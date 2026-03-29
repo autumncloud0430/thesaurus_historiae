@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>重商主義の循環</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+.hdr{padding:16px 20px;border-bottom:1px solid rgba(201,169,110,.08);display:flex;align-items:center;gap:14px;flex-wrap:wrap}.hdr h1{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2)}.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
+.wrap{display:flex;justify-content:center;padding:24px 16px 8px}
+.desc{max-width:740px;margin:0 auto;padding:0 20px 40px}
+.desc h2{font-family:'Noto Serif JP',serif;font-size:12px;font-weight:700;color:var(--gold2);margin:16px 0 6px;padding-left:8px;border-left:3px solid rgba(201,169,110,.3)}
+.desc p{font-size:9.5px;color:var(--text2);line-height:1.8;margin-bottom:8px}
+.desc p strong{color:var(--text);font-weight:600}
+.desc .side-note{font-size:8px;color:var(--text3);padding:4px 8px;border-left:2px solid rgba(201,169,110,.1);margin:6px 0 10px;line-height:1.6}
+.note{text-align:center;padding:8px 20px 32px;max-width:740px;margin:0 auto}.note p{font-size:9px;color:var(--text3);line-height:1.8}.note strong{color:var(--gold)}
+.hdr h1{font-size:12px}
+.wrap{padding:12px 8px}
+svg{max-width:100%;height:auto}
+.desc p{font-size:9px}
+.desc h2{font-size:11px}
+.side-note{font-size:7.5px}
+.note p{font-size:8px}
+}
+
+@media(max-width:600px){
+.hdr{padding:10px 12px}.hdr h1{font-size:12px}
+.wrap{padding:12px 8px}
+svg{max-width:100%;height:auto}
+.desc p{font-size:9px}
+.desc h2{font-size:11px}
+.side-note{font-size:7.5px}
+.note p{font-size:8px}
+}
+</style>
+</head>
+<body>
+<div class="hdr"><h1>重商主義の循環 ― 絶対王政の経済政策</h1><a href="charts.html">← Ad Chartae</a></div>
+
+<div class="wrap">
+<svg viewBox="0 0 660 480" xmlns="http://www.w3.org/2000/svg" style="width:660px;max-width:100%;height:auto">
+<defs>
+  <marker id="ag" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="rgba(201,169,110,.5)"/></marker>
+  <marker id="ab" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="rgba(100,130,180,.5)"/></marker>
+</defs>
+
+<text x="330" y="22" text-anchor="middle" fill="rgba(201,169,110,.12)" font-size="11" font-family="Cormorant Garamond" font-weight="700">重商主義の循環構造(16-18C)</text>
+
+<!-- ===== Central: Mother Country ===== -->
+<rect x="195" y="40" width="270" height="90" rx="14" fill="rgba(80,150,120,.06)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
+<text x="330" y="65" text-anchor="middle" fill="rgba(140,210,170,.9)" font-size="15" font-family="Noto Serif JP" font-weight="700">本国(絶対王政)</text>
+<text x="330" y="84" text-anchor="middle" fill="var(--text2)" font-size="8.5">★国力＝金銀の蓄積(正貨主義)→輸出＞輸入(貿易黒字)が国策</text>
+<text x="330" y="100" text-anchor="middle" fill="var(--text2)" font-size="8">原料を加工→製品に→輸出→金銀を獲得→常備軍・官僚制の資金に</text>
+<text x="330" y="116" text-anchor="middle" fill="var(--text3)" font-size="7">仏コルベール「コルベルティスム」/ 英航海法(1651) / 蘭VOC</text>
+
+<!-- Colony (left) -->
+<rect x="20" y="250" width="220" height="80" rx="12" fill="rgba(180,140,80,.06)" stroke="rgba(180,140,80,.25)" stroke-width="1.5"/>
+<text x="130" y="275" text-anchor="middle" fill="rgba(220,190,120,.9)" font-size="13" font-family="Noto Serif JP" font-weight="700">植民地</text>
+<text x="130" y="293" text-anchor="middle" fill="var(--text2)" font-size="8">原料の供給地＋本国製品の市場</text>
+<text x="130" y="308" text-anchor="middle" fill="var(--text2)" font-size="7.5">★植民地独自の工業化は禁止・抑制</text>
+<text x="130" y="322" text-anchor="middle" fill="var(--text3)" font-size="6.5">英＝北米13植民地・カリブ海 / 仏＝カナダ・西インド諸島</text>
+
+<!-- Other countries (right) -->
+<rect x="420" y="250" width="220" height="80" rx="12" fill="rgba(130,100,160,.06)" stroke="rgba(130,100,160,.25)" stroke-width="1.5"/>
+<text x="530" y="275" text-anchor="middle" fill="rgba(190,160,220,.9)" font-size="13" font-family="Noto Serif JP" font-weight="700">他の列強(ライバル国)</text>
+<text x="530" y="293" text-anchor="middle" fill="var(--text2)" font-size="8">貿易の競争相手＝排除すべき存在</text>
+<text x="530" y="308" text-anchor="middle" fill="var(--text2)" font-size="7.5">★関税障壁＋航海法で排除</text>
+<text x="530" y="322" text-anchor="middle" fill="var(--text3)" font-size="6.5">英の航海法＝英植民地への輸送は英船のみ(蘭を排除)</text>
+
+<!-- Treasury (bottom center) -->
+<rect x="230" y="380" width="200" height="55" rx="10" fill="rgba(201,169,110,.06)" stroke="rgba(201,169,110,.25)" stroke-width="1.5"/>
+<text x="330" y="403" text-anchor="middle" fill="var(--gold2)" font-size="12" font-family="Noto Serif JP" font-weight="700">金銀(国庫)</text>
+<text x="330" y="420" text-anchor="middle" fill="var(--text2)" font-size="8">→常備軍・官僚制・宮殿(ヴェルサイユ等)の資金源</text>
+<text x="330" y="432" text-anchor="middle" fill="var(--text3)" font-size="6.5">★金銀の蓄積＝国力の指標(→アダム＝スミスが批判)</text>
+
+<!-- ===== ARROWS ===== -->
+<!-- Colony → Mother (raw materials, going up-right) -->
+<line x1="155" y1="250" x2="265" y2="130" stroke="rgba(180,140,80,.5)" stroke-width="2.5" marker-end="url(#ag)"/>
+<text x="180" y="178" text-anchor="end" fill="rgba(220,190,120,.8)" font-size="8" font-weight="700">原料 ↑</text>
+<text x="180" y="190" text-anchor="end" fill="var(--text3)" font-size="6.5">砂糖・綿花・タバコ</text>
+
+<!-- Mother → Colony (manufactured goods, going down-left) -->
+<line x1="240" y1="130" x2="130" y2="250" stroke="rgba(80,150,120,.5)" stroke-width="2.5" marker-end="url(#ab)"/>
+<text x="155" y="210" text-anchor="start" fill="rgba(140,210,170,.7)" font-size="8" font-weight="700">製品 ↓</text>
+<text x="155" y="222" text-anchor="start" fill="var(--text3)" font-size="6.5">繊維・金属・武器</text>
+
+<!-- Mother → Rivals (export, going down-right) -->
+<line x1="420" y1="130" x2="505" y2="250" stroke="rgba(80,150,120,.5)" stroke-width="2" marker-end="url(#ab)"/>
+<text x="490" y="178" text-anchor="start" fill="rgba(140,210,170,.7)" font-size="8" font-weight="700">製品輸出 ↓</text>
+<text x="490" y="190" text-anchor="start" fill="var(--text3)" font-size="6.5">(高関税で保護)</text>
+
+<!-- Rivals → Mother (gold/silver, going up-left) -->
+<line x1="530" y1="250" x2="445" y2="130" stroke="rgba(201,169,110,.4)" stroke-width="2" marker-end="url(#ag)"/>
+<text x="518" y="210" text-anchor="end" fill="var(--gold)" font-size="8" font-weight="700">金銀 ↑</text>
+<text x="518" y="222" text-anchor="end" fill="var(--text3)" font-size="6.5">(対価として流入)</text>
+
+<!-- Mother → Treasury (dashed vertical) -->
+<line x1="330" y1="130" x2="330" y2="380" stroke="rgba(201,169,110,.3)" stroke-width="1.5" stroke-dasharray="4,3"/>
+<text x="345" y="260" text-anchor="start" fill="var(--gold)" font-size="7.5" font-weight="700">貿易黒字＝金銀の蓄積</text>
+
+<!-- ===== Criticism box ===== -->
+<rect x="20" y="440" width="620" height="30" rx="6" fill="rgba(100,130,180,.03)" stroke="rgba(100,130,180,.1)" stroke-width="0.5"/>
+<text x="330" y="459" text-anchor="middle" fill="rgba(160,180,220,.7)" font-size="8">★アダム＝スミス『国富論』(1776)が重商主義を批判＝「国富は金銀ではなく労働の生産物」→自由貿易(レッセ＝フェール)を主張→重商主義から自由主義経済へ転換</text>
+</svg>
+</div>
+
+<div class="desc">
+<h2>重商主義とは</h2>
+<p>16-18世紀の絶対王政の経済政策。核心＝<strong>「国富＝金銀の蓄積量」</strong>→<strong>輸出を最大化し輸入を最小化</strong>して貿易黒字を稼ぐことが国家の目標。そのための手段：①<strong>植民地</strong>＝原料の供給地＋本国製品の独占的市場(植民地の独自工業化は禁止) ②<strong>関税障壁</strong>＝外国製品に高関税→国内産業を保護 ③<strong>航海法</strong>(英1651)＝植民地との貿易は自国船のみ(オランダの中継貿易を排除) ④<strong>特権会社</strong>(東インド会社等)に独占貿易権を付与。</p>
+
+<h2>各国の重商主義</h2>
+<p><strong>フランス</strong>＝コルベール(ルイ14世の財務総監)が<strong>「コルベルティスム」</strong>を推進＝王立マニュファクチュア(ゴブラン織等)・関税保護・仏東インド会社の設立。<strong>イギリス</strong>＝<strong>航海法</strong>(1651、クロムウェル)で蘭を排除→英蘭戦争(1652-74)の原因に。東インド会社(1600)が対アジア貿易を独占。<strong>オランダ</strong>＝VOC(1602)による香辛料貿易独占。<strong>スペイン</strong>＝新大陸の銀を独占するが国内産業に投資せず→衰退(重商主義の「失敗例」)。</p>
+
+<h2>重商主義の批判と終焉</h2>
+<p><strong>アダム＝スミス</strong>『国富論(諸国民の富)』(1776)＝「国富は金銀ではなく<strong>労働の生産物</strong>」→重商主義を批判し<strong>自由貿易(レッセ＝フェール＝なすに任せよ)</strong>を主張。<strong>リカードウ</strong>の<strong>比較優位説</strong>＝各国が得意な分野に特化し自由に貿易すれば全体が豊かになる。→19世紀英の<strong>自由貿易帝国主義</strong>へ移行(穀物法廃止1846・航海法廃止1849)。ただし「持たざる国」(独伊日)は保護貿易(リストの幼稚産業保護論)を主張→<strong>自由貿易vs保護貿易の対立</strong>は現在まで続く。</p>
+<div class="side-note">★入試超頻出：「重商主義＝金銀の蓄積＝貿易黒字」「コルベール(仏)＝コルベルティスム」「航海法(英1651)＝蘭の排除」「アダム＝スミス『国富論』(1776)＝自由貿易への転換」「リカードウ＝比較優位」</div>
+</div>
+
+<div class="note"><p>重商主義の循環＝<strong>植民地(原料)→本国(加工→製品)→輸出(金銀獲得)→国庫(常備軍＋官僚制)</strong>。この構造が大航海時代〜絶対王政時代の世界経済を形作った。入試では「重商主義の仕組み」「コルベルティスムと航海法」「アダム＝スミスの批判＝自由貿易への転換点」が頻出。</p></div>
+</body></html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>朝貢貿易システム</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+.hdr{padding:16px 20px;border-bottom:1px solid rgba(201,169,110,.08);display:flex;align-items:center;gap:14px;flex-wrap:wrap}.hdr h1{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2)}.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
+.wrap{display:flex;justify-content:center;padding:24px 16px 8px}
+.desc{max-width:740px;margin:0 auto;padding:0 20px 40px}
+.desc h2{font-family:'Noto Serif JP',serif;font-size:12px;font-weight:700;color:var(--gold2);margin:16px 0 6px;padding-left:8px;border-left:3px solid rgba(201,169,110,.3)}
+.desc p{font-size:9.5px;color:var(--text2);line-height:1.8;margin-bottom:8px}
+.desc p strong{color:var(--text);font-weight:600}
+.desc .side-note{font-size:8px;color:var(--text3);padding:4px 8px;border-left:2px solid rgba(201,169,110,.1);margin:6px 0 10px;line-height:1.6}
+.note{text-align:center;padding:8px 20px 32px;max-width:740px;margin:0 auto}.note p{font-size:9px;color:var(--text3);line-height:1.8}.note strong{color:var(--gold)}
+
+@media(max-width:600px){
+.hdr{padding:10px 12px}.hdr h1{font-size:12px}
+.wrap{padding:12px 8px}
+svg{max-width:100%;height:auto}
+.desc p{font-size:9px}
+.desc h2{font-size:11px}
+.side-note{font-size:7.5px}
+.note p{font-size:8px}
+}
+</style>
+</head>
+<body>
+<div class="hdr"><h1>朝貢貿易システム ― 中華帝国の国際秩序</h1><a href="charts.html">← Ad Chartae</a></div>
+
+<div class="wrap">
+<svg viewBox="0 0 660 500" xmlns="http://www.w3.org/2000/svg" style="width:660px;max-width:100%;height:auto">
+<defs>
+  <marker id="ag" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="rgba(201,169,110,.5)"/></marker>
+  <marker id="ab" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="rgba(100,130,180,.5)"/></marker>
+  <marker id="ar" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="rgba(180,80,80,.6)"/></marker>
+</defs>
+
+<!-- ===== Central: China Emperor ===== -->
+<rect x="205" y="120" width="250" height="100" rx="14" fill="rgba(180,80,80,.06)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/>
+<text x="330" y="148" text-anchor="middle" fill="rgba(220,130,130,.9)" font-size="16" font-family="Noto Serif JP" font-weight="700">中華皇帝(天子)</text>
+<text x="330" y="168" text-anchor="middle" fill="var(--text2)" font-size="8.5">「天下」の中心＝世界の唯一の正統な統治者</text>
+<text x="330" y="185" text-anchor="middle" fill="var(--text2)" font-size="8">★対等な外交関係は存在しない＝全ての国は「臣下」</text>
+<text x="330" y="202" text-anchor="middle" fill="var(--text3)" font-size="7">漢〜唐〜宋〜元〜明〜清まで約2000年間継続</text>
+
+<!-- ===== Surrounding states (radial) ===== -->
+<!-- Korea (top) -->
+<rect x="255" y="15" width="150" height="45" rx="8" fill="rgba(100,130,180,.06)" stroke="rgba(100,130,180,.2)" stroke-width="1"/>
+<text x="330" y="36" text-anchor="middle" fill="rgba(160,180,220,.9)" font-size="10" font-family="Noto Serif JP" font-weight="700">朝鮮</text>
+<text x="330" y="50" text-anchor="middle" fill="var(--text3)" font-size="6.5">★最も模範的な朝貢国(「小中華」)</text>
+
+<!-- Vietnam (left) -->
+<rect x="20" y="100" width="140" height="45" rx="8" fill="rgba(80,150,120,.06)" stroke="rgba(80,150,120,.2)" stroke-width="1"/>
+<text x="90" y="121" text-anchor="middle" fill="rgba(140,210,170,.9)" font-size="10" font-family="Noto Serif JP" font-weight="700">ベトナム</text>
+<text x="90" y="135" text-anchor="middle" fill="var(--text3)" font-size="6.5">中国文化を受容しつつ独立を維持</text>
+
+<!-- Japan (right) -->
+<rect x="500" y="100" width="140" height="45" rx="8" fill="rgba(100,130,180,.06)" stroke="rgba(100,130,180,.2)" stroke-width="1"/>
+<text x="570" y="121" text-anchor="middle" fill="rgba(160,180,220,.9)" font-size="10" font-family="Noto Serif JP" font-weight="700">日本</text>
+<text x="570" y="135" text-anchor="middle" fill="var(--text3)" font-size="6.5">足利義満が「日本国王」として朝貢(勘合貿易)</text>
+
+<!-- Ryukyu (bottom right) -->
+<rect x="500" y="195" width="140" height="45" rx="8" fill="rgba(80,150,120,.06)" stroke="rgba(80,150,120,.2)" stroke-width="1"/>
+<text x="570" y="216" text-anchor="middle" fill="rgba(140,210,170,.9)" font-size="10" font-family="Noto Serif JP" font-weight="700">琉球</text>
+<text x="570" y="230" text-anchor="middle" fill="var(--text3)" font-size="6.5">中継貿易で繁栄(明〜清)</text>
+
+<!-- SE Asia (bottom left) -->
+<rect x="20" y="195" width="140" height="45" rx="8" fill="rgba(80,150,120,.06)" stroke="rgba(80,150,120,.2)" stroke-width="1"/>
+<text x="90" y="216" text-anchor="middle" fill="rgba(140,210,170,.9)" font-size="10" font-family="Noto Serif JP" font-weight="700">東南アジア諸国</text>
+<text x="90" y="230" text-anchor="middle" fill="var(--text3)" font-size="6.5">シャム・マラッカ・ジャワ等</text>
+
+<!-- Arrows: tribute (toward center) -->
+<path d="M310,60 C310,80 315,100 320,120" fill="none" stroke="rgba(201,169,110,.4)" stroke-width="2" marker-end="url(#ag)"/>
+<path d="M160,118 C180,120 190,125 205,135" fill="none" stroke="rgba(201,169,110,.4)" stroke-width="2" marker-end="url(#ag)"/>
+<path d="M500,118 C480,120 470,125 455,135" fill="none" stroke="rgba(201,169,110,.4)" stroke-width="2" marker-end="url(#ag)"/>
+<path d="M160,215 C180,210 195,200 210,190" fill="none" stroke="rgba(201,169,110,.4)" stroke-width="2" marker-end="url(#ag)"/>
+<path d="M500,215 C480,210 465,200 450,190" fill="none" stroke="rgba(201,169,110,.4)" stroke-width="2" marker-end="url(#ag)"/>
+
+<!-- Arrows: 回賜 (away from center, dashed) -->
+<path d="M340,120 C340,100 345,80 350,60" fill="none" stroke="rgba(100,130,180,.4)" stroke-width="1.5" stroke-dasharray="4,2" marker-end="url(#ab)"/>
+<path d="M205,150 C190,148 175,140 160,132" fill="none" stroke="rgba(100,130,180,.4)" stroke-width="1.5" stroke-dasharray="4,2" marker-end="url(#ab)"/>
+<path d="M455,150 C470,148 485,140 500,132" fill="none" stroke="rgba(100,130,180,.4)" stroke-width="1.5" stroke-dasharray="4,2" marker-end="url(#ab)"/>
+<path d="M210,200 C195,205 175,215 160,220" fill="none" stroke="rgba(100,130,180,.4)" stroke-width="1.5" stroke-dasharray="4,2" marker-end="url(#ab)"/>
+<path d="M450,200 C465,205 485,215 500,220" fill="none" stroke="rgba(100,130,180,.4)" stroke-width="1.5" stroke-dasharray="4,2" marker-end="url(#ab)"/>
+
+<!-- Labels for arrows -->
+<text x="275" y="85" text-anchor="end" fill="var(--gold)" font-size="7.5" font-weight="700">朝貢 →</text>
+<text x="385" y="85" text-anchor="start" fill="rgba(160,180,220,.7)" font-size="7.5">← 回賜</text>
+
+<!-- ===== Explanation boxes ===== -->
+<!-- Tribute box (left) -->
+<rect x="40" y="280" width="260" height="90" rx="10" fill="rgba(201,169,110,.04)" stroke="rgba(201,169,110,.12)" stroke-width="1"/>
+<text x="170" y="302" text-anchor="middle" fill="var(--gold2)" font-size="11" font-family="Noto Serif JP" font-weight="700">朝貢(実線→)</text>
+<text x="170" y="320" text-anchor="middle" fill="var(--text2)" font-size="8">周辺国の使節が中華皇帝に「貢ぎ物」を献上</text>
+<text x="170" y="336" text-anchor="middle" fill="var(--text2)" font-size="8">三跪九叩頭の礼(三度跪き九度額を地に打つ)</text>
+<text x="170" y="352" text-anchor="middle" fill="var(--text2)" font-size="7.5">皇帝の正朔(暦)を受け入れ＝「臣下」の表明</text>
+<text x="170" y="364" text-anchor="middle" fill="var(--text3)" font-size="6.5">★形式的には「上下関係の確認」＝政治的儀礼</text>
+
+<!-- 回賜 box (right) -->
+<rect x="360" y="280" width="260" height="90" rx="10" fill="rgba(100,130,180,.04)" stroke="rgba(100,130,180,.12)" stroke-width="1"/>
+<text x="490" y="302" text-anchor="middle" fill="rgba(160,180,220,.9)" font-size="11" font-family="Noto Serif JP" font-weight="700">回賜(破線←)</text>
+<text x="490" y="320" text-anchor="middle" fill="var(--text2)" font-size="8">皇帝が朝貢国に「恩恵」として返礼品を贈る</text>
+<text x="490" y="336" text-anchor="middle" fill="var(--text2)" font-size="8">★回賜は朝貢品よりも豊か＝中華の「徳」を示す</text>
+<text x="490" y="352" text-anchor="middle" fill="var(--text2)" font-size="7.5">絹・磁器・銀・書籍＋「王」の称号(冊封)</text>
+<text x="490" y="364" text-anchor="middle" fill="var(--text3)" font-size="6.5">→周辺国にとっては朝貢＝「得する貿易」</text>
+
+<!-- ===== Collapse: Macartney ===== -->
+<rect x="100" y="400" width="460" height="65" rx="10" fill="rgba(180,80,80,.06)" stroke="rgba(180,80,80,.25)" stroke-width="1.5"/>
+<text x="330" y="422" text-anchor="middle" fill="rgba(220,130,130,.9)" font-size="11" font-family="Noto Serif JP" font-weight="700">★体制の限界 ― マカートニー使節(1793)</text>
+<text x="330" y="439" text-anchor="middle" fill="var(--text2)" font-size="8">英ジョージ3世が自由貿易を要求→乾隆帝が拒否「天朝は万物を備え外国の産物を必要としない」</text>
+<text x="330" y="453" text-anchor="middle" fill="var(--text2)" font-size="8">朝貢体制は「対等な外交」を認めない→英は武力で市場をこじ開ける→★アヘン戦争(1840)へ</text>
+
+<!-- Legend -->
+<rect x="100" y="475" width="460" height="22" rx="4" fill="rgba(255,255,255,.01)" stroke="rgba(201,169,110,.05)" stroke-width="0.5"/>
+<line x1="120" y1="486" x2="150" y2="486" stroke="rgba(201,169,110,.4)" stroke-width="2"/>
+<text x="155" y="489" fill="var(--text3)" font-size="7">朝貢(周辺国→中国)</text>
+<line x1="300" y1="486" x2="330" y2="486" stroke="rgba(100,130,180,.4)" stroke-width="1.5" stroke-dasharray="4,2"/>
+<text x="335" y="489" fill="var(--text3)" font-size="7">回賜(中国→周辺国)</text>
+</svg>
+</div>
+
+<div class="desc">
+<h2>朝貢貿易システムとは</h2>
+<p>中華皇帝を頂点とする<strong>東アジアの国際秩序(冊封体制)</strong>の経済面。周辺国の王が使節を送り皇帝に「貢ぎ物」を献上(朝貢)→皇帝が「恩恵」として朝貢品を上回る返礼品を贈る(回賜)。★これは<strong>対等な貿易ではなく「上下関係の確認」</strong>＝周辺国は中華皇帝の「臣下」であると認め、皇帝は「徳」を示す。<strong>冊封</strong>＝皇帝が周辺国の王に「王」の称号を与える＝正統性の付与。</p>
+
+<h2>なぜ周辺国は朝貢したか</h2>
+<p>①<strong>経済的利益</strong>＝回賜は朝貢品より豊か→「朝貢すれば得をする」。さらに使節団に随行する商人が貿易を行える＝<strong>朝貢＝公認の貿易機会</strong>。明の海禁(民間の海外貿易を禁止)のもとでは朝貢が唯一の合法的貿易手段。②<strong>政治的正統性</strong>＝中華皇帝から「王」に封じられる＝国内での権威を強化。③<strong>安全保障</strong>＝中華帝国との友好関係＝外敵への抑止力。</p>
+
+<h2>体制の崩壊 ― 「天下」vs「万国公法」</h2>
+<p>朝貢体制は<strong>「対等な主権国家」という概念を持たない</strong>。西欧のウェストファリア体制(主権平等)とは根本的に異なる世界観。<strong>マカートニー使節</strong>(1793)＝英が自由貿易・常設大使館・関税引き下げを要求→乾隆帝が拒否→英は三跪九叩頭の礼も拒否。<strong>アヘン戦争</strong>(1840-42)＝英が武力で「自由貿易」を強制→<strong>南京条約(不平等条約体制)＝朝貢体制の崩壊の始まり</strong>。日清戦争(1894-95)で朝鮮が清の朝貢国でなくなる→<strong>冊封体制の最終的な終焉</strong>。</p>
+<div class="side-note">★入試超頻出：「朝貢＝上下関係の確認(対等ではない)」「回賜＞朝貢品(周辺国に経済的利益)」「明の海禁→朝貢が唯一の合法貿易」「マカートニー(1793)→拒否→アヘン戦争」「冊封体制vs主権国家体制(ウェストファリア)」</div>
+</div>
+
+<div class="note"><p>朝貢貿易＝<strong>中華帝国を中心とした東アジアの国際秩序の経済面</strong>。「天下」(中国が世界の中心)という世界観に基づく。入試では①<strong>朝貢と回賜の仕組み(形式＝上下関係、実態＝経済的利益)</strong> ②<strong>冊封との関係</strong> ③<strong>明の海禁と朝貢貿易の独占</strong> ④<strong>マカートニー→アヘン戦争＝ウェストファリア的秩序による「天下」の破壊</strong>が問われる。</p></div>
+</body></html>

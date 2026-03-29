@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>イギリス王家の変遷</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048;--border:rgba(201,169,110,.08)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+.hdr{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.hdr h1{font-family:'Noto Serif JP',serif;font-size:15px;font-weight:700;color:var(--gold2)}
+.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5;transition:opacity .2s}
+.hdr a:hover{opacity:1}
+.wrap{padding:20px 16px 10px;overflow-x:auto}
+.tree{display:flex;flex-direction:column;align-items:center;min-width:860px;gap:0}
+.nd{position:relative;text-align:center;cursor:pointer;transition:transform .15s}
+.nd:hover{transform:translateY(-1px)}
+.nb{border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:7px 12px;background:rgba(255,255,255,.02);transition:all .2s}
+.nd:hover .nb{border-color:rgba(201,169,110,.3);background:rgba(201,169,110,.04)}
+.nn{font-family:'Noto Serif JP',serif;font-size:11px;font-weight:700;color:var(--gold2);white-space:nowrap}
+.ni{font-size:7.5px;color:var(--text2);margin-top:1px;white-space:nowrap}
+.ntag{font-size:7px;font-weight:600;letter-spacing:.06em;margin-top:2px;padding:1px 6px;border-radius:100px;display:inline-block}
+/* Dynasty colors */
+.d-tud .nb{border-left:3px solid rgba(91,138,91,.4)} .d-tud .ntag{background:rgba(91,138,91,.2);color:#8ac8a0}
+.d-stu .nb{border-left:3px solid rgba(138,91,120,.4)} .d-stu .ntag{background:rgba(138,91,120,.2);color:#c8a0b8}
+.d-han .nb{border-left:3px solid rgba(91,111,138,.4)} .d-han .ntag{background:rgba(91,111,138,.2);color:#8aafc8}
+.d-crom .nb{border-left:3px solid rgba(138,120,91,.4);border-style:dashed} .d-crom .ntag{background:rgba(138,120,91,.2);color:#c8b88a}
+/* Highlight */
+.peak .nb{border-color:rgba(201,169,110,.35);background:rgba(201,169,110,.06);padding:9px 14px}
+.peak .nn{font-size:14px;background:linear-gradient(135deg,#c9a96e,#e8c888,#c9a96e);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+/* Layout */
+.cv{width:1px;height:14px;background:rgba(201,169,110,.15);margin:0 auto}
+.cv.l{height:20px}
+.row{display:flex;align-items:flex-start;gap:16px;justify-content:center}
+.branch{display:flex;flex-direction:column;align-items:center}
+.inherit{font-size:7px;color:var(--text3);text-align:center;margin:2px 0;font-style:italic}
+.inherit strong{color:var(--gold);font-style:normal}
+.dynasty-label{font-family:'Cormorant Garamond',serif;font-size:10px;font-weight:700;letter-spacing:.2em;text-align:center;padding:10px 0 4px;opacity:.5}
+.d-tud-label{color:rgba(91,138,91,.8)}
+.d-stu-label{color:rgba(138,91,120,.8)}
+.d-han-label{color:rgba(91,111,138,.8)}
+.why-box{border:1px dashed rgba(201,169,110,.15);border-radius:6px;padding:5px 10px;margin:4px 0;max-width:340px}
+.why-box p{font-size:7.5px;color:var(--gold);line-height:1.5;text-align:center}
+.tp{display:none}
+.m-heart{font-size:7px;color:var(--gold);opacity:.4;padding:0 3px;text-align:center}
+.m-line{width:20px;height:1px;background:rgba(201,169,110,.25)}
+.note{text-align:center;padding:6px 20px 32px;font-size:9px;color:var(--text3);line-height:1.8;max-width:800px;margin:0 auto}
+.note strong{color:var(--gold)}
+.legend{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;padding:10px 20px}
+.legend-item{display:flex;align-items:center;gap:5px;font-size:9px;color:var(--text3)}
+.legend-dot{width:12px;height:8px;border-radius:2px}
+
+@media(max-width:600px){
+.hdr{padding:10px 12px}.hdr h1{font-size:12px}
+.legend .li{font-size:7px}
+.note p{font-size:8px}
+}
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <h1>イギリス王家の変遷 ― テューダー→ステュアート→ハノーヴァー</h1>
+  <a href="charts.html">← Ad Chartae</a>
+</div>
+
+<div class="wrap">
+<div class="tree">
+
+<!-- ===== 薔薇戦争 → テューダー朝 ===== -->
+<div class="nd" style="opacity:.55"><div class="nb" style="border-left:3px solid rgba(100,100,100,.3)">
+  <div class="nn" style="font-size:10px">薔薇戦争（1455-1485）</div>
+  <div class="ni">ランカスター家(赤薔薇) vs ヨーク家(白薔薇) → テューダー家が統一</div>
+</div><div class="tp"><p>プランタジネット朝の分家同士（ランカスター家vsヨーク家）が王位を争った内戦。ボズワースの戦い(1485)でランカスター系のヘンリー＝テューダーがリチャード3世を破り勝利→ヨーク家のエリザベスと結婚し両家を統合→テューダー朝の開始。</p></div></div>
+
+<div class="cv l"></div>
+<div class="dynasty-label d-tud-label">TUDOR ― テューダー朝（1485-1603）</div>
+<div class="cv"></div>
+
+<!-- ヘンリー7世 -->
+<div class="nd d-tud"><div class="nb">
+  <div class="nn">ヘンリー7世</div>
+  <div class="ni">在位 1485-1509 ｜ テューダー朝初代</div>
+</div><div class="tp"><p>薔薇戦争の勝者。ランカスター家の血を引く。ヨーク家のエリザベスと結婚し両家を統合→内戦を終結。財政再建と中央集権化を推進。星室庁裁判所で貴族を統制。娘マーガレットをスコットランド王ジェームズ4世に嫁がせる→これが後のステュアート朝のイングランド王位継承権の根拠に。</p></div></div>
+
+<div class="cv"></div>
+
+<!-- ヘンリー8世 -->
+<div class="nd d-tud peak"><div class="nb">
+  <div class="nn">ヘンリー8世</div>
+  <div class="ni">在位 1509-1547 ｜ 6人の妻</div>
+  <div style="display:flex;gap:3px;justify-content:center;flex-wrap:wrap;margin-top:2px">
+    <span class="ntag">首長法(1534)</span>
+    <span class="ntag">英国国教会</span>
+  </div>
+</div><div class="tp"><p>6回結婚。最初の妻キャサリン（カール5世の叔母）との離婚を教皇が認めず→<strong>首長法(1534)</strong>で英国国教会を設立し教皇から離脱。修道院を解散し財産を没収。3人の子（エドワード・メアリ・エリザベス）が順に即位するが、いずれも後継者を残さず→テューダー朝断絶の遠因。</p></div></div>
+
+<div class="cv"></div>
+
+<!-- 3人の子 -->
+<div class="row" style="gap:12px">
+
+  <div class="nd d-tud"><div class="nb">
+    <div class="nn">エドワード6世</div>
+    <div class="ni">在位 1547-1553</div>
+    <div class="ni">プロテスタント推進。15歳で病死</div>
+  </div><div class="tp"><p>ヘンリー8世と3番目の妻ジェーン＝シーモアの子。幼少で即位し摂政が統治。一般祈禱書でプロテスタント化を推進。しかし結核で15歳で死去→後継者なし。</p></div></div>
+
+  <div class="nd d-tud"><div class="nb">
+    <div class="nn">メアリ1世</div>
+    <div class="ni">在位 1553-1558</div>
+    <div class="ni">「ブラッディ・メアリ」</div>
+  </div><div class="tp"><p>ヘンリー8世と最初の妻キャサリンの娘。熱心なカトリック→プロテスタントを迫害（「ブラッディ・メアリ」）。スペインのフェリペ2世と結婚するがイギリスでは不人気。後継者なく病死。</p></div></div>
+
+  <div class="nd d-tud peak"><div class="nb">
+    <div class="nn">エリザベス1世</div>
+    <div class="ni">在位 1558-1603 ｜ 「処女王」</div>
+    <div style="display:flex;gap:3px;justify-content:center;flex-wrap:wrap;margin-top:2px">
+      <span class="ntag">統一法(1559)</span>
+      <span class="ntag">アルマダ撃破(1588)</span>
+    </div>
+  </div><div class="tp"><p>ヘンリー8世と2番目の妻アン＝ブーリンの娘。<strong>統一法(1559)</strong>で英国国教会を確立（カトリックとプロテスタントの中間路線）。<strong>アルマダの海戦(1588)</strong>でスペイン無敵艦隊を撃破→イギリスの海洋覇権の始まり。東インド会社設立(1600)。生涯独身で「処女王」→後継者なくテューダー朝断絶。</p></div></div>
+
+</div>
+
+<div class="cv l"></div>
+<div class="why-box">
+  <p><strong>なぜ王朝が変わったか？</strong><br>エリザベス1世が生涯未婚で後継者なし→最も近い血縁はスコットランド王ジェームズ6世<br>（ヘンリー7世の娘マーガレット→スコットランド王家→ジェームズ）</p>
+</div>
+<div class="cv"></div>
+
+<!-- ===== ステュアート朝 ===== -->
+<div class="dynasty-label d-stu-label">STUART ― ステュアート朝（1603-1714）</div>
+<div class="cv"></div>
+
+<!-- ジェームズ1世 -->
+<div class="nd d-stu"><div class="nb">
+  <div class="nn">ジェームズ1世（スコットランド王としては6世）</div>
+  <div class="ni">在位 1603-1625 ｜ イングランド・スコットランド同君連合</div>
+  <div class="ntag">王権神授説</div>
+</div><div class="tp"><p>スコットランドのステュアート家出身。エリザベス1世の死で英王位を継承→イングランドとスコットランドの<strong>同君連合</strong>。王権神授説を主張し議会と対立。ピューリタン（清教徒）を弾圧→一部がメイフラワー号で新大陸に移住(1620)。欽定訳聖書(KJV)を刊行。</p></div></div>
+
+<div class="cv"></div>
+
+<!-- チャールズ1世 -->
+<div class="nd d-stu"><div class="nb">
+  <div class="nn">チャールズ1世</div>
+  <div class="ni">在位 1625-1649</div>
+  <div class="ntag" style="background:rgba(140,60,60,.2);color:#d4a0a0">1649 処刑</div>
+</div><div class="tp"><p>議会無視の専制→権利の請願(1628)を無視→11年間の議会なし統治。スコットランドの反乱をきっかけに議会を召集→対立激化→<strong>ピューリタン革命(1642-49)</strong>。クロムウェルの議会軍に敗北→裁判で死刑宣告→<strong>1649年1月30日に斬首</strong>。イングランド史上唯一の国王処刑。</p></div></div>
+
+<div class="cv"></div>
+
+<!-- 共和政 -->
+<div class="nd d-crom"><div class="nb">
+  <div class="nn">クロムウェルの共和政</div>
+  <div class="ni">1649-1660 ｜ 護国卿（Lord Protector）</div>
+  <div style="display:flex;gap:3px;justify-content:center;flex-wrap:wrap;margin-top:2px">
+    <span class="ntag">航海法(1651)</span>
+    <span class="ntag">アイルランド征服</span>
+  </div>
+</div><div class="tp"><p>ピューリタン革命の指導者。国王処刑後に共和政を樹立し護国卿として独裁。<strong>航海法(1651)</strong>でオランダの中継貿易を排除→英蘭戦争。アイルランドを武力征服。ピューリタン的禁欲主義を強制し社会は息苦しく→死後に息子リチャードが跡を継ぐも無能→<strong>王政復古(1660)</strong>へ。</p></div></div>
+
+<div class="cv"></div>
+<div class="inherit"><strong>王政復古(1660)</strong> ― ステュアート朝の復帰</div>
+<div class="cv"></div>
+
+<!-- チャールズ2世 -->
+<div class="nd d-stu"><div class="nb">
+  <div class="nn">チャールズ2世</div>
+  <div class="ni">在位 1660-1685 ｜ 王政復古</div>
+  <div class="ntag">審査法(1673)・人身保護法(1679)</div>
+</div><div class="tp"><p>チャールズ1世の子。亡命先のフランスから帰国し王政復古。議会との妥協路線を取りつつもカトリック寄りの秘密外交（ルイ14世との密約）。審査法(1673)でカトリック教徒の公職を禁止。人身保護法(1679)で不当逮捕を禁止。嫡子なく弟ジェームズが即位。</p></div></div>
+
+<div class="cv"></div>
+
+<!-- ジェームズ2世 -->
+<div class="nd d-stu"><div class="nb">
+  <div class="nn">ジェームズ2世</div>
+  <div class="ni">在位 1685-1688 ｜ カトリック</div>
+  <div class="ntag" style="background:rgba(140,60,60,.15);color:#d4a0a0">名誉革命で追放</div>
+</div><div class="tp"><p>公然たるカトリック信者。審査法を無視してカトリック教徒を登用→議会の反発。カトリックの男子が誕生(1688)→カトリック王朝の永続化を恐れた議会がオランダのウィリアム（ジェームズの娘メアリの夫）を招聘→ジェームズはフランスに亡命→<strong>名誉革命(1688)</strong>。</p></div></div>
+
+<div class="cv"></div>
+
+<!-- 名誉革命 -->
+<div class="why-box">
+  <p><strong>名誉革命（1688）</strong><br>議会がオランダ総督ウィリアム3世（ジェームズ2世の娘メアリの夫）を招聘<br>「無血革命」→ <strong>権利の章典(1689)</strong>で議会主権を確立→立憲君主政の成立</p>
+</div>
+<div class="cv"></div>
+
+<!-- ウィリアム3世 & メアリ2世 -->
+<div class="row" style="gap:10px">
+  <div class="nd d-stu"><div class="nb">
+    <div class="nn">ウィリアム3世</div>
+    <div class="ni">在位 1689-1702</div>
+    <div class="ni">オランダ総督を兼ねる</div>
+  </div><div class="tp"><p>オラニエ＝ナッサウ家。メアリ2世との共同統治。<strong>権利の章典(1689)</strong>に署名→議会の課税同意権・国王の法律停止権禁止・常備軍禁止。対仏戦争（ファルツ継承戦争）を主導。</p></div></div>
+
+  <div style="display:flex;align-items:center"><div class="m-line"></div><div class="m-heart">共同<br>統治</div><div class="m-line"></div></div>
+
+  <div class="nd d-stu"><div class="nb">
+    <div class="nn">メアリ2世</div>
+    <div class="ni">在位 1689-1694</div>
+    <div class="ni">ジェームズ2世の長女</div>
+  </div><div class="tp"><p>ジェームズ2世の長女でプロテスタント。夫ウィリアム3世とともに議会に招かれ共同統治。1694年に天然痘で死去。子はなし。</p></div></div>
+</div>
+
+<div class="cv"></div>
+
+<!-- アン女王 -->
+<div class="nd d-stu"><div class="nb">
+  <div class="nn">アン女王</div>
+  <div class="ni">在位 1702-1714 ｜ ステュアート朝最後</div>
+  <div style="display:flex;gap:3px;justify-content:center;flex-wrap:wrap;margin-top:2px">
+    <span class="ntag">スペイン継承戦争</span>
+    <span class="ntag">合同法(1707)</span>
+  </div>
+</div><div class="tp"><p>ジェームズ2世の次女。17回妊娠するが成人した子はゼロ→後継者問題が深刻化。<strong>合同法(1707)</strong>でイングランドとスコットランドが合同→「グレートブリテン王国」の成立。スペイン継承戦争ではマールバラ公が活躍→ユトレヒト条約(1713)。1714年に死去→ステュアート朝断絶。</p></div></div>
+
+<div class="cv l"></div>
+<div class="why-box">
+  <p><strong>なぜ王朝が変わったか？</strong><br>アン女王に後継者なし。王位継承法(1701)でカトリック教徒の王位継承を禁止<br>→ 最も近いプロテスタントの血縁 ＝ ヘンリー7世の曾孫の子孫であるハノーヴァー選帝侯ゲオルク</p>
+</div>
+<div class="cv"></div>
+
+<!-- ===== ハノーヴァー朝 ===== -->
+<div class="dynasty-label d-han-label">HANOVER ― ハノーヴァー朝（1714-1901）</div>
+<div class="cv"></div>
+
+<!-- ジョージ1世 -->
+<div class="nd d-han"><div class="nb">
+  <div class="nn">ジョージ1世</div>
+  <div class="ni">在位 1714-1727 ｜ ドイツ人の王</div>
+  <div class="ntag">責任内閣制の起源</div>
+</div><div class="tp"><p>ドイツのハノーヴァー選帝侯。英語をほとんど話せず→閣議に出席せず→<strong>首相（ウォルポール）が実質的に政治を主導 ＝ 責任内閣制の起源</strong>。「王は君臨すれども統治せず」の慣行が確立する契機。ジャコバイト（ステュアート家復帰派）の反乱(1715)を鎮圧。</p></div></div>
+
+<div class="cv"></div>
+
+<!-- ジョージ2世 -->
+<div class="nd d-han"><div class="nb">
+  <div class="nn">ジョージ2世</div>
+  <div class="ni">在位 1727-1760</div>
+  <div class="ntag">オーストリア継承戦争・七年戦争</div>
+</div><div class="tp"><p>ウォルポールの責任内閣制が定着。デッティンゲンの戦い(1743)で自ら軍を率いた最後のイギリス王。オーストリア継承戦争・七年戦争でフランスと対決→パリ条約(1763)でカナダ・インドを獲得→<strong>大英帝国の基盤確立</strong>。</p></div></div>
+
+<div class="cv"></div>
+
+<!-- ジョージ3世 -->
+<div class="nd d-han"><div class="nb">
+  <div class="nn">ジョージ3世</div>
+  <div class="ni">在位 1760-1820</div>
+  <div class="ntag">アメリカ独立・対ナポレオン</div>
+</div><div class="tp"><p>ハノーヴァー朝で初めてイギリス生まれ・英語が母語。<strong>アメリカ独立戦争(1775-83)</strong>で13植民地を喪失。対ナポレオン戦争（トラファルガー・ワーテルロー）を戦い抜く。晩年はポルフィリン症（精神障害）で摂政王太子(後のジョージ4世)が代行。在位60年。</p></div></div>
+
+<div class="cv"></div>
+
+<!-- ヴィクトリア女王 -->
+<div class="nd d-han peak"><div class="nb">
+  <div class="nn">ヴィクトリア女王</div>
+  <div class="ni">在位 1837-1901 ｜ 大英帝国の絶頂</div>
+  <div style="display:flex;gap:3px;justify-content:center;flex-wrap:wrap;margin-top:2px">
+    <span class="ntag">パクス＝ブリタニカ</span>
+    <span class="ntag">インド皇帝(1877)</span>
+    <span class="ntag">選挙法改正</span>
+  </div>
+</div><div class="tp"><p>在位64年。<strong>「パクス＝ブリタニカ」</strong>（イギリスの平和）の時代。インド帝国の皇帝を兼ねる(1877)。第1回万博(1851)。選挙法改正(1832・1867・1884)で段階的に選挙権を拡大。首相ディズレーリ（保守党・帝国主義）とグラッドストン（自由党・改革）が交互に政権。「ヨーロッパの祖母」→子孫が各国王室に。夫はドイツのアルバート公→子のエドワード7世からサクス＝コバーグ＝ゴータ朝→WW1中にウィンザー朝に改称→現在に至る。</p></div></div>
+
+<div class="cv"></div>
+<div class="nd" style="opacity:.5"><div class="nb" style="border-left:3px solid rgba(91,111,138,.3)">
+  <div class="nn" style="font-size:10px">→ サクス＝コバーグ＝ゴータ朝 → ウィンザー朝(1917改称)</div>
+  <div class="ni">WW1中の反独感情でドイツ風の家名を変更→現在のエリザベス2世・チャールズ3世に至る</div>
+</div><div class="tp"><p>ヴィクトリアの子エドワード7世から家名がサクス＝コバーグ＝ゴータに。しかしWW1中の反ドイツ感情(1917)で「ウィンザー」に改称→現在まで続くウィンザー朝。ジョージ5世→エドワード8世(退位)→ジョージ6世→エリザベス2世(1952-2022,在位70年)→チャールズ3世(2022-)。</p></div></div>
+
+</div><!-- tree -->
+</div><!-- wrap -->
+
+<div class="legend">
+  <div class="legend-item"><div class="legend-dot" style="background:rgba(91,138,91,.4)"></div>テューダー朝(1485-1603)</div>
+  <div class="legend-item"><div class="legend-dot" style="background:rgba(138,91,120,.4)"></div>ステュアート朝(1603-1714)</div>
+  <div class="legend-item"><div class="legend-dot" style="background:rgba(138,120,91,.4);border:1px dashed rgba(138,120,91,.6)"></div>共和政(1649-1660)</div>
+  <div class="legend-item"><div class="legend-dot" style="background:rgba(91,111,138,.4)"></div>ハノーヴァー朝(1714-1901)</div>
+</div>
+
+<div class="note">
+  <strong>入試ポイント：</strong><br>
+  ❶「なぜテューダー朝からステュアート朝に変わったか」→ エリザベス1世が未婚で後継者なし→スコットランド王ジェームズが血縁で継承<br>
+  ❷「なぜステュアート朝からハノーヴァー朝に変わったか」→ アン女王に後継者なし＋王位継承法(1701)でカトリック禁止→最も近いプロテスタントがドイツのハノーヴァー選帝侯<br>
+  ❸「なぜ責任内閣制が成立したか」→ ジョージ1世が英語を話せず閣議に出席しない→首相ウォルポールが政治を主導<br>
+  ❹ ヘンリー8世の首長法(1534) ＝ キャサリン（カール5世の叔母）との離婚問題（→ハプスブルク図と接続）<br>
+  ❺ 権利の請願(1628)→権利の章典(1689)→責任内閣制 ＝ イギリス立憲政治の段階的発展
+</div>
+
+<!-- Tooltip system -->
+<div id="tooltip-overlay" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;z-index:8000" onclick="closeTip()"></div>
+<div id="tooltip-box" style="display:none;position:fixed;z-index:9000;background:rgba(12,15,22,.97);border:1px solid rgba(201,169,110,.25);border-radius:8px;padding:12px 16px;max-width:320px;width:calc(100vw - 32px);box-shadow:0 8px 30px rgba(0,0,0,.6)">
+  <div id="tooltip-content" style="font-size:10px;color:#8a857d;line-height:1.7"></div>
+</div>
+<script>
+(function(){
+  var ov=document.getElementById("tooltip-overlay");
+  var bx=document.getElementById("tooltip-box");
+  var ct=document.getElementById("tooltip-content");
+  window.closeTip=function(){bx.style.display="none";ov.style.display="none"};
+  function openTip(nd){
+    var tp=nd.querySelector(".tp");if(!tp)return;closeTip();
+    ct.innerHTML=tp.innerHTML;ov.style.display="block";bx.style.display="block";
+    var r=nd.getBoundingClientRect();
+    var w=Math.min(320,window.innerWidth-32);bx.style.width=w+"px";
+    var l=r.left+r.width/2-w/2;
+    if(l<16)l=16;if(l+w>window.innerWidth-16)l=window.innerWidth-16-w;
+    bx.style.left=l+"px";bx.style.top=(r.bottom+8)+"px";bx.style.bottom="auto";
+    var br=bx.getBoundingClientRect();
+    if(br.bottom>window.innerHeight-16){var t=r.top-br.height-8;if(t<16)t=16;bx.style.top=t+"px"}
+  }
+  var tm=false,tt=null;
+  document.addEventListener("touchstart",function(e){tm=false;tt=e.target},{passive:true});
+  document.addEventListener("touchmove",function(){tm=true},{passive:true});
+  document.addEventListener("touchend",function(e){
+    if(tm)return;var nd=tt?tt.closest(".nd"):null;
+    if(nd){e.preventDefault();openTip(nd)}else if(!tt||!tt.closest("#tooltip-box"))closeTip();tt=null;
+  });
+  document.addEventListener("click",function(e){
+    if("ontouchstart"in window)return;var nd=e.target.closest(".nd");
+    if(nd)openTip(nd);else if(!e.target.closest("#tooltip-box"))closeTip();
+  });
+})();
+</script>
+
+</body>
+</html>

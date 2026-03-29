@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ウィーン体制 ― 五大国の勢力均衡</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+.hdr{padding:16px 20px;border-bottom:1px solid rgba(201,169,110,.08);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.hdr h1{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2)}
+.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
+.content{padding:12px 16px;overflow-x:auto}.content-inner{min-width:760px}
+.phase{margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid rgba(201,169,110,.04)}.phase:last-child{border-bottom:none}
+.phase-hdr{display:flex;align-items:baseline;gap:8px;margin-bottom:6px}
+.phase-era{font-family:'Cormorant Garamond',serif;font-size:13px;font-weight:700;color:var(--gold);letter-spacing:.1em;min-width:90px}
+.phase-title{font-family:'Noto Serif JP',serif;font-size:11px;font-weight:700;color:var(--gold2)}
+.phase-sub{font-size:8px;color:var(--text3);margin-left:4px}
+.phase-body{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.cn{border-radius:6px;padding:5px 10px;text-align:center;cursor:pointer;transition:all .15s}.cn:hover{filter:brightness(1.15);transform:translateY(-1px)}
+.cn .nm{font-family:'Noto Serif JP',serif;font-size:10px;font-weight:700;white-space:nowrap}
+.cn .sub{font-size:6.5px;color:var(--text3);margin-top:1px;white-space:nowrap}
+.cn-con{background:rgba(194,120,74,.06);border:1px solid rgba(194,120,74,.2)}.cn-con .nm{color:#d4b898}
+.cn-lib{background:rgba(74,120,194,.06);border:1px solid rgba(74,120,194,.2)}.cn-lib .nm{color:#8ab0d4}
+.cn-dim{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05)}.cn-dim .nm{color:var(--text3)}
+.grp{border-radius:8px;padding:8px 10px;display:flex;gap:6px;align-items:center;flex-wrap:wrap;position:relative}
+.grp-con{border:1px solid rgba(194,120,74,.12);background:rgba(194,120,74,.02)}
+.grp-lib{border:1px solid rgba(74,120,194,.12);background:rgba(74,120,194,.02)}
+.grp-label{font-size:7px;font-weight:600;letter-spacing:.06em;position:absolute;top:-7px;left:12px;padding:0 4px;background:var(--bg)}
+.grp-label-con{color:rgba(194,120,74,.6)}.grp-label-lib{color:rgba(74,120,194,.6)}
+.vs{font-family:'Cormorant Garamond',serif;font-size:12px;font-weight:700;color:rgba(194,90,74,.4);padding:0 5px}
+.ev{font-size:7px;color:var(--gold);background:rgba(201,169,110,.06);border:1px solid rgba(201,169,110,.1);border-radius:4px;padding:2px 6px;cursor:pointer;transition:all .15s;white-space:nowrap}.ev:hover{filter:brightness(1.2)}
+.ev-bad{color:#c25a5a;background:rgba(194,74,74,.06);border-color:rgba(194,74,74,.1)}
+.ar{font-size:8px;color:var(--text3);padding:0 2px}
+.detail{font-size:6.5px;color:var(--text3);margin:3px 0 0 4px;line-height:1.6}.detail b{color:var(--gold);font-weight:600}
+.tp{display:none}
+.note{text-align:center;padding:8px 20px 32px;max-width:820px;margin:0 auto}.note p{font-size:9px;color:var(--text3);line-height:1.8}.note strong{color:var(--gold)}
+.nd-svg{cursor:pointer}
+
+@media(max-width:600px){
+.hdr{padding:10px 12px}.hdr h1{font-size:12px}
+th,td{padding:6px 8px;font-size:9px}
+th{font-size:10px}
+td:first-child{font-size:8.5px}
+.note p{font-size:8px}
+.side-note{font-size:7.5px}
+}
+</style>
+</head>
+<body>
+<div class="hdr"><h1>ウィーン体制 ― 五大国の勢力均衡と崩壊</h1><a href="charts.html">← Ad Chartae</a></div>
+<div style="display:flex;gap:16px;justify-content:center;padding:6px 20px;flex-wrap:wrap;border-bottom:1px solid rgba(255,255,255,.02)">
+<div style="display:flex;align-items:center;gap:5px;font-size:8px;color:var(--text3)"><div style="width:16px;height:12px;border-radius:3px;background:rgba(194,120,74,.1);border:1px solid rgba(194,120,74,.2)"></div>保守・体制維持側</div>
+<div style="display:flex;align-items:center;gap:5px;font-size:8px;color:var(--text3)"><div style="width:16px;height:12px;border-radius:3px;background:rgba(74,120,194,.1);border:1px solid rgba(74,120,194,.2)"></div>自由主義・ナショナリズム</div>
+<div style="display:flex;align-items:center;gap:5px;font-size:8px;color:var(--gold)">★ 金バッジ＝条約・原則</div>
+<div style="display:flex;align-items:center;gap:5px;font-size:8px;color:#c25a5a">★ 赤バッジ＝革命・体制動揺</div>
+</div>
+<div class="content"><div class="content-inner">
+
+<div class="phase">
+<div class="phase-hdr"><div class="phase-era">1814-1815</div><div class="phase-title">ウィーン会議 ―「会議は踊る、されど進まず」</div></div>
+<div class="phase-body" style="margin-bottom:6px">
+<div class="grp grp-con"><div class="grp-label grp-label-con">五大国</div>
+<div class="cn cn-con nd-svg" data-tip="v1-aus"><div class="nm">オーストリア</div><div class="sub">メッテルニヒが議長</div></div>
+<div class="cn cn-con nd-svg" data-tip="v1-eng"><div class="nm">イギリス</div><div class="sub">カスルレー</div></div>
+<div class="cn cn-con nd-svg" data-tip="v1-rus"><div class="nm">ロシア</div><div class="sub">アレクサンドル1世</div></div>
+<div class="cn cn-con nd-svg" data-tip="v1-pru"><div class="nm">プロイセン</div><div class="sub">ハルデンベルク</div></div>
+<div class="cn cn-con nd-svg" data-tip="v1-fra"><div class="nm">フランス</div><div class="sub">タレーラン ← 正統主義で復帰</div></div>
+</div>
+</div>
+<div class="phase-body">
+<div class="ev nd-svg" data-tip="v1-legit">正統主義</div>
+<div class="ev nd-svg" data-tip="v1-balance">勢力均衡</div>
+<div class="ev nd-svg" data-tip="v1-holy">神聖同盟(露墺普)</div>
+<div class="ev nd-svg" data-tip="v1-quad">四国同盟(英墺普露)</div>
+</div>
+<div style="background:rgba(194,120,74,.03);border:1px solid rgba(194,120,74,.08);border-radius:6px;padding:6px 10px;margin-top:6px;font-size:7px;color:var(--text2);line-height:1.7">
+<b style="color:var(--gold)">ウィーン体制の仕組み：</b><br>
+<b style="color:#d4b898">五大国</b>（英墺露普仏）が定期的に会議→国際問題を協議（＝「会議外交」の先駆）<br>
+<b style="color:#d4b898">正統主義</b>で革命を否定 ＋ <b style="color:#d4b898">勢力均衡</b>で突出を防止 → <b style="color:#d4b898">自由主義・ナショナリズムを抑圧</b><br>
+ただし<b style="color:#8ab0d4">英だけは</b>内政干渉に反対→「栄光ある孤立」的な距離感→カニング外交で南米独立を承認
+</div>
+<div class="detail"><b>メッテルニヒ</b>が主導。<b>正統主義</b>（革命前の王朝を回復）＋<b>勢力均衡</b>（一国の突出防止）→保守的な国際秩序。タレーランが「正統主義」を利用し敗戦国フランスを対等な立場に復帰させた外交手腕。</div>
+</div>
+
+<div class="phase">
+<div class="phase-hdr"><div class="phase-era">1820s</div><div class="phase-title">最初の動揺 ― 自由主義とナショナリズムの挑戦</div></div>
+<div class="phase-body">
+<div class="grp grp-con"><div class="grp-label grp-label-con">体制維持側</div>
+<div class="cn cn-con nd-svg" data-tip="v2-met"><div class="nm">メッテルニヒ</div><div class="sub">カールスバート決議(1819)で弾圧</div></div>
+<div class="cn cn-con nd-svg" data-tip="v2-holy"><div class="nm">神聖同盟</div><div class="sub">スペイン革命を鎮圧(仏が代行)</div></div>
+</div>
+<div class="vs">VS</div>
+<div class="grp grp-lib"><div class="grp-label grp-label-lib">体制への挑戦</div>
+<div class="cn cn-lib nd-svg" data-tip="v2-spa"><div class="nm">スペイン立憲革命(1820)</div></div>
+<div class="cn cn-lib nd-svg" data-tip="v2-nap"><div class="nm">ナポリ革命(1820)</div></div>
+<div class="cn cn-lib nd-svg" data-tip="v2-dec"><div class="nm">デカブリストの乱(1825)</div></div>
+<div class="cn cn-lib nd-svg" data-tip="v2-gre"><div class="nm">ギリシア独立戦争(1821-29)</div></div>
+</div>
+</div>
+<div class="detail">革命は全て鎮圧→<b>ただしギリシア独立だけは成功</b>（英仏露が支援＝オスマンへの介入→正統主義の例外）。英はカニング外交で南米独立を承認→<b>ウィーン体制に最初のほころび</b></div>
+</div>
+
+<div class="phase">
+<div class="phase-hdr"><div class="phase-era">1830</div><div class="phase-title">七月革命 ― フランスの自由主義化</div></div>
+<div class="phase-body">
+<div class="ev ev-bad nd-svg" data-tip="v3-july">七月革命(1830)</div>
+<span class="ar">→</span>
+<div class="cn cn-lib nd-svg" data-tip="v3-louis"><div class="nm">ルイ＝フィリップ</div><div class="sub">七月王政 ←「国民の王」</div></div>
+<span class="ar">波及→</span>
+<div class="cn cn-lib nd-svg" data-tip="v3-bel"><div class="nm">ベルギー独立(1830)</div></div>
+<div class="cn cn-lib nd-svg" data-tip="v3-pol"><div class="nm">ポーランド蜂起(→鎮圧)</div></div>
+</div>
+<div style="background:rgba(194,74,74,.03);border:1px solid rgba(194,74,74,.08);border-radius:6px;padding:5px 10px;margin-top:4px;font-size:7px;color:var(--text2);line-height:1.6">
+<b style="color:#c25a5a">体制のどこが壊れたか：</b>
+<b style="color:#d4b898">正統主義</b>の否定（ブルボン正統王朝→オルレアン家に交代）＋ <b style="color:#d4b898">領土変更</b>（ベルギー独立＝ウィーン会議の決定を変更）
+</div>
+<div class="detail"><b>シャルル10世の反動→七月革命</b>→ブルボン正統王朝の崩壊＝<b>正統主義の否定</b>。ベルギーの独立は列強が承認→ウィーン体制の領土変更。しかしポーランドは露に鎮圧。</div>
+</div>
+
+<div class="phase">
+<div class="phase-hdr"><div class="phase-era">1848</div><div class="phase-title">「諸国民の春」― ウィーン体制の事実上の崩壊</div></div>
+<div class="phase-body" style="margin-bottom:6px">
+<div class="ev ev-bad nd-svg" data-tip="v4-feb">二月革命(仏,1848.2)</div>
+<span class="ar">波及→</span>
+<div class="ev ev-bad nd-svg" data-tip="v4-mar">三月革命(独・墺)</div>
+<span class="ar">→</span>
+<div class="ev ev-bad nd-svg" data-tip="v4-met">メッテルニヒ亡命!</div>
+</div>
+<div class="phase-body">
+<div class="grp grp-lib"><div class="grp-label grp-label-lib">革命の波</div>
+<div class="cn cn-lib nd-svg" data-tip="v4-fra"><div class="nm">フランス</div><div class="sub">第二共和政→ナポレオン3世</div></div>
+<div class="cn cn-lib nd-svg" data-tip="v4-ger"><div class="nm">ドイツ</div><div class="sub">フランクフルト国民議会(→挫折)</div></div>
+<div class="cn cn-lib nd-svg" data-tip="v4-hun"><div class="nm">ハンガリー</div><div class="sub">コッシュート(→露が鎮圧)</div></div>
+<div class="cn cn-lib nd-svg" data-tip="v4-ita"><div class="nm">イタリア</div><div class="sub">マッツィーニ(→墺が鎮圧)</div></div>
+</div>
+</div>
+<div style="background:rgba(194,74,74,.04);border:1px solid rgba(194,74,74,.1);border-radius:6px;padding:5px 10px;margin-top:4px;font-size:7px;color:var(--text2);line-height:1.6">
+<b style="color:#c25a5a">ウィーン体制の事実上の崩壊：</b>
+メッテルニヒ亡命＝体制の象徴の退場。しかし革命は全て鎮圧→<b style="color:var(--gold)">「下からの改革」の限界</b><br>
+→ ナポレオン3世が出現し正統主義は完全に終焉 → ビスマルクの「上からの統一」（鉄血政策）へ
+</div>
+<div class="detail"><b>メッテルニヒが亡命(1848.3)</b>→ウィーン体制の象徴的崩壊。しかし革命は全て鎮圧→<b>自由主義の挫折</b>→「下からの統一・改革」の限界→ビスマルクの「上からの統一」（鉄血政策）へ。ナポレオン3世の出現で正統主義は完全に終焉</div>
+</div>
+
+</div></div>
+
+<div class="tp" id="tip-v1-aus"><p><strong>オーストリア（メッテルニヒ）</strong> ― 会議の議長にして体制の設計者。多民族帝国のため、ナショナリズムの抑制が死活的利益。保守主義の守護者。「ウィーン体制＝メッテルニヒ体制」。</p></div>
+<div class="tp" id="tip-v1-eng"><p><strong>イギリス（カスルレー）</strong> ― 勢力均衡の維持者。大陸への過度な介入は避ける。ただし正統主義を盾にした内政干渉（特にスペイン革命鎮圧）には反対→カニング外交で南米独立を承認(1820年代)。</p></div>
+<div class="tp" id="tip-v1-rus"><p><strong>ロシア（アレクサンドル1世）</strong> ― <strong>神聖同盟</strong>(1815)を提唱。キリスト教的な君主間の連帯→しかし実質はロシアの保守反動の道具に。「ヨーロッパの憲兵」と呼ばれ各国の革命を鎮圧。ポーランド（国王を兼ねる）とフィンランドの領有。</p></div>
+<div class="tp" id="tip-v1-pru"><p><strong>プロイセン</strong> ― ライン地方を獲得→後の工業化の基盤。ドイツ連邦の中で墺と並ぶ有力国。神聖同盟に参加し保守的立場。</p></div>
+<div class="tp" id="tip-v1-fra"><p><strong>フランス（タレーラン）</strong> ― 敗戦国だが<strong>タレーランの外交手腕</strong>で五大国の一角に復帰。「正統主義」を主張し、ブルボン朝復古を正当化すると同時に、敗戦国への過度な処罰を防いだ。ナポレオン体制の崩壊に貢献。</p></div>
+<div class="tp" id="tip-v1-legit"><p><strong>正統主義（レジティミスム）</strong> ― 革命前の「正統な」王朝を回復する原則。仏にブルボン朝、西にブルボン朝、蘭にオラニエ家、等。タレーランが提唱→仏の敗戦国処罰を緩和する理論的根拠にも。</p></div>
+<div class="tp" id="tip-v1-balance"><p><strong>勢力均衡</strong> ― 一国が突出する力を持たないよう各国の領土・勢力を調整。英が最も重視。仏の周囲にオランダ（ベルギー統合）・プロイセン（ライン地方）を配置→仏の再膨張を防止。</p></div>
+<div class="tp" id="tip-v1-holy"><p><strong>神聖同盟(1815)</strong> ― アレクサンドル1世の提唱。キリスト教的君主の連帯→実質は保守反動の国際的枠組み。墺普露が参加。英は不参加（「壮大なナンセンス」by カスルレー）。教皇・オスマンも不参加。</p></div>
+<div class="tp" id="tip-v1-quad"><p><strong>四国同盟(1815)</strong> ― 英墺普露。仏のナポレオン体制復活を防ぐ軍事同盟。定期的な会議（アーヘン・トロッパウ・ライバハ・ヴェローナ）で国際問題を協議→「会議外交」の先駆。1818年に仏が加わり五国同盟に。</p></div>
+<div class="tp" id="tip-v2-met"><p><strong>メッテルニヒ</strong> ― <strong>カールスバート決議(1819)</strong>でドイツの学生運動・自由主義を弾圧。出版検閲・大学監視。1848年まで30年間ヨーロッパの保守的秩序を維持。</p></div>
+<div class="tp" id="tip-v2-holy"><p><strong>神聖同盟の介入</strong> ― スペイン立憲革命(1820)に対し、ヴェローナ会議(1822)の決定でフランスが鎮圧を代行(1823)。→英が反発しカニング外交で南米独立を承認。</p></div>
+<div class="tp" id="tip-v2-spa"><p><strong>スペイン立憲革命(1820)</strong> ― 1812年憲法の復活を要求→フランスが神聖同盟の委託で鎮圧(1823)。中南米では独立運動が進行（ボリバル・サン＝マルティン）。</p></div>
+<div class="tp" id="tip-v2-nap"><p><strong>ナポリ革命(1820)</strong> ― カルボナリ（炭焼き党）が蜂起→墺が鎮圧。イタリアの自由主義運動はこの後も続く→マッツィーニの青年イタリア(1831)。</p></div>
+<div class="tp" id="tip-v2-dec"><p><strong>デカブリストの乱(1825)</strong> ― ロシアの自由主義的将校がニコライ1世即位に際して蜂起→鎮圧。以後ニコライ1世は徹底した反動政治→「ヨーロッパの憲兵」。</p></div>
+<div class="tp" id="tip-v2-gre"><p><strong>ギリシア独立戦争(1821-29)</strong> ― オスマンからの独立→英仏露がギリシアを支援（ナヴァリノの海戦1827）。<strong>ウィーン体制の正統主義の例外</strong>（オスマンは正統王朝だが介入した）。ロマン主義の影響（バイロン）。</p></div>
+<div class="tp" id="tip-v3-july"><p><strong>七月革命(1830)</strong> ― シャルル10世が反動的な勅令→パリ市民が蜂起→シャルル10世は亡命。ブルボン正統王朝の崩壊＝<strong>正統主義の否定</strong>。ドラクロワ「民衆を導く自由の女神」。</p></div>
+<div class="tp" id="tip-v3-louis"><p><strong>ルイ＝フィリップ（七月王政, 1830-48）</strong> ― オルレアン家。「国民の王」。大ブルジョワジーの利益を代表。制限選挙。1848年二月革命で崩壊。</p></div>
+<div class="tp" id="tip-v3-bel"><p><strong>ベルギー独立(1830)</strong> ― オランダから独立→列強が承認し永世中立国に。<strong>ウィーン体制の領土変更</strong>の最初の事例。WW1でドイツがこの中立を侵犯→英の参戦理由に。</p></div>
+<div class="tp" id="tip-v3-pol"><p><strong>ポーランド蜂起(1830-31)</strong> ― 七月革命に触発→しかしロシアに鎮圧。ポーランドの自治権は剥奪。ショパンの「革命のエチュード」。</p></div>
+<div class="tp" id="tip-v4-feb"><p><strong>二月革命(1848.2)</strong> ― ルイ＝フィリップの七月王政が崩壊→第二共和政。男子普通選挙。国立作業場の設置→六月蜂起(労働者の反乱)で鎮圧→ルイ＝ナポレオン(ナポレオン3世)が大統領に。</p></div>
+<div class="tp" id="tip-v4-mar"><p><strong>三月革命(1848.3)</strong> ― 二月革命が波及→ベルリン・ウィーンで市街戦。自由主義・ナショナリズムの爆発。メッテルニヒが亡命→ウィーン体制の象徴的崩壊。</p></div>
+<div class="tp" id="tip-v4-met"><p><strong>メッテルニヒ亡命</strong> ― 1848年3月にウィーンの革命でメッテルニヒがイギリスに亡命。30年間ヨーロッパの保守秩序を支えた「ウィーン体制の化身」の退場。</p></div>
+<div class="tp" id="tip-v4-fra"><p><strong>フランス</strong> ― 第二共和政→しかしルイ＝ナポレオンがクーデター(1851)→ナポレオン3世として皇帝に(1852)。正統主義は完全に終焉。</p></div>
+<div class="tp" id="tip-v4-ger"><p><strong>ドイツ</strong> ― フランクフルト国民議会(1848-49)がドイツ統一を議論→プロイセン王に帝冠を提供→拒否（「革命の冠」）→<strong>「下からの統一」の挫折</strong>→ビスマルクの「上からの統一」（鉄血政策）へ。</p></div>
+<div class="tp" id="tip-v4-hun"><p><strong>ハンガリー</strong> ― コッシュートの独立運動→しかしロシアが墺を支援して鎮圧。「ヨーロッパの憲兵」ニコライ1世の面目躍如→しかし英仏の反感を買う→クリミア戦争で孤立する伏線。</p></div>
+<div class="tp" id="tip-v4-ita"><p><strong>イタリア</strong> ― マッツィーニのローマ共和国→仏が鎮圧。サルデーニャがオーストリアに敗北。→カヴールの現実主義的外交に転換→1859年以降のイタリア統一へ。</p></div>
+
+<div class="note"><p>
+<strong>入試ポイント：</strong><br>
+❶ <strong>ウィーン体制の2原則</strong>＝正統主義（革命前の王朝回復）＋勢力均衡（一国の突出防止）。メッテルニヒが主導<br>
+❷ <strong>神聖同盟(露墺普)</strong>と<strong>四国同盟(英墺普露)</strong>の違い。英は神聖同盟に不参加<br>
+❸ <strong>ギリシア独立(1829)</strong>＝正統主義の例外。<strong>ベルギー独立(1830)</strong>＝領土変更の最初の事例<br>
+❹ <strong>七月革命(1830)</strong>＝正統主義の否定（ブルボン朝→オルレアン朝）<br>
+❺ <strong>1848年「諸国民の春」</strong>＝メッテルニヒ亡命→ウィーン体制の事実上の崩壊。しかし革命は全て鎮圧→「下からの改革」の限界<br>
+❻ タレーランの「正統主義」活用 ＝ 敗戦国フランスを五大国の一角に復帰させた外交手腕
+</p></div>
+
+<div id="tooltip-overlay" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;z-index:8000" onclick="closeTip()"></div>
+<div id="tooltip-box" style="display:none;position:fixed;z-index:9000;background:rgba(12,15,22,.97);border:1px solid rgba(201,169,110,.25);border-radius:8px;padding:12px 16px;max-width:320px;width:calc(100vw - 32px);box-shadow:0 8px 30px rgba(0,0,0,.6)">
+<div id="tooltip-content" style="font-size:10px;color:#8a857d;line-height:1.7"></div></div>
+<script>
+(function(){var ov=document.getElementById("tooltip-overlay"),bx=document.getElementById("tooltip-box"),ct=document.getElementById("tooltip-content");window.closeTip=function(){bx.style.display="none";ov.style.display="none"};function openTip(el){var tipId=el.getAttribute("data-tip");var tipEl=tipId?document.getElementById("tip-"+tipId):null;if(!tipEl)return;closeTip();ct.innerHTML=tipEl.innerHTML;ov.style.display="block";bx.style.display="block";var r=el.getBoundingClientRect(),w=Math.min(320,window.innerWidth-32);bx.style.width=w+"px";var l=r.left+r.width/2-w/2;if(l<16)l=16;if(l+w>window.innerWidth-16)l=window.innerWidth-16-w;bx.style.left=l+"px";bx.style.top=(r.bottom+8)+"px";bx.style.bottom="auto";var br=bx.getBoundingClientRect();if(br.bottom>window.innerHeight-16){var t=r.top-br.height-8;if(t<16)t=16;bx.style.top=t+"px"}}var tm=false,tt=null;document.addEventListener("touchstart",function(e){tm=false;tt=e.target},{passive:true});document.addEventListener("touchmove",function(){tm=true},{passive:true});document.addEventListener("touchend",function(e){if(tm)return;var nd=tt?tt.closest(".nd-svg"):null;if(nd){e.preventDefault();openTip(nd)}else if(!tt||!tt.closest("#tooltip-box"))closeTip();tt=null});document.addEventListener("click",function(e){if("ontouchstart"in window)return;var nd=e.target.closest(".nd-svg");if(nd)openTip(nd);else if(!e.target.closest("#tooltip-box"))closeTip()})})();
+</script>
+</body></html>

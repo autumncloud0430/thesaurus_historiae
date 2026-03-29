@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>図表集 ― 世界史資料集</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+
+.top-bar{padding:28px 32px 18px;border-bottom:1px solid rgba(201,169,110,.06)}
+.top-bar h1{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:700;color:var(--gold2);letter-spacing:3px}
+.top-bar .meta{display:flex;align-items:center;gap:16px;margin-top:4px}
+.top-bar .meta a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.4}.top-bar .meta a:hover{opacity:1}
+.top-bar .meta .cnt{font-size:11px;color:var(--text3);font-family:'Cormorant Garamond',serif;font-size:14px;letter-spacing:1px}
+
+.search-area{padding:14px 32px;border-bottom:1px solid rgba(201,169,110,.04);display:flex;align-items:center;gap:12px}
+.search-area input{background:rgba(201,169,110,.03);border:1px solid rgba(201,169,110,.08);border-radius:8px;padding:10px 20px;color:var(--text);font-size:13px;font-family:inherit;width:420px;outline:none;transition:all .2s}
+.search-area input:focus{border-color:rgba(201,169,110,.25);background:rgba(201,169,110,.05)}
+.search-area input::placeholder{color:var(--text3)}
+.search-area .result{font-size:10px;color:var(--gold);opacity:.6}
+
+.nav-pills{display:flex;gap:5px;padding:10px 32px;flex-wrap:wrap;border-bottom:1px solid rgba(201,169,110,.04)}
+.nav-pills a{font-size:8px;padding:4px 10px;border:1px solid;border-radius:20px;text-decoration:none;transition:all .15s;opacity:.7}
+.nav-pills a:hover{opacity:1;background:rgba(201,169,110,.04)}
+
+.content{max-width:1100px;margin:0 auto;padding:20px 32px 80px}
+
+.sec{margin-bottom:32px}
+.sec-hdr{display:flex;align-items:center;gap:10px;padding:10px 0;margin-bottom:10px;border-bottom:1px solid rgba(201,169,110,.06)}
+.sec-icon{font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:700;opacity:.6}
+.sec-hdr h2{font-family:'Noto Serif JP',serif;font-size:15px;font-weight:700;color:var(--gold2)}
+.sec-cnt{font-size:9px;color:var(--text3);margin-left:auto;font-family:'Cormorant Garamond',serif;font-size:12px}
+
+.sec-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:8px}
+
+.card{display:flex;flex-direction:column;gap:5px;padding:10px 14px;border:1px solid rgba(201,169,110,.04);border-radius:8px;background:rgba(255,255,255,.006);text-decoration:none;transition:all .2s}
+.card:hover{background:rgba(201,169,110,.04);border-color:rgba(201,169,110,.12);transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.2)}
+.card.hidden{display:none}
+.card-badge{font-size:7px;padding:2px 7px;border-radius:4px;align-self:flex-start;font-weight:600}
+.card-main{font-size:10.5px;color:var(--text);font-weight:600;line-height:1.5}
+.card-sub{font-size:8px;color:var(--text3);line-height:1.4}
+
+.latin{font-family:'Cormorant Garamond',serif;font-size:10px;font-weight:400;font-style:italic;color:var(--gold);margin-left:10px;letter-spacing:1px;opacity:.6}
+.top-bar::after{content:'TABVLAE · SCHEMATA · ARBORES · COMPARATIONES';display:block;font-family:'Cormorant Garamond',serif;font-size:11px;color:var(--text3);letter-spacing:3px;margin-top:6px;opacity:.4}
+.sec-hdr::before{content:'';display:block;width:100%;height:1px;background:linear-gradient(90deg,rgba(201,169,110,.15),rgba(201,169,110,.03));position:absolute;top:0}
+.sec-hdr{position:relative;padding-top:12px}
+.nav-pills::before{content:'· NAVIGATIO ·';font-family:'Cormorant Garamond',serif;font-size:8px;color:var(--text3);letter-spacing:3px;opacity:.3;margin-right:8px}
+</style>
+</head>
+<body>
+<div class="top-bar"><h1>CHARTAE</h1><div class="meta"><span class="cnt">CIX chartae</span><a href="index.html">← Ad Indicem</a></div></div>
+<div class="divider" style="text-align:center;padding:4px 0;border-bottom:1px solid rgba(201,169,110,.04)"><span style="font-family:Cormorant Garamond,serif;font-size:9px;color:rgba(201,169,110,.15);letter-spacing:6px">✦ SENATUS POPULUSQUE HISTORIAE ✦</span></div>
+<div class="search-area"><input type="text" id="search" placeholder="Quaere — キーワードで横断検索"><span class="result" id="result"></span></div>
+<div class="nav-pills"><a href="#sec-orient" style="border-color:#d4c08844;color:#d4c088">Ⅰ. 古代オリエント・エジプト</a>
+<a href="#sec-greek_rome" style="border-color:#88b0d444;color:#88b0d4">Ⅱ. 古代ギリシア・ローマ</a>
+<a href="#sec-ancient_asia" style="border-color:#d4888844;color:#d48888">Ⅲ. 古代〜中世アジア</a>
+<a href="#sec-islam" style="border-color:#88d4b044;color:#88d4b0">Ⅳ. イスラーム世界</a>
+<a href="#sec-medieval" style="border-color:#c0a0d444;color:#c0a0d4">Ⅴ. 中世ヨーロッパ</a>
+<a href="#sec-nomad" style="border-color:#d4a08844;color:#d4a088">Ⅵ. 遊牧民・モンゴル帝国</a>
+<a href="#sec-early_modern" style="border-color:#88d4b044;color:#88d4b0">Ⅶ. 大航海時代〜宗教改革</a>
+<a href="#sec-absolutism" style="border-color:#d4c08844;color:#d4c088">Ⅷ. 絶対王政〜啓蒙専制</a>
+<a href="#sec-revolution" style="border-color:#d4888844;color:#d48888">Ⅸ. 市民革命〜ナショナリズム</a>
+<a href="#sec-imperialism_war" style="border-color:#c44e5244;color:#c44e52">Ⅹ. 帝国主義・世界大戦</a>
+<a href="#sec-coldwar_modern" style="border-color:#a0a0d444;color:#a0a0d4">Ⅺ. 冷戦・現代世界</a>
+<a href="#sec-economy" style="border-color:#b8d08844;color:#b8d088">Ⅻ. 経済構造・交易史</a>
+<a href="#sec-culture" style="border-color:#c0a0d444;color:#c0a0d4">XIII. 文化・思想・社会</a>
+</div>
+<div class="content">
+<section class="sec" id="sec-orient">
+  <div class="sec-hdr"><span class="sec-icon" style="color:#d4c088">Ⅰ</span><h2>古代オリエント・エジプト <span class="latin">Oriens Antiquus</span></h2><span class="sec-cnt">3</span></div>
+  <div class="sec-grid"><a href="flow_orient_unification.html" class="card" data-title="古代オリエントの統一"><div class="card-badge" style="background:rgba(80,150,120,.12);color:#88d4b0">→ フロー</div><div class="card-main">古代オリエントの統一</div></a>
+<a href="timeline_orient.html" class="card" data-title="古代オリエント史タイムライン"><div class="card-badge" style="background:rgba(100,130,180,.12);color:#88b0d4">▬ TL</div><div class="card-main">古代オリエント史タイムライン</div></a>
+<a href="compare_mesopotamia_egypt.html" class="card" data-title="メソポタミア vs エジプト 比較表"><div class="card-badge" style="background:rgba(180,140,60,.12);color:#d4c088">⇔ 比較</div><div class="card-main">メソポタミア vs エジプト 比較表</div></a>
+</div>
+</section>
+<section class="sec" id="sec-greek_rome">
+  <div class="sec-hdr"><span class="sec-icon" style="color:#88b0d4">Ⅱ</span><h2>古代ギリシア・ローマ <span class="latin">Graecia et Roma</span></h2><span class="sec-cnt">5</span></div>
+  <div class="sec-grid"><a href="flow_greek_philosophy.html" class="card" data-title="ギリシア哲学の系譜"><div class="card-badge" style="background:rgba(80,150,120,.12);color:#88d4b0">→ フロー</div><div class="card-main">ギリシア哲学の系譜</div></a>
+<a href="flow_athens_democracy.html" class="card" data-title="アテネ民主政の発展と衰退フロー"><div class="card-badge" style="background:rgba(80,150,120,.12);color:#88d4b0">→ フロー</div><div class="card-main">アテネ民主政の発展と衰退フロー</div></a>
+<a href="compare_athens_sparta.html" class="card" data-title="アテネ vs スパルタ 比較表"><div class="card-badge" style="background:rgba(180,140,60,.12);color:#d4c088">⇔ 比較</div><div class="card-main">アテネ vs スパルタ 比較表</div></a>
+<a href="flow_roman_republic.html" class="card" data-title="ローマ共和政→帝政フロー"><div class="card-badge" style="background:rgba(80,150,120,.12);color:#88d4b0">→ フロー</div><div class="card-main">ローマ共和政→帝政フロー</div></a>
+<a href="flow_sicily.html" class="card" data-title="シチリア島の歴史"><div class="card-badge" style="background:rgba(80,150,120,.12);color:#88d4b0">→ フロー</div><div class="card-main">シチリア島の歴史</div></a>
+</div>
+</section>
+<section class="sec" id="sec-ancient_asia">
+  <div class="sec-hdr"><span class="sec-icon" style="color:#d48888">Ⅲ</span><h2>古代〜中世アジア <span class="latin">Asia Antiqua et Media</span></h2><span class="sec-cnt">10</span></div>
+  <div class="sec-grid"><a href="timeline_china.html" class="card" data-title="中国王朝タイムライン"><div class="card-badge" style="background:rgba(100,130,180,.12);color:#88b0d4">▬ TL</div><div class="card-main">中国王朝タイムライン</div></a>
+<a href="compare_hundred_schools.html" class="card" data-title="諸子百家の比較表"><div class="card-badge" style="background:rgba(180,140,60,.12);color:#d4c088">⇔ 比較</div><div class="card-main">諸子百家の比較表</div></a>
+<a href="flow_confucianism.html" class="card" data-title="儒教の歴史"><div class="card-badge" style="background:rgba(80,150,120,.12);color:#88d4b0">→ フロー</div><div class="card-main">儒教の歴史</div></a>
+<a href="flow_keju.html" class="card" data-title="科挙制度の変遷"><div class="card-badge" style="background:rgba(80,150,120,.12);color:#88d4b0">→ フロー</div><div class="card-main">科挙制度の変遷</div></a>
+<a href="flow_juntian.html" class="card" data-title="均田制の歴史"><div class="card-badge" style="background:rgba(80,150,120,.12);color:#88d4b0">→ フロー</div><div class="card-main">均田制の歴史</div></a>
+<a href="compare_china_tax.html" class="card" data-title="中国税制の変遷 比較表"><div class="card-badge" style="background:rgba(180,140,60,.12);color:#d4c088">⇔ 比較</div><div class="card-main">中国税制の変遷 比較表</div></a>
+<a href="compare_land_systems.html" class="card" data-title="土地制度比較表"><div class="card-badge" style="background:rgba(180,140,60,.12);color:#d4c088">⇔ 比較</div><div class="card-main">土地制度比較表</div></a>
+<a href="timeline_india.html" class="card" data-title="インド通史タイムライン(bc4c〜1947)"><div class="card-badge" style="background:rgba(100,130,180,.12);color:#88b0d4">▬ TL</div><div class="card-main">インド通史タイムライン(BC4C〜1947)</div></a>
+<a href="cycle_tribute_trade.html" class="card" data-title="朝貢貿易システム"><div class="card-badge" style="background:rgba(130,100,160,.12);color:#c0a0d4">↻ 循環</div><div class="card-main">朝貢貿易システム</div></a>
+<a href="alliance_warring_states.html" class="card" data-title="春秋戦国の合従連衡"><div class="card-badge" style="background:rgba(180,100,80,.12);color:#d4a088">◎ 関係図</div><div class="card-main">春秋戦国の合従連衡</div></a>
+</div>
+</section>
+<section class="sec" id="sec-islam">
+  <div class="sec-hdr"><span class="sec-icon" style="color:#88d4b0">Ⅳ</span><h2>イスラーム世界 <span class="latin">Mundus Islamicus</span></h2><span class="sec-cnt">4</span></div>
+  <div class="sec-grid"><a href="timeline_islamic.html" class="card" data-title="イスラーム王朝タイムライン(600-1920)"><div class="card-badge" style="background:rgba(100,130,180,.12);color:#88b0d4">▬ TL</div><div class="card-main">イスラーム王朝タイムライン(600-1920)</div></a>
+<a href="flow_islam_split.html" class="card" data-title="イスラーム分裂フロー(スンナ派/シーア派)"><div class="card-badge" style="background:rgba(80,150,120,.12);color:#88d4b0">→ フロー</div><div class="card-main">イスラーム分裂フロー(スンナ派/シーア派)</div></a>
+<a href="compare_sunni_shia.html" class="card" data-title="スンナ派 vs シーア派 比較表"><div class="card-badge" style="background:rgba(180,140,60,.12);color:#d4c088">⇔ 比較</div><div class="card-main">スンナ派 vs シーア派 比較表</div></a>
+<a href="islam_succession_tree.html" class="card" data-title="ムハンマドの後継問題 ― ハーシム家 vs ウマイヤ家"><div class="card-badge" style="background:rgba(180,80,80,.12);color:#d48888">♔ 家系図</div><div class="card-main">ムハンマドの後継問題</div><div class="card-sub">ハーシム家 vs ウマイヤ家</div></a>
+</div>
+</section>
+<section class="sec" id="sec-medieval">
+  <div class="sec-hdr"><span class="sec-icon" style="color:#c0a0d4">Ⅴ</span><h2>中世ヨーロッパ <span class="latin">Europa Mediaevalis</span></h2><span class="sec-cnt">8</span></div>
+  <div class="sec-grid"><a href="flow_feudalism.html" class="card" data-title="中世封建制の成立と崩壊フロー"><div class="card-badge" style="background:rgba(80,150,120,.12);color:#88d4b0">→ フロー</div><div class="card-main">中世封建制の成立と崩壊フロー</div></a>
+<a href="flow_papal_authority.html" class="card" data-title="教皇権の盛衰フロー"><div class="card-badge" style="background:rgba(80,150,120,.12);color:#88d4b0">→ フロー</div><div class="card-main">教皇権の盛衰フロー</div></a>
+<a href="flow_crusades.html" class="card" data-title="十字軍の因果関係フロー"><div class="card-badge" style="background:rgba(80,150,120,.12);color:#88d4b0">→ フロー</div><div class="card-main">十字軍の因果関係フロー</div></a>
+<a href="alliance_crusades.html" class="card" data-title="十字軍時代の勢力図"><div class="card-badge" style="background:rgba(180,100,80,.12);color:#d4a088">◎ 関係図</div><div class="card-main">十字軍時代の勢力図</div></a>
+<a href="flow_hundred_years_war.html" class="card" data-title="百年戦争の流れ"><div class="card-badge" style="background:rgba(80,150,120,.12);color:#88d4b0">→ フロー</div><div class="card-main">百年戦争の流れ</div></a>
+<a href="compare_councils.html" class="card" data-title="公会議比較表"><div class="card-badge" style="background:rgba(180,140,60,.12);color:#d4c088">⇔ 比較</div><div class="card-main">公会議比較表</div></a>
+<a href="timeline_byzantium.html" class="card" data-title="ビザンツ帝国タイムライン(395-1453)"><div class="card-badge" style="background:rgba(100,130,180,.12);color:#88b0d4">▬ TL</div><div class="card-main">ビザンツ帝国タイムライン(395-1453)</div></a>
+<a href="carolingian_tree.html" class="card" data-title="カロリング家 ― カール大帝からヴェルダン条約へ"><div class="card-badge" style="background:rgba(180,80,80,.12);color:#d48888">♔ 家系図</div><div class="card-main">カロリング家</div><div class="card-sub">カール大帝からヴェルダン条約へ</div></a>
+</div>
+</section>
+<section class="sec" id="sec-nomad">
+  <div class="sec-hdr"><span class="sec-icon" style="color:#d4a088">Ⅵ</span><h2>遊牧民・モンゴル帝国 <span class="latin">Nomades et Imperium Mongolicum</span></h2><span class="sec-cnt">3</span></div>
+  <div class="sec-grid"><a href="timeline_nomads.html" class="card" data-title="遊牧民タイムライン"><div class="card-badge" style="background:rgba(100,130,180,.12);color:#88b0d4">▬ TL</div><div class="card-main">遊牧民タイムライン</div></a>
+<a href="mongol_tree.html" class="card" data-title="モンゴル帝国 家系図"><div class="card-badge" style="background:rgba(180,80,80,.12);color:#d48888">♔ 家系図</div><div class="card-main">モンゴル帝国 家系図</div></a>
+<a href="geo_germanic.html" class="card" data-title="ゲルマン民族の大移動"><div class="card-badge" style="background:rgba(80,150,120,.12);color:#88d4b0">▏ 地図</div><div class="card-main">ゲルマン民族の大移動</div></a>
+</div>
+</section>
+<section class="sec" id="sec-early_modern">
+  <div class="sec-hdr"><span class="sec-icon" style="color:#88d4b0">Ⅶ</span><h2>大航海時代〜宗教改革 <span class="latin">Navigatio et Reformatio</span></h2><span class="sec-cnt">13</span></div>
+  <div class="sec-grid"><a href="flow_age_of_exploration.html" class="card" data-title="大航海時代フロー"><div class="card-badge" style="background:rgba(80,150,120,.12);color:#88d4b0">→ フロー</div><div class="card-main">大航海時代フロー</div></a>
+<a href="geo_exploration.html" class="card" data-title="大航海時代の航路"><div class="card-badge" style="background:rgba(80,150,120,.12);color:#88d4b0">▏ 地図</div><div class="card-main">大航海時代の航路</div></a>
+<a href="flow_reformation.html" class="card" data-title="宗教改革→主権国家体制フロー"><div class="card-badge" style="background:rgba(80,150,120,.12);color:#88d4b0">→ フロー</div><div class="card-main">宗教改革→主権国家体制フロー</div></a>
+<a href="compare_reformation_3sects.html" class="card" data-title="宗教改革3派比較表"><div class="card-badge" style="background:rgba(180,140,60,.12);color:#d4c088">⇔ 比較</div><div class="card-main">宗教改革3派比較表</div></a>
+<a href="alliance_reformation.html" class="card" data-title="宗教改革の対立構造"><div class="card-badge" style="background:rgba(180,100,80,.12);color:#d4a088">◎ 関係図</div><div class="card-main">宗教改革の対立構造</div></a>
+<a href="timeline_reformation.html" class="card" data-title="宗教改革タイムライン(1500-1650)"><div class="card-badge" style="background:rgba(100,130,180,.12);color:#88b0d4">▬ TL</div><div class="card-main">宗教改革タイムライン(1500-1650)</div></a>
+<a href="flow_thirty_years_war.html" class="card" data-title="三十年戦争の流れ"><div class="card-badge" style="background:rgba(80,150,120,.12);color:#88d4b0">→ フロー</div><div class="card-main">三十年戦争の流れ</div></a>
+<a href="alliance_30years_war.html" class="card" data-title="三十年戦争の勢力図"><div class="card-badge" style="background:rgba(180,100,80,.12);color:#d4a088">◎ 関係図</div><div class="card-main">三十年戦争の勢力図</div></a>
+<a href="cycle_columbian_exchange.html" class="card" data-title="コロンブスの交換"><div class="card-badge" style="background:rgba(130,100,160,.12);color:#c0a0d4">↻ 循環</div><div class="card-main">コロンブスの交換</div></a>
+<a href="cycle_silver.html" class="card" data-title="16-17c 銀の世界循環"><div class="card-badge" style="background:rgba(130,100,160,.12);color:#c0a0d4">↻ 循環</div><div class="card-main">16-17C 銀の世界循環</div></a>
+<a href="cycle_triangle_trade.html" class="card" data-title="大西洋三角貿易"><div class="card-badge" style="background:rgba(130,100,160,.12);color:#c0a0d4">↻ 循環</div><div class="card-main">大西洋三角貿易</div></a>
+<a href="cycle_mercantilism.html" class="card" data-title="重商主義の循環"><div class="card-badge" style="background:rgba(130,100,160,.12);color:#c0a0d4">↻ 循環</div><div class="card-main">重商主義の循環</div></a>
+<a href="geo_silk_road.html" class="card" data-title="シルクロードの地理的図解"><div class="card-badge" style="background:rgba(80,150,120,.12);color:#88d4b0">▏ 地図</div><div class="card-main">シルクロードの地理的図解</div></a>
+</div>
+</section>
+<section class="sec" id="sec-absolutism">
+  <div class="sec-hdr"><span class="sec-icon" style="color:#d4c088">Ⅷ</span><h2>絶対王政〜啓蒙専制 <span class="latin">Absolutismus et Illuminatio</span></h2><span class="sec-cnt">11</span></div>
+  <div class="sec-grid"><a href="compare_absolutism.html" class="card" data-title="絶対王政比較表"><div class="card-badge" style="background:rgba(180,140,60,.12);color:#d4c088">⇔ 比較</div><div class="card-main">絶対王政比較表</div></a>
+<a href="compare_enlightened_despots.html" class="card" data-title="啓蒙専制君主比較表"><div class="card-badge" style="background:rgba(180,140,60,.12);color:#d4c088">⇔ 比較</div><div class="card-main">啓蒙専制君主比較表</div></a>
+<a href="flow_absolutism_diplomacy.html" class="card" data-title="絶対主義時代の欧州外交フロー"><div class="card-badge" style="background:rgba(80,150,120,.12);color:#88d4b0">→ フロー</div><div class="card-main">絶対主義時代の欧州外交フロー</div></a>
+<a href="alliance_7years_war.html" class="card" data-title="七年戦争期のヨーロッパ関係図 ― 外交革命"><div class="card-badge" style="background:rgba(180,100,80,.12);color:#d4a088">◎ 関係図</div><div class="card-main">七年戦争期のヨーロッパ関係図</div><div class="card-sub">外交革命</div></a>
+<a href="timeline_europe_dynasties.html" class="card" data-title="欧州王朝タイムライン"><div class="card-badge" style="background:rgba(100,130,180,.12);color:#88b0d4">▬ TL</div><div class="card-main">欧州王朝タイムライン</div></a>
+<a href="timeline_european_rulers.html" class="card" data-title="世界主要国 指導者タイムライン(1450-1914)"><div class="card-badge" style="background:rgba(100,130,180,.12);color:#88b0d4">▬ TL</div><div class="card-main">世界主要国 指導者タイムライン(1450-1914)</div></a>
+<a href="bourbon_tree.html" class="card" data-title="ブルボン家の系譜"><div class="card-badge" style="background:rgba(180,80,80,.12);color:#d48888">♔ 家系図</div><div class="card-main">ブルボン家の系譜</div></a>
+<a href="habsburg_tree.html" class="card" data-title="ハプスブルク家の婚姻戦略"><div class="card-badge" style="background:rgba(180,80,80,.12);color:#d48888">♔ 家系図</div><div class="card-main">ハプスブルク家の婚姻戦略</div></a>
+<a href="hohenzollern_tree.html" class="card" data-title="ホーエンツォレルン家の系譜"><div class="card-badge" style="background:rgba(180,80,80,.12);color:#d48888">♔ 家系図</div><div class="card-main">ホーエンツォレルン家の系譜</div></a>
+<a href="romanov_tree.html" class="card" data-title="ロマノフ朝の系譜"><div class="card-badge" style="background:rgba(180,80,80,.12);color:#d48888">♔ 家系図</div><div class="card-main">ロマノフ朝の系譜</div></a>
+<a href="england_kings_tree.html" class="card" data-title="イギリス王家の変遷"><div class="card-badge" style="background:rgba(180,80,80,.12);color:#d48888">♔ 家系図</div><div class="card-main">イギリス王家の変遷</div></a>
+</div>
+</section>
+<section class="sec" id="sec-revolution">
+  <div class="sec-hdr"><span class="sec-icon" style="color:#d48888">Ⅸ</span><h2>市民革命〜ナショナリズム <span class="latin">Revolutio et Natio</span></h2><span class="sec-cnt">14</span></div>
+  <div class="sec-grid"><a href="flow_french_revolution.html" class="card" data-title="フランス革命の政体変遷フロー"><div class="card-badge" style="background:rgba(80,150,120,.12);color:#88d4b0">→ フロー</div><div class="card-main">フランス革命の政体変遷フロー</div></a>
+<a href="flow_napoleon.html" class="card" data-title="ナポレオンの興亡"><div class="card-badge" style="background:rgba(80,150,120,.12);color:#88d4b0">→ フロー</div><div class="card-main">ナポレオンの興亡</div></a>
+<a href="alliance_napoleon.html" class="card" data-title="対仏大同盟の変遷 ― 7回の同盟とナポレオン"><div class="card-badge" style="background:rgba(180,100,80,.12);color:#d4a088">◎ 関係図</div><div class="card-main">対仏大同盟の変遷</div><div class="card-sub">7回の同盟とナポレオン</div></a>
+<a href="flow_vienna_system.html" class="card" data-title="ウィーン体制の成立と崩壊"><div class="card-badge" style="background:rgba(80,150,120,.12);color:#88d4b0">→ フロー</div><div class="card-main">ウィーン体制の成立と崩壊</div></a>
+<a href="alliance_vienna.html" class="card" data-title="ウィーン体制 ― 五大国の勢力均衡"><div class="card-badge" style="background:rgba(180,100,80,.12);color:#d4a088">◎ 関係図</div><div class="card-main">ウィーン体制</div><div class="card-sub">五大国の勢力均衡</div></a>
+<a href="compare_revolutions.html" class="card" data-title="革命比較表"><div class="card-badge" style="background:rgba(180,140,60,.12);color:#d4c088">⇔ 比較</div><div class="card-main">革命比較表</div></a>
+<a href="flow_german_unification.html" class="card" data-title="ドイツ統一の流れ"><div class="card-badge" style="background:rgba(80,150,120,.12);color:#88d4b0">→ フロー</div><div class="card-main">ドイツ統一の流れ</div></a>
+<a href="flow_italian_unification.html" class="card" data-title="イタリア統一の流れ"><div class="card-badge" style="background:rgba(80,150,120,.12);color:#88d4b0">→ フロー</div><div class="card-main">イタリア統一の流れ</div></a>
+<a href="flow_british_suffrage.html" class="card" data-title="イギリス選挙権拡大フロー"><div class="card-badge" style="background:rgba(80,150,120,.12);color:#88d4b0">→ フロー</div><div class="card-main">イギリス選挙権拡大フロー</div></a>
+<a href="flow_russia_southern.html" class="card" data-title="ロシアの南下政策"><div class="card-badge" style="background:rgba(80,150,120,.12);color:#88d4b0">→ フロー</div><div class="card-main">ロシアの南下政策</div></a>
+<a href="flow_alsace_lorraine.html" class="card" data-title="アルザス＝ロレーヌの歴史フロー"><div class="card-badge" style="background:rgba(80,150,120,.12);color:#88d4b0">→ フロー</div><div class="card-main">アルザス＝ロレーヌの歴史フロー</div></a>
+<a href="flow_ireland_independence.html" class="card" data-title="アイルランド独立フロー"><div class="card-badge" style="background:rgba(80,150,120,.12);color:#88d4b0">→ フロー</div><div class="card-main">アイルランド独立フロー</div></a>
+<a href="flow_ottoman_turkey.html" class="card" data-title="オスマン帝国の末期とトルコ共和国の成立"><div class="card-badge" style="background:rgba(80,150,120,.12);color:#88d4b0">→ フロー</div><div class="card-main">オスマン帝国の末期とトルコ共和国の成立</div></a>
+<a href="compare_latin_america.html" class="card" data-title="ラテンアメリカの独立比較"><div class="card-badge" style="background:rgba(180,140,60,.12);color:#d4c088">⇔ 比較</div><div class="card-main">ラテンアメリカの独立比較</div></a>
+</div>
+</section>
+<section class="sec" id="sec-imperialism_war">
+  <div class="sec-hdr"><span class="sec-icon" style="color:#c44e52">Ⅹ</span><h2>帝国主義・世界大戦 <span class="latin">Imperium et Bellum Mundi</span></h2><span class="sec-cnt">19</span></div>
+  <div class="sec-grid"><a href="compare_imperialism.html" class="card" data-title="帝国主義比較表"><div class="card-badge" style="background:rgba(180,140,60,.12);color:#d4c088">⇔ 比較</div><div class="card-main">帝国主義比較表</div></a>
+<a href="flow_imperialism_to_ww2.html" class="card" data-title="帝国主義→ww1→ww2の連鎖フロー"><div class="card-badge" style="background:rgba(80,150,120,.12);color:#88d4b0">→ フロー</div><div class="card-main">帝国主義→WW1→WW2の連鎖フロー</div></a>
+<a href="flow_africa_scramble.html" class="card" data-title="列強によるアフリカ分割"><div class="card-badge" style="background:rgba(80,150,120,.12);color:#88d4b0">→ フロー</div><div class="card-main">列強によるアフリカ分割</div></a>
+<a href="map_africa_colonization.html" class="card" data-title="アフリカ植民地化と独立"><div class="card-badge" style="background:rgba(80,150,120,.12);color:#88d4b0">▏ 地図</div><div class="card-main">アフリカ植民地化と独立</div></a>
+<a href="flow_ww1_causes.html" class="card" data-title="ww1開戦の因果関係フロー"><div class="card-badge" style="background:rgba(80,150,120,.12);color:#88d4b0">→ フロー</div><div class="card-main">WW1開戦の因果関係フロー</div></a>
+<a href="alliance_ww1.html" class="card" data-title="ヨーロッパ外交関係の変遷 ― ナポレオン3世からww1へ"><div class="card-badge" style="background:rgba(180,100,80,.12);color:#d4a088">◎ 関係図</div><div class="card-main">ヨーロッパ外交関係の変遷</div><div class="card-sub">ナポレオン3世からWW1へ</div></a>
+<a href="timeline_worldwars.html" class="card" data-title="両大戦タイムライン(1914-1945) ― 国別通史"><div class="card-badge" style="background:rgba(100,130,180,.12);color:#88b0d4">▬ TL</div><div class="card-main">両大戦タイムライン(1914-1945)</div><div class="card-sub">国別通史</div></a>
+<a href="flow_ww2_europe.html" class="card" data-title="第二次世界大戦(ヨーロッパ戦線)"><div class="card-badge" style="background:rgba(80,150,120,.12);color:#88d4b0">→ フロー</div><div class="card-main">第二次世界大戦(ヨーロッパ戦線)</div></a>
+<a href="flow_ww2_pacific.html" class="card" data-title="第二次世界大戦(太平洋戦線)"><div class="card-badge" style="background:rgba(80,150,120,.12);color:#88d4b0">→ フロー</div><div class="card-main">第二次世界大戦(太平洋戦線)</div></a>
+<a href="alliance_ww2.html" class="card" data-title="ww2の同盟関係"><div class="card-badge" style="background:rgba(180,100,80,.12);color:#d4a088">◎ 関係図</div><div class="card-main">WW2の同盟関係</div></a>
+<a href="flow_united_nations.html" class="card" data-title="国際連合の成立"><div class="card-badge" style="background:rgba(80,150,120,.12);color:#88d4b0">→ フロー</div><div class="card-main">国際連合の成立</div></a>
+<a href="flow_russian_revolution.html" class="card" data-title="ロシア革命フロー"><div class="card-badge" style="background:rgba(80,150,120,.12);color:#88d4b0">→ フロー</div><div class="card-main">ロシア革命フロー</div></a>
+<a href="compare_ww1_ww2.html" class="card" data-title="ww1 vs ww2 比較表"><div class="card-badge" style="background:rgba(180,140,60,.12);color:#d4c088">⇔ 比較</div><div class="card-main">WW1 vs WW2 比較表</div></a>
+<a href="compare_treaties.html" class="card" data-title="国際秩序(条約)比較表"><div class="card-badge" style="background:rgba(180,140,60,.12);color:#d4c088">⇔ 比較</div><div class="card-main">国際秩序(条約)比較表</div></a>
+<a href="cycle_dawes_plan.html" class="card" data-title="ドーズ案の資金循環"><div class="card-badge" style="background:rgba(130,100,160,.12);color:#c0a0d4">↻ 循環</div><div class="card-main">ドーズ案の資金循環</div></a>
+<a href="flow_arms_control.html" class="card" data-title="軍縮・軍備管理の歴史フロー"><div class="card-badge" style="background:rgba(80,150,120,.12);color:#88d4b0">→ フロー</div><div class="card-main">軍縮・軍備管理の歴史フロー</div></a>
+<a href="cycle_19c_triangle.html" class="card" data-title="19世紀の三角貿易(アヘン貿易)"><div class="card-badge" style="background:rgba(130,100,160,.12);color:#c0a0d4">↻ 循環</div><div class="card-main">19世紀の三角貿易(アヘン貿易)</div></a>
+<a href="timeline_colonies.html" class="card" data-title="植民地タイムライン"><div class="card-badge" style="background:rgba(100,130,180,.12);color:#88b0d4">▬ TL</div><div class="card-main">植民地タイムライン</div></a>
+<a href="map_us_expansion.html" class="card" data-title="北アメリカの植民地化と領土変遷"><div class="card-badge" style="background:rgba(80,150,120,.12);color:#88d4b0">▏ 地図</div><div class="card-main">北アメリカの植民地化と領土変遷</div></a>
+</div>
+</section>
+<section class="sec" id="sec-coldwar_modern">
+  <div class="sec-hdr"><span class="sec-icon" style="color:#a0a0d4">Ⅺ</span><h2>冷戦・現代世界 <span class="latin">Bellum Frigidum et Mundus Hodiernus</span></h2><span class="sec-cnt">12</span></div>
+  <div class="sec-grid"><a href="timeline_coldwar.html" class="card" data-title="冷戦年表タイムライン(1945-1991)"><div class="card-badge" style="background:rgba(100,130,180,.12);color:#88b0d4">▬ TL</div><div class="card-main">冷戦年表タイムライン(1945-1991)</div></a>
+<a href="alliance_cold_war.html" class="card" data-title="冷戦構造の変遷 ― 形成から崩壊まで"><div class="card-badge" style="background:rgba(180,100,80,.12);color:#d4a088">◎ 関係図</div><div class="card-main">冷戦構造の変遷</div><div class="card-sub">形成から崩壊まで</div></a>
+<a href="geo_cold_war.html" class="card" data-title="冷戦の東西ブロック"><div class="card-badge" style="background:rgba(80,150,120,.12);color:#88d4b0">▏ 地図</div><div class="card-main">冷戦の東西ブロック</div></a>
+<a href="flow_cold_war_end.html" class="card" data-title="冷戦終結フロー"><div class="card-badge" style="background:rgba(80,150,120,.12);color:#88d4b0">→ フロー</div><div class="card-main">冷戦終結フロー</div></a>
+<a href="flow_decolonization.html" class="card" data-title="脱植民地化の波"><div class="card-badge" style="background:rgba(80,150,120,.12);color:#88d4b0">→ フロー</div><div class="card-main">脱植民地化の波</div></a>
+<a href="flow_palestine.html" class="card" data-title="パレスチナ問題の起源フロー"><div class="card-badge" style="background:rgba(80,150,120,.12);color:#88d4b0">→ フロー</div><div class="card-main">パレスチナ問題の起源フロー</div></a>
+<a href="alliance_middle_east.html" class="card" data-title="中東現代の関係図"><div class="card-badge" style="background:rgba(180,100,80,.12);color:#d4a088">◎ 関係図</div><div class="card-main">中東現代の関係図</div></a>
+<a href="european_integration.html" class="card" data-title="ヨーロッパ統合の歴史 ― 戦後復興からeuへ"><div class="card-badge" style="background:rgba(130,130,100,.12);color:#c0c0a0">◆ </div><div class="card-main">ヨーロッパ統合の歴史</div><div class="card-sub">戦後復興からEUへ</div></a>
+<a href="cycle_bretton_woods.html" class="card" data-title="ブレトンウッズ体制"><div class="card-badge" style="background:rgba(130,100,160,.12);color:#c0a0d4">↻ 循環</div><div class="card-main">ブレトンウッズ体制</div></a>
+<a href="flow_china_modern.html" class="card" data-title="中国近代化の連鎖フロー"><div class="card-badge" style="background:rgba(80,150,120,.12);color:#88d4b0">→ フロー</div><div class="card-main">中国近代化の連鎖フロー</div></a>
+<a href="timeline_china_modern.html" class="card" data-title="中国近代化タイムライン(1840-2000)"><div class="card-badge" style="background:rgba(100,130,180,.12);color:#88b0d4">▬ TL</div><div class="card-main">中国近代化タイムライン(1840-2000)</div></a>
+<a href="flow_india_independence.html" class="card" data-title="インド独立フロー"><div class="card-badge" style="background:rgba(80,150,120,.12);color:#88d4b0">→ フロー</div><div class="card-main">インド独立フロー</div></a>
+</div>
+</section>
+<section class="sec" id="sec-economy">
+  <div class="sec-hdr"><span class="sec-icon" style="color:#b8d088">Ⅻ</span><h2>経済構造・交易史 <span class="latin">Oeconomia et Commercium</span></h2><span class="sec-cnt">5</span></div>
+  <div class="sec-grid"><a href="flow_economic_europe.html" class="card" data-title="ヨーロッパ経済構造の変遷"><div class="card-badge" style="background:rgba(80,150,120,.12);color:#88d4b0">→ フロー</div><div class="card-main">ヨーロッパ経済構造の変遷</div></a>
+<a href="flow_economic_trade.html" class="card" data-title="世界交易ネットワークの変遷"><div class="card-badge" style="background:rgba(80,150,120,.12);color:#88d4b0">→ フロー</div><div class="card-main">世界交易ネットワークの変遷</div></a>
+<a href="flow_economic_labor.html" class="card" data-title="労働制度の世界史的変遷"><div class="card-badge" style="background:rgba(80,150,120,.12);color:#88d4b0">→ フロー</div><div class="card-main">労働制度の世界史的変遷</div></a>
+<a href="cycle_industrial_revolution.html" class="card" data-title="産業革命の好循環"><div class="card-badge" style="background:rgba(130,100,160,.12);color:#c0a0d4">↻ 循環</div><div class="card-main">産業革命の好循環</div></a>
+<a href="timeline_industrial.html" class="card" data-title="産業革命の波及タイムライン"><div class="card-badge" style="background:rgba(100,130,180,.12);color:#88b0d4">▬ TL</div><div class="card-main">産業革命の波及タイムライン</div></a>
+</div>
+</section>
+<section class="sec" id="sec-culture">
+  <div class="sec-hdr"><span class="sec-icon" style="color:#c0a0d4">XIII</span><h2>文化・思想・社会 <span class="latin">Cultura, Philosophia, Societas</span></h2><span class="sec-cnt">2</span></div>
+  <div class="sec-grid"><a href="flow_women_history.html" class="card" data-title="世界の女性史"><div class="card-badge" style="background:rgba(80,150,120,.12);color:#88d4b0">→ フロー</div><div class="card-main">世界の女性史</div></a>
+<a href="compare_socialism.html" class="card" data-title="社会主義比較表"><div class="card-badge" style="background:rgba(180,140,60,.12);color:#d4c088">⇔ 比較</div><div class="card-main">社会主義比較表</div></a>
+</div>
+</section>
+</div>
+<script>
+document.getElementById('search').addEventListener('input', function(){
+  var q = this.value.toLowerCase();
+  var count = 0;
+  document.querySelectorAll('.card').forEach(function(card){
+    var title = card.getAttribute('data-title');
+    var match = q === '' || title.indexOf(q) >= 0;
+    if (match) { card.classList.remove('hidden'); count++; }
+    else { card.classList.add('hidden'); }
+  });
+  document.querySelectorAll('.sec').forEach(function(sec){
+    var visible = sec.querySelectorAll('.card:not(.hidden)').length;
+    sec.style.display = visible > 0 ? '' : 'none';
+  });
+  document.getElementById('result').textContent = q ? count + ' inventa' : '';
+});
+</script>
+</body>
+</html>

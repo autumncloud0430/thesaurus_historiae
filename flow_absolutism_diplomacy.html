@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>絶対主義時代の欧州外交フロー</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048;--border:rgba(201,169,110,.08)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+.hdr{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.hdr h1{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2)}
+.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
+.flow{max-width:760px;margin:0 auto;padding:24px 20px 60px}
+.phase{position:relative;margin-bottom:2px;padding:16px 16px 16px 60px;border-left:2px solid rgba(201,169,110,.08);margin-left:30px}
+.phase:last-child{border-left-color:transparent}
+.phase-label{position:absolute;left:-42px;top:16px;width:36px;font-family:'Cormorant Garamond',serif;font-size:10px;font-weight:700;color:var(--text3);text-align:right;line-height:1.3}
+.phase::before{content:'';position:absolute;left:-5px;top:22px;width:8px;height:8px;border-radius:50%;background:var(--bg);border:2px solid rgba(201,169,110,.25)}
+.node{background:rgba(255,255,255,.015);border:1px solid rgba(255,255,255,.04);border-radius:8px;padding:10px 14px;margin-bottom:8px;border-left:3px solid transparent;transition:all .2s}
+.node:hover{background:rgba(255,255,255,.03);border-color:rgba(255,255,255,.06)}
+.node-title{font-family:'Noto Serif JP',serif;font-size:12px;font-weight:700;color:var(--gold2);margin-bottom:2px}
+.node-year{font-family:'Cormorant Garamond',serif;font-size:11px;color:var(--gold);opacity:.6;margin-bottom:4px;letter-spacing:.08em}
+.node-desc{font-size:10px;color:var(--text2);line-height:1.7}
+.node-desc strong{color:var(--text);font-weight:600}
+.node.key{background:rgba(201,169,110,.04);border-color:rgba(201,169,110,.12)}
+.arrow{display:flex;align-items:center;gap:6px;padding:2px 0 2px 8px;margin-bottom:6px}
+.arrow-line{width:16px;height:1px;background:rgba(201,169,110,.15);flex-shrink:0}
+.arrow-text{font-size:8px;color:var(--text3)}
+.arrow-icon{color:rgba(201,169,110,.3);font-size:10px;flex-shrink:0}
+.branch-row{display:flex;gap:8px;margin-bottom:8px}
+.branch-row .node{flex:1}
+.side-note{font-size:8px;color:var(--text3);padding:4px 8px;border-left:2px solid rgba(201,169,110,.1);margin:4px 0 8px;line-height:1.6}
+
+/* Alliance display */
+.alliance{display:flex;gap:4px;flex-wrap:wrap;margin:6px 0}
+.ally{padding:3px 8px;border-radius:4px;font-size:8px;font-weight:600;border:1px solid}
+.a-fr{background:rgba(100,100,180,.1);border-color:rgba(100,100,180,.25);color:rgba(160,160,220,.9)}
+.a-habs{background:rgba(180,140,60,.1);border-color:rgba(180,140,60,.25);color:rgba(220,190,100,.9)}
+.a-eng{background:rgba(180,80,80,.08);border-color:rgba(180,80,80,.2);color:rgba(220,130,130,.9)}
+.a-nl{background:rgba(80,150,120,.08);border-color:rgba(80,150,120,.2);color:rgba(130,200,170,.9)}
+.a-pru{background:rgba(120,130,160,.1);border-color:rgba(120,130,160,.25);color:rgba(170,180,210,.9)}
+.a-ru{background:rgba(160,100,130,.08);border-color:rgba(160,100,130,.2);color:rgba(210,150,180,.9)}
+.a-swe{background:rgba(80,130,180,.08);border-color:rgba(80,130,180,.2);color:rgba(130,180,220,.9)}
+.a-ott{background:rgba(150,130,80,.08);border-color:rgba(150,130,80,.2);color:rgba(200,180,120,.9)}
+.a-sp{background:rgba(180,120,60,.08);border-color:rgba(180,120,60,.2);color:rgba(220,170,110,.9)}
+.vs-tag{padding:2px 6px;font-size:7px;color:rgba(180,80,80,.7);background:rgba(180,80,80,.06);border:1px solid rgba(180,80,80,.15);border-radius:3px}
+
+.p-post30 .node{border-left-color:rgba(130,120,100,.3)}.p-post30::before{border-color:rgba(130,120,100,.4)}
+.p-louis .node{border-left-color:rgba(100,100,180,.3)}.p-louis::before{border-color:rgba(100,100,180,.5);background:rgba(100,100,180,.15)}
+.p-succession .node{border-left-color:rgba(180,130,80,.3)}.p-succession::before{border-color:rgba(180,130,80,.5);background:rgba(180,130,80,.15)}
+.p-reversal .node{border-left-color:rgba(180,80,80,.3)}.p-reversal::before{border-color:rgba(180,80,80,.5);background:rgba(180,80,80,.15)}
+.p-partition .node{border-left-color:rgba(150,100,130,.3)}.p-partition::before{border-color:rgba(150,100,130,.4)}
+.p-result .node{border-left-color:rgba(201,169,110,.3)}.p-result::before{border-color:rgba(201,169,110,.5);background:rgba(201,169,110,.15)}
+
+.note{text-align:center;padding:8px 20px 32px;max-width:720px;margin:0 auto}.note p{font-size:9px;color:var(--text3);line-height:1.8}.note strong{color:var(--gold)}
+
+@media(max-width:600px){
+.hdr{padding:10px 12px}.hdr h1{font-size:12px}
+.flow{padding:16px 10px 40px}
+.phase{padding:12px 10px 12px 44px;margin-left:20px}
+.phase-label{left:-30px;width:28px;font-size:8px}
+.node{padding:8px 10px}.node-title{font-size:11px}.node-desc{font-size:9px}
+.branch-row{flex-direction:column}
+.side-note{font-size:7.5px}
+.note p{font-size:8px}
+}
+</style>
+</head>
+<body>
+<div class="hdr"><h1>絶対主義時代の欧州外交フロー ― ルイ14世から七年戦争まで</h1><a href="charts.html">← Ad Chartae</a></div>
+
+<div class="flow">
+
+<!-- ウェストファリア後 -->
+<div class="phase p-post30">
+  <div class="phase-label">1648<br>〜<br>1660s</div>
+  <div class="node">
+    <div class="node-title">ウェストファリア体制後のヨーロッパ</div>
+    <div class="node-year">1648–</div>
+    <div class="node-desc">三十年戦争の結果：<strong>神聖ローマ帝国(ハプスブルク)</strong>が弱体化→ドイツ領邦が事実上独立。<strong>スペイン＝ハプスブルク</strong>も衰退(ポルトガル独立1640、ネーデルラント独立承認1648)。<strong>フランス</strong>がヨーロッパ最強国に浮上。<strong>スウェーデン</strong>がバルト海の覇権を握る(「バルト海帝国」)。<strong>イングランド</strong>は清教徒革命(1642-60)の内紛→名誉革命(1688)後に大国化。<strong>オランダ</strong>は黄金時代(17C半ば)だが人口が少なく陸軍が弱い。</div>
+  </div>
+  <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">フランスのルイ14世が覇権を目指す→周辺国が対抗</div></div>
+</div>
+
+<!-- ルイ14世の戦争 -->
+<div class="phase p-louis">
+  <div class="phase-label">1667<br>〜<br>1714</div>
+  <div class="node">
+    <div class="node-title">南ネーデルラント継承戦争(帰属戦争)</div>
+    <div class="node-year">1667–68</div>
+    <div class="node-desc">ルイ14世がスペイン領ネーデルラント(現ベルギー)の領有を主張し侵攻。<strong>オランダ・英・スウェーデン</strong>が三国同盟を結んでフランスを牽制→<strong>アーヘンの和約</strong>(1668)＝フランスはリール等の都市のみ獲得(期待以下の成果)。★ポイント：<strong>オランダ</strong>がフランスの拡大を阻止する中心勢力に→ルイ14世の怒りを買う。</div>
+    <div class="alliance"><span class="ally a-fr">仏 ルイ14世</span><span class="vs-tag">vs</span><span class="ally a-sp">西(スペイン領)</span><span class="ally a-nl">蘭</span><span class="ally a-eng">英</span><span class="ally a-swe">瑞</span></div>
+  </div>
+  <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">ルイ14世がオランダに報復</div></div>
+  <div class="node">
+    <div class="node-title">オランダ侵略戦争(仏蘭戦争)</div>
+    <div class="node-year">1672–78</div>
+    <div class="node-desc">ルイ14世がオランダに大軍を侵攻。オランダは<strong>オラニエ公ウィレム3世</strong>が総督に復帰し抵抗→<strong>堤防を切って国土を水没</strong>させる焦土戦術。スペイン・神聖ローマ帝国がオランダ側で参戦。<strong>ナイメーヘン条約</strong>(1678)＝フランスはフランシュ＝コンテ等を獲得しヨーロッパ最強の地位を確認。★結果：ウィレム3世がルイ14世の宿敵に→後に英国王ウィリアム3世として名誉革命(1688)→<strong>英蘭がフランスに対抗する同盟</strong>の原型に。</div>
+    <div class="alliance"><span class="ally a-fr">仏</span><span class="ally a-eng">英(秘密同盟)</span><span class="vs-tag">vs</span><span class="ally a-nl">蘭(ウィレム3世)</span><span class="ally a-sp">西</span><span class="ally a-habs">墺</span></div>
+  </div>
+  <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">ルイ14世のナント勅令廃止(1685)→プロテスタント諸国が反仏で結束</div></div>
+  <div class="node">
+    <div class="node-title">ファルツ継承戦争(アウクスブルク同盟戦争/九年戦争)</div>
+    <div class="node-year">1688–97</div>
+    <div class="node-desc">ルイ14世がファルツ(プファルツ)の継承権を主張し侵攻。名誉革命(1688)で英王になった<strong>ウィリアム3世(＝ウィレム3世)</strong>が<strong>アウクスブルク同盟</strong>(英・蘭・墺・西・独諸邦)を組織して対抗。<strong>ライスワイク条約</strong>(1697)＝フランスの膨張が初めて阻止される→ルイ14世の全盛期の終わり。★ポイント：<strong>英蘭同君連合(ウィリアム3世)がフランスに対抗する</strong>構図が確立→スペイン継承戦争に直結。<br><br>
+<strong>【植民地での対応】ウィリアム王戦争</strong>(1689-97)＝北米で英仏が初めて本格的に衝突。ニューイングランドvsヌーヴェル＝フランス(カナダ)。先住民(イロコイ連邦＝英側、アルゴンキン系＝仏側)も巻き込む。結果は引き分け(ライスワイク条約で北米は現状維持)。<strong>→以後「北米で英仏が戦うたびに先住民が双方に利用される」パターン</strong>が確立。</div>
+    <div class="alliance"><span class="ally a-fr">仏</span><span class="vs-tag">vs</span><span class="ally a-eng">英(ウィリアム3世)</span><span class="ally a-nl">蘭</span><span class="ally a-habs">墺</span><span class="ally a-sp">西</span></div>
+  </div>
+  <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">スペインのカルロス2世が子なしで死去(1700)→後継者争い</div></div>
+  <div class="node key">
+    <div class="node-title">スペイン継承戦争</div>
+    <div class="node-year">1701–13/14</div>
+    <div class="node-desc">カルロス2世の遺言でルイ14世の孫<strong>フィリップ</strong>がスペイン王に→<strong>仏西が合邦する危険</strong>→英・蘭・墺が<strong>大同盟</strong>を結成。マールバラ公(英)・オイゲン公(墺)がブレンハイムの戦い(1704)等で勝利。<strong>ユトレヒト条約</strong>(1713)＋<strong>ラシュタット条約</strong>(1714、墺仏間)＝フィリップ5世のスペイン王位は認めるが<strong>仏西の王位合同を永久に禁止</strong>。英がジブラルタル・ミノルカ・ニューファンドランド・アカディアを獲得＋<strong>アシエント(奴隷貿易独占権)</strong>。墺がスペイン領ネーデルラント(現ベルギー)・ミラノ・ナポリ・サルデーニャを獲得(ラシュタット条約)。<br><br>
+<strong>【植民地での対応】アン女王戦争</strong>(1702-13)＝北米でのスペイン継承戦争。英がフランス領アカディア(ノヴァ＝スコシア)を占領。カリブ海でも英仏が交戦。<strong>ユトレヒト条約の北米条項</strong>＝仏がアカディア・ニューファンドランド・ハドソン湾地域を英に割譲＋<strong>アシエント(スペイン領アメリカへの奴隷貿易独占権)</strong>を英が獲得→<strong>英の大西洋商業覇権の確立</strong>。<br><br>
+★結果：<strong>英が海洋覇権</strong>、<strong>墺がイタリア・ネーデルラントの支配権</strong>を獲得。スペインはブルボン朝に交代するも二流国に転落。仏は領土拡大に失敗し財政が疲弊→ルイ14世の晩年は暗い。</div>
+    <div class="alliance"><span class="ally a-fr">仏</span><span class="ally a-sp">西(フィリップ5世)</span><span class="vs-tag">vs</span><span class="ally a-eng">英(マールバラ)</span><span class="ally a-nl">蘭</span><span class="ally a-habs">墺(オイゲン)</span></div>
+  </div>
+  <div class="side-note">★入試超頻出：ユトレヒト条約(1713)＋ラシュタット条約(1714)＝「仏西の合邦禁止」「英がジブラルタル＋アシエント」「墺がネーデルラント＋ミラノ＋ナポリ」。勢力均衡(バランス＝オブ＝パワー)の原則が国際秩序の基本に</div>
+  <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">ルイ14世死去(1715)→フランスの覇権争いは一段落→新たな対立軸へ</div></div>
+</div>
+
+<!-- 継承戦争の時代 -->
+<div class="phase p-succession">
+  <div class="phase-label">1733<br>〜<br>1748</div>
+  <div class="node">
+    <div class="node-title">ポーランド継承戦争</div>
+    <div class="node-year">1733–35</div>
+    <div class="node-desc">ポーランド王位をめぐり<strong>仏・西・サルデーニャ</strong>vs<strong>墺・露</strong>が対立。ルイ15世の義父スタニスワフ＝レシチンスキvsザクセン選帝侯アウグスト3世(墺露が支持)。<strong>ウィーン条約</strong>(1738)で決着＝墺露が推すアウグスト3世がポーランド王に。代償としてフランスのスタニスワフにロレーヌ公国を与える(→スタニスワフ死後にフランス領に)。スペインの次男がナポリ・シチリア王に。★意味：<strong>ロシアのヨーロッパ政治への本格的参入</strong>。戦争の結果が外交交渉で処理される＝18C的な「内閣戦争」の典型。</div>
+    <div class="alliance"><span class="ally a-fr">仏</span><span class="ally a-sp">西</span><span class="vs-tag">vs</span><span class="ally a-habs">墺</span><span class="ally a-ru">露</span></div>
+  </div>
+  <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">プロイセンの台頭→ハプスブルク vs ホーエンツォレルンの対立</div></div>
+  <div class="node key">
+    <div class="node-title">オーストリア継承戦争</div>
+    <div class="node-year">1740–48</div>
+    <div class="node-desc"><strong>マリア＝テレジア</strong>が即位→<strong>フリードリヒ2世(大王)</strong>がシレジア(ボヘミアの一部、鉱業が豊か)に侵攻＝<strong>プロイセンの台頭</strong>。仏・バイエルン・ザクセンも墺に宣戦。英は墺を支援(仏の勢力拡大を阻止するため)。<strong>アーヘンの和約</strong>(1748)＝<strong>プロイセンがシレジアを確保</strong>(鉄・石炭・繊維業の豊かな地域＝プロイセンの経済力が飛躍的に向上)。マリア＝テレジアは「シレジアを取り戻すまで死ねない」と奪回を誓う→外交革命へ。<br><br>
+<strong>【植民地での対応】ジョージ王戦争</strong>(1744-48)＝北米でのオーストリア継承戦争。ニューイングランド民兵がフランスの要塞<strong>ルイブール</strong>(ケープ＝ブレトン島)を攻略→しかし<strong>アーヘンの和約で仏に返還</strong>→植民地人の怒り(「我々が血を流して取ったのに本国が外交で返した」)→後のアメリカ独立の遠因の一つ。インドでは<strong>カーナティック戦争</strong>(1744-48)＝英仏東インド会社がインド南部で衝突(第1次)→現地のナワーブ(太守)を味方につけた代理戦争。★ポイント：ここから<strong>墺普の対立(ドイツの覇権争い)</strong>が18-19Cのヨーロッパ政治の基軸に。</div>
+    <div class="alliance"><span class="ally a-pru">普(フリードリヒ大王)</span><span class="ally a-fr">仏</span><span class="vs-tag">vs</span><span class="ally a-habs">墺(マリア＝テレジア)</span><span class="ally a-eng">英</span></div>
+  </div>
+  <div class="side-note">★入試頻出：「フリードリヒ2世のシレジア侵攻」がオーストリア継承戦争の直接の原因。墺普対立＝ドイツ統一問題(大ドイツvsKLEIN)の原型</div>
+  <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">マリア＝テレジアの復讐→300年来の敵フランスと同盟＝「外交革命」</div></div>
+</div>
+
+<!-- 外交革命と七年戦争 -->
+<div class="phase p-reversal">
+  <div class="phase-label">1756<br>〜<br>1763</div>
+  <div class="node key">
+    <div class="node-title">外交革命(同盟の逆転)</div>
+    <div class="node-year">1756</div>
+    <div class="node-desc">マリア＝テレジアの宰相<strong>カウニッツ</strong>が画策。300年来の宿敵であった<strong>仏(ブルボン)と墺(ハプスブルク)が同盟</strong>＝<strong>「外交革命(renversement des alliances)」</strong>。ポンパドゥール夫人(ルイ15世の愛妾)・ロシアのエリザヴェータ女帝も取り込む。一方プロイセンのフリードリヒ大王は<strong>英と同盟</strong>(ウェストミンスター条約1756)。★意味：<strong>仏vs墺(ハプスブルクvsブルボン)</strong>の伝統的対立が<strong>墺仏露 vs 普英</strong>に逆転→200年以上続いた同盟関係が一夜にして反転＝近代外交史上最大の衝撃。</div>
+    <div class="alliance"><span class="ally a-habs">墺</span><span class="ally a-fr">仏</span><span class="ally a-ru">露</span><span class="vs-tag">vs</span><span class="ally a-pru">普(フリードリヒ大王)</span><span class="ally a-eng">英</span></div>
+  </div>
+  <div class="side-note">★入試超頻出：「外交革命」＝仏墺同盟。「なぜ300年来の敵が手を結んだか」＝共通の敵プロイセンの台頭。マリー＝アントワネット(マリア＝テレジアの娘)のルイ16世への嫁入り(1770)もこの仏墺同盟の延長</side>
+  <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">フリードリヒ大王が先制攻撃→七年戦争</div></div>
+  <div class="node key">
+    <div class="node-title">七年戦争</div>
+    <div class="node-year">1756–63</div>
+    <div class="node-desc"><strong>「最初の世界大戦」</strong>とも呼ばれる。ヨーロッパ大陸＝<strong>プロイセン1国が墺仏露の3大国に包囲</strong>されるが、フリードリヒ大王の天才的な用兵で耐え抜く(ロスバッハ・ロイテンの勝利)。窮地に追い込まれるが<strong>「ブランデンブルク家の奇跡」</strong>＝ロシアのエリザヴェータ女帝が死去(1762)→ピョートル3世(フリードリヒ崇拝者)が即位しロシアが撤退。<br><br><strong>【植民地での対応(北米)】フレンチ＝インディアン戦争</strong>(1754-63)＝七年戦争の北米版(実は欧州より2年早く開戦)。オハイオ渓谷の支配権をめぐり英仏が衝突。若き<strong>ジョージ＝ワシントン</strong>(後の初代大統領)が最初の戦闘に参加。仏は<strong>先住民(ヒューロン族等)</strong>と同盟しゲリラ戦。英の<strong>ウルフ将軍</strong>が<strong>ケベック攻略</strong>(1759、アブラハム平原の戦い)で勝利→<strong>仏の北米植民地帝国が崩壊</strong>。<br><br>
+<strong>【植民地での対応(インド)】カーナティック戦争</strong>(第2次1749-54、第3次1756-63)＝英仏東インド会社がインド南部の覇権を争う。英の<strong>クライヴ</strong>がフランス側のベンガル太守を<strong>プラッシーの戦い</strong>(1757)で撃破→<strong>ベンガルのディーワーニー(徴税権)を獲得</strong>＝英のインド支配の起点。<br><br>
+<strong>パリ条約</strong>(1763)＝仏が<strong>カナダ全域・ミシシッピ以東・セネガル</strong>を英に割譲。仏のインドの拠点はポンディシェリ等5カ所のみに(商館のみで軍事力なし)。<strong>→英が北米・インド両方でフランスを排除＝第一次大英帝国の完成</strong>。しかし戦費が膨大→<strong>植民地への課税(印紙法1765・タウンゼンド諸法1767・茶法1773)</strong>→植民地人の反発→<strong>アメリカ独立革命</strong>(1775-83)。<br><br>
+<strong>フベルトゥスブルク条約</strong>(1763、墺普間)＝プロイセンのシレジア領有を最終的に確認＝マリア＝テレジアの奪回の夢は挫折。ヨーロッパの勢力図が<strong>英仏墺普露の「五大国体制(ペンタルキー)」</strong>に確定。</div>
+  </div>
+  <div class="branch-row">
+    <div class="node" style="border-left-color:rgba(120,130,160,.3)">
+      <div class="node-title">結果①：プロイセンが列強に</div>
+      <div class="node-desc"><strong>プロイセン</strong>が欧州の5大国(英仏墺露普)の一角に。フリードリヒ大王＝「啓蒙専制君主」の代名詞。以後<strong>墺普の二大国がドイツの覇権</strong>を争う→19Cの統一問題へ。</div>
+    </div>
+    <div class="node" style="border-left-color:rgba(180,80,80,.3)">
+      <div class="node-title">結果②：英の海洋覇権確立と植民地戦争の帰結</div>
+      <div class="node-desc"><strong>英がフランスから海外植民地を大量に奪取</strong>→<strong>第一次大英帝国</strong>の完成。カナダ・インドが英の手に。仏は海外帝国をほぼ喪失→<strong>アメリカ独立戦争(1775-83)で英に復讐</strong>を図る(仏米同盟1778)。★植民地戦争の全体像＝欧州の戦争は必ず植民地に波及した：<strong>ファルツ戦争＝ウィリアム王戦争 / スペイン継承＝アン女王戦争 / オーストリア継承＝ジョージ王戦争＋カーナティック戦争 / 七年戦争＝フレンチ＝インディアン戦争＋カーナティック戦争</strong>。最終的に英が全て勝利→「第二次百年戦争(1689-1815)で英が仏に勝った」。</div>
+    </div>
+  </div>
+  <div class="side-note">★入試超頻出：パリ条約(1763)＝「英が仏からカナダ・インドを獲得」。「フレンチ＝インディアン戦争＝七年戦争の北米版」「プラッシーの戦い(1757)＝英のインド支配の起点」。七年戦争の結果、英の海洋覇権が確立→しかし戦費→植民地への課税(印紙法)→アメリカ独立革命へ</div>
+  <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">七年戦争の結果が18C後半の世界を形作る</div></div>
+</div>
+
+<!-- ポーランド分割 -->
+<div class="phase p-partition">
+  <div class="phase-label">1772<br>〜<br>1795</div>
+  <div class="node">
+    <div class="node-title">ポーランド分割 ― 東欧の秩序再編</div>
+    <div class="node-year">1772 / 1793 / 1795</div>
+    <div class="node-desc">七年戦争後、<strong>墺・普・露の3国</strong>が利害を調整するためポーランドを3度にわたり分割：<strong>第1次</strong>(1772)＝フリードリヒ大王が発案。エカチェリーナ2世・マリア＝テレジアも参加(マリア＝テレジアは「泣きながら取った」)。<strong>第2次</strong>(1793)＝ポーランドの改革運動(五月三日憲法1791)を口実に普露が分割。<strong>コシチューシコの蜂起</strong>(1794)→鎮圧→<strong>第3次</strong>(1795)＝<strong>ポーランドが地図から消滅</strong>(→1918年のWW1終結まで123年間独立を喪失)。</div>
+    <div class="alliance"><span class="ally a-pru">普</span><span class="ally a-habs">墺</span><span class="ally a-ru">露</span>→<span class="vs-tag">ポーランドを3分割</span></div>
+  </div>
+  <div class="side-note">★入試頻出：ポーランド分割＝啓蒙専制3君主(フリードリヒ・マリア＝テレジア・エカチェリーナ)が「啓蒙」を掲げつつ弱小国を分割した矛盾。ポーランドの運命は19Cのナショナリズムの象徴に</div>
+  <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">絶対主義の外交体制はフランス革命(1789)で根本的に崩壊</div></div>
+</div>
+
+<!-- まとめ -->
+<div class="phase p-result">
+  <div class="phase-label">まとめ</div>
+  <div class="node key">
+    <div class="node-title">絶対主義時代の外交の特徴</div>
+    <div class="node-desc">
+      ①<strong>王朝間の戦争</strong>＝国民の戦争ではなく君主の領土・継承権をめぐる戦争。国民は動員されない(傭兵中心)→フランス革命で「国民の戦争」に変質。<br>
+      ②<strong>勢力均衡(バランス＝オブ＝パワー)</strong>＝一国の突出を許さない→必ず反対同盟が形成される(ルイ14世に対する包囲網、プロイセンに対する墺仏露)。<br>
+      ③<strong>同盟の流動性</strong>＝「永遠の敵」も「永遠の味方」もない。利害によって同盟が変わる(外交革命が最たる例)。<br>
+      ④<strong>植民地をめぐる英仏の争い</strong>が恒常化→七年戦争でイギリスが決定的に勝利→<strong>大英帝国の世紀</strong>へ。<br>
+      ⑤このシステムは<strong>フランス革命(1789)</strong>で崩壊→革命戦争・ナポレオン戦争→<strong>ウィーン体制(1815)</strong>へ。
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div class="note">
+<p>絶対主義時代の外交＝<strong>「ルイ14世の覇権→対仏包囲網→英の海洋覇権→墺普対立→外交革命→七年戦争→ポーランド分割」</strong>。入試では各戦争の<strong>「対立の構図(誰vs誰)」「条約の内容」「外交革命のなぜ」</strong>が頻出。特に<strong>七年戦争→パリ条約→英の覇権→アメリカ独立→フランス革命</strong>の因果連鎖を説明できることが重要。</p>
+</div>
+
+</body>
+</html>

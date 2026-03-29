@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ヨーロッパ統合の歴史 ― 戦後復興からEUへ</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048;--border:rgba(201,169,110,.08)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+.hdr{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.hdr h1{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2)}
+.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
+.content{padding:12px 16px;overflow-x:auto}.content-inner{min-width:760px}
+.phase{margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid rgba(201,169,110,.04)}.phase:last-child{border-bottom:none}
+.phase-hdr{display:flex;align-items:baseline;gap:8px;margin-bottom:6px}
+.phase-era{font-family:'Cormorant Garamond',serif;font-size:13px;font-weight:700;color:var(--gold);letter-spacing:.1em;min-width:90px}
+.phase-title{font-family:'Noto Serif JP',serif;font-size:11px;font-weight:700;color:var(--gold2)}
+.phase-sub{font-size:8px;color:var(--text3);margin-left:4px}
+.flow{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin-bottom:6px}
+/* Organization node = the main thing that was created */
+.org{border-radius:8px;padding:8px 14px;text-align:center;cursor:pointer;transition:all .15s;background:rgba(60,100,180,.06);border:1.5px solid rgba(60,100,180,.25)}
+.org:hover{filter:brightness(1.15);transform:translateY(-1px)}
+.org .nm{font-family:'Noto Serif JP',serif;font-size:13px;font-weight:700;color:#8ab0e0}
+.org .yr{font-family:'Cormorant Garamond',serif;font-size:9px;color:var(--gold);margin-top:1px}
+.org .desc{font-size:6.5px;color:var(--text3);margin-top:2px;max-width:160px}
+/* org-big removed - all orgs use blue */
+/* Treaty/event badge */
+.ev{font-size:7.5px;color:var(--gold);background:rgba(201,169,110,.06);border:1px solid rgba(201,169,110,.1);border-radius:4px;padding:3px 7px;cursor:pointer;transition:all .15s;white-space:nowrap}
+.ev:hover{filter:brightness(1.2)}
+.ev-bad{color:#c25a5a;background:rgba(194,74,74,.06);border-color:rgba(194,74,74,.1)}
+/* Members list (small text, not nodes) */
+.members{font-size:7px;color:var(--text2);line-height:1.6;margin:2px 0 0 4px}
+.members strong{color:rgba(60,100,180,.7);font-size:7.5px}
+.members .outsider{color:var(--text3);font-style:italic}
+/* Arrow */
+.ar{font-size:9px;color:var(--text3);padding:0 2px}
+/* Detail text */
+.detail{font-size:7px;color:var(--text3);margin:3px 0 0 4px;line-height:1.6}.detail b{color:var(--gold);font-weight:600}
+.tp{display:none}
+.note{text-align:center;padding:8px 20px 32px;max-width:820px;margin:0 auto}.note p{font-size:9px;color:var(--text3);line-height:1.8}.note strong{color:var(--gold)}
+.nd-svg{cursor:pointer}
+
+@media(max-width:600px){
+.hdr{padding:10px 12px}.hdr h1{font-size:12px}
+.flow{padding:16px 10px 40px}
+.phase{padding:12px 10px 12px 44px;margin-left:20px}
+.phase-label{left:-30px;width:28px;font-size:8px}
+.node{padding:8px 10px}.node-title{font-size:11px}.node-desc{font-size:9px}
+.branch-row{flex-direction:column}
+.side-note{font-size:7.5px}
+.note p{font-size:8px}
+}
+</style>
+</head>
+<body>
+<div class="hdr"><h1>ヨーロッパ統合の歴史 ― 戦後復興からEUへ</h1><a href="charts.html">← Ad Chartae</a></div>
+<div class="content"><div class="content-inner">
+
+<!-- Phase 1 -->
+<div class="phase">
+<div class="phase-hdr"><div class="phase-era">1945-1950</div><div class="phase-title">統合の出発点</div><div class="phase-sub">「独仏の戦争を二度と起こさない」</div></div>
+<div class="flow">
+<span class="ev nd-svg" data-tip="bg-marshall">マーシャル＝プラン(1947)</span>
+<span class="ar">→</span>
+<div class="org nd-svg" data-tip="bg-oeec"><div class="nm">OEEC</div><div class="yr">1948</div><div class="desc">マーシャル援助の受入調整</div></div>
+<span class="ar">→</span>
+<span class="ev nd-svg" data-tip="bg-schuman">シューマン宣言(1950)</span>
+</div>
+<div class="detail"><b>核心</b>：独仏の石炭・鉄鋼を共同管理→戦争の材料を国家から切り離す＝<b>ジャン＝モネ</b>の構想、<b>シューマン</b>（仏外相）が宣言</div>
+</div>
+
+<!-- Phase 2 -->
+<div class="phase">
+<div class="phase-hdr"><div class="phase-era">1951-1957</div><div class="phase-title">ECSC → EEC の設立</div><div class="phase-sub">「石炭と鉄鋼」から「共同市場」へ</div></div>
+<div class="flow">
+<div class="org nd-svg" data-tip="ecsc"><div class="nm">ECSC</div><div class="yr">1951 (52発効)</div><div class="desc">欧州石炭鉄鋼共同体</div></div>
+<span class="ar">→</span>
+<span class="ev ev-bad nd-svg" data-tip="edc">EDC構想 → 仏が否決(1954)</span>
+<span class="ar">→</span>
+<span class="ev nd-svg" data-tip="rome">ローマ条約(1957)</span>
+<span class="ar">→</span>
+<div class="org nd-svg" data-tip="eec"><div class="nm">EEC</div><div class="yr">1958発効</div><div class="desc">欧州経済共同体（共同市場）</div></div>
+<span class="ar">＋</span>
+<div class="org nd-svg" data-tip="euratom" style="padding:5px 10px"><div class="nm" style="font-size:10px">EURATOM</div><div class="desc">原子力共同体</div></div>
+</div>
+<div class="members"><strong>原加盟6カ国</strong>：仏・西独・伊・蘭・ベルギー・ルクセンブルク ｜ <span class="outsider">英は不参加→EFTA(1960)を結成</span></div>
+</div>
+
+<!-- Phase 3 -->
+<div class="phase">
+<div class="phase-hdr"><div class="phase-era">1958-1972</div><div class="phase-title">共同市場の発展</div><div class="phase-sub">関税同盟完成・CAP開始・ド＝ゴールの拒否</div></div>
+<div class="flow">
+<span class="ev nd-svg" data-tip="p3-cap">共通農業政策 CAP(1962)</span>
+<span class="ar">→</span>
+<span class="ev nd-svg" data-tip="p3-customs">域内関税の完全撤廃(1968)</span>
+</div>
+<div class="flow">
+<span class="ev ev-bad nd-svg" data-tip="p3-veto1">英の加盟申請 → ド＝ゴールが拒否(1963)</span>
+<span class="ar">→</span>
+<span class="ev ev-bad nd-svg" data-tip="p3-veto2">再申請 → 再び拒否(1967)</span>
+<span class="ar">→</span>
+<span class="ev nd-svg" data-tip="p3-resign">ド＝ゴール退陣(1969) → 英加盟への道が開く</span>
+</div>
+<div class="flow">
+<span class="ev nd-svg" data-tip="p3-merger">統合条約(1967)</span>
+<span class="ar">→</span>
+<div class="org nd-svg" data-tip="p5-ec"><div class="nm">EC（欧州共同体）</div><div class="yr">1967</div><div class="desc">ECSC＋EEC＋EURATOMの機関を一本化</div></div>
+</div>
+<div class="detail"><b>ド＝ゴール</b>：英は「米のトロイの木馬」→仏の主導権を守るため2度拒否。「空席の危機」(1965-66)でも超国家性に抵抗</div>
+</div>
+
+<!-- Phase 4 -->
+<div class="phase">
+<div class="phase-hdr"><div class="phase-era">1973-1985</div><div class="phase-title">拡大と「ユーロスクレロシス」</div><div class="phase-sub">加盟国は増えるが統合は停滞</div></div>
+<div class="flow">
+<span class="ev nd-svg" data-tip="p4-1st">第1次拡大(1973)</span>
+<span class="ar">→</span>
+<span class="ev ev-bad nd-svg" data-tip="p4-oil">石油危機(1973)→停滞</span>
+<span class="ar">→</span>
+<div class="org nd-svg" data-tip="p4-ems"><div class="nm">EMS</div><div class="yr">1979</div><div class="desc">欧州通貨制度→ユーロの前身</div></div>
+<span class="ar">→</span>
+<span class="ev nd-svg" data-tip="p4-ep">欧州議会の直接選挙(1979)</span>
+</div>
+<div class="flow">
+<span class="ev nd-svg" data-tip="p4-2nd">第2次拡大：ギリシア(1981)</span>
+<span class="ar">→</span>
+<span class="ev nd-svg" data-tip="p4-3rd">第3次拡大：スペイン・ポルトガル(1986)</span>
+</div>
+<div class="members"><strong>6→9→10→12カ国</strong>：+英・愛・丹(73) +希(81) +西・葡(86) ｜ 南欧は民主化後に加盟</div>
+</div>
+
+<!-- Phase 5 -->
+<div class="phase">
+<div class="phase-hdr"><div class="phase-era">1986-1993</div><div class="phase-title">統合の加速 → EU成立</div><div class="phase-sub">ドロール委員長の時代＋冷戦終結が追い風</div></div>
+<div class="flow">
+<span class="ev nd-svg" data-tip="p5-sea">単一欧州議定書(1986)</span>
+<span class="ar">→</span>
+<span class="ev nd-svg" data-tip="p5-wall">壁崩壊(1989)・独統一(1990)</span>
+<span class="ar">→</span>
+<span class="ev nd-svg" data-tip="p5-maas">マーストリヒト条約(1992)</span>
+<span class="ar">→ ECを発展させ →</span>
+<div class="org nd-svg" data-tip="p5-eu" style="padding:10px 18px"><div class="nm" style="font-size:15px">EU（欧州連合）</div><div class="yr">1993発効</div><div class="desc">ECを超える政治統合</div></div>
+</div>
+<div class="detail"><b>マーストリヒト条約の3本柱</b>：①EC（経済統合・単一市場・通貨統合への道筋）②共通外交・安保政策 ③司法・内務協力 ＋ <b>EU市民権</b>（域内自由移動）の創設。壁崩壊→独統一の巨大化を懸念した仏が通貨統合を加速させた</div>
+</div>
+
+<!-- Phase 6 -->
+<div class="phase">
+<div class="phase-hdr"><div class="phase-era">1993-2004</div><div class="phase-title">ユーロ導入と東方拡大</div><div class="phase-sub">冷戦後のヨーロッパの再統合</div></div>
+<div class="flow">
+<span class="ev nd-svg" data-tip="p6-4th">第4次拡大(1995)：墺・芬・瑞</span>
+<span class="ar">→</span>
+<span class="ev nd-svg" data-tip="p6-amsterdam">アムステルダム条約(1997)</span>
+<span class="ar">→</span>
+<div class="org nd-svg" data-tip="p6-euro" style="padding:10px 18px"><div class="nm" style="font-size:15px">ユーロ €</div><div class="yr">1999帳簿 / 2002流通</div><div class="desc">単一通貨。ECBが金融政策を統括</div></div>
+</div>
+<div class="flow">
+<span class="ev nd-svg" data-tip="p6-nice">ニース条約(2001)</span>
+<span class="ar">→</span>
+<span class="ev nd-svg" data-tip="p6-5th" style="font-weight:700;color:var(--gold2)">第5次拡大(2004)：旧東欧10カ国加盟 → 15→25</span>
+</div>
+<div class="members"><strong>+10カ国(2004)</strong>：ポーランド・チェコ・ハンガリー・スロヴァキア・スロヴェニア・バルト三国・マルタ・キプロス ｜ <span class="outsider">英・丹・瑞はユーロ不採用</span></div>
+<div class="detail">冷戦の東西分断を超えた「ヨーロッパの再統合」。ただし<b>「通貨は統一したが財政は各国バラバラ」</b>→ユーロ危機の構造的要因</div>
+</div>
+
+<!-- Phase 7 -->
+<div class="phase">
+<div class="phase-hdr"><div class="phase-era">2005-現在</div><div class="phase-title">統合の危機と試練</div><div class="phase-sub">EU憲法否決→ユーロ危機→Brexit→ウクライナ</div></div>
+<div class="flow">
+<span class="ev ev-bad nd-svg" data-tip="p7-const">EU憲法 → 仏蘭が否決(2005)</span>
+<span class="ar">→</span>
+<span class="ev nd-svg" data-tip="p7-lisbon">リスボン条約(2007/09発効)</span>
+<span class="ar">→</span>
+<span class="ev ev-bad nd-svg" data-tip="p7-eurocrisis">ユーロ危機(2010-)</span>
+</div>
+<div class="flow">
+<span class="ev ev-bad nd-svg" data-tip="p7-refugee">難民危機(2015)</span>
+<span class="ar">→</span>
+<span class="ev ev-bad nd-svg" data-tip="p7-brexit" style="font-weight:700">Brexit 投票(2016) → 離脱(2020)</span>
+<span class="ar">→</span>
+<span class="ev nd-svg" data-tip="p7-ukraine">ウクライナ侵攻(2022) → 結束の契機</span>
+</div>
+<div class="members"><strong>現在のEU</strong>：27カ国・人口約4.5億 ｜ ユーロ圏20カ国 ｜ シェンゲン圏（域内国境審査なし）</div>
+<div class="detail"><b>英の軌跡</b>：不参加(51)→EFTA(60)→拒否される(63,67)→渋々加盟(73)→リベート要求→ユーロ不参加→<b>Brexit(2020)</b> ＝ 一貫した「距離感」の帰結</div>
+</div>
+
+</div></div>
+
+<div class="tp" id="tip-bg-marshall"><p><strong>マーシャル＝プラン(1947)</strong> ― 米国務長官マーシャルが提唱。西欧16カ国に約130億ドル。経済復興＋共産主義封じ込め。ソ連・東欧は参加拒否。</p></div>
+<div class="tp" id="tip-bg-oeec"><p><strong>OEEC(1948)</strong> ― マーシャル援助の受入調整機関→西欧経済協力の最初の枠組み。1961年にOECD（経済協力開発機構）に改組。</p></div>
+<div class="tp" id="tip-bg-schuman"><p><strong>シューマン宣言(1950)</strong> ― 仏外相シューマンが<strong>独仏の石炭・鉄鋼の共同管理</strong>を提唱。構想者はジャン＝モネ。「戦争の材料を国家から切り離す」→超国家的統合の第一歩。毎年5月9日が「ヨーロッパの日」。</p></div>
+<div class="tp" id="tip-ecsc"><p><strong>ECSC（欧州石炭鉄鋼共同体, 1951）</strong> ― シューマン宣言に基づく。<strong>超国家的な「高等機関」</strong>が石炭・鉄鋼を管理→国家主権の一部を移譲する最初の実験。「機能主義」的統合。英は超国家性を嫌い不参加。</p></div>
+<div class="tp" id="tip-edc"><p><strong>EDC（欧州防衛共同体）構想</strong> ― 統合を軍事にも拡大する試み。しかし1954年に<strong>仏国民議会が批准を否決</strong>→政治・軍事統合は時期尚早→経済統合に集中する路線へ。</p></div>
+<div class="tp" id="tip-rome"><p><strong>ローマ条約(1957)</strong> ― EEC＋EURATOMの設立条約。目標は<strong>「共同市場」</strong>＝関税同盟（域内関税撤廃＋対外共通関税）＋ヒト・モノ・資本の自由移動。1958年発効。</p></div>
+<div class="tp" id="tip-eec"><p><strong>EEC（欧州経済共同体, 1958）</strong> ― 6カ国の共同市場。1968年に域内関税を完全撤廃→<strong>関税同盟完成</strong>。「EECの奇跡」と呼ばれる経済成長。1967年にECSC・EURATOM・EECの機関を統合→EC（欧州共同体）に。</p></div>
+<div class="tp" id="tip-euratom"><p><strong>EURATOM（欧州原子力共同体, 1958）</strong> ― 原子力の平和利用を共同で推進。EECと同時にローマ条約で設立。</p></div>
+<div class="tp" id="tip-p3-cap"><p><strong>CAP（共通農業政策, 1962）</strong> ― 農産物の価格支持＋補助金を共同化。仏農業の利益保護→仏のEEC参加の重要なインセンティブ。EC予算の最大項目（一時は7割超）→過剰生産・財政負担で後に改革の焦点。</p></div>
+<div class="tp" id="tip-p3-customs"><p><strong>域内関税の完全撤廃(1968)</strong> ― EEC設立から10年で達成。対外共通関税も導入→<strong>関税同盟が完成</strong>。ただし非関税障壁（規格・基準の違い等）は残る→1986年の単一欧州議定書で対応。</p></div>
+<div class="tp" id="tip-p3-veto1"><p><strong>ド＝ゴールの拒否(1963)</strong> ― 英の1961年加盟申請をド＝ゴールが記者会見で「ノン！」。英は「米と特別な関係」→参加すると「米のトロイの木馬」になり仏の主導権が弱まると判断。</p></div>
+<div class="tp" id="tip-p3-veto2"><p><strong>2度目の拒否(1967)</strong> ― 英が再申請→ド＝ゴールが再び拒否。1969年にド＝ゴールが国民投票に敗れ退陣→後継ポンピドゥーが英の加盟を容認。</p></div>
+<div class="tp" id="tip-p3-resign"><p><strong>ド＝ゴール退陣(1969)</strong> ― 国民投票で敗北し退陣。ポンピドゥー大統領が「完成・深化・拡大」のスローガンで英の加盟を認める→1973年第1次拡大へ。</p></div>
+<div class="tp" id="tip-p4-1st"><p><strong>第1次拡大(1973)</strong> ― 英・アイルランド・デンマーク加盟→6→9。ノルウェーは国民投票で否決。英はすぐにEC予算負担に不満→サッチャーの「I want my money back!」→リベート獲得。</p></div>
+<div class="tp" id="tip-p4-oil"><p><strong>石油危機(1973)</strong> ― EC各国がバラバラに対応→統合が進まない「ユーロスクレロシス」（欧州硬化症）。米日に対する競争力低下→後の単一市場構想の動機に。</p></div>
+<div class="tp" id="tip-p4-ems"><p><strong>EMS（欧州通貨制度, 1979）</strong> ― 為替相場を一定範囲内に安定させるERM（為替相場メカニズム）。ECU（欧州通貨単位）を基準→<strong>ユーロの前身</strong>。英は当初不参加→1990年加入→1992年「暗黒の水曜日」で離脱。</p></div>
+<div class="tp" id="tip-p4-ep"><p><strong>欧州議会の直接選挙(1979)</strong> ― 初のEC市民による直接投票。民主的正統性の強化。ただし投票率は低く「民主主義の赤字」が継続的課題。</p></div>
+<div class="tp" id="tip-p4-2nd"><p><strong>第2次拡大(1981)</strong> ― ギリシア加盟→10。1974年の軍事独裁から民主化→EC加盟が民主主義の「定着装置」。</p></div>
+<div class="tp" id="tip-p4-3rd"><p><strong>第3次拡大(1986)</strong> ― スペイン・ポルトガル加盟→12。1970年代の独裁からの民主化後。「南の拡大」。構造基金で格差是正。</p></div>
+<div class="tp" id="tip-p5-sea"><p><strong>単一欧州議定書(SEA, 1986)</strong> ― <strong>1992年末までに単一市場を完成</strong>させる目標。ドロール欧州委員長が推進。非関税障壁の撤廃→ヒト・モノ・カネ・サービスの「4つの自由」。特定多数決の導入。</p></div>
+<div class="tp" id="tip-p5-wall"><p><strong>壁崩壊(1989)・独統一(1990)</strong> ― 統一ドイツの巨大化を懸念した<strong>仏ミッテランが通貨統合の加速を独コールに求める</strong>→マーストリヒト条約への推進力。「ドイツをヨーロッパに埋め込む」戦略。</p></div>
+<div class="tp" id="tip-p5-maas"><p><strong>マーストリヒト条約(1992)</strong> ― ECを超える<strong>EU（欧州連合）の創設</strong>。3本柱：①経済（単一市場・通貨統合）②外交安保 ③司法内務。EU市民権。ユーロの収斂基準（財政赤字GDP比3%以内等）。英はユーロのオプトアウト（適用除外）を獲得。</p></div>
+<div class="tp" id="tip-p5-eu"><p><strong>EU（欧州連合, 1993発効）</strong> ― ECを発展させた政治・経済の統合体。経済統合（単一市場・ユーロ）＋政治統合（外交安保・司法内務）＋EU市民権。超国家的要素と政府間協力の混合。「国民国家を超える実験」。</p></div>
+<div class="tp" id="tip-p6-4th"><p><strong>第4次拡大(1995)</strong> ― オーストリア・フィンランド・スウェーデン加盟→15。冷戦期の中立国。ノルウェーは再び国民投票で否決。</p></div>
+<div class="tp" id="tip-p6-amsterdam"><p><strong>アムステルダム条約(1997)</strong> ― シェンゲン協定のEU統合。雇用政策の強化。東方拡大の制度改革は不十分→ニース条約へ。</p></div>
+<div class="tp" id="tip-p6-euro"><p><strong>ユーロ €（1999/2002）</strong> ― 1999年に11カ国で帳簿通貨→2002年に紙幣流通。ECB（フランクフルト）が金融政策統括。英・丹・瑞は不参加。<strong>「通貨統一＋財政バラバラ」</strong>がユーロ危機の構造的原因。</p></div>
+<div class="tp" id="tip-p6-nice"><p><strong>ニース条約(2001)</strong> ― 東方拡大に備えた制度改革。委員会規模・理事会票数の調整。不十分→EU憲法条約→リスボン条約へ。</p></div>
+<div class="tp" id="tip-p6-5th"><p><strong>第5次拡大(2004)</strong> ― <strong>旧東欧10カ国が一挙に加盟</strong>→15→25。冷戦の分断を超えた「再統合」。2007年にブルガリア・ルーマニア、2013年にクロアチア→28（→Brexit後27）。</p></div>
+<div class="tp" id="tip-p7-const"><p><strong>EU憲法条約の否決(2005)</strong> ― 「憲法」を制定する試み→<strong>仏蘭の国民投票で否決</strong>。市民のEU不信・拡大への不安・エリート主導への反発。「統合疲れ」の象徴。</p></div>
+<div class="tp" id="tip-p7-lisbon"><p><strong>リスボン条約(2007/09発効)</strong> ― 否決された憲法の内容を「憲法」の名を外して実質維持。EU大統領（欧州理事会常任議長）・EU外相（外務安保上級代表）を新設。欧州議会の権限強化。</p></div>
+<div class="tp" id="tip-p7-eurocrisis"><p><strong>ユーロ危機(2010-)</strong> ― ギリシアの財政粉飾→国債暴落→南欧に波及。「通貨統一＋財政バラバラ」の構造的欠陥。トロイカ（EU・ECB・IMF）が緊縮要求→南欧で反EU感情。ESM（欧州安定メカニズム）で対応。</p></div>
+<div class="tp" id="tip-p7-refugee"><p><strong>難民危機(2015)</strong> ― シリア内戦等→100万人以上がEUに流入。メルケルが受入→東欧（ハンガリー等）が反発→EU内の東西対立。ポピュリズム・反移民政党の台頭。</p></div>
+<div class="tp" id="tip-p7-brexit"><p><strong>Brexit(2016/2020)</strong> ― 国民投票で52%が離脱支持。移民問題・主権回復・EU規制への不満。2020年正式離脱→EU27に。英の「不参加→EFTA→拒否→渋々加盟→ユーロ不参加→離脱」は<strong>一貫した距離感</strong>の帰結。</p></div>
+<div class="tp" id="tip-p7-ukraine"><p><strong>ウクライナ侵攻(2022)</strong> ― EUが対露制裁で結束。芬瑞のNATO加入。安全保障面でのEUの役割強化の契機。ウクライナをEU加盟候補国に認定。</p></div>
+
+<div class="tp" id="tip-p5-ec"><p><strong>EC（欧州共同体, 1967〜）</strong> ― 1967年の統合条約（ブリュッセル条約）でECSC・EEC・EURATOMの3共同体の機関（委員会・理事会）を統合→<strong>EC</strong>として一本化。実態はEECが中核。マーストリヒト条約(1992)でECを発展させ<strong>EU</strong>に。ECはEUの「第1の柱」として存続。</p></div>
+<div class="tp" id="tip-p3-merger"><p><strong>統合条約（ブリュッセル条約, 1965署名/1967発効）</strong> ― ECSC・EEC・EURATOMの3共同体がそれぞれ持っていた委員会と理事会を<strong>1つに統合</strong>→EC（欧州共同体）として一本化。実態はEECが中核。3共同体自体は法的に存続するが、運営機関は共通に。</p></div>
+<div class="note"><p>
+<strong>入試ポイント：</strong><br>
+❶ 統合の原点＝<b>「独仏の戦争防止」</b>。シューマン宣言(1950)→ECSC(1951)→EEC(1957)→EC→EU(1993)<br>
+❷ <b>ローマ条約(1957)</b>でEEC設立。原加盟6カ国。英は不参加→ド＝ゴールが2度拒否→1973年にようやく加盟<br>
+❸ <b>マーストリヒト条約(1992)</b>＝ECからEUへ。通貨統合＋政治統合＋EU市民権。壁崩壊・独統一が追い風<br>
+❹ <b>ユーロ(1999/2002)</b>→「通貨統一・財政バラバラ」→<b>ユーロ危機(2010-)</b>の構造的原因<br>
+❺ <b>東方拡大(2004)</b>＝旧東欧10カ国→冷戦の分断を超えた再統合<br>
+❻ <b>Brexit(2020)</b>＝英の「主権」vs「統合」→EU統合の限界と可逆性を示した
+</p></div>
+
+<div id="tooltip-overlay" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;z-index:8000" onclick="closeTip()"></div>
+<div id="tooltip-box" style="display:none;position:fixed;z-index:9000;background:rgba(12,15,22,.97);border:1px solid rgba(201,169,110,.25);border-radius:8px;padding:12px 16px;max-width:320px;width:calc(100vw - 32px);box-shadow:0 8px 30px rgba(0,0,0,.6)">
+<div id="tooltip-content" style="font-size:10px;color:#8a857d;line-height:1.7"></div></div>
+<script>
+(function(){
+var ov=document.getElementById("tooltip-overlay"),bx=document.getElementById("tooltip-box"),ct=document.getElementById("tooltip-content");
+window.closeTip=function(){bx.style.display="none";ov.style.display="none"};
+function openTip(el){var tipId=el.getAttribute("data-tip");var tipEl=tipId?document.getElementById("tip-"+tipId):null;if(!tipEl)return;closeTip();ct.innerHTML=tipEl.innerHTML;ov.style.display="block";bx.style.display="block";var r=el.getBoundingClientRect(),w=Math.min(320,window.innerWidth-32);bx.style.width=w+"px";var l=r.left+r.width/2-w/2;if(l<16)l=16;if(l+w>window.innerWidth-16)l=window.innerWidth-16-w;bx.style.left=l+"px";bx.style.top=(r.bottom+8)+"px";bx.style.bottom="auto";var br=bx.getBoundingClientRect();if(br.bottom>window.innerHeight-16){var t=r.top-br.height-8;if(t<16)t=16;bx.style.top=t+"px"}}
+var tm=false,tt=null;
+document.addEventListener("touchstart",function(e){tm=false;tt=e.target},{passive:true});
+document.addEventListener("touchmove",function(){tm=true},{passive:true});
+document.addEventListener("touchend",function(e){if(tm)return;var nd=tt?tt.closest(".nd-svg"):null;if(nd){e.preventDefault();openTip(nd)}else if(!tt||!tt.closest("#tooltip-box"))closeTip();tt=null});
+document.addEventListener("click",function(e){if("ontouchstart"in window)return;var nd=e.target.closest(".nd-svg");if(nd)openTip(nd);else if(!e.target.closest("#tooltip-box"))closeTip()});
+})();
+</script>
+</body></html>

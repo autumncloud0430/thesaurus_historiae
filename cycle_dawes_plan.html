@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ドーズ案の資金循環</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+.hdr{padding:16px 20px;border-bottom:1px solid rgba(201,169,110,.08);display:flex;align-items:center;gap:14px;flex-wrap:wrap}.hdr h1{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2)}.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
+.wrap{display:flex;justify-content:center;padding:24px 16px 8px}
+.desc{max-width:740px;margin:0 auto;padding:0 20px 40px}
+.desc h2{font-family:'Noto Serif JP',serif;font-size:12px;font-weight:700;color:var(--gold2);margin:16px 0 6px;padding-left:8px;border-left:3px solid rgba(201,169,110,.3)}
+.desc p{font-size:9.5px;color:var(--text2);line-height:1.8;margin-bottom:8px}
+.desc p strong{color:var(--text);font-weight:600}
+.desc .side-note{font-size:8px;color:var(--text3);padding:4px 8px;border-left:2px solid rgba(201,169,110,.1);margin:6px 0 10px;line-height:1.6}
+.note{text-align:center;padding:8px 20px 32px;max-width:740px;margin:0 auto}.note p{font-size:9px;color:var(--text3);line-height:1.8}.note strong{color:var(--gold)}
+
+@media(max-width:600px){
+.hdr{padding:10px 12px}.hdr h1{font-size:12px}
+.wrap{padding:12px 8px}
+svg{max-width:100%;height:auto}
+.desc p{font-size:9px}
+.desc h2{font-size:11px}
+.side-note{font-size:7.5px}
+.note p{font-size:8px}
+}
+</style>
+</head>
+<body>
+<div class="hdr"><h1>ドーズ案の資金循環 ― なぜ1929年に世界経済が崩壊したか</h1><a href="charts.html">← Ad Chartae</a></div>
+
+<div class="wrap">
+<svg viewBox="0 0 660 530" xmlns="http://www.w3.org/2000/svg" style="width:660px;max-width:100%;height:auto">
+<defs>
+  <marker id="ag" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="rgba(201,169,110,.5)"/></marker>
+  <marker id="ar" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="rgba(180,80,80,.6)"/></marker>
+</defs>
+
+<!-- Title -->
+<text x="330" y="25" text-anchor="middle" fill="rgba(201,169,110,.15)" font-size="12" font-family="Cormorant Garamond" font-weight="700">ドーズ案の資金循環(1924-29)</text>
+
+<!-- ===== 3 NODES in neat triangle ===== -->
+<!-- USA (top center) -->
+<rect x="210" y="45" width="240" height="80" rx="12" fill="rgba(100,130,180,.06)" stroke="rgba(100,130,180,.25)" stroke-width="1.5"/>
+<text x="330" y="70" text-anchor="middle" fill="rgba(160,180,220,.9)" font-size="14" font-family="Noto Serif JP" font-weight="700">アメリカ合衆国</text>
+<text x="330" y="88" text-anchor="middle" fill="var(--text2)" font-size="8">WW1の最大の債権国 / ウォール街＝世界金融の中心</text>
+<text x="330" y="112" text-anchor="middle" fill="var(--text3)" font-size="6.5">★循環の起点＝米の資本がなければ全てが止まる</text>
+
+<!-- Germany (bottom left) -->
+<rect x="30" y="270" width="230" height="80" rx="12" fill="rgba(180,140,60,.06)" stroke="rgba(180,140,60,.25)" stroke-width="1.5"/>
+<text x="145" y="295" text-anchor="middle" fill="rgba(220,190,100,.9)" font-size="14" font-family="Noto Serif JP" font-weight="700">ドイツ</text>
+<text x="145" y="313" text-anchor="middle" fill="var(--text2)" font-size="8">賠償金1320億金マルク / ルール占領→ハイパーインフレ</text>
+<text x="145" y="338" text-anchor="middle" fill="var(--text3)" font-size="6.5">★ドーズ案(1924)で米資本が流入→経済回復</text>
+
+<!-- UK/France (bottom right) -->
+<rect x="400" y="270" width="230" height="80" rx="12" fill="rgba(80,150,120,.06)" stroke="rgba(80,150,120,.25)" stroke-width="1.5"/>
+<text x="515" y="295" text-anchor="middle" fill="rgba(140,210,170,.9)" font-size="14" font-family="Noto Serif JP" font-weight="700">イギリス・フランス</text>
+<text x="515" y="313" text-anchor="middle" fill="var(--text2)" font-size="8">WW1で米に巨額の戦債 / 独の賠償金で返済</text>
+<text x="515" y="338" text-anchor="middle" fill="var(--text3)" font-size="6.5">★独が払えなければ英仏も米に返済できない</text>
+
+<!-- ===== 3 CURVED ARROWS (uniform arcs, clockwise) ===== -->
+
+<!-- ① USA → Germany (top-center to bottom-left) -->
+<path d="M225,125 C160,170 80,220 70,270" fill="none" stroke="rgba(201,169,110,.5)" stroke-width="3" marker-end="url(#ag)"/>
+<rect x="62" y="170" width="130" height="42" rx="6" fill="rgba(201,169,110,.04)" stroke="rgba(201,169,110,.1)" stroke-width="0.5"/>
+<text x="127" y="187" text-anchor="middle" fill="var(--gold2)" font-size="10" font-family="Noto Serif JP" font-weight="700">① 米→独に貸付</text>
+<text x="127" y="203" text-anchor="middle" fill="var(--text2)" font-size="7.5">ウォール街が短期資本を投資</text>
+
+<!-- ② Germany → UK/France (bottom-left to bottom-right) -->
+<path d="M260,330 C310,380 370,380 400,330" fill="none" stroke="rgba(201,169,110,.5)" stroke-width="3" marker-end="url(#ag)"/>
+<rect x="270" y="370" width="120" height="42" rx="6" fill="rgba(201,169,110,.04)" stroke="rgba(201,169,110,.1)" stroke-width="0.5"/>
+<text x="330" y="387" text-anchor="middle" fill="var(--gold2)" font-size="10" font-family="Noto Serif JP" font-weight="700">② 独→英仏に賠償金</text>
+<text x="330" y="403" text-anchor="middle" fill="var(--text2)" font-size="7.5">米の資金で賠償金を支払う</text>
+
+<!-- ③ UK/France → USA (bottom-right to top-center) -->
+<path d="M590,270 C580,220 500,170 435,125" fill="none" stroke="rgba(201,169,110,.5)" stroke-width="3" marker-end="url(#ag)"/>
+<rect x="478" y="170" width="130" height="42" rx="6" fill="rgba(201,169,110,.04)" stroke="rgba(201,169,110,.1)" stroke-width="0.5"/>
+<text x="543" y="187" text-anchor="middle" fill="var(--gold2)" font-size="10" font-family="Noto Serif JP" font-weight="700">③ 英仏→米に戦債返済</text>
+<text x="543" y="203" text-anchor="middle" fill="var(--text2)" font-size="7.5">独の賠償金で米に返済</text>
+
+<!-- Center label -->
+<text x="330" y="270" text-anchor="middle" fill="rgba(201,169,110,.2)" font-size="10" font-family="Cormorant Garamond" font-weight="700">$が循環</text>
+
+<!-- ===== COLLAPSE (1929) ===== -->
+<rect x="130" y="440" width="400" height="65" rx="10" fill="rgba(180,80,80,.06)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/>
+<text x="330" y="464" text-anchor="middle" fill="rgba(220,130,130,.9)" font-size="12" font-family="Noto Serif JP" font-weight="700">★1929年 ウォール街大暴落 → 循環の崩壊</text>
+<text x="330" y="481" text-anchor="middle" fill="var(--text2)" font-size="8">米が資本を引き揚げ(①が停止)→独が賠償金を払えない(②が停止)</text>
+<text x="330" y="494" text-anchor="middle" fill="var(--text2)" font-size="8">→英仏が戦債を返済できない(③が停止)→★全世界が連鎖的に恐慌に</text>
+
+<!-- Collapse arrow: from USA straight down to collapse box -->
+<path d="M330,125 L330,440" fill="none" stroke="rgba(180,80,80,.3)" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#ar)"/>
+<text x="345" y="240" text-anchor="start" fill="rgba(220,130,130,.5)" font-size="8" font-weight="700">1929年</text>
+<text x="345" y="253" text-anchor="start" fill="rgba(220,130,130,.5)" font-size="8" font-weight="700">米資本の引き揚げ</text>
+
+<!-- WW2 hint -->
+<text x="330" y="520" text-anchor="middle" fill="rgba(180,80,80,.25)" font-size="8" font-family="Noto Sans JP">↓ 世界恐慌→ブロック経済→ファシズム→WW2</text>
+</svg>
+</div>
+
+<div class="desc">
+<h2>ドーズ案(1924)とは何か</h2>
+<p>WW1後、ドイツはヴェルサイユ条約で<strong>1320億金マルク</strong>の賠償金を課されたが支払い不能に。フランスが<strong>ルール占領</strong>(1923)→ドイツでハイパーインフレ(パン1個が数十億マルク)→シュトレーゼマンが<strong>レンテンマルク</strong>で通貨を安定化。米の銀行家<strong>ドーズ</strong>が策定した計画＝<strong>米の資本をドイツに貸し付け</strong>→ドイツが経済を回復させ→賠償金を英仏に支払い→英仏が米に戦債を返済する<strong>循環</strong>。1929年にはヤング案で賠償金を減額・期間延長。</p>
+
+<h2>なぜ「循環」は崩壊したか</h2>
+<p><strong>1929年10月24日「暗黒の木曜日」</strong>＝ウォール街の株価大暴落。米の銀行・投資家がパニックに→<strong>ドイツに貸し付けていた短期資本を一斉に引き揚げ</strong>→ドイツ経済が壊滅(失業率30%＝600万人)→賠償金が支払えない→英仏も戦債を返済できない→<strong>世界経済全体が連鎖的に崩壊</strong>＝世界恐慌。</p>
+<p>★核心：<strong>ドーズ案の循環は「米資本」という一本の糸に全てが吊り下がっていた</strong>。その糸が切れた瞬間に全体が崩壊した。1920年代の「相対的安定期」は<strong>見かけの繁栄</strong>に過ぎなかった。</p>
+
+<h2>世界恐慌→WW2への因果連鎖</h2>
+<p>ドイツの大量失業→<strong>ナチスへの支持が急上昇</strong>(1928年12議席→1932年230議席)→ヒトラー首相(1933)。各国がブロック経済(英スターリング・仏フラン・米ドル)→「持たざる国」(独伊日)が市場・資源を軍事的膨張で確保→<strong>WW2へ</strong>。</p>
+<div class="side-note">★入試超頻出：「ドーズ案(1924)→ヤング案(1929)→世界恐慌→ナチス台頭→WW2」の因果連鎖。「なぜ世界恐慌が世界中に波及したか」＝ドーズ案の循環構造を図で説明できること。この循環図が入試で最もよく問われるパターン</div>
+</div>
+
+<div class="note"><p>ドーズ案の資金循環＝<strong>米→独(貸付)→英仏(賠償金)→米(戦債返済)の三角形</strong>。全てが<strong>米資本に依存</strong>→1929年の暴落で一挙に崩壊→世界恐慌→ファシズム→WW2。入試では「ドーズ案の仕組み」と「なぜ崩壊したか」をセットで説明することが求められる。</p></div>
+</body></html>

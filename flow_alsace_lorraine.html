@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>アルザス＝ロレーヌの歴史フロー</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048;--border:rgba(201,169,110,.08)}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+.hdr{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;flex-wrap:wrap}.hdr h1{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2)}.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
+.flow{max-width:740px;margin:0 auto;padding:24px 20px 60px}
+.phase{position:relative;margin-bottom:2px;padding:16px 16px 16px 60px;border-left:2px solid rgba(201,169,110,.08);margin-left:30px}.phase:last-child{border-left-color:transparent}
+.phase-label{position:absolute;left:-42px;top:16px;width:36px;font-family:'Cormorant Garamond',serif;font-size:10px;font-weight:700;color:var(--text3);text-align:right;line-height:1.3}
+.phase::before{content:'';position:absolute;left:-5px;top:22px;width:8px;height:8px;border-radius:50%;background:var(--bg);border:2px solid rgba(201,169,110,.25)}
+.node{background:rgba(255,255,255,.015);border:1px solid rgba(255,255,255,.04);border-radius:8px;padding:10px 14px;margin-bottom:8px;border-left:3px solid transparent;transition:all .2s}.node:hover{background:rgba(255,255,255,.03)}.node-title{font-family:'Noto Serif JP',serif;font-size:12px;font-weight:700;color:var(--gold2);margin-bottom:2px}.node-year{font-family:'Cormorant Garamond',serif;font-size:11px;color:var(--gold);opacity:.6;margin-bottom:4px}.node-desc{font-size:10px;color:var(--text2);line-height:1.7}.node-desc strong{color:var(--text);font-weight:600}.node.key{background:rgba(201,169,110,.04);border-color:rgba(201,169,110,.12)}
+.arrow{display:flex;align-items:center;gap:6px;padding:2px 0 2px 8px;margin-bottom:6px}.arrow-line{width:16px;height:1px;background:rgba(201,169,110,.15)}.arrow-text{font-size:8px;color:var(--text3)}.arrow-icon{color:rgba(201,169,110,.3);font-size:10px}
+.side-note{font-size:8px;color:var(--text3);padding:4px 8px;border-left:2px solid rgba(201,169,110,.1);margin:4px 0 8px;line-height:1.6}
+
+/* Flag-like color tags */
+.flag{display:inline-block;padding:2px 8px;border-radius:3px;font-size:8px;font-weight:700;margin:2px}
+.flag-fr{background:rgba(100,100,180,.15);color:rgba(160,160,220,.9);border:1px solid rgba(100,100,180,.25)}
+.flag-de{background:rgba(180,140,60,.15);color:rgba(220,190,100,.9);border:1px solid rgba(180,140,60,.25)}
+.flag-eu{background:rgba(80,150,120,.15);color:rgba(140,210,170,.9);border:1px solid rgba(80,150,120,.25)}
+
+.p1 .node{border-left-color:rgba(130,120,100,.3)}.p1::before{border-color:rgba(130,120,100,.4)}
+.p2 .node{border-left-color:rgba(100,100,180,.3)}.p2::before{border-color:rgba(100,100,180,.5);background:rgba(100,100,180,.15)}
+.p3 .node{border-left-color:rgba(180,140,60,.3)}.p3::before{border-color:rgba(180,140,60,.5);background:rgba(180,140,60,.15)}
+.p4 .node{border-left-color:rgba(100,100,180,.3)}.p4::before{border-color:rgba(100,100,180,.4)}
+.p5 .node{border-left-color:rgba(180,80,80,.3)}.p5::before{border-color:rgba(180,80,80,.5);background:rgba(180,80,80,.15)}
+.p6 .node{border-left-color:rgba(100,100,180,.3)}.p6::before{border-color:rgba(100,100,180,.4)}
+.p7 .node{border-left-color:rgba(80,150,120,.3)}.p7::before{border-color:rgba(80,150,120,.5);background:rgba(80,150,120,.15)}
+.note{text-align:center;padding:8px 20px 32px;max-width:700px;margin:0 auto}.note p{font-size:9px;color:var(--text3);line-height:1.8}.note strong{color:var(--gold)}
+.hdr h1{font-size:12px}
+.flow{padding:16px 10px 40px}
+.phase{padding:12px 10px 12px 44px;margin-left:20px}
+.phase-label{left:-30px;width:28px;font-size:8px}
+.node{padding:8px 10px}.node-title{font-size:11px}.node-desc{font-size:9px}
+.branch-row{flex-direction:column}
+.side-note{font-size:7.5px}
+.note p{font-size:8px}
+}
+
+@media(max-width:600px){
+.hdr{padding:10px 12px}.hdr h1{font-size:12px}
+.flow{padding:16px 10px 40px}
+.phase{padding:12px 10px 12px 44px;margin-left:20px}
+.phase-label{left:-30px;width:28px;font-size:8px}
+.node{padding:8px 10px}.node-title{font-size:11px}.node-desc{font-size:9px}
+.branch-row{flex-direction:column}
+.side-note{font-size:7.5px}
+.note p{font-size:8px}
+}
+</style>
+</head>
+<body>
+<div class="hdr"><h1>アルザス＝ロレーヌの歴史フロー ― 独仏の間で揺れた地域</h1><a href="charts.html">← Ad Chartae</a></div>
+<div class="flow">
+
+<div class="phase p1"><div class="phase-label">起源<br>〜<br>1648</div>
+<div class="node"><div class="node-title">神聖ローマ帝国の一部としてのアルザス</div><div class="node-year">〜1648</div>
+<div class="node-desc">アルザス(仏語：Alsace、独語：Elsass)とロレーヌ(仏語：Lorraine、独語：Lothringen)はもともと<strong>神聖ローマ帝国</strong>の領域。住民の多くは<strong>アレマン語(ドイツ語の方言)</strong>を話すゲルマン系。「ロートリンゲン(ロレーヌ)」の名はカロリング帝国分割時のロタール1世の領地「ロタリンギア」に由来。中世にはストラスブール(シュトラースブルク)が自由都市として繁栄。<strong>言語的にはドイツ語圏</strong>だが、地理的にはライン川左岸でフランスに隣接→常に両国の狭間に。</div></div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">三十年戦争でフランスが獲得</div></div></div>
+
+<div class="phase p2"><div class="phase-label">1648<br>〜<br>1871</div>
+<div class="node key"><div class="node-title">ウェストファリア条約 → フランス領に<span class="flag flag-fr">仏</span></div><div class="node-year">1648–1871</div>
+<div class="node-desc"><strong>ウェストファリア条約</strong>(1648)＝三十年戦争の講和で<strong>アルザスの大部分をフランスが獲得</strong>(ハプスブルク家のアルザスにおける権利を仏に譲渡)。<strong>ルイ14世</strong>がストラスブールを占領(1681)→<strong>ライスワイク条約</strong>(1697)で正式にフランス領に。以後約200年間<strong>フランスに統治</strong>される→住民はフランス文化を受容しつつアルザス語(ドイツ方言)も維持＝<strong>二重のアイデンティティ</strong>。フランス革命では「ラ＝マルセイエーズ(フランス国歌)」がストラスブールで作曲される(1792)→<strong>アルザス人はフランス国民としてのアイデンティティ</strong>を強めた。ナポレオン時代もフランスの一部。</div></div>
+<div class="side-note">★ポイント：言語はドイツ語系だが、200年のフランス統治で住民は「フランス人」としてのアイデンティティを形成していた。これが1871年の併合を悲劇にする</div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">普仏戦争でドイツが奪取</div></div></div>
+
+<div class="phase p3"><div class="phase-label">1871<br>〜<br>1918</div>
+<div class="node key"><div class="node-title">普仏戦争 → ドイツ帝国領に<span class="flag flag-de">独</span></div><div class="node-year">1871–1918</div>
+<div class="node-desc"><strong>普仏戦争</strong>(1870-71)＝セダンでナポレオン3世を捕虜→パリ包囲。<strong>フランクフルト条約</strong>(1871.5)＝<strong>アルザス全域とロレーヌの一部(メッス周辺)をドイツに割譲</strong>＋賠償金50億フラン。ビスマルクの判断＝「アルザスは言語的にドイツ語圏→ドイツ固有の領土」。しかし<strong>住民の多くはフランスへの帰属を望んでいた</strong>→約16万人がフランスに移住(「オプション」の権利)。<br><br>
+ドイツ帝国領<strong>エルザス＝ロートリンゲン(帝国直轄領)</strong>として統治。通常の連邦構成国ではなく<strong>帝国の直轄地</strong>(自治権が制限)→住民の反発。ドイツ語教育の強制。しかし経済的にはドイツの重工業化の恩恵(ロレーヌの鉄鉱石)。<strong>フランスでは「失われた領土」への復讐感情</strong>＝小学校の地図でアルザス＝ロレーヌを黒く塗り「忘れるな」→<strong>対独復讐主義(レヴァンシスム)</strong>がWW1の精神的背景に。ドーデの短編小説<strong>『最後の授業』</strong>(1873)が象徴的。</div></div>
+<div class="side-note">★入試超頻出：「フランクフルト条約(1871)＝アルザス＝ロレーヌ割譲＋50億フラン」「対独復讐感情→露仏同盟・三国協商→WW1の遠因」。ドーデ『最後の授業』も文化史として問われる</div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">WW1でフランスが奪回</div></div></div>
+
+<div class="phase p4"><div class="phase-label">1919<br>〜<br>1940</div>
+<div class="node"><div class="node-title">ヴェルサイユ条約 → フランスに復帰<span class="flag flag-fr">仏</span></div><div class="node-year">1919–1940</div>
+<div class="node-desc"><strong>ヴェルサイユ条約</strong>(1919)＝<strong>アルザス＝ロレーヌの無条件返還</strong>(住民投票なし＝フランスにとって「回復」であり「獲得」ではない)。フランスは47年ぶりにストラスブール・メッスを取り戻す→国中で歓喜。しかし<strong>48年間のドイツ統治</strong>で育った世代にとっては複雑→フランス政府は急速なフランス語化・フランス文化の押しつけ→住民の一部に反発(「自治運動」)。アルザスの<strong>コンコルダート</strong>(教会と国家の協約＝フランス本土では1905年政教分離法で廃止されたが、アルザスではドイツ時代のコンコルダートが現在まで継続→フランス本土と法制度が異なる特殊性)。</div></div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">WW2でナチス・ドイツが再び併合</div></div></div>
+
+<div class="phase p5"><div class="phase-label">1940<br>〜<br>1944</div>
+<div class="node"><div class="node-title">ナチス・ドイツによる再併合<span class="flag flag-de">独</span></div><div class="node-year">1940–44</div>
+<div class="node-desc">フランス陥落(1940.6)後、ドイツは<strong>アルザス＝ロレーヌを事実上再併合</strong>(正式な条約はないが実質的な統合)。フランス語の使用を禁止。フランス風の名前を禁止(ドイツ名に強制改名)。<strong>「マルグレ＝ヌー(Malgré-nous＝我々の意に反して)」</strong>＝アルザス・ロレーヌの若者約13万人が<strong>ドイツ軍に強制徴兵</strong>→東部戦線等に送られ約4万人が死亡・行方不明。これはフランス側から見れば「裏切り者」、アルザス側から見れば「強制された犠牲者」→<strong>戦後も続くアイデンティティの葛藤</strong>の原因に。<strong>オラドゥール＝シュル＝グラヌ虐殺</strong>(1944)＝ナチス武装SSがフランスの村で住民642人を虐殺→実行部隊にアルザス人の強制徴兵者が含まれていた→戦後の裁判で大問題に。</div></div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">1944年連合軍の解放→再びフランスへ</div></div></div>
+
+<div class="phase p6"><div class="phase-label">1945<br>〜<br>1950s</div>
+<div class="node"><div class="node-title">戦後の復帰と独仏和解<span class="flag flag-fr">仏</span></div><div class="node-year">1945–</div>
+<div class="node-desc">1944-45年の解放で<strong>再びフランス領に復帰</strong>。戦後、ド＝ゴールの臨時政府は再びフランス語教育を推進。「マルグレ＝ヌー」問題は長く議論の対象に。しかし今度は<strong>独仏和解</strong>の道が開かれる：<strong>シューマン宣言</strong>(1950)＝アルザス出身(ロレーヌ生まれ)のフランス外相<strong>ロベール＝シューマン</strong>が「<strong>独仏の石炭・鉄鋼を共同管理</strong>しよう」と提案＝<strong>ECSC(欧州石炭鉄鋼共同体)</strong>(1952)の創設→EEC(1957)→EC→<strong>EU</strong>への道。★意味：アルザス・ロレーヌの石炭・鉄鉱石をめぐる独仏の争いが、逆に<strong>「共有すれば二度と戦争にならない」</strong>というヨーロッパ統合の発想の原点になった。</div></div>
+<div class="side-note">★入試超頻出：「シューマン宣言(1950)→ECSC(1952)→EEC(1957)→EU」。シューマンがアルザス＝ロレーヌ出身(独仏の間のアイデンティティを体現)であることが象徴的</div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">ヨーロッパ統合の中でアルザスは独仏の「架け橋」に</div></div></div>
+
+<div class="phase p7"><div class="phase-label">現在</div>
+<div class="node"><div class="node-title">今日のアルザス ― ヨーロッパ統合の象徴<span class="flag flag-eu">EU</span></div>
+<div class="node-desc">ストラスブールに<strong>欧州議会</strong>・<strong>欧州人権裁判所</strong>が置かれる＝独仏和解とヨーロッパ統合の象徴。住民はフランス語を話すがアルザス語(ドイツ方言)も残る。独仏両方の文化を持つ<strong>二重のアイデンティティ</strong>がむしろ誇りに。ライン川を挟んでドイツ(バーデン＝ヴュルテンベルク州)と自由に行き来＝<strong>シェンゲン協定</strong>の恩恵。かつて独仏が血を流して争った地が、今や<strong>「国境のないヨーロッパ」の象徴</strong>に。<br><br>
+アルザス＝ロレーヌの帰属の変遷＝<strong>仏(1648-1871)→独(1871-1918)→仏(1919-40)→独(1940-44)→仏(1945-)→EU</strong>。約300年間で<strong>5回</strong>主権が変わった＝近代ヨーロッパの戦争と平和の縮図。</div></div></div>
+
+</div>
+<div class="note"><p>アルザス＝ロレーヌ＝<strong>独仏関係の「リトマス試験紙」</strong>。入試では①<strong>ウェストファリア(1648)→仏領</strong> ②<strong>フランクフルト条約(1871)→独領＝対独復讐感情</strong> ③<strong>ヴェルサイユ(1919)→仏に返還</strong> ④<strong>WW2で独が再併合→マルグレ＝ヌー</strong> ⑤<strong>戦後の独仏和解→シューマン宣言→ECSC→EU</strong>の流れが問われる。「なぜストラスブールに欧州議会があるのか」の答えでもある。</p></div>
+</body></html>

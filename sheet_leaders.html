@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>国家指導者一覧 ― 世界史入試対策</title>
+<style>@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@400;600;700&family=Cormorant+Garamond:wght@400;700&display=swap');
+:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--gold-dim:rgba(201,169,110,.12);--text:#d4cfc6;--text2:#8a857d;--text3:#555048;--border:rgba(201,169,110,.08);}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+.hdr{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.hdr h1{font-family:'Noto Serif JP',serif;font-size:15px;font-weight:700;color:var(--gold2)}
+.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5;transition:opacity .2s}
+.hdr a:hover{opacity:1}
+.tabs{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:4px;padding:10px 20px;border-bottom:1px solid rgba(255,255,255,.03)}
+.tab{padding:5px 10px;border-radius:6px;border:1px solid transparent;cursor:pointer;font-size:10px;font-weight:600;font-family:inherit;background:rgba(255,255,255,.03);color:var(--text3);white-space:nowrap;transition:all .2s;text-align:center}
+.tab:hover{color:var(--text2);background:rgba(255,255,255,.06)}
+.tab.on{border-color:rgba(201,169,110,.2);color:var(--gold);background:var(--gold-dim)}
+.search-bar{padding:10px 20px;display:flex;gap:10px;align-items:center}
+.si{padding:6px 14px;border-radius:100px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);color:var(--text);font-size:11px;font-family:inherit;width:240px;outline:none;transition:border-color .2s}
+.si:focus{border-color:rgba(201,169,110,.3)}.si::placeholder{color:var(--text3)}
+.cnt{font-size:9px;color:var(--text3);font-family:'Cormorant Garamond',serif;letter-spacing:.1em}
+.tbl-wrap{padding:4px 20px 40px;overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:11px}
+th{background:rgba(201,169,110,.08);color:var(--gold);font-family:'Noto Serif JP',serif;font-weight:700;font-size:10px;letter-spacing:.08em;text-align:left;padding:8px 12px;border-bottom:1px solid rgba(201,169,110,.15);white-space:nowrap}
+td{padding:8px 12px;border-bottom:1px solid rgba(255,255,255,.025);color:#bbb;vertical-align:top;line-height:1.7}
+td.no-cell{color:var(--text3);font-family:'Cormorant Garamond',serif;font-size:12px;text-align:center;font-weight:600;width:36px}
+td.name-cell{color:var(--text);font-weight:600;width:180px}
+td.year-cell{color:var(--gold);opacity:.7;font-family:'Cormorant Garamond',serif;font-size:12px;white-space:nowrap;width:100px}
+td.desc-cell{color:#a8a39a;font-size:11px}
+tr:hover td{background:rgba(201,169,110,.03)}
+tr.section-header td{background:rgba(201,169,110,.06);color:var(--gold2);font-family:'Noto Serif JP',serif;font-weight:700;font-size:12px;padding:12px;letter-spacing:.06em;border-bottom:1px solid rgba(201,169,110,.1)}
+
+.hidden{display:none}
+@media(max-width:600px){
+.hdr{padding:10px 12px}.hdr h1{font-size:12px}
+th,td{padding:6px 8px;font-size:9px}
+th{font-size:10px}
+td:first-child{font-size:8.5px}
+.note p{font-size:8px}
+.side-note{font-size:7.5px}
+}
+</style>
+</head><body>
+<div class="hdr"><h1>国家指導者一覧</h1><a href="index.html">← Ad Indicem</a></div>
+<div class="tabs"><button class="tab on" onclick="switchTab(0)" id="tab0">古代オリエント</button>
+<button class="tab" onclick="switchTab(1)" id="tab1">ペルシア・イラン</button>
+<button class="tab" onclick="switchTab(2)" id="tab2">ギリシア・ローマ・ビザンツ</button>
+<button class="tab" onclick="switchTab(3)" id="tab3">ローマ教皇</button>
+<button class="tab" onclick="switchTab(4)" id="tab4">イスラーム世界</button>
+<button class="tab" onclick="switchTab(5)" id="tab5">モンゴル・ティムール</button>
+<button class="tab" onclick="switchTab(6)" id="tab6">オスマン・トルコ</button>
+<button class="tab" onclick="switchTab(7)" id="tab7">中国</button>
+<button class="tab" onclick="switchTab(8)" id="tab8">インド</button>
+<button class="tab" onclick="switchTab(9)" id="tab9">朝鮮</button>
+<button class="tab" onclick="switchTab(10)" id="tab10">東南アジア</button>
+<button class="tab" onclick="switchTab(11)" id="tab11">フランス</button>
+<button class="tab" onclick="switchTab(12)" id="tab12">イギリス</button>
+<button class="tab" onclick="switchTab(13)" id="tab13">ドイツ</button>
+<button class="tab" onclick="switchTab(14)" id="tab14">オーストリア</button>
+<button class="tab" onclick="switchTab(15)" id="tab15">ロシア</button>
+<button class="tab" onclick="switchTab(16)" id="tab16">アメリカ</button>
+<button class="tab" onclick="switchTab(17)" id="tab17">スペイン・ポルトガル等</button>
+<button class="tab" onclick="switchTab(18)" id="tab18">イタリア</button>
+<button class="tab" onclick="switchTab(19)" id="tab19">ラテンアメリカ</button>
+<button class="tab" onclick="switchTab(20)" id="tab20">アフリカ・エジプト</button>
+<button class="tab" onclick="switchTab(21)" id="tab21">東欧</button>
+<button class="tab" onclick="switchTab(22)" id="tab22">北欧・オランダ</button>
+</div>
+<div class="search-bar"><input class="si" id="search" placeholder="人物名・業績で検索..." oninput="filterRows()"><span class="cnt" id="cnt"></span></div>
+<div class="tbl-wrap" id="content0"><table>
+<thead><tr><th>代数/役職</th><th>人物名</th><th>時代/在位</th><th>覚えるべき事績</th></tr></thead>
+<tbody>
+<tr class="section-header"><td colspan="4">古代エジプト</td></tr>
+<tr><td class="no-cell">1</td><td class="name-cell">サルゴン（アッカド王）</td><td class="year-cell">在位前2334頃-前2279頃</td><td class="desc-cell">アッカド帝国の建設者。メソポタミアを初めて統一。世界史上最初の「帝国」。</td></tr>
+<tr><td class="no-cell">2</td><td class="name-cell">メネス（ナルメル）</td><td class="year-cell">前3000頃</td><td class="desc-cell">上下エジプト統一。メンフィスに都</td></tr>
+<tr><td class="no-cell">3</td><td class="name-cell">クフ王</td><td class="year-cell">前2500頃</td><td class="desc-cell">第4王朝ファラオ。ギザの大ピラミッド（高さ約146m、底辺230m）を建設。約230万個の石灰岩ブロックを使用。古王国時代の絶対的王権の象徴。</td></tr>
+<tr><td class="no-cell">4</td><td class="name-cell">トトメス3世</td><td class="year-cell">前15C</td><td class="desc-cell">エジプト新王国の最大版図。シリア・パレスチナまで遠征</td></tr>
+<tr><td class="no-cell">5</td><td class="name-cell">アメンホテプ4世</td><td class="year-cell">前14C</td><td class="desc-cell">アトン一神教。テル＝エル＝アマルナに遷都（アマルナ革命）。イクナートンと改名</td></tr>
+<tr><td class="no-cell">6</td><td class="name-cell">ツタンカーメン</td><td class="year-cell">前14C</td><td class="desc-cell">アメンホテプ4世の後継。アモン信仰に復帰。黄金のマスク</td></tr>
+<tr><td class="no-cell">7</td><td class="name-cell">ラメセス2世</td><td class="year-cell">前13C</td><td class="desc-cell">カデシュの戦いでヒッタイトと交戦。アブ＝シンベル神殿</td></tr>
+<tr class="section-header"><td colspan="4">古代メソポタミア</td></tr>
+<tr><td class="no-cell">8</td><td class="name-cell">ハンムラビ王</td><td class="year-cell">前18C</td><td class="desc-cell">メソポタミア統一。ハンムラビ法典（「目には目を」の復讐法）</td></tr>
+<tr><td class="no-cell">9</td><td class="name-cell">アッシュールバニパル</td><td class="year-cell">前7C</td><td class="desc-cell">アッシリア最後の大王。ニネヴェに大図書館を建設</td></tr>
+<tr><td class="no-cell">10</td><td class="name-cell">ネブカドネザル2世</td><td class="year-cell">前6C</td><td class="desc-cell">バビロン捕囚（ユダ王国を滅ぼしユダヤ人を強制移住）</td></tr>
+<tr class="section-header"><td colspan="4">古代ヘブライ王国</td></tr>
+<tr><td class="no-cell">11</td><td class="name-cell">ダヴィデ</td><td class="year-cell">前1000頃</td><td class="desc-cell">ヘブライ王国第2代王。エルサレムを都とする。ペリシテ人を撃退。旧約聖書の理想的な王。</td></tr>
+<tr><td class="no-cell">12</td><td class="name-cell">ソロモン</td><td class="year-cell">前10C</td><td class="desc-cell">ダヴィデの子。エルサレム神殿を建設。フェニキアとの交易で繁栄。<br>重税と強制労働→死後に王国が南北に分裂（北のイスラエル王国・南のユダ王国）。</td></tr>
+</tbody></table></div>
+<div class="tbl-wrap hidden" id="content1"><table>
+<thead><tr><th>代数/役職</th><th>人物名</th><th>時代/在位</th><th>覚えるべき事績</th></tr></thead>
+<tbody>
+<tr class="section-header"><td colspan="4">アケメネス朝ペルシア</td></tr>
+<tr><td class="no-cell">1</td><td class="name-cell">キュロス2世</td><td class="year-cell">前6C</td><td class="desc-cell">アケメネス朝建国。リディア・新バビロニアを征服。バビロン捕囚を解放</td></tr>
+<tr><td class="no-cell">2</td><td class="name-cell">カンビュセス2世</td><td class="year-cell">前6C</td><td class="desc-cell">エジプトを征服。オリエント統一を完成</td></tr>
+<tr><td class="no-cell">3</td><td class="name-cell">ダレイオス1世</td><td class="year-cell">前5C</td><td class="desc-cell">ペルセポリス建設。サトラップ・王の道・駅伝制。ペルシア戦争開始</td></tr>
+<tr><td class="no-cell">4</td><td class="name-cell">クセルクセス1世</td><td class="year-cell">前5C</td><td class="desc-cell">サラミスの海戦でアテネに敗北</td></tr>
+<tr><td class="no-cell">5</td><td class="name-cell">ダレイオス3世</td><td class="year-cell">在位前336-前330</td><td class="desc-cell">アケメネス朝最後の王。イッソス・ガウガメラでアレクサンドロスに敗北。帝国滅亡。</td></tr>
+<tr class="section-header"><td colspan="4">ササン朝ペルシア</td></tr>
+<tr><td class="no-cell">6</td><td class="name-cell">シャープール1世</td><td class="year-cell">3C</td><td class="desc-cell">エデッサの戦い（260）でローマ皇帝ヴァレリアヌスを捕虜に</td></tr>
+<tr><td class="no-cell">7</td><td class="name-cell">アルダシール1世</td><td class="year-cell">224-241</td><td class="desc-cell">ササン朝建国。ゾロアスター教を国教化。クテシフォンに都</td></tr>
+<tr><td class="no-cell">8</td><td class="name-cell">ホスロー1世</td><td class="year-cell">531-579</td><td class="desc-cell">「不滅の魂」。突厥と同盟しエフタルを滅亡。ユスティニアヌス帝と抗争。ジュンディシャープール学院</td></tr>
+<tr class="section-header"><td colspan="4">サファヴィー朝</td></tr>
+<tr><td class="no-cell">9</td><td class="name-cell">イスマーイール1世</td><td class="year-cell">1501-24</td><td class="desc-cell">サファヴィー朝建国。シーア派十二イマーム派を国教化。チャルディラーンの戦いでセリム1世に敗北</td></tr>
+<tr><td class="no-cell">10</td><td class="name-cell">アッバース1世</td><td class="year-cell">1587-1629</td><td class="desc-cell">サファヴィー朝最盛期。エスファハーンに遷都し「世界の半分」と称される壮麗な都を建設。<br>イマーム＝モスク・王の広場（メイダーン）を造営。<br>オスマン帝国からアゼルバイジャンを奪回。英との通商関係を構築。ポルトガルからホルムズ島を奪取。</td></tr>
+<tr class="section-header"><td colspan="4">アフシャール朝</td></tr>
+<tr><td class="no-cell">11</td><td class="name-cell">ナーディル＝シャー</td><td class="year-cell">1736-47</td><td class="desc-cell">サファヴィー朝滅亡後に建国。インド遠征（デリー攻略）</td></tr>
+<tr class="section-header"><td colspan="4">カージャール朝〜近現代イラン</td></tr>
+<tr><td class="no-cell">12</td><td class="name-cell">レザー＝シャー</td><td class="year-cell">1925-41</td><td class="desc-cell">パフレヴィー朝建国。イランの近代化</td></tr>
+<tr><td class="no-cell">13</td><td class="name-cell">パフレヴィー2世</td><td class="year-cell">1941-79</td><td class="desc-cell">白色革命。イラン＝イスラーム革命で亡命</td></tr>
+<tr><td class="no-cell">14</td><td class="name-cell">モサデグ</td><td class="year-cell">1951-53</td><td class="desc-cell">石油国有化宣言。CIAの介入で失脚</td></tr>
+<tr><td class="no-cell">15</td><td class="name-cell">ホメイニ</td><td class="year-cell">1979-89</td><td class="desc-cell">イラン＝イスラーム革命の指導者。イスラーム共和国樹立</td></tr>
+</tbody></table></div>
+<div class="tbl-wrap hidden" id="content2"><table>
+<thead><tr><th>代数/役職</th><th>人物名</th><th>時代/在位</th><th>覚えるべき事績</th></tr></thead>
+<tbody>
+<tr class="section-header"><td colspan="4">古代アテネ</td></tr>
+<tr><td class="no-cell">1</td><td class="name-cell">ドラコン</td><td class="year-cell">前621</td><td class="desc-cell">アテネ最初の成文法を制定（貴族の恣意的裁判を抑制）</td></tr>
+<tr><td class="no-cell">2</td><td class="name-cell">ソロン</td><td class="year-cell">前594</td><td class="desc-cell">財産政治（財産額に応じた参政権）。負債の帳消し（重荷おろし）</td></tr>
+<tr><td class="no-cell">3</td><td class="name-cell">クレイステネス</td><td class="year-cell">前508</td><td class="desc-cell">陶片追放（オストラキスモス）を制定。10部族制で血縁的部族制を打破→民主政の基礎</td></tr>
+<tr><td class="no-cell">4</td><td class="name-cell">ペイシストラトス</td><td class="year-cell">前6C</td><td class="desc-cell">アテネの僭主（前6世紀）。<br>非合法に権力を掌握（僭主政治）したが、中小農民を保護し公共事業を推進。<br>パンアテナイア祭の整備・ホメロスの叙事詩の編纂。<br>クレイステネスの民主政改革の前提を形成。</td></tr>
+<tr><td class="no-cell">5</td><td class="name-cell">ペリクレス</td><td class="year-cell">前5C</td><td class="desc-cell">アテネ民主政の完成。民会による直接民主政。デロス同盟の盟主。パルテノン神殿再建</td></tr>
+<tr class="section-header"><td colspan="4">マケドニア</td></tr>
+<tr><td class="no-cell">6</td><td class="name-cell">アレクサンドロス大王</td><td class="year-cell">前336-323</td><td class="desc-cell">東方遠征（イッソスの戦い→アルベラの戦い）。アケメネス朝を滅ぼす。ヘレニズム世界を創出</td></tr>
+<tr><td class="no-cell">7</td><td class="name-cell">フィリッポス2世</td><td class="year-cell">前4C</td><td class="desc-cell">カイロネイアの戦い（前338）でギリシア連合軍を破る。コリントス同盟盟主</td></tr>
+<tr class="section-header"><td colspan="4">ヘレニズム諸王国</td></tr>
+<tr><td class="no-cell">8</td><td class="name-cell">プトレマイオス1世</td><td class="year-cell">前305-前283</td><td class="desc-cell">アレクサンドロスの部将。プトレマイオス朝エジプトを建国。アレクサンドリアに都。ムセイオン（王立研究所）・大図書館を設立→ヘレニズム文化の中心地。</td></tr>
+<tr class="section-header"><td colspan="4">ローマ共和政</td></tr>
+<tr><td class="no-cell">9</td><td class="name-cell">アウグストゥス</td><td class="year-cell">前27-後14</td><td class="desc-cell">第2回三頭政治→アクティウムの海戦。プリンケプス（第一の市民）。元首政（プリンキパトゥス）開始。「パクス＝ロマーナ」</td></tr>
+<tr><td class="no-cell">10</td><td class="name-cell">カエサル</td><td class="year-cell">前1C</td><td class="desc-cell">ガリア遠征。第1回三頭政治（ポンペイウス・クラッスス）。「賽は投げられた」。暗殺される（前44）</td></tr>
+<tr><td class="no-cell"></td><td class="name-cell">グラックス兄弟</td><td class="year-cell">前2C後半</td><td class="desc-cell">兄ティベリウス（護民官前133）・弟ガイウス（護民官前123）。大土地所有制限を試み元老院派に殺害。内乱の1世紀の起点。</td></tr>
+<tr><td class="no-cell"></td><td class="name-cell">マリウス</td><td class="year-cell">前157-前86</td><td class="desc-cell">執政官7回。志願兵制（マリウスの軍制改革）→軍の私兵化→内乱の1世紀。</td></tr>
+<tr><td class="no-cell"></td><td class="name-cell">スッラ</td><td class="year-cell">前138-前78</td><td class="desc-cell">独裁官。マリウスと対立。元老院至上主義。プロスクリプティオ（公敵追放令）。</td></tr>
+<tr><td class="no-cell"></td><td class="name-cell">ポンペイウス</td><td class="year-cell">前106-前48</td><td class="desc-cell">第1回三頭政治（カエサル・クラッスス）。カエサルと対立→ファルサルスで敗北。</td></tr>
+<tr><td class="no-cell"></td><td class="name-cell">アントニウス</td><td class="year-cell">前83-前30</td><td class="desc-cell">第2回三頭政治。クレオパトラと結ぶ→アクティウム敗北→自殺。</td></tr>
+<tr class="section-header"><td colspan="4">ローマ帝政（ユリウス＝クラウディウス朝〜）</td></tr>
+<tr><td class="no-cell">11</td><td class="name-cell">ネロ</td><td class="year-cell">54-68</td><td class="desc-cell">キリスト教迫害。暴君。ローマ大火</td></tr>
+<tr><td class="no-cell">12</td><td class="name-cell">ネルウァ</td><td class="year-cell">96-98</td><td class="desc-cell">五賢帝の初代（在位96-98年）。ドミティアヌス暗殺後に元老院により擁立。養子縁組による皇帝位の継承という「五賢帝」の慣行を始めた→トラヤヌスを養子に指名。</td></tr>
+<tr><td class="no-cell">13</td><td class="name-cell">トラヤヌス</td><td class="year-cell">98-117</td><td class="desc-cell">ローマ帝国最大版図（ダキア・メソポタミア）</td></tr>
+<tr><td class="no-cell">14</td><td class="name-cell">ハドリアヌス</td><td class="year-cell">117-138</td><td class="desc-cell">ブリタニアにハドリアヌスの長城。第2ユダヤ戦争でユダヤ人をパレスチナから追放（ディアスポラ）</td></tr>
+<tr><td class="no-cell">15</td><td class="name-cell">アントニヌス＝ピウス</td><td class="year-cell">138-161</td><td class="desc-cell">五賢帝。「大秦王安敦」の遣使（後漢への使者とされるが実態不明）</td></tr>
+<tr><td class="no-cell">16</td><td class="name-cell">マルクス＝アウレリウス</td><td class="year-cell">161-180</td><td class="desc-cell">哲人皇帝。ストア派。『自省録』。「大秦王安敦」。五賢帝最後→以後衰退</td></tr>
+<tr><td class="no-cell">17</td><td class="name-cell">セプティミウス＝セウェルス</td><td class="year-cell">193-211</td><td class="desc-cell">セウェルス朝創始。軍人皇帝時代への道を開く</td></tr>
+<tr><td class="no-cell">18</td><td class="name-cell">カラカラ</td><td class="year-cell">211-217</td><td class="desc-cell">アントニヌス勅令（212）：全属州の自由民にローマ市民権を付与→属州税収の減少</td></tr>
+
+
+
+
+
+<tr class="section-header"><td colspan="4">帝政後期</td></tr>
+<tr><td class="no-cell">24</td><td class="name-cell">ディオクレティアヌス</td><td class="year-cell">284-305</td><td class="desc-cell">専制君主政（ドミナートゥス）開始。四帝分治制（テトラルキア）。キリスト教大迫害</td></tr>
+<tr><td class="no-cell">25</td><td class="name-cell">コンスタンティヌス</td><td class="year-cell">306-337</td><td class="desc-cell">ミラノ勅令（313）でキリスト教公認。<br>ニケーア公会議（325）でアタナシウス派を正統に。<br>コンスタンティノープル遷都。<br>コロヌスの土地緊縛令（332）。<br>ソリドゥス金貨鋳造。</td></tr>
+<tr><td class="no-cell">26</td><td class="name-cell">ユリアヌス</td><td class="year-cell">361-363</td><td class="desc-cell">「背教者」。異教（多神教）の復興を試みるも失敗</td></tr>
+<tr><td class="no-cell">27</td><td class="name-cell">テオドシウス</td><td class="year-cell">379-395</td><td class="desc-cell">最後のローマ統一皇帝。キリスト教をローマ帝国の国教化（392年、異教の祭祀禁止）。死後に帝国が東西に分裂（395年→以後統一されず）</td></tr>
+<tr class="section-header"><td colspan="4">パルティア</td></tr>
+<tr><td class="no-cell"></td><td class="name-cell">ミトリダテス1世</td><td class="year-cell">前171-前138</td><td class="desc-cell">パルティア（アルサケス朝）の最盛期。メソポタミアを征服しセレウコス朝から奪取。東西交易の中継で繁栄。中国史料では「安息」。</td></tr>
+
+<tr><td class="no-cell">29</td><td class="name-cell">ウァレリアヌス</td><td class="year-cell">253-260</td><td class="desc-cell">軍人皇帝時代（3世紀の危機）。ササン朝ペルシアのシャープール1世にエデッサの戦い（260）で敗れ捕虜に。<br>ローマ皇帝が異民族の捕虜となった唯一の事例→3世紀の危機の象徴。</td></tr>
+<tr class="section-header"><td colspan="4">ビザンツ帝国</td></tr>
+<tr><td class="no-cell">30</td><td class="name-cell">ユスティニアヌス</td><td class="year-cell">527-565</td><td class="desc-cell">『ローマ法大全』（トリボニアヌス編纂）。ハギア＝ソフィア聖堂再建。地中海再統一（ヴァンダル・東ゴートを征服）。養蚕技術導入</td></tr>
+<tr><td class="no-cell">31</td><td class="name-cell">ヘラクレイオス</td><td class="year-cell">610-641</td><td class="desc-cell">公用語をラテン語からギリシア語に。軍管区制（テマ制）の端緒。ササン朝と交戦</td></tr>
+<tr><td class="no-cell">32</td><td class="name-cell">レオン3世</td><td class="year-cell">717-741</td><td class="desc-cell">聖像禁止令（イコノクラスム,726）→ローマ教会と対立→東西教会分裂の遠因</td></tr>
+<tr><td class="no-cell">33</td><td class="name-cell">バシレイオス2世</td><td class="year-cell">976-1025</td><td class="desc-cell">ビザンツ帝国最盛期。ブルガリア征服</td></tr>
+<tr><td class="no-cell">34</td><td class="name-cell">ロマヌス4世</td><td class="year-cell">1068-71</td><td class="desc-cell">マンジケルトの戦い（1071）でセルジューク朝に大敗・捕虜→小アジアのトルコ化</td></tr>
+<tr><td class="no-cell">35</td><td class="name-cell">アレクシオス1世</td><td class="year-cell">1081-1118</td><td class="desc-cell">セルジューク朝の圧迫に対しローマ教皇に救援要請→第1回十字軍の契機</td></tr>
+<tr><td class="no-cell">36</td><td class="name-cell">コンスタンティノス11世</td><td class="year-cell">1405-1453</td><td class="desc-cell">ビザンツ最後の皇帝。1453年コンスタンティノープル陥落で戦死。</td></tr>
+</tbody></table></div>
+<div class="tbl-wrap hidden" id="content3"><table>
+<thead><tr><th>代数/役職</th><th>人物名</th><th>時代/在位</th><th>覚えるべき事績</th><th></th></tr></thead>
+<tbody>
+<tr class="section-header"><td colspan="5">初期〜中世前半</td></tr>
+<tr><td class="no-cell">1</td><td class="name-cell">ペテロ</td><td class="year-cell">1C</td><td class="desc-cell">イエスの筆頭弟子。初代ローマ教皇（伝承）。ローマで殉教</td><td class="desc-cell"></td></tr>
+<tr><td class="no-cell">2</td><td class="name-cell">レオ1世</td><td class="year-cell">440-461</td><td class="desc-cell">「大教皇」。フン族アッティラのイタリア侵攻を説得により阻止。教皇首位権を主張</td><td class="desc-cell"></td></tr>
+<tr><td class="no-cell">3</td><td class="name-cell">レオ3世</td><td class="year-cell">795-816</td><td class="desc-cell">800年にカール大帝にローマ皇帝の帝冠を授ける→西ローマ帝国の復活</td><td class="desc-cell"></td></tr>
+<tr><td class="no-cell">4</td><td class="name-cell">ヨハネス12世</td><td class="year-cell">955-964</td><td class="desc-cell">オットー1世に帝冠を授与（962年→神聖ローマ帝国の成立）</td><td class="desc-cell"></td></tr>
+<tr class="section-header"><td colspan="5">叙任権闘争〜教皇権絶頂期</td></tr>
+<tr><td class="no-cell">5</td><td class="name-cell">グレゴリウス7世</td><td class="year-cell">1073-85</td><td class="desc-cell">聖職叙任権闘争。カノッサの屈辱（1077）でハインリヒ4世を破門・屈服</td><td class="desc-cell"></td></tr>
+<tr><td class="no-cell">6</td><td class="name-cell">ウルバヌス2世</td><td class="year-cell">1088-99</td><td class="desc-cell">クレルモン公会議（1095）で十字軍を提唱→第1回十字軍</td><td class="desc-cell"></td></tr>
+<tr><td class="no-cell">7</td><td class="name-cell">カリクストゥス2世</td><td class="year-cell">1119-24</td><td class="desc-cell">ヴォルムス協約（1122）で叙任権闘争を終結</td><td class="desc-cell"></td></tr>
+<tr><td class="no-cell">8</td><td class="name-cell">インノケンティウス3世</td><td class="year-cell">1198-1216</td><td class="desc-cell">教皇権の絶頂。「教皇は太陽、皇帝は月」。第4回十字軍。ジョン王を破門</td><td class="desc-cell"></td></tr>
+<tr class="section-header"><td colspan="5">教皇権衰退期</td></tr>
+<tr><td class="no-cell">9</td><td class="name-cell">ボニファティウス8世</td><td class="year-cell">1294-1303</td><td class="desc-cell">フィリップ4世と対立→アナーニ事件（1303）で憤死</td><td class="desc-cell"></td></tr>
+<tr><td class="no-cell">10</td><td class="name-cell">クレメンス5世</td><td class="year-cell">1305-14</td><td class="desc-cell">教皇のバビロン捕囚（1309-77）。アヴィニョンに教皇庁を移す</td><td class="desc-cell"></td></tr>
+<tr class="section-header"><td colspan="5">ルネサンス〜宗教改革期</td></tr>
+<tr><td class="no-cell">11</td><td class="name-cell">アレクサンデル6世</td><td class="year-cell">1492-1503</td><td class="desc-cell">ボルジア家。教皇子午線設定→トルデシリャス条約。腐敗→宗教改革の背景</td><td class="desc-cell"></td></tr>
+<tr><td class="no-cell">12</td><td class="name-cell">ユリウス2世</td><td class="year-cell">1503-13</td><td class="desc-cell">「戦闘的教皇」。サン＝ピエトロ大聖堂改築開始。ミケランジェロにシスティナ天井画、ラファエロに「アテナイの学堂」を依頼</td><td class="desc-cell"></td></tr>
+<tr><td class="no-cell">13</td><td class="name-cell">レオ10世</td><td class="year-cell">1513-21</td><td class="desc-cell">メディチ家。贖宥状販売→ルター「95か条の論題」（1517）→宗教改革の直接の契機</td><td class="desc-cell"></td></tr>
+<tr class="section-header"><td colspan="5">近現代</td></tr>
+<tr><td class="no-cell">14</td><td class="name-cell">ピウス7世</td><td class="year-cell">1800-23</td><td class="desc-cell">ナポレオンとコンコルダート（1801）。ナポレオン戴冠式に出席</td><td class="desc-cell"></td></tr>
+<tr><td class="no-cell">15</td><td class="name-cell">ピウス11世</td><td class="year-cell">1922-39</td><td class="desc-cell">ムッソリーニとラテラノ条約（1929）。バチカン市国の独立を承認</td><td class="desc-cell"></td></tr>
+<tr><td class="no-cell">16</td><td class="name-cell">ヨハネ＝パウロ2世</td><td class="year-cell">1978-2005</td><td class="desc-cell">ポーランド出身。非イタリア人として455年ぶり。「連帯」運動支持。他宗教との対話。ホロコーストについてユダヤ人に謝罪</td><td class="desc-cell"></td></tr>
+</tbody></table></div>
+<div class="tbl-wrap hidden" id="content4"><table>
+<thead><tr><th>代数/役職</th><th>人物名</th><th>時代/在位</th><th>覚えるべき事績</th></tr></thead>
+<tbody>
+<tr class="section-header"><td colspan="4">正統カリフ時代</td></tr>
+<tr><td class="no-cell">1</td><td class="name-cell">ムハンマド</td><td class="year-cell">570-632</td><td class="desc-cell">イスラーム教の開祖。ヒジュラ（聖遷,622）。メディナでウンマ形成。メッカ征服</td></tr>
+<tr><td class="no-cell">2</td><td class="name-cell">アブー＝バクル</td><td class="year-cell">632-634</td><td class="desc-cell">ムハンマドの後継者。アラビア半島を統一</td></tr>
+<tr><td class="no-cell">3</td><td class="name-cell">ウマル</td><td class="year-cell">634-644</td><td class="desc-cell">シリア・エジプト・ササン朝を征服。ニハーヴァンドの戦い</td></tr>
+<tr><td class="no-cell">4</td><td class="name-cell">ウスマーン</td><td class="year-cell">644-656</td><td class="desc-cell">コーラン（コーラン）の編纂・統一</td></tr>
+<tr><td class="no-cell">5</td><td class="name-cell">アリー</td><td class="year-cell">656-661</td><td class="desc-cell">ムハンマドの従弟・娘婿。シーア派の始祖。暗殺</td></tr>
+<tr class="section-header"><td colspan="4">ウマイヤ朝</td></tr>
+<tr><td class="no-cell">6</td><td class="name-cell">ムアーウィヤ</td><td class="year-cell">661-680</td><td class="desc-cell">ウマイヤ朝建国。ダマスクスに遷都。カリフ位を世襲化</td></tr>
+<tr><td class="no-cell">7</td><td class="name-cell">ワリード1世</td><td class="year-cell">705-715</td><td class="desc-cell">ウマイヤ朝最大版図。西ゴート王国を滅ぼしイベリア半島征服（711）。中央アジアにも進出。ダマスクスにウマイヤ＝モスクを建設。</td></tr>
+<tr class="section-header"><td colspan="4">後ウマイヤ朝</td></tr>
+<tr><td class="no-cell">8</td><td class="name-cell">アブド＝アッラフマーン1世</td><td class="year-cell">756-788</td><td class="desc-cell">ウマイヤ家の生き残り。アッバース革命の迫害を逃れイベリア半島で後ウマイヤ朝を建国。コルドバに都。</td></tr>
+<tr><td class="no-cell">9</td><td class="name-cell">アブド＝アッラフマーン3世</td><td class="year-cell">912-961</td><td class="desc-cell">後ウマイヤ朝最盛期。カリフを称する（929）。コルドバは西欧最大の都市に。学問・文化の中心地。</td></tr>
+<tr class="section-header"><td colspan="4">アッバース朝</td></tr>
+<tr><td class="no-cell">10</td><td class="name-cell">ハールーン＝アッラシード</td><td class="year-cell">786-809</td><td class="desc-cell">アッバース朝最盛期。カール大帝と使節交換。『千夜一夜物語』の世界</td></tr>
+<tr><td class="no-cell">11</td><td class="name-cell">マンスール</td><td class="year-cell">在位754-775</td><td class="desc-cell">アッバース朝第2代カリフ。762年バグダード建設。実質的建国者。</td></tr>
+<tr class="section-header"><td colspan="4">アイユーブ朝</td></tr>
+<tr><td class="no-cell">12</td><td class="name-cell">サラディン</td><td class="year-cell">1169-93</td><td class="desc-cell">アイユーブ朝建国。エルサレムを十字軍から奪還。リチャード1世と抗争</td></tr>
+<tr class="section-header"><td colspan="4">マムルーク朝</td></tr>
+<tr><td class="no-cell">13</td><td class="name-cell">バイバルス</td><td class="year-cell">1260-77</td><td class="desc-cell">アイン＝ジャールートの戦いでモンゴル軍を撃退。十字軍に対抗</td></tr>
+<tr class="section-header"><td colspan="4">イル＝ハン国</td></tr>
+<tr><td class="no-cell">14</td><td class="name-cell">ガザン＝ハン</td><td class="year-cell">1295-1304</td><td class="desc-cell">イスラーム教に改宗。イラン＝イスラーム文化の発展</td></tr>
+<tr><td class="no-cell">15</td><td class="name-cell">トゥグリル＝ベク</td><td class="year-cell">在位1038-1063</td><td class="desc-cell">セルジューク朝建国者。1055年バグダード入城→スルタンの称号。</td></tr>
+<tr><td class="no-cell">16</td><td class="name-cell">マリク＝シャー</td><td class="year-cell">在位1072-1092</td><td class="desc-cell">セルジューク朝最盛期。宰相ニザーム＝アルムルクがニザーミーヤ学院設立。</td></tr>
+<tr class="section-header"><td colspan="4">ガズナ朝</td></tr>
+<tr><td class="no-cell">17</td><td class="name-cell">マフムード</td><td class="year-cell">998-1030</td><td class="desc-cell">トルコ系。北インドに17回侵入を繰り返す</td></tr>
+<tr class="section-header"><td colspan="4">近現代 中東</td></tr>
+<tr><td class="no-cell">18</td><td class="name-cell">フサイン</td><td class="year-cell">20C初</td><td class="desc-cell">フサイン＝マクマホン協定（1915）の当事者。アラブの反乱を指導</td></tr>
+<tr><td class="no-cell">19</td><td class="name-cell">イブン＝サウード</td><td class="year-cell">1875-1953</td><td class="desc-cell">サウジアラビア王国建国（1932）。ワッハーブ派</td></tr>
+<tr><td class="no-cell">20</td><td class="name-cell">ベギン</td><td class="year-cell">1913-92</td><td class="desc-cell">キャンプ＝デービッド合意。エジプト＝イスラエル平和条約（1979）</td></tr>
+<tr><td class="no-cell">21</td><td class="name-cell">ラビン</td><td class="year-cell">1922-95</td><td class="desc-cell">オスロ合意をアラファトと締結。暗殺</td></tr>
+<tr><td class="no-cell">22</td><td class="name-cell">アラファト</td><td class="year-cell">1929-2004</td><td class="desc-cell">パレスチナ解放機構議長。パレスチナ暫定自治協定（オスロ合意,1993）</td></tr>
+<tr><td class="no-cell">23</td><td class="name-cell">サッダーム＝フセイン</td><td class="year-cell">1979-2003</td><td class="desc-cell">イラン＝イラク戦争。湾岸戦争（クウェート侵攻）。イラク戦争で打倒</td></tr>
+</tbody></table></div>
+<div class="tbl-wrap hidden" id="content5"><table>
+<thead><tr><th>代数/役職</th><th>人物名</th><th>時代/在位</th><th>覚えるべき事績</th></tr></thead>
+<tbody>
+<tr class="section-header"><td colspan="4">モンゴル帝国</td></tr>
+<tr><td class="no-cell">1</td><td class="name-cell">バトゥ</td><td class="year-cell">13C</td><td class="desc-cell">ワールシュタットの戦い。サライに都を置きキプチャク＝ハン国建国</td></tr>
+<tr><td class="no-cell">2</td><td class="name-cell">フラグ</td><td class="year-cell">13C</td><td class="desc-cell">バグダードを占領しアッバース朝を滅ぼす（1258）。イル＝ハン国建国。タブリーズに都</td></tr>
+<tr><td class="no-cell">3</td><td class="name-cell">チンギス＝ハン</td><td class="year-cell">1206-27</td><td class="desc-cell">モンゴル帝国建国。千戸制。駅伝制（ジャムチ）。ホラズム遠征。西夏を攻略中に病死</td></tr>
+<tr><td class="no-cell">4</td><td class="name-cell">オゴタイ</td><td class="year-cell">1229-41</td><td class="desc-cell">カラコルムに都を建設。ワールシュタットの戦い（1241）。金を滅ぼす</td></tr>
+<tr><td class="no-cell">5</td><td class="name-cell">グユク</td><td class="year-cell">1246-48</td><td class="desc-cell">プラノ＝カルピニ（ローマ教皇使節）と会見</td></tr>
+<tr><td class="no-cell">6</td><td class="name-cell">モンケ</td><td class="year-cell">1251-59</td><td class="desc-cell">フラグの西征・フビライの南宋攻略を命じる</td></tr>
+<tr><td class="no-cell">7</td><td class="name-cell">フビライ</td><td class="year-cell">1260-94</td><td class="desc-cell">モンゴル帝国第5代ハン→元朝建国(1271)。大都（北京）に遷都。南宋を滅ぼす(1279,厓山の戦い)。日本遠征(1274,1281)失敗。色目人登用。交鈔（紙幣）。駅伝制（ジャムチ）整備。</td></tr>
+<tr class="section-header"><td colspan="4">ティムール朝</td></tr>
+<tr><td class="no-cell">8</td><td class="name-cell">シャー＝ルフ</td><td class="year-cell">15C前半</td><td class="desc-cell">首都をヘラートに移す。イラン＝イスラーム文化の保護</td></tr>
+<tr><td class="no-cell">9</td><td class="name-cell">ウルグ＝ベク</td><td class="year-cell">15C</td><td class="desc-cell">サマルカンドにマドラサ（学院）と天文台を建設。トルコ＝イスラーム文化</td></tr>
+<tr><td class="no-cell">10</td><td class="name-cell">ティムール</td><td class="year-cell">1370-1405</td><td class="desc-cell">西チャガタイ＝ハン国出身。<br>サマルカンドに都。<br>アンカラの戦い（1402）でオスマン帝国を中断。<br>キプチャク＝ハン国・北インド（デリー＝スルタン朝）にも遠征。<br>明への遠征途上に病死。</td></tr>
+</tbody></table></div>
+<div class="tbl-wrap hidden" id="content6"><table>
+<thead><tr><th>代数/役職</th><th>人物名</th><th>時代/在位</th><th>覚えるべき事績</th></tr></thead>
+<tbody>
+<tr class="section-header"><td colspan="4">オスマン帝国</td></tr>
+<tr><td class="no-cell">1</td><td class="name-cell">オスマン1世</td><td class="year-cell">1299-1326頃</td><td class="desc-cell">小アジアのガーズィー（聖戦士）。オスマン帝国建国</td></tr>
+<tr><td class="no-cell">2</td><td class="name-cell">ムラト1世</td><td class="year-cell">1362-89</td><td class="desc-cell">アドリアノープルに遷都。イェニチェリ創設。コソヴォの戦い（1389）でセルビアに勝利。戦死</td></tr>
+<tr><td class="no-cell">3</td><td class="name-cell">バヤジット1世</td><td class="year-cell">1389-1402</td><td class="desc-cell">「雷帝」。ニコポリスの戦い（1396）。アンカラの戦い（1402）でティムールに敗北→捕虜</td></tr>
+<tr><td class="no-cell">4</td><td class="name-cell">メフメト2世</td><td class="year-cell">1444-81</td><td class="desc-cell">「征服王」。コンスタンティノープル征服（1453）→ビザンツ帝国滅亡。トプカプ宮殿建設</td></tr>
+<tr><td class="no-cell">5</td><td class="name-cell">セリム1世</td><td class="year-cell">1512-20</td><td class="desc-cell">「冷酷者」。チャルディラーンの戦いでサファヴィー朝に勝利。マムルーク朝を征服→カリフ権獲得</td></tr>
+<tr><td class="no-cell">6</td><td class="name-cell">スレイマン1世</td><td class="year-cell">1520-66</td><td class="desc-cell">「壮麗者」。最盛期。モハーチの戦い（1526）。第1次ウィーン包囲（1529）。スレイマン＝モスク（建築家シナン）。カピチュレーション</td></tr>
+<tr><td class="no-cell">7</td><td class="name-cell">セリム2世</td><td class="year-cell">1566-74</td><td class="desc-cell">レパントの海戦（1571）で敗北。だがキプロスは保持</td></tr>
+<tr><td class="no-cell">8</td><td class="name-cell">アフメト3世</td><td class="year-cell">1703-30</td><td class="desc-cell">チューリップ時代。西欧文化の導入。最初の印刷所設立</td></tr>
+<tr><td class="no-cell">9</td><td class="name-cell">セリム3世</td><td class="year-cell">1789-1807</td><td class="desc-cell">西欧式軍制改革（ニザーム＝ジェディット）→イェニチェリの反発で廃位・殺害</td></tr>
+<tr><td class="no-cell">10</td><td class="name-cell">マフムト2世</td><td class="year-cell">1808-39</td><td class="desc-cell">1826年イェニチェリ全廃（「幸福な事件」）。近代化改革の基礎</td></tr>
+<tr><td class="no-cell">11</td><td class="name-cell">アブデュルメジド1世</td><td class="year-cell">1839-61</td><td class="desc-cell">ギュルハネ勅令（1839）→タンジマート開始。クリミア戦争</td></tr>
+<tr><td class="no-cell">12</td><td class="name-cell">アブデュルハミト2世</td><td class="year-cell">1876-1909</td><td class="desc-cell">ミドハト憲法（1876）を制定後すぐ停止。専制政治30年。青年トルコ革命（1908）で退位</td></tr>
+<tr><td class="no-cell">13</td><td class="name-cell">ミドハト＝パシャ</td><td class="year-cell">1822-1884</td><td class="desc-cell">大宰相。ミドハト憲法（1876）を起草。アブデュルハミト2世に罷免。</td></tr>
+<tr class="section-header"><td colspan="4">トルコ共和国</td></tr>
+<tr><td class="no-cell">14</td><td class="name-cell">ケマル＝パシャ（アタテュルク）</td><td class="year-cell">1923-38</td><td class="desc-cell">トルコ革命。ローザンヌ条約（1923）。共和国建国。カリフ制廃止。政教分離。ラテン文字採用</td></tr>
+</tbody></table></div>
+<div class="tbl-wrap hidden" id="content7"><table>
+<thead><tr><th>代数/役職</th><th>人物名</th><th>時代/在位</th><th>覚えるべき事績</th></tr></thead>
+<tbody>
+<tr class="section-header"><td colspan="4">秦・前漢</td></tr>
+<tr><td class="no-cell">1</td><td class="name-cell">冒頓単于</td><td class="year-cell">前209-前174</td><td class="desc-cell">匈奴を統一。白登山の戦い（前200）で劉邦を包囲。東は朝鮮・西は月氏を征服</td></tr>
+<tr><td class="no-cell">2</td><td class="name-cell">始皇帝</td><td class="year-cell">前221-前210</td><td class="desc-cell">中国統一。郡県制。度量衡・文字・車軌の統一。焚書坑儒。万里の長城。匈奴討伐（蒙恬）。陵墓に兵馬俑</td></tr>
+<tr><td class="no-cell">3</td><td class="name-cell">項羽</td><td class="year-cell">前232-前202</td><td class="desc-cell">秦末の群雄。垓下の戦い（前202）で劉邦に敗北。自害</td></tr>
+<tr><td class="no-cell">4</td><td class="name-cell">劉邦</td><td class="year-cell">前202-前195</td><td class="desc-cell">前漢建国。長安に都。郡国制（郡県制と封建制の併用）</td></tr>
+<tr><td class="no-cell">5</td><td class="name-cell">文帝</td><td class="year-cell">前180-前157</td><td class="desc-cell">「文景の治」。黄老思想による無為の政治</td></tr>
+<tr><td class="no-cell">6</td><td class="name-cell">景帝</td><td class="year-cell">前157-前141</td><td class="desc-cell">「文景の治」。呉楚七国の乱を鎮圧</td></tr>
+<tr><td class="no-cell">7</td><td class="name-cell">武帝</td><td class="year-cell">前141-前87</td><td class="desc-cell">匈奴遠征（衛青・霍去病）。張騫を大月氏に派遣（シルクロード）。儒学の官学化（五経博士）。塩鉄専売。均輸法・平準法。推恩の令で実質郡県制化</td></tr>
+<tr class="section-header"><td colspan="4">新・後漢</td></tr>
+<tr><td class="no-cell">8</td><td class="name-cell">王莽</td><td class="year-cell">8-23</td><td class="desc-cell">外戚として前漢を簒奪し「新」を建国。復古的改革→混乱→赤眉の乱で滅亡</td></tr>
+<tr><td class="no-cell">9</td><td class="name-cell">光武帝</td><td class="year-cell">25-57</td><td class="desc-cell">後漢建国。洛陽に遷都。奴国に金印「漢委奴国王」</td></tr>
+<tr><td class="no-cell">10</td><td class="name-cell">献帝</td><td class="year-cell">189-220</td><td class="desc-cell">後漢最後の皇帝。曹操に実権を奪われる。220年に曹丕に禅譲→後漢滅亡</td></tr>
+<tr class="section-header"><td colspan="4">三国</td></tr>
+<tr><td class="no-cell">11</td><td class="name-cell">曹操</td><td class="year-cell">155-220</td><td class="desc-cell">後漢末の群雄。屯田制を実施。官渡の戦い(200)で袁紹に勝利。赤壁の戦い(208)で孫権・劉備連合に敗北</td></tr>
+<tr><td class="no-cell">12</td><td class="name-cell">孫権</td><td class="year-cell">182-252</td><td class="desc-cell">呉の建国者（在位222-252年）。建業（南京）に都。長江流域の開発を推進。赤壁の戦いで劉備と連合し曹操を破る。魏・蜀との三国鼎立を維持。</td></tr>
+<tr><td class="no-cell">13</td><td class="name-cell">劉備</td><td class="year-cell">161-223</td><td class="desc-cell">蜀漢建国。諸葛亮を三顧の礼で迎える。関羽・張飛と義兄弟</td></tr>
+<tr class="section-header"><td colspan="4">西晋〜南北朝</td></tr>
+<tr><td class="no-cell">14</td><td class="name-cell">司馬炎</td><td class="year-cell">265-290</td><td class="desc-cell">三国を統一(280)。占田・課田法。八王の乱で衰退</td></tr>
+<tr><td class="no-cell">15</td><td class="name-cell">道武帝（拓跋珪）</td><td class="year-cell">386-409</td><td class="desc-cell">鮮卑族拓跋部。北魏建国。華北統一の基礎を築く</td></tr>
+<tr><td class="no-cell">16</td><td class="name-cell">太武帝</td><td class="year-cell">423-452</td><td class="desc-cell">華北統一を完成。廃仏（三武一宗の法難の最初）。道教を重用</td></tr>
+<tr><td class="no-cell">17</td><td class="name-cell">孝文帝</td><td class="year-cell">471-499</td><td class="desc-cell">漢化政策（洛陽遷都・鮮卑語禁止・漢姓採用・漢服強制）。均田制開始（485）</td></tr>
+<tr><td class="no-cell">18</td><td class="name-cell">劉裕</td><td class="year-cell">420-422</td><td class="desc-cell">東晋を滅ぼし宋（南朝）建国。寒門出身→門閥貴族体制に風穴</td></tr>
+<tr class="section-header"><td colspan="4">隋</td></tr>
+<tr><td class="no-cell">19</td><td class="name-cell">楊堅</td><td class="year-cell">581-604</td><td class="desc-cell">隋建国。南北朝を統一(589)。科挙の原型を開始。均田制・府兵制</td></tr>
+<tr><td class="no-cell">20</td><td class="name-cell">煬帝</td><td class="year-cell">604-618</td><td class="desc-cell">大運河建設（江南と華北を連結）。高句麗遠征3度失敗→反乱→隋滅亡</td></tr>
+<tr class="section-header"><td colspan="4">唐</td></tr>
+<tr><td class="no-cell">21</td><td class="name-cell">李淵</td><td class="year-cell">618-626</td><td class="desc-cell">隋末の混乱で挙兵→唐建国。都は長安</td></tr>
+<tr><td class="no-cell">22</td><td class="name-cell">李世民</td><td class="year-cell">626-649</td><td class="desc-cell">貞観の治。三省六部。律令体制の完成。均田制・租庸調制・府兵制。遣唐使受入</td></tr>
+<tr><td class="no-cell">23</td><td class="name-cell">則天武后</td><td class="year-cell">690-705</td><td class="desc-cell">中国史上唯一の女帝。国号を周に。科挙を拡大</td></tr>
+<tr><td class="no-cell">24</td><td class="name-cell">玄宗</td><td class="year-cell">712-756</td><td class="desc-cell">前半「開元の治」（賢臣の登用）→後半は楊貴妃に溺れ安史の乱（755）→均田制・府兵制の崩壊。両税法へ</td></tr>
+<tr class="section-header"><td colspan="4">五代十国・遼・金</td></tr>
+<tr><td class="no-cell">25</td><td class="name-cell">朱全忠</td><td class="year-cell">907-912</td><td class="desc-cell">唐を滅ぼし後梁建国→五代の開始</td></tr>
+<tr><td class="no-cell">26</td><td class="name-cell">石敬瑭</td><td class="year-cell">936-942</td><td class="desc-cell">契丹の支援で即位。燕雲十六州を割譲→以後の北方問題の根本原因</td></tr>
+<tr><td class="no-cell">27</td><td class="name-cell">耶律阿保機</td><td class="year-cell">907-926</td><td class="desc-cell">遼建国。二重統治体制（北面官・南面官）</td></tr>
+<tr><td class="no-cell">28</td><td class="name-cell">完顔阿骨打</td><td class="year-cell">1115-23</td><td class="desc-cell">女真族。金建国。遼を滅ぼす。靖康の変(1126-27)で北宋を滅亡させる</td></tr>
+<tr class="section-header"><td colspan="4">宋</td></tr>
+<tr><td class="no-cell">29</td><td class="name-cell">趙匡胤</td><td class="year-cell">960-976</td><td class="desc-cell">後周から禅譲→宋建国。殿試開始。文治主義（武将の兵権剥奪）</td></tr>
+<tr><td class="no-cell">30</td><td class="name-cell">神宗</td><td class="year-cell">1067-85</td><td class="desc-cell">王安石を宰相に登用し新法を実施</td></tr>
+<tr><td class="no-cell">31</td><td class="name-cell">徽宗</td><td class="year-cell">1100-26</td><td class="desc-cell">靖康の変（1126-27）で金に連行。北宋滅亡</td></tr>
+<tr><td class="no-cell">32</td><td class="name-cell">高宗</td><td class="year-cell">1127-62</td><td class="desc-cell">南宋の初代皇帝（在位1127-1162年）。<br>靖康の変で北宋が滅亡した後、臨安（杭州）に逃れ南宋を建国。<br>秦檜を用いて金と和議→淮水を国境とし金に臣下の礼。<br>岳飛を処刑。</td></tr>
+<tr class="section-header"><td colspan="4">元</td></tr>
+<tr><td class="no-cell">33</td><td class="name-cell">フビライ</td><td class="year-cell">1260-94</td><td class="desc-cell">モンゴル帝国第5代ハン→元朝建国(1271)。大都（北京）に遷都。南宋を滅ぼす(1279,厓山の戦い)。日本遠征(1274,1281)失敗。色目人登用。交鈔（紙幣）。駅伝制（ジャムチ）整備。</td></tr>
+<tr class="section-header"><td colspan="4">明</td></tr>
+<tr><td class="no-cell">34</td><td class="name-cell">朱元璋</td><td class="year-cell">1368-98</td><td class="desc-cell">紅巾の乱から身を起こし明建国。南京に都。里甲制・賦役黄冊・魚鱗図冊。海禁政策。中書省廃止→皇帝独裁</td></tr>
+<tr><td class="no-cell">35</td><td class="name-cell">建文帝</td><td class="year-cell">1398-1402</td><td class="desc-cell">靖難の役（1399-1402）で永楽帝に敗北</td></tr>
+<tr><td class="no-cell">36</td><td class="name-cell">永楽帝</td><td class="year-cell">1402-24</td><td class="desc-cell">靖難の役で即位。北京遷都。鄭和の南海遠征（7回）。『永楽大典』編纂。ベトナム（陳朝）征服</td></tr>
+<tr><td class="no-cell">37</td><td class="name-cell">正統帝</td><td class="year-cell">1435-49</td><td class="desc-cell">土木の変（1449）でオイラト族エセンに捕虜</td></tr>
+<tr><td class="no-cell">38</td><td class="name-cell">万暦帝</td><td class="year-cell">1572-1620</td><td class="desc-cell">明末。日本の朝鮮出兵（壬辰・丁酉の倭乱）に対応。張居正の改革</td></tr>
+<tr><td class="no-cell">39</td><td class="name-cell">李自成</td><td class="year-cell">1644</td><td class="desc-cell">農民反乱の指導者。北京を攻略し明を滅ぼす→清軍に敗北</td></tr>
+<tr class="section-header"><td colspan="4">清</td></tr>
+<tr><td class="no-cell">40</td><td class="name-cell">ヌルハチ</td><td class="year-cell">1559-1626</td><td class="desc-cell">女真族を統一。後金建国(1616)。八旗制。サルフの戦い(1619)で明軍を撃破</td></tr>
+<tr><td class="no-cell">41</td><td class="name-cell">ホンタイジ</td><td class="year-cell">1626-43</td><td class="desc-cell">後金→清に改称。内モンゴル征服</td></tr>
+<tr><td class="no-cell">42</td><td class="name-cell">順治帝</td><td class="year-cell">1643-61</td><td class="desc-cell">清の中国支配開始。北京遷都。李自成・南明を平定</td></tr>
+<tr><td class="no-cell"></td><td class="name-cell">康熙帝</td><td class="year-cell">1661-1722</td><td class="desc-cell">清の全盛期の始まり。三藩の乱鎮圧。台湾の鄭氏降伏。ネルチンスク条約(1689)。典礼問題でイエズス会以外を禁止</td></tr>
+<tr><td class="no-cell">43</td><td class="name-cell">雍正帝</td><td class="year-cell">1722-35</td><td class="desc-cell">キャフタ条約（1727,対ロシア）。軍機処設置（皇帝独裁の強化）。地丁銀の普及</td></tr>
+
+<tr><td class="no-cell"></td><td class="name-cell">乾隆帝</td><td class="year-cell">1735-96</td><td class="desc-cell">清の最大版図。ジュンガル征服。四庫全書の編纂。文字の獄（思想統制）。十全武功。マカートニー使節</td></tr>
+<tr><td class="no-cell">44</td><td class="name-cell">嘉慶帝</td><td class="year-cell">1796-1820</td><td class="desc-cell">白蓮教徒の乱（1796-1804）。清の衰退始まる</td></tr>
+<tr><td class="no-cell">45</td><td class="name-cell">道光帝</td><td class="year-cell">1820-50</td><td class="desc-cell">アヘン戦争（1840-42）。南京条約</td></tr>
+<tr><td class="no-cell">46</td><td class="name-cell">西太后</td><td class="year-cell">1835-1908</td><td class="desc-cell">同治帝・光緒帝の実質的最高権力者。戊戌の変法を弾圧。義和団事件で列強に宣戦</td></tr>
+<tr><td class="no-cell">47</td><td class="name-cell">咸豊帝</td><td class="year-cell">1850-61</td><td class="desc-cell">太平天国の乱。アロー戦争。北京条約。英仏連合軍に円明園を焼かれる</td></tr>
+<tr><td class="no-cell">48</td><td class="name-cell">同治帝</td><td class="year-cell">1861-75</td><td class="desc-cell">同治の中興。洋務運動（「中体西用」）</td></tr>
+<tr><td class="no-cell">49</td><td class="name-cell">光緒帝</td><td class="year-cell">1875-1908</td><td class="desc-cell">戊戌の変法（康有為・梁啓超の改革）を支持→西太后に幽閉。日清戦争時の皇帝</td></tr>
+<tr><td class="no-cell">50</td><td class="name-cell">宣統帝（溥儀）</td><td class="year-cell">1908-12</td><td class="desc-cell">清朝最後の皇帝。辛亥革命で退位。のち満州国皇帝</td></tr>
+
+
+<tr class="section-header"><td colspan="4">太平天国</td></tr>
+<tr><td class="no-cell">53</td><td class="name-cell">洪秀全</td><td class="year-cell">1851-64</td><td class="desc-cell">客家出身。拝上帝会を組織。太平天国の乱→南京を天京と改称。天朝田畝制度（土地均分）。曾国藩の湘軍に鎮圧</td></tr>
+<tr class="section-header"><td colspan="4">中華民国・中華人民共和国</td></tr>
+<tr><td class="no-cell">54</td><td class="name-cell">康有為</td><td class="year-cell">1858-1927</td><td class="desc-cell">公羊学に基づく変法論。戊戌の変法(百日維新,1898)を光緒帝に上奏→西太后のクーデタで失敗→日本に亡命</td></tr>
+<tr><td class="no-cell">55</td><td class="name-cell">袁世凱</td><td class="year-cell">1859-1916</td><td class="desc-cell">北洋軍閥。中華民国大総統。二十一カ条要求を受諾。帝政を企てるも失敗</td></tr>
+<tr><td class="no-cell">56</td><td class="name-cell">孫文</td><td class="year-cell">1866-1925</td><td class="desc-cell">興中会→中国同盟会。三民主義。辛亥革命で中華民国臨時大総統。第1次国共合作</td></tr>
+<tr><td class="no-cell">57</td><td class="name-cell">張作霖</td><td class="year-cell">1875-1928</td><td class="desc-cell">奉天軍閥の首領。満州の実質的支配者。日本軍により爆殺（張作霖爆殺事件,1928）</td></tr>
+<tr><td class="no-cell">58</td><td class="name-cell">汪兆銘</td><td class="year-cell">1883-1944</td><td class="desc-cell">日本の傀儡政権（南京国民政府）主席</td></tr>
+<tr><td class="no-cell">59</td><td class="name-cell">蔣介石</td><td class="year-cell">1887-1975</td><td class="desc-cell">北伐（1926-28）。上海クーデター（1927,共産党弾圧）。西安事件（1936）。日中戦争。重慶に遷都。国共内戦敗北→台湾</td></tr>
+<tr><td class="no-cell">60</td><td class="name-cell">毛沢東</td><td class="year-cell">1893-1976</td><td class="desc-cell">中国共産党。長征（1934-36）。中華人民共和国建国（1949）。朝鮮戦争に人民義勇軍派遣。大躍進政策（1958）。文化大革命（1966-76）</td></tr>
+<tr><td class="no-cell">61</td><td class="name-cell">周恩来</td><td class="year-cell">1898-1976</td><td class="desc-cell">首相。平和五原則（1954,ネルーと共同）。バンドン会議（1955）。日中国交正常化（1972）</td></tr>
+<tr><td class="no-cell">62</td><td class="name-cell">劉少奇</td><td class="year-cell">1898-1969</td><td class="desc-cell">国家主席。文化大革命で「走資派」として失脚・獄死</td></tr>
+<tr><td class="no-cell">63</td><td class="name-cell">張学良</td><td class="year-cell">1901-2001</td><td class="desc-cell">西安事件（1936）で蒋介石を監禁→第2次国共合作を実現</td></tr>
+<tr><td class="no-cell">64</td><td class="name-cell">鄧小平</td><td class="year-cell">1904-97</td><td class="desc-cell">改革開放政策。経済特区。「社会主義市場経済」。天安門事件（1989）</td></tr>
+<tr><td class="no-cell">65</td><td class="name-cell">江沢民</td><td class="year-cell">1926-2022</td><td class="desc-cell">天安門事件後の最高指導者。市場経済化を推進</td></tr>
+<tr><td class="no-cell">66</td><td class="name-cell">胡錦濤</td><td class="year-cell">1942-</td><td class="desc-cell">中華人民共和国の国家主席（在任2003-2013年）。<br>「和諧社会」（調和のとれた社会）をスローガンに格差是正を推進。<br>上海万博（2010年）・北京五輪（2008年）を主催。</td></tr>
+<tr><td class="no-cell">67</td><td class="name-cell">習近平</td><td class="year-cell">2013-</td><td class="desc-cell">第5世代指導者。「中国の夢」「一帯一路」構想。反腐敗運動。2018年任期制限撤廃。米中対立の激化</td></tr>
+<tr><td class="no-cell">68</td><td class="name-cell">梁啓超</td><td class="year-cell">1873-1929</td><td class="desc-cell">康有為の弟子。日本亡命後『新民叢報』で立憲運動展開。「新民説」</td></tr>
+<tr class="section-header"><td colspan="4">周辺王朝（西夏・西遼・オイラト）</td></tr>
+<tr><td class="no-cell">69</td><td class="name-cell">エセン＝ハン</td><td class="year-cell">15C</td><td class="desc-cell">オイラト部の首長。土木の変(1449)で明の正統帝を捕虜に</td></tr>
+<tr><td class="no-cell">70</td><td class="name-cell">李元昊</td><td class="year-cell">1038-48</td><td class="desc-cell">タングート族。西夏建国。西夏文字の創製</td></tr>
+<tr><td class="no-cell">71</td><td class="name-cell">耶律大石</td><td class="year-cell">1132頃</td><td class="desc-cell">遼の皇族。中央アジアで西遼（カラ＝キタイ）建国</td></tr>
+</tbody></table></div>
+<div class="tbl-wrap hidden" id="content8"><table>
+<thead><tr><th>代数/役職</th><th>人物名</th><th>時代/在位</th><th>覚えるべき事績</th></tr></thead>
+<tbody>
+<tr class="section-header"><td colspan="4">古代</td></tr>
+<tr><td class="no-cell">1</td><td class="name-cell">チャンドラグプタ</td><td class="year-cell">前4C</td><td class="desc-cell">マウリヤ朝建国。セレウコス朝と講和</td></tr>
+<tr><td class="no-cell">2</td><td class="name-cell">アショーカ王</td><td class="year-cell">前3C</td><td class="desc-cell">カリンガ征服後に仏教に帰依。ダルマ（法）に基づく統治。磨崖碑・石柱碑。第3回仏典結集。スリランカに仏教布教</td></tr>
+<tr><td class="no-cell">3</td><td class="name-cell">カニシカ王</td><td class="year-cell">2C</td><td class="desc-cell">クシャーナ朝最盛期。大乗仏教保護。ガンダーラ美術</td></tr>
+<tr><td class="no-cell">4</td><td class="name-cell">ハルシャ＝ヴァルダナ</td><td class="year-cell">7C</td><td class="desc-cell">北インドを統一。玄奘が訪問（『大唐西域記』）</td></tr>
+<tr class="section-header"><td colspan="4">グプタ朝</td></tr>
+<tr><td class="no-cell">5</td><td class="name-cell">チャンドラグプタ1世</td><td class="year-cell">320-335頃</td><td class="desc-cell">グプタ朝建国。パータリプトラに都。北インド統一の端緒</td></tr>
+<tr><td class="no-cell">6</td><td class="name-cell">チャンドラグプタ2世</td><td class="year-cell">376-415頃</td><td class="desc-cell">グプタ朝最盛期。法顕が訪問。サンスクリット文学・ナーランダー僧院の繁栄。ヒンドゥー教の確立</td></tr>
+<tr class="section-header"><td colspan="4">デリー＝スルタン朝</td></tr>
+<tr><td class="no-cell">7</td><td class="name-cell">アイバク（クトゥブッディーン）</td><td class="year-cell">1206-10</td><td class="desc-cell">デリー＝スルタン朝の最初の王朝（奴隷王朝）建国。クトゥブ＝ミナール建設</td></tr>
+<tr><td class="no-cell">8</td><td class="name-cell">ムハンマド＝トゥグルク</td><td class="year-cell">1325-51</td><td class="desc-cell">イブン＝バットゥータが訪問した時のスルタン。遷都政策の失敗で衰退</td></tr>
+<tr><td class="no-cell">9</td><td class="name-cell">アラー＝ウッディーン＝ハルジー</td><td class="year-cell">1296-1316</td><td class="desc-cell">デリー＝スルタン朝最大版図。南インド進出。モンゴル軍を撃退</td></tr>
+<tr><td class="no-cell">10</td><td class="name-cell">イブラーヒーム＝ロディー</td><td class="year-cell">1517-26</td><td class="desc-cell">アフガン系。パーニーパットの戦い（1526）でバーブルに敗北→デリー＝スルタン朝滅亡</td></tr>
+<tr class="section-header"><td colspan="4">ムガル帝国</td></tr>
+<tr><td class="no-cell">11</td><td class="name-cell">シヴァージー</td><td class="year-cell">17C</td><td class="desc-cell">マラーター王国建国。デカン高原のヒンドゥー教国</td></tr>
+<tr><td class="no-cell">12</td><td class="name-cell">ティプー＝スルタン</td><td class="year-cell">在位1782-1799</td><td class="desc-cell">マイソール王国スルタン。英に激しく抵抗。第4次マイソール戦争で戦死。</td></tr>
+<tr><td class="no-cell">13</td><td class="name-cell">バーブル</td><td class="year-cell">1526-30</td><td class="desc-cell">ティムールとチンギス＝ハンの血を引く。中央アジアからインドに侵入。<br>パーニーパットの戦い（1526）でロディー朝を火器で撃破→ムガル帝国建国。<br>自伝『バーブル＝ナーマ』をチャガタイ＝トルコ語で著す。</td></tr>
+<tr><td class="no-cell">14</td><td class="name-cell">フマーユーン</td><td class="year-cell">1530-56</td><td class="desc-cell">一時サファヴィー朝に亡命。帝位を回復</td></tr>
+<tr><td class="no-cell">15</td><td class="name-cell">アクバル</td><td class="year-cell">1556-1605</td><td class="desc-cell">ムガル帝国最盛期の基礎。アグラに遷都。ジズヤ（人頭税）廃止→ヒンドゥー教徒との融和。マンサブダール制。ラージプート族との婚姻政策</td></tr>
+<tr><td class="no-cell">16</td><td class="name-cell">シャー＝ジャハーン</td><td class="year-cell">1628-58</td><td class="desc-cell">ムガル帝国第5代皇帝。妃ムムターズ＝マハルの墓廟タージ＝マハル（アグラ）を建設→インド＝イスラーム建築の最高傑作。<br>デリーに赤い城（ラール＝キラー）を建設し遷都。莫大な建設費で財政悪化。<br>息子アウラングゼーブにより幽閉され死去。</td></tr>
+<tr><td class="no-cell">17</td><td class="name-cell">アウラングゼーブ</td><td class="year-cell">1658-1707</td><td class="desc-cell">ムガル帝国最大版図（デカン高原征服）。ジズヤ復活→ヒンドゥー教徒弾圧→シク教徒・マラーター同盟・ラージプート族の反乱→帝国衰退</td></tr>
+<tr class="section-header"><td colspan="4">近現代</td></tr>
+<tr><td class="no-cell">18</td><td class="name-cell">ガンディー</td><td class="year-cell">1869-1948</td><td class="desc-cell">非暴力・不服従運動（サティヤーグラハ）。「マハトマ」。塩の行進（1930）。第2次非協力運動。「インドを去れ」運動。独立後暗殺</td></tr>
+<tr><td class="no-cell">19</td><td class="name-cell">ジンナー</td><td class="year-cell">1876-1948</td><td class="desc-cell">全インド＝ムスリム連盟指導者。パキスタン建国（1947）の父</td></tr>
+<tr><td class="no-cell">20</td><td class="name-cell">ネルー</td><td class="year-cell">1889-1964</td><td class="desc-cell">インド独立(1947)後の初代首相。非同盟運動の中心人物。平和五原則(1954,周恩来と共同発表)。混合経済政策。カシミール問題で印パ対立</td></tr>
+<tr><td class="no-cell">21</td><td class="name-cell">インディラ＝ガンディー</td><td class="year-cell">1966-84</td><td class="desc-cell">ネルーの娘。第3次印パ戦争（1971,バングラデシュ独立）。非常事態宣言（1975）。シク教徒により暗殺</td></tr>
+</tbody></table></div>
+<div class="tbl-wrap hidden" id="content9"><table>
+<thead><tr><th>代数/役職</th><th>人物名</th><th>時代/在位</th><th>覚えるべき事績</th></tr></thead>
+<tbody>
+<tr class="section-header"><td colspan="4">朝鮮王朝</td></tr>
+<tr><td class="no-cell">1</td><td class="name-cell">李成桂</td><td class="year-cell">1392-98</td><td class="desc-cell">朝鮮王朝（李朝）建国。漢城（ソウル）に都。高麗を滅ぼす</td></tr>
+<tr><td class="no-cell">2</td><td class="name-cell">世宗</td><td class="year-cell">1418-50</td><td class="desc-cell">ハングル（訓民正音,1443）制定。朝鮮文化の黄金期。儒教の振興</td></tr>
+<tr><td class="no-cell">3</td><td class="name-cell">光海君</td><td class="year-cell">在位1608-1623</td><td class="desc-cell">朝鮮第15代王。壬辰倭乱後の復興。明清交代期に中立外交→廃位。</td></tr>
+<tr><td class="no-cell">4</td><td class="name-cell">大院君</td><td class="year-cell">19C後半</td><td class="desc-cell">高宗の父。鎖国攘夷政策。景福宮再建。キリスト教弾圧</td></tr>
+<tr><td class="no-cell">5</td><td class="name-cell">高宗</td><td class="year-cell">1863-1907</td><td class="desc-cell">大院君の摂政後に親政。1897年大韓帝国宣言。ハーグ密使事件で退位強制</td></tr>
+<tr><td class="no-cell">6</td><td class="name-cell">閔妃</td><td class="year-cell">19C後半</td><td class="desc-cell">高宗の妃。親露政策。日本公使館により暗殺（1895年乙未事変）</td></tr>
+<tr class="section-header"><td colspan="4">近現代 韓国</td></tr>
+<tr><td class="no-cell">7</td><td class="name-cell">李承晩</td><td class="year-cell">1948-60</td><td class="desc-cell">反共独裁→四月革命で退陣・ハワイ亡命</td></tr>
+<tr><td class="no-cell">8</td><td class="name-cell">朴正煕</td><td class="year-cell">1963-79</td><td class="desc-cell">軍事クーデタで政権掌握。開発独裁。漢江の奇跡。日韓基本条約（1965）。暗殺</td></tr>
+<tr class="section-header"><td colspan="4">近現代 北朝鮮</td></tr>
+<tr><td class="no-cell">9</td><td class="name-cell">金日成</td><td class="year-cell">1948-94</td><td class="desc-cell">北朝鮮建国。朝鮮戦争を開始。主体思想。個人崇拝</td></tr>
+<tr><td class="no-cell">10</td><td class="name-cell">金正日</td><td class="year-cell">1994-2011</td><td class="desc-cell">先軍政治。核開発。拉致問題</td></tr>
+<tr><td class="no-cell">11</td><td class="name-cell">金正恩</td><td class="year-cell">2011-</td><td class="desc-cell">金正日の三男。核・ミサイル開発を加速。2018年米朝首脳会談（シンガポール）。2019年ハノイ会談は決裂</td></tr>
+</tbody></table></div>
+<div class="tbl-wrap hidden" id="content10"><table>
+<thead><tr><th>代数/役職</th><th>人物名</th><th>時代/在位</th><th>覚えるべき事績</th></tr></thead>
+<tbody>
+<tr class="section-header"><td colspan="4">ベトナム</td></tr>
+<tr><td class="no-cell">1</td><td class="name-cell">ホー＝チ＝ミン</td><td class="year-cell">1890-1969</td><td class="desc-cell">ベトミン（ベトナム独立同盟）結成。ベトナム民主共和国独立宣言（1945）。ディエンビエンフーの戦い（1954）で仏に勝利</td></tr>
+<tr class="section-header"><td colspan="4">カンボジア</td></tr>
+<tr><td class="no-cell">2</td><td class="name-cell">シハヌーク</td><td class="year-cell">1941-55</td><td class="desc-cell">独立運動指導。ジュネーヴ休戦協定で独立。非同盟運動</td></tr>
+<tr><td class="no-cell">3</td><td class="name-cell">ポル＝ポト</td><td class="year-cell">1975-79</td><td class="desc-cell">クメール＝ルージュ指導者。プノンペン陥落。知識人の大虐殺。原始共産主義。ベトナム軍の侵攻で崩壊</td></tr>
+<tr><td class="no-cell">4</td><td class="name-cell">スールヤヴァルマン2世</td><td class="year-cell">12C</td><td class="desc-cell">アンコール朝。ヒンドゥー教（ヴィシュヌ神）→アンコール＝ワット建設。クメール帝国の最盛期</td></tr>
+<tr class="section-header"><td colspan="4">インドネシア</td></tr>
+<tr><td class="no-cell">5</td><td class="name-cell">スカルノ</td><td class="year-cell">1945-67</td><td class="desc-cell">インドネシア独立宣言（1945）。バンドン会議（1955）主催。「指導される民主主義」</td></tr>
+<tr class="section-header"><td colspan="4">第2代大統領</td></tr>
+<tr class="section-header"><td colspan="4">フィリピン</td></tr>
+<tr><td class="no-cell">6</td><td class="name-cell">アギナルド</td><td class="year-cell">1869-1964</td><td class="desc-cell">フィリピン共和国初代大統領。米西戦争後にアメリカに抵抗</td></tr>
+<tr><td class="no-cell">7</td><td class="name-cell">リサール</td><td class="year-cell">1861-1896</td><td class="desc-cell">フィリピン独立運動の父。スペイン支配を批判。処刑が独立運動を加速。</td></tr>
+<tr><td class="no-cell">8</td><td class="name-cell">マルコス</td><td class="year-cell">1965-86</td><td class="desc-cell">独裁→ピープルパワー革命で追放</td></tr>
+<tr class="section-header"><td colspan="4">大統領</td></tr>
+<tr class="section-header"><td colspan="4">ミャンマー</td></tr>
+<tr><td class="no-cell">9</td><td class="name-cell">アウンサン</td><td class="year-cell">1915-47</td><td class="desc-cell">ビルマ独立運動。日本軍と協力後にイギリスと交渉。暗殺</td></tr>
+<tr class="section-header"><td colspan="4">民主化運動指導者</td></tr>
+<tr class="section-header"><td colspan="4">タイ</td></tr>
+<tr><td class="no-cell">10</td><td class="name-cell">ラーマ1世</td><td class="year-cell">1782-1809</td><td class="desc-cell">チャクリ朝（ラタナコーシン朝・現王朝）建国者。トンブリーからバンコクに遷都。アユタヤ朝の法典・文化を復興。ビルマの侵攻を撃退。</td></tr>
+<tr><td class="no-cell">11</td><td class="name-cell">モンクット王</td><td class="year-cell">1851-68</td><td class="desc-cell">ボウリング条約（対英通商条約）。近代化</td></tr>
+<tr><td class="no-cell">12</td><td class="name-cell">ラーマ5世（チュラロンコーン）</td><td class="year-cell">在位1868-1910</td><td class="desc-cell">タイ。近代化改革（チャクリー改革）。東南アジアで唯一植民地化を免れた。</td></tr>
+<tr class="section-header"><td colspan="4">ラーマ5世</td></tr>
+<tr class="section-header"><td colspan="4">クメール王</td></tr>
+<tr class="section-header"><td colspan="4">シンガポール</td></tr>
+<tr class="section-header"><td colspan="4">初代首相</td></tr>
+<tr class="section-header"><td colspan="4">チベット（参考）</td></tr>
+<tr><td class="no-cell">13</td><td class="name-cell">ソンツェン＝ガンポ</td><td class="year-cell">7C</td><td class="desc-cell">吐蕃王国建国。唐の文成公主との婚姻。チベット文字制定</td></tr>
+</tbody></table></div>
+<div class="tbl-wrap hidden" id="content11"><table>
+<thead><tr><th>代数/役職</th><th>人物名</th><th>時代/在位</th><th>覚えるべき事績</th></tr></thead>
+<tbody>
+<tr class="section-header"><td colspan="4">フランク王国</td></tr>
+<tr><td class="no-cell">1</td><td class="name-cell">クローヴィス</td><td class="year-cell">481-511</td><td class="desc-cell">フランク王国建国。アタナシウス派（カトリック）に改宗。パリに都</td></tr>
+<tr><td class="no-cell">2</td><td class="name-cell">カール＝マルテル</td><td class="year-cell">714-741</td><td class="desc-cell">トゥール・ポワティエ間の戦い（732）でイスラーム軍を撃退。カロリング家の実質的始祖</td></tr>
+<tr><td class="no-cell">3</td><td class="name-cell">ピピン3世</td><td class="year-cell">751-768</td><td class="desc-cell">カロリング朝を開始。ラヴェンナ地方を教皇に寄進（ピピンの寄進→教皇領の起源）</td></tr>
+<tr><td class="no-cell">4</td><td class="name-cell">カール大帝</td><td class="year-cell">768-814</td><td class="desc-cell">西ヨーロッパを統一（フランク王国最盛期）。800年にレオ3世からローマ皇帝の帝冠を授かる→西ローマ帝国の復活。アーヘンに宮廷学校を設立→カロリング＝ルネサンス</td></tr>
+<tr class="section-header"><td colspan="4">ノルマンディー公</td></tr>
+<tr class="section-header"><td colspan="4">カペー朝</td></tr>
+<tr><td class="no-cell">5</td><td class="name-cell">ユーグ＝カペー</td><td class="year-cell">987-996</td><td class="desc-cell">カペー朝建国。パリ周辺のイル＝ド＝フランスのみ支配</td></tr>
+<tr><td class="no-cell">6</td><td class="name-cell">フィリップ2世</td><td class="year-cell">1180-1223</td><td class="desc-cell">王権拡大。ブーヴィーヌの戦い（1214）。第3回十字軍参加</td></tr>
+<tr><td class="no-cell">7</td><td class="name-cell">ルイ9世</td><td class="year-cell">1226-70</td><td class="desc-cell">第6・7回十字軍を指導（いずれも失敗）。聖王</td></tr>
+<tr><td class="no-cell">8</td><td class="name-cell">フィリップ4世</td><td class="year-cell">1285-1314</td><td class="desc-cell">三部会招集（1302）。アナーニ事件（1303,ボニファティウス8世を捕囚）。教皇のバビロン捕囚</td></tr>
+<tr><td class="no-cell">9</td><td class="name-cell">ジャンヌ＝ダルク</td><td class="year-cell">1412-1431</td><td class="desc-cell">百年戦争の転換点。オルレアン解放→シャルル7世戴冠を実現。火刑。</td></tr>
+<tr class="section-header"><td colspan="4">ヴァロワ朝</td></tr>
+<tr><td class="no-cell">10</td><td class="name-cell">シャルル7世</td><td class="year-cell">1422-61</td><td class="desc-cell">百年戦争勝利。ジャンヌ＝ダルクに助けられオルレアン解放</td></tr>
+<tr><td class="no-cell">11</td><td class="name-cell">シャルル8世</td><td class="year-cell">1483-98</td><td class="desc-cell">ヴァロワ朝第7代（在位1483-98年）。<br>ナポリ王位の継承権を主張しイタリアに侵入（1494年）→イタリア戦争の開始。<br>フランスのイタリアへの野望の始まり→カトーカンブレジ条約（1559年）まで約65年間続く。</td></tr>
+<tr><td class="no-cell">12</td><td class="name-cell">フランソワ1世</td><td class="year-cell">1515-47</td><td class="desc-cell">フランス＝トルコ同盟（1535）。カピチュレーションの起源。ルネサンスの保護</td></tr>
+<tr><td class="no-cell">13</td><td class="name-cell">シャルル9世</td><td class="year-cell">1560-74</td><td class="desc-cell">母后カトリーヌの摂政。サン＝バルテルミの虐殺（1572,ユグノー虐殺）</td></tr>
+<tr><td class="no-cell">14</td><td class="name-cell">アンリ3世</td><td class="year-cell">1574-89</td><td class="desc-cell">ユグノー戦争の最中にカトリック強硬派に暗殺。ヴァロワ朝断絶→ブルボン家のアンリ4世（ナバラ王）が即位。</td></tr>
+<tr class="section-header"><td colspan="4">ブルボン朝</td></tr>
+<tr><td class="no-cell">15</td><td class="name-cell">アンリ4世</td><td class="year-cell">1589-1610</td><td class="desc-cell">ブルボン朝初代。元はナバラ王（ユグノー）。<br>「パリはミサに値する」としてカトリックに改宗→国民的和解。<br>ナントの王令（1598）でユグノー戦争を終結。<br>シュリーの財政改革で経済復興。カトリック狂信者に暗殺。</td></tr>
+<tr><td class="no-cell">16</td><td class="name-cell">ルイ13世</td><td class="year-cell">1610-43</td><td class="desc-cell">宰相リシュリュー。三十年戦争にカトリック国でありながら新教側で参戦（反ハプスブルク）</td></tr>
+<tr><td class="no-cell">17</td><td class="name-cell">ルイ14世</td><td class="year-cell">1643-1715</td><td class="desc-cell">「太陽王」「朕は国家なり」。ヴェルサイユ宮殿。コルベールの重商主義。ナントの王令廃止（1685）。4つの侵略戦争。フロンドの乱鎮圧</td></tr>
+<tr><td class="no-cell">18</td><td class="name-cell">ルイ16世</td><td class="year-cell">1754-93</td><td class="desc-cell">フランス革命で立憲君主制→処刑（1793）。三部会招集（1789）。ヴァレンヌ逃亡事件</td></tr>
+<tr><td class="no-cell">19</td><td class="name-cell">ロベスピエール</td><td class="year-cell">1758-1794</td><td class="desc-cell">ジャコバン派指導者。恐怖政治を主導。テルミドールで処刑。</td></tr>
+<tr><td class="no-cell">20</td><td class="name-cell">ナポレオン＝ボナパルト</td><td class="year-cell">1769-1821</td><td class="desc-cell">統領→皇帝。ナポレオン法典。大陸制覇→ロシア遠征失敗→ワーテルロー。</td></tr>
+<tr><td class="no-cell">21</td><td class="name-cell">タレーラン</td><td class="year-cell">1754-1838</td><td class="desc-cell">外相。ウィーン会議で正統主義→敗戦国フランスの地位回復。</td></tr>
+<tr class="section-header"><td colspan="4">ナポレオン〜復古〜第二帝政</td></tr>
+<tr><td class="no-cell">22</td><td class="name-cell">ルイ18世</td><td class="year-cell">1814-24</td><td class="desc-cell">復古王政最初の王。欽定憲法を発布。立憲君主制を維持しようと努力</td></tr>
+<tr><td class="no-cell">23</td><td class="name-cell">シャルル10世</td><td class="year-cell">1824-30</td><td class="desc-cell">七月勅令（議会解散・選挙権制限）→七月革命（1830）で退位。アルジェリア出兵</td></tr>
+<tr><td class="no-cell">24</td><td class="name-cell">ルイ＝フィリップ</td><td class="year-cell">1830-48</td><td class="desc-cell">七月王政（オルレアン朝）。「市民王」。二月革命（1848）で退位</td></tr>
+<tr><td class="no-cell">25</td><td class="name-cell">ナポレオン3世</td><td class="year-cell">1852-70</td><td class="desc-cell">第二帝政。パリ改造（オスマン）。スエズ運河建設支援。クリミア戦争。イタリア統一戦争に介入。メキシコ出兵。普仏戦争でセダンに降伏</td></tr>
+<tr class="section-header"><td colspan="4">第三共和政以降</td></tr>
+<tr><td class="no-cell">26</td><td class="name-cell">ティエール</td><td class="year-cell">1871-73</td><td class="desc-cell">第三共和政初代大統領。パリ＝コミューンを鎮圧。普仏戦争の講和</td></tr>
+<tr><td class="no-cell">27</td><td class="name-cell">クレマンソー</td><td class="year-cell">1917-20</td><td class="desc-cell">「虎」。パリ講和会議で対独強硬論</td></tr>
+<tr><td class="no-cell">28</td><td class="name-cell">ブリアン</td><td class="year-cell">1920s</td><td class="desc-cell">ロカルノ条約（1925,シュトレーゼマンと）。パリ不戦条約（1928,ケロッグと）</td></tr>
+<tr class="section-header"><td colspan="4">宰相・首相</td></tr>
+<tr><td class="no-cell">29</td><td class="name-cell">リシュリュー</td><td class="year-cell">1624-42</td><td class="desc-cell">ルイ13世の宰相。三部会を招集せず絶対王政を強化。三十年戦争に反ハプスブルクで参戦。フランス学士院設立</td></tr>
+<tr><td class="no-cell">30</td><td class="name-cell">マザラン</td><td class="year-cell">1642-61</td><td class="desc-cell">ルイ14世の宰相。フロンドの乱を鎮圧。ウェストファリア条約を主導</td></tr>
+<tr><td class="no-cell">31</td><td class="name-cell">コルベール</td><td class="year-cell">1661-83</td><td class="desc-cell">ルイ14世の財務総監。重商主義。東インド会社再建。マニュファクチュア保護</td></tr>
+<tr><td class="no-cell">32</td><td class="name-cell">ルイ15世</td><td class="year-cell">1715-74</td><td class="desc-cell">「最愛王」→のち「嫌われ王」。7年戦争でフランスはカナダ・インド植民地を喪失（パリ条約,1763）。ポンパドゥール夫人の寵愛。<br>財政悪化→ルイ16世時代のフランス革命の遠因。</td></tr>
+<tr><td class="no-cell">33</td><td class="name-cell">ポワンカレ</td><td class="year-cell">1912-13/1922-24/1926-29</td><td class="desc-cell">ルール占領（1923）を断行したフランス首相。対独強硬路線。ドイツの賠償金支払い遅延に対し仏ベルギー軍がルール工業地帯を占領→国際的批判→ドーズ案による解決へ。</td></tr>
+<tr><td class="no-cell">34</td><td class="name-cell">ダラディエ</td><td class="year-cell">1933-34/1938-40</td><td class="desc-cell">急進社会党。ミュンヘン会談（1938）にチェンバレン（英）とともに出席し、ヒトラーのズデーテン地方併合を容認（宥和政策）。<br>ドイツのポーランド侵攻後に対独宣戦布告するもフランスは敗北→ヴィシー政権に逮捕。</td></tr>
+<tr><td class="no-cell">35</td><td class="name-cell">ブルム</td><td class="year-cell">1936-37</td><td class="desc-cell">フランス社会党党首。人民戦線内閣の首相。有給休暇制度・週40時間労働制を主要国で初めて法制化。スペイン内戦への不干渉政策。</td></tr>
+<tr><td class="no-cell">36</td><td class="name-cell">ペタン</td><td class="year-cell">1940-44</td><td class="desc-cell">ヴィシー政権の国家主席（1940-44年）。<br>第一次大戦のヴェルダンの英雄。<br>ドイツに降伏後、南部フランスにヴィシー政権を樹立しドイツに協力。<br>ユダヤ人の移送にも加担。<br>戦後、反逆罪で終身刑。</td></tr>
+<tr><td class="no-cell">37</td><td class="name-cell">シューマン</td><td class="year-cell">1947-48</td><td class="desc-cell">シューマン＝プラン（1950）を提唱。仏独の石炭・鉄鋼を共同管理するECSC（欧州石炭鉄鋼共同体,1952）の設立者。<br>EC→EUにつながるヨーロッパ統合の父。</td></tr>
+<tr><td class="no-cell">38</td><td class="name-cell">ド＝ゴール</td><td class="year-cell">1958-69</td><td class="desc-cell">自由フランス指導者→第五共和政初代大統領。NATO軍事機構から脱退。核武装</td></tr>
+<tr><td class="no-cell">39</td><td class="name-cell">ミッテラン</td><td class="year-cell">1981-95</td><td class="desc-cell">フランス第五共和政の大統領（在任1981-95年）。<br>社会党出身。<br>第五共和政初の左派政権。<br>国有化政策を推進するも経済悪化で転換。<br>EC統合の深化（マーストリヒト条約）。<br>コアビタシオン（保革共存）を経験。</td></tr>
+<tr><td class="no-cell">40</td><td class="name-cell">シラク</td><td class="year-cell">1995-2007</td><td class="desc-cell">フランス大統領（在任1995-2007年）。<br>ド＝ゴール派。<br>南太平洋での核実験実施（1995年）で国際的批判。<br>イラク戦争（2003年）に反対。<br>EU憲法条約の国民投票で否決（2005年）。</td></tr>
+</tbody></table></div>
+<div class="tbl-wrap hidden" id="content12"><table>
+<thead><tr><th>代数/役職</th><th>人物名</th><th>時代/在位</th><th>覚えるべき事績</th></tr></thead>
+<tbody>
+<tr class="section-header"><td colspan="4">ノルマン朝以前</td></tr>
+<tr><td class="no-cell">1</td><td class="name-cell">エグバート</td><td class="year-cell">9C前半</td><td class="desc-cell">七王国（ヘプターキー）を統一。イングランド王国の基礎</td></tr>
+<tr><td class="no-cell">2</td><td class="name-cell">アルフレッド大王</td><td class="year-cell">871-899</td><td class="desc-cell">デーン人を撃退（エディントンの戦い）。デーンロウの設定</td></tr>
+<tr><td class="no-cell">3</td><td class="name-cell">クヌート</td><td class="year-cell">1016-35</td><td class="desc-cell">デーン朝。北海帝国（イングランド・デンマーク・ノルウェー）</td></tr>
+<tr><td class="no-cell"></td><td class="name-cell">ハロルド2世</td><td class="year-cell">1066</td><td class="desc-cell">最後のアングロ＝サクソン系イングランド王。ヘースティングズの戦い（1066）でノルマンディー公ウィリアムに敗死→ノルマン＝コンクェスト。</td></tr>
+<tr class="section-header"><td colspan="4">ノルマン朝〜プランタジネット朝</td></tr>
+<tr><td class="no-cell">4</td><td class="name-cell">ウィリアム1世</td><td class="year-cell">1066-87</td><td class="desc-cell">ノルマン＝コンクェスト。ヘースティングズの戦い（1066）。封建制度導入</td></tr>
+<tr><td class="no-cell">5</td><td class="name-cell">ヘンリ2世</td><td class="year-cell">1154-89</td><td class="desc-cell">プランタジネット朝開始。アンジュー帝国。コモン＝ロー（慣習法）の確立</td></tr>
+<tr><td class="no-cell">6</td><td class="name-cell">リチャード1世</td><td class="year-cell">1189-99</td><td class="desc-cell">「獅子心王」。第3回十字軍でサラディンと抗争</td></tr>
+<tr><td class="no-cell">7</td><td class="name-cell">ジョン王</td><td class="year-cell">1199-1216</td><td class="desc-cell">マグナ＝カルタ（大憲章,1215）を承認。失地王。教皇インノケンティウス3世に破門される</td></tr>
+<tr><td class="no-cell">8</td><td class="name-cell">ヘンリ3世</td><td class="year-cell">1216-72</td><td class="desc-cell">マグナ＝カルタを無視→シモン＝ド＝モンフォールが議会を招集（1265）</td></tr>
+<tr><td class="no-cell">9</td><td class="name-cell">エドワード1世</td><td class="year-cell">1272-1307</td><td class="desc-cell">模範議会（1295）の招集→議会政治の慣行確立</td></tr>
+<tr><td class="no-cell">10</td><td class="name-cell">エドワード3世</td><td class="year-cell">1327-77</td><td class="desc-cell">百年戦争開始。クレシーの戦い（1346）勝利。ワット＝タイラーの乱（1381,孫の代）</td></tr>
+<tr><td class="no-cell">11</td><td class="name-cell">ヘンリ5世</td><td class="year-cell">1413-22</td><td class="desc-cell">百年戦争で仏に大勝。アジャンクールの戦い</td></tr>
+<tr class="section-header"><td colspan="4">テューダー朝</td></tr>
+<tr><td class="no-cell">12</td><td class="name-cell">ヘンリ7世</td><td class="year-cell">1485-1509</td><td class="desc-cell">テューダー朝建国。ボスワースの戦い（1485）。バラ戦争を収束</td></tr>
+<tr><td class="no-cell">13</td><td class="name-cell">ヘンリ8世</td><td class="year-cell">1509-47</td><td class="desc-cell">英国国教会設立（首長法,1534）。ローマ教皇と断絶。修道院解散</td></tr>
+<tr><td class="no-cell">14</td><td class="name-cell">エドワード6世</td><td class="year-cell">1547-53</td><td class="desc-cell">プロテスタント寄り。一般祈祷書</td></tr>
+<tr><td class="no-cell">15</td><td class="name-cell">メアリ1世</td><td class="year-cell">1553-58</td><td class="desc-cell">カトリック復帰。フェリペ2世と結婚。プロテスタント弾圧（「ブラッディ＝メアリ」）</td></tr>
+<tr><td class="no-cell">16</td><td class="name-cell">エリザベス1世</td><td class="year-cell">1558-1603</td><td class="desc-cell">統一法（1559）で英国国教会を確立。アルマダ戦争（1588）でスペイン無敵艦隊に勝利。東インド会社設立（1600）。「処女王」</td></tr>
+<tr class="section-header"><td colspan="4">ステュアート朝</td></tr>
+<tr><td class="no-cell">17</td><td class="name-cell">ジェームズ1世</td><td class="year-cell">1603-25</td><td class="desc-cell">ステュアート朝開始。王権神授説。スコットランド王を兼任</td></tr>
+<tr><td class="no-cell">18</td><td class="name-cell">チャールズ1世</td><td class="year-cell">1625-49</td><td class="desc-cell">権利の請願（1628）。スコットランドの反乱→ピューリタン革命で処刑（1649）</td></tr>
+<tr><td class="no-cell">19</td><td class="name-cell">クロムウェル</td><td class="year-cell">1649-58</td><td class="desc-cell">護国卿。航海法（1651,対オランダ）。アイルランド征服。共和政</td></tr>
+<tr><td class="no-cell">20</td><td class="name-cell">チャールズ2世</td><td class="year-cell">1660-85</td><td class="desc-cell">王政復古。審査法（1673,カトリックの公職追放）。人身保護法（1679）</td></tr>
+<tr><td class="no-cell">21</td><td class="name-cell">ジェームズ2世</td><td class="year-cell">1685-88</td><td class="desc-cell">カトリック復活を図る→名誉革命（1688）で亡命</td></tr>
+<tr><td class="no-cell">22</td><td class="name-cell">ウィリアム3世＆メアリ2世</td><td class="year-cell">1689-1702</td><td class="desc-cell">名誉革命。権利の章典（1689）。権利の宣言。イングランド銀行設立（1694）</td></tr>
+<tr><td class="no-cell">23</td><td class="name-cell">アン女王</td><td class="year-cell">1702-14</td><td class="desc-cell">スペイン継承戦争（アン女王戦争）。グレートブリテン王国成立（1707,スコットランドと合同）。ユトレヒト条約</td></tr>
+<tr class="section-header"><td colspan="4">ハノーヴァー朝</td></tr>
+<tr><td class="no-cell">24</td><td class="name-cell">ジョージ1世</td><td class="year-cell">1714-27</td><td class="desc-cell">ハノーヴァー選帝侯。英語を解さず→責任内閣制（ウォルポール内閣）確立の契機</td></tr>
+<tr><td class="no-cell">25</td><td class="name-cell">ジョージ3世</td><td class="year-cell">1760-1820</td><td class="desc-cell">アメリカ独立宣言で名指し批判された国王</td></tr>
+<tr><td class="no-cell">26</td><td class="name-cell">ヴィクトリア</td><td class="year-cell">1837-1901</td><td class="desc-cell">大英帝国全盛期。インド皇帝兼任（1877）。ディズレーリのスエズ運河株買収</td></tr>
+<tr class="section-header"><td colspan="4">首相</td></tr>
+<tr><td class="no-cell">28</td><td class="name-cell">ウォルポール</td><td class="year-cell">1721-42</td><td class="desc-cell">英国初代首相（事実上）。ホイッグ党。責任内閣制の確立。「国王は君臨すれども統治せず」</td></tr>
+<tr><td class="no-cell">29</td><td class="name-cell">小ピット</td><td class="year-cell">1783-1801</td><td class="desc-cell">対仏大同盟を組織。アイルランド併合（1801）</td></tr>
+<tr><td class="no-cell">30</td><td class="name-cell">カニング</td><td class="year-cell">1820s</td><td class="desc-cell">ラテンアメリカ諸国の独立を承認</td></tr>
+<tr><td class="no-cell">31</td><td class="name-cell">ウェリントン</td><td class="year-cell">1828-30</td><td class="desc-cell">ワーテルローの戦い（1815）の英雄。首相としてカトリック教徒解放法（1829）を成立させた。審査法の廃止（1828）も在任中。</td></tr>
+<tr><td class="no-cell">32</td><td class="name-cell">グレイ</td><td class="year-cell">1830-34</td><td class="desc-cell">第1回選挙法改正（1832）。腐敗選挙区の廃止</td></tr>
+<tr><td class="no-cell">33</td><td class="name-cell">パーマストン</td><td class="year-cell">1855-65</td><td class="desc-cell">砲艦外交。アロー戦争。クリミア戦争</td></tr>
+<tr><td class="no-cell">34</td><td class="name-cell">ディズレーリ</td><td class="year-cell">1868-80</td><td class="desc-cell">保守党。スエズ運河会社株買収（1875）。インド帝国（ヴィクトリア女王をインド皇帝に）。帝国主義推進</td></tr>
+<tr><td class="no-cell">35</td><td class="name-cell">グラッドストン</td><td class="year-cell">1868-94</td><td class="desc-cell">自由党。アイルランド自治法案（否決）。第2・3回選挙法改正</td></tr>
+<tr><td class="no-cell">36</td><td class="name-cell">バルフォア</td><td class="year-cell">1902-05</td><td class="desc-cell">バルフォア宣言（1917、外相として）でパレスチナにユダヤ人の民族的郷土の建設を約束。首相時代にはタフト＝桂協定（1905）に関与。</td></tr>
+<tr><td class="no-cell">37</td><td class="name-cell">アスキス</td><td class="year-cell">1908-16</td><td class="desc-cell">自由党。議会法（1911）で貴族院（上院）の権限を制限し庶民院（下院）の優越を確立。アイルランド自治法を成立させるも第一次大戦で実施延期。</td></tr>
+<tr><td class="no-cell">38</td><td class="name-cell">ロイド＝ジョージ</td><td class="year-cell">1916-22</td><td class="desc-cell">第一次世界大戦時の首相。パリ講和会議</td></tr>
+<tr><td class="no-cell">39</td><td class="name-cell">マクドナルド</td><td class="year-cell">1924,29-35</td><td class="desc-cell">イギリス初の労働党首相（1924年、29-35年）。第1次内閣でソ連を承認。第2次内閣で世界恐慌に直面→保守党と挙国一致内閣を組むも労働党から除名。</td></tr>
+<tr><td class="no-cell">40</td><td class="name-cell">ネヴィル＝チェンバレン</td><td class="year-cell">1937-40</td><td class="desc-cell">宥和政策。ミュンヘン会談（1938）でズデーテン地方割譲を容認</td></tr>
+<tr><td class="no-cell">41</td><td class="name-cell">チャーチル</td><td class="year-cell">1940-45</td><td class="desc-cell">第二次世界大戦を指導。大西洋憲章（1941,FDRと）。ヤルタ会談。「鉄のカーテン」演説</td></tr>
+<tr><td class="no-cell">42</td><td class="name-cell">アトリー</td><td class="year-cell">1945-51</td><td class="desc-cell">労働党。福祉国家建設（「ゆりかごから墓場まで」）。インド独立（1947）。NATO加盟</td></tr>
+<tr><td class="no-cell">43</td><td class="name-cell">サッチャー</td><td class="year-cell">1979-90</td><td class="desc-cell">新自由主義（サッチャリズム）。フォークランド戦争（1982）。国営企業民営化</td></tr>
+<tr><td class="no-cell">44</td><td class="name-cell">ブレア</td><td class="year-cell">1997-2007</td><td class="desc-cell">「第三の道」。イラク戦争（2003）に参加</td></tr>
+</tbody></table></div>
+<div class="tbl-wrap hidden" id="content13"><table>
+<thead><tr><th>代数/役職</th><th>人物名</th><th>時代/在位</th><th>覚えるべき事績</th></tr></thead>
+<tbody>
+<tr class="section-header"><td colspan="4">神聖ローマ帝国</td></tr>
+<tr><td class="no-cell">1</td><td class="name-cell">オットー1世</td><td class="year-cell">936-973</td><td class="desc-cell">レヒフェルトの戦い（955）でマジャール人撃退。教皇ヨハネス12世から帝冠→神聖ローマ帝国の事実上の創始者。オットー特権（帝国教会政策）</td></tr>
+<tr><td class="no-cell">2</td><td class="name-cell">ハインリヒ4世</td><td class="year-cell">1056-1106</td><td class="desc-cell">聖職叙任権闘争。カノッサの屈辱（1077）でグレゴリウス7世に謝罪。のちローマを占領し教皇を追放</td></tr>
+<tr><td class="no-cell">3</td><td class="name-cell">フリードリヒ1世</td><td class="year-cell">1152-90</td><td class="desc-cell">「赤髭王（バルバロッサ）」。第3回十字軍に参加し途上で溺死。レニャーノの戦い（1176）でロンバルディア同盟に敗北</td></tr>
+<tr><td class="no-cell">4</td><td class="name-cell">フリードリヒ2世</td><td class="year-cell">1220-50</td><td class="desc-cell">異文化に寛容。シチリアを拠点に。第5回十字軍を外交で解決（エルサレム返還）</td></tr>
+<tr><td class="no-cell">5</td><td class="name-cell">カール4世</td><td class="year-cell">1346-78</td><td class="desc-cell">金印勅書（1356）：7選帝侯による皇帝選出を法制化。プラハに都</td></tr>
+<tr><td class="no-cell">6</td><td class="name-cell">ジギスムント</td><td class="year-cell">14-15C</td><td class="desc-cell">ニコポリスの戦い。コンスタンツ公会議（1414-18）を招集→フスを処刑。教会大分裂を収束</td></tr>
+<tr><td class="no-cell">7</td><td class="name-cell">マクシミリアン1世</td><td class="year-cell">1493-1519</td><td class="desc-cell">婚姻政策でハプスブルク家の領土拡大。「戦は他家に任せよ、幸あるオーストリアよ、汝は結婚せよ」</td></tr>
+<tr><td class="no-cell">8</td><td class="name-cell">カール5世</td><td class="year-cell">1519-56</td><td class="desc-cell">スペイン王カルロス1世と同一人物。宗教改革と対決。アウクスブルクの和議（1555）。「太陽の沈まぬ帝国」。退位後にスペインとオーストリアに分割</td></tr>
+<tr class="section-header"><td colspan="4">プロイセン</td></tr>
+<tr><td class="no-cell"></td><td class="name-cell">フリードリヒ＝ヴィルヘルム4世</td><td class="year-cell">在位1840-1861</td><td class="desc-cell">プロイセン王。フランクフルト国民議会の皇帝位を拒否。</td></tr>
+<tr><td class="no-cell">10</td><td class="name-cell">フリードリヒ＝ヴィルヘルム1世</td><td class="year-cell">1713-40</td><td class="desc-cell">「兵隊王」。常備軍と官僚制を整備。軍国主義の基礎</td></tr>
+<tr><td class="no-cell">11</td><td class="name-cell">フリードリヒ2世</td><td class="year-cell">1740-86</td><td class="desc-cell">「大王」。啓蒙専制君主（「君主は国家第一の下僕」）。オーストリア継承戦争でシュレジエン獲得。七年戦争。サンスーシ宮殿。ヴォルテールを招聘</td></tr>
+<tr class="section-header"><td colspan="4">ドイツ帝国</td></tr>
+<tr><td class="no-cell">12</td><td class="name-cell">ヴィルヘルム1世</td><td class="year-cell">1861-88</td><td class="desc-cell">ドイツ帝国初代皇帝。ヴェルサイユ宮殿の鏡の間で即位（1871）</td></tr>
+<tr><td class="no-cell">13</td><td class="name-cell">ビスマルク</td><td class="year-cell">1871-90</td><td class="desc-cell">「鉄血宰相」。<br>デンマーク戦争→普墺戦争→普仏戦争でドイツ統一。<br>ビスマルク外交（三帝同盟・三国同盟・再保障条約）。<br>文化闘争。<br>社会主義者鎮圧法と社会保険制度（飴と鞭）。</td></tr>
+<tr><td class="no-cell">14</td><td class="name-cell">ヴィルヘルム2世</td><td class="year-cell">1888-1918</td><td class="desc-cell">ビスマルクを罷免（1890）。「世界政策」。3B政策。再保障条約更新を拒否→露仏同盟。第一次世界大戦で敗北→退位</td></tr>
+<tr class="section-header"><td colspan="4">ヴァイマル〜ナチス</td></tr>
+<tr><td class="no-cell">15</td><td class="name-cell">エーベルト</td><td class="year-cell">1919-25</td><td class="desc-cell">社会民主党。ヴァイマル共和国初代大統領</td></tr>
+<tr><td class="no-cell">16</td><td class="name-cell">シュトレーゼマン</td><td class="year-cell">1923</td><td class="desc-cell">首相・外相。ロカルノ条約（1925）でラインラント非武装を再確認。国際協調路線</td></tr>
+<tr><td class="no-cell">17</td><td class="name-cell">ヒンデンブルク</td><td class="year-cell">1925-34</td><td class="desc-cell">大統領。ヒトラーを首相に任命（1933）</td></tr>
+<tr><td class="no-cell">18</td><td class="name-cell">ヒトラー</td><td class="year-cell">1933-45</td><td class="desc-cell">ナチス党首。全権委任法。再軍備宣言。ラインラント進駐。オーストリア併合。ミュンヘン会談。独ソ不可侵条約。第二次世界大戦。ホロコースト</td></tr>
+<tr class="section-header"><td colspan="4">戦後ドイツ</td></tr>
+<tr><td class="no-cell">19</td><td class="name-cell">ルドルフ1世</td><td class="year-cell">1273-91</td><td class="desc-cell">大空位時代（1254-73）を終わらせた神聖ローマ皇帝。ハプスブルク家の帝位獲得の始まり。オーストリアをハプスブルク家の世襲領に→約650年の支配の起点。</td></tr>
+<tr><td class="no-cell">20</td><td class="name-cell">アデナウアー</td><td class="year-cell">1949-63</td><td class="desc-cell">西ドイツ復興。「経済の奇跡」。NATO加盟。西側統合</td></tr>
+<tr><td class="no-cell">21</td><td class="name-cell">ウルブリヒト</td><td class="year-cell">1950-71</td><td class="desc-cell">東独。ベルリンの壁建設（1961）</td></tr>
+<tr><td class="no-cell">22</td><td class="name-cell">ブラント</td><td class="year-cell">1969-74</td><td class="desc-cell">東方外交（オストポリティーク）。東西ドイツ基本条約（1972）。ワルシャワでの跪き</td></tr>
+<tr><td class="no-cell">23</td><td class="name-cell">ホネカー</td><td class="year-cell">1971-89</td><td class="desc-cell">東独。ベルリンの壁崩壊（1989）で退陣</td></tr>
+<tr><td class="no-cell">24</td><td class="name-cell">コール</td><td class="year-cell">1982-98</td><td class="desc-cell">ドイツ再統一（1990）。マーストリヒト条約</td></tr>
+</tbody></table></div>
+<div class="tbl-wrap hidden" id="content14"><table>
+<thead><tr><th>代数/役職</th><th>人物名</th><th>時代/在位</th><th>覚えるべき事績</th></tr></thead>
+<tbody>
+<tr class="section-header"><td colspan="4">ハプスブルク家</td></tr>
+<tr><td class="no-cell">1</td><td class="name-cell">フェルディナンド1世</td><td class="year-cell">1556-64</td><td class="desc-cell">カール5世の弟。オーストリア系ハプスブルク家の始祖。アウクスブルクの和議（1555）を締結しルター派を容認。<br>ハプスブルク家がスペイン系とオーストリア系に分裂した際のオーストリア側の初代。</td></tr>
+<tr><td class="no-cell">2</td><td class="name-cell">マリア＝テレジア</td><td class="year-cell">1740-80</td><td class="desc-cell">オーストリア継承戦争。シュレジエンをプロイセンに奪われる。外交革命（仏墺同盟）。啓蒙的改革</td></tr>
+<tr><td class="no-cell">3</td><td class="name-cell">ヨーゼフ2世</td><td class="year-cell">1765-90</td><td class="desc-cell">啓蒙専制君主。農奴解放令。宗教寛容令。改革が急進すぎて反発</td></tr>
+<tr><td class="no-cell">4</td><td class="name-cell">フランツ2世</td><td class="year-cell">1792-1835</td><td class="desc-cell">ナポレオンに敗北し神聖ローマ帝国消滅（1806）→オーストリア皇帝フランツ1世に。ウィーン会議時の皇帝</td></tr>
+<tr><td class="no-cell">5</td><td class="name-cell">メッテルニヒ</td><td class="year-cell">1809-48</td><td class="desc-cell">ウィーン会議（1814-15）を主催。正統主義。ウィーン体制の中心人物。三月革命（1848）で亡命</td></tr>
+<tr><td class="no-cell">6</td><td class="name-cell">フランツ＝ヨーゼフ1世</td><td class="year-cell">1848-1916</td><td class="desc-cell">オーストリア＝ハンガリー二重帝国（アウスグライヒ,1867）。第一次世界大戦時の皇帝</td></tr>
+</tbody></table></div>
+<div class="tbl-wrap hidden" id="content15"><table>
+<thead><tr><th>代数/役職</th><th>人物名</th><th>時代/在位</th><th>覚えるべき事績</th></tr></thead>
+<tbody>
+<tr class="section-header"><td colspan="4">キエフ大公国</td></tr>
+<tr><td class="no-cell">1</td><td class="name-cell">ウラディミル1世</td><td class="year-cell">980-1015</td><td class="desc-cell">キエフ大公国。ギリシア正教（東方正教会）に改宗（988）→ビザンツ文化の導入。ビザンツ皇女アンナと結婚。ロシアのキリスト教化の起点。「聖公」と称される。</td></tr>
+<tr class="section-header"><td colspan="4">モスクワ大公国〜帝政</td></tr>
+<tr><td class="no-cell">2</td><td class="name-cell">イヴァン3世</td><td class="year-cell">1462-1505</td><td class="desc-cell">ツァーリを自称。キプチャク＝ハン国（タタールのくびき）から解放。ビザンツ皇女と結婚→「第三のローマ」</td></tr>
+<tr><td class="no-cell">3</td><td class="name-cell">イヴァン4世</td><td class="year-cell">1533-84</td><td class="desc-cell">「雷帝」。ツァーリの称号を正式使用。シベリア進出（イェルマーク）。貴族を弾圧</td></tr>
+<tr><td class="no-cell">4</td><td class="name-cell">ミハイル＝ロマノフ</td><td class="year-cell">1613-45</td><td class="desc-cell">動乱時代を経てロマノフ朝を開始</td></tr>
+<tr><td class="no-cell">5</td><td class="name-cell">ピョートル1世</td><td class="year-cell">1682-1725</td><td class="desc-cell">西欧化改革。ペテルブルク建設（バルト海への窓）。北方戦争でスウェーデンに勝利。ネルチンスク条約（1689,清と）。「ヨーロッパへの窓を開く」</td></tr>
+<tr><td class="no-cell">6</td><td class="name-cell">エカチェリーナ2世</td><td class="year-cell">1762-96</td><td class="desc-cell">啓蒙専制君主。ヴォルテール・ディドロと交流。ポーランド分割（3回）。プガチョフの農民反乱鎮圧。クリミア半島獲得。南下政策</td></tr>
+<tr><td class="no-cell">7</td><td class="name-cell">アレクサンドル1世</td><td class="year-cell">1801-25</td><td class="desc-cell">ナポレオン戦争（モスクワ焼き討ち）。ウィーン会議。神聖同盟を提唱。デカブリストの乱（死後）</td></tr>
+<tr><td class="no-cell">8</td><td class="name-cell">ニコライ1世</td><td class="year-cell">1825-55</td><td class="desc-cell">デカブリストの乱を鎮圧。「ヨーロッパの憲兵」。ポーランド反乱弾圧。クリミア戦争で敗北→改革の必要性</td></tr>
+<tr><td class="no-cell">9</td><td class="name-cell">アレクサンドル2世</td><td class="year-cell">1855-81</td><td class="desc-cell">農奴解放令（1861）。ゼムストヴォ（地方自治）。ポーランド反乱鎮圧。露土戦争。ナロードニキ運動。暗殺</td></tr>
+<tr><td class="no-cell">10</td><td class="name-cell">アレクサンドル3世</td><td class="year-cell">在位1881-1894</td><td class="desc-cell">反動政治。ポベドノスツェフの影響。露仏同盟を締結。</td></tr>
+<tr><td class="no-cell">11</td><td class="name-cell">ウィッテ</td><td class="year-cell">1849-1915</td><td class="desc-cell">蔵相→首相。シベリア鉄道。工業化推進。ポーツマス条約。十月宣言。</td></tr>
+<tr class="section-header"><td colspan="4">ロマノフ朝</td></tr>
+<tr><td class="no-cell">12</td><td class="name-cell">ニコライ2世</td><td class="year-cell">1894-1917</td><td class="desc-cell">日露戦争。血の日曜日事件→第1次ロシア革命。十月宣言。ストルイピンの改革。第一次世界大戦→ロシア革命（二月・十月革命）で退位→処刑</td></tr>
+<tr><td class="no-cell">13</td><td class="name-cell">ストルイピン</td><td class="year-cell">1906-11</td><td class="desc-cell">農業改革（ミール解体と自営農創出）。暗殺</td></tr>
+<tr class="section-header"><td colspan="4">ソ連〜ロシア連邦</td></tr>
+<tr><td class="no-cell">14</td><td class="name-cell">トロツキー</td><td class="year-cell">1879-1940</td><td class="desc-cell">赤軍創設。ブレスト＝リトフスク条約（1918）の全権。スターリンとの権力闘争に敗北→亡命→暗殺</td></tr>
+<tr><td class="no-cell">15</td><td class="name-cell">ケレンスキー</td><td class="year-cell">1917</td><td class="desc-cell">二月革命後の臨時政府首相。戦争継続→十月革命で打倒</td></tr>
+<tr><td class="no-cell">16</td><td class="name-cell">レーニン</td><td class="year-cell">1917-24</td><td class="desc-cell">ボリシェヴィキ指導者。十月革命。ソヴィエト政権樹立。戦時共産主義→新経済政策（ネップ）。コミンテルン結成</td></tr>
+<tr><td class="no-cell">17</td><td class="name-cell">スターリン</td><td class="year-cell">1924-53</td><td class="desc-cell">一国社会主義論。五カ年計画（重工業化・農業集団化）。大粛清。独ソ不可侵条約。第二次世界大戦。冷戦</td></tr>
+<tr><td class="no-cell">18</td><td class="name-cell">フルシチョフ</td><td class="year-cell">1953-64</td><td class="desc-cell">スターリン批判（1956）。「雪どけ」。キューバ危機（1962）。中ソ論争。解任</td></tr>
+<tr><td class="no-cell">19</td><td class="name-cell">ブレジネフ</td><td class="year-cell">1964-82</td><td class="desc-cell">制限主権論（ブレジネフ＝ドクトリン）。チェコスロヴァキア侵攻（1968）。アフガニスタン侵攻（1979）。停滞の時代</td></tr>
+<tr><td class="no-cell">20</td><td class="name-cell">ゴルバチョフ</td><td class="year-cell">1985-91</td><td class="desc-cell">ペレストロイカ（改革）。グラスノスチ（情報公開）。新思考外交。INF全廃条約（1987,レーガンと）。マルタ会談で冷戦終結宣言。ソ連解体</td></tr>
+<tr><td class="no-cell">21</td><td class="name-cell">エリツィン</td><td class="year-cell">1991-99</td><td class="desc-cell">ロシア連邦初代大統領。ソ連解体。CIS（独立国家共同体）。市場経済化</td></tr>
+<tr><td class="no-cell">22</td><td class="name-cell">プーチン</td><td class="year-cell">2000-</td><td class="desc-cell">ロシア連邦大統領（2000-08年、2012年-）。<br>KGB出身。<br>チェチェン紛争での強硬策。<br>エネルギー資源を背景に大国復活を志向。<br>ジョージア侵攻（2008年）・クリミア併合（2014年）・ウクライナ侵攻（2022年）で欧米と対立。</td></tr>
+</tbody></table></div>
+<div class="tbl-wrap hidden" id="content16"><table>
+<thead><tr><th>代数/役職</th><th>人物名</th><th>時代/在位</th><th>覚えるべき事績</th></tr></thead>
+<tbody>
+<tr class="section-header"><td colspan="4">建国期</td></tr>
+<tr><td class="no-cell">1</td><td class="name-cell">ワシントン</td><td class="year-cell">1789-97</td><td class="desc-cell">独立戦争総司令官。初代大統領。孤立主義の基盤</td></tr>
+<tr><td class="no-cell">2</td><td class="name-cell">ジェファソン</td><td class="year-cell">1801-09</td><td class="desc-cell">独立宣言起草。ルイジアナ購入（1803,仏から）</td></tr>
+<tr><td class="no-cell">3</td><td class="name-cell">モンロー</td><td class="year-cell">1817-25</td><td class="desc-cell">モンロー教書（1823,新旧両大陸の相互不干渉）</td></tr>
+<tr><td class="no-cell">4</td><td class="name-cell">ジャクソン</td><td class="year-cell">1829-37</td><td class="desc-cell">ジャクソニアン＝デモクラシー（白人男性普通選挙の拡大）。先住民強制移住法</td></tr>
+<tr class="section-header"><td colspan="4">19世紀</td></tr>
+<tr><td class="no-cell">5</td><td class="name-cell">ポーク</td><td class="year-cell">1845-49</td><td class="desc-cell">テキサス併合。米墨戦争（1846-48）。オレゴン協定</td></tr>
+<tr><td class="no-cell">6</td><td class="name-cell">フィルモア</td><td class="year-cell">1850-53</td><td class="desc-cell">ペリーを日本に派遣→日米和親条約</td></tr>
+<tr><td class="no-cell">7</td><td class="name-cell">リンカーン</td><td class="year-cell">1861-65</td><td class="desc-cell">南北戦争。奴隷解放宣言（1863）。ゲティスバーグ演説（「人民の人民による人民のための政治」）。暗殺</td></tr>
+<tr><td class="no-cell">8</td><td class="name-cell">グラント</td><td class="year-cell">1869-77</td><td class="desc-cell">南北戦争の北軍将軍から大統領。南部再建</td></tr>
+<tr class="section-header"><td colspan="4">帝国主義〜WW1</td></tr>
+<tr><td class="no-cell">9</td><td class="name-cell">マッキンリー</td><td class="year-cell">1897-1901</td><td class="desc-cell">米西戦争（1898）。フィリピン・グアム・プエルトリコ獲得。門戸開放宣言</td></tr>
+<tr><td class="no-cell">10</td><td class="name-cell">セオドア＝ローズヴェルト</td><td class="year-cell">1901-09</td><td class="desc-cell">棍棒外交（カリブ海政策）。ポーツマス条約（日露戦争）の調停。パナマ運河建設</td></tr>
+<tr><td class="no-cell">11</td><td class="name-cell">タフト</td><td class="year-cell">1909-13</td><td class="desc-cell">ドル外交（経済的影響力による外交）</td></tr>
+<tr><td class="no-cell">12</td><td class="name-cell">ウィルソン</td><td class="year-cell">1913-21</td><td class="desc-cell">十四カ条の平和原則。国際連盟を提唱（しかし米は不参加）。宣教師外交</td></tr>
+<tr><td class="no-cell">13</td><td class="name-cell">ハーディング</td><td class="year-cell">1921-23</td><td class="desc-cell">「常態への復帰」。ワシントン会議（1921-22）開催</td></tr>
+<tr><td class="no-cell">14</td><td class="name-cell">クーリッジ</td><td class="year-cell">1923-29</td><td class="desc-cell">アメリカ第30代大統領（在任1923-29年）。<br>「永遠の繁栄」の時代。<br>レッセフェール（自由放任）政策。<br>政府の規制を最小化→投機の過熱を放置→世界恐慌（1929年）の遠因。</td></tr>
+<tr><td class="no-cell">15</td><td class="name-cell">フーヴァー</td><td class="year-cell">1929-33</td><td class="desc-cell">世界恐慌（1929）。フーヴァー＝モラトリアム（賠償金支払い猶予）</td></tr>
+<tr><td class="no-cell">16</td><td class="name-cell">フランクリン＝ローズヴェルト</td><td class="year-cell">1933-45</td><td class="desc-cell">民主党。ニューディール政策（TVA・AAA・NIRA・ワグナー法・社会保障法）で世界恐慌に対処。<br>大西洋憲章（1941）→第二次大戦への参戦。ヤルタ会談（1945）。4選された唯一の大統領（在任中に死去）。</td></tr>
+<tr class="section-header"><td colspan="4">冷戦期〜</td></tr>
+<tr><td class="no-cell">17</td><td class="name-cell">トルーマン</td><td class="year-cell">1945-53</td><td class="desc-cell">原爆投下（広島・長崎）。トルーマン＝ドクトリン（封じ込め政策）。マーシャル＝プラン。NATO結成。朝鮮戦争介入</td></tr>
+<tr><td class="no-cell">18</td><td class="name-cell">アイゼンハワー</td><td class="year-cell">1953-61</td><td class="desc-cell">共和党。第二次大戦のノルマンディー上陸作戦の連合軍最高司令官。朝鮮戦争の休戦（1953）。<br>ジュネーヴ4巨頭会談（1955）。アイゼンハワー＝ドクトリン（中東への共産主義進出を阻止）。軍産複合体を退任演説で警告。</td></tr>
+<tr><td class="no-cell">19</td><td class="name-cell">ケネディ</td><td class="year-cell">1961-63</td><td class="desc-cell">キューバ危機（1962）。部分的核実験禁止条約。「ニューフロンティア」。暗殺</td></tr>
+<tr><td class="no-cell">20</td><td class="name-cell">ジョンソン</td><td class="year-cell">1963-69</td><td class="desc-cell">北爆開始→ベトナム戦争本格化。公民権法（1964）。「偉大な社会」</td></tr>
+<tr><td class="no-cell">21</td><td class="name-cell">ニクソン</td><td class="year-cell">1969-74</td><td class="desc-cell">ニクソン訪中（1972）。ベトナム撤退（パリ和平協定,1973）。ドル＝ショック（金兌換停止,1971）。ウォーターゲート事件で辞任</td></tr>
+<tr><td class="no-cell">22</td><td class="name-cell">カーター</td><td class="year-cell">1977-81</td><td class="desc-cell">キャンプ＝デービッド合意（エジプト＝イスラエル）。パナマ運河返還条約。人権外交</td></tr>
+<tr><td class="no-cell">23</td><td class="name-cell">レーガン</td><td class="year-cell">1981-89</td><td class="desc-cell">新自由主義（レーガノミクス）。「強いアメリカ」。戦略防衛構想（SDI）。INF全廃条約（1987,ゴルバチョフと）</td></tr>
+<tr><td class="no-cell">24</td><td class="name-cell">ブッシュ（父）</td><td class="year-cell">1989-93</td><td class="desc-cell">マルタ会談で冷戦終結宣言（1989,ゴルバチョフと）。湾岸戦争（1991）</td></tr>
+<tr><td class="no-cell">25</td><td class="name-cell">クリントン</td><td class="year-cell">1993-2001</td><td class="desc-cell">NAFTA調印。パレスチナ暫定自治協定（オスロ合意）仲介。コソヴォ空爆</td></tr>
+<tr><td class="no-cell">26</td><td class="name-cell">ブッシュ（子）</td><td class="year-cell">2001-09</td><td class="desc-cell">9.11同時多発テロ→対テロ戦争。アフガニスタン攻撃。イラク戦争（2003）</td></tr>
+<tr><td class="no-cell">27</td><td class="name-cell">オバマ</td><td class="year-cell">2009-17</td><td class="desc-cell">初のアフリカ系大統領。「核なき世界」演説</td></tr>
+<tr><td class="no-cell">28</td><td class="name-cell">トランプ</td><td class="year-cell">2017-21/2025-</td><td class="desc-cell">共和党。「アメリカ第一主義」。TPP離脱・パリ協定離脱・中国との貿易摩擦・メキシコ国境の壁建設を推進。<br>2度の弾劾訴追（いずれも無罪）。2021年1月6日の議事堂襲撃事件。2024年に再選。</td></tr>
+</tbody></table></div>
+<div class="tbl-wrap hidden" id="content17"><table>
+<thead><tr><th>代数/役職</th><th>人物名</th><th>時代/在位</th><th>覚えるべき事績</th></tr></thead>
+<tbody>
+<tr class="section-header"><td colspan="4">スペイン</td></tr>
+<tr><td class="no-cell">1</td><td class="name-cell">イサベル＆フェルナンド</td><td class="year-cell">1474-1504</td><td class="desc-cell">レコンキスタ完了（1492,ナスル朝グラナダ陥落）。コロンブスを支援→新大陸到達（1492）。異端審問所。ユダヤ人追放</td></tr>
+<tr><td class="no-cell">2</td><td class="name-cell">カルロス1世</td><td class="year-cell">1516-56</td><td class="desc-cell">スペイン＝ハプスブルク家。「太陽の沈まぬ帝国」。新大陸の征服（コルテス・ピサロ）</td></tr>
+<tr><td class="no-cell">3</td><td class="name-cell">フェリペ2世</td><td class="year-cell">1556-98</td><td class="desc-cell">太陽の沈まぬ帝国の全盛期。レパントの海戦（1571）。ポルトガル併合。無敵艦隊（アルマダ）がイングランドに敗北（1588）。ネーデルラント独立戦争</td></tr>
+<tr><td class="no-cell">4</td><td class="name-cell">フェリペ5世</td><td class="year-cell">1700-46</td><td class="desc-cell">スペイン継承戦争でブルボン朝のスペイン王に（ルイ14世の孫）。ユトレヒト条約</td></tr>
+<tr><td class="no-cell">5</td><td class="name-cell">フランコ</td><td class="year-cell">1939-75</td><td class="desc-cell">スペイン内戦で勝利。独裁体制（ファシズム体制）</td></tr>
+<tr class="section-header"><td colspan="4">ポルトガル</td></tr>
+<tr><td class="no-cell">6</td><td class="name-cell">エンリケ航海王子</td><td class="year-cell">1394-1460</td><td class="desc-cell">大航海時代の先駆者。セウタ攻略（1415）。アフリカ西岸探検を奨励</td></tr>
+<tr><td class="no-cell">7</td><td class="name-cell">サラザール</td><td class="year-cell">1932-68</td><td class="desc-cell">ポルトガルの独裁者。植民地保持に固執</td></tr>
+<tr><td class="no-cell">8</td><td class="name-cell">ジョアン2世</td><td class="year-cell">1481-95</td><td class="desc-cell">「完全王」。エンリケ航海王子の事業を継承。ディアス（喜望峰到達,1488）を派遣。コロンブス帰国時に交渉。トルデシリャス条約（1494）を締結→ポルトガルのアジア進出の基盤。</td></tr>
+<tr class="section-header"><td colspan="4">スウェーデン</td></tr>
+<tr><td class="no-cell">9</td><td class="name-cell">グスタフ＝アドルフ</td><td class="year-cell">1611-32</td><td class="desc-cell">三十年戦争に新教側で参戦。リュッツェンの戦い（1632）で戦死。「北方の獅子」</td></tr>
+<tr><td class="no-cell">10</td><td class="name-cell">カール12世</td><td class="year-cell">1697-1718</td><td class="desc-cell">北方戦争でピョートル1世と争う。ポルタヴァの戦い（1709）で大敗</td></tr>
+<tr class="section-header"><td colspan="4">デンマーク</td></tr>
+<tr><td class="no-cell">11</td><td class="name-cell">クリスチャン4世</td><td class="year-cell">1588-1648</td><td class="desc-cell">三十年戦争にプロテスタント側として参戦（デンマーク戦争,1625-29）するもヴァレンシュタインに敗北→リューベックの和約で撤退。</td></tr>
+</tbody></table></div>
+<div class="tbl-wrap hidden" id="content18"><table>
+<thead><tr><th>代数/役職</th><th>人物名</th><th>時代/在位</th><th>覚えるべき事績</th></tr></thead>
+<tbody>
+<tr class="section-header"><td colspan="4">両シチリア王国</td></tr>
+<tr><td class="no-cell">1</td><td class="name-cell">ルッジェーロ2世</td><td class="year-cell">1130-54</td><td class="desc-cell">ノルマン人。南イタリアとシチリアを統一し両シチリア王国を建国。パレルモに都。<br>キリスト教・イスラーム・ビザンツ文化が融合した多文化王国。イドリースィー（地理学者）を保護。</td></tr>
+<tr class="section-header"><td colspan="4">イタリア統一運動</td></tr>
+<tr><td class="no-cell">2</td><td class="name-cell">マッツィーニ</td><td class="year-cell">1805-72</td><td class="desc-cell">青年イタリア結成。共和主義による統一を目指す</td></tr>
+<tr><td class="no-cell">3</td><td class="name-cell">ガリバルディ</td><td class="year-cell">1807-82</td><td class="desc-cell">千人隊（赤シャツ隊）で両シチリア王国を征服。征服地をヴィットーリオ＝エマヌエーレ2世に献上</td></tr>
+<tr><td class="no-cell">4</td><td class="name-cell">カヴール</td><td class="year-cell">1810-61</td><td class="desc-cell">サルデーニャ王国首相。ナポレオン3世と結びオーストリアと戦争。クリミア戦争に参戦して国際的地位向上。北イタリア統一の推進者</td></tr>
+<tr><td class="no-cell">5</td><td class="name-cell">ヴィットーリオ＝エマヌエーレ2世</td><td class="year-cell">1861-78</td><td class="desc-cell">イタリア王国初代国王。ローマを併合し首都に（1870）</td></tr>
+<tr><td class="no-cell">6</td><td class="name-cell">ムッソリーニ</td><td class="year-cell">1922-43</td><td class="desc-cell">ファシスト党。ローマ進軍（1922）。ラテラノ条約（1929）。エチオピア侵攻（1935）。ベルリン＝ローマ枢軸。連合国に降伏後処刑</td></tr>
+</tbody></table></div>
+<div class="tbl-wrap hidden" id="content19"><table>
+<thead><tr><th>代数/役職</th><th>人物名</th><th>時代/在位</th><th>覚えるべき事績</th></tr></thead>
+<tbody>
+<tr class="section-header"><td colspan="4">独立運動</td></tr>
+<tr><td class="no-cell">1</td><td class="name-cell">トゥサン＝ルーヴェルテュール</td><td class="year-cell">1743-1803</td><td class="desc-cell">ハイチ独立運動。黒人奴隷出身。フランスに捕虜にされ獄死</td></tr>
+<tr><td class="no-cell">2</td><td class="name-cell">イダルゴ</td><td class="year-cell">1753-1811</td><td class="desc-cell">メキシコ独立運動の端緒（「ドロレスの叫び」1810）。処刑</td></tr>
+<tr><td class="no-cell">3</td><td class="name-cell">サン＝マルティン</td><td class="year-cell">1778-1850</td><td class="desc-cell">アルゼンチン・チリ・ペルーの独立を指導</td></tr>
+<tr><td class="no-cell">4</td><td class="name-cell">ボリバル</td><td class="year-cell">1783-1830</td><td class="desc-cell">「解放者」。ベネズエラ・コロンビア・エクアドル・ペルー・ボリビアの独立。大コロンビアを建国</td></tr>
+<tr class="section-header"><td colspan="4">メキシコ</td></tr>
+<tr><td class="no-cell">5</td><td class="name-cell">フアレス</td><td class="year-cell">1806-72</td><td class="desc-cell">メキシコ大統領。ナポレオン3世のメキシコ出兵に抵抗。先住民出身</td></tr>
+<tr><td class="no-cell">6</td><td class="name-cell">ディアス</td><td class="year-cell">1830-1915</td><td class="desc-cell">メキシコの長期独裁→メキシコ革命（1910）で亡命</td></tr>
+<tr><td class="no-cell">7</td><td class="name-cell">サパタ</td><td class="year-cell">1879-1919</td><td class="desc-cell">メキシコ革命。「土地と自由」。アヤラ綱領。</td></tr>
+<tr><td class="no-cell">8</td><td class="name-cell">カルデナス</td><td class="year-cell">在任1934-1940</td><td class="desc-cell">メキシコ大統領。石油国有化。農地改革。革命の制度化。</td></tr>
+<tr><td class="no-cell">9</td><td class="name-cell">マデロ</td><td class="year-cell">1873-1913</td><td class="desc-cell">メキシコ革命の指導者。大統領に就任するもクーデタで殺害</td></tr>
+<tr class="section-header"><td colspan="4">南米・カリブ海</td></tr>
+<tr><td class="no-cell">10</td><td class="name-cell">ペロン</td><td class="year-cell">1895-1974</td><td class="desc-cell">アルゼンチン大統領。ペロニズム（労働者重視のポピュリズム）</td></tr>
+<tr><td class="no-cell">11</td><td class="name-cell">バティスタ</td><td class="year-cell">1901-73</td><td class="desc-cell">キューバの親米独裁者。カストロに打倒</td></tr>
+<tr><td class="no-cell">12</td><td class="name-cell">アジェンデ</td><td class="year-cell">1908-73</td><td class="desc-cell">チリ大統領。世界初の選挙による社会主義政権。CIAが関与したクーデタで死亡</td></tr>
+<tr><td class="no-cell">13</td><td class="name-cell">ピノチェト</td><td class="year-cell">1915-2006</td><td class="desc-cell">チリ軍事独裁者。新自由主義経済政策</td></tr>
+<tr><td class="no-cell">14</td><td class="name-cell">カストロ</td><td class="year-cell">1926-2016</td><td class="desc-cell">キューバ革命（1959,バティスタ政権打倒）。社会主義宣言。ソ連に接近→キューバ危機</td></tr>
+<tr><td class="no-cell">15</td><td class="name-cell">トリホス</td><td class="year-cell">1929-81</td><td class="desc-cell">パナマ。パナマ運河返還条約（1977,カーターと）</td></tr>
+<tr><td class="no-cell">16</td><td class="name-cell">ノリエガ</td><td class="year-cell">1934-2017</td><td class="desc-cell">パナマの独裁者。米軍の侵攻により逮捕</td></tr>
+<tr><td class="no-cell">17</td><td class="name-cell">チェ＝ゲバラ</td><td class="year-cell">1928-67</td><td class="desc-cell">アルゼンチン出身。キューバ革命（1959）でカストロと共闘。ゲリラ戦の理論家。ボリビアで処刑。20世紀の革命の象徴</td></tr>
+</tbody></table></div>
+<div class="tbl-wrap hidden" id="content20"><table>
+<thead><tr><th>代数/役職</th><th>人物名</th><th>時代/在位</th><th>覚えるべき事績</th></tr></thead>
+<tbody>
+<tr class="section-header"><td colspan="4">西アフリカ</td></tr>
+<tr><td class="no-cell">1</td><td class="name-cell">マンサ＝ムーサ</td><td class="year-cell">14C</td><td class="desc-cell">マリ王国最盛期の王。メッカ巡礼で莫大な黄金を散布。イブン＝バットゥータが来訪。トンブクトゥの繁栄</td></tr>
+<tr class="section-header"><td colspan="4">エジプト近現代</td></tr>
+<tr><td class="no-cell">2</td><td class="name-cell">ムハンマド＝アリー</td><td class="year-cell">1805-49</td><td class="desc-cell">エジプト総督→事実上の独立。エジプト近代化（軍制・教育改革）。エジプト＝トルコ戦争でオスマン帝国と対立</td></tr>
+<tr><td class="no-cell">3</td><td class="name-cell">ナセル</td><td class="year-cell">1956-70</td><td class="desc-cell">エジプト革命（1952）。スエズ運河国有化宣言（1956）→第2次中東戦争。汎アラブ主義。非同盟運動指導者</td></tr>
+<tr><td class="no-cell">4</td><td class="name-cell">サダト</td><td class="year-cell">1970-81</td><td class="desc-cell">第4次中東戦争（1973）。キャンプ＝デービッド合意。エジプト＝イスラエル平和条約（1979）。暗殺</td></tr>
+<tr><td class="no-cell">5</td><td class="name-cell">ムバラク</td><td class="year-cell">1981-2011</td><td class="desc-cell">長期政権→「アラブの春」（2011）で退陣</td></tr>
+<tr class="section-header"><td colspan="4">エチオピア</td></tr>
+<tr><td class="no-cell">6</td><td class="name-cell">メネリク2世</td><td class="year-cell">1889-1913</td><td class="desc-cell">アドワの戦い（1896）でイタリアを撃退→アフリカで数少ない独立維持</td></tr>
+<tr><td class="no-cell">7</td><td class="name-cell">セシル＝ローズ</td><td class="year-cell">1853-1902</td><td class="desc-cell">ケープ植民地首相。3C政策。ローデシア。ボーア戦争の一因。</td></tr>
+<tr class="section-header"><td colspan="4">サハラ以南</td></tr>
+<tr><td class="no-cell">8</td><td class="name-cell">クレオパトラ7世</td><td class="year-cell">前51-前30</td><td class="desc-cell">プトレマイオス朝最後の女王。カエサル・アントニウスと結びローマに対抗。アクティウムの海戦（前31）で敗北→自殺。プトレマイオス朝滅亡→エジプトがローマの属州に→ヘレニズム時代の終焉。</td></tr>
+<tr><td class="no-cell">9</td><td class="name-cell">マンデラ</td><td class="year-cell">1918-2013</td><td class="desc-cell">反アパルトヘイト闘争。27年間投獄→釈放。南アフリカ初の黒人大統領（1994）。ノーベル平和賞</td></tr>
+<tr><td class="no-cell">10</td><td class="name-cell">ンクルマ</td><td class="year-cell">1957-66</td><td class="desc-cell">ガーナ初代大統領。サハラ以南で最初の独立国。パン＝アフリカニズム</td></tr>
+<tr><td class="no-cell">11</td><td class="name-cell">ケニヤッタ</td><td class="year-cell">1964-78</td><td class="desc-cell">ケニア独立運動指導者・初代大統領。マウマウ団の反乱で投獄→独立後に大統領。アフリカ社会主義を掲げる。</td></tr>
+<tr><td class="no-cell">12</td><td class="name-cell">ニエレレ</td><td class="year-cell">1964-85</td><td class="desc-cell">タンザニア初代大統領。「ウジャマー社会主義」（アフリカ的社会主義）。アルーシャ宣言（1967）。パン＝アフリカニズムの指導者。</td></tr>
+<tr><td class="no-cell">13</td><td class="name-cell">モブツ</td><td class="year-cell">1965-97</td><td class="desc-cell">コンゴ（ザイールに改名）の独裁者</td></tr>
+<tr><td class="no-cell">14</td><td class="name-cell">ンクルマ（クワメ＝ンクルマ）</td><td class="year-cell">1957-66</td><td class="desc-cell">ガーナ独立（1957,サハラ以南初）の指導者・初代大統領。パン＝アフリカニズム。アフリカ統一機構（OAU）設立に尽力。軍事クーデタで失脚</td></tr>
+<tr><td class="no-cell">15</td><td class="name-cell">セク＝トゥーレ</td><td class="year-cell">1958-84</td><td class="desc-cell">ギニア初代大統領。1958年フランス共同体への加入を拒否→即時独立。「隷属の中の豊かさより、自由の中の貧困を選ぶ」</td></tr>
+<tr><td class="no-cell">16</td><td class="name-cell">ルムンバ</td><td class="year-cell">1960-61</td><td class="desc-cell">コンゴ初代首相。独立直後にコンゴ動乱→CIA関与で暗殺。アフリカ独立運動の象徴的悲劇</td></tr>
+<tr><td class="no-cell">17</td><td class="name-cell">ムガベ</td><td class="year-cell">1980-2017</td><td class="desc-cell">ジンバブエ初代首相→大統領。白人少数支配を終結。後半は独裁化・経済崩壊。2017年軍事クーデタで辞任</td></tr>
+<tr><td class="no-cell">18</td><td class="name-cell">デクラーク</td><td class="year-cell">1989-94</td><td class="desc-cell">南アフリカ大統領。アパルトヘイト撤廃（1991）。マンデラと共にノーベル平和賞（1993）。全人種参加選挙を実施</td></tr>
+</tbody></table></div>
+<div class="tbl-wrap hidden" id="content21"><table>
+<thead><tr><th>代数/役職</th><th>人物名</th><th>時代/在位</th><th>覚えるべき事績</th></tr></thead>
+<tbody>
+<tr class="section-header"><td colspan="4">ポーランド</td></tr>
+<tr><td class="no-cell">1</td><td class="name-cell">ヤゲウォ（ヴワディスワフ2世）</td><td class="year-cell">在位1386-1434</td><td class="desc-cell">ポーランド・リトアニア合同。タンネンベルク（1410）でドイツ騎士団撃破。</td></tr>
+<tr><td class="no-cell">2</td><td class="name-cell">コシューシコ</td><td class="year-cell">1746-1817</td><td class="desc-cell">ポーランド独立運動。アメリカ独立戦争にも参加。第3回ポーランド分割で敗北</td></tr>
+<tr><td class="no-cell">3</td><td class="name-cell">ピウスツキ</td><td class="year-cell">1867-1935</td><td class="desc-cell">第一次世界大戦後にポーランド独立を回復</td></tr>
+<tr><td class="no-cell">4</td><td class="name-cell">ゴムウカ</td><td class="year-cell">1905-82</td><td class="desc-cell">ポズナン暴動（1956）後に第一書記。ポーランドの独自路線</td></tr>
+<tr><td class="no-cell">5</td><td class="name-cell">ヤルゼルスキ</td><td class="year-cell">1923-2014</td><td class="desc-cell">戒厳令（1981）で「連帯」を弾圧</td></tr>
+<tr><td class="no-cell">6</td><td class="name-cell">ワレサ</td><td class="year-cell">1943-</td><td class="desc-cell">「連帯」指導者。レーニン造船所のストライキ。民主化。ノーベル平和賞。大統領</td></tr>
+<tr><td class="no-cell">7</td><td class="name-cell">カジミェシュ3世</td><td class="year-cell">1333-70</td><td class="desc-cell">ピアスト朝最後のポーランド王。「大王」。クラクフ大学（のちヤゲウォ大学）を創設（1364）。ユダヤ人を保護し商業を奨励。法典の整備。</td></tr>
+<tr class="section-header"><td colspan="4">ハンガリー</td></tr>
+<tr><td class="no-cell">8</td><td class="name-cell">コシュート</td><td class="year-cell">1802-94</td><td class="desc-cell">ハンガリー独立運動指導者（1848-49）。ロシア軍介入で鎮圧</td></tr>
+<tr><td class="no-cell">9</td><td class="name-cell">ナジ＝イムレ</td><td class="year-cell">1896-1958</td><td class="desc-cell">ハンガリー事件（1956）。ワルシャワ条約機構脱退を宣言→ソ連軍介入で鎮圧。処刑</td></tr>
+<tr><td class="no-cell">10</td><td class="name-cell">マーチャーシュ1世</td><td class="year-cell">1458-90</td><td class="desc-cell">コルヴィヌス。ハンガリー全盛期。ルネサンス文化保護</td></tr>
+<tr class="section-header"><td colspan="4">チェコスロヴァキア</td></tr>
+<tr><td class="no-cell">11</td><td class="name-cell">マサリク</td><td class="year-cell">1850-1937</td><td class="desc-cell">第一次世界大戦後にチェコスロヴァキア独立。初代大統領</td></tr>
+<tr><td class="no-cell">12</td><td class="name-cell">ハヴェル</td><td class="year-cell">1989-2003</td><td class="desc-cell">劇作家・反体制活動家。「ビロード革命」（1989）の指導者→初代大統領。チェコ分離後もチェコ大統領</td></tr>
+<tr class="section-header"><td colspan="4">ルーマニア</td></tr>
+<tr><td class="no-cell">13</td><td class="name-cell">チャウシェスク</td><td class="year-cell">1918-89</td><td class="desc-cell">ルーマニアの独裁者。独自路線（ソ連と距離）。1989年の革命で処刑</td></tr>
+<tr class="section-header"><td colspan="4">アルバニア</td></tr>
+<tr><td class="no-cell">14</td><td class="name-cell">ホジャ</td><td class="year-cell">1908-85</td><td class="desc-cell">アルバニアの独裁者。対ソ断交→対中接近→鎖国。「世界唯一の無神論国家」宣言</td></tr>
+<tr class="section-header"><td colspan="4">ユーゴスラヴィア</td></tr>
+<tr><td class="no-cell">15</td><td class="name-cell">チトー</td><td class="year-cell">1892-1980</td><td class="desc-cell">パルチザンでナチスに抵抗。独自の社会主義路線。非同盟運動</td></tr>
+<tr><td class="no-cell">16</td><td class="name-cell">ミロシェヴィッチ</td><td class="year-cell">1941-2006</td><td class="desc-cell">セルビア大統領。コソヴォ紛争（1998-99）。NATO空爆。ハーグの国際法廷で裁判中に死亡</td></tr>
+<tr><td class="no-cell">17</td><td class="name-cell">ゼレンスキー</td><td class="year-cell">2019-</td><td class="desc-cell">ウクライナ大統領。2022年ロシア全面侵攻に対し徹底抗戦。</td></tr>
+<tr><td class="no-cell">18</td><td class="name-cell">ティトー</td><td class="year-cell">1953-80</td><td class="desc-cell">ユーゴスラヴィア大統領。パルチザン指導者。コミンフォルムから除名（1948）→独自の社会主義。非同盟運動の中心</td></tr>
+<tr class="section-header"><td colspan="4">東ドイツ</td></tr>
+<tr><td class="no-cell">19</td><td class="name-cell">ホーネッカー</td><td class="year-cell">1971-89</td><td class="desc-cell">東ドイツの実質的最高指導者。ベルリンの壁崩壊（1989.11.9）の直前に退陣</td></tr>
+<tr class="section-header"><td colspan="4">ポーランド＝リトアニア</td></tr>
+<tr class="section-header"><td colspan="4">ポーランド王</td></tr>
+<tr class="section-header"><td colspan="4">北欧</td></tr>
+<tr class="section-header"><td colspan="4">デンマーク女王</td></tr>
+<tr class="section-header"><td colspan="4">ブルガリア</td></tr>
+<tr class="section-header"><td colspan="4">ブルガリア皇帝</td></tr>
+<tr class="section-header"><td colspan="4">ベルギー</td></tr>
+<tr class="section-header"><td colspan="4">ベルギー国王</td></tr>
+</tbody></table></div>
+<div class="tbl-wrap hidden" id="content22"><table>
+<thead><tr><th>No.</th><th>人物名</th><th>在位/生没年</th><th>業績・役割</th></tr></thead>
+<tbody>
+<tr class="section-header"><td colspan="4">北欧</td></tr>
+<tr><td class="no-cell">1</td><td class="name-cell">グスタフ＝ヴァーサ</td><td class="year-cell">在位1523-1560</td><td class="desc-cell">スウェーデン独立の父。カルマル同盟離脱。ルター派を国教に。</td></tr>
+<tr><td class="no-cell">2</td><td class="name-cell">クリスティーナ女王</td><td class="year-cell">在位1632-1654</td><td class="desc-cell">スウェーデン女王。ウェストファリア条約。デカルト招聘。退位しカトリック改宗。</td></tr>
+<tr><td class="no-cell">3</td><td class="name-cell">フレデリク7世</td><td class="year-cell">在位1848-1863</td><td class="desc-cell">デンマーク王。六月憲法（1849）で立憲君主政。シュレスヴィヒ＝ホルシュタイン問題。</td></tr>
+<tr class="section-header"><td colspan="4">オランダ</td></tr>
+<tr><td class="no-cell">4</td><td class="name-cell">オラニエ公ウィレム（沈黙公）</td><td class="year-cell">1533-1584</td><td class="desc-cell">ネーデルラント独立戦争の指導者。ユトレヒト同盟。暗殺。</td></tr>
+<tr><td class="no-cell">5</td><td class="name-cell">ウィレム3世</td><td class="year-cell">在位1672-1702</td><td class="desc-cell">オランダ総督→イギリス王（名誉革命）。権利の章典。ルイ14世に対抗。</td></tr>
+</tbody></table></div>
+
+<script>
+var currentTab=0;
+function switchTab(n){document.getElementById("content"+currentTab).className="tbl-wrap hidden";document.getElementById("tab"+currentTab).className="tab";document.getElementById("content"+n).className="tbl-wrap";document.getElementById("tab"+n).className="tab on";currentTab=n;filterRows()}
+function filterRows(){var q=document.getElementById("search").value.toLowerCase();var w=document.getElementById("content"+currentTab);var r=w.querySelectorAll("tbody tr");var s=0;for(var i=0;i<r.length;i++){var t=r[i].textContent.toLowerCase();if(!q||t.indexOf(q)>=0){r[i].style.display="";s++}else{r[i].style.display="none"}}document.getElementById("cnt").textContent=s+" 件"}
+filterRows();
+</script>
+<style>
+.chart-link{display:inline-block;font-size:6px;padding:1px 4px;margin:1px;border-radius:2px;background:rgba(201,169,110,.08);border:1px solid rgba(201,169,110,.12);color:#c9a96e;text-decoration:none;white-space:nowrap;vertical-align:middle;transition:all .15s}
+.chart-link:hover{background:rgba(201,169,110,.2);border-color:rgba(201,169,110,.3);color:#e8c888}
+.chart-links-wrap{display:inline;margin-left:3px}
+</style>
+<script>
+(function(){
+var M=[
+[/オリエント|シュメール|アッカド|バビロニア|ハンムラビ|ヒッタイト|アッシリア|アケメネス|ペルシア|エジプト古王国|エジプト新王国|フェニキア|リディア|メディア/,"timeline_orient.html","TL:オリエント"],
+[/中国|殷|周|秦|漢|三国|隋|唐|宋|元|明|清|春秋|戦国/,"timeline_china.html","TL:中国王朝"],
+[/アヘン戦争|太平天国|洋務運動|日清戦争|戊戌変法|義和団|辛亥革命|五四運動|国共|文化大革命|改革開放/,"timeline_china_modern.html","TL:中国近代"],
+[/イスラーム|ウマイヤ|アッバース|ファーティマ|アイユーブ|マムルーク|セルジューク|オスマン|サファヴィー|ムガル/,"timeline_islamic.html","TL:イスラーム"],
+[/ビザンツ|東ローマ|ユスティニアヌス|コンスタンティノープル/,"timeline_byzantium.html","TL:ビザンツ"],
+[/遊牧|匈奴|突厥|ウイグル|モンゴル|ティムール|フン族|柔然|鮮卑/,"timeline_nomads.html","TL:遊牧民"],
+[/インド|マウリヤ|グプタ|ムガル|ガンディー|ネルー/,"timeline_india.html","TL:インド"],
+[/冷戦|NATO|ワルシャワ|キューバ危機|デタント|ベルリンの壁|ゴルバチョフ|ペレストロイカ/,"timeline_coldwar.html","TL:冷戦"],
+[/WW1|WW2|第一次世界大戦|第二次世界大戦|ヴェルサイユ|真珠湾|ノルマンディー/,"timeline_worldwars.html","TL:大戦"],
+[/産業革命|蒸気機関|ワット|紡績|鉄道/,"timeline_industrial.html","TL:産業革命"],
+[/宗教改革|ルター|カルヴァン|95カ条|アウクスブルク/,"timeline_reformation.html","TL:宗教改革"],
+[/植民地|東インド会社|プランテーション/,"timeline_colonies.html","TL:植民地"],
+[/百年戦争|クレシー|ポワティエ|アジャンクール|ジャンヌ＝ダルク|ジャンヌ/,"flow_hundred_years_war.html","F:百年戦争"],
+[/三十年戦争|ウェストファリア|グスタフ＝アドルフ|リシュリュー|プラハ窓外/,"flow_thirty_years_war.html","F:三十年戦争"],
+[/ナポレオン|トラファルガー|アウステルリッツ|大陸封鎖|ワーテルロー|ボロディノ|ライプツィヒ/,"flow_napoleon.html","F:ナポレオン"],
+[/ウィーン体制|メッテルニヒ|正統主義|七月革命|二月革命|1848/,"flow_vienna_system.html","F:ウィーン体制"],
+[/ドイツ統一|ビスマルク|鉄血|普墺戦争|普仏戦争|エムス電報/,"flow_german_unification.html","F:独統一"],
+[/イタリア統一|カヴール|ガリバルディ|マッツィーニ|千人隊|赤シャツ/,"flow_italian_unification.html","F:伊統一"],
+[/アフリカ分割|ベルリン会議|ファショダ|セシル＝ローズ|3C政策/,"flow_africa_scramble.html","F:アフリカ分割"],
+[/WW2|ヨーロッパ|電撃戦|ダンケルク|バルバロッサ|スターリングラード|ノルマンディー|D-Day/,"flow_ww2_europe.html","F:WW2欧"],
+[/太平洋戦争|真珠湾|ミッドウェー|原爆|広島|長崎|ポツダム/,"flow_ww2_pacific.html","F:WW2太"],
+[/国際連合|国際連盟|大西洋憲章|サンフランシスコ|拒否権|安保理/,"flow_united_nations.html","F:国連"],
+[/脱植民地|アフリカの年|非同盟|エンクルマ|ネオコロニアリズム/,"flow_decolonization.html","F:脱植民地化"],
+[/オリエント統一|サルゴン|ハンムラビ|アッシリア|4王国|アケメネス|キュロス|ダレイオス/,"flow_orient_unification.html","F:オリエント統一"],
+[/科挙|九品中正|進士|殿試|八股文/,"flow_keju.html","F:科挙"],
+[/ギリシア哲学|ソクラテス|プラトン|アリストテレス|ストア|エピクロス|タレス/,"flow_greek_philosophy.html","F:ギリシア哲学"],
+[/均田制|租庸調|府兵制|口分田|両税法|楊炎/,"flow_juntian.html","F:均田制"],
+[/女性史|参政権|サフラジェット|ボーヴォワール|フェミニズム|ウルストンクラフト/,"flow_women_history.html","F:女性史"],
+[/フランス革命|バスティーユ|人権宣言|ジャコバン|ロベスピエール|テルミドール|総裁政府/,"flow_french_revolution.html","F:仏革命"],
+[/ローマ|共和政|元老院|グラックス|カエサル|アウグストゥス|帝政/,"flow_roman_republic.html","F:ローマ"],
+[/ロシア革命|ソヴィエト|レーニン|ボリシェヴィキ|ケレンスキー|血の日曜日/,"flow_russian_revolution.html","F:露革命"],
+[/封建制|荘園|農奴|騎士|レーエン|封建的主従関係/,"flow_feudalism.html","F:封建制"],
+[/十字軍|クレルモン|サラディン|エルサレム/,"flow_crusades.html","F:十字軍"],
+[/宗教改革|ルター|カルヴァン|首長法|ヘンリ8世|トリエント/,"flow_reformation.html","F:宗教改革"],
+[/教皇|叙任権闘争|カノッサ|ボニファティウス|アヴィニョン|大シスマ/,"flow_papal_authority.html","F:教皇権"],
+[/WW1|サラエヴォ|三国同盟|三国協商|シュリーフェン/,"flow_ww1_causes.html","F:WW1原因"],
+[/冷戦終結|マルタ会談|東欧革命|ソ連崩壊|ベルリンの壁崩壊/,"flow_cold_war_end.html","F:冷戦終結"],
+[/パレスチナ|イスラエル|バルフォア|中東戦争|PLO/,"flow_palestine.html","F:パレスチナ"],
+[/大航海時代|コロンブス|ヴァスコ＝ダ＝ガマ|マゼラン|トルデシリャス/,"flow_age_of_exploration.html","F:大航海時代"],
+[/インド独立|ガンディー|ネルー|分離独立|非暴力/,"flow_india_independence.html","F:印独立"],
+[/儒教|孔子|孟子|荀子|朱子学|陽明学|董仲舒|五経博士/,"flow_confucianism.html","F:儒教史"],
+[/シチリア|シラクサ|ノルマン|フリードリヒ2世|シチリアの晩鐘/,"flow_sicily.html","F:シチリア"],
+[/タンジマート|ミドハト|青年トルコ|ケマル|アタテュルク|ローザンヌ|カリフ制廃止/,"flow_ottoman_turkey.html","F:オスマン→トルコ"],
+[/南下政策|クリミア戦争|セヴァストポリ|露土戦争|ベルリン会議|グレート＝ゲーム|日露戦争/,"flow_russia_southern.html","F:露南下"],
+[/中国近代|アヘン|太平天国|洋務|辛亥|五四|国共合作/,"flow_china_modern.html","F:中国近代"],
+[/EU|ECSC|EEC|マーストリヒト|ユーロ/,"european_integration.html","F:EU統合"],
+[/メソポタミア|エジプト|楔形文字|ヒエログリフ|ジッグラト|ピラミッド/,"compare_mesopotamia_egypt.html","C:メソポタvsエジプト"],
+[/諸子百家|儒家|道家|法家|墨家|兵家|老子|荘子|韓非/,"compare_hundred_schools.html","C:諸子百家"],
+[/スンナ派|シーア派|カルバラー|イマーム|サファヴィー/,"compare_sunni_shia.html","C:スンナvsシーア"],
+[/租庸調|両税法|一条鞭法|地丁銀/,"compare_china_tax.html","C:中国税制"],
+[/アテネ|スパルタ|ペリクレス|リュクルゴス/,"compare_athens_sparta.html","C:アテネvsスパルタ"],
+[/絶対王政|ルイ14世|フェリペ2世|エリザベス|ピョートル/,"compare_absolutism.html","C:絶対王政"],
+[/ラテンアメリカ|ボリバル|サン＝マルティン|ハイチ|トゥサン/,"compare_latin_america.html","C:ラテン独立"],
+[/銀|ポトシ|価格革命|石見銀山/,"cycle_silver.html","Cy:銀循環"],
+[/三角貿易|奴隷貿易|砂糖|プランテーション/,"cycle_triangle_trade.html","Cy:三角貿易"],
+[/ブレトンウッズ|IMF|GATT|金ドル本位/,"cycle_bretton_woods.html","Cy:ブレトンウッズ"],
+[/朝貢|冊封|勘合貿易/,"cycle_tribute_trade.html","Cy:朝貢貿易"],
+[/コロンブスの交換|トウモロコシ|ジャガイモ|天然痘|新大陸/,"cycle_columbian_exchange.html","Cy:コロンブス交換"],
+[/ドーズ案|ヤング案|賠償金/,"cycle_dawes_plan.html","Cy:ドーズ案"],
+[/重商主義|コルベール|航海法|東インド会社/,"cycle_mercantilism.html","Cy:重商主義"],
+[/アヘン貿易|三角貿易|19世紀|茶/,"cycle_19c_triangle.html","Cy:アヘン三角貿易"],
+[/合従|連衡|蘇秦|張儀|戦国七雄/,"alliance_warring_states.html","A:合従連衡"],
+[/宗教改革|ルター派|カルヴァン派|英国教会|対抗宗教改革|イエズス会/,"alliance_reformation.html","A:宗教改革対立"],
+[/冷戦|NATO|ワルシャワ|鉄のカーテン|マーシャル|トルーマン/,"alliance_cold_war.html","A:冷戦構造"],
+[/シルクロード|オアシス|草原の道|海の道/,"geo_silk_road.html","G:シルクロード"],
+[/大航海|航路|ガマ|コロンブス|マゼラン/,"geo_exploration.html","G:大航海航路"],
+[/ゲルマン|大移動|西ゴート|東ゴート|フランク|ヴァンダル/,"geo_germanic.html","G:ゲルマン移動"],
+[/冷戦|東西ブロック|鉄のカーテン|NATO|ワルシャワ/,"geo_cold_war.html","G:冷戦地図"]
+];
+var cells=document.querySelectorAll('td');
+for(var i=0;i<cells.length;i++){
+  var txt=cells[i].textContent;
+  if(txt.length<5) continue;
+  var found={};
+  for(var j=0;j<M.length;j++){
+    if(M[j][0].test(txt) && !found[M[j][1]]){
+      found[M[j][1]]=M[j][2];
+    }
+  }
+  var keys=Object.keys(found);
+  if(keys.length>0 && keys.length<=4){
+    var wrap=document.createElement('span');
+    wrap.className='chart-links-wrap';
+    for(var k=0;k<keys.length;k++){
+      var a=document.createElement('a');
+      a.className='chart-link';
+      a.href=keys[k];
+      a.textContent=found[keys[k]];
+      a.title=keys[k];
+      wrap.appendChild(a);
+    }
+    cells[i].appendChild(wrap);
+  }
+}
+})();
+</script>
+</body></html>

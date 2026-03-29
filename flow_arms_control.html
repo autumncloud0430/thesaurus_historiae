@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>軍縮・軍備管理の歴史フロー</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048;--border:rgba(201,169,110,.08)}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+.hdr{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;flex-wrap:wrap}.hdr h1{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2)}.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
+.flow{max-width:740px;margin:0 auto;padding:24px 20px 60px}
+.phase{position:relative;margin-bottom:2px;padding:16px 16px 16px 60px;border-left:2px solid rgba(201,169,110,.08);margin-left:30px}.phase:last-child{border-left-color:transparent}
+.phase-label{position:absolute;left:-42px;top:16px;width:36px;font-family:'Cormorant Garamond',serif;font-size:10px;font-weight:700;color:var(--text3);text-align:right;line-height:1.3}
+.phase::before{content:'';position:absolute;left:-5px;top:22px;width:8px;height:8px;border-radius:50%;background:var(--bg);border:2px solid rgba(201,169,110,.25)}
+.node{background:rgba(255,255,255,.015);border:1px solid rgba(255,255,255,.04);border-radius:8px;padding:10px 14px;margin-bottom:8px;border-left:3px solid transparent;transition:all .2s}.node:hover{background:rgba(255,255,255,.03)}.node-title{font-family:'Noto Serif JP',serif;font-size:12px;font-weight:700;color:var(--gold2);margin-bottom:2px}.node-year{font-family:'Cormorant Garamond',serif;font-size:11px;color:var(--gold);opacity:.6;margin-bottom:4px}.node-desc{font-size:10px;color:var(--text2);line-height:1.7}.node-desc strong{color:var(--text);font-weight:600}.node.key{background:rgba(201,169,110,.04);border-color:rgba(201,169,110,.12)}
+.arrow{display:flex;align-items:center;gap:6px;padding:2px 0 2px 8px;margin-bottom:6px}.arrow-line{width:16px;height:1px;background:rgba(201,169,110,.15)}.arrow-text{font-size:8px;color:var(--text3)}.arrow-icon{color:rgba(201,169,110,.3);font-size:10px}
+.side-note{font-size:8px;color:var(--text3);padding:4px 8px;border-left:2px solid rgba(201,169,110,.1);margin:4px 0 8px;line-height:1.6}
+.p1 .node{border-left-color:rgba(130,120,100,.3)}.p1::before{border-color:rgba(130,120,100,.4)}
+.p2 .node{border-left-color:rgba(100,130,180,.3)}.p2::before{border-color:rgba(100,130,180,.5);background:rgba(100,130,180,.15)}
+.p3 .node{border-left-color:rgba(180,80,80,.3)}.p3::before{border-color:rgba(180,80,80,.5);background:rgba(180,80,80,.15)}
+.p4 .node{border-left-color:rgba(180,130,80,.3)}.p4::before{border-color:rgba(180,130,80,.5);background:rgba(180,130,80,.15)}
+.p5 .node{border-left-color:rgba(80,150,120,.3)}.p5::before{border-color:rgba(80,150,120,.5);background:rgba(80,150,120,.15)}
+.p6 .node{border-left-color:rgba(201,169,110,.3)}.p6::before{border-color:rgba(201,169,110,.5);background:rgba(201,169,110,.15)}
+.note{text-align:center;padding:8px 20px 32px;max-width:700px;margin:0 auto}.note p{font-size:9px;color:var(--text3);line-height:1.8}.note strong{color:var(--gold)}
+.hdr h1{font-size:12px}
+.flow{padding:16px 10px 40px}
+.phase{padding:12px 10px 12px 44px;margin-left:20px}
+.phase-label{left:-30px;width:28px;font-size:8px}
+.node{padding:8px 10px}.node-title{font-size:11px}.node-desc{font-size:9px}
+.branch-row{flex-direction:column}
+.side-note{font-size:7.5px}
+.note p{font-size:8px}
+}
+
+@media(max-width:600px){
+.hdr{padding:10px 12px}.hdr h1{font-size:12px}
+.flow{padding:16px 10px 40px}
+.phase{padding:12px 10px 12px 44px;margin-left:20px}
+.phase-label{left:-30px;width:28px;font-size:8px}
+.node{padding:8px 10px}.node-title{font-size:11px}.node-desc{font-size:9px}
+.branch-row{flex-direction:column}
+.side-note{font-size:7.5px}
+.note p{font-size:8px}
+}
+</style>
+</head>
+<body>
+<div class="hdr"><h1>軍縮・軍備管理の歴史フロー ― ハーグ会議から核軍縮まで</h1><a href="charts.html">← Ad Chartae</a></div>
+<div class="flow">
+
+<div class="phase p1"><div class="phase-label">前史<br>1899<br>〜<br>1914</div>
+<div class="node"><div class="node-title">ハーグ万国平和会議</div><div class="node-year">1899 / 1907</div>
+<div class="node-desc"><strong>第1回ハーグ会議</strong>(1899)＝ロシアのニコライ2世が提唱。ダムダム弾・毒ガスの禁止。<strong>常設仲裁裁判所</strong>を設立。しかし軍縮の実質的合意はなし。<strong>第2回</strong>(1907)＝44カ国参加。戦争法規の整備。いずれも軍縮そのものは実現せず→WW1で全て無意味に。しかし<strong>「国際法で戦争を規制する」</strong>という思想の起源として重要。</div></div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">WW1の惨禍→「二度と繰り返さない」→本格的軍縮の試み</div></div></div>
+
+<div class="phase p2"><div class="phase-label">戦間期<br>1921<br>〜<br>1934</div>
+<div class="node key"><div class="node-title">ワシントン会議(ワシントン体制)</div><div class="node-year">1921–22</div>
+<div class="node-desc">米大統領ハーディングが主催。<strong>ワシントン海軍軍縮条約</strong>＝米英日仏伊の<strong>主力艦(戦艦)保有比率を5:5:3:1.67:1.67</strong>に制限→<strong>史上初の大国間軍縮合意</strong>。主力艦の10年間建造禁止。<strong>四カ国条約</strong>＝日英仏米が太平洋の現状維持を約束→<strong>日英同盟の解消</strong>(日本の孤立化の布石)。<strong>九カ国条約</strong>＝中国の主権尊重・門戸開放・機会均等→「ワシントン体制」＝東アジアの国際秩序。</div></div>
+<div class="side-note">★入試超頻出：「5:5:3」の比率、「日英同盟の解消」「九カ国条約＝中国の門戸開放」。日本にとっては対米英7割の要求が通らず不満→1930年代にワシントン体制を打破する方向へ</div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">主力艦は制限したが補助艦(巡洋艦等)は未制限→次の軍縮へ</div></div>
+<div class="node"><div class="node-title">ロンドン海軍軍縮条約</div><div class="node-year">1930</div>
+<div class="node-desc"><strong>補助艦(巡洋艦・駆逐艦・潜水艦)</strong>も制限。日本の対米比率＝補助艦で約7割を確保(主力艦の6割より有利)。しかし日本海軍内の<strong>艦隊派</strong>(加藤寛治ら)が「統帥権干犯」(軍の編成権は天皇大権で内閣が決めるべきでない)と政府を攻撃→<strong>浜口雄幸首相が狙撃される</strong>→軍部の政治介入が加速→満州事変(1931)への伏線。</div></div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">陸軍の軍縮は？→ジュネーヴ軍縮会議→挫折</div></div>
+<div class="node"><div class="node-title">ジュネーヴ軍縮会議の挫折</div><div class="node-year">1932–34</div>
+<div class="node-desc">国際連盟主催で<strong>60カ国</strong>が参加。ドイツが<strong>「軍備平等権」</strong>(他の大国と同等の軍備を持つ権利)を要求→英仏が拒否→<strong>独が会議から脱退(1933)＝ヒトラー政権→連盟も脱退</strong>。日本もすでに脱退(1933)。→軍縮の国際的枠組みが完全に崩壊。ヒトラーの<strong>再軍備宣言</strong>(1935)→英独海軍協定(1935)＝英がヴェルサイユ条約に違反する独の海軍再建を事実上容認→<strong>宥和政策の始まり</strong>。日本も<strong>ワシントン・ロンドン条約を1936年に脱退</strong>→無条約時代に突入→WW2へ。</div></div>
+<div class="side-note">★入試頻出：「ジュネーヴ軍縮会議の失敗→ヴェルサイユ体制の軍事的枠組みの崩壊」。軍縮が挫折したことが1930年代の軍拡競争→WW2の背景に</div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">WW2→核兵器の登場→「人類滅亡の可能性」が軍備管理の動機に</div></div></div>
+
+<div class="phase p3"><div class="phase-label">冷戦前半<br>1945<br>〜<br>1968</div>
+<div class="node"><div class="node-title">核時代の始まり → 軍備管理の模索</div><div class="node-year">1945–63</div>
+<div class="node-desc"><strong>広島・長崎</strong>(1945)→<strong>ソ連が核開発</strong>(1949)→<strong>水爆</strong>(米1952、ソ1953)→米ソの核軍拡競争。<strong>ビキニ水爆実験</strong>(1954)＝第五福竜丸被曝→反核運動(ラッセル＝アインシュタイン宣言1955、パグウォッシュ会議1957)。キューバ危機(1962)＝<strong>核戦争の瀬戸際</strong>→米ソ双方が「これは危険すぎる」と認識→<strong>ホットライン</strong>設置(1963)。<strong>部分的核実験禁止条約(PTBT)</strong>(1963)＝地下以外の核実験を禁止(米英ソ＝仏中は不参加)。</div></div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">核保有国を増やさない→NPT</div></div>
+<div class="node key"><div class="node-title">核拡散防止条約(NPT)</div><div class="node-year">1968(発効1970)</div>
+<div class="node-desc"><strong>NPT</strong>＝核兵器国(米露英仏中の5カ国)以外の核保有を禁止。非核兵器国はIAEA(国際原子力機関)の査察を受ける。核兵器国は<strong>核軍縮の義務</strong>(第6条)→しかし実効性に疑問。<strong>不参加・脱退国</strong>：インド・パキスタン・イスラエル(いずれも核保有)、北朝鮮(2003年脱退→核開発)。★NPTの矛盾＝「5大国だけが核を持ってよい」という不平等性→インド等は「核のアパルトヘイト」と批判。</div></div>
+<div class="side-note">★入試超頻出：「NPT(1968)＝核保有5カ国の独占」「インド・パキスタン・イスラエルは不参加」</div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">核の数を減らす交渉→SALT・START</div></div></div>
+
+<div class="phase p4"><div class="phase-label">デタント<br>〜<br>新冷戦<br>1969<br>〜<br>1991</div>
+<div class="node"><div class="node-title">SALT → INF → START ― 米ソの核軍備管理</div><div class="node-year">1969–91</div>
+<div class="node-desc"><strong>SALT I</strong>(1972)＝ニクソンとブレジネフ。<strong>ABM条約</strong>(弾道弾迎撃ミサイルの配備を制限)＋戦略核の上限を暫定的に設定。デタントの象徴。<strong>SALT II</strong>(1979)＝カーターとブレジネフが署名→しかしソ連のアフガン侵攻で<strong>米上院が批准拒否</strong>→デタントの終焉。<br><br>
+レーガンの<strong>SDI(戦略防衛構想＝スターウォーズ計画)</strong>(1983)＝宇宙空間でソ連のミサイルを迎撃→ソ連は対抗する財政力がない→軍拡競争がソ連崩壊の一因に。<br><br>
+<strong>INF条約</strong>(1987)＝レーガンとゴルバチョフ。<strong>中距離核ミサイルの全廃</strong>＝★史上初の「核兵器の種類を丸ごと廃棄」する条約。冷戦終結への道。<br><br>
+<strong>START I</strong>(1991)＝ブッシュとゴルバチョフ。<strong>戦略核弾頭を6000発以下</strong>に削減(当時は約1万発ずつ)。冷戦終結の象徴的合意。</div></div>
+<div class="side-note">★入試超頻出：「SALT I(1972)＝デタント」「INF(1987)＝中距離核全廃→冷戦終結へ」「START I(1991)＝戦略核削減」の3つの区別</div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">冷戦後→核軍縮は進むかと思われたが…</div></div></div>
+
+<div class="phase p5"><div class="phase-label">冷戦後<br>1991<br>〜<br>2020s</div>
+<div class="node"><div class="node-title">冷戦後の軍縮 ― 前進と後退</div><div class="node-year">1993–現在</div>
+<div class="node-desc"><strong>START II</strong>(1993)＝エリツィンとブッシュ。MIRV(多弾頭ミサイル)の禁止→しかし批准が遅れ最終的に発効せず。<strong>包括的核実験禁止条約(CTBT)</strong>(1996)＝地下を含む全ての核実験を禁止→しかし<strong>米・中・インド等が未批准→未発効</strong>のまま。<strong>対人地雷禁止条約(オタワ条約)</strong>(1997)＝市民社会の運動で実現(ジョディ＝ウィリアムズにノーベル平和賞)→米露中は不参加。<br><br>
+<strong>新START</strong>(2010)＝オバマとメドヴェージェフ。戦略核弾頭を<strong>1550発以下</strong>に。2021年に5年延長。しかし<strong>INF条約からの離脱</strong>(2019、トランプ政権＝ロシアの違反を理由に)→<strong>軍備管理の枠組みが次々に崩壊</strong>。<strong>核兵器禁止条約(TPNW)</strong>(2017採択、2021発効)＝核兵器の開発・保有・使用を全面禁止→しかし<strong>核保有国は全て不参加</strong>→実効性に疑問だが道義的圧力。</div></div>
+<div class="side-note">21世紀の課題＝米露の軍備管理体制の崩壊(INF離脱・新STARTの行方)＋核保有国の増加(北朝鮮)＋新たな軍拡(中国の核増強・極超音速兵器・宇宙・サイバー)</div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">軍縮の歴史が示す教訓</div></div></div>
+
+<div class="phase p6"><div class="phase-label">まとめ</div>
+<div class="node key"><div class="node-title">軍縮の歴史の教訓</div>
+<div class="node-desc">①<strong>軍縮は「信頼」があるときだけ成功する</strong>＝ワシントン体制(1920年代)やデタント(1970年代)のような協調期に実現。対立が激化すると崩壊(ジュネーヴ会議・新冷戦)。②<strong>「軍縮(disarmament)」vs「軍備管理(arms control)」</strong>の区別が重要＝軍縮＝兵器を減らす/廃棄(INF)、軍備管理＝兵器の数に上限を設ける(SALT)。③<strong>核兵器は「持っている国が手放さない」問題</strong>＝NPTの不平等性→核保有国以外からの不満。④軍縮は<strong>技術の発展</strong>に常に追い越される＝戦艦→核兵器→MIRV→SDI→極超音速→サイバー。</div></div></div>
+
+</div>
+<div class="note"><p>軍縮の流れ＝<strong>①ハーグ会議(1899/1907)→②ワシントン会議(1921-22、5:5:3)→③ロンドン条約(1930)→④ジュネーヴ会議の挫折→⑤核時代(PTBT1963→NPT1968)→⑥SALT(1972)→INF(1987)→START(1991)→⑦冷戦後の前進と後退(CTBT未発効・INF離脱・核禁条約)</strong>。入試では戦間期の海軍軍縮(ワシントン・ロンドン)と冷戦期の核軍備管理(SALT・INF・START)が二大テーマ。</p></div>
+</body></html>

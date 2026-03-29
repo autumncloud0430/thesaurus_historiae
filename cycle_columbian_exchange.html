@@ -1,0 +1,118 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>コロンブスの交換</title><style>@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+.hdr{padding:16px 20px;border-bottom:1px solid rgba(201,169,110,.08);display:flex;align-items:center;gap:14px;flex-wrap:wrap}.hdr h1{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2)}.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
+.wrap{display:flex;justify-content:center;padding:24px 16px 8px}
+.desc{max-width:740px;margin:0 auto;padding:0 20px 40px}
+.desc h2{font-family:'Noto Serif JP',serif;font-size:12px;font-weight:700;color:var(--gold2);margin:16px 0 6px;padding-left:8px;border-left:3px solid rgba(201,169,110,.3)}
+.desc p{font-size:9.5px;color:var(--text2);line-height:1.8;margin-bottom:8px}.desc p strong{color:var(--text);font-weight:600}
+.desc .side-note{font-size:8px;color:var(--text3);padding:4px 8px;border-left:2px solid rgba(201,169,110,.1);margin:6px 0 10px;line-height:1.6}
+.note{text-align:center;padding:8px 20px 32px;max-width:740px;margin:0 auto}.note p{font-size:9px;color:var(--text3);line-height:1.8}.note strong{color:var(--gold)}
+
+@media(max-width:600px){
+.hdr{padding:10px 12px}.hdr h1{font-size:12px}
+.wrap{padding:12px 8px}
+svg{max-width:100%;height:auto}
+.desc p{font-size:9px}
+.desc h2{font-size:11px}
+.side-note{font-size:7.5px}
+.note p{font-size:8px}
+}
+</style></head><body>
+<div class="hdr"><h1>コロンブスの交換 ― 旧大陸⇔新大陸の生態系大変動</h1><a href="charts.html">← Ad Chartae</a></div>
+
+<div class="wrap">
+<svg viewBox="0 0 700 520" xmlns="http://www.w3.org/2000/svg" style="width:700px;max-width:100%;height:auto">
+<defs>
+  <marker id="a1" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="rgba(201,169,110,.6)"/></marker>
+  <marker id="a2" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="rgba(80,150,120,.6)"/></marker>
+  <marker id="a3" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="rgba(180,80,80,.6)"/></marker>
+</defs>
+
+<!-- Left: Old World -->
+<rect x="20" y="30" width="260" height="460" rx="12" fill="rgba(201,169,110,.03)" stroke="rgba(201,169,110,.12)" stroke-width="1"/>
+<text x="150" y="58" text-anchor="middle" fill="#e8c888" font-family="Noto Serif JP" font-size="14" font-weight="700">旧大陸(ユーラシア・アフリカ)</text>
+
+<!-- Right: New World -->
+<rect x="420" y="30" width="260" height="460" rx="12" fill="rgba(80,150,120,.03)" stroke="rgba(80,150,120,.12)" stroke-width="1"/>
+<text x="550" y="58" text-anchor="middle" fill="#8ad4b0" font-family="Noto Serif JP" font-size="14" font-weight="700">新大陸(南北アメリカ)</text>
+
+<!-- Center: Atlantic Ocean -->
+<text x="350" y="18" text-anchor="middle" fill="#555048" font-family="Cormorant Garamond" font-size="11" font-weight="700">大 西 洋</text>
+
+<!-- Arrows: Old → New (right) -->
+<line x1="285" y1="100" x2="415" y2="100" stroke="rgba(201,169,110,.4)" stroke-width="2" marker-end="url(#a1)"/>
+<text x="350" y="93" text-anchor="middle" fill="#c9a96e" font-family="Noto Sans JP" font-size="8" font-weight="600">旧大陸 → 新大陸</text>
+
+<!-- Old World exports (left column) -->
+<text x="40" y="100" fill="#d4cfc6" font-family="Noto Sans JP" font-size="9" font-weight="600">【家畜】</text>
+<text x="40" y="118" fill="#8a857d" font-family="Noto Sans JP" font-size="8">★馬・牛・豚・羊・鶏</text>
+<text x="40" y="133" fill="#555048" font-family="Noto Sans JP" font-size="7">→先住民は大型家畜を持たなかった</text>
+
+<text x="40" y="160" fill="#d4cfc6" font-family="Noto Sans JP" font-size="9" font-weight="600">【作物】</text>
+<text x="40" y="178" fill="#8a857d" font-family="Noto Sans JP" font-size="8">小麦・米・サトウキビ・コーヒー</text>
+<text x="40" y="193" fill="#8a857d" font-family="Noto Sans JP" font-size="8">バナナ・オレンジ・ブドウ</text>
+
+<text x="40" y="220" fill="#d4cfc6" font-family="Noto Sans JP" font-size="9" font-weight="600">【技術・文化】</text>
+<text x="40" y="238" fill="#8a857d" font-family="Noto Sans JP" font-size="8">鉄器・火器・車輪・文字</text>
+<text x="40" y="253" fill="#8a857d" font-family="Noto Sans JP" font-size="8">キリスト教・ヨーロッパの言語</text>
+
+<!-- DISEASE arrow (special - red, deadly) -->
+<line x1="285" y1="295" x2="415" y2="295" stroke="rgba(180,80,80,.5)" stroke-width="3" marker-end="url(#a3)"/>
+<text x="350" y="288" text-anchor="middle" fill="#c85050" font-family="Noto Sans JP" font-size="9" font-weight="700">★★疫病(壊滅的)</text>
+
+<text x="40" y="295" fill="#c85050" font-family="Noto Sans JP" font-size="9" font-weight="700">【★疫病】</text>
+<text x="40" y="313" fill="#c85050" font-family="Noto Sans JP" font-size="8">天然痘・麻疹・インフルエンザ</text>
+<text x="40" y="328" fill="#c85050" font-family="Noto Sans JP" font-size="8">チフス・コレラ・マラリア</text>
+<text x="40" y="348" fill="#d48888" font-family="Noto Sans JP" font-size="7">→先住民に免疫なし</text>
+<text x="40" y="363" fill="#d48888" font-family="Noto Sans JP" font-size="7">→★人口の50-90%が死亡</text>
+<text x="40" y="378" fill="#d48888" font-family="Noto Sans JP" font-size="7">→アステカ・インカ帝国の崩壊の主因</text>
+
+<!-- New World items (right column) -->
+<text x="440" y="100" fill="#8ad4b0" font-family="Noto Sans JP" font-size="9" font-weight="600">【作物】★新大陸原産</text>
+<text x="440" y="118" fill="#8a857d" font-family="Noto Sans JP" font-size="8">★トウモロコシ・★ジャガイモ</text>
+<text x="440" y="133" fill="#8a857d" font-family="Noto Sans JP" font-size="8">★トマト・★タバコ・カカオ</text>
+<text x="440" y="148" fill="#8a857d" font-family="Noto Sans JP" font-size="8">サツマイモ・トウガラシ・落花生</text>
+<text x="440" y="163" fill="#8a857d" font-family="Noto Sans JP" font-size="8">カボチャ・ゴム・バニラ</text>
+<text x="440" y="183" fill="#555048" font-family="Noto Sans JP" font-size="7">→ジャガイモ＝欧州の人口爆発の一因</text>
+<text x="440" y="198" fill="#555048" font-family="Noto Sans JP" font-size="7">→トウモロコシ＝アフリカ・アジアの食糧に</text>
+
+<text x="440" y="225" fill="#8ad4b0" font-family="Noto Sans JP" font-size="9" font-weight="600">【貴金属】</text>
+<text x="440" y="243" fill="#8a857d" font-family="Noto Sans JP" font-size="8">★銀(ポトシ銀山・メキシコ)</text>
+<text x="440" y="258" fill="#8a857d" font-family="Noto Sans JP" font-size="8">金(エルドラド伝説)</text>
+<text x="440" y="278" fill="#555048" font-family="Noto Sans JP" font-size="7">→★銀の大量流入→価格革命</text>
+<text x="440" y="293" fill="#555048" font-family="Noto Sans JP" font-size="7">→スペインの繁栄→衰退</text>
+
+<!-- Arrows: New → Old (left) -->
+<line x1="415" y1="140" x2="285" y2="140" stroke="rgba(80,150,120,.4)" stroke-width="2" marker-end="url(#a2)"/>
+<text x="350" y="155" text-anchor="middle" fill="#64a064" font-family="Noto Sans JP" font-size="8" font-weight="600">新大陸 → 旧大陸</text>
+
+<!-- New World diseases going other way (minor) -->
+<text x="440" y="340" fill="#d4cfc6" font-family="Noto Sans JP" font-size="9" font-weight="600">【疫病(新→旧)】</text>
+<text x="440" y="358" fill="#8a857d" font-family="Noto Sans JP" font-size="8">★梅毒(syphilis)</text>
+<text x="440" y="373" fill="#555048" font-family="Noto Sans JP" font-size="7">→唯一の「逆方向」の疫病</text>
+
+<!-- Slave Trade (bottom) -->
+<text x="350" y="420" text-anchor="middle" fill="#c9a96e" font-family="Noto Serif JP" font-size="11" font-weight="700">★奴隷貿易(アフリカ→新大陸)</text>
+<line x1="150" y1="435" x2="550" y2="435" stroke="rgba(180,80,80,.3)" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#a3)"/>
+<text x="350" y="455" text-anchor="middle" fill="#8a857d" font-family="Noto Sans JP" font-size="8">疫病で先住民が激減→プランテーション労働力として</text>
+<text x="350" y="470" text-anchor="middle" fill="#8a857d" font-family="Noto Sans JP" font-size="8">★約1200万人のアフリカ人が奴隷として強制移送(16-19C)</text>
+<text x="350" y="485" text-anchor="middle" fill="#555048" font-family="Noto Sans JP" font-size="7">→大西洋三角貿易＝欧州(工業製品)→アフリカ(奴隷)→新大陸(砂糖・タバコ・綿花)→欧州</text>
+
+<!-- Key insight -->
+<rect x="100" y="498" width="500" height="18" rx="4" fill="rgba(201,169,110,.06)" stroke="rgba(201,169,110,.1)" stroke-width="1"/>
+<text x="350" y="511" text-anchor="middle" fill="#c9a96e" font-family="Noto Sans JP" font-size="7.5" font-weight="600">★「コロンブスの交換」＝1492年以降の旧大陸⇔新大陸間の生物・文化・疫病の大規模な交換(歴史家アルフレッド・クロスビーが命名)</text>
+</svg>
+</div>
+
+<div class="desc">
+<h2>コロンブスの交換とは</h2>
+<p>1492年のコロンブスの航海以降、<strong>旧大陸(ユーラシア・アフリカ)と新大陸(南北アメリカ)の間で動植物・疫病・文化が大規模に移動した</strong>現象。歴史家<strong>アルフレッド＝クロスビー</strong>が『コロンブスの交換』(1972)で命名。</p>
+<h2>最大のインパクト＝疫病</h2>
+<p>★<strong>天然痘</strong>が最も壊滅的。新大陸の先住民はユーラシアの疫病に対する免疫を持たなかった→<strong>人口の50-90%が死亡</strong>。アステカ帝国(1521年滅亡)もインカ帝国(1533年滅亡)も、コルテスやピサロの軍事力よりも<strong>天然痘の流行が征服の主因</strong>。先住民の激減→労働力不足→<strong>アフリカからの奴隷貿易</strong>が拡大(大西洋三角貿易)。</p>
+<h2>食の革命</h2>
+<p>新大陸原産の<strong>ジャガイモ</strong>→18C以降ヨーロッパ(特にアイルランド・ドイツ)の主食に→<strong>人口爆発の一因</strong>(だしアイルランドではジャガイモ飢饉1845-49→大量移民)。<strong>トウモロコシ</strong>→アフリカ・アジアの食糧。<strong>トマト</strong>→イタリア料理に不可欠(だし当初は「毒」と恐れられた)。<strong>タバコ</strong>→ヨーロッパの嗜好品→プランテーション作物に。逆に旧大陸の<strong>サトウキビ</strong>→カリブ海のプランテーション＝奴隷労働の象徴。</p>
+<div class="side-note">★入試超頻出：「新大陸原産の作物(トウモロコシ・ジャガイモ・トマト・タバコ・カカオ)」「旧大陸→新大陸の疫病(天然痘)→先住民の激減→奴隷貿易」「銀の大量流入→価格革命」「ジャガイモ→欧州の人口増加」。★早稲田では「ある作物の原産地はどこか」が頻出。</div>
+</div>
+<div class="note"><p>コロンブスの交換＝<strong>1492年以降の旧大陸⇔新大陸の生態系大変動</strong>。入試では「新大陸原産作物の特定」「疫病→先住民激減→奴隷貿易」「銀→価格革命」の因果連鎖が問われる。</p></div>
+</body></html>

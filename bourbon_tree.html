@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ブルボン家の系譜</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048;--border:rgba(201,169,110,.08)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+.hdr{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.hdr h1{font-family:'Noto Serif JP',serif;font-size:15px;font-weight:700;color:var(--gold2)}
+.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5;transition:opacity .2s}
+.hdr a:hover{opacity:1}
+.wrap{padding:20px 16px 10px;overflow-x:auto}
+.tree{display:flex;flex-direction:column;align-items:center;min-width:820px;gap:0}
+.nd{position:relative;text-align:center;cursor:pointer;transition:transform .15s}
+.nd:hover{transform:translateY(-1px)}
+.nb{border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:7px 12px;background:rgba(255,255,255,.02);transition:all .2s}
+.nd:hover .nb{border-color:rgba(201,169,110,.3);background:rgba(201,169,110,.04)}
+.nn{font-family:'Noto Serif JP',serif;font-size:11px;font-weight:700;color:var(--gold2);white-space:nowrap}
+.ni{font-size:7.5px;color:var(--text2);margin-top:1px;white-space:nowrap}
+.ntag{font-size:7px;font-weight:600;letter-spacing:.06em;margin-top:2px;padding:1px 6px;border-radius:100px;display:inline-block}
+/* House colors */
+.h-fra .nb{border-left:3px solid rgba(100,80,140,.4)} .h-fra .ntag{background:rgba(100,80,140,.2);color:#b8a0d4}
+.h-spa .nb{border-left:3px solid rgba(140,80,80,.4)} .h-spa .ntag{background:rgba(140,80,80,.2);color:#d4a8a8}
+.h-nap .nb{border-left:3px solid rgba(140,120,80,.4)} .h-nap .ntag{background:rgba(140,120,80,.2);color:#d4c8a0}
+/* Highlight */
+.peak .nb{border-color:rgba(201,169,110,.35);background:rgba(201,169,110,.06);padding:9px 14px}
+.peak .nn{font-size:14px;background:linear-gradient(135deg,#c9a96e,#e8c888,#c9a96e);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.end .nb{border-color:rgba(140,60,60,.3);background:rgba(140,60,60,.04)}
+/* Layout */
+.cv{width:1px;height:14px;background:rgba(201,169,110,.15);margin:0 auto}
+.cv.l{height:20px}
+.row{display:flex;align-items:flex-start;gap:16px;justify-content:center}
+.branch{display:flex;flex-direction:column;align-items:center}
+.inherit{font-size:7px;color:var(--text3);text-align:center;margin:2px 0;font-style:italic}
+.inherit strong{color:var(--gold);font-style:normal}
+.split-label{font-family:'Cormorant Garamond',serif;font-size:9px;font-weight:700;letter-spacing:.15em;color:var(--gold);text-align:center;padding:6px 0 3px;opacity:.6}
+.tp{display:none}
+/* Bracket for Spanish branch */
+.bracket{border-left:1px dashed rgba(140,80,80,.25);padding-left:14px;margin-left:10px}
+.bracket-label{font-size:7px;color:var(--text3);writing-mode:vertical-rl;position:absolute;left:-20px;top:50%;transform:translateY(-50%);letter-spacing:.1em}
+/* Note */
+.note{text-align:center;padding:6px 20px 32px;font-size:9px;color:var(--text3);line-height:1.8;max-width:800px;margin:0 auto}
+.note strong{color:var(--gold)}
+.legend{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;padding:10px 20px}
+.legend-item{display:flex;align-items:center;gap:5px;font-size:9px;color:var(--text3)}
+.legend-dot{width:12px;height:8px;border-radius:2px}
+/* Family compact annotation */
+.compact{position:relative;border:1px dashed rgba(74,144,194,.2);border-radius:8px;padding:8px 14px;margin:8px 0}
+.compact-label{font-size:8px;color:rgba(74,144,194,.7);text-align:center;font-weight:600}
+
+@media(max-width:600px){
+.hdr{padding:10px 12px}.hdr h1{font-size:12px}
+.legend .li{font-size:7px}
+.note p{font-size:8px}
+}
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <h1>ブルボン家の系譜 ― ユグノー戦争からフランス革命、そしてスペインへ</h1>
+  <a href="charts.html">← Ad Chartae</a>
+</div>
+
+<div class="wrap">
+<div class="tree">
+
+<!-- ===== ヴァロワ朝からの接続 ===== -->
+<div class="nd" style="opacity:.6"><div class="nb" style="border-left:3px solid rgba(100,100,100,.3)">
+  <div class="nn" style="font-size:10px">ヴァロワ朝の断絶（1589）</div>
+  <div class="ni">アンリ3世暗殺→ユグノー戦争の混乱→ブルボン家に王位</div>
+</div><div class="tp"><p>ヴァロワ朝はアンリ2世の息子3人（フランソワ2世・シャルル9世・アンリ3世）が相次いで即位するが全て後継者なく死去。特にアンリ3世はカトリック同盟に暗殺される(1589)。最も近い王位継承権を持つナヴァル王アンリ（ブルボン家）が即位→ブルボン朝の開始。</p></div></div>
+
+<div class="cv l"></div>
+<div class="inherit"><strong>ブルボン朝フランスの開始</strong></div>
+<div class="cv"></div>
+
+<!-- ===== アンリ4世 ===== -->
+<div class="nd h-fra peak"><div class="nb">
+  <div class="nn">アンリ4世</div>
+  <div class="ni">在位 1589-1610 ｜ ブルボン朝初代</div>
+  <div class="ntag">ナントの王令(1598)</div>
+</div><div class="tp"><p>ナヴァル王→フランス王。元ユグノー（カルヴァン派）だが「パリはミサに値する」としてカトリックに改宗→内戦を終結。<strong>ナントの王令(1598)</strong>でユグノーに信仰の自由を認める→ユグノー戦争(1562-98)の終結。シュリーを財務総監に登用し財政再建。1610年にカトリック狂信者ラヴァイヤックに暗殺。</p></div></div>
+
+<div class="cv"></div>
+
+<!-- ===== ルイ13世 ===== -->
+<div class="nd h-fra"><div class="nb">
+  <div class="nn">ルイ13世</div>
+  <div class="ni">在位 1610-1643</div>
+  <div class="ntag">リシュリュー</div>
+</div><div class="tp"><p>幼少で即位。母后マリー＝ド＝メディシスの摂政→のちリシュリュー枢機卿(宰相1624-42)が実権を掌握。<strong>リシュリュー</strong>はユグノーの政治的特権を廃止（ラ＝ロシェル攻囲1628）しつつ信仰の自由は維持。三十年戦争にプロテスタント側で介入（反ハプスブルク政策）→フランスの国際的地位を向上。国内では中央集権を推進（地方長官インタンダン制度）。</p></div></div>
+
+<div class="cv"></div>
+
+<!-- ===== ルイ14世 ===== -->
+<div class="nd h-fra peak"><div class="nb">
+  <div class="nn">ルイ14世 ―「太陽王」</div>
+  <div class="ni">在位 1643-1715 ｜ フランス絶対王政の絶頂</div>
+  <div style="display:flex;gap:3px;justify-content:center;flex-wrap:wrap;margin-top:2px">
+    <span class="ntag">ヴェルサイユ宮殿</span>
+    <span class="ntag">コルベール</span>
+    <span class="ntag">ナント王令廃止(1685)</span>
+  </div>
+</div><div class="tp"><p>5歳で即位。マザラン枢機卿の死(1661)後に親政開始→<strong>「朕は国家なり」</strong>。ヴェルサイユ宮殿を建設し貴族を飼い殺し。コルベールの重商主義政策で財政強化。しかし<strong>フォンテーヌブロー勅令(1685)でナントの王令を撤回</strong>→ユグノー約20万人が国外亡命→経済的打撃。スペイン継承戦争(1701-13)で疲弊→晩年は財政破綻。在位72年はフランス最長。</p></div></div>
+
+<div class="cv"></div>
+
+<!-- ===== スペイン継承戦争の分岐 ===== -->
+<div class="split-label">スペイン継承戦争（1701-1713）で仏西にブルボン朝が並立</div>
+<div class="cv"></div>
+
+<div class="row" style="gap:40px">
+
+<!-- ===== フランス本流 ===== -->
+<div class="branch">
+
+  <!-- ルイ15世 -->
+  <div class="nd h-fra"><div class="nb">
+    <div class="nn">ルイ15世</div>
+    <div class="ni">在位 1715-1774 ｜ ルイ14世の曾孫</div>
+    <div class="ntag">七年戦争で敗北</div>
+  </div><div class="tp"><p>ルイ14世の曾孫（中間世代が早世のため）。幼少期はオルレアン公フィリップの摂政。長い治世だが七年戦争(1756-63)でイギリスに惨敗→<strong>カナダ・インドの植民地を喪失</strong>(パリ条約1763)。ポンパドゥール夫人が外交革命（仏墺同盟）を推進。晩年は「死後に洪水が来ようと知ったことか」の無責任さ。</p></div></div>
+
+  <div class="cv"></div>
+
+  <!-- ルイ16世 -->
+  <div class="nd h-fra end"><div class="nb">
+    <div class="nn">ルイ16世</div>
+    <div class="ni">在位 1774-1792 ｜ フランス革命で処刑</div>
+    <div class="ntag" style="background:rgba(140,60,60,.2);color:#d4a0a0">1793.1.21 ギロチン処刑</div>
+  </div><div class="tp"><p>ルイ15世の孫。妻はマリー＝アントワネット（ハプスブルク家マリア＝テレジアの娘→婚姻外交の延長）。アメリカ独立支援の戦費が財政破綻の最終打撃→三部会召集(1789)→フランス革命勃発。ヴァレンヌ逃亡事件(1791)で信頼を完全に失い、国民公会で裁判→<strong>1793年1月21日ギロチンで処刑</strong>。ブルボン朝の終焉（→復古王政1814-30で一時復活）。</p></div></div>
+
+  <div class="cv"></div>
+
+  <!-- 復古王政 -->
+  <div class="nd h-fra" style="opacity:.6"><div class="nb">
+    <div class="nn" style="font-size:10px">復古王政（1814-1830）</div>
+    <div class="ni">ルイ18世 → シャルル10世</div>
+    <div class="ni">→ 七月革命(1830)で追放</div>
+  </div><div class="tp"><p>ナポレオン失脚後、ルイ16世の弟ルイ18世が即位（復古王政）。立憲君主政を採用するが、次のシャルル10世が反動政治→<strong>七月革命(1830)</strong>で追放→オルレアン家のルイ＝フィリップが「国民王」として即位（七月王政）→1848年二月革命で崩壊。ブルボン朝フランスの完全な終焉。</p></div></div>
+
+</div>
+
+<!-- ===== スペイン＝ブルボン家 ===== -->
+<div class="branch" style="position:relative">
+
+  <!-- フェリペ5世 -->
+  <div class="nd h-spa"><div class="nb">
+    <div class="nn">フェリペ5世</div>
+    <div class="ni">スペイン王 ｜ 在位 1700-1746</div>
+    <div class="ntag">スペイン＝ブルボン朝 初代</div>
+  </div><div class="tp"><p>ルイ14世の孫。スペイン＝ハプスブルク家のカルロス2世が後継者なく死去→遺言でフェリペを後継者に指名→オーストリア・イギリス等が反発→<strong>スペイン継承戦争(1701-13)</strong>。ユトレヒト条約(1713)でスペイン王位は承認されるが、<strong>仏西の合同は永久に禁止</strong>。以後スペインはブルボン朝に。</p></div></div>
+
+  <div class="cv"></div>
+
+  <!-- 家族協約 -->
+  <div class="compact">
+    <div class="compact-label">仏西「家族協約」（パクト・ド・ファミーユ）</div>
+    <div style="font-size:7px;color:var(--text3);text-align:center;margin-top:2px">
+      第1次(1733) / 第2次(1743) / 第3次(1761)<br>
+      ブルボン同族の仏西が対英で連携→七年戦争・アメリカ独立戦争に影響
+    </div>
+  </div>
+
+  <div class="cv"></div>
+
+  <!-- カルロス3世 -->
+  <div class="nd h-spa"><div class="nb">
+    <div class="nn">カルロス3世</div>
+    <div class="ni">スペイン王 ｜ 在位 1759-1788</div>
+    <div class="ntag">啓蒙専制・第3次家族協約</div>
+  </div><div class="tp"><p>スペイン＝ブルボン朝の最盛期の王。啓蒙専制君主として行政改革・イエズス会追放(1767)。<strong>第3次家族協約(1761)</strong>でフランスと結び七年戦争に参戦（結果は不利）。アメリカ独立戦争でも仏とともに米を支援→英を牽制。</p></div></div>
+
+  <div class="cv"></div>
+
+  <!-- 近代スペイン -->
+  <div class="nd h-spa" style="opacity:.6"><div class="nb">
+    <div class="nn" style="font-size:10px">→ ナポレオンの介入(1808)</div>
+    <div class="ni">→ スペイン独立戦争</div>
+    <div class="ni">→ 中南米の独立運動へ</div>
+  </div><div class="tp"><p>ナポレオンがスペインに介入し、兄ジョゼフをスペイン王に据える→<strong>スペイン独立戦争(半島戦争, 1808-14)</strong>。この混乱がスペイン領中南米の独立運動（シモン＝ボリバル等）を誘発。ブルボン朝は復帰するが不安定で、20Cのスペイン内戦(1936-39)→フランコ独裁→1975年に再びブルボン朝（フアン＝カルロス1世）として復活、現在に至る。</p></div></div>
+
+</div>
+
+<!-- ===== ナポリ＝ブルボン家（補足） ===== -->
+<div class="branch" style="opacity:.5">
+
+  <div class="nd h-nap"><div class="nb">
+    <div class="nn" style="font-size:10px">ナポリ＝ブルボン家</div>
+    <div class="ni">両シチリア王国</div>
+    <div class="ntag">1735-1861</div>
+  </div><div class="tp"><p>カルロス3世がスペイン王になる前にナポリ王として統治→その子フェルディナンドが両シチリア王国を継承。ガリバルディの「赤シャツ隊」千人隊の遠征(1860)で崩壊→イタリア統一に吸収される。</p></div></div>
+
+</div>
+
+</div><!-- row -->
+
+</div><!-- tree -->
+</div><!-- wrap -->
+
+<div class="legend">
+  <div class="legend-item"><div class="legend-dot" style="background:rgba(100,80,140,.4)"></div>フランス＝ブルボン家</div>
+  <div class="legend-item"><div class="legend-dot" style="background:rgba(140,80,80,.4)"></div>スペイン＝ブルボン家</div>
+  <div class="legend-item"><div class="legend-dot" style="background:rgba(140,120,80,.4)"></div>ナポリ＝ブルボン家</div>
+</div>
+
+<div class="note">
+  <strong>ブルボン家のポイント：</strong><br>
+  ❶ アンリ4世のナントの王令(1598)→ルイ14世の撤回(1685)→ユグノー亡命 ＝ 「宗教的寛容→不寛容」の逆行<br>
+  ❷ スペイン継承戦争(1701-13)の原因 ＝ ルイ14世が孫をスペイン王にしたこと→ユトレヒト条約で仏西合同禁止<br>
+  ❸ 仏西「家族協約」＝ ブルボン同族の連携→七年戦争・アメリカ独立で英と対立する構造的背景<br>
+  ❹ ルイ16世の妻マリー＝アントワネット ＝ ハプスブルク家のマリア＝テレジアの娘→「外交革命」の産物<br>
+  ❺ ナポレオンのスペイン介入(1808)→スペイン独立戦争→中南米独立運動の引き金
+</div>
+
+<!-- Tooltip system -->
+<div id="tooltip-overlay" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;z-index:8000" onclick="closeTip()"></div>
+<div id="tooltip-box" style="display:none;position:fixed;z-index:9000;background:rgba(12,15,22,.97);border:1px solid rgba(201,169,110,.25);border-radius:8px;padding:12px 16px;max-width:320px;width:calc(100vw - 32px);box-shadow:0 8px 30px rgba(0,0,0,.6)">
+  <div id="tooltip-content" style="font-size:10px;color:#8a857d;line-height:1.7"></div>
+</div>
+<script>
+(function(){
+  var ov=document.getElementById("tooltip-overlay");
+  var bx=document.getElementById("tooltip-box");
+  var ct=document.getElementById("tooltip-content");
+  window.closeTip=function(){bx.style.display="none";ov.style.display="none"};
+  function openTip(nd){
+    var tp=nd.querySelector(".tp");if(!tp)return;closeTip();
+    ct.innerHTML=tp.innerHTML;ov.style.display="block";bx.style.display="block";
+    var r=nd.getBoundingClientRect();
+    var w=Math.min(320,window.innerWidth-32);bx.style.width=w+"px";
+    var l=r.left+r.width/2-w/2;
+    if(l<16)l=16;if(l+w>window.innerWidth-16)l=window.innerWidth-16-w;
+    bx.style.left=l+"px";bx.style.top=(r.bottom+8)+"px";bx.style.bottom="auto";
+    var br=bx.getBoundingClientRect();
+    if(br.bottom>window.innerHeight-16){var t=r.top-br.height-8;if(t<16)t=16;bx.style.top=t+"px"}
+  }
+  var tm=false,tt=null;
+  document.addEventListener("touchstart",function(e){tm=false;tt=e.target},{passive:true});
+  document.addEventListener("touchmove",function(){tm=true},{passive:true});
+  document.addEventListener("touchend",function(e){
+    if(tm)return;var nd=tt?tt.closest(".nd"):null;
+    if(nd){e.preventDefault();openTip(nd)}else if(!tt||!tt.closest("#tooltip-box"))closeTip();tt=null;
+  });
+  document.addEventListener("click",function(e){
+    if("ontouchstart"in window)return;var nd=e.target.closest(".nd");
+    if(nd)openTip(nd);else if(!e.target.closest("#tooltip-box"))closeTip();
+  });
+})();
+</script>
+
+</body>
+</html>

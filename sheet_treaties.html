@@ -1,0 +1,358 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>条約・協定一覧 ― 世界史入試対策</title><style>@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@400;600;700&family=Cormorant+Garamond:wght@400;700&display=swap');:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--gold-dim:rgba(201,169,110,.12);--text:#d4cfc6;--text2:#8a857d;--text3:#555048;--border:rgba(201,169,110,.08)}*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+.hdr{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;flex-wrap:wrap}.hdr h1{font-family:'Noto Serif JP',serif;font-size:15px;font-weight:700;color:var(--gold2)}.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5;transition:opacity .2s}.hdr a:hover{opacity:1}
+.tabs{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:4px;padding:10px 20px;border-bottom:1px solid rgba(255,255,255,.03)}.tab{padding:5px 10px;border-radius:6px;border:1px solid transparent;cursor:pointer;font-size:10px;font-weight:600;font-family:inherit;background:rgba(255,255,255,.03);color:var(--text3);white-space:nowrap;transition:all .2s;text-align:center}.tab:hover{color:var(--text2);background:rgba(255,255,255,.06)}.tab.on{border-color:rgba(201,169,110,.2);color:var(--gold);background:var(--gold-dim)}
+.search-bar{padding:10px 20px;display:flex;gap:10px;align-items:center}.si{padding:6px 14px;border-radius:100px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);color:var(--text);font-size:11px;font-family:inherit;width:240px;outline:none;transition:border-color .2s}.si:focus{border-color:rgba(201,169,110,.3)}.si::placeholder{color:var(--text3)}.cnt{font-size:9px;color:var(--text3);font-family:'Cormorant Garamond',serif;letter-spacing:.1em}
+.tbl-wrap{padding:4px 20px 40px;overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:11px}
+th{background:rgba(201,169,110,.08);color:var(--gold);font-family:'Noto Serif JP',serif;font-weight:700;font-size:10px;letter-spacing:.08em;text-align:left;padding:8px 12px;border-bottom:1px solid rgba(201,169,110,.15);white-space:nowrap}
+td{padding:8px 12px;border-bottom:1px solid rgba(255,255,255,.025);color:#bbb;vertical-align:top;line-height:1.7}
+td.no{color:var(--text3);font-family:'Cormorant Garamond',serif;font-size:12px;text-align:center;font-weight:600;width:36px}
+td.nm{color:var(--text);font-weight:600;width:160px}
+td.yr{color:var(--gold);opacity:.7;font-family:'Cormorant Garamond',serif;font-size:12px;white-space:nowrap;width:90px}
+td.ds{color:#a8a39a;font-size:11px}
+tr:hover td{background:rgba(201,169,110,.03)}
+tr.sh td{background:rgba(201,169,110,.06);color:var(--gold2);font-family:'Noto Serif JP',serif;font-weight:700;font-size:12px;padding:12px;letter-spacing:.06em;border-bottom:1px solid rgba(201,169,110,.1)}
+.hidden{display:none}
+@media(max-width:600px){
+.hdr{padding:10px 12px}.hdr h1{font-size:12px}
+th,td{padding:6px 8px;font-size:9px}
+th{font-size:10px}
+td:first-child{font-size:8.5px}
+.note p{font-size:8px}
+.side-note{font-size:7.5px}
+}
+</style></head><body>
+<div class="hdr"><h1>条約・協定一覧</h1><a href="index.html">← Ad Indicem</a></div>
+<div class="tabs"><button class="tab on" onclick="switchTab(0)" id="tab0">古代〜中世</button>
+<button class="tab" onclick="switchTab(1)" id="tab1">大航海〜近世</button>
+<button class="tab" onclick="switchTab(2)" id="tab2">ナポレオン〜19C</button>
+<button class="tab" onclick="switchTab(3)" id="tab3">19C東アジア〜日本</button>
+<button class="tab" onclick="switchTab(4)" id="tab4">同盟・協商〜WW1</button>
+<button class="tab" onclick="switchTab(5)" id="tab5">戦間期〜WW2</button>
+<button class="tab" onclick="switchTab(6)" id="tab6">戦後〜冷戦後</button>
+</div>
+<div class="search-bar"><input class="si" id="search" placeholder="条約名・年代・内容で検索..." oninput="filterRows()"><span class="cnt" id="cnt"></span></div>
+<div class="tbl-wrap" id="content0"><table>
+<thead><tr><th>No.</th><th>条約・協定名</th><th>年代</th><th>取り決めの内容</th></tr></thead>
+<tbody>
+<tr class="sh"><td colspan="4">古代</td></tr>
+<tr><td class="no">1</td><td class="nm">エジプト＝ヒッタイト平和条約</td><td class="yr">前1269頃</td><td class="ds">史上最古の国際条約。ラメセス2世（エジプト新王国）とハットゥシリ3世（ヒッタイト）の間で締結。<br><br>①カデシュの戦い（前1286頃）の後、両国の勢力均衡を認めて講和、<br>②相互不侵略・相互防衛・亡命者の引き渡しを規定、<br>③王女の婚姻による同盟関係の強化。→「海の民」の脅威が和平を促進した背景。</td></tr>
+<tr><td class="no">2</td><td class="nm">アントニヌス勅令</td><td class="yr">212</td><td class="ds">カラカラ帝が全属州の自由民にローマ市民権を付与。これにより属州民からの税収（属州税）が減少し、帝国の財政悪化の一因となった。</td></tr>
+<tr><td class="no">3</td><td class="nm">ミラノ勅令</td><td class="yr">313</td><td class="ds">コンスタンティヌス帝とリキニウス帝が共同で発布。キリスト教を公認（信仰の自由を認める）。没収されていた教会財産の返還も規定。</td></tr>
+<tr><td class="no">4</td><td class="nm">ニケーア公会議の決定</td><td class="yr">325</td><td class="ds">コンスタンティヌス帝が招集した最初のエキュメニカル（公）会議。<br><br>①アリウス派（キリストは神に造られた被造物）を異端と認定、<br>②アタナシウス派（三位一体説：父と子は同質）を正統教義と確認→ニケーア信条、<br>③復活祭の統一的日取りを決定。→以後のキリスト教教義の基準となる。</td></tr>
+<tr class="sh"><td colspan="4">中世ヨーロッパ</td></tr>
+<tr><td class="no">5</td><td class="nm">ヴェルダン条約</td><td class="yr">843</td><td class="ds">フランク王国を三分割。<br><br>①西フランク王国（のちフランス）はシャルル2世（禿頭王）、<br>②中部フランク王国（イタリア＋ロタリンギア）はロタール1世、<br>③東フランク王国（のちドイツ）はルートヴィヒ2世（ドイツ人王）が継承。</td></tr>
+<tr><td class="no">6</td><td class="nm">メルセン条約</td><td class="yr">870</td><td class="ds">ロタール1世の死後、中部フランク王国のうちイタリアを除く北部（ロタリンギア＝アルザス・ロレーヌ付近）を東西フランク王国が分割。現在の仏独国境線の原型が形成された。</td></tr>
+<tr><td class="no">7</td><td class="nm">クレルモン宗教会議</td><td class="yr">1095</td><td class="ds">教皇ウルバヌス2世が招集。<br><br>①ビザンツ皇帝アレクシオス1世の救援要請を受け十字軍を提唱、<br>②「神がそれを望みたもう（Deus le volt）」→第1回十字軍の出発点。<br>→教皇権の伸長を示す画期的事件。聖地エルサレム奪還を呼びかけ。</td></tr>
+<tr><td class="no">8</td><td class="nm">ヴォルムス協約</td><td class="yr">1122</td><td class="ds">聖職叙任権闘争の妥協的解決。<br><br>①聖職者の選出は教会が行う（教会の叙任権を承認）、<br>②ただしドイツでは皇帝臨席のもとで選挙を行い、皇帝が世俗的権限（領地支配権）を授与する。→教皇と皇帝の権限を分離。</td></tr>
+<tr><td class="no">9</td><td class="nm">金印勅書</td><td class="yr">1356</td><td class="ds">カール4世が発布。<br><br>①皇帝選出は7選帝侯（トリール・ケルン・マインツの3大司教＋ベーメン王・ファルツ伯・ザクセン公・ブランデンブルク辺境伯）の多数決による、<br>②選帝侯に領邦内の裁判権・貨幣鋳造権・関税徴収権など主権的権限を承認→帝国の分権化を法的に確定。</td></tr>
+<tr><td class="no">10</td><td class="nm">コンスタンツ公会議</td><td class="yr">1414-18</td><td class="ds">神聖ローマ皇帝ジギスムントが招集。<br><br>①教会大分裂（シスマ,1378-1417）を収束→マルティヌス5世を正統教皇に選出、<br>②フス（ベーメンの宗教改革者）を異端として火刑→フス戦争(1419-36)の原因、<br>③公会議至上主義（公会議は教皇より上位）を主張→しかし教皇権が巻き返し。</td></tr>
+<tr><td class="no">11</td><td class="nm">フィレンツェ公会議</td><td class="yr">1439</td><td class="ds">東西教会の合同を図る公会議。<br><br>①ビザンツ皇帝ヨハネス8世がオスマンの脅威に対抗するため西欧に救援を求め参加、<br>②東西教会の合同を一旦決議→しかしビザンツ側の聖職者・民衆が拒否し実効なし。<br>③ギリシア知識人のイタリア訪問→プレトン（プレソン）ら→ルネサンスに刺激。</td></tr>
+<tr class="sh"><td colspan="4">中世 東アジア</td></tr>
+<tr><td class="no">12</td><td class="nm">澶淵の盟</td><td class="yr">1004</td><td class="ds">宋と遼（契丹）の講和。<br><br>①宋が遼に毎年絹20万匹・銀10万両を贈る（歳幣）、<br>②両国は兄弟の関係（宋が兄）、<br>③国境は現状維持。→軍事的には宋の敗北だが、経済的には遼が宋の貿易圏に組み込まれた。</td></tr>
+<tr><td class="no">13</td><td class="nm">慶暦の和約</td><td class="yr">1044</td><td class="ds">宋と西夏（李元昊）の講和。<br><br>①西夏の李元昊が宋に臣下の礼をとる、<br>②その代わり宋は西夏に毎年絹13万匹・銀5万両・茶2万斤を贈る。→実質的には宋の屈服。</td></tr>
+<tr><td class="no">14</td><td class="nm">紹興の和議（南宋と金）</td><td class="yr">1141</td><td class="ds">南宋と金の講和。①淮河を国境線に設定、②南宋は金に臣下の礼をとる、③毎年銀25万両・絹25万匹を贈る（歳幣）→岳飛が処刑された背景。秦檜が推進。</td></tr>
+</tbody></table></div>
+<div class="tbl-wrap hidden" id="content1"><table>
+<thead><tr><th>No.</th><th>条約・協定名</th><th>年代</th><th>取り決めの内容</th></tr></thead>
+<tbody>
+<tr class="sh"><td colspan="4">大航海時代</td></tr>
+<tr><td class="no">1</td><td class="nm">教皇子午線</td><td class="yr">1493</td><td class="ds">教皇アレクサンデル6世が設定。大西洋上の西経約38度に南北の分界線を引き、<br>①線より西をスペイン領、<br>②線より東をポルトガル領とした。→ポルトガルの不満からトルデシリャス条約へ。</td></tr>
+<tr><td class="no">2</td><td class="nm">トルデシリャス条約</td><td class="yr">1494</td><td class="ds">教皇子午線をさらに西方に移動（西経約46度）。<br><br>①線より西（新大陸の大部分）はスペイン領、<br>②線より東（アフリカ・アジア＋ブラジル東端）はポルトガル領。→結果的にブラジルがポルトガル領になった。</td></tr>
+<tr><td class="no">3</td><td class="nm">サラゴサ条約</td><td class="yr">1529</td><td class="ds">東方（太平洋・アジア方面）におけるスペインとポルトガルの勢力圏分割を規定。モルッカ諸島（香料諸島）はポルトガル領と確認。</td></tr>
+<tr class="sh"><td colspan="4">近世 外交</td></tr>
+<tr><td class="no">4</td><td class="nm">フランス＝トルコ同盟</td><td class="yr">1535</td><td class="ds">フランソワ1世とスレイマン1世の同盟。<br><br>①反ハプスブルク（カール5世）の軍事同盟、<br>②フランス商人にオスマン帝国内での通商・居住の自由を認めるカピチュレーション（恩恵的特権）の端緒。→キリスト教国とイスラーム帝国の同盟として衝撃を与えた。</td></tr>
+<tr><td class="no">5</td><td class="nm">カピチュレーション</td><td class="yr">1535-</td><td class="ds">オスマン帝国が外国人に認めた恩恵的特権。<br><br>①外国人の居住・通商の自由、<br>②領事裁判権（治外法権）、<br>③関税の優遇。当初は恩恵として与えたものだが、帝国衰退後は列強がこれを不平等条約的に利用→トルコ共和国成立後に撤廃。</td></tr>
+<tr><td class="no">6</td><td class="nm">ピレネー条約</td><td class="yr">1659</td><td class="ds">フランス（マザラン）とスペインの講和。<br><br>①スペインがルシヨン（ピレネー山脈東部）をフランスに割譲、<br>②ルイ14世とスペイン王女マリー＝テレーズの婚姻を規定（ただし王位継承権は放棄）→のちのスペイン継承戦争の原因。フランスの対スペイン優位を確定。</td></tr>
+<tr><td class="no">7</td><td class="nm">ネルチンスク条約</td><td class="yr">1689</td><td class="ds">清（康熙帝）とロシア（ピョートル1世）の国境画定。<br><br>①国境をアルグン川とスタノヴォイ山脈（外興安嶺）に設定、<br>②ロシアのアルバジン城を破壊、<br>③両国間の通商を許可。→清がヨーロッパ国家と結んだ最初の対等な条約。イエズス会宣教師が通訳として仲介。</td></tr>
+<tr><td class="no">8</td><td class="nm">カルロヴィッツ条約</td><td class="yr">1699</td><td class="ds">第2次ウィーン包囲（1683）失敗後のオスマン帝国と欧州諸国の講和。<br><br>①ハンガリー・トランシルヴァニアをオーストリア（ハプスブルク家）に割譲、<br>②ポドリアをポーランドに返還、<br>③ペロポネソスをヴェネツィアに割譲→オスマン帝国のヨーロッパ後退の画期。</td></tr>
+<tr><td class="no">9</td><td class="nm">ユトレヒト条約</td><td class="yr">1713</td><td class="ds">スペイン継承戦争の講和。<br><br>①フェリペ5世（ブルボン家）のスペイン王位を承認（ただし仏西の王位は永久に分離）、<br>②フランスはニューファンドランド・アカディア・ハドソン湾をイギリスに割譲、<br>③スペインはジブラルタル・ミノルカ島をイギリスに、南ネーデルラント・ナポリ・サルデーニャをオーストリアに、シチリアをサヴォイアに割譲、<br>④イギリスがスペイン植民地へのアシエント（黒人奴隷貿易独占権）を獲得→イギリスの海上覇権確立。</td></tr>
+<tr><td class="no">10</td><td class="nm">ラシュタット条約</td><td class="yr">1714</td><td class="ds">ユトレヒト条約の補足。オーストリアとフランスの個別講和。オーストリアの北イタリア・南ネーデルラント支配を最終確認。</td></tr>
+<tr><td class="no">11</td><td class="nm">ニスタット条約</td><td class="yr">1721</td><td class="ds">北方戦争の講和。<br><br>①ロシアがスウェーデンからエストニア・リヴォニア（バルト海東岸）を獲得、<br>②スウェーデンにフィンランドを返還、<br>③ロシアが賠償金を支払い→ロシアのバルト海覇権確立。ピョートル1世が「インペラトール」（皇帝）の称号を使用開始。</td></tr>
+<tr><td class="no">12</td><td class="nm">キャフタ条約</td><td class="yr">1727</td><td class="ds">清（雍正帝）とロシアの国境画定。<br><br>①シベリアと外モンゴルの間の国境をバイカル湖南方に設定、<br>②キャフタでの国境貿易を公認、<br>③ロシアの北京における正教会の活動を許可。</td></tr>
+<tr><td class="no">13</td><td class="nm">ヤッシー条約</td><td class="yr">1792</td><td class="ds">露土戦争の講和。<br><br>①ロシアがドニエストル川以東を獲得、<br>②クリミア半島のロシア領有を最終確認（1783年の併合を追認）→ロシアの黒海進出の完成。</td></tr>
+<tr class="sh"><td colspan="4">宗教改革・宗教戦争</td></tr>
+<tr><td class="no">14</td><td class="nm">アウクスブルクの和議</td><td class="yr">1555</td><td class="ds">カール5世退位直前に締結。<br><br>①ルター派の信仰を容認（ただしカルヴァン派は除外）、<br>②信仰の選択権は領邦君主に限定（「その領主の宗教がその地の宗教」の原則）、<br>③個人の信仰の自由は認めない→領邦教会制の成立。不十分な妥協が三十年戦争の遠因。</td></tr>
+<tr><td class="no">15</td><td class="nm">カトーカンブレジ条約</td><td class="yr">1559</td><td class="ds">イタリア戦争（1494-1559）の最終講和。<br><br>①フランスがイタリアへの野望を放棄、<br>②スペイン（ハプスブルク家）のイタリア支配を承認→以後約150年間スペインがイタリアを支配。</td></tr>
+<tr><td class="no">16</td><td class="nm">ナントの王令</td><td class="yr">1598</td><td class="ds">アンリ4世が発布。<br><br>①ユグノー（フランスのカルヴァン派）に個人の信仰の自由を認める、<br>②ユグノーの公職就任権を保障、<br>③約100の安全保障都市（要塞保持権）を認める→ユグノー戦争（1562-98）の終結。ルイ14世が1685年に廃止→多くのユグノーが国外流出し仏経済に打撃。</td></tr>
+<tr><td class="no">17</td><td class="nm">ウェストファリア条約</td><td class="yr">1648</td><td class="ds">三十年戦争の講和。<br><br>①スイスとオランダの独立を正式に承認、<br>②フランスはアルザス地方とロレーヌの3都市（メッツ・トゥール・ヴェルダン）を獲得、<br>③カルヴァン派の信仰も容認（アウクスブルクの和議を修正）、<br>④ドイツの300以上の領邦に主権を承認→「神聖ローマ帝国の死亡証明書」、<br>⑤スウェーデンは西ポンメルン等を獲得、<br>⑥ブルボン家の優位が確立。→主権国家体制（ウェストファリア体制）の成立。</td></tr>
+</tbody></table></div>
+<div class="tbl-wrap hidden" id="content2"><table>
+<thead><tr><th>No.</th><th>条約・協定名</th><th>年代</th><th>取り決めの内容</th></tr></thead>
+<tbody>
+<tr class="sh"><td colspan="4">ナポレオン時代</td></tr>
+<tr><td class="no">1</td><td class="nm">コンコルダート</td><td class="yr">1801</td><td class="ds">ナポレオンと教皇ピウス7世の宗教協約。<br><br>①カトリック教を「フランス国民の大多数の宗教」と認める（国教化はせず）、<br>②聖職者の任命権はナポレオン政府が握る、<br>③革命期に没収した教会財産の返還はしない→カトリック教徒の支持を獲得しつつ教会を国家統制下に。</td></tr>
+<tr><td class="no">2</td><td class="nm">リュネヴィル条約</td><td class="yr">1801</td><td class="ds">ナポレオンとオーストリア（神聖ローマ帝国）の講和。<br><br>①フランスがライン川左岸を獲得、<br>②ベルギー（南ネーデルラント）のフランス領有を確認、<br>③北イタリアの諸共和国（バタヴィア・ヘルヴェティア・チザルピーナ・リグリア）の独立を承認→第2回対仏大同盟の崩壊。</td></tr>
+<tr><td class="no">3</td><td class="nm">アミアンの和約</td><td class="yr">1802</td><td class="ds">ナポレオン（フランス）とイギリスの講和。<br><br>①エジプトをオスマン帝国に返還、<br>②マルタ島をマルタ騎士団に返還（イギリス軍は撤退）、<br>③フランスはナポリ・ローマ教皇領から撤退→第2回対仏大同盟を解体。短命に終わり翌年に破綻→第3回対仏大同盟へ。</td></tr>
+<tr><td class="no">4</td><td class="nm">ティルジット条約</td><td class="yr">1807</td><td class="ds">ナポレオンとプロイセン・ロシアの講和。<br><br>①プロイセンはエルベ川以西の全領土を喪失（領土の約半分）、<br>②ウェストファリア王国の建設（ナポレオンの弟ジェロームが国王）、<br>③ワルシャワ大公国の建設（プロイセンのポーランド領から）、<br>④ロシアはフランスとの同盟を結び大陸封鎖令に参加→プロイセンの屈辱がシュタイン・ハルデンベルクの改革を促す。</td></tr>
+<tr><td class="no">5</td><td class="nm">ウィーン議定書</td><td class="yr">1815</td><td class="ds">ナポレオン戦争後のヨーロッパ再編。メッテルニヒが主導、タレーラン（仏）が正統主義の原則を提唱。<br><br>①正統主義に基づき旧君主の復位（仏・西・ナポリ等にブルボン家を復帰）。フランスは1792年当時の国境に戻す。<br>②ロシアはワルシャワ大公国の大部分を併合しポーランド立憲王国としロシア皇帝がポーランド王を兼ねる。フィンランド・ベッサラビアも獲得。<br>③プロイセンはザクセンの北半分とラインラント、ワルシャワ大公国の一部を獲得し領土を東西に拡張。<br>④オーストリアはネーデルラント等を放棄し、代わりにヴェネツィアとロンバルディアを合わせたロンバルド＝ヴェネト王国を直接統治。<br>⑤イギリスは旧オランダ領のセイロン島（スリランカ）・ケープ植民地を獲得。マルタ島・イオニア諸島の領有も承認。<br>⑥スイスは永世中立国。<br>⑦ドイツは35邦4自由市からなるドイツ連邦を構成、フランクフルトに連邦議会、オーストリアが議長。<br>⑧オランダはオランダ立憲王国となり旧オーストリア領南ネーデルラント（のちのベルギー）を併合。<br>⑨スウェーデンはフィンランドをロシアに、ポンメルンをプロイセンに譲り、デンマークからノルウェーを獲得。</td></tr>
+<tr class="sh"><td colspan="4">アメリカ</td></tr>
+<tr><td class="no">6</td><td class="nm">キュチュク＝カイナルジ条約</td><td class="yr">1774</td><td class="ds">露土戦争の講和（エカチェリーナ2世時代）。<br><br>①クリミア＝ハン国のオスマン帝国からの独立を承認（→1783年ロシアが併合）。<br>②オスマン帝国領内の正教徒に対するロシアの保護権を承認→以後の露土戦争やクリミア戦争の口実に。<br>③ロシアの黒海航行権。<br>④モルダヴィア・ワラキアに対するロシアの発言権→ロシアの南下政策の法的根拠。</td></tr>
+<tr><td class="no">7</td><td class="nm">パリ条約（独立戦争）</td><td class="yr">1783</td><td class="ds">アメリカ独立戦争の講和。<br><br>①イギリスがアメリカ合衆国の独立を承認、<br>②ミシシッピ川以東のルイジアナをアメリカに割譲、<br>③アメリカのニューファンドランド沿岸の漁業権を承認、<br>④セネガルと西インド諸島をフランスに、フロリダをスペインに割譲。</td></tr>
+<tr><td class="no">8</td><td class="nm">英仏通商条約</td><td class="yr">1786</td><td class="ds">イギリスとフランスの自由貿易協定。<br><br>①関税の相互引き下げ→安価なイギリス製品がフランスに流入しフランスの製造業に打撃、フランスの財政悪化の一因→フランス革命の経済的背景。</td></tr>
+<tr><td class="no">9</td><td class="nm">ミズーリ協定</td><td class="yr">1820</td><td class="ds">アメリカの奴隷制をめぐる南北の妥協。<br><br>①ミズーリ州は奴隷州として連邦に加入、<br>②メイン州は自由州として加入（南北のバランス維持）、<br>③以後、北緯36度30分以北（ミズーリ州を除く）では奴隷制を禁止→カンザス＝ネブラスカ法（1854）で事実上破棄。</td></tr>
+<tr><td class="no">10</td><td class="nm">オレゴン協定</td><td class="yr">1846</td><td class="ds">アメリカとイギリスのオレゴン領土境界画定。北緯49度線を国境とし、以南をアメリカ領、以北をイギリス領（カナダ）とした。</td></tr>
+<tr class="sh"><td colspan="4">19世紀 ヨーロッパ</td></tr>
+<tr><td class="no">11</td><td class="nm">アーヘンの和約</td><td class="yr">1748</td><td class="ds">オーストリア継承戦争の講和。<br><br>①プロイセンのシュレジエン領有を確認、<br>②その他の領土は概ね戦前の状態に復帰→マリア＝テレジアのシュレジエン奪回への執念→外交革命（仏墺同盟）→七年戦争へ。</td></tr>
+<tr><td class="no">12</td><td class="nm">パリ条約（七年戦争）</td><td class="yr">1763</td><td class="ds">七年戦争の講和。<br><br>①フランスがカナダ・ミシシッピ川以東のルイジアナをイギリスに割譲、<br>②フランスがインドの拠点をポンディシェリ等のみに制限、<br>③スペインがフロリダをイギリスに割譲（代わりにミシシッピ川以西のルイジアナをフランスから獲得）→イギリスの「世界帝国」化の画期。</td></tr>
+<tr><td class="no">13</td><td class="nm">トルコマンチャーイ条約</td><td class="yr">1828</td><td class="ds">ロシアとイラン（カージャール朝）の不平等条約。<br><br>①アルメニア（エレバン・ナヒチェヴァン）をロシアに割譲、<br>②ロシアに治外法権・最恵国待遇を承認、<br>③賠償金の支払い→イランの半植民地化の始まり。</td></tr>
+<tr><td class="no">14</td><td class="nm">アドリアノープル条約</td><td class="yr">1829</td><td class="ds">露土戦争（1828-29）の講和。<br><br>①ギリシアの自治を承認（のち独立へ）、<br>②セルビアの自治を承認、<br>③モルダヴィア・ワラキアの自治を拡大（ロシアの保護下）、<br>④ロシアがドナウ川河口地域と黒海東岸（カフカス南部）を獲得、<br>⑤ボスポラス・ダーダネルス両海峡のロシア商船の通行を認める。</td></tr>
+<tr><td class="no">15</td><td class="nm">七月勅令</td><td class="yr">1830</td><td class="ds">シャルル10世が発布。<br><br>①議会の解散、<br>②選挙権のさらなる制限（大土地所有者のみに）、<br>③出版の自由の停止→パリ市民の蜂起を招き七月革命が勃発→シャルル10世退位、ルイ＝フィリップ即位（七月王政）。</td></tr>
+<tr><td class="no">16</td><td class="nm">ウンキャル＝スケレッシ条約</td><td class="yr">1833</td><td class="ds">ロシアとオスマン帝国の防守同盟。<br><br>①ロシアはオスマン帝国にエジプトのムハンマド＝アリーに対する軍事援助を提供、<br>②その見返りにダーダネルス・ボスポラス両海峡のロシア以外の軍艦の通過を禁止→ロシアの黒海・地中海進出の拠点確保。英仏が反発→のちに改定。</td></tr>
+<tr><td class="no">17</td><td class="nm">ギュルハネ勅令</td><td class="yr">1839</td><td class="ds">アブデュルメジド1世が発布しタンジマート（恩恵的改革）を開始。<br><br>①法の前の平等（宗教を問わず）、<br>②生命と財産と名誉の保障、<br>③公正な裁判の保障、<br>④公正な徴税制度→近代的法治主義の宣言だが実効性は限定的。</td></tr>
+<tr><td class="no">18</td><td class="nm">ロンドン条約（エジプト問題）</td><td class="yr">1840</td><td class="ds">第2次エジプト＝トルコ戦争の結果。英露墺普がムハンマド＝アリーにシリアからの撤退を要求。エジプト・スーダンの世襲権のみ認める→東方問題におけるイギリスの主導権確立。</td></tr>
+<tr><td class="no">19</td><td class="nm">ガダルーペ＝イダルゴ条約</td><td class="yr">1848</td><td class="ds">米墨戦争の講和。<br><br>①メキシコがカリフォルニア・ニューメキシコ・アリゾナ等をアメリカに割譲（国土の約半分を喪失）、<br>②アメリカが1500万ドルを支払い→アメリカの太平洋到達。カリフォルニア・ゴールドラッシュ（1848-49）。</td></tr>
+<tr><td class="no">20</td><td class="nm">パリ条約（クリミア戦争）</td><td class="yr">1856</td><td class="ds">クリミア戦争の講和。<br><br>①黒海の中立化（黒海沿岸に軍艦・海軍基地を置けない）→ロシアの南下政策に打撃、<br>②モルダヴィア・ワラキア（のちルーマニア）の自治を承認、<br>③ドナウ川の自由航行、<br>④オスマン帝国の領土保全を列強が保障。</td></tr>
+<tr><td class="no">21</td><td class="nm">ヴィラフランカの和</td><td class="yr">1859</td><td class="ds">ナポレオン3世とオーストリア皇帝フランツ＝ヨーゼフ1世の休戦協定。<br><br>①オーストリアがロンバルディアをフランスに割譲（フランスはサルデーニャに譲渡）、<br>②ヴェネツィアはオーストリア領のまま→カヴールはヴェネツィア未回収に激怒し辞任。中部イタリアの併合はサルデーニャの住民投票で実現。</td></tr>
+<tr><td class="no">22</td><td class="nm">フランクフルト講和条約</td><td class="yr">1871</td><td class="ds">普仏戦争の講和。<br><br>①フランスがアルザス＝ロレーヌ（アルザス全域＋ロレーヌ東部）をドイツ帝国に割譲、<br>②賠償金50億フラン（完済まで独軍がフランスに駐留）→アルザス＝ロレーヌ問題が以後の独仏対立の火種となり、ヴェルサイユ条約（1919）での返還まで続く。</td></tr>
+<tr><td class="no">23</td><td class="nm">サン＝ステファノ条約</td><td class="yr">1878</td><td class="ds">露土戦争（1877-78）の講和。<br><br>①ルーマニア・セルビア・モンテネグロの独立承認、<br>②大ブルガリア公国の建設（ロシアの保護国。エーゲ海に達する広大な領域）、<br>③オスマン帝国がロシアに賠償金支払い→大ブルガリアがロシアの地中海進出の拠点となることを英墺が警戒→ベルリン会議へ。</td></tr>
+<tr><td class="no">24</td><td class="nm">ベルリン条約</td><td class="yr">1878</td><td class="ds">ビスマルクが「誠実な仲介人」として主催したベルリン会議の結果。サン＝ステファノ条約を大幅修正。<br><br>①大ブルガリアを3分割（ブルガリア公国＝自治国、東ルーメリア＝オスマン帝国内の自治州、マケドニア＝オスマン帝国に残留）、<br>②セルビア・モンテネグロ・ルーマニアの独立は維持、<br>③オーストリアがボスニア・ヘルツェゴヴィナの統治権を獲得、<br>④イギリスがキプロス島を獲得→ロシアの南下政策に歯止め、バルカン問題は未解決のまま。</td></tr>
+</tbody></table></div>
+<div class="tbl-wrap hidden" id="content3"><table>
+<thead><tr><th>No.</th><th>条約・協定名</th><th>年代</th><th>取り決めの内容</th></tr></thead>
+<tbody>
+<tr class="sh"><td colspan="4">19世紀 東アジア</td></tr>
+<tr><td class="no">1</td><td class="nm">南京条約</td><td class="yr">1842</td><td class="ds">アヘン戦争の講和。<br><br>①香港島をイギリスに割譲、<br>②広州・厦門（アモイ）・福州・寧波・上海の5港を開港、<br>③公行（コホン）の廃止（自由貿易）、<br>④賠償金2100万ドルの支払い。→関税自主権の喪失・領事裁判権（治外法権）・片務的最恵国待遇は翌年の虎門寨追加条約で規定。</td></tr>
+<tr><td class="no">2</td><td class="nm">虎門寨追加条約</td><td class="yr">1843</td><td class="ds">南京条約の追加条約。<br><br>①関税自主権の喪失（関税率を協定関税に）、<br>②領事裁判権（治外法権）の承認、<br>③片務的最恵国待遇→南京条約本体より実質的に不平等な内容。</td></tr>
+<tr><td class="no">3</td><td class="nm">望厦条約</td><td class="yr">1844</td><td class="ds">清とアメリカの条約（マカオ郊外で締結）。南京条約とほぼ同様の内容に加え、<br>①12年後の改定権を規定→列強に清の門戸を継続的に開かせる仕組み。</td></tr>
+<tr><td class="no">4</td><td class="nm">黄埔条約</td><td class="yr">1844</td><td class="ds">清とフランスの条約（広州郊外で締結）。南京条約・望厦条約とほぼ同様の不平等条約。フランスにキリスト教布教の自由を認めた点が特徴。</td></tr>
+<tr><td class="no">5</td><td class="nm">天津条約</td><td class="yr">1858</td><td class="ds">アロー戦争（第2次アヘン戦争）の講和。<br><br>①外国公使の北京駐在、<br>②キリスト教の布教の自由、<br>③外国人の内地旅行の自由、<br>④アヘン貿易の公認、<br>⑤南京・漢口など11港を追加開港、<br>⑥賠償金の支払い→批准交換のトラブルから英仏連合軍が北京を占領→北京条約へ。</td></tr>
+<tr><td class="no">6</td><td class="nm">アイグン条約</td><td class="yr">1858</td><td class="ds">清とロシアの国境条約。<br><br>①アムール川（黒竜江）以北をロシア領、<br>②ウスリー川以東は両国の共同管理（のち北京条約でロシア領に確定）→ロシアの極東進出の決定的一歩。</td></tr>
+<tr><td class="no">7</td><td class="nm">北京条約</td><td class="yr">1860</td><td class="ds">アロー戦争の最終講和。<br><br>①天津条約の批准、<br>②天津の開港、<br>③九竜半島南部をイギリスに割譲、<br>④ウスリー川以東（沿海州）をロシア領と確定→ロシアがウラジヴォストーク（「東を征服せよ」の意）を建設、太平洋進出の拠点に。仏はキリスト教布教の自由を拡大。</td></tr>
+<tr><td class="no">8</td><td class="nm">イリ条約</td><td class="yr">1881</td><td class="ds">ロシアと清のイリ地方の国境画定。<br><br>①ロシアが占領していたイリ地方の大部分を清に返還、<br>②賠償金の支払い→左宗棠のイリ地方回復の成果。</td></tr>
+<tr><td class="no">9</td><td class="nm">下関条約</td><td class="yr">1895</td><td class="ds">日清戦争の講和。<br><br>①清が朝鮮の独立を承認（冊封体制の崩壊）、<br>②遼東半島・台湾・澎湖諸島を日本に割譲、<br>③賠償金2億テール（両）、<br>④沙市・重慶・蘇州・杭州の4港を開港→三国干渉（露仏独）で遼東半島は返還。列強の中国分割が加速。</td></tr>
+<tr><td class="no">10</td><td class="nm">北京議定書（辛丑和約）</td><td class="yr">1901</td><td class="ds">義和団事件後の列強と清の議定書。<br><br>①賠償金4億5000万テール（39年分割）、<br>②北京の公使館区域に列強の駐兵権、<br>③大沽砲台の撤去、<br>④北京〜山海関の鉄道沿線に列強の駐兵権→清の半植民地化がほぼ完成。</td></tr>
+<tr class="sh"><td colspan="4">日本関連</td></tr>
+<tr><td class="no">11</td><td class="nm">日米和親条約</td><td class="yr">1854</td><td class="ds">ペリー来航の結果。<br><br>①下田・箱館の2港を開港、<br>②アメリカ船への燃料・食糧の供給、<br>③最恵国待遇→日本の開国。</td></tr>
+<tr><td class="no">12</td><td class="nm">日米修好通商条約</td><td class="yr">1858</td><td class="ds">ハリスとの交渉で締結。<br><br>①神奈川（横浜）・長崎・新潟・兵庫（神戸）の4港と江戸・大坂を開港、<br>②関税自主権の喪失（協定関税）、<br>③領事裁判権（治外法権）の承認→不平等条約。</td></tr>
+<tr><td class="no">13</td><td class="nm">天津条約（日清間）</td><td class="yr">1885</td><td class="ds">甲申政変（1884）後の日清間の取り決め。<br><br>①日清両国が朝鮮から撤兵、<br>②今後朝鮮に出兵する際は相互に事前通告→のちの日清戦争の際、日清両国が通告して出兵→開戦。</td></tr>
+<tr><td class="no">14</td><td class="nm">日英同盟</td><td class="yr">1902</td><td class="ds">①日英両国は清と韓国の独立を承認、<br>②一方が第三国と交戦した場合、他方は厳正中立を守る、<br>③一方が2カ国以上と交戦した場合、他方は参戦義務を負う→日露戦争の際にイギリスの好意的中立を確保。1921年の四カ国条約で解消。</td></tr>
+<tr><td class="no">15</td><td class="nm">ポーツマス条約</td><td class="yr">1905</td><td class="ds">日露戦争の講和。セオドア＝ローズヴェルトが仲介。小村寿太郎が全権。<br><br>①ロシアが韓国に対する日本の指導権を承認、<br>②遼東半島の租借権（旅順・大連）を日本に譲渡、<br>③南満州鉄道（長春以南）の経営権を日本に譲渡、<br>④南樺太（北緯50度以南）を日本に割譲、<br>⑤沿海州・カムチャッカの漁業権→賠償金は取れず→日比谷焼打事件。ハリマン計画（南満州鉄道の日米共同経営）を小村が拒否。</td></tr>
+<tr><td class="no">16</td><td class="nm">第2次日韓協約</td><td class="yr">1905</td><td class="ds">ポーツマス条約を受けて締結。<br><br>①韓国の外交権を日本が掌握、<br>②韓国統監府を設置（初代統監：伊藤博文）→韓国の保護国化。</td></tr>
+<tr><td class="no">17</td><td class="nm">第3次日韓協約</td><td class="yr">1907</td><td class="ds">ハーグ密使事件を機に締結。<br><br>①韓国の内政権を日本が掌握、<br>②韓国軍の解散→1910年の韓国併合へ。</td></tr>
+<tr><td class="no">18</td><td class="nm">日仏協約</td><td class="yr">1907</td><td class="ds">①日本がフランスのベトナム支配を承認、<br>②フランスが日本の朝鮮支配を承認→相互の植民地支配の承認。</td></tr>
+<tr><td class="no">19</td><td class="nm">日露協約</td><td class="yr">1907</td><td class="ds">①日本がロシアのモンゴル支配を承認、<br>②ロシアが日本の朝鮮支配を承認→満州の南北分割（日本＝南満州、ロシア＝北満州）。</td></tr>
+<tr><td class="no">20</td><td class="nm">日米紳士協約</td><td class="yr">1907-08</td><td class="ds">①日本政府が自主的に労働者のアメリカへの渡航を制限、<br>②アメリカは日本人移民の差別的扱いを改善→排日移民法（1924）への前段階。</td></tr>
+<tr class="sh"><td colspan="4">東南アジア</td></tr>
+<tr><td class="no">21</td><td class="nm">ボウリング条約</td><td class="yr">1855</td><td class="ds">タイ（ラーマ4世）とイギリスの通商条約。<br><br>①自由貿易の原則、<br>②関税率の制限（3%）、<br>③領事裁判権（治外法権）の承認→不平等条約だが、ラーマ4世は自発的に開国し植民地化を回避する戦略をとった。</td></tr>
+<tr><td class="no">22</td><td class="nm">サイゴン条約</td><td class="yr">1862</td><td class="ds">フランスとベトナム（阮朝）の条約。<br><br>①コーチシナ東部3省をフランスに割譲、<br>②ダナン・バラリアなど3港の開港、<br>③キリスト教布教の自由→フランスのインドシナ植民地化の第一歩。</td></tr>
+<tr><td class="no">23</td><td class="nm">フエ（ユエ）条約</td><td class="yr">1883</td><td class="ds">フランスによるベトナムの保護国化。<br><br>①ベトナムの外交権をフランスが掌握、<br>②フランスの軍事的保護を承認→清仏戦争（1884-85）の原因。</td></tr>
+<tr><td class="no">24</td><td class="nm">日韓併合条約</td><td class="yr">1910</td><td class="ds">①韓国の主権を完全に日本に移譲→朝鮮総督府設置。<br>②土地調査事業で農民が土地喪失→日本人地主の進出。<br>③日本語教育の強制→三・一独立運動（1919）の背景。</td></tr>
+<tr><td class="no">25</td><td class="nm">ラワルピンディー条約</td><td class="yr">1919</td><td class="ds">第3次アフガン戦争後の講和。<br><br>①イギリスがアフガニスタンの独立を承認（外交権の回復）。</td></tr>
+</tbody></table></div>
+<div class="tbl-wrap hidden" id="content4"><table>
+<thead><tr><th>No.</th><th>条約・協定名</th><th>年代</th><th>取り決めの内容</th></tr></thead>
+<tbody>
+<tr class="sh"><td colspan="4">ビスマルク外交</td></tr>
+<tr><td class="no">1</td><td class="nm">三帝同盟</td><td class="yr">1873</td><td class="ds">ビスマルク外交の出発点。独・墺・露の同盟。<br><br>①3国間の友好と協力、<br>②バルカン問題での協調→ロシアとオーストリアのバルカン利害対立で破綻→ビスマルクは新三帝同盟（1881）、再保障条約（1887）で対応。</td></tr>
+<tr><td class="no">2</td><td class="nm">三国同盟（独墺伊）</td><td class="yr">1882</td><td class="ds">①独墺伊3国の防守同盟、<br>②フランスがいずれかの国に攻撃した場合、他の2国が参戦、<br>③イタリアの「未回収のイタリア」問題は棚上げ→フランスの孤立化を完成。イタリアは第一次大戦でこの同盟を離脱し連合国側で参戦。</td></tr>
+<tr><td class="no">3</td><td class="nm">再保障条約</td><td class="yr">1887</td><td class="ds">ビスマルクがロシアと秘密裏に締結。<br><br>①独露間の中立（第三国との戦争時）、<br>②ロシアのコンスタンティノープルへの進出についてドイツが妨害しない→フランスの孤立化を維持する最後の手段。ヴィルヘルム2世が1890年に更新を拒否→露仏同盟へ。</td></tr>
+<tr><td class="no">4</td><td class="nm">露仏同盟</td><td class="yr">1891-94</td><td class="ds">再保障条約失効後のロシアとフランスの接近。<br><br>①軍事同盟（ドイツまたは三国同盟側との戦争時に相互援助）→フランスの孤立が解消、ビスマルク外交の崩壊。露仏間の経済的結びつき（フランス資本のロシアへの投資）が背景。</td></tr>
+<tr><td class="no">5</td><td class="nm">英仏協商</td><td class="yr">1904</td><td class="ds">イギリスとフランスの植民地問題の調整。<br><br>①イギリスのエジプト支配をフランスが承認、<br>②フランスのモロッコにおける優越権をイギリスが承認、<br>③その他ニューファンドランド漁業権・マダガスカル等の問題を解決→三国協商の第一歩。ドイツの「世界政策」に対する対抗。</td></tr>
+<tr><td class="no">6</td><td class="nm">英露協商</td><td class="yr">1907</td><td class="ds">イギリスとロシアの勢力圏調整。<br><br>①イランを3分割（北部＝ロシア勢力圏、南東部＝イギリス勢力圏、中間地帯＝緩衝地帯）、<br>②アフガニスタンはイギリスの勢力圏、<br>③チベットは両国とも干渉しない→三国協商の完成。ドイツの包囲が完成し「3B政策」vs「3C政策」の対立構造に。</td></tr>
+<tr class="sh"><td colspan="4">第一次世界大戦関連</td></tr>
+<tr><td class="no">7</td><td class="nm">ベルリン＝コンゴ会議一般議定書</td><td class="yr">1885</td><td class="ds">ビスマルクが主催。①コンゴ自由国（レオポルド2世の私領）を承認、②ニジェール川・コンゴ川の航行自由、③アフリカ領有には「実効支配」が必要（先占権の原則）→アフリカ分割の法的枠組み。</td></tr>
+<tr><td class="no">8</td><td class="nm">天津条約（清仏戦争）</td><td class="yr">1885</td><td class="ds">清仏戦争の講和。清がベトナムに対するフランスの保護権を承認→フランス領インドシナ連邦形成の法的根拠。</td></tr>
+<tr><td class="no">9</td><td class="nm">日米通商航海条約</td><td class="yr">1911/破棄1939</td><td class="ds">①日米間の通商・航海の自由を規定する基本条約→1939年にアメリカが破棄を通告（日中戦争への抗議）→翌年失効→日本への石油禁輸の法的根拠に→太平洋戦争への一因。</td></tr>
+<tr><td class="no">10</td><td class="nm">ロンドン秘密条約</td><td class="yr">1915</td><td class="ds">連合国がイタリアの参戦を勧誘するための秘密条約。<br><br>①戦後、南チロル・トリエステ・イストリア（「未回収のイタリア」）をイタリアに割譲、<br>②ダルマティア沿岸の一部、<br>③アルバニアの保護権→パリ講和会議でイタリアの要求は十分に認められず→「ヴィットーリオ＝ムティラータ（裏切られた勝利）」→ファシズムの温床に。</td></tr>
+<tr><td class="no">11</td><td class="nm">フサイン＝マクマホン協定</td><td class="yr">1915</td><td class="ds">イギリスのエジプト高等弁務官マクマホンとメッカ太守フサインの書簡交換。<br><br>①アラブ人の独立国家建設を約束（ただし地域の境界は曖昧）→実際にはサイクス＝ピコ協定・バルフォア宣言と矛盾（英の三枚舌外交）。</td></tr>
+<tr><td class="no">12</td><td class="nm">二十一カ条要求</td><td class="yr">1915</td><td class="ds">日本が中国（袁世凱政権）に突きつけた要求。<br><br>①山東省のドイツ権益を日本が継承、<br>②南満州・東部内蒙古での日本の権益拡大（租借権の延長等）、<br>③漢冶萍公司の日中合弁化、<br>④中国沿岸の不割譲、<br>⑤（第5号）中国政府への日本人顧問の採用等→第5号は列強の反対で撤回。五・四運動（1919）の背景。</td></tr>
+<tr><td class="no">13</td><td class="nm">サイクス＝ピコ協定</td><td class="yr">1916</td><td class="ds">イギリス・フランス・ロシアによるオスマン帝国領の秘密分割協定。<br><br>①フランスがシリア・レバノンを獲得、<br>②イギリスがイラク（メソポタミア）を獲得、<br>③パレスチナは国際管理→フサイン＝マクマホン協定と完全に矛盾。ロシア革命後にソヴィエト政権が暴露。</td></tr>
+<tr><td class="no">14</td><td class="nm">バルフォア宣言</td><td class="yr">1917</td><td class="ds">イギリス外相バルフォアがユダヤ人指導者ロスチャイルドに書簡で約束。<br><br>①パレスチナにおけるユダヤ人の「民族的郷土」の建設をイギリスが支持→フサイン＝マクマホン協定（アラブの独立約束）・サイクス＝ピコ協定（英仏の分割）と矛盾する三枚舌外交の完成。パレスチナ問題の根本原因。</td></tr>
+<tr><td class="no">15</td><td class="nm">石井＝ランシング協定</td><td class="yr">1917</td><td class="ds">日本の特派大使石井とアメリカ国務長官ランシングの協定。<br><br>①アメリカが日本の中国における特殊権益を承認、<br>②日本は中国の領土保全・門戸開放・機会均等を確認→九カ国条約（1922）で破棄。</td></tr>
+<tr><td class="no">16</td><td class="nm">ブレスト＝リトフスク条約</td><td class="yr">1918</td><td class="ds">ソヴィエト政権とドイツの単独講和。トロツキーが全権。<br><br>①フィンランド・バルト三国・ポーランド・ウクライナの独立を承認（事実上ドイツの影響下に）、<br>②ロシアの旧領土の約1/4を喪失→レーニンの「屈辱的な平和」。ドイツ敗戦後に無効化。</td></tr>
+<tr class="sh"><td colspan="4">講和条約</td></tr>
+<tr><td class="no">17</td><td class="nm">プラハ条約</td><td class="yr">1866</td><td class="ds">普墺戦争の講和。ビスマルクが意図的に寛大な条件にした。<br><br>①オーストリアは少額の賠償金のみ。領土割譲なし。<br>②ドイツ連邦の解体。<br>③北ドイツ連邦の成立を承認。<br>④オーストリアはドイツ統一から排除→アウスグライヒ（オーストリア＝ハンガリー帝国成立）。</td></tr>
+<tr><td class="no">18</td><td class="nm">ライナウ協定</td><td class="yr">1916</td><td class="ds">イギリスがインドの国民会議派（ティラク派）に戦後の自治権付与を約束→しかし戦後のローラット法（1919）で裏切り→反英運動の激化。</td></tr>
+<tr><td class="no">19</td><td class="nm">ヴェルサイユ条約</td><td class="yr">1919</td><td class="ds">対独講和条約。パリ講和会議で締結。クレマンソー（仏）が対独強硬、ウィルソン（米）が十四カ条に基づく平和を主張。<br><br>①アルザス＝ロレーヌをフランスに返還、<br>②ザール地方は15年間国際連盟管理（炭鉱はフランスに）、<br>③ラインラントの非武装化、<br>④ポーランド回廊をポーランドに（東プロイセンがドイツ本土から分離）、<br>⑤ダンツィヒは自由市に、<br>⑥全植民地を没収（委任統治制度で英仏日等に分配）、<br>⑦軍備制限（陸軍10万人以下、海軍1万5千人以下、戦車・潜水艦・空軍の禁止、徴兵制廃止）、<br>⑧賠償金1320億マルク（のち変更）、<br>⑨戦争責任条項（ドイツの「戦争責任」を明記）、<br>⑩国際連盟の設立→ドイツ国民の屈辱感→ナチスの台頭の背景。</td></tr>
+<tr><td class="no">20</td><td class="nm">サン＝ジェルマン条約</td><td class="yr">1919</td><td class="ds">対オーストリア講和条約。<br><br>①オーストリア＝ハンガリー帝国の解体を承認、<br>②チェコスロヴァキア・ユーゴスラヴィア・ポーランドの独立を承認、<br>③南チロル・トリエステ・イストリアをイタリアに割譲、<br>④ドイツとの合併（アンシュルス）を禁止、<br>⑤軍備制限。</td></tr>
+<tr><td class="no">21</td><td class="nm">ヌイイ条約</td><td class="yr">1919</td><td class="ds">対ブルガリア講和条約。<br><br>①西トラキアをギリシアに割譲（エーゲ海への出口を喪失）、<br>②南ドブルジャをルーマニアに割譲、<br>③軍備制限・賠償金。</td></tr>
+<tr><td class="no">22</td><td class="nm">トリアノン条約</td><td class="yr">1920</td><td class="ds">対ハンガリー講和条約。<br><br>①ハンガリーは旧領土の約7割を喪失、<br>②トランシルヴァニアをルーマニアに、スロヴァキアをチェコスロヴァキアに、クロアチアをユーゴスラヴィアに割譲→ハンガリーの修正主義がナチス・ドイツ接近の一因。</td></tr>
+<tr><td class="no">23</td><td class="nm">セーヴル条約</td><td class="yr">1920</td><td class="ds">対オスマン帝国講和条約。<br><br>①アラブ地域（メソポタミア・シリア・パレスチナ等）を英仏の委任統治下に、<br>②東トラキアとスミルナ（イズミル）周辺をギリシアに割譲、<br>③海峡地帯を国際管理、<br>④アルメニアとクルディスタンの独立、<br>⑤カピチュレーションの復活→ケマル＝パシャが拒否しギリシア＝トルコ戦争（1919-22）に勝利→ローザンヌ条約で全面改定。</td></tr>
+<tr><td class="no">24</td><td class="nm">ローザンヌ条約</td><td class="yr">1923</td><td class="ds">セーヴル条約を全面改定。<br><br>①東トラキアとスミルナ周辺をトルコに返還、<br>②カピチュレーションの廃止、<br>③海峡地帯はトルコの主権下に、<br>④アルメニア・クルディスタンの独立は取り消し→敗戦国が武力で講和条約を覆した唯一の事例。トルコ共和国の国際的承認。</td></tr>
+</tbody></table></div>
+<div class="tbl-wrap hidden" id="content5"><table>
+<thead><tr><th>No.</th><th>条約・協定名</th><th>年代</th><th>取り決めの内容</th></tr></thead>
+<tbody>
+<tr class="sh"><td colspan="4">ワシントン体制</td></tr>
+<tr><td class="no">1</td><td class="nm">四カ国条約</td><td class="yr">1921</td><td class="ds">①日英米仏4国が太平洋地域の現状維持と相互の権益尊重を約束、<br>②この条約の発効により日英同盟を解消→アメリカの戦略的目標（日英同盟の解消）が達成。</td></tr>
+<tr><td class="no">2</td><td class="nm">海軍軍備制限条約</td><td class="yr">1921-22</td><td class="ds">①主力艦（戦艦・巡洋艦）の保有比率を英：米：日：仏：伊＝5：5：3：1.67：1.67に制限、<br>②10年間の主力艦建造休止→日本の対米英比率6割に日本海軍が不満→ロンドン海軍軍縮条約（1930）でさらに補助艦も制限→統帥権干犯問題。</td></tr>
+<tr><td class="no">3</td><td class="nm">九カ国条約</td><td class="yr">1922</td><td class="ds">①中国の主権尊重・領土保全、<br>②門戸開放・機会均等の原則を確認、<br>③石井＝ランシング協定の破棄（日本の「特殊権益」を否定）、<br>④二十一カ条要求の一部の撤回を求める→中国における日本の特殊地位を否定する「ワシントン体制」の基盤。</td></tr>
+<tr class="sh"><td colspan="4">戦間期</td></tr>
+<tr><td class="no">4</td><td class="nm">ラパロ条約</td><td class="yr">1922</td><td class="ds">ドイツとソ連の国交樹立。<br><br>①外交関係の回復、<br>②賠償請求権の相互放棄→ヴェルサイユ体制下で孤立した独ソが接近。秘密軍事協力（ドイツ軍がソ連で兵器開発・訓練）の端緒。</td></tr>
+<tr><td class="no">5</td><td class="nm">ロカルノ条約</td><td class="yr">1925</td><td class="ds">①ラインラントの非武装を再確認（ヴェルサイユ条約の該当条項を英仏独が改めて保障）、<br>②独仏・独ベルギー間の国境の現状維持と相互不可侵、<br>③独とポーランド・チェコスロヴァキアの仲裁条約（ただし東部国境の現状維持は保障せず）→「ロカルノの精神」→ドイツの国際連盟加入（1926）へ。シュトレーゼマン（独）とブリアン（仏）の協調外交。</td></tr>
+<tr><td class="no">6</td><td class="nm">不戦条約（ブリアン＝ケロッグ条約）</td><td class="yr">1928</td><td class="ds">①国際紛争の解決手段としての戦争を放棄、<br>②紛争は平和的手段で解決→63カ国が署名。しかし自衛戦争は除外されており制裁規定もないため実効性に疑問。戦後の国連憲章・日本国憲法第9条に影響。</td></tr>
+<tr><td class="no">7</td><td class="nm">ラテラノ条約</td><td class="yr">1929</td><td class="ds">ムッソリーニと教皇ピウス11世の間で締結。<br><br>①バチカン市国の独立を承認（教皇領消滅以来のローマ教皇と国家の和解）、<br>②カトリック教をイタリアの国教に、<br>③宗教教育の義務化、<br>④教皇領没収の賠償金支払い。</td></tr>
+<tr><td class="no">8</td><td class="nm">ウェストミンスター憲章</td><td class="yr">1931</td><td class="ds">①イギリス連邦の自治領（カナダ・オーストラリア・ニュージーランド・南アフリカ・アイルランド自由国）が本国と対等の地位にあることを確認、<br>②自治領の完全な立法権の独立→大英帝国からイギリス連邦への転換を法的に確定。</td></tr>
+<tr><td class="no">9</td><td class="nm">仏ソ相互援助条約</td><td class="yr">1935</td><td class="ds">フランスとソ連の相互援助条約。<br><br>①一方が攻撃された場合の相互援助義務→ヒトラーはこれをロカルノ条約違反と主張し、1936年にラインラント進駐の口実とした。</td></tr>
+<tr><td class="no">10</td><td class="nm">英独海軍協定</td><td class="yr">1935</td><td class="ds">①ドイツ海軍の規模をイギリス海軍の35%まで認める（潜水艦は45%、条件付きで100%まで）→ヴェルサイユ条約の軍備制限を事実上破棄する内容をイギリスが認めた形→仏伊の反発→ストレーザ戦線の崩壊。宥和政策の始まり。</td></tr>
+<tr><td class="no">11</td><td class="nm">日独防共協定→日独伊防共協定</td><td class="yr">1936-37</td><td class="ds">①反コミンテルン（共産主義インターナショナル）の情報交換と防止活動での協力、<br>②秘密附属協定でソ連への対抗を規定→1937年にイタリアが加入し日独伊防共協定に→枢軸国形成への第一歩。</td></tr>
+<tr><td class="no">12</td><td class="nm">独ソ不可侵条約</td><td class="yr">1939</td><td class="ds">ヒトラーとスターリンが締結（外相リッベントロップとモロトフが署名）。<br><br>①10年間の相互不可侵、<br>②秘密附属議定書でポーランドの東西分割（西部はドイツ、東部はソ連）、バルト三国・ベッサラビア・フィンランドをソ連の勢力圏と規定→9月1日のドイツのポーランド侵攻（第二次世界大戦開始）の条件整備。</td></tr>
+<tr><td class="no">13</td><td class="nm">日独伊三国同盟</td><td class="yr">1940</td><td class="ds">①日独伊3国の軍事同盟、<br>②ヨーロッパの新秩序はドイツ・イタリアが、大東亜の新秩序は日本が主導、<br>③3国のいずれかが現在交戦していない国から攻撃された場合、他の2国は政治的・経済的・軍事的に援助→アメリカの対日警戒を高め、日米関係悪化を加速。</td></tr>
+<tr><td class="no">14</td><td class="nm">ハーヴァナ宣言（汎米会議）</td><td class="yr">1940</td><td class="ds">米州諸国がヨーロッパ植民地の米州への移転を禁止。モンロー主義の多国間化。</td></tr>
+<tr><td class="no">15</td><td class="nm">カイロ宣言</td><td class="yr">1943</td><td class="ds">ローズヴェルト・チャーチル・蒋介石の共同宣言。<br><br>①日本の無条件降伏を要求。<br>②満州・台湾の中国への返還。<br>③朝鮮の独立。→ポツダム宣言で履行確認。</td></tr>
+<tr class="sh"><td colspan="4">第二次世界大戦関連</td></tr>
+<tr><td class="no">16</td><td class="nm">ハーグ万国平和会議</td><td class="yr">1899/1907</td><td class="ds">①第1回（1899）：ニコライ2世提唱。ハーグ常設仲裁裁判所を設置。毒ガス・ダムダム弾の使用禁止。<br>②第2回（1907）：戦争法規の整備。→国際連盟・国際連合の先駆。</td></tr>
+<tr><td class="no">17</td><td class="nm">ジュネーヴ議定書（毒ガス禁止）</td><td class="yr">1925</td><td class="ds">①戦争における毒ガス・細菌兵器の使用を禁止。<br>→ただし開発・保有は禁止されず。化学兵器禁止条約（1993）で全面禁止。</td></tr>
+<tr><td class="no">18</td><td class="nm">ロンドン海軍軍縮条約</td><td class="yr">1930</td><td class="ds">①補助艦の保有比率を制限（英：米：日＝10：10：7等）。<br>→日本海軍の対米英比率約7割に軍令部が反発→統帥権干犯問題→浜口雄幸首相が狙撃。軍部の政治介入の始まり。</td></tr>
+<tr><td class="no">19</td><td class="nm">ミュンヘン協定</td><td class="yr">1938</td><td class="ds">英チェンバレン・仏ダラディエがヒトラーと会談。<br><br>①チェコスロヴァキアのズデーテン地方のドイツ併合を容認。<br>②チェンバレン「我々の時代の平和を持ち帰った」→宥和政策の象徴。翌年チェコ全土併合→宥和政策の完全破綻。</td></tr>
+<tr><td class="no">20</td><td class="nm">日ソ中立条約</td><td class="yr">1941</td><td class="ds">①日ソ間の中立（一方が第三国と交戦した場合、他方は中立を維持）、<br>②満州国とモンゴル人民共和国の領土保全と不可侵を相互に尊重→ソ連は1945年4月に一方的に破棄を通告し、同年8月に対日参戦。</td></tr>
+<tr><td class="no">21</td><td class="nm">大西洋憲章</td><td class="yr">1941</td><td class="ds">ローズヴェルト（米）とチャーチル（英）が大西洋上の軍艦で発表した共同宣言。<br><br>①領土の不拡大、<br>②民族自決、<br>③貿易の機会均等、<br>④恐怖と欠乏からの自由、<br>⑤武力行使の放棄、<br>⑥平和機構の再建→国際連合の理念的基盤。</td></tr>
+<tr><td class="no">22</td><td class="nm">ポツダム宣言</td><td class="yr">1945</td><td class="ds">米英中（のちソ連も参加）による日本への降伏勧告。<br><br>①日本の軍国主義の排除、<br>②戦争犯罪人の処罰、<br>③カイロ宣言の履行（満州・台湾の中国への返還、朝鮮の独立）、<br>④日本の主権は本州・北海道・九州・四国と連合国が決定する諸小島に限定、<br>⑤日本軍の無条件降伏→8月14日に日本が受諾。</td></tr>
+</tbody></table></div>
+<div class="tbl-wrap hidden" id="content6"><table>
+<thead><tr><th>No.</th><th>条約・協定名</th><th>年代</th><th>取り決めの内容</th></tr></thead>
+<tbody>
+<tr class="sh"><td colspan="4">戦後秩序</td></tr>
+<tr><td class="no">1</td><td class="nm">ヤルタ協定</td><td class="yr">1945</td><td class="ds">ローズヴェルト・チャーチル・スターリンのヤルタ会談の秘密協定。<br><br>①ドイツの分割占領（米英仏ソの4国）、<br>②ポーランドの国境画定（西方移動）、<br>③国際連合の設立（安保理の拒否権を確認）、<br>④ソ連の対日参戦の条件（南樺太の返還・千島列島の引き渡し・旅順の租借権等）→戦後の国際秩序（ヤルタ体制）の基盤。</td></tr>
+<tr><td class="no">2</td><td class="nm">西ヨーロッパ連合条約（ブリュッセル条約）</td><td class="yr">1948</td><td class="ds">英仏ベネルクス3国の集団安全保障条約。<br><br>①加盟国への攻撃に対する相互援助義務→NATOの前身。チェコスロヴァキアのクーデタ（共産党政権成立）が直接の契機。</td></tr>
+<tr><td class="no">3</td><td class="nm">北大西洋条約（NATO成立）</td><td class="yr">1949</td><td class="ds">①集団的自衛権に基づく軍事同盟（加盟国への攻撃は全加盟国への攻撃とみなす）、<br>②当初12カ国が加盟（米英仏加など）、<br>③西ドイツは1955年に加入→冷戦の軍事的枠組み。ソ連・東欧はワルシャワ条約機構（1955）で対抗。</td></tr>
+<tr><td class="no">4</td><td class="nm">ハーグ協定（インドネシア独立）</td><td class="yr">1949</td><td class="ds">①オランダがインドネシアの完全な主権と独立を承認、<br>②オランダ領東インドの全資産を引き渡し→スカルノ大統領のもとインドネシア連邦共和国が成立。</td></tr>
+<tr><td class="no">5</td><td class="nm">中ソ友好同盟相互援助条約</td><td class="yr">1950</td><td class="ds">①中ソの軍事同盟（日本およびその同盟国への共同防衛）、<br>②ソ連の中国への経済援助、<br>③旅順・大連の中国への返還→中ソ対立（1960年代〜）で形骸化。</td></tr>
+<tr><td class="no">6</td><td class="nm">サンフランシスコ講和条約</td><td class="yr">1951</td><td class="ds">日本と48カ国の講和条約。<br><br>①日本は朝鮮の独立を承認、<br>②台湾・澎湖諸島・南樺太・千島列島の権利を放棄、<br>③日本は国連の集団安全保障に協力→ソ連・中国（中華人民共和国）は不参加。同日に日米安全保障条約も締結。</td></tr>
+<tr><td class="no">7</td><td class="nm">日米安全保障条約</td><td class="yr">1951</td><td class="ds">①米軍の日本駐留を認める、<br>②日本の防衛をアメリカが担う→1960年に改定（新安保条約：相互防衛義務・事前協議制度）。安保闘争の背景。</td></tr>
+<tr><td class="no">8</td><td class="nm">太平洋安全保障条約（ANZUS）</td><td class="yr">1951</td><td class="ds">米・オーストラリア・ニュージーランドの安全保障条約。<br><br>①太平洋地域の相互防衛義務→アジア太平洋における反共安全保障網の一環。</td></tr>
+<tr><td class="no">9</td><td class="nm">朝鮮戦争休戦協定</td><td class="yr">1953</td><td class="ds">①板門店で国連軍と中朝連合軍が署名、<br>②北緯38度線付近の軍事境界線を設定、<br>③非武装地帯（DMZ）の設置→平和条約は未締結のまま現在に至る。</td></tr>
+<tr><td class="no">10</td><td class="nm">パリ協定</td><td class="yr">1954</td><td class="ds">①西ドイツの主権回復を承認、<br>②西ドイツのNATO加盟を認める、<br>③西ドイツの再軍備を容認（ただし核兵器・生物化学兵器は禁止）→1955年の西ドイツNATO正式加盟→ソ連がワルシャワ条約機構を結成。</td></tr>
+<tr><td class="no">11</td><td class="nm">ジュネーヴ休戦協定</td><td class="yr">1954</td><td class="ds">インドシナ戦争の停戦協定。<br><br>①北緯17度線を暫定的な軍事境界線に設定（北＝ベトナム民主共和国、南＝ベトナム国）、<br>②2年以内に南北統一選挙を実施（しかし実施されず→ベトナム戦争へ）、<br>③ラオス・カンボジアの独立を承認。</td></tr>
+<tr><td class="no">12</td><td class="nm">SEATO（東南アジア集団防衛条約）</td><td class="yr">1954</td><td class="ds">①米英仏豪NZ・タイ・フィリピン・パキスタンの集団防衛条約（マニラ条約）、②共産主義の拡大に対する集団的自衛権→ベトナム戦争への介入の法的根拠の一つ。1977年に解散。</td></tr>
+<tr><td class="no">13</td><td class="nm">ワルシャワ条約（機構成立）</td><td class="yr">1955</td><td class="ds">①東側陣営の集団防衛条約（ソ連・ポーランド・チェコスロヴァキア・ハンガリー・ルーマニア・ブルガリア・東ドイツ・アルバニアの8カ国）、<br>②加盟国への攻撃に対する相互援助義務、<br>③ソ連軍の東欧駐留を合法化→ハンガリー事件（1956）やチェコ事件（1968）でソ連が介入の根拠に使用。1991年に解体。</td></tr>
+<tr><td class="no">14</td><td class="nm">バグダード条約（METO/CENTO）</td><td class="yr">1955</td><td class="ds">中東の反共軍事同盟。<br><br>①トルコ・イラク・イギリス・パキスタン・イランが加盟、<br>②ソ連の中東進出に対抗→1958年のイラク革命でイラクが脱退し弱体化→CENTO（中央条約機構）に改称。</td></tr>
+<tr><td class="no">15</td><td class="nm">オーストリア国家条約</td><td class="yr">1955</td><td class="ds">①米英仏ソがオーストリアとの講和条約に調印、②オーストリアの主権回復・永世中立国を宣言→冷戦下で東西いずれの陣営にも属さない中立の成功例。</td></tr>
+<tr><td class="no">16</td><td class="nm">日ソ共同宣言</td><td class="yr">1956</td><td class="ds">①日ソの国交回復、<br>②ソ連による日本の国連加盟支持、<br>③歯舞群島・色丹島の平和条約締結後の引き渡しを約束（国後・択捉は未解決）→北方領土問題は現在も継続。</td></tr>
+<tr><td class="no">17</td><td class="nm">ローマ条約</td><td class="yr">1957</td><td class="ds">①EEC（ヨーロッパ経済共同体）の設立（域内の関税撤廃と共通市場の形成）、<br>②EURATOM（ヨーロッパ原子力共同体）の設立。加盟国は仏独伊ベネルクス3国の6カ国→1967年にECSCと統合しEC（ヨーロッパ共同体）に。</td></tr>
+<tr><td class="no">18</td><td class="nm">エヴィアン協定</td><td class="yr">1962</td><td class="ds">フランスとアルジェリア民族解放戦線の和平協定。<br><br>①アルジェリアの独立を承認、<br>②フランス人入植者の権利保護、<br>③サハラの石油資源の共同利用→ド＝ゴール大統領の決断。フランス軍の一部が反乱（OAS）。</td></tr>
+<tr><td class="no">19</td><td class="nm">日韓基本条約</td><td class="yr">1965</td><td class="ds">①日韓の国交正常化、<br>②大韓民国政府を朝鮮半島の唯一の合法政府と確認、<br>③日本が韓国に無償3億ドル・有償2億ドルの経済協力→植民地支配の清算をめぐる解釈に日韓で相違。</td></tr>
+<tr><td class="no">20</td><td class="nm">東西ドイツ基本条約</td><td class="yr">1972</td><td class="ds">ブラント（西独）の東方外交の成果。<br><br>①東西ドイツの相互承認、<br>②両国の国連同時加盟を合意→1973年に実現。</td></tr>
+<tr><td class="no">21</td><td class="nm">パリ和平協定</td><td class="yr">1973</td><td class="ds">ベトナム戦争の停戦。<br><br>①アメリカ軍のベトナムからの完全撤退、<br>②南ベトナムの現政権の維持、<br>③南北の停戦→しかし北ベトナムは1975年にサイゴンを陥落させ南北統一。</td></tr>
+<tr><td class="no">22</td><td class="nm">ヘルシンキ宣言（全欧安保協力会議）</td><td class="yr">1975</td><td class="ds">米ソ欧35カ国が参加。①国境の不可侵、②人権の尊重、③経済協力→ヤルタ体制の追認。東欧民主化運動の法的根拠にも。</td></tr>
+<tr><td class="no">23</td><td class="nm">パナマ運河条約（トリホス＝カーター条約）</td><td class="yr">1977</td><td class="ds">カーターが締結。1999年末にパナマ運河の管理権をパナマに返還。人権外交の成果。</td></tr>
+<tr><td class="no">24</td><td class="nm">日中平和友好条約</td><td class="yr">1978</td><td class="ds">①日中共同声明（1972）の原則を確認、<br>②反覇権条項（いずれの国も太平洋地域で覇権を求めない）→鄧小平が訪日。</td></tr>
+<tr><td class="no">25</td><td class="nm">エジプト＝イスラエル平和条約</td><td class="yr">1979</td><td class="ds">キャンプ＝デービッド合意（1978、カーター仲介）に基づく。<br><br>①エジプトがイスラエルを国家として承認（アラブ諸国で初）、<br>②イスラエルがシナイ半島をエジプトに返還（1982年完了）、<br>③両国の国交正常化→サダト大統領は1981年にイスラーム過激派に暗殺。エジプトはアラブ連盟から一時除名。</td></tr>
+<tr><td class="no">26</td><td class="nm">カンボジア和平協定</td><td class="yr">1991</td><td class="ds">①カンボジア内戦の全派が停戦、<br>②国連暫定統治機構（UNTAC）の監視下で総選挙を実施→日本のPKO（国連平和維持活動）初参加。</td></tr>
+<tr class="sh"><td colspan="4">軍縮</td></tr>
+<tr><td class="no">27</td><td class="nm">部分的核実験禁止条約（PTBT）</td><td class="yr">1963</td><td class="ds">①大気圏内・宇宙空間・水中での核実験を禁止（地下核実験は除外）、<br>②米英ソが調印→フランス・中国は不参加。キューバ危機（1962）後の緊張緩和の産物。</td></tr>
+<tr><td class="no">28</td><td class="nm">核拡散防止条約（NPT）</td><td class="yr">1968</td><td class="ds">①米英仏ソ中の5カ国のみに核兵器の保有を認める、<br>②非核兵器国への核兵器の移転を禁止、<br>③非核兵器国はIAEA（国際原子力機関）の査察を受ける→インド・パキスタン・イスラエルは未加盟。北朝鮮は2003年に脱退。</td></tr>
+<tr><td class="no">29</td><td class="nm">SALT I（第1次戦略兵器制限条約）</td><td class="yr">1972</td><td class="ds">ニクソンとブレジネフが調印。ABM制限条約と戦略攻撃兵器の暫定協定→米ソデタントの象徴。</td></tr>
+<tr><td class="no">30</td><td class="nm">中距離核戦力（INF）全廃条約</td><td class="yr">1987</td><td class="ds">ゴルバチョフ（ソ連）とレーガン（米）が調印。<br><br>①射程500〜5500kmの地上発射型弾道・巡航ミサイルの全廃、<br>②史上初の核兵器削減条約（軍縮でなく軍備管理を超えた「全廃」）→冷戦終結への重要な一歩。2019年にアメリカが離脱。</td></tr>
+<tr><td class="no">31</td><td class="nm">START I（第1次戦略兵器削減条約）</td><td class="yr">1991</td><td class="ds">ブッシュ（父）とゴルバチョフが調印。戦略核弾頭を6000発に削減。冷戦終結の象徴的条約。</td></tr>
+<tr><td class="no">32</td><td class="nm">新START</td><td class="yr">2010</td><td class="ds">オバマとメドヴェージェフ。戦略核弾頭を1550発に。2021年5年延長。</td></tr>
+<tr class="sh"><td colspan="4">国際経済・環境</td></tr>
+<tr><td class="no">33</td><td class="nm">GATT</td><td class="yr">1947</td><td class="ds">①自由貿易体制の基盤。最恵国待遇・関税引き下げ・数量制限の禁止を原則、<br>②多角的貿易交渉（ラウンド）を実施→1995年にWTO（世界貿易機関）に発展。</td></tr>
+<tr><td class="no">34</td><td class="nm">モントリオール議定書</td><td class="yr">1987</td><td class="ds">①オゾン層を破壊するフロン等の特定物質の生産・使用を段階的に削減・全廃→最も成功した国際環境条約の一つ。</td></tr>
+<tr><td class="no">35</td><td class="nm">京都議定書</td><td class="yr">1997</td><td class="ds">①先進国の温室効果ガス排出量を1990年比で2008-12年の間に平均5.2%削減する法的拘束力のある数値目標を設定→アメリカは2001年に離脱。途上国に削減義務なし。</td></tr>
+<tr class="sh"><td colspan="4">冷戦後</td></tr>
+<tr><td class="no">36</td><td class="nm">マーストリヒト条約</td><td class="yr">1992</td><td class="ds">①EC（ヨーロッパ共同体）をEU（ヨーロッパ連合）に改組、<br>②共通通貨ユーロの導入（1999年帳簿上、2002年流通開始）、<br>③共通の外交・安全保障政策、<br>④EU市民権の創設→ヨーロッパ統合の深化。イギリスは共通通貨に不参加。</td></tr>
+<tr><td class="no">37</td><td class="nm">北米自由貿易協定（NAFTA）</td><td class="yr">1993</td><td class="ds">①米・カナダ・メキシコの3国間で関税の段階的撤廃、<br>②投資の自由化→北米の経済統合を促進。メキシコからアメリカへの不法移民問題。2020年にUSMCA（新協定）に移行。</td></tr>
+<tr><td class="no">38</td><td class="nm">パレスチナ暫定自治協定（オスロ合意）</td><td class="yr">1993</td><td class="ds">①PLO（アラファト）がイスラエルの生存権を承認、<br>②イスラエル（ラビン首相）がPLOをパレスチナ人の代表と承認、<br>③ガザ地区とヨルダン川西岸のエリコで暫定自治を開始→クリントン大統領が仲介。ラビンは1995年に暗殺。その後の和平プロセスは停滞。</td></tr>
+<tr><td class="no">39</td><td class="nm">包括的核実験禁止条約（CTBT）</td><td class="yr">1996</td><td class="ds">①あらゆる場所（地下を含む）での核実験を禁止→米中印パキスタンなどが未批准で未発効。</td></tr>
+<tr><td class="no">40</td><td class="nm">リスボン条約</td><td class="yr">2007</td><td class="ds">①EU大統領（欧州理事会常任議長）の新設、<br>②EU外務・安全保障政策上級代表の設置、<br>③欧州議会の権限強化→2009年発効。実質的にはEU憲法条約（2005年にフランス・オランダの国民投票で否決）の簡略版。</td></tr>
+<tr><td class="no">41</td><td class="nm">パリ協定（気候変動）</td><td class="yr">2015</td><td class="ds">①すべての国が温室効果ガス削減目標を提出、②産業革命前からの気温上昇を2℃未満に抑制（努力目標1.5℃）→京都議定書に代わる枠組み。トランプが2017年に離脱表明（バイデンが復帰）。</td></tr>
+<tr><td class="no">42</td><td class="nm">TPP（環太平洋パートナーシップ協定）</td><td class="yr">2016</td><td class="ds">アジア太平洋地域の自由貿易圏。米国が離脱（2017,トランプ）→CPTPP（11カ国）として発効（2018）。</td></tr>
+</tbody></table></div>
+<script>var currentTab=0;function switchTab(n){document.getElementById("content"+currentTab).className="tbl-wrap hidden";document.getElementById("tab"+currentTab).className="tab";document.getElementById("content"+n).className="tbl-wrap";document.getElementById("tab"+n).className="tab on";currentTab=n;filterRows()}function filterRows(){var q=document.getElementById("search").value.toLowerCase();var w=document.getElementById("content"+currentTab);var r=w.querySelectorAll("tbody tr");var s=0;for(var i=0;i<r.length;i++){var t=r[i].textContent.toLowerCase();if(!q||t.indexOf(q)>=0){r[i].style.display="";s++}else{r[i].style.display="none"}}document.getElementById("cnt").textContent=s+" 件"}filterRows();</script>
+
+<style>
+.chart-link{display:inline-block;font-size:6px;padding:1px 4px;margin:1px;border-radius:2px;background:rgba(201,169,110,.08);border:1px solid rgba(201,169,110,.12);color:#c9a96e;text-decoration:none;white-space:nowrap;vertical-align:middle;transition:all .15s}
+.chart-link:hover{background:rgba(201,169,110,.2);border-color:rgba(201,169,110,.3);color:#e8c888}
+.chart-links-wrap{display:inline;margin-left:3px}
+</style>
+<script>
+(function(){
+var M=[
+[/オリエント|シュメール|アッカド|バビロニア|ハンムラビ|ヒッタイト|アッシリア|アケメネス|ペルシア|エジプト古王国|エジプト新王国|フェニキア|リディア|メディア/,"timeline_orient.html","TL:オリエント"],
+[/中国|殷|周|秦|漢|三国|隋|唐|宋|元|明|清|春秋|戦国/,"timeline_china.html","TL:中国王朝"],
+[/アヘン戦争|太平天国|洋務運動|日清戦争|戊戌変法|義和団|辛亥革命|五四運動|国共|文化大革命|改革開放/,"timeline_china_modern.html","TL:中国近代"],
+[/イスラーム|ウマイヤ|アッバース|ファーティマ|アイユーブ|マムルーク|セルジューク|オスマン|サファヴィー|ムガル/,"timeline_islamic.html","TL:イスラーム"],
+[/ビザンツ|東ローマ|ユスティニアヌス|コンスタンティノープル/,"timeline_byzantium.html","TL:ビザンツ"],
+[/遊牧|匈奴|突厥|ウイグル|モンゴル|ティムール|フン族|柔然|鮮卑/,"timeline_nomads.html","TL:遊牧民"],
+[/インド|マウリヤ|グプタ|ムガル|ガンディー|ネルー/,"timeline_india.html","TL:インド"],
+[/冷戦|NATO|ワルシャワ|キューバ危機|デタント|ベルリンの壁|ゴルバチョフ|ペレストロイカ/,"timeline_coldwar.html","TL:冷戦"],
+[/WW1|WW2|第一次世界大戦|第二次世界大戦|ヴェルサイユ|真珠湾|ノルマンディー/,"timeline_worldwars.html","TL:大戦"],
+[/産業革命|蒸気機関|ワット|紡績|鉄道/,"timeline_industrial.html","TL:産業革命"],
+[/宗教改革|ルター|カルヴァン|95カ条|アウクスブルク/,"timeline_reformation.html","TL:宗教改革"],
+[/植民地|東インド会社|プランテーション/,"timeline_colonies.html","TL:植民地"],
+[/百年戦争|クレシー|ポワティエ|アジャンクール|ジャンヌ＝ダルク|ジャンヌ/,"flow_hundred_years_war.html","F:百年戦争"],
+[/三十年戦争|ウェストファリア|グスタフ＝アドルフ|リシュリュー|プラハ窓外/,"flow_thirty_years_war.html","F:三十年戦争"],
+[/ナポレオン|トラファルガー|アウステルリッツ|大陸封鎖|ワーテルロー|ボロディノ|ライプツィヒ/,"flow_napoleon.html","F:ナポレオン"],
+[/ウィーン体制|メッテルニヒ|正統主義|七月革命|二月革命|1848/,"flow_vienna_system.html","F:ウィーン体制"],
+[/ドイツ統一|ビスマルク|鉄血|普墺戦争|普仏戦争|エムス電報/,"flow_german_unification.html","F:独統一"],
+[/イタリア統一|カヴール|ガリバルディ|マッツィーニ|千人隊|赤シャツ/,"flow_italian_unification.html","F:伊統一"],
+[/アフリカ分割|ベルリン会議|ファショダ|セシル＝ローズ|3C政策/,"flow_africa_scramble.html","F:アフリカ分割"],
+[/WW2|ヨーロッパ|電撃戦|ダンケルク|バルバロッサ|スターリングラード|ノルマンディー|D-Day/,"flow_ww2_europe.html","F:WW2欧"],
+[/太平洋戦争|真珠湾|ミッドウェー|原爆|広島|長崎|ポツダム/,"flow_ww2_pacific.html","F:WW2太"],
+[/国際連合|国際連盟|大西洋憲章|サンフランシスコ|拒否権|安保理/,"flow_united_nations.html","F:国連"],
+[/脱植民地|アフリカの年|非同盟|エンクルマ|ネオコロニアリズム/,"flow_decolonization.html","F:脱植民地化"],
+[/オリエント統一|サルゴン|ハンムラビ|アッシリア|4王国|アケメネス|キュロス|ダレイオス/,"flow_orient_unification.html","F:オリエント統一"],
+[/科挙|九品中正|進士|殿試|八股文/,"flow_keju.html","F:科挙"],
+[/ギリシア哲学|ソクラテス|プラトン|アリストテレス|ストア|エピクロス|タレス/,"flow_greek_philosophy.html","F:ギリシア哲学"],
+[/均田制|租庸調|府兵制|口分田|両税法|楊炎/,"flow_juntian.html","F:均田制"],
+[/女性史|参政権|サフラジェット|ボーヴォワール|フェミニズム|ウルストンクラフト/,"flow_women_history.html","F:女性史"],
+[/フランス革命|バスティーユ|人権宣言|ジャコバン|ロベスピエール|テルミドール|総裁政府/,"flow_french_revolution.html","F:仏革命"],
+[/ローマ|共和政|元老院|グラックス|カエサル|アウグストゥス|帝政/,"flow_roman_republic.html","F:ローマ"],
+[/ロシア革命|ソヴィエト|レーニン|ボリシェヴィキ|ケレンスキー|血の日曜日/,"flow_russian_revolution.html","F:露革命"],
+[/封建制|荘園|農奴|騎士|レーエン|封建的主従関係/,"flow_feudalism.html","F:封建制"],
+[/十字軍|クレルモン|サラディン|エルサレム/,"flow_crusades.html","F:十字軍"],
+[/宗教改革|ルター|カルヴァン|首長法|ヘンリ8世|トリエント/,"flow_reformation.html","F:宗教改革"],
+[/教皇|叙任権闘争|カノッサ|ボニファティウス|アヴィニョン|大シスマ/,"flow_papal_authority.html","F:教皇権"],
+[/WW1|サラエヴォ|三国同盟|三国協商|シュリーフェン/,"flow_ww1_causes.html","F:WW1原因"],
+[/冷戦終結|マルタ会談|東欧革命|ソ連崩壊|ベルリンの壁崩壊/,"flow_cold_war_end.html","F:冷戦終結"],
+[/パレスチナ|イスラエル|バルフォア|中東戦争|PLO/,"flow_palestine.html","F:パレスチナ"],
+[/大航海時代|コロンブス|ヴァスコ＝ダ＝ガマ|マゼラン|トルデシリャス/,"flow_age_of_exploration.html","F:大航海時代"],
+[/インド独立|ガンディー|ネルー|分離独立|非暴力/,"flow_india_independence.html","F:印独立"],
+[/儒教|孔子|孟子|荀子|朱子学|陽明学|董仲舒|五経博士/,"flow_confucianism.html","F:儒教史"],
+[/シチリア|シラクサ|ノルマン|フリードリヒ2世|シチリアの晩鐘/,"flow_sicily.html","F:シチリア"],
+[/タンジマート|ミドハト|青年トルコ|ケマル|アタテュルク|ローザンヌ|カリフ制廃止/,"flow_ottoman_turkey.html","F:オスマン→トルコ"],
+[/南下政策|クリミア戦争|セヴァストポリ|露土戦争|ベルリン会議|グレート＝ゲーム|日露戦争/,"flow_russia_southern.html","F:露南下"],
+[/中国近代|アヘン|太平天国|洋務|辛亥|五四|国共合作/,"flow_china_modern.html","F:中国近代"],
+[/EU|ECSC|EEC|マーストリヒト|ユーロ/,"european_integration.html","F:EU統合"],
+[/メソポタミア|エジプト|楔形文字|ヒエログリフ|ジッグラト|ピラミッド/,"compare_mesopotamia_egypt.html","C:メソポタvsエジプト"],
+[/諸子百家|儒家|道家|法家|墨家|兵家|老子|荘子|韓非/,"compare_hundred_schools.html","C:諸子百家"],
+[/スンナ派|シーア派|カルバラー|イマーム|サファヴィー/,"compare_sunni_shia.html","C:スンナvsシーア"],
+[/租庸調|両税法|一条鞭法|地丁銀/,"compare_china_tax.html","C:中国税制"],
+[/アテネ|スパルタ|ペリクレス|リュクルゴス/,"compare_athens_sparta.html","C:アテネvsスパルタ"],
+[/絶対王政|ルイ14世|フェリペ2世|エリザベス|ピョートル/,"compare_absolutism.html","C:絶対王政"],
+[/ラテンアメリカ|ボリバル|サン＝マルティン|ハイチ|トゥサン/,"compare_latin_america.html","C:ラテン独立"],
+[/銀|ポトシ|価格革命|石見銀山/,"cycle_silver.html","Cy:銀循環"],
+[/三角貿易|奴隷貿易|砂糖|プランテーション/,"cycle_triangle_trade.html","Cy:三角貿易"],
+[/ブレトンウッズ|IMF|GATT|金ドル本位/,"cycle_bretton_woods.html","Cy:ブレトンウッズ"],
+[/朝貢|冊封|勘合貿易/,"cycle_tribute_trade.html","Cy:朝貢貿易"],
+[/コロンブスの交換|トウモロコシ|ジャガイモ|天然痘|新大陸/,"cycle_columbian_exchange.html","Cy:コロンブス交換"],
+[/ドーズ案|ヤング案|賠償金/,"cycle_dawes_plan.html","Cy:ドーズ案"],
+[/重商主義|コルベール|航海法|東インド会社/,"cycle_mercantilism.html","Cy:重商主義"],
+[/アヘン貿易|三角貿易|19世紀|茶/,"cycle_19c_triangle.html","Cy:アヘン三角貿易"],
+[/合従|連衡|蘇秦|張儀|戦国七雄/,"alliance_warring_states.html","A:合従連衡"],
+[/宗教改革|ルター派|カルヴァン派|英国教会|対抗宗教改革|イエズス会/,"alliance_reformation.html","A:宗教改革対立"],
+[/冷戦|NATO|ワルシャワ|鉄のカーテン|マーシャル|トルーマン/,"alliance_cold_war.html","A:冷戦構造"],
+[/シルクロード|オアシス|草原の道|海の道/,"geo_silk_road.html","G:シルクロード"],
+[/大航海|航路|ガマ|コロンブス|マゼラン/,"geo_exploration.html","G:大航海航路"],
+[/ゲルマン|大移動|西ゴート|東ゴート|フランク|ヴァンダル/,"geo_germanic.html","G:ゲルマン移動"],
+[/冷戦|東西ブロック|鉄のカーテン|NATO|ワルシャワ/,"geo_cold_war.html","G:冷戦地図"]
+];
+var cells=document.querySelectorAll('td');
+for(var i=0;i<cells.length;i++){
+  var txt=cells[i].textContent;
+  if(txt.length<5) continue;
+  var found={};
+  for(var j=0;j<M.length;j++){
+    if(M[j][0].test(txt) && !found[M[j][1]]){
+      found[M[j][1]]=M[j][2];
+    }
+  }
+  var keys=Object.keys(found);
+  if(keys.length>0 && keys.length<=4){
+    var wrap=document.createElement('span');
+    wrap.className='chart-links-wrap';
+    for(var k=0;k<keys.length;k++){
+      var a=document.createElement('a');
+      a.className='chart-link';
+      a.href=keys[k];
+      a.textContent=found[keys[k]];
+      a.title=keys[k];
+      wrap.appendChild(a);
+    }
+    cells[i].appendChild(wrap);
+  }
+}
+})();
+</script>
+</body></html>

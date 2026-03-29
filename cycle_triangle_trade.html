@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>大西洋三角貿易</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+.hdr{padding:16px 20px;border-bottom:1px solid rgba(201,169,110,.08);display:flex;align-items:center;gap:14px;flex-wrap:wrap}.hdr h1{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2)}.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
+.wrap{display:flex;justify-content:center;padding:24px 16px 8px}
+.desc{max-width:740px;margin:0 auto;padding:0 20px 40px}
+.desc h2{font-family:'Noto Serif JP',serif;font-size:12px;font-weight:700;color:var(--gold2);margin:16px 0 6px;padding-left:8px;border-left:3px solid rgba(201,169,110,.3)}
+.desc p{font-size:9.5px;color:var(--text2);line-height:1.8;margin-bottom:8px}
+.desc p strong{color:var(--text);font-weight:600}
+.desc .side-note{font-size:8px;color:var(--text3);padding:4px 8px;border-left:2px solid rgba(201,169,110,.1);margin:6px 0 10px;line-height:1.6}
+.note{text-align:center;padding:8px 20px 32px;max-width:740px;margin:0 auto}.note p{font-size:9px;color:var(--text3);line-height:1.8}.note strong{color:var(--gold)}
+.hdr h1{font-size:12px}
+.wrap{padding:12px 8px}
+svg{max-width:100%;height:auto}
+.desc p{font-size:9px}
+.desc h2{font-size:11px}
+.side-note{font-size:7.5px}
+.note p{font-size:8px}
+}
+
+@media(max-width:600px){
+.hdr{padding:10px 12px}.hdr h1{font-size:12px}
+.wrap{padding:12px 8px}
+svg{max-width:100%;height:auto}
+.desc p{font-size:9px}
+.desc h2{font-size:11px}
+.side-note{font-size:7.5px}
+.note p{font-size:8px}
+}
+</style>
+</head>
+<body>
+<div class="hdr"><h1>大西洋三角貿易 ― 3大陸をつないだ「恥ずべき商業」</h1><a href="charts.html">← Ad Chartae</a></div>
+
+<div class="wrap">
+<svg viewBox="0 0 660 500" xmlns="http://www.w3.org/2000/svg" style="width:660px;max-width:100%;height:auto">
+<defs>
+  <marker id="a1" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="rgba(180,80,80,.6)"/></marker>
+  <marker id="a2" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="rgba(80,150,120,.6)"/></marker>
+  <marker id="a3" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="rgba(180,140,80,.6)"/></marker>
+</defs>
+
+<!-- 3 main nodes forming a triangle -->
+<!-- Europe (top center) -->
+<rect x="225" y="30" width="210" height="90" rx="12" fill="rgba(80,150,120,.06)" stroke="rgba(80,150,120,.25)" stroke-width="1.5"/>
+<text x="330" y="56" text-anchor="middle" fill="rgba(140,210,170,.9)" font-size="13" font-family="Noto Serif JP" font-weight="700">ヨーロッパ</text>
+<text x="330" y="73" text-anchor="middle" fill="var(--text2)" font-size="8">(リヴァプール・ナント・アムステルダム等)</text>
+<text x="330" y="88" text-anchor="middle" fill="var(--text2)" font-size="7.5">砂糖を精製→製品に加工→巨額の利益</text>
+<text x="330" y="102" text-anchor="middle" fill="var(--text3)" font-size="6.5">★三角貿易の利益＝産業革命の「本源的蓄積」(マルクス)</text>
+
+<!-- Africa (bottom left) -->
+<rect x="30" y="330" width="210" height="90" rx="12" fill="rgba(180,80,80,.06)" stroke="rgba(180,80,80,.25)" stroke-width="1.5"/>
+<text x="135" y="356" text-anchor="middle" fill="rgba(220,130,130,.9)" font-size="13" font-family="Noto Serif JP" font-weight="700">アフリカ</text>
+<text x="135" y="373" text-anchor="middle" fill="var(--text2)" font-size="8">(西アフリカ沿岸＝ギニア湾・セネガル等)</text>
+<text x="135" y="390" text-anchor="middle" fill="var(--text2)" font-size="7.5">現地の王国が戦争捕虜・犯罪者を奴隷として売却</text>
+<text x="135" y="403" text-anchor="middle" fill="var(--text3)" font-size="6.5">★推定1200万人以上がアメリカ大陸へ連行(16-19C)</text>
+
+<!-- Americas (bottom right) -->
+<rect x="420" y="330" width="210" height="90" rx="12" fill="rgba(180,140,80,.06)" stroke="rgba(180,140,80,.25)" stroke-width="1.5"/>
+<text x="525" y="356" text-anchor="middle" fill="rgba(220,190,120,.9)" font-size="13" font-family="Noto Serif JP" font-weight="700">アメリカ大陸</text>
+<text x="525" y="373" text-anchor="middle" fill="var(--text2)" font-size="8">(カリブ海・ブラジル・北米南部)</text>
+<text x="525" y="390" text-anchor="middle" fill="var(--text2)" font-size="7.5">★プランテーション(大農園)＝砂糖・綿花・タバコ</text>
+<text x="525" y="403" text-anchor="middle" fill="var(--text3)" font-size="6.5">奴隷労働＝人格を否定された「動産」扱い</text>
+
+<!-- ===== 3 ARROWS forming the triangle ===== -->
+<!-- Leg 1: Europe → Africa (weapons, textiles, rum) -->
+<path d="M240,120 Q120,220 100,330" fill="none" stroke="rgba(80,150,120,.5)" stroke-width="2.5" marker-end="url(#a2)"/>
+<rect x="60" y="195" width="140" height="55" rx="6" fill="rgba(80,150,120,.04)" stroke="rgba(80,150,120,.1)" stroke-width="0.5"/>
+<text x="130" y="212" text-anchor="middle" fill="rgba(140,210,170,.9)" font-size="9" font-family="Noto Serif JP" font-weight="700">第1辺：往路</text>
+<text x="130" y="226" text-anchor="middle" fill="var(--text2)" font-size="7.5">武器・火薬・繊維製品</text>
+<text x="130" y="238" text-anchor="middle" fill="var(--text2)" font-size="7.5">ラム酒・ガラス製品・鉄器</text>
+
+<!-- Leg 2: Africa → Americas (slaves = "Middle Passage") -->
+<path d="M240,385 L420,370" fill="none" stroke="rgba(180,80,80,.5)" stroke-width="3" marker-end="url(#a1)"/>
+<rect x="260" y="410" width="160" height="65" rx="6" fill="rgba(180,80,80,.04)" stroke="rgba(180,80,80,.1)" stroke-width="0.5"/>
+<text x="340" y="427" text-anchor="middle" fill="rgba(220,130,130,.9)" font-size="9" font-family="Noto Serif JP" font-weight="700">第2辺：中間航路</text>
+<text x="340" y="441" text-anchor="middle" fill="var(--text2)" font-size="7.5">★奴隷(Middle Passage)</text>
+<text x="340" y="454" text-anchor="middle" fill="var(--text2)" font-size="7">船内に鎖で繋がれ数週間→</text>
+<text x="340" y="465" text-anchor="middle" fill="var(--text3)" font-size="6.5">航海中に約15-20%が病死・餓死・自殺</text>
+
+<!-- Leg 3: Americas → Europe (sugar, cotton, tobacco) -->
+<path d="M560,330 Q540,220 430,110" fill="none" stroke="rgba(180,140,80,.5)" stroke-width="2.5" marker-end="url(#a3)"/>
+<rect x="470" y="190" width="150" height="55" rx="6" fill="rgba(180,140,80,.04)" stroke="rgba(180,140,80,.1)" stroke-width="0.5"/>
+<text x="545" y="207" text-anchor="middle" fill="rgba(220,190,120,.9)" font-size="9" font-family="Noto Serif JP" font-weight="700">第3辺：帰路</text>
+<text x="545" y="221" text-anchor="middle" fill="var(--text2)" font-size="7.5">砂糖・糖蜜・綿花</text>
+<text x="545" y="233" text-anchor="middle" fill="var(--text2)" font-size="7.5">タバコ・コーヒー・インディゴ</text>
+
+<!-- Center label -->
+<text x="330" y="280" text-anchor="middle" fill="rgba(201,169,110,.3)" font-size="14" font-family="Cormorant Garamond" font-weight="700">大西洋</text>
+<text x="330" y="296" text-anchor="middle" fill="rgba(201,169,110,.2)" font-size="10" font-family="Cormorant Garamond">三角貿易</text>
+<text x="330" y="310" text-anchor="middle" fill="rgba(201,169,110,.15)" font-size="8" font-family="Cormorant Garamond">16C–19C</text>
+</svg>
+</div>
+
+<div class="desc">
+<h2>三角貿易の仕組み</h2>
+<p><strong>第1辺(欧→ア)</strong>＝ヨーロッパの商人がアフリカ西海岸に武器・繊維・ラム酒等を運び、現地の王国・商人から<strong>奴隷</strong>を「購入」。アフリカの王国(ダホメー・アシャンティ等)は戦争捕虜や犯罪者を奴隷として売却→武器を得てさらに戦争→<strong>奴隷供給の悪循環</strong>。</p>
+<p><strong>第2辺(ア→米)＝「中間航路(Middle Passage)」</strong>＝★最も悲惨な航路。奴隷は船底に鎖で繋がれ、身動きの取れない状態で数週間〜2か月。疫病・脱水・飢餓・反乱・自殺で<strong>約15-20%が航海中に死亡</strong>。カリブ海やブラジルに到着後、奴隷市場で売却。</p>
+<p><strong>第3辺(米→欧)</strong>＝プランテーションで奴隷が生産した<strong>砂糖・糖蜜・綿花・タバコ・コーヒー</strong>等をヨーロッパに輸送。ヨーロッパで精製・加工→莫大な利益。砂糖は18Cに「白い黄金」と呼ばれた。</p>
+
+<h2>三角貿易の影響</h2>
+<p><strong>ヨーロッパ</strong>＝莫大な利益→<strong>資本蓄積＝産業革命の「本源的蓄積」</strong>(マルクス)の一部に。リヴァプール・ブリストル・ナント・ボルドー等の港町が繁栄。砂糖・コーヒー・タバコの普及→<strong>消費文化の変容</strong>(紅茶に砂糖を入れる文化も三角貿易の産物)。</p>
+<p><strong>アフリカ</strong>＝推定<strong>1200万人以上</strong>が連行→人口減少・社会崩壊。武器の流入で戦争が激化→国家の不安定化。<strong>奴隷貿易がアフリカの発展を数世紀にわたり阻害</strong>→現在の南北格差の歴史的起源の一つ。</p>
+<p><strong>アメリカ大陸</strong>＝プランテーション経済の確立→<strong>モノカルチャー</strong>(単一作物経済)＝独立後も先進国に従属する経済構造。人種構成の決定(アフリカ系住民)→奴隷制の遺産＝<strong>現代の人種問題に直結</strong>。</p>
+
+<h2>奴隷貿易の廃止</h2>
+<p>18C後半から<strong>廃止運動</strong>＝ウィルバーフォース(英議員)・クエーカー教徒が主導。<strong>英が奴隷貿易を禁止</strong>(1807)→<strong>奴隷制を廃止</strong>(1833)。仏(1848)。米(1865、南北戦争の結果＝修正第13条)。しかし形式的自由→実質的差別(シェアクロッピング・人種隔離・ジム＝クロウ法)が20Cまで継続。</p>
+<div class="side-note">★入試超頻出：「三角貿易の3辺(武器→奴隷→砂糖)」「中間航路」「プランテーション＝モノカルチャー」「ウィルバーフォース→奴隷貿易廃止(1807)」「産業革命の本源的蓄積」</div>
+</div>
+
+<div class="note"><p>大西洋三角貿易＝<strong>16-19Cの世界経済の暗部</strong>。入試では①<strong>3辺の内容(武器→奴隷→砂糖)</strong> ②<strong>プランテーション(砂糖・綿花)の仕組み</strong> ③<strong>アフリカへの影響(人口減少・社会崩壊)</strong> ④<strong>資本蓄積と産業革命の関係</strong> ⑤<strong>廃止の過程(ウィルバーフォース→1807→1833)</strong>が問われる。「近代ヨーロッパの繁栄はアフリカ人の犠牲の上に成り立った」ことを理解する。</p></div>
+</body></html>

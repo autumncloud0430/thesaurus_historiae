@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ブレトンウッズ体制</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+.hdr{padding:16px 20px;border-bottom:1px solid rgba(201,169,110,.08);display:flex;align-items:center;gap:14px;flex-wrap:wrap}.hdr h1{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2)}.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
+.wrap{display:flex;justify-content:center;padding:24px 16px 8px}
+.desc{max-width:740px;margin:0 auto;padding:0 20px 40px}
+.desc h2{font-family:'Noto Serif JP',serif;font-size:12px;font-weight:700;color:var(--gold2);margin:16px 0 6px;padding-left:8px;border-left:3px solid rgba(201,169,110,.3)}
+.desc p{font-size:9.5px;color:var(--text2);line-height:1.8;margin-bottom:8px}
+.desc p strong{color:var(--text);font-weight:600}
+.desc .side-note{font-size:8px;color:var(--text3);padding:4px 8px;border-left:2px solid rgba(201,169,110,.1);margin:6px 0 10px;line-height:1.6}
+.note{text-align:center;padding:8px 20px 32px;max-width:740px;margin:0 auto}.note p{font-size:9px;color:var(--text3);line-height:1.8}.note strong{color:var(--gold)}
+
+@media(max-width:600px){
+.hdr{padding:10px 12px}.hdr h1{font-size:12px}
+.wrap{padding:12px 8px}
+svg{max-width:100%;height:auto}
+.desc p{font-size:9px}
+.desc h2{font-size:11px}
+.side-note{font-size:7.5px}
+.note p{font-size:8px}
+}
+</style>
+</head>
+<body>
+<div class="hdr"><h1>ブレトンウッズ体制 ― ドル基軸通貨の仕組みと崩壊</h1><a href="charts.html">← Ad Chartae</a></div>
+
+<div class="wrap">
+<svg viewBox="0 0 660 480" xmlns="http://www.w3.org/2000/svg" style="width:660px;max-width:100%;height:auto">
+<defs>
+  <marker id="ag" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="rgba(201,169,110,.5)"/></marker>
+  <marker id="ab" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="rgba(100,130,180,.5)"/></marker>
+  <marker id="ar" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="rgba(180,80,80,.6)"/></marker>
+</defs>
+
+<!-- Title -->
+<text x="330" y="25" text-anchor="middle" fill="rgba(201,169,110,.12)" font-size="11" font-family="Cormorant Garamond" font-weight="700">ブレトンウッズ体制(1944-71)</text>
+
+<!-- ===== Central: US Dollar ===== -->
+<rect x="230" y="55" width="200" height="75" rx="12" fill="rgba(100,130,180,.08)" stroke="rgba(100,130,180,.3)" stroke-width="1.5"/>
+<text x="330" y="78" text-anchor="middle" fill="rgba(160,180,220,.9)" font-size="14" font-family="Noto Serif JP" font-weight="700">アメリカ(ドル)</text>
+<text x="330" y="96" text-anchor="middle" fill="var(--text2)" font-size="8">★1オンスの金＝35ドルで兌換を保証</text>
+<text x="330" y="114" text-anchor="middle" fill="var(--text3)" font-size="7">WW2後、世界の金の約2/3を保有→ドルの信認の根拠</text>
+
+<!-- Gold (top, above USA) -->
+<rect x="265" y="0" width="130" height="35" rx="8" fill="rgba(201,169,110,.1)" stroke="rgba(201,169,110,.3)" stroke-width="1"/>
+<text x="330" y="22" text-anchor="middle" fill="var(--gold2)" font-size="11" font-family="Noto Serif JP" font-weight="700">金(GOLD)</text>
+
+<!-- Arrow: Gold ↔ Dollar -->
+<line x1="315" y1="35" x2="315" y2="55" stroke="rgba(201,169,110,.5)" stroke-width="2" marker-end="url(#ag)"/>
+<line x1="345" y1="55" x2="345" y2="35" stroke="rgba(201,169,110,.5)" stroke-width="2" marker-end="url(#ag)"/>
+<text x="365" y="48" text-anchor="start" fill="var(--gold)" font-size="7" font-weight="700">金ドル本位制</text>
+
+<!-- ===== Other currencies (left and right, fixed to dollar) ===== -->
+<!-- Pound -->
+<rect x="30" y="140" width="150" height="50" rx="10" fill="rgba(80,150,120,.06)" stroke="rgba(80,150,120,.2)" stroke-width="1"/>
+<text x="105" y="163" text-anchor="middle" fill="rgba(140,210,170,.9)" font-size="11" font-family="Noto Serif JP" font-weight="700">英ポンド</text>
+<text x="105" y="178" text-anchor="middle" fill="var(--text3)" font-size="7">1£＝2.80$ に固定</text>
+
+<!-- Franc -->
+<rect x="30" y="210" width="150" height="50" rx="10" fill="rgba(80,150,120,.06)" stroke="rgba(80,150,120,.2)" stroke-width="1"/>
+<text x="105" y="233" text-anchor="middle" fill="rgba(140,210,170,.9)" font-size="11" font-family="Noto Serif JP" font-weight="700">仏フラン</text>
+<text x="105" y="248" text-anchor="middle" fill="var(--text3)" font-size="7">1$＝350フラン に固定</text>
+
+<!-- Mark -->
+<rect x="480" y="140" width="150" height="50" rx="10" fill="rgba(80,150,120,.06)" stroke="rgba(80,150,120,.2)" stroke-width="1"/>
+<text x="555" y="163" text-anchor="middle" fill="rgba(140,210,170,.9)" font-size="11" font-family="Noto Serif JP" font-weight="700">西独マルク</text>
+<text x="555" y="178" text-anchor="middle" fill="var(--text3)" font-size="7">1$＝4.20マルク に固定</text>
+
+<!-- Yen -->
+<rect x="480" y="210" width="150" height="50" rx="10" fill="rgba(80,150,120,.06)" stroke="rgba(80,150,120,.2)" stroke-width="1"/>
+<text x="555" y="233" text-anchor="middle" fill="rgba(140,210,170,.9)" font-size="11" font-family="Noto Serif JP" font-weight="700">日本円</text>
+<text x="555" y="248" text-anchor="middle" fill="var(--text3)" font-size="7">1$＝360円 に固定</text>
+
+<!-- Arrows: currencies pegged to dollar -->
+<path d="M230,95 C190,110 170,130 165,140" fill="none" stroke="rgba(100,130,180,.4)" stroke-width="1.5" marker-end="url(#ab)"/>
+<path d="M230,110 C190,140 170,190 165,210" fill="none" stroke="rgba(100,130,180,.4)" stroke-width="1.5" marker-end="url(#ab)"/>
+<path d="M430,95 C470,110 490,130 495,140" fill="none" stroke="rgba(100,130,180,.4)" stroke-width="1.5" marker-end="url(#ab)"/>
+<path d="M430,110 C470,140 490,190 495,210" fill="none" stroke="rgba(100,130,180,.4)" stroke-width="1.5" marker-end="url(#ab)"/>
+
+<!-- "Fixed rate" label -->
+<text x="190" y="140" text-anchor="end" fill="rgba(160,180,220,.6)" font-size="7">固定相場</text>
+<text x="470" y="140" text-anchor="start" fill="rgba(160,180,220,.6)" font-size="7">固定相場</text>
+
+<!-- ===== IMF & World Bank ===== -->
+<rect x="170" y="280" width="140" height="55" rx="10" fill="rgba(130,100,160,.06)" stroke="rgba(130,100,160,.2)" stroke-width="1"/>
+<text x="240" y="302" text-anchor="middle" fill="rgba(190,160,220,.9)" font-size="10" font-family="Noto Serif JP" font-weight="700">IMF(国際通貨基金)</text>
+<text x="240" y="316" text-anchor="middle" fill="var(--text2)" font-size="7">為替の安定＋国際収支の危機への融資</text>
+<text x="240" y="328" text-anchor="middle" fill="var(--text3)" font-size="6.5">固定相場を維持するための「番人」</text>
+
+<rect x="350" y="280" width="140" height="55" rx="10" fill="rgba(130,100,160,.06)" stroke="rgba(130,100,160,.2)" stroke-width="1"/>
+<text x="420" y="302" text-anchor="middle" fill="rgba(190,160,220,.9)" font-size="10" font-family="Noto Serif JP" font-weight="700">世界銀行(IBRD)</text>
+<text x="420" y="316" text-anchor="middle" fill="var(--text2)" font-size="7">戦後復興＋途上国への開発融資</text>
+<text x="420" y="328" text-anchor="middle" fill="var(--text3)" font-size="6.5">長期的な経済発展を支援</text>
+
+<!-- GATT -->
+<rect x="260" y="350" width="140" height="40" rx="8" fill="rgba(180,140,60,.06)" stroke="rgba(180,140,60,.2)" stroke-width="1"/>
+<text x="330" y="370" text-anchor="middle" fill="rgba(220,190,100,.9)" font-size="10" font-family="Noto Serif JP" font-weight="700">GATT(関税と貿易の一般協定)</text>
+<text x="330" y="383" text-anchor="middle" fill="var(--text3)" font-size="6.5">自由貿易の推進(→1995年にWTOに発展)</text>
+
+<!-- ===== COLLAPSE ===== -->
+<rect x="100" y="410" width="460" height="60" rx="10" fill="rgba(180,80,80,.06)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/>
+<text x="330" y="432" text-anchor="middle" fill="rgba(220,130,130,.9)" font-size="11" font-family="Noto Serif JP" font-weight="700">★1971年 ニクソン＝ショック → 体制の崩壊</text>
+<text x="330" y="448" text-anchor="middle" fill="var(--text2)" font-size="8">ベトナム戦費＋貿易赤字→ドルの信認低下→各国が金への交換を要求→米が金兌換を停止</text>
+<text x="330" y="461" text-anchor="middle" fill="var(--text2)" font-size="8">→1973年に主要国が変動相場制に移行＝ブレトンウッズ体制の終焉</text>
+</svg>
+</div>
+
+<div class="desc">
+<h2>ブレトンウッズ体制とは</h2>
+<p>1944年、米ニューハンプシャー州<strong>ブレトンウッズ</strong>で連合国44カ国が会議。WW2後の国際経済秩序を構築。ケインズ(英)案とホワイト(米)案の対立→米案が採用。核心＝<strong>金ドル本位制(1オンス＝35ドルで米が金とドルの交換を保証)</strong>＋<strong>固定相場制(各国通貨はドルに対して固定)</strong>。3つの柱：<strong>IMF</strong>(通貨の安定)・<strong>世界銀行</strong>(開発)・<strong>GATT</strong>(貿易自由化)。</p>
+
+<h2>なぜこの体制が可能だったか</h2>
+<p>WW2直後、米は<strong>世界のGDPの約50%・金準備の約2/3</strong>を保有する圧倒的な経済大国→<strong>ドルだけが「金と同じ価値」を持つ</strong>と全世界が信じられた。「ドル＝事実上の世界通貨」。各国はドルを準備通貨として保有→国際貿易はドル建てで決済。★1930年代の<strong>ブロック経済(通貨切り下げ競争→保護主義→戦争)</strong>の反省が出発点。</p>
+
+<h2>なぜ崩壊したか ― ニクソン＝ショック(1971)</h2>
+<p>1960年代、米は<strong>ベトナム戦争の戦費</strong>＋「偉大な社会」(ジョンソンの福祉政策)→<strong>財政赤字が拡大</strong>→ドルが大量に海外に流出→ドルの価値に対する信認が低下。各国(特に仏のド＝ゴール)がドルを金に交換するよう要求→米の金準備が急減。1971年8月15日、<strong>ニクソン大統領</strong>が<strong>金とドルの兌換を停止</strong>(ニクソン＝ショック)→固定相場が維持不能に→<strong>1973年に変動相場制</strong>に移行。</p>
+<div class="side-note">★入試超頻出：「ブレトンウッズ(1944)＝金ドル本位制＋固定相場＋IMF＋世界銀行＋GATT」「ニクソン＝ショック(1971)＝金兌換停止→変動相場制へ」「なぜ崩壊したか＝ベトナム戦費→ドルの信認低下」</div>
+</div>
+
+<div class="note"><p>ブレトンウッズ体制＝<strong>WW2後の国際経済秩序の基盤</strong>。入試では①<strong>金ドル本位制の仕組み(金＝ドル＝各国通貨の二段階構造)</strong> ②<strong>3つの柱(IMF/世界銀行/GATT)</strong> ③<strong>ニクソン＝ショック(1971)の原因(ベトナム戦費)と結果(変動相場制)</strong> ④<strong>1930年代のブロック経済の反省が出発点</strong>が問われる。「ドーズ案→世界恐慌→ブロック経済→WW2→ブレトンウッズ」という因果の連鎖を理解する。</p></div>
+</body></html>

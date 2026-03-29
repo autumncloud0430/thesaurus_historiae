@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>革命比較表</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+.hdr{padding:16px 20px;border-bottom:1px solid rgba(201,169,110,.08);display:flex;align-items:center;gap:14px;flex-wrap:wrap}.hdr h1{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2)}.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
+.wrap{overflow-x:auto;padding:12px 16px 40px}
+table{border-collapse:collapse;min-width:1100px;width:100%}
+th,td{padding:8px 10px;border:1px solid rgba(201,169,110,.06);text-align:left;vertical-align:top;font-size:9px;line-height:1.7}
+th{background:rgba(201,169,110,.06);font-family:'Noto Serif JP',serif;font-weight:700;color:var(--gold2);font-size:10px;white-space:nowrap;position:sticky;top:0}
+th:first-child{position:sticky;left:0;z-index:2;background:rgba(6,9,15,.95);min-width:80px}
+td:first-child{position:sticky;left:0;background:rgba(6,9,15,.9);font-family:'Noto Serif JP',serif;font-weight:700;color:var(--gold);font-size:9px;min-width:80px;border-right:1px solid rgba(201,169,110,.1)}
+td{color:var(--text2)}
+td strong{color:var(--text);font-weight:600}
+tr:hover td{background:rgba(201,169,110,.02)}
+.note{text-align:center;padding:8px 20px 32px;max-width:900px;margin:0 auto}.note p{font-size:9px;color:var(--text3);line-height:1.8}.note strong{color:var(--gold)}
+
+@media(max-width:600px){
+.hdr{padding:10px 12px}.hdr h1{font-size:12px}
+th,td{padding:6px 8px;font-size:9px}
+th{font-size:10px}
+td:first-child{font-size:8.5px}
+.note p{font-size:8px}
+.side-note{font-size:7.5px}
+}
+</style>
+</head>
+<body>
+<div class="hdr"><h1>革命比較表 ― 5つの革命を横断的に比較</h1><a href="charts.html">← Ad Chartae</a></div>
+<div class="wrap">
+<table>
+<tr>
+  <th></th>
+  <th>清教徒革命(ピューリタン革命)</th>
+  <th>名誉革命</th>
+  <th>アメリカ独立革命</th>
+  <th>フランス革命</th>
+  <th>ロシア革命(十月革命)</th>
+</tr>
+<tr>
+  <td>年代</td>
+  <td>1642–49</td>
+  <td>1688–89</td>
+  <td>1775–83</td>
+  <td>1789–99</td>
+  <td>1917</td>
+</tr>
+<tr>
+  <td>場所</td>
+  <td>イングランド</td>
+  <td>イングランド</td>
+  <td>北米13植民地</td>
+  <td>フランス</td>
+  <td>ロシア</td>
+</tr>
+<tr>
+  <td>原因</td>
+  <td><strong>王権vs議会</strong>の対立。チャールズ1世の専制(11年間議会なし)。ピューリタンへの弾圧。スコットランド反乱→長期議会の召集</td>
+  <td>ジェームズ2世の<strong>カトリック復活</strong>企図。審査法の無視。カトリック王子の誕生→プロテスタント支配層の危機感</td>
+  <td><strong>「代表なくして課税なし」</strong>。印紙法・タウンゼンド諸法・茶法＝七年戦争の戦費を植民地に転嫁。ボストン茶会事件(1773)</td>
+  <td><strong>財政危機</strong>(アメリカ独立支援の戦費)→三部会召集。アンシャンレジームの矛盾(特権身分の免税)。啓蒙思想の影響</td>
+  <td><strong>WW1の重圧</strong>(200万人戦死・食糧危機)。農奴解放の不徹底。専制政治。臨時政府の戦争継続→民衆の不満</td>
+</tr>
+<tr>
+  <td>指導者/勢力</td>
+  <td><strong>クロムウェル</strong>(鉄騎隊)＝議会派。独立派(ピューリタン中産階級)</td>
+  <td><strong>ウィリアム3世＋メアリ2世</strong>。議会のトーリ・ホイッグ双方が招請</td>
+  <td><strong>ワシントン</strong>(軍)・<strong>ジェファソン</strong>(独立宣言)・<strong>フランクリン</strong>(外交)。植民地エリート</td>
+  <td><strong>ラファイエット→ジロンド派→ロベスピエール(ジャコバン)→ナポレオン</strong>。指導層が段階的に急進化</td>
+  <td><strong>レーニン</strong>(ボリシェヴィキ)・<strong>トロツキー</strong>(軍事革命委員会)。職業革命家の前衛党</td>
+</tr>
+<tr>
+  <td>主要事件</td>
+  <td>エッジヒルの戦い(1642)。ネイズビーの戦い(1645)。<strong>チャールズ1世処刑</strong>(1649)。航海法(1651)</td>
+  <td>ウィリアムの上陸。ジェームズ2世の亡命。<strong>「流血なき革命」</strong></td>
+  <td>レキシントン(1775)。独立宣言(1776.7.4)。サラトガ(1777)→仏参戦。<strong>ヨークタウン</strong>(1781)</td>
+  <td>バスティーユ(7.14)。人権宣言(8.26)。ヴァレンヌ(1791)。8月10日事件。<strong>ルイ16世処刑</strong>(1793)。恐怖政治。テルミドール</td>
+  <td>二月革命(3月)→帝政崩壊。四月テーゼ。<strong>十月革命(11.7)＝冬宮占拠</strong>。平和/土地の布告。制憲議会解散。ブレスト＝リトフスク</td>
+</tr>
+<tr>
+  <td>暴力の程度</td>
+  <td><strong>内戦</strong>。国王処刑。アイルランド征服</td>
+  <td><strong>ほぼ無血</strong>＝「名誉革命」の由来</td>
+  <td><strong>独立戦争</strong>(8年)。しかし社会構造の大変革はなし(革命というより独立)</td>
+  <td><strong>大規模な流血</strong>。恐怖政治(約4万人処刑)。ヴァンデの反乱。対仏大同盟との戦争</td>
+  <td>十月革命自体はほぼ無血。しかし<strong>内戦(1918-22)</strong>で数百万人死亡。赤色テロル</td>
+</tr>
+<tr>
+  <td>成果(文書)</td>
+  <td>共和政の樹立(→失敗し王政復古)。航海法</td>
+  <td><strong>権利の章典</strong>(1689)＝議会主権・王権制限。<strong>立憲君主政</strong>の確立</td>
+  <td><strong>独立宣言</strong>(1776)。<strong>合衆国憲法</strong>(1787)＝三権分立・連邦制。権利章典(修正1-10条)</td>
+  <td><strong>人権宣言</strong>(1789)。1791年憲法。ナポレオン法典(1804)＝革命の法典化</td>
+  <td>平和/土地の布告。<strong>制憲議会を武力解散</strong>→一党独裁。1936年スターリン憲法(形式のみ)</td>
+</tr>
+<tr>
+  <td>政体の変化</td>
+  <td>絶対王政→共和政(護国卿)→<strong>王政復古</strong>(1660)</td>
+  <td>絶対王政→<strong>立憲君主政</strong>(議会主権)</td>
+  <td>植民地→<strong>連邦共和国</strong>(大統領制＋三権分立)</td>
+  <td>絶対王政→立憲君主政→共和政→帝政→<strong>揺れ動く(80年間で8回政体変更)</strong></td>
+  <td>帝政→臨時政府→<strong>ソヴィエト社会主義共和国</strong>(一党独裁)</td>
+</tr>
+<tr>
+  <td>思想的背景</td>
+  <td>ピューリタニズム(カルヴァン主義)。王権神授説への反発</td>
+  <td><strong>ロック</strong>『統治二論』(抵抗権・社会契約)→革命を正当化</td>
+  <td>ロック・<strong>自然権思想</strong>。コモン＝センス(トマス＝ペイン)。啓蒙思想</td>
+  <td><strong>ルソー</strong>(社会契約・一般意志)。<strong>モンテスキュー</strong>(三権分立)。ヴォルテール</td>
+  <td><strong>マルクス主義</strong>。レーニンの前衛党論(『何をなすべきか』)。帝国主義論</td>
+</tr>
+<tr>
+  <td>世界史的意義</td>
+  <td>国王処刑＝<strong>王権は絶対でない</strong>ことを示す。しかし共和政は定着せず</td>
+  <td><strong>議会制民主主義の原型</strong>。立憲君主政・責任内閣制の基礎。後の民主主義発展のモデル</td>
+  <td><strong>共和政の成功モデル</strong>。「自由・平等」の理念が仏革命に影響。連邦制・成文憲法の先例</td>
+  <td><strong>近代市民社会の原点</strong>。人権宣言＝近代的人権の基礎。しかし恐怖政治＝「革命は子を食う」</td>
+  <td><strong>世界初の社会主義国家</strong>。冷戦の起源。第三世界の革命運動に影響。「革命は全体主義になりうる」</td>
+</tr>
+</table>
+</div>
+<div class="note"><p>5つの革命の比較＝<strong>「原因(王権vs議会/課税/身分制/専制)→指導者層(貴族/ブルジョワ/労働者)→暴力の程度→成果(文書/政体)→思想的背景」</strong>を横断的に比較する。入試では「英革命と仏革命の違い」「仏革命と露革命の違い」が論述の定番。キーワード：<strong>英＝立憲君主政、米＝共和政+三権分立、仏＝人権宣言+急進化、露＝社会主義+一党独裁</strong>。</p></div>
+</body></html>

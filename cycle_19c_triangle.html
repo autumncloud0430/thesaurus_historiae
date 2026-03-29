@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>19世紀の三角貿易(アヘン貿易)</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+.hdr{padding:16px 20px;border-bottom:1px solid rgba(201,169,110,.08);display:flex;align-items:center;gap:14px;flex-wrap:wrap}.hdr h1{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2)}.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
+.wrap{display:flex;justify-content:center;padding:24px 16px 8px}
+.desc{max-width:740px;margin:0 auto;padding:0 20px 40px}
+.desc h2{font-family:'Noto Serif JP',serif;font-size:12px;font-weight:700;color:var(--gold2);margin:16px 0 6px;padding-left:8px;border-left:3px solid rgba(201,169,110,.3)}
+.desc p{font-size:9.5px;color:var(--text2);line-height:1.8;margin-bottom:8px}
+.desc p strong{color:var(--text);font-weight:600}
+.desc .side-note{font-size:8px;color:var(--text3);padding:4px 8px;border-left:2px solid rgba(201,169,110,.1);margin:6px 0 10px;line-height:1.6}
+.note{text-align:center;padding:8px 20px 32px;max-width:740px;margin:0 auto}.note p{font-size:9px;color:var(--text3);line-height:1.8}.note strong{color:var(--gold)}
+.hdr h1{font-size:12px}
+.wrap{padding:12px 8px}
+svg{max-width:100%;height:auto}
+.desc p{font-size:9px}
+.desc h2{font-size:11px}
+.side-note{font-size:7.5px}
+.note p{font-size:8px}
+}
+
+@media(max-width:600px){
+.hdr{padding:10px 12px}.hdr h1{font-size:12px}
+.wrap{padding:12px 8px}
+svg{max-width:100%;height:auto}
+.desc p{font-size:9px}
+.desc h2{font-size:11px}
+.side-note{font-size:7.5px}
+.note p{font-size:8px}
+}
+</style>
+</head>
+<body>
+<div class="hdr"><h1>19世紀の三角貿易(アヘン貿易) ― 英が「銀の流出」を逆転させた仕組み</h1><a href="charts.html">← Ad Chartae</a></div>
+
+<div class="wrap">
+<svg viewBox="0 0 660 530" xmlns="http://www.w3.org/2000/svg" style="width:660px;max-width:100%;height:auto">
+<defs>
+  <marker id="a1" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="rgba(180,80,80,.6)"/></marker>
+  <marker id="a2" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="rgba(80,150,120,.6)"/></marker>
+  <marker id="a3" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="rgba(180,140,80,.6)"/></marker>
+  <marker id="ag" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="rgba(201,169,110,.5)"/></marker>
+</defs>
+
+<!-- Phase label -->
+<text x="330" y="25" text-anchor="middle" fill="rgba(201,169,110,.12)" font-size="11" font-family="Cormorant Garamond" font-weight="700">19世紀の三角貿易(1820s-1840s)</text>
+
+<!-- ===== BEFORE: the problem (top area) ===== -->
+<rect x="30" y="40" width="600" height="55" rx="8" fill="rgba(201,169,110,.03)" stroke="rgba(201,169,110,.1)" stroke-width="0.5"/>
+<text x="330" y="58" text-anchor="middle" fill="var(--gold)" font-size="9" font-family="Noto Serif JP" font-weight="700">★問題：英は茶を大量に輸入するが中国に売る物がない→銀が一方的に流出</text>
+<text x="330" y="73" text-anchor="middle" fill="var(--text2)" font-size="7.5">18C後半、英国民の紅茶消費が爆発的に増加→茶の代金として銀が中国に流出→英の貿易赤字が拡大</text>
+<text x="330" y="85" text-anchor="middle" fill="var(--text3)" font-size="6.5">→産業革命の綿製品すら中国市場で売れない(自給自足の中国経済)→「何を売ればよいのか？」→答え＝アヘン</text>
+
+<!-- ===== 3 NODES forming triangle ===== -->
+<!-- Britain (top center) -->
+<rect x="220" y="110" width="220" height="80" rx="12" fill="rgba(80,150,120,.06)" stroke="rgba(80,150,120,.25)" stroke-width="1.5"/>
+<text x="330" y="135" text-anchor="middle" fill="rgba(140,210,170,.9)" font-size="14" font-family="Noto Serif JP" font-weight="700">イギリス</text>
+<text x="330" y="153" text-anchor="middle" fill="var(--text2)" font-size="8">産業革命の「世界の工場」＝綿製品の大量生産</text>
+<text x="330" y="170" text-anchor="middle" fill="var(--text2)" font-size="7.5">東インド会社がインド・中国貿易を独占(→1833年廃止)</text>
+<text x="330" y="182" text-anchor="middle" fill="var(--text3)" font-size="6.5">★三角貿易で銀の流出を逆転＝「自由貿易帝国主義」の実態</text>
+
+<!-- India (bottom left) -->
+<rect x="30" y="340" width="220" height="80" rx="12" fill="rgba(180,140,80,.06)" stroke="rgba(180,140,80,.25)" stroke-width="1.5"/>
+<text x="140" y="365" text-anchor="middle" fill="rgba(220,190,120,.9)" font-size="14" font-family="Noto Serif JP" font-weight="700">インド(英領)</text>
+<text x="140" y="383" text-anchor="middle" fill="var(--text2)" font-size="8">ベンガル地方でアヘン(ケシ)を栽培</text>
+<text x="140" y="398" text-anchor="middle" fill="var(--text2)" font-size="7.5">英東インド会社がアヘン生産を独占管理</text>
+<text x="140" y="410" text-anchor="middle" fill="var(--text3)" font-size="6.5">★インドの農民はアヘン栽培を強制される＝植民地支配の一環</text>
+
+<!-- China (bottom right) -->
+<rect x="410" y="340" width="220" height="80" rx="12" fill="rgba(180,80,80,.06)" stroke="rgba(180,80,80,.25)" stroke-width="1.5"/>
+<text x="520" y="365" text-anchor="middle" fill="rgba(220,130,130,.9)" font-size="14" font-family="Noto Serif JP" font-weight="700">清(中国)</text>
+<text x="520" y="383" text-anchor="middle" fill="var(--text2)" font-size="8">茶・絹・陶磁器を輸出(欧州で大人気)</text>
+<text x="520" y="398" text-anchor="middle" fill="var(--text2)" font-size="7.5">アヘン中毒者が急増(推定数百万人)→社会崩壊</text>
+<text x="520" y="410" text-anchor="middle" fill="var(--text3)" font-size="6.5">★銀の流れが逆転＝今度は中国から銀が流出→財政危機</text>
+
+<!-- ===== 3 CURVED ARROWS ===== -->
+<!-- Leg 1: Britain → India (manufactured cotton goods) -->
+<path d="M235,190 C160,240 80,290 75,340" fill="none" stroke="rgba(80,150,120,.5)" stroke-width="2.5" marker-end="url(#a2)"/>
+<rect x="55" y="235" width="145" height="52" rx="6" fill="rgba(80,150,120,.04)" stroke="rgba(80,150,120,.1)" stroke-width="0.5"/>
+<text x="127" y="252" text-anchor="middle" fill="rgba(140,210,170,.9)" font-size="9" font-family="Noto Serif JP" font-weight="700">第1辺：英→印</text>
+<text x="127" y="266" text-anchor="middle" fill="var(--text2)" font-size="7.5">綿製品(マンチェスター産)</text>
+<text x="127" y="278" text-anchor="middle" fill="var(--text3)" font-size="6.5">★印の手織り綿業を壊滅させた</text>
+
+<!-- Leg 2: India → China (OPIUM) -->
+<path d="M250,390 C310,440 380,440 410,390" fill="none" stroke="rgba(180,80,80,.6)" stroke-width="3" marker-end="url(#a1)"/>
+<rect x="260" y="440" width="140" height="55" rx="6" fill="rgba(180,80,80,.04)" stroke="rgba(180,80,80,.12)" stroke-width="0.5"/>
+<text x="330" y="457" text-anchor="middle" fill="rgba(220,130,130,.9)" font-size="10" font-family="Noto Serif JP" font-weight="700">第2辺：印→中</text>
+<text x="330" y="471" text-anchor="middle" fill="rgba(220,130,130,.9)" font-size="9" font-weight="700">★アヘン</text>
+<text x="330" y="485" text-anchor="middle" fill="var(--text2)" font-size="7">私貿易商(カントリー＝トレーダー)が</text>
+<text x="330" y="495" text-anchor="middle" fill="var(--text2)" font-size="7">広州に密輸(英政府は「関与せず」と建前)</text>
+
+<!-- Leg 3: China → Britain (tea, silk) -->
+<path d="M575,340 C560,280 500,230 425,190" fill="none" stroke="rgba(180,140,80,.5)" stroke-width="2.5" marker-end="url(#a3)"/>
+<rect x="468" y="235" width="145" height="52" rx="6" fill="rgba(180,140,80,.04)" stroke="rgba(180,140,80,.1)" stroke-width="0.5"/>
+<text x="540" y="252" text-anchor="middle" fill="rgba(220,190,120,.9)" font-size="9" font-family="Noto Serif JP" font-weight="700">第3辺：中→英</text>
+<text x="540" y="266" text-anchor="middle" fill="var(--text2)" font-size="7.5">茶(紅茶)・絹・陶磁器</text>
+<text x="540" y="278" text-anchor="middle" fill="var(--text3)" font-size="6.5">代金＝アヘン販売で得た銀で支払い</text>
+
+<!-- Silver flow reversal note in center -->
+<text x="330" y="340" text-anchor="middle" fill="rgba(201,169,110,.25)" font-size="9" font-family="Cormorant Garamond" font-weight="700">銀の流れの逆転</text>
+<text x="330" y="355" text-anchor="middle" fill="rgba(201,169,110,.15)" font-size="7">18C: 銀→中国(茶の代金)</text>
+<text x="330" y="367" text-anchor="middle" fill="rgba(180,80,80,.25)" font-size="7">19C: 銀←中国(アヘンの代金)</text>
+
+<!-- ===== Result: Opium War ===== -->
+<rect x="100" y="510" width="460" height="15" rx="4" fill="rgba(180,80,80,.04)"/>
+<text x="330" y="521" text-anchor="middle" fill="rgba(180,80,80,.3)" font-size="8">↓ 林則徐のアヘン没収・焼却(1839)→英が開戦→★アヘン戦争(1840-42)→南京条約</text>
+
+<!-- Legend -->
+<line x1="40" y1="525" x2="40" y2="525" stroke="none"/>
+</svg>
+</div>
+
+<div class="desc">
+<h2>なぜ英はアヘンを売ったか ― 「銀の流出」問題</h2>
+<p>18世紀後半、英国で<strong>紅茶の消費</strong>が爆発的に増加(砂糖を入れた紅茶が労働者の必需品に)。茶は中国からの輸入に完全に依存。しかし<strong>中国は英の工業製品を必要としなかった</strong>(自給自足の経済)→茶の代金として<strong>銀が一方的に中国へ流出</strong>。産業革命で「世界の工場」になった英が、対中貿易だけは赤字→この構造を逆転させる「商品」＝<strong>アヘン</strong>。</p>
+
+<h2>三角貿易の仕組み</h2>
+<p><strong>第1辺(英→印)</strong>＝マンチェスターの機械製綿製品をインドに輸出→<strong>インドの手織り綿業(ダッカのモスリン等)を壊滅</strong>させた(「織工の骨でインドの平原が白くなった」)。<br>
+<strong>第2辺(印→中)＝アヘン</strong>＝英東インド会社がベンガルでアヘンの生産を独占管理→カントリー＝トレーダー(民間商人)を通じて広州に密輸。英政府は「東インド会社は直接売っていない」と建前を維持。中国のアヘン中毒者は推定<strong>数百万人</strong>に。<br>
+<strong>第3辺(中→英)</strong>＝茶・絹・陶磁器。代金はアヘン販売で得た銀で支払う→<strong>英は銀を出さずに茶を買える</strong>。</p>
+
+<h2>結果：銀の逆流とアヘン戦争</h2>
+<p>アヘンの大量流入で<strong>銀の流れが逆転</strong>＝18Cは「銀→中国」だったのが19Cは<strong>「銀←中国」</strong>に。清の国内で銀不足→<strong>銀の価値が上昇→銀で納税する農民の負担が実質的に倍増</strong>→社会不安。道光帝が<strong>林則徐</strong>を広州に派遣→アヘン約2万箱を没収・焼却(1839)→英が「自由貿易の侵害」として開戦＝<strong>アヘン戦争</strong>(1840-42)→<strong>南京条約</strong>＝香港割譲・5港開港・不平等条約体制の始まり。</p>
+<div class="side-note">★入試超頻出：「英の対中貿易赤字→アヘンで逆転」「三角貿易の3辺(綿製品→アヘン→茶)」「銀の流れの逆転→清の財政危機」「林則徐→アヘン戦争→南京条約」。16-17Cの「銀の世界循環」(銀→中国)と19Cの「銀の逆流」(銀←中国)を対比できることが重要</div>
+</div>
+
+<div class="note"><p>19世紀の三角貿易＝<strong>「自由貿易」の名のもとに行われた最も不道徳な貿易</strong>。入試では①<strong>なぜアヘンを売ったか(銀の流出問題)</strong> ②<strong>3辺の内容(綿製品→アヘン→茶)</strong> ③<strong>インドの手工業の破壊＝植民地支配の経済的側面</strong> ④<strong>銀の流れの逆転→アヘン戦争への因果</strong>が問われる。16-17Cの銀の世界循環と19Cのアヘン三角貿易を合わせて「銀とアジアの関係」を通史的に理解する。</p></div>
+</body></html>
