@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>シルクロードの地理的図解</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+.hdr{padding:16px 20px;border-bottom:1px solid rgba(201,169,110,.08);display:flex;align-items:center;gap:14px;flex-wrap:wrap}.hdr h1{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2)}.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
+#map{width:100%;height:520px;background:#06090f}
+.legend{display:flex;gap:16px;justify-content:center;padding:8px 16px;flex-wrap:wrap;border-bottom:1px solid rgba(255,255,255,.02)}.legend .li{display:flex;align-items:center;gap:4px;font-size:8px;color:var(--text3)}.legend .ld{width:28px;height:3px;border-radius:2px}
+.desc{max-width:740px;margin:0 auto;padding:12px 20px 40px}.desc h2{font-family:'Noto Serif JP',serif;font-size:12px;font-weight:700;color:var(--gold2);margin:16px 0 6px;padding-left:8px;border-left:3px solid rgba(201,169,110,.3)}.desc p{font-size:9.5px;color:var(--text2);line-height:1.8;margin-bottom:8px}.desc p strong{color:var(--text);font-weight:600}.desc .side-note{font-size:8px;color:var(--text3);padding:4px 8px;border-left:2px solid rgba(201,169,110,.1);margin:6px 0 10px;line-height:1.6}
+.note{text-align:center;padding:8px 20px 32px;max-width:740px;margin:0 auto}.note p{font-size:9px;color:var(--text3);line-height:1.8}.note strong{color:var(--gold)}
+.leaflet-popup-content-wrapper{background:rgba(12,15,22,.95);border:1px solid rgba(201,169,110,.25);border-radius:6px;box-shadow:0 6px 24px rgba(0,0,0,.5)}.leaflet-popup-content{color:var(--text);font-family:'Noto Sans JP',sans-serif;font-size:10px;line-height:1.6;margin:8px 12px}.leaflet-popup-content strong{color:var(--gold2)}.leaflet-popup-tip{background:rgba(12,15,22,.95);border:1px solid rgba(201,169,110,.15)}
+.city-label-major{background:transparent!important;border:none!important;box-shadow:none!important;color:var(--gold2)!important;font-family:'Noto Serif JP',serif!important;font-size:8px!important;font-weight:700!important;text-shadow:0 0 4px rgba(6,9,15,.9),0 0 8px rgba(6,9,15,.8)!important;white-space:nowrap!important}
+.city-label-minor{background:rgba(12,15,22,.85)!important;border:1px solid rgba(201,169,110,.15)!important;border-radius:3px!important;padding:2px 5px!important;color:var(--text2)!important;font-family:'Noto Sans JP',sans-serif!important;font-size:7px!important;box-shadow:0 2px 6px rgba(0,0,0,.4)!important}
+
+@media(max-width:600px){
+.hdr,.top{padding:8px 10px}.hdr h1,.top h1{font-size:11px}
+#map{height:60vh!important}
+.legend .li{font-size:6.5px}
+.legend .ld{width:16px;height:8px}
+.controls{gap:2px;padding:4px 8px}
+.cat-btn{font-size:6.5px;padding:2px 5px}
+.layer-tog{gap:3px;padding:3px 8px}
+.layer-tog label{font-size:7px}
+.search-wrap{padding:3px 8px}
+.search-wrap input,.si{width:120px;font-size:9px;padding:3px 6px}
+.tb{font-size:8px;padding:2px 6px}
+.note p{font-size:8px}
+}
+</style>
+</head>
+<body>
+<div class="hdr"><h1>シルクロードの地理的図解 ― 3つの道が結んだユーラシア</h1><a href="charts.html">← Ad Chartae</a></div>
+<div class="legend"><div class="li"><div class="ld" style="background:rgba(201,169,110,.7)"></div>オアシスの道(シルクロード)</div><div class="li"><div class="ld" style="background:rgba(80,180,120,.6);border-top:2px dashed rgba(80,180,120,.6)"></div>草原の道</div><div class="li"><div class="ld" style="background:rgba(100,150,220,.6)"></div>海の道</div><div class="li" style="font-size:7px">都市をクリックで詳細表示</div></div>
+<div id="map"></div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+function initMap(){
+var map = L.map('map',{center:[28,65],zoom:3,minZoom:2,maxZoom:6,zoomControl:true,worldCopyJump:true,maxBounds:[[-60,-30],[70,180]],maxBoundsViscosity:0.8});
+L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',{attribution:'CARTO',subdomains:'abcd',maxZoom:19}).addTo(map);
+L.polyline([[34.3, 108.9], [34.7, 112.5]],{color:'#c9a96e',weight:2.5,opacity:0.6}).addTo(map);
+L.polyline([[34.3, 108.9], [36.0, 103.8]],{color:'#c9a96e',weight:2.5,opacity:0.6}).addTo(map);
+L.polyline([[36.0, 103.8], [38.0, 100.0], [39.0, 97.0], [39.5, 96.0], [40.1, 94.7]],{color:'#c9a96e',weight:2.5,opacity:0.6}).addTo(map);
+L.polyline([[40.1, 94.7], [42.0, 93.5], [42.8, 93.5]],{color:'#c9a96e',weight:2.5,opacity:0.6}).addTo(map);
+L.polyline([[42.8, 93.5], [42.9, 89.2]],{color:'#c9a96e',weight:2.5,opacity:0.6}).addTo(map);
+L.polyline([[42.9, 89.2], [41.7, 82.9]],{color:'#c9a96e',weight:2.5,opacity:0.6}).addTo(map);
+L.polyline([[41.7, 82.9], [40.5, 79.0], [39.5, 75.9]],{color:'#c9a96e',weight:2.5,opacity:0.6}).addTo(map);
+L.polyline([[40.1, 94.7], [38.5, 91.0], [37.5, 86.0], [37.1, 79.9]],{color:'#c9a96e',weight:2.5,opacity:0.6}).addTo(map);
+L.polyline([[37.1, 79.9], [38.4, 77.2]],{color:'#c9a96e',weight:2.5,opacity:0.6}).addTo(map);
+L.polyline([[38.4, 77.2], [39.5, 75.9]],{color:'#c9a96e',weight:2.5,opacity:0.6}).addTo(map);
+L.polyline([[39.5, 75.9], [40.5, 71.8]],{color:'#c9a96e',weight:2.5,opacity:0.6}).addTo(map);
+L.polyline([[40.5, 71.8], [41.3, 69.3]],{color:'#c9a96e',weight:2.5,opacity:0.6}).addTo(map);
+L.polyline([[39.5, 75.9], [39.0, 73.0], [39.5, 70.0], [39.7, 66.9]],{color:'#c9a96e',weight:2.5,opacity:0.6}).addTo(map);
+L.polyline([[41.3, 69.3], [39.7, 66.9]],{color:'#c9a96e',weight:2.5,opacity:0.6}).addTo(map);
+L.polyline([[39.7, 66.9], [39.8, 64.4]],{color:'#c9a96e',weight:2.5,opacity:0.6}).addTo(map);
+L.polyline([[39.7, 66.9], [36.8, 66.9]],{color:'#c9a96e',weight:2.5,opacity:0.6}).addTo(map);
+L.polyline([[36.8, 66.9], [34.5, 69.2]],{color:'#c9a96e',weight:2.5,opacity:0.6}).addTo(map);
+L.polyline([[39.8, 64.4], [42.5, 59.6]],{color:'#c9a96e',weight:2.5,opacity:0.6}).addTo(map);
+L.polyline([[39.8, 64.4], [37.7, 62.2]],{color:'#c9a96e',weight:2.5,opacity:0.6}).addTo(map);
+L.polyline([[37.7, 62.2], [36.3, 59.6]],{color:'#c9a96e',weight:2.5,opacity:0.6}).addTo(map);
+L.polyline([[36.3, 59.6], [32.6, 51.7]],{color:'#c9a96e',weight:2.5,opacity:0.6}).addTo(map);
+L.polyline([[32.6, 51.7], [35.2, 46.2]],{color:'#c9a96e',weight:2.5,opacity:0.6}).addTo(map);
+L.polyline([[35.2, 46.2], [33.3, 44.4]],{color:'#c9a96e',weight:2.5,opacity:0.6}).addTo(map);
+L.polyline([[37.7, 62.2], [37.0, 59.5], [36.5, 56.5], [36.0, 53.5], [35.5, 50.5], [35.5, 48.0], [36.5, 45.5], [37.6, 44.6]],{color:'#c9a96e',weight:2.5,opacity:0.6}).addTo(map);
+L.polyline([[37.6, 44.6], [36.3, 43.1]],{color:'#c9a96e',weight:2.5,opacity:0.6}).addTo(map);
+L.polyline([[36.3, 43.1], [33.3, 44.4]],{color:'#c9a96e',weight:2.5,opacity:0.6}).addTo(map);
+L.polyline([[33.3, 44.4], [34.9, 38.9]],{color:'#c9a96e',weight:2.5,opacity:0.6}).addTo(map);
+L.polyline([[34.9, 38.9], [36.2, 36.2]],{color:'#c9a96e',weight:2.5,opacity:0.6}).addTo(map);
+L.polyline([[36.2, 36.2], [38.4, 27.1]],{color:'#c9a96e',weight:2.5,opacity:0.6}).addTo(map);
+L.polyline([[38.4, 27.1], [41.0, 29.0]],{color:'#c9a96e',weight:2.5,opacity:0.6}).addTo(map);
+L.polyline([[41.0, 29.0], [41.5, 26.5], [41.0, 24.0], [40.5, 21.5], [40.0, 19.5], [40.5, 17.5], [41.0, 15.5], [41.5, 14.0], [41.9, 12.5]],{color:'#c9a96e',weight:2.5,opacity:0.6}).addTo(map);
+L.polyline([[36.2, 36.2], [34.4, 35.8]],{color:'#c9a96e',weight:2.5,opacity:0.6}).addTo(map);
+L.polyline([[34.4, 35.8], [32.0, 34.8]],{color:'#c9a96e',weight:2.5,opacity:0.6}).addTo(map);
+L.polyline([[32.0, 34.8], [31.2, 29.9]],{color:'#c9a96e',weight:2.5,opacity:0.6}).addTo(map);
+L.polyline([[43.7, 39.7], [37.6, 44.6]],{color:'#c9a96e',weight:2.5,opacity:0.6}).addTo(map);
+L.polyline([[34.3, 108.9], [39.9, 116.4]],{color:'#50b478',weight:2,opacity:0.45,dashArray:'8,4'}).addTo(map);
+L.polyline([[39.9, 116.4], [47.2, 102.8]],{color:'#50b478',weight:2,opacity:0.45,dashArray:'8,4'}).addTo(map);
+L.polyline([[34.3, 108.9], [42.0, 105.0], [47.2, 102.8]],{color:'#50b478',weight:2,opacity:0.45,dashArray:'8,4'}).addTo(map);
+L.polyline([[47.2, 102.8], [48.0, 68.0]],{color:'#50b478',weight:2,opacity:0.45,dashArray:'8,4'}).addTo(map);
+L.polyline([[48.0, 68.0], [43.2, 76.9]],{color:'#50b478',weight:2,opacity:0.45,dashArray:'8,4'}).addTo(map);
+L.polyline([[43.2, 76.9], [41.3, 69.3]],{color:'#50b478',weight:2,opacity:0.45,dashArray:'8,4'}).addTo(map);
+L.polyline([[48.0, 68.0], [42.5, 59.6]],{color:'#50b478',weight:2,opacity:0.45,dashArray:'8,4'}).addTo(map);
+L.polyline([[48.0, 68.0], [48.5, 63.0], [49.0, 58.0], [49.5, 55.0], [49.0, 52.0], [48.5, 49.0], [47.5, 46.5], [47.0, 45.0]],{color:'#50b478',weight:2,opacity:0.45,dashArray:'8,4'}).addTo(map);
+L.polyline([[47.0, 45.0], [47.5, 42.0], [47.5, 39.0], [47.0, 37.0], [46.0, 36.0], [45.0, 35.4]],{color:'#50b478',weight:2,opacity:0.45,dashArray:'8,4'}).addTo(map);
+L.polyline([[45.0, 35.4], [44.4, 33.5]],{color:'#50b478',weight:2,opacity:0.45,dashArray:'8,4'}).addTo(map);
+L.polyline([[44.4, 33.5], [41.0, 29.0]],{color:'#50b478',weight:2,opacity:0.45,dashArray:'8,4'}).addTo(map);
+L.polyline([[41.0, 29.0], [43.7, 39.7]],{color:'#50b478',weight:2,opacity:0.45,dashArray:'8,4'}).addTo(map);
+L.polyline([[24.8, 119.3], [23.5, 117.5], [22.0, 115.0], [22.0, 114.3], [22.3, 113.8]],{color:'#6496dc',weight:2.5,opacity:0.55}).addTo(map);
+L.polyline([[22.3, 113.8], [21.0, 112.5], [19.5, 112.0], [18.0, 111.5], [16.8, 108.5]],{color:'#6496dc',weight:2.5,opacity:0.55}).addTo(map);
+L.polyline([[16.8, 108.5], [14.5, 109.5], [12.0, 109.5], [9.5, 108.0], [7.0, 106.5], [4.5, 105.5], [2.5, 105.2]],{color:'#6496dc',weight:2.5,opacity:0.55}).addTo(map);
+L.polyline([[6.5, 79.7], [7.5, 77.5], [8.5, 76.5], [9.5, 76.0], [11.0, 75.6]],{color:'#6496dc',weight:2.5,opacity:0.55}).addTo(map);
+L.polyline([[18.5, 72.8], [20.0, 72.5], [21.0, 72.3]],{color:'#6496dc',weight:2.5,opacity:0.55}).addTo(map);
+L.polyline([[23.5, 58.8], [25.0, 57.5], [26.5, 56.8]],{color:'#6496dc',weight:2.5,opacity:0.55}).addTo(map);
+L.polyline([[11.0, 75.6], [11.0, 70.0], [11.5, 65.0], [12.0, 60.0], [12.3, 55.0], [12.5, 50.0], [12.7, 45.5]],{color:'#6496dc',weight:2.5,opacity:0.55}).addTo(map);
+L.polyline([[26.5, 56.8], [26.5, 54.5], [26.5, 52.0], [27.0, 50.5], [28.0, 49.5], [29.0, 49.0], [29.5, 48.8]],{color:'#6496dc',weight:2.5,opacity:0.55}).addTo(map);
+L.polyline([[2.5, 105.2], [2.3, 104.5], [2.0, 104.0], [1.8, 103.5], [1.7, 102.8]],{color:'#6496dc',weight:2.5,opacity:0.55}).addTo(map);
+L.polyline([[1.7, 102.8], [2.5, 100.5], [3.5, 100.0], [4.5, 99.0], [5.5, 97.0], [6.5, 95.0], [6.5, 92.0], [6.5, 89.0], [6.0, 85.0], [5.5, 82.0], [5.5, 80.5], [6.0, 79.8], [6.5, 79.7]],{color:'#6496dc',weight:2.5,opacity:0.55}).addTo(map);
+L.polyline([[1.7, 102.8], [1.5, 103.0], [1.0, 103.5], [1.0, 104.4], [1.2, 105.0], [1.5, 105.5], [3.0, 106.5], [5.5, 106.0], [8.0, 104.5], [10.5, 102.0], [12.0, 101.0], [12.5, 100.5], [13.3, 100.5]],{color:'#6496dc',weight:2.5,opacity:0.55}).addTo(map);
+L.polyline([[11.0, 75.6], [12.5, 74.5], [14.0, 74.0], [15.5, 73.5], [17.0, 73.0], [18.5, 72.8]],{color:'#6496dc',weight:2.5,opacity:0.55}).addTo(map);
+L.polyline([[21.0, 72.3], [21.0, 70.0], [21.0, 69.0], [21.5, 67.0], [22.0, 64.0], [22.5, 61.0], [23.5, 58.8]],{color:'#6496dc',weight:2.5,opacity:0.55}).addTo(map);
+L.polyline([[12.7, 45.5], [11.5, 49.5], [9.0, 51.5], [6.0, 51.0], [3.5, 48.0], [2.4, 46.0]],{color:'#6496dc',weight:2.5,opacity:0.55}).addTo(map);
+L.polyline([[12.7, 45.5], [12.5, 44.0], [12.5, 43.5], [12.5, 43.3], [12.6, 43.2], [12.7, 43.3], [12.8, 42.9], [12.9, 42.8], [13.2, 42.5], [13.5, 42.4], [15.0, 41.5], [17.0, 40.5], [19.0, 39.5], [21.0, 38.5], [23.0, 37.0], [25.0, 35.5], [27.0, 34.5], [27.8, 33.8], [28.3, 33.3], [28.8, 32.9], [29.2, 32.7], [29.5, 32.6], [29.9, 32.5]],{color:'#6496dc',weight:2.5,opacity:0.55}).addTo(map);
+L.polyline([[44.8, 35.5], [44.0, 34.5], [43.0, 33.5], [42.0, 31.5], [41.5, 30.0], [41.2, 29.5]],{color:'#6496dc',weight:2.5,opacity:0.55}).addTo(map);
+function majorIcon(){return L.divIcon({className:'',html:'<div style="width:16px;height:16px;border-radius:50%;background:rgba(201,169,110,.5);border:2px solid rgba(201,169,110,.9);box-shadow:0 0 8px rgba(201,169,110,.4);cursor:pointer"></div>',iconSize:[16,16],iconAnchor:[8,8]});}
+function minorIcon(){return L.divIcon({className:'',html:'<div style="width:12px;height:12px;border-radius:50%;background:rgba(201,169,110,.3);border:1.5px solid rgba(201,169,110,.6);cursor:pointer"></div>',iconSize:[12,12],iconAnchor:[6,6]});}
+var major = [[41.9, 12.5, "ローマ", "西の終点"], [41.0, 29.0, "コンスタンティノープル", "ビザンツの首都。東西交易の最大の結節点"], [36.2, 36.2, "アンティオキア", "シリアの交易都市"], [31.2, 29.9, "アレクサンドリア", "海の道の西の終点"], [33.3, 44.4, "バグダード", "アッバース朝の首都。「知恵の館」"], [32.6, 51.7, "イスファハーン", "サファヴィー朝の都。「世界の半分」"], [37.7, 62.2, "メルヴ", "中央アジアのオアシス。モンゴルに破壊(1221)"], [39.7, 66.9, "サマルカンド", "★ソグド人の拠点＝「青の都」。ティムール帝国の首都"], [39.8, 64.4, "ブハラ", "イスラーム神学の拠点"], [39.5, 75.9, "カシュガル", "天山北路と南路の合流点。東西の結節点"], [40.1, 94.7, "敦煌", "★莫高窟。天山北路と南路の分岐点"], [34.3, 108.9, "長安(西安)", "★シルクロードの東の起点。漢・唐の首都"], [24.9, 118.6, "泉州", "宋元代の国際港。マルコ＝ポーロが「ザイトゥン」と呼んだ"], [23.1, 113.3, "広州", "唐代から外国商人が居住。市舶司"], [11.3, 75.8, "カリカット", "胡椒の積出港。ガマが到達(1498)"], [2.2, 102.3, "マラッカ", "★海上交易路の要衝。イスラーム化の拠点"]];
+for(var i=0;i<major.length;i++){var c=major[i];L.marker([c[0],c[1]],{icon:majorIcon()}).addTo(map).bindPopup('<strong>'+c[2]+'</strong><br>'+c[3]).bindTooltip(c[2],{permanent:true,direction:'top',offset:[0,-8],className:'city-label-major'});}
+var minor = [[37.8, 26.0, "エフェソス", "小アジア西岸。アルテミス神殿(世界七不思議)"], [38.4, 27.1, "スミュルナ", "小アジアの主要港。レヴァント貿易の拠点"], [34.4, 35.8, "ティルス", "フェニキアの海洋都市。紫の染料の産地"], [32.0, 34.8, "ヤッファ", "パレスチナの港。十字軍の補給拠点"], [44.4, 33.5, "ケルソネソス", "黒海北岸のギリシア植民市"], [43.7, 39.7, "トラブゾン", "★黒海南岸の港。トレビゾンド帝国(1204-1461)。ペルシアへの別ルート"], [36.3, 43.1, "モースル", "チグリス河畔。アッシリアの故地。モスリン布の語源"], [34.9, 38.9, "パルミラ", "★シリア砂漠の隊商都市。女王ゼノビアがローマに反乱(270年代)"], [35.2, 46.2, "ハマダーン", "メディア王国の旧都。ペルシア「王の道」の中継点"], [36.3, 59.6, "ニーシャープール", "★ホラーサーンの主要都市。セルジューク朝。ウマル＝ハイヤームの出身地"], [34.5, 69.2, "カーブル", "★ヒンドゥークシュの南麓。インドへの入口。ガズナ朝・ムガルの拠点"], [36.8, 66.9, "バルフ", "★「都市の母」。バクトリアの中心。ゾロアスター教発祥伝説。モンゴルに破壊"], [37.6, 44.6, "タブリーズ", "★イルハン国の首都。カスピ海とメソポタミアを結ぶ。マルコ＝ポーロが滞在"], [41.3, 69.3, "タシケント", "フェルガナ盆地入口。草原の道とオアシスの道の合流点"], [40.5, 71.8, "フェルガナ", "★汗血馬の産地→漢の武帝が張騫を派遣(BC139)→シルクロード開通の契機"], [42.5, 59.6, "ヒヴァ", "ホラズム地方。ホラズム＝シャー朝。チンギスの西征で壊滅(1221)"], [42.8, 93.5, "ハミ", "天山北路の入口。漢代の伊吾。中国と西域の境界"], [42.9, 89.2, "トゥルファン", "★高昌国の故地。火焔山(『西遊記』)。乾燥気候で古文書が保存"], [41.7, 82.9, "クチャ", "★亀茲国。鳩摩羅什(仏典翻訳の大家)の出身地。キジル千仏洞"], [37.1, 79.9, "ホータン", "★玉(翡翠)の産地。于闐国。仏教の東伝ルートの重要拠点"], [38.4, 77.2, "ヤルカンド", "タリム南路のオアシス。カラコルム山脈への入口"], [36.0, 103.8, "蘭州", "★河西回廊の東の入口。黄河上流の渡河点"], [34.7, 112.5, "洛陽", "★後漢・北魏の首都。龍門石窟。白馬寺(中国最古の仏教寺院)"], [39.9, 116.4, "北京", "★元の大都。マルコ＝ポーロが「カンバルク」と呼んだ。明清の首都"], [47.2, 102.8, "カラコルム", "★モンゴル帝国の首都。パクス＝モンゴリカの象徴。ルブルック・カルピニが訪問"], [43.2, 76.9, "アルマトイ付近", "天山北麓。草原の道とオアシスの道の接近点"], [47.0, 45.0, "サライ", "★キプチャク＝ハン国の首都。ヴォルガ河畔。東方物産のヨーロッパへの窓口"], [45.0, 35.4, "カッファ", "★ジェノヴァの植民都市。1347年ペストがここからヨーロッパに伝播→人口1/3死亡"], [48.0, 68.0, "オトラル", "★1218年モンゴル使節殺害→チンギスの西征の引き金→ホラズム＝シャー朝壊滅"], [16.5, 107.6, "フエ", "チャンパ王国(2-17C)沿岸。沈香(香木)の産地"], [13.7, 100.5, "アユタヤ", "★アユタヤ朝(1351-1767)の首都。国際交易都市。日本人町(山田長政)"], [3.0, 104.7, "パレンバン", "★シュリーヴィジャヤ王国(7-14C)の中心。義浄(唐の僧)が滞在"], [6.9, 79.9, "コロンボ", "セイロンの港。宝石・象牙・シナモン。仏教の聖地"], [19.0, 72.8, "ムンバイ付近", "★グジャラート地方。インド西岸最大の交易地帯。綿織物の産地"], [21.5, 72.6, "スーラト", "★ムガル時代のインド最大の港。英東インド会社の最初の拠点(1612)"], [27.2, 56.3, "ホルムズ", "★ペルシア湾の入口。海上交易の最重要拠点。ポルトガルが占領(1507-1622)"], [23.6, 58.5, "マスカット", "オマーン沿岸。アラブ海洋交易の拠点。ザンジバルまで勢力圏"], [12.8, 45.0, "アデン", "★紅海の入口(バブ＝エル＝マンデブ)。インド洋と紅海の分岐点"], [2.0, 45.3, "モガディシュ", "東アフリカの港。スワヒリ交易圏。金・象牙・奴隷の輸出"]];
+var minorMarkers=[];
+for(var i=0;i<minor.length;i++){var c=minor[i];var m=L.marker([c[0],c[1]],{icon:minorIcon()}).addTo(map).bindPopup('<strong>'+c[2]+'</strong><br>'+c[3]).bindTooltip(c[2],{permanent:false,direction:'top',offset:[0,-8],className:'city-label-minor'});minorMarkers.push(m);}
+function updateMinorLabels(){var z=map.getZoom();for(var i=0;i<minorMarkers.length;i++){if(z>=4){minorMarkers[i].openTooltip();}else{minorMarkers[i].closeTooltip();}}}
+map.on('zoomend',updateMinorLabels);
+}
+(function wait(){if(typeof L!=="undefined"){initMap();}else{setTimeout(wait,100);}})();
+</script>
+<div class="desc">
+<h2>3つのシルクロード</h2>
+<p><strong>①オアシスの道</strong>＝長安→蘭州→河西回廊→敦煌(莫高窟)→タクラマカン砂漠の北縁or南縁→カシュガル→サマルカンド→ブハラ→メルヴ→バグダード→アンティオキア→コンスタンティノープル→ローマ。<strong>リヒトホーフェン</strong>が命名。</p>
+<p><strong>②草原の道</strong>＝モンゴル高原→カザフステップ→黒海北岸。<strong>遊牧民</strong>が担い手。<strong>パクス＝モンゴリカ</strong>(13-14C)で最も活性化。</p>
+<p><strong>③海の道</strong>＝泉州・広州→マラッカ海峡→カリカット→アデン/ホルムズ→アレクサンドリア。<strong>ムスリム商人</strong>が主な担い手→東南アジアのイスラーム化。</p>
+<h2>シルクロードで運ばれたもの</h2>
+<p><strong>東→西</strong>：絹・陶磁器・茶・紙・火薬・羅針盤。<strong>西→東</strong>：ガラス・金銀・毛織物・ブドウ・香辛料。<strong>双方向</strong>：宗教(仏教・イスラーム・景教)・疫病(ペスト)・技術。</p>
+<div class="side-note">★入試超頻出：「3つの道」「リヒトホーフェンが命名」「ソグド人＝陸上交易」「ムスリム商人→東南アジアのイスラーム化」「パクス＝モンゴリカ」「敦煌＝莫高窟」「東西交流の品目」</div>
+</div>
+<div class="note"><p>シルクロード＝<strong>「3つの道」がユーラシアを東西に結んだネットワーク</strong>。入試では①ルート名と経路 ②交易品 ③担い手の変遷 ④宗教の伝播 ⑤主要都市が問われる。</p></div>
+</body></html>

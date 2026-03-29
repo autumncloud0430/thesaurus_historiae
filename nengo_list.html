@@ -1,0 +1,397 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>必須年号リスト ― 世界史入試対策</title><style>@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@400;600;700&family=Cormorant+Garamond:wght@400;700&display=swap');:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--gold-dim:rgba(201,169,110,.12);--text:#d4cfc6;--text2:#8a857d;--text3:#555048;--border:rgba(201,169,110,.08)}*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+.hdr{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;flex-wrap:wrap}.hdr h1{font-family:'Noto Serif JP',serif;font-size:15px;font-weight:700;color:var(--gold2)}.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5;transition:opacity .2s}.hdr a:hover{opacity:1}
+.tabs{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:4px;padding:10px 20px;border-bottom:1px solid rgba(255,255,255,.03)}.tab{padding:5px 10px;border-radius:6px;border:1px solid transparent;cursor:pointer;font-size:10px;font-weight:600;font-family:inherit;background:rgba(255,255,255,.03);color:var(--text3);white-space:nowrap;transition:all .2s;text-align:center}.tab:hover{color:var(--text2);background:rgba(255,255,255,.06)}.tab.on{border-color:rgba(201,169,110,.2);color:var(--gold);background:var(--gold-dim)}
+.controls{padding:10px 20px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.si{padding:6px 14px;border-radius:100px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);color:var(--text);font-size:11px;font-family:inherit;width:220px;outline:none;transition:border-color .2s}.si:focus{border-color:rgba(201,169,110,.3)}.si::placeholder{color:var(--text3)}
+.cnt{font-size:9px;color:var(--text3);font-family:'Cormorant Garamond',serif;letter-spacing:.1em}
+.fbtn{padding:4px 10px;border-radius:100px;border:1px solid rgba(255,255,255,.06);background:rgba(255,255,255,.02);color:var(--text3);font-size:9px;font-family:inherit;cursor:pointer;transition:all .2s}.fbtn:hover,.fbtn.on{border-color:rgba(201,169,110,.2);color:var(--gold);background:var(--gold-dim)}
+.tbl-wrap{padding:4px 20px 40px;overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:11px}
+th{background:rgba(201,169,110,.08);color:var(--gold);font-family:'Noto Serif JP',serif;font-weight:700;font-size:10px;letter-spacing:.08em;text-align:left;padding:8px 12px;border-bottom:1px solid rgba(201,169,110,.15);white-space:nowrap}
+td{padding:7px 12px;border-bottom:1px solid rgba(255,255,255,.025);vertical-align:top;line-height:1.6}
+td.yr{color:var(--gold);opacity:.7;font-family:'Cormorant Garamond',serif;font-size:12px;white-space:nowrap;width:80px;font-weight:600}
+td.ev{color:var(--text);font-weight:600;width:180px}
+td.mm{color:#a8a39a;font-size:10.5px}
+td.st{width:50px;text-align:center;font-size:11px;letter-spacing:1px}
+.s3{color:#e8c888}.s2{color:#8a857d}.s1{color:#555048}
+tr:hover td{background:rgba(201,169,110,.03)}
+.hidden{display:none}
+@media(max-width:600px){
+.hdr{padding:10px 12px}.hdr h1{font-size:12px}
+th,td{padding:6px 8px;font-size:9px}
+th{font-size:10px}
+td:first-child{font-size:8.5px}
+.note p{font-size:8px}
+.side-note{font-size:7.5px}
+}
+</style></head><body>
+<div class="hdr"><h1>必須年号リスト 348</h1><a href="index.html">← Ad Indicem</a></div>
+<div class="tabs"><button class="tab on" onclick="switchTab(0)" id="tab0">ヨーロッパ（古代〜中世） <span style="opacity:.4;font-size:8px">50</span></button>
+<button class="tab" onclick="switchTab(1)" id="tab1">ヨーロッパ（近世〜近代） <span style="opacity:.4;font-size:8px">57</span></button>
+<button class="tab" onclick="switchTab(2)" id="tab2">ヨーロッパ（20世紀〜） <span style="opacity:.4;font-size:8px">54</span></button>
+<button class="tab" onclick="switchTab(3)" id="tab3">中国 <span style="opacity:.4;font-size:8px">76</span></button>
+<button class="tab" onclick="switchTab(4)" id="tab4">イスラーム・西アジア・インド <span style="opacity:.4;font-size:8px">59</span></button>
+<button class="tab" onclick="switchTab(5)" id="tab5">南北アメリカ・アフリカ・東南アジア <span style="opacity:.4;font-size:8px">52</span></button>
+</div>
+<div class="controls"><input class="si" id="search" placeholder="年号・出来事で検索..." oninput="filterRows()"><button class="fbtn on" id="f3" onclick="toggleFilter(3)">★★★</button><button class="fbtn on" id="f2" onclick="toggleFilter(2)">★★</button><button class="fbtn on" id="f1" onclick="toggleFilter(1)">★</button><span class="cnt" id="cnt"></span></div>
+<div class="tbl-wrap" id="content0"><table><thead><tr><th>年号</th><th>出来事</th><th>一言メモ</th><th>重要度</th></tr></thead><tbody>
+<tr data-stars="2"><td class="yr">前594</td><td class="ev">ソロンの改革</td><td class="mm">財産政治。債務奴隷の禁止</td><td class="st s2">★★</td></tr>
+<tr data-stars="1"><td class="yr">前509</td><td class="ev">ローマ共和政の成立</td><td class="mm">王政廃止→コンスル制</td><td class="st s1">★</td></tr>
+<tr data-stars="2"><td class="yr">前490</td><td class="ev">マラトンの戦い</td><td class="mm">ペルシア戦争。アテネ重装歩兵がペルシア軍を撃退</td><td class="st s2">★★</td></tr>
+<tr data-stars="3"><td class="yr">前480</td><td class="ev">サラミスの海戦</td><td class="mm">テミストクレス。クセルクセス1世を撃退</td><td class="st s3">★★★</td></tr>
+<tr data-stars="1"><td class="yr">前450</td><td class="ev">十二表法</td><td class="mm">ローマ最古の成文法。貴族の法独占を打破</td><td class="st s1">★</td></tr>
+<tr data-stars="3"><td class="yr">前431-前404</td><td class="ev">ペロポネソス戦争</td><td class="mm">アテネvsスパルタ→ポリスの衰退</td><td class="st s3">★★★</td></tr>
+<tr data-stars="1"><td class="yr">前367</td><td class="ev">リキニウス＝セクスティウス法</td><td class="mm">コンスル1名は平民から</td><td class="st s1">★</td></tr>
+<tr data-stars="1"><td class="yr">前338</td><td class="ev">カイロネイアの戦い</td><td class="mm">フィリッポス2世がギリシア連合軍に勝利</td><td class="st s1">★</td></tr>
+<tr data-stars="2"><td class="yr">前334-前324</td><td class="ev">アレクサンドロス大王の東征</td><td class="mm">ヘレニズム世界の形成</td><td class="st s2">★★</td></tr>
+<tr data-stars="3"><td class="yr">前264-前146</td><td class="ev">ポエニ戦争(3回)</td><td class="mm">ローマvsカルタゴ。地中海支配の確立</td><td class="st s3">★★★</td></tr>
+<tr data-stars="2"><td class="yr">前133</td><td class="ev">グラックス兄弟の改革</td><td class="mm">大土地所有の制限→内乱の1世紀の起点</td><td class="st s2">★★</td></tr>
+<tr data-stars="1"><td class="yr">前73</td><td class="ev">スパルタクスの反乱</td><td class="mm">剣闘士奴隷の大反乱</td><td class="st s1">★</td></tr>
+<tr data-stars="2"><td class="yr">前60</td><td class="ev">第1回三頭政治</td><td class="mm">カエサル・ポンペイウス・クラッスス</td><td class="st s2">★★</td></tr>
+<tr data-stars="2"><td class="yr">前31</td><td class="ev">アクティウムの海戦</td><td class="mm">オクタウィアヌスがアントニウスに勝利→プトレマイオス朝滅亡</td><td class="st s2">★★</td></tr>
+<tr data-stars="3"><td class="yr">前27</td><td class="ev">アウグストゥス即位</td><td class="mm">元首政開始。パクス＝ロマーナ</td><td class="st s3">★★★</td></tr>
+<tr data-stars="2"><td class="yr">96-180</td><td class="ev">五賢帝時代</td><td class="mm">ネルウァ→トラヤヌス→ハドリアヌス→アントニヌス＝ピウス→マルクス</td><td class="st s2">★★</td></tr>
+<tr data-stars="1"><td class="yr">212</td><td class="ev">アントニヌス勅令</td><td class="mm">カラカラ帝。全自由民にローマ市民権</td><td class="st s1">★</td></tr>
+<tr data-stars="3"><td class="yr">313</td><td class="ev">ミラノ勅令</td><td class="mm">コンスタンティヌス帝。キリスト教公認</td><td class="st s3">★★★</td></tr>
+<tr data-stars="2"><td class="yr">325</td><td class="ev">ニケーア公会議</td><td class="mm">アタナシウス派を正統。アリウス派を異端</td><td class="st s2">★★</td></tr>
+<tr data-stars="3"><td class="yr">375</td><td class="ev">ゲルマン民族の大移動開始</td><td class="mm">フン族の圧迫→西ゴート族→連鎖的大移動</td><td class="st s3">★★★</td></tr>
+<tr data-stars="3"><td class="yr">392</td><td class="ev">キリスト教国教化</td><td class="mm">テオドシウス帝</td><td class="st s3">★★★</td></tr>
+<tr data-stars="1"><td class="yr">395</td><td class="ev">ローマ帝国の東西分裂</td><td class="mm">テオドシウス帝の死後</td><td class="st s1">★</td></tr>
+<tr data-stars="3"><td class="yr">476</td><td class="ev">西ローマ帝国滅亡</td><td class="mm">オドアケル。古代の終焉</td><td class="st s3">★★★</td></tr>
+<tr data-stars="1"><td class="yr">496</td><td class="ev">クローヴィスのアタナシウス派改宗</td><td class="mm">フランク王国→教皇との協力</td><td class="st s1">★</td></tr>
+<tr data-stars="2"><td class="yr">527-565</td><td class="ev">ユスティニアヌス帝</td><td class="mm">ローマ法大全。ハギア＝ソフィア</td><td class="st s2">★★</td></tr>
+<tr data-stars="3"><td class="yr">622</td><td class="ev">ヒジュラ（聖遷）</td><td class="mm">イスラーム暦の紀元</td><td class="st s3">★★★</td></tr>
+<tr data-stars="2"><td class="yr">726</td><td class="ev">聖像禁止令</td><td class="mm">レオン3世→東西教会対立の深化</td><td class="st s2">★★</td></tr>
+<tr data-stars="3"><td class="yr">732</td><td class="ev">トゥール・ポワティエ間の戦い</td><td class="mm">カール＝マルテル。イスラームの侵入阻止</td><td class="st s3">★★★</td></tr>
+<tr data-stars="1"><td class="yr">751</td><td class="ev">ピピンの寄進</td><td class="mm">教皇領の起源</td><td class="st s1">★</td></tr>
+<tr data-stars="2"><td class="yr">800</td><td class="ev">カール大帝の戴冠</td><td class="mm">教皇レオ3世が西ローマ皇帝として戴冠</td><td class="st s2">★★</td></tr>
+<tr data-stars="2"><td class="yr">843</td><td class="ev">ヴェルダン条約</td><td class="mm">フランク3分割。仏独伊の原型</td><td class="st s2">★★</td></tr>
+<tr data-stars="1"><td class="yr">862</td><td class="ev">ノヴゴロド国の建国</td><td class="mm">リューリク。ロシアの起源</td><td class="st s1">★</td></tr>
+<tr data-stars="3"><td class="yr">962</td><td class="ev">神聖ローマ帝国の成立</td><td class="mm">オットー1世</td><td class="st s3">★★★</td></tr>
+<tr data-stars="2"><td class="yr">1054</td><td class="ev">東西教会の分裂</td><td class="mm">ローマ＝カトリックとギリシア正教が相互破門</td><td class="st s2">★★</td></tr>
+<tr data-stars="3"><td class="yr">1066</td><td class="ev">ノルマン＝コンクエスト</td><td class="mm">ウィリアム征服王。イギリス封建制の確立</td><td class="st s3">★★★</td></tr>
+<tr data-stars="3"><td class="yr">1077</td><td class="ev">カノッサの屈辱</td><td class="mm">ハインリヒ4世vsグレゴリウス7世。叙任権闘争</td><td class="st s3">★★★</td></tr>
+<tr data-stars="3"><td class="yr">1096</td><td class="ev">第1回十字軍</td><td class="mm">クレルモン宗教会議→エルサレム王国建設</td><td class="st s3">★★★</td></tr>
+<tr data-stars="1"><td class="yr">1122</td><td class="ev">ヴォルムス協約</td><td class="mm">叙任権闘争の妥協点</td><td class="st s1">★</td></tr>
+<tr data-stars="2"><td class="yr">1204</td><td class="ev">第4回十字軍</td><td class="mm">コンスタンティノープル占領→ラテン帝国</td><td class="st s2">★★</td></tr>
+<tr data-stars="3"><td class="yr">1215</td><td class="ev">マグナ＝カルタ</td><td class="mm">ジョン王。英立憲政治の出発点</td><td class="st s3">★★★</td></tr>
+<tr data-stars="2"><td class="yr">1241</td><td class="ev">ワールシュタットの戦い</td><td class="mm">バトゥのモンゴル軍がポーランド連合軍を撃破</td><td class="st s2">★★</td></tr>
+<tr data-stars="1"><td class="yr">1270</td><td class="ev">第7回十字軍（最後）</td><td class="mm">ルイ9世がチュニスで病死</td><td class="st s1">★</td></tr>
+<tr data-stars="1"><td class="yr">1295</td><td class="ev">模範議会</td><td class="mm">エドワード1世。英議会制の起源</td><td class="st s1">★</td></tr>
+<tr data-stars="1"><td class="yr">1302</td><td class="ev">三部会の初召集</td><td class="mm">フィリップ4世</td><td class="st s1">★</td></tr>
+<tr data-stars="2"><td class="yr">1309-77</td><td class="ev">アヴィニョン捕囚</td><td class="mm">教皇庁がアヴィニョンに→教皇権の衰退</td><td class="st s2">★★</td></tr>
+<tr data-stars="3"><td class="yr">1339-1453</td><td class="ev">百年戦争</td><td class="mm">英仏王位継承争い。ジャンヌ＝ダルク</td><td class="st s3">★★★</td></tr>
+<tr data-stars="3"><td class="yr">1347-51</td><td class="ev">ペスト（黒死病）</td><td class="mm">人口約1/3死亡→農奴制動揺→中世崩壊</td><td class="st s3">★★★</td></tr>
+<tr data-stars="1"><td class="yr">1356</td><td class="ev">金印勅書</td><td class="mm">カール4世。7選帝侯→帝国の分権化</td><td class="st s1">★</td></tr>
+<tr data-stars="2"><td class="yr">1378-1417</td><td class="ev">教会大分裂（大シスマ）</td><td class="mm">ローマとアヴィニョンに教皇並立→コンスタンツ公会議</td><td class="st s2">★★</td></tr>
+<tr data-stars="3"><td class="yr">1453</td><td class="ev">コンスタンティノープル陥落</td><td class="mm">メフメト2世。ビザンツ滅亡。中世の終焉</td><td class="st s3">★★★</td></tr>
+</tbody></table></div>
+<div class="tbl-wrap hidden" id="content1"><table><thead><tr><th>年号</th><th>出来事</th><th>一言メモ</th><th>重要度</th></tr></thead><tbody>
+<tr data-stars="3"><td class="yr">1492</td><td class="ev">コロンブスのアメリカ到達</td><td class="mm">＋グラナダ陥落。中世→近世の画期</td><td class="st s3">★★★</td></tr>
+<tr data-stars="1"><td class="yr">1494</td><td class="ev">トルデシリャス条約</td><td class="mm">教皇が西葡の勢力圏を分割</td><td class="st s1">★</td></tr>
+<tr data-stars="3"><td class="yr">1498</td><td class="ev">ヴァスコ＝ダ＝ガマのインド到達</td><td class="mm">喜望峰航路。香辛料貿易独占</td><td class="st s3">★★★</td></tr>
+<tr data-stars="3"><td class="yr">1517</td><td class="ev">ルター「95か条の論題」</td><td class="mm">宗教改革の開始</td><td class="st s3">★★★</td></tr>
+<tr data-stars="1"><td class="yr">1519-22</td><td class="ev">マゼランの世界周航</td><td class="mm">地球が球体であることを実証</td><td class="st s1">★</td></tr>
+<tr data-stars="1"><td class="yr">1529</td><td class="ev">第1次ウィーン包囲</td><td class="mm">スレイマン1世。ハプスブルクの危機</td><td class="st s1">★</td></tr>
+<tr data-stars="3"><td class="yr">1534</td><td class="ev">首長法</td><td class="mm">ヘンリ8世。英国国教会の成立</td><td class="st s3">★★★</td></tr>
+<tr data-stars="1"><td class="yr">1541</td><td class="ev">カルヴァンのジュネーヴ神権政治</td><td class="mm">予定説→資本主義の精神</td><td class="st s1">★</td></tr>
+<tr data-stars="1"><td class="yr">1545-63</td><td class="ev">トリエント公会議</td><td class="mm">カトリック改革。教義再確認・イエズス会</td><td class="st s1">★</td></tr>
+<tr data-stars="3"><td class="yr">1555</td><td class="ev">アウクスブルクの和議</td><td class="mm">ルター派承認。領主の宗教が領民の宗教</td><td class="st s3">★★★</td></tr>
+<tr data-stars="1"><td class="yr">1571</td><td class="ev">レパントの海戦</td><td class="mm">スペイン連合がオスマン海軍に勝利</td><td class="st s1">★</td></tr>
+<tr data-stars="1"><td class="yr">1581</td><td class="ev">オランダ独立宣言</td><td class="mm">ユトレヒト同盟→スペインからの独立</td><td class="st s1">★</td></tr>
+<tr data-stars="3"><td class="yr">1588</td><td class="ev">アルマダの海戦</td><td class="mm">英がスペイン無敵艦隊を撃破</td><td class="st s3">★★★</td></tr>
+<tr data-stars="3"><td class="yr">1598</td><td class="ev">ナントの王令</td><td class="mm">アンリ4世。ユグノーに信仰の自由</td><td class="st s3">★★★</td></tr>
+<tr data-stars="1"><td class="yr">1600</td><td class="ev">英東インド会社設立</td><td class="mm">→植民地支配の母体に</td><td class="st s1">★</td></tr>
+<tr data-stars="3"><td class="yr">1618-48</td><td class="ev">三十年戦争</td><td class="mm">宗教戦争→国際戦争。ウェストファリア条約</td><td class="st s3">★★★</td></tr>
+<tr data-stars="3"><td class="yr">1642-49</td><td class="ev">ピューリタン革命</td><td class="mm">チャールズ1世処刑。クロムウェル共和政</td><td class="st s3">★★★</td></tr>
+<tr data-stars="3"><td class="yr">1648</td><td class="ev">ウェストファリア条約</td><td class="mm">主権国家体制の成立</td><td class="st s3">★★★</td></tr>
+<tr data-stars="1"><td class="yr">1651</td><td class="ev">航海法</td><td class="mm">オランダの中継貿易を排除→英蘭戦争</td><td class="st s1">★</td></tr>
+<tr data-stars="3"><td class="yr">1661-1715</td><td class="ev">ルイ14世の親政</td><td class="mm">ヴェルサイユ宮殿。コルベール重商主義</td><td class="st s3">★★★</td></tr>
+<tr data-stars="1"><td class="yr">1685</td><td class="ev">フォンテーヌブロー勅令</td><td class="mm">ナントの王令を撤回→ユグノー亡命</td><td class="st s1">★</td></tr>
+<tr data-stars="3"><td class="yr">1688</td><td class="ev">名誉革命</td><td class="mm">権利の章典(1689)→立憲君主政</td><td class="st s3">★★★</td></tr>
+<tr data-stars="1"><td class="yr">1701-13</td><td class="ev">スペイン継承戦争</td><td class="mm">ユトレヒト条約。英がジブラルタル獲得</td><td class="st s1">★</td></tr>
+<tr data-stars="1"><td class="yr">1713</td><td class="ev">ユトレヒト条約</td><td class="mm">スペイン継承戦争講和。英が植民地拡大</td><td class="st s1">★</td></tr>
+<tr data-stars="1"><td class="yr">1740-48</td><td class="ev">オーストリア継承戦争</td><td class="mm">マリア＝テレジアvsフリードリヒ2世</td><td class="st s1">★</td></tr>
+<tr data-stars="3"><td class="yr">1756-63</td><td class="ev">七年戦争</td><td class="mm">外交革命。パリ条約→英が北米・インドで勝利</td><td class="st s3">★★★</td></tr>
+<tr data-stars="1"><td class="yr">1772</td><td class="ev">第1回ポーランド分割</td><td class="mm">露普墺→1793第2回→1795第3回で消滅</td><td class="st s1">★</td></tr>
+<tr data-stars="3"><td class="yr">1776</td><td class="ev">アメリカ独立宣言</td><td class="mm">＋アダム＝スミス『国富論』</td><td class="st s3">★★★</td></tr>
+<tr data-stars="3"><td class="yr">1789</td><td class="ev">フランス革命勃発</td><td class="mm">バスティーユ→人権宣言→封建的特権の廃止</td><td class="st s3">★★★</td></tr>
+<tr data-stars="2"><td class="yr">1793</td><td class="ev">ルイ16世処刑</td><td class="mm">→第1回対仏大同盟。恐怖政治へ</td><td class="st s2">★★</td></tr>
+<tr data-stars="2"><td class="yr">1799</td><td class="ev">ブリュメール18日のクーデター</td><td class="mm">ナポレオン統領政府。「革命は終わった」</td><td class="st s2">★★</td></tr>
+<tr data-stars="2"><td class="yr">1804</td><td class="ev">ナポレオン法典＋皇帝即位</td><td class="mm">近代市民法の模範。第一帝政</td><td class="st s2">★★</td></tr>
+<tr data-stars="1"><td class="yr">1805</td><td class="ev">トラファルガーの海戦</td><td class="mm">ネルソン提督→英の制海権確立</td><td class="st s1">★</td></tr>
+<tr data-stars="1"><td class="yr">1806</td><td class="ev">大陸封鎖令</td><td class="mm">ナポレオンが英を経済封鎖→ロシア遠征の遠因</td><td class="st s1">★</td></tr>
+<tr data-stars="1"><td class="yr">1807</td><td class="ev">ティルジット条約</td><td class="mm">ナポレオンとアレクサンドル1世。プロイセン領土半減</td><td class="st s1">★</td></tr>
+<tr data-stars="1"><td class="yr">1807-12</td><td class="ev">プロイセン改革</td><td class="mm">シュタイン・ハルデンベルク。農奴解放・軍制改革</td><td class="st s1">★</td></tr>
+<tr data-stars="3"><td class="yr">1814-15</td><td class="ev">ウィーン会議</td><td class="mm">正統主義・勢力均衡。メッテルニヒ体制</td><td class="st s3">★★★</td></tr>
+<tr data-stars="2"><td class="yr">1830</td><td class="ev">フランス七月革命</td><td class="mm">シャルル10世追放→ルイ＝フィリップ→ベルギー独立</td><td class="st s2">★★</td></tr>
+<tr data-stars="2"><td class="yr">1832</td><td class="ev">第1回選挙法改正（英）</td><td class="mm">産業資本家に選挙権拡大</td><td class="st s2">★★</td></tr>
+<tr data-stars="1"><td class="yr">1833</td><td class="ev">英の奴隷制廃止</td><td class="mm">ウィルバーフォースの運動→帝国全域で廃止</td><td class="st s1">★</td></tr>
+<tr data-stars="3"><td class="yr">1848</td><td class="ev">諸国民の春</td><td class="mm">二月革命・三月革命・『共産党宣言』。全て挫折</td><td class="st s3">★★★</td></tr>
+<tr data-stars="2"><td class="yr">1853-56</td><td class="ev">クリミア戦争</td><td class="mm">英仏vsロシア。南下挫折</td><td class="st s2">★★</td></tr>
+<tr data-stars="3"><td class="yr">1861</td><td class="ev">イタリア王国成立</td><td class="mm">カヴール＋ガリバルディ</td><td class="st s3">★★★</td></tr>
+<tr data-stars="3"><td class="yr">1861</td><td class="ev">ロシア農奴解放令</td><td class="mm">アレクサンドル2世。クリミア戦争敗北を契機</td><td class="st s3">★★★</td></tr>
+<tr data-stars="2"><td class="yr">1862</td><td class="ev">ビスマルクの「鉄血演説」</td><td class="mm">軍事力による統一路線を宣言</td><td class="st s2">★★</td></tr>
+<tr data-stars="3"><td class="yr">1866</td><td class="ev">普墺戦争</td><td class="mm">ケーニヒグレーツ→北ドイツ連邦</td><td class="st s3">★★★</td></tr>
+<tr data-stars="3"><td class="yr">1870-71</td><td class="ev">普仏戦争</td><td class="mm">セダン→ヴェルサイユでドイツ帝国成立→パリ＝コミューン</td><td class="st s3">★★★</td></tr>
+<tr data-stars="1"><td class="yr">1871</td><td class="ev">パリ＝コミューン</td><td class="mm">世界初の労働者自治。約2ヶ月で鎮圧</td><td class="st s1">★</td></tr>
+<tr data-stars="2"><td class="yr">1878</td><td class="ev">ベルリン会議</td><td class="mm">ビスマルク「誠実な仲介者」。バルカン調整</td><td class="st s2">★★</td></tr>
+<tr data-stars="2"><td class="yr">1882</td><td class="ev">三国同盟</td><td class="mm">独墺伊。ビスマルク体制の柱</td><td class="st s2">★★</td></tr>
+<tr data-stars="2"><td class="yr">1884-85</td><td class="ev">ベルリン＝西アフリカ会議</td><td class="mm">アフリカ分割の原則を決定</td><td class="st s2">★★</td></tr>
+<tr data-stars="1"><td class="yr">1890</td><td class="ev">ビスマルク辞任→「世界政策」</td><td class="mm">再保障条約の不更新→仏露同盟(1891-94)</td><td class="st s1">★</td></tr>
+<tr data-stars="1"><td class="yr">1894</td><td class="ev">ドレフュス事件</td><td class="mm">ゾラ「私は弾劾する」→知識人の政治参加</td><td class="st s1">★</td></tr>
+<tr data-stars="3"><td class="yr">1904</td><td class="ev">英仏協商</td><td class="mm">→1907年英露協商で三国協商完成</td><td class="st s3">★★★</td></tr>
+<tr data-stars="2"><td class="yr">1905</td><td class="ev">第1次ロシア革命</td><td class="mm">血の日曜日→十月宣言</td><td class="st s2">★★</td></tr>
+<tr data-stars="2"><td class="yr">1907</td><td class="ev">三国協商</td><td class="mm">英仏露。三国同盟と対峙→WW1へ</td><td class="st s2">★★</td></tr>
+<tr data-stars="1"><td class="yr">1912-13</td><td class="ev">バルカン戦争</td><td class="mm">オスマンの後退→WW1の導火線</td><td class="st s1">★</td></tr>
+</tbody></table></div>
+<div class="tbl-wrap hidden" id="content2"><table><thead><tr><th>年号</th><th>出来事</th><th>一言メモ</th><th>重要度</th></tr></thead><tbody>
+<tr data-stars="3"><td class="yr">1914</td><td class="ev">サラエヴォ事件→WW1勃発</td><td class="mm">同盟の連鎖→総力戦</td><td class="st s3">★★★</td></tr>
+<tr data-stars="3"><td class="yr">1917.3</td><td class="ev">ロシア二月革命</td><td class="mm">ニコライ2世退位→臨時政府</td><td class="st s3">★★★</td></tr>
+<tr data-stars="1"><td class="yr">1917.4</td><td class="ev">アメリカ参戦</td><td class="mm">無制限潜水艦戦が契機</td><td class="st s1">★</td></tr>
+<tr data-stars="3"><td class="yr">1917.11</td><td class="ev">ロシア十月革命</td><td class="mm">レーニン。世界初の社会主義政権</td><td class="st s3">★★★</td></tr>
+<tr data-stars="2"><td class="yr">1918.1</td><td class="ev">十四カ条の平和原則</td><td class="mm">ウィルソン。民族自決・国際連盟構想</td><td class="st s2">★★</td></tr>
+<tr data-stars="2"><td class="yr">1918.11</td><td class="ev">ドイツ革命→休戦</td><td class="mm">キール軍港の水兵反乱→ヴィルヘルム2世退位</td><td class="st s2">★★</td></tr>
+<tr data-stars="3"><td class="yr">1919</td><td class="ev">ヴェルサイユ条約</td><td class="mm">対独講和。アルザス返還・巨額賠償・軍備制限</td><td class="st s3">★★★</td></tr>
+<tr data-stars="2"><td class="yr">1919</td><td class="ev">ヴァイマル憲法</td><td class="mm">国民主権・男女普通選挙。48条が禍根</td><td class="st s2">★★</td></tr>
+<tr data-stars="3"><td class="yr">1920</td><td class="ev">国際連盟成立</td><td class="mm">ウィルソン提唱だが米不参加</td><td class="st s3">★★★</td></tr>
+<tr data-stars="2"><td class="yr">1921-28</td><td class="ev">ソ連のNEP</td><td class="mm">レーニン。部分的に市場経済を容認</td><td class="st s2">★★</td></tr>
+<tr data-stars="2"><td class="yr">1922</td><td class="ev">ムッソリーニの「ローマ進軍」</td><td class="mm">イタリアのファシズム政権成立</td><td class="st s2">★★</td></tr>
+<tr data-stars="1"><td class="yr">1925</td><td class="ev">ロカルノ条約</td><td class="mm">独の国際復帰</td><td class="st s1">★</td></tr>
+<tr data-stars="1"><td class="yr">1928</td><td class="ev">不戦条約</td><td class="mm">戦争放棄を宣言。実効性乏しい</td><td class="st s1">★</td></tr>
+<tr data-stars="3"><td class="yr">1929</td><td class="ev">世界恐慌</td><td class="mm">ウォール街暴落→ブロック経済化</td><td class="st s3">★★★</td></tr>
+<tr data-stars="3"><td class="yr">1933</td><td class="ev">ヒトラー首相就任→全権委任法</td><td class="mm">ナチス独裁の確立</td><td class="st s3">★★★</td></tr>
+<tr data-stars="2"><td class="yr">1935</td><td class="ev">ニュルンベルク法</td><td class="mm">ユダヤ人の市民権剥奪</td><td class="st s2">★★</td></tr>
+<tr data-stars="1"><td class="yr">1935-37</td><td class="ev">米中立法</td><td class="mm">米の孤立主義→WW2で転換</td><td class="st s1">★</td></tr>
+<tr data-stars="2"><td class="yr">1936-39</td><td class="ev">スペイン内戦</td><td class="mm">フランコ。独伊介入。ゲルニカ</td><td class="st s2">★★</td></tr>
+<tr data-stars="2"><td class="yr">1938</td><td class="ev">ミュンヘン会談</td><td class="mm">ズデーテン割譲。宥和政策の頂点</td><td class="st s2">★★</td></tr>
+<tr data-stars="2"><td class="yr">1939.8</td><td class="ev">独ソ不可侵条約</td><td class="mm">秘密議定書でポーランド分割</td><td class="st s2">★★</td></tr>
+<tr data-stars="3"><td class="yr">1939.9</td><td class="ev">WW2勃発</td><td class="mm">ドイツのポーランド侵攻</td><td class="st s3">★★★</td></tr>
+<tr data-stars="2"><td class="yr">1940</td><td class="ev">日独伊三国同盟</td><td class="mm">枢軸体制の確立</td><td class="st s2">★★</td></tr>
+<tr data-stars="3"><td class="yr">1941.6</td><td class="ev">独ソ戦開始</td><td class="mm">バルバロッサ作戦→スターリングラード(1942-43)が転換点</td><td class="st s3">★★★</td></tr>
+<tr data-stars="1"><td class="yr">1941.8</td><td class="ev">大西洋憲章</td><td class="mm">ローズヴェルト＋チャーチル。戦後秩序の理念</td><td class="st s1">★</td></tr>
+<tr data-stars="1"><td class="yr">1943</td><td class="ev">スターリングラードの戦い</td><td class="mm">独軍降伏。東部戦線の転換点</td><td class="st s1">★</td></tr>
+<tr data-stars="2"><td class="yr">1944.6</td><td class="ev">ノルマンディー上陸</td><td class="mm">Dデー。西部戦線の反攻</td><td class="st s2">★★</td></tr>
+<tr data-stars="3"><td class="yr">1945.2</td><td class="ev">ヤルタ会談</td><td class="mm">米英ソ首脳。戦後処理とソ連の対日参戦密約</td><td class="st s3">★★★</td></tr>
+<tr data-stars="1"><td class="yr">1945.5</td><td class="ev">ドイツ無条件降伏</td><td class="mm">→ニュルンベルク裁判</td><td class="st s1">★</td></tr>
+<tr data-stars="2"><td class="yr">1945.7</td><td class="ev">ポツダム会談</td><td class="mm">対日処理。ポツダム宣言</td><td class="st s2">★★</td></tr>
+<tr data-stars="3"><td class="yr">1947</td><td class="ev">トルーマン＝ドクトリン</td><td class="mm">対ソ封じ込め。冷戦の開始</td><td class="st s3">★★★</td></tr>
+<tr data-stars="3"><td class="yr">1947</td><td class="ev">マーシャル＝プラン</td><td class="mm">西欧復興＋共産主義封じ込め</td><td class="st s3">★★★</td></tr>
+<tr data-stars="1"><td class="yr">1947</td><td class="ev">GATT成立</td><td class="mm">自由貿易の促進→WTO(1995)へ</td><td class="st s1">★</td></tr>
+<tr data-stars="3"><td class="yr">1948</td><td class="ev">ベルリン封鎖</td><td class="mm">ソ連が西ベルリン封鎖→空輸→東西ドイツ分裂</td><td class="st s3">★★★</td></tr>
+<tr data-stars="2"><td class="yr">1948</td><td class="ev">世界人権宣言</td><td class="mm">国連総会で採択</td><td class="st s2">★★</td></tr>
+<tr data-stars="3"><td class="yr">1949</td><td class="ev">NATO成立</td><td class="mm">北大西洋条約機構。西側軍事同盟</td><td class="st s3">★★★</td></tr>
+<tr data-stars="2"><td class="yr">1949</td><td class="ev">ドイツ分裂</td><td class="mm">西独(BRD)・東独(DDR)</td><td class="st s2">★★</td></tr>
+<tr data-stars="1"><td class="yr">1953</td><td class="ev">スターリン死去</td><td class="mm">→フルシチョフのスターリン批判(1956)→雪どけ</td><td class="st s1">★</td></tr>
+<tr data-stars="2"><td class="yr">1955</td><td class="ev">ワルシャワ条約機構</td><td class="mm">東側軍事同盟</td><td class="st s2">★★</td></tr>
+<tr data-stars="2"><td class="yr">1956</td><td class="ev">ハンガリー事件</td><td class="mm">ナジ＝イムレの改革→ソ連軍介入で鎮圧</td><td class="st s2">★★</td></tr>
+<tr data-stars="2"><td class="yr">1956</td><td class="ev">スエズ戦争（第2次中東戦争）</td><td class="mm">英仏帝国主義の終焉を象徴。ナセルの威信高揚</td><td class="st s2">★★</td></tr>
+<tr data-stars="3"><td class="yr">1961</td><td class="ev">ベルリンの壁建設</td><td class="mm">東独市民の西側流出を阻止。冷戦の象徴</td><td class="st s3">★★★</td></tr>
+<tr data-stars="3"><td class="yr">1962</td><td class="ev">キューバ危機</td><td class="mm">核戦争の瀬戸際→デタントへの転機</td><td class="st s3">★★★</td></tr>
+<tr data-stars="2"><td class="yr">1968</td><td class="ev">プラハの春</td><td class="mm">ドプチェク→ソ連介入で挫折</td><td class="st s2">★★</td></tr>
+<tr data-stars="1"><td class="yr">1975</td><td class="ev">ヘルシンキ宣言</td><td class="mm">全欧安保協力会議。東西の緊張緩和</td><td class="st s1">★</td></tr>
+<tr data-stars="1"><td class="yr">1979</td><td class="ev">ソ連のアフガニスタン侵攻</td><td class="mm">→新冷戦。1989年撤退</td><td class="st s1">★</td></tr>
+<tr data-stars="3"><td class="yr">1985</td><td class="ev">ゴルバチョフ就任</td><td class="mm">ペレストロイカ・グラスノスチ→冷戦終結へ</td><td class="st s3">★★★</td></tr>
+<tr data-stars="3"><td class="yr">1989</td><td class="ev">ベルリンの壁崩壊</td><td class="mm">→東欧革命の連鎖</td><td class="st s3">★★★</td></tr>
+<tr data-stars="2"><td class="yr">1989.12</td><td class="ev">マルタ会談</td><td class="mm">米ソが冷戦終結を宣言</td><td class="st s2">★★</td></tr>
+<tr data-stars="2"><td class="yr">1990</td><td class="ev">ドイツ統一</td><td class="mm">東独が西独に吸収統一</td><td class="st s2">★★</td></tr>
+<tr data-stars="3"><td class="yr">1991.12</td><td class="ev">ソ連崩壊</td><td class="mm">CIS→ロシア連邦。冷戦の終焉</td><td class="st s3">★★★</td></tr>
+<tr data-stars="3"><td class="yr">1992</td><td class="ev">マーストリヒト条約</td><td class="mm">EU成立の基盤→ユーロ(1999)</td><td class="st s3">★★★</td></tr>
+<tr data-stars="1"><td class="yr">1999</td><td class="ev">コソヴォ紛争</td><td class="mm">NATO空爆</td><td class="st s1">★</td></tr>
+<tr data-stars="1"><td class="yr">2016</td><td class="ev">Brexit国民投票</td><td class="mm">英がEU離脱を選択</td><td class="st s1">★</td></tr>
+<tr data-stars="2"><td class="yr">2022</td><td class="ev">ロシアのウクライナ侵攻</td><td class="mm">NATO拡大への反発。国際秩序の動揺</td><td class="st s2">★★</td></tr>
+</tbody></table></div>
+<div class="tbl-wrap hidden" id="content3"><table><thead><tr><th>年号</th><th>出来事</th><th>一言メモ</th><th>重要度</th></tr></thead><tbody>
+<tr data-stars="1"><td class="yr">前8C</td><td class="ev">春秋五覇の時代</td><td class="mm">斉の桓公等。尊王攘夷</td><td class="st s1">★</td></tr>
+<tr data-stars="1"><td class="yr">前770</td><td class="ev">東周の開始（春秋時代へ）</td><td class="mm">犬戎により鎬京陥落→洛邑に遷都</td><td class="st s1">★</td></tr>
+<tr data-stars="1"><td class="yr">前403</td><td class="ev">戦国時代の開始</td><td class="mm">晋が韓魏趙に分裂</td><td class="st s1">★</td></tr>
+<tr data-stars="3"><td class="yr">前221</td><td class="ev">秦の統一</td><td class="mm">始皇帝。郡県制・焚書坑儒・万里の長城</td><td class="st s3">★★★</td></tr>
+<tr data-stars="3"><td class="yr">前202</td><td class="ev">前漢の建国</td><td class="mm">劉邦（高祖）。長安に都</td><td class="st s3">★★★</td></tr>
+<tr data-stars="3"><td class="yr">前141-前87</td><td class="ev">武帝の治世</td><td class="mm">儒教官学化・張騫西域派遣・推恩の令</td><td class="st s3">★★★</td></tr>
+<tr data-stars="1"><td class="yr">前127</td><td class="ev">推恩の令</td><td class="mm">諸侯王の領地を分割→中央集権強化</td><td class="st s1">★</td></tr>
+<tr data-stars="1"><td class="yr">8</td><td class="ev">王莽の新</td><td class="mm">前漢を簒奪。復古→失敗</td><td class="st s1">★</td></tr>
+<tr data-stars="2"><td class="yr">25</td><td class="ev">後漢の建国</td><td class="mm">光武帝。洛陽に都</td><td class="st s2">★★</td></tr>
+<tr data-stars="2"><td class="yr">184</td><td class="ev">黄巾の乱</td><td class="mm">太平道。後漢崩壊の直接的契機</td><td class="st s2">★★</td></tr>
+<tr data-stars="2"><td class="yr">220</td><td class="ev">後漢滅亡→三国時代</td><td class="mm">魏蜀呉の鼎立</td><td class="st s2">★★</td></tr>
+<tr data-stars="1"><td class="yr">280</td><td class="ev">西晋の統一</td><td class="mm">司馬炎。短命の統一→八王の乱</td><td class="st s1">★</td></tr>
+<tr data-stars="1"><td class="yr">316</td><td class="ev">西晋滅亡→五胡十六国</td><td class="mm">永嘉の乱→異民族が華北制圧</td><td class="st s1">★</td></tr>
+<tr data-stars="1"><td class="yr">383</td><td class="ev">淝水の戦い</td><td class="mm">東晋が前秦を撃退→南北分裂固定化</td><td class="st s1">★</td></tr>
+<tr data-stars="2"><td class="yr">386</td><td class="ev">北魏の建国</td><td class="mm">鮮卑拓跋氏→孝文帝の漢化政策</td><td class="st s2">★★</td></tr>
+<tr data-stars="2"><td class="yr">485</td><td class="ev">均田制の施行</td><td class="mm">北魏孝文帝。隋唐の律令制の基盤</td><td class="st s2">★★</td></tr>
+<tr data-stars="3"><td class="yr">589</td><td class="ev">隋の南北統一</td><td class="mm">楊堅。大運河・科挙開始</td><td class="st s3">★★★</td></tr>
+<tr data-stars="3"><td class="yr">618</td><td class="ev">唐の建国</td><td class="mm">太宗（貞観の治）。律令制の完成</td><td class="st s3">★★★</td></tr>
+<tr data-stars="1"><td class="yr">690-705</td><td class="ev">則天武后</td><td class="mm">中国史上唯一の女帝。国号を周に</td><td class="st s1">★</td></tr>
+<tr data-stars="3"><td class="yr">712-756</td><td class="ev">玄宗（開元の治）</td><td class="mm">唐の最盛期→楊貴妃→安史の乱で暗転</td><td class="st s3">★★★</td></tr>
+<tr data-stars="2"><td class="yr">755</td><td class="ev">安史の乱</td><td class="mm">安禄山→藩鎮割拠→唐の実質的分裂</td><td class="st s2">★★</td></tr>
+<tr data-stars="3"><td class="yr">780</td><td class="ev">両税法</td><td class="mm">楊炎。夏秋2回の資産課税。均田制の崩壊を追認</td><td class="st s3">★★★</td></tr>
+<tr data-stars="1"><td class="yr">875</td><td class="ev">黄巣の乱</td><td class="mm">塩の密売人の大反乱→唐の崩壊加速</td><td class="st s1">★</td></tr>
+<tr data-stars="3"><td class="yr">907</td><td class="ev">唐の滅亡→五代十国</td><td class="mm">後梁〜後周(華北)＋十国(華南)</td><td class="st s3">★★★</td></tr>
+<tr data-stars="2"><td class="yr">936</td><td class="ev">燕雲十六州の割譲</td><td class="mm">後晋→契丹。以後400年の痛恨事</td><td class="st s2">★★</td></tr>
+<tr data-stars="3"><td class="yr">960</td><td class="ev">北宋の建国</td><td class="mm">趙匡胤。文治主義。科挙の充実</td><td class="st s3">★★★</td></tr>
+<tr data-stars="2"><td class="yr">1004</td><td class="ev">澶淵の盟</td><td class="mm">宋と遼の和約</td><td class="st s2">★★</td></tr>
+<tr data-stars="2"><td class="yr">1069</td><td class="ev">王安石の新法</td><td class="mm">神宗の支持→旧法党と対立→挫折</td><td class="st s2">★★</td></tr>
+<tr data-stars="2"><td class="yr">1115</td><td class="ev">金の建国</td><td class="mm">女真族の完顔阿骨打</td><td class="st s2">★★</td></tr>
+<tr data-stars="2"><td class="yr">1126-27</td><td class="ev">靖康の変</td><td class="mm">金が北宋を滅ぼす→南宋成立</td><td class="st s2">★★</td></tr>
+<tr data-stars="3"><td class="yr">1206</td><td class="ev">チンギス＝ハンの即位</td><td class="mm">モンゴル帝国の建国</td><td class="st s3">★★★</td></tr>
+<tr data-stars="1"><td class="yr">1234</td><td class="ev">金の滅亡</td><td class="mm">モンゴルが金を滅ぼす</td><td class="st s1">★</td></tr>
+<tr data-stars="3"><td class="yr">1271</td><td class="ev">元の建国</td><td class="mm">フビライ。大都に遷都</td><td class="st s3">★★★</td></tr>
+<tr data-stars="1"><td class="yr">1276</td><td class="ev">南宋の臨安陥落</td><td class="mm">→1279年崖山で完全滅亡</td><td class="st s1">★</td></tr>
+<tr data-stars="3"><td class="yr">1279</td><td class="ev">南宋滅亡→元の中国統一</td><td class="mm">崖山の戦い。四等人制</td><td class="st s3">★★★</td></tr>
+<tr data-stars="1"><td class="yr">1351</td><td class="ev">紅巾の乱</td><td class="mm">白蓮教系→元の崩壊</td><td class="st s1">★</td></tr>
+<tr data-stars="3"><td class="yr">1368</td><td class="ev">明の建国</td><td class="mm">朱元璋（洪武帝）。海禁・朝貢貿易</td><td class="st s3">★★★</td></tr>
+<tr data-stars="1"><td class="yr">1399-1402</td><td class="ev">靖難の役</td><td class="mm">永楽帝が帝位奪取→北京遷都</td><td class="st s1">★</td></tr>
+<tr data-stars="2"><td class="yr">1405-33</td><td class="ev">鄭和の南海遠征</td><td class="mm">永楽帝の命。アフリカ東岸に到達</td><td class="st s2">★★</td></tr>
+<tr data-stars="1"><td class="yr">1449</td><td class="ev">土木の変</td><td class="mm">オイラトのエセンが英宗を捕虜に</td><td class="st s1">★</td></tr>
+<tr data-stars="1"><td class="yr">1616</td><td class="ev">後金の建国</td><td class="mm">ヌルハチ。→1636年に国号を清に</td><td class="st s1">★</td></tr>
+<tr data-stars="3"><td class="yr">1644</td><td class="ev">明の滅亡→清の入関</td><td class="mm">李自成の乱→清の中国支配開始</td><td class="st s3">★★★</td></tr>
+<tr data-stars="3"><td class="yr">1661-1722</td><td class="ev">康熙帝の治世</td><td class="mm">三藩平定・台湾征服。清の最盛期へ</td><td class="st s3">★★★</td></tr>
+<tr data-stars="1"><td class="yr">1673-81</td><td class="ev">三藩の乱</td><td class="mm">呉三桂等→康熙帝が平定</td><td class="st s1">★</td></tr>
+<tr data-stars="2"><td class="yr">1689</td><td class="ev">ネルチンスク条約</td><td class="mm">清露の国境画定。東アジア初の対等な条約</td><td class="st s2">★★</td></tr>
+<tr data-stars="3"><td class="yr">1723</td><td class="ev">地丁銀制</td><td class="mm">雍正帝。人頭税の消滅</td><td class="st s3">★★★</td></tr>
+<tr data-stars="1"><td class="yr">1757</td><td class="ev">広州一港貿易</td><td class="mm">清が対外貿易を広州1港に制限</td><td class="st s1">★</td></tr>
+<tr data-stars="2"><td class="yr">1839</td><td class="ev">林則徐のアヘン没収</td><td class="mm">→アヘン戦争の直接的原因</td><td class="st s2">★★</td></tr>
+<tr data-stars="3"><td class="yr">1840-42</td><td class="ev">アヘン戦争→南京条約</td><td class="mm">香港島割譲・5港開港。不平等条約体制の始まり</td><td class="st s3">★★★</td></tr>
+<tr data-stars="2"><td class="yr">1851-64</td><td class="ev">太平天国の乱</td><td class="mm">洪秀全。曽国藩の湘軍が鎮圧</td><td class="st s2">★★</td></tr>
+<tr data-stars="3"><td class="yr">1856-60</td><td class="ev">アロー戦争</td><td class="mm">天津条約・北京条約。円明園破壊</td><td class="st s3">★★★</td></tr>
+<tr data-stars="2"><td class="yr">1861</td><td class="ev">洋務運動の開始</td><td class="mm">曽国藩・李鴻章。「中体西用」</td><td class="st s2">★★</td></tr>
+<tr data-stars="3"><td class="yr">1894-95</td><td class="ev">日清戦争→下関条約</td><td class="mm">遼東半島・台湾割譲→三国干渉</td><td class="st s3">★★★</td></tr>
+<tr data-stars="2"><td class="yr">1898</td><td class="ev">戊戌の変法</td><td class="mm">康有為・譚嗣同→西太后のクーデターで挫折</td><td class="st s2">★★</td></tr>
+<tr data-stars="2"><td class="yr">1899-1900</td><td class="ev">義和団事件</td><td class="mm">扶清滅洋→8カ国出兵→北京議定書</td><td class="st s2">★★</td></tr>
+<tr data-stars="1"><td class="yr">1905</td><td class="ev">科挙の廃止</td><td class="mm">1300年の制度に幕</td><td class="st s1">★</td></tr>
+<tr data-stars="3"><td class="yr">1911</td><td class="ev">辛亥革命</td><td class="mm">武昌蜂起→中華民国成立(1912)→清滅亡</td><td class="st s3">★★★</td></tr>
+<tr data-stars="2"><td class="yr">1915</td><td class="ev">二十一カ条の要求</td><td class="mm">日本の対中要求→ナショナリズム高揚</td><td class="st s2">★★</td></tr>
+<tr data-stars="3"><td class="yr">1919</td><td class="ev">五四運動</td><td class="mm">反帝反封建の新文化運動</td><td class="st s3">★★★</td></tr>
+<tr data-stars="3"><td class="yr">1921</td><td class="ev">中国共産党の結成</td><td class="mm">陳独秀・毛沢東ら</td><td class="st s3">★★★</td></tr>
+<tr data-stars="2"><td class="yr">1924</td><td class="ev">第1次国共合作</td><td class="mm">孫文の容共・連ソ→北伐へ</td><td class="st s2">★★</td></tr>
+<tr data-stars="2"><td class="yr">1927</td><td class="ev">上海クーデター</td><td class="mm">蒋介石が共産党を弾圧→国共分裂</td><td class="st s2">★★</td></tr>
+<tr data-stars="2"><td class="yr">1931</td><td class="ev">満州事変</td><td class="mm">柳条湖事件→満州国→国連脱退</td><td class="st s2">★★</td></tr>
+<tr data-stars="2"><td class="yr">1934-36</td><td class="ev">長征</td><td class="mm">遵義会議で毛沢東が主導権</td><td class="st s2">★★</td></tr>
+<tr data-stars="2"><td class="yr">1936</td><td class="ev">西安事件</td><td class="mm">張学良が蒋介石を監禁→第2次国共合作へ</td><td class="st s2">★★</td></tr>
+<tr data-stars="3"><td class="yr">1937</td><td class="ev">日中戦争勃発</td><td class="mm">盧溝橋事件→南京事件</td><td class="st s3">★★★</td></tr>
+<tr data-stars="3"><td class="yr">1945-49</td><td class="ev">国共内戦→中華人民共和国成立</td><td class="mm">毛沢東の勝利(1949.10.1)</td><td class="st s3">★★★</td></tr>
+<tr data-stars="1"><td class="yr">1950</td><td class="ev">朝鮮戦争への参戦</td><td class="mm">中国人民義勇軍の介入</td><td class="st s1">★</td></tr>
+<tr data-stars="2"><td class="yr">1958-60</td><td class="ev">大躍進</td><td class="mm">人民公社。→大飢饉</td><td class="st s2">★★</td></tr>
+<tr data-stars="3"><td class="yr">1966-76</td><td class="ev">文化大革命</td><td class="mm">紅衛兵。社会の大混乱</td><td class="st s3">★★★</td></tr>
+<tr data-stars="1"><td class="yr">1971</td><td class="ev">国連代表権の交代</td><td class="mm">中華民国→中華人民共和国</td><td class="st s1">★</td></tr>
+<tr data-stars="2"><td class="yr">1972</td><td class="ev">ニクソン訪中</td><td class="mm">米中接近。冷戦構造の変容</td><td class="st s2">★★</td></tr>
+<tr data-stars="3"><td class="yr">1978</td><td class="ev">改革開放</td><td class="mm">鄧小平。社会主義市場経済への転換</td><td class="st s3">★★★</td></tr>
+<tr data-stars="3"><td class="yr">1989</td><td class="ev">天安門事件</td><td class="mm">民主化運動の弾圧</td><td class="st s3">★★★</td></tr>
+<tr data-stars="2"><td class="yr">1997</td><td class="ev">香港返還</td><td class="mm">英→中国。一国二制度</td><td class="st s2">★★</td></tr>
+<tr data-stars="2"><td class="yr">2001</td><td class="ev">WTO加盟</td><td class="mm">「世界の工場」→G2体制</td><td class="st s2">★★</td></tr>
+</tbody></table></div>
+<div class="tbl-wrap hidden" id="content4"><table><thead><tr><th>年号</th><th>出来事</th><th>一言メモ</th><th>重要度</th></tr></thead><tbody>
+<tr data-stars="1"><td class="yr">前6C</td><td class="ev">ゾロアスター教の成立</td><td class="mm">善悪二元論。アケメネス朝の国教</td><td class="st s1">★</td></tr>
+<tr data-stars="1"><td class="yr">前563頃</td><td class="ev">ブッダの誕生</td><td class="mm">仏教の開祖</td><td class="st s1">★</td></tr>
+<tr data-stars="1"><td class="yr">前525</td><td class="ev">アケメネス朝のエジプト征服</td><td class="mm">オリエント統一帝国の完成</td><td class="st s1">★</td></tr>
+<tr data-stars="1"><td class="yr">前4C</td><td class="ev">マウリヤ朝の建国</td><td class="mm">チャンドラグプタ。インド初の統一帝国</td><td class="st s1">★</td></tr>
+<tr data-stars="3"><td class="yr">前330</td><td class="ev">アケメネス朝滅亡</td><td class="mm">アレクサンドロスに滅ぼされる</td><td class="st s3">★★★</td></tr>
+<tr data-stars="3"><td class="yr">前3C</td><td class="ev">マウリヤ朝アショーカ王</td><td class="mm">仏教保護。ダルマによる統治</td><td class="st s3">★★★</td></tr>
+<tr data-stars="1"><td class="yr">226</td><td class="ev">ササン朝ペルシアの建国</td><td class="mm">ゾロアスター教を国教化</td><td class="st s1">★</td></tr>
+<tr data-stars="1"><td class="yr">320頃</td><td class="ev">グプタ朝の成立</td><td class="mm">インド古典文化の黄金期</td><td class="st s1">★</td></tr>
+<tr data-stars="3"><td class="yr">610頃</td><td class="ev">ムハンマドの啓示</td><td class="mm">イスラーム教の成立</td><td class="st s3">★★★</td></tr>
+<tr data-stars="3"><td class="yr">622</td><td class="ev">ヒジュラ</td><td class="mm">メッカ→メディナ。イスラーム暦元年</td><td class="st s3">★★★</td></tr>
+<tr data-stars="2"><td class="yr">632</td><td class="ev">ムハンマドの死→正統カリフ時代</td><td class="mm">アブー＝バクル→ウマル→ウスマーン→アリー</td><td class="st s2">★★</td></tr>
+<tr data-stars="2"><td class="yr">661</td><td class="ev">ウマイヤ朝の成立</td><td class="mm">ダマスクス。アラブ至上主義</td><td class="st s2">★★</td></tr>
+<tr data-stars="1"><td class="yr">680</td><td class="ev">カルバラーの悲劇</td><td class="mm">フサイン殺害→スンナ/シーア分裂</td><td class="st s1">★</td></tr>
+<tr data-stars="2"><td class="yr">711</td><td class="ev">ウマイヤ朝のイベリア征服</td><td class="mm">西ゴート王国滅亡</td><td class="st s2">★★</td></tr>
+<tr data-stars="3"><td class="yr">750</td><td class="ev">アッバース朝の成立</td><td class="mm">バグダード建設(762)</td><td class="st s3">★★★</td></tr>
+<tr data-stars="3"><td class="yr">751</td><td class="ev">タラス河畔の戦い</td><td class="mm">アッバースvs唐。製紙法の西伝</td><td class="st s3">★★★</td></tr>
+<tr data-stars="1"><td class="yr">909</td><td class="ev">ファーティマ朝の成立</td><td class="mm">シーア派。カイロ建設。アズハル学院</td><td class="st s1">★</td></tr>
+<tr data-stars="2"><td class="yr">1038</td><td class="ev">セルジューク朝の建国</td><td class="mm">トゥグリル＝ベク</td><td class="st s2">★★</td></tr>
+<tr data-stars="2"><td class="yr">1055</td><td class="ev">セルジューク朝バグダード入城</td><td class="mm">スルタンの称号→政教分離的二重支配</td><td class="st s2">★★</td></tr>
+<tr data-stars="3"><td class="yr">1187</td><td class="ev">エルサレム奪還</td><td class="mm">サラディン→第3回十字軍</td><td class="st s3">★★★</td></tr>
+<tr data-stars="1"><td class="yr">1192</td><td class="ev">ゴール朝のインド侵入</td><td class="mm">北インドのイスラーム支配の先駆</td><td class="st s1">★</td></tr>
+<tr data-stars="2"><td class="yr">1206</td><td class="ev">奴隷王朝（デリー＝スルタン朝）</td><td class="mm">北インドのイスラーム支配</td><td class="st s2">★★</td></tr>
+<tr data-stars="3"><td class="yr">1258</td><td class="ev">アッバース朝滅亡</td><td class="mm">フラグのバグダード攻略→カリフ殺害</td><td class="st s3">★★★</td></tr>
+<tr data-stars="2"><td class="yr">1299</td><td class="ev">オスマン帝国の建国</td><td class="mm">小アジアのトルコ系国家</td><td class="st s2">★★</td></tr>
+<tr data-stars="1"><td class="yr">1370</td><td class="ev">ティムール帝国の建国</td><td class="mm">サマルカンドを首都</td><td class="st s1">★</td></tr>
+<tr data-stars="1"><td class="yr">1398</td><td class="ev">ティムールのデリー侵攻</td><td class="mm">デリー＝スルタン朝に壊滅的打撃</td><td class="st s1">★</td></tr>
+<tr data-stars="3"><td class="yr">1453</td><td class="ev">オスマンのコンスタンティノープル征服</td><td class="mm">メフメト2世→イスタンブル</td><td class="st s3">★★★</td></tr>
+<tr data-stars="2"><td class="yr">1501</td><td class="ev">サファヴィー朝の建国</td><td class="mm">シーア派国教化→オスマンと対立</td><td class="st s2">★★</td></tr>
+<tr data-stars="3"><td class="yr">1517</td><td class="ev">オスマンがマムルーク朝征服</td><td class="mm">セリム1世→カリフの称号</td><td class="st s3">★★★</td></tr>
+<tr data-stars="3"><td class="yr">1526</td><td class="ev">ムガル帝国の建国</td><td class="mm">バーブル。パーニーパットの戦い</td><td class="st s3">★★★</td></tr>
+<tr data-stars="3"><td class="yr">1556-1605</td><td class="ev">アクバルの治世</td><td class="mm">ムガル最盛期。ジズヤ廃止。宗教融和</td><td class="st s3">★★★</td></tr>
+<tr data-stars="2"><td class="yr">1600</td><td class="ev">英東インド会社設立</td><td class="mm">→プラッシー→インド支配</td><td class="st s2">★★</td></tr>
+<tr data-stars="1"><td class="yr">1602</td><td class="ev">オランダ東インド会社設立</td><td class="mm">世界初の株式会社。バタヴィア</td><td class="st s1">★</td></tr>
+<tr data-stars="1"><td class="yr">1639</td><td class="ev">タージ＝マハル建設開始</td><td class="mm">シャー＝ジャハーン。インド＝イスラーム建築の最高傑作</td><td class="st s1">★</td></tr>
+<tr data-stars="1"><td class="yr">1683</td><td class="ev">第2次ウィーン包囲</td><td class="mm">オスマン敗北→カルロヴィッツ条約(1699)→後退</td><td class="st s1">★</td></tr>
+<tr data-stars="3"><td class="yr">1757</td><td class="ev">プラッシーの戦い</td><td class="mm">英東インド会社がベンガル支配→インド植民地化の起点</td><td class="st s3">★★★</td></tr>
+<tr data-stars="1"><td class="yr">1839</td><td class="ev">タンジマート開始</td><td class="mm">ギュルハネ勅令。オスマンの近代化</td><td class="st s1">★</td></tr>
+<tr data-stars="3"><td class="yr">1857</td><td class="ev">インド大反乱</td><td class="mm">東インド会社支配の終焉→英の直接統治→インド帝国(1877)</td><td class="st s3">★★★</td></tr>
+<tr data-stars="1"><td class="yr">1858</td><td class="ev">ムガル帝国滅亡</td><td class="mm">英がムガル皇帝を追放</td><td class="st s1">★</td></tr>
+<tr data-stars="3"><td class="yr">1869</td><td class="ev">スエズ運河開通</td><td class="mm">レセップスが建設→英が買収(1875)</td><td class="st s3">★★★</td></tr>
+<tr data-stars="2"><td class="yr">1876</td><td class="ev">ミドハト憲法</td><td class="mm">アジア初の近代憲法→アブデュルハミト2世が停止</td><td class="st s2">★★</td></tr>
+<tr data-stars="2"><td class="yr">1905</td><td class="ev">ベンガル分割令</td><td class="mm">→スワデーシ・スワラージ運動</td><td class="st s2">★★</td></tr>
+<tr data-stars="1"><td class="yr">1908</td><td class="ev">青年トルコ革命</td><td class="mm">ミドハト憲法を復活</td><td class="st s1">★</td></tr>
+<tr data-stars="2"><td class="yr">1916</td><td class="ev">サイクス＝ピコ協定</td><td class="mm">英仏露のオスマン領分割密約→中東問題の起源</td><td class="st s2">★★</td></tr>
+<tr data-stars="2"><td class="yr">1917</td><td class="ev">バルフォア宣言</td><td class="mm">ユダヤ人の「民族的郷土」→パレスチナ問題</td><td class="st s2">★★</td></tr>
+<tr data-stars="3"><td class="yr">1919</td><td class="ev">ローラット法→アムリットサル事件</td><td class="mm">→ガンディー非暴力運動本格化</td><td class="st s3">★★★</td></tr>
+<tr data-stars="2"><td class="yr">1920</td><td class="ev">セーヴル条約→トルコ革命</td><td class="mm">オスマン解体→ケマルの抵抗</td><td class="st s2">★★</td></tr>
+<tr data-stars="3"><td class="yr">1923</td><td class="ev">トルコ共和国の成立</td><td class="mm">ケマル。世俗化・ラテン文字</td><td class="st s3">★★★</td></tr>
+<tr data-stars="3"><td class="yr">1930</td><td class="ev">ガンディーの塩の行進</td><td class="mm">塩税への非暴力抵抗→世界的注目</td><td class="st s3">★★★</td></tr>
+<tr data-stars="3"><td class="yr">1947</td><td class="ev">インド・パキスタン分離独立</td><td class="mm">英撤退。印パ分離</td><td class="st s3">★★★</td></tr>
+<tr data-stars="3"><td class="yr">1948</td><td class="ev">イスラエル建国→第1次中東戦争</td><td class="mm">パレスチナ難民問題の発生</td><td class="st s3">★★★</td></tr>
+<tr data-stars="2"><td class="yr">1952</td><td class="ev">エジプト革命</td><td class="mm">ナセル→スエズ運河国有化→非同盟運動</td><td class="st s2">★★</td></tr>
+<tr data-stars="3"><td class="yr">1973</td><td class="ev">第4次中東戦争→石油危機</td><td class="mm">OAPEC石油戦略→第1次オイルショック</td><td class="st s3">★★★</td></tr>
+<tr data-stars="3"><td class="yr">1979</td><td class="ev">イラン＝イスラーム革命</td><td class="mm">ホメイニ。反米イスラーム体制</td><td class="st s3">★★★</td></tr>
+<tr data-stars="3"><td class="yr">1990-91</td><td class="ev">湾岸戦争</td><td class="mm">フセインのクウェート侵攻→米一極支配の始まり</td><td class="st s3">★★★</td></tr>
+<tr data-stars="1"><td class="yr">1993</td><td class="ev">オスロ合意</td><td class="mm">イスラエル・PLO相互承認→その後挫折</td><td class="st s1">★</td></tr>
+<tr data-stars="1"><td class="yr">2001</td><td class="ev">アフガニスタン戦争</td><td class="mm">9.11→米のタリバン攻撃</td><td class="st s1">★</td></tr>
+<tr data-stars="1"><td class="yr">2003</td><td class="ev">イラク戦争</td><td class="mm">フセイン政権崩壊→中東の不安定化</td><td class="st s1">★</td></tr>
+<tr data-stars="3"><td class="yr">2011</td><td class="ev">「アラブの春」</td><td class="mm">チュニジア→エジプト→リビア→シリア内戦→難民危機</td><td class="st s3">★★★</td></tr>
+</tbody></table></div>
+<div class="tbl-wrap hidden" id="content5"><table><thead><tr><th>年号</th><th>出来事</th><th>一言メモ</th><th>重要度</th></tr></thead><tbody>
+<tr data-stars="2"><td class="yr">1521</td><td class="ev">アステカ帝国滅亡</td><td class="mm">コルテスが征服</td><td class="st s2">★★</td></tr>
+<tr data-stars="2"><td class="yr">1533</td><td class="ev">インカ帝国滅亡</td><td class="mm">ピサロが征服</td><td class="st s2">★★</td></tr>
+<tr data-stars="1"><td class="yr">1607</td><td class="ev">ヴァージニア植民地建設</td><td class="mm">英の北米最初の恒久植民地</td><td class="st s1">★</td></tr>
+<tr data-stars="1"><td class="yr">1620</td><td class="ev">ピルグリム・ファーザーズ</td><td class="mm">メイフラワー号→ニューイングランド</td><td class="st s1">★</td></tr>
+<tr data-stars="1"><td class="yr">1733</td><td class="ev">13植民地の完成</td><td class="mm">英の北米東岸13植民地</td><td class="st s1">★</td></tr>
+<tr data-stars="3"><td class="yr">1765</td><td class="ev">印紙法</td><td class="mm">「代表なくして課税なし」→独立運動の起点</td><td class="st s3">★★★</td></tr>
+<tr data-stars="2"><td class="yr">1773</td><td class="ev">ボストン茶会事件</td><td class="mm">茶法への抵抗→英との対決姿勢が決定的</td><td class="st s2">★★</td></tr>
+<tr data-stars="3"><td class="yr">1775</td><td class="ev">アメリカ独立戦争の開始</td><td class="mm">レキシントンの戦い</td><td class="st s3">★★★</td></tr>
+<tr data-stars="3"><td class="yr">1776</td><td class="ev">アメリカ独立宣言</td><td class="mm">ロックの自然権思想。ジェファソン起草</td><td class="st s3">★★★</td></tr>
+<tr data-stars="3"><td class="yr">1783</td><td class="ev">パリ条約</td><td class="mm">英がアメリカの独立を承認</td><td class="st s3">★★★</td></tr>
+<tr data-stars="3"><td class="yr">1787</td><td class="ev">合衆国憲法の制定</td><td class="mm">連邦制・三権分立。権利章典(1791)</td><td class="st s3">★★★</td></tr>
+<tr data-stars="2"><td class="yr">1789</td><td class="ev">ワシントン初代大統領就任</td><td class="mm">合衆国憲法の運用開始</td><td class="st s2">★★</td></tr>
+<tr data-stars="1"><td class="yr">1803</td><td class="ev">ルイジアナ買収</td><td class="mm">仏ナポレオンから購入→領土倍増</td><td class="st s1">★</td></tr>
+<tr data-stars="3"><td class="yr">1804</td><td class="ev">ハイチ独立</td><td class="mm">世界初の黒人共和国</td><td class="st s3">★★★</td></tr>
+<tr data-stars="3"><td class="yr">1810s-20s</td><td class="ev">ラテンアメリカ独立運動</td><td class="mm">シモン＝ボリバル・サン＝マルティン</td><td class="st s3">★★★</td></tr>
+<tr data-stars="2"><td class="yr">1823</td><td class="ev">モンロー宣言</td><td class="mm">米大陸への欧州干渉を拒否</td><td class="st s2">★★</td></tr>
+<tr data-stars="1"><td class="yr">1830</td><td class="ev">インディアン強制移住法</td><td class="mm">ジャクソン大統領。「涙の道」</td><td class="st s1">★</td></tr>
+<tr data-stars="1"><td class="yr">1836</td><td class="ev">テキサス独立</td><td class="mm">メキシコから独立→1845年に米に併合</td><td class="st s1">★</td></tr>
+<tr data-stars="1"><td class="yr">1846</td><td class="ev">米墨戦争</td><td class="mm">→カリフォルニア等を獲得</td><td class="st s1">★</td></tr>
+<tr data-stars="3"><td class="yr">1861-65</td><td class="ev">南北戦争</td><td class="mm">奴隷制をめぐる内戦。奴隷解放宣言(1863)</td><td class="st s3">★★★</td></tr>
+<tr data-stars="1"><td class="yr">1862</td><td class="ev">ホームステッド法</td><td class="mm">西部の公有地を無償提供→西漸運動の加速</td><td class="st s1">★</td></tr>
+<tr data-stars="1"><td class="yr">1869</td><td class="ev">大陸横断鉄道完成</td><td class="mm">東西海岸を結ぶ→統一市場形成</td><td class="st s1">★</td></tr>
+<tr data-stars="1"><td class="yr">1885</td><td class="ev">インド国民会議派の結成</td><td class="mm">当初穏健→ティラク急進派→ガンディー非暴力</td><td class="st s1">★</td></tr>
+<tr data-stars="1"><td class="yr">1890</td><td class="ev">フロンティアの消滅</td><td class="mm">→対外膨張へ</td><td class="st s1">★</td></tr>
+<tr data-stars="3"><td class="yr">1898</td><td class="ev">米西戦争</td><td class="mm">フィリピン・グアム獲得→米帝国主義の開始</td><td class="st s3">★★★</td></tr>
+<tr data-stars="1"><td class="yr">1898</td><td class="ev">ファショダ事件</td><td class="mm">英仏衝突→仏が譲歩→英仏協商(1904)の伏線</td><td class="st s1">★</td></tr>
+<tr data-stars="1"><td class="yr">1910</td><td class="ev">メキシコ革命</td><td class="mm">ディアス独裁→サパタ→カルデナスの石油国有化(1938)</td><td class="st s1">★</td></tr>
+<tr data-stars="1"><td class="yr">1914</td><td class="ev">パナマ運河開通</td><td class="mm">大西洋と太平洋を結ぶ</td><td class="st s1">★</td></tr>
+<tr data-stars="3"><td class="yr">1929</td><td class="ev">世界恐慌</td><td class="mm">ウォール街暴落→ニューディール(1933)</td><td class="st s3">★★★</td></tr>
+<tr data-stars="2"><td class="yr">1933</td><td class="ev">ニューディール</td><td class="mm">ローズヴェルト。TVA・NIRA・ワグナー法</td><td class="st s2">★★</td></tr>
+<tr data-stars="1"><td class="yr">1935</td><td class="ev">フィリピン独立法</td><td class="mm">10年後の独立を約束→1946年独立</td><td class="st s1">★</td></tr>
+<tr data-stars="3"><td class="yr">1941.12</td><td class="ev">太平洋戦争勃発</td><td class="mm">真珠湾攻撃→米の参戦</td><td class="st s3">★★★</td></tr>
+<tr data-stars="1"><td class="yr">1942</td><td class="ev">ミッドウェー海戦</td><td class="mm">日本海軍の大敗→太平洋の転換点</td><td class="st s1">★</td></tr>
+<tr data-stars="3"><td class="yr">1945.8</td><td class="ev">原爆投下→日本降伏</td><td class="mm">広島・長崎。核時代の開始</td><td class="st s3">★★★</td></tr>
+<tr data-stars="2"><td class="yr">1948</td><td class="ev">大韓民国・朝鮮民主主義人民共和国成立</td><td class="mm">38度線で分断→朝鮮戦争(1950)</td><td class="st s2">★★</td></tr>
+<tr data-stars="3"><td class="yr">1950-53</td><td class="ev">朝鮮戦争</td><td class="mm">北の南侵→国連軍→中国参戦→38度線で休戦</td><td class="st s3">★★★</td></tr>
+<tr data-stars="2"><td class="yr">1954</td><td class="ev">ディエンビエンフーの戦い</td><td class="mm">仏がベトナムに敗北→ジュネーヴ協定→南北分断</td><td class="st s2">★★</td></tr>
+<tr data-stars="2"><td class="yr">1955</td><td class="ev">バンドン会議（AA会議）</td><td class="mm">平和十原則。非同盟運動の起点</td><td class="st s2">★★</td></tr>
+<tr data-stars="1"><td class="yr">1959</td><td class="ev">キューバ革命</td><td class="mm">カストロ→親ソ政権→キューバ危機の背景</td><td class="st s1">★</td></tr>
+<tr data-stars="2"><td class="yr">1960</td><td class="ev">「アフリカの年」</td><td class="mm">17カ国独立→コンゴ動乱</td><td class="st s2">★★</td></tr>
+<tr data-stars="3"><td class="yr">1963</td><td class="ev">ワシントン大行進</td><td class="mm">キング牧師「I Have a Dream」</td><td class="st s3">★★★</td></tr>
+<tr data-stars="3"><td class="yr">1964</td><td class="ev">公民権法（米）</td><td class="mm">人種差別禁止</td><td class="st s3">★★★</td></tr>
+<tr data-stars="3"><td class="yr">1965-75</td><td class="ev">ベトナム戦争</td><td class="mm">トンキン湾事件→北爆→テト攻勢→サイゴン陥落(1975)</td><td class="st s3">★★★</td></tr>
+<tr data-stars="1"><td class="yr">1967</td><td class="ev">ASEAN結成</td><td class="mm">東南アジア5カ国→地域統合</td><td class="st s1">★</td></tr>
+<tr data-stars="1"><td class="yr">1975</td><td class="ev">ポル＝ポト政権</td><td class="mm">カンボジア大量虐殺→1979年崩壊</td><td class="st s1">★</td></tr>
+<tr data-stars="2"><td class="yr">1975</td><td class="ev">サイゴン陥落</td><td class="mm">ベトナム統一</td><td class="st s2">★★</td></tr>
+<tr data-stars="1"><td class="yr">1986</td><td class="ev">フィリピン「ピープル・パワー革命」</td><td class="mm">マルコス独裁崩壊→アキノ大統領</td><td class="st s1">★</td></tr>
+<tr data-stars="3"><td class="yr">1990-91</td><td class="ev">アパルトヘイト撤廃</td><td class="mm">マンデラ釈放(1990)→新憲法(1996)</td><td class="st s3">★★★</td></tr>
+<tr data-stars="1"><td class="yr">1994</td><td class="ev">NAFTA発効</td><td class="mm">米加墨の自由貿易協定</td><td class="st s1">★</td></tr>
+<tr data-stars="1"><td class="yr">1994</td><td class="ev">ルワンダ虐殺</td><td class="mm">フツ族→ツチ族。約80万人犠牲</td><td class="st s1">★</td></tr>
+<tr data-stars="3"><td class="yr">2001.9.11</td><td class="ev">同時多発テロ</td><td class="mm">アルカイダ。「テロとの戦い」</td><td class="st s3">★★★</td></tr>
+<tr data-stars="3"><td class="yr">2008</td><td class="ev">リーマンショック</td><td class="mm">世界金融危機→新自由主義への批判</td><td class="st s3">★★★</td></tr>
+</tbody></table></div>
+<script>var currentTab=0;var showStars={1:true,2:true,3:true};function switchTab(n){document.getElementById("content"+currentTab).className="tbl-wrap hidden";document.getElementById("tab"+currentTab).className="tab";document.getElementById("content"+n).className="tbl-wrap";document.getElementById("tab"+n).className="tab on";currentTab=n;filterRows()}function toggleFilter(n){showStars[n]=!showStars[n];document.getElementById("f"+n).className=showStars[n]?"fbtn on":"fbtn";filterRows()}function filterRows(){var q=document.getElementById("search").value.toLowerCase();var w=document.getElementById("content"+currentTab);var r=w.querySelectorAll("tbody tr");var s=0;for(var i=0;i<r.length;i++){var t=r[i].textContent.toLowerCase();var st=parseInt(r[i].getAttribute("data-stars"));var mQ=!q||t.indexOf(q)>=0;var mS=showStars[st];if(mQ&&mS){r[i].style.display="";s++}else{r[i].style.display="none"}}document.getElementById("cnt").textContent=s+" 件"}filterRows();</script>
+</body></html>

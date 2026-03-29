@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>世界史 写真・図版資料集</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+.hdr{padding:16px 20px;border-bottom:1px solid rgba(201,169,110,.08);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.hdr h1{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2)}
+.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
+.hdr .count{font-size:10px;color:var(--text3);margin-left:auto}
+.tabs{display:flex;gap:5px;padding:10px 16px;flex-wrap:wrap;justify-content:center;border-bottom:1px solid rgba(255,255,255,.02)}
+.tab{font-family:'Noto Sans JP',sans-serif;font-size:10px;padding:4px 12px;border-radius:4px;border:1px solid rgba(201,169,110,.12);background:rgba(201,169,110,.03);color:var(--text3);cursor:pointer;transition:all .15s}
+.tab:hover{background:rgba(201,169,110,.06)}
+.tab.active{background:rgba(201,169,110,.12);color:var(--gold2);border-color:rgba(201,169,110,.25)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:14px;padding:16px 20px;max-width:1200px;margin:0 auto}
+.card{display:flex;gap:12px;background:rgba(255,255,255,.015);border:1px solid rgba(201,169,110,.06);border-radius:8px;padding:10px;cursor:pointer;transition:border-color .2s,background .2s,transform .15s;align-items:flex-start}
+.card:hover{border-color:rgba(201,169,110,.2);background:rgba(255,255,255,.03);transform:translateY(-1px)}
+.card:active{transform:translateY(0)}
+.card.hidden{display:none}
+.card-img{flex-shrink:0;width:150px;height:160px;border-radius:5px;overflow:hidden;background:rgba(255,255,255,.03)}
+.card-img img{width:100%;height:100%;object-fit:cover;display:block;border-radius:5px}
+.img-err{display:flex;align-items:center;justify-content:center;height:100%;font-size:8px;color:var(--text3);text-align:center;padding:8px}
+.img-err a{color:var(--gold);font-size:7px}
+.card-info{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px}
+.card-name{font-family:'Noto Serif JP',serif;font-size:12px;font-weight:700;color:var(--gold2)}
+.card-era{font-size:9px;color:var(--text2)}
+.card-creator{font-size:9px;color:var(--text3)}
+.card-point{font-size:9px;color:var(--text);line-height:1.5;margin-top:3px}
+/* Modal */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:8000;overflow-y:auto;-webkit-overflow-scrolling:touch}
+.modal-overlay.open{display:flex;justify-content:center;align-items:flex-start;padding:24px 16px}
+.modal{background:rgba(12,15,22,.98);border:1px solid rgba(201,169,110,.15);border-radius:12px;max-width:600px;width:100%;box-shadow:0 16px 60px rgba(0,0,0,.7);margin:auto}
+.modal-close{position:absolute;top:12px;right:16px;font-size:20px;color:var(--text3);cursor:pointer;z-index:1;width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:rgba(0,0,0,.5)}.modal-close:hover{color:var(--gold2)}
+.modal-img{width:100%;border-radius:12px 12px 0 0;overflow:hidden;background:rgba(255,255,255,.03);position:relative}
+.modal-img img{width:100%;height:auto;display:block;max-height:50vh;object-fit:contain;background:rgba(20,20,25,1)}
+.modal-body{padding:16px 20px 20px}
+.modal-name{font-family:'Noto Serif JP',serif;font-size:16px;font-weight:700;color:var(--gold2);margin-bottom:4px}
+.modal-era{font-size:11px;color:var(--text2);margin-bottom:2px}
+.modal-creator{font-size:11px;color:var(--text3);margin-bottom:10px}
+.modal-desc{font-size:10px;color:var(--text);line-height:1.8;margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid rgba(201,169,110,.06)}
+.modal-tips-title{font-family:'Noto Serif JP',serif;font-size:11px;color:var(--gold);margin-bottom:6px}
+.modal-tips{list-style:none;padding:0}
+.modal-tips li{font-size:9.5px;color:var(--text);line-height:1.7;padding:4px 0 4px 14px;position:relative}
+.modal-tips li::before{content:"▸";position:absolute;left:0;color:var(--gold);font-size:8px}
+.modal-credit{margin-top:14px;padding-top:10px;border-top:1px solid rgba(255,255,255,.03)}
+.modal-credit a{font-size:8px;color:var(--text3);text-decoration:none}.modal-credit a:hover{color:var(--gold)}
+.note{text-align:center;padding:16px 20px 32px;max-width:700px;margin:0 auto}.note p{font-size:8px;color:var(--text3);line-height:1.6}
+  .card-img{width:110px;height:130px}
+  .card-name{font-size:11px}
+  .modal-overlay.open{padding:12px 8px}
+  .modal-body{padding:14px 16px 16px}
+}
+.hdr h1{font-size:12px}
+.gallery{grid-template-columns:repeat(2,1fr)!important;gap:6px!important}
+.card{padding:6px}
+.card img{height:80px}
+.card .title{font-size:8px}
+.card .desc{font-size:7px}
+.note p{font-size:8px}
+}
+
+@media(max-width:600px){
+.hdr{padding:10px 12px}.hdr h1{font-size:12px}
+.gallery{grid-template-columns:repeat(2,1fr)!important;gap:6px!important}
+.card{padding:6px}
+.card img{height:80px}
+.card .title{font-size:8px}
+.card .desc{font-size:7px}
+.note p{font-size:8px}
+}
+</style></head><body>
+<div class="hdr">
+<h1>世界史 写真・図版資料集</h1>
+<a href="index.html">← Ad Indicem</a>
+<div class="count" id="count">全50件</div>
+</div>
+<div class="tabs" id="tabs"><button class="tab active" data-cat="すべて">すべて</button>
+<button class="tab" data-cat="建築">建築</button>
+<button class="tab" data-cat="絵画">絵画</button>
+<button class="tab" data-cat="彫刻">彫刻</button>
+<button class="tab" data-cat="遺跡">遺跡</button>
+<button class="tab" data-cat="碑文">碑文</button>
+<button class="tab" data-cat="工芸">工芸</button>
+<button class="tab" data-cat="歴史写真">歴史写真</button></div>
+<div class="grid" id="grid"><div class="card" data-cat="建築" data-id="a01" onclick="openDetail('a01')">
+<div class="card-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Kheops-Pyramid.jpg/400px-Kheops-Pyramid.jpg" alt="ギザの大ピラミッド" loading="lazy" style="object-position:center 60%" onerror="this.parentElement.innerHTML='<div class=\'img-err\'>画像読込失敗<br><a href=\'https://commons.wikimedia.org/wiki/File:Kheops-Pyramid.jpg\' target=\'_blank\'>Commonsで見る</a></div>'"></div>
+<div class="card-info">
+<div class="card-name">ギザの大ピラミッド</div>
+<div class="card-era">BC26C頃 / エジプト</div>
+<div class="card-creator">クフ王</div>
+<div class="card-point">📌 古王国時代。世界七不思議の唯一の現存物</div>
+</div></div>
+<div class="card" data-cat="建築" data-id="a02" onclick="openDetail('a02')">
+<div class="card-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Parthenon_from_west.jpg/400px-Parthenon_from_west.jpg" alt="パルテノン神殿" loading="lazy" style="object-position:center 40%" onerror="this.parentElement.innerHTML='<div class=\'img-err\'>画像読込失敗<br><a href=\'https://commons.wikimedia.org/wiki/File:Parthenon_from_west.jpg\' target=\'_blank\'>Commonsで見る</a></div>'"></div>
+<div class="card-info">
+<div class="card-name">パルテノン神殿</div>
+<div class="card-era">BC438年 / アテネ</div>
+<div class="card-creator">フェイディアス(総監督)</div>
+<div class="card-point">📌 ドーリア式。ペリクレス時代の民主政全盛期を象徴</div>
+</div></div>
+<div class="card" data-cat="建築" data-id="a03" onclick="openDetail('a03')">
+<div class="card-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Colosseum_in_Rome,_Italy_-_April_2007.jpg/400px-Colosseum_in_Rome,_Italy_-_April_2007.jpg" alt="コロッセウム" loading="lazy" style="object-position:center 50%" onerror="this.parentElement.innerHTML='<div class=\'img-err\'>画像読込失敗<br><a href=\'https://commons.wikimedia.org/wiki/File:Colosseum_in_Rome,_Italy_-_April_2007.jpg\' target=\'_blank\'>Commonsで見る</a></div>'"></div>
+<div class="card-info">
+<div class="card-name">コロッセウム</div>
+<div class="card-era">AD80年 / ローマ</div>
+<div class="card-creator">フラウィウス朝</div>
+<div class="card-point">📌 「パンとサーカス」。5万人収容の円形闘技場</div>
+</div></div>
+<div class="card" data-cat="建築" data-id="a04" onclick="openDetail('a04')">
+<div class="card-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Rome_Pantheon_front.jpg/400px-Rome_Pantheon_front.jpg" alt="パンテオン" loading="lazy" style="object-position:center 30%" onerror="this.parentElement.innerHTML='<div class=\'img-err\'>画像読込失敗<br><a href=\'https://commons.wikimedia.org/wiki/File:Rome_Pantheon_front.jpg\' target=\'_blank\'>Commonsで見る</a></div>'"></div>
+<div class="card-info">
+<div class="card-name">パンテオン</div>
+<div class="card-era">AD128年 / ローマ</div>
+<div class="card-creator">ハドリアヌス帝</div>
+<div class="card-point">📌 ドーム建築の傑作。コンクリート技術</div>
+</div></div>
+<div class="card" data-cat="遺跡" data-id="a05" onclick="openDetail('a05')">
+<div class="card-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Mohenjo-daro.jpg/400px-Mohenjo-daro.jpg" alt="モヘンジョ＝ダロ" loading="lazy" style="object-position:center 50%" onerror="this.parentElement.innerHTML='<div class=\'img-err\'>画像読込失敗<br><a href=\'https://commons.wikimedia.org/wiki/File:Mohenjo-daro.jpg\' target=\'_blank\'>Commonsで見る</a></div>'"></div>
+<div class="card-info">
+<div class="card-name">モヘンジョ＝ダロ</div>
+<div class="card-era">BC2600頃 / インダス</div>
+
+<div class="card-point">📌 インダス文明。都市計画・排水設備</div>
+</div></div>
+<div class="card" data-cat="遺跡" data-id="a06" onclick="openDetail('a06')">
+<div class="card-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Terracotta_Army,_View_of_Pit_1.jpg/400px-Terracotta_Army,_View_of_Pit_1.jpg" alt="兵馬俑" loading="lazy" style="object-position:center 35%" onerror="this.parentElement.innerHTML='<div class=\'img-err\'>画像読込失敗<br><a href=\'https://commons.wikimedia.org/wiki/File:Terracotta_Army,_View_of_Pit_1.jpg\' target=\'_blank\'>Commonsで見る</a></div>'"></div>
+<div class="card-info">
+<div class="card-name">兵馬俑</div>
+<div class="card-era">BC210頃 / 秦</div>
+<div class="card-creator">始皇帝</div>
+<div class="card-point">📌 始皇帝陵。8000体の兵士俑</div>
+</div></div>
+<div class="card" data-cat="彫刻" data-id="a07" onclick="openDetail('a07')">
+<div class="card-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Venus_de_Milo_Louvre_Ma399.jpg/400px-Venus_de_Milo_Louvre_Ma399.jpg" alt="ミロのヴィーナス" loading="lazy" style="object-position:center 12%" onerror="this.parentElement.innerHTML='<div class=\'img-err\'>画像読込失敗<br><a href=\'https://commons.wikimedia.org/wiki/File:Venus_de_Milo_Louvre_Ma399.jpg\' target=\'_blank\'>Commonsで見る</a></div>'"></div>
+<div class="card-info">
+<div class="card-name">ミロのヴィーナス</div>
+<div class="card-era">BC130頃 / ギリシア</div>
+
+<div class="card-point">📌 ヘレニズム美術。ルーヴル美術館所蔵</div>
+</div></div>
+<div class="card" data-cat="彫刻" data-id="a08" onclick="openDetail('a08')">
+<div class="card-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Laocoon_Pio-Clementino_Inv1059-1064-1067.jpg/400px-Laocoon_Pio-Clementino_Inv1059-1064-1067.jpg" alt="ラオコーン像" loading="lazy" style="object-position:center 18%" onerror="this.parentElement.innerHTML='<div class=\'img-err\'>画像読込失敗<br><a href=\'https://commons.wikimedia.org/wiki/File:Laocoon_Pio-Clementino_Inv1059-1064-1067.jpg\' target=\'_blank\'>Commonsで見る</a></div>'"></div>
+<div class="card-info">
+<div class="card-name">ラオコーン像</div>
+<div class="card-era">BC1C頃 / ギリシア</div>
+
+<div class="card-point">📌 ヘレニズム美術の代表作。トロイ戦争</div>
+</div></div>
+<div class="card" data-cat="碑文" data-id="a09" onclick="openDetail('a09')">
+<div class="card-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Rosetta_Stone.JPG/400px-Rosetta_Stone.JPG" alt="ロゼッタストーン" loading="lazy" style="object-position:center 30%" onerror="this.parentElement.innerHTML='<div class=\'img-err\'>画像読込失敗<br><a href=\'https://commons.wikimedia.org/wiki/File:Rosetta_Stone.JPG\' target=\'_blank\'>Commonsで見る</a></div>'"></div>
+<div class="card-info">
+<div class="card-name">ロゼッタストーン</div>
+<div class="card-era">BC196年 / エジプト</div>
+
+<div class="card-point">📌 シャンポリオンが解読。ヒエログリフ</div>
+</div></div>
+<div class="card" data-cat="碑文" data-id="a10" onclick="openDetail('a10')">
+<div class="card-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Code-de-Hammurabi-1.jpg/400px-Code-de-Hammurabi-1.jpg" alt="ハンムラビ法典碑" loading="lazy" style="object-position:center 15%" onerror="this.parentElement.innerHTML='<div class=\'img-err\'>画像読込失敗<br><a href=\'https://commons.wikimedia.org/wiki/File:Code-de-Hammurabi-1.jpg\' target=\'_blank\'>Commonsで見る</a></div>'"></div>
+<div class="card-info">
+<div class="card-name">ハンムラビ法典碑</div>
+<div class="card-era">BC18C / バビロニア</div>
+<div class="card-creator">ハンムラビ王</div>
+<div class="card-point">📌 「目には目を」。くさび形文字</div>
+</div></div>
+<div class="card" data-cat="建築" data-id="m01" onclick="openDetail('m01')">
+<div class="card-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Hagia_Sophia_Mars_2013.jpg/400px-Hagia_Sophia_Mars_2013.jpg" alt="ハギア＝ソフィア" loading="lazy" style="object-position:center 50%" onerror="this.parentElement.innerHTML='<div class=\'img-err\'>画像読込失敗<br><a href=\'https://commons.wikimedia.org/wiki/File:Hagia_Sophia_Mars_2013.jpg\' target=\'_blank\'>Commonsで見る</a></div>'"></div>
+<div class="card-info">
+<div class="card-name">ハギア＝ソフィア</div>
+<div class="card-era">537年 / コンスタンティノープル</div>
+<div class="card-creator">ユスティニアヌス帝</div>
+<div class="card-point">📌 ビザンツ建築の最高傑作。ペンデンティヴ・ドーム</div>
+</div></div>
+<div class="card" data-cat="建築" data-id="m02" onclick="openDetail('m02')">
+<div class="card-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Chartres_cathedral.jpg/400px-Chartres_cathedral.jpg" alt="シャルトル大聖堂" loading="lazy" style="object-position:center 40%" onerror="this.parentElement.innerHTML='<div class=\'img-err\'>画像読込失敗<br><a href=\'https://commons.wikimedia.org/wiki/File:Chartres_cathedral.jpg\' target=\'_blank\'>Commonsで見る</a></div>'"></div>
+<div class="card-info">
+<div class="card-name">シャルトル大聖堂</div>
+<div class="card-era">13C / フランス</div>
+
+<div class="card-point">📌 ゴシック建築の代表。ステンドグラス・尖頭アーチ・フライング＝バットレス</div>
+</div></div>
+<div class="card" data-cat="建築" data-id="m03" onclick="openDetail('m03')">
+<div class="card-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Vista_de_la_Alhambra.jpg/400px-Vista_de_la_Alhambra.jpg" alt="アルハンブラ宮殿" loading="lazy" style="object-position:center 50%" onerror="this.parentElement.innerHTML='<div class=\'img-err\'>画像読込失敗<br><a href=\'https://commons.wikimedia.org/wiki/File:Vista_de_la_Alhambra.jpg\' target=\'_blank\'>Commonsで見る</a></div>'"></div>
+<div class="card-info">
+<div class="card-name">アルハンブラ宮殿</div>
+<div class="card-era">14C / グラナダ</div>
+<div class="card-creator">ナスル朝</div>
+<div class="card-point">📌 イスラーム建築。アラベスク・鍾乳石飾り。レコンキスタ最後の拠点</div>
+</div></div>
+<div class="card" data-cat="建築" data-id="m04" onclick="openDetail('m04')">
+<div class="card-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Angkor_Wat.jpg/400px-Angkor_Wat.jpg" alt="アンコール＝ワット" loading="lazy" style="object-position:center 55%" onerror="this.parentElement.innerHTML='<div class=\'img-err\'>画像読込失敗<br><a href=\'https://commons.wikimedia.org/wiki/File:Angkor_Wat.jpg\' target=\'_blank\'>Commonsで見る</a></div>'"></div>
+<div class="card-info">
+<div class="card-name">アンコール＝ワット</div>
+<div class="card-era">12C / カンボジア</div>
+<div class="card-creator">スーリヤヴァルマン2世</div>
+<div class="card-point">📌 ヒンドゥー→仏教寺院。クメール帝国</div>
+</div></div>
+<div class="card" data-cat="建築" data-id="m05" onclick="openDetail('m05')">
+<div class="card-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Notre-Dame_de_Paris_2013-07-24.jpg/400px-Notre-Dame_de_Paris_2013-07-24.jpg" alt="ノートルダム大聖堂" loading="lazy" style="object-position:center 40%" onerror="this.parentElement.innerHTML='<div class=\'img-err\'>画像読込失敗<br><a href=\'https://commons.wikimedia.org/wiki/File:Notre-Dame_de_Paris_2013-07-24.jpg\' target=\'_blank\'>Commonsで見る</a></div>'"></div>
+<div class="card-info">
+<div class="card-name">ノートルダム大聖堂</div>
+<div class="card-era">1163-1345 / パリ</div>
+
+<div class="card-point">📌 初期ゴシック。バラ窓</div>
+</div></div>
+<div class="card" data-cat="建築" data-id="m06" onclick="openDetail('m06')">
+<div class="card-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/The_Leaning_Tower_of_Pisa_SB.jpeg/400px-The_Leaning_Tower_of_Pisa_SB.jpeg" alt="ピサ大聖堂(斜塔)" loading="lazy" style="object-position:center 40%" onerror="this.parentElement.innerHTML='<div class=\'img-err\'>画像読込失敗<br><a href=\'https://commons.wikimedia.org/wiki/File:The_Leaning_Tower_of_Pisa_SB.jpeg\' target=\'_blank\'>Commonsで見る</a></div>'"></div>
+<div class="card-info">
+<div class="card-name">ピサ大聖堂(斜塔)</div>
+<div class="card-era">12C / イタリア</div>
+
+<div class="card-point">📌 ロマネスク建築。ガリレオの落体実験の伝説</div>
+</div></div>
+<div class="card" data-cat="工芸" data-id="m07" onclick="openDetail('m07')">
+<div class="card-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Labours_of_the_Months_Les_Tres_Riches_Heures_du_duc_de_Berry_Janvier.jpg/400px-Labours_of_the_Months_Les_Tres_Riches_Heures_du_duc_de_Berry_Janvier.jpg" alt="『ベリー公のいとも豪華なる時祷書』" loading="lazy" style="object-position:center 20%" onerror="this.parentElement.innerHTML='<div class=\'img-err\'>画像読込失敗<br><a href=\'https://commons.wikimedia.org/wiki/File:Labours_of_the_Months_Les_Tres_Riches_Heures_du_duc_de_Berry_Janvier.jpg\' target=\'_blank\'>Commonsで見る</a></div>'"></div>
+<div class="card-info">
+<div class="card-name">『ベリー公のいとも豪華なる時祷書』</div>
+<div class="card-era">15C / フランス</div>
+<div class="card-creator">ランブール兄弟</div>
+<div class="card-point">📌 国際ゴシック様式。中世末期の細密画</div>
+</div></div>
+<div class="card" data-cat="建築" data-id="m08" onclick="openDetail('m08')">
+<div class="card-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Mont_Saint-Michel_France.jpg/400px-Mont_Saint-Michel_France.jpg" alt="モン＝サン＝ミシェル" loading="lazy" style="object-position:center 45%" onerror="this.parentElement.innerHTML='<div class=\'img-err\'>画像読込失敗<br><a href=\'https://commons.wikimedia.org/wiki/File:Mont_Saint-Michel_France.jpg\' target=\'_blank\'>Commonsで見る</a></div>'"></div>
+<div class="card-info">
+<div class="card-name">モン＝サン＝ミシェル</div>
+<div class="card-era">11-16C / フランス</div>
+
+<div class="card-point">📌 修道院建築。百年戦争で要塞化</div>
+</div></div>
+<div class="card" data-cat="絵画" data-id="r01" onclick="openDetail('r01')">
+<div class="card-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Leonardo_da_Vinci_-_The_Last_Supper_high_res.jpg/400px-Leonardo_da_Vinci_-_The_Last_Supper_high_res.jpg" alt="『最後の晩餐』" loading="lazy" style="object-position:center 40%" onerror="this.parentElement.innerHTML='<div class=\'img-err\'>画像読込失敗<br><a href=\'https://commons.wikimedia.org/wiki/File:Leonardo_da_Vinci_-_The_Last_Supper_high_res.jpg\' target=\'_blank\'>Commonsで見る</a></div>'"></div>
+<div class="card-info">
+<div class="card-name">『最後の晩餐』</div>
+<div class="card-era">1498年 / ミラノ</div>
+<div class="card-creator">レオナルド＝ダ＝ヴィンチ</div>
+<div class="card-point">📌 盛期ルネサンスの三大巨匠。遠近法</div>
+</div></div>
+<div class="card" data-cat="絵画" data-id="r02" onclick="openDetail('r02')">
+<div class="card-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa,_by_Leonardo_da_Vinci,_from_C2RMF_retouched.jpg/400px-Mona_Lisa,_by_Leonardo_da_Vinci,_from_C2RMF_retouched.jpg" alt="『モナ＝リザ』" loading="lazy" style="object-position:center 25%" onerror="this.parentElement.innerHTML='<div class=\'img-err\'>画像読込失敗<br><a href=\'https://commons.wikimedia.org/wiki/File:Mona_Lisa,_by_Leonardo_da_Vinci,_from_C2RMF_retouched.jpg\' target=\'_blank\'>Commonsで見る</a></div>'"></div>
+<div class="card-info">
+<div class="card-name">『モナ＝リザ』</div>
+<div class="card-era">1503-06年</div>
+<div class="card-creator">レオナルド＝ダ＝ヴィンチ</div>
+<div class="card-point">📌 スフマート技法。ルーヴル美術館</div>
+</div></div>
+<div class="card" data-cat="彫刻" data-id="r03" onclick="openDetail('r03')">
+<div class="card-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/David_von_Michelangelo.jpg/400px-David_von_Michelangelo.jpg" alt="『ダヴィデ像』" loading="lazy" style="object-position:center 12%" onerror="this.parentElement.innerHTML='<div class=\'img-err\'>画像読込失敗<br><a href=\'https://commons.wikimedia.org/wiki/File:David_von_Michelangelo.jpg\' target=\'_blank\'>Commonsで見る</a></div>'"></div>
+<div class="card-info">
+<div class="card-name">『ダヴィデ像』</div>
+<div class="card-era">1504年 / フィレンツェ</div>
+<div class="card-creator">ミケランジェロ</div>
+<div class="card-point">📌 盛期ルネサンスの理想的人体表現</div>
+</div></div>
+<div class="card" data-cat="絵画" data-id="r04" onclick="openDetail('r04')">
+<div class="card-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Michelangelo_-_Creation_of_Adam_(cropped).jpg/400px-Michelangelo_-_Creation_of_Adam_(cropped).jpg" alt="『システィーナ礼拝堂天井画』" loading="lazy" style="object-position:center 50%" onerror="this.parentElement.innerHTML='<div class=\'img-err\'>画像読込失敗<br><a href=\'https://commons.wikimedia.org/wiki/File:Michelangelo_-_Creation_of_Adam_(cropped).jpg\' target=\'_blank\'>Commonsで見る</a></div>'"></div>
+<div class="card-info">
+<div class="card-name">『システィーナ礼拝堂天井画』</div>
+<div class="card-era">1512年 / ヴァチカン</div>
+<div class="card-creator">ミケランジェロ</div>
+<div class="card-point">📌 「アダムの創造」。教皇ユリウス2世の依頼</div>
+</div></div>
+<div class="card" data-cat="絵画" data-id="r05" onclick="openDetail('r05')">
+<div class="card-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/The_School_of_Athens_by_Raffaello_Sanzio_da_Urbino.jpg/400px-The_School_of_Athens_by_Raffaello_Sanzio_da_Urbino.jpg" alt="『アテナイの学堂』" loading="lazy" style="object-position:center 40%" onerror="this.parentElement.innerHTML='<div class=\'img-err\'>画像読込失敗<br><a href=\'https://commons.wikimedia.org/wiki/File:The_School_of_Athens_by_Raffaello_Sanzio_da_Urbino.jpg\' target=\'_blank\'>Commonsで見る</a></div>'"></div>
+<div class="card-info">
+<div class="card-name">『アテナイの学堂』</div>
+<div class="card-era">1511年 / ヴァチカン</div>
+<div class="card-creator">ラファエロ</div>
+<div class="card-point">📌 ルネサンスの人文主義。プラトンとアリストテレス</div>
+</div></div>
+<div class="card" data-cat="建築" data-id="r06" onclick="openDetail('r06')">
+<div class="card-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Petersdom_von_Engelsburg_gesehen.jpg/400px-Petersdom_von_Engelsburg_gesehen.jpg" alt="サン＝ピエトロ大聖堂" loading="lazy" style="object-position:center 45%" onerror="this.parentElement.innerHTML='<div class=\'img-err\'>画像読込失敗<br><a href=\'https://commons.wikimedia.org/wiki/File:Petersdom_von_Engelsburg_gesehen.jpg\' target=\'_blank\'>Commonsで見る</a></div>'"></div>
+<div class="card-info">
+<div class="card-name">サン＝ピエトロ大聖堂</div>
+<div class="card-era">1626年 / ヴァチカン</div>
+<div class="card-creator">ミケランジェロ他</div>
+<div class="card-point">📌 ルネサンス＋バロック。カトリックの総本山</div>
+</div></div>
+<div class="card" data-cat="絵画" data-id="r07" onclick="openDetail('r07')">
+<div class="card-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Girl_with_a_Pearl_Earring.jpg/400px-Girl_with_a_Pearl_Earring.jpg" alt="『真珠の耳飾りの少女』" loading="lazy" style="object-position:center 25%" onerror="this.parentElement.innerHTML='<div class=\'img-err\'>画像読込失敗<br><a href=\'https://commons.wikimedia.org/wiki/File:Girl_with_a_Pearl_Earring.jpg\' target=\'_blank\'>Commonsで見る</a></div>'"></div>
+<div class="card-info">
+<div class="card-name">『真珠の耳飾りの少女』</div>
+<div class="card-era">1665年</div>
+<div class="card-creator">フェルメール</div>
+<div class="card-point">📌 オランダ黄金時代の市民画</div>
+</div></div>
+<div class="card" data-cat="建築" data-id="r08" onclick="openDetail('r08')">
+<div class="card-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Chateau_Versailles_Galerie_des_Glaces.jpg/400px-Chateau_Versailles_Galerie_des_Glaces.jpg" alt="ヴェルサイユ宮殿" loading="lazy" style="object-position:center 50%" onerror="this.parentElement.innerHTML='<div class=\'img-err\'>画像読込失敗<br><a href=\'https://commons.wikimedia.org/wiki/File:Chateau_Versailles_Galerie_des_Glaces.jpg\' target=\'_blank\'>Commonsで見る</a></div>'"></div>
+<div class="card-info">
+<div class="card-name">ヴェルサイユ宮殿</div>
+<div class="card-era">17C / フランス</div>
+<div class="card-creator">ルイ14世</div>
+<div class="card-point">📌 絶対王政の象徴。バロック建築</div>
+</div></div>
+<div class="card" data-cat="建築" data-id="r09" onclick="openDetail('r09')">
+<div class="card-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Taj_Mahal_2012.jpg/400px-Taj_Mahal_2012.jpg" alt="タージ＝マハル" loading="lazy" style="object-position:center 55%" onerror="this.parentElement.innerHTML='<div class=\'img-err\'>画像読込失敗<br><a href=\'https://commons.wikimedia.org/wiki/File:Taj_Mahal_2012.jpg\' target=\'_blank\'>Commonsで見る</a></div>'"></div>
+<div class="card-info">
+<div class="card-name">タージ＝マハル</div>
+<div class="card-era">1653年 / インド</div>
+<div class="card-creator">シャー＝ジャハーン</div>
+<div class="card-point">📌 ムガル建築。白大理石。妃の廟</div>
+</div></div>
+<div class="card" data-cat="絵画" data-id="r10" onclick="openDetail('r10')">
+<div class="card-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Sandro_Botticelli_-_La_nascita_di_Venere_-_Google_Art_Project_-_edited.jpg/400px-Sandro_Botticelli_-_La_nascita_di_Venere_-_Google_Art_Project_-_edited.jpg" alt="『ヴィーナスの誕生』" loading="lazy" style="object-position:center 35%" onerror="this.parentElement.innerHTML='<div class=\'img-err\'>画像読込失敗<br><a href=\'https://commons.wikimedia.org/wiki/File:Sandro_Botticelli_-_La_nascita_di_Venere_-_Google_Art_Project_-_edited.jpg\' target=\'_blank\'>Commonsで見る</a></div>'"></div>
+<div class="card-info">
+<div class="card-name">『ヴィーナスの誕生』</div>
+<div class="card-era">1485年</div>
+<div class="card-creator">ボッティチェリ</div>
+<div class="card-point">📌 初期ルネサンス。メディチ家の庇護</div>
+</div></div>
+<div class="card" data-cat="絵画" data-id="n01" onclick="openDetail('n01')">
+<div class="card-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Delacroix_-_La_liberte.jpg/400px-Delacroix_-_La_liberte.jpg" alt="『民衆を導く自由の女神』" loading="lazy" style="object-position:center 30%" onerror="this.parentElement.innerHTML='<div class=\'img-err\'>画像読込失敗<br><a href=\'https://commons.wikimedia.org/wiki/File:Delacroix_-_La_liberte.jpg\' target=\'_blank\'>Commonsで見る</a></div>'"></div>
+<div class="card-info">
+<div class="card-name">『民衆を導く自由の女神』</div>
+<div class="card-era">1830年</div>
+<div class="card-creator">ドラクロワ</div>
+<div class="card-point">📌 七月革命を描く。ロマン主義</div>
+</div></div>
+<div class="card" data-cat="絵画" data-id="n02" onclick="openDetail('n02')">
+<div class="card-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Claude_Monet,_Impression,_soleil_levant.jpg/400px-Claude_Monet,_Impression,_soleil_levant.jpg" alt="『印象・日の出』" loading="lazy" style="object-position:center 50%" onerror="this.parentElement.innerHTML='<div class=\'img-err\'>画像読込失敗<br><a href=\'https://commons.wikimedia.org/wiki/File:Claude_Monet,_Impression,_soleil_levant.jpg\' target=\'_blank\'>Commonsで見る</a></div>'"></div>
+<div class="card-info">
+<div class="card-name">『印象・日の出』</div>
+<div class="card-era">1872年</div>
+<div class="card-creator">モネ</div>
+<div class="card-point">📌 印象派の名前の由来。光の描写</div>
+</div></div>
+<div class="card" data-cat="絵画" data-id="n03" onclick="openDetail('n03')">
+<div class="card-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Mural_del_Gernika.jpg/400px-Mural_del_Gernika.jpg" alt="『ゲルニカ』" loading="lazy" style="object-position:center 50%" onerror="this.parentElement.innerHTML='<div class=\'img-err\'>画像読込失敗<br><a href=\'https://commons.wikimedia.org/wiki/File:Mural_del_Gernika.jpg\' target=\'_blank\'>Commonsで見る</a></div>'"></div>
+<div class="card-info">
+<div class="card-name">『ゲルニカ』</div>
+<div class="card-era">1937年</div>
+<div class="card-creator">ピカソ</div>
+<div class="card-point">📌 スペイン内戦。ドイツ軍の無差別爆撃を告発。キュビスム</div>
+</div></div>
+<div class="card" data-cat="絵画" data-id="n04" onclick="openDetail('n04')">
+<div class="card-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/400px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg" alt="『星月夜』" loading="lazy" style="object-position:center 40%" onerror="this.parentElement.innerHTML='<div class=\'img-err\'>画像読込失敗<br><a href=\'https://commons.wikimedia.org/wiki/File:Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg\' target=\'_blank\'>Commonsで見る</a></div>'"></div>
+<div class="card-info">
+<div class="card-name">『星月夜』</div>
+<div class="card-era">1889年</div>
+<div class="card-creator">ゴッホ</div>
+<div class="card-point">📌 後期印象派。サン＝レミの精神病院で制作</div>
+</div></div>
+<div class="card" data-cat="彫刻" data-id="n05" onclick="openDetail('n05')">
+<div class="card-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Statue_of_Liberty_7.jpg/400px-Statue_of_Liberty_7.jpg" alt="自由の女神像" loading="lazy" style="object-position:center 20%" onerror="this.parentElement.innerHTML='<div class=\'img-err\'>画像読込失敗<br><a href=\'https://commons.wikimedia.org/wiki/File:Statue_of_Liberty_7.jpg\' target=\'_blank\'>Commonsで見る</a></div>'"></div>
+<div class="card-info">
+<div class="card-name">自由の女神像</div>
+<div class="card-era">1886年 / ニューヨーク</div>
+<div class="card-creator">バルトルディ</div>
+<div class="card-point">📌 仏から米への贈り物。移民の象徴</div>
+</div></div>
+<div class="card" data-cat="建築" data-id="n06" onclick="openDetail('n06')">
+<div class="card-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Tour_Eiffel_Wikimedia_Commons.jpg/400px-Tour_Eiffel_Wikimedia_Commons.jpg" alt="エッフェル塔" loading="lazy" style="object-position:center 35%" onerror="this.parentElement.innerHTML='<div class=\'img-err\'>画像読込失敗<br><a href=\'https://commons.wikimedia.org/wiki/File:Tour_Eiffel_Wikimedia_Commons.jpg\' target=\'_blank\'>Commonsで見る</a></div>'"></div>
+<div class="card-info">
+<div class="card-name">エッフェル塔</div>
+<div class="card-era">1889年 / パリ</div>
+<div class="card-creator">エッフェル</div>
+<div class="card-point">📌 パリ万博。鉄骨建築。当初は批判</div>
+</div></div>
+<div class="card" data-cat="建築" data-id="i01" onclick="openDetail('i01')">
+<div class="card-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Jerusalem_Dome_of_the_rock_BW_14.JPG/400px-Jerusalem_Dome_of_the_rock_BW_14.JPG" alt="岩のドーム" loading="lazy" style="object-position:center 45%" onerror="this.parentElement.innerHTML='<div class=\'img-err\'>画像読込失敗<br><a href=\'https://commons.wikimedia.org/wiki/File:Jerusalem_Dome_of_the_rock_BW_14.JPG\' target=\'_blank\'>Commonsで見る</a></div>'"></div>
+<div class="card-info">
+<div class="card-name">岩のドーム</div>
+<div class="card-era">691年 / エルサレム</div>
+<div class="card-creator">ウマイヤ朝</div>
+<div class="card-point">📌 イスラーム最古の現存建築。ムハンマド昇天の地</div>
+</div></div>
+<div class="card" data-cat="建築" data-id="i02" onclick="openDetail('i02')">
+<div class="card-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Mosque_of_Cordoba_Spain.jpg/400px-Mosque_of_Cordoba_Spain.jpg" alt="コルドバのメスキータ" loading="lazy" style="object-position:center 50%" onerror="this.parentElement.innerHTML='<div class=\'img-err\'>画像読込失敗<br><a href=\'https://commons.wikimedia.org/wiki/File:Mosque_of_Cordoba_Spain.jpg\' target=\'_blank\'>Commonsで見る</a></div>'"></div>
+<div class="card-info">
+<div class="card-name">コルドバのメスキータ</div>
+<div class="card-era">8-10C / スペイン</div>
+<div class="card-creator">後ウマイヤ朝</div>
+<div class="card-point">📌 馬蹄形アーチ。レコンキスタ後にカトリック教会に転用</div>
+</div></div>
+<div class="card" data-cat="建築" data-id="i03" onclick="openDetail('i03')">
+<div class="card-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Cour_mosquee_Suleymaniye_Istanbul.jpg/400px-Cour_mosquee_Suleymaniye_Istanbul.jpg" alt="スレイマン＝モスク" loading="lazy" style="object-position:center 45%" onerror="this.parentElement.innerHTML='<div class=\'img-err\'>画像読込失敗<br><a href=\'https://commons.wikimedia.org/wiki/File:Cour_mosquee_Suleymaniye_Istanbul.jpg\' target=\'_blank\'>Commonsで見る</a></div>'"></div>
+<div class="card-info">
+<div class="card-name">スレイマン＝モスク</div>
+<div class="card-era">1557年 / イスタンブル</div>
+<div class="card-creator">ミマール＝シナン</div>
+<div class="card-point">📌 オスマン建築の頂点。ハギア＝ソフィアに対抗</div>
+</div></div>
+<div class="card" data-cat="建築" data-id="e01" onclick="openDetail('e01')">
+<div class="card-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/The_Great_Wall_of_China_at_Jinshanling-edit.jpg/400px-The_Great_Wall_of_China_at_Jinshanling-edit.jpg" alt="万里の長城" loading="lazy" style="object-position:center 50%" onerror="this.parentElement.innerHTML='<div class=\'img-err\'>画像読込失敗<br><a href=\'https://commons.wikimedia.org/wiki/File:The_Great_Wall_of_China_at_Jinshanling-edit.jpg\' target=\'_blank\'>Commonsで見る</a></div>'"></div>
+<div class="card-info">
+<div class="card-name">万里の長城</div>
+<div class="card-era">BC3C〜17C / 中国</div>
+<div class="card-creator">始皇帝(始)→明(現存)</div>
+<div class="card-point">📌 北方遊牧民への防衛。明代に大修築</div>
+</div></div>
+<div class="card" data-cat="遺跡" data-id="e02" onclick="openDetail('e02')">
+<div class="card-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Caves_of_the_Thousand_Buddhas.jpg/400px-Caves_of_the_Thousand_Buddhas.jpg" alt="敦煌莫高窟" loading="lazy" style="object-position:center 50%" onerror="this.parentElement.innerHTML='<div class=\'img-err\'>画像読込失敗<br><a href=\'https://commons.wikimedia.org/wiki/File:Caves_of_the_Thousand_Buddhas.jpg\' target=\'_blank\'>Commonsで見る</a></div>'"></div>
+<div class="card-info">
+<div class="card-name">敦煌莫高窟</div>
+<div class="card-era">4-14C / 中国</div>
+
+<div class="card-point">📌 仏教石窟寺院。シルクロードの要衝。壁画</div>
+</div></div>
+<div class="card" data-cat="建築" data-id="e03" onclick="openDetail('e03')">
+<div class="card-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/The_Forbidden_City_-_View_from_Coal_Hill.jpg/400px-The_Forbidden_City_-_View_from_Coal_Hill.jpg" alt="紫禁城(故宮)" loading="lazy" style="object-position:center 40%" onerror="this.parentElement.innerHTML='<div class=\'img-err\'>画像読込失敗<br><a href=\'https://commons.wikimedia.org/wiki/File:The_Forbidden_City_-_View_from_Coal_Hill.jpg\' target=\'_blank\'>Commonsで見る</a></div>'"></div>
+<div class="card-info">
+<div class="card-name">紫禁城(故宮)</div>
+<div class="card-era">15C / 北京</div>
+<div class="card-creator">永楽帝</div>
+<div class="card-point">📌 明清の皇帝の宮殿。世界最大の木造建築群</div>
+</div></div>
+<div class="card" data-cat="歴史写真" data-id="h01" onclick="openDetail('h01')">
+<div class="card-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Yalta_summit_1945_with_Churchill,_Roosevelt,_Stalin.jpg/400px-Yalta_summit_1945_with_Churchill,_Roosevelt,_Stalin.jpg" alt="ヤルタ会談" loading="lazy" style="object-position:center 40%" onerror="this.parentElement.innerHTML='<div class=\'img-err\'>画像読込失敗<br><a href=\'https://commons.wikimedia.org/wiki/File:Yalta_summit_1945_with_Churchill,_Roosevelt,_Stalin.jpg\' target=\'_blank\'>Commonsで見る</a></div>'"></div>
+<div class="card-info">
+<div class="card-name">ヤルタ会談</div>
+<div class="card-era">1945年</div>
+<div class="card-creator">チャーチル・ルーズベルト・スターリン</div>
+<div class="card-point">📌 WW2の戦後処理を協議。冷戦の端緒</div>
+</div></div>
+<div class="card" data-cat="歴史写真" data-id="h02" onclick="openDetail('h02')">
+<div class="card-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/BerlinWall-BrandenburgGate.jpg/400px-BerlinWall-BrandenburgGate.jpg" alt="ベルリンの壁崩壊" loading="lazy" style="object-position:center 45%" onerror="this.parentElement.innerHTML='<div class=\'img-err\'>画像読込失敗<br><a href=\'https://commons.wikimedia.org/wiki/File:BerlinWall-BrandenburgGate.jpg\' target=\'_blank\'>Commonsで見る</a></div>'"></div>
+<div class="card-info">
+<div class="card-name">ベルリンの壁崩壊</div>
+<div class="card-era">1989年</div>
+
+<div class="card-point">📌 冷戦の終結を象徴。東西ドイツ統一(1990)へ</div>
+</div></div>
+<div class="card" data-cat="歴史写真" data-id="h03" onclick="openDetail('h03')">
+<div class="card-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Tiananmen.JPG/400px-Tiananmen.JPG" alt="天安門広場" loading="lazy" style="object-position:center 50%" onerror="this.parentElement.innerHTML='<div class=\'img-err\'>画像読込失敗<br><a href=\'https://commons.wikimedia.org/wiki/File:Tiananmen.JPG\' target=\'_blank\'>Commonsで見る</a></div>'"></div>
+<div class="card-info">
+<div class="card-name">天安門広場</div>
+<div class="card-era">1989年</div>
+
+<div class="card-point">📌 天安門事件(1989)。民主化運動の弾圧。中国現代史の転換点</div>
+</div></div>
+<div class="card" data-cat="歴史写真" data-id="h04" onclick="openDetail('h04')">
+<div class="card-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Salt_March.jpg/400px-Salt_March.jpg" alt="ガンディーの塩の行進" loading="lazy" style="object-position:center 50%" onerror="this.parentElement.innerHTML='<div class=\'img-err\'>画像読込失敗<br><a href=\'https://commons.wikimedia.org/wiki/File:Salt_March.jpg\' target=\'_blank\'>Commonsで見る</a></div>'"></div>
+<div class="card-info">
+<div class="card-name">ガンディーの塩の行進</div>
+<div class="card-era">1930年</div>
+
+<div class="card-point">📌 非暴力不服従運動。英の塩税に抗議</div>
+</div></div>
+<div class="card" data-cat="建築" data-id="x01" onclick="openDetail('x01')">
+<div class="card-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Borobudur-Nothwest-view.jpg/400px-Borobudur-Nothwest-view.jpg" alt="ボロブドゥール" loading="lazy" style="object-position:center 45%" onerror="this.parentElement.innerHTML='<div class=\'img-err\'>画像読込失敗<br><a href=\'https://commons.wikimedia.org/wiki/File:Borobudur-Nothwest-view.jpg\' target=\'_blank\'>Commonsで見る</a></div>'"></div>
+<div class="card-info">
+<div class="card-name">ボロブドゥール</div>
+<div class="card-era">9C / ジャワ</div>
+<div class="card-creator">シャイレンドラ朝</div>
+<div class="card-point">📌 大乗仏教の石造遺跡。マンダラ構造</div>
+</div></div>
+<div class="card" data-cat="絵画" data-id="x02" onclick="openDetail('x02')">
+<div class="card-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Jean-François_Millet_-_Gleaners_-_Google_Art_Project_2.jpg/400px-Jean-François_Millet_-_Gleaners_-_Google_Art_Project_2.jpg" alt="『落穂拾い』" loading="lazy" style="object-position:center 50%" onerror="this.parentElement.innerHTML='<div class=\'img-err\'>画像読込失敗<br><a href=\'https://commons.wikimedia.org/wiki/File:Jean-François_Millet_-_Gleaners_-_Google_Art_Project_2.jpg\' target=\'_blank\'>Commonsで見る</a></div>'"></div>
+<div class="card-info">
+<div class="card-name">『落穂拾い』</div>
+<div class="card-era">1857年</div>
+<div class="card-creator">ミレー</div>
+<div class="card-point">📌 写実主義(レアリスム)。農民の労働を描く</div>
+</div></div>
+<div class="card" data-cat="絵画" data-id="x03" onclick="openDetail('x03')">
+<div class="card-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/The_Nightwatch_by_Rembrandt_-_Rijksmuseum.jpg/400px-The_Nightwatch_by_Rembrandt_-_Rijksmuseum.jpg" alt="『夜警』" loading="lazy" style="object-position:center 35%" onerror="this.parentElement.innerHTML='<div class=\'img-err\'>画像読込失敗<br><a href=\'https://commons.wikimedia.org/wiki/File:The_Nightwatch_by_Rembrandt_-_Rijksmuseum.jpg\' target=\'_blank\'>Commonsで見る</a></div>'"></div>
+<div class="card-info">
+<div class="card-name">『夜警』</div>
+<div class="card-era">1642年</div>
+<div class="card-creator">レンブラント</div>
+<div class="card-point">📌 オランダ黄金時代。市民軍の集団肖像画</div>
+</div></div>
+<div class="card" data-cat="建築" data-id="x04" onclick="openDetail('x04')">
+<div class="card-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Machu_Picchu,_Peru.jpg/400px-Machu_Picchu,_Peru.jpg" alt="マチュピチュ" loading="lazy" style="object-position:center 55%" onerror="this.parentElement.innerHTML='<div class=\'img-err\'>画像読込失敗<br><a href=\'https://commons.wikimedia.org/wiki/File:Machu_Picchu,_Peru.jpg\' target=\'_blank\'>Commonsで見る</a></div>'"></div>
+<div class="card-info">
+<div class="card-name">マチュピチュ</div>
+<div class="card-era">15C / ペルー</div>
+<div class="card-creator">インカ帝国</div>
+<div class="card-point">📌 「空中都市」。スペイン人に発見されなかった</div>
+</div></div>
+<div class="card" data-cat="遺跡" data-id="x05" onclick="openDetail('x05')">
+<div class="card-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Stonehenge2007_07_30.jpg/400px-Stonehenge2007_07_30.jpg" alt="ストーンヘンジ" loading="lazy" style="object-position:center 50%" onerror="this.parentElement.innerHTML='<div class=\'img-err\'>画像読込失敗<br><a href=\'https://commons.wikimedia.org/wiki/File:Stonehenge2007_07_30.jpg\' target=\'_blank\'>Commonsで見る</a></div>'"></div>
+<div class="card-info">
+<div class="card-name">ストーンヘンジ</div>
+<div class="card-era">BC3000-2000頃 / 英</div>
+
+<div class="card-point">📌 新石器〜青銅器時代の巨石記念物</div>
+</div></div>
+<div class="card" data-cat="碑文" data-id="x06" onclick="openDetail('x06')">
+<div class="card-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Great_Isaiah_Scroll.jpg/400px-Great_Isaiah_Scroll.jpg" alt="死海文書" loading="lazy" style="object-position:center 30%" onerror="this.parentElement.innerHTML='<div class=\'img-err\'>画像読込失敗<br><a href=\'https://commons.wikimedia.org/wiki/File:Great_Isaiah_Scroll.jpg\' target=\'_blank\'>Commonsで見る</a></div>'"></div>
+<div class="card-info">
+<div class="card-name">死海文書</div>
+<div class="card-era">BC3C-AD1C / パレスチナ</div>
+
+<div class="card-point">📌 ユダヤ教の最古の聖書写本。クムラン洞窟で発見</div>
+</div></div></div>
+<div class="note"><p>
+画像はWikimedia Commonsから取得（CC BY-SA / CC0 / Public Domain）。<br>
+各画像の著作権情報は詳細画面の「📷 Wikimedia Commons」リンク先で確認できます。<br>
+カードをクリック/タップすると詳細が表示されます。
+</p></div>
+
+<div class="modal-overlay" id="modal" onclick="if(event.target===this)closeDetail()">
+<div class="modal">
+<div class="modal-close" onclick="closeDetail()">✕</div>
+<div class="modal-img"><img id="m-img" src="" alt=""></div>
+<div class="modal-body">
+<div class="modal-name" id="m-name"></div>
+<div class="modal-era" id="m-era"></div>
+<div class="modal-creator" id="m-creator"></div>
+<div class="modal-desc" id="m-desc"></div>
+<div class="modal-tips-title">📌 入試のポイント</div>
+<ul class="modal-tips" id="m-tips"></ul>
+<div class="modal-credit"><a id="m-link" href="" target="_blank" rel="noopener">📷 Wikimedia Commons で著作権情報を確認</a></div>
+</div>
+</div>
+</div>
+
+<script>
+(function(){
+var FB={"m07": ["https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Les_Tr\u00e8s_Riches_Heures_du_duc_de_Berry_Janvier.jpg/400px-Les_Tr\u00e8s_Riches_Heures_du_duc_de_Berry_Janvier.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Tr\u00e8s_Riches_Heures_du_Duc_de_Berry_-_Janvier.jpg/400px-Tr\u00e8s_Riches_Heures_du_Duc_de_Berry_-_Janvier.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Stundenbuch_des_Herzogs_von_Berry_Januar.jpg/400px-Stundenbuch_des_Herzogs_von_Berry_Januar.jpg"], "m03": [], "e02": ["https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Mogao_Caves.jpg/400px-Mogao_Caves.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Mogao_Grottoes.jpg/400px-Mogao_Grottoes.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Dunhuang_Mogao_Ku.jpg/400px-Dunhuang_Mogao_Ku.jpg"], "a04": ["https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Rome_Pantheon_front.jpg/400px-Rome_Pantheon_front.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Pantheon_Rome.jpg/400px-Pantheon_Rome.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Pantheon,_Rome.jpg/400px-Pantheon,_Rome.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Roma-Pantheon.jpg/400px-Roma-Pantheon.jpg"], "h04": ["https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Salt_March.jpg/400px-Salt_March.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Marche_sel.jpg/400px-Marche_sel.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Gandhi_Salt_March.jpg/400px-Gandhi_Salt_March.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Mahatma_Gandhi_during_the_Salt_March.jpg/400px-Mahatma_Gandhi_during_the_Salt_March.jpg"], "i03": []};
+var FBO={"m07": ["https://upload.wikimedia.org/wikipedia/commons/8/8a/Les_Tr\u00e8s_Riches_Heures_du_duc_de_Berry_Janvier.jpg", "https://upload.wikimedia.org/wikipedia/commons/2/2c/Tr\u00e8s_Riches_Heures_du_Duc_de_Berry_-_Janvier.jpg", "https://upload.wikimedia.org/wikipedia/commons/2/28/Stundenbuch_des_Herzogs_von_Berry_Januar.jpg"], "m03": [], "e02": ["https://upload.wikimedia.org/wikipedia/commons/a/a1/Mogao_Caves.jpg", "https://upload.wikimedia.org/wikipedia/commons/b/b1/Mogao_Grottoes.jpg", "https://upload.wikimedia.org/wikipedia/commons/f/f6/Dunhuang_Mogao_Ku.jpg"], "a04": ["https://upload.wikimedia.org/wikipedia/commons/0/06/Rome_Pantheon_front.jpg", "https://upload.wikimedia.org/wikipedia/commons/f/fb/Pantheon_Rome.jpg", "https://upload.wikimedia.org/wikipedia/commons/a/a5/Pantheon,_Rome.jpg", "https://upload.wikimedia.org/wikipedia/commons/b/bc/Roma-Pantheon.jpg"], "h04": ["https://upload.wikimedia.org/wikipedia/commons/9/99/Salt_March.jpg", "https://upload.wikimedia.org/wikipedia/commons/7/7c/Marche_sel.jpg", "https://upload.wikimedia.org/wikipedia/commons/7/76/Gandhi_Salt_March.jpg", "https://upload.wikimedia.org/wikipedia/commons/4/47/Mahatma_Gandhi_during_the_Salt_March.jpg"], "i03": []};
+var D={"a01":{n:"ギザの大ピラミッド",e:"BC26C頃 / エジプト",c:"クフ王",p:"古王国時代。世界七不思議の唯一の現存物",d:"エジプト古王国第4王朝のクフ王の墓。高さ約146m（建設当時）。約230万個の石灰岩ブロックで構成。ヘロドトスによれば建設に20年・10万人を要したという。三大ピラミッドの中で最大。",t:["古王国時代(BC27C-BC22C)の代表的建造物","世界七不思議の中で唯一の現存物","太陽信仰・来世信仰との関連","クフ王・カフラー王・メンカウラー王の三大ピラミッド"],img:"https://upload.wikimedia.org/wikipedia/commons/e/e3/Kheops-Pyramid.jpg",pg:"https://commons.wikimedia.org/wiki/File:Kheops-Pyramid.jpg",pos:"center 60%"},
+"a02":{n:"パルテノン神殿",e:"BC438年 / アテネ",c:"フェイディアス(総監督)",p:"ドーリア式。ペリクレス時代の民主政全盛期を象徴",d:"アテネのアクロポリスに建つドーリア式神殿。BC447-438年に建設。ペリクレスの主導のもと、フェイディアスが総監督。内部にはアテナ女神の巨大な黄金象牙像が安置されていた。",t:["ドーリア式柱の代表例（太く溝がある・柱頭が簡素）","ペリクレス時代＝アテネ民主政の全盛期を象徴","デロス同盟の資金を流用して建設→同盟国の反発","エルギン・マーブル問題（大英博物館への返還要求）"],img:"https://upload.wikimedia.org/wikipedia/commons/a/ad/Parthenon_from_west.jpg",pg:"https://commons.wikimedia.org/wiki/File:Parthenon_from_west.jpg",pos:"center 40%"},
+"a03":{n:"コロッセウム",e:"AD80年 / ローマ",c:"フラウィウス朝",p:"「パンとサーカス」。5万人収容の円形闘技場",d:"フラウィウス朝のウェスパシアヌス帝が建設を開始し、ティトゥス帝の時代(AD80年)に完成。約5万人を収容できた円形闘技場。剣闘士の戦いや猛獣との闘いが行われた。",t:["「パンとサーカス」（パンとキルケンセス）の象徴","ローマ帝政期の大衆統治の手段","コンクリート技術・アーチ構造の活用","フラウィウス円形闘技場が正式名"],img:"https://upload.wikimedia.org/wikipedia/commons/5/53/Colosseum_in_Rome,_Italy_-_April_2007.jpg",pg:"https://commons.wikimedia.org/wiki/File:Colosseum_in_Rome,_Italy_-_April_2007.jpg",pos:"center 50%"},
+"a04":{n:"パンテオン",e:"AD128年 / ローマ",c:"ハドリアヌス帝",p:"ドーム建築の傑作。コンクリート技術",d:"ハドリアヌス帝が再建(AD128年頃)。直径43.3mの無補強コンクリート・ドームは建築史上の奇跡。天窓（オクルス）から光が差し込む設計。「すべての神々に捧げる」神殿。",t:["ローマのコンクリート技術の最高到達点","ドーム建築の原型（後のハギア＝ソフィア等に影響）","ルネサンス期にブルネレスキがドーム建築の参考にした"],img:"https://upload.wikimedia.org/wikipedia/commons/0/06/Rome_Pantheon_front.jpg",pg:"https://commons.wikimedia.org/wiki/File:Rome_Pantheon_front.jpg",pos:"center 30%"},
+"a05":{n:"モヘンジョ＝ダロ",e:"BC2600頃 / インダス",c:"",p:"インダス文明。都市計画・排水設備",d:"インダス川流域に栄えたインダス文明(BC2600-BC1800頃)の代表的都市遺跡。整然とした都市計画・レンガ造りの排水設備・大浴場が特徴。文字（インダス文字）は未解読。",t:["インダス文明の計画都市＝格子状の街路・上下水道","ハラッパーとともに二大遺跡","インダス文字は未解読","衰退原因は諸説（気候変動・河川の変流等）"],img:"https://upload.wikimedia.org/wikipedia/commons/2/2b/Mohenjo-daro.jpg",pg:"https://commons.wikimedia.org/wiki/File:Mohenjo-daro.jpg",pos:"center 50%"},
+"a06":{n:"兵馬俑",e:"BC210頃 / 秦",c:"始皇帝",p:"始皇帝陵。8000体の兵士俑",d:"秦の始皇帝の陵墓を守るために副葬された約8000体の兵士俑・馬俑。1974年に農民が井戸掘り中に発見。一体一体の顔が異なる。世界最大の地下軍事博物館。",t:["始皇帝の中国統一(BC221)と強大な権力の象徴","一体ずつ顔が違う＝写実性","副葬の文化→来世観","1974年発見→1987年世界遺産"],img:"https://upload.wikimedia.org/wikipedia/commons/4/49/Terracotta_Army,_View_of_Pit_1.jpg",pg:"https://commons.wikimedia.org/wiki/File:Terracotta_Army,_View_of_Pit_1.jpg",pos:"center 35%"},
+"a07":{n:"ミロのヴィーナス",e:"BC130頃 / ギリシア",c:"",p:"ヘレニズム美術。ルーヴル美術館所蔵",d:"BC130年頃の作とされるヘレニズム期の大理石彫刻。1820年にミロス島で発見。両腕が欠けた状態で発見され、元の姿は不明。ルーヴル美術館所蔵。",t:["ヘレニズム美術の代表作","ギリシア古典期の理想美とヘレニズムの写実の融合","ルーヴル美術館の三大至宝の一つ（モナ＝リザ・サモトラケのニケと並ぶ）"],img:"https://upload.wikimedia.org/wikipedia/commons/a/a5/Venus_de_Milo_Louvre_Ma399.jpg",pg:"https://commons.wikimedia.org/wiki/File:Venus_de_Milo_Louvre_Ma399.jpg",pos:"center 12%"},
+"a08":{n:"ラオコーン像",e:"BC1C頃 / ギリシア",c:"",p:"ヘレニズム美術の代表作。トロイ戦争",d:"トロイの神官ラオコーンと二人の息子が大蛇に絞め殺される場面を描いた群像。BC1世紀頃の作。苦悶の表情が特徴。ヴァチカン美術館所蔵。",t:["ヘレニズム美術の劇的表現の頂点","トロイ戦争の伝説と結びつく","1506年にローマで発見→ミケランジェロに影響","ヴィンケルマンが「高貴な単純さと静かな偉大さ」と評した"],img:"https://upload.wikimedia.org/wikipedia/commons/1/17/Laocoon_Pio-Clementino_Inv1059-1064-1067.jpg",pg:"https://commons.wikimedia.org/wiki/File:Laocoon_Pio-Clementino_Inv1059-1064-1067.jpg",pos:"center 18%"},
+"a09":{n:"ロゼッタストーン",e:"BC196年 / エジプト",c:"",p:"シャンポリオンが解読。ヒエログリフ",d:"BC196年にプトレマイオス5世の勅令を3種の文字（ヒエログリフ・デモティック・ギリシア語）で刻んだ石碑。1799年にナポレオンのエジプト遠征中に発見。",t:["シャンポリオンが1822年にヒエログリフを解読→エジプト学の幕開け","ナポレオンのエジプト遠征(1798-99)で発見","大英博物館所蔵（フランスとの返還論争あり）","3つの文字が並記＝同じ内容をギリシア語から解読"],img:"https://upload.wikimedia.org/wikipedia/commons/2/23/Rosetta_Stone.JPG",pg:"https://commons.wikimedia.org/wiki/File:Rosetta_Stone.JPG",pos:"center 30%"},
+"a10":{n:"ハンムラビ法典碑",e:"BC18C / バビロニア",c:"ハンムラビ王",p:"「目には目を」。くさび形文字",d:"古バビロニア王国のハンムラビ王(在位BC1792-BC1750)が制定した法典を刻んだ玄武岩の石碑。上部にはシャマシュ神（太陽神）から法を授かるハンムラビ王のレリーフ。",t:["「目には目を、歯には歯を」（同害報復の原則）","身分による刑罰の差異＝階級社会","楔形文字で記述","ルーヴル美術館所蔵","王権神授の思想（上部レリーフ）"],img:"https://upload.wikimedia.org/wikipedia/commons/5/58/Code-de-Hammurabi-1.jpg",pg:"https://commons.wikimedia.org/wiki/File:Code-de-Hammurabi-1.jpg",pos:"center 15%"},
+"m01":{n:"ハギア＝ソフィア",e:"537年 / コンスタンティノープル",c:"ユスティニアヌス帝",p:"ビザンツ建築の最高傑作。ペンデンティヴ・ドーム",d:"ユスティニアヌス帝の命で532-537年に建設。直径31mの巨大ドームをペンデンティヴで支える革新的構造。1453年のオスマン帝国によるコンスタンティノープル陥落後、モスクに改装。",t:["ビザンツ建築の最高傑作","ペンデンティヴ＝球面三角形でドームを支える技術","ユスティニアヌス帝(在位527-565)の文化事業","1453年以降モスクに→現在は博物館","内部のモザイクはイコノクラスム期に一部破壊"],img:"https://upload.wikimedia.org/wikipedia/commons/2/22/Hagia_Sophia_Mars_2013.jpg",pg:"https://commons.wikimedia.org/wiki/File:Hagia_Sophia_Mars_2013.jpg",pos:"center 50%"},
+"m02":{n:"シャルトル大聖堂",e:"13C / フランス",c:"",p:"ゴシック建築の代表。ステンドグラス・尖頭アーチ・フライング＝バットレス",d:"13世紀に完成したフランスの大聖堂。176枚のステンドグラスが現存し、特にバラ窓と「美しい窓のマリア」が有名。ゴシック建築の教科書的存在。",t:["ゴシック建築の三大要素：尖頭アーチ・リブ＝ヴォールト・フライング＝バットレス","ステンドグラス＝「聖書を読めない民衆への教え」","都市の経済力と市民の信仰心の象徴"],img:"https://upload.wikimedia.org/wikipedia/commons/1/12/Chartres_cathedral.jpg",pg:"https://commons.wikimedia.org/wiki/File:Chartres_cathedral.jpg",pos:"center 40%"},
+"m03":{n:"アルハンブラ宮殿",e:"14C / グラナダ",c:"ナスル朝",p:"イスラーム建築。アラベスク・鍾乳石飾り。レコンキスタ最後の拠点",d:"イベリア半島最後のイスラーム王朝ナスル朝の宮殿。14世紀に建設。獅子の中庭・アラベスク装飾・鍾乳石飾り（ムカルナス）が特徴。1492年にグラナダ陥落でキリスト教徒の手に。",t:["イスラーム建築の傑作：アラベスク・幾何学模様","レコンキスタ最後の拠点（1492年グラナダ陥落）","偶像崇拝の禁止→幾何学・植物文様の発達","獅子の中庭の噴水"],img:"https://upload.wikimedia.org/wikipedia/commons/c/c6/Vista_de_la_Alhambra.jpg",pg:"https://commons.wikimedia.org/wiki/File:Vista_de_la_Alhambra.jpg",pos:"center 50%"},
+"m04":{n:"アンコール＝ワット",e:"12C / カンボジア",c:"スーリヤヴァルマン2世",p:"ヒンドゥー→仏教寺院。クメール帝国",d:"スーリヤヴァルマン2世が12世紀前半に建設。もともとはヒンドゥー教（ヴィシュヌ神）の寺院で、後に仏教寺院に転用。周囲には堀がめぐらされ、中央に塔がそびえる。",t:["クメール帝国（アンコール朝）の全盛期を象徴","ヒンドゥー教→仏教に転用","回廊のレリーフ＝マハーバーラタ等の叙事詩を描く","カンボジアの国旗に描かれている"],img:"https://upload.wikimedia.org/wikipedia/commons/4/41/Angkor_Wat.jpg",pg:"https://commons.wikimedia.org/wiki/File:Angkor_Wat.jpg",pos:"center 55%"},
+"m05":{n:"ノートルダム大聖堂",e:"1163-1345 / パリ",c:"",p:"初期ゴシック。バラ窓",d:"パリのシテ島に建つ初期ゴシック建築の代表。1163年に着工、1345年に完成。バラ窓とフライング＝バットレスが特徴。ヴィクトル＝ユゴーの小説の舞台としても有名。",t:["初期ゴシック建築","バラ窓＝円形のステンドグラス","フライング＝バットレス（飛び梁）","2019年の火災で尖塔が焼失→修復"],img:"https://upload.wikimedia.org/wikipedia/commons/a/af/Notre-Dame_de_Paris_2013-07-24.jpg",pg:"https://commons.wikimedia.org/wiki/File:Notre-Dame_de_Paris_2013-07-24.jpg",pos:"center 40%"},
+"m06":{n:"ピサ大聖堂(斜塔)",e:"12C / イタリア",c:"",p:"ロマネスク建築。ガリレオの落体実験の伝説",d:"ピサ大聖堂の鐘楼（カンパニーレ）。1173年に着工。建設中に地盤沈下で傾き始め、完成まで約200年を要した。ガリレオが落体の実験をしたという伝説がある。",t:["ロマネスク建築の代表例","半円アーチ（ロマネスクの特徴）","ガリレオの落体実験の伝説（実際には行っていないとされる）"],img:"https://upload.wikimedia.org/wikipedia/commons/6/66/The_Leaning_Tower_of_Pisa_SB.jpeg",pg:"https://commons.wikimedia.org/wiki/File:The_Leaning_Tower_of_Pisa_SB.jpeg",pos:"center 40%"},
+"m07":{n:"『ベリー公のいとも豪華なる時祷書』",e:"15C / フランス",c:"ランブール兄弟",p:"国際ゴシック様式。中世末期の細密画",d:"フランスのランブール兄弟が15世紀初頭に制作した豪華な装飾写本。ベリー公ジャン1世のために制作。各月の農作業や貴族の生活を精密に描く。国際ゴシック様式の最高傑作。",t:["国際ゴシック様式の代表作","中世末期の写本装飾（ミニアチュール）の頂点","農民の暮らし・貴族の狩猟など中世社会の視覚資料"],img:"https://upload.wikimedia.org/wikipedia/commons/d/da/Labours_of_the_Months_Les_Tres_Riches_Heures_du_duc_de_Berry_Janvier.jpg",pg:"https://commons.wikimedia.org/wiki/File:Labours_of_the_Months_Les_Tres_Riches_Heures_du_duc_de_Berry_Janvier.jpg",pos:"center 20%"},
+"m08":{n:"モン＝サン＝ミシェル",e:"11-16C / フランス",c:"",p:"修道院建築。百年戦争で要塞化",d:"フランス北西部ノルマンディーの小島に建つ修道院。8世紀に起源を持ち、11-16世紀にかけて増築。潮の満ち引きで孤島になる。百年戦争中は要塞としても機能した。",t:["ベネディクト会の修道院","ロマネスク→ゴシックの建築様式の変遷が一つの建物に","百年戦争中は英軍に包囲されたが陥落しなかった"],img:"https://upload.wikimedia.org/wikipedia/commons/e/ee/Mont_Saint-Michel_France.jpg",pg:"https://commons.wikimedia.org/wiki/File:Mont_Saint-Michel_France.jpg",pos:"center 45%"},
+"r01":{n:"『最後の晩餐』",e:"1498年 / ミラノ",c:"レオナルド＝ダ＝ヴィンチ",p:"盛期ルネサンスの三大巨匠。遠近法",d:"レオナルド＝ダ＝ヴィンチがミラノのサンタ＝マリア＝デッレ＝グラツィエ修道院の食堂壁面に描いた(1495-98)。イエスが弟子たちに「この中に裏切り者がいる」と告げた瞬間を描く。",t:["盛期ルネサンスの三大巨匠（レオナルド・ミケランジェロ・ラファエロ）","線遠近法（一点透視図法）の模範的使用","テンペラ＋油彩の実験的技法→劣化が激しい","スフォルツァ家（ミラノ公）のパトロネージ"],img:"https://upload.wikimedia.org/wikipedia/commons/b/bb/Leonardo_da_Vinci_-_The_Last_Supper_high_res.jpg",pg:"https://commons.wikimedia.org/wiki/File:Leonardo_da_Vinci_-_The_Last_Supper_high_res.jpg",pos:"center 40%"},
+"r02":{n:"『モナ＝リザ』",e:"1503-06年",c:"レオナルド＝ダ＝ヴィンチ",p:"スフマート技法。ルーヴル美術館",d:"レオナルド＝ダ＝ヴィンチが1503-06年頃に制作。正式名は「ラ＝ジョコンダ」。スフマート技法（輪郭線を使わずぼかす技法）の代表例。ルーヴル美術館所蔵。",t:["スフマート技法＝輪郭線なしのぼかし","ルネサンスの人文主義＝人間への関心","フランソワ1世が購入→ルーヴルへ","ルーヴル美術館の三大至宝の一つ"],img:"https://upload.wikimedia.org/wikipedia/commons/e/ec/Mona_Lisa,_by_Leonardo_da_Vinci,_from_C2RMF_retouched.jpg",pg:"https://commons.wikimedia.org/wiki/File:Mona_Lisa,_by_Leonardo_da_Vinci,_from_C2RMF_retouched.jpg",pos:"center 25%"},
+"r03":{n:"『ダヴィデ像』",e:"1504年 / フィレンツェ",c:"ミケランジェロ",p:"盛期ルネサンスの理想的人体表現",d:"ミケランジェロがフィレンツェ共和国のために制作(1501-04)。旧約聖書の英雄ダヴィデの姿を理想的人体比率で表現。高さ5.17m。アカデミア美術館所蔵。",t:["盛期ルネサンスの理想的人体表現","フィレンツェ共和国の自由と市民精神の象徴","大理石からの「解放」＝ミケランジェロの彫刻哲学","メディチ家からの独立を象徴するとも解釈される"],img:"https://upload.wikimedia.org/wikipedia/commons/d/d5/David_von_Michelangelo.jpg",pg:"https://commons.wikimedia.org/wiki/File:David_von_Michelangelo.jpg",pos:"center 12%"},
+"r04":{n:"『システィーナ礼拝堂天井画』",e:"1512年 / ヴァチカン",c:"ミケランジェロ",p:"「アダムの創造」。教皇ユリウス2世の依頼",d:"ミケランジェロがシスティーナ礼拝堂の天井に描いた(1508-12)。創世記の場面を描く9場面のうちの一つ。神がアダムに命を吹き込む瞬間。教皇ユリウス2世の依頼。",t:["ミケランジェロは自らを彫刻家と考え、絵画の依頼に不満だった","教皇ユリウス2世のパトロネージ","天井全体で旧約聖書の創世記〜ノアの物語を描く","人体表現の力強さ＝ミケランジェロの特徴"],img:"https://upload.wikimedia.org/wikipedia/commons/5/5b/Michelangelo_-_Creation_of_Adam_(cropped).jpg",pg:"https://commons.wikimedia.org/wiki/File:Michelangelo_-_Creation_of_Adam_(cropped).jpg",pos:"center 50%"},
+"r05":{n:"『アテナイの学堂』",e:"1511年 / ヴァチカン",c:"ラファエロ",p:"ルネサンスの人文主義。プラトンとアリストテレス",d:"ラファエロがヴァチカン宮殿の「署名の間」に描いた(1509-11)。古代ギリシアの哲学者たちを一堂に描く。中央にプラトン（天を指す）とアリストテレス（地を指す）。",t:["ルネサンスの人文主義＝古代ギリシア・ローマ文化の復興","プラトン＝イデア論（天を指す）vsアリストテレス＝経験論（地を指す）","プラトンの顔はレオナルド、ヘラクレイトスはミケランジェロがモデルとも"],img:"https://upload.wikimedia.org/wikipedia/commons/f/f2/The_School_of_Athens_by_Raffaello_Sanzio_da_Urbino.jpg",pg:"https://commons.wikimedia.org/wiki/File:The_School_of_Athens_by_Raffaello_Sanzio_da_Urbino.jpg",pos:"center 40%"},
+"r06":{n:"サン＝ピエトロ大聖堂",e:"1626年 / ヴァチカン",c:"ミケランジェロ他",p:"ルネサンス＋バロック。カトリックの総本山",d:"カトリック教会の総本山。ミケランジェロ、ブラマンテ、ベルニーニらが設計に関わり、1626年に献堂。ミケランジェロのドーム、ベルニーニの大天蓋が有名。",t:["ルネサンス＋バロック建築の融合","サン＝ピエトロ大聖堂の建設費用捻出のための免罪符販売→ルターの宗教改革の引き金","ベルニーニの楕円形広場＝バロック的空間演出"],img:"https://upload.wikimedia.org/wikipedia/commons/1/15/Petersdom_von_Engelsburg_gesehen.jpg",pg:"https://commons.wikimedia.org/wiki/File:Petersdom_von_Engelsburg_gesehen.jpg",pos:"center 45%"},
+"r07":{n:"『真珠の耳飾りの少女』",e:"1665年",c:"フェルメール",p:"オランダ黄金時代の市民画",d:"フェルメールが1665年頃に制作。トルコ風のターバンと大きな真珠の耳飾りをつけた少女を描く。「北方のモナ＝リザ」「オランダのモナ＝リザ」とも呼ばれる。",t:["オランダ黄金時代(17C)の市民文化","フェルメール＝光の画家。窓からの光の表現","肖像画ではなく「トローニー」（特定の人物でない頭部の習作）"],img:"https://upload.wikimedia.org/wikipedia/commons/c/ce/Girl_with_a_Pearl_Earring.jpg",pg:"https://commons.wikimedia.org/wiki/File:Girl_with_a_Pearl_Earring.jpg",pos:"center 25%"},
+"r08":{n:"ヴェルサイユ宮殿",e:"17C / フランス",c:"ルイ14世",p:"絶対王政の象徴。鏡の間。バロック建築",d:"ルイ14世が1682年に宮廷を移転。鏡の間は357枚の鏡と数百のシャンデリアで飾られる。庭園はル＝ノートルの設計。1919年にヴェルサイユ条約が調印された場所。",t:["絶対王政の象徴：ルイ14世「朕は国家なり」","バロック建築の代表例","鏡の間でヴェルサイユ条約調印(1919)","フランス革命の原因の一つ＝宮廷の浪費"],img:"https://upload.wikimedia.org/wikipedia/commons/f/f1/Chateau_Versailles_Galerie_des_Glaces.jpg",pg:"https://commons.wikimedia.org/wiki/File:Chateau_Versailles_Galerie_des_Glaces.jpg",pos:"center 50%"},
+"r09":{n:"タージ＝マハル",e:"1653年 / インド",c:"シャー＝ジャハーン",p:"ムガル建築。白大理石。妃の廟",d:"ムガル帝国第5代皇帝シャー＝ジャハーンが愛妃ムムターズ＝マハルの廟として建設(1632-53)。白大理石に宝石を象嵌。左右対称の完璧な構成。",t:["ムガル帝国の全盛期（シャー＝ジャハーン）","イスラーム建築＋インド建築の融合","建設に22年・2万人を動員","後にアウラングゼーブが父を幽閉→ムガル衰退へ"],img:"https://upload.wikimedia.org/wikipedia/commons/f/f5/Taj_Mahal_2012.jpg",pg:"https://commons.wikimedia.org/wiki/File:Taj_Mahal_2012.jpg",pos:"center 55%"},
+"r10":{n:"『ヴィーナスの誕生』",e:"1485年",c:"ボッティチェリ",p:"初期ルネサンス。メディチ家の庇護",d:"ボッティチェリが1485年頃に制作。ギリシア神話のヴィーナス（アフロディテ）が海の泡から誕生する場面。メディチ家の庇護のもとで制作。ウフィツィ美術館所蔵。",t:["初期ルネサンス＝古代ギリシア・ローマの神話の復活","メディチ家のパトロネージ＝フィレンツェの芸術保護","テンペラ画（卵黄を媒介にした絵具）","新プラトン主義の影響"],img:"https://upload.wikimedia.org/wikipedia/commons/0/0b/Sandro_Botticelli_-_La_nascita_di_Venere_-_Google_Art_Project_-_edited.jpg",pg:"https://commons.wikimedia.org/wiki/File:Sandro_Botticelli_-_La_nascita_di_Venere_-_Google_Art_Project_-_edited.jpg",pos:"center 35%"},
+"n01":{n:"『民衆を導く自由の女神』",e:"1830年",c:"ドラクロワ",p:"七月革命を描く。ロマン主義",d:"ドラクロワが1830年の七月革命を題材に描いた。中央の女性はフランス共和国の擬人化「マリアンヌ」。三色旗を掲げて民衆を導く。ルーヴル美術館所蔵。",t:["七月革命(1830)＝シャルル10世の追放→七月王政（ルイ＝フィリップ）へ","ロマン主義絵画の代表作＝感情・劇的場面の重視","マリアンヌ＝フランス共和国の象徴","後の自由の女神像のモデルの一つとも"],img:"https://upload.wikimedia.org/wikipedia/commons/8/84/Delacroix_-_La_liberte.jpg",pg:"https://commons.wikimedia.org/wiki/File:Delacroix_-_La_liberte.jpg",pos:"center 30%"},
+"n02":{n:"『印象・日の出』",e:"1872年",c:"モネ",p:"印象派の名前の由来。光の描写",d:"モネが1872年にル・アーヴル港で描いた。批評家ルイ＝ルロワがこの作品を揶揄して「印象派」と名付けた。光の変化を捉えることに主眼を置いた。",t:["印象派の名前の由来となった作品","光と色彩の瞬間的効果を描く＝戸外制作","従来のアカデミー絵画（歴史画中心）への反発","1874年の第1回印象派展に出品"],img:"https://upload.wikimedia.org/wikipedia/commons/5/54/Claude_Monet,_Impression,_soleil_levant.jpg",pg:"https://commons.wikimedia.org/wiki/File:Claude_Monet,_Impression,_soleil_levant.jpg",pos:"center 50%"},
+"n03":{n:"『ゲルニカ』",e:"1937年",c:"ピカソ",p:"スペイン内戦。ドイツ軍の無差別爆撃を告発。キュビスム",d:"ピカソが1937年のスペイン内戦中、ドイツ空軍によるゲルニカ爆撃を告発して描いた。モノクロームの巨大な作品(3.5m×7.8m)。パリ万博のスペイン館に展示。",t:["スペイン内戦(1936-39)＝ファシズムvs人民戦線","ドイツ空軍（コンドル軍団）による無差別爆撃","キュビスムの手法で戦争の恐怖を表現","フランコ政権下ではスペインに戻されなかった"],img:"https://upload.wikimedia.org/wikipedia/commons/6/6f/Mural_del_Gernika.jpg",pg:"https://commons.wikimedia.org/wiki/File:Mural_del_Gernika.jpg",pos:"center 50%"},
+"n04":{n:"『星月夜』",e:"1889年",c:"ゴッホ",p:"後期印象派。サン＝レミの精神病院で制作",d:"ゴッホが1889年にサン＝レミの精神病院で描いた。渦巻く夜空と糸杉が特徴。ゴッホの精神的苦悩と激しい感情が表現されている。MoMA所蔵。",t:["後期印象派＝印象派の色彩＋個人の感情表現","ゴッホの精神疾患と芸術の関係","厚塗り（インパスト）技法","生前はほとんど評価されなかった"],img:"https://upload.wikimedia.org/wikipedia/commons/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg",pg:"https://commons.wikimedia.org/wiki/File:Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg",pos:"center 40%"},
+"n05":{n:"自由の女神像",e:"1886年 / ニューヨーク",c:"バルトルディ",p:"仏から米への贈り物。移民の象徴",d:"フランスからアメリカ独立100周年を記念して贈られた(1886年)。バルトルディが設計、エッフェル（エッフェル塔と同じ）が内部構造を担当。ニューヨーク港のリバティ島に立つ。",t:["仏米友好の象徴＋移民の希望の象徴","フランス革命の理念（自由・平等・博愛）の輸出","右手にトーチ（啓蒙の光）、左手に独立宣言の銘板","台座の詩「疲れた者、貧しい者を私のもとに送りなさい」"],img:"https://upload.wikimedia.org/wikipedia/commons/a/a1/Statue_of_Liberty_7.jpg",pg:"https://commons.wikimedia.org/wiki/File:Statue_of_Liberty_7.jpg",pos:"center 20%"},
+"n06":{n:"エッフェル塔",e:"1889年 / パリ",c:"エッフェル",p:"パリ万博。鉄骨建築。当初は批判",d:"1889年のパリ万博のために建設。高さ324m（当時世界一）。建設当初はパリの景観を壊すとして芸術家・知識人から猛反対を受けた。20年後に解体予定だったが通信塔として存続。",t:["1889年パリ万博＝フランス革命100周年記念","鉄骨建築＝産業革命の技術力の象徴","当初の芸術家の反対→現在はパリの象徴","エッフェルは自由の女神像の内部構造も設計"],img:"https://upload.wikimedia.org/wikipedia/commons/a/a8/Tour_Eiffel_Wikimedia_Commons.jpg",pg:"https://commons.wikimedia.org/wiki/File:Tour_Eiffel_Wikimedia_Commons.jpg",pos:"center 35%"},
+"i01":{n:"岩のドーム",e:"691年 / エルサレム",c:"ウマイヤ朝",p:"イスラーム最古の現存建築。ムハンマド昇天の地",d:"ウマイヤ朝カリフのアブド＝アルマリクが691年に建設。イスラーム建築で現存する最古の建造物の一つ。ムハンマドの昇天（ミーラージュ）の場所とされる岩の上に建つ。",t:["イスラーム最古の現存建築","ムハンマドの昇天の聖地＝エルサレム","金色のドーム＝ビザンツ建築の影響","エルサレム＝ユダヤ教・キリスト教・イスラームの三宗教の聖地"],img:"https://upload.wikimedia.org/wikipedia/commons/c/c2/Jerusalem_Dome_of_the_rock_BW_14.JPG",pg:"https://commons.wikimedia.org/wiki/File:Jerusalem_Dome_of_the_rock_BW_14.JPG",pos:"center 45%"},
+"i02":{n:"コルドバのメスキータ",e:"8-10C / スペイン",c:"後ウマイヤ朝",p:"馬蹄形アーチ。レコンキスタ後にカトリック教会に転用",d:"後ウマイヤ朝が8-10世紀にコルドバに建設した大モスク。馬蹄形アーチと赤白の二色アーチが特徴。レコンキスタ後の13世紀にカトリック大聖堂に転用。",t:["後ウマイヤ朝＝アッバース朝から逃れてイベリア半島に建国","馬蹄形アーチ＝イスラーム建築の特徴","レコンキスタ後にカトリック教会に転用＝宗教の重層性","856本の柱が林立する「柱の森」"],img:"https://upload.wikimedia.org/wikipedia/commons/c/ce/Mosque_of_Cordoba_Spain.jpg",pg:"https://commons.wikimedia.org/wiki/File:Mosque_of_Cordoba_Spain.jpg",pos:"center 50%"},
+"i03":{n:"スレイマン＝モスク",e:"1557年 / イスタンブル",c:"ミマール＝シナン",p:"オスマン建築の頂点。ハギア＝ソフィアに対抗",d:"オスマン帝国最盛期のスレイマン1世の命で建築家ミマール＝シナンが設計(1550-57)。イスタンブル最大のモスク。モスク・学校・病院・浴場を含む複合施設。",t:["オスマン帝国の最盛期＝スレイマン1世（壮麗王）","ミマール＝シナン＝オスマン最大の建築家","ハギア＝ソフィアに対抗→イスラーム建築の自信","キュリエ（複合施設）＝モスク＋マドラサ＋病院＋浴場"],img:"https://upload.wikimedia.org/wikipedia/commons/c/c8/Cour_mosquee_Suleymaniye_Istanbul.jpg",pg:"https://commons.wikimedia.org/wiki/File:Cour_mosquee_Suleymaniye_Istanbul.jpg",pos:"center 45%"},
+"e01":{n:"万里の長城",e:"BC3C〜17C / 中国",c:"始皇帝(始)→明(現存)",p:"北方遊牧民への防衛。明代に大修築",d:"北方遊牧民に対する防衛壁。始皇帝が戦国時代の各国の長城を連結(BC3C)。現存するものの大部分は明代(14-17C)に大修築されたもの。総延長は約2万km。",t:["始皇帝の中国統一事業の一つ","現存部分の大半は明代の修築","北方遊牧民（匈奴→突厥→モンゴル）への防衛","「月から見える唯一の建造物」は誤り"],img:"https://upload.wikimedia.org/wikipedia/commons/2/23/The_Great_Wall_of_China_at_Jinshanling-edit.jpg",pg:"https://commons.wikimedia.org/wiki/File:The_Great_Wall_of_China_at_Jinshanling-edit.jpg",pos:"center 50%"},
+"e02":{n:"敦煌莫高窟",e:"4-14C / 中国",c:"",p:"仏教石窟寺院。シルクロードの要衝。壁画",d:"甘粛省にある仏教石窟寺院群。4世紀から14世紀にかけて開鑿。492の石窟に壁画・彫塑が残る。シルクロードの東西文化交流の結節点。",t:["シルクロードの要衝＝東西文化の交差点","4-14世紀の約1000年間にわたる仏教美術","蔵経洞からは敦煌文書（各種言語の写本）が発見","1900年に道士・王円籙が発見→スタイン等が持ち出し"],img:"https://upload.wikimedia.org/wikipedia/commons/4/4f/Caves_of_the_Thousand_Buddhas.jpg",pg:"https://commons.wikimedia.org/wiki/File:Caves_of_the_Thousand_Buddhas.jpg",pos:"center 50%"},
+"e03":{n:"紫禁城(故宮)",e:"15C / 北京",c:"永楽帝",p:"明清の皇帝の宮殿。世界最大の木造建築群",d:"明の永楽帝が1406年に建設を開始。明清24代の皇帝が居住した宮殿。980棟の建物からなり、世界最大の木造建築群。中心軸上に太和殿・中和殿・保和殿が並ぶ。",t:["明の永楽帝が南京から北京に遷都(1421)","紫禁城＝皇帝の居所＝「天子は紫微垣（北極星）に住む」","中心軸・左右対称の配置＝儒教的秩序の空間化","現在は「故宮博物院」として公開"],img:"https://upload.wikimedia.org/wikipedia/commons/e/ef/The_Forbidden_City_-_View_from_Coal_Hill.jpg",pg:"https://commons.wikimedia.org/wiki/File:The_Forbidden_City_-_View_from_Coal_Hill.jpg",pos:"center 40%"},
+"h01":{n:"ヤルタ会談",e:"1945年",c:"チャーチル・ルーズベルト・スターリン",p:"WW2の戦後処理を協議。冷戦の端緒",d:"1945年2月にクリミア半島のヤルタで開催。チャーチル（英）・ルーズベルト（米）・スターリン（ソ連）が戦後処理を協議。ドイツの分割管理、ポーランド問題、ソ連の対日参戦の密約。",t:["WW2の戦後処理の最も重要な会談","ドイツの分割管理と非ナチ化","ソ連の対日参戦の密約→北方領土問題の遠因","冷戦の端緒：東欧のソ連圏化が決定的に"],img:"https://upload.wikimedia.org/wikipedia/commons/d/d2/Yalta_summit_1945_with_Churchill,_Roosevelt,_Stalin.jpg",pg:"https://commons.wikimedia.org/wiki/File:Yalta_summit_1945_with_Churchill,_Roosevelt,_Stalin.jpg",pos:"center 40%"},
+"h02":{n:"ベルリンの壁崩壊",e:"1989年",c:"",p:"冷戦の終結を象徴。東西ドイツ統一(1990)へ",d:"1989年11月9日、東ドイツ政府が旅行の自由化を発表→市民が壁に殺到→壁の崩壊。冷戦の終結を象徴する出来事。翌1990年にドイツ統一。",t:["冷戦の終結を象徴する最も有名な出来事","壁の建設(1961)→崩壊(1989)の28年間","ゴルバチョフのペレストロイカ・新思考外交が背景","1990年にドイツ統一→1991年にソ連崩壊"],img:"https://upload.wikimedia.org/wikipedia/commons/2/25/BerlinWall-BrandenburgGate.jpg",pg:"https://commons.wikimedia.org/wiki/File:BerlinWall-BrandenburgGate.jpg",pos:"center 45%"},
+"h03":{n:"天安門広場",e:"1989年",c:"",p:"天安門事件(1989)。民主化運動の弾圧。中国現代史の転換点",d:"中国・北京の天安門広場。1989年の民主化運動の弾圧（六四天安門事件）の舞台。毛沢東の肖像画が掲げられた天安門と広大な広場は中国近現代史の象徴。",t:["天安門事件(1989.6.4)＝民主化運動への武力弾圧","五四運動(1919)も天安門前で発生","毛沢東が1949年に中華人民共和国の建国を宣言した場所","中国政府は事件について現在も検閲を行っている"],img:"https://upload.wikimedia.org/wikipedia/commons/0/03/Tiananmen.JPG",pg:"https://commons.wikimedia.org/wiki/File:Tiananmen.JPG",pos:"center 50%"},
+"h04":{n:"ガンディーの塩の行進",e:"1930年",c:"",p:"非暴力不服従運動。英の塩税に抗議",d:"1930年3月12日、ガンディーが78人の同志とともにアフマダーバードからダンディーまで約380kmを24日間かけて行進。英国の塩税に対する非暴力の抗議運動。",t:["非暴力・不服従運動（サティヤーグラハ）の象徴的行動","英の塩税＝インド人の日常生活への圧迫","この行進が世界的な注目を集め、インド独立運動に弾み","ガンディーの「非暴力」は後のキング牧師等に影響"],img:"https://upload.wikimedia.org/wikipedia/commons/9/99/Salt_March.jpg",pg:"https://commons.wikimedia.org/wiki/File:Salt_March.jpg",pos:"center 50%"},
+"x01":{n:"ボロブドゥール",e:"9C / ジャワ",c:"シャイレンドラ朝",p:"大乗仏教の石造遺跡。マンダラ構造",d:"ジャワ島中部にある大乗仏教の石造遺跡。シャイレンドラ朝が9世紀に建設。方形の基壇の上に円形の壇を重ね、マンダラ（曼荼羅）の宇宙観を立体化。1814年にラッフルズが再発見。",t:["大乗仏教の石造遺跡＝世界最大級の仏教建造物","シャイレンドラ朝（ジャワ島の仏教王朝）","マンダラ構造＝仏教の宇宙観の立体的表現","近くにプランバナン（ヒンドゥー教）もある→宗教の多様性"],img:"https://upload.wikimedia.org/wikipedia/commons/8/8c/Borobudur-Nothwest-view.jpg",pg:"https://commons.wikimedia.org/wiki/File:Borobudur-Nothwest-view.jpg",pos:"center 45%"},
+"x02":{n:"『落穂拾い』",e:"1857年",c:"ミレー",p:"写実主義(レアリスム)。農民の労働を描く",d:"ミレーが1857年に制作。収穫後の畑で落ち穂を拾う3人の農婦を描く。当時の美術界では農民を主題にすること自体が革新的だった。オルセー美術館所蔵。",t:["写実主義（レアリスム）の代表作","農民の労働を尊厳をもって描く","当時のブルジョワ社会への暗黙の批判","バルビゾン派＝自然や農村をテーマ"],img:"https://upload.wikimedia.org/wikipedia/commons/1/1f/Jean-François_Millet_-_Gleaners_-_Google_Art_Project_2.jpg",pg:"https://commons.wikimedia.org/wiki/File:Jean-François_Millet_-_Gleaners_-_Google_Art_Project_2.jpg",pos:"center 50%"},
+"x03":{n:"『夜警』",e:"1642年",c:"レンブラント",p:"オランダ黄金時代。市民軍の集団肖像画",d:"レンブラントが1642年にアムステルダムの市民軍団の集団肖像画として制作。従来の静的な集団肖像画と異なり、動きのある劇的構図。暗い背景と光のコントラストが特徴。",t:["オランダ黄金時代(17C)の代表画家","光と影のドラマチックな対比＝レンブラント光線","市民軍の集団肖像画＝オランダの市民社会","アムステルダム国立美術館所蔵"],img:"https://upload.wikimedia.org/wikipedia/commons/9/94/The_Nightwatch_by_Rembrandt_-_Rijksmuseum.jpg",pg:"https://commons.wikimedia.org/wiki/File:The_Nightwatch_by_Rembrandt_-_Rijksmuseum.jpg",pos:"center 35%"},
+"x04":{n:"マチュピチュ",e:"15C / ペルー",c:"インカ帝国",p:"「空中都市」。スペイン人に発見されなかった",d:"インカ帝国の都市遺跡。標高約2400mのアンデス山中に位置。15世紀に建設されたと考えられるが、スペイン人に発見されず放棄された「空中都市」。1911年にハイラム＝ビンガムが再発見。",t:["インカ帝国の建築技術（精密な石組み・モルタル不使用）","スペイン人に発見されなかった＝征服を免れた","インカには文字がなく、キープ（結縄）で記録","1911年にアメリカ人探検家ビンガムが「発見」"],img:"https://upload.wikimedia.org/wikipedia/commons/e/eb/Machu_Picchu,_Peru.jpg",pg:"https://commons.wikimedia.org/wiki/File:Machu_Picchu,_Peru.jpg",pos:"center 55%"},
+"x05":{n:"ストーンヘンジ",e:"BC3000-2000頃 / 英",c:"",p:"新石器〜青銅器時代の巨石記念物",d:"イングランド南部のソールズベリー平原にある巨石記念物。BC3000-BC2000年頃に段階的に建設。夏至の日の出の方向と一致する配置。建設目的は天文観測・祭祀場など諸説あり。",t:["新石器〜青銅器時代の巨石文化（メガリス）","建設方法・目的は未だ謎が多い","夏至の日の出との整列→天文台説","巨石の運搬距離は数百km→当時の社会組織の高度さ"],img:"https://upload.wikimedia.org/wikipedia/commons/3/3c/Stonehenge2007_07_30.jpg",pg:"https://commons.wikimedia.org/wiki/File:Stonehenge2007_07_30.jpg",pos:"center 50%"},
+"x06":{n:"死海文書",e:"BC3C-AD1C / パレスチナ",c:"",p:"ユダヤ教の最古の聖書写本。クムラン洞窟で発見",d:"1947年以降にパレスチナの死海沿岸クムラン洞窟群で発見された約900巻の写本群。ヘブライ語・アラム語・ギリシア語。旧約聖書の最古の写本を含む。",t:["ユダヤ教の聖書テキストの最古級の写本","クムラン教団（エッセネ派と推定）が保管","旧約聖書の正典化の過程を解明する資料","イスラエル博物館の「聖書の祠」に所蔵"],img:"https://upload.wikimedia.org/wikipedia/commons/3/31/Great_Isaiah_Scroll.jpg",pg:"https://commons.wikimedia.org/wiki/File:Great_Isaiah_Scroll.jpg",pos:"center 30%"},
+};
+
+window.openDetail=function(id){
+  var d=D[id];if(!d)return;
+  var mimg=document.getElementById("m-img");
+  mimg.src=d.img;
+  if(FBO[id]){
+    var fbIdx=0;
+    mimg.onerror=function(){
+      if(FBO[id]&&fbIdx<FBO[id].length){mimg.onerror=function(){fbIdx++;if(FBO[id]&&fbIdx<FBO[id].length)mimg.src=FBO[id][fbIdx]};mimg.src=FBO[id][fbIdx]}
+    };
+  }
+  document.getElementById("m-img").alt=d.n;
+  document.getElementById("m-img").style.objectPosition=d.pos;
+  document.getElementById("m-name").textContent=d.n;
+  document.getElementById("m-era").textContent=d.e;
+  document.getElementById("m-creator").textContent=d.c;
+  document.getElementById("m-desc").textContent=d.d;
+  var tipsEl=document.getElementById("m-tips");
+  tipsEl.innerHTML="";
+  d.t.forEach(function(t){
+    var li=document.createElement("li");li.textContent=t;tipsEl.appendChild(li);
+  });
+  document.getElementById("m-link").href=d.pg;
+  document.getElementById("modal").classList.add("open");
+  document.body.style.overflow="hidden";
+};
+
+window.closeDetail=function(){
+  document.getElementById("modal").classList.remove("open");
+  document.body.style.overflow="";
+};
+
+document.addEventListener("keydown",function(e){
+  if(e.key==="Escape")closeDetail();
+});
+
+var tabs=document.querySelectorAll(".tab");
+var cards=document.querySelectorAll(".card");
+var count=document.getElementById("count");
+tabs.forEach(function(t){
+  t.addEventListener("click",function(){
+    var cat=t.getAttribute("data-cat");
+    tabs.forEach(function(t2){t2.className="tab"+(t2.getAttribute("data-cat")===cat?" active":"")});
+    var n=0;
+    cards.forEach(function(c){
+      var show=(cat==="すべて"||c.getAttribute("data-cat")===cat);
+      c.classList.toggle("hidden",!show);
+      if(show)n++;
+    });
+    count.textContent=n+"件表示";
+  });
+});
+
+// Fallback image loading
+function tryFallback(img, iid, idx) {
+  var list = FB[iid];
+  if (!list || idx >= list.length) return;
+  img.onerror = function() { tryFallback(img, iid, idx + 1); };
+  img.src = list[idx];
+}
+
+// Setup fallbacks for cards
+document.querySelectorAll(".card").forEach(function(card) {
+  var iid = card.getAttribute("data-id");
+  if (FB[iid]) {
+    var img = card.querySelector("img");
+    if (img) {
+      var origOnerror = img.onerror;
+      img.onerror = function() { tryFallback(img, iid, 0); };
+    }
+  }
+});
+})();
+</script></body></html>

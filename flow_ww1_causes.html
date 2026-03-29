@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WW1開戦の因果関係フロー</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048;--border:rgba(201,169,110,.08)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+.hdr{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.hdr h1{font-family:'Noto Serif JP',serif;font-size:15px;font-weight:700;color:var(--gold2)}
+.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
+.flow{max-width:720px;margin:0 auto;padding:24px 20px 60px}
+.phase{position:relative;margin-bottom:2px;padding:16px 16px 16px 60px;border-left:2px solid rgba(201,169,110,.08);margin-left:30px}
+.phase:last-child{border-left-color:transparent}
+.phase-label{position:absolute;left:-42px;top:16px;width:36px;font-family:'Cormorant Garamond',serif;font-size:10px;font-weight:700;color:var(--text3);text-align:right;line-height:1.3}
+.phase::before{content:'';position:absolute;left:-5px;top:22px;width:8px;height:8px;border-radius:50%;background:var(--bg);border:2px solid rgba(201,169,110,.25)}
+.node{background:rgba(255,255,255,.015);border:1px solid rgba(255,255,255,.04);border-radius:8px;padding:10px 14px;margin-bottom:8px;border-left:3px solid transparent;transition:all .2s}
+.node:hover{background:rgba(255,255,255,.03);border-color:rgba(255,255,255,.06)}
+.node-title{font-family:'Noto Serif JP',serif;font-size:12px;font-weight:700;color:var(--gold2);margin-bottom:2px}
+.node-year{font-family:'Cormorant Garamond',serif;font-size:11px;color:var(--gold);opacity:.6;margin-bottom:4px;letter-spacing:.08em}
+.node-desc{font-size:10px;color:var(--text2);line-height:1.7}
+.node-desc strong{color:var(--text);font-weight:600}
+.arrow{display:flex;align-items:center;gap:6px;padding:2px 0 2px 8px;margin-bottom:6px}
+.arrow-line{width:16px;height:1px;background:rgba(201,169,110,.15);flex-shrink:0}
+.arrow-text{font-size:8px;color:var(--text3)}
+.arrow-icon{color:rgba(201,169,110,.3);font-size:10px;flex-shrink:0}
+.branch-row{display:flex;gap:8px;margin-bottom:8px}
+.branch-row .node{flex:1}
+.node.key{background:rgba(201,169,110,.04);border-color:rgba(201,169,110,.12)}
+.side-note{font-size:8px;color:var(--text3);padding:4px 8px;border-left:2px solid rgba(201,169,110,.1);margin:4px 0 8px;line-height:1.6}
+
+.p-bg .node{border-left-color:rgba(130,130,100,.3)}.p-bg::before{border-color:rgba(130,130,100,.4)}
+.p-bismarck .node{border-left-color:rgba(100,130,180,.3)}.p-bismarck::before{border-color:rgba(100,130,180,.4)}
+.p-collapse .node{border-left-color:rgba(180,130,80,.3)}.p-collapse::before{border-color:rgba(180,130,80,.5);background:rgba(180,130,80,.15)}
+.p-crisis .node{border-left-color:rgba(180,80,80,.3)}.p-crisis::before{border-color:rgba(180,80,80,.4)}
+.p-july .node{border-left-color:rgba(180,60,60,.35)}.p-july::before{border-color:rgba(180,60,60,.5);background:rgba(180,60,60,.15)}
+.p-chain .node{border-left-color:rgba(150,50,50,.35)}.p-chain::before{border-color:rgba(150,50,50,.5);background:rgba(150,50,50,.2)}
+
+.note{text-align:center;padding:8px 20px 32px;max-width:700px;margin:0 auto}.note p{font-size:9px;color:var(--text3);line-height:1.8}.note strong{color:var(--gold)}
+
+@media(max-width:600px){
+.hdr{padding:10px 12px}.hdr h1{font-size:12px}
+.flow{padding:16px 10px 40px}
+.phase{padding:12px 10px 12px 44px;margin-left:20px}
+.phase-label{left:-30px;width:28px;font-size:8px}
+.node{padding:8px 10px}.node-title{font-size:11px}.node-desc{font-size:9px}
+.branch-row{flex-direction:column}
+.side-note{font-size:7.5px}
+.note p{font-size:8px}
+}
+</style>
+</head>
+<body>
+<div class="hdr"><h1>WW1開戦の因果関係フロー ― なぜヨーロッパは大戦に至ったか</h1><a href="charts.html">← Ad Chartae</a></div>
+
+<div class="flow">
+
+<!-- Phase 1: 構造的背景 -->
+<div class="phase p-bg">
+  <div class="phase-label">構造的<br>背景</div>
+  <div class="branch-row">
+    <div class="node">
+      <div class="node-title">帝国主義の競争</div>
+      <div class="node-year">1880s–</div>
+      <div class="node-desc">列強がアフリカ・アジアの植民地を奪い合う。ベルリン会議(1884-85)でアフリカ分割のルールを決めるが、<strong>「来るのが遅かった」独伊</strong>と<strong>既得権を持つ英仏</strong>の間で摩擦が増大。植民地＝国力の象徴＝ナショナリズムと結びつく。</div>
+    </div>
+    <div class="node">
+      <div class="node-title">軍拡競争</div>
+      <div class="node-year">1890s–</div>
+      <div class="node-desc">ヴィルヘルム2世の<strong>大海軍建設</strong>(ティルピッツ)→英独建艦競争(ドレッドノート型戦艦)。各国が常備軍を拡大・徴兵制を整備。<strong>軍部の発言力が増大</strong>→外交よりも軍事的解決を志向。参謀本部が独自の作戦計画(シュリーフェン計画等)を準備→政治家の選択肢を制約。</div>
+    </div>
+  </div>
+  <div class="branch-row">
+    <div class="node">
+      <div class="node-title">ナショナリズムの高揚</div>
+      <div class="node-year">19C後半–</div>
+      <div class="node-desc">各国で排外的ナショナリズムが高まる。フランス＝対独復讐感情(アルザス＝ロレーヌ)。ドイツ＝「ドイツの場所(Platz an der Sonne)」。<strong>汎スラヴ主義</strong>(ロシア)vs<strong>汎ゲルマン主義</strong>(ドイツ・オーストリア)→バルカン半島で衝突。</div>
+    </div>
+    <div class="node">
+      <div class="node-title">バルカンの火薬庫</div>
+      <div class="node-year">1878–</div>
+      <div class="node-desc">オスマン帝国の衰退→バルカン諸国の独立(ベルリン会議1878)。<strong>オーストリア</strong>＝ボスニア併合(1908)→<strong>セルビア</strong>の「大セルビア主義」と激突。<strong>ロシア</strong>＝スラヴ民族の保護者を自任→セルビアを支援。「ヨーロッパの火薬庫」。</div>
+    </div>
+  </div>
+  <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">これらの構造的対立が同盟体制を生む</div></div>
+</div>
+
+<!-- Phase 2: ビスマルク体制 -->
+<div class="phase p-bismarck">
+  <div class="phase-label">1871<br>〜<br>1890</div>
+  <div class="node">
+    <div class="node-title">ビスマルク体制(安定期)</div>
+    <div class="node-year">1871–90</div>
+    <div class="node-desc">ドイツ帝国成立後、ビスマルクは<strong>フランスの孤立化</strong>を外交の基本方針に。三帝同盟(独墺露、1873)→露土戦争後のベルリン会議(1878)でロシアの不満→三国同盟(独墺伊、1882)＋独露再保障条約(1887)。<strong>複雑だが安定した同盟網</strong>＝ビスマルクの「正直な仲介者」外交。</div>
+  </div>
+  <div class="side-note">核心：ビスマルクは「フランスを孤立させ、ロシアとの関係も維持する」という綱渡りを成功させていた</div>
+  <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">1890年ヴィルヘルム2世がビスマルクを罷免→体制崩壊</div></div>
+</div>
+
+<!-- Phase 3: ビスマルク体制の崩壊 -->
+<div class="phase p-collapse">
+  <div class="phase-label">1890<br>〜<br>1907</div>
+  <div class="node key">
+    <div class="node-title">ビスマルク罷免 → 独露再保障条約の不更新</div>
+    <div class="node-year">1890</div>
+    <div class="node-desc">ヴィルヘルム2世がビスマルクを罷免し「世界政策(Weltpolitik)」に転換。<strong>独露再保障条約を更新せず</strong>→ロシアが孤立→フランスに接近＝<strong>露仏同盟</strong>(1891-94)成立。ビスマルクが最も恐れた<strong>「ドイツの二正面戦争」</strong>の可能性が現実化。これがWW1の最も根本的な遠因。</div>
+  </div>
+  <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">二つの陣営の形成が始まる</div></div>
+  <div class="node">
+    <div class="node-title">三国同盟 vs 三国協商の形成</div>
+    <div class="node-year">1882 / 1904–07</div>
+    <div class="node-desc"><strong>三国同盟</strong>(独墺伊、1882)＝ドイツ・オーストリア＝ハンガリー・イタリア。<strong>英仏協商</strong>(1904)＝植民地問題で英仏が妥協(エジプト＝英、モロッコ＝仏)。<strong>英露協商</strong>(1907)＝イラン・アフガン・チベットで勢力圏を画定。→<strong>三国協商</strong>(英仏露)が事実上の対独包囲網に。ヨーロッパが二大陣営に分裂。</div>
+  </div>
+  <div class="side-note">注意：三国協商は正式な軍事同盟ではなく「友好関係(entente)」。だが危機の際には事実上の同盟として機能した</div>
+  <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">二大陣営の対立が各地で危機を引き起こす</div></div>
+</div>
+
+<!-- Phase 4: 危機の連鎖 -->
+<div class="phase p-crisis">
+  <div class="phase-label">1905<br>〜<br>1913</div>
+  <div class="node">
+    <div class="node-title">第一次モロッコ事件(タンジール事件)</div>
+    <div class="node-year">1905</div>
+    <div class="node-desc">ヴィルヘルム2世がモロッコのタンジールに上陸し、フランスのモロッコ支配に異議。<strong>英仏協商を揺さぶる狙い</strong>→逆効果で英仏の結束が強化。アルヘシラス会議(1906)でドイツが孤立→英仏協商の有効性が証明された。</div>
+  </div>
+  <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">ドイツの威嚇外交が繰り返される</div></div>
+  <div class="node">
+    <div class="node-title">ボスニア危機</div>
+    <div class="node-year">1908</div>
+    <div class="node-desc">オーストリアがボスニア＝ヘルツェゴヴィナを正式に併合。セルビアが猛反発(同胞のスラヴ人が住む)。<strong>ロシアはセルビアを支持</strong>するが軍事的に準備不足→屈辱的に引き下がる。→ロシアは「次は引かない」と決意。セルビアでは反オーストリア民族主義が過激化。</div>
+  </div>
+  <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">バルカンでの緊張が極限に</div></div>
+  <div class="node">
+    <div class="node-title">第二次モロッコ事件(アガディール事件)</div>
+    <div class="node-year">1911</div>
+    <div class="node-desc">ドイツがモロッコのアガディールに砲艦パンター号を派遣→英が強硬に反発(ロイド＝ジョージの「マンション＝ハウス演説」)。<strong>英独対立の決定的深化</strong>。独の威嚇外交は毎回逆効果で、対独包囲網が強化されるだけだった。</div>
+  </div>
+  <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">バルカンで直接的な戦争が始まる</div></div>
+  <div class="node">
+    <div class="node-title">バルカン戦争</div>
+    <div class="node-year">1912–13</div>
+    <div class="node-desc"><strong>第一次</strong>(1912)：バルカン同盟(セルビア・ギリシャ・ブルガリア・モンテネグロ)がオスマンに勝利→トルコの欧州領土をほぼ喪失。<strong>第二次</strong>(1913)：戦利品分配で同盟が崩壊→ブルガリアが孤立。セルビアが領土を大幅に拡大→<strong>オーストリアの危機感が頂点に</strong>(セルビアの膨張＝南スラヴ人の離反の恐れ)。</div>
+  </div>
+  <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">「次のバルカンの火花」が全面戦争を引き起こす状況が完成</div></div>
+</div>
+
+<!-- Phase 5: 七月危機 -->
+<div class="phase p-july">
+  <div class="phase-label">1914<br>6月<br>〜<br>7月</div>
+  <div class="node key">
+    <div class="node-title">サラエヴォ事件</div>
+    <div class="node-year">1914.6.28</div>
+    <div class="node-desc">ボスニアの首都サラエヴォで、セルビア人青年<strong>ガヴリロ＝プリンツィプ</strong>がオーストリア皇太子<strong>フランツ＝フェルディナント</strong>夫妻を暗殺。背後にセルビアの秘密結社「黒手組」。オーストリアはセルビアへの懲罰を決意→ドイツが「白紙委任状(Blankoscheck)」＝オーストリアの行動を無条件に支持。</div>
+  </div>
+  <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">オーストリアの最後通牒(7.23)→セルビアが一部拒否(7.25)</div></div>
+  <div class="node">
+    <div class="node-title">七月危機 ― 外交の失敗</div>
+    <div class="node-year">1914.7</div>
+    <div class="node-desc">オーストリアがセルビアに<strong>48時間の最後通牒</strong>(意図的に受け入れ不可能な条件)→セルビアは大部分を受諾するも一部拒否→オーストリアが<strong>セルビアに宣戦</strong>(7.28)。英のグレイ外相が調停を試みるが、<strong>同盟の連鎖と軍事計画の自動性</strong>が外交を凌駕→各国は「総動員」を開始。一度総動員が始まると<strong>鉄道のダイヤは変更不可能</strong>→もはや止められない。</div>
+  </div>
+  <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">同盟の連鎖が作動→5週間で全欧州が戦争状態に</div></div>
+</div>
+
+<!-- Phase 6: 参戦の連鎖 -->
+<div class="phase p-chain">
+  <div class="phase-label">1914<br>7月末<br>〜<br>8月</div>
+  <div class="node">
+    <div class="node-title">参戦の連鎖(ドミノ)</div>
+    <div class="node-year">1914.7.28 – 8.4</div>
+    <div class="node-desc">
+      <strong>7.28</strong> オーストリア → セルビアに宣戦<br>
+      <strong>7.30</strong> ロシアが総動員(セルビア支援＝汎スラヴ主義)<br>
+      <strong>8.1</strong> ドイツ → ロシアに宣戦(墺を支援＋シュリーフェン計画の発動)<br>
+      <strong>8.3</strong> ドイツ → フランスに宣戦(シュリーフェン計画＝仏を先に倒す)<br>
+      <strong>8.4</strong> ドイツ軍がベルギーに侵入 → <strong>イギリスが参戦</strong>(ベルギーの中立保障条約1839年を根拠)
+    </div>
+  </div>
+  <div class="side-note">わずか1週間で局地紛争(墺vsセルビア)が全面戦争(独墺 vs 英仏露)に拡大。シュリーフェン計画が「フランスを先に倒す」ことを前提としたため、ロシアとの戦争がフランスへの攻撃を自動的に引き起こした</div>
+  <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">人類史上初の総力戦(1914-18)＝死者約1000万人</div></div>
+  <div class="node key">
+    <div class="node-title">第一次世界大戦の開始</div>
+    <div class="node-year">1914.8</div>
+    <div class="node-desc">中央同盟国(独・墺)vs 連合国(英・仏・露)＋後にイタリア(1915)・アメリカ(1917)・日本等が参戦。西部戦線は<strong>塹壕戦で膠着</strong>→4年間の消耗戦。各国とも「クリスマスまでに終わる」と楽観していたが、<strong>工業化された近代戦争の破壊力</strong>を誰も予測できなかった。</div>
+  </div>
+</div>
+
+</div>
+
+<div class="note">
+<p>WW1の原因は<strong>「一つの原因」ではなく複数の要因の連鎖</strong>。入試では①帝国主義の競争 ②同盟体制(三国同盟vs三国協商) ③バルカン問題 ④ビスマルク体制の崩壊 ⑤サラエヴォ事件→七月危機 の5層で説明できることが求められる。特に<strong>「ビスマルク罷免→独露再保障条約不更新→露仏同盟→二正面戦争」</strong>の因果連鎖が最重要。</p>
+</div>
+
+</body>
+</html>

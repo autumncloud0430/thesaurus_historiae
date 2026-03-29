@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>モンゴル帝国 家系図</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--gold-dim:rgba(201,169,110,.12);--text:#d4cfc6;--text2:#8a857d;--text3:#555048;--border:rgba(201,169,110,.08);
+--kj:#5b8a72;--kc:#7a6b8a;--ko:#8a7b5b;--kt:#8a5b5b;--ky:#5b6f8a;--ki:#8a6b5b}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+.hdr{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.hdr h1{font-family:'Noto Serif JP',serif;font-size:15px;font-weight:700;color:var(--gold2)}
+.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5;transition:opacity .2s}
+.hdr a:hover{opacity:1}
+.tree-wrap{padding:24px 16px 20px;overflow-x:auto}
+.tree{display:flex;flex-direction:column;align-items:center;min-width:980px}
+/* Node */
+.nd{position:relative;text-align:center;cursor:default;transition:transform .2s}
+.nd:hover{transform:translateY(-2px)}
+.nb{border:1px solid rgba(201,169,110,.2);border-radius:8px;padding:8px 12px;background:rgba(201,169,110,.04);transition:all .25s;position:relative}
+.nd:hover .nb{border-color:rgba(201,169,110,.5);background:rgba(201,169,110,.08);box-shadow:0 4px 20px rgba(201,169,110,.1)}
+.nn{font-family:'Noto Serif JP',serif;font-size:12px;font-weight:700;color:var(--gold2);white-space:nowrap}
+.ni{font-size:8px;color:var(--text2);margin-top:1px;white-space:nowrap}
+.nk{font-family:'Cormorant Garamond',serif;font-size:8px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin-top:3px;padding:1px 7px;border-radius:100px;display:inline-block}
+/* Founder */
+.founder .nb{border-color:rgba(201,169,110,.4);background:rgba(201,169,110,.08);padding:10px 18px}
+.founder .nn{font-size:16px;background:linear-gradient(135deg,#c9a96e,#e8c888,#c9a96e);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+/* Rival */
+.rival .nb{border-style:dashed;opacity:.85}
+/* Khanate colors */
+.kj .nk{background:rgba(91,138,114,.2);color:#8ac4a0} .kj .nb{border-left:3px solid rgba(91,138,114,.4)}
+.kc .nk{background:rgba(122,107,138,.2);color:#b09fc8} .kc .nb{border-left:3px solid rgba(122,107,138,.4)}
+.ko .nk{background:rgba(138,123,91,.2);color:#c8b88a} .ko .nb{border-left:3px solid rgba(138,123,91,.4)}
+.kt .nb{border-left:3px solid rgba(138,91,91,.3)}
+.ky .nk{background:rgba(91,111,138,.2);color:#8aafc8} .ky .nb{border-left:3px solid rgba(91,111,138,.4)}
+.ki .nk{background:rgba(138,107,91,.2);color:#c8a88a} .ki .nb{border-left:3px solid rgba(138,107,91,.4)}
+/* Lines */
+.cv{width:1px;height:20px;background:rgba(201,169,110,.2);margin:0 auto}
+.cv.s{height:14px}
+/* Tooltip - click based, fixed position */
+.nd .tp{display:none;position:fixed;background:rgba(12,15,22,.96);border:1px solid rgba(201,169,110,.25);border-radius:8px;padding:10px 14px;width:300px;z-index:9999;pointer-events:auto;box-shadow:0 8px 30px rgba(0,0,0,.5)}
+/* tooltip content is copied to #tooltip-box */
+.tp p{font-size:10px;color:var(--text2);line-height:1.7}
+/* Layout */
+.row{display:flex;align-items:flex-start;gap:12px}
+.branch{display:flex;flex-direction:column;align-items:center}
+.sub-row{display:flex;gap:8px}
+.sub-branch{display:flex;flex-direction:column;align-items:center}
+/* Legend */
+.legend{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;padding:16px 20px}
+.legend-item{display:flex;align-items:center;gap:5px;font-size:9px;color:var(--text3)}
+.legend-dot{width:8px;height:8px;border-radius:2px}
+.note{text-align:center;padding:6px 20px 32px;font-size:9px;color:var(--text3);line-height:1.8;max-width:750px;margin:0 auto}
+.note strong{color:var(--gold)}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.tree>*{animation:fadeIn .6s ease both}
+.tree>*:nth-child(2){animation-delay:.1s}
+.tree>*:nth-child(3){animation-delay:.2s}
+
+@media(max-width:600px){
+.hdr{padding:10px 12px}.hdr h1{font-size:12px}
+.legend .li{font-size:7px}
+.note p{font-size:8px}
+}
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <h1>モンゴル帝国 家系図</h1>
+  <a href="charts.html">← Ad Chartae</a>
+</div>
+
+<div class="tree-wrap">
+<div class="tree">
+
+<!-- Gen 1: チンギス -->
+<div class="nd founder">
+  <div class="nb">
+    <div class="nn">チンギス＝ハン</div>
+    <div class="ni">在位 1206-1227 ｜ 大モンゴル帝国建国</div>
+  </div>
+  <div class="tp"><p>テムジンとして生まれ、モンゴル高原を統一。1206年クリルタイで即位。西夏・金・ホラズムを征服。駅伝制（ジャムチ）を整備。1227年西夏遠征中に没。</p></div>
+</div>
+
+<div class="cv"></div>
+
+<!-- Gen 2: Four Sons -->
+<div class="row">
+
+  <!-- ジョチ系 -->
+  <div class="branch">
+    <div class="cv s"></div>
+    <div class="nd kj">
+      <div class="nb">
+        <div class="nn">ジョチ</div>
+        <div class="ni">?-1227 ｜ 長男</div>
+        <div class="nk">キプチャク＝ハン国</div>
+      </div>
+      <div class="tp"><p>長男だが出生に疑惑あり（メルキト捕虜時代に懐妊）。父に先立ち死去。ロシア・東欧方面を分封される。</p></div>
+    </div>
+    <div class="cv s"></div>
+    <div class="nd kj">
+      <div class="nb">
+        <div class="nn">バトゥ</div>
+        <div class="ni">1207頃-1255 ｜ ジョチの子</div>
+        <div class="nk">キプチャク＝ハン国 建国</div>
+      </div>
+      <div class="tp"><p>ジョチの次男。ヨーロッパ遠征（1236-42）を指揮。ワールシュタットの戦い(1241)でポーランド・ドイツ連合軍を撃破。サライを首都にキプチャク＝ハン国を建国。「タタールのくびき」(~1480)の起点。モンケの即位を支持。</p></div>
+    </div>
+  </div>
+
+  <!-- チャガタイ系 -->
+  <div class="branch">
+    <div class="cv s"></div>
+    <div class="nd kc">
+      <div class="nb">
+        <div class="nn">チャガタイ</div>
+        <div class="ni">1183頃-1242 ｜ 次男</div>
+        <div class="nk">チャガタイ＝ハン国</div>
+      </div>
+      <div class="tp"><p>中央アジア（トルキスタン）を分封。ヤサ（モンゴル法）の守護者。後にチャガタイ＝ハン国に発展→14Cにティムールが台頭する母体。</p></div>
+    </div>
+    <div class="cv s"></div>
+    <div class="nd kc" style="opacity:.7">
+      <div class="nb">
+        <div class="nn" style="font-size:10px">→ ティムール帝国へ</div>
+        <div class="ni">14C後半にティムールが簒奪</div>
+      </div>
+      <div class="tp"><p>西チャガタイ＝ハン国からティムール（在位1370-1405）が台頭。チンギスの血統ではないがチンギスの女系子孫と婚姻し「駙馬（グレゲン）」を名乗る。サマルカンドを首都に大帝国を建設。</p></div>
+    </div>
+  </div>
+
+  <!-- オゴタイ系 -->
+  <div class="branch">
+    <div class="cv s"></div>
+    <div class="nd ko">
+      <div class="nb">
+        <div class="nn">オゴタイ</div>
+        <div class="ni">在位 1229-1241 ｜ 三男・第2代大ハン</div>
+        <div class="nk">オゴタイ＝ハン国</div>
+      </div>
+      <div class="tp"><p>チンギスが後継者に指名。カラコルムを建設。金を滅ぼす(1234)。バトゥの西征を命じる。飲酒が原因で急死→後継争いの契機に。</p></div>
+    </div>
+    <div class="cv s"></div>
+    <div class="nd ko">
+      <div class="nb">
+        <div class="nn">グユク</div>
+        <div class="ni">在位 1246-1248 ｜ オゴタイの子・第3代</div>
+      </div>
+      <div class="tp"><p>オゴタイの長男。バトゥと対立。教皇インノケンティウス4世の使節プラノ＝カルピニを接見。在位わずか2年で急死→トゥルイ家に大ハン位が移る契機。</p></div>
+    </div>
+    <div class="cv s"></div>
+    <div class="nd ko rival">
+      <div class="nb">
+        <div class="nn">ハイドゥ</div>
+        <div class="ni">1235頃-1301 ｜ オゴタイの孫</div>
+        <div class="nk" style="background:rgba(180,80,80,.15);color:#d4a0a0">反フビライの盟主</div>
+      </div>
+      <div class="tp"><p>オゴタイの孫。フビライの大ハン位を認めず、中央アジアで約30年にわたり反乱を継続（ハイドゥの乱, 1266-1301）。チャガタイ＝ハン国と連携しフビライに対抗。モンゴル帝国の統一性を最終的に破壊した人物。彼の死後、オゴタイ＝ハン国はチャガタイ＝ハン国に吸収される。</p></div>
+    </div>
+  </div>
+
+  <!-- トゥルイ系 -->
+  <div class="branch">
+    <div class="cv s"></div>
+    <div class="nd kt">
+      <div class="nb">
+        <div class="nn">トゥルイ</div>
+        <div class="ni">1191頃-1232 ｜ 四男（末子）</div>
+        <div class="nk" style="background:rgba(138,91,91,.1);color:#c8a08a">モンゴル本土を相続</div>
+      </div>
+      <div class="tp"><p>末子相続の慣習によりモンゴル本土と軍の大部分を継承。早世したが、モンケ・アリクブケ・フビライ・フラグが帝国の中心を担う→「トゥルイ家の時代」。</p></div>
+    </div>
+    <div class="cv s"></div>
+
+    <!-- トゥルイの4子 -->
+    <div class="sub-row">
+      <div class="sub-branch">
+        <div class="cv s"></div>
+        <div class="nd kt">
+          <div class="nb">
+            <div class="nn">モンケ</div>
+            <div class="ni">在位 1251-1259 ｜ 第4代</div>
+          </div>
+          <div class="tp"><p>トゥルイの長男。バトゥの支持で即位しオゴタイ家を排除。南宋遠征中に陣没。モンケの死が帝国分裂の決定的契機→フビライとアリクブケの後継争い。</p></div>
+        </div>
+      </div>
+
+      <div class="sub-branch">
+        <div class="cv s"></div>
+        <div class="nd kt rival">
+          <div class="nb">
+            <div class="nn">アリクブケ</div>
+            <div class="ni">?-1266 ｜ トゥルイの子</div>
+            <div class="nk" style="background:rgba(180,80,80,.15);color:#d4a0a0">フビライと対立</div>
+          </div>
+          <div class="tp"><p>トゥルイの末子。モンケ死後、カラコルムのクリルタイで大ハンに推戴されフビライと対立（1260-64）。モンゴル高原の伝統派（遊牧重視）を代表。敗北後フビライに降伏し幽閉→病死。この内戦が帝国の分裂を決定づけた。</p></div>
+        </div>
+      </div>
+
+      <div class="sub-branch">
+        <div class="cv s"></div>
+        <div class="nd ky">
+          <div class="nb">
+            <div class="nn">フビライ</div>
+            <div class="ni">在位 1260-1294 ｜ 第5代</div>
+            <div class="nk">元朝 建国(1271)</div>
+          </div>
+          <div class="tp"><p>大都（北京）に遷都し国号を「元」とする。南宋を滅ぼし中国統一(1279)。元寇(1274/1281)は失敗。マルコ＝ポーロが仕える。色目人重用・四等人制・交鈔。アリクブケ・ハイドゥとの内戦でモンゴル帝国の統一性は実質崩壊。</p></div>
+        </div>
+      </div>
+
+      <div class="sub-branch">
+        <div class="cv s"></div>
+        <div class="nd ki">
+          <div class="nb">
+            <div class="nn">フラグ</div>
+            <div class="ni">在位 1256-1265</div>
+            <div class="nk">イル＝ハン国 建国</div>
+          </div>
+          <div class="tp"><p>バグダードを攻略しアッバース朝を滅亡(1258)。アイン＝ジャールート(1260)でマムルーク朝に敗北→西進の限界。タブリーズを首都にイル＝ハン国を建国。ガザン＝ハン時にイスラーム改宗。宰相ラシード＝ウッディーンが『集史』を編纂。</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- row -->
+</div><!-- tree -->
+</div><!-- tree-wrap -->
+
+<div class="legend">
+  <div class="legend-item"><div class="legend-dot" style="background:rgba(91,138,114,.5)"></div>キプチャク＝ハン国（南ロシア）</div>
+  <div class="legend-item"><div class="legend-dot" style="background:rgba(122,107,138,.5)"></div>チャガタイ＝ハン国（中央アジア）</div>
+  <div class="legend-item"><div class="legend-dot" style="background:rgba(138,123,91,.5)"></div>オゴタイ＝ハン国（モンゴル西部）</div>
+  <div class="legend-item"><div class="legend-dot" style="background:rgba(91,111,138,.5)"></div>元朝（中国）</div>
+  <div class="legend-item"><div class="legend-dot" style="background:rgba(138,107,91,.5)"></div>イル＝ハン国（イラン）</div>
+  <div class="legend-item"><div class="legend-dot" style="background:rgba(180,80,80,.3);border:1px dashed rgba(180,80,80,.5)"></div>フビライへの対抗勢力</div>
+</div>
+
+<div class="note">
+  <strong>帝国分裂の構造：</strong>モンケの死(1259)後、<strong>フビライ</strong>（中国志向・大都）と<strong>アリクブケ</strong>（遊牧伝統・カラコルム）が大ハン位を争い、帝国は事実上分裂。<br>
+  フビライが勝利するも、オゴタイ家の<strong>ハイドゥ</strong>が中央アジアで約30年にわたり反乱→帝国の統一は完全に崩壊。<br>
+  4ハン国はそれぞれ独自の道を歩む。オゴタイ＝ハン国はハイドゥの死(1301)後にチャガタイ＝ハン国に吸収。<br>
+  <strong>入試ポイント：</strong>「なぜモンゴル帝国は分裂したか」→ ①後継争い(フビライvsアリクブケ) ②中国化vs遊牧伝統の路線対立 ③ハイドゥの乱による長期内戦
+</div>
+
+<div id="tooltip-overlay" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;z-index:8000" onclick="closeTip()"></div>
+<div id="tooltip-box" style="display:none;position:fixed;z-index:9000;background:rgba(12,15,22,.97);border:1px solid rgba(201,169,110,.25);border-radius:8px;padding:12px 16px;max-width:300px;width:calc(100vw - 32px);box-shadow:0 8px 30px rgba(0,0,0,.6)">
+  <div id="tooltip-content" style="font-size:10px;color:#8a857d;line-height:1.7"></div>
+</div>
+<script>
+(function() {
+  var overlay = document.getElementById("tooltip-overlay");
+  var box = document.getElementById("tooltip-box");
+  var content = document.getElementById("tooltip-content");
+  var isOpen = false;
+
+  window.closeTip = function() {
+    box.style.display = "none";
+    overlay.style.display = "none";
+    isOpen = false;
+  };
+
+  function openTip(nd) {
+    var tp = nd.querySelector(".tp");
+    if (!tp) return;
+    closeTip();
+
+    content.innerHTML = tp.innerHTML;
+    overlay.style.display = "block";
+    box.style.display = "block";
+
+    // Position: center horizontally under the node
+    var rect = nd.getBoundingClientRect();
+    var bw = Math.min(300, window.innerWidth - 32);
+    box.style.width = bw + "px";
+
+    var left = rect.left + rect.width / 2 - bw / 2;
+    if (left < 16) left = 16;
+    if (left + bw > window.innerWidth - 16) left = window.innerWidth - 16 - bw;
+    box.style.left = left + "px";
+
+    // Try below first
+    var top = rect.bottom + 8;
+    box.style.top = top + "px";
+
+    // Check if it overflows bottom
+    var boxRect = box.getBoundingClientRect();
+    if (boxRect.bottom > window.innerHeight - 16) {
+      // Place above instead
+      top = rect.top - boxRect.height - 8;
+      if (top < 16) top = 16;
+      box.style.top = top + "px";
+    }
+
+    isOpen = true;
+  }
+
+  // Touch handling
+  var touchMoved = false;
+  var touchTgt = null;
+
+  document.addEventListener("touchstart", function(e) {
+    touchMoved = false;
+    touchTgt = e.target;
+  }, {passive: true});
+
+  document.addEventListener("touchmove", function() {
+    touchMoved = true;
+  }, {passive: true});
+
+  document.addEventListener("touchend", function(e) {
+    if (touchMoved) return;
+    var nd = touchTgt ? touchTgt.closest(".nd") : null;
+    if (nd) {
+      e.preventDefault();
+      openTip(nd);
+    } else if (!touchTgt || !touchTgt.closest("#tooltip-box")) {
+      closeTip();
+    }
+    touchTgt = null;
+  });
+
+  // Desktop click
+  document.addEventListener("click", function(e) {
+    if ("ontouchstart" in window) return;
+    var nd = e.target.closest(".nd");
+    if (nd) {
+      openTip(nd);
+    } else if (!e.target.closest("#tooltip-box") && !e.target.closest("#tooltip-overlay")) {
+      closeTip();
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

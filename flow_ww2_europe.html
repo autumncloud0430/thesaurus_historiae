@@ -1,0 +1,75 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>第二次世界大戦(ヨーロッパ戦線)</title><style>@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048;--border:rgba(201,169,110,.08)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+.hdr{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.hdr h1{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2)}
+.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
+.flow{max-width:720px;margin:0 auto;padding:24px 20px 60px}
+.phase{position:relative;margin-bottom:2px;padding:16px 16px 16px 60px;border-left:2px solid rgba(201,169,110,.08);margin-left:30px}
+.phase:last-child{border-left-color:transparent}
+.phase-label{position:absolute;left:-42px;top:16px;width:36px;font-family:'Cormorant Garamond',serif;font-size:10px;font-weight:700;color:var(--text3);text-align:right;line-height:1.3}
+.phase::before{content:'';position:absolute;left:-5px;top:22px;width:8px;height:8px;border-radius:50%;background:var(--bg);border:2px solid rgba(201,169,110,.25)}
+.node{background:rgba(255,255,255,.015);border:1px solid rgba(255,255,255,.04);border-radius:8px;padding:10px 14px;margin-bottom:8px;border-left:3px solid transparent}
+.node:hover{background:rgba(255,255,255,.03)}
+.node-title{font-family:'Noto Serif JP',serif;font-size:12px;font-weight:700;color:var(--gold2);margin-bottom:2px}
+.node-year{font-family:'Cormorant Garamond',serif;font-size:11px;color:var(--gold);opacity:.6;margin-bottom:4px}
+.node-desc{font-size:10px;color:var(--text2);line-height:1.7}
+.node-desc strong{color:var(--text);font-weight:600}
+.arrow{display:flex;align-items:center;gap:6px;padding:2px 0 2px 8px;margin-bottom:6px}
+.arrow-line{width:16px;height:1px;background:rgba(201,169,110,.15)}
+.arrow-text{font-size:8px;color:var(--text3)}
+.arrow-icon{color:rgba(201,169,110,.3);font-size:10px}
+.branch-row{display:flex;gap:8px;margin-bottom:8px}
+.branch-row .node{flex:1}
+.node.key{background:rgba(201,169,110,.04);border-color:rgba(201,169,110,.12)}
+.side-note{font-size:8px;color:var(--text3);padding:4px 8px;border-left:2px solid rgba(201,169,110,.1);margin:4px 0 8px;line-height:1.6}
+.note{text-align:center;padding:8px 20px 32px;max-width:700px;margin:0 auto}.note p{font-size:9px;color:var(--text3);line-height:1.8}.note strong{color:var(--gold)}
+
+.p1 .node{border-left-color:rgba(130,130,100,.3)}.p1::before{border-color:rgba(130,130,100,.4)}.p2 .node{border-left-color:rgba(180,80,80,.3)}.p2::before{border-color:rgba(180,80,80,.4)}.p3 .node{border-left-color:rgba(180,140,60,.3)}.p3::before{border-color:rgba(180,140,60,.5);background:rgba(180,140,60,.15)}.p4 .node{border-left-color:rgba(80,150,120,.3)}.p4::before{border-color:rgba(80,150,120,.5);background:rgba(80,150,120,.15)}
+@media(max-width:600px){
+.hdr{padding:10px 12px}.hdr h1{font-size:12px}
+.flow{padding:16px 10px 40px}
+.phase{padding:12px 10px 12px 44px;margin-left:20px}
+.phase-label{left:-30px;width:28px;font-size:8px}
+.node{padding:8px 10px}.node-title{font-size:11px}.node-desc{font-size:9px}
+.branch-row{flex-direction:column}
+.side-note{font-size:7.5px}
+.note p{font-size:8px}
+}
+</style></head><body><div class="hdr"><h1>第二次世界大戦(ヨーロッパ戦線) ― ナチスの電撃戦からベルリン陥落まで(1939-1945)</h1><a href="charts.html">← Ad Chartae</a></div><div class="flow">
+<div class="phase p1"><div class="phase-label">前史</div>
+  <div class="node"><div class="node-title">ナチス・ドイツの領土拡大</div><div class="node-year">1936-39</div>
+  <div class="node-desc"><strong>ラインラント進駐</strong>(1936.3)→<strong>オーストリア併合(アンシュルス)</strong>(1938.3)→★<strong>ミュンヘン会談</strong>(1938.9)＝英チェンバレン・仏ダラディエがズデーテン地方の割譲を容認(★<strong>「宥和政策」の象徴</strong>＝チェンバレン「我々の時代の平和」)→チェコスロヴァキア解体(1939.3)→リトアニアからメーメル奪回(1939.3)→★<strong>独ソ不可侵条約</strong>(1939.8.23)＝モロトフ＝リッベントロップ協定→秘密議定書でポーランド・バルト三国・フィンランドの勢力圏を分割。</div></div></div>
+
+<div class="phase p2"><div class="phase-label">電撃戦<br>1939-40</div>
+  <div class="node key"><div class="node-title">★ポーランド侵攻(WW2開戦)</div><div class="node-year">1939.9.1</div>
+  <div class="node-desc"><strong>電撃戦(ブリッツクリーク)</strong>＝戦車(パンツァー)師団＋急降下爆撃機(シュトゥーカ)の集中運用→3週間でポーランド崩壊。英仏が独に宣戦(9.3)→だし<strong>「奇妙な戦争(Phoney War)」</strong>＝西部戦線は半年間ほぼ動かず。ソ連もポーランド東部に侵攻(9.17)→ソ連はフィンランドにも侵攻(<strong>冬戦争</strong>1939.11-40.3)→国際連盟から除名。</div></div>
+  <div class="node"><div class="node-title">北欧侵攻(デンマーク・ノルウェー)</div><div class="node-year">1940.4</div>
+  <div class="node-desc"><strong>ヴェーザー演習作戦</strong>＝独が<strong>デンマーク</strong>を数時間で占領(無血)→<strong>ノルウェー</strong>に海空から侵攻→英仏の援軍が来るも独が制圧(6月)。ノルウェーのクヴィスリングが対独協力政権→★「クヴィスリング」＝対敵協力者(裏切り者)の代名詞に。★スウェーデンの鉄鉱石ルート確保が目的。</div></div>
+  <div class="node key"><div class="node-title">★フランス陥落</div><div class="node-year">1940.5-6</div>
+  <div class="node-desc">オランダ(5.14降伏・ロッテルダム爆撃)→ベルギー(5.28降伏)を突破→<strong>アルデンヌの森</strong>を戦車で突破(マジノ線を迂回)→★<strong>6週間でフランス降伏</strong>(6.22)。★<strong>ダンケルク撤退</strong>(5.26-6.4)＝英仏軍約33万人がドーヴァー海峡を渡り英に脱出(★「ダイナモ作戦」)。仏は<strong>ヴィシー政権(ペタン)</strong>(独の傀儡・南仏)と<strong>自由フランス(ド＝ゴール・ロンドン)</strong>に分裂。独はフランス北部＋大西洋岸を直接占領。</div></div>
+  <div class="node"><div class="node-title">バトル＝オブ＝ブリテン</div><div class="node-year">1940.7-10</div>
+  <div class="node-desc">独空軍(ルフトヴァッフェ)が英本土を爆撃(ロンドン大空襲)→★<strong>チャーチル</strong>「我々は海岸で戦い、丘で戦い、決して降伏しない」→<strong>RAFが独空軍を撃退</strong>(レーダーの活用)→ヒトラーが英本土上陸(「あしか作戦」)を断念＝★<strong>ナチスの最初の敗北</strong>。</div></div></div>
+
+<div class="phase p3"><div class="phase-label">転換点<br>1941-43</div>
+  <div class="node"><div class="node-title">バルカン侵攻</div><div class="node-year">1941.4</div>
+  <div class="node-desc">ユーゴスラヴィア・ギリシアを制圧。クレタ島空挺作戦。★バルカン作戦がバルバロッサ作戦を約5週間遅延させた→モスクワ到達前に冬が来る一因に。</div></div>
+  <div class="node key"><div class="node-title">★独ソ戦(バルバロッサ作戦)開始</div><div class="node-year">1941.6.22</div>
+  <div class="node-desc">ヒトラーが不可侵条約を破りソ連に侵攻。★<strong>WW2最大の戦線</strong>＝独軍約300万がソ連に侵入。北方軍集団→レニングラード(★<strong>900日の包囲</strong>＝約100万市民が餓死)、中央軍集団→モスクワ、南方軍集団→ウクライナの穀倉地帯・コーカサスの石油。初期は快進撃→だし<strong>モスクワの門前で阻止</strong>(1941.12)＝ジューコフの反攻＋冬将軍。</div></div>
+  <div class="node key"><div class="node-title">★★スターリングラードの戦い</div><div class="node-year">1942.8-1943.2</div>
+  <div class="node-desc">★<strong>WW2の転換点</strong>。ヴォルガ河畔の工業都市。独第6軍(パウルス)が市街戦を展開→ソ連軍がウラヌス作戦で独軍を包囲→<strong>独軍約9万人が降伏</strong>(パウルス元帥含む)→★<strong>独の攻勢の終わり＝以後ソ連が西へ反攻</strong>。両軍合わせて約200万人の死傷者。同時期に<strong>クルスクの戦い</strong>(1943.7)＝史上最大の戦車戦→独の装甲戦力が壊滅。</div></div>
+  <div class="node"><div class="node-title">北アフリカ・イタリア</div><div class="node-year">1942-43</div>
+  <div class="node-desc">ロンメル(「砂漠の狐」) vs モンゴメリー→★<strong>エル＝アラメインの戦い</strong>(1942.10)で英が勝利。米英のトーチ作戦(1942.11)→独伊軍降伏(1943.5)。シチリア上陸(1943.7)→★<strong>ムッソリーニ失脚</strong>→イタリア降伏(1943.9)→だし独がイタリア北部を占領→アンツィオ・モンテカッシーノの激戦。</div></div></div>
+
+<div class="phase p4"><div class="phase-label">反攻<br>1944-45</div>
+  <div class="node key"><div class="node-title">★★ノルマンディー上陸作戦(D-Day)</div><div class="node-year">1944.6.6</div>
+  <div class="node-desc">★<strong>史上最大の上陸作戦</strong>＝連合軍最高司令官アイゼンハワー。英仏海峡を渡り<strong>ノルマンディー5つの海岸に約15万人が上陸</strong>(オマハ・ユタ・ゴールド・ジュノー・ソード)→<strong>第二戦線の確立</strong>。ファレーズ包囲戦で独軍壊滅→<strong>パリ解放</strong>(1944.8.25)＝ド＝ゴールがシャンゼリゼを行進。東からはソ連軍がバグラチオン作戦で独中央軍集団を壊滅→ポーランドに進出。</div></div>
+  <div class="node"><div class="node-title">ヤルタ会談</div><div class="node-year">1945.2</div>
+  <div class="node-desc">★ルーズヴェルト・チャーチル・スターリンの<strong>「ビッグスリー」</strong>→ドイツの分割占領(米英仏ソ4カ国)・ポーランド国境の西方移動・国連の設立・ソ連の対日参戦を合意。★<strong>戦後の冷戦の原型</strong>がここで決まる。</div></div>
+  <div class="node key"><div class="node-title">★ベルリン陥落・ドイツ降伏</div><div class="node-year">1945.4-5</div>
+  <div class="node-desc">ソ連軍250万がベルリンに突入(ジューコフ)→<strong>ヒトラーが地下壕で自殺</strong>(4月30日)→<strong>ドイツ無条件降伏</strong>(5月8日＝★VEデー)。★<strong>ホロコースト</strong>＝ナチスによるユダヤ人約600万人の組織的虐殺(アウシュヴィッツ・トレブリンカ等)が解放により明らかに→★<strong>ニュルンベルク裁判</strong>(1945-46)で戦犯を裁く。</div></div>
+  <div class="side-note">★入試超頻出：「ミュンヘン会談(1938)＝宥和政策」「独ソ不可侵条約(1939.8)→秘密議定書」「電撃戦＝ブリッツクリーク」「ダンケルク撤退」「デンマーク・ノルウェー侵攻(1940.4)」「バルバロッサ作戦(1941.6)」「レニングラード包囲(900日)」「スターリングラード(1942-43)＝転換点」「D-Day(1944.6.6)」「ヤルタ会談(1945.2)」「ホロコースト」「ニュルンベルク裁判」</div>
+</div>
+</div><div class="note"><p>WW2ヨーロッパ戦線＝<strong>電撃戦(1939-40)→独ソ戦の消耗(1941-43)→連合軍の東西反攻(1944-45)</strong>。「スターリングラード＝転換点」「D-Day＝第二戦線」「ホロコースト」が最頻出。</p></div></body></html>

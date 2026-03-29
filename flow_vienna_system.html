@@ -1,0 +1,71 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>ウィーン体制の成立と崩壊</title><style>@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048;--border:rgba(201,169,110,.08)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+.hdr{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.hdr h1{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2)}
+.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
+.flow{max-width:720px;margin:0 auto;padding:24px 20px 60px}
+.phase{position:relative;margin-bottom:2px;padding:16px 16px 16px 60px;border-left:2px solid rgba(201,169,110,.08);margin-left:30px}
+.phase:last-child{border-left-color:transparent}
+.phase-label{position:absolute;left:-42px;top:16px;width:36px;font-family:'Cormorant Garamond',serif;font-size:10px;font-weight:700;color:var(--text3);text-align:right;line-height:1.3}
+.phase::before{content:'';position:absolute;left:-5px;top:22px;width:8px;height:8px;border-radius:50%;background:var(--bg);border:2px solid rgba(201,169,110,.25)}
+.node{background:rgba(255,255,255,.015);border:1px solid rgba(255,255,255,.04);border-radius:8px;padding:10px 14px;margin-bottom:8px;border-left:3px solid transparent}
+.node:hover{background:rgba(255,255,255,.03)}
+.node-title{font-family:'Noto Serif JP',serif;font-size:12px;font-weight:700;color:var(--gold2);margin-bottom:2px}
+.node-year{font-family:'Cormorant Garamond',serif;font-size:11px;color:var(--gold);opacity:.6;margin-bottom:4px}
+.node-desc{font-size:10px;color:var(--text2);line-height:1.7}
+.node-desc strong{color:var(--text);font-weight:600}
+.arrow{display:flex;align-items:center;gap:6px;padding:2px 0 2px 8px;margin-bottom:6px}
+.arrow-line{width:16px;height:1px;background:rgba(201,169,110,.15)}
+.arrow-text{font-size:8px;color:var(--text3)}
+.arrow-icon{color:rgba(201,169,110,.3);font-size:10px}
+.branch-row{display:flex;gap:8px;margin-bottom:8px}
+.branch-row .node{flex:1}
+.node.key{background:rgba(201,169,110,.04);border-color:rgba(201,169,110,.12)}
+.side-note{font-size:8px;color:var(--text3);padding:4px 8px;border-left:2px solid rgba(201,169,110,.1);margin:4px 0 8px;line-height:1.6}
+.note{text-align:center;padding:8px 20px 32px;max-width:700px;margin:0 auto}.note p{font-size:9px;color:var(--text3);line-height:1.8}.note strong{color:var(--gold)}
+
+.p1 .node{border-left-color:rgba(100,100,180,.3)}.p1::before{border-color:rgba(100,100,180,.4)}.p2 .node{border-left-color:rgba(130,100,80,.3)}.p2::before{border-color:rgba(130,100,80,.4)}.p3 .node{border-left-color:rgba(180,140,60,.3)}.p3::before{border-color:rgba(180,140,60,.5);background:rgba(180,140,60,.15)}.p4 .node{border-left-color:rgba(180,80,80,.3)}.p4::before{border-color:rgba(180,80,80,.5);background:rgba(180,80,80,.15)}
+@media(max-width:600px){
+.hdr{padding:10px 12px}.hdr h1{font-size:12px}
+.flow{padding:16px 10px 40px}
+.phase{padding:12px 10px 12px 44px;margin-left:20px}
+.phase-label{left:-30px;width:28px;font-size:8px}
+.node{padding:8px 10px}.node-title{font-size:11px}.node-desc{font-size:9px}
+.branch-row{flex-direction:column}
+.side-note{font-size:7.5px}
+.note p{font-size:8px}
+}
+</style></head><body>
+<div class="hdr"><h1>ウィーン体制の成立と崩壊 ― 正統主義と自由主義の闘い(1814-1848)</h1><a href="charts.html">← Ad Chartae</a></div>
+<div class="flow">
+<div class="phase p1"><div class="phase-label">成立</div>
+  <div class="node key"><div class="node-title">★ウィーン会議</div><div class="node-year">1814-15</div>
+  <div class="node-desc">ナポレオン戦争後の国際秩序を再建。議長＝オーストリアの<strong>メッテルニヒ</strong>。★原則＝<strong>正統主義(レジティミスム)</strong>＝革命前の王朝を正統な支配者として復活させる(タレーランが主張)。「会議は踊る、されど進まず」(舞踏会ばかりで交渉が停滞)。</div></div>
+  <div class="branch-row">
+    <div class="node"><div class="node-title">勢力均衡の原則</div>
+    <div class="node-desc"><strong>英</strong>＝海上覇権を確保(ケープ・セイロン・マルタ)。<strong>ロシア</strong>＝ポーランド(会議王国)。<strong>プロイセン</strong>＝ザクセン北部・ラインラント。<strong>オーストリア</strong>＝北イタリア(ロンバルディア・ヴェネツィア)。<strong>仏</strong>＝タレーランの外交で大国の地位を維持。</div></div>
+    <div class="node"><div class="node-title">体制の維持機構</div>
+    <div class="node-desc"><strong>神聖同盟</strong>(1815)＝ロシア皇帝アレクサンドル1世が提唱→キリスト教的友愛(英・教皇・オスマン帝国は不参加)。<strong>四国同盟</strong>(→五国同盟)＝英露墺普(→仏)→革命・反乱を共同で鎮圧する実質的な機構。</div></div>
+  </div></div>
+
+<div class="phase p2"><div class="phase-label">抑圧</div>
+  <div class="node"><div class="node-title">メッテルニヒ体制の抑圧</div><div class="node-year">1815-30</div>
+  <div class="node-desc"><strong>カールスバート決議</strong>(1819)＝ドイツ連邦で大学の自由・出版の自由を抑圧。各地で自由主義・ナショナリズム運動を弾圧。<strong>ブルシェンシャフト</strong>(ドイツの学生組合)を解散。<strong>カルボナリ</strong>(イタリアの秘密結社)の蜂起(1820-21)もオーストリアが鎮圧。スペイン立憲革命(1820)→フランスが介入して鎮圧。</div></div>
+  <div class="node"><div class="node-title">ギリシア独立戦争</div><div class="node-year">1821-29</div>
+  <div class="node-desc">★<strong>ウィーン体制に最初のひび</strong>。ギリシア人がオスマン帝国から独立を目指す→<strong>ロマン主義的共感</strong>(バイロンが義勇兵として参戦→病死)→英仏露が支援→<strong>ギリシア独立</strong>(1829ロンドン議定書)。★正統主義の原則が破れた最初の例。</div></div></div>
+
+<div class="phase p3"><div class="phase-label">動揺<br>1830</div>
+  <div class="node key"><div class="node-title">★七月革命(フランス)</div><div class="node-year">1830</div>
+  <div class="node-desc">シャルル10世の反動政治(出版の自由制限等)に対し<strong>パリ市民が蜂起</strong>→シャルル10世亡命→<strong>ルイ＝フィリップ</strong>が「フランス人の王」として即位＝<strong>七月王政</strong>(立憲君主制)。★<strong>正統主義が仏で否定された</strong>。ドラクロワ『民衆を導く自由の女神』。</div></div>
+  <div class="node"><div class="node-title">波及</div>
+  <div class="node-desc"><strong>ベルギー独立</strong>(1830)＝オランダから分離→立憲王政。<strong>ポーランドの蜂起</strong>(1830-31)→ロシアが鎮圧→失敗。<strong>イタリア・ドイツ</strong>でも自由主義運動→だし失敗。★ウィーン体制は動揺するが完全には崩壊しない。</div></div></div>
+
+<div class="phase p4"><div class="phase-label">崩壊<br>1848</div>
+  <div class="node key"><div class="node-title">★★二月革命 → 「諸国民の春」</div><div class="node-year">1848</div>
+  <div class="node-desc"><strong>仏</strong>＝二月革命→ルイ＝フィリップ退位→<strong>第二共和政</strong>(男子普通選挙)→ルイ＝ナポレオン大統領→ナポレオン3世(第二帝政)。<strong>ウィーン</strong>＝三月革命→★<strong>メッテルニヒ亡命＝ウィーン体制の終焉</strong>。<strong>ベルリン</strong>＝三月革命→フランクフルト国民議会(ドイツ統一を議論→大ドイツ vs 小ドイツ→失敗)。<strong>ハンガリー</strong>＝コシュートの独立運動→ロシアが鎮圧。<strong>イタリア</strong>＝マッツィーニのローマ共和国→失敗。</div></div>
+  <div class="side-note">★1848年革命の結果：ほとんどが「失敗」に終わる→だし①自由主義・ナショナリズムの力を証明 ②「上からの改革」(ビスマルクの鉄血政策・カヴールの現実主義)への転換 ③農奴解放(オーストリア・ハンガリー)が実現</div>
+</div>
+</div><div class="note"><p>ウィーン体制(1814-48)＝<strong>正統主義による復古と、自由主義・ナショナリズムによる挑戦の時代</strong>。入試では①<strong>メッテルニヒと正統主義</strong> ②<strong>ギリシア独立(1829)＝最初のひび</strong> ③<strong>七月革命(1830)＝正統主義の否定</strong> ④<strong>二月革命(1848)＝メッテルニヒ亡命＝体制崩壊</strong>が問われる。</p></div></body></html>
