@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>対仏大同盟の変遷 ― 7回の同盟とナポレオン</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048;--border:rgba(201,169,110,.08)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+.hdr{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.hdr h1{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2)}
+.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
+.content{padding:12px 16px;overflow-x:auto}.content-inner{min-width:760px}
+.phase{margin-bottom:12px;padding-bottom:12px;border-bottom:1px solid rgba(201,169,110,.04)}.phase:last-child{border-bottom:none}
+.phase-hdr{display:flex;align-items:baseline;gap:8px;margin-bottom:6px}
+.phase-era{font-family:'Cormorant Garamond',serif;font-size:13px;font-weight:700;color:var(--gold);letter-spacing:.1em;min-width:80px}
+.phase-title{font-family:'Noto Serif JP',serif;font-size:11px;font-weight:700;color:var(--gold2)}
+.phase-sub{font-size:8px;color:var(--text3);margin-left:4px}
+.phase-body{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.cn{border-radius:6px;padding:4px 9px;text-align:center;cursor:pointer;transition:all .15s}.cn:hover{filter:brightness(1.15);transform:translateY(-1px)}
+.cn .nm{font-family:'Noto Serif JP',serif;font-size:9px;font-weight:700;white-space:nowrap}
+.cn .sub{font-size:6px;color:var(--text3);margin-top:1px;white-space:nowrap}
+.cn-fr{background:rgba(100,80,160,.06);border:1px solid rgba(100,80,160,.2)}.cn-fr .nm{color:#b8a0d4}
+.cn-fr-big{background:rgba(100,80,160,.08);border:1.5px solid rgba(100,80,160,.3);padding:6px 14px}.cn-fr-big .nm{font-size:12px;color:#c8b0e0}
+.cn-co{background:rgba(194,120,74,.06);border:1px solid rgba(194,120,74,.2)}.cn-co .nm{color:#d4b898}
+.cn-out{background:rgba(255,255,255,.02);border:1px dashed rgba(255,255,255,.06)}.cn-out .nm{color:var(--text3);opacity:.6}
+.cn-dim{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.04)}.cn-dim .nm{color:var(--text3)}
+.grp{border-radius:8px;padding:8px 10px;display:flex;gap:5px;align-items:center;flex-wrap:wrap;position:relative}
+.grp-fr{border:1px solid rgba(100,80,160,.12);background:rgba(100,80,160,.02)}
+.grp-co{border:1px solid rgba(194,120,74,.12);background:rgba(194,120,74,.02)}
+.grp-label{font-size:7px;font-weight:600;letter-spacing:.06em;position:absolute;top:-7px;left:12px;padding:0 4px;background:var(--bg)}
+.grp-label-fr{color:rgba(100,80,160,.6)}
+.grp-label-co{color:rgba(194,120,74,.6)}
+.vs{font-family:'Cormorant Garamond',serif;font-size:12px;font-weight:700;color:rgba(194,90,74,.4);padding:0 5px}
+.ev{font-size:7px;color:var(--gold);background:rgba(201,169,110,.06);border:1px solid rgba(201,169,110,.1);border-radius:4px;padding:2px 6px;cursor:pointer;transition:all .15s;white-space:nowrap}.ev:hover{filter:brightness(1.2)}
+.ev-bad{color:#c25a5a;background:rgba(194,74,74,.06);border-color:rgba(194,74,74,.1)}
+.ev-good{color:#8ac8a0;background:rgba(91,138,91,.06);border-color:rgba(91,138,91,.1)}
+.ar{font-size:8px;color:var(--text3);padding:0 2px}
+.detail{font-size:6.5px;color:var(--text3);margin:3px 0 0 4px;line-height:1.6}.detail b{color:var(--gold);font-weight:600}
+.tp{display:none}
+.note{text-align:center;padding:8px 20px 32px;max-width:820px;margin:0 auto}.note p{font-size:9px;color:var(--text3);line-height:1.8}.note strong{color:var(--gold)}
+.nd-svg{cursor:pointer}
+
+@media(max-width:600px){
+.hdr{padding:10px 12px}.hdr h1{font-size:12px}
+th,td{padding:6px 8px;font-size:9px}
+th{font-size:10px}
+td:first-child{font-size:8.5px}
+.note p{font-size:8px}
+.side-note{font-size:7.5px}
+}
+</style>
+</head>
+<body>
+<div class="hdr"><h1>対仏大同盟の変遷 ― ナポレオン vs ヨーロッパ</h1><a href="charts.html">← Ad Chartae</a></div>
+<div class="content"><div class="content-inner">
+
+<!-- 前史 -->
+<div class="phase">
+<div class="phase-hdr"><div class="phase-era">1792</div><div class="phase-title">前史 ― 革命戦争の開始</div></div>
+<div class="phase-body">
+<div class="grp grp-fr"><div class="grp-label grp-label-fr">革命フランス</div>
+<div class="cn cn-fr nd-svg" data-tip="pre-fr"><div class="nm">フランス</div><div class="sub">立法議会がオーストリアに宣戦</div></div>
+</div>
+<div class="vs">VS</div>
+<div class="cn cn-co nd-svg" data-tip="pre-aus"><div class="nm">墺</div><div class="sub">＋プロイセン</div></div>
+<div class="ar">→</div>
+<div class="ev nd-svg" data-tip="pre-valmy">ヴァルミーの戦い(1792.9)</div>
+<div class="ar">→ 仏の勝利 →</div>
+<div class="ev nd-svg" data-tip="pre-exec">ルイ16世処刑(1793.1)</div>
+</div>
+<div class="detail"><b>革命の輸出</b>への恐怖→ヨーロッパ君主国が対仏同盟を組む動機。ルイ16世処刑で衝撃が拡大</div>
+</div>
+
+<!-- 第1次 -->
+<div class="phase">
+<div class="phase-hdr"><div class="phase-era">第1次</div><div class="phase-title">1793-1797</div><div class="phase-sub">革命戦争。仏は徴兵制で大軍を動員</div></div>
+<div class="phase-body">
+<div class="grp grp-fr"><div class="grp-label grp-label-fr">フランス</div>
+<div class="cn cn-fr nd-svg" data-tip="c1-fr"><div class="nm">革命フランス</div><div class="sub">国民公会→総裁政府</div></div>
+<div class="cn cn-dim nd-svg" data-tip="c1-levee"><div class="nm">国民総動員令</div><div class="sub">levée en masse(1793)</div></div>
+</div>
+<div class="vs">VS</div>
+<div class="grp grp-co"><div class="grp-label grp-label-co">第1次対仏大同盟</div>
+<div class="cn cn-co nd-svg" data-tip="c1-eng"><div class="nm">イギリス</div><div class="sub">ピット（小ピット）</div></div>
+<div class="cn cn-co nd-svg" data-tip="c1-aus"><div class="nm">オーストリア</div></div>
+<div class="cn cn-co nd-svg" data-tip="c1-pru"><div class="nm">プロイセン</div><div class="sub">→途中で脱落(1795)</div></div>
+<div class="cn cn-co nd-svg" data-tip="c1-spa"><div class="nm">スペイン</div><div class="sub">→途中で脱落</div></div>
+<div class="cn cn-co nd-svg" data-tip="c1-sar"><div class="nm">サルデーニャ</div></div>
+<div class="cn cn-co nd-svg" data-tip="c1-ned"><div class="nm">オランダ</div></div>
+</div>
+</div>
+<div class="detail"><b>結果</b>：ナポレオンのイタリア遠征(1796-97)で墺が敗北→<b>カンポ＝フォルミオ条約(1797)</b>→墺が脱落。英だけが継続</div>
+</div>
+
+<!-- 第2次 -->
+<div class="phase">
+<div class="phase-hdr"><div class="phase-era">第2次</div><div class="phase-title">1798-1802</div><div class="phase-sub">エジプト遠征中にナポレオン帰国→統領に</div></div>
+<div class="phase-body">
+<div class="grp grp-fr"><div class="grp-label grp-label-fr">フランス</div>
+<div class="cn cn-fr-big nd-svg" data-tip="c2-nap"><div class="nm">ナポレオン</div><div class="sub">統領政府(1799)→第一統領</div></div>
+</div>
+<div class="vs">VS</div>
+<div class="grp grp-co"><div class="grp-label grp-label-co">第2次対仏大同盟</div>
+<div class="cn cn-co nd-svg" data-tip="c2-eng"><div class="nm">イギリス</div></div>
+<div class="cn cn-co nd-svg" data-tip="c2-aus"><div class="nm">オーストリア</div></div>
+<div class="cn cn-co nd-svg" data-tip="c2-rus"><div class="nm">ロシア</div><div class="sub">パーヴェル1世 → 途中離脱</div></div>
+<div class="cn cn-co nd-svg" data-tip="c2-ott"><div class="nm">オスマン</div></div>
+</div>
+</div>
+<div class="detail"><b>マレンゴの戦い(1800)</b>で墺を破る→<b>リュネヴィル条約(1801)</b>墺脱落。<b>アミアンの和約(1802)</b>で英とも一時停戦→束の間の平和。ナポレオンは国内で法典編纂・コンコルダートに着手</div>
+</div>
+
+<!-- 第3次 -->
+<div class="phase">
+<div class="phase-hdr"><div class="phase-era">第3次</div><div class="phase-title">1805</div><div class="phase-sub">トラファルガーとアウステルリッツ ― 海と陸の明暗</div></div>
+<div class="phase-body">
+<div class="grp grp-fr"><div class="grp-label grp-label-fr">フランス帝国</div>
+<div class="cn cn-fr-big nd-svg" data-tip="c3-nap"><div class="nm">ナポレオン（皇帝）</div><div class="sub">1804年に皇帝即位</div></div>
+</div>
+<div class="vs">VS</div>
+<div class="grp grp-co"><div class="grp-label grp-label-co">第3次対仏大同盟</div>
+<div class="cn cn-co nd-svg" data-tip="c3-eng"><div class="nm">イギリス</div></div>
+<div class="cn cn-co nd-svg" data-tip="c3-aus"><div class="nm">オーストリア</div></div>
+<div class="cn cn-co nd-svg" data-tip="c3-rus"><div class="nm">ロシア</div><div class="sub">アレクサンドル1世</div></div>
+</div>
+</div>
+<div class="phase-body" style="margin-top:6px">
+<div class="ev ev-bad nd-svg" data-tip="c3-traf">トラファルガー(1805.10) → 仏海軍壊滅</div>
+<div class="ar">しかし</div>
+<div class="ev ev-good nd-svg" data-tip="c3-aust">アウステルリッツ(1805.12) → 「三帝会戦」仏の大勝利</div>
+</div>
+<div class="detail"><b>海ではネルソンが仏を破る</b>（→英の制海権確立）。<b>陸ではナポレオンが墺露を撃破</b>→<b>プレスブルク条約</b>→墺脱落。1806年に<b>神聖ローマ帝国解体</b>＋<b>ライン同盟</b>結成</div>
+</div>
+
+<!-- 第4次 -->
+<div class="phase">
+<div class="phase-hdr"><div class="phase-era">第4次</div><div class="phase-title">1806-1807</div><div class="phase-sub">プロイセンの惨敗とティルジット条約</div></div>
+<div class="phase-body">
+<div class="grp grp-fr"><div class="grp-label grp-label-fr">フランス帝国</div>
+<div class="cn cn-fr-big nd-svg" data-tip="c4-nap"><div class="nm">ナポレオン</div><div class="sub">＋ライン同盟</div></div>
+</div>
+<div class="vs">VS</div>
+<div class="grp grp-co"><div class="grp-label grp-label-co">第4次対仏大同盟</div>
+<div class="cn cn-co nd-svg" data-tip="c4-pru"><div class="nm">プロイセン</div><div class="sub">イエナで惨敗</div></div>
+<div class="cn cn-co nd-svg" data-tip="c4-rus"><div class="nm">ロシア</div></div>
+<div class="cn cn-co nd-svg" data-tip="c4-eng"><div class="nm">イギリス</div></div>
+</div>
+</div>
+<div class="detail"><b>イエナの戦い(1806)</b>→プロイセン壊滅（領土半減）。<b>ティルジット条約(1807)</b>→露のアレクサンドル1世がナポレオンと和解→<b>大陸封鎖令</b>への参加を約束→ナポレオンの大陸支配の頂点。プロイセンはシュタイン＝ハルデンベルク改革に着手</div>
+</div>
+
+<!-- 第5次 -->
+<div class="phase">
+<div class="phase-hdr"><div class="phase-era">第5次</div><div class="phase-title">1809</div><div class="phase-sub">オーストリアの反撃と挫折</div></div>
+<div class="phase-body">
+<div class="grp grp-fr"><div class="grp-label grp-label-fr">フランス帝国</div>
+<div class="cn cn-fr-big nd-svg" data-tip="c5-nap"><div class="nm">ナポレオン</div></div>
+</div>
+<div class="vs">VS</div>
+<div class="grp grp-co"><div class="grp-label grp-label-co">第5次対仏大同盟</div>
+<div class="cn cn-co nd-svg" data-tip="c5-aus"><div class="nm">オーストリア</div><div class="sub">ほぼ単独で挑戦</div></div>
+<div class="cn cn-co nd-svg" data-tip="c5-eng"><div class="nm">イギリス</div><div class="sub">スペインで半島戦争を支援</div></div>
+</div>
+</div>
+<div class="detail"><b>ヴァグラムの戦い(1809)</b>→墺が敗北→<b>シェーンブルン条約</b>→さらに領土を喪失。ナポレオンは墺皇女マリー＝ルイーズと結婚(1810)→ハプスブルクとの一時的和解。一方<b>スペインでは半島戦争(1808-14)</b>が泥沼化→「スペインの潰瘍」</div>
+</div>
+
+<!-- 第6次 -->
+<div class="phase">
+<div class="phase-hdr"><div class="phase-era">第6次</div><div class="phase-title">1813-1814</div><div class="phase-sub">ロシア遠征の失敗 → 「諸国民の戦い」→ ナポレオン退位</div></div>
+<div class="phase-body" style="margin-bottom:6px">
+<div class="ev ev-bad nd-svg" data-tip="c6-russia">ロシア遠征(1812) → 壊滅的失敗</div>
+<div class="ar">→ ナポレオンの威信崩壊 →</div>
+</div>
+<div class="phase-body">
+<div class="grp grp-fr"><div class="grp-label grp-label-fr">フランス帝国（弱体化）</div>
+<div class="cn cn-fr nd-svg" data-tip="c6-nap"><div class="nm">ナポレオン</div><div class="sub">大陸軍の消耗</div></div>
+</div>
+<div class="vs">VS</div>
+<div class="grp grp-co"><div class="grp-label grp-label-co">第6次対仏大同盟 ― ほぼ全ヨーロッパ</div>
+<div class="cn cn-co nd-svg" data-tip="c6-eng"><div class="nm">イギリス</div></div>
+<div class="cn cn-co nd-svg" data-tip="c6-rus"><div class="nm">ロシア</div></div>
+<div class="cn cn-co nd-svg" data-tip="c6-pru"><div class="nm">プロイセン</div><div class="sub">解放戦争</div></div>
+<div class="cn cn-co nd-svg" data-tip="c6-aus"><div class="nm">オーストリア</div></div>
+<div class="cn cn-co nd-svg" data-tip="c6-swe"><div class="nm">スウェーデン</div></div>
+</div>
+</div>
+<div class="detail"><b>ライプツィヒの戦い(1813.10)</b>「諸国民の戦い」→ナポレオン大敗。1814年パリ陥落→<b>退位→エルバ島に流刑</b>。ブルボン朝復古（ルイ18世）。<b>ウィーン会議(1814-15)</b>開始</div>
+</div>
+
+<!-- 第7次 -->
+<div class="phase">
+<div class="phase-hdr"><div class="phase-era">第7次</div><div class="phase-title">1815</div><div class="phase-sub">百日天下とワーテルロー</div></div>
+<div class="phase-body" style="margin-bottom:6px">
+<div class="ev nd-svg" data-tip="c7-return">エルバ島脱出(1815.3)</div>
+<div class="ar">→</div>
+<div class="ev nd-svg" data-tip="c7-100">百日天下</div>
+<div class="ar">→</div>
+</div>
+<div class="phase-body">
+<div class="grp grp-fr"><div class="grp-label grp-label-fr">フランス</div>
+<div class="cn cn-fr nd-svg" data-tip="c7-nap"><div class="nm">ナポレオン</div><div class="sub">パリに復帰</div></div>
+</div>
+<div class="vs">VS</div>
+<div class="grp grp-co"><div class="grp-label grp-label-co">第7次対仏大同盟 ― 全ヨーロッパ</div>
+<div class="cn cn-co nd-svg" data-tip="c7-eng"><div class="nm">イギリス</div><div class="sub">ウェリントン</div></div>
+<div class="cn cn-co nd-svg" data-tip="c7-pru"><div class="nm">プロイセン</div><div class="sub">ブリュッヒャー</div></div>
+<div class="cn cn-co nd-svg" data-tip="c7-rest"><div class="nm">墺・露・他</div></div>
+</div>
+</div>
+<div class="phase-body" style="margin-top:6px">
+<div class="ev ev-bad nd-svg" data-tip="c7-waterloo">ワーテルロー(1815.6.18) → 決定的敗北</div>
+<div class="ar">→</div>
+<div class="ev nd-svg" data-tip="c7-exile">セントヘレナ島に流刑 → 1821年没</div>
+<div class="ar">→</div>
+<div class="ev nd-svg" data-tip="c7-vienna">ウィーン体制の確立</div>
+</div>
+</div>
+
+</div></div>
+
+<div class="tp" id="tip-pre-fr"><p>1792年、立法議会が「祖国は危機にあり」を宣言しオーストリアに宣戦→<strong>革命戦争</strong>の開始。国王と王妃（マリー＝アントワネット＝ハプスブルク家）の外国への密通が疑われた。</p></div>
+<div class="tp" id="tip-pre-aus"><p>墺＋普が<strong>ピルニッツ宣言(1791)</strong>でフランス王政の回復を要求→仏の反発→宣戦。当初は仏革命軍は弱体だったが義勇兵の動員で持ちこたえる。</p></div>
+<div class="tp" id="tip-pre-valmy"><p><strong>ヴァルミーの戦い(1792.9)</strong> ― 仏義勇兵が墺普軍を撃退。ゲーテが「ここから、今日から、世界史の新しい時代が始まる」。翌日に共和政が宣言される。</p></div>
+<div class="tp" id="tip-pre-exec"><p><strong>ルイ16世処刑(1793.1)</strong> ― ヨーロッパの君主国に衝撃→「革命の輸出」への恐怖→各国が対仏同盟に参加する直接の動機に。</p></div>
+<div class="tp" id="tip-c1-fr"><p><strong>革命フランス</strong> ― 国民公会(ジャコバン独裁)→テルミドールのクーデター(1794)→総裁政府。<strong>国民総動員令(1793)</strong>で80万人を動員→ヨーロッパ初の国民軍。ナポレオンがイタリア遠征(1796-97)で頭角を現す。</p></div>
+<div class="tp" id="tip-c1-levee"><p><strong>国民総動員令(levée en masse, 1793)</strong> ― 18-25歳男子の徴兵。約80万人の大軍→従来の傭兵軍を圧倒。「国民の戦争」の始まり→ナポレオン戦争、さらにWW1の総力戦の原型。</p></div>
+<div class="tp" id="tip-c1-eng"><p><strong>イギリス</strong> ― 小ピットが対仏戦争を主導。海軍力で大陸封鎖→仏の海外貿易を遮断。<strong>全7回の対仏大同盟で唯一、一度も脱落しなかった</strong>。財政力と海軍力が鍵。</p></div>
+<div class="tp" id="tip-c1-aus"><p><strong>オーストリア</strong> ― ナポレオンのイタリア遠征(1796-97)で北イタリアを喪失→カンポ＝フォルミオ条約(1797)で脱落。以後も何度もナポレオンに挑んでは敗北を繰り返す。</p></div>
+<div class="tp" id="tip-c1-pru"><p><strong>プロイセン</strong> ― 1795年のバーゼルの和約で早期に脱落→第3回ポーランド分割に集中。第4次同盟(1806)まで参加しない。</p></div>
+<div class="tp" id="tip-c1-spa"><p><strong>スペイン</strong> ― ブルボン朝だが仏に敗北→1795年に脱落し仏と同盟→トラファルガー(1805)で仏側で参戦。</p></div>
+<div class="tp" id="tip-c1-sar"><p><strong>サルデーニャ</strong> ― ナポレオンのイタリア遠征で真っ先に敗北。</p></div>
+<div class="tp" id="tip-c1-ned"><p><strong>オランダ</strong> ― 仏に征服されバタヴィア共和国(仏の衛星国)に。</p></div>
+<div class="tp" id="tip-c2-nap"><p><strong>ナポレオン</strong> ― エジプト遠征(1798-99)中に第2次同盟が結成→急遽帰国→<strong>ブリュメール18日のクーデター(1799)</strong>→統領政府を樹立→第一統領に就任。マレンゴの戦い(1800)で墺を破り大陸での地位を固める。</p></div>
+<div class="tp" id="tip-c2-eng"><p><strong>イギリス</strong> ― ネルソンがアブキール湾の海戦(1798)で仏艦隊を壊滅→エジプト遠征を孤立させる。しかし大陸では墺露が敗北→アミアンの和約(1802)で一時停戦。</p></div>
+<div class="tp" id="tip-c2-aus"><p><strong>オーストリア</strong> ― マレンゴ(1800)で再び敗北→リュネヴィル条約(1801)で脱落。</p></div>
+<div class="tp" id="tip-c2-rus"><p><strong>ロシア</strong> ― パーヴェル1世がスヴォーロフ率いる軍をイタリアに派遣→一時は仏を圧倒するも英との対立で途中離脱。パーヴェルはナポレオンに傾斜→1801年暗殺。</p></div>
+<div class="tp" id="tip-c2-ott"><p><strong>オスマン帝国</strong> ― ナポレオンのエジプト遠征に反発し同盟参加。エジプトはオスマンの属領だった。</p></div>
+<div class="tp" id="tip-c3-nap"><p><strong>ナポレオン</strong> ― 1804年に<strong>皇帝即位</strong>（国民投票で承認）。ナポレオン法典(1804)。英上陸作戦を計画するもトラファルガーで断念→大陸での征服に転換。</p></div>
+<div class="tp" id="tip-c3-eng"><p><strong>イギリス</strong> ― <strong>トラファルガーの海戦(1805.10.21)</strong>でネルソンが仏西連合艦隊を壊滅→ネルソンは戦死するも英の制海権が確立。ナポレオンは英本土上陸を永久に断念→大陸封鎖令(1806)で経済封鎖に転換。</p></div>
+<div class="tp" id="tip-c3-aus"><p><strong>オーストリア</strong> ― ウルムの戦いで大敗→ウィーン占領→アウステルリッツで壊滅→プレスブルク条約で脱落。</p></div>
+<div class="tp" id="tip-c3-rus"><p><strong>ロシア</strong> ― アレクサンドル1世がアウステルリッツに参戦→大敗。しかし本国が遠いため侵攻は受けず→第4次で再び参戦。</p></div>
+<div class="tp" id="tip-c3-traf"><p><strong>トラファルガーの海戦(1805.10)</strong> ― ネルソン提督が仏西連合艦隊を壊滅。ネルソン戦死。<strong>英の制海権が確定</strong>→以後ナポレオンは海で英に勝てない→大陸封鎖令(経済封鎖)に転換するが不完全。</p></div>
+<div class="tp" id="tip-c3-aust"><p><strong>アウステルリッツの戦い(1805.12)</strong> ― 「三帝会戦」。ナポレオンvs墺皇帝フランツ2世＋露皇帝アレクサンドル1世。ナポレオンの戦術的傑作→墺露軍を壊滅。→神聖ローマ帝国解体(1806)の直接の契機。</p></div>
+<div class="tp" id="tip-c4-nap"><p><strong>ナポレオン</strong> ― ライン同盟(独西南部の諸邦)を従属させ神聖ローマ帝国を解体(1806)。大陸封鎖令(1806)→英を経済封鎖。ティルジット(1807)でヨーロッパ支配の頂点に。</p></div>
+<div class="tp" id="tip-c4-pru"><p><strong>プロイセン</strong> ― <strong>イエナ・アウエルシュタットの戦い(1806)</strong>で壊滅→ベルリン占領→<strong>ティルジット条約で領土半減</strong>→屈辱がシュタイン＝ハルデンベルク改革(農奴解放・軍制改革・教育改革→ベルリン大学設立)の原動力に。</p></div>
+<div class="tp" id="tip-c4-rus"><p><strong>ロシア</strong> ― フリートラントの戦い(1807)で敗北→<strong>ティルジット条約</strong>でナポレオンと和解。大陸封鎖令に参加を約束→しかし封鎖はロシア経済に打撃→徐々に遵守しなくなる→1812年遠征の遠因。</p></div>
+<div class="tp" id="tip-c4-eng"><p><strong>イギリス</strong> ― 大陸では同盟国を失うが海上封鎖を維持。スペインで半島戦争(1808-14)を支援→ウェリントンがナポレオンを消耗させる「スペインの潰瘍」。</p></div>
+<div class="tp" id="tip-c5-nap"><p><strong>ナポレオン</strong> ― ヴァグラムの戦い(1809)で墺を撃破→シェーンブルン条約。墺皇女マリー＝ルイーズと結婚(1810)→ハプスブルクとの一時的和解。しかし半島戦争は泥沼化。</p></div>
+<div class="tp" id="tip-c5-aus"><p><strong>オーストリア</strong> ― カール大公が改革した軍で反攻→アスペルン＝エスリンクの戦い(1809)ではナポレオンに初の敗北を与えるも、ヴァグラムで逆転負け→条件は前回より厳しく。</p></div>
+<div class="tp" id="tip-c5-eng"><p><strong>イギリス</strong> ― スペインでウェリントンが半島戦争を指揮。直接は第5次同盟に深く関与せず。</p></div>
+<div class="tp" id="tip-c6-russia"><p><strong>ロシア遠征(1812)</strong> ― 60万人の大陸軍で侵攻→ロシアの<strong>焦土戦術</strong>→ボロディノの戦い→モスクワ入城するも焼き払われる→退却→<strong>冬将軍</strong>と飢餓で壊滅。帰還した兵はわずか数万。ナポレオンの決定的転機。</p></div>
+<div class="tp" id="tip-c6-nap"><p><strong>ナポレオン</strong> ― ロシア遠征の壊滅で威信が崩壊→従属国が離反→第6次同盟が全ヨーロッパ規模に。「諸国民の戦い」ライプツィヒ(1813)で大敗→1814年退位→エルバ島。</p></div>
+<div class="tp" id="tip-c6-eng"><p><strong>イギリス</strong> ― 半島戦争でウェリントンがフランスを圧迫。資金面で同盟諸国を全面支援。</p></div>
+<div class="tp" id="tip-c6-rus"><p><strong>ロシア</strong> ― ロシア遠征を撃退→追撃してヨーロッパに進出。アレクサンドル1世がパリ入城(1814)。ウィーン会議で主要な役割。</p></div>
+<div class="tp" id="tip-c6-pru"><p><strong>プロイセン</strong> ― ティルジットの屈辱から再起。<strong>解放戦争(1813-14)</strong>→ライプツィヒの戦いで中心的役割。ナショナリズムの高揚。</p></div>
+<div class="tp" id="tip-c6-aus"><p><strong>オーストリア</strong> ― メッテルニヒの外交で途中から同盟に復帰。ウィーン会議を主催。</p></div>
+<div class="tp" id="tip-c6-swe"><p><strong>スウェーデン</strong> ― 元ナポレオンの部下ベルナドット(後のカール14世)が皇太子に→反ナポレオンに転じ同盟に参加。</p></div>
+<div class="tp" id="tip-c7-return"><p><strong>エルバ島脱出(1815.3)</strong> ― ウィーン会議中にナポレオンがエルバ島を脱出→フランスに上陸→軍が次々と合流→パリに復帰。ルイ18世は逃亡。</p></div>
+<div class="tp" id="tip-c7-100"><p><strong>百日天下</strong> ― エルバ脱出(3月)からワーテルロー敗北(6月)までの約100日間。ウィーン会議中の列強は直ちに第7次同盟を結成。</p></div>
+<div class="tp" id="tip-c7-nap"><p><strong>ナポレオン</strong> ― パリに復帰するも国内の支持は不安定。先手を打って英普連合軍を各個撃破する作戦→しかしワーテルローで失敗。</p></div>
+<div class="tp" id="tip-c7-eng"><p><strong>イギリス</strong> ― <strong>ウェリントン</strong>がワーテルローで英蘭連合軍を指揮。午後まで仏軍の攻撃に耐え、プロイセン軍の到着で形勢逆転。</p></div>
+<div class="tp" id="tip-c7-pru"><p><strong>プロイセン</strong> ― <strong>ブリュッヒャー</strong>がワーテルロー戦場に間に合い側面攻撃→勝利の決め手に。「ウェリントンとブリュッヒャーの握手」。</p></div>
+<div class="tp" id="tip-c7-rest"><p><strong>墺・露・他</strong> ― 第7次同盟には全ヨーロッパが参加。ただしワーテルローの戦闘は英蘭＋普で決着がついた。</p></div>
+<div class="tp" id="tip-c7-waterloo"><p><strong>ワーテルロー(1815.6.18)</strong> ― ベルギー南部。ウェリントン(英)＋ブリュッヒャー(普)がナポレオンを撃破。ナポレオン最後の戦い。「ワーテルローを迎えた」＝決定的敗北の代名詞に。</p></div>
+<div class="tp" id="tip-c7-exile"><p><strong>セントヘレナ島</strong> ― 南大西洋の絶海の孤島に流刑。1821年に胃癌で死去（毒殺説もあり）。享年51歳。</p></div>
+<div class="tp" id="tip-c7-vienna"><p><strong>ウィーン体制</strong> ― メッテルニヒ主導。<strong>正統主義</strong>（革命前の王朝を復活）＋<strong>勢力均衡</strong>（一国の突出を防ぐ）。<strong>神聖同盟</strong>(露墺普)＋<strong>四国同盟</strong>(英墺普露)。1848年の諸国民の春まで維持。</p></div>
+
+<div class="note"><p>
+<strong>入試ポイント：</strong><br>
+❶ <strong>イギリスは全7回で唯一一度も脱落しなかった</strong>＝海軍力と財政力が鍵。海上封鎖で仏を経済的に締め上げる<br>
+❷ <strong>ロシア遠征(1812)の失敗</strong>＝60万→数万の壊滅。焦土戦術＋冬将軍。ナポレオンの決定的転機<br>
+❸ <strong>海ではトラファルガー(1805)で負け、陸ではアウステルリッツで勝ち</strong>→ナポレオンは海で英に勝てない→大陸封鎖令に転換<br>
+❹ <strong>ティルジット条約(1807)</strong>＝ナポレオンの頂点。露を取り込み大陸封鎖に参加させる→しかし露の離反がロシア遠征の原因<br>
+❺ <strong>プロイセンの屈辱と再起</strong>：イエナ(1806)で壊滅→シュタイン＝ハルデンベルク改革→解放戦争(1813)で復活<br>
+❻ <strong>ワーテルロー(1815)</strong>＝ウェリントン(英)＋ブリュッヒャー(普)。百日天下の終結→セントヘレナ→ウィーン体制確立
+</p></div>
+
+<div id="tooltip-overlay" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;z-index:8000" onclick="closeTip()"></div>
+<div id="tooltip-box" style="display:none;position:fixed;z-index:9000;background:rgba(12,15,22,.97);border:1px solid rgba(201,169,110,.25);border-radius:8px;padding:12px 16px;max-width:320px;width:calc(100vw - 32px);box-shadow:0 8px 30px rgba(0,0,0,.6)">
+<div id="tooltip-content" style="font-size:10px;color:#8a857d;line-height:1.7"></div></div>
+<script>
+(function(){
+var ov=document.getElementById("tooltip-overlay"),bx=document.getElementById("tooltip-box"),ct=document.getElementById("tooltip-content");
+window.closeTip=function(){bx.style.display="none";ov.style.display="none"};
+function openTip(el){var tipId=el.getAttribute("data-tip");var tipEl=tipId?document.getElementById("tip-"+tipId):null;if(!tipEl)return;closeTip();ct.innerHTML=tipEl.innerHTML;ov.style.display="block";bx.style.display="block";var r=el.getBoundingClientRect(),w=Math.min(320,window.innerWidth-32);bx.style.width=w+"px";var l=r.left+r.width/2-w/2;if(l<16)l=16;if(l+w>window.innerWidth-16)l=window.innerWidth-16-w;bx.style.left=l+"px";bx.style.top=(r.bottom+8)+"px";bx.style.bottom="auto";var br=bx.getBoundingClientRect();if(br.bottom>window.innerHeight-16){var t=r.top-br.height-8;if(t<16)t=16;bx.style.top=t+"px"}}
+var tm=false,tt=null;
+document.addEventListener("touchstart",function(e){tm=false;tt=e.target},{passive:true});
+document.addEventListener("touchmove",function(){tm=true},{passive:true});
+document.addEventListener("touchend",function(e){if(tm)return;var nd=tt?tt.closest(".nd-svg"):null;if(nd){e.preventDefault();openTip(nd)}else if(!tt||!tt.closest("#tooltip-box"))closeTip();tt=null});
+document.addEventListener("click",function(e){if("ontouchstart"in window)return;var nd=e.target.closest(".nd-svg");if(nd)openTip(nd);else if(!e.target.closest("#tooltip-box"))closeTip()});
+})();
+</script>
+</body></html>

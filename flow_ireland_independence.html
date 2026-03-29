@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>アイルランド独立フロー</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048;--border:rgba(201,169,110,.08)}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+.hdr{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;flex-wrap:wrap}.hdr h1{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2)}.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
+.flow{max-width:740px;margin:0 auto;padding:24px 20px 60px}
+.phase{position:relative;margin-bottom:2px;padding:16px 16px 16px 60px;border-left:2px solid rgba(201,169,110,.08);margin-left:30px}.phase:last-child{border-left-color:transparent}
+.phase-label{position:absolute;left:-42px;top:16px;width:36px;font-family:'Cormorant Garamond',serif;font-size:10px;font-weight:700;color:var(--text3);text-align:right;line-height:1.3}
+.phase::before{content:'';position:absolute;left:-5px;top:22px;width:8px;height:8px;border-radius:50%;background:var(--bg);border:2px solid rgba(201,169,110,.25)}
+.node{background:rgba(255,255,255,.015);border:1px solid rgba(255,255,255,.04);border-radius:8px;padding:10px 14px;margin-bottom:8px;border-left:3px solid transparent;transition:all .2s}.node:hover{background:rgba(255,255,255,.03)}.node-title{font-family:'Noto Serif JP',serif;font-size:12px;font-weight:700;color:var(--gold2);margin-bottom:2px}.node-year{font-family:'Cormorant Garamond',serif;font-size:11px;color:var(--gold);opacity:.6;margin-bottom:4px}.node-desc{font-size:10px;color:var(--text2);line-height:1.7}.node-desc strong{color:var(--text);font-weight:600}.node.key{background:rgba(201,169,110,.04);border-color:rgba(201,169,110,.12)}
+.arrow{display:flex;align-items:center;gap:6px;padding:2px 0 2px 8px;margin-bottom:6px}.arrow-line{width:16px;height:1px;background:rgba(201,169,110,.15)}.arrow-text{font-size:8px;color:var(--text3)}.arrow-icon{color:rgba(201,169,110,.3);font-size:10px}
+.branch-row{display:flex;gap:8px;margin-bottom:8px}.branch-row .node{flex:1}
+.side-note{font-size:8px;color:var(--text3);padding:4px 8px;border-left:2px solid rgba(201,169,110,.1);margin:4px 0 8px;line-height:1.6}
+.p1 .node{border-left-color:rgba(130,120,100,.3)}.p1::before{border-color:rgba(130,120,100,.4)}
+.p2 .node{border-left-color:rgba(80,150,120,.3)}.p2::before{border-color:rgba(80,150,120,.5);background:rgba(80,150,120,.15)}
+.p3 .node{border-left-color:rgba(180,130,80,.3)}.p3::before{border-color:rgba(180,130,80,.5);background:rgba(180,130,80,.15)}
+.p4 .node{border-left-color:rgba(180,80,80,.3)}.p4::before{border-color:rgba(180,80,80,.5);background:rgba(180,80,80,.15)}
+.p5 .node{border-left-color:rgba(100,130,180,.3)}.p5::before{border-color:rgba(100,130,180,.5);background:rgba(100,130,180,.15)}
+.p6 .node{border-left-color:rgba(150,80,80,.3)}.p6::before{border-color:rgba(150,80,80,.4)}
+.p7 .node{border-left-color:rgba(201,169,110,.3)}.p7::before{border-color:rgba(201,169,110,.5);background:rgba(201,169,110,.15)}
+.note{text-align:center;padding:8px 20px 32px;max-width:700px;margin:0 auto}.note p{font-size:9px;color:var(--text3);line-height:1.8}.note strong{color:var(--gold)}
+.hdr h1{font-size:12px}
+.flow{padding:16px 10px 40px}
+.phase{padding:12px 10px 12px 44px;margin-left:20px}
+.phase-label{left:-30px;width:28px;font-size:8px}
+.node{padding:8px 10px}.node-title{font-size:11px}.node-desc{font-size:9px}
+.branch-row{flex-direction:column}
+.side-note{font-size:7.5px}
+.note p{font-size:8px}
+}
+
+@media(max-width:600px){
+.hdr{padding:10px 12px}.hdr h1{font-size:12px}
+.flow{padding:16px 10px 40px}
+.phase{padding:12px 10px 12px 44px;margin-left:20px}
+.phase-label{left:-30px;width:28px;font-size:8px}
+.node{padding:8px 10px}.node-title{font-size:11px}.node-desc{font-size:9px}
+.branch-row{flex-direction:column}
+.side-note{font-size:7.5px}
+.note p{font-size:8px}
+}
+</style>
+</head>
+<body>
+<div class="hdr"><h1>アイルランド独立フロー ― 英支配800年から分離独立まで</h1><a href="charts.html">← Ad Chartae</a></div>
+<div class="flow">
+
+<div class="phase p1"><div class="phase-label">前史<br>12C<br>〜<br>18C</div>
+<div class="node"><div class="node-title">英によるアイルランド支配の始まり</div><div class="node-year">1169–1690s</div>
+<div class="node-desc"><strong>ヘンリ2世</strong>(1169-71)がアイルランドに侵攻→英の支配が始まる(ただし実効支配はダブリン周辺の「ペイル」に限定)。16C：<strong>ヘンリ8世</strong>が「アイルランド王」を兼ねる→<strong>宗教改革</strong>で英国国教会を押し付けるが、アイルランド人は<strong>カトリック</strong>を維持→<strong>宗教的対立が民族的対立と一体化</strong>。<strong>クロムウェル</strong>(1649-53)がアイルランドを征服→大規模な土地没収→プロテスタント地主(英系入植者)がカトリック農民の土地を支配。<strong>ウィリアム3世</strong>のボイン川の戦い(1690)でカトリックのジェームズ2世派を撃破→<strong>刑罰法(ピーナル・ロー)</strong>＝カトリック教徒の公職・教育・土地所有を制限→アイルランド人の徹底的な従属。</div></div>
+<div class="side-note">アイルランド問題の根源＝①宗教(カトリックvsプロテスタント) ②土地(英系地主vsアイルランド小作人) ③民族(ケルト系vsアングロ・サクソン系)の三重の対立</div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">18C末、フランス革命の影響で自治・独立運動が始まる</div></div></div>
+
+<div class="phase p2"><div class="phase-label">1798<br>〜<br>1829</div>
+<div class="node"><div class="node-title">合同法(1800) → カトリック解放(1829)</div><div class="node-year">1798–1829</div>
+<div class="node-desc"><strong>ウルフ＝トーン</strong>の反乱(1798)＝フランス革命に触発されたアイルランド人の蜂起→鎮圧。英は反乱の再発を防ぐため<strong>合同法</strong>(1800)＝アイルランド議会を廃止し<strong>グレートブリテン及びアイルランド連合王国</strong>に統合(1801)。ダブリンの議会がなくなりロンドンのウェストミンスター議会に統合→アイルランド人はロンドンで少数派に。
+<br><br><strong>ダニエル＝オコンネル</strong>(「解放者」)が<strong>カトリック解放運動</strong>を指導→<strong>カトリック解放法</strong>(1829)＝カトリック教徒の議員資格・公職就任を認める＝イギリス憲政史上の画期。しかしアイルランドの土地問題・自治問題は未解決。</div></div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">大飢饉がアイルランド社会を根底から変える</div></div></div>
+
+<div class="phase p3"><div class="phase-label">1845<br>〜<br>1870s</div>
+<div class="node key"><div class="node-title">ジャガイモ飢饉(大飢饉)</div><div class="node-year">1845–49</div>
+<div class="node-desc">ジャガイモの疫病(ジャガイモ疫病菌)が3年連続で蔓延→アイルランドの主食が壊滅。人口約800万人のうち<strong>約100万人が餓死・病死</strong>、<strong>約100万人が海外(主に米国)に移住</strong>。英政府は自由放任主義(レッセ＝フェール)を理由に救済が遅れ不十分→<strong>「英は穀物を輸出しながらアイルランド人を餓死させた」</strong>という怨恨が深く刻まれる。1841年の人口約820万人→1901年には約440万人に半減。アイルランド人のディアスポラ(離散)＝特に<strong>アメリカのアイルランド系移民</strong>が後の独立運動を資金面で支援。</div></div>
+<div class="side-note">★入試頻出：ジャガイモ飢饉(1845-49)＝アイルランド問題の最大の転換点。「英への怨恨」「大量移民」「人口半減」がキーワード</div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">飢饉後、自治運動(穏健派)と武装独立運動(急進派)の二つの流れが形成</div></div>
+<div class="branch-row">
+<div class="node"><div class="node-title">穏健派：自治運動(ホーム＝ルール)</div>
+<div class="node-desc"><strong>パーネル</strong>が<strong>アイルランド国民党</strong>を率い、ウェストミンスター議会で<strong>ホーム＝ルール(自治)</strong>法案を推進。<strong>グラッドストン</strong>(自由党)が第1次(1886)・第2次(1893)ホーム＝ルール法案を提出→いずれも否決(上院＝保守党・地主の反対)。<strong>第3次ホーム＝ルール法</strong>(1914)がようやく成立→しかし<strong>WW1の勃発で施行延期</strong>。北部アルスターのプロテスタント(ユニオニスト)は「アルスター義勇軍」を組織し武力でも自治に反対→アイルランド島内の分断が深刻化。</div></div>
+<div class="node"><div class="node-title">急進派：武装共和主義</div>
+<div class="node-desc"><strong>フィーニアン(アイルランド共和同盟)</strong>(1858)＝武装蜂起による完全独立を目指す。<strong>アイルランド共和主義同胞団(IRB)</strong>が地下で活動。<strong>シン＝フェイン</strong>(「我ら自身」の意、1905)＝アーサー＝グリフィスが設立→英議会への参加を拒否し独自の議会・経済を構想。<strong>ゲーリック復興運動</strong>＝アイルランド語・文化の復興→民族的アイデンティティの再構築。</div></div>
+</div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">WW1でホーム＝ルールが延期→急進派が「今こそ蜂起を」</div></div></div>
+
+<div class="phase p4"><div class="phase-label">1916<br>〜<br>1918</div>
+<div class="node key"><div class="node-title">イースター蜂起</div><div class="node-year">1916.4.24–30</div>
+<div class="node-desc">WW1中の<strong>1916年復活祭(イースター)</strong>の月曜日、IRBと<strong>アイルランド義勇軍</strong>・<strong>アイルランド市民軍</strong>(ジェームズ＝コノリー)がダブリン中央郵便局(GPO)を占拠→<strong>「アイルランド共和国」の独立を宣言</strong>(パトリック＝ピアース)。ドイツからの武器輸送は失敗(ロジャー＝ケースメント逮捕)。6日間の戦闘の末に英軍に鎮圧→<strong>蜂起自体は軍事的に完敗</strong>、市民の反応も当初は冷淡だった。
+<br><br>しかし英軍が<strong>指導者16人を軍事裁判で処刑</strong>(ピアース・コノリー等＝コノリーは負傷して椅子に座ったまま銃殺)→<strong>世論が一変</strong>。「英は殉教者を作った」→蜂起の指導者が国民的英雄に→アイルランド独立運動が大衆的支持を獲得。</div></div>
+<div class="side-note">★入試頻出：「イースター蜂起(1916)」＝軍事的には失敗だが、処刑が世論を反英に転換させた。「蜂起は失敗で勝利を得た」</div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">1918年選挙でシン＝フェインが圧勝→独自議会を設立</div></div>
+<div class="node"><div class="node-title">1918年総選挙 → シン＝フェインの勝利</div><div class="node-year">1918.12</div>
+<div class="node-desc">WW1終結直後の総選挙で<strong>シン＝フェインがアイルランドの議席73/105を獲得</strong>(穏健派の国民党は壊滅)。しかし当選者はウェストミンスター議会への出席を拒否→ダブリンで独自の<strong>ドイル＝エアラン(アイルランド国民議会)</strong>を設立(1919.1)。<strong>「アイルランド共和国」の独立を再宣言</strong>。<strong>エイモン＝デ＝ヴァレラ</strong>が大統領に選出(獄中)。<strong>マイケル＝コリンズ</strong>が情報機関を組織し対英ゲリラ戦を準備。</div></div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">アイルランド独立戦争(英愛戦争)が始まる</div></div></div>
+
+<div class="phase p5"><div class="phase-label">1919<br>〜<br>1921</div>
+<div class="node"><div class="node-title">アイルランド独立戦争(英愛戦争)</div><div class="node-year">1919.1 – 1921.7</div>
+<div class="node-desc"><strong>IRA(アイルランド共和軍)</strong>＝マイケル＝コリンズが指揮する<strong>ゲリラ戦</strong>。英軍施設・警察(RIC)への待ち伏せ攻撃・情報員の暗殺。英は<strong>ブラック＝アンド＝タンズ</strong>(退役軍人の準軍事組織)を投入→民間人への報復攻撃→<strong>「血の日曜日」</strong>(1920.11.21、ダブリン)＝コリンズが英諜報員14人を暗殺→同日英軍がクローク＝パークのサッカー試合場で無差別発砲→14人死亡。国際世論(特に米のアイルランド系)が英を非難→英も軍事的に制圧不能と認識→<strong>停戦</strong>(1921.7)。</div></div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">ロイド＝ジョージとの交渉→妥協的な条約→内部分裂</div></div>
+<div class="node key"><div class="node-title">英愛条約(アングロ＝アイリッシュ条約)</div><div class="node-year">1921.12.6</div>
+<div class="node-desc">コリンズ・グリフィスらがロンドンで交渉(デ＝ヴァレラは不参加)。<strong>英愛条約</strong>の内容：①アイルランド南部26県が<strong>「アイルランド自由国」</strong>として英連邦内の自治領(ドミニオン)に→<strong>完全な共和国ではない</strong> ②英王への忠誠の誓い(形式的) ③<strong>北部アルスター6県</strong>(プロテスタント多数)は英国に残留する選択権を持つ(→<strong>北アイルランド</strong>として残留)。コリンズは「これは自由そのものではないが、自由を勝ち取る自由を与える」と評価。デ＝ヴァレラは「共和国」でないとして反対→<strong>条約賛成派 vs 反対派に分裂</strong>。</div></div>
+<div class="side-note">★入試頻出：「アイルランド自由国(1922)」＝英連邦内の自治領。「北アイルランドの分離」が後の紛争の根源</div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">条約をめぐりアイルランド人同士の内戦に</div></div></div>
+
+<div class="phase p6"><div class="phase-label">1922<br>〜<br>1923</div>
+<div class="node"><div class="node-title">アイルランド内戦</div><div class="node-year">1922.6 – 1923.5</div>
+<div class="node-desc"><strong>条約賛成派(自由国軍＝コリンズ)</strong>vs<strong>条約反対派(反条約IRA＝デ＝ヴァレラ)</strong>の内戦。独立戦争の戦友同士が殺し合う悲劇。<strong>コリンズが待ち伏せ攻撃で戦死</strong>(1922.8、31歳)。自由国軍が優勢→反条約派が降伏(1923.5)。独立戦争より多くの死者(約4000人)を出した。内戦の対立が<strong>フィネ＝ゲール(条約賛成派)vsフィアナ＝フォイル(反対派＝デ＝ヴァレラ)</strong>として現在のアイルランドの二大政党に引き継がれている。</div></div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">内戦後、アイルランド自由国が安定→段階的に英からの独立を深める</div></div></div>
+
+<div class="phase p7"><div class="phase-label">1937<br>〜<br>1949</div>
+<div class="node"><div class="node-title">自由国から共和国へ</div><div class="node-year">1932–49</div>
+<div class="node-desc"><strong>デ＝ヴァレラ</strong>が1932年に選挙で政権獲得→段階的に英との関係を希薄化。<strong>1937年憲法</strong>＝国名を<strong>「エール(Éire)」</strong>に変更・大統領制・英王への忠誠の誓いを廃止→事実上の共和国に。WW2では<strong>中立</strong>を維持(英の圧力を拒否)。<strong>1949年</strong>＝正式に<strong>「アイルランド共和国」</strong>を宣言し英連邦から離脱。ただし<strong>北アイルランド6県は英国の一部として残る</strong>→<strong>「北アイルランド紛争(The Troubles)」</strong>(1968-1998)＝カトリック系住民(ナショナリスト/IRA)vsプロテスタント系住民(ユニオニスト/ロイヤリスト)の暴力的対立→<strong>ベルファスト合意(聖金曜日協定)</strong>(1998)で和平。</div></div></div>
+
+</div>
+<div class="note"><p>アイルランド独立＝<strong>①800年の英支配(宗教＋土地＋民族の三重対立)→②大飢饉(1845)→③ホーム＝ルール運動vsフィーニアン→④イースター蜂起(1916)→⑤独立戦争(1919-21)→⑥英愛条約(自由国＝自治領＋北部分離)→⑦内戦(賛成vs反対)→⑧共和国(1949)</strong>。入試では「イースター蜂起→処刑→世論転換」「自由国＝共和国ではなく自治領」「北アイルランド問題」が出る。イギリスの選挙法改正・WW1との同時期の問題として関連づけられることが多い。</p></div>
+</body></html>

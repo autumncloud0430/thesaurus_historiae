@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>インド独立フロー</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048;--border:rgba(201,169,110,.08)}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+.hdr{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;flex-wrap:wrap}.hdr h1{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2)}.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
+.flow{max-width:740px;margin:0 auto;padding:24px 20px 60px}
+.phase{position:relative;margin-bottom:2px;padding:16px 16px 16px 60px;border-left:2px solid rgba(201,169,110,.08);margin-left:30px}.phase:last-child{border-left-color:transparent}
+.phase-label{position:absolute;left:-42px;top:16px;width:36px;font-family:'Cormorant Garamond',serif;font-size:10px;font-weight:700;color:var(--text3);text-align:right;line-height:1.3}
+.phase::before{content:'';position:absolute;left:-5px;top:22px;width:8px;height:8px;border-radius:50%;background:var(--bg);border:2px solid rgba(201,169,110,.25)}
+.node{background:rgba(255,255,255,.015);border:1px solid rgba(255,255,255,.04);border-radius:8px;padding:10px 14px;margin-bottom:8px;border-left:3px solid transparent;transition:all .2s}.node:hover{background:rgba(255,255,255,.03)}.node-title{font-family:'Noto Serif JP',serif;font-size:12px;font-weight:700;color:var(--gold2);margin-bottom:2px}.node-year{font-family:'Cormorant Garamond',serif;font-size:11px;color:var(--gold);opacity:.6;margin-bottom:4px}.node-desc{font-size:10px;color:var(--text2);line-height:1.7}.node-desc strong{color:var(--text);font-weight:600}.node.key{background:rgba(201,169,110,.04);border-color:rgba(201,169,110,.12)}
+.arrow{display:flex;align-items:center;gap:6px;padding:2px 0 2px 8px;margin-bottom:6px}.arrow-line{width:16px;height:1px;background:rgba(201,169,110,.15)}.arrow-text{font-size:8px;color:var(--text3)}.arrow-icon{color:rgba(201,169,110,.3);font-size:10px}
+.branch-row{display:flex;gap:8px;margin-bottom:8px}.branch-row .node{flex:1}
+.side-note{font-size:8px;color:var(--text3);padding:4px 8px;border-left:2px solid rgba(201,169,110,.1);margin:4px 0 8px;line-height:1.6}
+.p1 .node{border-left-color:rgba(100,130,180,.3)}.p1::before{border-color:rgba(100,130,180,.4)}
+.p2 .node{border-left-color:rgba(180,130,80,.3)}.p2::before{border-color:rgba(180,130,80,.5);background:rgba(180,130,80,.15)}
+.p3 .node{border-left-color:rgba(80,150,120,.3)}.p3::before{border-color:rgba(80,150,120,.5);background:rgba(80,150,120,.15)}
+.p4 .node{border-left-color:rgba(180,80,80,.3)}.p4::before{border-color:rgba(180,80,80,.5);background:rgba(180,80,80,.15)}
+.p5 .node{border-left-color:rgba(201,169,110,.3)}.p5::before{border-color:rgba(201,169,110,.5);background:rgba(201,169,110,.15)}
+.note{text-align:center;padding:8px 20px 32px;max-width:700px;margin:0 auto}.note p{font-size:9px;color:var(--text3);line-height:1.8}.note strong{color:var(--gold)}
+.hdr h1{font-size:12px}
+.flow{padding:16px 10px 40px}
+.phase{padding:12px 10px 12px 44px;margin-left:20px}
+.phase-label{left:-30px;width:28px;font-size:8px}
+.node{padding:8px 10px}.node-title{font-size:11px}.node-desc{font-size:9px}
+.branch-row{flex-direction:column}
+.side-note{font-size:7.5px}
+.note p{font-size:8px}
+}
+
+@media(max-width:600px){
+.hdr{padding:10px 12px}.hdr h1{font-size:12px}
+.flow{padding:16px 10px 40px}
+.phase{padding:12px 10px 12px 44px;margin-left:20px}
+.phase-label{left:-30px;width:28px;font-size:8px}
+.node{padding:8px 10px}.node-title{font-size:11px}.node-desc{font-size:9px}
+.branch-row{flex-direction:column}
+.side-note{font-size:7.5px}
+.note p{font-size:8px}
+}
+</style>
+</head>
+<body>
+<div class="hdr"><h1>インド独立フロー ― 英支配から分離独立まで</h1><a href="charts.html">← Ad Chartae</a></div>
+<div class="flow">
+
+<div class="phase p1"><div class="phase-label">1757<br>〜<br>1885</div>
+<div class="node"><div class="node-title">東インド会社支配 → 英直接統治</div><div class="node-year">1757–1885</div>
+<div class="node-desc"><strong>プラッシーの戦い</strong>(1757)で東インド会社がベンガルの実権を掌握。マイソール戦争・マラーター戦争・シク戦争で全インドを支配。<strong>インド大反乱(セポイの反乱)</strong>(1857)→東インド会社解散→<strong>英政府の直接統治</strong>。英の綿製品流入→インドの手工業壊滅(「織工の骨でインドの平原が白くなった」)。鉄道網は原料輸送のためで、インドの富がイギリスに流出(「富の流出」論＝ナオロージー)。</div></div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">英のインド支配が固まる中で、知識人層から民族運動が始まる</div></div></div>
+
+<div class="phase p2"><div class="phase-label">1885<br>〜<br>1919</div>
+<div class="node"><div class="node-title">インド国民会議派の成立</div><div class="node-year">1885</div>
+<div class="node-desc"><strong>インド国民会議派</strong>(1885)＝英人退官官僚ヒュームの仲介で設立。当初は英国留学帰りの<strong>知識人・弁護士</strong>による穏健な請願路線。<strong>穏健派(モデレート)</strong>＝<strong>ダーダーバーイー＝ナオロージー</strong>(「富の流出」論＝インドの富が英に吸い取られていることを数値で証明)・<strong>ゴーカレー</strong>(ガンディーの政治的師匠)。自治(セルフ・ガヴァメント)を要求するが、英帝国の枠内での改良を志向。</div></div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">ベンガル分割令(1905)で穏健路線の限界が露呈→急進派が台頭</div></div>
+<div class="node"><div class="node-title">ベンガル分割令 → 4綱領 → 穏健派vs急進派の対立</div><div class="node-year">1905–1911</div>
+<div class="node-desc">カーゾン総督が<strong>ベンガル分割令</strong>(1905)＝ヒンドゥー多数の西ベンガルとムスリム多数の東ベンガルに分割→<strong>「分割統治(divide and rule)」</strong>の典型。反英運動が激化→カルカッタ大会(1906)で<strong>4綱領</strong>を採択：①<strong>スワデーシー</strong>(国産品愛用) ②<strong>スワラージ</strong>(自治) ③<strong>ボイコット</strong>(英国品排斥) ④<strong>民族教育</strong>。<strong>急進派(エクストリーミスト)</strong>の<strong>ティラク</strong>「スワラージは我が生得の権利なり」→穏健派と対立→スーラト分裂(1907)。英は分割統治を補強するため<strong>全インド＝ムスリム連盟</strong>(1906)の結成を支援→ヒンドゥーvsムスリムの対立を制度化。分割令は1911年に撤回されるがインドのナショナリズムは後戻りしなかった。</div></div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">WW1での協力→見返りの自治の約束→裏切り</div></div>
+<div class="node"><div class="node-title">WW1とローラット法 → アムリトサル事件</div><div class="node-year">1914–1919</div>
+<div class="node-desc">WW1でインドは英に協力(130万人を派兵・多額の戦費負担)→戦後の<strong>自治拡大を期待</strong>。しかし英が出したのは<strong>モンタギュー＝チェムスフォード改革</strong>(1919)＝州レベルで限定的な自治のみ(「二頭政治」)→期待外れ。さらに<strong>ローラット法</strong>(1919)＝令状なしの逮捕・裁判なしの投獄を可能にする弾圧法→ガンディーが抗議の<strong>ハルタール(同盟罷業)</strong>を呼びかけ。<strong>アムリトサル事件</strong>(1919.4.13)＝パンジャーブのジャリアンワーラー＝バーグ(壁に囲まれた広場)で<strong>ダイヤー准将が非武装の群衆に無警告で発砲→約400人死亡・約1200人負傷</strong>。英議会では一部がダイヤーを英雄視→インド全土で反英感情が爆発。ガンディーが「英との協力は不可能」と確信→非協力運動へ。</div></div>
+<div class="side-note">★入試超頻出：「ベンガル分割令(1905)→4綱領」「ローラット法(1919)→アムリトサル事件」「ティラクの急進派vsナオロージーの穏健派」「ムスリム連盟(1906)＝英の分割統治」。すべて年代と内容がセットで問われる</div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">ガンディーの非暴力・不服従運動が民族運動を大衆化</div></div></div>
+
+<div class="phase p3"><div class="phase-label">1920<br>〜<br>1942</div>
+<div class="node key"><div class="node-title">ガンディーの非暴力・不服従(サティヤーグラハ)</div><div class="node-year">1920–1942</div>
+<div class="node-desc">南アフリカでインド人差別と闘った<strong>モーハンダース＝カラムチャンド＝ガンディー</strong>がインドに帰国(1915)。ゴーカレーの助言で1年間インド各地を旅行し民衆の苦しみを知る。<strong>サティヤーグラハ(真理の把持)</strong>＝非暴力・不服従の哲学→チャンパーラン(藍農園での搾取)・アフマダーバード(繊維労働者)で実践→成功。<br><br>
+<strong>第1次非協力運動</strong>(1920-22)＝英国の称号返上・法廷・学校のボイコット。<strong>ヒラーファト運動</strong>(オスマン帝国のカリフ制廃止に抗議するムスリムの運動)と連携＝<strong>ヒンドゥーとムスリムの初めての大規模な共闘</strong>。ガンディーは手紡ぎ車(チャルカー)で糸を紡ぐ＝<strong>「カーディー(手紡ぎ布)」＝スワデーシーの象徴</strong>。しかし<strong>チャウリ＝チャウラ事件</strong>(1922)＝群衆が警察署を襲撃→ガンディーが「非暴力が守られていない」として運動を中止→国民会議派内から批判。<br><br>
+<strong>塩の行進(ダンディー行進)</strong>(1930.3-4)＝英の塩の専売(製造・販売を禁止し高税)に抗議してガンディーが<strong>アフマダーバードから海岸のダンディーまで約380km・24日間を徒歩で行進</strong>→海水から塩を作る＝<strong>「法を破る」不服従運動の象徴</strong>。世界中のメディアが報道→6万人が逮捕→英が<strong>円卓会議</strong>(ロンドン、1930-32)にガンディーを招請。しかし<strong>アンベードカル</strong>(不可触民指導者)が独自の選挙区を要求→ガンディーは断食で抗議(プーナ協定1932)。<br><br>
+<strong>「インドを去れ(Quit India)」運動</strong>(1942.8)＝WW2中、日本軍がビルマに迫る中で英に<strong>即時撤退</strong>を要求。ガンディー「行動か死か(Do or Die)」→英が大弾圧(ガンディー・ネルー・パテール等国民会議派指導者を一斉逮捕)→民衆の自発的抵抗→しかし英のインド支配の<strong>不可逆的な弱体化</strong>。一方<strong>スバス＝チャンドラ＝ボース</strong>は日本の支援で<strong>インド国民軍(INA)</strong>を組織し武装闘争路線→インパール作戦(1944)に参加するも失敗。</div></div>
+<div class="side-note">★入試超頻出：「非協力(1920)→塩の行進(1930)→インドを去れ(1942)」の3段階。ガンディーの方法＝暴力を使わないが法に従わない→英の「法と秩序」の道義的正当性を崩す戦略。ボースの武装闘争路線との対比も問われる</div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">独立は確実に→しかし「一つのインド」か「分離」かが問題に</div></div></div>
+
+<div class="phase p4"><div class="phase-label">1940<br>〜<br>1947</div>
+<div class="node"><div class="node-title">ヒンドゥー vs ムスリムの対立 → 分離独立へ</div><div class="node-year">1940–47</div>
+<div class="node-desc"><strong>ネルー</strong>(国民会議派)＝統一インドでの独立を主張。<strong>ジンナー</strong>(ムスリム連盟)＝<strong>パキスタン決議</strong>(1940、ラホール)＝ムスリム多数地域の独立国家を要求。「ヒンドゥーとムスリムは別の民族(二民族論)」。ガンディーは統一インドを訴え続けるが…<br>
+WW2終結(1945)→<strong>アトリー労働党政権</strong>が独立を決定。最後の総督<strong>マウントバッテン</strong>が交渉→ネルーとジンナーの妥協は不可能と判断→<strong>分離独立</strong>を決定。<strong>1947年8月14日パキスタン独立</strong>、<strong>8月15日インド独立</strong>。</div></div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">分離独立は大規模な暴力と難民を伴った</div></div>
+<div class="node key"><div class="node-title">分離独立の悲劇とその後</div><div class="node-year">1947.8 →</div>
+<div class="node-desc">分離に伴い<strong>約1500万人が大移動</strong>(ヒンドゥーが印へ、ムスリムがパキスタンへ)→<strong>宗教暴動で約100万人が死亡</strong>。<strong>カシミール問題</strong>＝ヒンドゥーの藩王がインドへの帰属を選択→ムスリム住民が多数→第1次印パ戦争(1947-48)→現在まで未解決。ガンディーはヒンドゥー・ムスリムの和解を訴え続けるが、<strong>1948年1月30日にヒンドゥー過激派に暗殺</strong>。ネルーが初代首相として<strong>非同盟・社会主義的計画経済・政教分離</strong>のインドを建設。</div></div></div>
+
+<div class="phase p5"><div class="phase-label">意義</div>
+<div class="node"><div class="node-title">インド独立の世界史的意義</div>
+<div class="node-desc">①<strong>大英帝国の終焉</strong>＝最大の植民地インドの独立→「帝国は持続不可能」が明白に→アフリカ・アジアの脱植民地化が加速。②<strong>非暴力抵抗の思想的影響</strong>＝キング牧師(米公民権運動)・マンデラ(南アフリカ)に直接的影響。③<strong>分離独立の教訓</strong>＝宗教に基づく国家分割が暴力と難民を生む→パレスチナ問題との共通性。④<strong>非同盟運動</strong>＝ネルーがバンドン会議(1955)で主導→米ソどちらにも属さない「第三の道」。</div></div></div>
+
+</div>
+<div class="note"><p>インド独立＝<strong>①英支配(プラッシー→大反乱→直接統治)→②国民会議派(穏健→急進)→③ガンディーの非暴力(非協力→塩の行進→Quit India)→④ヒンドゥーvsムスリムの分裂→⑤分離独立(1947)の悲劇</strong>。入試では「なぜ分離独立に至ったか」＝英の分割統治＋ジンナーの二民族論＋ネルーとの妥協不成立、を説明できることが重要。</p></div>
+</body></html>

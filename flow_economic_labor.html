@@ -1,0 +1,71 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>労働制度の世界史的変遷</title><style>@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048;--border:rgba(201,169,110,.08)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+.hdr{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.hdr h1{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2)}
+.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
+.flow{max-width:720px;margin:0 auto;padding:24px 20px 60px}
+.phase{position:relative;margin-bottom:2px;padding:16px 16px 16px 60px;border-left:2px solid rgba(201,169,110,.08);margin-left:30px}
+.phase:last-child{border-left-color:transparent}
+.phase-label{position:absolute;left:-42px;top:16px;width:36px;font-family:'Cormorant Garamond',serif;font-size:10px;font-weight:700;color:var(--text3);text-align:right;line-height:1.3}
+.phase::before{content:'';position:absolute;left:-5px;top:22px;width:8px;height:8px;border-radius:50%;background:var(--bg);border:2px solid rgba(201,169,110,.25)}
+.node{background:rgba(255,255,255,.015);border:1px solid rgba(255,255,255,.04);border-radius:8px;padding:10px 14px;margin-bottom:8px;border-left:3px solid transparent}
+.node:hover{background:rgba(255,255,255,.03)}
+.node-title{font-family:'Noto Serif JP',serif;font-size:12px;font-weight:700;color:var(--gold2);margin-bottom:2px}
+.node-year{font-family:'Cormorant Garamond',serif;font-size:11px;color:var(--gold);opacity:.6;margin-bottom:4px}
+.node-desc{font-size:10px;color:var(--text2);line-height:1.7}
+.node-desc strong{color:var(--text);font-weight:600}
+.arrow{display:flex;align-items:center;gap:6px;padding:2px 0 2px 8px;margin-bottom:6px}
+.arrow-line{width:16px;height:1px;background:rgba(201,169,110,.15)}
+.arrow-text{font-size:8px;color:var(--text3)}
+.arrow-icon{color:rgba(201,169,110,.3);font-size:10px}
+.branch-row{display:flex;gap:8px;margin-bottom:8px}
+.branch-row .node{flex:1}
+.node.key{background:rgba(201,169,110,.04);border-color:rgba(201,169,110,.12)}
+.side-note{font-size:8px;color:var(--text3);padding:4px 8px;border-left:2px solid rgba(201,169,110,.1);margin:4px 0 8px;line-height:1.6}
+.note{text-align:center;padding:8px 20px 32px;max-width:700px;margin:0 auto}.note p{font-size:9px;color:var(--text3);line-height:1.8}.note strong{color:var(--gold)}
+
+.p1 .node{border-left-color:rgba(130,130,100,.3)}.p1::before{border-color:rgba(130,130,100,.5);background:rgba(130,130,100,.15)}.p2 .node{border-left-color:rgba(100,130,180,.3)}.p2::before{border-color:rgba(100,130,180,.4)}.p3 .node{border-left-color:rgba(180,80,80,.3)}.p3::before{border-color:rgba(180,80,80,.5);background:rgba(180,80,80,.15)}.p4 .node{border-left-color:rgba(180,140,60,.3)}.p4::before{border-color:rgba(180,140,60,.5);background:rgba(180,140,60,.15)}.p5 .node{border-left-color:rgba(80,150,120,.3)}.p5::before{border-color:rgba(80,150,120,.4)}
+@media(max-width:600px){
+.hdr{padding:10px 12px}.hdr h1{font-size:12px}
+.flow{padding:16px 10px 40px}
+.phase{padding:12px 10px 12px 44px;margin-left:20px}
+.phase-label{left:-30px;width:28px;font-size:8px}
+.node{padding:8px 10px}.node-title{font-size:11px}.node-desc{font-size:9px}
+.branch-row{flex-direction:column}
+.side-note{font-size:7.5px}
+.note p{font-size:8px}
+}
+</style></head><body><div class="hdr"><h1>労働制度の世界史的変遷 ― 奴隷制から福祉国家まで ― 「誰が働き、誰が得をしたか」</h1><a href="charts.html">← Ad Chartae</a></div><div class="flow">
+<div class="phase p1"><div class="phase-label">古代</div>
+  <div class="node"><div class="node-title">★古代の奴隷制</div>
+  <div class="node-desc"><strong>ギリシア</strong>：アテネの市民は人口の約1/3→残りは奴隷・在留外人(メトイコイ)・女性。★<strong>奴隷がラウレイオン銀山・農業・家事労働を担う</strong>→市民は政治・哲学に専念できる。アリストテレス＝「奴隷は生きた道具」。<br><strong>ローマ</strong>：征服戦争で大量の奴隷→★<strong>ラティフンディア(大土地所有)＝奴隷制大農場</strong>→自由農民が没落(安い奴隷労働に対抗できず)→「パンとサーカス」(無産市民の不満を抑える)→グラックス兄弟の改革(失敗)→★共和政の崩壊の経済的原因。<strong>スパルタクスの反乱</strong>(前73-71)＝最大の奴隷反乱。<br><strong>限界</strong>：★征服戦争が停滞→奴隷の供給が減少→<strong>コロヌス(小作人)</strong>制へ移行(3-4C)→中世の農奴制の起源。</div></div>
+  <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">ローマ帝国の衰退→征服停止→奴隷供給の減少→コロヌス制→農奴制</div></div>
+</div>
+
+<div class="phase p2"><div class="phase-label">中世</div>
+  <div class="node"><div class="node-title">★農奴制(セルフダム)</div>
+  <div class="node-desc"><strong>西欧</strong>：奴隷ではないが★<strong>土地に縛られ移動の自由なし</strong>。領主に賦役(週2-3日)＋貢納＋結婚税・死亡税。奴隷との違い＝★<strong>人格は認められる</strong>(家族を持てる・自分の保有地を耕作できる)。<br><strong>東欧</strong>：16C以降に★<strong>「農奴制の再版(第二次農奴制)」</strong>→グーツヘルシャフト(農場領主制)＝西欧への穀物輸出のため領主が直営地を拡大→農奴の賦役がむしろ強化(週4-6日)→ロシアでは★<strong>1861年まで農奴制が存続</strong>(アレクサンドル2世の農奴解放令)。プロイセン＝1807年(シュタイン＝ハルデンベルクの改革)。オーストリア＝1848年(三月革命で)。<br><strong>崩壊の原因</strong>(西欧)：貨幣経済の浸透→黒死病→労働力不足→賃金労働への移行。</div></div>
+  <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">西欧＝農奴制崩壊→自由な労働者が出現→囲い込みで土地を失う→工場労働者に</div></div>
+</div>
+
+<div class="phase p3"><div class="phase-label">近世<br>16-18C</div>
+  <div class="node key"><div class="node-title">★大西洋奴隷制(プランテーション奴隷制)</div>
+  <div class="node-desc"><strong>構造</strong>：★中世の農奴制とは別系統。大航海時代以降にアメリカ大陸で新たに生まれた奴隷制。<br><strong>原因</strong>：新大陸の先住民が疫病で激減→★<strong>プランテーション(砂糖・タバコ・綿花)の労働力不足</strong>→アフリカから奴隷を強制的に連行→★<strong>大西洋奴隷貿易</strong>(16-19C→約1200万人)。<br><strong>特徴</strong>：★<strong>人種(肌の色)に基づく奴隷制</strong>→古代の奴隷制(戦争捕虜→人種は問わない)とは本質的に異なる→★<strong>人種差別の制度的起源</strong>。カリブ海のサトウキビ農園が最も過酷(平均寿命7年)。★<strong>三角貿易</strong>＝ヨーロッパの工業製品→アフリカの奴隷→新大陸の砂糖→ヨーロッパ→★<strong>ヨーロッパの資本蓄積(＝産業革命の資金源の一つ)</strong>。<br>★<strong>廃止</strong>：イギリス＝奴隷貿易廃止(1807)→帝国全土で奴隷制廃止(1833)。仏＝1848年。米＝南北戦争→奴隷解放宣言(1863)→修正第13条(1865)。ブラジル＝1888(最も遅い)。</div></div>
+  <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">産業革命→奴隷労働より機械の方が効率的→奴隷制廃止運動＋工場労働者の誕生</div></div>
+</div>
+
+<div class="phase p4"><div class="phase-label">19C</div>
+  <div class="node key"><div class="node-title">★工場労働と労働運動</div>
+  <div class="node-desc"><strong>構造</strong>：★<strong>「自由な」労働者</strong>＝土地も道具も持たない→<strong>労働力を時間単位で売る</strong>しかない→資本家との圧倒的な力の不均衡。法的には自由→だし★<strong>実態は「賃金奴隷」</strong>(マルクス)。<br><strong>労働条件</strong>：1日14-16時間・児童労働(5歳から)・女性労働(妊婦も)・危険な環境(炭鉱・紡績工場の粉塵)・低賃金(生存ぎりぎり)→★<strong>「鉄の賃金法則」</strong>(ラッサール＝賃金は労働者の生存に必要な最低限に落ち着く)。<br><strong>労働運動</strong>：ラッダイト運動(1811機械打壊)→★チャーティスト運動(1838-48)→★労働組合の合法化(英1871)→第1インターナショナル(1864マルクス)→★第2インターナショナル(1889→メーデー＝5月1日)→ドイツ社会民主党(SPD→修正主義ベルンシュタイン vs 正統派カウツキー)。<br><strong>改革</strong>：工場法(英1833→1847年10時間法)→ビスマルクの社会保険(1880s＝疾病・労災・老齢年金→★社会政策の先駆→だし「アメとムチ」＝社会主義運動を弱体化する目的)。</div></div>
+  <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">WW1→総力戦→女性の労働参加→参政権→WW2後→福祉国家</div></div>
+</div>
+
+<div class="phase p5"><div class="phase-label">20C</div>
+  <div class="node"><div class="node-title">★福祉国家と現代の労働</div>
+  <div class="node-desc"><strong>福祉国家</strong>：★ベヴァリッジ報告(1942英)＝「ゆりかごから墓場まで」→★<strong>アトリー政権</strong>(労働党1945-51)が国民保健サービス(NHS)・国有化を実施→福祉国家の模範。北欧型(スウェーデン＝高福祉高負担)。ニューディール(米1933＝ワグナー法で団体交渉権→社会保障法)。<br><strong>社会主義国の労働</strong>：ソ連＝★<strong>五カ年計画</strong>(1928-)→重工業化→計画経済＝国家が労働を配分→完全雇用だが非効率＋自由の欠如→1991年崩壊。中国＝人民公社(1958)→改革開放(1978)→市場経済化→★<strong>「世界の工場」</strong>＝安い労働力で世界の製造業を吸収。<br><strong>現代の課題</strong>：★グローバリゼーション→先進国の製造業が途上国に移転(脱工業化)→サービス経済化。非正規雇用の拡大(「プレカリアート」)。AI・自動化→雇用の消失?→ベーシック＝インカム論。★<strong>グローバル・サウスの労働問題</strong>＝児童労働・搾取工場(スウェットショップ)→SDGs目標8(ディーセント＝ワーク)。</div></div>
+  <div class="side-note">★一橋頻出：「奴隷制→農奴制→自由労働→工場労働のどこが変わりどこが変わらなかったか」＝法的身分は変わったが、★<strong>「働く者」と「所有する者」の非対称性は形を変えて存続した</strong>→これが論述の核心。</div>
+</div>
+</div><div class="note"><p>労働制度の変遷＝<strong>古代奴隷制→中世農奴制→近世プランテーション奴隷制→近代工場労働→福祉国家</strong>。入試では「各段階の違い」と「変わらなかったもの(支配と被支配の構造)」を問う。</p></div></body></html>

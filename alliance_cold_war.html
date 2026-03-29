@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>冷戦構造の変遷 ― 形成から崩壊まで</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048;--border:rgba(201,169,110,.08)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+.hdr{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.hdr h1{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2)}
+.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
+.content{padding:12px 16px;overflow-x:auto}.content-inner{min-width:780px}
+.phase{margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid rgba(201,169,110,.04)}.phase:last-child{border-bottom:none}
+.phase-hdr{display:flex;align-items:baseline;gap:8px;margin-bottom:8px}
+.phase-era{font-family:'Cormorant Garamond',serif;font-size:13px;font-weight:700;color:var(--gold);letter-spacing:.1em;min-width:90px}
+.phase-title{font-family:'Noto Serif JP',serif;font-size:11px;font-weight:700;color:var(--gold2)}
+.phase-sub{font-size:8px;color:var(--text3);margin-left:4px}
+.phase-body{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.cn{border-radius:6px;padding:5px 10px;text-align:center;cursor:pointer;transition:all .15s}.cn:hover{filter:brightness(1.15);transform:translateY(-1px)}
+.cn .nm{font-family:'Noto Serif JP',serif;font-size:10px;font-weight:700;white-space:nowrap}
+.cn .sub{font-size:6.5px;color:var(--text3);margin-top:1px;white-space:nowrap}
+.cn-us{background:rgba(74,120,194,.06);border:1px solid rgba(74,120,194,.2)}.cn-us .nm{color:#8ab0d4}
+.cn-ussr{background:rgba(194,74,74,.06);border:1px solid rgba(194,74,74,.2)}.cn-ussr .nm{color:#d4a0a0}
+.cn-third{background:rgba(120,160,80,.06);border:1px solid rgba(120,160,80,.2)}.cn-third .nm{color:#a8c890}
+.cn-dim{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05)}.cn-dim .nm{color:var(--text3)}
+.cn-big{padding:7px 14px}.cn-big .nm{font-size:12px}
+.grp{border-radius:8px;padding:8px 10px;display:flex;gap:6px;align-items:center;flex-wrap:wrap;position:relative}
+.grp-us{border:1px solid rgba(74,120,194,.12);background:rgba(74,120,194,.02)}
+.grp-ussr{border:1px solid rgba(194,74,74,.1);background:rgba(194,74,74,.02)}
+.grp-third{border:1px solid rgba(120,160,80,.1);background:rgba(120,160,80,.02)}
+.grp-label{font-size:7px;font-weight:600;letter-spacing:.06em;position:absolute;top:-7px;left:12px;padding:0 4px;background:var(--bg)}
+.grp-label-us{color:rgba(74,120,194,.6)}.grp-label-ussr{color:rgba(194,74,74,.6)}.grp-label-third{color:rgba(120,160,80,.6)}
+.vs{font-family:'Cormorant Garamond',serif;font-size:12px;font-weight:700;color:rgba(194,90,74,.4);padding:0 6px}
+.event{font-size:7px;color:var(--gold);background:rgba(201,169,110,.06);border:1px solid rgba(201,169,110,.08);border-radius:4px;padding:2px 6px;white-space:nowrap}
+.event-red{color:#c25a5a;background:rgba(194,74,74,.06);border-color:rgba(194,74,74,.1)}
+.aside{font-size:6.5px;color:var(--text3);max-width:110px;line-height:1.4}
+.detail{font-size:6.5px;color:var(--text3);margin:4px 0 0 10px;line-height:1.6}.detail strong{color:var(--gold)}
+.tp{display:none}
+.note{text-align:center;padding:8px 20px 32px;max-width:820px;margin:0 auto}.note p{font-size:9px;color:var(--text3);line-height:1.8}.note strong{color:var(--gold)}
+.legend-bar{display:flex;gap:16px;justify-content:center;padding:6px 20px;flex-wrap:wrap;border-bottom:1px solid rgba(255,255,255,.02)}
+.legend-bar .li{display:flex;align-items:center;gap:5px;font-size:8px;color:var(--text3)}
+.legend-bar .ld{width:16px;height:12px;border-radius:3px}
+
+@media(max-width:600px){
+.hdr{padding:10px 12px}.hdr h1{font-size:12px}
+th,td{padding:6px 8px;font-size:9px}
+th{font-size:10px}
+td:first-child{font-size:8.5px}
+.note p{font-size:8px}
+.side-note{font-size:7.5px}
+}
+</style>
+</head>
+<body>
+<div class="hdr"><h1>冷戦構造の変遷 ― 形成・危機・デタント・新冷戦・崩壊</h1><a href="charts.html">← Ad Chartae</a></div>
+<div class="legend-bar">
+<div class="li"><div class="ld" style="background:rgba(74,120,194,.1);border:1px solid rgba(74,120,194,.2)"></div>西側</div>
+<div class="li"><div class="ld" style="background:rgba(194,74,74,.1);border:1px solid rgba(194,74,74,.2)"></div>東側</div>
+<div class="li"><div class="ld" style="background:rgba(120,160,80,.1);border:1px solid rgba(120,160,80,.2)"></div>第三世界</div>
+</div>
+<div class="content"><div class="content-inner">
+<div class="phase">
+<div class="phase-hdr"><div class="phase-era">1945-1955</div><div class="phase-title">冷戦の形成 ― 二極構造の確立</div><div class="phase-sub">鉄のカーテン→封じ込め→軍事同盟</div></div>
+<div class="phase-body">
+<div class="grp grp-us"><div class="grp-label grp-label-us">西側陣営</div>
+<div class="cn cn-us cn-big nd-svg" data-tip="f1-usa"><div class="nm">アメリカ</div><div class="sub">トルーマン＝ドクトリン(1947)</div></div>
+<div class="cn cn-us nd-svg" data-tip="f1-west"><div class="nm">西欧諸国</div><div class="sub">マーシャル＝プラン受入</div></div>
+<div class="cn cn-us nd-svg" data-tip="f1-wger"><div class="nm">西ドイツ</div><div class="sub">BRD成立(1949)</div></div>
+<div class="cn cn-dim nd-svg" data-tip="f1-japan"><div class="nm">日本</div><div class="sub">サンフランシスコ講和(1951)</div></div>
+<div style="font-size:6px;color:var(--text3);width:100%;text-align:center;margin-top:2px">NATO(1949) ｜ マーシャル＝プラン(1947) ｜ GATT(1947)</div>
+</div>
+<div class="vs">VS</div>
+<div class="grp grp-ussr"><div class="grp-label grp-label-ussr">東側陣営</div>
+<div class="cn cn-ussr cn-big nd-svg" data-tip="f1-ussr"><div class="nm">ソ連</div><div class="sub">スターリン ｜ 原爆保有(1949)</div></div>
+<div class="cn cn-ussr nd-svg" data-tip="f1-east"><div class="nm">東欧諸国</div><div class="sub">人民民主主義</div></div>
+<div class="cn cn-ussr nd-svg" data-tip="f1-eger"><div class="nm">東ドイツ</div><div class="sub">DDR成立(1949)</div></div>
+<div class="cn cn-ussr nd-svg" data-tip="f1-china"><div class="nm">中国</div><div class="sub">中華人民共和国(1949)</div></div>
+<div style="font-size:6px;color:var(--text3);width:100%;text-align:center;margin-top:2px">コミンフォルム(1947) ｜ COMECON(1949) ｜ ワルシャワ条約機構(1955)</div>
+</div></div>
+<div class="detail"><strong>ベルリン封鎖(1948-49)</strong>：最初の直接対決→東西ドイツ分裂。<strong>朝鮮戦争(1950-53)</strong>：冷戦初の「熱い戦争」。</div>
+</div>
+
+<div class="phase">
+<div class="phase-hdr"><div class="phase-era">1955-1962</div><div class="phase-title">「雪どけ」と危機の交錯</div><div class="phase-sub">スターリン批判→第三世界の台頭→キューバ危機</div></div>
+<div class="phase-body">
+<div class="grp grp-us"><div class="grp-label grp-label-us">西側</div>
+<div class="cn cn-us cn-big nd-svg" data-tip="f2-usa"><div class="nm">アメリカ</div><div class="sub">アイゼンハワー→ケネディ</div></div>
+<div class="cn cn-us nd-svg" data-tip="f2-nato"><div class="nm">NATO</div><div class="sub">西独加入(1955)</div></div>
+</div>
+<div class="vs">VS</div>
+<div class="grp grp-ussr"><div class="grp-label grp-label-ussr">東側</div>
+<div class="cn cn-ussr cn-big nd-svg" data-tip="f2-ussr"><div class="nm">ソ連</div><div class="sub">フルシチョフ ｜ スターリン批判(1956)</div></div>
+<div class="cn cn-ussr nd-svg" data-tip="f2-east"><div class="nm">東欧</div><div class="sub">ハンガリー事件(1956)</div></div>
+<div class="cn cn-ussr nd-svg" data-tip="f2-china"><div class="nm">中国</div><div class="sub" style="color:#c25a5a">中ソ対立の始まり</div></div>
+</div>
+<div class="grp grp-third" style="margin-left:8px"><div class="grp-label grp-label-third">第三世界の台頭</div>
+<div class="cn cn-third nd-svg" data-tip="f2-third"><div class="nm">非同盟運動</div><div class="sub">バンドン会議(1955)</div></div>
+<div class="cn cn-third nd-svg" data-tip="f2-nasser"><div class="nm">エジプト</div><div class="sub">ナセル ｜ スエズ(1956)</div></div>
+</div></div>
+<div class="detail"><strong>ベルリンの壁(1961)</strong>→冷戦の象徴。<strong>キューバ危機(1962)</strong>→核戦争の瀬戸際→<strong>デタントへの転機</strong>。<strong>中ソ対立</strong>→東側の亀裂。</div>
+</div>
+
+<div class="phase">
+<div class="phase-hdr"><div class="phase-era">1962-1979</div><div class="phase-title">デタント（緊張緩和）</div><div class="phase-sub">核軍縮・ニクソン訪中・ヘルシンキ宣言</div></div>
+<div class="phase-body">
+<div class="grp grp-us"><div class="grp-label grp-label-us">西側</div>
+<div class="cn cn-us cn-big nd-svg" data-tip="f3-usa"><div class="nm">アメリカ</div><div class="sub">ニクソン→カーター</div></div>
+<div class="cn cn-us nd-svg" data-tip="f3-wger"><div class="nm">西ドイツ</div><div class="sub">ブラントの東方外交</div></div>
+</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:3px;padding:0 4px">
+<div class="event nd-svg" data-tip="ev-ptbt">PTBT(1963)</div><div class="event nd-svg" data-tip="ev-npt">NPT(1968)</div><div class="event nd-svg" data-tip="ev-salt1">SALT I(1972)</div><div class="event nd-svg" data-tip="ev-helsinki">ヘルシンキ(1975)</div>
+<div style="font-size:7px;color:var(--gold);font-weight:600">← 対話 →</div></div>
+<div class="grp grp-ussr"><div class="grp-label grp-label-ussr">東側</div>
+<div class="cn cn-ussr cn-big nd-svg" data-tip="f3-ussr"><div class="nm">ソ連</div><div class="sub">ブレジネフ ｜ プラハの春を弾圧(1968)</div></div>
+<div class="cn cn-ussr nd-svg" data-tip="f3-east"><div class="nm">東欧</div><div class="sub">ブレジネフ＝ドクトリン</div></div>
+</div></div>
+<div class="phase-body" style="margin-top:8px">
+<div class="cn cn-ussr nd-svg" style="border-style:dashed;border-color:rgba(194,74,74,.15)" data-tip="f3-china"><div class="nm">中国</div><div class="sub" style="color:#c25a5a">中ソ対立が深刻化</div></div>
+<div style="font-size:7px;color:var(--gold)">←ニクソン訪中(1972)→</div>
+<div class="cn cn-us nd-svg" style="border-style:dashed" data-tip="f3-nixon"><div class="nm">米中接近</div><div class="sub">冷戦構造の変容</div></div>
+<div class="aside">二極→「米中ソの三角関係」</div>
+</div>
+<div class="detail"><strong>ベトナム戦争(1965-75)</strong>→米の威信低下。<strong>ニクソン＝ショック(1971)</strong>→ブレトンウッズ崩壊。<strong>石油危機(1973)</strong>→世界経済に打撃。</div>
+</div>
+
+<div class="phase">
+<div class="phase-hdr"><div class="phase-era">1979-1985</div><div class="phase-title">「新冷戦」</div><div class="phase-sub">デタント崩壊→再び対立激化</div></div>
+<div class="phase-body">
+<div class="grp grp-us"><div class="grp-label grp-label-us">西側（攻勢）</div>
+<div class="cn cn-us cn-big nd-svg" data-tip="f4-usa"><div class="nm">アメリカ</div><div class="sub">レーガン ｜「悪の帝国」</div></div>
+<div class="cn cn-us nd-svg" data-tip="f4-uk"><div class="nm">イギリス</div><div class="sub">サッチャー</div></div>
+</div>
+<div class="vs">VS</div>
+<div class="grp grp-ussr"><div class="grp-label grp-label-ussr">東側（停滞）</div>
+<div class="cn cn-ussr cn-big nd-svg" data-tip="f4-ussr"><div class="nm">ソ連</div><div class="sub">老齢指導者の連続→停滞</div></div>
+<div class="cn cn-ussr nd-svg" data-tip="f4-afghan"><div class="nm">アフガニスタン</div><div class="sub" style="color:#c25a5a">ソ連が侵攻(1979)</div></div>
+<div class="cn cn-ussr nd-svg" data-tip="f4-poland"><div class="nm">ポーランド</div><div class="sub">「連帯」→戒厳令</div></div>
+</div></div>
+<div class="detail"><strong>アフガン侵攻(1979)</strong>＝デタント崩壊の引き金。レーガンのSDI構想→軍拡競争→ソ連経済を圧迫。</div>
+</div>
+
+<div class="phase">
+<div class="phase-hdr"><div class="phase-era">1985-1991</div><div class="phase-title">冷戦の終結</div><div class="phase-sub">ペレストロイカ→東欧革命→ソ連崩壊</div></div>
+<div style="font-size:7.5px;color:var(--gold);margin-bottom:4px;font-weight:600">① ゴルバチョフの改革</div>
+<div class="phase-body" style="margin-bottom:8px">
+<div class="cn cn-us cn-big nd-svg" data-tip="f5-usa"><div class="nm">アメリカ</div><div class="sub">レーガン→ブッシュ(父)</div></div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:3px;padding:0 6px">
+<div class="event nd-svg" data-tip="ev-inf">INF全廃条約(1987)</div><div class="event nd-svg" data-tip="ev-malta">マルタ会談(1989.12)</div>
+<div style="font-size:7px;color:var(--gold);font-weight:600">← 対話再開 →</div></div>
+<div class="cn cn-ussr cn-big nd-svg" data-tip="f5-ussr"><div class="nm">ソ連</div><div class="sub">ゴルバチョフ ｜ ペレストロイカ</div></div>
+<div class="aside">「新思考外交」<br>東欧への不介入を宣言</div>
+</div>
+<div style="font-size:7.5px;color:#c25a5a;margin-bottom:4px;font-weight:600">② 東欧革命の連鎖（1989）</div>
+<div class="phase-body" style="margin-bottom:8px">
+<div class="cn cn-dim nd-svg" data-tip="f5-poland"><div class="nm">ポーランド</div><div class="sub">連帯が選挙で勝利</div></div>
+<div style="font-size:7px;color:var(--text3)">→</div>
+<div class="cn cn-dim nd-svg" data-tip="f5-hungary"><div class="nm">ハンガリー</div><div class="sub">国境開放</div></div>
+<div style="font-size:7px;color:var(--text3)">→</div>
+<div class="cn cn-dim nd-svg" data-tip="f5-wall"><div class="nm" style="color:var(--gold2)">壁崩壊</div><div class="sub">1989.11.9</div></div>
+<div style="font-size:7px;color:var(--text3)">→</div>
+<div class="cn cn-dim nd-svg" data-tip="f5-czech"><div class="nm">チェコ</div><div class="sub">ビロード革命</div></div>
+<div style="font-size:7px;color:var(--text3)">→</div>
+<div class="cn cn-dim nd-svg" data-tip="f5-romania"><div class="nm">ルーマニア</div><div class="sub">チャウシェスク処刑</div></div>
+</div>
+<div style="font-size:7.5px;color:#c25a5a;margin-bottom:4px;font-weight:600">③ ソ連崩壊</div>
+<div class="phase-body">
+<div class="event nd-svg" data-tip="ev-reunify">独統一(1990.10)</div><div style="font-size:7px;color:var(--text3)">→</div>
+<div class="event event-red nd-svg" data-tip="ev-baltic">バルト三国独立</div><div style="font-size:7px;color:var(--text3)">→</div>
+<div class="event event-red nd-svg" data-tip="ev-coup">8月クーデター失敗</div><div style="font-size:7px;color:var(--text3)">→</div>
+<div class="event event-red nd-svg" data-tip="ev-cis">CIS結成</div><div style="font-size:7px;color:var(--text3)">→</div>
+<div class="cn cn-dim nd-svg" data-tip="f5-end" style="border-color:rgba(194,74,74,.2)"><div class="nm" style="color:#d4a0a0">ソ連崩壊</div><div class="sub">1991.12.25</div></div>
+</div>
+<div class="detail"><strong>マルタ会談(1989.12)</strong>：冷戦終結宣言。しかしソ連は内部から崩壊→1991.12にCIS結成＋ゴルバチョフ辞任→<strong>冷戦の完全な終焉→「アメリカ一極」時代へ</strong>。</div>
+</div>
+
+</div></div>
+<div class="tp" id="tip-f1-usa"><p><strong>アメリカ</strong> ― <strong>トルーマン＝ドクトリン(1947)</strong>で封じ込め宣言。<strong>マーシャル＝プラン(1947)</strong>で西欧復興。<strong>NATO(1949)</strong>で軍事同盟。</p></div>
+<div class="tp" id="tip-f1-west"><p><strong>西欧</strong> ― マーシャル＝プラン受入→戦後復興。仏独和解→ECSC(1951)→EEC(1957)→EU(1992)への統合の出発点。</p></div>
+<div class="tp" id="tip-f1-wger"><p><strong>西ドイツ</strong> ― 1949年成立。アデナウアーが西側統合を推進。1955年NATO加入。「経済の奇跡」。</p></div>
+<div class="tp" id="tip-f1-japan"><p><strong>日本</strong> ― サンフランシスコ講和(1951)で主権回復。日米安保条約で西側に。朝鮮特需→高度成長。</p></div>
+<div class="tp" id="tip-f1-ussr"><p><strong>ソ連</strong> ― スターリン体制。東欧を衛星国化。<strong>原爆保有(1949)</strong>で核均衡。ベルリン封鎖(1948-49)。朝鮮戦争で北を支援。</p></div>
+<div class="tp" id="tip-f1-east"><p><strong>東欧</strong> ― 共産党一党独裁。ソ連型計画経済。コミンフォルム(1947)で統制。ティトーのユーゴだけソ連と距離を置く。</p></div>
+<div class="tp" id="tip-f1-eger"><p><strong>東ドイツ</strong> ― 1949年成立。西との経済格差拡大→市民の西側流出→壁(1961)の背景。</p></div>
+<div class="tp" id="tip-f1-china"><p><strong>中国</strong> ― 1949年に中華人民共和国。中ソ友好同盟(1950)。朝鮮戦争に参戦。当初は東側の一員。</p></div>
+<div class="tp" id="tip-f2-usa"><p><strong>アメリカ</strong> ― アイゼンハワー→ケネディ。U-2事件(1960)。<strong>キューバ危機(1962)</strong>で核戦争の瀬戸際→デタントへの転機。</p></div>
+<div class="tp" id="tip-f2-nato"><p><strong>NATO</strong> ― 西独加入(1955)→対抗でワルシャワ条約機構(1955)。欧州の軍事的二極化が完成。</p></div>
+<div class="tp" id="tip-f2-ussr"><p><strong>ソ連</strong> ― フルシチョフの<strong>スターリン批判(1956)</strong>→東側に衝撃。「平和共存」路線だがハンガリー事件は武力鎮圧。スプートニク(1957)。キューバにミサイル配備(1962)→危機。</p></div>
+<div class="tp" id="tip-f2-east"><p><strong>東欧</strong> ― <strong>ハンガリー事件(1956)</strong>：ナジ＝イムレの改革→ソ連軍が鎮圧。ポズナン暴動。東側内部の不安定さが露呈。</p></div>
+<div class="tp" id="tip-f2-china"><p><strong>中国</strong> ― スターリン批判・平和共存に毛沢東が反発→<strong>中ソ対立</strong>開始。ソ連技術者引き揚げ(1960)。独自の核実験(1964)。</p></div>
+<div class="tp" id="tip-f2-third"><p><strong>非同盟運動</strong> ― <strong>バンドン会議(1955)</strong>。ネルー・スカルノ・ナセル・ティトー。米ソどちらにも属さない「第三世界」の台頭。</p></div>
+<div class="tp" id="tip-f2-nasser"><p><strong>エジプト（ナセル）</strong> ― <strong>スエズ運河国有化(1956)</strong>→スエズ戦争→英仏帝国主義の終焉を象徴。非同盟運動の指導者。</p></div>
+<div class="tp" id="tip-f3-usa"><p><strong>アメリカ</strong> ― <strong>ニクソン訪中(1972)</strong>→冷戦構造が変容。ベトナムから撤退。SALT I(1972)。ウォーターゲート(1974)。ニクソン＝ショック(1971)。</p></div>
+<div class="tp" id="tip-f3-wger"><p><strong>西ドイツ</strong> ― ブラントの<strong>東方外交</strong>。東独・ポーランド・ソ連と関係正常化。ワルシャワでのひざまずき(1970)。</p></div>
+<div class="tp" id="tip-f3-ussr"><p><strong>ソ連</strong> ― ブレジネフ。SALT I・ヘルシンキでデタントに参加。しかし<strong>プラハの春(1968)</strong>を弾圧→ブレジネフ＝ドクトリン。</p></div>
+<div class="tp" id="tip-f3-east"><p><strong>東欧</strong> ― <strong>プラハの春(1968)</strong>：ドプチェク「人間の顔をした社会主義」→ソ連が軍事介入で鎮圧。自由化は封じ込め。</p></div>
+<div class="tp" id="tip-f3-china"><p><strong>中国</strong> ― 中ソ対立が深刻化（珍宝島1969）。ソ連を最大の脅威と認識→<strong>米中接近</strong>の動機に。国連代表権交代(1971)。</p></div>
+<div class="tp" id="tip-f3-nixon"><p><strong>米中接近</strong> ― <strong>ニクソン訪中(1972)</strong>で冷戦構造が根本的に変容。「二極」→「米中ソの三角関係」。キッシンジャー外交。</p></div>
+<div class="tp" id="tip-f4-usa"><p><strong>アメリカ（レーガン）</strong> ― ソ連を<strong>「悪の帝国」</strong>。<strong>SDI構想</strong>で軍拡競争→ソ連経済を圧迫。中距離核のパーシング2配備。</p></div>
+<div class="tp" id="tip-f4-uk"><p><strong>イギリス（サッチャー）</strong> ― レーガンの同盟者。新自由主義。フォークランド紛争(1982)。「鉄の女」。</p></div>
+<div class="tp" id="tip-f4-ussr"><p><strong>ソ連</strong> ― ブレジネフ停滞→アンドロポフ→チェルネンコ→老齢指導者が続く。<strong>アフガン侵攻(1979)</strong>で孤立。軍拡で経済疲弊→ゴルバチョフ登場(1985)の背景。</p></div>
+<div class="tp" id="tip-f4-afghan"><p><strong>アフガン侵攻(1979)</strong> ― デタント崩壊の引き金。10万人投入→泥沼。「ソ連のベトナム」。米がムジャヒディーン支援。1989年撤退。</p></div>
+<div class="tp" id="tip-f4-poland"><p><strong>「連帯」</strong> ― ワレサの独立労組(1980)→東側初。戒厳令(1981)で一時弾圧→地下で存続→1989年に勝利→東欧革命の先駆。</p></div>
+<div class="tp" id="tip-f5-usa"><p><strong>アメリカ</strong> ― INF全廃条約(1987)。マルタ会談(1989)で冷戦終結宣言。湾岸戦争(1991)で「一極」時代の到来。</p></div>
+<div class="tp" id="tip-f5-ussr"><p><strong>ソ連（ゴルバチョフ）</strong> ― <strong>ペレストロイカ</strong>（改革）・<strong>グラスノスチ</strong>（情報公開）。「新思考外交」で東欧不介入→革命の連鎖。8月クーデター失敗→CIS→消滅。</p></div>
+<div class="tp" id="tip-f5-poland"><p><strong>ポーランド</strong> ― 「連帯」が1989年選挙で圧勝→東欧初の非共産党政権。東欧革命の口火。</p></div>
+<div class="tp" id="tip-f5-hungary"><p><strong>ハンガリー</strong> ― 墺との国境開放(1989)→東独市民が西側へ脱出→壁崩壊の伏線。ナジ＝イムレの名誉回復。</p></div>
+<div class="tp" id="tip-f5-wall"><p><strong>壁崩壊(1989.11.9)</strong> ― 旅行自由化発表→市民が殺到→壁が開く。冷戦最大の象徴的瞬間。→独統一(1990.10)。</p></div>
+<div class="tp" id="tip-f5-czech"><p><strong>チェコ</strong> ― 「ビロード革命」(1989.11)。ハヴェルが大統領に。非暴力で体制転換。1993年にチェコとスロヴァキアに分離。</p></div>
+<div class="tp" id="tip-f5-romania"><p><strong>ルーマニア</strong> ― 東欧革命で唯一の暴力的転換。チャウシェスク夫妻は逮捕・即日処刑(1989.12)。</p></div>
+<div class="tp" id="tip-f5-end"><p><strong>ソ連崩壊(1991.12.25)</strong> ― バルト独立→各共和国が独立宣言→8月クーデター失敗→CIS結成→ゴルバチョフ辞任→<strong>ソ連消滅</strong>。冷戦の完全な終焉。</p></div>
+
+
+<div class="tp" id="tip-ev-nato"><p><strong>NATO（北大西洋条約機構, 1949）</strong> ― 米を中心とする西側軍事同盟。集団的自衛権に基づき「1カ国への攻撃は全体への攻撃」。原加盟12カ国。西独は1955年加入。冷戦後も存続しNATO拡大→ロシアとの新たな対立の火種に。</p></div>
+<div class="tp" id="tip-ev-marshall"><p><strong>マーシャル＝プラン（欧州復興計画, 1947）</strong> ― 米国務長官マーシャルが提唱。西欧16カ国に約130億ドルの経済援助→西欧の戦後復興を加速。ソ連・東欧は参加を拒否（コミンフォルムで対抗）。経済的な西側統合の基盤。</p></div>
+<div class="tp" id="tip-ev-gatt"><p><strong>GATT（関税と貿易に関する一般協定, 1947）</strong> ― 自由貿易の促進を目的とする多国間協定。関税引き下げの交渉（ラウンド）を重ねる。1995年にWTO（世界貿易機関）に発展的に改組。</p></div>
+<div class="tp" id="tip-ev-ptbt"><p><strong>PTBT（部分的核実験禁止条約, 1963）</strong> ― 大気圏内・宇宙空間・水中での核実験を禁止（地下は除外）。キューバ危機(1962)後の最初の核軍縮。米英ソが署名。仏中は不参加。「デタントの始まり」を象徴。</p></div>
+<div class="tp" id="tip-ev-npt"><p><strong>NPT（核拡散防止条約, 1968）</strong> ― 米英仏中露の5カ国のみに核保有を認め、それ以外への拡散を防止。核保有国は核軍縮の努力義務。インド・パキスタン・イスラエルは未加入。北朝鮮は2003年脱退を宣言。</p></div>
+<div class="tp" id="tip-ev-salt1"><p><strong>SALT I（第1次戦略兵器制限交渉, 1972）</strong> ― ニクソンとブレジネフが調印。ICBM（大陸間弾道ミサイル）とSLBM（潜水艦発射弾道ミサイル）の保有数上限を設定。ABM（弾道弾迎撃ミサイル）制限条約も同時締結。デタントの象徴的成果。</p></div>
+<div class="tp" id="tip-ev-helsinki"><p><strong>ヘルシンキ宣言（全欧安全保障協力会議, 1975）</strong> ― 東西35カ国が参加。①国境の不可侵②人権の尊重③経済協力の3本柱。東側は国境の現状承認を得たが、<strong>「人権条項」が後に東欧の反体制運動の法的根拠</strong>に→「ヘルシンキ・プロセス」が冷戦終結に貢献。</p></div>
+<div class="tp" id="tip-ev-inf"><p><strong>INF全廃条約（中距離核戦力全廃条約, 1987）</strong> ― レーガンとゴルバチョフが調印。射程500-5500kmの<strong>地上発射型核ミサイルを全廃</strong>→史上初の「核兵器の種類を丸ごと廃棄」する条約。冷戦終結への決定的一歩。2019年に米が離脱し失効。</p></div>
+<div class="tp" id="tip-ev-malta"><p><strong>マルタ会談（1989.12）</strong> ― 地中海のマルタ島沖でブッシュ（父）とゴルバチョフが会談。「<strong>冷戦の終結</strong>」を宣言。ヤルタ会談(1945)から始まった冷戦がマルタで終わる→「ヤルタからマルタへ」。</p></div>
+<div class="tp" id="tip-ev-reunify"><p><strong>ドイツ統一（1990.10.3）</strong> ― 壁崩壊(1989.11)から約11ヶ月で実現。東独が西独に吸収される形。「2＋4条約」（東西独＋米英仏ソ）で国際的に承認。統一後もNATOに残留→ソ連/ロシアにとっての懸念材料に。</p></div>
+<div class="tp" id="tip-ev-baltic"><p><strong>バルト三国独立（1990-91）</strong> ― リトアニア(1990.3)・ラトヴィア(1990.5)・エストニア(1991.8)が独立宣言。1940年のソ連による併合は国際法上違法だったとの立場。「人間の鎖」(1989)で結束。ソ連崩壊の先駆け。</p></div>
+<div class="tp" id="tip-ev-coup"><p><strong>8月クーデター（1991.8）</strong> ― ソ連保守派（KGB議長ら）がゴルバチョフを軟禁し権力掌握を試みる→モスクワ市民が抵抗、エリツィン（ロシア共和国大統領）が戦車の上で演説→<strong>クーデターは3日で失敗</strong>→ソ連共産党の活動禁止→各共和国の独立が加速。</p></div>
+<div class="tp" id="tip-ev-cis"><p><strong>CIS（独立国家共同体, 1991.12）</strong> ― ロシア・ウクライナ・ベラルーシが結成を宣言→他の旧ソ連構成国も参加。ソ連に代わる緩やかな連合体だが実効性は低い。ゴルバチョフは12月25日に辞任→<strong>ソ連消滅</strong>。</p></div>
+
+<div class="note"><p>
+<strong>入試ポイント：</strong><br>
+❶ 冷戦5段階：<strong>形成(45-55)→危機と雪どけ(55-62)→デタント(62-79)→新冷戦(79-85)→終結(85-91)</strong><br>
+❷ <strong>第三世界の台頭</strong>＝バンドン(1955)・非同盟運動→二極では捉えられない多面性<br>
+❸ <strong>中ソ対立→米中接近(1972)</strong>＝冷戦最大の変容。二極→三角関係<br>
+❹ <strong>デタント崩壊</strong>＝ソ連のアフガン侵攻(1979)→レーガンの軍拡→ソ連経済圧迫<br>
+❺ <strong>東欧革命(1989)</strong>：ポーランド→ハンガリー→壁崩壊→チェコ→ルーマニア。ゴルバチョフの不介入が前提<br>
+❻ <strong>ソ連崩壊(1991)</strong>＝経済停滞＋軍拡の重圧＋ペレストロイカの混乱＋民族問題
+</p></div>
+
+<div id="tooltip-overlay" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;z-index:8000" onclick="closeTip()"></div>
+<div id="tooltip-box" style="display:none;position:fixed;z-index:9000;background:rgba(12,15,22,.97);border:1px solid rgba(201,169,110,.25);border-radius:8px;padding:12px 16px;max-width:320px;width:calc(100vw - 32px);box-shadow:0 8px 30px rgba(0,0,0,.6)">
+<div id="tooltip-content" style="font-size:10px;color:#8a857d;line-height:1.7"></div></div>
+<script>
+(function(){
+var ov=document.getElementById("tooltip-overlay"),bx=document.getElementById("tooltip-box"),ct=document.getElementById("tooltip-content");
+window.closeTip=function(){bx.style.display="none";ov.style.display="none"};
+function openTip(el){var tipId=el.getAttribute("data-tip");var tipEl=tipId?document.getElementById("tip-"+tipId):null;if(!tipEl)return;closeTip();ct.innerHTML=tipEl.innerHTML;ov.style.display="block";bx.style.display="block";var r=el.getBoundingClientRect(),w=Math.min(320,window.innerWidth-32);bx.style.width=w+"px";var l=r.left+r.width/2-w/2;if(l<16)l=16;if(l+w>window.innerWidth-16)l=window.innerWidth-16-w;bx.style.left=l+"px";bx.style.top=(r.bottom+8)+"px";bx.style.bottom="auto";var br=bx.getBoundingClientRect();if(br.bottom>window.innerHeight-16){var t=r.top-br.height-8;if(t<16)t=16;bx.style.top=t+"px"}}
+var tm=false,tt=null;
+document.addEventListener("touchstart",function(e){tm=false;tt=e.target},{passive:true});
+document.addEventListener("touchmove",function(){tm=true},{passive:true});
+document.addEventListener("touchend",function(e){if(tm)return;var nd=tt?tt.closest(".nd-svg"):null;if(nd){e.preventDefault();openTip(nd)}else if(!tt||!tt.closest("#tooltip-box"))closeTip();tt=null});
+document.addEventListener("click",function(e){if("ontouchstart"in window)return;var nd=e.target.closest(".nd-svg");if(nd)openTip(nd);else if(!e.target.closest("#tooltip-box"))closeTip()});
+})();
+</script>
+</body></html>

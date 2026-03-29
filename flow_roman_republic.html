@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ローマ共和政→帝政フロー</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048;--border:rgba(201,169,110,.08)}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+.hdr{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;flex-wrap:wrap}.hdr h1{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2)}.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
+.flow{max-width:760px;margin:0 auto;padding:24px 20px 60px}
+.phase{position:relative;margin-bottom:2px;padding:16px 16px 16px 60px;border-left:2px solid rgba(201,169,110,.08);margin-left:30px}.phase:last-child{border-left-color:transparent}
+.phase-label{position:absolute;left:-42px;top:16px;width:36px;font-family:'Cormorant Garamond',serif;font-size:10px;font-weight:700;color:var(--text3);text-align:right;line-height:1.3}
+.phase::before{content:'';position:absolute;left:-5px;top:22px;width:8px;height:8px;border-radius:50%;background:var(--bg);border:2px solid rgba(201,169,110,.25)}
+.node{background:rgba(255,255,255,.015);border:1px solid rgba(255,255,255,.04);border-radius:8px;padding:10px 14px;margin-bottom:8px;border-left:3px solid transparent;transition:all .2s}.node:hover{background:rgba(255,255,255,.03)}.node-title{font-family:'Noto Serif JP',serif;font-size:12px;font-weight:700;color:var(--gold2);margin-bottom:2px}.node-year{font-family:'Cormorant Garamond',serif;font-size:11px;color:var(--gold);opacity:.6;margin-bottom:4px}.node-desc{font-size:10px;color:var(--text2);line-height:1.7}.node-desc strong{color:var(--text);font-weight:600}.node.key{background:rgba(201,169,110,.04);border-color:rgba(201,169,110,.12)}
+.arrow{display:flex;align-items:center;gap:6px;padding:2px 0 2px 8px;margin-bottom:6px}.arrow-line{width:16px;height:1px;background:rgba(201,169,110,.15)}.arrow-text{font-size:8px;color:var(--text3)}.arrow-icon{color:rgba(201,169,110,.3);font-size:10px}
+.branch-row{display:flex;gap:8px;margin-bottom:8px}.branch-row .node{flex:1}
+.side-note{font-size:8px;color:var(--text3);padding:4px 8px;border-left:2px solid rgba(201,169,110,.1);margin:4px 0 8px;line-height:1.6}
+
+/* Institution chips */
+.inst{display:flex;gap:5px;flex-wrap:wrap;margin:6px 0}
+.inst-tag{padding:3px 8px;border-radius:4px;font-size:8px;font-weight:600;border:1px solid}
+.i-senate{background:rgba(180,140,60,.1);border-color:rgba(180,140,60,.25);color:rgba(220,190,100,.9)}
+.i-consul{background:rgba(100,100,180,.1);border-color:rgba(100,100,180,.25);color:rgba(160,160,220,.9)}
+.i-tribune{background:rgba(180,80,80,.08);border-color:rgba(180,80,80,.2);color:rgba(220,130,130,.9)}
+.i-army{background:rgba(120,130,100,.1);border-color:rgba(120,130,100,.25);color:rgba(170,180,140,.9)}
+.i-emperor{background:rgba(150,80,130,.1);border-color:rgba(150,80,130,.25);color:rgba(200,140,180,.9)}
+
+.p1 .node{border-left-color:rgba(130,120,100,.3)}.p1::before{border-color:rgba(130,120,100,.4)}
+.p2 .node{border-left-color:rgba(180,140,60,.3)}.p2::before{border-color:rgba(180,140,60,.5);background:rgba(180,140,60,.15)}
+.p3 .node{border-left-color:rgba(100,130,180,.3)}.p3::before{border-color:rgba(100,130,180,.5);background:rgba(100,130,180,.15)}
+.p4 .node{border-left-color:rgba(180,130,80,.3)}.p4::before{border-color:rgba(180,130,80,.5);background:rgba(180,130,80,.15)}
+.p5 .node{border-left-color:rgba(180,80,80,.3)}.p5::before{border-color:rgba(180,80,80,.5);background:rgba(180,80,80,.15)}
+.p6 .node{border-left-color:rgba(150,80,130,.3)}.p6::before{border-color:rgba(150,80,130,.5);background:rgba(150,80,130,.15)}
+.p7 .node{border-left-color:rgba(130,100,100,.3)}.p7::before{border-color:rgba(130,100,100,.4)}
+.note{text-align:center;padding:8px 20px 32px;max-width:720px;margin:0 auto}.note p{font-size:9px;color:var(--text3);line-height:1.8}.note strong{color:var(--gold)}
+.hdr h1{font-size:12px}
+.flow{padding:16px 10px 40px}
+.phase{padding:12px 10px 12px 44px;margin-left:20px}
+.phase-label{left:-30px;width:28px;font-size:8px}
+.node{padding:8px 10px}.node-title{font-size:11px}.node-desc{font-size:9px}
+.branch-row{flex-direction:column}
+.side-note{font-size:7.5px}
+.note p{font-size:8px}
+}
+
+@media(max-width:600px){
+.hdr{padding:10px 12px}.hdr h1{font-size:12px}
+.flow{padding:16px 10px 40px}
+.phase{padding:12px 10px 12px 44px;margin-left:20px}
+.phase-label{left:-30px;width:28px;font-size:8px}
+.node{padding:8px 10px}.node-title{font-size:11px}.node-desc{font-size:9px}
+.branch-row{flex-direction:column}
+.side-note{font-size:7.5px}
+.note p{font-size:8px}
+}
+</style>
+</head>
+<body>
+<div class="hdr"><h1>ローマ共和政→帝政フロー ― なぜ共和政は崩壊したか</h1><a href="charts.html">← Ad Chartae</a></div>
+<div class="flow">
+
+<!-- 王政→共和政 -->
+<div class="phase p1"><div class="phase-label">前753<br>〜<br>前509</div>
+<div class="node"><div class="node-title">王政から共和政へ</div><div class="node-year">BC753–BC509</div>
+<div class="node-desc">伝説では<strong>ロムルス</strong>がBC753年にローマを建国(「ローマ建国紀元」)。7人の王が統治(最後の3人はエトルリア系)。最後の王<strong>タルクィニウス＝スペルブス</strong>(「傲慢王」)の暴政→BC509年に追放＝<strong>共和政の始まり</strong>。「二度と王を戴かない」＝ローマ人の根本的信条(後にカエサルが殺された理由の一つ)。</div></div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">貴族(パトリキ)が政治を独占→平民(プレブス)が権利を要求</div></div></div>
+
+<!-- 共和政の仕組みと身分闘争 -->
+<div class="phase p2"><div class="phase-label">前509<br>〜<br>前287</div>
+<div class="node key"><div class="node-title">共和政の仕組み</div><div class="node-year">BC509–</div>
+<div class="inst">
+  <div class="inst-tag i-consul">コンスル(執政官)×2名 ＝最高権力者・任期1年・拒否権あり</div>
+  <div class="inst-tag i-senate">元老院(セナトゥス) ＝貴族300人の終身議員・実質的支配</div>
+  <div class="inst-tag i-tribune">護民官(トリブヌス・プレビス) ＝平民の代表・元老院の決議に拒否権</div>
+</div>
+<div class="node-desc">コンスルは2人制(互いに抑制)・任期1年(独裁防止)。非常時のみ<strong>ディクタトル(独裁官)</strong>を任命(最長6か月)。★核心：<strong>「誰か一人に権力が集中しない」仕組み</strong>＝チェック＝アンド＝バランス。しかし実権は<strong>パトリキ(貴族)</strong>が握り、<strong>プレブス(平民)</strong>は排除されていた→身分闘争へ。</div></div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">平民が「聖山への退去」(ストライキ)で圧力→段階的に権利を獲得</div></div>
+<div class="node"><div class="node-title">身分闘争(パトリキ vs プレブス)</div><div class="node-year">BC494–BC287</div>
+<div class="node-desc">約200年にわたる平民の権利獲得の過程：<br>
+<strong>護民官の設置</strong>(BC494)＝平民の代表→元老院の決議に<strong>拒否権(ヴェト)</strong>。<strong>十二表法</strong>(BC450頃)＝慣習法を初めて成文化→貴族の恣意的な法解釈を防止＝「法の前の平等」の出発点。<strong>リキニウス＝セクスティウス法</strong>(BC367)＝コンスルの一人は必ず平民から選出。<strong>ホルテンシウス法</strong>(BC287)＝<strong>平民会の決議(プレビスキトゥム)が全市民を拘束</strong>→法的には貴族と平民が対等に。<br>
+★しかし実態は<strong>新貴族(ノビレス)</strong>＝パトリキと富裕な平民が結合した支配層が形成→政治の実権は依然として少数エリートに。</div></div>
+<div class="side-note">★入試超頻出：「十二表法→リキニウス＝セクスティウス法→ホルテンシウス法」の順番と内容。「身分闘争の結果、法的平等は達成されたが実質的な権力は新貴族が握った」</div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">身分闘争が収束→対外膨張の時代へ</div></div></div>
+
+<!-- ポエニ戦争と地中海支配 -->
+<div class="phase p3"><div class="phase-label">前264<br>〜<br>前146</div>
+<div class="node key"><div class="node-title">ポエニ戦争 ― 地中海の覇権</div><div class="node-year">BC264–BC146</div>
+<div class="node-desc"><strong>カルタゴ</strong>(フェニキア系の商業国家、北アフリカ)との3度の戦争：<br>
+<strong>第1次</strong>(BC264-241)＝シチリアの支配権をめぐる海戦中心→ローマが勝利→シチリアが最初の<strong>属州(プロウィンキア)</strong>に。<br>
+<strong>第2次</strong>(BC218-201)＝<strong>ハンニバル</strong>がアルプスを越えてイタリアに侵入→<strong>カンナエの戦い</strong>(BC216)でローマ軍を壊滅(戦術の教科書的殲滅戦)→しかしローマは降伏せず持久戦→<strong>スキピオ</strong>がカルタゴ本土(ザマ)で勝利(BC202)。<br>
+<strong>第3次</strong>(BC149-146)＝カトーの「カルタゴは滅ぶべし(Carthago delenda est)」→<strong>カルタゴ完全破壊</strong>＝住民を奴隷に売り、土地に塩をまく(伝承)。同年<strong>コリント</strong>(ギリシア)も破壊→<strong>ローマが地中海世界の覇者に</strong>。</div></div>
+<div class="side-note">★入試超頻出：「ハンニバルのアルプス越え→カンナエの戦い→ザマの戦い(スキピオ)」。第2次ポエニ戦争はローマ史の転換点</div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">征服が社会構造を変える→共和政崩壊の原因に</div></div></div>
+
+<!-- 共和政の危機 -->
+<div class="phase p4"><div class="phase-label">前2C<br>〜<br>前1C前半</div>
+<div class="node key"><div class="node-title">ラティフンディアの拡大 → 中小農民の没落</div><div class="node-year">BC2C</div>
+<div class="node-desc">征服で<strong>大量の奴隷と土地</strong>が流入→元老院貴族が<strong>ラティフンディア(大土地経営)</strong>を形成＝奴隷を使った大規模農業(オリーブ・ブドウ等の商品作物)。安価な属州穀物の流入→中小農民(自作農)が価格競争に敗れ没落→<strong>土地を失い無産市民(プロレタリイ)に</strong>→ローマに流入→「パンとサーカス」で養われる。★核心：共和政の基盤＝<strong>自作農＝市民＝兵士</strong>の三位一体→自作農の没落＝<strong>兵士の供給源の枯渇＝共和政の社会的基盤の崩壊</strong>。</div></div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">改革の試み→元老院の抵抗→失敗</div></div>
+<div class="node"><div class="node-title">グラックス兄弟の改革 → 挫折</div><div class="node-year">BC133 / BC123</div>
+<div class="node-desc"><strong>ティベリウス＝グラックス</strong>(BC133、護民官)＝大土地所有を制限し、余剰地を貧民に分配する農地法を提案→<strong>元老院の保守派が反対→暴動で殺害</strong>。弟<strong>ガイウス＝グラックス</strong>(BC123)＝穀物法(安価な穀物の配給)・騎士階級の裁判権等の改革を推進→やはり元老院に阻まれ<strong>自殺</strong>。★意味：<strong>「合法的な改革では社会問題を解決できない」</strong>→以後、実力者(将軍)が軍事力で政治を動かす時代に＝<strong>「内乱の一世紀」</strong>の始まり。</div></div>
+<div class="side-note">★入試超頻出：「ラティフンディア→中小農民没落→グラックス兄弟の改革失敗→内乱の一世紀」の因果連鎖。「なぜ共和政は崩壊したか」の論述の核心</div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">改革の道が閉ざされた→軍事力が政治を支配する時代へ</div></div></div>
+
+<!-- 内乱の一世紀 -->
+<div class="phase p5"><div class="phase-label">前1C</div>
+<div class="node"><div class="node-title">マリウスの軍制改革 → 私兵化</div><div class="node-year">BC107</div>
+<div class="node-desc"><strong>マリウス</strong>がユグルタ戦争で功績→<strong>軍制改革</strong>＝従来は自作農(財産を持つ市民)のみが兵役→<strong>無産市民(プロレタリイ)を志願兵として募集</strong>→武器・給与は指揮官が個人的に提供。→兵士は<strong>国家ではなく指揮官個人に忠誠</strong>を誓う＝<strong>軍隊の私兵化</strong>。退役後の土地は指揮官が政治力で確保→指揮官＝パトロン、兵士＝クリエンテス。<strong>★これが共和政崩壊の直接的原因</strong>＝軍を持つ将軍が政治を支配する構造。</div></div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">将軍同士の権力闘争が内戦に</div></div>
+<div class="node"><div class="node-title">内乱の一世紀 ― 将軍たちの権力闘争</div><div class="node-year">BC88–BC31</div>
+<div class="node-desc"><strong>スラ</strong>(BC82-79)＝マリウスとの内戦→勝利→<strong>独裁官(ディクタトル)</strong>に就任し元老院の権威を回復しようとするが…辞任後に混乱再発。<strong>ポンペイウス</strong>＝地中海の海賊を掃討→東方の征服。<strong>クラッスス</strong>＝ローマ一の富豪、スパルタクスの反乱(BC73-71)を鎮圧。→3人が結ぶ<strong>第1回三頭政治</strong>(BC60)＝ポンペイウス・カエサル・クラッスス(正式な制度ではなく私的な政治同盟)→元老院を無視して政策を実行。</div></div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">クラッスス戦死(BC53)→残る二人が対立</div></div>
+<div class="node key"><div class="node-title">カエサルの独裁 → 暗殺</div><div class="node-year">BC49–BC44</div>
+<div class="node-desc"><strong>ガイウス＝ユリウス＝カエサル</strong>がガリア遠征(BC58-50)で名声→元老院がカエサルの解任を命令→カエサルが<strong>ルビコン川を渡る</strong>(BC49)＝「賽は投げられた(alea iacta est)」→内戦→ポンペイウスを破る(ファルサルスの戦いBC48)。カエサルは<strong>終身ディクタトル</strong>に就任→ユリウス暦の導入・市民権の拡大・退役兵への土地分配→民衆に人気。しかし<strong>「王」になるのではないかという疑念</strong>→BC44年3月15日(「3月のイドゥス」)、<strong>ブルートゥス・カッシウスら元老院議員に暗殺</strong>。「ブルートゥス、お前もか(Et tu, Brute?)」(シェイクスピア)。</div></div>
+<div class="side-note">★入試超頻出：「ルビコンを渡る」「終身ディクタトル」「ブルートゥスに暗殺」。カエサルは「共和政の破壊者」か「必要な改革者」か→入試の論述テーマ</div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">カエサルの後継者争い→第2回三頭政治</div></div>
+<div class="node"><div class="node-title">第2回三頭政治 → アクティウムの海戦</div><div class="node-year">BC43–BC31</div>
+<div class="node-desc"><strong>第2回三頭政治</strong>(BC43)＝<strong>オクタウィアヌス</strong>(カエサルの養子)・<strong>アントニウス</strong>(カエサルの副官)・<strong>レピドゥス</strong>。今度は正式な公職。ブルートゥス・カッシウスをフィリッピの戦い(BC42)で破る。レピドゥスは脱落→オクタウィアヌス(西)vsアントニウス(東、エジプトの<strong>クレオパトラ</strong>と同盟)。<strong>アクティウムの海戦</strong>(BC31)＝オクタウィアヌスが勝利→アントニウスとクレオパトラは自殺→<strong>プトレマイオス朝エジプトが滅亡</strong>→地中海世界がオクタウィアヌスの手に。</div></div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">共和政は事実上終焉→しかし「共和政の衣を纏った」帝政が始まる</div></div></div>
+
+<!-- 帝政の成立 -->
+<div class="phase p6"><div class="phase-label">前27<br>〜<br>後2C</div>
+<div class="node key"><div class="node-title">アウグストゥス ― 元首政(プリンキパトゥス)の成立</div><div class="node-year">BC27–AD14</div>
+<div class="node-desc">オクタウィアヌスはカエサルの失敗(「王」と見なされて殺された)に学び、<strong>共和政の制度を形式的に維持</strong>しながら実権を握る巧みな戦略：元老院から<strong>「アウグストゥス(尊厳者)」</strong>の称号(BC27)。コンスル・護民官職権・インペリウム(軍事指揮権)等を「一時的に委託された」という形式→実態は<strong>すべての権力の集中</strong>。自らを<strong>「プリンケプス(第一の市民)」</strong>と称する→<strong>元首政(プリンキパトゥス)</strong>＝「共和政の衣を纏った君主政」。<br><br>
+<strong>「パクス＝ロマーナ(ローマの平和)」</strong>の始まり＝約200年間の安定と繁栄。常備軍の整備・属州統治の改善・道路網(「すべての道はローマに通ず」)・公共事業。「私はレンガの街を受け取り、大理石の街を残す」。ウェルギリウス(『アエネイス』)・ホラティウス・オウィディウスの文学黄金期。</div></div>
+<div class="inst">
+  <div class="inst-tag i-emperor">プリンケプス(元首)＝実権</div>
+  <div class="inst-tag i-senate">元老院 ＝形式上は存続するが権限縮小</div>
+  <div class="inst-tag i-consul">コンスル ＝名誉職に</div>
+</div>
+<div class="side-note">★入試超頻出：「アウグストゥス＝元首政＝プリンキパトゥス」「パクス＝ロマーナ」。「なぜカエサルは殺されアウグストゥスは殺されなかったか」＝形式上共和政を維持した巧みさ</div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">五賢帝の時代(AD96-180)がパクス＝ロマーナの頂点</div></div>
+<div class="node"><div class="node-title">五賢帝 → パクス＝ロマーナの頂点と終焉</div><div class="node-year">AD96–180</div>
+<div class="node-desc"><strong>ネルウァ→トラヤヌス→ハドリアヌス→アントニヌス＝ピウス→マルクス＝アウレリウス</strong>＝「養子皇帝制」(最も有能な者を養子にして後継者に)。<strong>トラヤヌス</strong>(98-117)＝帝国最大版図(ダキア・メソポタミア征服)。<strong>ハドリアヌス</strong>(117-138)＝防衛線の整備(ブリタニアの「ハドリアヌスの長城」)。<strong>マルクス＝アウレリウス</strong>(161-180)＝「哲人皇帝」(ストア哲学の『自省録』)→しかし実子コンモドゥスに帝位を譲る→暴君→暗殺(192)→<strong>養子皇帝制の終焉＝五賢帝時代の終わりがパクス＝ロマーナの終わり</strong>。</div></div>
+<div class="side-note">★入試超頻出：「五賢帝の名前を順に」「トラヤヌス＝最大版図」「ハドリアヌス＝長城」「マルクス＝アウレリウス＝哲人皇帝」。ギボン『ローマ帝国衰亡史』はこの時代を「人類が最も幸福だった時代」と評した</div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">3世紀の危機→専制君主政→東西分裂→西ローマ滅亡</div></div></div>
+
+<!-- 帝政後期 -->
+<div class="phase p7"><div class="phase-label">3C<br>〜<br>476</div>
+<div class="node"><div class="node-title">3世紀の危機 → 専制君主政 → 西ローマ滅亡</div><div class="node-year">235–476</div>
+<div class="node-desc"><strong>軍人皇帝時代</strong>(235-284)＝約50年間に26人の皇帝(ほとんどが軍人に擁立され暗殺)。ゲルマン人の侵入・ササン朝ペルシアの圧力・ペスト・経済の混乱。<strong>ディオクレティアヌス</strong>(284-305)＝<strong>専制君主政(ドミナトゥス)</strong>に移行＝皇帝が「主人(ドミヌス)」→元老院は完全に形骸化。帝国を4分割統治(テトラルキア)。キリスト教の大迫害。<strong>コンスタンティヌス</strong>(306-337)＝<strong>ミラノ勅令</strong>(313)でキリスト教を公認。<strong>コンスタンティノープル</strong>に遷都(330)。<strong>ニケーア公会議</strong>(325)でアタナシウス派を正統に。<strong>テオドシウス</strong>(379-395)＝キリスト教を<strong>国教</strong>に(392)→帝国を二人の息子に分割(395)＝<strong>東西ローマ帝国の分裂</strong>。<br><br>
+<strong>西ローマ帝国</strong>＝ゲルマン人の侵入が止まらず→476年、ゲルマン人傭兵隊長<strong>オドアケル</strong>が最後の皇帝ロムルス＝アウグストゥルスを廃位＝<strong>西ローマ帝国の滅亡</strong>＝「古代の終わり」。<strong>東ローマ(ビザンツ)帝国</strong>は1453年までさらに約1000年存続。</div></div>
+<div class="side-note">★入試超頻出：「ディオクレティアヌス＝専制君主政(ドミナトゥス)」「コンスタンティヌス＝ミラノ勅令＋コンスタンティノープル遷都」「テオドシウス＝キリスト教国教化＋東西分裂」「476年＝西ローマ滅亡」</div></div>
+
+</div>
+<div class="note"><p>ローマの政体変遷＝<strong>王政(BC753-509)→共和政(BC509-BC27)→元首政/プリンキパトゥス(BC27-AD284)→専制君主政/ドミナトゥス(284-476/1453)</strong>。入試の論述テーマの定番＝<strong>「なぜ共和政は崩壊したか」</strong>→①ポエニ戦争後のラティフンディア拡大→中小農民没落 ②グラックスの改革失敗→合法的改革の道が閉ざされた ③マリウスの軍制改革→軍の私兵化 ④内乱の一世紀→カエサル→アウグストゥス。<strong>「征服の成功が社会構造を変え、社会の変化が政治体制を崩壊させた」</strong>という逆説が核心。</p></div>
+</body></html>

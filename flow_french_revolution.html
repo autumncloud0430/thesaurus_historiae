@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>フランス革命の政体変遷フロー</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048;--border:rgba(201,169,110,.08)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+.hdr{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.hdr h1{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2)}
+.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
+.flow{max-width:760px;margin:0 auto;padding:24px 20px 60px}
+
+/* Phase */
+.phase{position:relative;margin-bottom:2px;padding:16px 16px 16px 60px;border-left:2px solid rgba(201,169,110,.08);margin-left:30px}
+.phase:last-child{border-left-color:transparent}
+.phase-label{position:absolute;left:-42px;top:16px;width:36px;font-family:'Cormorant Garamond',serif;font-size:10px;font-weight:700;color:var(--text3);text-align:right;line-height:1.3}
+.phase::before{content:'';position:absolute;left:-5px;top:22px;width:8px;height:8px;border-radius:50%;background:var(--bg);border:2px solid rgba(201,169,110,.25)}
+
+/* Assembly box = the institution */
+.asm{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05);border-radius:10px;padding:12px;margin-bottom:10px}
+.asm-header{display:flex;align-items:baseline;gap:8px;margin-bottom:6px;padding-bottom:4px;border-bottom:1px solid rgba(201,169,110,.06)}
+.asm-name{font-family:'Noto Serif JP',serif;font-size:13px;font-weight:700;color:var(--gold2)}
+.asm-type{font-size:8px;color:var(--gold);opacity:.5;font-family:'Cormorant Garamond',serif;letter-spacing:.1em}
+
+/* Faction chips inside assembly */
+.factions{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:6px}
+.faction{padding:4px 10px;border-radius:5px;font-size:9px;font-weight:600;border:1px solid;display:flex;align-items:center;gap:4px}
+.faction .dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+
+/* Faction colors */
+.f-royal{background:rgba(100,100,180,.08);border-color:rgba(100,100,180,.2);color:rgba(160,160,220,.9)}
+.f-royal .dot{background:rgba(100,100,180,.5)}
+.f-feuillant{background:rgba(80,140,120,.08);border-color:rgba(80,140,120,.2);color:rgba(140,200,180,.9)}
+.f-feuillant .dot{background:rgba(80,140,120,.5)}
+.f-girondin{background:rgba(180,150,80,.08);border-color:rgba(180,150,80,.2);color:rgba(220,190,120,.9)}
+.f-girondin .dot{background:rgba(180,150,80,.5)}
+.f-jacobin{background:rgba(180,70,70,.1);border-color:rgba(180,70,70,.25);color:rgba(220,120,120,.9)}
+.f-jacobin .dot{background:rgba(180,70,70,.5)}
+.f-therm{background:rgba(160,140,80,.08);border-color:rgba(160,140,80,.2);color:rgba(200,180,120,.9)}
+.f-therm .dot{background:rgba(160,140,80,.5)}
+.f-napol{background:rgba(100,80,160,.1);border-color:rgba(100,80,160,.25);color:rgba(160,140,220,.9)}
+.f-napol .dot{background:rgba(100,80,160,.5)}
+.f-sansculotte{background:rgba(150,80,50,.08);border-color:rgba(150,80,50,.2);color:rgba(200,140,100,.9)}
+.f-sansculotte .dot{background:rgba(150,80,50,.5)}
+.f-clergy{background:rgba(130,130,130,.08);border-color:rgba(130,130,130,.2);color:rgba(180,180,180,.9)}
+.f-clergy .dot{background:rgba(130,130,130,.4)}
+.f-noble{background:rgba(120,100,160,.08);border-color:rgba(120,100,160,.2);color:rgba(170,150,210,.9)}
+.f-noble .dot{background:rgba(120,100,160,.5)}
+.f-bourgeois{background:rgba(100,150,130,.08);border-color:rgba(100,150,130,.2);color:rgba(150,200,180,.9)}
+.f-bourgeois .dot{background:rgba(100,150,130,.5)}
+.f-restore{background:rgba(100,100,180,.08);border-color:rgba(100,100,180,.15);color:rgba(150,150,210,.9)}
+.f-restore .dot{background:rgba(100,100,180,.4)}
+
+.power-tag{display:inline-block;font-size:7px;padding:2px 6px;border-radius:3px;background:rgba(201,169,110,.1);color:var(--gold);margin-left:4px}
+
+.asm-desc{font-size:10px;color:var(--text2);line-height:1.7;margin-top:4px}
+.asm-desc strong{color:var(--text);font-weight:600}
+
+/* Event node (outside assemblies) */
+.event{background:rgba(201,169,110,.03);border:1px solid rgba(201,169,110,.1);border-radius:8px;padding:8px 12px;margin-bottom:8px}
+.event-title{font-family:'Noto Serif JP',serif;font-size:11px;font-weight:700;color:var(--gold2);margin-bottom:2px}
+.event-year{font-family:'Cormorant Garamond',serif;font-size:10px;color:var(--gold);opacity:.6;margin-bottom:3px}
+.event-desc{font-size:9px;color:var(--text2);line-height:1.6}
+.event-desc strong{color:var(--text);font-weight:600}
+
+.arrow{display:flex;align-items:center;gap:6px;padding:2px 0 2px 8px;margin-bottom:6px}
+.arrow-line{width:16px;height:1px;background:rgba(201,169,110,.15);flex-shrink:0}
+.arrow-text{font-size:8px;color:var(--text3)}
+.arrow-icon{color:rgba(201,169,110,.3);font-size:10px;flex-shrink:0}
+.side-note{font-size:8px;color:var(--text3);padding:4px 8px;border-left:2px solid rgba(201,169,110,.1);margin:4px 0 8px;line-height:1.6}
+
+/* Phase accents */
+.p-ancien .asm{border-left:3px solid rgba(100,100,180,.2)}.p-ancien::before{border-color:rgba(100,100,180,.4)}
+.p-89 .event{border-left:3px solid rgba(201,169,110,.3)}.p-89::before{border-color:rgba(201,169,110,.5);background:rgba(201,169,110,.15)}
+.p-constit .asm{border-left:3px solid rgba(80,140,120,.2)}.p-constit::before{border-color:rgba(80,140,120,.4)}
+.p-legis .asm{border-left:3px solid rgba(180,150,80,.2)}.p-legis::before{border-color:rgba(180,150,80,.4)}
+.p-conv .asm{border-left:3px solid rgba(180,70,70,.2)}.p-conv::before{border-color:rgba(180,70,70,.5);background:rgba(180,70,70,.15)}
+.p-therm .asm{border-left:3px solid rgba(160,140,80,.2)}.p-therm::before{border-color:rgba(160,140,80,.4)}
+.p-napol .asm{border-left:3px solid rgba(100,80,160,.2)}.p-napol::before{border-color:rgba(100,80,160,.5);background:rgba(100,80,160,.15)}
+.p-after .asm{border-left:3px solid rgba(100,100,180,.15)}.p-after::before{border-color:rgba(100,100,180,.3)}
+
+.note{text-align:center;padding:8px 20px 32px;max-width:720px;margin:0 auto}.note p{font-size:9px;color:var(--text3);line-height:1.8}.note strong{color:var(--gold)}
+
+@media(max-width:600px){
+.hdr{padding:10px 12px}.hdr h1{font-size:12px}
+.flow{padding:16px 10px 40px}
+.phase{padding:12px 10px 12px 44px;margin-left:20px}
+.phase-label{left:-30px;width:28px;font-size:8px}
+.node{padding:8px 10px}.node-title{font-size:11px}.node-desc{font-size:9px}
+.branch-row{flex-direction:column}
+.side-note{font-size:7.5px}
+.note p{font-size:8px}
+}
+</style>
+</head>
+<body>
+<div class="hdr"><h1>フランス革命の政体変遷フロー ― 機関と勢力の推移</h1><a href="charts.html">← Ad Chartae</a></div>
+
+<div class="flow">
+
+<!-- アンシャンレジーム -->
+<div class="phase p-ancien">
+  <div class="phase-label">〜1789</div>
+  <div class="asm">
+    <div class="asm-header"><div class="asm-name">アンシャン＝レジーム(旧体制)</div><div class="asm-type">ABSOLUTE MONARCHY</div></div>
+    <div class="factions">
+      <div class="faction f-clergy"><div class="dot"></div>第一身分(聖職者)</div>
+      <div class="faction f-noble"><div class="dot"></div>第二身分(貴族)</div>
+      <div class="faction f-bourgeois"><div class="dot"></div>第三身分(平民)＝人口の98%</div>
+    </div>
+    <div class="asm-desc"><strong>ルイ16世</strong>の絶対王政。聖職者・貴族は免税特権。財政破綻(アメリカ独立戦争の支援で悪化)→<strong>三部会</strong>を175年ぶりに召集(1789.5)。第三身分の代表は弁護士・知識人などの<strong>ブルジョワジー</strong>が中心。</div>
+  </div>
+  <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">三部会で議決方法をめぐり対立(身分別vs頭数別)→第三身分が離脱</div></div>
+</div>
+
+<!-- 1789年の革命 -->
+<div class="phase p-89">
+  <div class="phase-label">1789<br>6月<br>〜<br>10月</div>
+  <div class="event">
+    <div class="event-title">球戯場の誓い → バスティーユ襲撃 → 人権宣言</div>
+    <div class="event-year">1789.6.20 – 8.26</div>
+    <div class="event-desc">第三身分が自らを<strong>「国民議会」</strong>と宣言し球戯場(テニスコート)で「憲法制定まで解散しない」と誓う(6.20)。国王が軍を集結→パリ民衆が<strong>バスティーユ牢獄を襲撃</strong>(7.14)＝革命の象徴。農村では「大恐怖」→封建的特権の廃止(8.4夜)。<strong>人権宣言</strong>(8.26)＝自由・平等・所有権・国民主権。10月行進でルイ16世をパリに連行。</div>
+  </div>
+  <div class="side-note">ここで3つの層が登場：①ブルジョワジー(議会で主導)　②パリの民衆＝サン＝キュロット(街頭の実力行使)　③農民(農村での領主権の破壊)。以後この3つの力関係が革命を動かす</div>
+  <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">国民議会が憲法を起草</div></div>
+</div>
+
+<!-- 国民議会(立憲君主政) -->
+<div class="phase p-constit">
+  <div class="phase-label">1789<br>〜<br>1791</div>
+  <div class="asm">
+    <div class="asm-header"><div class="asm-name">国民議会(憲法制定議会)</div><div class="asm-type">CONSTITUTIONAL ASSEMBLY</div></div>
+    <div class="factions">
+      <div class="faction f-feuillant"><div class="dot"></div>立憲君主派(ラファイエット・バイイ・ミラボー)<span class="power-tag">主導権</span></div>
+      <div class="faction f-jacobin"><div class="dot"></div>ジャコバン＝クラブ(まだ少数)</div>
+    </div>
+    <div class="asm-desc"><strong>穏健なブルジョワジー</strong>が主導。<strong>1791年憲法</strong>＝立憲君主制・制限選挙(納税額による「能動市民」と「受動市民」の区別)。教会財産の没収・聖職者市民化法(1790)→教皇が反発→カトリック農民の反革命感情。<strong>ヴァレンヌ逃亡事件</strong>(1791.6)＝国王がオーストリアへの逃亡を図り逮捕→国民の信頼を喪失。→ラファイエットらは「国王は誘拐された」と取り繕うが、急進派が共和政を要求し始める。</div>
+  </div>
+  <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">1791年憲法に基づき新たな議会を選出</div></div>
+</div>
+
+<!-- 立法議会 -->
+<div class="phase p-legis">
+  <div class="phase-label">1791<br>〜<br>1792</div>
+  <div class="asm">
+    <div class="asm-header"><div class="asm-name">立法議会</div><div class="asm-type">LEGISLATIVE ASSEMBLY ― 立憲君主政</div></div>
+    <div class="factions">
+      <div class="faction f-feuillant"><div class="dot"></div>フイヤン派(立憲君主派・穏健ブルジョワ)</div>
+      <div class="faction f-girondin"><div class="dot"></div>ジロンド派(穏健共和派・地方ブルジョワ)<span class="power-tag">主導権</span></div>
+      <div class="faction f-jacobin"><div class="dot"></div>ジャコバン派(急進共和派・パリの弁護士等)</div>
+    </div>
+    <div class="asm-desc"><strong>ジロンド派</strong>(ブリソーら、ボルドー等の地方ブルジョワジーが基盤)が戦争を主導。<strong>オーストリアに宣戦</strong>(1792.4)＝「革命を輸出する」＋国内の反革命派を炙り出す狙い。しかし戦況不利→パリの<strong>サン＝キュロット</strong>(無産市民・職人層)が過激化。<strong>8月10日事件</strong>(1792)＝サン＝キュロットがテュイルリー宮殿を襲撃→<strong>王権停止</strong>。フイヤン派は崩壊。→男子普通選挙による新議会(国民公会)の選出へ。</div>
+  </div>
+  <div class="side-note">★重要：8月10日事件＝革命の担い手が「ブルジョワジーの議会」から「サン＝キュロットの街頭行動」に移行した転換点</div>
+  <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">王政廃止→共和政宣言(1792.9.21)</div></div>
+</div>
+
+<!-- 国民公会:ジロンド派優勢期 -->
+<div class="phase p-conv">
+  <div class="phase-label">1792<br>〜<br>1793</div>
+  <div class="asm">
+    <div class="asm-header"><div class="asm-name">国民公会(前期)</div><div class="asm-type">NATIONAL CONVENTION ― 第一共和政</div></div>
+    <div class="factions">
+      <div class="faction f-girondin"><div class="dot"></div>ジロンド派(穏健共和・地方ブルジョワ)<span class="power-tag">当初主導</span></div>
+      <div class="faction f-jacobin"><div class="dot"></div>山岳派＝ジャコバン派(ロベスピエール・ダントン・マラー)</div>
+      <div class="faction f-sansculotte"><div class="dot"></div>サン＝キュロット(パリ民衆＝ジャコバン派を支持)</div>
+    </div>
+    <div class="asm-desc"><strong>第一共和政</strong>を宣言(1792.9)。<strong>ルイ16世の処刑</strong>(1793.1.21)をめぐりジロンド派(処刑に躊躇)とジャコバン派(即時処刑を主張)が対立。対仏大同盟(英・墺・プロイセン等)の結成→戦況悪化。ヴァンデの反乱(カトリック農民の反革命蜂起)。食糧危機→サン＝キュロットがジロンド派を「革命に不熱心」と攻撃。<strong>1793年6月</strong>＝サン＝キュロットの武装蜂起で<strong>ジロンド派を議会から追放</strong>→ジャコバン派の独裁へ。</div>
+  </div>
+  <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">ジャコバン派(山岳派)がサン＝キュロットの支持で権力掌握</div></div>
+</div>
+
+<!-- 国民公会:ジャコバン独裁 -->
+<div class="phase p-conv">
+  <div class="phase-label">1793<br>〜<br>1794</div>
+  <div class="asm">
+    <div class="asm-header"><div class="asm-name">国民公会(ジャコバン独裁)</div><div class="asm-type">CONVENTION ― 恐怖政治(テルール)</div></div>
+    <div class="factions">
+      <div class="faction f-jacobin"><div class="dot"></div>ロベスピエール(公安委員会)<span class="power-tag">独裁</span></div>
+      <div class="faction f-sansculotte"><div class="dot"></div>サン＝キュロット(エベール派＝過激派)</div>
+    </div>
+    <div class="asm-desc"><strong>ロベスピエール</strong>が<strong>公安委員会</strong>の中心として実質的独裁。<strong>恐怖政治(テルール)</strong>＝革命裁判所で「革命の敵」をギロチンに(マリー＝アントワネット、ジロンド派の指導者、さらにダントンやエベールまで)。<strong>最高価格令</strong>(穀物等の価格統制)＝サン＝キュロットの要求を反映。<strong>徴兵制</strong>(levée en masse)で対外戦争に対処。1793年憲法(男子普通選挙)は制定されるが施行されず。「理性の崇拝」→<strong>最高存在の祭典</strong>(ロベスピエールの独自宗教)→党内でも孤立。約4万人が処刑・投獄。</div>
+  </div>
+  <div class="side-note">★入試頻出：「なぜ恐怖政治に至ったか」＝対外戦争の危機＋国内反乱(ヴァンデ)＋食糧危機→非常事態が独裁を正当化。しかしダントン(寛容派)もエベール(過激派)も粛清→ロベスピエール以外に味方がいなくなる</div>
+  <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">恐怖が恐怖を呼ぶ→「次は自分が処刑される」→反ロベスピエール派が結集</div></div>
+</div>
+
+<!-- テルミドール -->
+<div class="phase p-therm">
+  <div class="phase-label">1794<br>〜<br>1799</div>
+  <div class="asm">
+    <div class="asm-header"><div class="asm-name">テルミドール反動 → 総裁政府</div><div class="asm-type">DIRECTORY ― 保守的共和政</div></div>
+    <div class="factions">
+      <div class="faction f-therm"><div class="dot"></div>テルミドール派(穏健共和＝ブルジョワジーの復権)<span class="power-tag">主導</span></div>
+    </div>
+    <div class="asm-desc"><strong>テルミドール9日のクーデタ</strong>(1794.7.27)＝国民公会の議員がロベスピエールを逮捕→翌日処刑。恐怖政治の終結。<strong>1795年憲法</strong>＝制限選挙の復活(有産市民のみ)→<strong>総裁政府</strong>(5人の総裁)＝<strong>穏健ブルジョワジー</strong>が権力を取り戻す。サン＝キュロットは弾圧され政治の表舞台から退場。しかし王党派(右)とバブーフの陰謀(左)に挟まれ不安定。<strong>軍の力に依存</strong>→若き将軍<strong>ナポレオン＝ボナパルト</strong>が台頭(イタリア遠征1796-97で名声)。</div>
+  </div>
+  <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">政治的不安定→軍人に秩序回復を期待</div></div>
+</div>
+
+<!-- ナポレオン -->
+<div class="phase p-napol">
+  <div class="phase-label">1799<br>〜<br>1815</div>
+  <div class="asm">
+    <div class="asm-header"><div class="asm-name">統領政府 → 第一帝政</div><div class="asm-type">CONSULATE → EMPIRE</div></div>
+    <div class="factions">
+      <div class="faction f-napol"><div class="dot"></div>ナポレオン＝ボナパルト<span class="power-tag">独裁→皇帝</span></div>
+    </div>
+    <div class="asm-desc"><strong>ブリュメール18日のクーデタ</strong>(1799.11.9)で総裁政府を倒す。<strong>統領政府</strong>→第一統領→<strong>皇帝</strong>(1804)。国民投票で承認＝「人民の意志に基づく独裁」。<strong>ナポレオン法典</strong>(1804)＝所有権の保障・法の前の平等＝<strong>革命の成果を法典化</strong>。しかし言論統制・秘密警察→自由は制限。アウステルリッツ(1805)→大陸封鎖令→ロシア遠征失敗(1812)→ライプツィヒ→退位→百日天下→ワーテルロー(1815)。</div>
+  </div>
+  <div class="side-note">★入試頻出：「ナポレオンは革命の継承者か破壊者か」＝法典で平等・所有権を確立(継承)したが、自由を抑圧し皇帝になった(破壊)。両面を説明できることが重要</div>
+  <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">ナポレオン退位→ウィーン会議→ブルボン朝復活</div></div>
+</div>
+
+<!-- 19世紀の政体変遷 -->
+<div class="phase p-after">
+  <div class="phase-label">1814<br>〜<br>1870</div>
+  <div class="asm">
+    <div class="asm-header"><div class="asm-name">復古王政 → 七月王政 → 第二共和政 → 第二帝政 → 第三共和政</div><div class="asm-type">19C の政体変遷</div></div>
+    <div class="factions">
+      <div class="faction f-restore"><div class="dot"></div>王党派(復古王政)</div>
+      <div class="faction f-bourgeois"><div class="dot"></div>ブルジョワジー(七月王政)</div>
+      <div class="faction f-sansculotte"><div class="dot"></div>労働者(二月革命)</div>
+      <div class="faction f-napol"><div class="dot"></div>ボナパルティスト(第二帝政)</div>
+    </div>
+    <div class="asm-desc">
+      <strong>復古王政</strong>(1814-30)：ルイ18世は憲章を認容→シャルル10世が反動→<strong>七月革命</strong>(1830)で退位。
+      <strong>七月王政</strong>(1830-48)：ルイ＝フィリップ「市民の王」→制限選挙でブルジョワジー支配→<strong>二月革命</strong>(1848)で退位。
+      <strong>第二共和政</strong>(1848-52)：男子普通選挙→ルイ＝ナポレオンが大統領→クーデタ(1851)→<strong>第二帝政</strong>。
+      <strong>第二帝政</strong>(1852-70)：ナポレオン3世→普仏戦争(セダン)で敗北→退位→<strong>第三共和政</strong>(1870-1940)。
+      ＝フランスは<strong>王政→共和政→帝政→王政→王政→共和政→帝政→共和政</strong>と約80年間揺れ動いた。
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div class="note">
+<p>フランス革命の核心＝<strong>「どの階層が、どの機関で、何を目指したか」</strong>。①ブルジョワジーが国民議会で立憲君主制→②ジロンド派が立法議会で穏健共和制→③ジャコバン派がサン＝キュロットと組んで国民公会で急進共和制(恐怖政治)→④テルミドールでブルジョワジー復権→⑤ナポレオンの軍事独裁。革命は<strong>「右から左へ、そしてまた右へ」</strong>振り子のように揺れ動いた。</p>
+</div>
+
+</body>
+</html>

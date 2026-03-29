@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>中国近代化の連鎖フロー</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048;--border:rgba(201,169,110,.08)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+.hdr{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.hdr h1{font-family:'Noto Serif JP',serif;font-size:15px;font-weight:700;color:var(--gold2)}
+.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
+.flow{max-width:700px;margin:0 auto;padding:24px 20px 60px}
+.phase{position:relative;margin-bottom:2px;padding:16px 16px 16px 60px;border-left:2px solid rgba(201,169,110,.08);margin-left:30px}
+.phase:last-child{border-left-color:transparent}
+.phase-label{position:absolute;left:-42px;top:16px;width:36px;font-family:'Cormorant Garamond',serif;font-size:10px;font-weight:700;color:var(--text3);text-align:right;line-height:1.3}
+.phase::before{content:'';position:absolute;left:-5px;top:22px;width:8px;height:8px;border-radius:50%;background:var(--bg);border:2px solid rgba(201,169,110,.25)}
+.node{background:rgba(255,255,255,.015);border:1px solid rgba(255,255,255,.04);border-radius:8px;padding:10px 14px;margin-bottom:8px;border-left:3px solid transparent;transition:all .2s}
+.node:hover{background:rgba(255,255,255,.03);border-color:rgba(255,255,255,.06)}
+.node-title{font-family:'Noto Serif JP',serif;font-size:12px;font-weight:700;color:var(--gold2);margin-bottom:2px}
+.node-year{font-family:'Cormorant Garamond',serif;font-size:11px;color:var(--gold);opacity:.6;margin-bottom:4px;letter-spacing:.08em}
+.node-desc{font-size:10px;color:var(--text2);line-height:1.7}
+.node-desc strong{color:var(--text);font-weight:600}
+.arrow{display:flex;align-items:center;gap:6px;padding:2px 0 2px 8px;margin-bottom:6px}
+.arrow-line{width:16px;height:1px;background:rgba(201,169,110,.15);flex-shrink:0}
+.arrow-text{font-size:8px;color:var(--text3);white-space:nowrap}
+.arrow-icon{color:rgba(201,169,110,.3);font-size:10px;flex-shrink:0}
+.branch-row{display:flex;gap:8px;margin-bottom:8px}
+.branch-row .node{flex:1}
+.node.key{background:rgba(201,169,110,.04);border-color:rgba(201,169,110,.12)}
+.side-note{font-size:8px;color:var(--text3);padding:4px 8px;border-left:2px solid rgba(201,169,110,.1);margin:4px 0 8px;line-height:1.6}
+
+/* Phase colors */
+.p-shock .node{border-left-color:rgba(180,80,80,.3)}.p-shock::before{border-color:rgba(180,80,80,.4)}
+.p-reform .node{border-left-color:rgba(100,130,180,.3)}.p-reform::before{border-color:rgba(100,130,180,.4)}
+.p-rev .node{border-left-color:rgba(180,130,80,.3)}.p-rev::before{border-color:rgba(180,130,80,.5);background:rgba(180,130,80,.15)}
+.p-civil .node{border-left-color:rgba(150,80,80,.3)}.p-civil::before{border-color:rgba(150,80,80,.4)}
+.p-prc .node{border-left-color:rgba(180,60,60,.3)}.p-prc::before{border-color:rgba(180,60,60,.5);background:rgba(180,60,60,.15)}
+.p-open .node{border-left-color:rgba(80,150,120,.3)}.p-open::before{border-color:rgba(80,150,120,.5);background:rgba(80,150,120,.15)}
+
+.note{text-align:center;padding:8px 20px 32px;max-width:700px;margin:0 auto}.note p{font-size:9px;color:var(--text3);line-height:1.8}.note strong{color:var(--gold)}
+
+@media(max-width:600px){
+.hdr{padding:10px 12px}.hdr h1{font-size:12px}
+.flow{padding:16px 10px 40px}
+.phase{padding:12px 10px 12px 44px;margin-left:20px}
+.phase-label{left:-30px;width:28px;font-size:8px}
+.node{padding:8px 10px}.node-title{font-size:11px}.node-desc{font-size:9px}
+.branch-row{flex-direction:column}
+.side-note{font-size:7.5px}
+.note p{font-size:8px}
+}
+</style>
+</head>
+<body>
+<div class="hdr"><h1>中国近代化の連鎖フロー ― アヘン戦争から改革開放まで</h1><a href="charts.html">← Ad Chartae</a></div>
+
+<div class="flow">
+
+<!-- Phase 1: 西洋の衝撃 -->
+<div class="phase p-shock">
+  <div class="phase-label">1840<br>〜<br>1864</div>
+  <div class="node key">
+    <div class="node-title">アヘン戦争</div>
+    <div class="node-year">1840–42</div>
+    <div class="node-desc">英がアヘン貿易の利権を守るため開戦。<strong>南京条約</strong>＝香港割譲・5港開港・公行廃止・賠償金2100万ドル。追加条約で<strong>治外法権・協定関税・最恵国待遇</strong>→不平等条約体制の始まり。中国が「天下」ではなく「列強に劣る一国」であると突きつけられた衝撃。</div>
+  </div>
+  <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">国内の矛盾が爆発</div></div>
+  <div class="node">
+    <div class="node-title">太平天国の乱</div>
+    <div class="node-year">1851–64</div>
+    <div class="node-desc">洪秀全がキリスト教的理想に基づき「太平天国」を建国。<strong>滅満興漢</strong>(満洲族の清を倒し漢族を復興)・<strong>天朝田畝制度</strong>(土地の均分)を掲げる。南京を首都に。曾国藩の<strong>湘軍</strong>・李鴻章の<strong>淮軍</strong>が鎮圧→彼らが洋務運動の主導者に。死者推定2000万人以上＝清朝の国力を決定的に消耗。</div>
+  </div>
+  <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">太平天国の鎮圧で力をつけた漢人官僚が近代化を主導</div></div>
+</div>
+
+<!-- Phase 2: 近代化の試み(1) -->
+<div class="phase p-reform">
+  <div class="phase-label">1861<br>〜<br>1895</div>
+  <div class="node">
+    <div class="node-title">洋務運動(自強運動)</div>
+    <div class="node-year">1861–95</div>
+    <div class="node-desc"><strong>「中体西用」</strong>＝中国の体制(儒教的秩序)を維持しつつ西洋の技術(軍事・工業)を導入。曾国藩・李鴻章・左宗棠・張之洞が主導。江南製造局(軍事)・輪船招商局(海運)・北洋艦隊を整備。しかし制度の根本改革には踏み込まず、<strong>技術のみの導入</strong>にとどまった。</div>
+  </div>
+  <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">日清戦争の敗北で「中体西用」の限界が露呈</div></div>
+  <div class="node key">
+    <div class="node-title">日清戦争の敗北</div>
+    <div class="node-year">1894–95</div>
+    <div class="node-desc"><strong>下関条約</strong>＝遼東半島・台湾・澎湖諸島の割譲、賠償金2億テール。<strong>三国干渉</strong>(露仏独)で遼東半島を返還→列強の中国分割が加速(租借地・勢力圏の設定)。洋務運動の北洋艦隊が壊滅→<strong>技術だけでは不十分、制度の改革が必要</strong>という認識が広がる。</div>
+  </div>
+  <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">「制度を変えなければ」→変法運動へ</div></div>
+</div>
+
+<!-- Phase 3: 近代化の試み(2) -->
+<div class="phase p-reform">
+  <div class="phase-label">1898<br>〜<br>1911</div>
+  <div class="node">
+    <div class="node-title">戊戌変法(百日維新)</div>
+    <div class="node-year">1898</div>
+    <div class="node-desc">光緒帝と<strong>康有為・梁啓超</strong>が立憲君主制をめざす急進改革を試みる。科挙改革・新式学校・議会開設等を布告。しかし<strong>西太后のクーデタ</strong>でわずか103日で挫折。譚嗣同ら「戊戌の六君子」が処刑。康有為・梁啓超は日本に亡命。→<strong>体制内改革は不可能</strong>→革命路線(孫文)へ。</div>
+  </div>
+  <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">変法の失敗→排外運動が激化</div></div>
+  <div class="node">
+    <div class="node-title">義和団事件</div>
+    <div class="node-year">1900–01</div>
+    <div class="node-desc"><strong>「扶清滅洋」</strong>を掲げる義和団が北京の列強公使館を包囲。西太后が列強に宣戦布告。<strong>8カ国連合軍</strong>(日英米仏独露伊墺)が鎮圧。<strong>北京議定書</strong>＝巨額の賠償金(4億5000万テール)・外国軍の北京駐留権→清朝の半植民地化が決定的に。</div>
+  </div>
+  <div class="side-note">義和団の惨敗→清朝もついに改革に着手(清末新政：科挙廃止1905)→しかし「太遅太少(too late, too little)」</div>
+  <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">清朝では改革不可能→孫文の革命路線が支持を得る</div></div>
+</div>
+
+<!-- Phase 4: 革命 -->
+<div class="phase p-rev">
+  <div class="phase-label">1911<br>〜<br>1928</div>
+  <div class="node key">
+    <div class="node-title">辛亥革命 → 中華民国成立</div>
+    <div class="node-year">1911–12</div>
+    <div class="node-desc">1911年10月10日、武昌の軍隊が蜂起→各省が独立宣言。<strong>孫文が臨時大総統</strong>に就任(1912.1)。しかし実権は<strong>袁世凱</strong>に移る(孫文が大総統を譲る代わりに宣統帝を退位させる取引)。<strong>宣統帝(溥儀)退位</strong>→清朝滅亡(268年)。<strong>アジア初の共和国</strong>だが実態は軍閥割拠。</div>
+  </div>
+  <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">袁世凱の皇帝即位失敗(1915)→死去(1916)→軍閥割拠</div></div>
+  <div class="node">
+    <div class="node-title">五四運動 → 新たな思想の流入</div>
+    <div class="node-year">1919</div>
+    <div class="node-desc">ヴェルサイユ条約で山東省の旧ドイツ利権が日本に→<strong>学生デモ</strong>(1919.5.4)→全国に波及。<strong>反帝国主義・反封建</strong>の大運動。陳独秀・李大釗を通じて<strong>マルクス主義</strong>が流入→<strong>中国共産党結成</strong>(1921)の土壌に。孫文も「連ソ容共」政策へ転換→第一次国共合作(1924)。</div>
+  </div>
+  <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">孫文死去(1925)→蒋介石が北伐→共産党を弾圧(上海クーデタ1927)</div></div>
+</div>
+
+<!-- Phase 5: 内戦と抗日 -->
+<div class="phase p-civil">
+  <div class="phase-label">1928<br>〜<br>1949</div>
+  <div class="node">
+    <div class="node-title">国民政府(南京) vs 共産党(延安)</div>
+    <div class="node-year">1928–49</div>
+    <div class="node-desc">蒋介石が北伐を完了し南京に国民政府を樹立。共産党への包囲討伐戦→毛沢東の<strong>長征</strong>(1934-36)＝共産党が延安に根拠地を移す。<strong>西安事件</strong>(1936)＝張学良が蒋介石を監禁→<strong>第二次国共合作</strong>(抗日統一戦線)。</div>
+  </div>
+  <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">日中戦争(1937-45)→日本降伏→国共内戦再開</div></div>
+  <div class="node key">
+    <div class="node-title">中華人民共和国の建国</div>
+    <div class="node-year">1949.10.1</div>
+    <div class="node-desc">国共内戦で共産党が勝利。<strong>毛沢東が天安門で建国宣言</strong>。蒋介石は台湾に撤退→<strong>「二つの中国」</strong>問題。土地改革(地主の土地を農民に分配)。朝鮮戦争参戦(1950-53)。<strong>ソ連をモデルとした社会主義国家建設</strong>が始まる。</div>
+  </div>
+  <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">ソ連型の計画経済→毛沢東の急進路線へ</div></div>
+</div>
+
+<!-- Phase 6: 社会主義建設の挫折 -->
+<div class="phase p-prc">
+  <div class="phase-label">1953<br>〜<br>1976</div>
+  <div class="node">
+    <div class="node-title">第一次五カ年計画</div>
+    <div class="node-year">1953–57</div>
+    <div class="node-desc">ソ連の技術援助による<strong>重工業化</strong>。農業集団化。工業生産は年平均18%成長と一定の成功。百花斉放・百家争鳴(1956)→<strong>反右派闘争</strong>(1957)で知識人を弾圧。毛沢東はソ連型の漸進路線に不満→独自の急進路線へ。</div>
+  </div>
+  <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">毛沢東「15年でイギリスに追いつく」</div></div>
+  <div class="node">
+    <div class="node-title">大躍進政策 → 大飢饉</div>
+    <div class="node-year">1958–61</div>
+    <div class="node-desc">人民公社の設立・「裏庭製鉄」(低品質の鉄を大量生産)。非現実的な穀物増産報告(水増し)→実際は<strong>大飢饉</strong>→推定<strong>1500万〜5500万人が餓死</strong>(中国近代史最大の人災)。毛沢東は国家主席を辞任(1959)→劉少奇・鄧小平が実務を担当。</div>
+  </div>
+  <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">権力を奪われた毛沢東が巻き返しを図る</div></div>
+  <div class="node">
+    <div class="node-title">文化大革命</div>
+    <div class="node-year">1966–76</div>
+    <div class="node-desc">毛沢東が権力奪還のために発動。<strong>「造反有理」</strong>のスローガン。<strong>紅衛兵</strong>が知識人・幹部を迫害。劉少奇が失脚・獄死。林彪事件(1971)。鄧小平も2度失脚。古典文化・文化財の大規模破壊。経済・教育が<strong>10年間停滞</strong>。毛沢東死去(1976.9)→<strong>四人組逮捕</strong>(1976.10)で終結。</div>
+  </div>
+  <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">文革の反省→「二度と政治運動で経済を壊さない」</div></div>
+</div>
+
+<!-- Phase 7: 改革開放 -->
+<div class="phase p-open">
+  <div class="phase-label">1978<br>〜</div>
+  <div class="node key">
+    <div class="node-title">改革開放</div>
+    <div class="node-year">1978–</div>
+    <div class="node-desc"><strong>鄧小平</strong>が実権掌握。1978年12月の<strong>第11期三中全会</strong>が転換点。農村＝人民公社を解体し<strong>生産請負制</strong>を導入→農業生産が急増。工業＝<strong>経済特区</strong>(深圳・珠海・汕頭・厦門)を設置→外資導入。「先富論(先に豊かになれる者から)」。<strong>共産党の一党支配を維持しつつ市場経済を導入</strong>＝「社会主義市場経済」。</div>
+  </div>
+  <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">経済成長の一方で民主化要求→天安門事件</div></div>
+  <div class="node">
+    <div class="node-title">天安門事件とその後</div>
+    <div class="node-year">1989 → 現在</div>
+    <div class="node-desc"><strong>天安門事件</strong>(1989.6.4)＝民主化を求める学生デモを武力弾圧→国際的孤立。しかし鄧小平の<strong>南巡講話</strong>(1992)で「改革開放の加速」を宣言→経済成長を最優先に。<strong>WTO加盟</strong>(2001)→「世界の工場」→GDP世界第2位(2010)。<strong>政治は一党支配のまま、経済は市場化</strong>という中国独自の体制が続く。</div>
+  </div>
+</div>
+
+</div>
+
+<div class="note">
+<p>中国の近代化は<strong>「技術→制度→思想→革命→社会主義→市場経済」</strong>と段階的に深化した。各段階で<strong>「なぜ前の方法では不十分だったか」</strong>を因果関係で説明できることが入試のポイント。洋務運動(技術のみ)→変法(制度改革の挫折)→革命(清朝打倒)→共産主義(土地革命)→改革開放(市場経済)。</p>
+</div>
+
+</body>
+</html>

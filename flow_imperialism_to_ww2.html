@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>帝国主義→WW1→WW2の連鎖フロー</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048;--border:rgba(201,169,110,.08)}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+.hdr{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;flex-wrap:wrap}.hdr h1{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2)}.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
+.flow{max-width:740px;margin:0 auto;padding:24px 20px 60px}
+.phase{position:relative;margin-bottom:2px;padding:16px 16px 16px 60px;border-left:2px solid rgba(201,169,110,.08);margin-left:30px}.phase:last-child{border-left-color:transparent}
+.phase-label{position:absolute;left:-42px;top:16px;width:36px;font-family:'Cormorant Garamond',serif;font-size:10px;font-weight:700;color:var(--text3);text-align:right;line-height:1.3}
+.phase::before{content:'';position:absolute;left:-5px;top:22px;width:8px;height:8px;border-radius:50%;background:var(--bg);border:2px solid rgba(201,169,110,.25)}
+.node{background:rgba(255,255,255,.015);border:1px solid rgba(255,255,255,.04);border-radius:8px;padding:10px 14px;margin-bottom:8px;border-left:3px solid transparent;transition:all .2s}.node:hover{background:rgba(255,255,255,.03)}.node-title{font-family:'Noto Serif JP',serif;font-size:12px;font-weight:700;color:var(--gold2);margin-bottom:2px}.node-year{font-family:'Cormorant Garamond',serif;font-size:11px;color:var(--gold);opacity:.6;margin-bottom:4px}.node-desc{font-size:10px;color:var(--text2);line-height:1.7}.node-desc strong{color:var(--text);font-weight:600}.node.key{background:rgba(201,169,110,.04);border-color:rgba(201,169,110,.12)}
+.arrow{display:flex;align-items:center;gap:6px;padding:2px 0 2px 8px;margin-bottom:6px}.arrow-line{width:16px;height:1px;background:rgba(201,169,110,.15)}.arrow-text{font-size:8px;color:var(--text3)}.arrow-icon{color:rgba(201,169,110,.3);font-size:10px}
+.branch-row{display:flex;gap:8px;margin-bottom:8px}.branch-row .node{flex:1}
+.side-note{font-size:8px;color:var(--text3);padding:4px 8px;border-left:2px solid rgba(201,169,110,.1);margin:4px 0 8px;line-height:1.6}
+.p1 .node{border-left-color:rgba(130,120,100,.3)}.p1::before{border-color:rgba(130,120,100,.4)}
+.p2 .node{border-left-color:rgba(180,130,80,.3)}.p2::before{border-color:rgba(180,130,80,.5);background:rgba(180,130,80,.15)}
+.p3 .node{border-left-color:rgba(180,80,80,.3)}.p3::before{border-color:rgba(180,80,80,.5);background:rgba(180,80,80,.15)}
+.p4 .node{border-left-color:rgba(100,130,180,.3)}.p4::before{border-color:rgba(100,130,180,.4)}
+.p5 .node{border-left-color:rgba(180,80,80,.35)}.p5::before{border-color:rgba(180,80,80,.5);background:rgba(180,80,80,.2)}
+.note{text-align:center;padding:8px 20px 32px;max-width:700px;margin:0 auto}.note p{font-size:9px;color:var(--text3);line-height:1.8}.note strong{color:var(--gold)}
+.hdr h1{font-size:12px}
+.flow{padding:16px 10px 40px}
+.phase{padding:12px 10px 12px 44px;margin-left:20px}
+.phase-label{left:-30px;width:28px;font-size:8px}
+.node{padding:8px 10px}.node-title{font-size:11px}.node-desc{font-size:9px}
+.branch-row{flex-direction:column}
+.side-note{font-size:7.5px}
+.note p{font-size:8px}
+}
+
+@media(max-width:600px){
+.hdr{padding:10px 12px}.hdr h1{font-size:12px}
+.flow{padding:16px 10px 40px}
+.phase{padding:12px 10px 12px 44px;margin-left:20px}
+.phase-label{left:-30px;width:28px;font-size:8px}
+.node{padding:8px 10px}.node-title{font-size:11px}.node-desc{font-size:9px}
+.branch-row{flex-direction:column}
+.side-note{font-size:7.5px}
+.note p{font-size:8px}
+}
+</style>
+</head>
+<body>
+<div class="hdr"><h1>帝国主義→WW1→WW2の連鎖フロー</h1><a href="charts.html">← Ad Chartae</a></div>
+<div class="flow">
+
+<div class="phase p1"><div class="phase-label">1870s<br>〜<br>1900s</div>
+<div class="node"><div class="node-title">帝国主義の時代 ― 列強の植民地競争</div><div class="node-year">1870s–1914</div>
+<div class="node-desc">第二次産業革命(鉄鋼・化学・電機)→<strong>原料供給地と市場としての植民地</strong>が国力の指標に。1880年代にアフリカ分割が加速(ベルリン会議1884-85)。ドイツ・イタリア・日本が「遅れてきた帝国主義国」として参入→<strong>「持てる国」(英仏)vs「持たざる国」(独伊日)</strong>の構図。ヴィルヘルム2世の世界政策(3B政策)→英の3C政策と衝突。</div></div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">植民地競争が同盟体制の形成を促す</div></div>
+<div class="node"><div class="node-title">二大陣営の形成</div><div class="node-year">1882–1907</div>
+<div class="node-desc"><strong>三国同盟</strong>(独墺伊、1882)vs<strong>三国協商</strong>(露仏同盟1891-94＋英仏協商1904＋英露協商1907)。ビスマルク罷免(1890)→独露再保障条約不更新→露仏同盟＝<strong>ドイツの二正面戦争の可能性</strong>が現実化。モロッコ事件(1905,1911)・ボスニア危機(1908)で対立が先鋭化。</div></div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">バルカンの「火花」が全面戦争を引き起こす</div></div></div>
+
+<div class="phase p2"><div class="phase-label">1914<br>〜<br>1918</div>
+<div class="node key"><div class="node-title">第一次世界大戦</div><div class="node-year">1914–18</div>
+<div class="node-desc">サラエヴォ事件(1914.6)→同盟の連鎖で1週間で全欧州が戦争状態に。西部戦線の塹壕戦＝4年間の消耗戦。<strong>総力戦</strong>＝国家が経済・社会・思想を全て動員→戦後の社会変革(女性参政権・労働運動・ナショナリズム)の起爆剤に。米参戦(1917)→ドイツ革命→休戦(1918.11)。死者約1000万人＋スペイン風邪で数千万人。</div></div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">「勝者の平和」→敗者の怨恨＝WW2の種を蒔く</div></div></div>
+
+<div class="phase p3"><div class="phase-label">1919<br>〜<br>1929</div>
+<div class="node key"><div class="node-title">ヴェルサイユ体制の成立</div><div class="node-year">1919–20</div>
+<div class="node-desc"><strong>パリ講和会議</strong>(1919)＝ウィルソン(米)・クレマンソー(仏、対独強硬)・ロイド＝ジョージ(英、中間)・オルランド(伊)。<strong>ヴェルサイユ条約</strong>(対独)＝①アルザス＝ロレーヌの仏への返還 ②全植民地喪失 ③軍備制限(陸軍10万人・戦車禁止・空軍禁止) ④<strong>戦争責任条項(231条)</strong>→巨額賠償金(1320億金マルク)。<strong>国際連盟</strong>(1920)＝ウィルソンの理想→しかし<strong>米上院が批准拒否→米不参加</strong>が致命的弱点。民族自決は欧州のみ(チェコスロヴァキア・ユーゴ・ポーランド等が独立)→アジア・アフリカの失望(→五四運動・三一独立運動)。ドイツ国内に<strong>「背後の一突き伝説」</strong>と怨恨→ナチスの温床に。</div></div>
+<div class="side-note">★入試の核心：ヴェルサイユ体制の根本的欠陥＝①懲罰的すぎてドイツの怨恨を生んだが、ドイツを本当に無力化するには不十分(「最悪の中間地点」) ②米不参加 ③民族自決の限界</div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">最初の数年は混乱(ルール占領・ハイパーインフレ)→ドーズ案で安定化</div></div>
+<div class="node"><div class="node-title">賠償問題の混迷 → ドーズ案による安定化</div><div class="node-year">1921–24</div>
+<div class="node-desc">賠償金支払いをめぐる混乱：独が支払い不能→仏が<strong>ルール占領</strong>(1923、ポワンカレ首相)＝ドイツ最大の工業地帯をフランス・ベルギーが軍事占領→独は受動的抵抗(ストライキ)→政府が労働者に賃金を印刷して支給→<strong>ハイパーインフレ</strong>(パン1個が数十億マルク)。シュトレーゼマン首相が<strong>レンテンマルク</strong>で通貨安定。<strong>ドーズ案</strong>(1924)＝米の銀行家ドーズが策定→<strong>米から独に資本が流入→独が賠償金を英仏に支払い→英仏が米に戦債を返済</strong>する循環構造。独経済が回復。</div></div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">ドーズ案を基盤に「相対的安定期」→協調外交の時代</div></div>
+<div class="node"><div class="node-title">相対的安定期 ― ロカルノ体制</div><div class="node-year">1925–29</div>
+<div class="node-desc"><strong>ロカルノ条約</strong>(1925)＝独外相<strong>シュトレーゼマン</strong>と仏外相<strong>ブリアン</strong>が主導。独仏ベルギーの<strong>国境相互保障</strong>(ラインラントの現状維持)＝独仏和解の象徴。英伊が保障国に。→<strong>独の国際連盟加入</strong>(1926)＝国際社会への復帰。<strong>不戦条約(ケロッグ＝ブリアン条約)</strong>(1928)＝仏米主導で63カ国が署名＝「国策の手段としての戦争」を放棄→理想主義的だが制裁規定なし。<strong>ヤング案</strong>(1929)＝賠償金を減額・支払い期間を延長。<br><br>
+<strong>軍縮の試み</strong>：<strong>ワシントン会議</strong>(1921-22)＝米英日仏伊の主力艦保有比率を<strong>5:5:3:1.67:1.67</strong>に制限(ワシントン海軍軍縮条約)。四カ国条約(日英仏米＝太平洋の現状維持、日英同盟の解消)。九カ国条約(中国の主権尊重・門戸開放)＝<strong>「ワシントン体制」</strong>。<strong>ロンドン海軍軍縮条約</strong>(1930)＝補助艦(巡洋艦・駆逐艦)も制限→日本で統帥権干犯問題。<strong>ジュネーヴ軍縮会議</strong>(1932-34)＝独が軍備平等権を要求→英仏が拒否→<strong>独が脱退(1933)＝軍縮の挫折</strong>。<br><br>
+「狂騒の20年代」＝米を中心とした繁栄。しかし<strong>全ての安定は米資本に依存</strong>→1929年の暴落で一挙に崩壊。</div></div>
+<div class="side-note">★入試超頻出：「ワシントン会議(1921-22)＝5:5:3」「ロカルノ条約(1925)→連盟加入(1926)→不戦条約(1928)」の順番。シュトレーゼマンとブリアンは1926年ノーベル平和賞。ロカルノは東部国境(ポーランド)を保障しなかった→ヒトラーの東方拡大を阻止できない構造的欠陥</div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">1929年10月ウォール街暴落→ドーズ案の循環が崩壊→世界恐慌</div></div></div>
+
+<div class="phase p4"><div class="phase-label">1929<br>〜<br>1933</div>
+<div class="node key"><div class="node-title">世界恐慌 → ブロック経済</div><div class="node-year">1929–33</div>
+<div class="node-desc"><strong>1929年10月24日「暗黒の木曜日」</strong>＝ウォール街の株価大暴落。ドーズ案で独に流入していた米資本が一斉に引き揚げ→<strong>独経済が壊滅</strong>(失業率30%＝600万人)。米の<strong>スムート＝ホーリー法</strong>(1930)＝高関税→各国が報復関税→世界貿易2/3に縮小。各国が<strong>ブロック経済</strong>で自国を守る：英＝<strong>スターリング＝ブロック</strong>(オタワ連邦会議1932、帝国特恵関税)、仏＝<strong>フラン＝ブロック</strong>、米＝<strong>ドル＝ブロック</strong>(ニューディール)。→<strong>植民地を持たない「持たざる国」(独伊日)</strong>は自給圏を持てない→市場・資源の確保を<strong>軍事的膨張</strong>に求める。</div></div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">恐慌→大量失業→ファシズムへの支持</div></div>
+<div class="node"><div class="node-title">ファシズムの台頭と集団安全保障の崩壊</div><div class="node-year">1931–36</div>
+<div class="node-desc"><strong>日本</strong>＝満州事変(1931)→満州国建国(1932)→<strong>リットン調査団</strong>の報告→国際連盟が日本を非難→<strong>日本が連盟脱退</strong>(1933)＝連盟の集団安全保障の最初の失敗。<strong>ドイツ</strong>＝ナチスが第1党→<strong>ヒトラー首相就任</strong>(1933.1)→全権委任法→一党独裁→連盟脱退(1933)→再軍備宣言(1935)。<strong>イタリア</strong>＝ムッソリーニの<strong>エチオピア侵攻</strong>(1935-36)→連盟が経済制裁を決議→しかし石油禁輸は見送り→<strong>制裁は無力</strong>＝集団安全保障の決定的失敗。<strong>日独伊三国防共協定</strong>(1936-37)→枢軸の形成。</div></div>
+<div class="side-note">★入試超頻出：「満州事変→リットン→脱退」「エチオピア→制裁の無力→連盟の死」。「持たざる国」の侵略に対して国際連盟が無力だった＝ヴェルサイユ体制の崩壊</div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">宥和政策の失敗→侵略を止められず</div></div></div>
+
+<div class="phase p5"><div class="phase-label">1933<br>〜<br>1945</div>
+<div class="node"><div class="node-title">宥和政策から開戦へ</div><div class="node-year">1933–39</div>
+<div class="node-desc">英仏は<strong>宥和政策</strong>(appeasement)＝ヒトラーの要求を部分的に認めて戦争を回避しようとする。再軍備(1935)→ラインラント(1936)→墺併合(1938.3)→<strong>ミュンヘン会談</strong>(1938.9)でズデーテン割譲→チェンバレン「我々の時代に平和を」→翌1939年チェコ解体で<strong>宥和の破綻が明白</strong>に。独ソ不可侵条約(1939.8)→<strong>ポーランド侵攻</strong>(1939.9.1)＝WW2開戦。</div></div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">6年間の戦争→死者約6000万人</div></div>
+<div class="node key"><div class="node-title">第二次世界大戦</div><div class="node-year">1939–45</div>
+<div class="node-desc">欧州＝電撃戦で仏陥落(1940)→独ソ戦(1941)→スターリングラード(1943)→D-Day(1944)→ベルリン陥落(1945)。太平洋＝真珠湾(1941)→ミッドウェー(1942)→原爆(1945)。ホロコースト(600万人)。<strong>帝国主義→WW1→ヴェルサイユ→恐慌→ファシズム→WW2</strong>という<strong>31年間の連鎖</strong>が完結。戦後は米ソ二極の<strong>冷戦体制</strong>へ。</div></div></div>
+
+</div>
+<div class="note"><p>帝国主義→WW1→WW2＝<strong>「31年間の危機(1914-45)」</strong>。入試では<strong>「なぜWW1がWW2に至ったか」</strong>を①ヴェルサイユ体制の矛盾(懲罰的すぎた) ②世界恐慌(ブロック経済→持たざる国の不満) ③宥和政策の失敗 の3点で説明できることが求められる。E.H.カーが「二十年の危機」と呼んだ戦間期の構造的不安定を理解することが核心。</p></div>
+</body></html>

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>遊牧民タイムライン</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+.hdr{padding:16px 20px;border-bottom:1px solid rgba(201,169,110,.08);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.hdr h1{font-family:'Noto Serif JP',serif;font-size:13px;font-weight:700;color:var(--gold2)}
+.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
+.legend{display:flex;gap:10px;justify-content:center;padding:6px 16px;flex-wrap:wrap;border-bottom:1px solid rgba(255,255,255,.02)}
+.legend .li{display:flex;align-items:center;gap:4px;font-size:7px;color:var(--text3)}
+.legend .ld{width:14px;height:10px;border-radius:3px}
+.wrap{padding:8px 0 10px;overflow-x:auto}
+.nd-svg{cursor:pointer}.nd-svg:hover rect{filter:brightness(1.3)}
+.tp{display:none}
+.note{text-align:center;padding:8px 20px 32px;max-width:880px;margin:0 auto}.note p{font-size:9px;color:var(--text3);line-height:1.8}.note strong{color:var(--gold)}
+
+@media(max-width:600px){
+.hdr{padding:10px 12px}.hdr h1{font-size:12px}
+.legend .li{font-size:7px}
+.note p{font-size:8px}
+}
+</style></head><body>
+<div class="hdr"><h1>ユーラシア遊牧民タイムライン ― スキタイからロシア・清の征服まで</h1><a href="charts.html">← Ad Chartae</a></div>
+<div class="legend">
+<div class="li"><div class="ld" style="background:rgba(100,150,60,.15);border:1px solid rgba(100,150,60,.3)"></div>イラン系</div>
+<div class="li"><div class="ld" style="background:rgba(60,130,190,.15);border:1px solid rgba(60,130,190,.3)"></div>テュルク系</div>
+<div class="li"><div class="ld" style="background:rgba(190,140,60,.15);border:1px solid rgba(190,140,60,.3)"></div>モンゴル系</div>
+<div class="li"><div class="ld" style="background:rgba(150,90,150,.15);border:1px solid rgba(150,90,150,.3)"></div>その他</div>
+<div class="li"><div class="ld" style="background:rgba(170,100,170,.12);border:1px solid rgba(170,100,170,.25)"></div>ツングース系</div>
+<div class="li"><div class="ld" style="background:rgba(190,70,70,.1);border:1px solid rgba(190,70,70,.25)"></div>定住帝国の征服</div>
+<div class="li" style="font-size:6px;color:var(--text3)">点線矢印＝民族移動 ｜ 縦長ブロック＝広域支配</div>
+</div>
+<div class="wrap">
+<svg viewBox="0 0 1696 707" xmlns="http://www.w3.org/2000/svg" style="width:1696px;height:707px;min-width:1696px">
+<rect x="0" y="0" width="1696" height="28" fill="rgba(201,169,110,.02)"/>
+<text x="4" y="16" fill="rgba(201,169,110,.4)" font-size="7" font-family="Noto Sans JP">横断イベント</text>
+<line x1="107" y1="4" x2="107" y2="28" stroke="rgba(201,169,110,.15)" stroke-dasharray="3,2"/>
+<text x="109" y="14" fill="rgba(201,169,110,.6)" font-size="6" font-family="Noto Sans JP">犬戎→西周滅亡(BC771)</text>
+<line x1="336" y1="4" x2="336" y2="28" stroke="rgba(201,169,110,.15)" stroke-dasharray="3,2"/>
+<text x="338" y="14" fill="rgba(201,169,110,.6)" font-size="6" font-family="Noto Sans JP">ゲルマン大移動(375)</text>
+<line x1="915" y1="4" x2="915" y2="28" stroke="rgba(201,169,110,.15)" stroke-dasharray="3,2"/>
+<text x="917" y="14" fill="rgba(201,169,110,.6)" font-size="6" font-family="Noto Sans JP">ヒジュラ(622)</text>
+<line x1="990" y1="4" x2="990" y2="28" stroke="rgba(201,169,110,.15)" stroke-dasharray="3,2"/>
+<text x="992" y="14" fill="rgba(201,169,110,.6)" font-size="6" font-family="Noto Sans JP">タラス河畔(751)</text>
+<line x1="1253" y1="4" x2="1253" y2="28" stroke="rgba(201,169,110,.15)" stroke-dasharray="3,2"/>
+<text x="1255" y="14" fill="rgba(201,169,110,.6)" font-size="6" font-family="Noto Sans JP">チンギス即位</text>
+<line x1="1284" y1="4" x2="1284" y2="28" stroke="rgba(201,169,110,.15)" stroke-dasharray="3,2"/>
+<text x="1286" y="24" fill="rgba(201,169,110,.6)" font-size="6" font-family="Noto Sans JP">バグダード陥落</text>
+<line x1="1454" y1="4" x2="1454" y2="28" stroke="rgba(201,169,110,.15)" stroke-dasharray="3,2"/>
+<text x="1456" y="14" fill="rgba(201,169,110,.6)" font-size="6" font-family="Noto Sans JP">カザン征服(露)</text>
+<line x1="1574" y1="4" x2="1574" y2="28" stroke="rgba(201,169,110,.15)" stroke-dasharray="3,2"/>
+<text x="1576" y="14" fill="rgba(201,169,110,.6)" font-size="6" font-family="Noto Sans JP">ジュンガル壊滅</text>
+<rect x="90" y="76" width="1606" height="80" fill="rgba(255,255,255,.02)"/>
+<text x="4" y="111" fill="var(--gold2)" font-size="8" font-family="Noto Serif JP" font-weight="700">モンゴル高原</text>
+<text x="4" y="121" fill="var(--text3)" font-size="5.5" font-family="Noto Sans JP">オルホン〜ゴビ</text>
+<line x1="0" y1="156" x2="1696" y2="156" stroke="rgba(201,169,110,.04)"/>
+<rect x="90" y="159" width="1606" height="80" fill="rgba(255,255,255,.01)"/>
+<text x="4" y="194" fill="var(--gold2)" font-size="8" font-family="Noto Serif JP" font-weight="700">東トルキスタン</text>
+<text x="4" y="204" fill="var(--text3)" font-size="5.5" font-family="Noto Sans JP">タリム〜天山</text>
+<line x1="0" y1="239" x2="1696" y2="239" stroke="rgba(201,169,110,.04)"/>
+<rect x="90" y="242" width="1606" height="80" fill="rgba(255,255,255,.02)"/>
+<text x="4" y="277" fill="var(--gold2)" font-size="8" font-family="Noto Serif JP" font-weight="700">西トルキスタン</text>
+<text x="4" y="287" fill="var(--text3)" font-size="5.5" font-family="Noto Sans JP">ソグド〜ホラズム</text>
+<line x1="0" y1="322" x2="1696" y2="322" stroke="rgba(201,169,110,.04)"/>
+<rect x="90" y="325" width="1606" height="80" fill="rgba(255,255,255,.01)"/>
+<text x="4" y="360" fill="var(--gold2)" font-size="8" font-family="Noto Serif JP" font-weight="700">イラン高原</text>
+<text x="4" y="370" fill="var(--text3)" font-size="5.5" font-family="Noto Sans JP">ペルシア〜アフガン</text>
+<line x1="0" y1="405" x2="1696" y2="405" stroke="rgba(201,169,110,.04)"/>
+<rect x="90" y="408" width="1606" height="80" fill="rgba(255,255,255,.02)"/>
+<text x="4" y="443" fill="var(--gold2)" font-size="8" font-family="Noto Serif JP" font-weight="700">カザフ草原</text>
+<text x="4" y="453" fill="var(--text3)" font-size="5.5" font-family="Noto Sans JP">ウラル〜バルハシ</text>
+<line x1="0" y1="488" x2="1696" y2="488" stroke="rgba(201,169,110,.04)"/>
+<rect x="90" y="491" width="1606" height="80" fill="rgba(255,255,255,.01)"/>
+<text x="4" y="526" fill="var(--gold2)" font-size="8" font-family="Noto Serif JP" font-weight="700">南ロシア</text>
+<text x="4" y="536" fill="var(--text3)" font-size="5.5" font-family="Noto Sans JP">ドン〜ヴォルガ</text>
+<line x1="0" y1="571" x2="1696" y2="571" stroke="rgba(201,169,110,.04)"/>
+<rect x="90" y="574" width="1606" height="80" fill="rgba(255,255,255,.02)"/>
+<text x="4" y="609" fill="var(--gold2)" font-size="8" font-family="Noto Serif JP" font-weight="700">黒海沿岸</text>
+<text x="4" y="619" fill="var(--text3)" font-size="5.5" font-family="Noto Sans JP">クリミア〜北カフカス</text>
+<line x1="0" y1="654" x2="1696" y2="654" stroke="rgba(201,169,110,.04)"/>
+<line x1="90" y1="66" x2="90" y2="702" stroke="rgba(255,255,255,.015)"/>
+<line x1="148" y1="66" x2="148" y2="702" stroke="rgba(255,255,255,.015)"/>
+<line x1="206" y1="66" x2="206" y2="702" stroke="rgba(255,255,255,.015)"/>
+<line x1="264" y1="58" x2="264" y2="702" stroke="rgba(201,169,110,.07)"/>
+<text x="264" y="56" text-anchor="middle" fill="rgba(201,169,110,.5)" font-size="8" font-family="Cormorant Garamond" font-weight="700">500BC</text>
+<line x1="322" y1="66" x2="322" y2="702" stroke="rgba(255,255,255,.015)"/>
+<line x1="380" y1="66" x2="380" y2="702" stroke="rgba(255,255,255,.015)"/>
+<line x1="438" y1="66" x2="438" y2="702" stroke="rgba(255,255,255,.015)"/>
+<line x1="496" y1="66" x2="496" y2="702" stroke="rgba(255,255,255,.015)"/>
+<line x1="554" y1="58" x2="554" y2="702" stroke="rgba(201,169,110,.07)"/>
+<text x="554" y="56" text-anchor="middle" fill="rgba(201,169,110,.5)" font-size="8" font-family="Cormorant Garamond" font-weight="700">0</text>
+<line x1="612" y1="66" x2="612" y2="702" stroke="rgba(255,255,255,.015)"/>
+<line x1="670" y1="66" x2="670" y2="702" stroke="rgba(255,255,255,.015)"/>
+<line x1="728" y1="66" x2="728" y2="702" stroke="rgba(255,255,255,.015)"/>
+<line x1="786" y1="66" x2="786" y2="702" stroke="rgba(255,255,255,.015)"/>
+<line x1="844" y1="58" x2="844" y2="702" stroke="rgba(201,169,110,.07)"/>
+<text x="844" y="56" text-anchor="middle" fill="rgba(201,169,110,.5)" font-size="8" font-family="Cormorant Garamond" font-weight="700">500</text>
+<line x1="902" y1="66" x2="902" y2="702" stroke="rgba(255,255,255,.015)"/>
+<line x1="960" y1="66" x2="960" y2="702" stroke="rgba(255,255,255,.015)"/>
+<line x1="1018" y1="66" x2="1018" y2="702" stroke="rgba(255,255,255,.015)"/>
+<line x1="1076" y1="66" x2="1076" y2="702" stroke="rgba(255,255,255,.015)"/>
+<line x1="1134" y1="58" x2="1134" y2="702" stroke="rgba(201,169,110,.07)"/>
+<text x="1134" y="56" text-anchor="middle" fill="rgba(201,169,110,.5)" font-size="8" font-family="Cormorant Garamond" font-weight="700">1000</text>
+<line x1="1192" y1="66" x2="1192" y2="702" stroke="rgba(255,255,255,.015)"/>
+<line x1="1250" y1="66" x2="1250" y2="702" stroke="rgba(255,255,255,.015)"/>
+<line x1="1308" y1="66" x2="1308" y2="702" stroke="rgba(255,255,255,.015)"/>
+<line x1="1366" y1="66" x2="1366" y2="702" stroke="rgba(255,255,255,.015)"/>
+<line x1="1424" y1="58" x2="1424" y2="702" stroke="rgba(201,169,110,.07)"/>
+<text x="1424" y="56" text-anchor="middle" fill="rgba(201,169,110,.5)" font-size="8" font-family="Cormorant Garamond" font-weight="700">1500</text>
+<line x1="1482" y1="66" x2="1482" y2="702" stroke="rgba(255,255,255,.015)"/>
+<line x1="1540" y1="66" x2="1540" y2="702" stroke="rgba(255,255,255,.015)"/>
+<line x1="1598" y1="66" x2="1598" y2="702" stroke="rgba(255,255,255,.015)"/>
+<line x1="1656" y1="66" x2="1656" y2="702" stroke="rgba(255,255,255,.015)"/>
+<line x1="525" y1="116" x2="769" y2="531" stroke="rgba(6,9,15,.7)" stroke-width="6"/><line x1="525" y1="116" x2="769" y2="531" stroke="rgba(194,140,74,.35)" stroke-width="2.5" stroke-dasharray="6,4"/><polygon points="769,531 761,526 768,522" fill="rgba(194,140,74,.35)"/><rect x="622" y="316" width="50" height="14" rx="3" fill="rgba(6,9,15,.92)"/><text x="647" y="326" text-anchor="middle" fill="rgba(194,140,74,.8)" font-size="6.5" font-family="Noto Sans JP" font-weight="600">北匈奴→フン族?</text>
+<line x1="409" y1="199" x2="467" y2="282" stroke="rgba(6,9,15,.7)" stroke-width="6"/><line x1="409" y1="199" x2="467" y2="282" stroke="rgba(120,160,80,.35)" stroke-width="2.5" stroke-dasharray="6,4"/><polygon points="467,282 459,278 466,273" fill="rgba(120,160,80,.35)"/><rect x="420" y="232" width="35" height="14" rx="3" fill="rgba(6,9,15,.92)"/><text x="438" y="242" text-anchor="middle" fill="rgba(120,160,80,.8)" font-size="6.5" font-family="Noto Sans JP" font-weight="600">月氏の西遷</text>
+
+<line x1="1206" y1="116" x2="1215" y2="199" stroke="rgba(6,9,15,.7)" stroke-width="6"/><line x1="1206" y1="116" x2="1215" y2="199" stroke="rgba(194,140,74,.35)" stroke-width="2.5" stroke-dasharray="6,4"/><polygon points="1215,199 1210,191 1218,191" fill="rgba(194,140,74,.35)"/><rect x="1193" y="150" width="35" height="14" rx="3" fill="rgba(6,9,15,.92)"/><text x="1211" y="160" text-anchor="middle" fill="rgba(194,140,74,.8)" font-size="6.5" font-family="Noto Sans JP" font-weight="600">契丹→西遼</text>
+<g class="nd-svg" data-tip="n-scythia"><rect x="148" y="493" width="232" height="103" rx="5" fill="rgba(100,150,60,.10)" stroke="rgba(100,150,60,.28)" stroke-width="1.5"/><text x="152" y="506" fill="#a8c890" font-size="9" font-family="Noto Serif JP" font-weight="700">スキタイ</text><text x="152" y="517" fill="rgba(255,255,255,.3)" font-size="5.5" font-family="Noto Sans JP">イラン系騎馬遊牧の原型</text></g>
+<g class="nd-svg" data-tip="n-xiongnu_s"><rect x="525" y="78" width="81" height="20" rx="4" fill="rgba(190,140,60,.10)" stroke="rgba(190,140,60,.28)" stroke-width="1"/><text x="528" y="91" fill="#d4c098" font-size="8" font-family="Noto Serif JP" font-weight="700">南匈奴</text><text x="528" y="100" fill="rgba(255,255,255,.25)" font-size="5" font-family="Noto Sans JP">漢に帰順。北匈奴は西遷</text></g>
+<g class="nd-svg" data-tip="n-quanrong"><rect x="32" y="161" width="174" height="20" rx="4" fill="rgba(150,90,150,.10)" stroke="rgba(150,90,150,.28)" stroke-width="1"/><text x="35" y="174" fill="#c8a8c8" font-size="8" font-family="Noto Serif JP" font-weight="700">犬戎</text><text x="35" y="183" fill="rgba(255,255,255,.25)" font-size="5" font-family="Noto Sans JP">西周を滅ぼす(BC771)</text></g>
+<g class="nd-svg" data-tip="n-donghu"><rect x="322" y="78" width="111" height="20" rx="4" fill="rgba(150,90,150,.10)" stroke="rgba(150,90,150,.28)" stroke-width="1"/><text x="325" y="91" fill="#c8a8c8" font-size="8" font-family="Noto Serif JP" font-weight="700">東胡</text><text x="325" y="100" fill="rgba(255,255,255,.25)" font-size="5" font-family="Noto Sans JP">→匈奴に滅ぼされる</text></g>
+<g class="nd-svg" data-tip="n-sarmatia"><rect x="380" y="493" width="406" height="103" rx="5" fill="rgba(100,150,60,.10)" stroke="rgba(100,150,60,.28)" stroke-width="1.5"/><text x="384" y="506" fill="#a8c890" font-size="9" font-family="Noto Serif JP" font-weight="700">サルマタイ</text><text x="384" y="517" fill="rgba(255,255,255,.3)" font-size="5.5" font-family="Noto Sans JP">イラン系重装騎兵</text></g>
+<g class="nd-svg" data-tip="n-xiongnu"><rect x="380" y="100" width="145" height="20" rx="4" fill="rgba(190,140,60,.10)" stroke="rgba(190,140,60,.28)" stroke-width="1"/><text x="383" y="113" fill="#d4c098" font-size="8" font-family="Noto Serif JP" font-weight="700">匈奴(統一期)</text><text x="383" y="122" fill="rgba(255,255,255,.25)" font-size="5" font-family="Noto Sans JP">冒頓単于。漢と対決</text></g>
+<g class="nd-svg" data-tip="n-parthia"><rect x="411" y="327" width="273" height="20" rx="4" fill="rgba(100,150,60,.10)" stroke="rgba(100,150,60,.28)" stroke-width="1"/><text x="414" y="340" fill="#a8c890" font-size="8" font-family="Noto Serif JP" font-weight="700">パルティア</text><text x="414" y="349" fill="rgba(255,255,255,.25)" font-size="5" font-family="Noto Sans JP">ローマと対峙</text></g>
+<g class="nd-svg" data-tip="n-yuezhi_east"><rect x="380" y="161" width="75" height="20" rx="4" fill="rgba(100,150,60,.10)" stroke="rgba(100,150,60,.28)" stroke-width="1"/><text x="383" y="174" fill="#a8c890" font-size="8" font-family="Noto Serif JP" font-weight="700">月氏(原住地)</text><text x="383" y="183" fill="rgba(255,255,255,.25)" font-size="5" font-family="Noto Sans JP">甘粛〜東トルキスタン</text></g>
+<g class="nd-svg" data-tip="n-yuezhi"><rect x="455" y="244" width="157" height="20" rx="4" fill="rgba(100,150,60,.10)" stroke="rgba(100,150,60,.28)" stroke-width="1"/><text x="458" y="257" fill="#a8c890" font-size="8" font-family="Noto Serif JP" font-weight="700">大月氏</text><text x="458" y="266" fill="rgba(255,255,255,.25)" font-size="5" font-family="Noto Sans JP">匈奴に追われ西遷→バクトリア</text></g>
+<g class="nd-svg" data-tip="n-kushan"><rect x="612" y="244" width="116" height="20" rx="4" fill="rgba(100,150,60,.10)" stroke="rgba(100,150,60,.28)" stroke-width="1"/><text x="615" y="257" fill="#a8c890" font-size="8" font-family="Noto Serif JP" font-weight="700">クシャーナ朝</text><text x="615" y="266" fill="rgba(255,255,255,.25)" font-size="5" font-family="Noto Sans JP">カニシカ王。ガンダーラ</text></g>
+<g class="nd-svg" data-tip="n-wusun"><rect x="438" y="410" width="232" height="20" rx="4" fill="rgba(150,90,150,.10)" stroke="rgba(150,90,150,.28)" stroke-width="1"/><text x="441" y="423" fill="#c8a8c8" font-size="8" font-family="Noto Serif JP" font-weight="700">烏孫</text><text x="441" y="432" fill="rgba(255,255,255,.25)" font-size="5" font-family="Noto Sans JP">漢と同盟</text></g>
+<g class="nd-svg" data-tip="n-xianbei"><rect x="612" y="78" width="174" height="20" rx="4" fill="rgba(190,140,60,.10)" stroke="rgba(190,140,60,.28)" stroke-width="1"/><text x="615" y="91" fill="#d4c098" font-size="8" font-family="Noto Serif JP" font-weight="700">鮮卑</text><text x="615" y="100" fill="rgba(255,255,255,.25)" font-size="5" font-family="Noto Sans JP">匈奴の後→北魏へ</text></g>
+<g class="nd-svg" data-tip="n-goth"><rect x="670" y="598" width="102" height="20" rx="4" fill="rgba(150,90,150,.10)" stroke="rgba(150,90,150,.28)" stroke-width="1"/><text x="673" y="611" fill="#c8a8c8" font-size="8" font-family="Noto Serif JP" font-weight="700">ゴート族</text><text x="673" y="620" fill="rgba(255,255,255,.25)" font-size="5" font-family="Noto Sans JP">ゲルマン系</text></g>
+<g class="nd-svg" data-tip="n-alan"><rect x="612" y="515" width="174" height="20" rx="4" fill="rgba(100,150,60,.10)" stroke="rgba(100,150,60,.28)" stroke-width="1"/><text x="615" y="528" fill="#a8c890" font-size="8" font-family="Noto Serif JP" font-weight="700">アラン人</text><text x="615" y="537" fill="rgba(255,255,255,.25)" font-size="5" font-family="Noto Sans JP">サルマタイ系</text></g>
+<g class="nd-svg" data-tip="n-sassan"><rect x="684" y="327" width="248" height="20" rx="4" fill="rgba(100,150,60,.10)" stroke="rgba(100,150,60,.28)" stroke-width="1"/><text x="687" y="340" fill="#a8c890" font-size="8" font-family="Noto Serif JP" font-weight="700">ササン朝</text><text x="687" y="349" fill="rgba(255,255,255,.25)" font-size="5" font-family="Noto Sans JP">ゾロアスター教</text></g>
+<g class="nd-svg" data-tip="n-hun"><rect x="769" y="537" width="57" height="103" rx="5" fill="rgba(150,90,150,.10)" stroke="rgba(150,90,150,.28)" stroke-width="1.5"/><text x="773" y="550" fill="#c8a8c8" font-size="7" font-family="Noto Serif JP" font-weight="700">フン族</text></g>
+<g class="nd-svg" data-tip="n-ephtal"><rect x="798" y="161" width="81" height="103" rx="5" fill="rgba(150,90,150,.10)" stroke="rgba(150,90,150,.28)" stroke-width="1.5"/><text x="802" y="174" fill="#c8a8c8" font-size="9" font-family="Noto Serif JP" font-weight="700">エフタル</text><text x="802" y="185" fill="rgba(255,255,255,.3)" font-size="5.5" font-family="Noto Sans JP">「白いフン」</text></g>
+<g class="nd-svg" data-tip="n-rouran"><rect x="745" y="100" width="130" height="20" rx="4" fill="rgba(190,140,60,.10)" stroke="rgba(190,140,60,.28)" stroke-width="1"/><text x="748" y="113" fill="#d4c098" font-size="8" font-family="Noto Serif JP" font-weight="700">柔然</text><text x="748" y="122" fill="rgba(255,255,255,.25)" font-size="5" font-family="Noto Sans JP">→突厥に滅ぼされる</text></g>
+<g class="nd-svg" data-tip="n-wturk"><rect x="874" y="183" width="61" height="103" rx="5" fill="rgba(60,130,190,.10)" stroke="rgba(60,130,190,.28)" stroke-width="1.5"/><text x="878" y="196" fill="#8ac0d4" font-size="9" font-family="Noto Serif JP" font-weight="700">西突厥</text></g>
+<g class="nd-svg" data-tip="n-eturk1"><rect x="874" y="78" width="45" height="20" rx="4" fill="rgba(60,130,190,.10)" stroke="rgba(60,130,190,.28)" stroke-width="1"/><text x="877" y="91" fill="#8ac0d4" font-size="6.5" font-family="Noto Serif JP" font-weight="700">東突厥</text></g>
+<g class="nd-svg" data-tip="n-eturk2"><rect x="950" y="78" width="36" height="20" rx="4" fill="rgba(60,130,190,.10)" stroke="rgba(60,130,190,.28)" stroke-width="1"/><text x="953" y="91" fill="#8ac0d4" font-size="6.5" font-family="Noto Serif JP" font-weight="700">第二突厥</text></g>
+<g class="nd-svg" data-tip="n-arab"><rect x="932" y="327" width="57" height="20" rx="4" fill="rgba(150,130,80,.08)" stroke="rgba(150,130,80,.22)" stroke-width="1"/><text x="935" y="340" fill="#c8c0a0" font-size="8" font-family="Noto Serif JP" font-weight="700">ウマイヤ朝(征服)</text></g>
+<g class="nd-svg" data-tip="n-arab2"><rect x="960" y="244" width="116" height="20" rx="4" fill="rgba(150,130,80,.08)" stroke="rgba(150,130,80,.22)" stroke-width="1"/><text x="963" y="257" fill="#c8c0a0" font-size="8" font-family="Noto Serif JP" font-weight="700">アッバース朝(支配)</text><text x="963" y="266" fill="rgba(255,255,255,.25)" font-size="5" font-family="Noto Sans JP">タラス河畔(751)</text></g>
+<g class="nd-svg" data-tip="n-khazar"><rect x="931" y="493" width="183" height="103" rx="5" fill="rgba(60,130,190,.10)" stroke="rgba(60,130,190,.28)" stroke-width="1.5"/><text x="935" y="506" fill="#8ac0d4" font-size="9" font-family="Noto Serif JP" font-weight="700">ハザール</text><text x="935" y="517" fill="rgba(255,255,255,.3)" font-size="5.5" font-family="Noto Sans JP">ユダヤ教国教</text></g>
+<g class="nd-svg" data-tip="n-turgesh"><rect x="959" y="410" width="39" height="20" rx="4" fill="rgba(60,130,190,.10)" stroke="rgba(60,130,190,.28)" stroke-width="1"/><text x="962" y="423" fill="#8ac0d4" font-size="6.5" font-family="Noto Serif JP" font-weight="700">突騎施</text></g>
+<g class="nd-svg" data-tip="n-uyghur"><rect x="986" y="78" width="56" height="20" rx="4" fill="rgba(60,130,190,.10)" stroke="rgba(60,130,190,.28)" stroke-width="1"/><text x="989" y="91" fill="#8ac0d4" font-size="8" font-family="Noto Serif JP" font-weight="700">ウイグル可汗国</text></g>
+<g class="nd-svg" data-tip="n-karluk"><rect x="998" y="410" width="101" height="20" rx="4" fill="rgba(60,130,190,.10)" stroke="rgba(60,130,190,.28)" stroke-width="1"/><text x="1001" y="423" fill="#8ac0d4" font-size="8" font-family="Noto Serif JP" font-weight="700">カルルク</text><text x="1001" y="432" fill="rgba(255,255,255,.25)" font-size="5" font-family="Noto Sans JP">タラス河畔で重要</text></g>
+<g class="nd-svg" data-tip="n-uyghur_w"><rect x="1041" y="136" width="209" height="20" rx="4" fill="rgba(60,130,190,.10)" stroke="rgba(60,130,190,.28)" stroke-width="1"/><text x="1044" y="149" fill="#8ac0d4" font-size="8" font-family="Noto Serif JP" font-weight="700">天山ウイグル</text><text x="1044" y="158" fill="rgba(255,255,255,.25)" font-size="5" font-family="Noto Sans JP">仏教文化</text></g>
+<g class="nd-svg" data-tip="n-pecheneg"><rect x="1047" y="515" width="140" height="103" rx="5" fill="rgba(60,130,190,.10)" stroke="rgba(60,130,190,.28)" stroke-width="1.5"/><text x="1051" y="528" fill="#8ac0d4" font-size="9" font-family="Noto Serif JP" font-weight="700">ペチェネグ</text></g>
+<g class="nd-svg" data-tip="n-oghuz"><rect x="989" y="432" width="174" height="20" rx="4" fill="rgba(60,130,190,.10)" stroke="rgba(60,130,190,.28)" stroke-width="1"/><text x="992" y="445" fill="#8ac0d4" font-size="8" font-family="Noto Serif JP" font-weight="700">オグズ</text><text x="992" y="454" fill="rgba(255,255,255,.25)" font-size="5" font-family="Noto Sans JP">→セルジュークの母体</text></g>
+<g class="nd-svg" data-tip="n-saman"><rect x="1029" y="266" width="104" height="20" rx="4" fill="rgba(100,150,60,.10)" stroke="rgba(100,150,60,.28)" stroke-width="1"/><text x="1032" y="279" fill="#a8c890" font-size="8" font-family="Noto Serif JP" font-weight="700">サーマーン朝</text><text x="1032" y="288" fill="rgba(255,255,255,.25)" font-size="5" font-family="Noto Sans JP">イラン系。ペルシア文学</text></g>
+<g class="nd-svg" data-tip="n-ghazna"><rect x="1121" y="327" width="121" height="20" rx="4" fill="rgba(60,130,190,.10)" stroke="rgba(60,130,190,.28)" stroke-width="1"/><text x="1124" y="340" fill="#8ac0d4" font-size="8" font-family="Noto Serif JP" font-weight="700">ガズナ朝</text><text x="1124" y="349" fill="rgba(255,255,255,.25)" font-size="5" font-family="Noto Sans JP">テュルク系。インド侵入</text></g>
+<g class="nd-svg" data-tip="n-kipchak"><rect x="1134" y="410" width="139" height="186" rx="5" fill="rgba(60,130,190,.10)" stroke="rgba(60,130,190,.28)" stroke-width="1.5"/><text x="1138" y="423" fill="#8ac0d4" font-size="9" font-family="Noto Serif JP" font-weight="700">キプチャク</text><text x="1138" y="434" fill="rgba(255,255,255,.3)" font-size="5.5" font-family="Noto Sans JP">「キプチャク草原」</text></g>
+<g class="nd-svg" data-tip="n-seljuk"><rect x="1156" y="349" width="90" height="20" rx="4" fill="rgba(60,130,190,.10)" stroke="rgba(60,130,190,.28)" stroke-width="1"/><text x="1159" y="362" fill="#8ac0d4" font-size="8" font-family="Noto Serif JP" font-weight="700">セルジューク朝</text><text x="1159" y="371" fill="rgba(255,255,255,.25)" font-size="5" font-family="Noto Sans JP">マンジケルト(1071)</text></g>
+<g class="nd-svg" data-tip="n-karakhan"><rect x="1099" y="244" width="158" height="20" rx="4" fill="rgba(60,130,190,.10)" stroke="rgba(60,130,190,.28)" stroke-width="1"/><text x="1102" y="257" fill="#8ac0d4" font-size="8" font-family="Noto Serif JP" font-weight="700">カラハン朝</text><text x="1102" y="266" fill="rgba(255,255,255,.25)" font-size="5" font-family="Noto Sans JP">初テュルク系イスラーム</text></g>
+<g class="nd-svg" data-tip="n-khitan"><rect x="1080" y="78" width="126" height="20" rx="4" fill="rgba(190,140,60,.10)" stroke="rgba(190,140,60,.28)" stroke-width="1"/><text x="1083" y="91" fill="#d4c098" font-size="8" font-family="Noto Serif JP" font-weight="700">契丹(遼)</text><text x="1083" y="100" fill="rgba(255,255,255,.25)" font-size="5" font-family="Noto Sans JP">澶淵の盟(1004)</text></g>
+<g class="nd-svg" data-tip="n-jin"><rect x="1201" y="100" width="69" height="20" rx="4" fill="rgba(170,100,170,.08)" stroke="rgba(170,100,170,.22)" stroke-width="1"/><text x="1204" y="113" fill="#d4b8d4" font-size="8" font-family="Noto Serif JP" font-weight="700">女真(金)</text></g>
+<g class="nd-svg" data-tip="n-khwarezm"><rect x="1179" y="266" width="89" height="103" rx="5" fill="rgba(60,130,190,.10)" stroke="rgba(60,130,190,.28)" stroke-width="1.5"/><text x="1183" y="279" fill="#8ac0d4" font-size="9" font-family="Noto Serif JP" font-weight="700">ホラズム＝シャー朝</text><text x="1183" y="290" fill="rgba(255,255,255,.3)" font-size="5.5" font-family="Noto Sans JP">モンゴル侵攻の引き金</text></g>
+<g class="nd-svg" data-tip="n-karakhi"><rect x="1206" y="183" width="55" height="103" rx="5" fill="rgba(190,140,60,.10)" stroke="rgba(190,140,60,.28)" stroke-width="1.5"/><text x="1210" y="196" fill="#d4c098" font-size="7" font-family="Noto Serif JP" font-weight="700">カラ＝キタイ(西遼)</text></g>
+<g class="nd-svg" data-tip="n-yuan"><rect x="1253" y="78" width="94" height="20" rx="4" fill="rgba(190,140,60,.10)" stroke="rgba(190,140,60,.28)" stroke-width="1"/><text x="1256" y="91" fill="#d4c098" font-size="8" font-family="Noto Serif JP" font-weight="700">モンゴル帝国→元</text><text x="1256" y="100" fill="rgba(255,255,255,.25)" font-size="5" font-family="Noto Sans JP">チンギス→フビライ</text></g>
+<g class="nd-svg" data-tip="n-golden"><rect x="1273" y="493" width="152" height="103" rx="5" fill="rgba(190,140,60,.10)" stroke="rgba(190,140,60,.28)" stroke-width="1.5"/><text x="1277" y="506" fill="#d4c098" font-size="9" font-family="Noto Serif JP" font-weight="700">キプチャク＝ハン国</text><text x="1277" y="517" fill="rgba(255,255,255,.3)" font-size="5.5" font-family="Noto Sans JP">「タタールのくびき」</text></g>
+<g class="nd-svg" data-tip="n-chaga"><rect x="1266" y="161" width="83" height="20" rx="4" fill="rgba(190,140,60,.10)" stroke="rgba(190,140,60,.28)" stroke-width="1"/><text x="1269" y="174" fill="#d4c098" font-size="8" font-family="Noto Serif JP" font-weight="700">チャガタイ＝ハン国</text><text x="1269" y="183" fill="rgba(255,255,255,.25)" font-size="5" font-family="Noto Sans JP">→東西分裂</text></g>
+<g class="nd-svg" data-tip="n-chaga"><rect x="1266" y="244" width="83" height="20" rx="4" fill="rgba(190,140,60,.10)" stroke="rgba(190,140,60,.28)" stroke-width="1"/><text x="1269" y="257" fill="#d4c098" font-size="8" font-family="Noto Serif JP" font-weight="700">チャガタイ＝ハン国</text><text x="1269" y="266" fill="rgba(255,255,255,.25)" font-size="5" font-family="Noto Sans JP">→東西分裂</text></g>
+<g class="nd-svg" data-tip="n-chaga"><rect x="1266" y="432" width="83" height="20" rx="4" fill="rgba(190,140,60,.10)" stroke="rgba(190,140,60,.28)" stroke-width="1"/><text x="1269" y="445" fill="#d4c098" font-size="8" font-family="Noto Serif JP" font-weight="700">チャガタイ＝ハン国</text><text x="1269" y="454" fill="rgba(255,255,255,.25)" font-size="5" font-family="Noto Sans JP">→東西分裂</text></g>
+<g class="nd-svg" data-tip="n-ilkhan"><rect x="1284" y="327" width="45" height="20" rx="4" fill="rgba(190,140,60,.10)" stroke="rgba(190,140,60,.28)" stroke-width="1"/><text x="1287" y="340" fill="#d4c098" font-size="6.5" font-family="Noto Serif JP" font-weight="700">イル＝ハン国</text></g>
+<g class="nd-svg" data-tip="n-timur"><rect x="1349" y="244" width="79" height="103" rx="5" fill="rgba(60,130,190,.10)" stroke="rgba(60,130,190,.28)" stroke-width="1.5"/><text x="1353" y="257" fill="#8ac0d4" font-size="9" font-family="Noto Serif JP" font-weight="700">ティムール朝</text></g>
+<g class="nd-svg" data-tip="n-crimea"><rect x="1390" y="598" width="198" height="20" rx="4" fill="rgba(60,130,190,.10)" stroke="rgba(60,130,190,.28)" stroke-width="1"/><text x="1393" y="611" fill="#8ac0d4" font-size="8" font-family="Noto Serif JP" font-weight="700">クリミア＝ハン国</text><text x="1393" y="620" fill="rgba(255,255,255,.25)" font-size="5" font-family="Noto Sans JP">オスマンの属国</text></g>
+<g class="nd-svg" data-tip="n-kazakh"><rect x="1404" y="410" width="154" height="20" rx="4" fill="rgba(60,130,190,.10)" stroke="rgba(60,130,190,.28)" stroke-width="1"/><text x="1407" y="423" fill="#8ac0d4" font-size="8" font-family="Noto Serif JP" font-weight="700">カザフ＝ハン国</text><text x="1407" y="432" fill="rgba(255,255,255,.25)" font-size="5" font-family="Noto Sans JP">大中小ジュズ</text></g>
+<g class="nd-svg" data-tip="n-dzungar"><rect x="1366" y="78" width="208" height="103" rx="5" fill="rgba(190,140,60,.10)" stroke="rgba(190,140,60,.28)" stroke-width="1.5"/><text x="1370" y="91" fill="#d4c098" font-size="9" font-family="Noto Serif JP" font-weight="700">オイラト→ジュンガル</text><text x="1370" y="102" fill="rgba(255,255,255,.3)" font-size="5.5" font-family="Noto Sans JP">最後の遊牧帝国</text></g>
+<g class="nd-svg" data-tip="n-khiva"><rect x="1424" y="266" width="216" height="20" rx="4" fill="rgba(60,130,190,.10)" stroke="rgba(60,130,190,.28)" stroke-width="1"/><text x="1427" y="279" fill="#8ac0d4" font-size="8" font-family="Noto Serif JP" font-weight="700">ヒヴァ＝ハン国</text><text x="1427" y="288" fill="rgba(255,255,255,.25)" font-size="5" font-family="Noto Sans JP">→露の保護国(1873)</text></g>
+<g class="nd-svg" data-tip="n-bukhara"><rect x="1424" y="288" width="213" height="20" rx="4" fill="rgba(60,130,190,.10)" stroke="rgba(60,130,190,.28)" stroke-width="1"/><text x="1427" y="301" fill="#8ac0d4" font-size="8" font-family="Noto Serif JP" font-weight="700">ブハラ＝ハン国</text><text x="1427" y="310" fill="rgba(255,255,255,.25)" font-size="5" font-family="Noto Sans JP">→露の保護国(1868)</text></g>
+<g class="nd-svg" data-tip="n-kokand"><rect x="1545" y="244" width="97" height="20" rx="4" fill="rgba(60,130,190,.10)" stroke="rgba(60,130,190,.28)" stroke-width="1"/><text x="1548" y="257" fill="#8ac0d4" font-size="8" font-family="Noto Serif JP" font-weight="700">コーカンド＝ハン国</text><text x="1548" y="266" fill="rgba(255,255,255,.25)" font-size="5" font-family="Noto Sans JP">→露が併合(1876)</text></g>
+<g class="nd-svg" data-tip="n-safavid"><rect x="1425" y="349" width="136" height="20" rx="4" fill="rgba(60,130,190,.10)" stroke="rgba(60,130,190,.28)" stroke-width="1"/><text x="1428" y="362" fill="#8ac0d4" font-size="8" font-family="Noto Serif JP" font-weight="700">サファヴィー朝</text><text x="1428" y="371" fill="rgba(255,255,255,.25)" font-size="5" font-family="Noto Sans JP">シーア派国教化</text></g>
+<g class="nd-svg" data-tip="n-golden2"><rect x="1349" y="515" width="108" height="20" rx="4" fill="rgba(190,140,60,.10)" stroke="rgba(190,140,60,.28)" stroke-width="1"/><text x="1352" y="528" fill="#d4c098" font-size="8" font-family="Noto Serif JP" font-weight="700">キプチャク分裂</text><text x="1352" y="537" fill="rgba(255,255,255,.25)" font-size="5" font-family="Noto Sans JP">カザン・アストラハン等</text></g>
+<g class="nd-svg" data-tip="n-moghul"><rect x="1331" y="183" width="197" height="20" rx="4" fill="rgba(190,140,60,.10)" stroke="rgba(190,140,60,.28)" stroke-width="1"/><text x="1334" y="196" fill="#d4c098" font-size="8" font-family="Noto Serif JP" font-weight="700">モグーリスタン</text><text x="1334" y="205" fill="rgba(255,255,255,.25)" font-size="5" font-family="Noto Sans JP">東チャガタイ</text></g>
+<g class="nd-svg" data-tip="n-rus_south"><rect x="1454" y="493" width="202" height="20" rx="4" fill="rgba(190,70,70,.08)" stroke="rgba(190,70,70,.22)" stroke-width="1"/><text x="1457" y="506" fill="#d4a0a0" font-size="8" font-family="Noto Serif JP" font-weight="700">ロシアが征服</text><text x="1457" y="515" fill="rgba(255,255,255,.25)" font-size="5" font-family="Noto Sans JP">カザン(1552)→</text></g>
+<g class="nd-svg" data-tip="n-rus_crimea"><rect x="1588" y="576" width="68" height="20" rx="4" fill="rgba(190,70,70,.08)" stroke="rgba(190,70,70,.22)" stroke-width="1"/><text x="1591" y="589" fill="#d4a0a0" font-size="8" font-family="Noto Serif JP" font-weight="700">ロシアが併合</text></g>
+<g class="nd-svg" data-tip="n-rus_kazakh"><rect x="1558" y="410" width="98" height="20" rx="4" fill="rgba(190,70,70,.08)" stroke="rgba(190,70,70,.22)" stroke-width="1"/><text x="1561" y="423" fill="#d4a0a0" font-size="8" font-family="Noto Serif JP" font-weight="700">ロシアが征服</text><text x="1561" y="432" fill="rgba(255,255,255,.25)" font-size="5" font-family="Noto Sans JP">カザフ草原</text></g>
+<g class="nd-svg" data-tip="n-rus_turk"><rect x="1637" y="244" width="23" height="64" rx="4" fill="rgba(190,70,70,.08)" stroke="rgba(190,70,70,.22)" stroke-width="1"/><text x="1640" y="270" fill="#d4a0a0" font-size="6.5" font-family="Noto Serif JP" font-weight="700">露</text><text x="1640" y="282" fill="#d4a0a0" font-size="5.5" font-family="Noto Sans JP">征服</text></g>
+<g class="nd-svg" data-tip="n-qing_xinj"><rect x="1574" y="161" width="82" height="20" rx="4" fill="rgba(190,70,70,.08)" stroke="rgba(190,70,70,.22)" stroke-width="1"/><text x="1577" y="174" fill="#d4a0a0" font-size="8" font-family="Noto Serif JP" font-weight="700">清→「新疆」</text><text x="1577" y="183" fill="rgba(255,255,255,.25)" font-size="5" font-family="Noto Sans JP">ジュンガル壊滅(1758)</text></g>
+<g class="nd-svg" data-tip="n-qing_mong"><rect x="1535" y="100" width="121" height="20" rx="4" fill="rgba(190,70,70,.08)" stroke="rgba(190,70,70,.22)" stroke-width="1"/><text x="1538" y="113" fill="#d4a0a0" font-size="8" font-family="Noto Serif JP" font-weight="700">清の支配</text><text x="1538" y="122" fill="rgba(255,255,255,.25)" font-size="5" font-family="Noto Sans JP">外藩モンゴル</text></g>
+<g class="nd-svg" data-tip="n-qajar"><rect x="1561" y="327" width="95" height="20" rx="4" fill="rgba(60,130,190,.10)" stroke="rgba(60,130,190,.28)" stroke-width="1"/><text x="1564" y="340" fill="#8ac0d4" font-size="8" font-family="Noto Serif JP" font-weight="700">アフシャール→ガージャール</text><text x="1564" y="349" fill="rgba(255,255,255,.25)" font-size="5" font-family="Noto Sans JP">英露に圧迫</text></g>
+<rect x="0" y="659" width="1696" height="28" fill="rgba(194,74,74,.015)"/>
+<text x="4" y="673" fill="rgba(194,74,74,.4)" font-size="7" font-family="Noto Sans JP">中国王朝</text>
+<rect x="435" y="663" width="247" height="18" rx="3" fill="rgba(194,74,74,.05)" stroke="rgba(194,74,74,.12)"/>
+<text x="558" y="675" text-anchor="middle" fill="rgba(194,74,74,.5)" font-size="7" font-family="Noto Serif JP" font-weight="600">漢</text>
+<rect x="682" y="663" width="214" height="18" rx="3" fill="rgba(194,74,74,.05)" stroke="rgba(194,74,74,.12)"/>
+<text x="789" y="675" text-anchor="middle" fill="rgba(194,74,74,.5)" font-size="7" font-family="Noto Serif JP" font-weight="600">魏晋南北朝</text>
+<rect x="896" y="663" width="17" height="18" rx="3" fill="rgba(194,74,74,.05)" stroke="rgba(194,74,74,.12)"/>
+<rect x="912" y="663" width="168" height="18" rx="3" fill="rgba(194,74,74,.05)" stroke="rgba(194,74,74,.12)"/>
+<text x="996" y="675" text-anchor="middle" fill="rgba(194,74,74,.5)" font-size="7" font-family="Noto Serif JP" font-weight="600">唐</text>
+<rect x="1080" y="663" width="31" height="18" rx="3" fill="rgba(194,74,74,.05)" stroke="rgba(194,74,74,.12)"/>
+<text x="1095" y="675" text-anchor="middle" fill="rgba(194,74,74,.5)" font-size="7" font-family="Noto Serif JP" font-weight="600">五代</text>
+<rect x="1111" y="663" width="185" height="18" rx="3" fill="rgba(194,74,74,.05)" stroke="rgba(194,74,74,.12)"/>
+<text x="1203" y="675" text-anchor="middle" fill="rgba(194,74,74,.5)" font-size="7" font-family="Noto Serif JP" font-weight="600">宋</text>
+<rect x="1291" y="663" width="56" height="18" rx="3" fill="rgba(194,74,74,.05)" stroke="rgba(194,74,74,.12)"/>
+<text x="1319" y="675" text-anchor="middle" fill="rgba(194,74,74,.5)" font-size="7" font-family="Noto Serif JP" font-weight="600">元</text>
+<rect x="1347" y="663" width="160" height="18" rx="3" fill="rgba(194,74,74,.05)" stroke="rgba(194,74,74,.12)"/>
+<text x="1427" y="675" text-anchor="middle" fill="rgba(194,74,74,.5)" font-size="7" font-family="Noto Serif JP" font-weight="600">明</text>
+<rect x="1508" y="663" width="155" height="18" rx="3" fill="rgba(194,74,74,.05)" stroke="rgba(194,74,74,.12)"/>
+<text x="1585" y="675" text-anchor="middle" fill="rgba(194,74,74,.5)" font-size="7" font-family="Noto Serif JP" font-weight="600">清</text>
+</svg></div>
+<div class="tp" id="tip-n-quanrong"><p><strong>犬戎</strong>(BC10C-BC7C頃) ― 中国西方（甘粛〜陝西）の遊牧系民族。<strong>BC771年に西周の都・鎬京を攻撃→幽王が殺され西周が滅亡→東周（春秋時代）の始まり</strong>。中国史における「遊牧民の脅威」の原型的存在。のち秦の西方進出で吸収・消滅。</p></div>
+<div class="tp" id="tip-n-scythia"><p><strong>スキタイ</strong>(BC7C-BC3C) ― 黒海北岸〜南ロシアのイラン系遊牧民。騎馬遊牧文化の原型。ヘロドトスが記録。黄金の動物文様。ダレイオスの遠征を撃退。BC3Cにサルマタイに駆逐。</p></div>
+<div class="tp" id="tip-n-donghu"><p><strong>東胡</strong> ― モンゴル高原東部。匈奴の冒頓単于に滅ぼされる(BC209)→残党が鮮卑・烏桓に分裂。</p></div>
+<div class="tp" id="tip-n-sarmatia"><p><strong>サルマタイ</strong>(BC3C-AD4C) ― イラン系。スキタイを駆逐し黒海〜南ロシアを支配。重装騎兵。フン族の西進で崩壊。一部がアラン人として残存。</p></div>
+<div class="tp" id="tip-n-xiongnu"><p><strong>匈奴</strong>(BC3C-AD1C) ― 冒頓単于がBC209にモンゴル高原を統一。漢の高祖を白登山で包囲→和親策。武帝の反撃→南北に分裂。</p></div>
+<div class="tp" id="tip-n-xiongnu_s"><p><strong>南匈奴</strong> ― BC50頃分裂。漢に帰順→辺境防衛に従事。<strong>北匈奴は西遷</strong>→4Cにフン族としてヨーロッパに出現した説あり。</p></div>
+<div class="tp" id="tip-n-parthia"><p><strong>パルティア（安息）</strong>(BC247-AD224) ― イラン系。ローマと対峙（カルラエBC53でクラッススを壊滅）。シルクロード中継貿易。ササン朝に滅ぼされる。</p></div>
+<div class="tp" id="tip-n-yuezhi_east"><p><strong>月氏（原住地）</strong> ― 甘粛〜東トルキスタンの遊牧民。<strong>匈奴の冒頓単于に大敗→大部分が西へ移動（大月氏）</strong>。残った一部は小月氏。漢の張騫が同盟を求め西域に派遣される契機。</p></div>
+<div class="tp" id="tip-n-yuezhi"><p><strong>大月氏</strong> ― 匈奴に追われ西遷→バクトリアに定着→<strong>クシャーナ朝</strong>(1C-3C)を建国。カニシカ王の仏教保護→ガンダーラ美術。</p></div>
+<div class="tp" id="tip-n-kushan"><p><strong>クシャーナ朝</strong>(1C-3C) ― 大月氏の後裔。カニシカ王が仏教を保護→ガンダーラ美術の全盛期。ササン朝に圧迫されて衰退。</p></div>
+<div class="tp" id="tip-n-wusun"><p><strong>烏孫</strong> ― 天山〜イリ河谷。漢の張騫が同盟を求めて訪問→匈奴を挟撃。</p></div>
+<div class="tp" id="tip-n-xianbei"><p><strong>鮮卑</strong>(1C-4C) ― 東胡の後裔。匈奴衰退後にモンゴル高原を支配。拓跋部が<strong>北魏</strong>(386-534)→孝文帝の漢化政策。</p></div>
+<div class="tp" id="tip-n-goth"><p><strong>ゴート族</strong> ― ゲルマン系。フン族の圧迫→ゲルマン民族大移動(375)の引き金。</p></div>
+<div class="tp" id="tip-n-alan"><p><strong>アラン人</strong> ― サルマタイ系イラン人。フン族に征服される。カフカスのオセット人が末裔。</p></div>
+<div class="tp" id="tip-n-sassan"><p><strong>ササン朝</strong>(224-651) ― イラン系定住帝国。ゾロアスター教国教。ローマ/ビザンツと対峙。突厥と連合しエフタルを滅ぼす。イスラーム征服で滅亡(651)。</p></div>
+<div class="tp" id="tip-n-hun"><p><strong>フン族</strong>(4C-5C) ― <strong>アッティラ</strong>(434-453)。ゲルマン民族大移動の引き金(375)。カタラウヌム(451)で阻止。アッティラ死後に崩壊。</p></div>
+<div class="tp" id="tip-n-ephtal"><p><strong>エフタル</strong>(5C-6C) ― 「白いフン」。中央アジア〜北インドを支配。<strong>突厥＋ササン朝の挟撃で滅亡</strong>(560頃)。</p></div>
+<div class="tp" id="tip-n-rouran"><p><strong>柔然</strong>(4C-6C) ― モンゴル高原を支配。<strong>突厥に滅ぼされる(552)</strong>。残党がアヴァールとしてヨーロッパへ移住した説あり。</p></div>
+<div class="tp" id="tip-n-wturk"><p><strong>西突厥</strong> ― 東トルキスタン〜カザフ草原を支配。ソグド人との共生→シルクロード交易の促進。唐に滅ぼされる(657)。</p></div>
+<div class="tp" id="tip-n-eturk1"><p><strong>東突厥</strong>(552-630) ― 唐の太宗に服属(630)→羈縻政策で管理。</p></div>
+<div class="tp" id="tip-n-eturk2"><p><strong>第二突厥</strong>(682-744) ― <strong>オルホン碑文</strong>＝テュルク系最古の文字記録。ウイグルに滅ぼされる(744)。</p></div>
+<div class="tp" id="tip-n-arab"><p><strong>ウマイヤ朝のイスラーム征服</strong> ― ササン朝を滅ぼし(651)イラン高原を征服→イスラーム化。</p></div>
+<div class="tp" id="tip-n-arab2"><p><strong>アッバース朝</strong> ― <strong>タラス河畔(751)</strong>でアッバース朝が唐を破る→中央アジアのイスラーム化確定。製紙法の西伝。</p></div>
+<div class="tp" id="tip-n-khazar"><p><strong>ハザール</strong>(7C-10C) ― テュルク系。<strong>ユダヤ教を国教に採用</strong>。ビザンツ・アッバース朝と並立。キエフ＝ルーシに滅ぼされる。</p></div>
+<div class="tp" id="tip-n-turgesh"><p><strong>突騎施</strong>(699-766) ― 西突厥の後継。アラブの征服に抵抗。カルルクに取って代わられる。</p></div>
+<div class="tp" id="tip-n-uyghur"><p><strong>ウイグル可汗国</strong>(744-840) ― マニ教国教。安史の乱(755)で唐を援助。840年にキルギスに滅ぼされ西遷。</p></div>
+<div class="tp" id="tip-n-karluk"><p><strong>カルルク</strong> ― タラス河畔(751)でアッバース側について唐軍を破る。カラハン朝の母体。</p></div>
+<div class="tp" id="tip-n-uyghur_w"><p><strong>天山ウイグル</strong> ― 840年に西遷後、天山方面に定着。仏教・マニ教文化。モンゴル帝国に帰順→ウイグル文字がモンゴル文字の基に。</p></div>
+<div class="tp" id="tip-n-pecheneg"><p><strong>ペチェネグ</strong>(9C-11C) ― テュルク系。ハザールやキエフ＝ルーシと対立。1091年にビザンツ＋クマンに壊滅。</p></div>
+<div class="tp" id="tip-n-oghuz"><p><strong>オグズ</strong> ― テュルク系遊牧民連合。イスラーム化しセルジューク朝の母体に。</p></div>
+<div class="tp" id="tip-n-saman"><p><strong>サーマーン朝</strong>(819-999) ― イラン系イスラーム王朝。ペルシア文学復興。テュルク系奴隷軍人を多用→ガズナ朝・カラハン朝に。</p></div>
+<div class="tp" id="tip-n-ghazna"><p><strong>ガズナ朝</strong>(977-1186) ― テュルク系。<strong>マフムード</strong>がインドに17回遠征→北インドのイスラーム化の先駆。フィルダウスィー『シャー＝ナーメ』。</p></div>
+<div class="tp" id="tip-n-kipchak"><p><strong>キプチャク（クマン）</strong>(11C-13C) ― テュルク系。「キプチャク草原」。モンゴルに征服→キプチャク＝ハン国の基盤に。マムルーク兵にも多い。</p></div>
+<div class="tp" id="tip-n-seljuk"><p><strong>セルジューク朝</strong>(1038-1194) ― <strong>マンジケルト(1071)</strong>でビザンツを破る→十字軍の引き金。スルタンの称号。</p></div>
+<div class="tp" id="tip-n-karakhan"><p><strong>カラハン朝</strong>(940-1212) ― <strong>最初のテュルク系イスラーム王朝</strong>。テュルク語文学。</p></div>
+<div class="tp" id="tip-n-khitan"><p><strong>契丹（遼）</strong>(907-1125) ― モンゴル系。澶淵の盟(1004)で宋と対等。金に滅ぼされる→残党がカラ＝キタイに。</p></div>
+<div class="tp" id="tip-n-jin"><p><strong>女真（金）</strong>(1115-1234) ― ツングース系。遼を滅ぼし<strong>靖康の変(1126)</strong>で北宋を滅亡。モンゴルに滅ぼされる。後の清（後金）の祖。</p></div>
+<div class="tp" id="tip-n-khwarezm"><p><strong>ホラズム＝シャー朝</strong>(1077-1231) ― テュルク系。<strong>モンゴル使節を殺害→チンギスの西征(1219)の直接の引き金</strong>。</p></div>
+<div class="tp" id="tip-n-karakhi"><p><strong>カラ＝キタイ（西遼）</strong>(1124-1218) ― 契丹の残党・耶律大石が中央アジアに建国。仏教徒がイスラーム圏を支配する異例。</p></div>
+<div class="tp" id="tip-n-yuan"><p><strong>モンゴル帝国→元</strong> ― チンギス(1206統一)→フビライ(大都→元朝)。13Cにユーラシア大半を征服→「パクス＝モンゴリカ」。駅伝制(ジャムチ)。</p></div>
+<div class="tp" id="tip-n-golden"><p><strong>キプチャク＝ハン国</strong>(1243-1502) ― バトゥの西征で建国。<strong>「タタールのくびき」</strong>約240年。ティムールに敗北→分裂。</p></div>
+<div class="tp" id="tip-n-chaga"><p><strong>チャガタイ＝ハン国</strong> ― 中央アジア〜カザフ草原。14Cに東西分裂→西はティムールに、東はモグーリスタンに。</p></div>
+<div class="tp" id="tip-n-ilkhan"><p><strong>イル＝ハン国</strong>(1258-1335) ― フラグ。<strong>アッバース朝を滅ぼす(1258)</strong>。ガザン＝ハンがイスラームに改宗。</p></div>
+<div class="tp" id="tip-n-timur"><p><strong>ティムール朝</strong>(1370-1507) ― サマルカンド。アンカラ(1402)でオスマンを破る。ウルグ＝ベク天文台。子孫バーブルがムガル帝国を建国。</p></div>
+<div class="tp" id="tip-n-crimea"><p><strong>クリミア＝ハン国</strong>(1441-1783) ― オスマンの属国。1783年にエカチェリーナ2世が併合。</p></div>
+<div class="tp" id="tip-n-kazakh"><p><strong>カザフ＝ハン国</strong>(15C-18C) ― 大中小の3ジュズ。ジュンガルの脅威→ロシアの保護→段階的に征服。</p></div>
+<div class="tp" id="tip-n-dzungar"><p><strong>ジュンガル</strong>(17C-1758) ― <strong>最後の遊牧帝国</strong>。清の3代（康熙・雍正・乾隆）にわたる遠征で<strong>1758年に壊滅→「新疆」に</strong>。</p></div>
+
+<div class="tp" id="tip-n-safavid"><p><strong>サファヴィー朝</strong>(1501-1736) ― シーア派国教化→現在のイランの宗教的基盤。スンナ派オスマンと対立。</p></div>
+<div class="tp" id="tip-n-golden2"><p><strong>キプチャク分裂</strong> ― カザン・アストラハン・クリミア・シビル等のハン国に分裂→モスクワ大公国の台頭を許す。</p></div>
+<div class="tp" id="tip-n-moghul"><p><strong>モグーリスタン</strong> ― 東チャガタイの後身。イスラーム化進行。</p></div>
+<div class="tp" id="tip-n-rus_south"><p><strong>ロシアの征服</strong> ― イヴァン4世がカザン(1552)・アストラハン(1556)征服→シベリアへ拡大。</p></div>
+<div class="tp" id="tip-n-rus_crimea"><p><strong>クリミア併合(1783)</strong> ― エカチェリーナ2世。黒海北岸から遊牧民支配が消える。</p></div>
+<div class="tp" id="tip-n-rus_kazakh"><p><strong>カザフ草原の征服</strong> ― 小ジュズ(1731)→段階的にロシアに編入。</p></div>
+<div class="tp" id="tip-n-rus_turk"><p><strong>ロシアの中央アジア征服</strong>(1860s-80s) ― コーカンド併合(1876)、ブハラ・ヒヴァを保護国化。</p></div>
+<div class="tp" id="tip-n-qing_xinj"><p><strong>清のジュンガル征服(1758)</strong> ― 乾隆帝。ジュンガルを壊滅→<strong>「新疆」として編入</strong>。遊牧帝国の最後の消滅。</p></div>
+<div class="tp" id="tip-n-qing_mong"><p><strong>清のモンゴル支配</strong> ― ドロンノール会盟(1691)でハルハが帰順→外藩モンゴルとして理藩院が管理。</p></div>
+<div class="tp" id="tip-n-qajar"><p><strong>ガージャール朝</strong>(1796-1925) ― テュルク系。英露に圧迫。トルコマンチャーイ条約(1828)でカフカスをロシアに割譲。</p></div>
+
+
+<div class="tp" id="tip-n-khiva"><p><strong>ヒヴァ＝ハン国</strong>(1511-1873) ― アムダリヤ下流のホラズム地方。ウズベク系。1873年にロシアの保護国に。</p></div>
+<div class="tp" id="tip-n-bukhara"><p><strong>ブハラ＝ハン国</strong>(1500-1868) ― サマルカンド〜ブハラ。ティムール朝を倒したウズベク系シャイバーニー朝が起源。1868年にロシアの保護国に。ブハラはイスラーム学問の中心地。</p></div>
+<div class="tp" id="tip-n-kokand"><p><strong>コーカンド＝ハン国</strong>(1709-1876) ― フェルガナ盆地。ウズベク系。3ハン国で最も遅く成立。1876年にロシアが直接併合→<strong>「グレートゲーム」</strong>（英露の中央アジア争奪）の舞台。</p></div>
+
+<div class="note"><p>
+<strong>入試ポイント：</strong><br>
+❶ <strong>犬戎(BC771)</strong>が西周を滅ぼす→東周（春秋時代）の始まり<br>
+❷ <strong>匈奴</strong>（冒頓単于・漢との関係）と<strong>突厥</strong>（東西分裂・唐との関係）はモンゴル高原の二大遊牧帝国<br>
+❸ <strong>月氏の西遷→クシャーナ朝</strong>＝匈奴に追われた玉突き的移動→ガンダーラ美術・仏教伝播<br>
+❹ <strong>フン族とゲルマン民族大移動(375)</strong>＝草原の遊牧民の動きが西ローマ帝国崩壊の引き金<br>
+❺ <strong>ホラズム＝シャー朝</strong>のモンゴル使節殺害→チンギスの西征(1219)の直接の引き金<br>
+❻ <strong>モンゴル帝国(13C)</strong>＝ユーラシアの大半を支配→4ハン国に分裂<br>
+❼ <strong>ジュンガル(17C-1758)</strong>＝最後の遊牧帝国。清に壊滅→「新疆」<br>
+❽ <strong>遊牧世界の終焉</strong>＝18-19Cにロシア（西から）と清（東から）が草原を征服
+</p></div>
+
+<div id="tooltip-overlay" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;z-index:8000" onclick="closeTip()"></div>
+<div id="tooltip-box" style="display:none;position:fixed;z-index:9000;background:rgba(12,15,22,.97);border:1px solid rgba(201,169,110,.25);border-radius:8px;padding:12px 16px;max-width:320px;width:calc(100vw - 32px);box-shadow:0 8px 30px rgba(0,0,0,.6)">
+<div id="tooltip-content" style="font-size:10px;color:#8a857d;line-height:1.7"></div></div>
+<script>
+(function(){var ov=document.getElementById("tooltip-overlay"),bx=document.getElementById("tooltip-box"),ct=document.getElementById("tooltip-content");window.closeTip=function(){bx.style.display="none";ov.style.display="none"};function openTip(el){var tipId=el.getAttribute("data-tip");var tipEl=tipId?document.getElementById("tip-"+tipId):null;if(!tipEl)return;closeTip();ct.innerHTML=tipEl.innerHTML;ov.style.display="block";bx.style.display="block";var r=el.getBoundingClientRect(),w=Math.min(320,window.innerWidth-32);bx.style.width=w+"px";var l=r.left+r.width/2-w/2;if(l<16)l=16;if(l+w>window.innerWidth-16)l=window.innerWidth-16-w;bx.style.left=l+"px";bx.style.top=(r.bottom+8)+"px";bx.style.bottom="auto";var br=bx.getBoundingClientRect();if(br.bottom>window.innerHeight-16){var t=r.top-br.height-8;if(t<16)t=16;bx.style.top=t+"px"}}var tm=false,tt=null;document.addEventListener("touchstart",function(e){tm=false;tt=e.target},{passive:true});document.addEventListener("touchmove",function(){tm=true},{passive:true});document.addEventListener("touchend",function(e){if(tm)return;var nd=tt?tt.closest(".nd-svg"):null;if(nd){e.preventDefault();openTip(nd)}else if(!tt||!tt.closest("#tooltip-box"))closeTip();tt=null});document.addEventListener("click",function(e){if("ontouchstart"in window)return;var nd=e.target.closest(".nd-svg");if(nd)openTip(nd);else if(!e.target.closest("#tooltip-box"))closeTip()})}
+)();
+</script></body></html>

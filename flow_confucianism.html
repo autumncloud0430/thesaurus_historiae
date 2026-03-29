@@ -1,0 +1,81 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>儒教の歴史</title><style>@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048;--border:rgba(201,169,110,.08)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+.hdr{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.hdr h1{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2)}
+.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
+.flow{max-width:720px;margin:0 auto;padding:24px 20px 60px}
+.phase{position:relative;margin-bottom:2px;padding:16px 16px 16px 60px;border-left:2px solid rgba(201,169,110,.08);margin-left:30px}
+.phase:last-child{border-left-color:transparent}
+.phase-label{position:absolute;left:-42px;top:16px;width:36px;font-family:'Cormorant Garamond',serif;font-size:10px;font-weight:700;color:var(--text3);text-align:right;line-height:1.3}
+.phase::before{content:'';position:absolute;left:-5px;top:22px;width:8px;height:8px;border-radius:50%;background:var(--bg);border:2px solid rgba(201,169,110,.25)}
+.node{background:rgba(255,255,255,.015);border:1px solid rgba(255,255,255,.04);border-radius:8px;padding:10px 14px;margin-bottom:8px;border-left:3px solid transparent}
+.node:hover{background:rgba(255,255,255,.03)}
+.node-title{font-family:'Noto Serif JP',serif;font-size:12px;font-weight:700;color:var(--gold2);margin-bottom:2px}
+.node-year{font-family:'Cormorant Garamond',serif;font-size:11px;color:var(--gold);opacity:.6;margin-bottom:4px}
+.node-desc{font-size:10px;color:var(--text2);line-height:1.7}
+.node-desc strong{color:var(--text);font-weight:600}
+.arrow{display:flex;align-items:center;gap:6px;padding:2px 0 2px 8px;margin-bottom:6px}
+.arrow-line{width:16px;height:1px;background:rgba(201,169,110,.15)}
+.arrow-text{font-size:8px;color:var(--text3)}
+.arrow-icon{color:rgba(201,169,110,.3);font-size:10px}
+.branch-row{display:flex;gap:8px;margin-bottom:8px}
+.branch-row .node{flex:1}
+.node.key{background:rgba(201,169,110,.04);border-color:rgba(201,169,110,.12)}
+.side-note{font-size:8px;color:var(--text3);padding:4px 8px;border-left:2px solid rgba(201,169,110,.1);margin:4px 0 8px;line-height:1.6}
+.note{text-align:center;padding:8px 20px 32px;max-width:700px;margin:0 auto}.note p{font-size:9px;color:var(--text3);line-height:1.8}.note strong{color:var(--gold)}
+
+.p1 .node{border-left-color:rgba(180,140,60,.3)}.p1::before{border-color:rgba(180,140,60,.5);background:rgba(180,140,60,.15)}.p2 .node{border-left-color:rgba(100,130,180,.3)}.p2::before{border-color:rgba(100,130,180,.4)}.p3 .node{border-left-color:rgba(80,150,120,.3)}.p3::before{border-color:rgba(80,150,120,.5);background:rgba(80,150,120,.15)}.p4 .node{border-left-color:rgba(130,130,100,.3)}.p4::before{border-color:rgba(130,130,100,.4)}.p5 .node{border-left-color:rgba(180,80,80,.3)}.p5::before{border-color:rgba(180,80,80,.5);background:rgba(180,80,80,.15)}.p6 .node{border-left-color:rgba(130,100,160,.3)}.p6::before{border-color:rgba(130,100,160,.5);background:rgba(130,100,160,.15)}.p7 .node{border-left-color:rgba(100,130,100,.3)}.p7::before{border-color:rgba(100,130,100,.4)}
+@media(max-width:600px){
+.hdr{padding:10px 12px}.hdr h1{font-size:12px}
+.flow{padding:16px 10px 40px}
+.phase{padding:12px 10px 12px 44px;margin-left:20px}
+.phase-label{left:-30px;width:28px;font-size:8px}
+.node{padding:8px 10px}.node-title{font-size:11px}.node-desc{font-size:9px}
+.branch-row{flex-direction:column}
+.side-note{font-size:7.5px}
+.note p{font-size:8px}
+}
+</style></head><body><div class="hdr"><h1>儒教の歴史 ― 孔子から朱子学・陽明学、そして近代へ</h1><a href="charts.html">← Ad Chartae</a></div><div class="flow">
+<div class="phase p1"><div class="phase-label">成立<br>春秋</div>
+  <div class="node key"><div class="node-title">★★孔子(孔丘)</div><div class="node-year">BC551-BC479</div>
+  <div class="node-desc">魯国出身。★<strong>仁(人間愛)</strong>と<strong>礼(社会規範)</strong>を核とする思想。「己の欲せざる所、人に施す勿れ」。<strong>徳治主義</strong>＝為政者が徳をもって民を導く(法による支配＝法家に対立)。★<strong>五倫(君臣・父子・夫婦・長幼・朋友)</strong>の人間関係を重視。周公旦の「周礼」を理想→<strong>周の礼楽制度の復興</strong>を説く。生前は不遇(諸国遊説するも用いられず)→弟子3000人を教育。★<strong>『論語』</strong>＝弟子がまとめた言行録。</div></div>
+  <div class="node"><div class="node-title">孔子の主要な弟子たち</div>
+  <div class="node-desc"><strong>顔回</strong>(最も愛した弟子・早世)。<strong>子路</strong>(武勇)。<strong>子貢</strong>(外交・商業の才)。<strong>曾子</strong>(孝の思想→『大学』に影響)。<strong>子思</strong>(孔子の孫→『中庸』)。門人の系譜が後の儒教の多様な流派を生む。</div></div></div>
+
+<div class="phase p2"><div class="phase-label">戦国<br>発展</div>
+  <div class="node key"><div class="node-title">★孟子(性善説)</div><div class="node-year">BC372頃-BC289頃</div>
+  <div class="node-desc">★<strong>性善説</strong>＝人間は生まれつき善(四端＝惻隠・羞悪・辞譲・是非の心)。★<strong>仁義</strong>に基づく王道政治(覇道＝力による支配を否定)。★<strong>易姓革命</strong>＝暴虐な君主を倒すことは正当→<strong>革命権</strong>の思想(後世に大きな影響)。<strong>民を貴しとし、社稷之に次ぎ、君を軽しとす</strong>→民本主義。『孟子』。</div></div>
+  <div class="node key"><div class="node-title">★荀子(性悪説)</div><div class="node-year">BC313頃-BC238頃</div>
+  <div class="node-desc">★<strong>性悪説</strong>＝人間は生まれつき利己的→<strong>礼(社会規範)と教育</strong>によって矯正すべき。孟子の性善説を批判。「天は自然の法則であり、人事に関与しない」→合理主義的。弟子に<strong>韓非・李斯</strong>(ともに法家)→儒教と法家の架け橋。『荀子』。</div></div></div>
+
+<div class="phase p3"><div class="phase-label">秦漢</div>
+  <div class="node"><div class="node-title">秦の焚書坑儒</div><div class="node-year">BC213-BC212</div>
+  <div class="node-desc">始皇帝が李斯の建議で★<strong>焚書</strong>(医薬・卜筮・農業以外の書を焼く)＋★<strong>坑儒</strong>(儒者460人を生き埋め)。法家を国教とし儒教を弾圧→だし儒教は民間で存続。</div></div>
+  <div class="node key"><div class="node-title">★★漢の武帝：儒教の国教化</div><div class="node-year">BC136</div>
+  <div class="node-desc">★<strong>董仲舒</strong>の建議で<strong>五経博士</strong>を設置→★<strong>「百家を罷黜し、独り儒術を尊ぶ」</strong>＝儒教が事実上の<strong>国教</strong>に。★<strong>郷挙里選</strong>(地方から人材を推薦→官僚に)で儒教的教養が必須に。董仲舒は儒教に<strong>陰陽五行説</strong>を取り込む→天人相関説(君主が悪政をすると天が災害を下す)。<strong>太学</strong>(BC124)＝国立大学で五経を教授→儒教的官僚の養成機関。</div></div>
+  <div class="node"><div class="node-title">訓詁学(漢代の儒学)</div>
+  <div class="node-desc">★<strong>今文学派</strong>(当時通用の文字で書かれた経典)vs <strong>古文学派</strong>(秦以前の古い文字の経典)の論争。漢代の儒学＝経典の字句の解釈(訓詁)に集中→<strong>訓詁学</strong>。『白虎通義』(後漢・章帝)で国家的に統一解釈を確定。</div></div></div>
+
+<div class="phase p4"><div class="phase-label">魏晋<br>南北朝<br>隋唐</div>
+  <div class="node"><div class="node-title">儒教の停滞期</div><div class="node-year">3C-10C</div>
+  <div class="node-desc">魏晋南北朝＝<strong>仏教・道教が隆盛</strong>→儒教は相対的に後退。<strong>玄学</strong>(老荘思想ベースの哲学)が流行(竹林の七賢)。<strong>九品中正</strong>で門閥貴族が支配→儒教の理念(実力主義)と乖離。隋唐＝<strong>科挙</strong>の導入で儒教的教養が再び重要に→だし唐代は仏教(玄奘・禅宗)と道教(老子を李氏の祖とする)も盛ん→三教(儒仏道)の並立。★<strong>韓愈</strong>(768-824)が仏教・道教を排斥して<strong>儒教復興(古文復興運動)</strong>を主張→宋学の先駆。</div></div></div>
+
+<div class="phase p5"><div class="phase-label">宋<br>朱子学</div>
+  <div class="node key"><div class="node-title">★★朱子学(朱熹/朱子)</div><div class="node-year">1130-1200</div>
+  <div class="node-desc">南宋。★<strong>「理」と「気」</strong>の哲学＝万物は「理」(普遍的原理)と「気」(物質的エネルギー)から成る→★<strong>性即理</strong>(人間の本性は理＝善)。<strong>格物致知</strong>＝事物の理を一つ一つ窮めることで知に至る(★<strong>外から学ぶ</strong>アプローチ)。★<strong>『四書集注』</strong>＝『大学』『中庸』『論語』『孟子』の注釈→<strong>科挙の標準テキスト</strong>に(元以降)。<strong>大義名分論</strong>＝君臣の上下関係は絶対→★<strong>体制維持の思想</strong>として歴代王朝に採用。先駆者＝周敦頤・程顥・程頤(二程)。★朝鮮(李朝)・日本(林羅山→徳川幕府の官学)・ベトナムにも伝播。</div></div></div>
+
+<div class="phase p6"><div class="phase-label">明<br>陽明学</div>
+  <div class="node key"><div class="node-title">★★陽明学(王陽明/王守仁)</div><div class="node-year">1472-1529</div>
+  <div class="node-desc">明代。朱子学への批判から出発。★<strong>心即理</strong>＝理は外の事物ではなく<strong>人間の心の中にある</strong>(朱子学の「性即理」に対立)。★<strong>知行合一</strong>＝知ることと行うことは一体(朱子学の格物致知＝「まず学んでから行動」を批判→<strong>知ったら即実行すべき</strong>)。★<strong>致良知</strong>＝生まれながらの良心(良知)を発揮すれば善悪を判断できる。★<strong>実践重視</strong>→陽明学は<strong>行動主義的</strong>→日本では幕末の志士(大塩平八郎・吉田松陰)に影響。だし朱子学側からは「禅に近い(=仏教的)」と批判された。</div></div></div>
+
+<div class="phase p7"><div class="phase-label">清<br>〜近代</div>
+  <div class="node"><div class="node-title">清代の考証学</div><div class="node-year">17-19C</div>
+  <div class="node-desc">朱子学・陽明学の空理空論を批判→★<strong>考証学</strong>＝経典の実証的・文献学的研究。<strong>顧炎武</strong>(清初)＝「経世致用」(学問は社会に役立てるべき)。<strong>戴震</strong>＝朱子学の「理」を批判(理は感情を抑圧する道具になっている)。乾隆帝時代に『四庫全書』(中国最大の叢書)編纂→だし★<strong>文字の獄</strong>(反清的表現を弾圧)の側面も。</div></div>
+  <div class="node"><div class="node-title">近代の儒教批判と再評価</div><div class="node-year">20C-</div>
+  <div class="node-desc">★<strong>新文化運動(1910s-)</strong>＝陳独秀・魯迅らが儒教を「封建的旧思想」として激しく批判(「孔子の店を倒せ」)。五四運動(1919)と連動。中華人民共和国＝文化大革命(1966-76)で「★批林批孔」運動→儒教を徹底的に否定。だし改革開放後→2000年代に<strong>孔子学院</strong>設立→儒教を中国文化のソフトパワーとして再活用。</div></div>
+  <div class="side-note">★入試超頻出：「孔子＝仁と礼」「孟子＝性善説＋易姓革命」「荀子＝性悪説」「武帝＝董仲舒＝五経博士＝儒教の国教化」「朱子学＝性即理＋格物致知＋『四書集注』」「陽明学＝心即理＋知行合一＋致良知」「考証学＝実証主義」「科挙と儒教の関係」</div>
+</div>
+</div><div class="note"><p>儒教史＝<strong>孔子(仁＋礼)→孟子(性善説)→荀子(性悪説)→秦で弾圧→漢で国教化→宋で朱子学(体系化)→明で陽明学(実践重視)→清で考証学→近代で批判→現代で再評価</strong>。朱子学vs陽明学の対比が入試最頻出。</p></div></body></html>

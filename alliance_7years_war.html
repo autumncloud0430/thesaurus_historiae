@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>七年戦争期のヨーロッパ関係図 ― 外交革命</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048;--border:rgba(201,169,110,.08)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+.hdr{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.hdr h1{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2)}
+.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5;transition:opacity .2s}.hdr a:hover{opacity:1}
+.panels{display:flex;gap:0;justify-content:center;flex-wrap:wrap;padding:10px}
+.panel{flex:1;min-width:440px;max-width:520px;padding:10px 12px}
+.panel:first-child{border-right:1px solid rgba(201,169,110,.06)}
+.panel-title{text-align:center;margin-bottom:6px}
+.panel-title h2{font-family:'Noto Serif JP',serif;font-size:13px;font-weight:700;color:var(--gold2)}
+.panel-title .sub{font-family:'Cormorant Garamond',serif;font-size:11px;color:var(--text3);letter-spacing:.15em}
+.nd-svg{cursor:pointer}
+.nd-svg:hover rect{filter:brightness(1.3)}
+.tp{display:none}
+.legend{display:flex;gap:16px;justify-content:center;padding:8px 20px;flex-wrap:wrap}
+.legend-item{display:flex;align-items:center;gap:5px;font-size:9px;color:var(--text3)}
+.legend-line{width:22px;height:2px;border-radius:1px}
+.legend-line.dashed{background:repeating-linear-gradient(90deg,var(--colonial) 0,var(--colonial) 4px,transparent 4px,transparent 8px)}
+.note{text-align:center;padding:8px 20px 32px;max-width:820px;margin:0 auto}
+.note p{font-size:9px;color:var(--text3);line-height:1.8}
+.note strong{color:var(--gold)}
+
+@media(max-width:600px){
+.hdr{padding:10px 12px}.hdr h1{font-size:12px}
+th,td{padding:6px 8px;font-size:9px}
+th{font-size:10px}
+td:first-child{font-size:8.5px}
+.note p{font-size:8px}
+.side-note{font-size:7.5px}
+}
+</style>
+</head>
+<body>
+<div class="hdr">
+  <h1>七年戦争期のヨーロッパ関係図 ― 外交革命</h1>
+  <a href="charts.html">← Ad Chartae</a>
+</div>
+
+<div class="legend">
+  <div class="legend-item"><div class="legend-line" style="background:#4a90c2"></div>同盟</div>
+  <div class="legend-item"><div class="legend-line" style="background:#c25a5a"></div>対立・交戦</div>
+  <div class="legend-item"><div class="legend-line" style="background:#c29a4a;height:1px;border-top:1px dashed #c29a4a"></div>植民地抗争</div>
+</div>
+
+<div class="panels">
+
+<!-- ==================== -->
+<!-- PANEL 1: BEFORE      -->
+<!-- ==================== -->
+<div class="panel">
+  <div class="panel-title">
+    <div class="sub">BEFORE — 1740-48</div>
+    <h2>オーストリア継承戦争</h2>
+  </div>
+  <!--
+    Layout: simple 2x2 grid
+    Top row: Britain(left) === alliance === Austria(right)
+    Bottom row: France(left) === alliance === Prussia(right)
+    Vertical: rivalry on both sides
+    Spain: bottom-left corner, small
+    Center: label "伝統的構図"
+
+    Coordinates:
+    Britain:  x=40  y=60   w=140 h=55
+    Austria:  x=280 y=60   w=140 h=60
+    France:   x=40  y=235  w=140 h=55
+    Prussia:  x=280 y=235  w=140 h=55
+    Spain:    x=40  y=340  w=100 h=35
+  -->
+  <svg viewBox="0 0 460 390" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto">
+
+    <!-- LINES -->
+    <!-- Brit — Austria: alliance (top) -->
+    <line x1="180" y1="87" x2="280" y2="87" stroke="#4a90c2" stroke-width="2" opacity=".5"/>
+
+    <!-- France — Prussia: alliance (bottom) -->
+    <line x1="180" y1="262" x2="280" y2="262" stroke="#4a90c2" stroke-width="2" opacity=".5"/>
+
+    <!-- Brit vs France: rivalry (left) -->
+    <line x1="110" y1="115" x2="110" y2="235" stroke="#c25a5a" stroke-width="2.5" opacity=".4"/>
+
+    <!-- Austria vs Prussia: rivalry (right) -->
+    <line x1="350" y1="120" x2="350" y2="235" stroke="#c25a5a" stroke-width="2.5" opacity=".4"/>
+
+    <!-- Colonial: Brit vs France (far left) -->
+    <line x1="30" y1="115" x2="30" y2="235" stroke="#c29a4a" stroke-width="1.5" opacity=".35" stroke-dasharray="5,4"/>
+
+    <!-- France — Spain -->
+    <line x1="80" y1="290" x2="80" y2="340" stroke="#4a90c2" stroke-width="1" opacity=".3" stroke-dasharray="4,3"/>
+
+    <!-- LABELS on lines (with background) -->
+    <rect x="195" y="77" width="30" height="14" rx="2" fill="rgba(6,9,15,.8)"/>
+    <text x="210" y="88" text-anchor="middle" fill="#4a90c2" font-size="8" font-family="Noto Sans JP" opacity=".8">同盟</text>
+
+    <rect x="195" y="252" width="30" height="14" rx="2" fill="rgba(6,9,15,.8)"/>
+    <text x="210" y="263" text-anchor="middle" fill="#4a90c2" font-size="8" font-family="Noto Sans JP" opacity=".8">同盟</text>
+
+    <rect x="120" y="163" width="30" height="14" rx="2" fill="rgba(6,9,15,.8)"/>
+    <text x="135" y="174" text-anchor="middle" fill="#c25a5a" font-size="7.5" font-family="Noto Sans JP" opacity=".8">宿敵</text>
+
+    <rect x="357" y="158" width="60" height="24" rx="2" fill="rgba(6,9,15,.8)"/>
+    <text x="387" y="169" text-anchor="middle" fill="#c25a5a" font-size="7.5" font-family="Noto Sans JP" opacity=".8">シレジア</text>
+    <text x="387" y="179" text-anchor="middle" fill="#c25a5a" font-size="7.5" font-family="Noto Sans JP" opacity=".7">争奪</text>
+
+    <rect x="5" y="166" width="40" height="14" rx="2" fill="rgba(6,9,15,.8)"/>
+    <text x="25" y="177" text-anchor="middle" fill="#c29a4a" font-size="6.5" font-family="Noto Sans JP" opacity=".7">植民地</text>
+
+    <!-- NODES -->
+    <g class="nd-svg" data-tip="brit1">
+      <rect x="40" y="60" width="140" height="55" rx="8" fill="rgba(74,144,194,.08)" stroke="rgba(74,144,194,.25)" stroke-width="1.5"/>
+      <text x="110" y="82" text-anchor="middle" fill="#d4cfc6" font-size="12" font-family="Noto Serif JP" font-weight="700">イギリス</text>
+      <text x="110" y="100" text-anchor="middle" fill="#8a857d" font-size="7.5" font-family="Noto Sans JP">ジョージ2世</text>
+    </g>
+
+    <g class="nd-svg" data-tip="austria1">
+      <rect x="280" y="60" width="140" height="60" rx="8" fill="rgba(74,144,194,.08)" stroke="rgba(74,144,194,.25)" stroke-width="1.5"/>
+      <text x="350" y="80" text-anchor="middle" fill="#d4cfc6" font-size="11" font-family="Noto Serif JP" font-weight="700">オーストリア</text>
+      <text x="350" y="96" text-anchor="middle" fill="#8a857d" font-size="7" font-family="Noto Sans JP">マリア＝テレジア</text>
+      <text x="350" y="110" text-anchor="middle" fill="#555048" font-size="6.5" font-family="Noto Sans JP">シレジア奪還が悲願</text>
+    </g>
+
+    <g class="nd-svg" data-tip="france1">
+      <rect x="40" y="235" width="140" height="55" rx="8" fill="rgba(194,90,74,.08)" stroke="rgba(194,90,74,.2)" stroke-width="1.5"/>
+      <text x="110" y="258" text-anchor="middle" fill="#d4cfc6" font-size="12" font-family="Noto Serif JP" font-weight="700">フランス</text>
+      <text x="110" y="276" text-anchor="middle" fill="#8a857d" font-size="7.5" font-family="Noto Sans JP">ルイ15世</text>
+    </g>
+
+    <g class="nd-svg" data-tip="prussia1">
+      <rect x="280" y="235" width="140" height="55" rx="8" fill="rgba(194,154,74,.08)" stroke="rgba(194,154,74,.2)" stroke-width="1.5"/>
+      <text x="350" y="258" text-anchor="middle" fill="#d4cfc6" font-size="12" font-family="Noto Serif JP" font-weight="700">プロイセン</text>
+      <text x="350" y="276" text-anchor="middle" fill="#8a857d" font-size="7" font-family="Noto Sans JP">フリードリヒ2世</text>
+    </g>
+
+    <g class="nd-svg" data-tip="spain1">
+      <rect x="40" y="340" width="100" height="35" rx="6" fill="rgba(194,90,74,.04)" stroke="rgba(194,90,74,.1)" stroke-width="1"/>
+      <text x="90" y="356" text-anchor="middle" fill="#8a857d" font-size="9" font-family="Noto Serif JP" font-weight="600">スペイン</text>
+      <text x="90" y="370" text-anchor="middle" fill="#555048" font-size="6.5" font-family="Noto Sans JP">ブルボン同族</text>
+    </g>
+
+    <!-- Center label -->
+    <text x="230" y="180" text-anchor="middle" fill="#555048" font-size="9" font-family="Cormorant Garamond" font-weight="700" letter-spacing=".1em">伝統的対立構図</text>
+    <text x="230" y="195" text-anchor="middle" fill="#555048" font-size="8" font-family="Noto Sans JP">英墺 vs 仏普</text>
+  </svg>
+</div>
+
+<!-- ==================== -->
+<!-- PANEL 2: AFTER       -->
+<!-- ==================== -->
+<div class="panel">
+  <div class="panel-title">
+    <div class="sub">AFTER — 1756-63</div>
+    <h2>七年戦争（外交革命後）</h2>
+  </div>
+  <svg viewBox="0 0 460 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto">
+
+    <!-- TOP GROUP BOX: Britain + Prussia -->
+    <rect x="85" y="35" width="290" height="75" rx="10" fill="rgba(74,144,194,.03)" stroke="rgba(74,144,194,.15)" stroke-width="1" stroke-dasharray="4,3"/>
+    <text x="230" y="50" text-anchor="middle" fill="rgba(74,144,194,.6)" font-size="8" font-family="Cormorant Garamond" font-weight="700" letter-spacing=".15em">勝者側</text>
+
+    <!-- BOTTOM GROUP BOX: Russia + Austria + France + Spain -->
+    <rect x="30" y="225" width="400" height="80" rx="10" fill="rgba(194,90,74,.03)" stroke="rgba(194,90,74,.12)" stroke-width="1" stroke-dasharray="4,3"/>
+    <text x="230" y="240" text-anchor="middle" fill="rgba(194,90,74,.6)" font-size="8" font-family="Cormorant Garamond" font-weight="700" letter-spacing=".15em">反プロイセン同盟</text>
+
+    <!-- ===== ALLIANCE LINES (blue, within groups) ===== -->
+
+    <!-- TOP: Britain — Prussia -->
+    <line x1="225" y1="82" x2="260" y2="82" stroke="#4a90c2" stroke-width="2.5" opacity=".5"/>
+
+    <!-- BOTTOM: Austria — France -->
+    <line x1="245" y1="272" x2="280" y2="272" stroke="#4a90c2" stroke-width="2" opacity=".4"/>
+
+    <!-- BOTTOM: Russia — Austria -->
+    <line x1="110" y1="272" x2="145" y2="272" stroke="#4a90c2" stroke-width="2" opacity=".4"/>
+
+    <!-- BOTTOM: France — Spain -->
+    <line x1="375" y1="272" x2="395" y2="272" stroke="#4a90c2" stroke-width="1.2" opacity=".35"/>
+
+    <!-- ===== RIVALRY LINES (red, between top and bottom groups) ===== -->
+
+    <!-- Britain → Austria -->
+    <line x1="175" y1="103" x2="195" y2="250" stroke="#c25a5a" stroke-width="1.5" opacity=".25"/>
+
+    <!-- Britain → France -->
+    <line x1="190" y1="103" x2="320" y2="250" stroke="#c25a5a" stroke-width="1.5" opacity=".25"/>
+
+    <!-- Prussia → Austria -->
+    <line x1="310" y1="103" x2="200" y2="250" stroke="#c25a5a" stroke-width="1.5" opacity=".25"/>
+
+    <!-- Prussia → France -->
+    <line x1="320" y1="103" x2="330" y2="250" stroke="#c25a5a" stroke-width="1.5" opacity=".25"/>
+
+    <!-- Prussia → Russia (subtle) -->
+    <line x1="285" y1="103" x2="80" y2="250" stroke="#c25a5a" stroke-width="1" opacity=".15" stroke-dasharray="4,4"/>
+
+    <!-- COLONIAL: Britain vs France (dashed orange) -->
+    <line x1="205" y1="103" x2="335" y2="250" stroke="#c29a4a" stroke-width="1.3" opacity=".3" stroke-dasharray="5,4"/>
+
+    <!-- ===== LABELS ===== -->
+
+    <!-- Center: Diplomatic Revolution + rivalry label -->
+    <rect x="180" y="150" width="100" height="40" rx="5" fill="rgba(201,169,110,.04)" stroke="rgba(201,169,110,.12)" stroke-width="1"/>
+    <text x="230" y="166" text-anchor="middle" fill="#c9a96e" font-size="8" font-family="Cormorant Garamond" font-weight="700" letter-spacing=".1em">外交革命</text>
+    <text x="230" y="180" text-anchor="middle" fill="#c25a5a" font-size="7.5" font-family="Noto Sans JP" opacity=".7">↕ 交戦 ↕</text>
+
+    <!-- Colonial label -->
+    <rect x="295" y="170" width="60" height="13" rx="2" fill="rgba(6,9,15,.8)"/>
+    <text x="325" y="180" text-anchor="middle" fill="#c29a4a" font-size="6.5" font-family="Noto Sans JP" opacity=".6">北米・インド</text>
+
+    <!-- Small alliance labels (within bottom group) -->
+    <text x="128" y="292" text-anchor="middle" fill="#4a90c2" font-size="5.5" font-family="Noto Sans JP" opacity=".6">同盟</text>
+    <text x="263" y="292" text-anchor="middle" fill="#4a90c2" font-size="5.5" font-family="Noto Sans JP" opacity=".6">仏墺新同盟</text>
+    <text x="385" y="292" text-anchor="middle" fill="#4a90c2" font-size="5.5" font-family="Noto Sans JP" opacity=".5">家族協約</text>
+
+    <!-- Top alliance label -->
+    <text x="243" y="77" text-anchor="middle" fill="#4a90c2" font-size="6" font-family="Noto Sans JP" opacity=".7">ウェストミンスター協約</text>
+
+    <!-- ===== NODES ===== -->
+
+    <!-- TOP ROW -->
+
+    <!-- Britain -->
+    <g class="nd-svg" data-tip="brit2">
+      <rect x="95" y="58" width="135" height="48" rx="8" fill="rgba(74,144,194,.1)" stroke="rgba(74,144,194,.35)" stroke-width="2"/>
+      <text x="162" y="77" text-anchor="middle" fill="#e8c888" font-size="12" font-family="Noto Serif JP" font-weight="700">イギリス</text>
+      <text x="162" y="92" text-anchor="middle" fill="#8a857d" font-size="7" font-family="Noto Sans JP">ピット ｜ 勝者→植民地帝国</text>
+    </g>
+
+    <!-- Prussia -->
+    <g class="nd-svg" data-tip="prussia2">
+      <rect x="250" y="58" width="115" height="48" rx="8" fill="rgba(194,154,74,.1)" stroke="rgba(194,154,74,.35)" stroke-width="2"/>
+      <text x="307" y="77" text-anchor="middle" fill="#e8c888" font-size="11" font-family="Noto Serif JP" font-weight="700">プロイセン</text>
+      <text x="307" y="92" text-anchor="middle" fill="#8a857d" font-size="7" font-family="Noto Sans JP">大王 ｜ 奇跡の生還</text>
+    </g>
+
+    <!-- BOTTOM ROW -->
+
+    <!-- Russia -->
+    <g class="nd-svg" data-tip="russia2">
+      <rect x="38" y="250" width="75" height="48" rx="7" fill="rgba(194,90,74,.06)" stroke="rgba(194,90,74,.18)" stroke-width="1"/>
+      <text x="75" y="268" text-anchor="middle" fill="#d4cfc6" font-size="9" font-family="Noto Serif JP" font-weight="600">ロシア</text>
+      <text x="75" y="280" text-anchor="middle" fill="#555048" font-size="5.5" font-family="Noto Sans JP">エリザベータ</text>
+      <text x="75" y="290" text-anchor="middle" fill="#555048" font-size="5" font-family="Noto Sans JP">→途中離脱(奇跡)</text>
+    </g>
+
+    <!-- Austria -->
+    <g class="nd-svg" data-tip="austria2">
+      <rect x="140" y="250" width="110" height="48" rx="7" fill="rgba(194,90,74,.08)" stroke="rgba(194,90,74,.25)" stroke-width="1.5"/>
+      <text x="195" y="268" text-anchor="middle" fill="#d4cfc6" font-size="10" font-family="Noto Serif JP" font-weight="700">オーストリア</text>
+      <text x="195" y="281" text-anchor="middle" fill="#8a857d" font-size="6.5" font-family="Noto Sans JP">マリア＝テレジア</text>
+      <text x="195" y="292" text-anchor="middle" fill="#c25a5a" font-size="6" font-family="Noto Sans JP" opacity=".7">シレジア奪還失敗</text>
+    </g>
+
+    <!-- France -->
+    <g class="nd-svg" data-tip="france2">
+      <rect x="275" y="250" width="105" height="48" rx="7" fill="rgba(194,90,74,.08)" stroke="rgba(194,90,74,.25)" stroke-width="1.5"/>
+      <text x="327" y="268" text-anchor="middle" fill="#d4cfc6" font-size="10" font-family="Noto Serif JP" font-weight="700">フランス</text>
+      <text x="327" y="281" text-anchor="middle" fill="#8a857d" font-size="6.5" font-family="Noto Sans JP">ルイ15世</text>
+      <text x="327" y="292" text-anchor="middle" fill="#c25a5a" font-size="6" font-family="Noto Sans JP" opacity=".8">北米・インド喪失</text>
+    </g>
+
+    <!-- Spain -->
+    <g class="nd-svg" data-tip="spain2">
+      <rect x="395" y="255" width="28" height="38" rx="5" fill="rgba(194,90,74,.04)" stroke="rgba(194,90,74,.1)" stroke-width="1"/>
+      <text x="409" y="271" text-anchor="middle" fill="#8a857d" font-size="7" font-family="Noto Serif JP" font-weight="600">西</text>
+      <text x="409" y="283" text-anchor="middle" fill="#555048" font-size="5" font-family="Noto Sans JP">1762</text>
+    </g>
+
+    <!-- ===== RESULT (bottom) ===== -->
+    <rect x="30" y="330" width="400" height="55" rx="6" fill="rgba(6,9,15,.4)" stroke="rgba(201,169,110,.06)" stroke-width="1"/>
+    <text x="230" y="349" text-anchor="middle" fill="#c9a96e" font-size="9" font-family="Noto Serif JP" font-weight="700">パリ条約 (1763)</text>
+    <text x="230" y="365" text-anchor="middle" fill="#8a857d" font-size="7.5" font-family="Noto Sans JP">英が北米（カナダ）・インドの権益を獲得 → 大英帝国の基盤確立</text>
+    <text x="230" y="379" text-anchor="middle" fill="#555048" font-size="7" font-family="Noto Sans JP">英の植民地課税 → アメリカ独立革命(1775) / 仏の財政破綻 → フランス革命(1789)</text>
+
+  </svg>
+</div>
+
+</div><!-- panels -->
+
+<!-- Hidden tooltips -->
+<div class="tp" id="tip-brit1"><p><strong>イギリス</strong>（オーストリア継承戦争） ― 伝統的にオーストリアと同盟し、フランスと植民地で対立。この構図は七年戦争で逆転する。</p></div>
+<div class="tp" id="tip-austria1"><p><strong>オーストリア</strong> ― マリア＝テレジアの即位(1740)をきっかけにプロイセンがシレジアを奪取→<strong>シレジア奪還が最大の悲願</strong>。そのためには従来の敵フランスとも手を組む覚悟→外交革命の起点。外交官カウニッツが仏墺同盟を実現。</p></div>
+<div class="tp" id="tip-france1"><p><strong>フランス</strong> ― ルイ15世。伝統的にハプスブルク（オーストリア）と対立し、プロイセンと同盟。しかし外交革命でこの構図が逆転→仏墺同盟(1756)へ。ポンパドゥール夫人が外交革命を推進したとされる。</p></div>
+<div class="tp" id="tip-prussia1"><p><strong>プロイセン</strong> ― フリードリヒ2世（大王）。1740年にシレジアを奪取し列強入り。フランスと同盟してオーストリアに対抗→しかし外交革命で孤立→イギリスと組むしかなくなる。</p></div>
+<div class="tp" id="tip-spain1"><p><strong>スペイン</strong> ― ブルボン朝（フェリペ5世以来）。フランスとブルボン同族として「家族協約」で連携。七年戦争では第3次家族協約(1761)でフランス側に参戦。</p></div>
+<div class="tp" id="tip-brit2"><p><strong>イギリス</strong>（七年戦争） ― ピット（大ピット）が戦争を指揮。プロイセンには資金援助、自らは海外植民地の戦争に集中→<strong>パリ条約(1763)でフランスからカナダ・ミシシッピ以東・インドの権益を獲得</strong>→大英帝国の基盤確立。しかし戦費負担→植民地への課税→アメリカ独立革命(1775)の遠因。</p></div>
+<div class="tp" id="tip-prussia2"><p><strong>プロイセン</strong> ― フリードリヒ2世が<strong>墺・仏・露の三方面から包囲される</strong>「四面楚歌」状態。何度も壊滅の危機→しかし1762年にロシアのエリザベータ女帝が急死→後継のピョートル3世がフリードリヒの崇拝者で即座に撤退（<strong>「ブランデンブルクの奇跡」</strong>）→九死に一生を得てシレジアを維持。</p></div>
+<div class="tp" id="tip-austria2"><p><strong>オーストリア</strong> ― カウニッツの外交で仏・露と同盟→プロイセン包囲網を形成。しかし<strong>シレジア奪還は失敗</strong>。七年戦争後もプロイセンとの対立が続く→ドイツ統一問題（大ドイツ主義vs小ドイツ主義）の伏線。</p></div>
+<div class="tp" id="tip-france2"><p><strong>フランス</strong> ― 外交革命でオーストリアと同盟→しかし戦争ではイギリスに海外植民地で惨敗。<strong>パリ条約(1763)でカナダ・インドを失う</strong>。さらに戦費が財政を圧迫→ルイ16世の財政危機→<strong>フランス革命(1789)の遠因</strong>。</p></div>
+<div class="tp" id="tip-russia2"><p><strong>ロシア</strong> ― エリザベータ女帝が反プロイセン同盟に参加しベルリンを一時占領。しかし1762年に急死→後継の<strong>ピョートル3世がフリードリヒの崇拝者</strong>で即座に撤退・和平（「ブランデンブルクの奇跡」）。ピョートル3世はその後妻エカチェリーナにクーデターで廃位される。</p></div>
+<div class="tp" id="tip-spain2"><p><strong>スペイン</strong> ― 第3次家族協約(1761)でフランス側に参戦。しかし英に敗れフロリダを失う（代わりに仏からルイジアナを獲得）。</p></div>
+
+<div class="note">
+  <p>
+    <strong>「外交革命」（1756）</strong>とは、200年以上続いたハプスブルク vs ブルボンの対立構図が逆転し、<strong>仏墺が同盟</strong>を結んだ事件。<br>
+    マリア＝テレジアがシレジア奪還のためフランスに接近（<strong>カウニッツ外交</strong>）→孤立を恐れたフリードリヒ2世がイギリスと結ぶ。<br>
+    結果プロイセンは墺仏露の三方から包囲されるが、ロシアのエリザベータ女帝の急死（<strong>「ブランデンブルクの奇跡」</strong>）で九死に一生を得た。<br>
+    この戦争が<strong>英の植民地課税 → アメリカ独立革命</strong>と、<strong>仏の財政破綻 → フランス革命</strong>の伏線となる。
+  </p>
+</div>
+
+<!-- Tooltip system -->
+<div id="tooltip-overlay" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;z-index:8000" onclick="closeTip()"></div>
+<div id="tooltip-box" style="display:none;position:fixed;z-index:9000;background:rgba(12,15,22,.97);border:1px solid rgba(201,169,110,.25);border-radius:8px;padding:12px 16px;max-width:320px;width:calc(100vw - 32px);box-shadow:0 8px 30px rgba(0,0,0,.6)">
+  <div id="tooltip-content" style="font-size:10px;color:#8a857d;line-height:1.7"></div>
+</div>
+<script>
+(function(){
+  var ov=document.getElementById("tooltip-overlay"),bx=document.getElementById("tooltip-box"),ct=document.getElementById("tooltip-content");
+  window.closeTip=function(){bx.style.display="none";ov.style.display="none"};
+  function openTip(el){
+    var tipId=el.getAttribute("data-tip");
+    var tipEl=tipId?document.getElementById("tip-"+tipId):null;
+    if(!tipEl)return;closeTip();
+    ct.innerHTML=tipEl.innerHTML;ov.style.display="block";bx.style.display="block";
+    var r=el.getBoundingClientRect(),w=Math.min(320,window.innerWidth-32);bx.style.width=w+"px";
+    var l=r.left+r.width/2-w/2;if(l<16)l=16;if(l+w>window.innerWidth-16)l=window.innerWidth-16-w;
+    bx.style.left=l+"px";bx.style.top=(r.bottom+8)+"px";bx.style.bottom="auto";
+    var br=bx.getBoundingClientRect();if(br.bottom>window.innerHeight-16){var t=r.top-br.height-8;if(t<16)t=16;bx.style.top=t+"px"}
+  }
+  var tm=false,tt=null;
+  document.addEventListener("touchstart",function(e){tm=false;tt=e.target},{passive:true});
+  document.addEventListener("touchmove",function(){tm=true},{passive:true});
+  document.addEventListener("touchend",function(e){if(tm)return;var nd=tt?tt.closest(".nd-svg"):null;if(nd){e.preventDefault();openTip(nd)}else if(!tt||!tt.closest("#tooltip-box"))closeTip();tt=null});
+  document.addEventListener("click",function(e){if("ontouchstart"in window)return;var nd=e.target.closest(".nd-svg");if(nd)openTip(nd);else if(!e.target.closest("#tooltip-box"))closeTip()});
+})();
+</script>
+</body>
+</html>

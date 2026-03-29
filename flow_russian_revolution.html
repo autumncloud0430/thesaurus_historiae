@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ロシア革命フロー</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048;--border:rgba(201,169,110,.08)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+.hdr{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.hdr h1{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2)}
+.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
+.flow{max-width:760px;margin:0 auto;padding:24px 20px 60px}
+.phase{position:relative;margin-bottom:2px;padding:16px 16px 16px 60px;border-left:2px solid rgba(201,169,110,.08);margin-left:30px}
+.phase:last-child{border-left-color:transparent}
+.phase-label{position:absolute;left:-42px;top:16px;width:36px;font-family:'Cormorant Garamond',serif;font-size:10px;font-weight:700;color:var(--text3);text-align:right;line-height:1.3}
+.phase::before{content:'';position:absolute;left:-5px;top:22px;width:8px;height:8px;border-radius:50%;background:var(--bg);border:2px solid rgba(201,169,110,.25)}
+
+.asm{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05);border-radius:10px;padding:12px;margin-bottom:10px}
+.asm-header{display:flex;align-items:baseline;gap:8px;margin-bottom:6px;padding-bottom:4px;border-bottom:1px solid rgba(201,169,110,.06)}
+.asm-name{font-family:'Noto Serif JP',serif;font-size:13px;font-weight:700;color:var(--gold2)}
+.asm-type{font-size:8px;color:var(--gold);opacity:.5;font-family:'Cormorant Garamond',serif;letter-spacing:.1em}
+.factions{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:6px}
+.faction{padding:4px 10px;border-radius:5px;font-size:9px;font-weight:600;border:1px solid;display:flex;align-items:center;gap:4px}
+.faction .dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.power-tag{display:inline-block;font-size:7px;padding:2px 6px;border-radius:3px;background:rgba(201,169,110,.1);color:var(--gold);margin-left:4px}
+.asm-desc{font-size:10px;color:var(--text2);line-height:1.7;margin-top:4px}
+.asm-desc strong{color:var(--text);font-weight:600}
+
+/* Dual power special layout */
+.dual{display:flex;gap:10px;margin-bottom:10px}
+.dual .asm{flex:1}
+
+.event{background:rgba(201,169,110,.03);border:1px solid rgba(201,169,110,.1);border-radius:8px;padding:8px 12px;margin-bottom:8px}
+.event-title{font-family:'Noto Serif JP',serif;font-size:11px;font-weight:700;color:var(--gold2);margin-bottom:2px}
+.event-year{font-family:'Cormorant Garamond',serif;font-size:10px;color:var(--gold);opacity:.6;margin-bottom:3px}
+.event-desc{font-size:9px;color:var(--text2);line-height:1.6}
+.event-desc strong{color:var(--text);font-weight:600}
+
+.arrow{display:flex;align-items:center;gap:6px;padding:2px 0 2px 8px;margin-bottom:6px}
+.arrow-line{width:16px;height:1px;background:rgba(201,169,110,.15);flex-shrink:0}
+.arrow-text{font-size:8px;color:var(--text3)}
+.arrow-icon{color:rgba(201,169,110,.3);font-size:10px;flex-shrink:0}
+.side-note{font-size:8px;color:var(--text3);padding:4px 8px;border-left:2px solid rgba(201,169,110,.1);margin:4px 0 8px;line-height:1.6}
+
+/* Faction colors */
+.f-tsar{background:rgba(100,80,140,.08);border-color:rgba(100,80,140,.2);color:rgba(160,140,200,.9)}.f-tsar .dot{background:rgba(100,80,140,.5)}
+.f-kadet{background:rgba(80,140,120,.08);border-color:rgba(80,140,120,.2);color:rgba(140,200,180,.9)}.f-kadet .dot{background:rgba(80,140,120,.5)}
+.f-sr{background:rgba(180,150,80,.08);border-color:rgba(180,150,80,.2);color:rgba(220,190,120,.9)}.f-sr .dot{background:rgba(180,150,80,.5)}
+.f-mensh{background:rgba(150,130,100,.08);border-color:rgba(150,130,100,.2);color:rgba(200,180,140,.9)}.f-mensh .dot{background:rgba(150,130,100,.5)}
+.f-bolsh{background:rgba(180,60,60,.1);border-color:rgba(180,60,60,.25);color:rgba(220,110,110,.9)}.f-bolsh .dot{background:rgba(180,60,60,.5)}
+.f-worker{background:rgba(150,80,50,.08);border-color:rgba(150,80,50,.2);color:rgba(200,140,100,.9)}.f-worker .dot{background:rgba(150,80,50,.5)}
+.f-soldier{background:rgba(120,120,80,.08);border-color:rgba(120,120,80,.2);color:rgba(170,170,120,.9)}.f-soldier .dot{background:rgba(120,120,80,.5)}
+.f-peasant{background:rgba(100,130,80,.08);border-color:rgba(100,130,80,.2);color:rgba(150,180,120,.9)}.f-peasant .dot{background:rgba(100,130,80,.5)}
+
+/* Phase accents */
+.p-pre .asm{border-left:3px solid rgba(130,120,100,.2)}.p-pre::before{border-color:rgba(130,120,100,.4)}
+.p-1905 .asm{border-left:3px solid rgba(180,130,80,.2)}.p-1905::before{border-color:rgba(180,130,80,.5);background:rgba(180,130,80,.15)}
+.p-feb .event{border-left:3px solid rgba(100,130,180,.2)}.p-feb::before{border-color:rgba(100,130,180,.5);background:rgba(100,130,180,.15)}
+.p-dual .asm{border-left:3px solid rgba(150,120,80,.2)}.p-dual::before{border-color:rgba(150,120,80,.4)}
+.p-oct .event{border-left:3px solid rgba(180,60,60,.3)}.p-oct::before{border-color:rgba(180,60,60,.5);background:rgba(180,60,60,.15)}
+.p-civil .asm{border-left:3px solid rgba(150,50,50,.2)}.p-civil::before{border-color:rgba(150,50,50,.5)}
+.p-soviet .asm{border-left:3px solid rgba(150,60,90,.2)}.p-soviet::before{border-color:rgba(150,60,90,.5);background:rgba(150,60,90,.15)}
+
+.note{text-align:center;padding:8px 20px 32px;max-width:720px;margin:0 auto}.note p{font-size:9px;color:var(--text3);line-height:1.8}.note strong{color:var(--gold)}
+
+@media(max-width:600px){
+.hdr{padding:10px 12px}.hdr h1{font-size:12px}
+.flow{padding:16px 10px 40px}
+.phase{padding:12px 10px 12px 44px;margin-left:20px}
+.phase-label{left:-30px;width:28px;font-size:8px}
+.node{padding:8px 10px}.node-title{font-size:11px}.node-desc{font-size:9px}
+.branch-row{flex-direction:column}
+.side-note{font-size:7.5px}
+.note p{font-size:8px}
+}
+</style>
+</head>
+<body>
+<div class="hdr"><h1>ロシア革命フロー ― 機関と勢力の推移</h1><a href="charts.html">← Ad Chartae</a></div>
+
+<div class="flow">
+
+<!-- 前史：帝政と革命運動 -->
+<div class="phase p-pre">
+  <div class="phase-label">前史<br>〜1905</div>
+  <div class="asm">
+    <div class="asm-header"><div class="asm-name">ロマノフ朝の専制</div><div class="asm-type">AUTOCRACY</div></div>
+    <div class="factions">
+      <div class="faction f-tsar"><div class="dot"></div>ツァーリ(皇帝)＝無制限の専制権力</div>
+    </div>
+    <div class="asm-desc">議会なし。農奴解放(1861)後も<strong>ミール(共同体)</strong>が農民を縛る。<strong>ナロードニキ</strong>(人民主義者)＝農民啓蒙→テロ→アレクサンドル2世暗殺(1881)。</div>
+  </div>
+  <div class="asm">
+    <div class="asm-header"><div class="asm-name">革命諸政党の形成</div><div class="asm-type">OPPOSITION PARTIES</div></div>
+    <div class="factions">
+      <div class="faction f-sr"><div class="dot"></div>社会革命党(エスエル)＝農民基盤・土地社会化</div>
+      <div class="faction f-kadet"><div class="dot"></div>立憲民主党(カデット)＝自由主義知識人・立憲政治</div>
+      <div class="faction f-mensh"><div class="dot"></div>メンシェヴィキ(マルトフ)＝穏健マルクス主義・ブルジョワ革命を先に</div>
+      <div class="faction f-bolsh"><div class="dot"></div>ボリシェヴィキ(レーニン)＝職業革命家の前衛党・即座に社会主義革命</div>
+    </div>
+    <div class="asm-desc"><strong>ロシア社会民主労働党</strong>(1898結成)が1903年に分裂：<strong>ボリシェヴィキ</strong>(多数派の意)＝レーニンの「職業革命家の規律ある前衛党」vsメンシェヴィキ(少数派)＝「大衆的な党」。<strong>エスエル</strong>＝ナロードニキの後継、農民を基盤とし最大の支持基盤(→制憲議会選挙で第1党に)。<strong>カデット</strong>＝ブルジョワ知識人・立憲君主制or議会制共和政を要求。</div>
+  </div>
+  <div class="side-note">★入試頻出：「ボリシェヴィキとメンシェヴィキの違い」＝前衛党か大衆党か。「エスエルとの違い」＝農民か労働者か。この4党の立場と支持基盤の違いが革命の展開を決定づける</div>
+  <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">日露戦争の敗北→国民の不満が爆発</div></div>
+</div>
+
+<!-- 1905年革命 -->
+<div class="phase p-1905">
+  <div class="phase-label">1905<br>〜<br>1914</div>
+  <div class="event">
+    <div class="event-title">血の日曜日事件(1905.1.22)</div>
+    <div class="event-year">労働者の平和的請願デモに軍が発砲 → 全国にスト・反乱</div>
+    <div class="event-desc">ガポン神父率いる<strong>労働者のデモ</strong>が冬宮に向かう→軍が発砲し数百人が死傷。全国にストライキ・農民反乱・兵士の反乱(戦艦ポチョムキン)が波及。各地に<strong>ソヴィエト(労働者評議会)</strong>が自然発生的に結成。ペテルブルク・ソヴィエト議長にトロツキー。</div>
+  </div>
+  <div class="asm">
+    <div class="asm-header"><div class="asm-name">国会(ドゥーマ)</div><div class="asm-type">STATE DUMA ― 十月詔書(1905)で設立</div></div>
+    <div class="factions">
+      <div class="faction f-kadet"><div class="dot"></div>カデット(立憲民主党)<span class="power-tag">第1党(当初)</span></div>
+      <div class="faction f-sr"><div class="dot"></div>エスエル(一部ボイコット)</div>
+      <div class="faction f-bolsh"><div class="dot"></div>ボリシェヴィキ(ボイコット→後に参加)</div>
+    </div>
+    <div class="asm-desc">ニコライ2世が<strong>十月詔書</strong>で市民的自由と国会を約束→カデットは一応満足し革命は収束。しかしドゥーマの権限は極めて限定的(皇帝が解散権を保持)。第1・第2ドゥーマは「反政府的」として解散→<strong>選挙法改悪</strong>(1907)で保守派に有利に。<strong>ストルイピン首相</strong>の農業改革(ミール解体→自作農創出＝「強者への賭け」)は1911年暗殺で中断。根本問題は未解決のままWW1へ。</div>
+  </div>
+  <div class="side-note">1905年革命＝「失敗した予行演習」(レーニン)。ソヴィエトという組織形態が初めて登場。ボリシェヴィキはまだ小さな党だった</div>
+  <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">WW1の重圧(200万人戦死・食糧危機)→帝政が持ちこたえられなくなる</div></div>
+</div>
+
+<!-- 二月革命 -->
+<div class="phase p-feb">
+  <div class="phase-label">1917<br>2-3月</div>
+  <div class="event">
+    <div class="event-title">二月革命 → ニコライ2世退位 → ロマノフ朝滅亡</div>
+    <div class="event-year">1917.3.8–15 (旧暦2月)</div>
+    <div class="event-desc">国際婦人デー(3.8)のデモが急速に拡大→<strong>兵士がデモ隊に合流</strong>→鎮圧命令が機能せず。<strong>自然発生的な蜂起</strong>＝特定の政党が指導したのではない(レーニンはスイスに亡命中)。ニコライ2世が退位→<strong>ロマノフ朝滅亡</strong>(304年間)。帝政は倒れたが<strong>「誰が統治するか」</strong>が決まっていない。</div>
+  </div>
+  <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">二つの機関が並立する「二重権力」状態に</div></div>
+</div>
+
+<!-- 二重権力 -->
+<div class="phase p-dual">
+  <div class="phase-label">1917<br>3月<br>〜<br>10月</div>
+  <div class="dual">
+    <div class="asm">
+      <div class="asm-header"><div class="asm-name">臨時政府</div><div class="asm-type">PROVISIONAL GOVT</div></div>
+      <div class="factions">
+        <div class="faction f-kadet"><div class="dot"></div>カデット(リヴォフ公)<span class="power-tag">当初主導</span></div>
+        <div class="faction f-sr"><div class="dot"></div>エスエル(ケレンスキー)</div>
+        <div class="faction f-mensh"><div class="dot"></div>メンシェヴィキ</div>
+      </div>
+      <div class="asm-desc"><strong>ドゥーマの臨時委員会</strong>から発展。自由主義者(カデット)＋穏健社会主義者(エスエル右派・メンシェヴィキ)が参加。<strong>戦争継続</strong>・制憲議会の準備を掲げる。正統性は高いが<strong>軍・民衆を動かす力</strong>に欠ける。</div>
+    </div>
+    <div class="asm">
+      <div class="asm-header"><div class="asm-name">ペトログラード・ソヴィエト</div><div class="asm-type">SOVIET</div></div>
+      <div class="factions">
+        <div class="faction f-sr"><div class="dot"></div>エスエル<span class="power-tag">当初多数派</span></div>
+        <div class="faction f-mensh"><div class="dot"></div>メンシェヴィキ</div>
+        <div class="faction f-bolsh"><div class="dot"></div>ボリシェヴィキ(当初少数)</div>
+        <div class="faction f-worker"><div class="dot"></div>労働者代表</div>
+        <div class="faction f-soldier"><div class="dot"></div>兵士代表</div>
+      </div>
+      <div class="asm-desc"><strong>労働者・兵士</strong>が選出した評議会。<strong>「命令第一号」</strong>＝軍の命令はソヴィエトの承認なしに無効→<strong>軍の実権</strong>を掌握。正統性は低いが<strong>実力</strong>を持つ。当初はエスエル・メンシェヴィキが多数＝「臨時政府を支持するが監視する」。</div>
+    </div>
+  </div>
+  <div class="side-note">★入試超頻出：「二重権力(ドヴォエヴラスチエ)」＝臨時政府(正統性)とソヴィエト(実力)の並立。臨時政府は法的正統性を持つが軍を動かせない。ソヴィエトは軍を動かせるが「正式な政府」ではない。この矛盾が十月革命への道を開く</div>
+
+  <div class="event">
+    <div class="event-title">レーニン帰国 → 「四月テーゼ」</div>
+    <div class="event-year">1917.4.16</div>
+    <div class="event-desc">ドイツの<strong>「封印列車」</strong>(ロシアの混乱を望むドイツが通過を許可)でスイスから帰還。<strong>「四月テーゼ」</strong>＝①臨時政府を支持しない ②<strong>「すべての権力をソヴィエトへ」</strong> ③即時停戦 ④土地の農民への分配。ボリシェヴィキの路線を「臨時政府との協力」から「権力奪取」に転換。<strong>「パン・土地・平和」</strong>のスローガンが兵士・農民・労働者の心をつかむ。</div>
+  </div>
+  <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">臨時政府の失策が続く</div></div>
+
+  <div class="event">
+    <div class="event-title">臨時政府の信用失墜 → ボリシェヴィキの台頭</div>
+    <div class="event-year">1917.6–10</div>
+    <div class="event-desc"><strong>ケレンスキー攻勢</strong>(6月)＝戦争継続のための攻勢→惨敗→兵士の離反加速。<strong>七月事件</strong>＝ボリシェヴィキのデモ→鎮圧→レーニンはフィンランドに逃亡。<strong>コルニーロフ事件</strong>(8月)＝右派将軍のクーデタ未遂→<strong>ボリシェヴィキが武装して防衛に貢献→「革命の守護者」として支持急上昇</strong>。9月にはペトログラード・ソヴィエトでボリシェヴィキが多数派に(議長＝<strong>トロツキー</strong>)。</div>
+  </div>
+  <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">レーニン「武装蜂起の時は今だ」→党中央委員会を説得</div></div>
+</div>
+
+<!-- 十月革命 -->
+<div class="phase p-oct">
+  <div class="phase-label">1917<br>10-11月</div>
+  <div class="event">
+    <div class="event-title">十月革命(ボリシェヴィキ革命)</div>
+    <div class="event-year">1917.11.7 (旧暦10.25)</div>
+    <div class="event-desc">トロツキーが<strong>軍事革命委員会</strong>を指揮。赤衛隊(武装労働者)と親ボリシェヴィキの兵士が<strong>冬宮を占拠</strong>＝計画的・組織的なクーデタ(二月革命の自然発生的崩壊とは対照的)。ほとんど無抵抗。レーニンが<strong>全ロシア・ソヴィエト大会</strong>で権力掌握を宣言→メンシェヴィキ・エスエル右派は抗議して退場。</div>
+  </div>
+  <div class="asm">
+    <div class="asm-header"><div class="asm-name">人民委員会議(ソヴナルコム)</div><div class="asm-type">COUNCIL OF PEOPLE'S COMMISSARS ― ボリシェヴィキ政権</div></div>
+    <div class="factions">
+      <div class="faction f-bolsh"><div class="dot"></div>ボリシェヴィキ<span class="power-tag">独占</span></div>
+      <div class="faction f-sr"><div class="dot"></div>左派エスエル(一時連立→離脱)</div>
+    </div>
+    <div class="asm-desc"><strong>レーニン</strong>＝人民委員会議議長(首相)、<strong>トロツキー</strong>＝外務人民委員(→軍事)。<strong>「平和に関する布告」</strong>＝即時停戦。<strong>「土地に関する布告」</strong>＝地主の土地没収→農民に分配(エスエルの綱領を借用)。銀行国有化。<strong>チェーカー</strong>(秘密警察)設立。<strong>制憲議会</strong>選挙(1918.1)→<strong>エスエルが第1党</strong>(ボリシェヴィキは約25%)→<strong>ボリシェヴィキが武力で解散</strong>＝民主主義の否定。<strong>ブレスト＝リトフスク条約</strong>(1918.3)＝ドイツと講和→領土1/4喪失の屈辱的条件→左派エスエルが抗議し連立を離脱→<strong>一党独裁</strong>に。</div>
+  </div>
+  <div class="side-note">★入試頻出：「制憲議会の解散」＝ボリシェヴィキは選挙で負けたのに武力で議会を閉じた。「ソヴィエト民主主義」を掲げながら実態は一党独裁。レーニンは「制憲議会はブルジョワ的形式に過ぎない」と正当化</div>
+  <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">反ボリシェヴィキ勢力が各地で蜂起→内戦</div></div>
+</div>
+
+<!-- 内戦 -->
+<div class="phase p-civil">
+  <div class="phase-label">1918<br>〜<br>1922</div>
+  <div class="asm">
+    <div class="asm-header"><div class="asm-name">ロシア内戦</div><div class="asm-type">CIVIL WAR</div></div>
+    <div class="factions">
+      <div class="faction f-bolsh"><div class="dot"></div>赤軍(ボリシェヴィキ＝トロツキーが組織)</div>
+      <div class="faction f-tsar"><div class="dot"></div>白軍(旧帝政派・カデット・将軍たち)</div>
+      <div class="faction f-sr"><div class="dot"></div>反ボリシェヴィキ社会主義者(エスエル・メンシェヴィキ)</div>
+      <div class="faction f-peasant"><div class="dot"></div>緑軍(農民の自衛組織＝赤にも白にもつかない)</div>
+    </div>
+    <div class="asm-desc"><strong>赤軍</strong>(トロツキーが旧帝政軍の将校を徴用して組織)vs<strong>白軍</strong>(統一指導を欠く寄せ集め)。<strong>英仏日米</strong>がシベリア出兵等で白軍を支援→かえって「外国の侵略者と戦う」ボリシェヴィキの正当性を強化。<strong>戦時共産主義</strong>＝穀物の強制徴発・工業国有化・労働義務→農民の抵抗→大飢饉(1921-22、500万人死亡)。ニコライ2世一家の処刑(1918.7)。<strong>クロンシュタットの反乱</strong>(1921)＝革命を支持した水兵が「ボリシェヴィキなしのソヴィエト」を要求→武力鎮圧。</div>
+  </div>
+  <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">戦時共産主義の破綻→レーニンが経済政策を転換</div></div>
+</div>
+
+<!-- NEP→スターリン -->
+<div class="phase p-soviet">
+  <div class="phase-label">1921<br>〜<br>1928</div>
+  <div class="asm">
+    <div class="asm-header"><div class="asm-name">新経済政策(NEP)→ソ連の成立</div><div class="asm-type">USSR ― 1922.12成立</div></div>
+    <div class="factions">
+      <div class="faction f-bolsh"><div class="dot"></div>共産党(ボリシェヴィキ→ロシア共産党に改称)<span class="power-tag">一党独裁</span></div>
+    </div>
+    <div class="asm-desc"><strong>NEP</strong>(1921-)＝部分的に市場経済を復活(穀物税・中小私営許可)→経済回復。しかし「ネップマン(成金)」の出現→「社会主義なのに資本家がいる」矛盾。<strong>ソヴィエト社会主義共和国連邦(USSR)</strong>成立(1922.12)。</div>
+  </div>
+  <div class="asm">
+    <div class="asm-header"><div class="asm-name">後継者争い → スターリン体制</div><div class="asm-type">POWER STRUGGLE</div></div>
+    <div class="factions">
+      <div class="faction f-bolsh"><div class="dot"></div>スターリン(書記長＝党官僚機構を掌握)<span class="power-tag">勝利</span></div>
+      <div class="faction f-bolsh" style="opacity:.5"><div class="dot"></div>トロツキー(永続革命論)→追放</div>
+      <div class="faction f-bolsh" style="opacity:.5"><div class="dot"></div>ジノヴィエフ・カーメネフ→粛清</div>
+      <div class="faction f-bolsh" style="opacity:.5"><div class="dot"></div>ブハーリン(NEP継続派)→粛清</div>
+    </div>
+    <div class="asm-desc">レーニン死去(1924.1)→<strong>スターリンvsトロツキー</strong>。トロツキー＝「永続革命論(世界革命なしに社会主義は不可能)」。スターリン＝<strong>「一国社会主義論」</strong>→書記長として<strong>党官僚機構</strong>を掌握し、まずトロツキー(左派)を追放(1927)、次にブハーリン(右派)を排除→<strong>個人独裁を確立</strong>。NEP廃止→<strong>五カ年計画</strong>(1928-)＝強制的重工業化・農業集団化→<strong>大粛清</strong>(1936-38)→全体主義国家へ。</div>
+  </div>
+</div>
+
+</div>
+
+<div class="note">
+<p>ロシア革命の核心＝<strong>「どの政党が、どの機関で、誰を代表して権力を握ったか」</strong>。帝政下では4つの政党(カデット・エスエル・メンシェヴィキ・ボリシェヴィキ)が地下で活動→二月革命で<strong>臨時政府(カデット＋穏健派)とソヴィエト(労働者＋兵士)</strong>が並立→ボリシェヴィキが<strong>「パン・土地・平和」</strong>で支持を拡大→十月革命で権力奪取→制憲議会解散で<strong>一党独裁</strong>へ。二月革命は「自然発生的崩壊」、十月革命は「計画的クーデタ」という違いが入試の頻出ポイント。</p>
+</div>
+
+</body>
+</html>

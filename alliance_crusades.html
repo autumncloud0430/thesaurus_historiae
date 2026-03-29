@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>十字軍時代の勢力図</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+.hdr{padding:16px 20px;border-bottom:1px solid rgba(201,169,110,.08);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.hdr h1{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2)}
+.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
+.content{padding:12px 16px;overflow-x:auto}.content-inner{min-width:760px}
+.phase{margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid rgba(201,169,110,.04)}.phase:last-child{border-bottom:none}
+.phase-hdr{display:flex;align-items:baseline;gap:8px;margin-bottom:6px}
+.phase-era{font-family:'Cormorant Garamond',serif;font-size:13px;font-weight:700;color:var(--gold);letter-spacing:.1em;min-width:80px}
+.phase-title{font-family:'Noto Serif JP',serif;font-size:11px;font-weight:700;color:var(--gold2)}
+.phase-sub{font-size:8px;color:var(--text3);margin-left:4px}
+.phase-body{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.cn{border-radius:6px;padding:5px 10px;text-align:center;cursor:pointer;transition:all .15s}.cn:hover{filter:brightness(1.15);transform:translateY(-1px)}
+.cn .nm{font-family:'Noto Serif JP',serif;font-size:9px;font-weight:700;white-space:nowrap}
+.cn .sub{font-size:6px;color:var(--text3);margin-top:1px;white-space:nowrap}
+.cn-chr{background:rgba(74,100,194,.06);border:1px solid rgba(74,100,194,.2)}.cn-chr .nm{color:#8aa0d4}
+.cn-isl{background:rgba(120,160,80,.06);border:1px solid rgba(120,160,80,.2)}.cn-isl .nm{color:#a8c890}
+.cn-byz{background:rgba(160,120,80,.06);border:1px solid rgba(160,120,80,.2)}.cn-byz .nm{color:#d4c098}
+.cn-dim{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05)}.cn-dim .nm{color:var(--text3)}
+.grp{border-radius:8px;padding:8px 10px;display:flex;gap:5px;align-items:center;flex-wrap:wrap;position:relative}
+.grp-chr{border:1px solid rgba(74,100,194,.12);background:rgba(74,100,194,.02)}
+.grp-isl{border:1px solid rgba(120,160,80,.12);background:rgba(120,160,80,.02)}
+.grp-label{font-size:7px;font-weight:600;letter-spacing:.06em;position:absolute;top:-7px;left:12px;padding:0 4px;background:var(--bg)}
+.grp-label-chr{color:rgba(74,100,194,.6)}.grp-label-isl{color:rgba(120,160,80,.6)}
+.vs{font-family:'Cormorant Garamond',serif;font-size:12px;font-weight:700;color:rgba(194,90,74,.4);padding:0 5px}
+.ev{font-size:7px;color:var(--gold);background:rgba(201,169,110,.06);border:1px solid rgba(201,169,110,.1);border-radius:4px;padding:2px 6px;cursor:pointer;transition:all .15s;white-space:nowrap}.ev:hover{filter:brightness(1.2)}
+.ev-bad{color:#c25a5a;background:rgba(194,74,74,.06);border-color:rgba(194,74,74,.1)}
+.ar{font-size:8px;color:var(--text3);padding:0 2px}
+.detail{font-size:6.5px;color:var(--text3);margin:3px 0 0 4px;line-height:1.6}.detail b{color:var(--gold);font-weight:600}
+.tp{display:none}
+.note{text-align:center;padding:8px 20px 32px;max-width:820px;margin:0 auto}.note p{font-size:9px;color:var(--text3);line-height:1.8}.note strong{color:var(--gold)}
+.nd-svg{cursor:pointer}
+
+@media(max-width:600px){
+.hdr{padding:10px 12px}.hdr h1{font-size:12px}
+th,td{padding:6px 8px;font-size:9px}
+th{font-size:10px}
+td:first-child{font-size:8.5px}
+.note p{font-size:8px}
+.side-note{font-size:7.5px}
+}
+</style>
+</head>
+<body>
+<div class="hdr"><h1>十字軍時代の勢力図 ― キリスト教世界 vs イスラーム世界</h1><a href="charts.html">← Ad Chartae</a></div>
+<div class="content"><div class="content-inner">
+
+<div class="phase">
+<div class="phase-hdr"><div class="phase-era">1095-1099</div><div class="phase-title">第1回十字軍 ― 「唯一の成功」</div></div>
+<div class="phase-body">
+<div class="grp grp-chr"><div class="grp-label grp-label-chr">キリスト教世界</div>
+<div class="cn cn-chr nd-svg" data-tip="c1-pope"><div class="nm">教皇ウルバヌス2世</div><div class="sub">クレルモン公会議(1095)で提唱</div></div>
+<div class="cn cn-chr nd-svg" data-tip="c1-knight"><div class="nm">仏独伊の諸侯・騎士</div><div class="sub">ゴドフロワ＝ド＝ブイヨン等</div></div>
+</div>
+<div class="vs">VS</div>
+<div class="grp grp-isl"><div class="grp-label grp-label-isl">イスラーム世界</div>
+<div class="cn cn-isl nd-svg" data-tip="c1-sel"><div class="nm">セルジューク朝</div><div class="sub">分裂状態で対応できず</div></div>
+<div class="cn cn-isl nd-svg" data-tip="c1-fat"><div class="nm">ファーティマ朝</div><div class="sub">エジプト（シーア派）</div></div>
+</div>
+<div class="cn cn-byz nd-svg" data-tip="c1-byz"><div class="nm">ビザンツ帝国</div><div class="sub">アレクシオス1世が援軍要請→十字軍のきっかけ</div></div>
+</div>
+<div class="detail"><b>聖地エルサレムを奪回</b>(1099)→十字軍国家（エルサレム王国等）を建設。セルジューク朝の分裂＋ファーティマ朝との対立（スンナ派vsシーア派）がイスラーム側の弱点に。<b>第1回だけが「成功」した十字軍</b></div>
+</div>
+
+<div class="phase">
+<div class="phase-hdr"><div class="phase-era">1147-1192</div><div class="phase-title">第2回・第3回 ― サラディンの反撃</div></div>
+<div class="phase-body" style="margin-bottom:6px">
+<div class="ev nd-svg" data-tip="c2-2nd">第2回十字軍(1147-49) → 失敗</div>
+<span class="ar">→</span>
+<div class="ev ev-bad nd-svg" data-tip="c2-sala">サラディンがエルサレム奪回(1187)</div>
+<span class="ar">→</span>
+<div class="ev nd-svg" data-tip="c2-3rd">第3回十字軍(1189-92)</div>
+</div>
+<div class="phase-body">
+<div class="grp grp-chr"><div class="grp-label grp-label-chr">第3回十字軍の「三大王」</div>
+<div class="cn cn-chr nd-svg" data-tip="c2-richard"><div class="nm">リチャード1世</div><div class="sub">英「獅子心王」</div></div>
+<div class="cn cn-chr nd-svg" data-tip="c2-philip"><div class="nm">フィリップ2世</div><div class="sub">仏（途中帰国）</div></div>
+<div class="cn cn-chr nd-svg" data-tip="c2-fred"><div class="nm">フリードリヒ1世</div><div class="sub">神聖ローマ皇帝（途中溺死）</div></div>
+</div>
+<div class="vs">VS</div>
+<div class="cn cn-isl nd-svg" data-tip="c2-saladin"><div class="nm">サラディン</div><div class="sub">アイユーブ朝 ← イスラーム統一</div></div>
+</div>
+<div class="detail"><b>サラディン</b>がイスラーム世界を統一し<b>ヒッティーンの戦い(1187)</b>でエルサレムを奪回→衝撃。第3回はリチャード1世がサラディンと互角に戦うもエルサレム奪回は失敗→沿岸部の確保で和平</div>
+</div>
+
+<div class="phase">
+<div class="phase-hdr"><div class="phase-era">1202-1204</div><div class="phase-title">第4回 ― コンスタンティノープル略奪</div><div class="phase-sub">十字軍の変質</div></div>
+<div class="phase-body">
+<div class="cn cn-chr nd-svg" data-tip="c4-ven"><div class="nm">ヴェネツィア</div><div class="sub">商業的利害で主導</div></div>
+<span class="ar">が十字軍を誘導→</span>
+<div class="ev ev-bad nd-svg" data-tip="c4-cp">コンスタンティノープルを略奪(1204)</div>
+<span class="ar">→</span>
+<div class="cn cn-byz nd-svg" data-tip="c4-latin"><div class="nm">ラテン帝国</div><div class="sub">ビザンツの地に十字軍国家</div></div>
+</div>
+<div class="detail"><b>聖地ではなくキリスト教国ビザンツを攻撃</b>→十字軍の理想の完全な変質。ヴェネツィアの商業的利害が動機。東西教会の亀裂は決定的に。ビザンツは1261年に奪回するが衰退が加速→1453年オスマンに滅亡</div>
+</div>
+
+<div class="phase">
+<div class="phase-hdr"><div class="phase-era">1217-1272</div><div class="phase-title">第5回〜第7回 ― 十字軍の衰退</div></div>
+<div class="phase-body" style="margin-bottom:6px">
+<div class="ev nd-svg" data-tip="c5-5th">第5回(1217-21)：エジプトのダミエッタを一時占領→撤退</div>
+</div>
+<div class="phase-body" style="margin-bottom:6px">
+<div class="ev nd-svg" data-tip="c5-6th">第6回(1228-29)：皇帝フリードリヒ2世が交渉でエルサレムを回復</div>
+<div class="cn cn-dim nd-svg" data-tip="c5-fred2"><div class="nm">フリードリヒ2世</div><div class="sub">破門されたまま十字軍→外交で成功</div></div>
+</div>
+<div class="phase-body" style="margin-bottom:6px">
+<div class="ev ev-bad nd-svg" data-tip="c5-jeru">エルサレム再陥落(1244) ← ホラズム傭兵</div>
+</div>
+<div class="phase-body">
+<div class="ev nd-svg" data-tip="c5-7th">第7回(1248-54)：ルイ9世がエジプト遠征→捕虜に</div>
+<div class="cn cn-dim nd-svg" data-tip="c5-louis"><div class="nm">ルイ9世（聖王）</div><div class="sub">仏王。第8回(1270)でチュニスで病死</div></div>
+</div>
+<div class="detail"><b>第6回だけが特異</b>：破門中の皇帝フリードリヒ2世がアイユーブ朝と<b>交渉</b>でエルサレムを回復(1229)→武力でなく外交という異例。しかし1244年に再陥落。第7回・第8回はルイ9世が主導するが全て失敗→十字軍運動の終焉が近づく</div>
+</div>
+
+<div class="phase">
+<div class="phase-hdr"><div class="phase-era">1291</div><div class="phase-title">十字軍国家の滅亡と長期的影響</div></div>
+<div class="phase-body">
+<div class="ev ev-bad nd-svg" data-tip="c5-acre">アッコン陥落(1291)</div>
+<span class="ar">→</span>
+<div class="cn cn-dim nd-svg" data-tip="c5-end"><div class="nm">十字軍国家の消滅</div><div class="sub">マムルーク朝が最終的に制圧</div></div>
+</div>
+<div class="detail"><b>マムルーク朝</b>（エジプト）がアイユーブ朝を倒し十字軍国家を掃討。約200年の十字軍時代が終結。しかし<b>長期的影響</b>は大きい：①東方貿易の拡大（ヴェネツィア・ジェノヴァ）②教皇権の衰退（十字軍の失敗→権威低下）③騎士道文化の発展④イスラーム文化の西欧への流入</div>
+</div>
+
+</div></div>
+
+<div class="tp" id="tip-c1-pope"><p><strong>ウルバヌス2世</strong> ― <strong>クレルモン公会議(1095)</strong>で聖地回復を呼びかけ→「神がそれを望んでおられる！」(Deus vult)。叙任権闘争後の教皇権強化の一環。十字軍参加者には贖宥（罪の許し）を約束。</p></div>
+<div class="tp" id="tip-c1-knight"><p><strong>諸侯・騎士</strong> ― フランスの諸侯が中心（十字軍はフランス語で「フランクの事業」とも）。宗教的熱狂＋領土拡大の欲求。途中でユダヤ人虐殺も発生（ラインラント）。</p></div>
+<div class="tp" id="tip-c1-sel"><p><strong>セルジューク朝</strong> ― マンジケルトの戦い(1071)でビザンツを破り小アジアに進出→ビザンツが教皇に援軍要請→十字軍のきっかけ。しかし11C末には分裂状態→十字軍に対して統一的対応ができず。</p></div>
+<div class="tp" id="tip-c1-fat"><p><strong>ファーティマ朝</strong> ― シーア派（イスマーイール派）のエジプト王朝。スンナ派のセルジューク朝と対立→イスラーム世界の分裂が十字軍成功の一因。1171年にサラディンのアイユーブ朝に取って代わられる。</p></div>
+<div class="tp" id="tip-c1-byz"><p><strong>ビザンツ帝国</strong> ― アレクシオス1世がセルジュークに対する援軍を教皇に要請→十字軍の発端。しかし十字軍は徐々にビザンツの制御を離れ、第4回(1204)ではビザンツ自体が略奪される。</p></div>
+<div class="tp" id="tip-c2-2nd"><p><strong>第2回十字軍(1147-49)</strong> ― エデッサ伯領の陥落(1144)がきっかけ。仏王ルイ7世と神聖ローマ皇帝コンラート3世が参加→しかしダマスクス攻略に失敗→成果なし。</p></div>
+<div class="tp" id="tip-c2-sala"><p><strong>サラディンのエルサレム奪回(1187)</strong> ― <strong>ヒッティーンの戦い</strong>で十字軍を壊滅→88年ぶりにエルサレムをイスラーム側に奪回。サラディンの寛容さ（住民の安全を保証）はキリスト教側にも敬意を持たれた。</p></div>
+<div class="tp" id="tip-c2-3rd"><p><strong>第3回十字軍(1189-92)</strong> ― エルサレム奪回を目指す。英リチャード1世がアッコンを奪回しサラディンと互角に戦うも、エルサレム奪回は断念→沿岸部の確保で和平。</p></div>
+<div class="tp" id="tip-c2-richard"><p><strong>リチャード1世「獅子心王」</strong> ― 英王。軍事的才能に優れサラディンと互角に渡り合う。アッコンを奪回。しかしエルサレムは断念し帰国→途中でオーストリアに捕らえられ身代金。</p></div>
+<div class="tp" id="tip-c2-philip"><p><strong>フィリップ2世</strong> ― 仏王。リチャードとの確執→アッコン攻略後に早々に帰国し、リチャード不在のうちに英領を攻撃。</p></div>
+<div class="tp" id="tip-c2-fred"><p><strong>フリードリヒ1世（バルバロッサ）</strong> ― 神聖ローマ皇帝。大軍を率いるが小アジアの川で溺死→軍は瓦解。</p></div>
+<div class="tp" id="tip-c2-saladin"><p><strong>サラディン（サラーフ＝アッディーン）</strong> ― アイユーブ朝の建国者。ファーティマ朝を倒しエジプト・シリアを統一→イスラーム世界を結集して十字軍に対抗。<strong>イスラーム側の英雄</strong>。寛容さと騎士道的精神でキリスト教側からも敬われた。</p></div>
+<div class="tp" id="tip-c4-ven"><p><strong>ヴェネツィア</strong> ― 東方貿易の拠点確保が目的。十字軍に輸送船を提供する代わりに、まずザラ（キリスト教都市）を攻撃させ、次にコンスタンティノープルに誘導。商業的利害が宗教的目的を凌駕した象徴。</p></div>
+<div class="tp" id="tip-c4-cp"><p><strong>コンスタンティノープル略奪(1204)</strong> ― 十字軍がビザンツの首都を3日間にわたり略奪。教会の宝物・聖遺物を持ち去る。<strong>キリスト教徒がキリスト教徒を攻撃</strong>→十字軍の理想の完全な崩壊。東西教会の亀裂は決定的に。</p></div>
+<div class="tp" id="tip-c4-latin"><p><strong>ラテン帝国(1204-61)</strong> ― コンスタンティノープルに建国された十字軍国家。ビザンツの亡命政権（ニケーア帝国）が1261年に奪回。しかしビザンツは衰退が加速→1453年オスマンに滅亡。</p></div>
+<div class="tp" id="tip-c5-acre"><p><strong>アッコン陥落(1291)</strong> ― マムルーク朝が十字軍国家最後の拠点アッコンを攻略。約200年にわたる十字軍国家が完全に消滅。</p></div>
+<div class="tp" id="tip-c5-end"><p><strong>十字軍の長期的影響</strong> ― ①<strong>東方貿易の拡大</strong>→ヴェネツィア・ジェノヴァの繁栄→ルネサンスの経済的基盤 ②<strong>教皇権の衰退</strong>（十字軍の失敗→権威低下→アナーニ事件1303→教皇のバビロン捕囚） ③<strong>イスラーム文化の流入</strong>（アリストテレス哲学・医学・数学が西欧に→12C ルネサンス） ④騎士修道会（テンプル・ヨハネ・ドイツ騎士団）の発展。</p></div>
+
+<div class="tp" id="tip-c5-5th"><p><strong>第5回十字軍(1217-21)</strong> ― エジプトのダミエッタ（ナイル河口の要塞）を攻略→しかしカイロへの進軍に失敗→ナイル増水で撤退。教皇主導だが成果なし。</p></div>
+<div class="tp" id="tip-c5-6th"><p><strong>第6回十字軍(1228-29)</strong> ― 神聖ローマ皇帝<strong>フリードリヒ2世</strong>が主導。教皇に破門されたまま出発→アイユーブ朝のアル＝カーミルと<strong>交渉</strong>で10年間のエルサレム返還を実現(1229)。武力でなく外交で聖地を回復した唯一の十字軍→しかし教皇は認めず。</p></div>
+<div class="tp" id="tip-c5-fred2"><p><strong>フリードリヒ2世</strong> ― 「世界の驚異」。シチリア育ちでアラビア語を解し、イスラーム文化に精通。破門中に十字軍→外交でエルサレムを回復→教皇と対立。中世的な聖戦の論理ではなく近代的な外交の先駆。</p></div>
+<div class="tp" id="tip-c5-jeru"><p><strong>エルサレム再陥落(1244)</strong> ― ホラズム人傭兵（モンゴルに追われた中央アジアの勢力）がエジプトのアイユーブ朝と結んでエルサレムを攻略→以後キリスト教徒は二度とエルサレムを回復できず。</p></div>
+<div class="tp" id="tip-c5-7th"><p><strong>第7回十字軍(1248-54)</strong> ― 仏王<strong>ルイ9世</strong>（聖ルイ）がエジプト遠征→ダミエッタを占領するもマンスーラの戦いで大敗→<strong>ルイ9世が捕虜に</strong>（莫大な身代金で解放）。第8回(1270)ではチュニスに遠征→疫病で死去→列聖される。</p></div>
+<div class="tp" id="tip-c5-louis"><p><strong>ルイ9世（聖王）</strong> ― フランス王。中世の理想的君主像。第7回(1248)で捕虜→第8回(1270)チュニスで病死。死後に列聖。しかし十字軍としては全て失敗→聖地回復は実現せず。</p></div>
+<div class="note"><p>
+<strong>入試ポイント：</strong><br>
+❶ 十字軍の契機＝<strong>セルジューク朝の進出→ビザンツが教皇に援軍要請→クレルモン公会議(1095)</strong><br>
+❷ <strong>第1回(1099)だけが「成功」</strong>。イスラーム世界の分裂（セルジューク分裂＋スンナvsシーア）が原因<br>
+❸ <strong>サラディン</strong>がイスラームを統一→ヒッティーン(1187)でエルサレム奪回→第3回十字軍へ<br>
+❹ <strong>第4回(1204)＝コンスタンティノープル略奪</strong>→十字軍の変質（宗教→商業利害）。東西教会の決裂<br>
+❺ <strong>第6回(1229)のフリードリヒ2世</strong>＝唯一「交渉」で聖地を回復した異例の十字軍<br>
+❻ 長期的影響：東方貿易の拡大・教皇権の衰退・イスラーム文化の流入（12Cルネサンス）
+</p></div>
+
+<div id="tooltip-overlay" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;z-index:8000" onclick="closeTip()"></div>
+<div id="tooltip-box" style="display:none;position:fixed;z-index:9000;background:rgba(12,15,22,.97);border:1px solid rgba(201,169,110,.25);border-radius:8px;padding:12px 16px;max-width:320px;width:calc(100vw - 32px);box-shadow:0 8px 30px rgba(0,0,0,.6)">
+<div id="tooltip-content" style="font-size:10px;color:#8a857d;line-height:1.7"></div></div>
+<script>
+(function(){var ov=document.getElementById("tooltip-overlay"),bx=document.getElementById("tooltip-box"),ct=document.getElementById("tooltip-content");window.closeTip=function(){bx.style.display="none";ov.style.display="none"};function openTip(el){var tipId=el.getAttribute("data-tip");var tipEl=tipId?document.getElementById("tip-"+tipId):null;if(!tipEl)return;closeTip();ct.innerHTML=tipEl.innerHTML;ov.style.display="block";bx.style.display="block";var r=el.getBoundingClientRect(),w=Math.min(320,window.innerWidth-32);bx.style.width=w+"px";var l=r.left+r.width/2-w/2;if(l<16)l=16;if(l+w>window.innerWidth-16)l=window.innerWidth-16-w;bx.style.left=l+"px";bx.style.top=(r.bottom+8)+"px";bx.style.bottom="auto";var br=bx.getBoundingClientRect();if(br.bottom>window.innerHeight-16){var t=r.top-br.height-8;if(t<16)t=16;bx.style.top=t+"px"}}var tm=false,tt=null;document.addEventListener("touchstart",function(e){tm=false;tt=e.target},{passive:true});document.addEventListener("touchmove",function(){tm=true},{passive:true});document.addEventListener("touchend",function(e){if(tm)return;var nd=tt?tt.closest(".nd-svg"):null;if(nd){e.preventDefault();openTip(nd)}else if(!tt||!tt.closest("#tooltip-box"))closeTip();tt=null});document.addEventListener("click",function(e){if("ontouchstart"in window)return;var nd=e.target.closest(".nd-svg");if(nd)openTip(nd);else if(!e.target.closest("#tooltip-box"))closeTip()})})();
+</script>
+</body></html>

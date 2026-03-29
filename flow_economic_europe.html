@@ -1,0 +1,77 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>ヨーロッパ経済構造の変遷</title><style>@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048;--border:rgba(201,169,110,.08)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+.hdr{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.hdr h1{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2)}
+.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
+.flow{max-width:720px;margin:0 auto;padding:24px 20px 60px}
+.phase{position:relative;margin-bottom:2px;padding:16px 16px 16px 60px;border-left:2px solid rgba(201,169,110,.08);margin-left:30px}
+.phase:last-child{border-left-color:transparent}
+.phase-label{position:absolute;left:-42px;top:16px;width:36px;font-family:'Cormorant Garamond',serif;font-size:10px;font-weight:700;color:var(--text3);text-align:right;line-height:1.3}
+.phase::before{content:'';position:absolute;left:-5px;top:22px;width:8px;height:8px;border-radius:50%;background:var(--bg);border:2px solid rgba(201,169,110,.25)}
+.node{background:rgba(255,255,255,.015);border:1px solid rgba(255,255,255,.04);border-radius:8px;padding:10px 14px;margin-bottom:8px;border-left:3px solid transparent}
+.node:hover{background:rgba(255,255,255,.03)}
+.node-title{font-family:'Noto Serif JP',serif;font-size:12px;font-weight:700;color:var(--gold2);margin-bottom:2px}
+.node-year{font-family:'Cormorant Garamond',serif;font-size:11px;color:var(--gold);opacity:.6;margin-bottom:4px}
+.node-desc{font-size:10px;color:var(--text2);line-height:1.7}
+.node-desc strong{color:var(--text);font-weight:600}
+.arrow{display:flex;align-items:center;gap:6px;padding:2px 0 2px 8px;margin-bottom:6px}
+.arrow-line{width:16px;height:1px;background:rgba(201,169,110,.15)}
+.arrow-text{font-size:8px;color:var(--text3)}
+.arrow-icon{color:rgba(201,169,110,.3);font-size:10px}
+.branch-row{display:flex;gap:8px;margin-bottom:8px}
+.branch-row .node{flex:1}
+.node.key{background:rgba(201,169,110,.04);border-color:rgba(201,169,110,.12)}
+.side-note{font-size:8px;color:var(--text3);padding:4px 8px;border-left:2px solid rgba(201,169,110,.1);margin:4px 0 8px;line-height:1.6}
+.note{text-align:center;padding:8px 20px 32px;max-width:700px;margin:0 auto}.note p{font-size:9px;color:var(--text3);line-height:1.8}.note strong{color:var(--gold)}
+
+.p1 .node{border-left-color:rgba(130,130,100,.3)}.p1::before{border-color:rgba(130,130,100,.5);background:rgba(130,130,100,.15)}.p2 .node{border-left-color:rgba(180,140,60,.3)}.p2::before{border-color:rgba(180,140,60,.4)}.p3 .node{border-left-color:rgba(100,130,180,.3)}.p3::before{border-color:rgba(100,130,180,.4)}.p4 .node{border-left-color:rgba(80,150,120,.3)}.p4::before{border-color:rgba(80,150,120,.5);background:rgba(80,150,120,.15)}.p5 .node{border-left-color:rgba(180,80,80,.3)}.p5::before{border-color:rgba(180,80,80,.5);background:rgba(180,80,80,.15)}
+@media(max-width:600px){
+.hdr{padding:10px 12px}.hdr h1{font-size:12px}
+.flow{padding:16px 10px 40px}
+.phase{padding:12px 10px 12px 44px;margin-left:20px}
+.phase-label{left:-30px;width:28px;font-size:8px}
+.node{padding:8px 10px}.node-title{font-size:11px}.node-desc{font-size:9px}
+.branch-row{flex-direction:column}
+.side-note{font-size:7.5px}
+.note p{font-size:8px}
+}
+</style></head><body><div class="hdr"><h1>ヨーロッパ経済構造の変遷 ― 荘園制から帝国主義まで ― 「なぜ変わったか」の因果連鎖</h1><a href="charts.html">← Ad Chartae</a></div><div class="flow">
+<div class="phase p1"><div class="phase-label">中世前期<br>9-11C</div>
+  <div class="node key"><div class="node-title">★荘園制(マナー制)</div>
+  <div class="node-desc"><strong>構造</strong>：領主直営地(デメーヌ)＋農民保有地＋共有地(入会地)の三圃制。★<strong>農奴(セルフ)</strong>＝土地に縛られ移動の自由なし。領主に<strong>賦役</strong>(直営地での無償労働)＋<strong>貢納</strong>(生産物の一部)＋<strong>十分の一税</strong>(教会へ)。★<strong>自給自足経済</strong>＝貨幣はほぼ不要。市場・交易は極めて限定的。<br><strong>機能の理由</strong>：ゲルマン民族の大移動→ローマの交通・交易網の崩壊→安全の確保が最優先→領主の「保護」と引き換えに農奴の「服従」＝<strong>封建制の経済的基盤</strong>。</div></div>
+  <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">十字軍(1096-)→遠隔地交易の復活＋東方の奢侈品需要→貨幣経済の浸透</div></div>
+</div>
+
+<div class="phase p2"><div class="phase-label">中世後期<br>12-14C</div>
+  <div class="node"><div class="node-title">商業の復活と都市の成長</div>
+  <div class="node-desc"><strong>変化の原因</strong>：★十字軍→東方貿易(香辛料・絹・砂糖)が復活→北イタリア(ヴェネツィア・ジェノヴァ・フィレンツェ)と北海・バルト海(ハンザ同盟)を結ぶ交易ネットワーク。シャンパーニュの大市(定期市)。★<strong>貨幣経済の農村への浸透</strong>→領主が「賦役」より「貨幣地代」を好むように(貨幣の方が使い勝手がよい)→★<strong>賦役の金納化(コミューテーション)</strong>＝農奴の負担が人格的拘束→金銭的義務に変質→事実上の解放の第一歩。<br><strong>都市</strong>＝ギルド(同職組合)が生産・品質・価格を管理。「都市の空気は自由にする」→農奴が都市に逃亡→1年と1日で自由人に。</div></div>
+  <div class="node key"><div class="node-title">★黒死病(1347-51)→封建制の動揺</div>
+  <div class="node-desc"><strong>変化の原因</strong>：★ヨーロッパ人口の約1/3が死亡→<strong>労働力の絶対的不足</strong>→農奴の交渉力が激増(「働き手が足りない→条件を良くしないと逃げる」)→★<strong>農奴の地位が劇的に向上</strong>。<br><strong>西欧</strong>＝賃金労働の拡大→イギリスでは領主が賃金上昇を法律で抑えようとする(労働者法1351)→★<strong>ワット＝タイラーの乱</strong>(1381)→結局は農奴解放の方向に。<br><strong>東欧</strong>＝逆に★<strong>「農奴制の再版(第二次農奴制)」</strong>→グーツヘルシャフト(農場領主制)→領主が直営地を拡大し穀物を西欧に輸出(★<strong>エルベ川以東の分岐</strong>＝西欧は自由化、東欧は再農奴化)。</div></div>
+  <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">農奴制の崩壊→独立自営農民の出現→毛織物需要の拡大</div></div>
+</div>
+
+<div class="phase p3"><div class="phase-label">近世<br>15-17C</div>
+  <div class="node key"><div class="node-title">★囲い込み(エンクロージャー)と農業革命</div>
+  <div class="node-desc"><strong>変化の原因</strong>：★<strong>第1次囲い込み</strong>(15-16C)＝毛織物工業(フランドル→イギリス)の発展→羊毛需要の増大→領主が共有地・農民保有地を囲い込んで牧羊地に転換→トマス＝モア『ユートピア』「★羊が人間を食い殺す」。農民が土地を失い浮浪者化→救貧法(エリザベス救貧法1601)。<br>★<strong>第2次囲い込み</strong>(18C-)＝議会法による合法的囲い込み→大規模農場が成立→★<strong>農業革命</strong>(ノーフォーク農法＝四輪作→カブ・クローバーで地力回復→休耕地が不要に)＋タウンゼンド(「カブのタウンゼンド」)→<strong>食糧生産の飛躍的増大→人口増加→都市への人口流出＝産業革命の労働力</strong>。</div></div>
+  <div class="node"><div class="node-title">マニュファクチュア(工場制手工業)</div>
+  <div class="node-desc"><strong>構造</strong>：問屋制家内工業(商人が原料を農家に配り製品を回収)→★<strong>マニュファクチュア</strong>(工場に労働者を集めて分業で生産)。資本家が工場・原料・道具を所有→労働者は労働力を売る→★<strong>資本主義的生産関係の萌芽</strong>。<br><strong>なぜ工場に集約されたか</strong>：品質管理の必要＋分業による効率化＋商人が生産過程を直接管理したい→だしまだ手作業(動力は人力・水力)→機械化(産業革命)への前段階。</div></div>
+  <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">農業革命→余剰労働力＋食糧増産＋資本蓄積＋技術革新の需要→産業革命</div></div>
+</div>
+
+<div class="phase p4"><div class="phase-label">近代<br>18-19C<br>前半</div>
+  <div class="node key"><div class="node-title">★★産業革命(イギリス、1760s-1840s)</div>
+  <div class="node-desc"><strong>なぜイギリスで最初に？</strong>：①農業革命で食糧と労働力が確保 ②囲い込みで土地を失った農民＝工場労働者の供給源 ③植民地(インド・北米)からの原料(綿花)＋市場 ④石炭・鉄の豊富な資源 ⑤名誉革命後の政治的安定＋特許制度 ⑥非国教徒(クエーカー等)の企業家精神。<br><strong>技術革新の連鎖</strong>：ジョン＝ケイの飛び杼(1733)→ハーグリーヴズのジェニー紡績機(1764)→アークライトの水力紡績機(1769)→★ワットの蒸気機関(1769改良)→カートライトの力織機(1785)→スティーヴンソンの蒸気機関車(1825ストックトン＝ダーリントン鉄道)。<br>★<strong>工場制機械工業</strong>＝蒸気機関の動力→大量生産→イギリスが「★世界の工場」に(1851年ロンドン万博＝世界の工業生産の半分)。</div></div>
+  <div class="node"><div class="node-title">★産業革命の社会的影響</div>
+  <div class="node-desc"><strong>都市化</strong>：マンチェスター・バーミンガム等の工業都市が急成長→劣悪な住環境(エンゲルス『イギリスにおける労働者階級の状態』1845)。<br><strong>労働問題</strong>：長時間労働(1日14-16時間)・児童労働・低賃金→★<strong>ラッダイト運動</strong>(機械打ちこわし1811-)→<strong>工場法</strong>(1833児童労働制限→1847年10時間法)。★<strong>チャーティスト運動</strong>(1838-48→男子普通選挙等6カ条の要求)。<br><strong>階級社会</strong>：★<strong>産業資本家(ブルジョワジー)</strong> vs <strong>工場労働者(プロレタリアート)</strong>の対立構造→★マルクス・エンゲルス『共産党宣言』(1848)→マルクス『資本論』(1867)。</div></div>
+  <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">過剰生産→原料の調達先＋製品の市場が必要→海外進出→帝国主義</div></div>
+</div>
+
+<div class="phase p5"><div class="phase-label">19C<br>後半</div>
+  <div class="node key"><div class="node-title">★自由貿易から帝国主義へ</div>
+  <div class="node-desc"><strong>自由貿易の時代</strong>(19C中盤)：イギリス＝★穀物法廃止(1846)・航海法廃止(1849)→自由貿易の確立→「世界の工場」が安い製品を輸出し世界中から原料を輸入→★<strong>パクス＝ブリタニカ</strong>。<br><strong>なぜ帝国主義に転換？</strong>：①1873年の大不況→★<strong>保護関税</strong>の復活(独・米・仏→イギリスも最終的に)②独・米の工業化→イギリスの独占が崩壊③★<strong>過剰資本の輸出先</strong>が必要(ホブソン『帝国主義論』→レーニン『帝国主義論』＝「資本主義の最高段階」)④ナショナリズム＝植民地＝国家の威信。<br>★<strong>帝国主義</strong>(1880s-)＝列強がアフリカ・アジアを分割→ベルリン会議(1884-85)→ファショダ事件(1898)→モロッコ事件→★<strong>WW1へ</strong>(帝国主義の矛盾が爆発)。</div></div>
+  <div class="side-note">★一橋頻出の「構造変動」の問い方：「なぜ荘園制は崩壊したか」「囲い込みの原因と結果」「産業革命がイギリスで最初に起きた理由」「自由貿易から帝国主義への転換の原因」→各段階の<strong>「なぜ変わったか(原因)→何が変わったか(構造変化)→その結果どうなったか(帰結)」</strong>の三段論法で答える。</div>
+</div>
+</div><div class="note"><p>ヨーロッパ経済構造の変遷＝<strong>荘園制(自給自足)→貨幣経済の浸透→黒死病で封建制動揺→囲い込み＋農業革命→マニュファクチュア→産業革命(工場制)→自由貿易→帝国主義</strong>。各段階の転換の「なぜ」を説明できることが論述の鍵。</p></div></body></html>

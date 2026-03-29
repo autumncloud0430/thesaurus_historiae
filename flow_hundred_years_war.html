@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>百年戦争の流れ</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048;--border:rgba(201,169,110,.08)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+.hdr{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.hdr h1{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2)}
+.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
+.flow{max-width:720px;margin:0 auto;padding:24px 20px 60px}
+.phase{position:relative;margin-bottom:2px;padding:16px 16px 16px 60px;border-left:2px solid rgba(201,169,110,.08);margin-left:30px}
+.phase:last-child{border-left-color:transparent}
+.phase-label{position:absolute;left:-42px;top:16px;width:36px;font-family:'Cormorant Garamond',serif;font-size:10px;font-weight:700;color:var(--text3);text-align:right;line-height:1.3}
+.phase::before{content:'';position:absolute;left:-5px;top:22px;width:8px;height:8px;border-radius:50%;background:var(--bg);border:2px solid rgba(201,169,110,.25)}
+.node{background:rgba(255,255,255,.015);border:1px solid rgba(255,255,255,.04);border-radius:8px;padding:10px 14px;margin-bottom:8px;border-left:3px solid transparent}
+.node:hover{background:rgba(255,255,255,.03)}
+.node-title{font-family:'Noto Serif JP',serif;font-size:12px;font-weight:700;color:var(--gold2);margin-bottom:2px}
+.node-year{font-family:'Cormorant Garamond',serif;font-size:11px;color:var(--gold);opacity:.6;margin-bottom:4px}
+.node-desc{font-size:10px;color:var(--text2);line-height:1.7}
+.node-desc strong{color:var(--text);font-weight:600}
+.arrow{display:flex;align-items:center;gap:6px;padding:2px 0 2px 8px;margin-bottom:6px}
+.arrow-line{width:16px;height:1px;background:rgba(201,169,110,.15)}
+.arrow-text{font-size:8px;color:var(--text3)}
+.arrow-icon{color:rgba(201,169,110,.3);font-size:10px}
+.branch-row{display:flex;gap:8px;margin-bottom:8px}
+.branch-row .node{flex:1}
+.node.key{background:rgba(201,169,110,.04);border-color:rgba(201,169,110,.12)}
+.side-note{font-size:8px;color:var(--text3);padding:4px 8px;border-left:2px solid rgba(201,169,110,.1);margin:4px 0 8px;line-height:1.6}
+.note{text-align:center;padding:8px 20px 32px;max-width:700px;margin:0 auto}.note p{font-size:9px;color:var(--text3);line-height:1.8}.note strong{color:var(--gold)}
+
+.p1 .node{border-left-color:rgba(130,130,100,.3)}.p1::before{border-color:rgba(130,130,100,.4)}.p2 .node{border-left-color:rgba(100,130,180,.3)}.p2::before{border-color:rgba(100,130,180,.4)}.p3 .node{border-left-color:rgba(130,120,80,.3)}.p3::before{border-color:rgba(130,120,80,.4)}.p4 .node{border-left-color:rgba(180,100,80,.3)}.p4::before{border-color:rgba(180,100,80,.4)}.p5 .node{border-left-color:rgba(201,169,110,.4)}.p5::before{border-color:rgba(201,169,110,.5);background:rgba(201,169,110,.15)}.p6 .node{border-left-color:rgba(80,150,120,.3)}.p6::before{border-color:rgba(80,150,120,.4)}
+
+@media(max-width:600px){
+.hdr{padding:10px 12px}.hdr h1{font-size:12px}
+.flow{padding:16px 10px 40px}
+.phase{padding:12px 10px 12px 44px;margin-left:20px}
+.phase-label{left:-30px;width:28px;font-size:8px}
+.node{padding:8px 10px}.node-title{font-size:11px}.node-desc{font-size:9px}
+.branch-row{flex-direction:column}
+.side-note{font-size:7.5px}
+.note p{font-size:8px}
+}
+</style>
+</head>
+<body>
+<div class="hdr"><h1>百年戦争の流れ ― エドワード3世からジャンヌ＝ダルクまで(1337-1453)</h1><a href="charts.html">← Ad Chartae</a></div>
+<div class="flow">
+
+<div class="phase p1">
+  <div class="phase-label">原因</div>
+  <div class="node"><div class="node-title">フランス王位継承問題</div><div class="node-year">1328</div>
+  <div class="node-desc">カペー朝断絶→ヴァロワ朝フィリップ6世が即位。英エドワード3世は母がカペー家出身→<strong>フランス王位を主張</strong>。実態は<strong>フランドル地方の毛織物利権</strong>(イギリスの羊毛→フランドルで加工)と<strong>ギュイエンヌ(アキテーヌ)の領有権</strong>をめぐる英仏対立。</div></div>
+</div>
+
+<div class="phase p2">
+  <div class="phase-label">前半<br>英優勢</div>
+  <div class="node key"><div class="node-title">★クレシーの戦い</div><div class="node-year">1346</div>
+  <div class="node-desc">英の<strong>長弓兵(ロングボウ)</strong>がフランス騎士軍を壊滅。★<strong>騎士の時代の終わりを象徴</strong>＝歩兵の火力が重装騎兵に勝利。</div></div>
+  <div class="node"><div class="node-title">黒死病(ペスト)の流行</div><div class="node-year">1348-50</div>
+  <div class="node-desc">ヨーロッパ人口の<strong>約1/3が死亡</strong>→戦争一時中断。労働力不足→農奴の地位向上→<strong>封建制の動揺</strong>。</div></div>
+  <div class="node key"><div class="node-title">★ポワティエの戦い</div><div class="node-year">1356</div>
+  <div class="node-desc">エドワード黒太子が仏王<strong>ジャン2世を捕虜に</strong>。★フランス王が戦場で捕虜＝国家的屈辱。ジャックリーの乱(1358)＝農民反乱が発生。</div></div>
+</div>
+
+<div class="phase p3">
+  <div class="phase-label">中盤<br>停戦</div>
+  <div class="node"><div class="node-title">ブレティニー条約(停戦)</div><div class="node-year">1360</div>
+  <div class="node-desc">英がアキテーヌ等の広大な領土を獲得。仏はジャン2世の身代金300万エキュ。だし<strong>シャルル5世が巻き返し</strong>→デュ＝ゲクラン将軍のゲリラ戦で英領を奪回(1370s)。</div></div>
+  <div class="node"><div class="node-title">英仏両国の内紛</div><div class="node-year">1380s-1410s</div>
+  <div class="node-desc">英＝ワット＝タイラーの乱(1381)→ランカスター vs ヨーク(薔薇戦争の伏線)。仏＝シャルル6世の精神疾患→<strong>アルマニャック派 vs ブルゴーニュ派</strong>の内戦。</div></div>
+</div>
+
+<div class="phase p4">
+  <div class="phase-label">後半<br>英再攻勢</div>
+  <div class="node key"><div class="node-title">★アジャンクールの戦い</div><div class="node-year">1415</div>
+  <div class="node-desc">英ヘンリ5世が再び<strong>長弓兵</strong>で仏軍を壊滅(仏騎士約6000戦死)。英が北仏を制圧。</div></div>
+  <div class="node"><div class="node-title">トロワ条約</div><div class="node-year">1420</div>
+  <div class="node-desc">ヘンリ5世がシャルル6世の娘と結婚→<strong>英王がフランス王位を継承する</strong>と約束される。仏王太子シャルル(後の7世)は廃嫡＝フランスは事実上英の支配下に。</div></div>
+</div>
+
+<div class="phase p5">
+  <div class="phase-label">転換点</div>
+  <div class="node key"><div class="node-title">★★ジャンヌ＝ダルク</div><div class="node-year">1429-31</div>
+  <div class="node-desc">ドンレミの農民の少女。「神の声」を聞いたと主張→シャルル王太子に謁見→<strong>オルレアン包囲戦を解放</strong>(1429)→ランスでシャルル7世の戴冠式を実現。★<strong>フランスの国民意識の覚醒</strong>＝百年戦争の転換点。1431年ルーアンで英により<strong>異端として火刑</strong>。1456年名誉回復。1920年列聖。</div></div>
+</div>
+
+<div class="phase p6">
+  <div class="phase-label">終結</div>
+  <div class="node"><div class="node-title">フランスの反攻</div><div class="node-year">1429-53</div>
+  <div class="node-desc">シャルル7世が<strong>常備軍</strong>を整備(ブルゴーニュ派との和解1435)＋<strong>大砲</strong>の活用→英の拠点を次々に奪回。</div></div>
+  <div class="node key"><div class="node-title">★カスティヨンの戦い(百年戦争終結)</div><div class="node-year">1453</div>
+  <div class="node-desc">仏が<strong>大砲</strong>で英軍を撃破＝★<strong>英のフランス領喪失(カレーのみ残る→1558年喪失)</strong>。講和条約はなく自然終結。同年コンスタンティノープル陥落＝<strong>「中世の終わり」の象徴的年</strong>。</div></div>
+  <div class="side-note">★百年戦争の結果：①英仏の分離＝国民意識の形成 ②騎士→歩兵＋大砲＝軍事革命 ③封建制の動揺→中央集権化 ④英は薔薇戦争へ(1455-85)</div>
+</div>
+
+</div>
+<div class="note"><p>百年戦争(1337-1453)＝<strong>英仏の国民意識を形成した「中世最大の戦争」</strong>。入試では①<strong>クレシー(1346)・ポワティエ(1356)・アジャンクール(1415)＝長弓兵の勝利</strong> ②<strong>ジャンヌ＝ダルク(1429)＝オルレアン解放→火刑</strong> ③<strong>カスティヨン(1453)＝大砲で終結</strong> ④<strong>封建制の動揺→中央集権化</strong>が問われる。</p></div>
+</body></html>

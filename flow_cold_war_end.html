@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>冷戦終結フロー</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048;--border:rgba(201,169,110,.08)}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+.hdr{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;flex-wrap:wrap}.hdr h1{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2)}.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
+.flow{max-width:740px;margin:0 auto;padding:24px 20px 60px}
+.phase{position:relative;margin-bottom:2px;padding:16px 16px 16px 60px;border-left:2px solid rgba(201,169,110,.08);margin-left:30px}.phase:last-child{border-left-color:transparent}
+.phase-label{position:absolute;left:-42px;top:16px;width:36px;font-family:'Cormorant Garamond',serif;font-size:10px;font-weight:700;color:var(--text3);text-align:right;line-height:1.3}
+.phase::before{content:'';position:absolute;left:-5px;top:22px;width:8px;height:8px;border-radius:50%;background:var(--bg);border:2px solid rgba(201,169,110,.25)}
+.node{background:rgba(255,255,255,.015);border:1px solid rgba(255,255,255,.04);border-radius:8px;padding:10px 14px;margin-bottom:8px;border-left:3px solid transparent;transition:all .2s}.node:hover{background:rgba(255,255,255,.03)}.node-title{font-family:'Noto Serif JP',serif;font-size:12px;font-weight:700;color:var(--gold2);margin-bottom:2px}.node-year{font-family:'Cormorant Garamond',serif;font-size:11px;color:var(--gold);opacity:.6;margin-bottom:4px}.node-desc{font-size:10px;color:var(--text2);line-height:1.7}.node-desc strong{color:var(--text);font-weight:600}.node.key{background:rgba(201,169,110,.04);border-color:rgba(201,169,110,.12)}
+.arrow{display:flex;align-items:center;gap:6px;padding:2px 0 2px 8px;margin-bottom:6px}.arrow-line{width:16px;height:1px;background:rgba(201,169,110,.15)}.arrow-text{font-size:8px;color:var(--text3)}.arrow-icon{color:rgba(201,169,110,.3);font-size:10px}
+.branch-row{display:flex;gap:8px;margin-bottom:8px}.branch-row .node{flex:1}
+.side-note{font-size:8px;color:var(--text3);padding:4px 8px;border-left:2px solid rgba(201,169,110,.1);margin:4px 0 8px;line-height:1.6}
+.p1 .node{border-left-color:rgba(150,80,80,.3)}.p1::before{border-color:rgba(150,80,80,.4)}
+.p2 .node{border-left-color:rgba(180,130,80,.3)}.p2::before{border-color:rgba(180,130,80,.5);background:rgba(180,130,80,.15)}
+.p3 .node{border-left-color:rgba(100,130,180,.3)}.p3::before{border-color:rgba(100,130,180,.5);background:rgba(100,130,180,.15)}
+.p4 .node{border-left-color:rgba(80,150,120,.3)}.p4::before{border-color:rgba(80,150,120,.5);background:rgba(80,150,120,.15)}
+.p5 .node{border-left-color:rgba(201,169,110,.3)}.p5::before{border-color:rgba(201,169,110,.5);background:rgba(201,169,110,.15)}
+.note{text-align:center;padding:8px 20px 32px;max-width:700px;margin:0 auto}.note p{font-size:9px;color:var(--text3);line-height:1.8}.note strong{color:var(--gold)}
+.hdr h1{font-size:12px}
+.flow{padding:16px 10px 40px}
+.phase{padding:12px 10px 12px 44px;margin-left:20px}
+.phase-label{left:-30px;width:28px;font-size:8px}
+.node{padding:8px 10px}.node-title{font-size:11px}.node-desc{font-size:9px}
+.branch-row{flex-direction:column}
+.side-note{font-size:7.5px}
+.note p{font-size:8px}
+}
+
+@media(max-width:600px){
+.hdr{padding:10px 12px}.hdr h1{font-size:12px}
+.flow{padding:16px 10px 40px}
+.phase{padding:12px 10px 12px 44px;margin-left:20px}
+.phase-label{left:-30px;width:28px;font-size:8px}
+.node{padding:8px 10px}.node-title{font-size:11px}.node-desc{font-size:9px}
+.branch-row{flex-direction:column}
+.side-note{font-size:7.5px}
+.note p{font-size:8px}
+}
+</style>
+</head>
+<body>
+<div class="hdr"><h1>冷戦終結フロー ― なぜソ連は崩壊したか</h1><a href="charts.html">← Ad Chartae</a></div>
+<div class="flow">
+
+<div class="phase p1"><div class="phase-label">1970s<br>〜<br>1985</div>
+<div class="node"><div class="node-title">ソ連の構造的疲弊</div><div class="node-year">1970s–1985</div>
+<div class="node-desc"><strong>ブレジネフ時代</strong>(1964-82)の「停滞(ザストイ)」＝計画経済の非効率・技術革新の遅れ・軍事費の過大(GDPの15-20%)。<strong>アフガニスタン侵攻</strong>(1979)＝「ソ連のベトナム」→10年間の泥沼で国力消耗。レーガンの軍拡(SDI＝スターウォーズ計画)→ソ連は対抗する財政的余裕がない。チェルネンコ死去(1985)→54歳の<strong>ゴルバチョフ</strong>が書記長に。</div></div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">「このままではソ連は崩壊する」→ゴルバチョフの改革</div></div></div>
+
+<div class="phase p2"><div class="phase-label">1985<br>〜<br>1988</div>
+<div class="node key"><div class="node-title">ゴルバチョフの「ペレストロイカ」と「グラスノスチ」</div><div class="node-year">1985–</div>
+<div class="node-desc"><strong>ペレストロイカ(建て直し)</strong>＝計画経済に市場原理を部分導入。企業の自主性拡大。しかし中途半端な改革→旧来のシステムが壊れるが新しいシステムが機能しない→<strong>経済の混乱が加速</strong>。<strong>グラスノスチ(情報公開)</strong>＝言論の自由化。チェルノブイリ原発事故(1986)が情報公開の契機に。→これまで隠されていた<strong>共産党の腐敗・歴史的犯罪(大粛清等)が次々に暴露</strong>→共産党の正統性が崩壊。<strong>「新思考外交」</strong>＝INF条約(1987)＝米ソの中距離核全廃。</div></div>
+<div class="side-note">★入試の核心：ゴルバチョフのジレンマ＝改革しなければソ連は衰退するが、改革すれば体制の矛盾が噴出して制御不能になる。「改革が体制を救うのではなく、改革が体制を壊した」</div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">東欧諸国が「ソ連はもう介入しない」と確信→連鎖的に体制崩壊</div></div></div>
+
+<div class="phase p3"><div class="phase-label">1989</div>
+<div class="node key"><div class="node-title">1989年 東欧革命 ― ドミノ式崩壊</div><div class="node-year">1989</div>
+<div class="node-desc">ゴルバチョフが<strong>ブレジネフ＝ドクトリン(制限主権論)を放棄</strong>＝「東欧への軍事介入はしない」→東欧の民衆が一斉に立ち上がる：<br>
+<strong>ポーランド</strong>(6月)＝「連帯」が自由選挙で圧勝→東欧初の非共産党政権<br>
+<strong>ハンガリー</strong>(5-10月)＝鉄条網を撤去→オーストリアとの国境開放→東独市民が大量脱出<br>
+<strong>東ドイツ</strong>(11月)＝ホーネッカー退陣→<strong>11.9 ベルリンの壁崩壊</strong>＝冷戦の象徴が消えた瞬間<br>
+<strong>チェコスロヴァキア</strong>(11月)＝「ビロード革命」＝無血の政権交代→ハヴェル大統領<br>
+<strong>ルーマニア</strong>(12月)＝チャウシェスク独裁→民衆蜂起→処刑＝東欧で唯一の流血革命</div></div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">冷戦の象徴的終結→公式な終結宣言へ</div></div>
+<div class="node"><div class="node-title">マルタ会談 ― 冷戦終結宣言</div><div class="node-year">1989.12.2–3</div>
+<div class="node-desc">地中海のマルタ島で<strong>ブッシュ(米)とゴルバチョフ(ソ)</strong>が会談。<strong>「冷戦の終結」</strong>を宣言(ヤルタからマルタへ)。ただし正式な条約ではなく共同声明。</div></div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">東西ドイツの統一→ソ連国内の民族独立運動</div></div></div>
+
+<div class="phase p4"><div class="phase-label">1990<br>〜<br>1991</div>
+<div class="node"><div class="node-title">ドイツ統一</div><div class="node-year">1990.10.3</div>
+<div class="node-desc">壁崩壊後、東独で自由選挙(1990.3)→統一を掲げる政党が勝利。コール首相(西独)が主導。<strong>「2＋4条約」</strong>(東西独＋米英仏ソ)で統一を国際的に承認。<strong>NATOに残留</strong>(ソ連はNATO不拡大の「約束」があったと主張→後に争点に)。1990.10.3に<strong>東独が西独に編入</strong>される形で統一＝ビスマルクの統一(1871)以来の「ドイツ問題」が解決。</div></div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">ソ連国内で民族独立運動が連鎖→ゴルバチョフの求心力低下</div></div>
+<div class="node"><div class="node-title">ソ連国内の民族独立運動</div><div class="node-year">1990–91</div>
+<div class="node-desc"><strong>バルト三国</strong>(リトアニア・ラトヴィア・エストニア)が独立宣言(1990)。グルジア・ウクライナ・モルドバ等でも民族運動が激化。ゴルバチョフは連邦の維持を図るが、<strong>エリツィン</strong>(ロシア共和国大統領)が急進改革を主張しゴルバチョフと対立。新連邦条約の準備→署名直前に保守派がクーデタを企てる。</div></div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">最後のあがき→エリツィンの勝利→ソ連の終焉</div></div>
+<div class="node key"><div class="node-title">8月クーデタ → ソ連崩壊</div><div class="node-year">1991.8 → 12.25</div>
+<div class="node-desc"><strong>8月クーデタ</strong>(1991.8.19-21)＝共産党保守派がゴルバチョフを軟禁→<strong>エリツィンがモスクワで市民と共に抵抗</strong>(戦車の上で演説)→クーデタは3日で失敗。→共産党の権威が完全に崩壊。<strong>ウクライナ</strong>が独立を国民投票で承認(12.1)→ソ連の維持が不可能に。12.8 <strong>ベロヴェーシ合意</strong>(ロシア・ウクライナ・ベラルーシ)＝ソ連の解体と<strong>CIS(独立国家共同体)</strong>の創設。<strong>12.25 ゴルバチョフが辞任</strong>→クレムリンからソ連国旗が降ろされロシア国旗が掲揚＝<strong>ソヴィエト連邦の消滅</strong>(1922-1991、69年間)。</div></div></div>
+
+<div class="phase p5"><div class="phase-label">結果</div>
+<div class="node"><div class="node-title">冷戦後の世界秩序</div><div class="node-year">1991–</div>
+<div class="node-desc"><strong>米国の一極支配(ユニポーラー)</strong>の時代→「歴史の終わり」(フクヤマ)＝自由民主主義の最終的勝利？ しかし湾岸戦争(1991)・ユーゴスラヴィア内戦(1991-)・ソマリア・ルワンダ虐殺(1994)→<strong>冷戦後の世界は平和ではなかった</strong>。旧ソ連圏のNATO東方拡大→ロシアの反発→21世紀の米露対立の伏線。EU(マーストリヒト条約1992)の拡大→欧州統合の深化。</div></div></div>
+
+</div>
+<div class="note"><p>冷戦終結の因果連鎖＝<strong>①ソ連の構造的疲弊(経済停滞＋アフガン＋軍拡競争)→②ゴルバチョフの改革(ペレストロイカ＋グラスノスチ)→③東欧革命(ブレジネフ＝ドクトリン放棄→ドミノ式崩壊)→④ベルリンの壁崩壊(1989.11)→⑤ドイツ統一(1990)→⑥ソ連の民族独立運動→⑦8月クーデタ失敗→⑧ソ連崩壊(1991.12)</strong>。入試では「なぜゴルバチョフの改革がソ連を救わず崩壊させたか」が論述テーマの定番。</p></div>
+</body></html>

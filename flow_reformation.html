@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>宗教改革→主権国家体制フロー</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048;--border:rgba(201,169,110,.08)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+.hdr{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.hdr h1{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2)}
+.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
+.flow{max-width:760px;margin:0 auto;padding:24px 20px 60px}
+.phase{position:relative;margin-bottom:2px;padding:16px 16px 16px 60px;border-left:2px solid rgba(201,169,110,.08);margin-left:30px}
+.phase:last-child{border-left-color:transparent}
+.phase-label{position:absolute;left:-42px;top:16px;width:36px;font-family:'Cormorant Garamond',serif;font-size:10px;font-weight:700;color:var(--text3);text-align:right;line-height:1.3}
+.phase::before{content:'';position:absolute;left:-5px;top:22px;width:8px;height:8px;border-radius:50%;background:var(--bg);border:2px solid rgba(201,169,110,.25)}
+.node{background:rgba(255,255,255,.015);border:1px solid rgba(255,255,255,.04);border-radius:8px;padding:10px 14px;margin-bottom:8px;border-left:3px solid transparent;transition:all .2s}
+.node:hover{background:rgba(255,255,255,.03);border-color:rgba(255,255,255,.06)}
+.node-title{font-family:'Noto Serif JP',serif;font-size:12px;font-weight:700;color:var(--gold2);margin-bottom:2px}
+.node-year{font-family:'Cormorant Garamond',serif;font-size:11px;color:var(--gold);opacity:.6;margin-bottom:4px;letter-spacing:.08em}
+.node-desc{font-size:10px;color:var(--text2);line-height:1.7}
+.node-desc strong{color:var(--text);font-weight:600}
+.node.key{background:rgba(201,169,110,.04);border-color:rgba(201,169,110,.12)}
+.arrow{display:flex;align-items:center;gap:6px;padding:2px 0 2px 8px;margin-bottom:6px}
+.arrow-line{width:16px;height:1px;background:rgba(201,169,110,.15);flex-shrink:0}
+.arrow-text{font-size:8px;color:var(--text3)}
+.arrow-icon{color:rgba(201,169,110,.3);font-size:10px;flex-shrink:0}
+.branch-row{display:flex;gap:8px;margin-bottom:8px}
+.branch-row .node{flex:1}
+.side-note{font-size:8px;color:var(--text3);padding:4px 8px;border-left:2px solid rgba(201,169,110,.1);margin:4px 0 8px;line-height:1.6}
+
+.p-bg .node{border-left-color:rgba(130,120,100,.3)}.p-bg::before{border-color:rgba(130,120,100,.4)}
+.p-luther .node{border-left-color:rgba(180,140,80,.3)}.p-luther::before{border-color:rgba(180,140,80,.5);background:rgba(180,140,80,.15)}
+.p-spread .node{border-left-color:rgba(100,150,130,.3)}.p-spread::before{border-color:rgba(100,150,130,.4)}
+.p-counter .node{border-left-color:rgba(160,130,100,.3)}.p-counter::before{border-color:rgba(160,130,100,.4)}
+.p-war .node{border-left-color:rgba(180,80,80,.3)}.p-war::before{border-color:rgba(180,80,80,.5);background:rgba(180,80,80,.15)}
+.p-west .node{border-left-color:rgba(100,130,180,.3)}.p-west::before{border-color:rgba(100,130,180,.5);background:rgba(100,130,180,.15)}
+.p-result .node{border-left-color:rgba(201,169,110,.3)}.p-result::before{border-color:rgba(201,169,110,.5);background:rgba(201,169,110,.15)}
+
+.note{text-align:center;padding:8px 20px 32px;max-width:720px;margin:0 auto}.note p{font-size:9px;color:var(--text3);line-height:1.8}.note strong{color:var(--gold)}
+
+@media(max-width:600px){
+.hdr{padding:10px 12px}.hdr h1{font-size:12px}
+.flow{padding:16px 10px 40px}
+.phase{padding:12px 10px 12px 44px;margin-left:20px}
+.phase-label{left:-30px;width:28px;font-size:8px}
+.node{padding:8px 10px}.node-title{font-size:11px}.node-desc{font-size:9px}
+.branch-row{flex-direction:column}
+.side-note{font-size:7.5px}
+.note p{font-size:8px}
+}
+</style>
+</head>
+<body>
+<div class="hdr"><h1>宗教改革→主権国家体制フロー ― なぜ宗教改革が国際秩序を変えたか</h1><a href="charts.html">← Ad Chartae</a></div>
+
+<div class="flow">
+
+<!-- 背景 -->
+<div class="phase p-bg">
+  <div class="phase-label">背景<br>15C末<br>〜</div>
+  <div class="branch-row">
+    <div class="node">
+      <div class="node-title">教会の腐敗</div>
+      <div class="node-desc">教皇庁の世俗化(ルネサンス教皇のメディチ家出身レオ10世)。聖職売買(シモニア)。聖職者の堕落。<strong>サン＝ピエトロ大聖堂の建設費</strong>捻出のため、マインツ大司教アルブレヒトが<strong>免罪符(贖宥状)</strong>を大々的に販売＝「金貨がチャリンと鳴ると魂が天国に飛ぶ」(テッツェルの宣伝文句)。人文主義者(エラスムス『痴愚神礼讃』)が教会を批判。</div>
+    </div>
+    <div class="node">
+      <div class="node-title">活版印刷の普及</div>
+      <div class="node-desc"><strong>グーテンベルク</strong>の活版印刷術(1450年頃)が宗教改革を可能にした技術的前提。ルターの95カ条は印刷されて<strong>2週間でドイツ全土に広まった</strong>。聖書のドイツ語訳(1522)も大量に印刷→<strong>一般信徒が自分で聖書を読む</strong>ことが可能に。「印刷術がなければ宗教改革はなかった」。</div>
+    </div>
+  </div>
+  <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">教会への不満＋印刷術の普及→ルターの登場</div></div>
+</div>
+
+<!-- ルターの宗教改革 -->
+<div class="phase p-luther">
+  <div class="phase-label">1517<br>〜<br>1555</div>
+  <div class="node key">
+    <div class="node-title">ルターの95カ条の論題</div>
+    <div class="node-year">1517.10.31</div>
+    <div class="node-desc">ヴィッテンベルク大学神学教授<strong>マルティン＝ルター</strong>が免罪符販売を批判する<strong>95カ条の論題</strong>を発表。核心教義：<strong>「信仰のみ(sola fide)」</strong>＝善行ではなく信仰だけが人を救う。<strong>「聖書のみ(sola scriptura)」</strong>＝教皇の権威ではなく聖書だけが信仰の根拠。「万人司祭主義」＝聖職者と一般信徒の区別を否定。→教皇の権威・聖職者の特権・免罪符を根本から否定する革命的主張。</div>
+  </div>
+  <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">教皇がルターを破門→カール5世がヴォルムス帝国議会で裁く</div></div>
+  <div class="node">
+    <div class="node-title">ヴォルムス帝国議会 → ルターの保護</div>
+    <div class="node-year">1521</div>
+    <div class="node-desc">神聖ローマ皇帝<strong>カール5世</strong>がルターに撤回を迫る→ルターは「ここに私は立つ。他になしえない」と拒否→<strong>帝国追放令</strong>。しかし<strong>ザクセン選帝侯フリードリヒ</strong>がルターを<strong>ヴァルトブルク城</strong>に匿う→聖書のドイツ語訳に着手(1522)。★ポイント：<strong>諸侯がルターを保護した理由</strong>＝宗教的共感だけでなく、<strong>教会財産の没収</strong>・<strong>皇帝(カール5世)への対抗手段</strong>としてルター派を利用。宗教改革は最初から<strong>政治問題</strong>でもあった。</div>
+  </div>
+  <div class="side-note">★入試の核心：ルターの保護＝諸侯の「宗教的動機＋政治的動機(反皇帝・教会財産の没収)」の二重性。この政治化が「宗教改革→主権国家体制」の因果関係を生む</div>
+  <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">ルター派諸侯 vs 皇帝(カトリック)の対立→ドイツ農民戦争→シュマルカルデン戦争</div></div>
+  <div class="node">
+    <div class="node-title">アウクスブルクの和議 ― 「領邦教会制」の成立</div>
+    <div class="node-year">1555</div>
+    <div class="node-desc">ドイツ農民戦争(1524-25)＝農民が宗教改革に触発されて蜂起→ルターは鎮圧を支持(「諸侯のルター」)。シュマルカルデン同盟(ルター派諸侯)とカール5世の戦争→決着つかず。<strong>アウクスブルクの和議</strong>(1555)＝<strong>「支配者の宗教がその地の宗教(cuius regio, eius religio)」</strong>→ルター派を公認(カルヴァン派は除外)。★決定的な意味：<strong>各領邦の君主が自領の宗教を決める権利</strong>を獲得＝教皇でも皇帝でもなく<strong>領邦君主が宗教的主権を持つ</strong>＝主権国家の萌芽。</div>
+  </div>
+  <div class="side-note">★超頻出：「cuius regio, eius religio」＝領邦教会制。ただしカルヴァン派は認められていない→60年後の三十年戦争の火種</side>
+  <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">宗教改革はドイツだけでなく各国に広がる</div></div>
+</div>
+
+<!-- 各国への拡大 -->
+<div class="phase p-spread">
+  <div class="phase-label">各国<br>への<br>拡大</div>
+  <div class="branch-row">
+    <div class="node">
+      <div class="node-title">カルヴァンのジュネーヴ</div>
+      <div class="node-year">1536–</div>
+      <div class="node-desc"><strong>ジャン＝カルヴァン</strong>がジュネーヴで神政政治。<strong>予定説</strong>＝救われる者は神が予め定めている→勤勉に働くことが「選ばれた証」→<strong>資本主義の精神</strong>(ウェーバー『プロテスタンティズムの倫理と資本主義の精神』)。カルヴァン派＝<strong>商工業者(ブルジョワ)</strong>を中心に各国に拡大：フランス＝<strong>ユグノー</strong>、イングランド＝<strong>ピューリタン</strong>、ネーデルラント＝<strong>ゴイセン</strong>、スコットランド＝<strong>プレスビテリアン</strong>。</div>
+    </div>
+    <div class="node">
+      <div class="node-title">イングランドの国教会</div>
+      <div class="node-year">1534–</div>
+      <div class="node-desc"><strong>ヘンリ8世</strong>がキャサリンとの離婚を教皇に拒否される→<strong>首長法</strong>(1534)＝国王を教会の首長に＝ローマからの離脱。★ポイント：教義はカトリックに近いが<strong>教皇権を否認</strong>＝政治的動機(王権の強化)が宗教改革の形をとった。修道院解散(1536-39)で教会財産を没収→ジェントリに売却＝<strong>王権の財政基盤</strong>に。エリザベス1世が<strong>統一法</strong>(1559)で国教会を確立(中間路線)。</div>
+    </div>
+  </div>
+  <div class="branch-row">
+    <div class="node">
+      <div class="node-title">フランスのユグノー戦争</div>
+      <div class="node-year">1562–1598</div>
+      <div class="node-desc">カトリック(ギーズ家)vsユグノー(ブルボン家)の<strong>約40年間の内戦</strong>。<strong>サン＝バルテルミの虐殺</strong>(1572)＝カトリック側がパリのユグノー数千人を殺害。アンリ4世がカトリックに改宗して即位→<strong>ナントの勅令</strong>(1598)＝ユグノーに信仰の自由。★結果：<strong>「宗教よりも国家の統一を優先する」</strong>という考え方の勝利＝近代主権国家の論理。</div>
+    </div>
+    <div class="node">
+      <div class="node-title">オランダ独立戦争</div>
+      <div class="node-year">1568–1648</div>
+      <div class="node-desc">ネーデルラントの<strong>ゴイセン(カルヴァン派)</strong>がスペイン(カトリック・フェリペ2世)の支配に反抗。<strong>オラニエ公ウィレム</strong>が指導。ユトレヒト同盟(1579)→<strong>ネーデルラント連邦共和国(オランダ)</strong>として事実上独立(1581)。ウェストファリア条約(1648)で国際的に承認。★意味：<strong>宗教的動機＋経済的自立の要求＋民族的アイデンティティ</strong>が結合した独立運動。</div>
+    </div>
+  </div>
+  <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">カトリック側も改革で巻き返しを図る</div></div>
+</div>
+
+<!-- 対抗宗教改革 -->
+<div class="phase p-counter">
+  <div class="phase-label">1534<br>〜<br>1563</div>
+  <div class="node">
+    <div class="node-title">対抗宗教改革(カトリック改革)</div>
+    <div class="node-year">1534–1563</div>
+    <div class="node-desc"><strong>イエズス会</strong>(1534、イグナティウス＝ロヨラ)＝軍隊的規律で海外布教(ザビエルの日本1549、マテオ＝リッチの中国)・教育活動。<strong>トリエント公会議</strong>(1545-63)＝教皇の至上権を再確認・教義を明確化・聖職者の教育改善。<strong>禁書目録</strong>・<strong>異端審問</strong>の強化。バロック美術＝感情に訴える壮大な宗教芸術でカトリック信仰を強化。★結果：ヨーロッパは<strong>「プロテスタント圏(北)vsカトリック圏(南)」</strong>に固定化＝<strong>統一的なキリスト教世界(カトリック普遍主義)の崩壊</strong>。</div>
+  </div>
+  <div class="side-note">★入試頻出：「なぜ北欧はプロテスタント、南欧はカトリックか」＝対抗宗教改革でカトリック圏が巻き返した結果。イエズス会の活動で南欧・ラテンアメリカ・アジアの一部はカトリックにとどまった</div>
+  <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">カトリック vs プロテスタントの対立が最終的な全面戦争に</div></div>
+</div>
+
+<!-- 三十年戦争 -->
+<div class="phase p-war">
+  <div class="phase-label">1618<br>〜<br>1648</div>
+  <div class="node key">
+    <div class="node-title">三十年戦争 ― 宗教戦争の最終局面</div>
+    <div class="node-year">1618–1648</div>
+    <div class="node-desc"><strong>プラハ窓外投擲事件</strong>(1618)＝ボヘミアのプロテスタント貴族がハプスブルク家の使者を窓から投げ落とす→戦争の発端。4段階：
+    <br>①<strong>ベーメン＝プファルツ戦争</strong>(1618-25)＝白山の戦い(1620)でカトリック側勝利→プファルツ選帝侯フリードリヒ5世が追放(「冬王」)
+    <br>②<strong>デンマーク戦争</strong>(1625-29)＝デンマーク王クリスチャン4世がプロテスタント側で介入→ヴァレンシュタインに敗退
+    <br>③<strong>スウェーデン戦争</strong>(1630-35)＝スウェーデン王グスタフ＝アドルフの介入→ブライテンフェルトの勝利(1631)→グスタフ戦死(リュッツェン1632)
+    <br>④<strong>スウェーデン＝フランス戦争</strong>(1635-48)＝★最重要：<strong>カトリック国フランス(リシュリュー)</strong>がプロテスタント側で参戦＝<strong>「宗教よりも国益(ハプスブルク弱体化)を優先」</strong>
+    <br>ドイツの人口が約<strong>1/3に減少</strong>する壊滅的被害。</div>
+  </div>
+  <div class="side-note">★入試超頻出：「カトリック国フランスがなぜプロテスタント側で参戦したか」＝リシュリューがハプスブルク家(独＋西)の包囲を打破するため＝宗教的対立が国家間の権力政治(レゾン＝デタ＝国家理性)に変質した決定的瞬間。これが主権国家体制への転換点</div>
+  <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">30年間の宗教戦争の教訓→「宗教で戦争するのはもうやめよう」</div></div>
+</div>
+
+<!-- ウェストファリア条約 -->
+<div class="phase p-west">
+  <div class="phase-label">1648</div>
+  <div class="node key">
+    <div class="node-title">ウェストファリア条約 ― 主権国家体制の成立</div>
+    <div class="node-year">1648</div>
+    <div class="node-desc"><strong>ミュンスターとオスナブリュック</strong>で交渉。主要な決定：
+    <br>①<strong>カルヴァン派の公認</strong>(アウクスブルクの和議ではルター派のみ→ここで初めてカルヴァン派も認める)
+    <br>②<strong>領邦の主権の確認</strong>＝神聖ローマ帝国の約300の領邦が事実上の<strong>独立国</strong>に→皇帝(ハプスブルク)の権威は形骸化→「帝国は名ばかり」
+    <br>③<strong>オランダ・スイスの独立</strong>を国際的に承認
+    <br>④教皇の国際政治への影響力が<strong>決定的に低下</strong>＝教皇はこの条約に抗議したが無視された</div>
+  </div>
+  <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">ウェストファリア条約が確立した新しい国際秩序</div></div>
+</div>
+
+<!-- 結果：主権国家体制 -->
+<div class="phase p-result">
+  <div class="phase-label">結果</div>
+  <div class="node key">
+    <div class="node-title">ウェストファリア体制＝主権国家体制</div>
+    <div class="node-year">1648–</div>
+    <div class="node-desc"><strong>「ウェストファリア体制」</strong>＝近代国際秩序の出発点とされる(現在の国際関係学でも使われる用語)。その原則：
+    <br>①<strong>領域主権</strong>＝各国は自国の領域内で最高の権威を持つ(内政不干渉)
+    <br>②<strong>主権平等</strong>＝大国も小国も国際法上は対等
+    <br>③<strong>宗教的寛容</strong>＝国際関係において宗教は戦争の理由にならない(世俗化)
+    <br>④<strong>勢力均衡</strong>＝一国が突出して強大にならないよう各国が牽制し合う
+    <br><br>つまり：中世の「<strong>教皇と皇帝が支配するキリスト教世界(普遍的秩序)</strong>」が崩壊し、<strong>「主権を持つ個々の国家が並立する国際社会(多元的秩序)」</strong>に移行した。この体制の延長線上に、ウィーン体制→ビスマルク体制→ヴェルサイユ体制→国際連合がある。</div>
+  </div>
+</div>
+
+</div>
+
+<div class="note">
+<p>宗教改革→主権国家体制の因果関係＝入試の論述テーマの定番。流れ：<strong>①ルターの宗教改革(1517)→②諸侯の政治利用(教会財産没収・反皇帝)→③アウクスブルクの和議(領邦教会制)→④カトリックvsプロテスタントの対立固定化→⑤三十年戦争(宗教戦争→国家間戦争に変質、仏が国益でプロテスタント側に参戦)→⑥ウェストファリア条約(主権国家体制の成立)</strong>。キーワードは<strong>「レゾン＝デタ(国家理性)」</strong>＝宗教よりも国益を優先する考え方の勝利。</p>
+</div>
+
+</body>
+</html>

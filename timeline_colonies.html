@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>植民地タイムライン</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+.hdr{padding:16px 20px;border-bottom:1px solid rgba(201,169,110,.08);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.hdr h1{font-family:'Noto Serif JP',serif;font-size:13px;font-weight:700;color:var(--gold2)}
+.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
+.legend{display:flex;gap:8px;justify-content:center;padding:6px 16px;flex-wrap:wrap;border-bottom:1px solid rgba(255,255,255,.02)}
+.legend .li{display:flex;align-items:center;gap:3px;font-size:6.5px;color:var(--text3)}
+.legend .ld{width:12px;height:8px;border-radius:2px}
+.wrap{padding:8px 0 10px;overflow-x:auto}
+.nd-svg{cursor:pointer}.nd-svg:hover rect{filter:brightness(1.3)}
+.tp{display:none}
+.note{text-align:center;padding:8px 20px 32px;max-width:880px;margin:0 auto}.note p{font-size:9px;color:var(--text3);line-height:1.8}.note strong{color:var(--gold)}
+.hdr h1{font-size:12px}
+.legend .li{font-size:7px}
+.note p{font-size:8px}
+}
+
+@media(max-width:600px){
+.hdr{padding:10px 12px}.hdr h1{font-size:12px}
+.legend .li{font-size:7px}
+.note p{font-size:8px}
+}
+</style></head><body>
+<div class="hdr"><h1>植民地タイムライン ― 大航海時代から脱植民地化まで</h1><a href="charts.html">← Ad Chartae</a></div>
+<div class="legend">
+<div class="li"><div class="ld" style="background:rgba(60,120,190,.15);border:1px solid rgba(60,120,190,.3)"></div>英</div>
+<div class="li"><div class="ld" style="background:rgba(120,80,170,.15);border:1px solid rgba(120,80,170,.3)"></div>仏</div>
+<div class="li"><div class="ld" style="background:rgba(180,80,80,.12);border:1px solid rgba(180,80,80,.25)"></div>西</div>
+<div class="li"><div class="ld" style="background:rgba(80,150,60,.12);border:1px solid rgba(80,150,60,.25)"></div>葡</div>
+<div class="li"><div class="ld" style="background:rgba(190,150,60,.12);border:1px solid rgba(190,150,60,.25)"></div>蘭</div>
+<div class="li"><div class="ld" style="background:rgba(130,130,130,.12);border:1px solid rgba(130,130,130,.22)"></div>独</div>
+<div class="li"><div class="ld" style="background:rgba(60,180,180,.12);border:1px solid rgba(60,180,180,.22)"></div>米</div>
+<div class="li"><div class="ld" style="background:rgba(180,170,60,.12);border:1px solid rgba(180,170,60,.25)"></div>日</div>
+<div class="li"><div class="ld" style="background:rgba(201,169,110,.18);border:1px solid rgba(201,169,110,.3)"></div>独立</div>
+<div class="li" style="font-size:5.5px;color:var(--text3)">← 横スクロール ｜ 右側ほど拡大 ｜ 点線＝横断イベント</div>
+</div>
+<div class="wrap">
+<svg viewBox="0 0 1243 1268" xmlns="http://www.w3.org/2000/svg" style="width:1243px;height:1268px;min-width:1243px">
+<rect x="100" y="52" width="1143" height="80" fill="rgba(255,255,255,.018)"/>
+<text x="4" y="90" fill="var(--gold2)" font-size="7" font-family="Noto Serif JP" font-weight="700">北アメリカ</text>
+<text x="4" y="99" fill="var(--text3)" font-size="4.5" font-family="Noto Sans JP">英仏→米独立</text>
+<line x1="0" y1="132" x2="1243" y2="132" stroke="rgba(201,169,110,.04)"/>
+<rect x="100" y="138" width="1143" height="104" fill="rgba(255,255,255,.008)"/>
+<text x="4" y="188" fill="var(--gold2)" font-size="7" font-family="Noto Serif JP" font-weight="700">カリブ海</text>
+<text x="4" y="197" fill="var(--text3)" font-size="4.5" font-family="Noto Sans JP">砂糖・奴隷貿易</text>
+<line x1="0" y1="242" x2="1243" y2="242" stroke="rgba(201,169,110,.04)"/>
+<rect x="100" y="248" width="1143" height="104" fill="rgba(255,255,255,.018)"/>
+<text x="4" y="298" fill="var(--gold2)" font-size="7" font-family="Noto Serif JP" font-weight="700">中南アメリカ</text>
+<text x="4" y="307" fill="var(--text3)" font-size="4.5" font-family="Noto Sans JP">西葡→独立の波</text>
+<line x1="0" y1="352" x2="1243" y2="352" stroke="rgba(201,169,110,.04)"/>
+<rect x="100" y="358" width="1143" height="80" fill="rgba(255,255,255,.008)"/>
+<text x="4" y="396" fill="var(--gold2)" font-size="7" font-family="Noto Serif JP" font-weight="700">インド</text>
+<text x="4" y="405" fill="var(--text3)" font-size="4.5" font-family="Noto Sans JP">ムガル→英領</text>
+<line x1="0" y1="438" x2="1243" y2="438" stroke="rgba(201,169,110,.04)"/>
+<rect x="100" y="444" width="1143" height="128" fill="rgba(255,255,255,.018)"/>
+<text x="4" y="506" fill="var(--gold2)" font-size="7" font-family="Noto Serif JP" font-weight="700">東南アジア大陸</text>
+<text x="4" y="515" fill="var(--text3)" font-size="4.5" font-family="Noto Sans JP">ビルマ・ベトナム・タイ</text>
+<line x1="0" y1="572" x2="1243" y2="572" stroke="rgba(201,169,110,.04)"/>
+<rect x="100" y="578" width="1143" height="104" fill="rgba(255,255,255,.008)"/>
+<text x="4" y="628" fill="var(--gold2)" font-size="7" font-family="Noto Serif JP" font-weight="700">東南アジア島嶼</text>
+<text x="4" y="637" fill="var(--text3)" font-size="4.5" font-family="Noto Sans JP">蘭領東インド・比</text>
+<line x1="0" y1="682" x2="1243" y2="682" stroke="rgba(201,169,110,.04)"/>
+<rect x="100" y="688" width="1143" height="128" fill="rgba(255,255,255,.018)"/>
+<text x="4" y="750" fill="var(--gold2)" font-size="7" font-family="Noto Serif JP" font-weight="700">中国・朝鮮</text>
+<text x="4" y="759" fill="var(--text3)" font-size="4.5" font-family="Noto Sans JP">租借地・勢力圏</text>
+<line x1="0" y1="816" x2="1243" y2="816" stroke="rgba(201,169,110,.04)"/>
+<rect x="100" y="822" width="1143" height="56" fill="rgba(255,255,255,.008)"/>
+<text x="4" y="848" fill="var(--gold2)" font-size="7" font-family="Noto Serif JP" font-weight="700">西アジア</text>
+<text x="4" y="857" fill="var(--text3)" font-size="4.5" font-family="Noto Sans JP">オスマン→委任統治</text>
+<line x1="0" y1="878" x2="1243" y2="878" stroke="rgba(201,169,110,.04)"/>
+<rect x="100" y="884" width="1143" height="152" fill="rgba(255,255,255,.018)"/>
+<text x="4" y="958" fill="var(--gold2)" font-size="7" font-family="Noto Serif JP" font-weight="700">北アフリカ</text>
+<text x="4" y="967" fill="var(--text3)" font-size="4.5" font-family="Noto Sans JP">仏領・英のエジプト</text>
+<line x1="0" y1="1036" x2="1243" y2="1036" stroke="rgba(201,169,110,.04)"/>
+<rect x="100" y="1042" width="1143" height="56" fill="rgba(255,255,255,.008)"/>
+<text x="4" y="1068" fill="var(--gold2)" font-size="7" font-family="Noto Serif JP" font-weight="700">サハラ以南</text>
+<text x="4" y="1077" fill="var(--text3)" font-size="4.5" font-family="Noto Sans JP">アフリカ分割</text>
+<line x1="0" y1="1098" x2="1243" y2="1098" stroke="rgba(201,169,110,.04)"/>
+<rect x="100" y="1104" width="1143" height="152" fill="rgba(255,255,255,.018)"/>
+<text x="4" y="1178" fill="var(--gold2)" font-size="7" font-family="Noto Serif JP" font-weight="700">太平洋</text>
+<text x="4" y="1187" fill="var(--text3)" font-size="4.5" font-family="Noto Sans JP">英仏独米</text>
+<line x1="0" y1="1256" x2="1243" y2="1256" stroke="rgba(201,169,110,.04)"/>
+<line x1="113" y1="38" x2="113" y2="1268" stroke="rgba(201,169,110,.06)"/>
+<text x="113" y="34" text-anchor="middle" fill="rgba(201,169,110,.5)" font-size="8" font-family="Cormorant Garamond" font-weight="700">1500</text>
+<line x1="178" y1="44" x2="178" y2="1268" stroke="rgba(255,255,255,.012)"/>
+<text x="178" y="34" text-anchor="middle" fill="rgba(201,169,110,.2)" font-size="6" font-family="Cormorant Garamond">1550</text>
+<line x1="243" y1="38" x2="243" y2="1268" stroke="rgba(201,169,110,.06)"/>
+<text x="243" y="34" text-anchor="middle" fill="rgba(201,169,110,.5)" font-size="8" font-family="Cormorant Garamond" font-weight="700">1600</text>
+<line x1="308" y1="44" x2="308" y2="1268" stroke="rgba(255,255,255,.012)"/>
+<text x="308" y="34" text-anchor="middle" fill="rgba(201,169,110,.2)" font-size="6" font-family="Cormorant Garamond">1650</text>
+<line x1="373" y1="38" x2="373" y2="1268" stroke="rgba(201,169,110,.06)"/>
+<text x="373" y="34" text-anchor="middle" fill="rgba(201,169,110,.5)" font-size="8" font-family="Cormorant Garamond" font-weight="700">1700</text>
+<line x1="438" y1="44" x2="438" y2="1268" stroke="rgba(255,255,255,.012)"/>
+<text x="438" y="34" text-anchor="middle" fill="rgba(201,169,110,.2)" font-size="6" font-family="Cormorant Garamond">1750</text>
+<line x1="503" y1="38" x2="503" y2="1268" stroke="rgba(201,169,110,.06)"/>
+<text x="503" y="34" text-anchor="middle" fill="rgba(201,169,110,.5)" font-size="8" font-family="Cormorant Garamond" font-weight="700">1800</text>
+<line x1="703" y1="44" x2="703" y2="1268" stroke="rgba(255,255,255,.012)"/>
+<text x="703" y="34" text-anchor="middle" fill="rgba(201,169,110,.2)" font-size="6" font-family="Cormorant Garamond">1850</text>
+<line x1="903" y1="38" x2="903" y2="1268" stroke="rgba(201,169,110,.06)"/>
+<text x="903" y="34" text-anchor="middle" fill="rgba(201,169,110,.5)" font-size="8" font-family="Cormorant Garamond" font-weight="700">1900</text>
+<line x1="1103" y1="44" x2="1103" y2="1268" stroke="rgba(255,255,255,.012)"/>
+<text x="1103" y="34" text-anchor="middle" fill="rgba(201,169,110,.2)" font-size="6" font-family="Cormorant Garamond">1950</text>
+<line x1="472" y1="38" x2="472" y2="1268" stroke="rgba(201,169,110,.07)" stroke-dasharray="4,4"/>
+<text x="474" y="48" fill="rgba(201,169,110,.45)" font-size="5.5" font-family="Noto Sans JP">米独立(1776)</text>
+<line x1="519" y1="38" x2="519" y2="1268" stroke="rgba(201,169,110,.07)" stroke-dasharray="4,4"/>
+<text x="521" y="48" fill="rgba(201,169,110,.45)" font-size="5.5" font-family="Noto Sans JP">ハイチ(1804)</text>
+<line x1="839" y1="38" x2="839" y2="1268" stroke="rgba(201,169,110,.07)" stroke-dasharray="4,4"/>
+<text x="841" y="48" fill="rgba(201,169,110,.45)" font-size="5.5" font-family="Noto Sans JP">ベルリン会議(1884)</text>
+<line x1="979" y1="38" x2="979" y2="1268" stroke="rgba(201,169,110,.07)" stroke-dasharray="4,4"/>
+<text x="981" y="48" fill="rgba(201,169,110,.45)" font-size="5.5" font-family="Noto Sans JP">ヴェルサイユ(1919)</text>
+<line x1="1091" y1="38" x2="1091" y2="1268" stroke="rgba(201,169,110,.07)" stroke-dasharray="4,4"/>
+<text x="1093" y="48" fill="rgba(201,169,110,.45)" font-size="5.5" font-family="Noto Sans JP">印独立(1947)</text>
+<line x1="1143" y1="38" x2="1143" y2="1268" stroke="rgba(201,169,110,.07)" stroke-dasharray="4,4"/>
+<text x="1145" y="48" fill="rgba(201,169,110,.45)" font-size="5.5" font-family="Noto Sans JP">アフリカの年(1960)</text>
+<g class="nd-svg" data-tip="cl-na_eng"><rect x="252" y="56" width="220" height="20" rx="3" fill="rgba(60,120,190,.12)" stroke="rgba(60,120,190,.28)" stroke-width="1"/><text x="255" y="69" fill="#8ab0d4" font-size="8" font-family="Noto Serif JP" font-weight="700">英領13植民地</text><text x="470" y="73" text-anchor="end" fill="rgba(255,255,255,.18)" font-size="5" font-family="Cormorant Garamond">1607-1776</text></g>
+<g class="nd-svg" data-tip="cl-na_fra"><rect x="157" y="80" width="298" height="20" rx="3" fill="rgba(120,80,170,.12)" stroke="rgba(120,80,170,.28)" stroke-width="1"/><text x="160" y="93" fill="#b8a0d4" font-size="8" font-family="Noto Serif JP" font-weight="700">ヌーヴェル＝フランス</text><text x="453" y="97" text-anchor="end" fill="rgba(255,255,255,.18)" font-size="5" font-family="Cormorant Garamond">1534-1763</text></g>
+<g class="nd-svg" data-tip="cl-na_usa"><rect x="472" y="56" width="731" height="20" rx="3" fill="rgba(201,169,110,.15)" stroke="rgba(201,169,110,.30)" stroke-width="1"/><text x="475" y="69" fill="#e8c888" font-size="8" font-family="Noto Serif JP" font-weight="700">アメリカ合衆国</text><text x="1201" y="73" text-anchor="end" fill="rgba(255,255,255,.18)" font-size="5" font-family="Cormorant Garamond">1776-1975</text></g>
+<g class="nd-svg" data-tip="cl-na_canada"><rect x="455" y="80" width="316" height="20" rx="3" fill="rgba(60,120,190,.12)" stroke="rgba(60,120,190,.28)" stroke-width="1"/><text x="458" y="93" fill="#8ab0d4" font-size="8" font-family="Noto Serif JP" font-weight="700">英領カナダ</text><text x="769" y="97" text-anchor="end" fill="rgba(255,255,255,.18)" font-size="5" font-family="Cormorant Garamond">1763-1867</text></g>
+<g class="nd-svg" data-tip="cl-na_canada2"><rect x="771" y="80" width="432" height="20" rx="3" fill="rgba(201,169,110,.15)" stroke="rgba(201,169,110,.30)" stroke-width="1"/><text x="774" y="93" fill="#e8c888" font-size="8" font-family="Noto Serif JP" font-weight="700">カナダ自治領</text><text x="1201" y="97" text-anchor="end" fill="rgba(255,255,255,.18)" font-size="5" font-family="Cormorant Garamond">1867-1975</text></g>
+<g class="nd-svg" data-tip="cl-cb_spa"><rect x="103" y="142" width="792" height="20" rx="3" fill="rgba(180,80,80,.10)" stroke="rgba(180,80,80,.25)" stroke-width="1"/><text x="106" y="155" fill="#d4a0a0" font-size="8" font-family="Noto Serif JP" font-weight="700">スペイン領(キューバ等)</text><text x="893" y="159" text-anchor="end" fill="rgba(255,255,255,.18)" font-size="5" font-family="Cormorant Garamond">1492-1898</text></g>
+<g class="nd-svg" data-tip="cl-cb_eng"><rect x="278" y="166" width="873" height="20" rx="3" fill="rgba(60,120,190,.12)" stroke="rgba(60,120,190,.28)" stroke-width="1"/><text x="281" y="179" fill="#8ab0d4" font-size="8" font-family="Noto Serif JP" font-weight="700">英領(ジャマイカ等)</text><text x="1149" y="183" text-anchor="end" fill="rgba(255,255,255,.18)" font-size="5" font-family="Cormorant Garamond">1627-1962</text></g>
+<g class="nd-svg" data-tip="cl-cb_fra"><rect x="288" y="190" width="230" height="20" rx="3" fill="rgba(120,80,170,.12)" stroke="rgba(120,80,170,.28)" stroke-width="1"/><text x="292" y="203" fill="#b8a0d4" font-size="8" font-family="Noto Serif JP" font-weight="700">仏領サン＝ドマング</text><text x="517" y="207" text-anchor="end" fill="rgba(255,255,255,.18)" font-size="5" font-family="Cormorant Garamond">1635-1804</text></g>
+<g class="nd-svg" data-tip="cl-cb_haiti"><rect x="519" y="190" width="684" height="20" rx="3" fill="rgba(201,169,110,.15)" stroke="rgba(201,169,110,.30)" stroke-width="1"/><text x="522" y="203" fill="#e8c888" font-size="8" font-family="Noto Serif JP" font-weight="700">ハイチ独立</text><text x="1201" y="207" text-anchor="end" fill="rgba(255,255,255,.18)" font-size="5" font-family="Cormorant Garamond">1804-1975</text></g>
+<g class="nd-svg" data-tip="cl-la_spa"><rect x="140" y="252" width="447" height="20" rx="3" fill="rgba(180,80,80,.10)" stroke="rgba(180,80,80,.25)" stroke-width="1"/><text x="143" y="265" fill="#d4a0a0" font-size="8" font-family="Noto Serif JP" font-weight="700">スペイン領(メキシコ〜南米)</text><text x="585" y="269" text-anchor="end" fill="rgba(255,255,255,.18)" font-size="5" font-family="Cormorant Garamond">1521-1821</text></g>
+<g class="nd-svg" data-tip="cl-la_por"><rect x="113" y="276" width="478" height="20" rx="3" fill="rgba(80,150,60,.10)" stroke="rgba(80,150,60,.25)" stroke-width="1"/><text x="116" y="289" fill="#a8c890" font-size="8" font-family="Noto Serif JP" font-weight="700">ポルトガル領ブラジル</text><text x="589" y="293" text-anchor="end" fill="rgba(255,255,255,.18)" font-size="5" font-family="Cormorant Garamond">1500-1822</text></g>
+<g class="nd-svg" data-tip="cl-la_indep"><rect x="543" y="300" width="80" height="20" rx="3" fill="rgba(201,169,110,.15)" stroke="rgba(201,169,110,.30)" stroke-width="1"/><text x="546" y="313" fill="#e8c888" font-size="7" font-family="Noto Serif JP" font-weight="700">独立の波(ボリバル等)</text></g>
+<g class="nd-svg" data-tip="cl-la_free"><rect x="623" y="252" width="580" height="20" rx="3" fill="rgba(201,169,110,.15)" stroke="rgba(201,169,110,.30)" stroke-width="1"/><text x="626" y="265" fill="#e8c888" font-size="8" font-family="Noto Serif JP" font-weight="700">独立諸国</text><text x="1201" y="269" text-anchor="end" fill="rgba(255,255,255,.18)" font-size="5" font-family="Cormorant Garamond">1830-1975</text></g>
+<g class="nd-svg" data-tip="cl-in_mughal"><rect x="147" y="362" width="300" height="20" rx="3" fill="rgba(170,130,80,.10)" stroke="rgba(170,130,80,.22)" stroke-width="1"/><text x="150" y="375" fill="#d4b898" font-size="8" font-family="Noto Serif JP" font-weight="700">ムガル帝国</text><text x="445" y="379" text-anchor="end" fill="rgba(255,255,255,.18)" font-size="5" font-family="Cormorant Garamond">1526-1757</text></g>
+<g class="nd-svg" data-tip="cl-in_eic1"><rect x="243" y="386" width="204" height="20" rx="3" fill="rgba(60,120,190,.12)" stroke="rgba(60,120,190,.28)" stroke-width="1"/><text x="246" y="399" fill="#8ab0d4" font-size="8" font-family="Noto Serif JP" font-weight="700">英東インド会社(進出)</text><text x="445" y="403" text-anchor="end" fill="rgba(255,255,255,.18)" font-size="5" font-family="Cormorant Garamond">1600-1757</text></g>
+<g class="nd-svg" data-tip="cl-in_eic2"><rect x="447" y="362" width="288" height="20" rx="3" fill="rgba(60,120,190,.12)" stroke="rgba(60,120,190,.28)" stroke-width="1"/><text x="450" y="375" fill="#8ab0d4" font-size="8" font-family="Noto Serif JP" font-weight="700">英東インド会社(支配)</text><text x="733" y="379" text-anchor="end" fill="rgba(255,255,255,.18)" font-size="5" font-family="Cormorant Garamond">1757-1858</text></g>
+<g class="nd-svg" data-tip="cl-in_raj"><rect x="735" y="362" width="356" height="20" rx="3" fill="rgba(60,120,190,.12)" stroke="rgba(60,120,190,.28)" stroke-width="1"/><text x="738" y="375" fill="#8ab0d4" font-size="8" font-family="Noto Serif JP" font-weight="700">英領インド</text><text x="1089" y="379" text-anchor="end" fill="rgba(255,255,255,.18)" font-size="5" font-family="Cormorant Garamond">1858-1947</text></g>
+<g class="nd-svg" data-tip="cl-in_indep"><rect x="1091" y="362" width="112" height="20" rx="3" fill="rgba(201,169,110,.15)" stroke="rgba(201,169,110,.30)" stroke-width="1"/><text x="1094" y="375" fill="#e8c888" font-size="8" font-family="Noto Serif JP" font-weight="700">印パ独立</text><text x="1201" y="379" text-anchor="end" fill="rgba(255,255,255,.18)" font-size="5" font-family="Cormorant Garamond">1947-1975</text></g>
+<g class="nd-svg" data-tip="cl-sea_fra"><rect x="751" y="448" width="312" height="20" rx="3" fill="rgba(120,80,170,.12)" stroke="rgba(120,80,170,.28)" stroke-width="1"/><text x="754" y="461" fill="#b8a0d4" font-size="8" font-family="Noto Serif JP" font-weight="700">仏領インドシナ</text><text x="1061" y="465" text-anchor="end" fill="rgba(255,255,255,.18)" font-size="5" font-family="Cormorant Garamond">1862-1940</text></g>
+<g class="nd-svg" data-tip="cl-sea_fra_jpn"><rect x="1063" y="448" width="20" height="20" rx="3" fill="rgba(180,170,60,.12)" stroke="rgba(180,170,60,.30)" stroke-width="1"/><text x="1066" y="461" fill="#d4d098" font-size="5.5" font-family="Noto Serif JP" font-weight="700">日本占領(仏印)</text></g>
+<g class="nd-svg" data-tip="cl-sea_fra2"><rect x="1083" y="448" width="36" height="20" rx="3" fill="rgba(120,80,170,.12)" stroke="rgba(120,80,170,.28)" stroke-width="1"/><text x="1086" y="461" fill="#b8a0d4" font-size="6.5" font-family="Noto Serif JP" font-weight="700">仏復帰→ディエンビエンフー</text></g>
+<g class="nd-svg" data-tip="cl-sea_burma"><rect x="599" y="472" width="472" height="20" rx="3" fill="rgba(60,120,190,.12)" stroke="rgba(60,120,190,.28)" stroke-width="1"/><text x="602" y="485" fill="#8ab0d4" font-size="8" font-family="Noto Serif JP" font-weight="700">英領ビルマ</text><text x="1069" y="489" text-anchor="end" fill="rgba(255,255,255,.18)" font-size="5" font-family="Cormorant Garamond">1824-1942</text></g>
+<g class="nd-svg" data-tip="cl-sea_burma_jpn"><rect x="1071" y="472" width="12" height="20" rx="3" fill="rgba(180,170,60,.12)" stroke="rgba(180,170,60,.30)" stroke-width="1"/><text x="1077" y="478" text-anchor="middle" fill="#d4d098" font-size="6" font-family="Noto Serif JP" font-weight="700">日</text><text x="1077" y="486" text-anchor="middle" fill="#d4d098" font-size="6" font-family="Noto Serif JP" font-weight="700">本</text></g>
+<g class="nd-svg" data-tip="cl-sea_burma2"><rect x="1083" y="472" width="12" height="20" rx="3" fill="rgba(201,169,110,.15)" stroke="rgba(201,169,110,.30)" stroke-width="1"/><text x="1089" y="478" text-anchor="middle" fill="#e8c888" font-size="6" font-family="Noto Serif JP" font-weight="700">英</text><text x="1089" y="486" text-anchor="middle" fill="#e8c888" font-size="6" font-family="Noto Serif JP" font-weight="700">復</text></g>
+<g class="nd-svg" data-tip="cl-sea_thai"><rect x="113" y="496" width="1090" height="20" rx="3" fill="rgba(201,169,110,.15)" stroke="rgba(201,169,110,.30)" stroke-width="1"/><text x="116" y="509" fill="#e8c888" font-size="8" font-family="Noto Serif JP" font-weight="700">タイ(独立維持)</text><text x="1201" y="513" text-anchor="end" fill="rgba(255,255,255,.18)" font-size="5" font-family="Cormorant Garamond">1500-1975</text></g>
+<g class="nd-svg" data-tip="cl-sei_ned"><rect x="246" y="582" width="825" height="20" rx="3" fill="rgba(190,150,60,.10)" stroke="rgba(190,150,60,.25)" stroke-width="1"/><text x="249" y="595" fill="#d4c098" font-size="8" font-family="Noto Serif JP" font-weight="700">蘭領東インド</text><text x="1069" y="599" text-anchor="end" fill="rgba(255,255,255,.18)" font-size="5" font-family="Cormorant Garamond">1602-1942</text></g>
+<g class="nd-svg" data-tip="cl-sei_ned_jpn"><rect x="1071" y="582" width="12" height="20" rx="3" fill="rgba(180,170,60,.12)" stroke="rgba(180,170,60,.30)" stroke-width="1"/><text x="1077" y="588" text-anchor="middle" fill="#d4d098" font-size="6" font-family="Noto Serif JP" font-weight="700">日</text><text x="1077" y="596" text-anchor="middle" fill="#d4d098" font-size="6" font-family="Noto Serif JP" font-weight="700">本</text></g>
+<g class="nd-svg" data-tip="cl-sei_ned2"><rect x="1083" y="582" width="120" height="20" rx="3" fill="rgba(201,169,110,.15)" stroke="rgba(201,169,110,.30)" stroke-width="1"/><text x="1086" y="595" fill="#e8c888" font-size="8" font-family="Noto Serif JP" font-weight="700">インドネシア独立(1945宣言)</text><text x="1201" y="599" text-anchor="end" fill="rgba(255,255,255,.18)" font-size="5" font-family="Cormorant Garamond">1945-1975</text></g>
+<g class="nd-svg" data-tip="cl-sei_spa"><rect x="198" y="606" width="698" height="20" rx="3" fill="rgba(180,80,80,.10)" stroke="rgba(180,80,80,.25)" stroke-width="1"/><text x="200" y="619" fill="#d4a0a0" font-size="8" font-family="Noto Serif JP" font-weight="700">西領フィリピン</text><text x="893" y="623" text-anchor="end" fill="rgba(255,255,255,.18)" font-size="5" font-family="Cormorant Garamond">1565-1898</text></g>
+<g class="nd-svg" data-tip="cl-sei_usa"><rect x="895" y="606" width="176" height="20" rx="3" fill="rgba(60,180,180,.10)" stroke="rgba(60,180,180,.22)" stroke-width="1"/><text x="898" y="619" fill="#8ad4d4" font-size="8" font-family="Noto Serif JP" font-weight="700">米領フィリピン</text><text x="1069" y="623" text-anchor="end" fill="rgba(255,255,255,.18)" font-size="5" font-family="Cormorant Garamond">1898-1942</text></g>
+<g class="nd-svg" data-tip="cl-sei_usa_jpn"><rect x="1071" y="606" width="12" height="20" rx="3" fill="rgba(180,170,60,.12)" stroke="rgba(180,170,60,.30)" stroke-width="1"/><text x="1077" y="612" text-anchor="middle" fill="#d4d098" font-size="6" font-family="Noto Serif JP" font-weight="700">日</text><text x="1077" y="620" text-anchor="middle" fill="#d4d098" font-size="6" font-family="Noto Serif JP" font-weight="700">本</text></g>
+<g class="nd-svg" data-tip="cl-sei_usa2"><rect x="1087" y="606" width="116" height="20" rx="3" fill="rgba(201,169,110,.15)" stroke="rgba(201,169,110,.30)" stroke-width="1"/><text x="1090" y="619" fill="#e8c888" font-size="8" font-family="Noto Serif JP" font-weight="700">フィリピン独立(1946)</text><text x="1201" y="623" text-anchor="end" fill="rgba(255,255,255,.18)" font-size="5" font-family="Cormorant Garamond">1946-1975</text></g>
+<g class="nd-svg" data-tip="cl-sei_mal"><rect x="579" y="630" width="492" height="20" rx="3" fill="rgba(60,120,190,.12)" stroke="rgba(60,120,190,.28)" stroke-width="1"/><text x="582" y="643" fill="#8ab0d4" font-size="8" font-family="Noto Serif JP" font-weight="700">英領マラヤ</text><text x="1069" y="647" text-anchor="end" fill="rgba(255,255,255,.18)" font-size="5" font-family="Cormorant Garamond">1819-1942</text></g>
+<g class="nd-svg" data-tip="cl-sei_mal_jpn"><rect x="1071" y="630" width="12" height="20" rx="3" fill="rgba(180,170,60,.12)" stroke="rgba(180,170,60,.30)" stroke-width="1"/><text x="1077" y="636" text-anchor="middle" fill="#d4d098" font-size="6" font-family="Noto Serif JP" font-weight="700">日</text><text x="1077" y="644" text-anchor="middle" fill="#d4d098" font-size="6" font-family="Noto Serif JP" font-weight="700">本</text></g>
+<g class="nd-svg" data-tip="cl-sei_mal2"><rect x="1083" y="630" width="72" height="20" rx="3" fill="rgba(201,169,110,.15)" stroke="rgba(201,169,110,.30)" stroke-width="1"/><text x="1086" y="643" fill="#e8c888" font-size="7" font-family="Noto Serif JP" font-weight="700">英復帰→マレーシア(1963)</text></g>
+<g class="nd-svg" data-tip="cl-ch_macau"><rect x="187" y="692" width="1112" height="20" rx="3" fill="rgba(80,150,60,.10)" stroke="rgba(80,150,60,.25)" stroke-width="1"/><text x="190" y="705" fill="#a8c890" font-size="8" font-family="Noto Serif JP" font-weight="700">マカオ(葡)</text><text x="1297" y="709" text-anchor="end" fill="rgba(255,255,255,.18)" font-size="5" font-family="Cormorant Garamond">1557-1999</text></g>
+<g class="nd-svg" data-tip="cl-ch_treaty"><rect x="671" y="716" width="404" height="20" rx="3" fill="rgba(140,120,150,.08)" stroke="rgba(140,120,150,.20)" stroke-width="1"/><text x="674" y="729" fill="#c0b8c8" font-size="8" font-family="Noto Serif JP" font-weight="700">租界・租借地</text><text x="1073" y="733" text-anchor="end" fill="rgba(255,255,255,.18)" font-size="5" font-family="Cormorant Garamond">1842-1943</text></g>
+<g class="nd-svg" data-tip="cl-ch_jpn"><rect x="883" y="740" width="200" height="20" rx="3" fill="rgba(180,170,60,.12)" stroke="rgba(180,170,60,.30)" stroke-width="1"/><text x="886" y="753" fill="#d4d098" font-size="8" font-family="Noto Serif JP" font-weight="700">日本(台湾→満州→侵略)</text><text x="1081" y="757" text-anchor="end" fill="rgba(255,255,255,.18)" font-size="5" font-family="Cormorant Garamond">1895-1945</text></g>
+<g class="nd-svg" data-tip="cl-ch_korea"><rect x="943" y="764" width="140" height="20" rx="3" fill="rgba(180,170,60,.12)" stroke="rgba(180,170,60,.30)" stroke-width="1"/><text x="946" y="777" fill="#d4d098" font-size="8" font-family="Noto Serif JP" font-weight="700">日本の朝鮮支配</text><text x="1081" y="781" text-anchor="end" fill="rgba(255,255,255,.18)" font-size="5" font-family="Cormorant Garamond">1910-1945</text></g>
+<g class="nd-svg" data-tip="cl-wa_ott"><rect x="135" y="826" width="840" height="20" rx="3" fill="rgba(150,140,90,.10)" stroke="rgba(150,140,90,.22)" stroke-width="1"/><text x="138" y="839" fill="#c8c0a8" font-size="8" font-family="Noto Serif JP" font-weight="700">オスマン帝国</text><text x="973" y="843" text-anchor="end" fill="rgba(255,255,255,.18)" font-size="5" font-family="Cormorant Garamond">1517-1918</text></g>
+<g class="nd-svg" data-tip="cl-wa_mandate"><rect x="983" y="826" width="112" height="20" rx="3" fill="rgba(60,120,190,.12)" stroke="rgba(60,120,190,.28)" stroke-width="1"/><text x="986" y="839" fill="#8ab0d4" font-size="8" font-family="Noto Serif JP" font-weight="700">英仏委任統治</text><text x="1093" y="843" text-anchor="end" fill="rgba(255,255,255,.18)" font-size="5" font-family="Cormorant Garamond">1920-1948</text></g>
+<g class="nd-svg" data-tip="cl-wa_indep"><rect x="1095" y="826" width="108" height="20" rx="3" fill="rgba(201,169,110,.15)" stroke="rgba(201,169,110,.30)" stroke-width="1"/><text x="1098" y="839" fill="#e8c888" font-size="8" font-family="Noto Serif JP" font-weight="700">独立諸国＋イスラエル</text><text x="1201" y="843" text-anchor="end" fill="rgba(255,255,255,.18)" font-size="5" font-family="Cormorant Garamond">1948-1975</text></g>
+<g class="nd-svg" data-tip="cl-naf_alg"><rect x="623" y="888" width="528" height="20" rx="3" fill="rgba(120,80,170,.12)" stroke="rgba(120,80,170,.28)" stroke-width="1"/><text x="626" y="901" fill="#b8a0d4" font-size="8" font-family="Noto Serif JP" font-weight="700">仏領アルジェリア</text><text x="1149" y="905" text-anchor="end" fill="rgba(255,255,255,.18)" font-size="5" font-family="Cormorant Garamond">1830-1962</text></g>
+<g class="nd-svg" data-tip="cl-naf_tun"><rect x="827" y="912" width="300" height="20" rx="3" fill="rgba(120,80,170,.12)" stroke="rgba(120,80,170,.28)" stroke-width="1"/><text x="830" y="925" fill="#b8a0d4" font-size="8" font-family="Noto Serif JP" font-weight="700">仏領チュニジア</text><text x="1125" y="929" text-anchor="end" fill="rgba(255,255,255,.18)" font-size="5" font-family="Cormorant Garamond">1881-1956</text></g>
+<g class="nd-svg" data-tip="cl-naf_mor"><rect x="951" y="936" width="176" height="20" rx="3" fill="rgba(120,80,170,.12)" stroke="rgba(120,80,170,.28)" stroke-width="1"/><text x="954" y="949" fill="#b8a0d4" font-size="8" font-family="Noto Serif JP" font-weight="700">仏領モロッコ</text><text x="1125" y="953" text-anchor="end" fill="rgba(255,255,255,.18)" font-size="5" font-family="Cormorant Garamond">1912-1956</text></g>
+<g class="nd-svg" data-tip="cl-naf_egy"><rect x="831" y="960" width="160" height="20" rx="3" fill="rgba(60,120,190,.12)" stroke="rgba(60,120,190,.28)" stroke-width="1"/><text x="834" y="973" fill="#8ab0d4" font-size="8" font-family="Noto Serif JP" font-weight="700">英のエジプト支配</text><text x="989" y="977" text-anchor="end" fill="rgba(255,255,255,.18)" font-size="5" font-family="Cormorant Garamond">1882-1922</text></g>
+<g class="nd-svg" data-tip="cl-naf_ita"><rect x="947" y="984" width="160" height="20" rx="3" fill="rgba(150,130,80,.08)" stroke="rgba(150,130,80,.20)" stroke-width="1"/><text x="950" y="997" fill="#c8b8a0" font-size="8" font-family="Noto Serif JP" font-weight="700">伊領リビア</text><text x="1105" y="1001" text-anchor="end" fill="rgba(255,255,255,.18)" font-size="5" font-family="Cormorant Garamond">1911-1951</text></g>
+<g class="nd-svg" data-tip="cl-ssa_slave"><rect x="113" y="1046" width="710" height="20" rx="3" fill="rgba(140,120,150,.08)" stroke="rgba(140,120,150,.20)" stroke-width="1"/><text x="116" y="1059" fill="#c0b8c8" font-size="8" font-family="Noto Serif JP" font-weight="700">奴隷貿易の時代</text><text x="821" y="1063" text-anchor="end" fill="rgba(255,255,255,.18)" font-size="5" font-family="Cormorant Garamond">1500-1880</text></g>
+<g class="nd-svg" data-tip="cl-ssa_scramble"><rect x="839" y="1046" width="120" height="20" rx="3" fill="rgba(140,120,150,.08)" stroke="rgba(140,120,150,.20)" stroke-width="1"/><text x="842" y="1059" fill="#c0b8c8" font-size="8" font-family="Noto Serif JP" font-weight="700">アフリカ分割</text><text x="957" y="1063" text-anchor="end" fill="rgba(255,255,255,.18)" font-size="5" font-family="Cormorant Garamond">1884-1914</text></g>
+<g class="nd-svg" data-tip="cl-ssa_colonial"><rect x="959" y="1046" width="184" height="20" rx="3" fill="rgba(140,120,150,.08)" stroke="rgba(140,120,150,.20)" stroke-width="1"/><text x="962" y="1059" fill="#c0b8c8" font-size="8" font-family="Noto Serif JP" font-weight="700">植民地支配(英仏独白葡)</text><text x="1141" y="1063" text-anchor="end" fill="rgba(255,255,255,.18)" font-size="5" font-family="Cormorant Garamond">1914-1960</text></g>
+<g class="nd-svg" data-tip="cl-ssa_indep"><rect x="1143" y="1046" width="60" height="20" rx="3" fill="rgba(201,169,110,.15)" stroke="rgba(201,169,110,.30)" stroke-width="1"/><text x="1146" y="1059" fill="#e8c888" font-size="7" font-family="Noto Serif JP" font-weight="700">「アフリカの年」→独立</text></g>
+<g class="nd-svg" data-tip="cl-pac_aus"><rect x="487" y="1108" width="420" height="20" rx="3" fill="rgba(60,120,190,.12)" stroke="rgba(60,120,190,.28)" stroke-width="1"/><text x="490" y="1121" fill="#8ab0d4" font-size="8" font-family="Noto Serif JP" font-weight="700">英領オーストラリア</text><text x="905" y="1125" text-anchor="end" fill="rgba(255,255,255,.18)" font-size="5" font-family="Cormorant Garamond">1788-1901</text></g>
+<g class="nd-svg" data-tip="cl-pac_nz"><rect x="663" y="1132" width="268" height="20" rx="3" fill="rgba(60,120,190,.12)" stroke="rgba(60,120,190,.28)" stroke-width="1"/><text x="666" y="1145" fill="#8ab0d4" font-size="8" font-family="Noto Serif JP" font-weight="700">英領NZ</text><text x="929" y="1149" text-anchor="end" fill="rgba(255,255,255,.18)" font-size="5" font-family="Cormorant Garamond">1840-1907</text></g>
+<g class="nd-svg" data-tip="cl-pac_ger"><rect x="839" y="1156" width="140" height="20" rx="3" fill="rgba(130,130,130,.10)" stroke="rgba(130,130,130,.22)" stroke-width="1"/><text x="842" y="1169" fill="#b0b0b0" font-size="8" font-family="Noto Serif JP" font-weight="700">独領(ニューギニア等)</text><text x="977" y="1173" text-anchor="end" fill="rgba(255,255,255,.18)" font-size="5" font-family="Cormorant Garamond">1884-1919</text></g>
+<g class="nd-svg" data-tip="cl-pac_usa"><rect x="895" y="1180" width="308" height="20" rx="3" fill="rgba(60,180,180,.10)" stroke="rgba(60,180,180,.22)" stroke-width="1"/><text x="898" y="1193" fill="#8ad4d4" font-size="8" font-family="Noto Serif JP" font-weight="700">米領(グアム等)</text><text x="1201" y="1197" text-anchor="end" fill="rgba(255,255,255,.18)" font-size="5" font-family="Cormorant Garamond">1898-1975</text></g>
+<g class="nd-svg" data-tip="cl-pac_fra"><rect x="671" y="1204" width="532" height="20" rx="3" fill="rgba(120,80,170,.12)" stroke="rgba(120,80,170,.28)" stroke-width="1"/><text x="674" y="1217" fill="#b8a0d4" font-size="8" font-family="Noto Serif JP" font-weight="700">仏領ポリネシア</text><text x="1201" y="1221" text-anchor="end" fill="rgba(255,255,255,.18)" font-size="5" font-family="Cormorant Garamond">1842-1975</text></g>
+</svg></div>
+
+<div class="tp" id="tip-cl-na_eng"><p><strong>英領13植民地</strong>(1607-1776) ― ヴァージニア(1607)〜ジョージア(1733)。プランテーション(南部)＋自営農民(北部)。タウンミーティングなど自治の伝統。印紙法(1765)→ボストン茶会事件(1773)→<strong>独立宣言(1776)</strong>。</p></div>
+<div class="tp" id="tip-cl-na_fra"><p><strong>ヌーヴェル＝フランス</strong>(1534-1763) ― カナダ〜ミシシッピ流域。毛皮交易。<strong>フレンチ＝インディアン戦争(=七年戦争)</strong>で英に敗北→パリ条約(1763)でカナダを英に割譲。</p></div>
+<div class="tp" id="tip-cl-na_usa"><p><strong>アメリカ合衆国</strong>(1776-) ― 独立宣言(1776)→合衆国憲法(1787)→西部開拓(マニフェスト＝デスティニー)→南北戦争(1861-65)→帝国主義期(米西戦争1898)。</p></div>
+<div class="tp" id="tip-cl-na_canada"><p><strong>英領カナダ</strong> ― パリ条約(1763)で仏から獲得。1867年に<strong>カナダ自治領</strong>(Dominion)→英連邦内で自治。</p></div>
+<div class="tp" id="tip-cl-na_canada2"><p><strong>カナダ自治領</strong>(1867-) ― 英領北アメリカ法。連邦制。ウェストミンスター憲章(1931)で実質独立。</p></div>
+<div class="tp" id="tip-cl-cb_spa"><p><strong>スペイン領カリブ</strong> ― キューバ・プエルトリコ等。砂糖プランテーション。米西戦争(1898)で米に割譲。キューバは1902年に形式上独立。</p></div>
+<div class="tp" id="tip-cl-cb_eng"><p><strong>英領カリブ</strong> ― ジャマイカ・バルバドス等。<strong>三角貿易</strong>の一角（砂糖→欧州、武器→アフリカ、奴隷→カリブ）。1960年代に独立。</p></div>
+<div class="tp" id="tip-cl-cb_fra"><p><strong>仏領サン＝ドマング</strong> ― 現在のハイチ。世界最大の砂糖生産地。奴隷労働。<strong>トゥサン＝ルヴェルテュール</strong>が奴隷反乱を指導→1804年にハイチとして独立。</p></div>
+<div class="tp" id="tip-cl-cb_haiti"><p><strong>ハイチ独立(1804)</strong> ― <strong>世界初の黒人共和国</strong>。フランス革命の「自由・平等・博愛」を奴隷が実践。ラテンアメリカ独立運動に影響。</p></div>
+<div class="tp" id="tip-cl-la_spa"><p><strong>スペイン領アメリカ</strong>(1521-1821) ― メキシコ(アステカ征服)〜ペルー(インカ征服)。エンコミエンダ制→大土地所有(アシエンダ)。<strong>銀の大量流出→価格革命</strong>。クリオーリョ(現地生まれ白人)が独立を主導。</p></div>
+<div class="tp" id="tip-cl-la_por"><p><strong>ポルトガル領ブラジル</strong>(1500-1822) ― 砂糖→金→コーヒーのプランテーション。ナポレオンのポルトガル侵攻→王室がブラジルに逃亡→1822年に<strong>ペドロ1世が独立を宣言</strong>（帝政として独立＝ラテンアメリカで唯一）。</p></div>
+<div class="tp" id="tip-cl-la_indep"><p><strong>独立の波(1810-30)</strong> ― ナポレオン戦争が契機。<strong>シモン＝ボリバル</strong>(ベネズエラ・コロンビア等)、<strong>サン＝マルティン</strong>(アルゼンチン・チリ・ペルー)。クリオーリョが主導。米のモンロー宣言(1823)が欧州の再植民地化を牽制。</p></div>
+<div class="tp" id="tip-cl-la_free"><p><strong>独立後のラテンアメリカ</strong> ― カウディーリョ(軍事独裁者)の時代。モノカルチャー経済。英米の経済的支配。メキシコ革命(1910)。</p></div>
+<div class="tp" id="tip-cl-in_mughal"><p><strong>ムガル帝国</strong>(1526-1757) ― バーブルが建国。アクバル帝の全盛期。アウラングゼーブ以降衰退→地方勢力が台頭→英の介入を招く。</p></div>
+<div class="tp" id="tip-cl-in_eic1"><p><strong>英東インド会社(進出期)</strong> ― 1600年設立。マドラス・ボンベイ・カルカッタに商館。仏東インド会社と競争→<strong>プラッシーの戦い(1757)</strong>で仏の影響力を排除。</p></div>
+<div class="tp" id="tip-cl-in_eic2"><p><strong>英東インド会社(支配期)</strong>(1757-1858) ― プラッシー以降、ベンガルの徴税権を獲得→実質的な領土支配。<strong>シパーヒーの反乱(1857)</strong>→会社統治の終了→英政府直轄(英領インド)へ。</p></div>
+<div class="tp" id="tip-cl-in_raj"><p><strong>英領インド</strong>(1858-1947) ― ヴィクトリア女王がインド皇帝を兼ねる。鉄道建設・英語教育。インド国民会議(1885)→<strong>ガンディーの非暴力運動</strong>→1947年<strong>インド・パキスタン分離独立</strong>。</p></div>
+<div class="tp" id="tip-cl-in_indep"><p><strong>インド・パキスタン独立(1947)</strong> ― ヒンドゥーのインドとムスリムのパキスタン(東西)に分離→カシミール問題。1971年に東パキスタンがバングラデシュとして独立。</p></div>
+<div class="tp" id="tip-cl-sea_fra"><p><strong>仏領インドシナ</strong>(1862-1954) ― ベトナム・ラオス・カンボジア。阮朝ベトナムを段階的に征服。<strong>ディエン＝ビエン＝フーの戦い(1954)</strong>で仏が敗北→ジュネーヴ休戦協定→ベトナム南北分裂→ベトナム戦争へ。</p></div>
+<div class="tp" id="tip-cl-sea_burma"><p><strong>英領ビルマ</strong>(1824-1948) ― 3次のビルマ戦争で段階的に征服。英領インドの一部として統治。1948年独立。</p></div>
+<div class="tp" id="tip-cl-sea_thai"><p><strong>タイ(独立維持)</strong> ― <strong>東南アジアで唯一植民地化を免れた国</strong>。チュラロンコン(ラーマ5世)の近代化改革。英仏の緩衝地帯として機能。</p></div>
+
+<div class="tp" id="tip-cl-sei_ned"><p><strong>蘭領東インド</strong>(1602-1942) ― VOC(蘭東インド会社)が香辛料貿易を独占→植民地経営。強制栽培制度(19C)。日本占領後、<strong>スカルノ</strong>がインドネシア独立を宣言(1945)→蘭と独立戦争→1949年承認。</p></div>
+<div class="tp" id="tip-cl-sei_spa"><p><strong>西領フィリピン</strong>(1565-1898) ― マゼラン到達(1521)。マニラを拠点にアカプルコ貿易（ガレオン貿易）。<strong>ホセ＝リサール</strong>の啓蒙運動→米西戦争(1898)で米に割譲。</p></div>
+<div class="tp" id="tip-cl-sei_usa"><p><strong>米領フィリピン</strong>(1898-1946) ― 米西戦争で獲得。米の「善意の同化」政策。日本占領(1942-45)→1946年独立。</p></div>
+<div class="tp" id="tip-cl-sei_mal"><p><strong>英領マラヤ</strong> ― ペナン(1786)→シンガポール(1819)→マラッカ→海峡植民地。錫・ゴム。1957年マラヤ連邦独立→1963年マレーシア結成。</p></div>
+
+
+<div class="tp" id="tip-cl-ch_macau"><p><strong>マカオ(葡)</strong>(1557-1999) ― 中国における最古の欧州植民地。1999年に中国に返還。</p></div>
+<div class="tp" id="tip-cl-ch_treaty"><p><strong>租界・租借地</strong>(1842-) ― <strong>アヘン戦争(1842)→南京条約</strong>で香港割譲・5港開港。以後、列強が租界・租借地を設定。勢力圏（英＝長江流域、仏＝雲南、独＝山東、露＝満州、日＝福建）。</p></div>
+<div class="tp" id="tip-cl-ch_jpn"><p><strong>日本の中国進出</strong> ― 日清戦争(1895)→<strong>台湾割譲</strong>。二十一カ条(1915)。<strong>満州事変(1931)→満州国</strong>。日中戦争(1937-45)。</p></div>
+<div class="tp" id="tip-cl-ch_korea"><p><strong>日本の朝鮮支配</strong>(1910-45) ― 日韓併合(1910)。三・一独立運動(1919)。皇民化政策。1945年解放→南北分断。</p></div>
+<div class="tp" id="tip-cl-wa_ott"><p><strong>オスマン帝国</strong>(1517-1918) ― 西アジア・北アフリカを支配。19C「瀕死の病人」→WW1で敗北→セーヴル条約→<strong>英仏の委任統治</strong>に分割。</p></div>
+<div class="tp" id="tip-cl-wa_mandate"><p><strong>英仏委任統治</strong>(1920-48) ― サイクス＝ピコ協定に基づく分割。英＝パレスチナ・イラク・トランスヨルダン。仏＝シリア・レバノン。「三枚舌外交」の帰結→パレスチナ問題の直接の背景。</p></div>
+<div class="tp" id="tip-cl-wa_indep"><p><strong>西アジアの独立</strong> ― イラク(1932)・トランスヨルダン(1946)・シリア(1946)・レバノン(1943)・<strong>イスラエル建国(1948)</strong>→中東戦争へ。</p></div>
+<div class="tp" id="tip-cl-naf_alg"><p><strong>仏領アルジェリア</strong>(1830-1962) ― 仏の最初の本格的アフリカ植民地。100万人の入植者(コロン)。<strong>アルジェリア戦争(1954-62)</strong>→ド＝ゴールが独立を承認→仏国内に政治的衝撃。</p></div>
+<div class="tp" id="tip-cl-naf_tun"><p><strong>仏領チュニジア</strong>(1881-1956) ― 保護国。1956年独立。2011年「アラブの春」の発火点。</p></div>
+<div class="tp" id="tip-cl-naf_mor"><p><strong>仏領モロッコ</strong>(1912-56) ― モロッコ事件(1905,1911)→仏の保護国化。1956年独立。</p></div>
+<div class="tp" id="tip-cl-naf_egy"><p><strong>英のエジプト支配</strong>(1882-1922) ― スエズ運河(1869開通、仏が建設)の株を英が買収→1882年に軍事占領。形式上はオスマンの属国。1922年に名目上独立するがスエズ運河地帯は英が保持→ナセルの国有化(1956)。</p></div>
+<div class="tp" id="tip-cl-naf_ita"><p><strong>伊領リビア</strong>(1911-51) ― 伊土戦争(1911-12)でオスマンから奪取。WW2後に英仏が管理→1951年独立。</p></div>
+<div class="tp" id="tip-cl-ssa_slave"><p><strong>奴隷貿易</strong>(15C-19C) ― ポルトガルが開始→英蘭仏が拡大。<strong>三角貿易</strong>（欧州→武器・繊維→アフリカ→奴隷→新大陸→砂糖・綿花→欧州）。推定1200万人以上が大西洋を渡る。英が1807年に奴隷貿易禁止。</p></div>
+<div class="tp" id="tip-cl-ssa_scramble"><p><strong>アフリカ分割</strong>(1884-1914) ― <strong>ベルリン会議(1884-85)</strong>：列強がアフリカ分割のルールを決定（現地の同意なし）。英のケープ＝カイロ政策(3C政策)vs仏の横断政策→ファショダ事件(1898)。独立を保ったのは<strong>エチオピアとリベリアだけ</strong>。</p></div>
+<div class="tp" id="tip-cl-ssa_colonial"><p><strong>アフリカの植民地支配</strong> ― 英(ナイジェリア・ケニア・南ア等)、仏(西アフリカ・赤道アフリカ)、白(コンゴ)、葡(モザンビーク・アンゴラ)、独(タンガニーカ・ナミビア)。間接統治(英)vs同化政策(仏)。</p></div>
+<div class="tp" id="tip-cl-ssa_indep"><p><strong>「アフリカの年」(1960)</strong> ― この年だけで<strong>17カ国が独立</strong>。仏領が中心。エンクルマ(ガーナ,1957)がパン＝アフリカ主義を主導。独立後は国境問題・部族対立・新植民地主義が課題。</p></div>
+<div class="tp" id="tip-cl-pac_aus"><p><strong>英領オーストラリア</strong>(1788-1901) ― 流刑植民地として開始。ゴールドラッシュ。先住民アボリジニの排除。1901年にオーストラリア連邦として自治。</p></div>
+<div class="tp" id="tip-cl-pac_nz"><p><strong>英領ニュージーランド</strong> ― ワイタンギ条約(1840)でマオリと英が合意。1907年に自治領。</p></div>
+<div class="tp" id="tip-cl-pac_ger"><p><strong>独領太平洋</strong>(1884-1919) ― ニューギニア北東部・サモア等。WW1で日本・豪が占領→委任統治に。</p></div>
+<div class="tp" id="tip-cl-pac_usa"><p><strong>米領太平洋</strong> ― 米西戦争(1898)でグアム獲得。ハワイ併合(1898)。</p></div>
+<div class="tp" id="tip-cl-pac_fra"><p><strong>仏領太平洋</strong> ― タヒチ等のフランス領ポリネシア。ニューカレドニア。核実験場としても使用。</p></div>
+
+
+<div class="tp" id="tip-cl-sea_fra_jpn"><p><strong>日本の仏印進駐(1940-45)</strong> ― 1940年に北部仏印進駐（ヴィシー政権の黙認）→1941年南部仏印進駐→<strong>米が石油禁輸（ABCD包囲網）→真珠湾攻撃の引き金に</strong>。1945年3月に明号作戦で仏植民地政府を武力排除→ベトナムのホー＝チ＝ミンが独立を宣言(1945.9)。</p></div>
+<div class="tp" id="tip-cl-sea_fra2"><p><strong>仏の復帰→ディエンビエンフー</strong>(1945-54) ― 仏がインドシナ再支配を試みる→第一次インドシナ戦争→<strong>ディエンビエンフーの戦い(1954)</strong>で仏が大敗→ジュネーヴ休戦協定→ベトナム南北分裂→ベトナム戦争へ。</p></div>
+<div class="tp" id="tip-cl-sea_burma_jpn"><p><strong>日本のビルマ占領(1942-45)</strong> ― 英軍を駆逐。アウン＝サンがビルマ独立義勇軍を率いて日本に協力→のち反日に転じる。インパール作戦(1944)で日本軍が壊滅的敗北。</p></div>
+<div class="tp" id="tip-cl-sea_burma2"><p><strong>ビルマ独立(1948)</strong> ― アウン＝サンが独立交渉を主導→暗殺(1947)→1948年に英連邦に加わらず完全独立。</p></div>
+<div class="tp" id="tip-cl-sei_ned_jpn"><p><strong>日本の蘭印占領(1942-45)</strong> ― 石油資源の確保が主目的。蘭軍は短期間で降伏。日本は<strong>スカルノ</strong>ら民族主義者を利用→独立運動を準備させる→日本降伏直後にインドネシア独立宣言(1945.8.17)。</p></div>
+<div class="tp" id="tip-cl-sei_ned2"><p><strong>インドネシア独立</strong>(1945宣言/1949承認) ― スカルノが独立宣言→蘭が再征服を試みるも国際的非難→1949年にハーグ協定で主権移譲。</p></div>
+<div class="tp" id="tip-cl-sei_usa_jpn"><p><strong>日本のフィリピン占領(1942-45)</strong> ― マッカーサーが「I shall return」。バターン死の行進。1944年レイテ沖海戦→米軍のフィリピン奪回。</p></div>
+<div class="tp" id="tip-cl-sei_usa2"><p><strong>フィリピン独立(1946)</strong> ― 米が約束通り独立を承認。ただし米軍基地は残存。</p></div>
+<div class="tp" id="tip-cl-sei_mal_jpn"><p><strong>日本のマラヤ占領(1942-45)</strong> ― シンガポール陥落(1942.2)は英帝国史上最大の敗北。華僑虐殺。日本敗戦後に英が復帰→マラヤ連邦独立(1957)→マレーシア結成(1963)。</p></div>
+<div class="tp" id="tip-cl-sei_mal2"><p><strong>マラヤ独立→マレーシア</strong> ― 1957年マラヤ連邦独立→1963年マレーシア結成（シンガポール・サバ・サラワクを含む）→1965年シンガポールが分離独立。</p></div>
+
+
+<div class="note"><p>
+<strong>入試ポイント：</strong><br>
+❶ <strong>独立の3つの波</strong>：アメリカ(1776)→ラテンアメリカ(1810-30s)→アジア・アフリカ(1940s-60s)<br>
+❷ <strong>ハイチ独立(1804)</strong>＝世界初の黒人共和国。フランス革命の理念を奴隷が実践<br>
+❸ <strong>プラッシーの戦い(1757)</strong>→英東インド会社のインド支配→シパーヒーの反乱(1857)→英領インド<br>
+❹ <strong>ベルリン会議(1884-85)</strong>＝アフリカ分割のルール。独立維持はエチオピアとリベリアだけ<br>
+❺ <strong>「アフリカの年」(1960)</strong>＝17カ国が独立。仏領中心<br>
+❻ <strong>日本の占領(1942-45)</strong>が東南アジアの欧州植民地支配の「神話」を崩壊→独立運動を加速<br>
+❼ <strong>タイだけが東南アジアで唯一植民地化を免れた</strong>（英仏の緩衝地帯）<br>
+❽ 宗主国の色が地域ごとに異なる→<strong>「どの国がどこを支配したか」</strong>が色で一目瞭然
+</p></div>
+
+
+
+<div id="tooltip-overlay" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;z-index:8000" onclick="closeTip()"></div>
+<div id="tooltip-box" style="display:none;position:fixed;z-index:9000;background:rgba(12,15,22,.97);border:1px solid rgba(201,169,110,.25);border-radius:8px;padding:12px 16px;max-width:320px;width:calc(100vw - 32px);box-shadow:0 8px 30px rgba(0,0,0,.6)">
+<div id="tooltip-content" style="font-size:10px;color:#8a857d;line-height:1.7"></div></div>
+<script>
+(function(){var ov=document.getElementById("tooltip-overlay"),bx=document.getElementById("tooltip-box"),ct=document.getElementById("tooltip-content");window.closeTip=function(){bx.style.display="none";ov.style.display="none"};function openTip(el){var tipId=el.getAttribute("data-tip");var tipEl=tipId?document.getElementById("tip-"+tipId):null;if(!tipEl)return;closeTip();ct.innerHTML=tipEl.innerHTML;ov.style.display="block";bx.style.display="block";var r=el.getBoundingClientRect(),w=Math.min(320,window.innerWidth-32);bx.style.width=w+"px";var l=r.left+r.width/2-w/2;if(l<16)l=16;if(l+w>window.innerWidth-16)l=window.innerWidth-16-w;bx.style.left=l+"px";bx.style.top=(r.bottom+8)+"px";bx.style.bottom="auto";var br=bx.getBoundingClientRect();if(br.bottom>window.innerHeight-16){var t=r.top-br.height-8;if(t<16)t=16;bx.style.top=t+"px"}}var tm=false,tt=null;document.addEventListener("touchstart",function(e){tm=false;tt=e.target},{passive:true});document.addEventListener("touchmove",function(){tm=true},{passive:true});document.addEventListener("touchend",function(e){if(tm)return;var nd=tt?tt.closest(".nd-svg"):null;if(nd){e.preventDefault();openTip(nd)}else if(!tt||!tt.closest("#tooltip-box"))closeTip();tt=null});document.addEventListener("click",function(e){if("ontouchstart"in window)return;var nd=e.target.closest(".nd-svg");if(nd)openTip(nd);else if(!e.target.closest("#tooltip-box"))closeTip()})}
+)();
+</script></body></html>

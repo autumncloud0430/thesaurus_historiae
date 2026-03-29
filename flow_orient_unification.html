@@ -1,0 +1,87 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>古代オリエントの統一</title><style>@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048;--border:rgba(201,169,110,.08)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+.hdr{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.hdr h1{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2)}
+.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
+.flow{max-width:720px;margin:0 auto;padding:24px 20px 60px}
+.phase{position:relative;margin-bottom:2px;padding:16px 16px 16px 60px;border-left:2px solid rgba(201,169,110,.08);margin-left:30px}
+.phase:last-child{border-left-color:transparent}
+.phase-label{position:absolute;left:-42px;top:16px;width:36px;font-family:'Cormorant Garamond',serif;font-size:10px;font-weight:700;color:var(--text3);text-align:right;line-height:1.3}
+.phase::before{content:'';position:absolute;left:-5px;top:22px;width:8px;height:8px;border-radius:50%;background:var(--bg);border:2px solid rgba(201,169,110,.25)}
+.node{background:rgba(255,255,255,.015);border:1px solid rgba(255,255,255,.04);border-radius:8px;padding:10px 14px;margin-bottom:8px;border-left:3px solid transparent}
+.node:hover{background:rgba(255,255,255,.03)}
+.node-title{font-family:'Noto Serif JP',serif;font-size:12px;font-weight:700;color:var(--gold2);margin-bottom:2px}
+.node-year{font-family:'Cormorant Garamond',serif;font-size:11px;color:var(--gold);opacity:.6;margin-bottom:4px}
+.node-desc{font-size:10px;color:var(--text2);line-height:1.7}
+.node-desc strong{color:var(--text);font-weight:600}
+.arrow{display:flex;align-items:center;gap:6px;padding:2px 0 2px 8px;margin-bottom:6px}
+.arrow-line{width:16px;height:1px;background:rgba(201,169,110,.15)}
+.arrow-text{font-size:8px;color:var(--text3)}
+.arrow-icon{color:rgba(201,169,110,.3);font-size:10px}
+.branch-row{display:flex;gap:8px;margin-bottom:8px}
+.branch-row .node{flex:1}
+.node.key{background:rgba(201,169,110,.04);border-color:rgba(201,169,110,.12)}
+.side-note{font-size:8px;color:var(--text3);padding:4px 8px;border-left:2px solid rgba(201,169,110,.1);margin:4px 0 8px;line-height:1.6}
+.note{text-align:center;padding:8px 20px 32px;max-width:700px;margin:0 auto}.note p{font-size:9px;color:var(--text3);line-height:1.8}.note strong{color:var(--gold)}
+
+.p1 .node{border-left-color:rgba(180,140,60,.3)}.p1::before{border-color:rgba(180,140,60,.5);background:rgba(180,140,60,.15)}.p2 .node{border-left-color:rgba(100,130,180,.3)}.p2::before{border-color:rgba(100,130,180,.4)}.p3 .node{border-left-color:rgba(180,80,80,.3)}.p3::before{border-color:rgba(180,80,80,.5);background:rgba(180,80,80,.15)}.p4 .node{border-left-color:rgba(201,169,110,.3)}.p4::before{border-color:rgba(201,169,110,.5);background:rgba(201,169,110,.15)}
+@media(max-width:600px){
+.hdr{padding:10px 12px}.hdr h1{font-size:12px}
+.flow{padding:16px 10px 40px}
+.phase{padding:12px 10px 12px 44px;margin-left:20px}
+.phase-label{left:-30px;width:28px;font-size:8px}
+.node{padding:8px 10px}.node-title{font-size:11px}.node-desc{font-size:9px}
+.branch-row{flex-direction:column}
+.side-note{font-size:7.5px}
+.note p{font-size:8px}
+}
+</style></head><body><div class="hdr"><h1>古代オリエントの統一 ― シュメールからアケメネス朝まで</h1><a href="charts.html">← Ad Chartae</a></div><div class="flow">
+<div class="phase p1"><div class="phase-label">BC3000<br>〜2000</div>
+  <div class="node"><div class="node-title">シュメール都市国家</div><div class="node-year">BC3000頃〜</div>
+  <div class="node-desc">メソポタミア南部(現イラク)。<strong>ウル・ウルク・ラガシュ・エリドゥ</strong>等の都市国家。★<strong>楔形文字</strong>・<strong>六十進法</strong>・ジッグラト(聖塔)・太陰暦・『ギルガメシュ叙事詩』。<strong>灌漑農業</strong>(チグリス・ユーフラテス川)が文明の基盤。都市国家間で覇権争い→統一には至らず。</div></div>
+  <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">セム語系民族がシュメール文明を継承</div></div>
+  <div class="node"><div class="node-title">アッカド王国(★最初のメソポタミア統一)</div><div class="node-year">BC24C頃</div>
+  <div class="node-desc"><strong>サルゴン1世</strong>(セム語系)が★<strong>メソポタミア最初の統一王朝</strong>を建設。首都＝<strong>アッカド</strong>(正確な位置は不明)。ペルシア湾から地中海までの広域支配を主張。だし<strong>約150年で崩壊</strong>→グティ人の侵入。</div></div>
+  <div class="node"><div class="node-title">ウル第3王朝(シュメール復興)</div><div class="node-year">BC2112頃-BC2004頃</div>
+  <div class="node-desc"><strong>ウル＝ナンム</strong>が建設。首都＝<strong>ウル</strong>。★<strong>ウル＝ナンム法典</strong>＝現存する世界最古の法典(ハンムラビ法典より約300年古い)。シュメール文明の最後の繁栄。<strong>エラム人とアムル人の侵入</strong>で崩壊→メソポタミアは小国分立へ。</div></div></div>
+
+<div class="phase p2"><div class="phase-label">BC2000<br>〜1200</div>
+  <div class="node key"><div class="node-title">★古バビロニア王国(バビロン第1王朝)</div><div class="node-year">BC1894頃-BC1595頃</div>
+  <div class="node-desc">アムル人が建国。首都＝★<strong>バビロン</strong>(ユーフラテス川中流)。<strong>ハンムラビ王</strong>(BC18C頃)がメソポタミアを統一→★<strong>ハンムラビ法典</strong>＝「目には目を」(★<strong>同害復讐法</strong>)＋身分による刑罰の差異(自由人・半自由人・奴隷)。楔形文字で石碑に刻まれた(ルーヴル美術館所蔵)。★<strong>ヒッタイトの攻撃</strong>(BC1595頃)で滅亡。</div></div>
+  <div class="node"><div class="node-title">ヒッタイト王国</div><div class="node-year">BC17C頃-BC12C頃</div>
+  <div class="node-desc">小アジア(アナトリア高原)。首都＝<strong>ハットゥシャ(ボアズキョイ)</strong>。★<strong>最初の鉄器使用民族</strong>→鉄製武器で軍事的優位。バビロンを攻撃しバビロン第1王朝を滅ぼす。★<strong>カデシュの戦い</strong>(BC1286頃)＝エジプト新王国のラメセス2世と交戦→★<strong>世界最古の国際条約</strong>(平和条約)を締結。BC12C頃<strong>「海の民」の侵入</strong>で滅亡。</div></div>
+  <div class="node"><div class="node-title">ミタンニ王国</div><div class="node-year">BC16C-BC13C頃</div>
+  <div class="node-desc">北メソポタミア。首都＝<strong>ワシュカンニ</strong>(正確な位置は不明)。フリ人が建国。戦車(チャリオット)を駆使。エジプトと<strong>アマルナ外交</strong>(国際書簡)。<strong>ヒッタイトとアッシリアに挟まれて滅亡</strong>。</div></div>
+  <div class="node"><div class="node-title">カッシート(バビロン第3王朝)</div><div class="node-year">BC16C-BC12C頃</div>
+  <div class="node-desc">ヒッタイトがバビロンを攻撃した後にカッシート人が支配。首都＝<strong>バビロン</strong>。約400年の長期政権だが文化的貢献は少ない。<strong>エラム人の攻撃</strong>で滅亡。</div></div></div>
+
+<div class="phase p3"><div class="phase-label">BC1200<br>〜600</div>
+  <div class="node"><div class="node-title">「海の民」の大移動と暗黒時代</div><div class="node-year">BC12C頃</div>
+  <div class="node-desc">地中海東部に「海の民」が侵入→ヒッタイト滅亡・ミケーネ文明崩壊・エジプト新王国衰退。★<strong>鉄器が普及</strong>(ヒッタイトの独占が崩れた)。この混乱期にフェニキア人(★アルファベットの起源)・アラム人(★アラム文字→各地の文字の基)・ヘブライ人(★ユダヤ教＝一神教)が活躍。</div></div>
+  <div class="node key"><div class="node-title">★★アッシリア帝国(初のオリエント統一)</div><div class="node-year">BC8C-BC612</div>
+  <div class="node-desc">ティグリス川上流。首都＝★<strong>ニネヴェ</strong>(最盛期)。★<strong>鉄製武器＋戦車＋騎兵＋攻城兵器</strong>による圧倒的軍事力。<strong>アッシュルバニパル王</strong>(在位BC668-627頃)のもとでBC7Cに★<strong>オリエント初の統一</strong>(メソポタミア＋エジプト＋シリア＋エラム)。ニネヴェに<strong>大図書館</strong>(楔形文字粘土板の収集)。だし<strong>過酷な支配</strong>(強制移住・重税・残虐な刑罰)→各地で反乱→新バビロニア＋メディアの連合軍に★<strong>BC612年ニネヴェ陥落</strong>→帝国崩壊。</div></div>
+  <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">アッシリア崩壊→★4王国の分立</div></div>
+  <div class="node key"><div class="node-title">★新バビロニア(カルデア)</div><div class="node-year">BC625-BC539</div>
+  <div class="node-desc">首都＝★<strong>バビロン</strong>。<strong>ネブカドネザル2世</strong>が最盛期→★<strong>バビロン捕囚</strong>(BC586、ユダ王国を滅ぼしユダヤ人を強制移住)→ユダヤ教の成熟の契機。バビロンの空中庭園(世界七不思議)。★<strong>アケメネス朝のキュロス2世</strong>に征服され滅亡(BC539)。</div></div>
+  <div class="node key"><div class="node-title">★メディア王国</div><div class="node-year">BC7C後半-BC550</div>
+  <div class="node-desc">首都＝★<strong>エクバタナ(ハマダーン)</strong>。イラン高原。イラン系民族で最初の統一王国。アッシリア滅亡に貢献。★<strong>アケメネス朝のキュロス2世</strong>(元はメディアの臣下)に倒される(BC550)→アケメネス朝ペルシアの建国。</div></div>
+  <div class="node key"><div class="node-title">★リディア王国</div><div class="node-year">BC7C-BC546</div>
+  <div class="node-desc">首都＝★<strong>サルデス</strong>。小アジア西部。クロイソス王の富が有名(「クロイソスのように富む」)。★<strong>世界最古の鋳造貨幣(エレクトロン貨)</strong>を発行→商業の発展を促進。★<strong>アケメネス朝のキュロス2世</strong>に征服され滅亡(BC546)。</div></div>
+  <div class="node key"><div class="node-title">★エジプト第26王朝(サイス朝)</div><div class="node-year">BC664-BC525</div>
+  <div class="node-desc">首都＝★<strong>サイス</strong>(ナイルデルタ西部)。アッシリア支配から独立→エジプト最後の独立王朝。ギリシア人傭兵を雇用。★<strong>アケメネス朝のカンビュセス2世</strong>に征服され滅亡(BC525)→エジプトがペルシア帝国に編入。</div></div>
+  <div class="side-note">★4王国＝<strong>新バビロニア(BC539キュロス2世に滅亡)・メディア(BC550キュロス2世)・リディア(BC546キュロス2世)・エジプト(BC525カンビュセス2世)</strong>。入試では「4王国の名前・首都・特徴・誰に滅ぼされたか」が頻出。</div>
+</div>
+
+<div class="phase p4"><div class="phase-label">統一</div>
+  <div class="node key"><div class="node-title">★★アケメネス朝ペルシア(全オリエント統一)</div><div class="node-year">BC550-BC330</div>
+  <div class="node-desc"><strong>★キュロス2世</strong>＝メディアを倒し建国(BC550)→リディア征服(BC546)→新バビロニア征服(BC539、★<strong>バビロン捕囚の解放</strong>＝ユダヤ人がエルサレムに帰還)。★<strong>カンビュセス2世</strong>＝エジプト征服(BC525)→<strong>4王国すべてを併合＝オリエント全域を統一</strong>。</div></div>
+  <div class="node"><div class="node-title">★ダレイオス1世の統治制度</div><div class="node-year">BC522-BC486</div>
+  <div class="node-desc">最盛期。首都＝<strong>ペルセポリス</strong>(儀式用)・<strong>スサ</strong>(行政)・<strong>エクバタナ</strong>(夏の離宮)・<strong>バビロン</strong>。帝国を約20の州に分け★<strong>サトラップ(知事)</strong>を任命。★<strong>「王の目・王の耳」</strong>(監察官)がサトラップを監視。★<strong>「王の道」</strong>(スサ→サルデス、約2400km)＋<strong>駅伝制</strong>→「世界で最も速い情報伝達」(ヘロドトス)。<strong>ダレイオス金貨(ダリク)</strong>を発行。<strong>ゾロアスター教</strong>(善悪二元論・最後の審判→★ユダヤ教・キリスト教に影響)を保護。★<strong>寛容な支配</strong>(被征服民の宗教・文化を尊重)＝アッシリアの過酷な支配との対比。</div></div>
+  <div class="node"><div class="node-title">ペルシア戦争と滅亡</div><div class="node-year">BC500-BC330</div>
+  <div class="node-desc">★<strong>ペルシア戦争</strong>(BC500-BC449)＝ダレイオス1世がギリシアに遠征→マラトンの戦い(BC490)で敗北。クセルクセス1世→テルモピレー(BC480、スパルタのレオニダス)→サラミスの海戦(BC480)でアテネ海軍に敗北。BC330年<strong>アレクサンドロス大王</strong>(マケドニア)に滅ぼされる→ヘレニズム時代へ。</div></div>
+  <div class="side-note">★入試超頻出の流れ：「シュメール→アッカド(サルゴン)→ウル第3王朝→バビロニア(ハンムラビ法典)→ヒッタイト(鉄器・カデシュ)→アッシリア(初の統一・ニネヴェ)→★4王国(新バビロニア・メディア・リディア・エジプト)→アケメネス朝(キュロス2世・カンビュセス2世で全統一→ダレイオス1世の統治)→アレクサンドロス」</div>
+</div>
+</div><div class="note"><p>古代オリエント＝<strong>4王国がそれぞれ誰の時代に滅ぼされたかを正確に覚える</strong>ことが入試の鍵。新バビロニア・メディア・リディア→キュロス2世、エジプト→カンビュセス2世。</p></div></body></html>

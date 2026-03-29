@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>パレスチナ問題の起源フロー</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048;--border:rgba(201,169,110,.08)}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+.hdr{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;flex-wrap:wrap}.hdr h1{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2)}.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
+.flow{max-width:740px;margin:0 auto;padding:24px 20px 60px}
+.phase{position:relative;margin-bottom:2px;padding:16px 16px 16px 60px;border-left:2px solid rgba(201,169,110,.08);margin-left:30px}.phase:last-child{border-left-color:transparent}
+.phase-label{position:absolute;left:-42px;top:16px;width:36px;font-family:'Cormorant Garamond',serif;font-size:10px;font-weight:700;color:var(--text3);text-align:right;line-height:1.3}
+.phase::before{content:'';position:absolute;left:-5px;top:22px;width:8px;height:8px;border-radius:50%;background:var(--bg);border:2px solid rgba(201,169,110,.25)}
+.node{background:rgba(255,255,255,.015);border:1px solid rgba(255,255,255,.04);border-radius:8px;padding:10px 14px;margin-bottom:8px;border-left:3px solid transparent;transition:all .2s}.node:hover{background:rgba(255,255,255,.03)}.node-title{font-family:'Noto Serif JP',serif;font-size:12px;font-weight:700;color:var(--gold2);margin-bottom:2px}.node-year{font-family:'Cormorant Garamond',serif;font-size:11px;color:var(--gold);opacity:.6;margin-bottom:4px}.node-desc{font-size:10px;color:var(--text2);line-height:1.7}.node-desc strong{color:var(--text);font-weight:600}.node.key{background:rgba(201,169,110,.04);border-color:rgba(201,169,110,.12)}
+.arrow{display:flex;align-items:center;gap:6px;padding:2px 0 2px 8px;margin-bottom:6px}.arrow-line{width:16px;height:1px;background:rgba(201,169,110,.15)}.arrow-text{font-size:8px;color:var(--text3)}.arrow-icon{color:rgba(201,169,110,.3);font-size:10px}
+.branch-row{display:flex;gap:8px;margin-bottom:8px}.branch-row .node{flex:1}
+.side-note{font-size:8px;color:var(--text3);padding:4px 8px;border-left:2px solid rgba(201,169,110,.1);margin:4px 0 8px;line-height:1.6}
+.p1 .node{border-left-color:rgba(130,120,100,.3)}.p1::before{border-color:rgba(130,120,100,.4)}
+.p2 .node{border-left-color:rgba(180,80,80,.3)}.p2::before{border-color:rgba(180,80,80,.5);background:rgba(180,80,80,.15)}
+.p3 .node{border-left-color:rgba(100,130,180,.3)}.p3::before{border-color:rgba(100,130,180,.4)}
+.p4 .node{border-left-color:rgba(180,130,80,.3)}.p4::before{border-color:rgba(180,130,80,.5);background:rgba(180,130,80,.15)}
+.p5 .node{border-left-color:rgba(180,80,80,.35)}.p5::before{border-color:rgba(180,80,80,.5);background:rgba(180,80,80,.2)}
+.p6 .node{border-left-color:rgba(80,150,120,.3)}.p6::before{border-color:rgba(80,150,120,.4)}
+.p7 .node{border-left-color:rgba(150,80,80,.3)}.p7::before{border-color:rgba(150,80,80,.4)}
+.note{text-align:center;padding:8px 20px 32px;max-width:700px;margin:0 auto}.note p{font-size:9px;color:var(--text3);line-height:1.8}.note strong{color:var(--gold)}
+.hdr h1{font-size:12px}
+.flow{padding:16px 10px 40px}
+.phase{padding:12px 10px 12px 44px;margin-left:20px}
+.phase-label{left:-30px;width:28px;font-size:8px}
+.node{padding:8px 10px}.node-title{font-size:11px}.node-desc{font-size:9px}
+.branch-row{flex-direction:column}
+.side-note{font-size:7.5px}
+.note p{font-size:8px}
+}
+
+@media(max-width:600px){
+.hdr{padding:10px 12px}.hdr h1{font-size:12px}
+.flow{padding:16px 10px 40px}
+.phase{padding:12px 10px 12px 44px;margin-left:20px}
+.phase-label{left:-30px;width:28px;font-size:8px}
+.node{padding:8px 10px}.node-title{font-size:11px}.node-desc{font-size:9px}
+.branch-row{flex-direction:column}
+.side-note{font-size:7.5px}
+.note p{font-size:8px}
+}
+</style>
+</head>
+<body>
+<div class="hdr"><h1>パレスチナ問題の起源フロー ― 三重の矛盾から現在まで</h1><a href="charts.html">← Ad Chartae</a></div>
+<div class="flow">
+
+<div class="phase p1"><div class="phase-label">前史<br>19C末</div>
+<div class="node"><div class="node-title">シオニズム運動の誕生</div><div class="node-year">1890s</div>
+<div class="node-desc">ヨーロッパでのユダヤ人差別(ポグロム＝ロシアでの迫害、ドレフュス事件＝フランスでの冤罪)→<strong>テオドール＝ヘルツル</strong>が『ユダヤ人国家』(1896)を出版。<strong>第1回シオニスト会議</strong>(バーゼル、1897)＝パレスチナにユダヤ人の「ナショナル・ホーム(民族的郷土)」を建設する運動。以後、東欧のユダヤ人がパレスチナに移住を開始(アリヤー)。当時のパレスチナはオスマン帝国領でアラブ人が多数を占めていた。</div></div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">WW1中にイギリスが矛盾する3つの約束を行う</div></div></div>
+
+<div class="phase p2"><div class="phase-label">1915<br>〜<br>1917</div>
+<div class="node key"><div class="node-title">イギリスの「三重の矛盾」</div><div class="node-year">1915–17</div>
+<div class="node-desc">WW1中、イギリスはオスマン帝国を弱体化させるため、<strong>3つの矛盾する約束</strong>を行った：<br><br>
+①<strong>フサイン＝マクマホン協定</strong>(1915)＝メッカのシャリーフ(太守)<strong>フサイン</strong>に対し、アラブの反乱と引き換えに<strong>アラブ人の独立国家建設を約束</strong>。フサインはこれを信じてオスマン帝国に対する「アラブの反乱」(1916、ロレンスが支援)を起こした。<br><br>
+②<strong>サイクス＝ピコ協定</strong>(1916)＝英の<strong>サイクス</strong>と仏の<strong>ピコ</strong>が交渉し、オスマン領のアラブ地域を<strong>英仏で秘密に分割</strong>する密約。英＝イラク・トランスヨルダン・パレスチナ。仏＝シリア・レバノン。アラブ人には知らされなかった。<br><br>
+③<strong>バルフォア宣言</strong>(1917)＝英外相<strong>バルフォア</strong>がロスチャイルド卿(ユダヤ人銀行家)に宛てた書簡で、パレスチナに<strong>ユダヤ人の「ナショナル・ホーム」の建設を支持</strong>。→英はユダヤ人の資金力と米参戦への影響力を期待。</div></div>
+<div class="side-note">★入試超頻出：「三重の矛盾」＝同じ土地(パレスチナ)について、アラブ人に独立を、ユダヤ人にナショナル・ホームを約束し、フランスと秘密分割した。この矛盾がパレスチナ問題の根源</div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">WW1後、英がパレスチナを委任統治→矛盾が現実の対立に</div></div></div>
+
+<div class="phase p3"><div class="phase-label">1920<br>〜<br>1947</div>
+<div class="node"><div class="node-title">英のパレスチナ委任統治</div><div class="node-year">1920–48</div>
+<div class="node-desc">国際連盟が英に<strong>パレスチナ委任統治</strong>を付与(1920)。バルフォア宣言が委任統治の条件に組み込まれる→<strong>ユダヤ人の移住が加速</strong>。1920年代：人口比アラブ人約90%、ユダヤ人約10%→1930年代にナチスのユダヤ人迫害で移住が急増→人口比が大きく変化。<strong>アラブ人の反発</strong>→「アラブ大反乱」(1936-39)→英が<strong>移住制限</strong>(白書1939)→今度はユダヤ人テロ組織(イルグン等)が英に対して攻撃。英はもはや統治不能に→<strong>国連に問題を丸投げ</strong>(1947)。</div></div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">ホロコーストの衝撃がユダヤ人国家建設への国際的支持を高めた</div></div></div>
+
+<div class="phase p4"><div class="phase-label">1947<br>〜<br>1948</div>
+<div class="node key"><div class="node-title">国連分割決議 → イスラエル建国</div><div class="node-year">1947.11 → 1948.5</div>
+<div class="node-desc"><strong>国連総会決議181号</strong>(1947.11.29)＝パレスチナをユダヤ人国家(56%)・アラブ人国家(43%)・エルサレム国際管理(1%)に<strong>分割</strong>する案。ユダヤ人は人口の1/3なのに面積の56%を得る→<strong>アラブ側は拒否</strong>、ユダヤ側は受諾。1948年5月14日、英が撤退するその日に<strong>ベングリオン</strong>が<strong>イスラエル独立宣言</strong>。米ソが即座に承認。翌日<strong>第一次中東戦争(パレスチナ戦争)</strong>＝エジプト・ヨルダン・シリア・イラク・レバノンのアラブ5カ国がイスラエルに侵攻。</div></div>
+<div class="side-note">★入試超頻出：「国連分割決議→イスラエル建国→第一次中東戦争」。分割案でアラブ側が拒否した理由＝人口の1/3に過ぎないユダヤ人に面積の56%を与える不公平</div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">イスラエルの勝利→パレスチナ難民の発生</div></div></div>
+
+<div class="phase p5"><div class="phase-label">1948<br>〜<br>1973</div>
+<div class="node"><div class="node-title">4度の中東戦争</div><div class="node-year">1948–73</div>
+<div class="node-desc">
+<strong>第一次</strong>(1948-49)＝イスラエルが勝利→分割案より広い領土を獲得。<strong>約70万人のパレスチナ人が難民</strong>に(ナクバ＝「大災厄」)。ヨルダンがヨルダン川西岸を、エジプトがガザを占領。<br>
+<strong>第二次(スエズ戦争)</strong>(1956)＝ナセルのスエズ運河国有化→英仏イスラエルがエジプト侵攻→米ソが撤退を要求→英仏の帝国主義の限界を露呈。<br>
+<strong>第三次(六日戦争)</strong>(1967)＝イスラエルが先制攻撃→<strong>6日間でシナイ半島・ガザ・ヨルダン川西岸・ゴラン高原を占領</strong>→「占領地」問題＝国連安保理決議242号(占領地からの撤退を要求、だが履行されず)。<br>
+<strong>第四次(十月戦争/ヨム＝キプール戦争)</strong>(1973)＝エジプト・シリアがイスラエルを奇襲→<strong>OAPEC(アラブ石油輸出国機構)が石油戦略</strong>を発動→<strong>第一次石油危機</strong>＝原油価格4倍→世界経済に衝撃→高度経済成長の終焉。</div></div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">軍事的解決は不可能→和平の模索</div></div></div>
+
+<div class="phase p6"><div class="phase-label">1978<br>〜<br>1993</div>
+<div class="node"><div class="node-title">PLO(パレスチナ解放機構)と和平の試み</div><div class="node-year">1964–1993</div>
+<div class="node-desc"><strong>PLO</strong>(1964、アラファト議長)＝パレスチナ人の代表組織。当初は武装闘争(ハイジャック・テロ)→次第に外交路線に転換。第一次<strong>インティファーダ</strong>(1987)＝占領地のパレスチナ人が石を投げる抵抗運動→国際世論の同情。<strong>キャンプ＝デービッド合意</strong>(1978)＝カーター仲介でエジプトのサダトとイスラエルのベギンが和平→エジプトがアラブ諸国で初めてイスラエルを承認(サダトは暗殺1981)。<strong>オスロ合意</strong>(1993)＝アラファト(PLO)とラビン(イスラエル首相)が相互承認→パレスチナ暫定自治→「二国家解決」への道筋(ラビンは暗殺1995)。</div></div>
+<div class="side-note">★入試頻出：「キャンプ＝デービッド(1978)＝エジプト・イスラエル和平」「オスロ合意(1993)＝PLOとイスラエルの相互承認」</side>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">しかし和平プロセスは頓挫→現在も未解決</div></div></div>
+
+<div class="phase p7"><div class="phase-label">2000<br>〜<br>現在</div>
+<div class="node"><div class="node-title">和平の挫折と対立の継続</div><div class="node-year">2000–</div>
+<div class="node-desc">キャンプ＝デービッド首脳会談(2000)＝クリントン仲介→決裂。<strong>第二次インティファーダ</strong>(2000-05)＝自爆テロが激化。イスラエルが<strong>分離壁</strong>を建設。<strong>ハマス</strong>(イスラーム主義組織)がガザで選挙に勝利(2006)→PLO(ファタハ)との分裂→パレスチナが西岸(ファタハ)とガザ(ハマス)に事実上分断。イスラエルの入植地拡大が継続→「二国家解決」の実現がますます困難に。<strong>パレスチナ問題</strong>は100年以上にわたる<strong>「英の三重の矛盾」の遺産</strong>であり、中東の不安定の根源であり続けている。</div></div></div>
+
+</div>
+<div class="note"><p>パレスチナ問題＝<strong>①シオニズム(19C末)→②英の三重の矛盾(フサイン＝マクマホン/サイクス＝ピコ/バルフォア)→③委任統治下のユダヤ人移住→④国連分割決議→イスラエル建国(1948)→⑤4度の中東戦争→⑥PLO→キャンプ＝デービッド→オスロ合意→⑦和平の挫折</strong>。入試では「三重の矛盾の内容」「なぜイスラエルが建国できたか(ホロコースト→国際的同情＋米ソの支持)」「中東戦争と石油危機の関係」が頻出。</p></div>
+</body></html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>アテネ民主政の発展と衰退フロー</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048;--border:rgba(201,169,110,.08)}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+.hdr{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;flex-wrap:wrap}.hdr h1{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2)}.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
+.flow{max-width:760px;margin:0 auto;padding:24px 20px 60px}
+.phase{position:relative;margin-bottom:2px;padding:16px 16px 16px 60px;border-left:2px solid rgba(201,169,110,.08);margin-left:30px}.phase:last-child{border-left-color:transparent}
+.phase-label{position:absolute;left:-42px;top:16px;width:36px;font-family:'Cormorant Garamond',serif;font-size:10px;font-weight:700;color:var(--text3);text-align:right;line-height:1.3}
+.phase::before{content:'';position:absolute;left:-5px;top:22px;width:8px;height:8px;border-radius:50%;background:var(--bg);border:2px solid rgba(201,169,110,.25)}
+.node{background:rgba(255,255,255,.015);border:1px solid rgba(255,255,255,.04);border-radius:8px;padding:10px 14px;margin-bottom:8px;border-left:3px solid transparent;transition:all .2s}.node:hover{background:rgba(255,255,255,.03)}.node-title{font-family:'Noto Serif JP',serif;font-size:12px;font-weight:700;color:var(--gold2);margin-bottom:2px}.node-year{font-family:'Cormorant Garamond',serif;font-size:11px;color:var(--gold);opacity:.6;margin-bottom:4px}.node-desc{font-size:10px;color:var(--text2);line-height:1.7}.node-desc strong{color:var(--text);font-weight:600}.node.key{background:rgba(201,169,110,.04);border-color:rgba(201,169,110,.12)}
+.arrow{display:flex;align-items:center;gap:6px;padding:2px 0 2px 8px;margin-bottom:6px}.arrow-line{width:16px;height:1px;background:rgba(201,169,110,.15)}.arrow-text{font-size:8px;color:var(--text3)}.arrow-icon{color:rgba(201,169,110,.3);font-size:10px}
+.branch-row{display:flex;gap:8px;margin-bottom:8px}.branch-row .node{flex:1}
+.side-note{font-size:8px;color:var(--text3);padding:4px 8px;border-left:2px solid rgba(201,169,110,.1);margin:4px 0 8px;line-height:1.6}
+
+.inst{display:flex;gap:5px;flex-wrap:wrap;margin:6px 0}
+.inst-tag{padding:3px 8px;border-radius:4px;font-size:8px;font-weight:600;border:1px solid}
+.i-ekklesia{background:rgba(80,150,120,.1);border-color:rgba(80,150,120,.25);color:rgba(140,210,170,.9)}
+.i-boule{background:rgba(100,130,180,.1);border-color:rgba(100,130,180,.25);color:rgba(160,180,220,.9)}
+.i-archon{background:rgba(180,140,60,.1);border-color:rgba(180,140,60,.25);color:rgba(220,190,100,.9)}
+.i-strategos{background:rgba(180,80,80,.1);border-color:rgba(180,80,80,.25);color:rgba(220,130,130,.9)}
+.i-dikasterion{background:rgba(150,80,130,.1);border-color:rgba(150,80,130,.25);color:rgba(200,140,180,.9)}
+
+.p1 .node{border-left-color:rgba(130,120,100,.3)}.p1::before{border-color:rgba(130,120,100,.4)}
+.p2 .node{border-left-color:rgba(180,140,60,.3)}.p2::before{border-color:rgba(180,140,60,.5);background:rgba(180,140,60,.15)}
+.p3 .node{border-left-color:rgba(100,130,180,.3)}.p3::before{border-color:rgba(100,130,180,.5);background:rgba(100,130,180,.15)}
+.p4 .node{border-left-color:rgba(80,150,120,.3)}.p4::before{border-color:rgba(80,150,120,.5);background:rgba(80,150,120,.15)}
+.p5 .node{border-left-color:rgba(180,80,80,.3)}.p5::before{border-color:rgba(180,80,80,.5);background:rgba(180,80,80,.15)}
+.p6 .node{border-left-color:rgba(180,130,80,.3)}.p6::before{border-color:rgba(180,130,80,.5);background:rgba(180,130,80,.15)}
+.p7 .node{border-left-color:rgba(150,80,130,.3)}.p7::before{border-color:rgba(150,80,130,.5);background:rgba(150,80,130,.15)}
+.note{text-align:center;padding:8px 20px 32px;max-width:720px;margin:0 auto}.note p{font-size:9px;color:var(--text3);line-height:1.8}.note strong{color:var(--gold)}
+
+@media(max-width:600px){
+.hdr{padding:10px 12px}.hdr h1{font-size:12px}
+.flow{padding:16px 10px 40px}
+.phase{padding:12px 10px 12px 44px;margin-left:20px}
+.phase-label{left:-30px;width:28px;font-size:8px}
+.node{padding:8px 10px}.node-title{font-size:11px}.node-desc{font-size:9px}
+.branch-row{flex-direction:column}
+.side-note{font-size:7.5px}
+.note p{font-size:8px}
+}
+</style>
+</head>
+<body>
+<div class="hdr"><h1>アテネ民主政の発展と衰退フロー ― ポリスの誕生からヘレニズムまで</h1><a href="charts.html">← Ad Chartae</a></div>
+<div class="flow">
+
+<!-- エーゲ文明〜暗黒時代 -->
+<div class="phase p1"><div class="phase-label">前20C<br>〜<br>前8C</div>
+<div class="node"><div class="node-title">エーゲ文明 → 暗黒時代 → ポリスの形成</div><div class="node-year">BC2000–BC800頃</div>
+<div class="node-desc"><strong>クレタ文明(ミノア文明)</strong>(BC2000-1400頃)＝クノッソス宮殿・線文字A・海洋交易・非軍事的(城壁なし)。<strong>ミケーネ文明</strong>(BC1600-1200頃)＝ミケーネ・ティリンスの城塞・線文字B(ギリシア語の最古の記録)・トロイア戦争(伝承)。BC1200頃に<strong>ミケーネ文明の崩壊</strong>(「海の民」の侵入？ドーリア人の南下？原因は諸説)→約400年間の<strong>「暗黒時代」</strong>＝文字の使用が途絶・人口減少・集落の縮小。<br><br>
+BC8C頃から<strong>ポリス(都市国家)</strong>が形成される。<strong>アクロポリス</strong>(城砦)＋<strong>アゴラ</strong>(広場＝市場＋政治の場)＋周辺の農地。小規模(数千〜数万人)・自給自足・政治参加。<strong>ホメロス</strong>の叙事詩(『イリアス』『オデュッセイア』、BC8C頃に成立)がギリシア人の共通の精神的基盤に。</div></div>
+<div class="side-note">★入試頻出：「クレタ＝ミノア＝線文字A(未解読)」「ミケーネ＝線文字B(ヴェントリスが解読)」「暗黒時代→ポリスの形成」</div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">ポリスの政治はどう発展したか？→貴族政から民主政へ段階的に</div></div></div>
+
+<!-- ドラコン〜ソロン -->
+<div class="phase p2"><div class="phase-label">前7C<br>〜<br>前6C前半</div>
+<div class="node"><div class="node-title">貴族政の矛盾 → ドラコンの立法</div><div class="node-year">BC7C</div>
+<div class="node-desc">初期のポリスは<strong>貴族政(アリストクラティア)</strong>＝土地を持つ貴族が政治を独占。裁判は貴族が口頭の慣習法で恣意的に行う→平民の不満。<strong>ドラコン</strong>(BC621頃)＝アテネで初めて<strong>法の成文化</strong>を行う→「ドラコンの法」は極めて厳格(窃盗にも死刑→「ドラコニアン」の語源)。しかし法が文字で書かれたこと自体が画期的＝<strong>貴族の恣意を制限</strong>。同時期に<strong>オリンピア競技</strong>(BC776〜)・<strong>デルフォイの神託</strong>がギリシア世界の共通の絆に。</div></div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">貴族と平民の対立が深刻化→ソロンが調停者に</div></div>
+<div class="node key"><div class="node-title">ソロンの改革</div><div class="node-year">BC594</div>
+<div class="node-desc">アルコン(執政官)に選ばれた<strong>ソロン</strong>が社会危機を調停：<br>
+①<strong>債務奴隷の禁止(重荷おろし＝セイサクテイア)</strong>＝借金で奴隷になったアテネ市民を解放。以後アテネ市民が債務奴隷になることを禁止→<strong>「自由な市民」の概念の基礎</strong>。<br>
+②<strong>財産政治(ティモクラティア)</strong>＝市民を財産額で4等級に分け、等級に応じた参政権と軍事義務を割り当て→<strong>血統(貴族かどうか)ではなく財産で政治参加を決める</strong>＝貴族の独占を緩和。最下層(テーテス)にも民会(エクレシア)の参加権。<br>
+③<strong>民衆裁判所(ヘリアイア)</strong>の設置＝市民が裁判に参加。<br>
+★しかしソロンは<strong>土地の再分配は行わなかった</strong>→富裕層も貧困層も不満→ソロン退任後に再び混乱→僭主政へ。</div></div>
+<div class="side-note">★入試超頻出：「ソロン＝債務奴隷の禁止＋財産政治」。「血統から財産へ」の転換が核心。しかし根本的解決にならなかった→僭主の登場</div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">貴族間の争い→非合法に権力を握る「僭主」が登場</div></div></div>
+
+<!-- ペイシストラトス〜クレイステネス -->
+<div class="phase p3"><div class="phase-label">前6C<br>後半</div>
+<div class="node"><div class="node-title">ペイシストラトスの僭主政</div><div class="node-year">BC561–BC527(断続的)</div>
+<div class="node-desc"><strong>ペイシストラトス</strong>が武力でアテネの政権を3度にわたり掌握＝<strong>僭主(テュランノス)</strong>。★「僭主」＝合法的手続きによらず実力で権力を握った者(必ずしも「暴君」ではない)。ペイシストラトスの政策：貧農への<strong>土地分配と融資</strong>→中小農民の安定。<strong>公共事業</strong>(神殿建設・水道)で雇用創出。<strong>パンアテナイア祭</strong>の整備。文芸の保護(ホメロスの叙事詩を公式に編纂)。→民衆には人気だったが、僭主＝非合法の権力者という反感→息子<strong>ヒッピアス</strong>が暴政→BC510年に追放。</div></div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">僭主追放後の権力闘争→クレイステネスが民主政の基盤を築く</div></div>
+<div class="node key"><div class="node-title">クレイステネスの改革 ― 民主政の基盤</div><div class="node-year">BC508/507</div>
+<div class="node-desc"><strong>クレイステネス</strong>が改革＝<strong>アテネ民主政の実質的な出発点</strong>：<br>
+①<strong>デーモス(区)制度</strong>＝アッティカ全域を<strong>10の部族(フュレー)</strong>に再編。各部族は都市部・海岸部・内陸部の3地区から構成→<strong>地縁的結合で旧来の血縁(氏族)的結合を打破</strong>＝貴族の政治基盤を解体。<br>
+②<strong>五百人評議会(ブーレー)</strong>＝10部族から各50人を<strong>抽選</strong>で選出→民会の議題を準備＝<strong>抽選制が民主政の核心</strong>(選挙は「金持ちが勝つ」→抽選は「平等」)。<br>
+③<strong>陶片追放(オストラキスモス)</strong>＝僭主の出現を防ぐため、危険人物を<strong>市民の投票で10年間追放</strong>→陶片(オストラコン)に名前を書いて投票(6000票以上で追放)。</div></div>
+<div class="side-note">★入試超頻出：「クレイステネス＝10部族制＋五百人評議会(抽選)＋陶片追放」。ドラコン→ソロン→クレイステネスの段階的発展の流れを説明できること。「なぜ抽選か」＝選挙では富裕者が有利→抽選＝市民の平等の究極の表現</div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">ペルシア戦争の勝利が民主政をさらに推進する</div></div></div>
+
+<!-- ペルシア戦争 -->
+<div class="phase p4"><div class="phase-label">前500<br>〜<br>前479</div>
+<div class="node key"><div class="node-title">ペルシア戦争 ― 民主政を強化した外的要因</div><div class="node-year">BC500–BC479</div>
+<div class="node-desc"><strong>イオニアの反乱</strong>(BC499-494)＝小アジアのギリシア植民市がペルシアに反乱→アテネが支援→ペルシアの怒りを買う。<br>
+<strong>第1次</strong>(BC490)＝ダレイオス1世がギリシアに派兵→<strong>マラトンの戦い</strong>＝アテネの重装歩兵(ホプリテース)がペルシア軍を撃退→「マラソン」の語源(戦勝の報告に走った兵士の伝説)。<br>
+<strong>第2次</strong>(BC480-479)＝クセルクセス1世が大軍で侵攻→<strong>テルモピュライの戦い</strong>＝スパルタ王レオニダス率いる300人が壮絶な防戦→全滅(映画「300」)。アテネは焼き払われる→<strong>サラミスの海戦</strong>(BC480)＝<strong>テミストクレス</strong>の海軍戦略で三段櫂船(トリレーメス)がペルシア艦隊を撃破。<strong>プラタイアの戦い</strong>(BC479)で陸戦でも勝利→ペルシアをギリシアから撃退。<br><br>
+★民主政への影響：サラミスの海戦で<strong>三段櫂船を漕いだのは最下層のテーテス(無産市民)</strong>→<strong>「国を救ったのは我々だ」→政治的発言権の拡大</strong>＝ペルシア戦争が民主政をさらに推し進めた。</div></div>
+<div class="side-note">★入試超頻出：「マラトン(BC490)→テルモピュライ→サラミス(BC480)→プラタイア(BC479)」の順番。「テーテスの軍事的貢献→民主政の深化」の因果関係が論述のポイント</div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">ペルシア戦後の繁栄→ペリクレスの時代＝民主政の完成</div></div></div>
+
+<!-- ペリクレスの民主政 -->
+<div class="phase p5"><div class="phase-label">前5C<br>後半</div>
+<div class="node key"><div class="node-title">ペリクレスの時代 ― アテネ民主政の完成</div><div class="node-year">BC443–BC429(ペリクレスが将軍職を独占した期間)</div>
+<div class="inst">
+  <div class="inst-tag i-ekklesia">民会(エクレシア) ＝18歳以上の成年男子市民全員が参加・最高決定機関</div>
+  <div class="inst-tag i-boule">五百人評議会(ブーレー) ＝抽選・民会の議題を準備</div>
+  <div class="inst-tag i-strategos">将軍(ストラテゴス)×10 ＝唯一の選挙職・ペリクレスが連続当選</div>
+  <div class="inst-tag i-dikasterion">民衆裁判所 ＝市民から抽選で選ばれた陪審員</div>
+</div>
+<div class="node-desc"><strong>ペリクレス</strong>の改革で民主政が完成：<br>
+①<strong>公職者への手当(日当)</strong>の支給＝貧しい市民も仕事を休んで政治に参加できる→<strong>参政権が実質的に全市民に</strong>。<br>
+②<strong>ほぼ全ての公職が抽選</strong>→将軍(ストラテゴス)のみが選挙(軍事的能力が必要なため)→ペリクレスは15年間連続で将軍に選ばれ事実上の指導者に。<br>
+③<strong>デロス同盟</strong>(BC478-)の盟主として同盟資金をアテネに移し<strong>パルテノン神殿</strong>等を建設＝「アテネの黄金時代」。ソフォクレス(悲劇)・アリストファネス(喜劇)・ヘロドトス(歴史の父)・ソクラテス。<br>
+④ペリクレスの葬送演説(トゥキュディデスの記録)＝<strong>「我々の政体は民主政と呼ばれる。それは少数者ではなく多数者の手にあるからだ」</strong>。<br><br>
+★しかし民主政の<strong>限界</strong>：①参政権は<strong>成年男子市民のみ</strong>→女性・在留外国人(メトイコイ)・奴隷は除外＝人口の約10-15%だけが「市民」。②デロス同盟の資金流用＝<strong>他のポリスへの帝国主義</strong>。</div></div>
+<div class="side-note">★入試超頻出：「ペリクレス＝公職者への手当→直接民主政の完成」「民主政の限界＝女性・メトイコイ・奴隷は除外」「デロス同盟の資金でパルテノン建設」。ペリクレスの葬送演説も頻出</div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">アテネの帝国主義→スパルタとの対立→ペロポネソス戦争</div></div></div>
+
+<!-- ペロポネソス戦争 -->
+<div class="phase p6"><div class="phase-label">前431<br>〜<br>前404</div>
+<div class="node key"><div class="node-title">ペロポネソス戦争 ― アテネの衰退</div><div class="node-year">BC431–BC404</div>
+<div class="node-desc"><strong>アテネ(デロス同盟)</strong>vs<strong>スパルタ(ペロポネソス同盟)</strong>の全ギリシアを巻き込んだ大戦争。<strong>トゥキュディデス</strong>『戦史(ペロポネソス戦争史)』が記録。<br>
+<strong>前半</strong>(BC431-421)＝ペリクレスの<strong>籠城策</strong>(城壁内に市民を集め海軍で通商を維持)→しかし<strong>疫病</strong>が発生(ペストか天然痘か)→<strong>ペリクレス自身も病死</strong>(BC429)→指導者を失ったアテネは<strong>デマゴーグ(扇動政治家)</strong>に振り回される＝クレオン等。ニキアスの和約(BC421)で一時停戦。<br>
+<strong>後半</strong>(BC415-404)＝<strong>シチリア遠征</strong>(BC415-413)＝アルキビアデスが主導→大失敗＝遠征軍壊滅→アテネの国力に致命的打撃。スパルタが<strong>ペルシアの資金援助</strong>で艦隊を建設→<strong>アイゴスポタモイの海戦</strong>(BC405)でアテネ艦隊を壊滅→<strong>BC404年アテネ降伏</strong>＝長壁を破壊・艦隊引き渡し・デロス同盟解散。<br><br>
+★民主政への打撃：<strong>「民主政はデマゴーグに支配されると愚かな決定をする」</strong>→シチリア遠征の愚挙が象徴。プラトンが民主政を批判し「哲人王」の統治を構想→『国家(ポリテイア)』。</div></div>
+<div class="side-note">★入試超頻出：「ペロポネソス戦争＝アテネvsスパルタ」「トゥキュディデスの『戦史』」「シチリア遠征の失敗→アテネの衰退」。民主政とデマゴーグの関係は現代政治にも通じるテーマ</div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">スパルタの覇権→テーバイ→マケドニアの支配→ポリスの自由の終わり</div></div></div>
+
+<!-- ポリスの衰退→ヘレニズム -->
+<div class="phase p7"><div class="phase-label">前4C<br>〜<br>前2C</div>
+<div class="node"><div class="node-title">ポリスの衰退 → マケドニアの支配 → ヘレニズム</div><div class="node-year">BC404–BC146</div>
+<div class="node-desc"><strong>スパルタの覇権</strong>(BC404-371)→他のポリスの反発。<strong>テーバイ</strong>のエパメイノンダスがレウクトラの戦い(BC371)でスパルタに勝利→しかしテーバイの覇権も短命。→ポリス間の抗争で全体が疲弊＝<strong>「ポリスの危機」</strong>＝市民兵の衰退→傭兵の増加、貧富の格差拡大、市民の政治的無関心。<br><br>
+<strong>マケドニアのフィリッポス2世</strong>が台頭→<strong>カイロネイアの戦い</strong>(BC338)でアテネ・テーバイ連合軍を撃破→<strong>コリント同盟</strong>(BC337)でギリシア全体をマケドニアの支配下に＝<strong>ポリスの独立と自由の事実上の終わり</strong>。デモステネスの反マケドニア演説(「フィリッピカ」)は報われず。<br><br>
+<strong>アレクサンドロス大王</strong>(BC336-323)がペルシア帝国を征服→エジプト・中央アジア・インドまで遠征＝<strong>世界帝国</strong>。死後に後継者(ディアドコイ)戦争→<strong>3王国</strong>に分裂：アンティゴノス朝マケドニア・セレウコス朝シリア・プトレマイオス朝エジプト＝<strong>ヘレニズム時代</strong>(BC323-BC30)。ギリシア文化とオリエント文化の融合＝<strong>コスモポリタニズム(世界市民主義)</strong>。ストア派(ゼノン)・エピクロス派。自然科学の発展(エウクレイデスの幾何学・アルキメデス・エラトステネスの地球の大きさの計算)。<strong>ムセイオン(アレクサンドリア図書館)</strong>。BC30年にプトレマイオス朝がローマに滅ぼされヘレニズム時代が終わる。</div></div>
+<div class="side-note">★入試超頻出：「カイロネイア(BC338)→コリント同盟」「アレクサンドロスの東方遠征」「ヘレニズム3王国」「ヘレニズム文化＝コスモポリタニズム＋ストア派/エピクロス派」</div></div>
+
+</div>
+<div class="note"><p>アテネ民主政の発展段階＝<strong>①ドラコン(成文法)→②ソロン(財産政治＋債務奴隷禁止)→③クレイステネス(10部族制＋五百人評議会＋陶片追放)→④ペルシア戦争(テーテスの貢献)→⑤ペリクレス(公職手当＝直接民主政の完成)</strong>。衰退＝<strong>ペロポネソス戦争(デマゴーグ→シチリア遠征の失敗)→ポリスの危機→マケドニアの支配→ヘレニズム</strong>。入試では各段階の改革者の名前と内容を正確に答えることが求められる。「近代民主主義との違い」(直接民主政vs代議制、女性・奴隷の排除)も頻出テーマ。</p></div>
+</body></html>

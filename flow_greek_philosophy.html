@@ -1,0 +1,63 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>ギリシア哲学の系譜</title><style>@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048;--border:rgba(201,169,110,.08)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+.hdr{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.hdr h1{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2)}
+.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
+.flow{max-width:720px;margin:0 auto;padding:24px 20px 60px}
+.phase{position:relative;margin-bottom:2px;padding:16px 16px 16px 60px;border-left:2px solid rgba(201,169,110,.08);margin-left:30px}
+.phase:last-child{border-left-color:transparent}
+.phase-label{position:absolute;left:-42px;top:16px;width:36px;font-family:'Cormorant Garamond',serif;font-size:10px;font-weight:700;color:var(--text3);text-align:right;line-height:1.3}
+.phase::before{content:'';position:absolute;left:-5px;top:22px;width:8px;height:8px;border-radius:50%;background:var(--bg);border:2px solid rgba(201,169,110,.25)}
+.node{background:rgba(255,255,255,.015);border:1px solid rgba(255,255,255,.04);border-radius:8px;padding:10px 14px;margin-bottom:8px;border-left:3px solid transparent}
+.node:hover{background:rgba(255,255,255,.03)}
+.node-title{font-family:'Noto Serif JP',serif;font-size:12px;font-weight:700;color:var(--gold2);margin-bottom:2px}
+.node-year{font-family:'Cormorant Garamond',serif;font-size:11px;color:var(--gold);opacity:.6;margin-bottom:4px}
+.node-desc{font-size:10px;color:var(--text2);line-height:1.7}
+.node-desc strong{color:var(--text);font-weight:600}
+.arrow{display:flex;align-items:center;gap:6px;padding:2px 0 2px 8px;margin-bottom:6px}
+.arrow-line{width:16px;height:1px;background:rgba(201,169,110,.15)}
+.arrow-text{font-size:8px;color:var(--text3)}
+.arrow-icon{color:rgba(201,169,110,.3);font-size:10px}
+.branch-row{display:flex;gap:8px;margin-bottom:8px}
+.branch-row .node{flex:1}
+.node.key{background:rgba(201,169,110,.04);border-color:rgba(201,169,110,.12)}
+.side-note{font-size:8px;color:var(--text3);padding:4px 8px;border-left:2px solid rgba(201,169,110,.1);margin:4px 0 8px;line-height:1.6}
+.note{text-align:center;padding:8px 20px 32px;max-width:700px;margin:0 auto}.note p{font-size:9px;color:var(--text3);line-height:1.8}.note strong{color:var(--gold)}
+
+.p1 .node{border-left-color:rgba(100,130,180,.3)}.p2 .node{border-left-color:rgba(180,140,60,.3)}.p2::before{border-color:rgba(180,140,60,.5);background:rgba(180,140,60,.15)}.p3 .node{border-left-color:rgba(201,169,110,.4)}.p3::before{border-color:rgba(201,169,110,.5);background:rgba(201,169,110,.15)}.p4 .node{border-left-color:rgba(80,150,120,.3)}
+@media(max-width:600px){
+.hdr{padding:10px 12px}.hdr h1{font-size:12px}
+.flow{padding:16px 10px 40px}
+.phase{padding:12px 10px 12px 44px;margin-left:20px}
+.phase-label{left:-30px;width:28px;font-size:8px}
+.node{padding:8px 10px}.node-title{font-size:11px}.node-desc{font-size:9px}
+.branch-row{flex-direction:column}
+.side-note{font-size:7.5px}
+.note p{font-size:8px}
+}
+</style></head><body><div class="hdr"><h1>ギリシア哲学の系譜 ― 自然哲学からヘレニズム哲学まで</h1><a href="charts.html">← Ad Chartae</a></div><div class="flow">
+<div class="phase p1"><div class="phase-label">自然<br>哲学</div>
+  <div class="node"><div class="node-title">イオニア自然哲学</div><div class="node-year">BC6C</div>
+  <div class="node-desc">★<strong>万物の根源(アルケー)は何か？</strong>＝神話ではなく理性で世界を説明しようとする→「哲学の誕生」。<strong>タレス</strong>＝「万物の根源は水」。<strong>ヘラクレイトス</strong>＝「万物は流転する」(火)。<strong>デモクリトス</strong>＝★<strong>原子論</strong>(万物は不可分の原子atomから成る)。<strong>ピタゴラス</strong>＝数学・音楽の調和＝「万物は数なり」。</div></div></div>
+
+<div class="phase p2"><div class="phase-label">ソフィスト<br>〜ソクラテス</div>
+  <div class="node"><div class="node-title">ソフィスト(詭弁家)</div><div class="node-year">BC5C</div>
+  <div class="node-desc">アテネ民主制の発展→弁論術の需要→<strong>プロタゴラス</strong>＝★<strong>「人間は万物の尺度である」</strong>→真理は相対的(★<strong>相対主義</strong>)。有償で弁論術を教授→「真理よりも説得力」という批判。</div></div>
+  <div class="node key"><div class="node-title">★ソクラテス</div><div class="node-year">BC469-BC399</div>
+  <div class="node-desc">ソフィストの相対主義に反対→★<strong>「汝自身を知れ」(無知の知)</strong>＝自分が何も知らないことを知ることが知恵の出発点。★<strong>問答法(産婆術)</strong>＝対話を通じて相手に真理を「産み出させる」。普遍的な善・正義の存在を追求。<strong>「悪法もまた法なり」</strong>→毒杯を飲んで死亡(BC399)→★著作は残さず弟子プラトンが記録。</div></div></div>
+
+<div class="phase p3"><div class="phase-label">プラトン<br>〜アリスト<br>テレス</div>
+  <div class="node key"><div class="node-title">★プラトン</div><div class="node-year">BC427-BC347</div>
+  <div class="node-desc">ソクラテスの弟子。<strong>アカデメイア</strong>(学園)を設立。★<strong>イデア論</strong>＝現実世界は「イデア(理想形)」の不完全な模倣→真の実在はイデアの世界にある(「洞窟の比喩」)。★<strong>『国家』</strong>＝理想国家は<strong>哲人王</strong>(哲学者が統治する国家)→民主制を批判(衆愚政治になりうる)。</div></div>
+  <div class="node key"><div class="node-title">★アリストテレス</div><div class="node-year">BC384-BC322</div>
+  <div class="node-desc">プラトンの弟子。★<strong>「万学の祖」</strong>＝論理学・自然学・倫理学・政治学・詩学を体系化。★<strong>リュケイオン</strong>(学園)を設立。プラトンのイデア論を批判→<strong>経験・観察を重視</strong>(★<strong>帰納法</strong>の先駆)。アレクサンドロス大王の家庭教師。中世イスラーム世界で保存→<strong>12Cルネサンス</strong>でヨーロッパに再導入→<strong>スコラ哲学</strong>(トマス＝アクィナス)の基盤に。</div></div></div>
+
+<div class="phase p4"><div class="phase-label">ヘレニズム<br>哲学</div>
+  <div class="node"><div class="node-title">ヘレニズム時代の哲学</div><div class="node-year">BC3C-</div>
+  <div class="node-desc">ポリスの解体→個人の幸福・心の平安の追求へ。①★<strong>ストア派(ストア学派)</strong>＝ゼノンが創始→<strong>禁欲主義</strong>＝理性に従い感情を抑制→「世界市民(コスモポリタニズム)」→ローマのセネカ・マルクス＝アウレリウスに影響。②★<strong>エピクロス派</strong>＝<strong>快楽主義</strong>(だし精神的快楽＝心の平静アタラクシアを重視)→「隠れて生きよ」。</div></div>
+  <div class="side-note">★入試超頻出：「タレス＝水」「プロタゴラス＝人間は万物の尺度(相対主義)」「ソクラテス＝無知の知＋問答法」「プラトン＝イデア論＋哲人王＋アカデメイア」「アリストテレス＝万学の祖＋リュケイオン」「ストア派＝禁欲＋コスモポリタニズム」「エピクロス派＝快楽(精神的)＝アタラクシア」</div>
+</div>
+</div><div class="note"><p>ギリシア哲学＝<strong>自然哲学(アルケーの探求)→ソクラテス(人間の内面)→プラトン(イデア)→アリストテレス(経験・体系化)→ヘレニズム(個人の幸福)</strong>。入試では各哲学者の核心概念とキーワードが問われる。</p></div></body></html>
