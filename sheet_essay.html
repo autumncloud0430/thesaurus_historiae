@@ -26,7 +26,7 @@ td:first-child{font-size:8.5px}
 <button class="tab" onclick="switchTab(2)" id="tab2">テーマ史横断</button>
 <button class="tab" onclick="switchTab(3)" id="tab3">比較史_制度比較</button>
 </div>
-<div class="search-bar"><input class="si" id="search" placeholder="テーマ・キーワードで検索..." oninput="filterRows"><span class="cnt" id="cnt"></span></div>
+<div class="search-bar"><input class="si" id="search" placeholder="テーマ・キーワードで検索..." oninput="filterRows()"><span class="cnt" id="cnt"></span></div>
 <div class="tbl-wrap" id="content0"><table>
 <thead><tr><th>テーマ</th><th>時代</th><th>論点（何を問われるか）</th><th>展開のポイント（答案の骨子）</th><th>必須キーワード</th><th>難易度</th></tr></thead>
 <tbody>
@@ -319,29 +319,29 @@ var M=[
 ];
 var cells=document.querySelectorAll('td');
 for(var i=0;i<cells.length;i++){
- var txt=cells[i].textContent;
- if(txt.length<5) continue;
- var found={};
- for(var j=0;j<M.length;j++){
- if(M[j][0].test(txt) && !found[M[j][1]]){
- found[M[j][1]]=M[j][2];
- }
- }
- var keys=Object.keys(found);
- if(keys.length>0 && keys.length<=4){
- var wrap=document.createElement('span');
- wrap.className='chart-links-wrap';
- for(var k=0;k<keys.length;k++){
- var a=document.createElement('a');
- a.className='chart-link';
- a.href=keys[k];
- a.textContent=found[keys[k]];
- a.title=keys[k];
- wrap.appendChild(a);
- }
- cells[i].appendChild(wrap);
- }
+  var txt=cells[i].textContent;
+  if(txt.length<5) continue;
+  var found={};
+  for(var j=0;j<M.length;j++){
+    if(M[j][0].test(txt) && !found[M[j][1]]){
+      found[M[j][1]]=M[j][2];
+    }
+  }
+  var keys=Object.keys(found);
+  if(keys.length>0 && keys.length<=4){
+    var wrap=document.createElement('span');
+    wrap.className='chart-links-wrap';
+    for(var k=0;k<keys.length;k++){
+      var a=document.createElement('a');
+      a.className='chart-link';
+      a.href=keys[k];
+      a.textContent=found[keys[k]];
+      a.title=keys[k];
+      wrap.appendChild(a);
+    }
+    cells[i].appendChild(wrap);
+  }
 }
-});
+})();
 </script>
 </body></html>

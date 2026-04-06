@@ -36,12 +36,12 @@
 <body>
 <div class="hdr"><h1>大航海時代の航路 ― 世界を結んだ3つの航海</h1><a href="charts.html">← Ad Chartae</a></div>
 <div class="legend">
- <div class="li"><div class="ld" style="background:#e85050"></div>ガマ(1497-98) 東回り→インド</div>
- <div class="li"><div class="ld" style="background:#50b478"></div>コロンブス(1492) 西回り→新大陸</div>
- <div class="li"><div class="ld" style="background:#6496dc"></div>マゼラン/エルカーノ(1519-22) 世界周航</div>
- <div class="li"><div class="ld" style="background:#c9a96e;opacity:.5"></div>ディアス(1488)</div>
- <div class="li"><div class="ld" style="background:#e88050;opacity:.5"></div>カブラル(1500)</div>
- <div class="li"><div class="ld" style="background:rgba(201,169,110,.3);border-top:1px dashed rgba(201,169,110,.3)"></div>トルデシリャス条約線</div>
+  <div class="li"><div class="ld" style="background:#e85050"></div>ガマ(1497-98) 東回り→インド</div>
+  <div class="li"><div class="ld" style="background:#50b478"></div>コロンブス(1492) 西回り→新大陸</div>
+  <div class="li"><div class="ld" style="background:#6496dc"></div>マゼラン/エルカーノ(1519-22) 世界周航</div>
+  <div class="li"><div class="ld" style="background:#c9a96e;opacity:.5"></div>ディアス(1488)</div>
+  <div class="li"><div class="ld" style="background:#e88050;opacity:.5"></div>カブラル(1500)</div>
+  <div class="li"><div class="ld" style="background:rgba(201,169,110,.3);border-top:1px dashed rgba(201,169,110,.3)"></div>トルデシリャス条約線</div>
 </div>
 <div id="map"></div>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -52,60 +52,60 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',{att
 
 var ROUTES = [{"pts": [[38.7, -9.1], [37.0, -10.0], [33.0, -12.0], [28.0, -15.5], [23.0, -17.0], [18.0, -18.0], [15.0, -17.5], [14.8, -17.5], [10.0, -18.0], [5.0, -15.0], [0.0, -5.0], [-5.0, 5.0], [-10.0, 10.0], [-15.0, 12.0], [-20.0, 12.0], [-25.0, 14.0], [-30.0, 16.0], [-34.0, 18.0], [-34.5, 20.0], [-34.0, 26.0], [-30.0, 32.0], [-26.0, 33.5], [-20.0, 36.0], [-15.0, 40.5], [-10.0, 42.0], [-5.0, 42.0], [-2.0, 42.5], [2.0, 44.0], [5.0, 46.0], [8.0, 50.0], [10.0, 55.0], [11.3, 75.8]], "color": "#e85050", "weight": 3, "opacity": 0.7, "dash": null, "popup": "\u30f4\u30a1\u30b9\u30b3\uff1d\u30c0\uff1d\u30ac\u30de(1497-98)<br>\u30ea\u30b9\u30dc\u30f3\u2192\u559c\u671b\u5cf0\u2192\u30ab\u30ea\u30ab\u30c3\u30c8<br>\u2605\u30a4\u30f3\u30c9\u822a\u8def\u306e\u958b\u62d3"}, {"pts": [[37.2, -6.9], [36.0, -8.0], [33.0, -12.0], [28.5, -15.5], [28.0, -18.0], [27.0, -25.0], [26.0, -35.0], [25.0, -45.0], [24.5, -55.0], [24.0, -65.0], [24.0, -74.0], [24.0, -74.5]], "color": "#50b478", "weight": 3, "opacity": 0.7, "dash": null, "popup": "\u30b3\u30ed\u30f3\u30d6\u30b9\u7b2c1\u56de\u822a\u6d77(1492)<br>\u30d1\u30ed\u30b9\u2192\u30ab\u30ca\u30ea\u30a2\u2192\u30b5\u30f3\u30b5\u30eb\u30d0\u30c9\u30eb<br>\u2605\u300c\u897f\u56de\u308a\u3067\u30a4\u30f3\u30c9\u306b\u5230\u9054\u300d\u3068\u8aa4\u8a8d"}, {"pts": [[24.0, -74.5], [20.0, -73.0], [19.5, -72.0], [22.0, -70.0], [25.0, -65.0], [28.0, -55.0], [32.0, -45.0], [35.0, -35.0], [37.0, -20.0], [38.0, -12.0], [38.7, -9.1]], "color": "#50b478", "weight": 2, "opacity": 0.4, "dash": "8,4", "popup": "\u30b3\u30ed\u30f3\u30d6\u30b9\u5e30\u8def<br>\u504f\u897f\u98a8\u3067\u5317\u5bc4\u308a\u306b\u5e30\u9084"}, {"pts": [[36.5, -6.0], [33.0, -12.0], [28.0, -16.0], [15.0, -20.0], [5.0, -30.0], [-5.0, -35.0], [-15.0, -38.0], [-25.0, -43.0], [-35.0, -50.0], [-45.0, -60.0], [-52.5, -70.0], [-52.0, -72.0], [-52.5, -74.5], [-50.0, -77.0], [-45.0, -80.0], [-35.0, -85.0], [-25.0, -90.0], [-15.0, -100.0], [-5.0, -110.0], [0.0, -120.0], [5.0, -135.0], [10.0, -145.0], [10.0, -155.0], [10.0, -170.0], [10.0, -180.0]], "color": "#6496dc", "weight": 3, "opacity": 0.7, "dash": null, "popup": "\u30de\u30bc\u30e9\u30f3(1519-21)<br>\u30bb\u30d3\u30ea\u30e3\u2192\u30de\u30bc\u30e9\u30f3\u6d77\u5ce1\u2192\u592a\u5e73\u6d0b\u6a2a\u65ad"}, {"pts": [[10.0, 180.0], [10.0, 165.0], [10.0, 150.0], [10.0, 140.0], [10.0, 125.0]], "color": "#6496dc", "weight": 3, "opacity": 0.7, "dash": null, "popup": "\u30de\u30bc\u30e9\u30f3 \u592a\u5e73\u6d0b\u2192\u30d5\u30a3\u30ea\u30d4\u30f3"}, {"pts": [[10.0, 125.0], [5.0, 120.0], [0.0, 127.5], [-5.0, 120.0], [-8.0, 115.0], [-10.0, 110.0], [-12.0, 100.0], [-10.0, 85.0], [-10.0, 70.0], [-10.0, 55.0], [-15.0, 45.0], [-20.0, 40.0], [-28.0, 35.0], [-34.0, 20.0], [-34.5, 18.0], [-30.0, 10.0], [-20.0, 5.0], [-10.0, 0.0], [0.0, -5.0], [10.0, -15.0], [20.0, -18.0], [28.0, -16.0], [33.0, -12.0], [36.5, -6.0]], "color": "#6496dc", "weight": 2.5, "opacity": 0.5, "dash": "8,4", "popup": "\u30a8\u30eb\u30ab\u30fc\u30ce\u306e\u5e30\u8def(1521-22)<br>\u30e2\u30eb\u30c3\u30ab\u2192\u30a4\u30f3\u30c9\u6d0b\u2192\u559c\u671b\u5cf0\u2192\u30b9\u30da\u30a4\u30f3<br>\u2605\u53f2\u4e0a\u521d\u306e\u4e16\u754c\u5468\u822a"}, {"pts": [[38.7, -9.1], [33.0, -12.0], [28.0, -15.5], [22.0, -16.0], [15.0, -17.5], [10.0, -15.0], [5.0, -5.0], [0.0, 5.0], [-5.0, 10.0], [-10.0, 13.0], [-15.0, 12.0], [-20.0, 13.0], [-25.0, 14.5], [-30.0, 16.5], [-34.0, 18.0], [-34.5, 20.0], [-34.0, 27.0], [-33.5, 28.0]], "color": "#c9a96e", "weight": 2, "opacity": 0.5, "dash": "6,3", "popup": "\u30c7\u30a3\u30a2\u30b9(1488)<br>\u559c\u671b\u5cf0\u306b\u5230\u9054\u2192\u300c\u5d50\u306e\u5cac\u300d"}, {"pts": [[38.7, -9.1], [33.0, -12.0], [25.0, -18.0], [15.0, -25.0], [5.0, -32.0], [-5.0, -37.0], [-15.0, -39.0], [-16.5, -39.0]], "color": "#e88050", "weight": 2, "opacity": 0.5, "dash": "6,3", "popup": "\u30ab\u30d6\u30e9\u30eb(1500)<br>\u30d6\u30e9\u30b8\u30eb\u300c\u767a\u898b\u300d"}, {"pts": [[60.0, -46.6], [-60.0, -46.6]], "color": "rgba(201,169,110,.3)", "weight": 1.5, "opacity": 0.5, "dash": "4,4", "popup": "\u30c8\u30eb\u30c7\u30b7\u30ea\u30e3\u30b9\u6761\u7d04\u7dda(1494)<br>\u897f\u7d4c46\u00b037\u2032"}];
 var CITIES = [[38.7, -9.1, "リスボン", "ポルトガルの首都。大航海時代の出発点。エンリケ航海王子が航海事業を推進"], [37.2, -6.9, "パロス", "コロンブスの出港地(1492.8.3)。ピンタ号・ニーニャ号・サンタ＝マリア号"], [36.5, -6.0, "セビリャ", "スペインの貿易管理拠点。カサ・デ・コントラタシオン(通商院)"], [28.5, -15.5, "カナリア諸島", "コロンブスが最後に補給した地点。ここから西へ"], [14.8, -17.5, "カーボベルデ", "ポルトガル領。ガマが立ち寄った中継地"], [-34.0, 18.5, "喜望峰", "★ディアスが到達(1488)。「嵐の岬」→ジョアン2世が「喜望峰」と改名"], [-16.5, -39.0, "ブラジル(ポルトセグロ)", "カブラルが「発見」(1500)。トルデシリャス条約でポルトガル領に"], [11.3, 75.8, "カリカット", "★ガマが到達(1498)。インド航路の開拓＝香辛料貿易の独占を目指す"], [24.0, -74.5, "サンサルバドル付近", "★コロンブスが到達(1492.10.12)。「インド」と誤認"], [19.5, -72.0, "イスパニョーラ島", "コロンブスが植民地を建設。現在のハイチ・ドミニカ共和国"], [-52.5, -70.0, "マゼラン海峡", "★マゼランが通過(1520)。南米大陸とフエゴ島の間"], [10.0, 125.0, "フィリピン(セブ島)", "マゼランがここで戦死(1521)。ラプラプが抵抗"], [0.0, 127.5, "モルッカ諸島", "★香辛料(クローブ・ナツメグ)の原産地。大航海時代の最終目的地"]];
-var drawnCopies = {}; // track which world copies are drawn
+var drawnCopies = {};  // track which world copies are drawn
 
 function offsetPts(pts, dlon) {
- return pts.map(function(p) { return [p[0], p[1] + dlon]; });
+  return pts.map(function(p) { return [p[0], p[1] + dlon]; });
 }
 
 function cityIcon(sz) {
- return L.divIcon({className:'',html:'<div style="width:'+sz+'px;height:'+sz+'px;border-radius:50%;background:rgba(201,169,110,.6);border:1.5px solid rgba(201,169,110,.9);box-shadow:0 0 6px rgba(201,169,110,.4);cursor:pointer"></div>',iconSize:[sz,sz],iconAnchor:[sz/2,sz/2]});
+  return L.divIcon({className:'',html:'<div style="width:'+sz+'px;height:'+sz+'px;border-radius:50%;background:rgba(201,169,110,.6);border:1.5px solid rgba(201,169,110,.9);box-shadow:0 0 6px rgba(201,169,110,.4);cursor:pointer"></div>',iconSize:[sz,sz],iconAnchor:[sz/2,sz/2]});
 }
 
 function drawCopy(map, worldN) {
- if (drawnCopies[worldN]) return;
- var off = worldN * 360;
- var layers = [];
- // Routes
- for (var i = 0; i < ROUTES.length; i++) {
- var r = ROUTES[i];
- var style = {color:r.color, weight:r.weight, opacity:r.opacity};
- if (r.dash) style.dashArray = r.dash;
- var line = L.polyline(offsetPts(r.pts, off), style).addTo(map);
- if (worldN === 0 && r.popup) line.bindPopup('<strong>' + r.popup + '</strong>');
- layers.push(line);
- }
- // Cities
- for (var i = 0; i < CITIES.length; i++) {
- var c = CITIES[i];
- var sz = c[3].indexOf('★') >= 0 ? 16 : 12;
- var m = L.marker([c[0], c[1] + off], {icon: cityIcon(sz)}).addTo(map);
- m.bindPopup('<strong>' + c[2] + '</strong><br>' + c[3]);
- m.bindTooltip(c[2], {permanent: true, direction: 'top', offset: [0, -10], className: 'city-label'});
- layers.push(m);
- }
- drawnCopies[worldN] = layers;
+  if (drawnCopies[worldN]) return;
+  var off = worldN * 360;
+  var layers = [];
+  // Routes
+  for (var i = 0; i < ROUTES.length; i++) {
+    var r = ROUTES[i];
+    var style = {color:r.color, weight:r.weight, opacity:r.opacity};
+    if (r.dash) style.dashArray = r.dash;
+    var line = L.polyline(offsetPts(r.pts, off), style).addTo(map);
+    if (worldN === 0 && r.popup) line.bindPopup('<strong>' + r.popup + '</strong>');
+    layers.push(line);
+  }
+  // Cities
+  for (var i = 0; i < CITIES.length; i++) {
+    var c = CITIES[i];
+    var sz = c[3].indexOf('★') >= 0 ? 16 : 12;
+    var m = L.marker([c[0], c[1] + off], {icon: cityIcon(sz)}).addTo(map);
+    m.bindPopup('<strong>' + c[2] + '</strong><br>' + c[3]);
+    m.bindTooltip(c[2], {permanent: true, direction: 'top', offset: [0, -10], className: 'city-label'});
+    layers.push(m);
+  }
+  drawnCopies[worldN] = layers;
 }
 
 function updateCopies(map) {
- var bounds = map.getBounds;
- var west = bounds.getWest;
- var east = bounds.getEast;
- // Which world copies are needed?
- var minWorld = Math.floor((west + 180) / 360) - 1;
- var maxWorld = Math.ceil((east - 180) / 360) + 1;
- // Draw any needed copies
- for (var w = minWorld; w <= maxWorld; w++) {
- drawCopy(map, w);
- }
- // Remove copies that are too far away (keep ±2 extra)
- for (var key in drawnCopies) {
- var wn = parseInt(key);
- if (wn < minWorld - 2 || wn > maxWorld + 2) {
- drawnCopies[wn].forEach(function(l) { map.removeLayer(l); });
- delete drawnCopies[wn];
- }
- }
+  var bounds = map.getBounds();
+  var west = bounds.getWest();
+  var east = bounds.getEast();
+  // Which world copies are needed?
+  var minWorld = Math.floor((west + 180) / 360) - 1;
+  var maxWorld = Math.ceil((east - 180) / 360) + 1;
+  // Draw any needed copies
+  for (var w = minWorld; w <= maxWorld; w++) {
+    drawCopy(map, w);
+  }
+  // Remove copies that are too far away (keep ±2 extra)
+  for (var key in drawnCopies) {
+    var wn = parseInt(key);
+    if (wn < minWorld - 2 || wn > maxWorld + 2) {
+      drawnCopies[wn].forEach(function(l) { map.removeLayer(l); });
+      delete drawnCopies[wn];
+    }
+  }
 }
 
 // Initial draw
@@ -115,7 +115,7 @@ for (var w = -2; w <= 2; w++) drawCopy(map, w);
 map.on('moveend', function() { updateCopies(map); });
 
 }
-(function wait(){if(typeof L!=="undefined"){initMap;}else{setTimeout(wait,100);}});
+(function wait(){if(typeof L!=="undefined"){initMap();}else{setTimeout(wait,100);}})();
 </script>
 <div class="desc">
 <h2>大航海時代の3大航海</h2>
@@ -124,7 +124,7 @@ map.on('moveend', function() { updateCopies(map); });
 <p><strong>③マゼラン/エルカーノ(1519-22、青線)</strong>＝スペイン王カルロス1世の命→南米東岸を南下→<strong>マゼラン海峡</strong>を通過(1520)→<strong>太平洋</strong>(マゼランが命名)を約4か月横断→<strong>フィリピンでマゼラン戦死</strong>(1521)→<strong>エルカーノ</strong>がモルッカ諸島で香辛料を積み→インド洋→喜望峰→<strong>スペインに帰還(1522)</strong>。出発5隻265人→帰還1隻18人。★<strong>史上初の世界周航</strong>。</p>
 <h2>トルデシリャス条約(1494)</h2>
 <p><strong>教皇アレクサンデル6世</strong>が仲裁→<strong>西経46°37′の線</strong>(地図上の破線)を境に、東側＝ポルトガル領、西側＝スペイン領。★<strong>ブラジルがポルトガル語圏</strong>になった理由(<strong>カブラル</strong>がブラジルに到達、1500年)。</p>
-<div class="side-note">★入試超：「ディアス(1488)→ガマ(1498)→カブラル(1500)」の順番。「コロンブス＝西回りでインドと誤認」「マゼラン＝フィリピンで戦死、エルカーノが世界周航を完成」「トルデシリャス条約＝西経46°37′→ブラジルがポルトガル領」「エンリケ航海王子＝航海事業の推進者(ただし本人は航海していない)」</div>
+<div class="side-note">★入試超：「ディアス(1488)→ガマ(1498)→カブラル(1500)」の順番。「コロンブス＝西回りでインドと誤認」「マゼラン＝フィリピンで戦死、エルカーノが世界周航を完成」「トルデシリャス条約＝西経46°37′→ブラジルがポルトガル領」「エンリケ航海王子＝航海事業の推進者(だし本人は航海していない)」</div>
 </div>
 <div class="note"><p>大航海時代＝<strong>ポルトガルの東回りとスペインの西回りが世界を一つに結んだ</strong>。入試では①<strong>各航海者の航路と年代</strong> ②<strong>トルデシリャス条約</strong> ③<strong>香辛料貿易の独占</strong> ④<strong>「コロンブスの交換」</strong> ⑤<strong>大航海時代→銀の世界循環→価格革命</strong>が問われる。</p></div>
 </body></html>

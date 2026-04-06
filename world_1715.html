@@ -58,19 +58,19 @@ body{font-family:'Noto Sans JP',sans-serif;background:#080b14;color:#e0dcd6;heig
 </head>
 <body>
 <div class="top"><a href="index.html" style="font-size:10px;color:#c9a96e;text-decoration:none;opacity:.5;margin-left:auto">← Ad Indicem</a>
- <h1>🗺 1715年の世界</h1>
- <p>スペイン継承戦争終結・ユトレヒト条約・東方の大帝国</p>
- <button class="tb on" id="pb" onclick="toggleCat('B')">⚔戦場</button>
- <button class="tb on" id="pt" onclick="toggleCat('T')">📜条約</button>
- <button class="tb on" id="pc" onclick="toggleCat('C')">🏛都市</button>
- <button class="tb on" id="ps" onclick="toggleCat('S')">🏺遺跡</button>
- <input class="si" id="search" placeholder="検索..." oninput="renderPoints">
- <span class="cnt" id="cnt"></span>
+  <h1>🗺 1715年の世界</h1>
+  <p>スペイン継承戦争終結・ユトレヒト条約・東方の大帝国</p>
+  <button class="tb on" id="pb" onclick="toggleCat('B')">⚔戦場</button>
+  <button class="tb on" id="pt" onclick="toggleCat('T')">📜条約</button>
+  <button class="tb on" id="pc" onclick="toggleCat('C')">🏛都市</button>
+  <button class="tb on" id="ps" onclick="toggleCat('S')">🏺遺跡</button>
+  <input class="si" id="search" placeholder="検索..." oninput="renderPoints()">
+  <span class="cnt" id="cnt"></span>
 </div>
 <div id="map"></div>
 <div class="leg-wrap">
- <div class="leg-toggle" onclick="toggleLeg" id="legtitle">▼ 凡例</div>
- <div class="leg-body" id="leg"></div>
+  <div class="leg-toggle" onclick="toggleLeg()" id="legtitle">▼ 凡例</div>
+  <div class="leg-body" id="leg"></div>
 </div>
 
 <script>
@@ -382,79 +382,79 @@ var PALETTE=["#c05050","#5a9ac0","#c0a050","#60aa80","#9b6b8a","#c07a40",
 "#6090c0","#90b060","#c09070","#7a9a8a","#a06090","#80a0c0"];
 function hashColor(s){var h=0;for(var i=0;i<s.length;i++)h=((h<<5)-h)+s.charCodeAt(i);return PALETTE[Math.abs(h)%PALETTE.length];}
 function getCol(name,subj){
- var key;
- if(subj&&subj!==name&&subj!==''){key=NORM[subj]||subj;}
- else{key=NORM[name]||name;}
- return PCOLORS[key]||hashColor(name);
+  var key;
+  if(subj&&subj!==name&&subj!==''){key=NORM[subj]||subj;}
+  else{key=NORM[name]||name;}
+  return PCOLORS[key]||hashColor(name);
 }
 
 // ═══ MAP ═══
 var map=L.map("map",{center:[25,15],zoom:2,minZoom:2,maxZoom:12,worldCopyJump:true,preferCanvas:false});
 // Render order: territories first, then points on top
 L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png",{
- attribution:'&copy; OSM &copy; CARTO',subdomains:"abcd",maxZoom:19,noWrap:false}).addTo(map);
+  attribution:'&copy; OSM &copy; CARTO',subdomains:"abcd",maxZoom:19,noWrap:false}).addTo(map);
 
 // ═══ RENDER TERRITORIES ═══
 function shiftGJ(gj,off){
- return{type:"FeatureCollection",features:gj.features.map(f=>{
- function sc(c){if(typeof c[0]==="number")return[c[0]+off,c[1]];return c.map(sc)}
- return{...f,geometry:{...f.geometry,coordinates:sc(f.geometry.coordinates)}};
- })};
+  return{type:"FeatureCollection",features:gj.features.map(f=>{
+    function sc(c){if(typeof c[0]==="number")return[c[0]+off,c[1]];return c.map(sc)}
+    return{...f,geometry:{...f.geometry,coordinates:sc(f.geometry.coordinates)}};
+  })};
 }
 
 let tLayers=[],tLabels=[],capMarkers=[];
 var leg=document.getElementById("leg");
-var seen=new Set;
+var seen=new Set();
 
 [0,-360,360].forEach(offset=>{
- var data=offset===0?TERR:shiftGJ(TERR,offset);
- var layer=L.geoJSON(data,{
- style:function(f){var n=f.properties.NAME||"";var s=f.properties.SUBJECTO||"";var c=getCol(n,s);return{color:c,weight:1.5,opacity:0.6,fillColor:c,fillOpacity:0.2,interactive:true};},
- interactive:true,
- onEachFeature:(f,layer)=>{
- var n=f.properties.NAME||"";
- var c=getCol(n,f.properties.SUBJECTO||"");
- var j=ja(n);
- var d=DESC[n]||"";
- layer.bindPopup(
- `<div style="font-weight:700;font-size:14px;color:${c}">${j}</div>`+
- (j!==n?'<div style="font-size:10px;color:#666">'+n+'</div>':'')+
- (f.properties.SUBJECTO&&f.properties.SUBJECTO!==n?'<div style="font-size:10px;color:#888">宗主国: '+ja(f.properties.SUBJECTO||'')+'</div>':'')+
- (d?`<div style="font-size:11px;color:#aaa;margin-top:4px;line-height:1.6">${d}</div>`:"")+
- `<div style="font-size:10px;color:#777;margin-top:4px">1715年頃</div>`,
- {className:"tp",maxWidth:320}
- );
- if(offset===0){
- try{
- var center=layer.getBounds.getCenter;
- var lbl=L.tooltip({permanent:true,direction:"center",className:"tname",opacity:0.9});
- lbl.setContent(`<span style="color:${c};font-size:11px">${j}</span>`);
- lbl.setLatLng(center);map.addLayer(lbl);tLabels.push(lbl);
- }catch(e){}
- var caps=CAPS[n];
- if(caps){caps.forEach(cap=>{
- var m=L.circleMarker([cap[1],cap[2]],{radius:4,fillColor:"#ffd700",fillOpacity:0.9,color:"#fff",weight:1.5,opacity:0.8}).addTo(map);
- m.bindTooltip(cap[0],{permanent:true,direction:"right",offset:[5,0],className:"ml ml-C",opacity:1});
- m.bindPopup(`<div style="font-weight:700;color:#ffd700;font-size:13px">★ ${cap[0]}</div><div style="font-size:11px;color:#999">${j}の首都</div>`,{className:"tp"});
- capMarkers.push(m);
- })}
- if(!seen.has(n)){seen.add(n);
- var item=document.createElement("div");item.className="lgi";
- item.innerHTML=`<div class="sw" style="background:${c}55;border:1px solid ${c}88"></div><span style="color:${c}">${j}</span>`;
- item.onclick==>{try{map.fitBounds(layer.getBounds,{padding:[50,50],maxZoom:6})}catch(e){}};
- leg.appendChild(item);
- }
- }
- }
- }).addTo(map);
- tLayers.push(layer);
+  var data=offset===0?TERR:shiftGJ(TERR,offset);
+  var layer=L.geoJSON(data,{
+    style:function(f){var n=f.properties.NAME||"";var s=f.properties.SUBJECTO||"";var c=getCol(n,s);return{color:c,weight:1.5,opacity:0.6,fillColor:c,fillOpacity:0.2,interactive:true};},
+    interactive:true,
+    onEachFeature:(f,layer)=>{
+      var n=f.properties.NAME||"";
+      var c=getCol(n,f.properties.SUBJECTO||"");
+      var j=ja(n);
+      var d=DESC[n]||"";
+      layer.bindPopup(
+        `<div style="font-weight:700;font-size:14px;color:${c}">${j}</div>`+
+        (j!==n?'<div style="font-size:10px;color:#666">'+n+'</div>':'')+
+        (f.properties.SUBJECTO&&f.properties.SUBJECTO!==n?'<div style="font-size:10px;color:#888">宗主国: '+ja(f.properties.SUBJECTO||'')+'</div>':'')+
+        (d?`<div style="font-size:11px;color:#aaa;margin-top:4px;line-height:1.6">${d}</div>`:"")+
+        `<div style="font-size:10px;color:#777;margin-top:4px">1715年頃</div>`,
+        {className:"tp",maxWidth:320}
+      );
+      if(offset===0){
+        try{
+          var center=layer.getBounds().getCenter();
+          var lbl=L.tooltip({permanent:true,direction:"center",className:"tname",opacity:0.9});
+          lbl.setContent(`<span style="color:${c};font-size:11px">${j}</span>`);
+          lbl.setLatLng(center);map.addLayer(lbl);tLabels.push(lbl);
+        }catch(e){}
+        var caps=CAPS[n];
+        if(caps){caps.forEach(cap=>{
+          var m=L.circleMarker([cap[1],cap[2]],{radius:4,fillColor:"#ffd700",fillOpacity:0.9,color:"#fff",weight:1.5,opacity:0.8}).addTo(map);
+          m.bindTooltip(cap[0],{permanent:true,direction:"right",offset:[5,0],className:"ml ml-C",opacity:1});
+          m.bindPopup(`<div style="font-weight:700;color:#ffd700;font-size:13px">★ ${cap[0]}</div><div style="font-size:11px;color:#999">${j}の首都</div>`,{className:"tp"});
+          capMarkers.push(m);
+        })}
+        if(!seen.has(n)){seen.add(n);
+          var item=document.createElement("div");item.className="lgi";
+          item.innerHTML=`<div class="sw" style="background:${c}55;border:1px solid ${c}88"></div><span style="color:${c}">${j}</span>`;
+          item.onclick=()=>{try{map.fitBounds(layer.getBounds(),{padding:[50,50],maxZoom:6})}catch(e){}};
+          leg.appendChild(item);
+        }
+      }
+    }
+  }).addTo(map);
+  tLayers.push(layer);
 });
 
 let legCollapsed=false;
 function toggleLeg(){
- legCollapsed=!legCollapsed;
- document.getElementById("leg").className="leg-body"+(legCollapsed?" collapsed":"");
- document.getElementById("legtitle").textContent=legCollapsed?"▶ 凡例":"▼ 凡例";
+  legCollapsed=!legCollapsed;
+  document.getElementById("leg").className="leg-body"+(legCollapsed?" collapsed":"");
+  document.getElementById("legtitle").textContent=legCollapsed?"▶ 凡例":"▼ 凡例";
 }
 
 // ═══ POINT DATA ═══
@@ -606,7 +606,7 @@ var R=[
 ["平壌","前100",39.02,125.75,"楽浪郡→高句麗の都","C"],
 ["慶州","前57",35.86,129.21,"新羅の首都。仏国寺・石窟庵","C"],
 ["石窟庵","751",35.79,129.35,"新羅。花崗岩の仏教石窟","S"],
-["奈良","710",34.69,135.80,"平城京。寺大仏","C"],
+["奈良","710",34.69,135.80,"平城京。東大寺大仏","C"],
 ["京都","794",35.01,135.77,"平安京。1000年以上の都","C"],
 ["江戸(東京)","1603",35.68,139.77,"徳川幕府→明治維新後の首都","C"],
 ["広島","1945",34.39,132.46,"原爆投下(1945.8.6)","C"],
@@ -1174,74 +1174,74 @@ var ERA_YEARS=[-3000,-2000,-1500,-1000,-700,-500,-400,-323,-300,-200,-100,-1,100
 var THIS_ERA_IDX=32; // index of -500
 
 var DATA=R.map(r=>{
- var yN=pY(r[1]);
- let bestIdx=0,bestDist=Infinity;
- ERA_YEARS.forEach((ey,i)=>{var d=Math.abs((yN||0)-ey);if(d<bestDist){bestDist=d;bestIdx=i}});
- return{n:r[0],y:r[1],la:r[2],lo:r[3],d:r[4],cat:r[5],yN,eraIdx:bestIdx};
+  var yN=pY(r[1]);
+  let bestIdx=0,bestDist=Infinity;
+  ERA_YEARS.forEach((ey,i)=>{var d=Math.abs((yN||0)-ey);if(d<bestDist){bestDist=d;bestIdx=i}});
+  return{n:r[0],y:r[1],la:r[2],lo:r[3],d:r[4],cat:r[5],yN,eraIdx:bestIdx};
 }).filter(d=>d.eraIdx===THIS_ERA_IDX);
 
 let activeCats=new Set(["B","T","C","S"]),pointMarkers=[],labelLayer=null,currentFiltered=[];
 
 function toggleCat(cat){
- if(activeCats.has(cat))activeCats.delete(cat);else activeCats.add(cat);
- if(activeCats.size===0)activeCats.add(cat);
- Object.keys(CATS).forEach(k=>{document.getElementById("p"+k.toLowerCase()).className="tb"+(activeCats.has(k)?" on":"")});
- renderPoints;
+  if(activeCats.has(cat))activeCats.delete(cat);else activeCats.add(cat);
+  if(activeCats.size===0)activeCats.add(cat);
+  Object.keys(CATS).forEach(k=>{document.getElementById("p"+k.toLowerCase()).className="tb"+(activeCats.has(k)?" on":"")});
+  renderPoints();
 }
 
 function getFiltered(){
- let d=DATA.filter(x=>activeCats.has(x.cat));
- var s=document.getElementById("search").value.toLowerCase();
- if(s)d=d.filter(x=>x.n.toLowerCase().includes(s)||x.d.toLowerCase().includes(s));
- return d.sort((a,b)=>(a.yN||0)-(b.yN||0));
+  let d=DATA.filter(x=>activeCats.has(x.cat));
+  var s=document.getElementById("search").value.toLowerCase();
+  if(s)d=d.filter(x=>x.n.toLowerCase().includes(s)||x.d.toLowerCase().includes(s));
+  return d.sort((a,b)=>(a.yN||0)-(b.yN||0));
 }
 
 function renderPoints(){
- pointMarkers.forEach(m=>map.removeLayer(m));pointMarkers=[];
- if(labelLayer){map.removeLayer(labelLayer)}
- labelLayer=L.layerGroup.addTo(map);
- var items=getFiltered;currentFiltered=items;
- items.forEach(d=>{
- var cc=CATS[d.cat];
- var r=d.cat==="S"?4:d.cat==="C"?4.5:5.5;
- [0,-360,360].forEach(off=>{
- // Invisible large hit target
- var hit=L.circleMarker([d.la,d.lo+off],{radius:14,fillColor:"transparent",fillOpacity:0,stroke:false,interactive:true}).addTo(map);
- // Visible small dot
- var dot=L.circleMarker([d.la,d.lo+off],{radius:r,fillColor:cc.c,fillOpacity:.7,color:"rgba(255,255,255,.2)",weight:1,opacity:.4,interactive:false}).addTo(map);
- var popupHtml=`<div style="font-weight:700;font-size:13px;color:${cc.c}">${cc.l.slice(0,2)} ${d.n}</div>`+
- `<div style="font-size:10px;color:#777">${d.y||""}</div>`+
- `<div style="font-size:11px;color:#aaa;line-height:1.5;margin-top:3px">${d.d}</div>`;
- hit.bindPopup(popupHtml,{className:"tp",maxWidth:300});
- hit._d=d;dot._d=d;pointMarkers.push(hit);pointMarkers.push(dot);
- });
- });
- document.getElementById("cnt").textContent=`${items.length}件`;
- // Bring all point markers to front so they sit above territories
- pointMarkers.forEach(m=>{try{m.bringToFront}catch(e){}});
- updateLabels;
+  pointMarkers.forEach(m=>map.removeLayer(m));pointMarkers=[];
+  if(labelLayer){map.removeLayer(labelLayer)}
+  labelLayer=L.layerGroup().addTo(map);
+  var items=getFiltered();currentFiltered=items;
+  items.forEach(d=>{
+    var cc=CATS[d.cat];
+    var r=d.cat==="S"?4:d.cat==="C"?4.5:5.5;
+    [0,-360,360].forEach(off=>{
+      // Invisible large hit target
+      var hit=L.circleMarker([d.la,d.lo+off],{radius:14,fillColor:"transparent",fillOpacity:0,stroke:false,interactive:true}).addTo(map);
+      // Visible small dot
+      var dot=L.circleMarker([d.la,d.lo+off],{radius:r,fillColor:cc.c,fillOpacity:.7,color:"rgba(255,255,255,.2)",weight:1,opacity:.4,interactive:false}).addTo(map);
+      var popupHtml=`<div style="font-weight:700;font-size:13px;color:${cc.c}">${cc.l.slice(0,2)} ${d.n}</div>`+
+        `<div style="font-size:10px;color:#777">${d.y||""}</div>`+
+        `<div style="font-size:11px;color:#aaa;line-height:1.5;margin-top:3px">${d.d}</div>`;
+      hit.bindPopup(popupHtml,{className:"tp",maxWidth:300});
+      hit._d=d;dot._d=d;pointMarkers.push(hit);pointMarkers.push(dot);
+    });
+  });
+  document.getElementById("cnt").textContent=`${items.length}件`;
+  // Bring all point markers to front so they sit above territories
+  pointMarkers.forEach(m=>{try{m.bringToFront()}catch(e){}});
+  updateLabels();
 }
 
 function updateLabels(){
- if(labelLayer){map.removeLayer(labelLayer)}
- labelLayer=L.layerGroup.addTo(map);
- var zoom=map.getZoom;if(zoom<5)return;
- var bounds=map.getBounds.pad(0.1);
- var max=zoom<7?80:300;let count=0;
- for(var d of currentFiltered){
- if(count>=max)break;
- if(!bounds.contains([d.la,d.lo]))continue;
- var cc=CATS[d.cat];
- var lbl=L.tooltip({permanent:true,direction:"right",offset:[6,0],className:"ml ml-"+d.cat,opacity:1});
- lbl.setContent(d.n);lbl.setLatLng([d.la,d.lo]);
- labelLayer.addLayer(lbl);count++;
- }
+  if(labelLayer){map.removeLayer(labelLayer)}
+  labelLayer=L.layerGroup().addTo(map);
+  var zoom=map.getZoom();if(zoom<5)return;
+  var bounds=map.getBounds().pad(0.1);
+  var max=zoom<7?80:300;let count=0;
+  for(var d of currentFiltered){
+    if(count>=max)break;
+    if(!bounds.contains([d.la,d.lo]))continue;
+    var cc=CATS[d.cat];
+    var lbl=L.tooltip({permanent:true,direction:"right",offset:[6,0],className:"ml ml-"+d.cat,opacity:1});
+    lbl.setContent(d.n);lbl.setLatLng([d.la,d.lo]);
+    labelLayer.addLayer(lbl);count++;
+  }
 }
 let lt=null;
 function dbl(){if(lt)clearTimeout(lt);lt=setTimeout(updateLabels,150)}
 map.on("zoomend",dbl);map.on("moveend",dbl);
 
-renderPoints;
+renderPoints();
 </script>
 </body>
 </html>
