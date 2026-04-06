@@ -1,0 +1,100 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>帝国の統治構造比較マトリクス</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048;--border:rgba(201,169,110,.08)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+.hdr{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.hdr h1{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2)}
+.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
+.tbl-wrap{overflow-x:auto;padding:12px 16px 40px;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;min-width:1300px;width:100%}
+th{background:rgba(201,169,110,.06);color:var(--gold2);font-family:'Noto Serif JP',serif;font-size:10px;font-weight:700;padding:10px 10px;text-align:left;border-bottom:1px solid rgba(201,169,110,.12);position:sticky;top:0;white-space:nowrap}
+td{padding:8px 10px;border-bottom:1px solid rgba(255,255,255,.03);font-size:8.5px;color:var(--text2);line-height:1.7;vertical-align:top}
+td:first-child{font-family:'Noto Serif JP',serif;font-weight:700;color:var(--gold2);font-size:9px;white-space:nowrap;min-width:90px;background:rgba(201,169,110,.02)}
+tr:hover td{background:rgba(201,169,110,.02)}
+td strong{color:var(--text);font-weight:600}
+.note{text-align:center;padding:8px 20px 32px;max-width:800px;margin:0 auto}.note p{font-size:9px;color:var(--text3);line-height:1.8}.note strong{color:var(--gold)}
+@media(max-width:600px){.hdr{padding:10px 12px}.hdr h1{font-size:12px}th,td{padding:6px 8px;font-size:8px}td:first-child{font-size:8px}.note p{font-size:8px}}
+</style></head><body>
+<div class="hdr"><h1>帝国の統治構造比較マトリクス</h1><a href="charts.html">← Ad Chartae</a></div>
+<div class="tbl-wrap"><table>
+<thead><tr><th>比較軸</th><th>アケメネス朝<br>ペルシア<br>(BC550-BC330)</th><th>ローマ帝国<br>(BC27-AD476/1453)</th><th>秦・漢<br>(BC221-AD220)</th><th>オスマン帝国<br>(1299-1922)</th><th>ムガル帝国<br>(1526-1858)</th><th>清<br>(1636-1912)</th><th>ロシア帝国<br>(1721-1917)</th></tr></thead>
+<tbody>
+
+<tr><td>支配者の称号</td>
+<td>「諸王の王(シャーハンシャー)」</td>
+<td>★<strong>プリンケプス</strong>(元首)→ドミヌス(主人)→皇帝(インペラートル)</td>
+<td>★<strong>皇帝</strong>(始皇帝が創始)。「天子」=天命を受けた支配者</td>
+<td>★<strong>スルタン</strong>＋<strong>カリフ</strong>(1517以降)。イスラーム世界の政治的・宗教的最高権威を兼ねる</td>
+<td>★<strong>パーディシャー</strong>(皇帝)。ティムール朝の後継を自称</td>
+<td>★<strong>皇帝</strong>＋<strong>ハン</strong>(モンゴル系遊牧民の首長)。満州族・モンゴル族・漢族に対してそれぞれ異なる称号</td>
+<td>★<strong>ツァーリ(皇帝)</strong>。カエサルに由来。ピョートル1世以降は「インペラートル」</td>
+</tr>
+
+<tr><td>★地方統治制度</td>
+<td>★<strong>サトラップ(知事)制</strong>：帝国を約20の属州に分割→各州に知事を配置→ただし★<strong>「王の目・王の耳」</strong>(監察官)を派遣して知事を監視</td>
+<td>★<strong>属州制</strong>：元老院属州(平定地)＋皇帝属州(軍事的に重要な辺境)→★<strong>総督</strong>を派遣。自治都市(ムニキピウム)に一定の自治権→★<strong>ローマ市民権</strong>の漸進的拡大(212カラカラ帝の勅令で全自由民に)</td>
+<td>★<strong>郡県制</strong>(秦)→★<strong>郡国制</strong>(漢初＝郡県＋王国の併用)→武帝が推恩の令で王国を弱体化→実質的に郡県制。★<strong>中央集権的な官僚支配</strong>の原型</td>
+<td>★<strong>ティマール制</strong>：騎士(スィパーヒー)に徴税権を付与→軍事奉仕の対価。★<strong>ミッレト制</strong>：宗教共同体(ギリシア正教・アルメニア正教・ユダヤ教)に内部自治を認める→★<strong>多民族・多宗教帝国の統治の知恵</strong></td>
+<td>★<strong>マンサブダール制</strong>：官僚に位階(マンサブ)を付与→軍事力の提供義務。★<strong>ザミーンダール</strong>(地方の徴税請負人)→のちイギリスのザミーンダーリー制に転用</td>
+<td>★<strong>満漢併用制</strong>：中央の各部署に満州人と漢人を1名ずつ配置→相互監視。★<strong>八旗制</strong>：満州人・モンゴル人・漢人をそれぞれ8旗に編成→軍事＋行政＋社会組織を兼ねる。★<strong>藩部</strong>(モンゴル・チベット・新疆)は理藩院が管轄→間接統治</td>
+<td>★<strong>県(グベールニヤ)制</strong>：知事を中央から派遣。★<strong>農奴制</strong>が地方統治の基盤(1861まで)→貴族が領地の農奴を支配→「農奴制＝地方統治の外注」</td>
+</tr>
+
+<tr><td>★官僚登用</td>
+<td>ペルシア人貴族が中心。ただし被征服民も能力に応じて登用</td>
+<td>★<strong>元老院</strong>(共和政の遺制)＋★<strong>騎士身分</strong>(エクイテス)からの登用。帝政後期は軍人皇帝が→実力主義</td>
+<td>★<strong>郷挙里選</strong>(漢)→★<strong>九品中正</strong>(魏晋)→★<strong>科挙</strong>(隋唐以降)。科挙は世界初の大規模な実力主義的官僚登用制度</td>
+<td>★<strong>デヴシルメ</strong>(キリスト教徒の子弟を強制徴集→改宗→教育→★<strong>イェニチェリ(常備軍)</strong>＋官僚に登用)→★<strong>奴隷出身者が帝国の中枢を担う</strong>独特のシステム</td>
+<td>★マンサブダール制で位階を付与。イスラーム教徒が中心だが★<strong>アクバルはヒンドゥー(ラージプート)も高位に登用</strong>→宗教融和</td>
+<td>★<strong>科挙</strong>(漢人の登用)＋★<strong>八旗制</strong>(満州人の特権的地位)の併用。中央は満漢併用だが★<strong>満州人が実質的に優位</strong></td>
+<td>★<strong>官等制(チン)</strong>：ピョートル1世の「官等表(1722)」→14等級の官僚制度→★一定の等級以上で貴族の資格を付与＝「勤務貴族」</td>
+</tr>
+
+<tr><td>★多民族統治の<br>方法</td>
+<td>★<strong>「寛容な支配」</strong>：被征服民の宗教・慣習を尊重(★キュロス2世がバビロン捕囚のユダヤ人を解放)。★<strong>アラム語</strong>を帝国共通語に採用→言語の多様性を維持しつつ統一</td>
+<td>★<strong>ローマ市民権の拡大</strong>＝征服民を法的に統合する手段。★ローマ法(万民法)の適用→法の普遍性。ただし★<strong>文化的にはローマ化(ラテン語・都市文化)</strong>を推進→「同化」の側面も</td>
+<td>★<strong>華夷秩序</strong>：「中華」(文明)と「夷狄」(野蛮)の区別→ただし文化的に同化すれば受け入れる(★<strong>文化主義的な包摂</strong>)。★<strong>冊封・朝貢体制</strong>で周辺国を秩序に組み込む</td>
+<td>★<strong>ミッレト制</strong>で宗教的多様性を許容→各宗教共同体が婚姻・教育・裁判を自治。★<strong>イスラーム法(シャリーア)</strong>が帝国の法的基盤→ただし非ムスリムには独自の法を許容→★<strong>「多元的法秩序」</strong></td>
+<td>★<strong>アクバルの融和策</strong>(ジズヤ廃止・ラージプートとの同盟)→★<strong>アウラングゼーブの不寛容策</strong>(ジズヤ復活)→★<strong>帝国衰退の直接原因</strong>＝宗教政策の転換が統合を破壊した典型例</td>
+<td>★<strong>多元的統治</strong>：満州人には八旗・モンゴル人には盟旗制度・漢人には郡県制・チベットにはダライ＝ラマを通じた間接統治・ウイグルにはベク(在地有力者)→★<strong>「一つの帝国・複数の制度」</strong></td>
+<td>★<strong>「ロシア化」政策</strong>：ロシア正教・ロシア語の強制→特にアレクサンドル3世以降。★ポーランド弾圧→★ユダヤ人迫害(ポグロム)→★<strong>同化主義的・抑圧的な多民族統治</strong>の典型</td>
+</tr>
+
+<tr><td>★交通・通信</td>
+<td>★<strong>「王の道」</strong>：スサ→サルデスの約2700kmの幅広い道路→★<strong>駅伝制(アンガレイオン)</strong>で7日で情報伝達(通常は90日)→帝国統治の基盤</td>
+<td>★<strong>ローマ街道</strong>：「すべての道はローマに通ず」→★約8万kmの舗装道路網→軍事移動＋交易＋文化伝播。★<strong>地中海</strong>＝「我らの海(マーレ・ノストルム)」→海上交通も整備</td>
+<td>★<strong>馳道</strong>(秦の始皇帝)＝帝国を貫く幹線道路。★<strong>文字・度量衡・車軌の統一</strong>→物流と情報の統一。漢代に★<strong>シルクロード</strong>が開拓(張騫)</td>
+<td>★<strong>隊商路(キャラバンルート)</strong>の保護→バルカン〜アナトリア〜アラブ〜エジプトの広大な交易圏。★<strong>海軍</strong>で地中海の制海権を握る(16Cのレパントまで)</td>
+<td>★<strong>大幹道(グランド・トランク・ロード)</strong>：ムガル帝国を東西に貫く幹線道路(カブール→デリー→ベンガル)→のちイギリスが整備・利用</td>
+<td>★<strong>大運河</strong>(隋代に建設→元代に改修)：杭州→北京の約1800km→南北の物資輸送→★<strong>帝国の経済的統一の基盤</strong>。★<strong>駅站制(ジャムチ)</strong>＝モンゴル帝国から継承した駅伝制度</td>
+<td>★<strong>シベリア鉄道</strong>(1891-1916)：モスクワ→ウラジオストクの約9300km→★世界最長の鉄道→帝国の東西統合＋極東進出の手段</td>
+</tr>
+
+<tr><td>★軍事制度</td>
+<td>★<strong>「不死隊(アタナトイ)」</strong>：精鋭1万人の近衛兵(欠員が出ると即補充→常に1万人)。各属州からの徴兵で多民族軍を編成</td>
+<td>★<strong>軍団(レギオン)</strong>：市民兵→職業軍人化(マリウスの軍制改革BC107)。★<strong>リメス(辺境防衛線)</strong>＝ハドリアヌスの長城(ブリタニア)等。帝政後期は★<strong>ゲルマン人傭兵</strong>に依存→帝国弱体化の一因</td>
+<td>★<strong>徴兵制</strong>(秦＝皆兵制)→★<strong>府兵制</strong>(北朝〜唐前半)→★<strong>募兵制</strong>(唐中期以降＝節度使の私兵化→安史の乱の原因)</td>
+<td>★<strong>イェニチェリ</strong>：デヴシルメで徴集したキリスト教徒の少年→改宗・訓練→★<strong>世界初の常備歩兵軍</strong>→スルタンに絶対忠誠。★<strong>ティマール騎兵(スィパーヒー)</strong>＝封土の代わりに軍事奉仕</td>
+<td>★<strong>マンサブダール制</strong>：位階に応じた騎兵の維持義務。★象兵＋騎兵が主力。ただし火器の導入が遅れ→マラーターやイギリスに敗北</td>
+<td>★<strong>八旗兵</strong>(満州人の精鋭)＋★<strong>緑営</strong>(漢人の正規軍)。太平天国以降は★<strong>郷勇(義勇軍)</strong>＝曾国藩の湘軍・李鴻章の淮軍→地方軍閥化の原因</td>
+<td>★<strong>ストレリツィ(銃兵隊)</strong>→ピョートル1世が解体し★<strong>徴兵制の正規軍</strong>を創設。★<strong>コサック</strong>＝辺境の自由な騎兵集団→帝国の辺境防衛＋シベリア征服の先兵</td>
+</tr>
+
+<tr><td>崩壊の要因</td>
+<td>★アレクサンドロス大王の征服(BC330)。内部的には後継者争い・サトラップの自立傾向</td>
+<td>★ゲルマン人の大移動＋軍人皇帝の乱立＋キリスト教化＋経済的衰退＋コロヌス制→★395東西分裂→476西ローマ滅亡</td>
+<td>★外戚・宦官の専横(漢)→黄巾の乱→三国分裂。★<strong>中央集権が強すぎて皇帝の資質に依存</strong>→「良い皇帝」がいないと崩壊</td>
+<td>★イェニチェリの堕落＋ティマール制の崩壊＋西欧の軍事技術への遅れ→18-19Cの改革の失敗→WW1敗北→解体</td>
+<td>★アウラングゼーブの不寛容→マラーターの台頭→地方ナワーブの自立→イギリスの介入→★<strong>シパーヒーの乱(1857)で名目的にも消滅</strong></td>
+<td>★アヘン戦争→太平天国→日清戦争→列強の中国分割→辛亥革命(1911)→★<strong>異民族支配(満州族)への不満が革命の推進力</strong></td>
+<td>★農奴制の矛盾＋工業化の遅れ＋WW1の敗北→★<strong>ロシア革命(1917)</strong>→ロマノフ朝崩壊</td>
+</tr>
+
+</tbody></table></div>
+
+<div class="note"><p>帝国統治の比較＝<strong>「どう多民族を統合したか」</strong>が核心。寛容型(アケメネス・オスマン・清)vs同化型(ローマ・ロシア)vs制度型(秦漢・ムガル)。</p></div>
+</body></html>
