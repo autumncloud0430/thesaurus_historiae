@@ -1,0 +1,82 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>「海の道」フロー ― インド洋交易の2000年</title><style>@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048;--border:rgba(201,169,110,.08)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+.hdr{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.hdr h1{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2)}
+.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
+.flow{max-width:720px;margin:0 auto;padding:24px 20px 60px}
+.phase{position:relative;margin-bottom:2px;padding:16px 16px 16px 60px;border-left:2px solid rgba(201,169,110,.08);margin-left:30px}
+.phase:last-child{border-left-color:transparent}
+.phase-label{position:absolute;left:-42px;top:16px;width:36px;font-family:'Cormorant Garamond',serif;font-size:10px;font-weight:700;color:var(--text3);text-align:right;line-height:1.3}
+.phase::before{content:'';position:absolute;left:-5px;top:22px;width:8px;height:8px;border-radius:50%;background:var(--bg);border:2px solid rgba(201,169,110,.25)}
+.node{background:rgba(255,255,255,.015);border:1px solid rgba(255,255,255,.04);border-radius:8px;padding:10px 14px;margin-bottom:8px;border-left:3px solid transparent}
+.node:hover{background:rgba(255,255,255,.03)}
+.node-title{font-family:'Noto Serif JP',serif;font-size:12px;font-weight:700;color:var(--gold2);margin-bottom:2px}
+.node-year{font-family:'Cormorant Garamond',serif;font-size:11px;color:var(--gold);opacity:.6;margin-bottom:4px}
+.node-desc{font-size:10px;color:var(--text2);line-height:1.7}
+.node-desc strong{color:var(--text);font-weight:600}
+.arrow{display:flex;align-items:center;gap:6px;padding:2px 0 2px 8px;margin-bottom:6px}
+.arrow-line{width:16px;height:1px;background:rgba(201,169,110,.15)}
+.arrow-text{font-size:8px;color:var(--text3)}
+.arrow-icon{color:rgba(201,169,110,.3);font-size:10px}
+.branch-row{display:flex;gap:8px;margin-bottom:8px}
+.branch-row .node{flex:1}
+.node.key{background:rgba(201,169,110,.04);border-color:rgba(201,169,110,.12)}
+.side-note{font-size:8px;color:var(--text3);padding:4px 8px;border-left:2px solid rgba(201,169,110,.1);margin:4px 0 8px;line-height:1.6}
+.note{text-align:center;padding:8px 20px 32px;max-width:700px;margin:0 auto}.note p{font-size:9px;color:var(--text3);line-height:1.8}.note strong{color:var(--gold)}
+@media(max-width:600px){
+.hdr{padding:10px 12px}.hdr h1{font-size:12px}
+.flow{padding:16px 10px 40px}
+.phase{padding:12px 10px 12px 44px;margin-left:20px}
+.phase-label{left:-30px;width:28px;font-size:8px}
+.node{padding:8px 10px}.node-title{font-size:11px}.node-desc{font-size:9px}
+.branch-row{flex-direction:column}
+.side-note{font-size:7.5px}
+.note p{font-size:8px}
+}
+</style></head><body><div class="hdr"><h1>「海の道」フロー ― インド洋交易の2000年</h1><a href="charts.html">← Ad Chartae</a></div><div class="flow">
+
+<div class="phase"><div class="phase-label">1C<br>〜5C<br>古代</div>
+ <div class="node key"><div class="node-title">★古代のインド洋交易 ― ローマ・インド・東南アジア</div>
+ <div class="node-desc">★<strong>「エリュトゥラー海案内記」</strong>(1C)：ギリシア語の航海案内書→紅海からインド洋に至る港・交易品を記録→★<strong>季節風(モンスーン)航法</strong>の利用＝★<strong>ヒッパロスの風</strong>（夏は南西風でインドへ・冬は北東風でアラビアへ）→直行航路が可能に。<br><strong>ローマ帝国</strong>：紅海→インド洋→インド西岸(ムッスィーリス港)の直接交易→★<strong>ローマ金貨がインドから大量に出土</strong>→胡椒・絹・宝石・香辛料をインドから輸入→★ローマは金・銀で支払い→<strong>プリニウスが「インドへの金の流出」を嘆く</strong>。<br>★<strong>扶南</strong>(メコン川下流)・★<strong>オケオ港</strong>：東南アジアの中継貿易拠点→ローマの金貨・インドの装飾品が出土→<strong>「海のシルクロード」の西端と東端をつなぐ結節点</strong>。<br>★<strong>中国(後漢)</strong>：大秦(ローマ帝国)への使節伝説(166年)→南海交易路の存在を中国側も認識。</div></div>
+ <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">7C以降→イスラーム商人が交易を支配</div></div>
+</div>
+
+<div class="phase"><div class="phase-label">7C<br>〜15C<br>イスラーム</div>
+ <div class="node key"><div class="node-title">★ダウ船の世界 ― イスラーム商人の海洋ネットワーク</div>
+ <div class="node-desc">★<strong>ダウ船</strong>：三角帆(ラテン帆)のアラブ式帆船→モンスーンを利用してアラビア半島↔東アフリカ↔インド↔東南アジアを結ぶ→★<strong>インド洋を「ムスリムの海」に</strong>。<br><strong>主な交易品</strong>：東アフリカ(金・象牙・奴隷)→アラビア(乳香・没薬)→インド(胡椒・綿布・宝石)→東南アジア(香辛料＝丁子・ナツメグ)→中国(陶磁器・絹)。★<strong>広州(唐代)→泉州(宋元代)</strong>＝中国側の主要港。<br>★<strong>東アフリカ</strong>：★<strong>スワヒリ文化圏</strong>の形成＝アラブ商人とアフリカ人の混血→スワヒリ語(バントゥー語＋アラビア語)→キルワ・モンバサ・マリンディ・ザンジバルなどの★<strong>港市国家</strong>群の繁栄。★<strong>イブン＝バットゥータ</strong>(14C)が東アフリカ・インド・中国を旅行→『三大陸周遊記(旅行記)』に記録。<br>★<strong>イスラームの伝播</strong>：商人を通じたイスラームの「平和的伝播」→インド(デリー＝スルタン朝)・東南アジア(マラッカ→ジャワ→モルッカ)に広がる。</div></div>
+ <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">鄭和の大航海→ただし明の海禁政策で中断→ポルトガルの進出</div></div>
+</div>
+
+<div class="phase"><div class="phase-label">15C<br>鄭和</div>
+ <div class="node"><div class="node-title">★鄭和の南海遠征(1405-33)</div>
+ <div class="node-desc">★<strong>明の永楽帝</strong>の命令で宦官★<strong>鄭和</strong>が★<strong>7度の大航海</strong>を実施(1405-33)。<br><strong>規模</strong>：最大で★<strong>艦船200隻以上・乗組員2万7千人</strong>→コロンブスの艦隊(3隻・90人)とは比較にならない世界最大の艦隊。旗艦「宝船」は全長約120m(推定)。<br><strong>航路</strong>：南シナ海→マラッカ→インド洋→ペルシア湾・★<strong>東アフリカ(マリンディ)</strong>まで到達→キリン(麒麟)を持ち帰る。<br>★<strong>朝貢貿易</strong>の拡大が目的(領土征服ではない)→各地の王に明の冊封を要請→マラッカ王国を保護。<br><strong>ただし</strong>：永楽帝の死後→★<strong>海禁政策</strong>(民間の海外貿易禁止)→鄭和の記録は廃棄→★<strong>中国は海洋から撤退</strong>→約70年後にポルトガルが同じ海域に進出→「もし中国が海禁政策をとらなかったら？」は世界史のifの一つ。</div></div>
+ <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">中国の撤退→権力の空白→ポルトガルがインド洋に進出</div></div>
+</div>
+
+<div class="phase"><div class="phase-label">16C<br>ポルトガル</div>
+ <div class="node key"><div class="node-title">★ポルトガルの「海の帝国」</div>
+ <div class="node-desc">★<strong>ヴァスコ＝ダ＝ガマ</strong>のインド航路開拓(1498カリカット到達)→★<strong>「海のシルクロード」をヨーロッパ人が直接参入</strong>＝アラブ商人の中継貿易独占を打破。<br>★<strong>アルブケルケ</strong>の戦略：インド洋の要衝を武力で確保→★<strong>ゴア</strong>(1510インド西岸)→★<strong>マラッカ</strong>(1511)→★<strong>ホルムズ</strong>(1515ペルシア湾入口)→★<strong>モルッカ諸島</strong>(1512香辛料)→マカオ(1557中国)→長崎(1571日本)→★<strong>「点と線の帝国」</strong>＝領土を面で支配せず★<strong>貿易拠点(ファクトリア)を結ぶ海上ネットワーク</strong>。<br><strong>カルタス・ダ・インディア(ポルトガル香辛料貿易)</strong>：リスボン→喜望峰→ゴア→マラッカ→モルッカの航路を独占→★<strong>胡椒の価格をヨーロッパで決定する力</strong>→ただし17Cにオランダに奪われる。</div></div>
+ <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">ポルトガル衰退→オランダ(VOC)→イギリスの海上覇権</div></div>
+</div>
+
+<div class="phase"><div class="phase-label">17C<br>VOC</div>
+ <div class="node"><div class="node-title">★VOCの海洋覇権</div>
+ <div class="node-desc">★<strong>VOC(オランダ東インド会社1602)</strong>：★世界初の株式会社→資本金はイギリス東インド会社の10倍→軍事力と商業力を兼備。<br>★<strong>アンボイナ事件</strong>(1623)：モルッカ諸島でイギリス商人を虐殺→★<strong>香辛料貿易からイギリスを排除</strong>→イギリスはインドに重心を移動(→のちインド帝国へ)。<br><strong>バタヴィア</strong>(現ジャカルタ)を拠点→ジャワ島を支配。★<strong>日本の出島</strong>(1641-)＝ヨーロッパで唯一日本との貿易を維持。<br>★<strong>ケープ植民地</strong>(1652)：喜望峰にオランダ人が入植→のち英に奪われ(1806)→南アフリカの起源。<br><strong>衰退</strong>：18C後半に経営悪化→1799年解散→蘭領東インド政府に移管。★<strong>「商業の時代」から「帝国主義の時代」へ</strong>の転換。</div></div>
+ <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">オランダ衰退→イギリスがインド洋の覇者に</div></div>
+</div>
+
+<div class="phase"><div class="phase-label">19C<br>パクス・<br>ブリタニカ</div>
+ <div class="node key"><div class="node-title">★イギリスのインド洋支配</div>
+ <div class="node-desc">★<strong>パクス＝ブリタニカ</strong>のインド洋版：インド(帝冠の宝石)→スエズ運河(1869)→アデン→セイロン→シンガポール→香港の★<strong>拠点ネットワーク</strong>でインド洋〜太平洋を支配。<br>★<strong>スエズ運河</strong>(1869)：地中海→紅海→インド洋の最短航路→★<strong>インド洋交易の構造を根本的に変革</strong>→それまでの喜望峰回り航路の重要性が低下→スエズの支配＝インド洋の支配。<br>★<strong>蒸気船の時代</strong>：帆船→蒸気船→季節風(モンスーン)に依存しない通年航行が可能に→★<strong>2000年続いたモンスーン依存の交易システムが終焉</strong>。石炭補給基地の確保が新たな地政学的要因に。<br><strong>交易品の変化</strong>：香辛料(中世)→綿織物・茶・アヘン(近代)→★<strong>石油</strong>(20C以降＝ペルシア湾)→インド洋は「石油の海」に。</div></div>
+ <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">20C→帝国の解体→インド洋は「石油の海」に</div></div>
+</div>
+
+<div class="phase"><div class="phase-label">20C〜<br>現代</div>
+ <div class="node"><div class="node-title">現代のインド洋 ― 石油と地政学</div>
+ <div class="node-desc"><strong>脱植民地化</strong>：インド独立(1947)→スエズ動乱(1956)→英の撤退→★<strong>インド洋に覇権国家が不在の時代</strong>→米ソの進出。<br>★<strong>石油の海</strong>：ペルシア湾→ホルムズ海峡→インド洋→マラッカ海峡が★<strong>世界のエネルギー輸送の大動脈</strong>に→日本・中国・韓国の石油輸入の約8割がこのルートを通過。<br>★<strong>海賊問題</strong>：ソマリア沖の海賊(2008年頃ピーク)→国際的な海軍派遣→マラッカ海峡の海賊問題。<br>★<strong>中国の「真珠の首飾り」戦略</strong>：スリランカ(ハンバントタ港)・パキスタン(グワダル港)・ジブチ(軍事基地)→★<strong>一帯一路(海上シルクロード)</strong>→インド洋における中印の地政学的競争→★<strong>2000年前のローマとインドの交易ルートが21世紀の大国間競争の舞台に</strong>。</div></div>
+</div>
+
+</div><div class="note"><p>「海の道」の核心＝<strong>モンスーン交易(古代)→ダウ船(イスラーム)→鄭和(明)→ポルトガル(拠点支配)→VOC(独占)→イギリス(スエズ運河)→現代(石油)</strong>。陸の「シルクロード」と比較し、「海の道」はより大量の物資を運べ、文明交流の主要ルートだった。</p></div></body></html>

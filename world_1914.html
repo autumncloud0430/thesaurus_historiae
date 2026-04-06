@@ -60,12 +60,12 @@ body{font-family:'Noto Sans JP',sans-serif;background:#080b14;color:#e0dcd6;heig
 <button class="tb on" id="pt" onclick="toggleCat('T')">📜条約</button>
 <button class="tb on" id="pc" onclick="toggleCat('C')">🏛都市</button>
 <button class="tb on" id="ps" onclick="toggleCat('S')">🏺遺跡</button>
-<input class="si" id="search" placeholder="検索..." oninput="renderPoints()">
+<input class="si" id="search" placeholder="検索..." oninput="renderPoints">
 <span class="cnt" id="cnt"></span>
 </div>
 <div id="map"></div>
 <div class="leg-wrap">
-<div class="leg-toggle" onclick="toggleLeg()" id="legtitle">▼ 凡例</div>
+<div class="leg-toggle" onclick="toggleLeg" id="legtitle">▼ 凡例</div>
 <div class="leg-body" id="leg"></div>
 </div>
 <script>
@@ -250,9 +250,9 @@ var NORM={
 var PALETTE=["#c05050","#5a9ac0","#c0a050","#60aa80","#9b6b8a","#c07a40","#6a85c0","#aa8a50","#70aa70","#b06080","#5aaa9a","#a0a060","#8a6090","#cc7070","#60b0a0","#b09050","#7070b0","#a07070","#609060","#b08070","#6090c0","#90b060","#c09070","#7a9a8a","#a06090","#80a0c0"];
 function hashColor(s){var h=0;for(var i=0;i<s.length;i++)h=((h<<5)-h)+s.charCodeAt(i);return PALETTE[Math.abs(h)%PALETTE.length];}
 function getCol(name,subj){
-  var key;
-  if(subj&&subj!==name&&subj!==""){key=NORM[subj]||subj;}else{key=NORM[name]||name;}
-  return PCOLORS[key]||hashColor(name);
+ var key;
+ if(subj&&subj!==name&&subj!==""){key=NORM[subj]||subj;}else{key=NORM[name]||name;}
+ return PCOLORS[key]||hashColor(name);
 }
 
 var map=L.map("map",{center:[30,20],zoom:3,minZoom:2,maxZoom:12,worldCopyJump:true});
@@ -273,55 +273,55 @@ var seen={};
 [0,-360,360].forEach(function(offset){
 var data=offset===0?TERR:shiftGJ(TERR,offset);
 var layer=L.geoJSON(data,{
-  style:function(f){var n=f.properties.NAME||"";var s=f.properties.SUBJECTO||"";var c=getCol(n,s);return{color:c,weight:1.5,opacity:0.6,fillColor:c,fillOpacity:0.2}},
-  onEachFeature:function(f,layer){
-    var n=f.properties.NAME||"";
-    var s=f.properties.SUBJECTO||"";
-    var c=getCol(n,s);
-    var j=ja(n);
-    var d=DESC[n]||"";
-    var subjNote=(s&&s!==n)?"<div style='font-size:10px;color:#888'>宗主国: "+ja(s)+"</div>":"";
-    layer.bindPopup(
-      "<div style='font-weight:700;font-size:14px;color:"+c+"'>"+j+"</div>"+
-      (j!==n?"<div style='font-size:10px;color:#666'>"+n+"</div>":"")+
-      subjNote+
-      (d?"<div style='font-size:11px;color:#aaa;margin-top:4px;line-height:1.6'>"+d+"</div>":"")+
-      "<div style='font-size:10px;color:#777;margin-top:4px'>1914年</div>",
-      {className:"tp",maxWidth:340}
-    );
-    if(offset===0){
-      try{
-        var center=layer.getBounds().getCenter();
-        var lbl=L.tooltip({permanent:true,direction:"center",className:"tname",opacity:0.9});
-        var fs=j.length>10?"9px":"11px";
-        lbl.setContent("<span style='color:"+c+";font-size:"+fs+"'>"+j+"</span>");
-        lbl.setLatLng(center);map.addLayer(lbl);tLabels.push(lbl);
-      }catch(e){}
-      var caps=CAPS[n];
-      if(caps){caps.forEach(function(cap){
-        var m=L.circleMarker([cap[1],cap[2]],{radius:4,fillColor:"#ffd700",fillOpacity:0.9,color:"#fff",weight:1.5,opacity:0.8}).addTo(map);
-        m.bindTooltip(cap[0],{permanent:true,direction:"right",offset:[5,0],className:"ml ml-C",opacity:1});
-        m.bindPopup("<div style='font-weight:700;color:#ffd700;font-size:13px'>"+cap[0]+"</div><div style='font-size:11px;color:#999'>"+j+"の首都</div>",{className:"tp"});
-        capMarkers.push(m);
-      })}
-      if(!seen[n]){seen[n]=1;
-        var item=document.createElement("div");item.className="lgi";
-        var sn=(s&&s!==n)?" ["+ja(s)+"]":"";
-        item.innerHTML="<div class='sw' style='background:"+c+"55;border:1px solid "+c+"88'></div><span style='color:"+c+"'>"+j+sn+"</span>";
-        item.onclick=(function(ly){return function(){try{map.fitBounds(ly.getBounds(),{padding:[50,50],maxZoom:6})}catch(e){}}})(layer);
-        leg.appendChild(item);
-      }
-    }
-  }
+ style:function(f){var n=f.properties.NAME||"";var s=f.properties.SUBJECTO||"";var c=getCol(n,s);return{color:c,weight:1.5,opacity:0.6,fillColor:c,fillOpacity:0.2}},
+ onEachFeature:function(f,layer){
+ var n=f.properties.NAME||"";
+ var s=f.properties.SUBJECTO||"";
+ var c=getCol(n,s);
+ var j=ja(n);
+ var d=DESC[n]||"";
+ var subjNote=(s&&s!==n)?"<div style='font-size:10px;color:#888'>宗主国: "+ja(s)+"</div>":"";
+ layer.bindPopup(
+ "<div style='font-weight:700;font-size:14px;color:"+c+"'>"+j+"</div>"+
+ (j!==n?"<div style='font-size:10px;color:#666'>"+n+"</div>":"")+
+ subjNote+
+ (d?"<div style='font-size:11px;color:#aaa;margin-top:4px;line-height:1.6'>"+d+"</div>":"")+
+ "<div style='font-size:10px;color:#777;margin-top:4px'>1914年</div>",
+ {className:"tp",maxWidth:340}
+ );
+ if(offset===0){
+ try{
+ var center=layer.getBounds.getCenter;
+ var lbl=L.tooltip({permanent:true,direction:"center",className:"tname",opacity:0.9});
+ var fs=j.length>10?"9px":"11px";
+ lbl.setContent("<span style='color:"+c+";font-size:"+fs+"'>"+j+"</span>");
+ lbl.setLatLng(center);map.addLayer(lbl);tLabels.push(lbl);
+ }catch(e){}
+ var caps=CAPS[n];
+ if(caps){caps.forEach(function(cap){
+ var m=L.circleMarker([cap[1],cap[2]],{radius:4,fillColor:"#ffd700",fillOpacity:0.9,color:"#fff",weight:1.5,opacity:0.8}).addTo(map);
+ m.bindTooltip(cap[0],{permanent:true,direction:"right",offset:[5,0],className:"ml ml-C",opacity:1});
+ m.bindPopup("<div style='font-weight:700;color:#ffd700;font-size:13px'>"+cap[0]+"</div><div style='font-size:11px;color:#999'>"+j+"の首都</div>",{className:"tp"});
+ capMarkers.push(m);
+ })}
+ if(!seen[n]){seen[n]=1;
+ var item=document.createElement("div");item.className="lgi";
+ var sn=(s&&s!==n)?" ["+ja(s)+"]":"";
+ item.innerHTML="<div class='sw' style='background:"+c+"55;border:1px solid "+c+"88'></div><span style='color:"+c+"'>"+j+sn+"</span>";
+ item.onclick=(function(ly){return function{try{map.fitBounds(ly.getBounds,{padding:[50,50],maxZoom:6})}catch(e){}}})(layer);
+ leg.appendChild(item);
+ }
+ }
+ }
 }).addTo(map);
 tLayers.push(layer);
 });
 
 var legCollapsed=false;
-function toggleLeg(){
-  legCollapsed=!legCollapsed;
-  document.getElementById("leg").className="leg-body"+(legCollapsed?" collapsed":"");
-  document.getElementById("legtitle").textContent=legCollapsed?"\u25b6 凡例":"\u25bc 凡例";
+function toggleLeg{
+ legCollapsed=!legCollapsed;
+ document.getElementById("leg").className="leg-body"+(legCollapsed?" collapsed":"");
+ document.getElementById("legtitle").textContent=legCollapsed?"\u25b6 凡例":"\u25bc 凡例";
 }
 
 // === POINTS ===
@@ -473,7 +473,7 @@ var R=[
 ["平壌","前100",39.02,125.75,"楽浪郡→高句麗の都","C"],
 ["慶州","前57",35.86,129.21,"新羅の首都。仏国寺・石窟庵","C"],
 ["石窟庵","751",35.79,129.35,"新羅。花崗岩の仏教石窟","S"],
-["奈良","710",34.69,135.80,"平城京。東大寺大仏","C"],
+["奈良","710",34.69,135.80,"平城京。寺大仏","C"],
 ["京都","794",35.01,135.77,"平安京。1000年以上の都","C"],
 ["江戸(東京)","1603",35.68,139.77,"徳川幕府→明治維新後の首都","C"],
 ["広島","1945",34.39,132.46,"原爆投下(1945.8.6)","C"],
@@ -1039,76 +1039,76 @@ var R=[
 var ERA_YEARS=[-3000,-2000,-1500,-1000,-700,-500,-400,-323,-300,-200,-100,-1,100,200,300,400,500,600,700,800,900,1000,1100,1200,1279,1300,1400,1492,1530,1600,1650,1700,1715,1783,1800,1815,1880,1900,1914,1920,1930,1938,1945,1960,1994,2000];
 
 var DATA=R.map(function(r){
-  var yN=pY(r[1]);
-  var bestIdx=0,bestDist=Infinity;
-  ERA_YEARS.forEach(function(ey,i){var d=Math.abs((yN||0)-ey);if(d<bestDist){bestDist=d;bestIdx=i}});
-  return{n:r[0],y:r[1],la:r[2],lo:r[3],d:r[4],cat:r[5],yN:yN,eraIdx:bestIdx};
+ var yN=pY(r[1]);
+ var bestIdx=0,bestDist=Infinity;
+ ERA_YEARS.forEach(function(ey,i){var d=Math.abs((yN||0)-ey);if(d<bestDist){bestDist=d;bestIdx=i}});
+ return{n:r[0],y:r[1],la:r[2],lo:r[3],d:r[4],cat:r[5],yN:yN,eraIdx:bestIdx};
 }).filter(function(d){return d.eraIdx===38});
 
 var activeCats={B:true,T:true,C:true,S:true};
 var pointMarkers=[],labelLayer=null,currentFiltered=[];
 
 function toggleCat(cat){
-  activeCats[cat]=!activeCats[cat];
-  var any=false;for(var k in activeCats)if(activeCats[k])any=true;
-  if(!any)activeCats[cat]=true;
-  for(var k in CATS){document.getElementById("p"+k.toLowerCase()).className="tb"+(activeCats[k]?" on":"")}
-  renderPoints();
+ activeCats[cat]=!activeCats[cat];
+ var any=false;for(var k in activeCats)if(activeCats[k])any=true;
+ if(!any)activeCats[cat]=true;
+ for(var k in CATS){document.getElementById("p"+k.toLowerCase).className="tb"+(activeCats[k]?" on":"")}
+ renderPoints;
 }
 
-function getFiltered(){
-  var d=DATA.filter(function(x){return activeCats[x.cat]});
-  var s=document.getElementById("search").value.toLowerCase();
-  if(s)d=d.filter(function(x){return x.n.toLowerCase().indexOf(s)>=0||x.d.toLowerCase().indexOf(s)>=0});
-  return d.sort(function(a,b){return(a.yN||0)-(b.yN||0)});
+function getFiltered{
+ var d=DATA.filter(function(x){return activeCats[x.cat]});
+ var s=document.getElementById("search").value.toLowerCase;
+ if(s)d=d.filter(function(x){return x.n.toLowerCase.indexOf(s)>=0||x.d.toLowerCase.indexOf(s)>=0});
+ return d.sort(function(a,b){return(a.yN||0)-(b.yN||0)});
 }
 
-function renderPoints(){
-  pointMarkers.forEach(function(m){map.removeLayer(m)});pointMarkers=[];
-  if(labelLayer){map.removeLayer(labelLayer)}
-  labelLayer=L.layerGroup().addTo(map);
-  var items=getFiltered();currentFiltered=items;
-  items.forEach(function(d){
-    var cc=CATS[d.cat];
-    var r=d.cat==="S"?4:d.cat==="C"?4.5:5.5;
-    [0,-360,360].forEach(function(off){
-      var hit=L.circleMarker([d.la,d.lo+off],{radius:14,fillColor:"transparent",fillOpacity:0,stroke:false,interactive:true}).addTo(map);
-      var dot=L.circleMarker([d.la,d.lo+off],{radius:r,fillColor:cc.c,fillOpacity:0.7,color:"rgba(255,255,255,0.2)",weight:1,opacity:0.4,interactive:false}).addTo(map);
-      hit.bindPopup(
-        "<div style='font-weight:700;font-size:13px;color:"+cc.c+"'>"+cc.l.slice(0,2)+" "+d.n+"</div>"+
-        "<div style='font-size:10px;color:#777'>"+d.y+"</div>"+
-        "<div style='font-size:11px;color:#aaa;line-height:1.5;margin-top:3px'>"+d.d+"</div>",
-        {className:"tp",maxWidth:300}
-      );
-      hit._d=d;dot._d=d;pointMarkers.push(hit);pointMarkers.push(dot);
-    });
-  });
-  document.getElementById("cnt").textContent=items.length+"\u4ef6";
-  pointMarkers.forEach(function(m){try{m.bringToFront()}catch(e){}});
-  updateLabels();
+function renderPoints{
+ pointMarkers.forEach(function(m){map.removeLayer(m)});pointMarkers=[];
+ if(labelLayer){map.removeLayer(labelLayer)}
+ labelLayer=L.layerGroup.addTo(map);
+ var items=getFiltered;currentFiltered=items;
+ items.forEach(function(d){
+ var cc=CATS[d.cat];
+ var r=d.cat==="S"?4:d.cat==="C"?4.5:5.5;
+ [0,-360,360].forEach(function(off){
+ var hit=L.circleMarker([d.la,d.lo+off],{radius:14,fillColor:"transparent",fillOpacity:0,stroke:false,interactive:true}).addTo(map);
+ var dot=L.circleMarker([d.la,d.lo+off],{radius:r,fillColor:cc.c,fillOpacity:0.7,color:"rgba(255,255,255,0.2)",weight:1,opacity:0.4,interactive:false}).addTo(map);
+ hit.bindPopup(
+ "<div style='font-weight:700;font-size:13px;color:"+cc.c+"'>"+cc.l.slice(0,2)+" "+d.n+"</div>"+
+ "<div style='font-size:10px;color:#777'>"+d.y+"</div>"+
+ "<div style='font-size:11px;color:#aaa;line-height:1.5;margin-top:3px'>"+d.d+"</div>",
+ {className:"tp",maxWidth:300}
+ );
+ hit._d=d;dot._d=d;pointMarkers.push(hit);pointMarkers.push(dot);
+ });
+ });
+ document.getElementById("cnt").textContent=items.length+"\u4ef6";
+ pointMarkers.forEach(function(m){try{m.bringToFront}catch(e){}});
+ updateLabels;
 }
 
-function updateLabels(){
-  if(labelLayer){map.removeLayer(labelLayer)}
-  labelLayer=L.layerGroup().addTo(map);
-  var zoom=map.getZoom();if(zoom<5)return;
-  var bounds=map.getBounds().pad(0.1);
-  var max=zoom<7?80:300,count=0;
-  for(var i=0;i<currentFiltered.length;i++){
-    if(count>=max)break;
-    var d=currentFiltered[i];
-    if(!bounds.contains([d.la,d.lo]))continue;
-    var cc=CATS[d.cat];
-    var lbl=L.tooltip({permanent:true,direction:"right",offset:[6,0],className:"ml ml-"+d.cat,opacity:1});
-    lbl.setContent(d.n);lbl.setLatLng([d.la,d.lo]);
-    labelLayer.addLayer(lbl);count++;
-  }
+function updateLabels{
+ if(labelLayer){map.removeLayer(labelLayer)}
+ labelLayer=L.layerGroup.addTo(map);
+ var zoom=map.getZoom;if(zoom<5)return;
+ var bounds=map.getBounds.pad(0.1);
+ var max=zoom<7?80:300,count=0;
+ for(var i=0;i<currentFiltered.length;i++){
+ if(count>=max)break;
+ var d=currentFiltered[i];
+ if(!bounds.contains([d.la,d.lo]))continue;
+ var cc=CATS[d.cat];
+ var lbl=L.tooltip({permanent:true,direction:"right",offset:[6,0],className:"ml ml-"+d.cat,opacity:1});
+ lbl.setContent(d.n);lbl.setLatLng([d.la,d.lo]);
+ labelLayer.addLayer(lbl);count++;
+ }
 }
 var lt=null;
-function dbl(){if(lt)clearTimeout(lt);lt=setTimeout(updateLabels,150)}
+function dbl{if(lt)clearTimeout(lt);lt=setTimeout(updateLabels,150)}
 map.on("zoomend",dbl);map.on("moveend",dbl);
 
-renderPoints();
+renderPoints;
 </script>
 </body>
 </html>

@@ -136,7 +136,7 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
 <span class="inset-bar">後周 <span style="font-size:7px;opacity:.6">951-960</span></span><span class="inset-arrow">→</span>
 <span class="inset-bar" style="background:rgba(201,169,110,.2);color:#e8c888">北宋</span>
 </div>
-<div class="inset-note">後梁（朱全忠が唐を簒奪）→ 後唐（沙陀族）→ <strong style="color:var(--gold)">後晋（石敬瑭が契丹に燕雲十六州を割譲 ← 超頻出）</strong> → 後漢（最短命）→ 後周（郭威→世宗の改革）→ 趙匡胤に禅譲 → 北宋建国</div>
+<div class="inset-note">後梁（朱全忠が唐を簒奪）→ 後唐（沙陀族）→ <strong style="color:var(--gold)">後晋（石敬瑭が契丹に燕雲十六州を割譲 ← 超</strong> → 後漢（最短命）→ 後周（郭威→世宗の改革）→ 趙匡胤に禅譲 → 北宋建国</div>
 </div>
 
 <div class="tp" id="tip-c-shang"><p><strong>殷（商）</strong>(前1600頃-前1046) ― 最古の実証された王朝。<strong>甲骨文字</strong>・青銅器。殷墟（河南省安陽）。神権政治。</p></div>
@@ -158,7 +158,7 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
 <div class="tp" id="tip-c-nwei"><p><strong>北魏</strong>(386-534) ― 鮮卑拓跋氏。<strong>孝文帝の漢化政策</strong>：<strong>均田制</strong>・三長制・洛陽遷都・鮮卑語禁止。<strong>雲崗/竜門石窟</strong>。534年に東西分裂。</p></div>
 <div class="tp" id="tip-c-ewei"><p><strong>東魏→北斉</strong>(534-577) ― 東魏(高歓)→北斉。華北東部。577年に北周に滅ぼされる。</p></div>
 <div class="tp" id="tip-c-wwei"><p><strong>西魏→北周</strong>(535-581) ― 西魏(宇文泰)→北周。<strong>府兵制を創始</strong>。北斉を滅ぼし華北統一→外戚の楊堅が隋を建国。</p></div>
-<div class="tp" id="tip-c-wudai"><p><strong>五代</strong>(907-960) ― 後梁→後唐→後晋→後漢→後周。53年に5王朝が交代。<strong>後晋の石敬瑭が契丹に燕雲十六州を割譲</strong>（超頻出）。趙匡胤（後周の部将）が禅譲で北宋を建国。下の詳細図を参照。</p></div>
+<div class="tp" id="tip-c-wudai"><p><strong>五代</strong>(907-960) ― 後梁→後唐→後晋→後漢→後周。53年に5王朝が交代。<strong>後晋の石敬瑭が契丹に燕雲十六州を割譲</strong>（超。趙匡胤（後周の部将）が禅譲で北宋を建国。下の詳細図を参照。</p></div>
 <div class="tp" id="tip-c-liao"><p><strong>遼（契丹）</strong>(916-1125) ― 耶律阿保機。<strong>二重統治体制</strong>（北面官＝遊牧民の慣習法/南面官＝漢人の律令）。<strong>澶淵の盟(1004)</strong>で宋と共存。1125年に金に滅ぼされる→残党がカラ＝キタイ（西遼）。</p></div>
 <div class="tp" id="tip-c-jin"><p><strong>金</strong>(1115-1234) ― 女真族・完顔阿骨打。遼を滅ぼし、<strong>靖康の変(1127)</strong>で北宋も滅ぼす。<strong>猛安謀克制</strong>。1234年にモンゴルに滅ぼされる。</p></div>
 <div class="tp" id="tip-c-shu"><p><strong>蜀漢</strong>(221-263) ― <strong>劉備・諸葛亮</strong>。成都。北伐を試みるも失敗。263年に魏に滅ぼされる。</p></div>
@@ -181,10 +181,10 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
 ❺ <strong>制度の連続性</strong>：均田制（北魏→隋唐）、科挙（隋→清）、府兵制（北周→唐）→両税法→一条鞭法→地丁銀制
 </p></div>
 
-<div id="tooltip-overlay" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;z-index:8000" onclick="closeTip()"></div>
+<div id="tooltip-overlay" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;z-index:8000" onclick="closeTip"></div>
 <div id="tooltip-box" style="display:none;position:fixed;z-index:9000;background:rgba(12,15,22,.97);border:1px solid rgba(201,169,110,.25);border-radius:8px;padding:12px 16px;max-width:320px;width:calc(100vw - 32px);box-shadow:0 8px 30px rgba(0,0,0,.6)">
 <div id="tooltip-content" style="font-size:10px;color:#8a857d;line-height:1.7"></div></div>
 <script>
-(function(){var ov=document.getElementById("tooltip-overlay"),bx=document.getElementById("tooltip-box"),ct=document.getElementById("tooltip-content");window.closeTip=function(){bx.style.display="none";ov.style.display="none"};function openTip(el){var tipId=el.getAttribute("data-tip");var tipEl=tipId?document.getElementById("tip-"+tipId):null;if(!tipEl)return;closeTip();ct.innerHTML=tipEl.innerHTML;ov.style.display="block";bx.style.display="block";var r=el.getBoundingClientRect(),w=Math.min(320,window.innerWidth-32);bx.style.width=w+"px";var l=r.left+r.width/2-w/2;if(l<16)l=16;if(l+w>window.innerWidth-16)l=window.innerWidth-16-w;bx.style.left=l+"px";bx.style.top=(r.bottom+8)+"px";bx.style.bottom="auto";var br=bx.getBoundingClientRect();if(br.bottom>window.innerHeight-16){var t=r.top-br.height-8;if(t<16)t=16;bx.style.top=t+"px"}}var tm=false,tt=null;document.addEventListener("touchstart",function(e){tm=false;tt=e.target},{passive:true});document.addEventListener("touchmove",function(){tm=true},{passive:true});document.addEventListener("touchend",function(e){if(tm)return;var nd=tt?tt.closest(".nd-svg"):null;if(nd){e.preventDefault();openTip(nd)}else if(!tt||!tt.closest("#tooltip-box"))closeTip();tt=null});document.addEventListener("click",function(e){if("ontouchstart"in window)return;var nd=e.target.closest(".nd-svg");if(nd)openTip(nd);else if(!e.target.closest("#tooltip-box"))closeTip()})}
-)();
+(function{var ov=document.getElementById("tooltip-overlay"),bx=document.getElementById("tooltip-box"),ct=document.getElementById("tooltip-content");window.closeTip=function{bx.style.display="none";ov.style.display="none"};function openTip(el){var tipId=el.getAttribute("data-tip");var tipEl=tipId?document.getElementById("tip-"+tipId):null;if(!tipEl)return;closeTip;ct.innerHTML=tipEl.innerHTML;ov.style.display="block";bx.style.display="block";var r=el.getBoundingClientRect,w=Math.min(320,window.innerWidth-32);bx.style.width=w+"px";var l=r.left+r.width/2-w/2;if(l<16)l=16;if(l+w>window.innerWidth-16)l=window.innerWidth-16-w;bx.style.left=l+"px";bx.style.top=(r.bottom+8)+"px";bx.style.bottom="auto";var br=bx.getBoundingClientRect;if(br.bottom>window.innerHeight-16){var t=r.top-br.height-8;if(t<16)t=16;bx.style.top=t+"px"}}var tm=false,tt=null;document.addEventListener("touchstart",function(e){tm=false;tt=e.target},{passive:true});document.addEventListener("touchmove",function{tm=true},{passive:true});document.addEventListener("touchend",function(e){if(tm)return;var nd=tt?tt.closest(".nd-svg"):null;if(nd){e.preventDefault;openTip(nd)}else if(!tt||!tt.closest("#tooltip-box"))closeTip;tt=null});document.addEventListener("click",function(e){if("ontouchstart"in window)return;var nd=e.target.closest(".nd-svg");if(nd)openTip(nd);else if(!e.target.closest("#tooltip-box"))closeTip})}
+);
 </script></body></html>

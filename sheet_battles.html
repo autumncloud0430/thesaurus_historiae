@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>戦い・戦争一覧 ― 世界史入試対策</title><style>@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@400;600;700&family=Cormorant+Garamond:wght@400;700&display=swap');:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--gold-dim:rgba(201,169,110,.12);--text:#d4cfc6;--text2:#8a857d;--text3:#555048;--border:rgba(201,169,110,.08)}*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>戦い・戦争一覧</title><style>@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@400;600;700&family=Cormorant+Garamond:wght@400;700&display=swap');:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--gold-dim:rgba(201,169,110,.12);--text:#d4cfc6;--text2:#8a857d;--text3:#555048;--border:rgba(201,169,110,.08)}*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
 .hdr{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;flex-wrap:wrap}.hdr h1{font-family:'Noto Serif JP',serif;font-size:15px;font-weight:700;color:var(--gold2)}.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5;transition:opacity .2s}.hdr a:hover{opacity:1}
 .search-bar{padding:10px 20px;display:flex;gap:10px;align-items:center}.si{padding:6px 14px;border-radius:100px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);color:var(--text);font-size:11px;font-family:inherit;width:240px;outline:none;transition:border-color .2s}.si:focus{border-color:rgba(201,169,110,.3)}.si::placeholder{color:var(--text3)}.cnt{font-size:9px;color:var(--text3);font-family:'Cormorant Garamond',serif;letter-spacing:.1em}
 .tbl-wrap{padding:4px 20px 40px;overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:11px}
@@ -21,7 +21,7 @@ td:first-child{font-size:8.5px}
 }
 </style></head><body>
 <div class="hdr"><h1>戦い・戦争一覧</h1><a href="index.html">← Ad Indicem</a></div>
-<div class="search-bar"><input class="si" id="search" placeholder="戦争名・年代・内容で検索..." oninput="filterRows()"><span class="cnt" id="cnt"></span></div>
+<div class="search-bar"><input class="si" id="search" placeholder="戦争名・年代・内容で検索..." oninput="filterRows"><span class="cnt" id="cnt"></span></div>
 <div class="tbl-wrap"><table>
 <thead><tr><th>No.</th><th>名称</th><th>年代</th><th>内容・経過・結果・影響</th><th>因果の連鎖（前→本事象→後）</th></tr></thead>
 <tbody>
@@ -183,7 +183,7 @@ td:first-child{font-size:8.5px}
 <tr class="sh"><td colspan="5">冷戦期</td></tr>
 <tr><td class="no">134</td><td class="nm">キューバ危機</td><td class="yr">1962</td><td class="ds">ソ連がキューバにミサイル基地建設→ケネディが海上封鎖→フルシチョフがミサイル撤去。核戦争の瀬戸際。<br>→米ソホットライン設置→部分的核実験禁止条約（1963）→デタントの起点。</td><td class="ds">キューバ革命→ソ連のミサイル配備→海上封鎖→核戦争の危機→ホットライン→軍縮交渉の開始</td></tr>
 </tbody></table></div>
-<script>function filterRows(){var q=document.getElementById("search").value.toLowerCase();var r=document.querySelectorAll("tbody tr");var s=0;for(var i=0;i<r.length;i++){var t=r[i].textContent.toLowerCase();if(!q||t.indexOf(q)>=0){r[i].style.display="";s++}else{r[i].style.display="none"}}document.getElementById("cnt").textContent=s+" 件"}filterRows();</script>
+<script>function filterRows{var q=document.getElementById("search").value.toLowerCase;var r=document.querySelectorAll("tbody tr");var s=0;for(var i=0;i<r.length;i++){var t=r[i].textContent.toLowerCase;if(!q||t.indexOf(q)>=0){r[i].style.display="";s++}else{r[i].style.display="none"}}document.getElementById("cnt").textContent=s+" 件"}filterRows;</script>
 
 <style>
 .chart-link{display:inline-block;font-size:6px;padding:1px 4px;margin:1px;border-radius:2px;background:rgba(201,169,110,.08);border:1px solid rgba(201,169,110,.12);color:#c9a96e;text-decoration:none;white-space:nowrap;vertical-align:middle;transition:all .15s}
@@ -191,7 +191,7 @@ td:first-child{font-size:8.5px}
 .chart-links-wrap{display:inline;margin-left:3px}
 </style>
 <script>
-(function(){
+(function{
 var M=[
 [/オリエント|シュメール|アッカド|バビロニア|ハンムラビ|ヒッタイト|アッシリア|アケメネス|ペルシア|エジプト古王国|エジプト新王国|フェニキア|リディア|メディア/,"timeline_orient.html","TL:オリエント"],
 [/中国|殷|周|秦|漢|三国|隋|唐|宋|元|明|清|春秋|戦国/,"timeline_china.html","TL:中国王朝"],
@@ -264,29 +264,29 @@ var M=[
 ];
 var cells=document.querySelectorAll('td');
 for(var i=0;i<cells.length;i++){
-  var txt=cells[i].textContent;
-  if(txt.length<5) continue;
-  var found={};
-  for(var j=0;j<M.length;j++){
-    if(M[j][0].test(txt) && !found[M[j][1]]){
-      found[M[j][1]]=M[j][2];
-    }
-  }
-  var keys=Object.keys(found);
-  if(keys.length>0 && keys.length<=4){
-    var wrap=document.createElement('span');
-    wrap.className='chart-links-wrap';
-    for(var k=0;k<keys.length;k++){
-      var a=document.createElement('a');
-      a.className='chart-link';
-      a.href=keys[k];
-      a.textContent=found[keys[k]];
-      a.title=keys[k];
-      wrap.appendChild(a);
-    }
-    cells[i].appendChild(wrap);
-  }
+ var txt=cells[i].textContent;
+ if(txt.length<5) continue;
+ var found={};
+ for(var j=0;j<M.length;j++){
+ if(M[j][0].test(txt) && !found[M[j][1]]){
+ found[M[j][1]]=M[j][2];
+ }
+ }
+ var keys=Object.keys(found);
+ if(keys.length>0 && keys.length<=4){
+ var wrap=document.createElement('span');
+ wrap.className='chart-links-wrap';
+ for(var k=0;k<keys.length;k++){
+ var a=document.createElement('a');
+ a.className='chart-link';
+ a.href=keys[k];
+ a.textContent=found[keys[k]];
+ a.title=keys[k];
+ wrap.appendChild(a);
+ }
+ cells[i].appendChild(wrap);
+ }
 }
-})();
+});
 </script>
 </body></html>

@@ -52,7 +52,7 @@ body{font-family:'Noto Sans JP',sans-serif;background:#080b14;color:#e0dcd6;heig
 <button class="tb on" id="pt" onclick="toggleCat('T')">📜条約</button>
 <button class="tb on" id="pc" onclick="toggleCat('C')">🏛都市</button>
 <button class="tb on" id="ps" onclick="toggleCat('S')">🏺遺跡</button>
-<input class="si" id="search" placeholder="地名・説明で検索..." oninput="renderPoints()">
+<input class="si" id="search" placeholder="地名・説明で検索..." oninput="renderPoints">
 <span class="cnt" id="cnt"></span>
 </div>
 <div id="map"></div>
@@ -60,11 +60,11 @@ body{font-family:'Noto Sans JP',sans-serif;background:#080b14;color:#e0dcd6;heig
 var CATS={B:{l:"⚔ 戦場",c:"#e07060",e:"⚔"},T:{l:"📜 条約",c:"#5a9ac0",e:"📜"},C:{l:"🏛 都市",c:"#8ab070",e:"🏛"},S:{l:"🏺 遺跡",c:"#c9a050",e:"🏺"}};
 
 function pY(s){
-  if(!s)return 0;
-  var t=String(s),m=t.match(/前(\d+)/);
-  if(m)return -parseInt(m[1]);
-  var n=t.match(/(\d{1,4})/);
-  return n?parseInt(n[1]):0;
+ if(!s)return 0;
+ var t=String(s),m=t.match(/前(\d+)/);
+ if(m)return -parseInt(m[1]);
+ var n=t.match(/(\d{1,4})/);
+ return n?parseInt(n[1]):0;
 }
 
 var R=[
@@ -211,7 +211,7 @@ var R=[
 ["平壌","前100",39.02,125.75,"楽浪郡→高句麗の都","C"],
 ["慶州","前57",35.86,129.21,"新羅の首都。仏国寺・石窟庵","C"],
 ["石窟庵","751",35.79,129.35,"新羅。花崗岩の仏教石窟","S"],
-["奈良","710",34.69,135.80,"平城京。東大寺大仏","C"],
+["奈良","710",34.69,135.80,"平城京。寺大仏","C"],
 ["京都","794",35.01,135.77,"平安京。1000年以上の都","C"],
 ["江戸(東京)","1603",35.68,139.77,"徳川幕府→明治維新後の首都","C"],
 ["広島","1945",34.39,132.46,"原爆投下(1945.8.6)","C"],
@@ -776,32 +776,32 @@ var R=[
 // Parse and group by coordinates
 var DATA=[];
 for(var i=0;i<R.length;i++){
-  var r=R[i];
-  DATA.push({n:r[0],y:r[1],la:r[2],lo:r[3],d:r[4],cat:r[5],yN:pY(r[1])});
+ var r=R[i];
+ DATA.push({n:r[0],y:r[1],la:r[2],lo:r[3],d:r[4],cat:r[5],yN:pY(r[1])});
 }
 
 // Group by rounded coordinates (same location = same marker)
 var GROUPS={};
 for(var i=0;i<DATA.length;i++){
-  var d=DATA[i];
-  var key=Math.round(d.la*10)+"_"+Math.round(d.lo*10);
-  if(!GROUPS[key])GROUPS[key]={la:d.la,lo:d.lo,items:[]};
-  GROUPS[key].items.push(d);
+ var d=DATA[i];
+ var key=Math.round(d.la*10)+"_"+Math.round(d.lo*10);
+ if(!GROUPS[key])GROUPS[key]={la:d.la,lo:d.lo,items:[]};
+ GROUPS[key].items.push(d);
 }
 
 // Sort items within each group by year
 var groupKeys=Object.keys(GROUPS);
 for(var i=0;i<groupKeys.length;i++){
-  GROUPS[groupKeys[i]].items.sort(function(a,b){return a.yN-b.yN});
+ GROUPS[groupKeys[i]].items.sort(function(a,b){return a.yN-b.yN});
 }
 
 var multiCount=0;
 var multiEntries=0;
 for(var i=0;i<groupKeys.length;i++){
-  if(GROUPS[groupKeys[i]].items.length>1){
-    multiCount++;
-    multiEntries+=GROUPS[groupKeys[i]].items.length;
-  }
+ if(GROUPS[groupKeys[i]].items.length>1){
+ multiCount++;
+ multiEntries+=GROUPS[groupKeys[i]].items.length;
+ }
 }
 
 var activeCats={B:true,T:true,C:true,S:true};
@@ -814,148 +814,148 @@ L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png"
 attribution:"OSM+CARTO",subdomains:"abcd",maxZoom:19,noWrap:false}).addTo(map);
 
 function toggleCat(cat){
-  activeCats[cat]=!activeCats[cat];
-  var any=false;for(var k in activeCats)if(activeCats[k])any=true;
-  if(!any)activeCats[cat]=true;
-  for(var k in CATS){document.getElementById("p"+k.toLowerCase()).className="tb"+(activeCats[k]?" on":"")}
-  renderPoints();
+ activeCats[cat]=!activeCats[cat];
+ var any=false;for(var k in activeCats)if(activeCats[k])any=true;
+ if(!any)activeCats[cat]=true;
+ for(var k in CATS){document.getElementById("p"+k.toLowerCase).className="tb"+(activeCats[k]?" on":"")}
+ renderPoints;
 }
 
-function getFiltered(){
-  var s=document.getElementById("search").value.toLowerCase();
-  var result=[];
-  for(var i=0;i<groupKeys.length;i++){
-    var g=GROUPS[groupKeys[i]];
-    // Filter items by active categories
-    var filtered=[];
-    for(var j=0;j<g.items.length;j++){
-      var d=g.items[j];
-      if(!activeCats[d.cat])continue;
-      if(s&&d.n.toLowerCase().indexOf(s)<0&&d.d.toLowerCase().indexOf(s)<0)continue;
-      filtered.push(d);
-    }
-    if(filtered.length>0){
-      result.push({la:g.la,lo:g.lo,items:filtered});
-    }
-  }
-  return result;
+function getFiltered{
+ var s=document.getElementById("search").value.toLowerCase;
+ var result=[];
+ for(var i=0;i<groupKeys.length;i++){
+ var g=GROUPS[groupKeys[i]];
+ // Filter items by active categories
+ var filtered=[];
+ for(var j=0;j<g.items.length;j++){
+ var d=g.items[j];
+ if(!activeCats[d.cat])continue;
+ if(s&&d.n.toLowerCase.indexOf(s)<0&&d.d.toLowerCase.indexOf(s)<0)continue;
+ filtered.push(d);
+ }
+ if(filtered.length>0){
+ result.push({la:g.la,lo:g.lo,items:filtered});
+ }
+ }
+ return result;
 }
 
 function buildPopup(items){
-  if(items.length===1){
-    var d=items[0];
-    var cc=CATS[d.cat];
-    return "<div style='font-weight:700;font-size:13px;color:"+cc.c+"'>"+cc.e+" "+d.n+"</div>"+
-      "<div style='font-size:10px;color:#777'>"+d.y+"</div>"+
-      "<div style='font-size:11px;color:#aaa;line-height:1.5;margin-top:3px'>"+d.d+"</div>";
-  }
-  // Multiple eras at same location
-  var first=items[0];
-  var title=first.n.replace(/\(.*\)/,"").replace(/陥落|の戦い|会談|条約|起義/,"");
-  // Use the shortest name as title
-  var shortest=items[0].n;
-  for(var i=1;i<items.length;i++){
-    if(items[i].n.length<shortest.length)shortest=items[i].n;
-  }
-  var h="<div style='font-weight:700;font-size:14px;color:#c9b99a'>"+shortest+"</div>";
-  h+="<div style='font-size:10px;color:#666;margin-bottom:4px'>"+items.length+"つの時代に登場</div>";
-  for(var i=0;i<items.length;i++){
-    var d=items[i];
-    var cc=CATS[d.cat];
-    h+="<div class='era-item'>";
-    h+="<span class='era-cat' style='color:"+cc.c+"'>"+cc.e+"</span>";
-    h+="<span class='era-year'>"+d.y+"</span> ";
-    h+="<span class='era-desc'>"+d.d+"</span>";
-    h+="</div>";
-  }
-  return h;
+ if(items.length===1){
+ var d=items[0];
+ var cc=CATS[d.cat];
+ return "<div style='font-weight:700;font-size:13px;color:"+cc.c+"'>"+cc.e+" "+d.n+"</div>"+
+ "<div style='font-size:10px;color:#777'>"+d.y+"</div>"+
+ "<div style='font-size:11px;color:#aaa;line-height:1.5;margin-top:3px'>"+d.d+"</div>";
+ }
+ // Multiple eras at same location
+ var first=items[0];
+ var title=first.n.replace(/\(.*\)/,"").replace(/陥落|の戦い|会談|条約|起義/,"");
+ // Use the shortest name as title
+ var shortest=items[0].n;
+ for(var i=1;i<items.length;i++){
+ if(items[i].n.length<shortest.length)shortest=items[i].n;
+ }
+ var h="<div style='font-weight:700;font-size:14px;color:#c9b99a'>"+shortest+"</div>";
+ h+="<div style='font-size:10px;color:#666;margin-bottom:4px'>"+items.length+"つの時代に登場</div>";
+ for(var i=0;i<items.length;i++){
+ var d=items[i];
+ var cc=CATS[d.cat];
+ h+="<div class='era-item'>";
+ h+="<span class='era-cat' style='color:"+cc.c+"'>"+cc.e+"</span>";
+ h+="<span class='era-year'>"+d.y+"</span> ";
+ h+="<span class='era-desc'>"+d.d+"</span>";
+ h+="</div>";
+ }
+ return h;
 }
 
-function renderPoints(){
-  for(var i=0;i<pointMarkers.length;i++){map.removeLayer(pointMarkers[i])}
-  pointMarkers=[];
-  if(labelLayer){map.removeLayer(labelLayer)}
-  labelLayer=L.layerGroup().addTo(map);
-  
-  var groups=getFiltered();
-  currentGroups=groups;
-  var totalItems=0;
-  
-  for(var i=0;i<groups.length;i++){
-    var g=groups[i];
-    totalItems+=g.items.length;
-    
-    // Determine primary category (most frequent, or first)
-    var catCount={};
-    for(var j=0;j<g.items.length;j++){
-      var c=g.items[j].cat;
-      catCount[c]=(catCount[c]||0)+1;
-    }
-    var bestCat=g.items[0].cat;
-    var bestN=0;
-    for(var c in catCount){if(catCount[c]>bestN){bestN=catCount[c];bestCat=c}}
-    var cc=CATS[bestCat];
-    
-    var isMulti=g.items.length>1;
-    var r=isMulti?7:5;
-    var fillOp=isMulti?0.9:0.7;
-    var borderCol=isMulti?"rgba(201,185,154,0.6)":"rgba(255,255,255,0.2)";
-    var borderW=isMulti?2:1;
-    
-    var popupHtml=buildPopup(g.items);
-    
-    var offsets=[0,-360,360];
-    for(var oi=0;oi<offsets.length;oi++){
-      var off=offsets[oi];
-      // Hit target
-      var hit=L.circleMarker([g.la,g.lo+off],{radius:14,fillColor:"transparent",fillOpacity:0,stroke:false,interactive:true}).addTo(map);
-      // Visible dot
-      var dot=L.circleMarker([g.la,g.lo+off],{radius:r,fillColor:cc.c,fillOpacity:fillOp,color:borderCol,weight:borderW,opacity:0.6,interactive:false}).addTo(map);
-      // Multi-era ring
-      if(isMulti&&off===0){
-        var ring=L.circleMarker([g.la,g.lo],{radius:10,fillColor:"transparent",fillOpacity:0,color:"#c9b99a",weight:1,opacity:0.4,interactive:false}).addTo(map);
-        pointMarkers.push(ring);
-      }
-      hit.bindPopup(popupHtml,{className:"tp",maxWidth:360});
-      pointMarkers.push(hit);
-      pointMarkers.push(dot);
-    }
-  }
-  
-  document.getElementById("cnt").textContent=groups.length+"箇所 / "+totalItems+"件";
-  for(var i=0;i<pointMarkers.length;i++){try{pointMarkers[i].bringToFront()}catch(e){}}
-  updateLabels();
+function renderPoints{
+ for(var i=0;i<pointMarkers.length;i++){map.removeLayer(pointMarkers[i])}
+ pointMarkers=[];
+ if(labelLayer){map.removeLayer(labelLayer)}
+ labelLayer=L.layerGroup.addTo(map);
+ 
+ var groups=getFiltered;
+ currentGroups=groups;
+ var totalItems=0;
+ 
+ for(var i=0;i<groups.length;i++){
+ var g=groups[i];
+ totalItems+=g.items.length;
+ 
+ // Determine primary category (most frequent, or first)
+ var catCount={};
+ for(var j=0;j<g.items.length;j++){
+ var c=g.items[j].cat;
+ catCount[c]=(catCount[c]||0)+1;
+ }
+ var bestCat=g.items[0].cat;
+ var bestN=0;
+ for(var c in catCount){if(catCount[c]>bestN){bestN=catCount[c];bestCat=c}}
+ var cc=CATS[bestCat];
+ 
+ var isMulti=g.items.length>1;
+ var r=isMulti?7:5;
+ var fillOp=isMulti?0.9:0.7;
+ var borderCol=isMulti?"rgba(201,185,154,0.6)":"rgba(255,255,255,0.2)";
+ var borderW=isMulti?2:1;
+ 
+ var popupHtml=buildPopup(g.items);
+ 
+ var offsets=[0,-360,360];
+ for(var oi=0;oi<offsets.length;oi++){
+ var off=offsets[oi];
+ // Hit target
+ var hit=L.circleMarker([g.la,g.lo+off],{radius:14,fillColor:"transparent",fillOpacity:0,stroke:false,interactive:true}).addTo(map);
+ // Visible dot
+ var dot=L.circleMarker([g.la,g.lo+off],{radius:r,fillColor:cc.c,fillOpacity:fillOp,color:borderCol,weight:borderW,opacity:0.6,interactive:false}).addTo(map);
+ // Multi-era ring
+ if(isMulti&&off===0){
+ var ring=L.circleMarker([g.la,g.lo],{radius:10,fillColor:"transparent",fillOpacity:0,color:"#c9b99a",weight:1,opacity:0.4,interactive:false}).addTo(map);
+ pointMarkers.push(ring);
+ }
+ hit.bindPopup(popupHtml,{className:"tp",maxWidth:360});
+ pointMarkers.push(hit);
+ pointMarkers.push(dot);
+ }
+ }
+ 
+ document.getElementById("cnt").textContent=groups.length+"箇所 / "+totalItems+"件";
+ for(var i=0;i<pointMarkers.length;i++){try{pointMarkers[i].bringToFront}catch(e){}}
+ updateLabels;
 }
 
-function updateLabels(){
-  if(labelLayer){map.removeLayer(labelLayer)}
-  labelLayer=L.layerGroup().addTo(map);
-  var zoom=map.getZoom();
-  if(zoom<4)return;
-  var bounds=map.getBounds().pad(0.1);
-  var max=zoom<6?60:zoom<8?150:400;
-  var count=0;
-  for(var i=0;i<currentGroups.length;i++){
-    if(count>=max)break;
-    var g=currentGroups[i];
-    if(!bounds.contains([g.la,g.lo]))continue;
-    var d=g.items[0];
-    var cc=CATS[d.cat];
-    var label=d.n;
-    if(g.items.length>1)label=d.n.replace(/\(.*\)/,"")+" ("+g.items.length+")";
-    var lbl=L.tooltip({permanent:true,direction:"right",offset:[6,0],className:"ml ml-"+d.cat,opacity:1});
-    lbl.setContent(label);
-    lbl.setLatLng([g.la,g.lo]);
-    labelLayer.addLayer(lbl);
-    count++;
-  }
+function updateLabels{
+ if(labelLayer){map.removeLayer(labelLayer)}
+ labelLayer=L.layerGroup.addTo(map);
+ var zoom=map.getZoom;
+ if(zoom<4)return;
+ var bounds=map.getBounds.pad(0.1);
+ var max=zoom<6?60:zoom<8?150:400;
+ var count=0;
+ for(var i=0;i<currentGroups.length;i++){
+ if(count>=max)break;
+ var g=currentGroups[i];
+ if(!bounds.contains([g.la,g.lo]))continue;
+ var d=g.items[0];
+ var cc=CATS[d.cat];
+ var label=d.n;
+ if(g.items.length>1)label=d.n.replace(/\(.*\)/,"")+" ("+g.items.length+")";
+ var lbl=L.tooltip({permanent:true,direction:"right",offset:[6,0],className:"ml ml-"+d.cat,opacity:1});
+ lbl.setContent(label);
+ lbl.setLatLng([g.la,g.lo]);
+ labelLayer.addLayer(lbl);
+ count++;
+ }
 }
 
 var lt=null;
-function dbl(){if(lt)clearTimeout(lt);lt=setTimeout(updateLabels,150)}
+function dbl{if(lt)clearTimeout(lt);lt=setTimeout(updateLabels,150)}
 map.on("zoomend",dbl);
 map.on("moveend",dbl);
 
-renderPoints();
+renderPoints;
 </script>
 </body></html>

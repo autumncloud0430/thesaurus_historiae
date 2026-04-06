@@ -1,0 +1,89 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>朝鮮近現代フロー ― 開国から南北分断まで</title><style>@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048;--border:rgba(201,169,110,.08)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+.hdr{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.hdr h1{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2)}
+.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
+.flow{max-width:720px;margin:0 auto;padding:24px 20px 60px}
+.phase{position:relative;margin-bottom:2px;padding:16px 16px 16px 60px;border-left:2px solid rgba(201,169,110,.08);margin-left:30px}
+.phase:last-child{border-left-color:transparent}
+.phase-label{position:absolute;left:-42px;top:16px;width:36px;font-family:'Cormorant Garamond',serif;font-size:10px;font-weight:700;color:var(--text3);text-align:right;line-height:1.3}
+.phase::before{content:'';position:absolute;left:-5px;top:22px;width:8px;height:8px;border-radius:50%;background:var(--bg);border:2px solid rgba(201,169,110,.25)}
+.node{background:rgba(255,255,255,.015);border:1px solid rgba(255,255,255,.04);border-radius:8px;padding:10px 14px;margin-bottom:8px;border-left:3px solid transparent}
+.node:hover{background:rgba(255,255,255,.03)}
+.node-title{font-family:'Noto Serif JP',serif;font-size:12px;font-weight:700;color:var(--gold2);margin-bottom:2px}
+.node-year{font-family:'Cormorant Garamond',serif;font-size:11px;color:var(--gold);opacity:.6;margin-bottom:4px}
+.node-desc{font-size:10px;color:var(--text2);line-height:1.7}
+.node-desc strong{color:var(--text);font-weight:600}
+.arrow{display:flex;align-items:center;gap:6px;padding:2px 0 2px 8px;margin-bottom:6px}
+.arrow-line{width:16px;height:1px;background:rgba(201,169,110,.15)}
+.arrow-text{font-size:8px;color:var(--text3)}
+.arrow-icon{color:rgba(201,169,110,.3);font-size:10px}
+.branch-row{display:flex;gap:8px;margin-bottom:8px}
+.branch-row .node{flex:1}
+.node.key{background:rgba(201,169,110,.04);border-color:rgba(201,169,110,.12)}
+.side-note{font-size:8px;color:var(--text3);padding:4px 8px;border-left:2px solid rgba(201,169,110,.1);margin:4px 0 8px;line-height:1.6}
+.note{text-align:center;padding:8px 20px 32px;max-width:700px;margin:0 auto}.note p{font-size:9px;color:var(--text3);line-height:1.8}.note strong{color:var(--gold)}
+
+@media(max-width:600px){
+.hdr{padding:10px 12px}.hdr h1{font-size:12px}
+.flow{padding:16px 10px 40px}
+.phase{padding:12px 10px 12px 44px;margin-left:20px}
+.phase-label{left:-30px;width:28px;font-size:8px}
+.node{padding:8px 10px}.node-title{font-size:11px}.node-desc{font-size:9px}
+.branch-row{flex-direction:column}
+.side-note{font-size:7.5px}
+.note p{font-size:8px}
+}
+</style></head><body><div class="hdr"><h1>朝鮮近現代フロー ― 開国から南北分断まで</h1><a href="charts.html">← Ad Chartae</a></div><div class="flow">
+
+<div class="phase"><div class="phase-label">1870s<br>開国</div>
+ <div class="node key"><div class="node-title">★江華島事件(1875)→日朝修好条規(1876)</div>
+ <div class="node-desc"><strong>背景</strong>：朝鮮は興宣大院君(国王高宗の父)のもとで★<strong>鎖国攘夷政策</strong>を継続(丙寅洋擾1866・辛未洋擾1871で仏米を撃退)。ただし大院君が失脚(1873)→閔氏政権が実権掌握。<br><strong>事件</strong>：日本の軍艦雲揚号が江華島付近で朝鮮砲台と交戦→★<strong>日朝修好条規</strong>(1876)＝朝鮮初の近代的条約→★<strong>不平等条約</strong>(治外法権・関税自主権なし・釜山等3港開港)。日本の「砲艦外交」＝ペリー来航の再現。<br><strong>意義</strong>：★朝鮮の<strong>冊封体制(清との宗属関係)から条約体制への移行</strong>の始まり→清が宗主権を主張→日清対立の伏線。</div></div>
+ <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">開国→近代化をめぐる路線対立</div></div>
+</div>
+
+<div class="phase"><div class="phase-label">1880s<br>改革と<br>挫折</div>
+ <div class="node"><div class="node-title">壬午軍乱(1882)</div>
+ <div class="node-desc"><strong>原因</strong>：新式軍隊(別技軍)への優遇→旧式軍人の不満が爆発。大院君が背後で扇動。<br><strong>経過</strong>：反日暴動→日本公使館襲撃。★<strong>清が介入</strong>→大院君を天津に連行→清の宗主権を強化(袁世凱が駐在)。<br><strong>結果</strong>：★事大党(清に依存＝閔氏)vs 独立党(日本に依存＝金玉均)の対立が激化。</div></div>
+ <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">独立党がクーデタで改革を試みる</div></div>
+ <div class="node key"><div class="node-title">★甲申政変(1884)と天津条約(1885)</div>
+ <div class="node-desc"><strong>事件</strong>：★<strong>金玉均</strong>・朴泳孝ら<strong>独立党(開化派)</strong>が日本の支援でクーデタ→ただし★<strong>清軍(袁世凱)が3日で鎮圧</strong>→金玉均は日本に亡命(のち1894上海で暗殺)。<br><strong>天津条約</strong>(1885伊藤博文＝李鴻章)：★日清両国が朝鮮から撤兵。将来派兵時は相互通知→★<strong>日清戦争の伏線</strong>(甲午農民戦争で両国が派兵→衝突)。<br><strong>意義</strong>：★<strong>「上からの近代化」の挫折</strong>→明治維新のような改革は朝鮮では実現できなかった(清の介入＋国内保守派の抵抗)。</div></div>
+ <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">清の宗主権が強化→ただし日清戦争で一変</div></div>
+</div>
+
+<div class="phase"><div class="phase-label">1894<br>〜95<br>転換点</div>
+ <div class="node key"><div class="node-title">★甲午農民戦争(東学党の乱)→日清戦争</div>
+ <div class="node-desc"><strong>東学</strong>：崔済愚が創始した民衆宗教(「人乃天」)。西学(キリスト教)に対抗。<br><strong>甲午農民戦争</strong>(1894)：全琫準が指導。★<strong>「斥倭斥洋」</strong>(日本と西洋を排斥)＋減税・身分制廃止を要求→朝鮮政府が清に援軍要請→★<strong>天津条約に基づき日本も派兵</strong>→日清両軍が朝鮮で対峙→★<strong>日清戦争</strong>(1894-95)。<br><strong>下関条約</strong>(1895)：★<strong>清が朝鮮の独立を承認</strong>(＝宗属関係の終了)→台湾・遼東半島割譲→★三国干渉(露仏独)で遼東半島を返還→<strong>ロシアの影響力が増大</strong>。</div></div>
+ <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">清の影響力消滅→日本vsロシアの対立に移行</div></div>
+</div>
+
+<div class="phase"><div class="phase-label">1895<br>〜1905<br>日露対立</div>
+ <div class="node"><div class="node-title">★大韓帝国の成立(1897)と列強の角逐</div>
+ <div class="node-desc"><strong>閔妃暗殺</strong>(1895乙未事変)：日本公使三浦梧楼が閔妃を殺害→国際的非難。高宗が★<strong>ロシア公使館に避難(俄館播遷1896)</strong>→ロシアの影響力が急増。<br>★<strong>大韓帝国</strong>(1897)：高宗が皇帝を称す＝清との対等を宣言。光武改革(近代化)→ただし実質的な自立は困難。<br><strong>日露の対立</strong>：ロシアが満州に進出→義和団事件後も撤兵せず→★<strong>日英同盟</strong>(1902)→★<strong>日露戦争</strong>(1904-05)→ポーツマス条約(1905)＝★<strong>ロシアが日本の韓国での優越権を承認</strong>。</div></div>
+ <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">日露戦争勝利→日本が朝鮮の保護国化を推進</div></div>
+</div>
+
+<div class="phase"><div class="phase-label">1905<br>〜1910<br>保護国化</div>
+ <div class="node key"><div class="node-title">★第二次日韓協約(1905)→韓国併合(1910)</div>
+ <div class="node-desc"><strong>段階的な主権剥奪</strong>：<br>①★<strong>第1次日韓協約</strong>(1904)＝顧問政治(日本人顧問を韓国政府に配置)<br>②★<strong>第2次日韓協約(乙巳条約)</strong>(1905)＝<strong>外交権を剥奪→統監府設置(初代統監＝伊藤博文)</strong>。高宗は★<strong>ハーグ密使事件</strong>(1907第2回万国平和会議に密使を派遣して抗議→列強に無視される)→日本が高宗を退位させる<br>③第3次日韓協約(1907)＝内政権も掌握。軍隊解散→義兵運動が激化<br>④★<strong>韓国併合条約</strong>(1910.8)＝<strong>大韓帝国を日本に併合→朝鮮総督府</strong>(初代総督＝寺内正毅)を設置。<br><strong>抵抗</strong>：★<strong>義兵運動</strong>(1907-10)＝解散軍人＋農民の武装闘争→日本が軍事力で鎮圧。安重根が伊藤博文を暗殺(1909ハルビン)。</div></div>
+ <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">植民地支配の開始→武断政治→文化政治→皇民化</div></div>
+</div>
+
+<div class="phase"><div class="phase-label">1910<br>〜1945<br>植民地期</div>
+ <div class="node"><div class="node-title">日本の植民地支配(3期に区分)</div>
+ <div class="node-desc"><strong>第1期：武断政治</strong>(1910-19)＝憲兵警察制度。土地調査事業(1910-18)→申告主義→多くの農民が土地を失う→東洋拓殖株式会社。言論・集会・結社の自由なし。<br><strong>第2期：文化政治</strong>(1919-37)＝三一運動後に「融和策」。普通警察制度に移行。朝鮮語の新聞・雑誌を許可(朝鮮日報・東亜日報)。ただし実質は分断統治。<br><strong>第3期：皇民化政策</strong>(1937-45)＝日中戦争以降。★<strong>創氏改名</strong>(日本式の氏名を強制)・<strong>日本語教育の強制</strong>(朝鮮語使用禁止)・<strong>神社参拝の強制</strong>。★<strong>強制連行・徴用</strong>(炭鉱・軍需工場)。★<strong>「従軍慰安婦」問題</strong>→現在も日韓の歴史問題。</div></div>
+ <div class="node key"><div class="node-title">★三一運動(1919.3.1)</div>
+ <div class="node-desc"><strong>背景</strong>：①WW1中のウィルソンの★<strong>十四カ条(民族自決)</strong>に刺激 ②高宗の死(毒殺説)→国葬に合わせて計画。<br><strong>経過</strong>：ソウルのパゴダ公園で★<strong>独立宣言書</strong>を読み上げ→「独立万歳」のデモが全国に拡大→★<strong>約200万人が参加</strong>→日本軍が武力鎮圧(柳寛順ら多数が逮捕・処刑)。<br><strong>影響</strong>：①日本が武断政治→文化政治に転換(形式的な融和) ②★<strong>大韓民国臨時政府</strong>が上海に樹立(李承晩＝初代大統領・金九) ③★<strong>中国の五四運動(1919.5.4)</strong>に影響を与えた。</div></div>
+ <div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">1945日本敗戦→解放→ただし独立ではなく分断占領</div></div>
+</div>
+
+<div class="phase"><div class="phase-label">1945<br>〜1953<br>分断</div>
+ <div class="node key"><div class="node-title">★38度線と南北分断(1945-48)→朝鮮戦争</div>
+ <div class="node-desc"><strong>分割占領</strong>：1945.8.15日本降伏→★<strong>北緯38度線</strong>で分割占領(北＝ソ連/南＝アメリカ)→米ソの冷戦がそのまま朝鮮に投影。<br><strong>南北政府の樹立</strong>：★<strong>大韓民国</strong>(1948.8南・李承晩)＋★<strong>朝鮮民主主義人民共和国</strong>(1948.9北・金日成)→それぞれが「全朝鮮の正統政府」を主張。<br>★<strong>朝鮮戦争</strong>(1950.6-53.7)：北朝鮮の南進→釜山まで追い詰められる→国連軍(マッカーサー)の仁川上陸作戦→北上→★<strong>中国人民義勇軍の参戦</strong>→38度線付近で膠着→★<strong>休戦協定(板門店)</strong>(1953.7)＝<strong>「休戦」であって「終戦」ではない</strong>→分断が固定化。<br><strong>影響</strong>：①冷戦のアジアへの拡大 ②日本の再軍備(警察予備隊1950)と経済復興(朝鮮特需) ③南北の体制が決定的に分岐。</div></div>
+ <div class="side-note"></div>
+</div>
+
+</div><div class="note"><p>朝鮮近現代の因果連鎖＝<strong>鎖国→開国(不平等条約)→事大vs独立の路線対立→日清戦争で清の影響排除→日露戦争でロシアも排除→日本の保護国化→併合(植民地化)→三一運動→解放→冷戦で南北分断→朝鮮戦争で固定化</strong>。各段階の「なぜ」を説明できることが</p></div></body></html>

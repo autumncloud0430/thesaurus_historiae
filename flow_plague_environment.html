@@ -1,0 +1,67 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>疫病・環境と歴史フロー</title><style>@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048;--border:rgba(201,169,110,.08)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+.hdr{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.hdr h1{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2)}
+.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
+.flow{max-width:720px;margin:0 auto;padding:24px 20px 60px}
+.phase{position:relative;margin-bottom:2px;padding:16px 16px 16px 60px;border-left:2px solid rgba(201,169,110,.08);margin-left:30px}
+.phase:last-child{border-left-color:transparent}
+.phase-label{position:absolute;left:-42px;top:16px;width:36px;font-family:'Cormorant Garamond',serif;font-size:10px;font-weight:700;color:var(--text3);text-align:right;line-height:1.3}
+.phase::before{content:'';position:absolute;left:-5px;top:22px;width:8px;height:8px;border-radius:50%;background:var(--bg);border:2px solid rgba(201,169,110,.25)}
+.node{background:rgba(255,255,255,.015);border:1px solid rgba(255,255,255,.04);border-radius:8px;padding:10px 14px;margin-bottom:8px;border-left:3px solid transparent}
+.node:hover{background:rgba(255,255,255,.03)}
+.node-title{font-family:'Noto Serif JP',serif;font-size:12px;font-weight:700;color:var(--gold2);margin-bottom:2px}
+.node-year{font-family:'Cormorant Garamond',serif;font-size:11px;color:var(--gold);opacity:.6;margin-bottom:4px}
+.node-desc{font-size:10px;color:var(--text2);line-height:1.7}
+.node-desc strong{color:var(--text);font-weight:600}
+.arrow{display:flex;align-items:center;gap:6px;padding:2px 0 2px 8px;margin-bottom:6px}
+.arrow-line{width:16px;height:1px;background:rgba(201,169,110,.15)}
+.arrow-text{font-size:8px;color:var(--text3)}
+.arrow-icon{color:rgba(201,169,110,.3);font-size:10px}
+.branch-row{display:flex;gap:8px;margin-bottom:8px}
+.branch-row .node{flex:1}
+.node.key{background:rgba(201,169,110,.04);border-color:rgba(201,169,110,.12)}
+.side-note{font-size:8px;color:var(--text3);padding:4px 8px;border-left:2px solid rgba(201,169,110,.1);margin:4px 0 8px;line-height:1.6}
+.note{text-align:center;padding:8px 20px 32px;max-width:700px;margin:0 auto}.note p{font-size:9px;color:var(--text3);line-height:1.8}.note strong{color:var(--gold)}
+@media(max-width:600px){.hdr{padding:10px 12px}.hdr h1{font-size:12px}.flow{padding:16px 10px 40px}.phase{padding:12px 10px 12px 44px;margin-left:20px}.phase-label{left:-30px;width:28px;font-size:8px}.node{padding:8px 10px}.node-title{font-size:11px}.node-desc{font-size:9px}.note p{font-size:8px}}
+</style></head><body><div class="hdr"><h1>疫病・環境と歴史フロー ― 「構造的要因」としての病と気候</h1><a href="charts.html">← Ad Chartae</a></div><div class="flow">
+
+<div class="phase"><div class="phase-label">2C<br>〜6C<br>古代</div>
+<div class="node"><div class="node-title">古代の疫病 ― 帝国を揺るがした感染症</div>
+<div class="node-desc">★<strong>アントニヌスの疫病</strong>(165-180ローマ)：パルティア遠征の兵士が持ち帰る(天然痘と推定)→★人口の約10%が死亡→マルクス＝アウレリウス帝の治世を直撃→★<strong>五賢帝時代の終焉の一因</strong>。軍団の兵力不足→ゲルマン人傭兵への依存が加速。<br>★<strong>ユスティニアヌスのペスト</strong>(541-542)：エジプトから地中海全域に拡大(ペスト菌)→★推定2500万-5000万人が死亡→ユスティニアヌス帝の地中海再征服が頓挫→★<strong>ビザンツ帝国に回復不能な打撃</strong>→7Cのイスラームの急速な拡大を容易にした一因。</div></div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">中世温暖期→人口増加→ペストの衝撃がより壊滅的に</div></div>
+</div>
+
+<div class="phase"><div class="phase-label">10-13C<br>温暖期</div>
+<div class="node"><div class="node-title">★中世温暖期(10-13C)と人口爆発</div>
+<div class="node-desc">★<strong>中世温暖期</strong>(約900-1300)：ヨーロッパの平均気温が約1℃高い→★<strong>農業生産力の向上</strong>→三圃制の普及→重量有輪犂→開墾(シトー会修道院＋東方植民)。★<strong>人口の倍増</strong>：西ヨーロッパ約3500万→7000万(11-14C)→都市の成長→商業の復活→ギルド・ハンザ同盟。<br>★<strong>ノルマン人の航海</strong>：温暖化→北大西洋の氷が減少→ヴァイキングがアイスランド・グリーンランド・北米(ヴィンランド)に到達。<br>ただし★<strong>人口増加＝ペストの被害を拡大する前提条件</strong>を作った。</div></div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">14C→寒冷化＋ペストの同時打撃</div></div>
+</div>
+
+<div class="phase"><div class="phase-label">14C<br>ペスト</div>
+<div class="node key"><div class="node-title">★黒死病(ペスト)と中世の終わり(1347-51)</div>
+<div class="node-desc">★<strong>黒死病</strong>(1347-51)：中央アジア→モンゴル帝国の交易路に沿って西伝→黒海→イタリアの港湾都市→全ヨーロッパに拡大→★<strong>人口の約1/3(推定2500万人)が死亡</strong>。<br>★<strong>社会的影響</strong>：①<strong>労働力激減→農奴の地位向上</strong>(希少価値→賃金上昇→移動の自由)→★<strong>封建制の崩壊を加速</strong>。②<strong>農民反乱</strong>＝ジャックリー(仏1358)・ワット＝タイラー(英1381)。③<strong>教会の権威失墜</strong>→聖職者の大量死→信仰への懐疑→ユダヤ人迫害(スケープゴート)。④毛織物工業の構造転換→囲い込みの遠因。<br>★<strong>意義</strong>：ペストは★<strong>封建制の崩壊→ルネサンス→近代への転換を加速した構造的要因</strong>。</div></div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">大航海時代→新旧大陸の「疫病の交換」</div></div>
+</div>
+
+<div class="phase"><div class="phase-label">16C<br>交換</div>
+<div class="node key"><div class="node-title">★コロンブスの交換 ― 新旧大陸の生態学的衝突</div>
+<div class="node-desc">★<strong>「コロンブスの交換」</strong>：1492年以降、旧大陸と新大陸の間で生物・疫病・文化が双方向に移動。<br>★<strong>旧→新(壊滅的)</strong>：天然痘・麻疹・インフルエンザ→★<strong>先住民の人口が90%以上減少</strong>(推定5000万→500万)→アステカ・インカ征服の最大の要因＝★<strong>「銃・病原菌・鉄鋼」(ダイアモンド)</strong>→先住民の労働力不足→★<strong>アフリカ人奴隷貿易</strong>(代替労働力)→大西洋三角貿易。<br>★<strong>新→旧</strong>：★<strong>ジャガイモ・トウモロコシ・トマト・カカオ・タバコ・トウガラシ</strong>→18Cヨーロッパの人口爆発に貢献(特にジャガイモ)→ただしアイルランドのジャガイモ飢饉(1845-49)。梅毒(新→旧の説が有力)。<br>★<strong>銀</strong>：ポトシ銀山(1545)→★<strong>「銀の世界循環」</strong>→★<strong>価格革命</strong>(物価2-3倍)→封建領主の没落・商人の台頭。</div></div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">17C→小氷期の到来→各地で危機</div></div>
+</div>
+
+<div class="phase"><div class="phase-label">17C<br>小氷期</div>
+<div class="node key"><div class="node-title">★小氷期と「17世紀の全般的危機」</div>
+<div class="node-desc">★<strong>小氷期</strong>(約1300-1850/特に深刻なのは1550-1700頃)：地球の平均気温が約1-2℃低下→★<strong>農業生産力の低下→飢饉→社会不安→反乱・革命</strong>。<br>★<strong>「17世紀の全般的危機」</strong>：同時多発的に内乱→★<strong>三十年戦争</strong>(1618独)→★<strong>フロンドの乱</strong>(1648仏)→★<strong>ピューリタン革命</strong>(1642英)→★<strong>李自成の乱→明滅亡</strong>(1644中国)→★<strong>島原の乱</strong>(1637日本)→これらに小氷期が構造的背景として関与。<br>★<strong>凶作→食糧価格高騰→農民反乱→既存体制の動揺</strong>がユーラシア全域で同時進行→気候変動という共通の構造的要因が世界各地の政治変動を引き起こした。</div></div>
+<div class="arrow"><div class="arrow-icon">↓</div><div class="arrow-line"></div><div class="arrow-text">19C→産業化→環境問題→20C→パンデミック</div></div>
+</div>
+
+<div class="phase"><div class="phase-label">20C〜<br>現代</div>
+<div class="node"><div class="node-title">近現代の疫病と環境</div>
+<div class="node-desc">★<strong>スペイン風邪</strong>(1918-19)：★<strong>感染者5億人・死者5000万-1億人</strong>→WW1の死者(約1700万)を遥かに上回る→★<strong>WW1終結を早めた一因</strong>(独軍の戦力低下)。★「スペイン風邪」の名はスペインが起源ではなく、中立国スペインの報道が目立ったため。<br>★<strong>産業革命と環境</strong>：石炭→石油→温室効果ガス→地球温暖化→パリ協定(2015「+1.5℃以内」)。<br>★<strong>歴史の教訓</strong>：疫病と気候は「偶然の災害」ではなく★<strong>社会構造・交易網・政治体制の変容を引き起こす構造的要因</strong>→ペスト→封建制崩壊、交換→奴隷貿易、小氷期→17C危機→近代国家形成。</div></div>
+</div>
+
+</div><div class="note"><p>疫病・環境史の核心＝<strong>「なぜその時代にその変化が起きたか」の構造的背景として疫病と気候が作用した</strong>。★黒死病→封建制崩壊。コロンブスの交換→先住民壊滅→奴隷貿易。小氷期→17C危機。世界史の大きな転換を引き起こした「見えない力」。</p></div></body></html>

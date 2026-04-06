@@ -63,201 +63,201 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
 
 <!-- SVG Graph -->
 <svg viewBox="0 0 1560 220" xmlns="http://www.w3.org/2000/svg" style="width:1560px;height:220px;display:block">
-  <!-- Y axis label -->
-  <text x="8" y="30" fill="var(--gold)" font-size="8" font-family="Noto Serif JP" font-weight="700" writing-mode="tb">教皇権の強さ</text>
-  <!-- Y gridlines -->
-  <line x1="30" y1="20" x2="1540" y2="20" stroke="rgba(201,169,110,.04)"/>
-  <line x1="30" y1="60" x2="1540" y2="60" stroke="rgba(201,169,110,.04)"/>
-  <line x1="30" y1="100" x2="1540" y2="100" stroke="rgba(201,169,110,.06)"/>
-  <line x1="30" y1="140" x2="1540" y2="140" stroke="rgba(201,169,110,.04)"/>
-  <line x1="30" y1="180" x2="1540" y2="180" stroke="rgba(201,169,110,.04)"/>
-  <text x="22" y="24" fill="var(--text3)" font-size="6" font-family="Noto Sans JP" text-anchor="end">高</text>
-  <text x="22" y="184" fill="var(--text3)" font-size="6" font-family="Noto Sans JP" text-anchor="end">低</text>
+ <!-- Y axis label -->
+ <text x="8" y="30" fill="var(--gold)" font-size="8" font-family="Noto Serif JP" font-weight="700" writing-mode="tb">教皇権の強さ</text>
+ <!-- Y gridlines -->
+ <line x1="30" y1="20" x2="1540" y2="20" stroke="rgba(201,169,110,.04)"/>
+ <line x1="30" y1="60" x2="1540" y2="60" stroke="rgba(201,169,110,.04)"/>
+ <line x1="30" y1="100" x2="1540" y2="100" stroke="rgba(201,169,110,.06)"/>
+ <line x1="30" y1="140" x2="1540" y2="140" stroke="rgba(201,169,110,.04)"/>
+ <line x1="30" y1="180" x2="1540" y2="180" stroke="rgba(201,169,110,.04)"/>
+ <text x="22" y="24" fill="var(--text3)" font-size="6" font-family="Noto Sans JP" text-anchor="end">高</text>
+ <text x="22" y="184" fill="var(--text3)" font-size="6" font-family="Noto Sans JP" text-anchor="end">低</text>
 
-  <!-- Background shading for peak period -->
-  <rect x="690" y="10" width="220" height="190" fill="rgba(201,169,110,.02)" rx="4"/>
-  <text x="800" y="208" text-anchor="middle" fill="rgba(201,169,110,.15)" font-size="7" font-family="Noto Sans JP">教皇権の絶頂期</text>
+ <!-- Background shading for peak period -->
+ <rect x="690" y="10" width="220" height="190" fill="rgba(201,169,110,.02)" rx="4"/>
+ <text x="800" y="208" text-anchor="middle" fill="rgba(201,169,110,.15)" font-size="7" font-family="Noto Sans JP">教皇権の絶頂期</text>
 
-  <!-- Authority line (the main feature) -->
-  <!-- Points: x based on era position, y based on authority level (20=max, 180=min) -->
-  <!-- 1.Early(100,160) 2.Leo I(180,130) 3.Gregory I(300,100) 4.Iconoclasm(400,120) 
-       5.Cluny(540,80) 6.Gregory VII(650,50) 7.Urban II(720,40) 8.Innocent III(800,20) 
-       9.Boniface(920,90) 10.Avignon(1000,150) 11.Schism(1080,170) 
-       12.Constance(1160,130) 13.Renaissance(1280,110) 14.Reformation(1400,170) 15.Trent(1500,120) -->
-  
-  <!-- Gradient fill under the line -->
-  <defs>
-    <linearGradient id="gfill" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="rgba(201,169,110,.15)"/>
-      <stop offset="100%" stop-color="rgba(201,169,110,.0)"/>
-    </linearGradient>
-  </defs>
-  <polygon points="100,160 180,130 300,100 400,120 540,80 650,50 720,40 800,20 920,90 1000,150 1080,170 1160,130 1280,110 1400,170 1500,120 1500,200 100,200" fill="url(#gfill)"/>
-  
-  <!-- The line itself -->
-  <polyline points="100,160 180,130 300,100 400,120 540,80 650,50 720,40 800,20 920,90 1000,150 1080,170 1160,130 1280,110 1400,170 1500,120" fill="none" stroke="rgba(201,169,110,.6)" stroke-width="2.5" stroke-linejoin="round"/>
-  
-  <!-- Data points with labels -->
-  <g font-family="Noto Sans JP" font-size="6.5" fill="var(--text2)">
-    <circle cx="100" cy="160" r="3" fill="rgba(130,120,100,.5)" stroke="rgba(130,120,100,.8)" stroke-width="1"/>
-    <text x="100" y="175" text-anchor="middle">初期教会</text>
+ <!-- Authority line (the main feature) -->
+ <!-- Points: x based on era position, y based on authority level (20=max, 180=min) -->
+ <!-- 1.Early(100,160) 2.Leo I(180,130) 3.Gregory I(300,100) 4.Iconoclasm(400,120) 
+ 5.Cluny(540,80) 6.Gregory VII(650,50) 7.Urban II(720,40) 8.Innocent III(800,20) 
+ 9.Boniface(920,90) 10.Avignon(1000,150) 11.Schism(1080,170) 
+ 12.Constance(1160,130) 13.Renaissance(1280,110) 14.Reformation(1400,170) 15.Trent(1500,120) -->
+ 
+ <!-- Gradient fill under the line -->
+ <defs>
+ <linearGradient id="gfill" x1="0" y1="0" x2="0" y2="1">
+ <stop offset="0%" stop-color="rgba(201,169,110,.15)"/>
+ <stop offset="100%" stop-color="rgba(201,169,110,.0)"/>
+ </linearGradient>
+ </defs>
+ <polygon points="100,160 180,130 300,100 400,120 540,80 650,50 720,40 800,20 920,90 1000,150 1080,170 1160,130 1280,110 1400,170 1500,120 1500,200 100,200" fill="url(#gfill)"/>
+ 
+ <!-- The line itself -->
+ <polyline points="100,160 180,130 300,100 400,120 540,80 650,50 720,40 800,20 920,90 1000,150 1080,170 1160,130 1280,110 1400,170 1500,120" fill="none" stroke="rgba(201,169,110,.6)" stroke-width="2.5" stroke-linejoin="round"/>
+ 
+ <!-- Data points with labels -->
+ <g font-family="Noto Sans JP" font-size="6.5" fill="var(--text2)">
+ <circle cx="100" cy="160" r="3" fill="rgba(130,120,100,.5)" stroke="rgba(130,120,100,.8)" stroke-width="1"/>
+ <text x="100" y="175" text-anchor="middle">初期教会</text>
 
-    <circle cx="180" cy="130" r="3" fill="rgba(100,130,180,.5)" stroke="rgba(100,130,180,.8)" stroke-width="1"/>
-    <text x="180" y="145" text-anchor="middle">レオ1世</text>
+ <circle cx="180" cy="130" r="3" fill="rgba(100,130,180,.5)" stroke="rgba(100,130,180,.8)" stroke-width="1"/>
+ <text x="180" y="145" text-anchor="middle">レオ1世</text>
 
-    <circle cx="300" cy="100" r="3" fill="rgba(80,150,120,.5)" stroke="rgba(80,150,120,.8)" stroke-width="1"/>
-    <text x="300" y="115" text-anchor="middle">グレゴリウス1世</text>
+ <circle cx="300" cy="100" r="3" fill="rgba(80,150,120,.5)" stroke="rgba(80,150,120,.8)" stroke-width="1"/>
+ <text x="300" y="115" text-anchor="middle">グレゴリウス1世</text>
 
-    <circle cx="400" cy="120" r="3.5" fill="rgba(180,130,80,.5)" stroke="rgba(180,130,80,.8)" stroke-width="1"/>
-    <text x="400" y="135" text-anchor="middle">聖像禁止令</text>
+ <circle cx="400" cy="120" r="3.5" fill="rgba(180,130,80,.5)" stroke="rgba(180,130,80,.8)" stroke-width="1"/>
+ <text x="400" y="135" text-anchor="middle">聖像禁止令</text>
 
-    <circle cx="540" cy="80" r="3" fill="rgba(80,150,120,.5)" stroke="rgba(80,150,120,.8)" stroke-width="1"/>
-    <text x="540" y="95" text-anchor="middle">クリュニー改革</text>
+ <circle cx="540" cy="80" r="3" fill="rgba(80,150,120,.5)" stroke="rgba(80,150,120,.8)" stroke-width="1"/>
+ <text x="540" y="95" text-anchor="middle">クリュニー改革</text>
 
-    <circle cx="650" cy="50" r="4" fill="rgba(201,169,110,.6)" stroke="rgba(201,169,110,.9)" stroke-width="1.5"/>
-    <text x="650" y="65" text-anchor="middle" font-weight="700" fill="var(--gold)">グレゴリウス7世</text>
-    <text x="650" y="75" text-anchor="middle" font-size="5.5">カノッサの屈辱</text>
+ <circle cx="650" cy="50" r="4" fill="rgba(201,169,110,.6)" stroke="rgba(201,169,110,.9)" stroke-width="1.5"/>
+ <text x="650" y="65" text-anchor="middle" font-weight="700" fill="var(--gold)">グレゴリウス7世</text>
+ <text x="650" y="75" text-anchor="middle" font-size="5.5">カノッサの屈辱</text>
 
-    <circle cx="720" cy="40" r="3.5" fill="rgba(201,169,110,.6)" stroke="rgba(201,169,110,.9)" stroke-width="1"/>
-    <text x="720" y="55" text-anchor="middle">ウルバヌス2世</text>
-    <text x="720" y="65" text-anchor="middle" font-size="5.5">第1回十字軍</text>
+ <circle cx="720" cy="40" r="3.5" fill="rgba(201,169,110,.6)" stroke="rgba(201,169,110,.9)" stroke-width="1"/>
+ <text x="720" y="55" text-anchor="middle">ウルバヌス2世</text>
+ <text x="720" y="65" text-anchor="middle" font-size="5.5">第1回十字軍</text>
 
-    <circle cx="800" cy="20" r="5" fill="rgba(201,169,110,.7)" stroke="rgba(201,169,110,1)" stroke-width="2"/>
-    <text x="800" y="15" text-anchor="middle" font-weight="700" fill="var(--gold2)" font-size="8">★頂点</text>
-    <text x="838" y="28" text-anchor="start" font-weight="700" fill="var(--gold)">インノケンティウス3世</text>
+ <circle cx="800" cy="20" r="5" fill="rgba(201,169,110,.7)" stroke="rgba(201,169,110,1)" stroke-width="2"/>
+ <text x="800" y="15" text-anchor="middle" font-weight="700" fill="var(--gold2)" font-size="8">★頂点</text>
+ <text x="838" y="28" text-anchor="start" font-weight="700" fill="var(--gold)">インノケンティウス3世</text>
 
-    <circle cx="920" cy="90" r="4" fill="rgba(180,80,80,.5)" stroke="rgba(180,80,80,.8)" stroke-width="1.5"/>
-    <text x="920" y="105" text-anchor="middle" fill="rgba(220,130,130,.8)" font-weight="700">アナーニ事件</text>
-    <text x="920" y="115" text-anchor="middle" font-size="5.5">ボニファティウス8世</text>
+ <circle cx="920" cy="90" r="4" fill="rgba(180,80,80,.5)" stroke="rgba(180,80,80,.8)" stroke-width="1.5"/>
+ <text x="920" y="105" text-anchor="middle" fill="rgba(220,130,130,.8)" font-weight="700">アナーニ事件</text>
+ <text x="920" y="115" text-anchor="middle" font-size="5.5">ボニファティウス8世</text>
 
-    <circle cx="1000" cy="150" r="3.5" fill="rgba(180,80,80,.5)" stroke="rgba(180,80,80,.8)" stroke-width="1"/>
-    <text x="1000" y="165" text-anchor="middle" fill="rgba(220,130,130,.7)">アヴィニョン捕囚</text>
+ <circle cx="1000" cy="150" r="3.5" fill="rgba(180,80,80,.5)" stroke="rgba(180,80,80,.8)" stroke-width="1"/>
+ <text x="1000" y="165" text-anchor="middle" fill="rgba(220,130,130,.7)">アヴィニョン捕囚</text>
 
-    <circle cx="1080" cy="170" r="4" fill="rgba(180,80,80,.5)" stroke="rgba(180,80,80,.8)" stroke-width="1.5"/>
-    <text x="1080" y="185" text-anchor="middle" fill="rgba(220,130,130,.8)" font-weight="700">大シスマ</text>
+ <circle cx="1080" cy="170" r="4" fill="rgba(180,80,80,.5)" stroke="rgba(180,80,80,.8)" stroke-width="1.5"/>
+ <text x="1080" y="185" text-anchor="middle" fill="rgba(220,130,130,.8)" font-weight="700">大シスマ</text>
 
-    <circle cx="1160" cy="130" r="3" fill="rgba(130,100,160,.5)" stroke="rgba(130,100,160,.8)" stroke-width="1"/>
-    <text x="1160" y="145" text-anchor="middle">コンスタンツ公会議</text>
+ <circle cx="1160" cy="130" r="3" fill="rgba(130,100,160,.5)" stroke="rgba(130,100,160,.8)" stroke-width="1"/>
+ <text x="1160" y="145" text-anchor="middle">コンスタンツ公会議</text>
 
-    <circle cx="1280" cy="110" r="3" fill="rgba(130,120,100,.5)" stroke="rgba(130,120,100,.8)" stroke-width="1"/>
-    <text x="1280" y="125" text-anchor="middle">ルネサンス教皇</text>
+ <circle cx="1280" cy="110" r="3" fill="rgba(130,120,100,.5)" stroke="rgba(130,120,100,.8)" stroke-width="1"/>
+ <text x="1280" y="125" text-anchor="middle">ルネサンス教皇</text>
 
-    <circle cx="1400" cy="170" r="4" fill="rgba(180,80,80,.5)" stroke="rgba(180,80,80,.8)" stroke-width="1.5"/>
-    <text x="1400" y="185" text-anchor="middle" fill="rgba(220,130,130,.8)" font-weight="700">宗教改革</text>
+ <circle cx="1400" cy="170" r="4" fill="rgba(180,80,80,.5)" stroke="rgba(180,80,80,.8)" stroke-width="1.5"/>
+ <text x="1400" y="185" text-anchor="middle" fill="rgba(220,130,130,.8)" font-weight="700">宗教改革</text>
 
-    <circle cx="1500" cy="120" r="3" fill="rgba(130,100,160,.5)" stroke="rgba(130,100,160,.8)" stroke-width="1"/>
-    <text x="1500" y="135" text-anchor="middle">トリエント公会議</text>
-  </g>
+ <circle cx="1500" cy="120" r="3" fill="rgba(130,100,160,.5)" stroke="rgba(130,100,160,.8)" stroke-width="1"/>
+ <text x="1500" y="135" text-anchor="middle">トリエント公会議</text>
+ </g>
 
-  <!-- Century markers at bottom -->
-  <g font-family="Cormorant Garamond" font-size="8" fill="rgba(201,169,110,.3)" font-weight="700">
-    <text x="100" y="200" text-anchor="middle">1-3C</text>
-    <text x="200" y="200" text-anchor="middle">5C</text>
-    <text x="300" y="200" text-anchor="middle">6C</text>
-    <text x="400" y="200" text-anchor="middle">8C</text>
-    <text x="540" y="200" text-anchor="middle">10C</text>
-    <text x="650" y="200" text-anchor="middle">11C</text>
-    <text x="720" y="200" text-anchor="middle">1095</text>
-    <text x="800" y="200" text-anchor="middle">13C初</text>
-    <text x="920" y="200" text-anchor="middle">1303</text>
-    <text x="1000" y="200" text-anchor="middle">1309</text>
-    <text x="1080" y="200" text-anchor="middle">1378</text>
-    <text x="1160" y="200" text-anchor="middle">1414</text>
-    <text x="1280" y="200" text-anchor="middle">15C後</text>
-    <text x="1400" y="200" text-anchor="middle">1517</text>
-    <text x="1500" y="200" text-anchor="middle">1545</text>
-  </g>
+ <!-- Century markers at bottom -->
+ <g font-family="Cormorant Garamond" font-size="8" fill="rgba(201,169,110,.3)" font-weight="700">
+ <text x="100" y="200" text-anchor="middle">1-3C</text>
+ <text x="200" y="200" text-anchor="middle">5C</text>
+ <text x="300" y="200" text-anchor="middle">6C</text>
+ <text x="400" y="200" text-anchor="middle">8C</text>
+ <text x="540" y="200" text-anchor="middle">10C</text>
+ <text x="650" y="200" text-anchor="middle">11C</text>
+ <text x="720" y="200" text-anchor="middle">1095</text>
+ <text x="800" y="200" text-anchor="middle">13C初</text>
+ <text x="920" y="200" text-anchor="middle">1303</text>
+ <text x="1000" y="200" text-anchor="middle">1309</text>
+ <text x="1080" y="200" text-anchor="middle">1378</text>
+ <text x="1160" y="200" text-anchor="middle">1414</text>
+ <text x="1280" y="200" text-anchor="middle">15C後</text>
+ <text x="1400" y="200" text-anchor="middle">1517</text>
+ <text x="1500" y="200" text-anchor="middle">1545</text>
+ </g>
 </svg>
 
 <!-- Event cards below -->
 <div class="events">
 
 <div class="ev ev-rise">
-  <div class="ev-year">1–5C</div>
-  <div class="ev-title">初期教会とローマ司教の台頭</div>
-  <div class="ev-desc"><strong>ペテロ</strong>＝イエスの筆頭弟子→「岩(ペトロス)の上に教会を建てる」(マタイ16:18)→<strong>ローマ司教がペテロの後継者</strong>＝教皇の権威の根拠。ミラノ勅令(313)→ニケーア公会議(325)→国教化(392)。<strong>レオ1世</strong>(440-461)がフン族のアッティラに面会し撤退させた逸話→「教皇」の権威上昇。<strong>ゲラシウス1世</strong>(492-496)＝「二つの剣」の理論＝教皇は霊的権威、皇帝は世俗権力→<strong>教皇の独立性を主張</strong>。</div>
+ <div class="ev-year">1–5C</div>
+ <div class="ev-title">初期教会とローマ司教の台頭</div>
+ <div class="ev-desc"><strong>ペテロ</strong>＝イエスの筆頭弟子→「岩(ペトロス)の上に教会を建てる」(マタイ16:18)→<strong>ローマ司教がペテロの後継者</strong>＝教皇の権威の根拠。ミラノ勅令(313)→ニケーア公会議(325)→国教化(392)。<strong>レオ1世</strong>(440-461)がフン族のアッティラに面会し撤退させた逸話→「教皇」の権威上昇。<strong>ゲラシウス1世</strong>(492-496)＝「二つの剣」の理論＝教皇は霊的権威、皇帝は世俗権力→<strong>教皇の独立性を主張</strong>。</div>
 </div>
 
 <div class="ev ev-rise">
-  <div class="ev-year">590–604</div>
-  <div class="ev-title">グレゴリウス1世</div>
-  <div class="ev-desc"><strong>「大教皇」</strong>。西ローマ滅亡後の混乱の中で教皇領の基盤を確立。<strong>ゲルマン人への布教</strong>(アングロ＝サクソンにカンタベリーの修道士を派遣)。グレゴリオ聖歌を整備。教皇がローマの事実上の<strong>世俗支配者</strong>にもなる。</div>
+ <div class="ev-year">590–604</div>
+ <div class="ev-title">グレゴリウス1世</div>
+ <div class="ev-desc"><strong>「大教皇」</strong>。西ローマ滅亡後の混乱の中で教皇領の基盤を確立。<strong>ゲルマン人への布教</strong>(アングロ＝サクソンにカンタベリーの修道士を派遣)。グレゴリオ聖歌を整備。教皇がローマの事実上の<strong>世俗支配者</strong>にもなる。</div>
 </div>
 
 <div class="ev ev-fall">
-  <div class="ev-year">726–843</div>
-  <div class="ev-title">聖像禁止令と東西教会の対立</div>
-  <div class="ev-desc">ビザンツ皇帝<strong>レオン3世</strong>が<strong>聖像禁止令(イコノクラスム)</strong>(726)→ローマ教皇が反発→東西の溝が深まる。教皇は<strong>フランク王国</strong>に接近＝ピピンの寄進(756)→<strong>教皇領の成立</strong>。<strong>カール大帝</strong>への戴冠(800)＝「ローマ皇帝」の復活→教皇が皇帝を「任命する」という権威。<strong>1054年東西教会の分裂</strong>(大シスマ)＝カトリック(ローマ教皇)vs正教(コンスタンティノープル総主教)。</div>
+ <div class="ev-year">726–843</div>
+ <div class="ev-title">聖像禁止令と東西教会の対立</div>
+ <div class="ev-desc">ビザンツ皇帝<strong>レオン3世</strong>が<strong>聖像禁止令(イコノクラスム)</strong>(726)→ローマ教皇が反発→東西の溝が深まる。教皇は<strong>フランク王国</strong>に接近＝ピピンの寄進(756)→<strong>教皇領の成立</strong>。<strong>カール大帝</strong>への戴冠(800)＝「ローマ皇帝」の復活→教皇が皇帝を「任命する」という権威。<strong>1054年東西教会の分裂</strong>(大シスマ)＝カトリック(ローマ教皇)vs正教(コンスタンティノープル総主教)。</div>
 </div>
 
 <div class="ev ev-rise">
-  <div class="ev-year">910–1059</div>
-  <div class="ev-title">クリュニー修道院改革</div>
-  <div class="ev-desc"><strong>クリュニー修道院</strong>(910年創設、ブルゴーニュ)が<strong>教会改革</strong>を主導＝聖職売買(シモニア)・聖職者の妻帯(ニコライ主義)を批判→<strong>教会の道徳的権威を回復</strong>。クリュニーは教皇に直属(地元の領主・司教の支配から独立)→教皇権強化の基盤に。<strong>教皇選挙令</strong>(1059)＝教皇を枢機卿の選挙で選ぶ＝世俗権力からの独立。</div>
+ <div class="ev-year">910–1059</div>
+ <div class="ev-title">クリュニー修道院改革</div>
+ <div class="ev-desc"><strong>クリュニー修道院</strong>(910年創設、ブルゴーニュ)が<strong>教会改革</strong>を主導＝聖職売買(シモニア)・聖職者の妻帯(ニコライ主義)を批判→<strong>教会の道徳的権威を回復</strong>。クリュニーは教皇に直属(地元の領主・司教の支配から独立)→教皇権強化の基盤に。<strong>教皇選挙令</strong>(1059)＝教皇を枢機卿の選挙で選ぶ＝世俗権力からの独立。</div>
 </div>
 
 <div class="ev ev-peak">
-  <div class="ev-year">1073–1122</div>
-  <div class="ev-title">グレゴリウス7世と叙任権闘争</div>
-  <div class="ev-desc"><strong>グレゴリウス7世</strong>(1073-85)＝<strong>「教皇は皇帝を廃位できる」</strong>(教皇令27カ条)。<strong>叙任権闘争</strong>＝聖職者の任命権(叙任権)をめぐり教皇vs神聖ローマ皇帝ハインリヒ4世が対立。<strong>カノッサの屈辱</strong>(1077)＝ハインリヒ4世が破門され、雪の中で3日間教皇に許しを乞う→<strong>教皇権が皇帝権に優越した象徴的瞬間</strong>。<strong>ヴォルムス協約</strong>(1122)で叙任権闘争は妥協的に決着。</div>
-  <div class="ev-note">★超頻出：「カノッサの屈辱(1077)」「叙任権闘争→ヴォルムス協約(1122)」</div>
+ <div class="ev-year">1073–1122</div>
+ <div class="ev-title">グレゴリウス7世と叙任権闘争</div>
+ <div class="ev-desc"><strong>グレゴリウス7世</strong>(1073-85)＝<strong>「教皇は皇帝を廃位できる」</strong>(教皇令27カ条)。<strong>叙任権闘争</strong>＝聖職者の任命権(叙任権)をめぐり教皇vs神聖ローマ皇帝ハインリヒ4世が対立。<strong>カノッサの屈辱</strong>(1077)＝ハインリヒ4世が破門され、雪の中で3日間教皇に許しを乞う→<strong>教皇権が皇帝権に優越した象徴的瞬間</strong>。<strong>ヴォルムス協約</strong>(1122)で叙任権闘争は妥協的に決着。</div>
+ <div class="ev-note">★超：「カノッサの屈辱(1077)」「叙任権闘争→ヴォルムス協約(1122)」</div>
 </div>
 
 <div class="ev ev-peak">
-  <div class="ev-year">1095</div>
-  <div class="ev-title">ウルバヌス2世と第1回十字軍</div>
-  <div class="ev-desc"><strong>クレルモン宗教会議</strong>(1095)＝教皇ウルバヌス2世が<strong>聖地エルサレムの奪還</strong>を呼びかけ→<strong>第1回十字軍</strong>(1096-99)→エルサレム王国の建設。教皇が<strong>全キリスト教世界を軍事的に動員</strong>できる権威を示した。</div>
+ <div class="ev-year">1095</div>
+ <div class="ev-title">ウルバヌス2世と第1回十字軍</div>
+ <div class="ev-desc"><strong>クレルモン宗教会議</strong>(1095)＝教皇ウルバヌス2世が<strong>聖地エルサレムの奪還</strong>を呼びかけ→<strong>第1回十字軍</strong>(1096-99)→エルサレム王国の建設。教皇が<strong>全キリスト教世界を軍事的に動員</strong>できる権威を示した。</div>
 </div>
 
 <div class="ev ev-peak">
-  <div class="ev-year">1198–1216</div>
-  <div class="ev-title">インノケンティウス3世 ★教皇権の絶頂</div>
-  <div class="ev-desc"><strong>「教皇は太陽、皇帝は月」</strong>＝教皇権は神から直接授かった至上の権威、皇帝権は教皇から反射した光にすぎない。英王<strong>ジョン</strong>を破門→屈服させる。仏王<strong>フィリップ2世</strong>の離婚問題にも介入。<strong>第4回ラテラノ公会議</strong>(1215)＝異端審問の制度化。<strong>第4回十字軍</strong>(1202-04)はコンスタンティノープルを攻撃→教皇の意図に反するが結果的にラテン帝国を建設。アルビジョワ十字軍(南仏のカタリ派を弾圧)。<strong>フランチェスコ修道会・ドミニコ修道会</strong>を認可。</div>
-  <div class="ev-note">★超頻出：「インノケンティウス3世＝教皇権の絶頂＝太陽と月」「英王ジョンを破門」</div>
+ <div class="ev-year">1198–1216</div>
+ <div class="ev-title">インノケンティウス3世 ★教皇権の絶頂</div>
+ <div class="ev-desc"><strong>「教皇は太陽、皇帝は月」</strong>＝教皇権は神から直接授かった至上の権威、皇帝権は教皇から反射した光にすぎない。英王<strong>ジョン</strong>を破門→屈服させる。仏王<strong>フィリップ2世</strong>の離婚問題にも介入。<strong>第4回ラテラノ公会議</strong>(1215)＝異端審問の制度化。<strong>第4回十字軍</strong>(1202-04)はコンスタンティノープルを攻撃→教皇の意図に反するが結果的にラテン帝国を建設。アルビジョワ十字軍(南仏のカタリ派を弾圧)。<strong>フランチェスコ修道会・ドミニコ修道会</strong>を認可。</div>
+ <div class="ev-note">★超：「インノケンティウス3世＝教皇権の絶頂＝太陽と月」「英王ジョンを破門」</div>
 </div>
 
 <div class="ev ev-fall">
-  <div class="ev-year">1294–1303</div>
-  <div class="ev-title">ボニファティウス8世 → アナーニ事件</div>
-  <div class="ev-desc"><strong>ボニファティウス8世</strong>＝「世俗の剣も霊的の剣も教皇に属する」(教書ウナム＝サンクタム1302)と教皇権の至上を主張。しかし仏王<strong>フィリップ4世</strong>(端麗王)が聖職者への課税をめぐり対立→<strong>アナーニ事件</strong>(1303)＝フィリップの部下がアナーニでボニファティウスを<strong>捕縛・凌辱</strong>→教皇は解放後まもなく<strong>憤死</strong>。★<strong>カノッサ(1077)では教皇が皇帝を屈服させたが、アナーニ(1303)では世俗権力が教皇を屈服させた</strong>＝教皇権の衰退の転換点。</div>
-  <div class="ev-note">★超頻出：「カノッサ(1077)vsアナーニ(1303)」の対比＝教皇権の上昇と下降を象徴する2つの事件</div>
+ <div class="ev-year">1294–1303</div>
+ <div class="ev-title">ボニファティウス8世 → アナーニ事件</div>
+ <div class="ev-desc"><strong>ボニファティウス8世</strong>＝「世俗の剣も霊的の剣も教皇に属する」(教書ウナム＝サンクタム1302)と教皇権の至上を主張。しかし仏王<strong>フィリップ4世</strong>(端麗王)が聖職者への課税をめぐり対立→<strong>アナーニ事件</strong>(1303)＝フィリップの部下がアナーニでボニファティウスを<strong>捕縛・凌辱</strong>→教皇は解放後まもなく<strong>憤死</strong>。★<strong>カノッサ(1077)では教皇が皇帝を屈服させたが、アナーニ(1303)では世俗権力が教皇を屈服させた</strong>＝教皇権の衰退の転換点。</div>
+ <div class="ev-note">★超：「カノッサ(1077)vsアナーニ(1303)」の対比＝教皇権の上昇と下降を象徴する2つの事件</div>
 </div>
 
 <div class="ev ev-fall">
-  <div class="ev-year">1309–1377</div>
-  <div class="ev-title">アヴィニョン捕囚(教皇のバビロン捕囚)</div>
-  <div class="ev-desc">フィリップ4世の圧力で教皇庁が<strong>南仏アヴィニョン</strong>に移転(1309)→以後約70年間、<strong>7代の教皇がアヴィニョンに「幽閉」</strong>。教皇はフランス王の影響下に→<strong>教皇の普遍的権威が大きく損なわれる</strong>。ペトラルカが旧約聖書の「バビロン捕囚」になぞらえて批判。<strong>ウィクリフ</strong>(英、オックスフォード)が教皇権・聖職者の堕落を批判→聖書の英訳→後の宗教改革の先駆者。</div>
+ <div class="ev-year">1309–1377</div>
+ <div class="ev-title">アヴィニョン捕囚(教皇のバビロン捕囚)</div>
+ <div class="ev-desc">フィリップ4世の圧力で教皇庁が<strong>南仏アヴィニョン</strong>に移転(1309)→以後約70年間、<strong>7代の教皇がアヴィニョンに「幽閉」</strong>。教皇はフランス王の影響下に→<strong>教皇の普遍的権威が大きく損なわれる</strong>。ペトラルカが旧約聖書の「バビロン捕囚」になぞらえて批判。<strong>ウィクリフ</strong>(英、オックスフォード)が教皇権・聖職者の堕落を批判→聖書の英訳→後の宗教改革の先駆者。</div>
 </div>
 
 <div class="ev ev-low">
-  <div class="ev-year">1378–1417</div>
-  <div class="ev-title">大シスマ(教会大分裂)</div>
-  <div class="ev-desc">1377年にローマに帰還→しかし<strong>教皇が2人(ローマとアヴィニョン)</strong>に分裂＝<strong>大シスマ(大分裂)</strong>(1378-1417)。さらにピサ公会議(1409)が第3の教皇を選出→<strong>教皇が3人同時に存在</strong>する異常事態。→<strong>「教皇は一人であるはずなのに3人いる」</strong>＝教皇の権威は地に落ちた。<strong>フス</strong>(ボヘミア、プラハ大学)がウィクリフの影響で教会批判→後のフス戦争(1419-36)。</div>
+ <div class="ev-year">1378–1417</div>
+ <div class="ev-title">大シスマ(教会大分裂)</div>
+ <div class="ev-desc">1377年にローマに帰還→しかし<strong>教皇が2人(ローマとアヴィニョン)</strong>に分裂＝<strong>大シスマ(大分裂)</strong>(1378-1417)。さらにピサ公会議(1409)が第3の教皇を選出→<strong>教皇が3人同時に存在</strong>する異常事態。→<strong>「教皇は一人であるはずなのに3人いる」</strong>＝教皇の権威は地に落ちた。<strong>フス</strong>(ボヘミア、プラハ大学)がウィクリフの影響で教会批判→後のフス戦争(1419-36)。</div>
 </div>
 
 <div class="ev ev-reform">
-  <div class="ev-year">1414–1418</div>
-  <div class="ev-title">コンスタンツ公会議</div>
-  <div class="ev-desc"><strong>コンスタンツ公会議</strong>(1414-18)＝大シスマの解決。3人の教皇を全て退位/廃位→新教皇マルティヌス5世を選出＝<strong>シスマの終結</strong>。<strong>公会議主義</strong>(コンチリアリスム)＝「公会議は教皇に優越する」→しかし教皇はこれを認めず、後に公会議主義は否定される。<strong>フスを異端として火刑</strong>(1415)→ボヘミアのフス派の反乱→フス戦争。</div>
-  <div class="ev-note">★頻出：「コンスタンツ＝大シスマ解決＋フス処刑」「公会議主義」</div>
+ <div class="ev-year">1414–1418</div>
+ <div class="ev-title">コンスタンツ公会議</div>
+ <div class="ev-desc"><strong>コンスタンツ公会議</strong>(1414-18)＝大シスマの解決。3人の教皇を全て退位/廃位→新教皇マルティヌス5世を選出＝<strong>シスマの終結</strong>。<strong>公会議主義</strong>(コンチリアリスム)＝「公会議は教皇に優越する」→しかし教皇はこれを認めず、後に公会議主義は否定される。<strong>フスを異端として火刑</strong>(1415)→ボヘミアのフス派の反乱→フス戦争。</div>
+ <div class="ev-note">：「コンスタンツ＝大シスマ解決＋フス処刑」「公会議主義」</div>
 </div>
 
 <div class="ev ev-low">
-  <div class="ev-year">15C後半</div>
-  <div class="ev-title">ルネサンス教皇</div>
-  <div class="ev-desc">教皇が<strong>世俗的な君主・芸術パトロン</strong>として振る舞う時代。<strong>ユリウス2世</strong>＝「戦争教皇」(自ら軍を率いる)。ミケランジェロにシスティーナ礼拝堂天井画を依頼。<strong>レオ10世</strong>(メディチ家出身)＝「教皇になったのだから楽しもう」。<strong>サン＝ピエトロ大聖堂</strong>の建設資金のため<strong>免罪符(贖宥状)</strong>を大々的に販売→<strong>ルターの批判を招く</strong>。教皇の霊的権威は形骸化し、イタリアの一君主のように振る舞う。</div>
+ <div class="ev-year">15C後半</div>
+ <div class="ev-title">ルネサンス教皇</div>
+ <div class="ev-desc">教皇が<strong>世俗的な君主・芸術パトロン</strong>として振る舞う時代。<strong>ユリウス2世</strong>＝「戦争教皇」(自ら軍を率いる)。ミケランジェロにシスティーナ礼拝堂天井画を依頼。<strong>レオ10世</strong>(メディチ家出身)＝「教皇になったのだから楽しもう」。<strong>サン＝ピエトロ大聖堂</strong>の建設資金のため<strong>免罪符(贖宥状)</strong>を大々的に販売→<strong>ルターの批判を招く</strong>。教皇の霊的権威は形骸化し、イタリアの一君主のように振る舞う。</div>
 </div>
 
 <div class="ev ev-fall">
-  <div class="ev-year">1517</div>
-  <div class="ev-title">宗教改革 ― 教皇権の国際的影響力の崩壊</div>
-  <div class="ev-desc"><strong>ルター</strong>の95カ条(1517)→「信仰のみ」「聖書のみ」→<strong>教皇の権威そのものを否定</strong>。北欧がプロテスタントに→教皇はカトリック圏(南欧＋中南米)のみの指導者に。<strong>ウェストファリア条約</strong>(1648)＝教皇が抗議するも無視＝<strong>国際政治における教皇の影響力が決定的に消滅</strong>。</div>
+ <div class="ev-year">1517</div>
+ <div class="ev-title">宗教改革 ― 教皇権の国際的影響力の崩壊</div>
+ <div class="ev-desc"><strong>ルター</strong>の95カ条(1517)→「信仰のみ」「聖書のみ」→<strong>教皇の権威そのものを否定</strong>。北欧がプロテスタントに→教皇はカトリック圏(南欧＋中南米)のみの指導者に。<strong>ウェストファリア条約</strong>(1648)＝教皇が抗議するも無視＝<strong>国際政治における教皇の影響力が決定的に消滅</strong>。</div>
 </div>
 
 <div class="ev ev-reform">
-  <div class="ev-year">1545–63</div>
-  <div class="ev-title">トリエント公会議 ― 内部改革</div>
-  <div class="ev-desc"><strong>トリエント公会議</strong>＝カトリック側の内部改革(対抗宗教改革)。教皇の至上権を再確認。教義の明確化。聖職者の教育改善。<strong>イエズス会</strong>の海外布教。→カトリック圏では教皇の権威が再強化されたが、<strong>国際政治の舞台からは退場</strong>＝教皇は「カトリック教徒の霊的指導者」に限定された。</div>
+ <div class="ev-year">1545–63</div>
+ <div class="ev-title">トリエント公会議 ― 内部改革</div>
+ <div class="ev-desc"><strong>トリエント公会議</strong>＝カトリック側の内部改革(対抗宗教改革)。教皇の至上権を再確認。教義の明確化。聖職者の教育改善。<strong>イエズス会</strong>の海外布教。→カトリック圏では教皇の権威が再強化されたが、<strong>国際政治の舞台からは退場</strong>＝教皇は「カトリック教徒の霊的指導者」に限定された。</div>
 </div>
 
 </div><!-- /events -->

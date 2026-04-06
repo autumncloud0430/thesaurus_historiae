@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>国家指導者一覧 ― 世界史入試対策</title>
+<title>国家指導者一覧</title>
 <style>@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@400;600;700&family=Cormorant+Garamond:wght@400;700&display=swap');
 :root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--gold-dim:rgba(201,169,110,.12);--text:#d4cfc6;--text2:#8a857d;--text3:#555048;--border:rgba(201,169,110,.08);}
 *{margin:0;padding:0;box-sizing:border-box}
@@ -66,7 +66,7 @@ td:first-child{font-size:8.5px}
 <button class="tab" onclick="switchTab(21)" id="tab21">東欧</button>
 <button class="tab" onclick="switchTab(22)" id="tab22">北欧・オランダ</button>
 </div>
-<div class="search-bar"><input class="si" id="search" placeholder="人物名・業績で検索..." oninput="filterRows()"><span class="cnt" id="cnt"></span></div>
+<div class="search-bar"><input class="si" id="search" placeholder="人物名・業績で検索..." oninput="filterRows"><span class="cnt" id="cnt"></span></div>
 <div class="tbl-wrap" id="content0"><table>
 <thead><tr><th>代数/役職</th><th>人物名</th><th>時代/在位</th><th>覚えるべき事績</th></tr></thead>
 <tbody>
@@ -781,9 +781,9 @@ td:first-child{font-size:8.5px}
 
 <script>
 var currentTab=0;
-function switchTab(n){document.getElementById("content"+currentTab).className="tbl-wrap hidden";document.getElementById("tab"+currentTab).className="tab";document.getElementById("content"+n).className="tbl-wrap";document.getElementById("tab"+n).className="tab on";currentTab=n;filterRows()}
-function filterRows(){var q=document.getElementById("search").value.toLowerCase();var w=document.getElementById("content"+currentTab);var r=w.querySelectorAll("tbody tr");var s=0;for(var i=0;i<r.length;i++){var t=r[i].textContent.toLowerCase();if(!q||t.indexOf(q)>=0){r[i].style.display="";s++}else{r[i].style.display="none"}}document.getElementById("cnt").textContent=s+" 件"}
-filterRows();
+function switchTab(n){document.getElementById("content"+currentTab).className="tbl-wrap hidden";document.getElementById("tab"+currentTab).className="tab";document.getElementById("content"+n).className="tbl-wrap";document.getElementById("tab"+n).className="tab on";currentTab=n;filterRows}
+function filterRows{var q=document.getElementById("search").value.toLowerCase;var w=document.getElementById("content"+currentTab);var r=w.querySelectorAll("tbody tr");var s=0;for(var i=0;i<r.length;i++){var t=r[i].textContent.toLowerCase;if(!q||t.indexOf(q)>=0){r[i].style.display="";s++}else{r[i].style.display="none"}}document.getElementById("cnt").textContent=s+" 件"}
+filterRows;
 </script>
 <style>
 .chart-link{display:inline-block;font-size:6px;padding:1px 4px;margin:1px;border-radius:2px;background:rgba(201,169,110,.08);border:1px solid rgba(201,169,110,.12);color:#c9a96e;text-decoration:none;white-space:nowrap;vertical-align:middle;transition:all .15s}
@@ -791,7 +791,7 @@ filterRows();
 .chart-links-wrap{display:inline;margin-left:3px}
 </style>
 <script>
-(function(){
+(function{
 var M=[
 [/オリエント|シュメール|アッカド|バビロニア|ハンムラビ|ヒッタイト|アッシリア|アケメネス|ペルシア|エジプト古王国|エジプト新王国|フェニキア|リディア|メディア/,"timeline_orient.html","TL:オリエント"],
 [/中国|殷|周|秦|漢|三国|隋|唐|宋|元|明|清|春秋|戦国/,"timeline_china.html","TL:中国王朝"],
@@ -864,29 +864,29 @@ var M=[
 ];
 var cells=document.querySelectorAll('td');
 for(var i=0;i<cells.length;i++){
-  var txt=cells[i].textContent;
-  if(txt.length<5) continue;
-  var found={};
-  for(var j=0;j<M.length;j++){
-    if(M[j][0].test(txt) && !found[M[j][1]]){
-      found[M[j][1]]=M[j][2];
-    }
-  }
-  var keys=Object.keys(found);
-  if(keys.length>0 && keys.length<=4){
-    var wrap=document.createElement('span');
-    wrap.className='chart-links-wrap';
-    for(var k=0;k<keys.length;k++){
-      var a=document.createElement('a');
-      a.className='chart-link';
-      a.href=keys[k];
-      a.textContent=found[keys[k]];
-      a.title=keys[k];
-      wrap.appendChild(a);
-    }
-    cells[i].appendChild(wrap);
-  }
+ var txt=cells[i].textContent;
+ if(txt.length<5) continue;
+ var found={};
+ for(var j=0;j<M.length;j++){
+ if(M[j][0].test(txt) && !found[M[j][1]]){
+ found[M[j][1]]=M[j][2];
+ }
+ }
+ var keys=Object.keys(found);
+ if(keys.length>0 && keys.length<=4){
+ var wrap=document.createElement('span');
+ wrap.className='chart-links-wrap';
+ for(var k=0;k<keys.length;k++){
+ var a=document.createElement('a');
+ a.className='chart-link';
+ a.href=keys[k];
+ a.textContent=found[keys[k]];
+ a.title=keys[k];
+ wrap.appendChild(a);
+ }
+ cells[i].appendChild(wrap);
+ }
 }
-})();
+});
 </script>
 </body></html>
