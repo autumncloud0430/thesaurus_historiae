@@ -318,7 +318,7 @@ tLayers.push(layer);
 });
 
 var legCollapsed=false;
-function toggleLeg{
+function toggleLeg(){
  legCollapsed=!legCollapsed;
  document.getElementById("leg").className="leg-body"+(legCollapsed?" collapsed":"");
  document.getElementById("legtitle").textContent=legCollapsed?"\u25b6 凡例":"\u25bc 凡例";
@@ -1052,18 +1052,18 @@ function toggleCat(cat){
  activeCats[cat]=!activeCats[cat];
  var any=false;for(var k in activeCats)if(activeCats[k])any=true;
  if(!any)activeCats[cat]=true;
- for(var k in CATS){document.getElementById("p"+k.toLowerCase).className="tb"+(activeCats[k]?" on":"")}
+ for(var k in CATS){document.getElementById("p"+k.toLowerCase()).className="tb"+(activeCats[k]?" on":"")}
  renderPoints;
 }
 
-function getFiltered{
+function getFiltered(){
  var d=DATA.filter(function(x){return activeCats[x.cat]});
- var s=document.getElementById("search").value.toLowerCase;
- if(s)d=d.filter(function(x){return x.n.toLowerCase.indexOf(s)>=0||x.d.toLowerCase.indexOf(s)>=0});
+ var s=document.getElementById("search").value.toLowerCase();
+ if(s)d=d.filter(function(x){return x.n.toLowerCase().indexOf(s)>=0||x.d.toLowerCase().indexOf(s)>=0});
  return d.sort(function(a,b){return(a.yN||0)-(b.yN||0)});
 }
 
-function renderPoints{
+function renderPoints(){
  pointMarkers.forEach(function(m){map.removeLayer(m)});pointMarkers=[];
  if(labelLayer){map.removeLayer(labelLayer)}
  labelLayer=L.layerGroup.addTo(map);
@@ -1088,7 +1088,7 @@ function renderPoints{
  updateLabels;
 }
 
-function updateLabels{
+function updateLabels(){
  if(labelLayer){map.removeLayer(labelLayer)}
  labelLayer=L.layerGroup.addTo(map);
  var zoom=map.getZoom;if(zoom<5)return;
@@ -1105,7 +1105,7 @@ function updateLabels{
  }
 }
 var lt=null;
-function dbl{if(lt)clearTimeout(lt);lt=setTimeout(updateLabels,150)}
+function dbl(){if(lt)clearTimeout(lt);lt=setTimeout(updateLabels,150)}
 map.on("zoomend",dbl);map.on("moveend",dbl);
 
 renderPoints;

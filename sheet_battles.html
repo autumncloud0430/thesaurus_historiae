@@ -183,7 +183,7 @@ td:first-child{font-size:8.5px}
 <tr class="sh"><td colspan="5">冷戦期</td></tr>
 <tr><td class="no">134</td><td class="nm">キューバ危機</td><td class="yr">1962</td><td class="ds">ソ連がキューバにミサイル基地建設→ケネディが海上封鎖→フルシチョフがミサイル撤去。核戦争の瀬戸際。<br>→米ソホットライン設置→部分的核実験禁止条約（1963）→デタントの起点。</td><td class="ds">キューバ革命→ソ連のミサイル配備→海上封鎖→核戦争の危機→ホットライン→軍縮交渉の開始</td></tr>
 </tbody></table></div>
-<script>function filterRows{var q=document.getElementById("search").value.toLowerCase;var r=document.querySelectorAll("tbody tr");var s=0;for(var i=0;i<r.length;i++){var t=r[i].textContent.toLowerCase;if(!q||t.indexOf(q)>=0){r[i].style.display="";s++}else{r[i].style.display="none"}}document.getElementById("cnt").textContent=s+" 件"}filterRows;</script>
+<script>function filterRows(){var q=document.getElementById("search").value.toLowerCase();var r=document.querySelectorAll("tbody tr");var s=0;for(var i=0;i<r.length;i++){var t=r[i].textContent.toLowerCase();if(!q||t.indexOf(q)>=0){r[i].style.display="";s++}else{r[i].style.display="none"}}document.getElementById("cnt").textContent=s+" 件"}filterRows();</script>
 
 <style>
 .chart-link{display:inline-block;font-size:6px;padding:1px 4px;margin:1px;border-radius:2px;background:rgba(201,169,110,.08);border:1px solid rgba(201,169,110,.12);color:#c9a96e;text-decoration:none;white-space:nowrap;vertical-align:middle;transition:all .15s}
@@ -191,7 +191,7 @@ td:first-child{font-size:8.5px}
 .chart-links-wrap{display:inline;margin-left:3px}
 </style>
 <script>
-(function{
+(function(){
 var M=[
 [/オリエント|シュメール|アッカド|バビロニア|ハンムラビ|ヒッタイト|アッシリア|アケメネス|ペルシア|エジプト古王国|エジプト新王国|フェニキア|リディア|メディア/,"timeline_orient.html","TL:オリエント"],
 [/中国|殷|周|秦|漢|三国|隋|唐|宋|元|明|清|春秋|戦国/,"timeline_china.html","TL:中国王朝"],

@@ -315,7 +315,7 @@ var seen=new Set;
 });
 
 let legCollapsed=false;
-function toggleLeg{
+function toggleLeg(){
  legCollapsed=!legCollapsed;
  document.getElementById("leg").className="leg-body"+(legCollapsed?" collapsed":"");
  document.getElementById("legtitle").textContent=legCollapsed?"▶ 凡例":"▼ 凡例";
@@ -1049,18 +1049,18 @@ let activeCats=new Set(["B","T","C","S"]),pointMarkers=[],labelLayer=null,curren
 function toggleCat(cat){
  if(activeCats.has(cat))activeCats.delete(cat);else activeCats.add(cat);
  if(activeCats.size===0)activeCats.add(cat);
- Object.keys(CATS).forEach(k=>{document.getElementById("p"+k.toLowerCase).className="tb"+(activeCats.has(k)?" on":"")});
+ Object.keys(CATS).forEach(k=>{document.getElementById("p"+k.toLowerCase()).className="tb"+(activeCats.has(k)?" on":"")});
  renderPoints;
 }
 
-function getFiltered{
+function getFiltered(){
  let d=DATA.filter(x=>activeCats.has(x.cat));
- var s=document.getElementById("search").value.toLowerCase;
- if(s)d=d.filter(x=>x.n.toLowerCase.includes(s)||x.d.toLowerCase.includes(s));
+ var s=document.getElementById("search").value.toLowerCase();
+ if(s)d=d.filter(x=>x.n.toLowerCase().includes(s)||x.d.toLowerCase().includes(s));
  return d.sort((a,b)=>(a.yN||0)-(b.yN||0));
 }
 
-function renderPoints{
+function renderPoints(){
  pointMarkers.forEach(m=>map.removeLayer(m));pointMarkers=[];
  if(labelLayer){map.removeLayer(labelLayer)}
  labelLayer=L.layerGroup.addTo(map);
@@ -1086,7 +1086,7 @@ function renderPoints{
  updateLabels;
 }
 
-function updateLabels{
+function updateLabels(){
  if(labelLayer){map.removeLayer(labelLayer)}
  labelLayer=L.layerGroup.addTo(map);
  var zoom=map.getZoom;if(zoom<5)return;
@@ -1102,7 +1102,7 @@ function updateLabels{
  }
 }
 let lt=null;
-function dbl{if(lt)clearTimeout(lt);lt=setTimeout(updateLabels,150)}
+function dbl(){if(lt)clearTimeout(lt);lt=setTimeout(updateLabels,150)}
 map.on("zoomend",dbl);map.on("moveend",dbl);
 
 renderPoints;

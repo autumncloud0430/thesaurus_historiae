@@ -817,12 +817,12 @@ function toggleCat(cat){
  activeCats[cat]=!activeCats[cat];
  var any=false;for(var k in activeCats)if(activeCats[k])any=true;
  if(!any)activeCats[cat]=true;
- for(var k in CATS){document.getElementById("p"+k.toLowerCase).className="tb"+(activeCats[k]?" on":"")}
+ for(var k in CATS){document.getElementById("p"+k.toLowerCase()).className="tb"+(activeCats[k]?" on":"")}
  renderPoints;
 }
 
-function getFiltered{
- var s=document.getElementById("search").value.toLowerCase;
+function getFiltered(){
+ var s=document.getElementById("search").value.toLowerCase();
  var result=[];
  for(var i=0;i<groupKeys.length;i++){
  var g=GROUPS[groupKeys[i]];
@@ -831,7 +831,7 @@ function getFiltered{
  for(var j=0;j<g.items.length;j++){
  var d=g.items[j];
  if(!activeCats[d.cat])continue;
- if(s&&d.n.toLowerCase.indexOf(s)<0&&d.d.toLowerCase.indexOf(s)<0)continue;
+ if(s&&d.n.toLowerCase().indexOf(s)<0&&d.d.toLowerCase().indexOf(s)<0)continue;
  filtered.push(d);
  }
  if(filtered.length>0){
@@ -871,7 +871,7 @@ function buildPopup(items){
  return h;
 }
 
-function renderPoints{
+function renderPoints(){
  for(var i=0;i<pointMarkers.length;i++){map.removeLayer(pointMarkers[i])}
  pointMarkers=[];
  if(labelLayer){map.removeLayer(labelLayer)}
@@ -927,7 +927,7 @@ function renderPoints{
  updateLabels;
 }
 
-function updateLabels{
+function updateLabels(){
  if(labelLayer){map.removeLayer(labelLayer)}
  labelLayer=L.layerGroup.addTo(map);
  var zoom=map.getZoom;
@@ -952,7 +952,7 @@ function updateLabels{
 }
 
 var lt=null;
-function dbl{if(lt)clearTimeout(lt);lt=setTimeout(updateLabels,150)}
+function dbl(){if(lt)clearTimeout(lt);lt=setTimeout(updateLabels,150)}
 map.on("zoomend",dbl);
 map.on("moveend",dbl);
 

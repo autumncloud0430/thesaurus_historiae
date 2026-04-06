@@ -128,7 +128,7 @@ function navigate(dir) {
 }
 
 // Slider
-document.getElementById('slider').addEventListener('input', function {
+document.getElementById('slider').addEventListener('input', function() {
  render(parseInt(this.value));
 });
 
@@ -138,7 +138,7 @@ for (var i = 0; i < DATA.length; i++) {
  var btn = document.createElement('button');
  btn.textContent = DATA[i][0];
  btn.setAttribute('data-idx', i);
- btn.addEventListener('click', function {
+ btn.addEventListener('click', function() {
  render(parseInt(this.getAttribute('data-idx')));
  });
  btnContainer.appendChild(btn);
@@ -146,8 +146,8 @@ for (var i = 0; i < DATA.length; i++) {
 
 // Keyboard nav
 document.addEventListener('keydown', function(e) {
- if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault; navigate(-1); }
- if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { e.preventDefault; navigate(1); }
+ if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); navigate(-1); }
+ if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { e.preventDefault(); navigate(1); }
 });
 
 // Init

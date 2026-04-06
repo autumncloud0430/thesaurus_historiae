@@ -361,7 +361,7 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
  <div id="tooltip-content" style="font-size:10px;color:#8a857d;line-height:1.7"></div>
 </div>
 <script>
-(function{
+(function(){
  var ov=document.getElementById("tooltip-overlay"),bx=document.getElementById("tooltip-box"),ct=document.getElementById("tooltip-content");
  window.closeTip=function{bx.style.display="none";ov.style.display="none"};
  function openTip(el){
@@ -376,8 +376,8 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
  }
  var tm=false,tt=null;
  document.addEventListener("touchstart",function(e){tm=false;tt=e.target},{passive:true});
- document.addEventListener("touchmove",function{tm=true},{passive:true});
- document.addEventListener("touchend",function(e){if(tm)return;var nd=tt?tt.closest(".nd-svg"):null;if(nd){e.preventDefault;openTip(nd)}else if(!tt||!tt.closest("#tooltip-box"))closeTip;tt=null});
+ document.addEventListener("touchmove", function() {tm=true},{passive:true});
+ document.addEventListener("touchend",function(e){if(tm)return;var nd=tt?tt.closest(".nd-svg"):null;if(nd){e.preventDefault();openTip(nd)}else if(!tt||!tt.closest("#tooltip-box"))closeTip;tt=null});
  document.addEventListener("click",function(e){if("ontouchstart"in window)return;var nd=e.target.closest(".nd-svg");if(nd)openTip(nd);else if(!e.target.closest("#tooltip-box"))closeTip});
 });
 </script>

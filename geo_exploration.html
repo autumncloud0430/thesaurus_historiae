@@ -46,7 +46,7 @@
 <div id="map"></div>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
-function initMap{
+function initMap(){
 var map = L.map('map',{center:[10,-10],zoom:2,minZoom:2,maxZoom:6,zoomControl:true});
 L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',{attribution:'CARTO',subdomains:'abcd',maxZoom:19}).addTo(map);
 
@@ -112,10 +112,10 @@ function updateCopies(map) {
 for (var w = -2; w <= 2; w++) drawCopy(map, w);
 
 // Update on move
-map.on('moveend', function { updateCopies(map); });
+map.on('moveend', function() { updateCopies(map); });
 
 }
-(function wait{if(typeof L!=="undefined"){initMap;}else{setTimeout(wait,100);}});
+(function wait(){if(typeof L!=="undefined"){initMap;}else{setTimeout(wait,100);}});
 </script>
 <div class="desc">
 <h2>大航海時代の3大航海</h2>
