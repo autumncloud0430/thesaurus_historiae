@@ -1,0 +1,611 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>文化史・人物業績一覧</title><style>@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@400;600;700&family=Cormorant+Garamond:wght@400;700&display=swap');:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--gold-dim:rgba(201,169,110,.12);--text:#d4cfc6;--text2:#8a857d;--text3:#555048;--border:rgba(201,169,110,.08)}*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}.hdr{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;flex-wrap:wrap}.hdr h1{font-family:'Noto Serif JP',serif;font-size:15px;font-weight:700;color:var(--gold2)}.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5;transition:opacity .2s}.hdr a:hover{opacity:1}.tabs{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:4px;padding:10px 20px;border-bottom:1px solid rgba(255,255,255,.03)}.tab{padding:5px 10px;border-radius:6px;border:1px solid transparent;cursor:pointer;font-size:10px;font-weight:600;font-family:inherit;background:rgba(255,255,255,.03);color:var(--text3);white-space:nowrap;transition:all .2s;text-align:center}.tab:hover{color:var(--text2);background:rgba(255,255,255,.06)}.tab.on{border-color:rgba(201,169,110,.2);color:var(--gold);background:var(--gold-dim)}.search-bar{padding:10px 20px;display:flex;gap:10px;align-items:center}.si{padding:6px 14px;border-radius:100px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);color:var(--text);font-size:11px;font-family:inherit;width:240px;outline:none;transition:border-color .2s}.si:focus{border-color:rgba(201,169,110,.3)}.si::placeholder{color:var(--text3)}.cnt{font-size:9px;color:var(--text3);font-family:'Cormorant Garamond',serif;letter-spacing:.1em}.tbl-wrap{padding:4px 20px 40px;overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:11px}th{background:rgba(201,169,110,.08);color:var(--gold);font-family:'Noto Serif JP',serif;font-weight:700;font-size:10px;letter-spacing:.08em;text-align:left;padding:8px 12px;border-bottom:1px solid rgba(201,169,110,.15);white-space:nowrap}td{padding:8px 12px;border-bottom:1px solid rgba(255,255,255,.025);color:#bbb;vertical-align:top;line-height:1.7}td.no-cell{color:var(--text3);font-family:'Cormorant Garamond',serif;font-size:12px;text-align:center;font-weight:600;width:36px}td.name-cell{color:var(--text);font-weight:600;width:160px}td.year-cell{color:var(--gold);opacity:.7;font-family:'Cormorant Garamond',serif;font-size:12px;white-space:nowrap;width:100px}td.feature-cell{color:var(--gold);opacity:.5;font-size:10px;width:200px}td.desc-cell{color:#a8a39a;font-size:11px}tr:hover td{background:rgba(201,169,110,.03)}tr.section-header td{background:rgba(201,169,110,.06);color:var(--gold2);font-family:'Noto Serif JP',serif;font-weight:700;font-size:12px;padding:12px;letter-spacing:.06em;border-bottom:1px solid rgba(201,169,110,.1)}.hidden{display:none}
+@media(max-width:600px){
+.hdr{padding:10px 12px}.hdr h1{font-size:12px}
+th,td{padding:6px 8px;font-size:9px}
+th{font-size:10px}
+td:first-child{font-size:8.5px}
+.note p{font-size:8px}
+.side-note{font-size:7.5px}
+}
+
+.cat-header td{background:linear-gradient(90deg,rgba(201,169,110,.12),rgba(201,169,110,.02));color:var(--gold2);font-family:'Cormorant Garamond',serif;font-weight:600;font-size:13px;letter-spacing:1px;padding:10px 12px;border-bottom:1px solid rgba(201,169,110,.25)}
+</style></head><body>
+<div class="hdr"><h1>文化史・人物業績一覧</h1><a href="index.html">← Ad Indicem</a></div><div class="tabs"><button class="tab on" onclick="switchTab(0)" id="tab0">西洋文化史</button>
+<button class="tab" onclick="switchTab(1)" id="tab1">中国・東洋文化史</button>
+<button class="tab" onclick="switchTab(2)" id="tab2">様式・運動・潮流</button>
+</div>
+<div class="search-bar"><input class="si" id="search" placeholder="人物名・作品・分野で検索..." oninput="filterRows()"><span class="cnt" id="cnt"></span></div><div class="tbl-wrap" id="content0"><table class="culture-tbl"><thead><tr><th>No.</th><th>人物名</th><th>時代/生没年</th><th>分野・業績・代表作</th></tr></thead><tbody>
+<tr class="cat-header"><td colspan="4">▶ 古代ギリシア 文学</td></tr>
+<tr><td>1</td><td><strong>ヘシオドス</strong></td><td>前700頃</td><td>農民詩人。『労働と日々』（労働の尊さ）・『神統記』（ギリシア神話の体系化）。</td></tr>
+<tr><td>2</td><td><strong>サッフォー</strong></td><td>前612頃</td><td>レスボス島出身の女流叙情詩人。少女への恋愛を歌う。「レズビアン」の語源。</td></tr>
+<tr><td>3</td><td><strong>アイスキュロス</strong></td><td>前525-前456</td><td>3大悲劇詩人（最古）。マラトン・サラミスに従軍。代表作『アガメムノン』。</td></tr>
+<tr><td>4</td><td><strong>ピンダロス</strong></td><td>前518-前438</td><td>叙情詩人。4大祭典の競技祝勝歌。</td></tr>
+<tr><td>5</td><td><strong>ソフォクレス</strong></td><td>前496頃-前406</td><td>3大悲劇詩人。代表作『オイディプス王』→「エディプス・コンプレックス」の由来。</td></tr>
+<tr><td>6</td><td><strong>エウリピデス</strong></td><td>前485頃-前406頃</td><td>3大悲劇詩人（最後）。女性心理描写。代表作『メディア』。後世に最も愛好。</td></tr>
+<tr><td>7</td><td><strong>アリストファネス</strong></td><td>前450頃-前385頃</td><td>喜劇詩人。『女の平和』（反戦）・『蜂』（ペリクレス批判）・『雲』（ソクラテスを嘲笑）。</td></tr>
+<tr><td>8</td><td><strong>メナンドロス</strong></td><td>前342頃-前291頃</td><td>アテネの新喜劇(ニュー=コメディ)の代表者。日常生活の風俗を描く。後のローマ喜劇の原型。</td></tr>
+<tr><td>9</td><td><strong>テオクリトス</strong></td><td>前300頃</td><td>ヘレニズム期。牧歌(ブコリカ)の創始者。ウェルギリウスの田園詩に影響。</td></tr>
+<tr><td>10</td><td><strong>ホメロス</strong></td><td>前8C</td><td>叙事詩人。『イリアス』（トロイア戦争）・『オデュッセイア』（英雄の帰還）。口伝を集成。</td></tr>
+<tr class="cat-header"><td colspan="4">▶ 古代ギリシア 彫刻</td></tr>
+<tr><td>11</td><td><strong>フェイディアス</strong></td><td>前490頃-前430頃</td><td>パルテノン神殿再建を監督。『アテナ女神像』（象牙と黄金）。ペリクレスの知遇。</td></tr>
+<tr><td>12</td><td><strong>ミュロン</strong></td><td>前5C</td><td>『円盤を投げる男（ディスコボロス）』。躍動する人体を初めて表現。</td></tr>
+<tr><td>13</td><td><strong>ポリュクレイトス</strong></td><td>前5C</td><td>『槍をかつぐ人（ドリュフォロス）』。頭部＝全体の1/7が理想的均衡。</td></tr>
+<tr><td>14</td><td><strong>プラクシテレス</strong></td><td>前4C</td><td>女神を裸体で表現。人間的・感覚的な優美さ→ヘレニズム彫刻の先駆。</td></tr>
+<tr class="cat-header"><td colspan="4">▶ 古代ギリシア 哲学</td></tr>
+<tr><td>15</td><td><strong>タレス</strong></td><td>前624頃-前546頃</td><td>ミレトス学派。万物の根源＝水。「自然哲学の祖」。</td></tr>
+<tr><td>16</td><td><strong>アナクシマンドロス</strong></td><td>前610頃-前546頃</td><td>タレスの弟子。万物の根源＝無限なるもの。一種の進化論。</td></tr>
+<tr><td>17</td><td><strong>アナクシメネス</strong></td><td>前585頃-前525頃</td><td>ミレトス学派。万物の根源＝空気。</td></tr>
+<tr><td>18</td><td><strong>ピタゴラス</strong></td><td>前582頃-前497頃</td><td>万物の根源＝数。ピタゴラスの定理。輪廻転生を説く教団。</td></tr>
+<tr><td>19</td><td><strong>ヘラクレイトス</strong></td><td>前544頃-</td><td>「万物は流転する」。根源＝火。</td></tr>
+<tr><td>20</td><td><strong>パルメニデス</strong></td><td>前515頃-前450頃</td><td>エレア派。「有るものはある、無いものはない」。存在の不変・不動・一を説く。ゼノン(エレア派)の師。</td></tr>
+<tr><td>21</td><td><strong>アナクサゴラス</strong></td><td>前500頃-前428頃</td><td>イオニア学派。万物はヌース(知性)によって秩序づけられると説く。ペリクレスの師。</td></tr>
+<tr><td>22</td><td><strong>エンペドクレス</strong></td><td>前490頃-前430頃</td><td>シチリア出身。四元素説(火・空気・水・土)。愛と憎を万物の動因とする。</td></tr>
+<tr><td>23</td><td><strong>プロタゴラス</strong></td><td>前485頃-前415頃</td><td>最初のソフィスト。「人間は万物の尺度」→相対主義。</td></tr>
+<tr><td>24</td><td><strong>ソクラテス</strong></td><td>前469頃-前399</td><td>知徳合一。対話法（産婆術）。「汝自身を知れ」。著作なし。毒杯→「悪法もまた法なり」。</td></tr>
+<tr><td>25</td><td><strong>デモクリトス</strong></td><td>前460頃-前370頃</td><td>万物の根源＝原子（アトム）。エピクロス派に影響。</td></tr>
+<tr><td>26</td><td><strong>プラトン</strong></td><td>前427-前347</td><td>イデア論。アカデメイア創設。『ソクラテスの弁明』『国家篇』『饗宴』。</td></tr>
+<tr><td>27</td><td><strong>ディオゲネス</strong></td><td>前400頃-前325頃</td><td>犬儒派（キニコス）。樽に住む。ストア派のゼノンに影響。</td></tr>
+<tr><td>28</td><td><strong>アリストテレス</strong></td><td>前384-前322</td><td>リュケイオン創設。「万学の祖」。形而上学。アレクサンドロスの教育係。イスラーム哲学→スコラ哲学に影響。『政治学』『形而上学』。</td></tr>
+<tr><td>29</td><td><strong>エピクロス</strong></td><td>前342頃-前271頃</td><td>精神的快楽→「心の平静」。エピキュリアンの語源（本来は精神的快楽）。</td></tr>
+<tr><td>30</td><td><strong>ゼノン（ストア派）</strong></td><td>前335-前263</td><td>ストア派の祖。禁欲→「心の平静」。ローマ帝政期にも普及。</td></tr>
+<tr><td>31</td><td><strong>プロティノス</strong></td><td>205頃-270頃</td><td>新プラトン主義の祖。『エンネアデス』。一者(ト=ヘン)からの流出説。中世神学に影響。</td></tr>
+<tr class="cat-header"><td colspan="4">▶ 古代ギリシア 科学・医学</td></tr>
+<tr><td>32</td><td><strong>ヒッポクラテス</strong></td><td>前460頃-前375頃</td><td>「医学の父」。科学的医学。「生命は短く、技芸は長し」。</td></tr>
+<tr><td>33</td><td><strong>アリスタルコス</strong></td><td>前310頃-前230頃</td><td>太陽中心説（地動説）を最初に唱える。</td></tr>
+<tr><td>34</td><td><strong>エウクレイデス</strong></td><td>前300頃</td><td>ユークリッド幾何学。「学問に王道なし」。</td></tr>
+<tr><td>35</td><td><strong>アルキメデス</strong></td><td>前287頃-前212</td><td>「浮体の原理」。円周率。第2次ポエニ戦争でローマ兵に殺害。</td></tr>
+<tr><td>36</td><td><strong>エラトステネス</strong></td><td>前275頃-前194</td><td>ムセイオン館長。地球の全周を計算。</td></tr>
+<tr class="cat-header"><td colspan="4">▶ 古代ギリシア 歴史</td></tr>
+<tr><td>37</td><td><strong>ヘロドトス</strong></td><td>前485頃-前425頃</td><td>「歴史学の父」。ペルシア戦争を題材に『歴史』。「エジプトはナイルの賜物」。</td></tr>
+<tr><td>38</td><td><strong>トゥキディデス</strong></td><td>前460頃-前400頃</td><td>ペロポネソス戦争の『歴史』。厳密な史料批判。「科学的歴史学の祖」。</td></tr>
+<tr><td>39</td><td><strong>クセノフォン</strong></td><td>前430頃-前354頃</td><td>ソクラテスの弟子。『アナバシス』(ペルシア遠征の記録)。『ソクラテスの思い出』。歴史と哲学の両面で活動。</td></tr>
+<tr><td>40</td><td><strong>ポリビオス</strong></td><td>前201頃-前120頃</td><td>『歴史』。政体循環論。ローマの混合政体を評価。</td></tr>
+<tr class="cat-header"><td colspan="4">▶ 古代ローマ 文学</td></tr>
+<tr><td>41</td><td><strong>プラウトゥス</strong></td><td>前254頃-前184</td><td>ローマ共和政期の喜劇作家。ギリシア新喜劇を翻案。『ほら吹き軍人』『メナエクムス兄弟』→シェイクスピアに影響。</td></tr>
+<tr><td>42</td><td><strong>テレンティウス</strong></td><td>前185頃-前159</td><td>ローマ喜劇作家。洗練された言語で後世のラテン文学の模範。『宦官』『自虐者』。</td></tr>
+<tr><td>43</td><td><strong>キケロ</strong></td><td>前106-前43</td><td>雄弁家。ラテン散文の模範。『国家論』。</td></tr>
+<tr><td>44</td><td><strong>カエサル</strong></td><td>前100-前44</td><td>『ガリア戦記』(自らのガリア遠征の記録)。ラテン散文の名文。「来た、見た、勝った」。</td></tr>
+<tr><td>45</td><td><strong>ルクレティウス</strong></td><td>前99頃-前55</td><td>『事物の本性について』(De rerum natura)。エピクロス派哲学を詩で表現。原子論。</td></tr>
+<tr><td>46</td><td><strong>ヴェルギリウス</strong></td><td>前70-前19</td><td>ラテン文学最大。建国叙事詩『アエネイス』。</td></tr>
+<tr><td>47</td><td><strong>ホラティウス</strong></td><td>前65-前8</td><td>『叙情詩集』。エピクロス派。</td></tr>
+<tr><td>48</td><td><strong>オヴィディウス</strong></td><td>前43-後17頃</td><td>『転身譜（変身物語）』。追放。</td></tr>
+<tr class="cat-header"><td colspan="4">▶ 古代ローマ 歴史</td></tr>
+<tr><td>49</td><td><strong>リヴィウス</strong></td><td>前59-17</td><td>『ローマ建国史』142巻。「ローマ史研究の聖書」。</td></tr>
+<tr><td>50</td><td><strong>タキトゥス</strong></td><td>55頃-120頃</td><td>『ゲルマニア』（古ゲルマンの貴重な史料）。『年代記』。</td></tr>
+<tr><td>51</td><td><strong>プルタルコス</strong></td><td>46頃-120頃</td><td>『対比列伝』（英雄伝）。ギリシアとローマの英雄を対比。</td></tr>
+<tr class="cat-header"><td colspan="4">▶ 古代ローマ 哲学</td></tr>
+<tr><td>52</td><td><strong>セネカ</strong></td><td>前5頃-65</td><td>ストア派。『幸福論』。ネロの家庭教師→自殺強要。</td></tr>
+<tr><td>53</td><td><strong>マルクス＝アウレリウス</strong></td><td>121-180</td><td>哲人皇帝。ストア派。『自省録』。</td></tr>
+<tr class="cat-header"><td colspan="4">▶ 古代ローマ 科学・地理</td></tr>
+<tr><td>54</td><td><strong>ストラボン</strong></td><td>前64頃-後23頃</td><td>ギリシア出身。『地理誌』17巻。アウグストゥス時代の世界地理。ローマ帝国の領域把握に貢献。</td></tr>
+<tr><td>55</td><td><strong>ガレノス</strong></td><td>129頃-200頃</td><td>ペルガモン出身。マルクス=アウレリウス帝の侍医。医学を体系化→中世ヨーロッパ・イスラーム世界で千年以上権威とされた。</td></tr>
+<tr><td>56</td><td><strong>プトレマイオス</strong></td><td>2C</td><td>天動説を体系化。『アルマゲスト』。</td></tr>
+<tr><td>57</td><td><strong>大プリニウス</strong></td><td>23-79</td><td>『博物誌』37巻(百科全書)。ヴェスヴィオ火山噴火で死亡。古代自然知識の集大成。</td></tr>
+<tr class="cat-header"><td colspan="4">▶ キリスト教教父</td></tr>
+<tr><td>58</td><td><strong>エウセビオス</strong></td><td>260頃-340頃</td><td>カイサリアの司教。『教会史』(初期キリスト教史の基本史料)。コンスタンティヌス帝の側近。</td></tr>
+<tr><td>59</td><td><strong>アンブロシウス</strong></td><td>339頃-397</td><td>ミラノ司教。テオドシウス帝を破門→教会権威の確立。アウグスティヌスに影響。</td></tr>
+<tr><td>60</td><td><strong>ヒエロニムス</strong></td><td>347頃-420</td><td>ラテン語訳聖書『ウルガタ』を作成(4C末)→中世西欧の標準聖書となる。</td></tr>
+<tr><td>61</td><td><strong>アウグスティヌス</strong></td><td>354-430</td><td>ヒッポの司教。教父哲学の最大の代表者。『神の国』(ローマ掠奪後に執筆、キリスト教歴史哲学)・『告白』。予定説。</td></tr>
+<tr class="cat-header"><td colspan="4">▶ 中世 哲学・神学</td></tr>
+<tr><td>62</td><td><strong>ボエティウス</strong></td><td>480頃-524</td><td>東ゴート王国の高官→処刑。『哲学の慰め』(獄中で執筆)。古代と中世を繋ぐ思想家。</td></tr>
+<tr><td>63</td><td><strong>グレゴリウス1世</strong></td><td>540頃-604</td><td>ローマ教皇(在位590-604)。典礼改革(グレゴリオ聖歌)。ゲルマン諸族への布教推進。教皇権確立の基礎を築く。</td></tr>
+<tr><td>64</td><td><strong>ベーダ</strong></td><td>673頃-735</td><td>アングロ=サクソンの修道士。『英国民教会史』。英語史学の祖。「尊敬すべきベーダ」。</td></tr>
+<tr><td>65</td><td><strong>アルクイン</strong></td><td>735頃-804</td><td>カロリング＝ルネサンスの中心。カール大帝の宮廷学校指導。</td></tr>
+<tr><td>66</td><td><strong>アンセルムス</strong></td><td>1033-1109</td><td>「スコラ哲学の父」。実在論。信仰＞理性。</td></tr>
+<tr><td>67</td><td><strong>アベラール</strong></td><td>1079-1142</td><td>唯名論。理性＞信仰。『往復書簡』。</td></tr>
+<tr><td>68</td><td><strong>ベルナール=ド=クレルヴォー</strong></td><td>1090-1153</td><td>シトー修道会の指導者。第2回十字軍を提唱。神秘主義。神学と信仰実践を統合。</td></tr>
+<tr><td>69</td><td><strong>アルベルトゥス=マグヌス</strong></td><td>1200頃-1280</td><td>ドイツのドミニコ会士。アクィナスの師。アリストテレス哲学を西欧に本格的に紹介。「万能博士」。</td></tr>
+<tr><td>70</td><td><strong>ロジャー＝ベーコン</strong></td><td>1214頃-1294</td><td>観察・実験を重視。イギリス経験論の先駆。</td></tr>
+<tr><td>71</td><td><strong>ボナヴェントゥラ</strong></td><td>1221頃-1274</td><td>フランチェスコ会総長。「セラフィム博士」。神秘主義的神学。アクィナスと並ぶ13C神学者。</td></tr>
+<tr><td>72</td><td><strong>トマス＝アクィナス</strong></td><td>1225-1274</td><td>スコラ哲学の大成。『神学大全』。ドミニコ会。アリストテレス哲学の影響。</td></tr>
+<tr><td>73</td><td><strong>ドゥンス＝スコトゥス</strong></td><td>1266頃-1308</td><td>トマス説に反対。理性と信仰を区別。</td></tr>
+<tr><td>74</td><td><strong>ウィリアム＝オブ＝オッカム</strong></td><td>1290頃-1349頃</td><td>唯名論。「オッカムの剃刀」。近代哲学への道。</td></tr>
+<tr class="cat-header"><td colspan="4">▶ 中世 文学</td></tr>
+<tr><td>75</td><td><strong>ダンテ</strong></td><td>1265-1321</td><td>『神曲』（トスカナ語＝イタリア語）。地獄・煉獄・天国の三部作。イタリア国民文学の祖。</td></tr>
+<tr><td>76</td><td><strong>ペトラルカ</strong></td><td>1304-1374</td><td>「最初の人文主義者」。『カンツォニエーレ（叙情歌集）』。古典文化復活。</td></tr>
+<tr><td>77</td><td><strong>ボッカチオ</strong></td><td>1313-1375</td><td>『デカメロン（10日物語）』。ペスト禍。人間の欲望を肯定的に描写。</td></tr>
+<tr><td>78</td><td><strong>チョーサー</strong></td><td>1343頃-1400</td><td>イギリス。『カンタベリー物語』(中英語)。英文学の父。イタリア文学(ダンテ・ボッカチオ)の影響。</td></tr>
+<tr class="cat-header"><td colspan="4">▶ 宗教改革先駆</td></tr>
+<tr><td>79</td><td><strong>ウィクリフ</strong></td><td>1320頃-1384</td><td>イギリス。ローマ教皇の権威を否定。聖書至上主義。聖書の英訳。宗教改革の先駆。フスに影響。</td></tr>
+<tr><td>80</td><td><strong>フス</strong></td><td>1370頃-1415</td><td>ボヘミアの神学者。プラハ大学総長。ウィクリフの影響。コンスタンツ公会議で異端宣告→火刑→フス戦争。</td></tr>
+<tr><td>81</td><td><strong>トマス=ア=ケンピス</strong></td><td>1380頃-1471</td><td>ドイツ系の修道士。『キリストに倣いて』(中世神秘主義の集大成)。現代に至るまで愛読。</td></tr>
+<tr class="cat-header"><td colspan="4">▶ ビザンツ</td></tr>
+<tr><td>82</td><td><strong>プロコピオス</strong></td><td>500頃-565頃</td><td>ビザンツの歴史家。ユスティニアヌス帝の宮廷に仕える。『戦史』『秘史』(宮廷の暴露本)。</td></tr>
+<tr><td>83</td><td><strong>キュリロス=メトディオス兄弟</strong></td><td>9C</td><td>ビザンツの宣教師兄弟。スラヴ人へのキリスト教伝道。キリル文字の原型(グラゴール文字)を考案。</td></tr>
+<tr class="cat-header"><td colspan="4">▶ ルネサンス 人文学・文学</td></tr>
+<tr><td>84</td><td><strong>フィチーノ</strong></td><td>1433-1499</td><td>フィレンツェ。メディチ家の「プラトン=アカデミー」を主宰。プラトン著作のラテン語訳。</td></tr>
+<tr><td>85</td><td><strong>ピコ=デラ=ミランドラ</strong></td><td>1463-1494</td><td>『人間の尊厳について』。人間中心主義を宣言。ヘブライ・ギリシア・ラテンに通じる。</td></tr>
+<tr><td>86</td><td><strong>マキァヴェリ</strong></td><td>1469-1527</td><td>『君主論』。政治を倫理から分離した現実主義。チェーザレ＝ボルジアを理想化。</td></tr>
+<tr><td>87</td><td><strong>エラスムス</strong></td><td>1469頃-1536</td><td>『愚神礼賛』。16世紀最大の人文主義者。トマス＝モアと親交。</td></tr>
+<tr><td>88</td><td><strong>トマス＝モア</strong></td><td>1478-1535</td><td>『ユートピア』。ヘンリ8世に処刑。</td></tr>
+<tr><td>89</td><td><strong>ラブレー</strong></td><td>1494頃-1553</td><td>フランス。『ガルガンチュアとパンタグリュエル』。中世的禁欲を笑い飛ばすルネサンス的生の讃歌。</td></tr>
+<tr><td>90</td><td><strong>ロンサール</strong></td><td>1524-1585</td><td>フランス。プレイヤード派(七星詩派)の中心。古典復興と母語(フランス語)の洗練を追求。</td></tr>
+<tr><td>91</td><td><strong>モンテーニュ</strong></td><td>1533-1592</td><td>フランス。『エセー(随想録)』。「ク=セ=ジュ(私は何を知るか)」。近代の自己省察と懐疑主義の先駆。</td></tr>
+<tr><td>92</td><td><strong>セルバンテス</strong></td><td>1547-1616</td><td>『ドン＝キホーテ』。「近代小説の祖」。レパントの海戦で負傷。獄中で構想。</td></tr>
+<tr><td>93</td><td><strong>シェークスピア</strong></td><td>1564-1616</td><td>4大悲劇：『ハムレット』『リア王』『マクベス』『オセロ』。エリザベス朝〜ジェームズ朝。</td></tr>
+<tr class="cat-header"><td colspan="4">▶ ルネサンス 美術・建築</td></tr>
+<tr><td>94</td><td><strong>ジョット</strong></td><td>1266-1337</td><td>ルネサンス初期。ビザンツ様式からの脱却。アッシジ聖堂壁画。</td></tr>
+<tr><td>95</td><td><strong>ブルネレスキ</strong></td><td>1377-1446</td><td>フィレンツェ大聖堂ドゥオモ設計。透視図法の発明。ルネサンス建築の開祖。</td></tr>
+<tr><td>96</td><td><strong>ドナテルロ</strong></td><td>1386頃-1466</td><td>写実主義彫刻。代表作『ダヴィデ』。</td></tr>
+<tr><td>97</td><td><strong>フラ=アンジェリコ</strong></td><td>1395頃-1455</td><td>フィレンツェのドミニコ会修道士画家。宗教画。『受胎告知』。精神性と優美さの両立。</td></tr>
+<tr><td>98</td><td><strong>マサッチオ</strong></td><td>1401-1428</td><td>初期ルネサンス画風確立。『楽園追放』。遠近法。</td></tr>
+<tr><td>99</td><td><strong>アルベルティ</strong></td><td>1404-1472</td><td>フィレンツェ。『絵画論』(遠近法の理論化)・『建築論』。「万能人」の理想を体現。</td></tr>
+<tr><td>100</td><td><strong>ピエロ=デラ=フランチェスカ</strong></td><td>1415頃-1492</td><td>初期ルネサンス。数学的遠近法の理論と実践。『キリストの洗礼』『ウルビーノ公夫妻の肖像』。</td></tr>
+<tr><td>101</td><td><strong>ベッリーニ</strong></td><td>1430頃-1516</td><td>ヴェネツィア派の祖(ジョヴァンニ=ベッリーニ)。油彩による柔らかな光の表現。ジョルジョーネ・ティツィアーノの師。</td></tr>
+<tr><td>102</td><td><strong>マンテーニャ</strong></td><td>1431-1506</td><td>北イタリア。厳格な遠近法。『死せるキリスト』(極端な短縮法)。ベッリーニの義兄。</td></tr>
+<tr><td>103</td><td><strong>ボッティチェリ</strong></td><td>1444頃-1510</td><td>『春』『ヴィーナスの誕生』。メディチ家保護。サヴォナローラの影響で自滅。</td></tr>
+<tr><td>104</td><td><strong>ブラマンテ</strong></td><td>1444-1514</td><td>サン＝ピエトロ大聖堂新築の最初の設計者。集中式プランを提案。ラファエロの叔父。</td></tr>
+<tr><td>105</td><td><strong>ファン=アイク兄弟</strong></td><td>15C前半</td><td>初期フランドル派。油絵技法を確立。『ヘントの祭壇画』(1432、弟ヤンの代表作)。緻密な写実描写。</td></tr>
+<tr><td>106</td><td><strong>ダ＝ヴィンチ</strong></td><td>1452-1519</td><td>万能の天才。『最後の晩餐』『モナ＝リザ』。</td></tr>
+<tr><td>107</td><td><strong>デューラー</strong></td><td>1471-1528</td><td>ドイツ。「ドイツのダ＝ヴィンチ」。版画『四人の使徒』。</td></tr>
+<tr><td>108</td><td><strong>ミケランジェロ</strong></td><td>1475-1564</td><td>彫刻『ピエタ』『ダヴィデ』。システィナ礼拝堂『最後の審判』。サン＝ピエトロ大聖堂。</td></tr>
+<tr><td>109</td><td><strong>ジョルジョーネ</strong></td><td>1477頃-1510</td><td>ヴェネツィア派。『嵐』(西洋絵画初の純粋な風景画)。ティツィアーノと並ぶ。早逝。</td></tr>
+<tr><td>110</td><td><strong>ラファエロ</strong></td><td>1483-1520</td><td>「聖母子像」。『アテナイの学堂』。37歳早逝。</td></tr>
+<tr><td>111</td><td><strong>ティツィアーノ</strong></td><td>1490頃-1576</td><td>ヴェネツィア派の巨匠。色彩の魔術師。カール5世・フェリペ2世の宮廷画家。</td></tr>
+<tr><td>112</td><td><strong>ホルバイン</strong></td><td>1497-1543</td><td>ドイツ→イギリス。エラスムス像・ヘンリ8世の肖像画。</td></tr>
+<tr><td>113</td><td><strong>パッラーディオ</strong></td><td>1508-1580</td><td>ヴェネツィア。古典主義建築の理論家。『建築四書』→イギリスのパッラーディオ主義→ホワイトハウス等に影響。</td></tr>
+<tr><td>114</td><td><strong>ヴァザーリ</strong></td><td>1511-1574</td><td>『美術家列伝』(ルネサンス美術史の基本文献)。画家・建築家・伝記作家。「ルネサンス」概念の提唱者。</td></tr>
+<tr><td>115</td><td><strong>ブリューゲル</strong></td><td>1525頃-1569</td><td>フランドルの「農民画家」。『農民の婚宴』『雪中の狩人』。</td></tr>
+<tr><td>116</td><td><strong>エル＝グレコ</strong></td><td>1541-1614</td><td>クレタ島出身→スペイン。マニエリスム。『オルガス伯の埋葬』。</td></tr>
+<tr class="cat-header"><td colspan="4">▶ 宗教改革</td></tr>
+<tr><td>117</td><td><strong>ルター</strong></td><td>1483-1546</td><td>『95カ条の論題』(1517ヴィッテンベルク)→宗教改革の開始。聖書主義(信仰のみ)。聖書ドイツ語訳→近代ドイツ語の基礎。万人司祭主義。</td></tr>
+<tr><td>118</td><td><strong>ツヴィングリ</strong></td><td>1484-1531</td><td>スイス・チューリヒでの宗教改革。ルターより徹底した象徴主義的聖餐観。カッペルの戦いで戦死。</td></tr>
+<tr><td>119</td><td><strong>ロヨラ</strong></td><td>1491-1556</td><td>スペインのバスク貴族。イエズス会創設(1534、サラマンカ大学出身仲間と)。『霊操』。対抗宗教改革の中核。</td></tr>
+<tr><td>120</td><td><strong>ザビエル</strong></td><td>1506-1552</td><td>イエズス会の創設メンバー。インド(ゴア)・モルッカ・日本(1549鹿児島)で布教。中国入国前に広東沖で病死。</td></tr>
+<tr><td>121</td><td><strong>カルヴァン</strong></td><td>1509-1564</td><td>予定説。『キリスト教綱要』。ジュネーヴ神権政治。資本主義の精神の源泉。</td></tr>
+<tr class="cat-header"><td colspan="4">▶ バロック 美術</td></tr>
+<tr><td>122</td><td><strong>カラヴァッジョ</strong></td><td>1571-1610</td><td>イタリア・バロックの創始者。劇的な明暗法(キアロスクーロ)。『聖マタイの召命』。後世のバロック画家に絶大な影響。</td></tr>
+<tr><td>123</td><td><strong>ルーベンス</strong></td><td>1577-1640</td><td>フランドル・バロック。色彩豊かな大画面。外交官としても活動。</td></tr>
+<tr><td>124</td><td><strong>ベルニーニ</strong></td><td>1598-1680</td><td>イタリア・バロック彫刻と建築の巨匠。『聖テレジアの法悦』。サン=ピエトロ広場の列柱(ローマ)。</td></tr>
+<tr><td>125</td><td><strong>ベラスケス</strong></td><td>1599-1660</td><td>スペイン・バロック。フェリペ4世の宮廷画家。『ラス=メニーナス(宮廷の侍女たち)』『ブレダの開城』。</td></tr>
+<tr><td>126</td><td><strong>レンブラント</strong></td><td>1606-1669</td><td>オランダ・バロックの頂点。『夜警』『テュルプ博士の解剖学講義』。独特の光の表現。晩年は破産。</td></tr>
+<tr><td>127</td><td><strong>フェルメール</strong></td><td>1632-1675</td><td>オランダ。『真珠の耳飾りの少女』『牛乳を注ぐ女』。日常の静謐な光。現存作品は約35点のみ。</td></tr>
+<tr class="cat-header"><td colspan="4">▶ 17C古典主義 文学</td></tr>
+<tr><td>128</td><td><strong>コルネイユ</strong></td><td>1606-1684</td><td>フランス古典主義悲劇の祖。『ル=シッド』。三一致の法則。</td></tr>
+<tr><td>129</td><td><strong>ミルトン</strong></td><td>1608-1674</td><td>イギリス。『失楽園』。ピューリタン革命でクロムウェルを支持。</td></tr>
+<tr><td>130</td><td><strong>モリエール</strong></td><td>1622-1673</td><td>フランス古典喜劇。『タルチュフ(偽信者)』『人間嫌い』『守銭奴』。ルイ14世の庇護。社会風刺。</td></tr>
+<tr><td>131</td><td><strong>ラシーヌ</strong></td><td>1639-1699</td><td>フランス古典主義悲劇の完成者。『フェードル』『アンドロマック』。厳格な古典主義。</td></tr>
+<tr><td>132</td><td><strong>デフォー</strong></td><td>1660頃-1731</td><td>イギリス。『ロビンソン＝クルーソー』。近代小説の先駆。</td></tr>
+<tr><td>133</td><td><strong>スウィフト</strong></td><td>1667-1745</td><td>アイルランド。『ガリヴァー旅行記』。イギリス社会を風刺。</td></tr>
+<tr class="cat-header"><td colspan="4">▶ 科学革命</td></tr>
+<tr><td>134</td><td><strong>コペルニクス</strong></td><td>1473-1543</td><td>ポーランド。地動説。『天球の回転について』。科学革命の起点。</td></tr>
+<tr><td>135</td><td><strong>フランシス＝ベーコン</strong></td><td>1561-1626</td><td>イギリス経験論の祖。帰納法。『ノヴム＝オルガヌム』。「知は力なり」。</td></tr>
+<tr><td>136</td><td><strong>ガリレイ</strong></td><td>1564-1642</td><td>望遠鏡で地動説証明。『天文対話』。「それでも地球は動く」。</td></tr>
+<tr><td>137</td><td><strong>ケプラー</strong></td><td>1571-1630</td><td>惑星運動の3法則。ティコ＝ブラーエの観測データを活用。</td></tr>
+<tr><td>138</td><td><strong>ハーヴェー</strong></td><td>1578-1657</td><td>血液循環の発見。実験医学の確立。</td></tr>
+<tr><td>139</td><td><strong>ニュートン</strong></td><td>1642-1727</td><td>万有引力・微積分法。『プリンキピア』。近代科学の土台。</td></tr>
+<tr><td>140</td><td><strong>リンネ</strong></td><td>1707-1778</td><td>スウェーデン。生物の分類学体系を確立。二名法。</td></tr>
+<tr><td>141</td><td><strong>ラヴォアジェ</strong></td><td>1743-1794</td><td>「近代化学の父」。質量保存の法則。フランス革命でギロチン処刑。</td></tr>
+<tr class="cat-header"><td colspan="4">▶ 17-18C 哲学(合理論・経験論)</td></tr>
+<tr><td>142</td><td><strong>グロティウス</strong></td><td>1583-1645</td><td>「国際法の祖」。『戦争と平和の法』。『海洋自由論』。</td></tr>
+<tr><td>143</td><td><strong>ホッブズ</strong></td><td>1588-1679</td><td>『リヴァイアサン』。「万人の万人に対する闘争」。絶対王政の理論化。</td></tr>
+<tr><td>144</td><td><strong>デカルト</strong></td><td>1596-1650</td><td>演繹法。「われ思う、ゆえにわれあり」。『方法序説』。大陸合理論の祖。</td></tr>
+<tr><td>145</td><td><strong>パスカル</strong></td><td>1623-1662</td><td>「人間は考える葦」。『パンセ』。ジャンセニスム。パスカルの法則。</td></tr>
+<tr><td>146</td><td><strong>スピノザ</strong></td><td>1632-1677</td><td>オランダのユダヤ人。汎神論。『エチカ』。レンズ磨きで生計。</td></tr>
+<tr><td>147</td><td><strong>ロック</strong></td><td>1632-1704</td><td>『統治二論』。抵抗権。名誉革命の正当化。経験論。</td></tr>
+<tr><td>148</td><td><strong>ライプニッツ</strong></td><td>1646-1716</td><td>ドイツ。微積分法（ニュートンと独立に発見）。単子論（モナドロジー）。</td></tr>
+<tr><td>149</td><td><strong>ヒューム</strong></td><td>1711-1776</td><td>懐疑論。因果律を否定。カントに影響。『人性論』。</td></tr>
+<tr class="cat-header"><td colspan="4">▶ 18C 啓蒙思想</td></tr>
+<tr><td>150</td><td><strong>モンテスキュー</strong></td><td>1689-1755</td><td>フランス啓蒙。『ペルシア人の手紙』(風刺)・『法の精神』(1748、三権分立論)。アメリカ合衆国憲法に影響。</td></tr>
+<tr><td>151</td><td><strong>ヴォルテール</strong></td><td>1694-1778</td><td>フリードリヒ2世・エカチェリーナ2世と交流。宗教的不寛容批判。『哲学書簡』。</td></tr>
+<tr><td>152</td><td><strong>ケネー</strong></td><td>1694-1774</td><td>フランス。重農主義(フィジオクラシー)の創始。『経済表』(1758)。「農業こそ富の源泉」。アダム=スミスに影響。</td></tr>
+<tr><td>153</td><td><strong>ルソー</strong></td><td>1712-1778</td><td>『社会契約論』（人民主権）。『エミール』。フランス革命に多大な影響。</td></tr>
+<tr><td>154</td><td><strong>ディドロ</strong></td><td>1713-1784</td><td>『百科全書』の編集主幹。ダランベールと共編。</td></tr>
+<tr><td>155</td><td><strong>ダランベール</strong></td><td>1717-1783</td><td>フランス。ディドロと『百科全書』を共同編纂。数学者・物理学者。</td></tr>
+<tr class="cat-header"><td colspan="4">▶ 経済学</td></tr>
+<tr><td>156</td><td><strong>アダム＝スミス</strong></td><td>1723-1790</td><td>古典派経済学の祖。『国富論』（1776）。自由放任主義。「神の見えざる手」。労働価値説。</td></tr>
+<tr><td>157</td><td><strong>ベンサム</strong></td><td>1748-1832</td><td>イギリス。功利主義の創始。「最大多数の最大幸福」。法律改革運動。J.S.ミルに影響。</td></tr>
+<tr><td>158</td><td><strong>マルサス</strong></td><td>1766-1834</td><td>イギリス古典派経済学。『人口論』(1798)。「人口は幾何級数的、食料は算術級数的に増加→貧困は必然」。</td></tr>
+<tr><td>159</td><td><strong>リカード</strong></td><td>1772-1823</td><td>古典派経済学の完成。比較優位の理論。自由貿易を理論的に支持。</td></tr>
+<tr><td>160</td><td><strong>フリードリヒ＝リスト</strong></td><td>1789-1846</td><td>ドイツ。保護貿易論。ドイツ関税同盟を推進。アダム＝スミスの自由貿易論を批判。</td></tr>
+<tr><td>161</td><td><strong>ケインズ</strong></td><td>1883-1946</td><td>イギリス。修正資本主義。『雇用・利子および貨幣の一般理論』。有効需要の理論→政府の財政出動による景気対策を主張。ニューディール政策・戦後のブレトンウッズ体制に影響。</td></tr>
+<tr><td>162</td><td><strong>ハイエク</strong></td><td>1899-1992</td><td>オーストリア→英国。新自由主義経済学。ケインズの政府介入を批判。『隷従への道』。サッチャー・レーガンの経済政策に影響。ノーベル経済学賞(1974)。</td></tr>
+<tr class="cat-header"><td colspan="4">▶ ロココ・新古典主義 美術</td></tr>
+<tr><td>163</td><td><strong>ワトー</strong></td><td>1684-1721</td><td>フランス・ロココの創始者。『シテール島への巡礼』。雅宴画(フェート=ギャラント)。</td></tr>
+<tr><td>164</td><td><strong>フラゴナール</strong></td><td>1732-1806</td><td>フランス・ロココ。『ぶらんこ』。貴族社会の享楽を描写。</td></tr>
+<tr><td>165</td><td><strong>ゴヤ</strong></td><td>1746-1828</td><td>スペイン。『1808年5月3日』（ナポレオン支配への抵抗）。ロマン主義の先駆。</td></tr>
+<tr><td>166</td><td><strong>ダヴィド</strong></td><td>1748-1825</td><td>フランス新古典主義。『ホラティウス兄弟の誓い』『マラーの死』『ナポレオンの戴冠式』。ジャコバン派→ナポレオンの首席画家。</td></tr>
+<tr><td>167</td><td><strong>アングル</strong></td><td>1780-1867</td><td>フランス新古典主義の継承者。ダヴィドの弟子。『グランド=オダリスク』『泉』。厳格なデッサン。</td></tr>
+<tr class="cat-header"><td colspan="4">▶ ドイツ観念論</td></tr>
+<tr><td>168</td><td><strong>カント</strong></td><td>1724-1804</td><td>批判哲学。『純粋理性批判』『実践理性批判』。『永遠平和のために』。</td></tr>
+<tr><td>169</td><td><strong>ヘルダー</strong></td><td>1744-1803</td><td>疾風怒濤運動の先導者。民族固有の文化を重視→ロマン主義の先駆。</td></tr>
+<tr><td>170</td><td><strong>フィヒテ</strong></td><td>1762-1814</td><td>ドイツ観念論。カントの後継。『ドイツ国民に告ぐ』(ナポレオン占領下ベルリンでの講演)→ドイツ=ナショナリズムの源流。</td></tr>
+<tr><td>171</td><td><strong>ヘーゲル</strong></td><td>1770-1831</td><td>弁証法。止揚（アウフヘーベン）。『精神現象学』。マルクスに影響。</td></tr>
+<tr><td>172</td><td><strong>シェリング</strong></td><td>1775-1854</td><td>ドイツ観念論。自然哲学。フィヒテとヘーゲルをつなぐ。後期は啓示哲学。</td></tr>
+<tr class="cat-header"><td colspan="4">▶ 19C 哲学</td></tr>
+<tr><td>173</td><td><strong>ショーペンハウアー</strong></td><td>1788-1860</td><td>ドイツ。『意志と表象としての世界』。厭世主義(ペシミズム)。ニーチェに影響。</td></tr>
+<tr><td>174</td><td><strong>コント</strong></td><td>1798-1857</td><td>フランス。実証主義哲学。社会学(ソシオロジー)の創始。人類の知識は神学的→形而上学的→実証的と発展する(三段階の法則)。</td></tr>
+<tr><td>175</td><td><strong>J.S.ミル</strong></td><td>1806-1873</td><td>イギリス。ベンサム功利主義を修正(質的功利主義)。『自由論』(1859)『功利主義論』『女性の隷従』。</td></tr>
+<tr><td>176</td><td><strong>キェルケゴール</strong></td><td>1813-1855</td><td>デンマーク。『死に至る病』。実存主義の先駆。ヘーゲル批判。</td></tr>
+<tr><td>177</td><td><strong>スペンサー</strong></td><td>1820-1903</td><td>イギリス。社会進化論。ダーウィンの生物進化を社会に適用。「適者生存」の語の提唱。</td></tr>
+<tr><td>178</td><td><strong>ニーチェ</strong></td><td>1844-1900</td><td>ドイツ。『ツァラトゥストラはかく語りき』『悲劇の誕生』。「神は死んだ」「超人」「永劫回帰」。晩年は発狂。</td></tr>
+<tr class="cat-header"><td colspan="4">▶ 社会主義</td></tr>
+<tr><td>179</td><td><strong>サン=シモン</strong></td><td>1760-1825</td><td>フランス。空想的社会主義。産業者による合理的社会の構想。弟子から実証主義(コント)と社会主義が分岐。</td></tr>
+<tr><td>180</td><td><strong>オーウェン</strong></td><td>1771-1858</td><td>空想的社会主義。ニューラナーク工場。「ニューハーモニー」→失敗。</td></tr>
+<tr><td>181</td><td><strong>フーリエ</strong></td><td>1772-1837</td><td>フランス。空想的社会主義。理想共同体ファランジュ(ファランステール)。米国にも実験植民地。</td></tr>
+<tr><td>182</td><td><strong>プルードン</strong></td><td>1809-1865</td><td>無政府主義の父。「財産とは盗んだもの」。</td></tr>
+<tr><td>183</td><td><strong>バクーニン</strong></td><td>1814-1876</td><td>ロシア。アナキズム。マルクスと第1インター内で対立(1872除名)。権力機構全般の破壊を主張。</td></tr>
+<tr><td>184</td><td><strong>マルクス</strong></td><td>1818-1883</td><td>科学的社会主義。『共産党宣言』『資本論』。唯物史観。第1インター。</td></tr>
+<tr><td>185</td><td><strong>エンゲルス</strong></td><td>1820-1895</td><td>マルクスの盟友。『空想から科学へ』。</td></tr>
+<tr><td>186</td><td><strong>ラサール</strong></td><td>1825-1864</td><td>ドイツ社会主義。全ドイツ労働者協会(1863)を創設→後の社会民主党の源流。</td></tr>
+<tr><td>187</td><td><strong>クロポトキン</strong></td><td>1842-1921</td><td>ロシアの貴族出身アナキスト。『相互扶助論』。ロシア革命後に帰国。</td></tr>
+<tr class="cat-header"><td colspan="4">▶ 社会科学・心理学</td></tr>
+<tr><td>188</td><td><strong>フロイト</strong></td><td>1856-1939</td><td>オーストリア・ユダヤ人。精神分析学。無意識・エディプス=コンプレックス・リビドー。『夢判断』。ナチス支配下でロンドンに亡命。</td></tr>
+<tr><td>189</td><td><strong>デュルケーム</strong></td><td>1858-1917</td><td>フランス。社会学。『自殺論』『社会分業論』。社会的事実を「もの」として扱うと主張→社会学の科学化。</td></tr>
+<tr><td>190</td><td><strong>ヴェーバー</strong></td><td>1864-1920</td><td>ドイツの社会学者。『プロテスタンティズムの倫理と資本主義の精神』。</td></tr>
+<tr><td>191</td><td><strong>ユング</strong></td><td>1875-1961</td><td>スイス。フロイトの弟子→決別。集合的無意識・元型(アーキタイプ)。分析心理学。</td></tr>
+<tr class="cat-header"><td colspan="4">▶ 歴史学・歴史哲学</td></tr>
+<tr><td>192</td><td><strong>ランケ</strong></td><td>1795-1886</td><td>ドイツ。近代歴史学の祖。「本来あったありのままに」(wie es eigentlich gewesen)。史料批判を重視。</td></tr>
+<tr><td>193</td><td><strong>シュペングラー</strong></td><td>1880-1936</td><td>ドイツの歴史哲学者。『西洋の没落』(1918-22)。文明を生命体に喩え、西洋文明の衰退を予言。文明の周期的興亡論。トインビーに影響。</td></tr>
+<tr><td>194</td><td><strong>トインビー</strong></td><td>1889-1975</td><td>イギリスの歴史家。『歴史の研究』全12巻。文明の興亡を「挑戦と応戦」の理論で分析。比較文明論の大家。</td></tr>
+<tr class="cat-header"><td colspan="4">▶ 19C ロマン主義文学</td></tr>
+<tr><td>195</td><td><strong>ゲーテ</strong></td><td>1749-1832</td><td>ドイツ古典主義文学の最高峰。『若きウェルテルの悩み』(疾風怒濤)→『ファウスト』(生涯の大作)。ワイマール公国の宰相。</td></tr>
+<tr><td>196</td><td><strong>シラー</strong></td><td>1759-1805</td><td>『群盗』→疾風怒濤。ゲーテと古典主義。ベートーヴェン第9番の原詩。</td></tr>
+<tr><td>197</td><td><strong>ワーズワース</strong></td><td>1770-1850</td><td>イギリス・ロマン派「湖畔詩人」。『抒情民謡集』(コールリッジと共著、1798)。自然詩。</td></tr>
+<tr><td>198</td><td><strong>W=スコット</strong></td><td>1771-1832</td><td>スコットランド。歴史小説の創始。『アイヴァンホー』(十字軍時代)。中世趣味の流行を生む。</td></tr>
+<tr><td>199</td><td><strong>グリム兄弟</strong></td><td>1785-1863/1786-1859</td><td>ドイツ。『グリム童話』。『ドイツ語辞典』。ドイツ文献学・民俗学の創始。ゲルマン民族主義の文化的基礎。</td></tr>
+<tr><td>200</td><td><strong>バイロン</strong></td><td>1788-1824</td><td>イギリス・ロマン主義。ギリシア独立戦争に義勇兵として参加→現地で病死。</td></tr>
+<tr><td>201</td><td><strong>シェリー</strong></td><td>1792-1822</td><td>イギリス・ロマン派詩人。『西風に寄せる歌』。妻は『フランケンシュタイン』のメアリ=シェリー。イタリアで溺死。</td></tr>
+<tr><td>202</td><td><strong>キーツ</strong></td><td>1795-1821</td><td>イギリス・ロマン派詩人。『ナイチンゲールに寄せるオード』。結核で25歳没。</td></tr>
+<tr><td>203</td><td><strong>ハイネ</strong></td><td>1797-1856</td><td>ドイツ・ユダヤ系ロマン派詩人。『歌の本』。七月革命後パリに亡命。『ローレライ』作詞。</td></tr>
+<tr><td>204</td><td><strong>ユーゴー</strong></td><td>1802-1885</td><td>フランス・ロマン主義。『レ＝ミゼラブル』『ノートルダム＝ド＝パリ』。</td></tr>
+<tr><td>205</td><td><strong>デュマ(父)</strong></td><td>1802-1870</td><td>フランス。『三銃士』『モンテ=クリスト伯』。混血(父はハイチ出身)。大衆歴史小説の巨匠。</td></tr>
+<tr class="cat-header"><td colspan="4">▶ 19C 写実・自然主義文学</td></tr>
+<tr><td>206</td><td><strong>スタンダール</strong></td><td>1783-1842</td><td>フランス。『赤と黒』『パルムの僧院』。ナポレオン軍の士官→後世に評価された近代心理小説の先駆。</td></tr>
+<tr><td>207</td><td><strong>バルザック</strong></td><td>1799-1850</td><td>フランス写実主義。『人間喜劇』(90編超の連作)『ゴリオ爺さん』『従妹ベット』。王政復古期フランス社会の全体像。</td></tr>
+<tr><td>208</td><td><strong>プーシキン</strong></td><td>1799-1837</td><td>ロシア近代文学の祖。『エヴゲニー=オネーギン』『大尉の娘』。皇帝の憲兵隊との決闘で死亡。</td></tr>
+<tr><td>209</td><td><strong>ホーソーン</strong></td><td>1804-1864</td><td>アメリカ。『緋文字』。ピューリタニズムの負の遺産を描く。</td></tr>
+<tr><td>210</td><td><strong>ゴーゴリ</strong></td><td>1809-1852</td><td>ロシア。ウクライナ出身。『検察官』(官僚風刺喜劇)・『外套』・『死せる魂』。ロシア社会の批判。</td></tr>
+<tr><td>211</td><td><strong>ポー</strong></td><td>1809-1849</td><td>アメリカ。『黒猫』『モルグ街の殺人』(推理小説の祖)。象徴主義・怪奇小説の先駆。</td></tr>
+<tr><td>212</td><td><strong>ディケンズ</strong></td><td>1812-1870</td><td>イギリス・ヴィクトリア朝。『オリバー=トゥイスト』『デイヴィッド=コッパーフィールド』『二都物語』(仏革命)『クリスマス=キャロル』。産業革命下の貧困告発。</td></tr>
+<tr><td>213</td><td><strong>ツルゲーネフ</strong></td><td>1818-1883</td><td>ロシア。『猟人日記』(農奴制告発)・『父と子』(「ニヒリスト」の語を広める)。西欧派。</td></tr>
+<tr><td>214</td><td><strong>メルヴィル</strong></td><td>1819-1891</td><td>アメリカ。『白鯨(モービィ=ディック)』。捕鯨船での体験。生前は不遇、20世紀に再評価。</td></tr>
+<tr><td>215</td><td><strong>ホイットマン</strong></td><td>1819-1892</td><td>アメリカ。『草の葉』。自由詩。民主主義とアメリカの新しい詩形式。</td></tr>
+<tr><td>216</td><td><strong>ドストエフスキー</strong></td><td>1821-1881</td><td>ロシア。『罪と罰』『カラマーゾフの兄弟』。人間の内面の苦悩と救済。</td></tr>
+<tr><td>217</td><td><strong>フロベール</strong></td><td>1821-1880</td><td>写実主義の完成者。『ボヴァリー夫人』。客観描写の徹底。</td></tr>
+<tr><td>218</td><td><strong>トルストイ</strong></td><td>1828-1910</td><td>『戦争と平和』『復活』。非暴力→ガンディーに影響。ロシア正教に破門。</td></tr>
+<tr><td>219</td><td><strong>マーク=トウェイン</strong></td><td>1835-1910</td><td>アメリカ。『トム=ソーヤーの冒険』『ハックルベリー=フィンの冒険』。ミシシッピ川の少年時代→アメリカ英語の文学。</td></tr>
+<tr><td>220</td><td><strong>ゾラ</strong></td><td>1840-1902</td><td>フランス自然主義の代表。『居酒屋』『ナナ』『ジェルミナール』。「ルーゴン=マッカール叢書」。ドレフュス事件で「われ弾劾す」。</td></tr>
+<tr><td>221</td><td><strong>モーパッサン</strong></td><td>1850-1893</td><td>フランス自然主義。短編の名手。『女の一生』『脂肪の塊』。フロベールの弟子。</td></tr>
+<tr><td>222</td><td><strong>チェーホフ</strong></td><td>1860-1904</td><td>ロシア。医師。短編小説・戯曲。『かもめ』『桜の園』『ワーニャ伯父さん』『三人姉妹』。近代劇の創始者の一人。</td></tr>
+<tr class="cat-header"><td colspan="4">▶ 象徴主義・世紀末文学</td></tr>
+<tr><td>223</td><td><strong>ボードレール</strong></td><td>1821-1867</td><td>フランス。象徴主義の先駆。『悪の華』。「近代詩の父」。退廃的美学。</td></tr>
+<tr><td>224</td><td><strong>イプセン</strong></td><td>1828-1906</td><td>ノルウェー。「近代演劇の父」。『人形の家』（女性の自立→フェミニズムの先駆）。自然主義演劇。</td></tr>
+<tr><td>225</td><td><strong>ストリンドベリ</strong></td><td>1849-1912</td><td>スウェーデン。自然主義戯曲。『令嬢ジュリー』。北欧文学を世界に。</td></tr>
+<tr class="cat-header"><td colspan="4">▶ 20C 文学</td></tr>
+<tr><td>226</td><td><strong>ロマン=ロラン</strong></td><td>1866-1944</td><td>フランス。『ジャン=クリストフ』(ベートーヴェンをモデル)。反戦平和主義。</td></tr>
+<tr><td>227</td><td><strong>ジッド</strong></td><td>1869-1951</td><td>フランス。『狭き門』『贋金つくり』。ノーベル賞。一時共産主義に共感→『ソヴィエト旅行記』で幻滅を記す。</td></tr>
+<tr><td>228</td><td><strong>プルースト</strong></td><td>1871-1922</td><td>フランス。『失われた時を求めて』(全7編)。意識の流れ・記憶の主題。20C小説の金字塔。</td></tr>
+<tr><td>229</td><td><strong>トーマス=マン</strong></td><td>1875-1955</td><td>ドイツ。『ブッデンブローク家の人々』(ノーベル賞)『魔の山』『ヴェニスに死す』。ナチスを逃れ亡命。</td></tr>
+<tr><td>230</td><td><strong>リルケ</strong></td><td>1875-1926</td><td>プラハ生まれのドイツ語詩人。『ドゥイノの悲歌』。象徴主義。</td></tr>
+<tr><td>231</td><td><strong>ヘッセ</strong></td><td>1877-1962</td><td>ドイツ→スイス。『車輪の下』『シッダールタ』『ガラス玉演戯』。東洋思想への傾倒。</td></tr>
+<tr><td>232</td><td><strong>ジョイス</strong></td><td>1882-1941</td><td>アイルランド。『ユリシーズ』。意識の流れの手法→20世紀小説の革新。</td></tr>
+<tr><td>233</td><td><strong>カフカ</strong></td><td>1883-1924</td><td>チェコ（プラハ）出身ドイツ語作家。『変身』『審判』。不条理の文学。</td></tr>
+<tr><td>234</td><td><strong>T.S.エリオット</strong></td><td>1888-1965</td><td>アメリカ→イギリス。『荒地』(WW1後の精神的荒廃)。モダニズム詩。</td></tr>
+<tr><td>235</td><td><strong>パステルナーク</strong></td><td>1890-1960</td><td>ソ連。『ドクトル=ジバゴ』(ロシア革命と内戦)。ノーベル賞辞退(政府の圧力)。</td></tr>
+<tr><td>236</td><td><strong>フォークナー</strong></td><td>1897-1962</td><td>アメリカ南部。『響きと怒り』『アブサロム、アブサロム!』。意識の流れ。ノーベル賞。</td></tr>
+<tr><td>237</td><td><strong>レマルク</strong></td><td>1898-1970</td><td>ドイツ。『西部戦線異状なし』(WW1の実体験、1929)。ナチスに国籍剥奪→米に亡命。</td></tr>
+<tr><td>238</td><td><strong>ヘミングウェイ</strong></td><td>1899-1961</td><td>アメリカ。『武器よさらば』(WW1)・『誰がために鐘は鳴る』(スペイン内戦)・『老人と海』(ノーベル賞)。ハードボイルド文体。</td></tr>
+<tr><td>239</td><td><strong>スタインベック</strong></td><td>1902-1968</td><td>アメリカ。『怒りの葡萄』(世界恐慌で移動するオクラホマ農民)・『エデンの東』。ノーベル賞。</td></tr>
+<tr><td>240</td><td><strong>サルトル</strong></td><td>1905-1980</td><td>フランス実存主義。『存在と無』。「実存は本質に先立つ」。ノーベル賞辞退。</td></tr>
+<tr><td>241</td><td><strong>ショーロホフ</strong></td><td>1905-1984</td><td>ソ連。『静かなドン』(ドン=コサックの運命)。ノーベル賞。</td></tr>
+<tr><td>242</td><td><strong>ボーヴォワール</strong></td><td>1908-1986</td><td>フランス。実存主義。『第二の性』（1949）→「人は女に生まれるのではない、女になるのだ」。フェミニズム思想の古典。サルトルのパートナー。</td></tr>
+<tr><td>243</td><td><strong>カミュ</strong></td><td>1913-1960</td><td>フランス領アルジェリア出身。『異邦人』『ペスト』『シーシュポスの神話』。不条理。ノーベル賞。交通事故死。</td></tr>
+<tr><td>244</td><td><strong>ソルジェニーツィン</strong></td><td>1918-2008</td><td>ソ連の反体制作家。『収容所群島』。ノーベル賞→国外追放。</td></tr>
+<tr><td>245</td><td><strong>ガルシア=マルケス</strong></td><td>1927-2014</td><td>コロンビア。『百年の孤独』。マジック=リアリズム。ラテンアメリカ文学の頂点。ノーベル賞。</td></tr>
+<tr class="cat-header"><td colspan="4">▶ 20C 哲学・思想</td></tr>
+<tr><td>246</td><td><strong>ハイデガー</strong></td><td>1889-1976</td><td>ドイツ。『存在と時間』(1927)。存在論。一時ナチスに協力→戦後に追放。</td></tr>
+<tr><td>247</td><td><strong>レヴィ=ストロース</strong></td><td>1908-2009</td><td>フランス。構造主義人類学。『悲しき熱帯』『野生の思考』。</td></tr>
+<tr><td>248</td><td><strong>フーコー</strong></td><td>1926-1984</td><td>フランス。ポスト構造主義。『監獄の誕生』『狂気の歴史』『性の歴史』。「知」と「権力」の関係。</td></tr>
+<tr><td>249</td><td><strong>デリダ</strong></td><td>1930-2004</td><td>フランス。脱構築(ディコンストラクション)。ポスト構造主義。</td></tr>
+<tr><td>250</td><td><strong>サイード</strong></td><td>1935-2003</td><td>パレスチナ系アメリカ人。『オリエンタリズム』(1978)。西洋の東洋表象を批判。ポストコロニアリズムの基礎。</td></tr>
+<tr class="cat-header"><td colspan="4">▶ 19C ロマン主義・風景画</td></tr>
+<tr><td>251</td><td><strong>ターナー</strong></td><td>1775-1851</td><td>イギリス。ロマン主義風景画の巨匠。『戦艦テメレール号』『雨・蒸気・速度』。印象派の先駆。</td></tr>
+<tr><td>252</td><td><strong>ジェリコー</strong></td><td>1791-1824</td><td>フランス・ロマン主義の先駆。『メデューサ号の筏』(難破事件の告発)。落馬で33歳没。</td></tr>
+<tr><td>253</td><td><strong>ドラクロワ</strong></td><td>1798-1863</td><td>ロマン主義の代表。『民衆を導く自由の女神』（七月革命）。『キオス島の虐殺』。</td></tr>
+<tr class="cat-header"><td colspan="4">▶ 写実主義・バルビゾン派</td></tr>
+<tr><td>254</td><td><strong>コロー</strong></td><td>1796-1875</td><td>フランス・バルビゾン派。叙情的な風景画。印象派への橋渡し。</td></tr>
+<tr><td>255</td><td><strong>ドーミエ</strong></td><td>1808-1879</td><td>フランス。風刺画家。ルイ=フィリップを批判して投獄。『三等車』(社会派絵画)。</td></tr>
+<tr><td>256</td><td><strong>ミレー</strong></td><td>1814-1875</td><td>フランス・バルビゾン派。『晩鐘』『落ち穂拾い』『種をまく人』。農民の労働を敬虔に描く。</td></tr>
+<tr><td>257</td><td><strong>クールベ</strong></td><td>1819-1877</td><td>写実主義（レアリスム）の旗手。「天使は見たことがないから描けない」。パリ＝コミューンに参加。</td></tr>
+<tr class="cat-header"><td colspan="4">▶ 印象派</td></tr>
+<tr><td>258</td><td><strong>ピサロ</strong></td><td>1830-1903</td><td>印象派の長老。点描も試す。他の印象派画家をまとめる役。</td></tr>
+<tr><td>259</td><td><strong>マネ</strong></td><td>1832-1883</td><td>『草上の昼食』『オランピア』(1863のサロン落選で論争)。印象派の先駆(ただし本人は印象派展には不参加)。</td></tr>
+<tr><td>260</td><td><strong>ドガ</strong></td><td>1834-1917</td><td>印象派。『踊り子』シリーズ。瞬間を切り取る構図。晩年は彫刻も。</td></tr>
+<tr><td>261</td><td><strong>モネ</strong></td><td>1840-1926</td><td>印象派の代表。『印象・日の出』が「印象派」の名の由来。『睡蓮』連作。</td></tr>
+<tr><td>262</td><td><strong>ルノワール</strong></td><td>1841-1919</td><td>印象派。明るく温かい色彩。『ムーラン・ド・ラ・ギャレット』。人物画。</td></tr>
+<tr class="cat-header"><td colspan="4">▶ 後期印象派・世紀末</td></tr>
+<tr><td>263</td><td><strong>セザンヌ</strong></td><td>1839-1906</td><td>後期印象派。『サント=ヴィクトワール山』『カード遊びをする人々』。「自然を円筒と球と円錐で捉える」→キュビスムの祖。</td></tr>
+<tr><td>264</td><td><strong>ロダン</strong></td><td>1840-1917</td><td>近代彫刻の父。『考える人』『カレーの市民』『地獄の門』。</td></tr>
+<tr><td>265</td><td><strong>ゴーギャン</strong></td><td>1848-1903</td><td>フランス→タヒチ。後期印象派。『タヒチの女たち』『われわれはどこから来たのか』。文明批判の原始主義。</td></tr>
+<tr><td>266</td><td><strong>ゴッホ</strong></td><td>1853-1890</td><td>オランダ→南仏。後期印象派。『ひまわり』『星月夜』『自画像(耳に包帯)』。弟テオの経済支援。37歳で自殺。</td></tr>
+<tr><td>267</td><td><strong>スーラ</strong></td><td>1859-1891</td><td>新印象派(点描)。『グランド=ジャット島の日曜日の午後』。科学的色彩理論。31歳没。</td></tr>
+<tr><td>268</td><td><strong>クリムト</strong></td><td>1862-1918</td><td>オーストリア。ウィーン分離派。『接吻』。金箔を多用した装飾的画風。世紀末ウィーン。</td></tr>
+<tr><td>269</td><td><strong>ムンク</strong></td><td>1863-1944</td><td>ノルウェー。『叫び』。表現主義の先駆。不安・死・孤独の表現。</td></tr>
+<tr class="cat-header"><td colspan="4">▶ 20C 美術</td></tr>
+<tr><td>270</td><td><strong>カンディンスキー</strong></td><td>1866-1944</td><td>ロシア→独・仏。抽象絵画の創始者の一人。『コンポジション』シリーズ。バウハウスで教える。</td></tr>
+<tr><td>271</td><td><strong>マチス</strong></td><td>1869-1954</td><td>フランス。フォーヴィスム(野獣派)の旗手。『赤のハーモニー』。大胆な色彩。晩年は切り絵。</td></tr>
+<tr><td>272</td><td><strong>モンドリアン</strong></td><td>1872-1944</td><td>オランダ。新造形主義。垂直・水平線と三原色の構成。</td></tr>
+<tr><td>273</td><td><strong>ピカソ</strong></td><td>1881-1973</td><td>キュビズム（立体派）の創始。『ゲルニカ』（スペイン内戦）。『アヴィニョンの娘たち』。</td></tr>
+<tr><td>274</td><td><strong>ブラック</strong></td><td>1882-1963</td><td>フランス。ピカソと共にキュビスムを創始。</td></tr>
+<tr><td>275</td><td><strong>シャガール</strong></td><td>1887-1985</td><td>ロシア・ユダヤ系→フランス。『私と村』。夢幻的・象徴的な作風。パリ・オペラ座天井画。</td></tr>
+<tr><td>276</td><td><strong>デュシャン</strong></td><td>1887-1968</td><td>フランス→アメリカ。『泉』(便器にサインしただけ、1917)。レディメイド。現代美術の父。</td></tr>
+<tr><td>277</td><td><strong>ミロ</strong></td><td>1893-1983</td><td>スペイン・カタルーニャ。シュルレアリスム。有機的・詩的な抽象。</td></tr>
+<tr><td>278</td><td><strong>マグリット</strong></td><td>1898-1967</td><td>ベルギー。シュルレアリスム。『イメージの裏切り(これはパイプではない)』。</td></tr>
+<tr><td>279</td><td><strong>ダリ</strong></td><td>1904-1989</td><td>スペイン。シュールレアリスム（超現実主義）。『記憶の固執（柔らかい時計）』。</td></tr>
+<tr><td>280</td><td><strong>ポロック</strong></td><td>1912-1956</td><td>アメリカ。アクション=ペインティング(ドリッピング)。抽象表現主義。</td></tr>
+<tr><td>281</td><td><strong>ウォーホル</strong></td><td>1928-1987</td><td>アメリカ。ポップ・アート。マリリン・モンローのシルクスクリーン。大衆消費社会の美術。</td></tr>
+<tr class="cat-header"><td colspan="4">▶ 科学・技術(19-20C)</td></tr>
+<tr><td>282</td><td><strong>グーテンベルク</strong></td><td>1398頃-1468</td><td>ドイツ。活版印刷術（金属活字）の実用化。42行聖書の印刷（1455頃）。宗教改革・ルネサンス・科学革命の前提条件。「メディア革命」。四大発明に匹敵。</td></tr>
+<tr><td>283</td><td><strong>ワット</strong></td><td>1736-1819</td><td>スコットランド。蒸気機関の改良（1769）→産業革命の動力源。ニューコメンの機関を大幅改良。</td></tr>
+<tr><td>284</td><td><strong>ラマルク</strong></td><td>1744-1829</td><td>フランス。最初の体系的進化論(用不用説)。ダーウィンに先駆ける。</td></tr>
+<tr><td>285</td><td><strong>ファラデー</strong></td><td>1791-1867</td><td>イギリス。電磁誘導の発見(1831)。モーター・発電機の原理。数学教育を受けずに独力で到達。</td></tr>
+<tr><td>286</td><td><strong>ダーウィン</strong></td><td>1809-1882</td><td>進化論。『種の起源』。「適者生存」「自然淘汰」。</td></tr>
+<tr><td>287</td><td><strong>メンデル</strong></td><td>1822-1884</td><td>遺伝法則の発見。エンドウの交配実験。死後に再発見（1900年）。</td></tr>
+<tr><td>288</td><td><strong>パスツール</strong></td><td>1822-1895</td><td>フランス。狂犬病ワクチン。低温殺菌法（パスチャライゼーション）。微生物学。</td></tr>
+<tr><td>289</td><td><strong>マクスウェル</strong></td><td>1831-1879</td><td>イギリス。電磁気学の方程式化(マクスウェル方程式)。光は電磁波であると予言。</td></tr>
+<tr><td>290</td><td><strong>ノーベル</strong></td><td>1833-1896</td><td>スウェーデン。ダイナマイトの発明。遺言でノーベル賞を創設（1901年第1回）。</td></tr>
+<tr><td>291</td><td><strong>メンデレーエフ</strong></td><td>1834-1907</td><td>ロシア。元素の周期表を作成(1869)。未発見元素の性質を予言→的中。</td></tr>
+<tr><td>292</td><td><strong>レントゲン</strong></td><td>1845-1923</td><td>ドイツ。X線の発見(1895)→第1回ノーベル物理学賞。医学診断に革命。</td></tr>
+<tr><td>293</td><td><strong>エジソン</strong></td><td>1847-1931</td><td>アメリカ。白熱電球・蓄音機・映画の発明。「発明王」。1000件以上の特許。メンロパーク研究所。</td></tr>
+<tr><td>294</td><td><strong>ベル</strong></td><td>1847-1922</td><td>スコットランド出身→アメリカ。電話の発明(1876)。</td></tr>
+<tr><td>295</td><td><strong>プランク</strong></td><td>1858-1947</td><td>ドイツ。量子論の提唱(1900)。エネルギーは不連続な量子として放射される。</td></tr>
+<tr><td>296</td><td><strong>フォード</strong></td><td>1863-1947</td><td>アメリカ。大量生産方式(流れ作業、フォード=システム)。T型フォード(1908)で自動車の大衆化。</td></tr>
+<tr><td>297</td><td><strong>ライト兄弟</strong></td><td>1867/1871-1912/1948</td><td>アメリカ。動力飛行機の初飛行（1903年キティホーク）。12秒・36m→航空時代の幕開け。</td></tr>
+<tr><td>298</td><td><strong>キュリー夫妻</strong></td><td>1867-1934/1859-1906</td><td>ポーランド出身マリ・フランスのピエール。ラジウム・ポロニウムの発見。放射能研究。マリは女性初のノーベル賞受賞者・2度受賞。</td></tr>
+<tr><td>299</td><td><strong>マルコーニ</strong></td><td>1874-1937</td><td>イタリア。無線電信の発明。大西洋横断無線実験(1901)。</td></tr>
+<tr><td>300</td><td><strong>アインシュタイン</strong></td><td>1879-1955</td><td>相対性理論。ノーベル賞。ナチスで亡命。ラッセル＝アインシュタイン宣言。</td></tr>
+<tr><td>301</td><td><strong>ボーア</strong></td><td>1885-1962</td><td>デンマーク。原子模型の提唱。量子論の発展。</td></tr>
+<tr><td>302</td><td><strong>ハッブル</strong></td><td>1889-1953</td><td>アメリカ。銀河の後退と宇宙膨張の発見。</td></tr>
+<tr><td>303</td><td><strong>ワトソン&クリック</strong></td><td>1928-/1916-2004</td><td>米・英。DNAの二重らせん構造を発見(1953)。分子生物学革命。</td></tr>
+<tr class="cat-header"><td colspan="4">▶ バロック音楽</td></tr>
+<tr><td>304</td><td><strong>ヴィヴァルディ</strong></td><td>1678-1741</td><td>イタリア・バロック。『四季』。ヴェネツィアの司祭(「赤毛の司祭」)。協奏曲形式を確立。J.S.バッハに影響。</td></tr>
+<tr><td>305</td><td><strong>ヘンデル</strong></td><td>1685-1759</td><td>ドイツ→イギリス・バロック。『メサイア（救世主）』。</td></tr>
+<tr><td>306</td><td><strong>バッハ</strong></td><td>1685-1750</td><td>ドイツ・バロック。「音楽の父」。『マタイ受難曲』。対位法の集大成。</td></tr>
+<tr class="cat-header"><td colspan="4">▶ 古典派音楽</td></tr>
+<tr><td>307</td><td><strong>ハイドン</strong></td><td>1732-1809</td><td>オーストリア。「交響曲の父」「弦楽四重奏曲の父」。エステルハージ家に長年仕える。モーツァルトの友・ベートーヴェンの師。</td></tr>
+<tr><td>308</td><td><strong>モーツァルト</strong></td><td>1756-1791</td><td>オーストリア。古典派。オペラ『フィガロの結婚』『魔笛』。35歳で夭折。</td></tr>
+<tr><td>309</td><td><strong>ベートーヴェン</strong></td><td>1770-1827</td><td>古典派→ロマン派。交響曲第9番（シラー「歓喜に寄す」）。晩年は聴覚喪失。</td></tr>
+<tr class="cat-header"><td colspan="4">▶ ロマン派音楽</td></tr>
+<tr><td>310</td><td><strong>ロッシーニ</strong></td><td>1792-1868</td><td>イタリア・オペラ。『セビリアの理髪師』『ウィリアム=テル』。</td></tr>
+<tr><td>311</td><td><strong>シューベルト</strong></td><td>1797-1828</td><td>オーストリア。ロマン派。「歌曲の王」。『野ばら』『魔王』『冬の旅』『未完成交響曲』。31歳没。</td></tr>
+<tr><td>312</td><td><strong>ベルリオーズ</strong></td><td>1803-1869</td><td>フランス・ロマン派。『幻想交響曲』。標題音楽の先駆。</td></tr>
+<tr><td>313</td><td><strong>メンデルスゾーン</strong></td><td>1809-1847</td><td>ドイツ。『真夏の夜の夢』(結婚行進曲)・ヴァイオリン協奏曲。バッハ『マタイ受難曲』の復活上演。</td></tr>
+<tr><td>314</td><td><strong>ショパン</strong></td><td>1810-1849</td><td>ポーランド。「ピアノの詩人」。ロマン派。祖国の独立への思いを音楽に。</td></tr>
+<tr><td>315</td><td><strong>シューマン</strong></td><td>1810-1856</td><td>ドイツ・ロマン派。ピアノ曲『子供の情景』。妻クララは名ピアニスト。晩年は精神病。</td></tr>
+<tr><td>316</td><td><strong>フランツ＝リスト</strong></td><td>1811-1886</td><td>ハンガリー。「ピアノの魔術師」。交響詩を創始。ヴァーグナーの義父。</td></tr>
+<tr><td>317</td><td><strong>ヴェルディ</strong></td><td>1813-1901</td><td>イタリア・オペラ。『アイーダ』。イタリア統一運動（リソルジメント）の象徴。</td></tr>
+<tr><td>318</td><td><strong>ワーグナー</strong></td><td>1813-1883</td><td>ドイツ・ロマン派オペラの頂点。楽劇。『ニーベルングの指環』(四部作)・『トリスタンとイゾルデ』・『タンホイザー』。バイロイト音楽祭。</td></tr>
+<tr><td>319</td><td><strong>ブラームス</strong></td><td>1833-1897</td><td>ドイツ。古典的形式によるロマン派。交響曲第1番=「ベートーヴェンの第10」。ウィーンで活躍。</td></tr>
+<tr><td>320</td><td><strong>ビゼー</strong></td><td>1838-1875</td><td>フランス。『カルメン』(初演は不評、直後に36歳没)。</td></tr>
+<tr><td>321</td><td><strong>プッチーニ</strong></td><td>1858-1924</td><td>イタリア・オペラ。『蝶々夫人』(日本題材)・『トスカ』・『ラ=ボエーム』・『トゥーランドット』。</td></tr>
+<tr class="cat-header"><td colspan="4">▶ 国民楽派</td></tr>
+<tr><td>322</td><td><strong>スメタナ</strong></td><td>1824-1884</td><td>チェコ国民楽派の父。連作交響詩『わが祖国』(「モルダウ」)。チェコ民族運動。</td></tr>
+<tr><td>323</td><td><strong>ムソルグスキー</strong></td><td>1839-1881</td><td>ロシア国民楽派「五人組」。『展覧会の絵』・歌劇『ボリス=ゴドゥノフ』。</td></tr>
+<tr><td>324</td><td><strong>チャイコフスキー</strong></td><td>1840-1893</td><td>ロシア・ロマン派。『白鳥の湖』。ロシア国民楽派。</td></tr>
+<tr><td>325</td><td><strong>ドヴォルザーク</strong></td><td>1841-1904</td><td>チェコ国民楽派。交響曲第9番『新世界より』(アメリカ滞在中)。</td></tr>
+<tr><td>326</td><td><strong>リムスキー=コルサコフ</strong></td><td>1844-1908</td><td>ロシア国民楽派「五人組」。『シェヘラザード』。ストラヴィンスキーの師。</td></tr>
+<tr><td>327</td><td><strong>シベリウス</strong></td><td>1865-1957</td><td>フィンランド。『フィンランディア』。フィンランド独立運動の精神的支柱。</td></tr>
+<tr class="cat-header"><td colspan="4">▶ 近現代音楽</td></tr>
+<tr><td>328</td><td><strong>ドビュッシー</strong></td><td>1862-1918</td><td>フランス。印象主義音楽。『牧神の午後への前奏曲』『海』。無調・全音音階。</td></tr>
+<tr><td>329</td><td><strong>ラヴェル</strong></td><td>1875-1937</td><td>フランス。『ボレロ』。印象主義〜新古典主義。精緻な管弦楽法。</td></tr>
+<tr><td>330</td><td><strong>ストラヴィンスキー</strong></td><td>1882-1971</td><td>ロシア→フランス→アメリカ。『春の祭典』（パリ初演で暴動）。20世紀音楽の革新。</td></tr>
+<tr class="cat-header"><td colspan="4">▶ 近現代建築</td></tr>
+<tr><td>331</td><td><strong>エッフェル</strong></td><td>1832-1923</td><td>フランス。エッフェル塔（1889年パリ万博）・自由の女神の鉄骨構造を設計。鉄骨建築の先駆。</td></tr>
+<tr><td>332</td><td><strong>ガウディ</strong></td><td>1852-1926</td><td>スペイン。サグラダ＝ファミリア聖堂（1882着工〜未完成）。曲線と有機的形態。アール＝ヌーヴォー。</td></tr>
+<tr><td>333</td><td><strong>フランク＝ロイド＝ライト</strong></td><td>1867-1959</td><td>アメリカ。有機的建築。『落水荘（カウフマン邸）』。グッゲンハイム美術館（NY）。プレイリー様式。</td></tr>
+<tr><td>334</td><td><strong>グロピウス</strong></td><td>1883-1969</td><td>ドイツ。バウハウス（1919-33）の創設者。芸術と技術の統合。ナチスにより閉鎖→アメリカに亡命。</td></tr>
+<tr><td>335</td><td><strong>ミース＝ファン＝デル＝ローエ</strong></td><td>1886-1969</td><td>ドイツ→アメリカ。「Less is more」。バウハウス最後の校長。鉄とガラスの高層建築。</td></tr>
+<tr><td>336</td><td><strong>ル＝コルビュジエ</strong></td><td>1887-1965</td><td>スイス→フランス。近代建築の三大巨匠。「住宅は住むための機械」。ピロティ・屋上庭園・自由な平面。国立西洋美術館（東京,世界遺産）。</td></tr>
+</tbody></table></div>
+<div class="tbl-wrap hidden" id="content1"><table class="culture-tbl"><thead><tr><th>No.</th><th>項目</th><th>時代/生没年</th><th>分野・業績・代表作</th></tr></thead><tbody>
+<tr class="cat-header"><td colspan="4">▶ 中国 諸子百家</td></tr>
+<tr><td>1</td><td><strong>孔子</strong></td><td>前551-前479</td><td>儒家の祖。仁・礼・孝。「論語」（弟子が編纂）。周の礼制の復興。春秋の筆法。</td></tr>
+<tr><td>2</td><td><strong>墨子</strong></td><td>前480頃-前390頃</td><td>墨家。兼愛（無差別の愛）・非攻（反戦）。節用・節葬。儒家を批判。</td></tr>
+<tr><td>3</td><td><strong>商鞅</strong></td><td>前390頃-前338</td><td>法家。秦の変法（土地私有・郡県制・連座制）。富国強兵→秦の統一の基盤。</td></tr>
+<tr><td>4</td><td><strong>孟子</strong></td><td>前372頃-前289頃</td><td>儒家。性善説。仁義。王道政治。易姓革命論。</td></tr>
+<tr><td>5</td><td><strong>荘子</strong></td><td>前369頃-前286頃</td><td>道家。万物斉同。「胡蝶の夢」。自由な精神の追求。</td></tr>
+<tr><td>6</td><td><strong>荀子</strong></td><td>前298頃-前235頃</td><td>儒家。性悪説。礼による秩序。韓非・李斯の師。</td></tr>
+<tr><td>7</td><td><strong>韓非</strong></td><td>前280頃-前233</td><td>法家。法治主義。『韓非子』。荀子の弟子。始皇帝の統治理念に影響→李斯に殺害。</td></tr>
+<tr><td>8</td><td><strong>老子</strong></td><td>前6C頃?</td><td>道家の祖。無為自然。「道（タオ）」。小国寡民。反文明的。</td></tr>
+<tr><td>9</td><td><strong>孫子</strong></td><td>前5C頃</td><td>兵家。『孫子』（兵法書）。「敵を知り己を知れば百戦殆うからず」。</td></tr>
+<tr class="cat-header"><td colspan="4">▶ 中国 古代詩歌</td></tr>
+<tr><td>10</td><td><strong>屈原</strong></td><td>前340頃-前278</td><td>楚の政治家・詩人。『楚辞』の中心的作品「離騒」。入水自殺→端午節の起源。</td></tr>
+<tr class="cat-header"><td colspan="4">▶ 中国 漢代 学術・科学</td></tr>
+<tr><td>11</td><td><strong>張騫</strong></td><td>前195頃-前114</td><td>前漢・武帝の命で大月氏に使節派遣(前139)。13年かけて帰還→西域諸国の情報を伝える。「シルクロード」開拓の端緒。</td></tr>
+<tr><td>12</td><td><strong>董仲舒</strong></td><td>前176-前104</td><td>前漢。武帝に儒学の官学化を献策→五経博士設置。天人相関説。</td></tr>
+<tr><td>13</td><td><strong>司馬遷</strong></td><td>前145頃-前86頃</td><td>『史記』（紀伝体の祖。本紀・列伝・世家・書・年表）。武帝の宮刑に耐え完成。</td></tr>
+<tr><td>14</td><td><strong>王充</strong></td><td>27-100頃</td><td>後漢の思想家。『論衡』。迷信・神秘主義を批判する合理主義的思考。当時は異端視→後世に再評価。</td></tr>
+<tr><td>15</td><td><strong>班超</strong></td><td>32-102</td><td>後漢。『漢書』の班固の弟。西域都護として30年にわたり西域を経営(73-102)。部下の甘英を大秦(ローマ)に派遣。</td></tr>
+<tr><td>16</td><td><strong>蔡倫</strong></td><td>63頃-121</td><td>後漢。製紙法の改良（105年）。タラス河畔の戦い（751）でイスラーム世界に伝播→ヨーロッパへ。四大発明の一つ。</td></tr>
+<tr><td>17</td><td><strong>鄭玄</strong></td><td>127-200</td><td>後漢末。訓詁学(古典解釈学)の大成者。五経の注釈を集大成→後世の経学の基礎。</td></tr>
+<tr><td>18</td><td><strong>華佗</strong></td><td>140頃-208頃</td><td>後漢末〜三国。外科手術（麻酔薬「麻沸散」を使用）。五禽戯（体操法）。曹操に殺害。</td></tr>
+<tr><td>19</td><td><strong>許慎</strong></td><td>58頃-147頃</td><td>後漢。『説文解字』。最古の字書。部首別・六書による漢字の体系化。漢字研究の原点。</td></tr>
+<tr><td>20</td><td><strong>張仲景</strong></td><td>150頃-219頃</td><td>後漢末。『傷寒雑病論』。中国医学の臨床の祖。漢方医学の基礎。</td></tr>
+<tr><td>21</td><td><strong>班固</strong></td><td>32-92</td><td>『漢書』（前漢の歴史。紀伝体の断代史の祖）。</td></tr>
+<tr class="cat-header"><td colspan="4">▶ 中国 魏晋南北朝〜唐 文学</td></tr>
+<tr><td>22</td><td><strong>陶淵明</strong></td><td>365-427</td><td>東晋→南朝宋。田園詩人。「帰去来辞」「桃花源記」。隠逸の理想。</td></tr>
+<tr><td>23</td><td><strong>孟浩然</strong></td><td>689-740</td><td>盛唐の詩人。自然詩。王維と並ぶ山水田園詩人。</td></tr>
+<tr><td>24</td><td><strong>李白</strong></td><td>701-762</td><td>盛唐。「詩仙」。豪放な詩風。玄宗の知遇→安史の乱で流罪。</td></tr>
+<tr><td>25</td><td><strong>王維</strong></td><td>701-761</td><td>盛唐。「詩仏」。山水画(南宗画の祖)と自然詩。「詩中に画あり、画中に詩あり」。</td></tr>
+<tr><td>26</td><td><strong>杜甫</strong></td><td>712-770</td><td>盛唐。「詩聖」。社会的苦悩を詠む。安史の乱で流浪。</td></tr>
+<tr><td>27</td><td><strong>韓愈</strong></td><td>768-824</td><td>中唐。古文復興運動の領袖。唐宋八大家の第一人。『原道』(仏教・道教批判)。柳宗元と並称。</td></tr>
+<tr><td>28</td><td><strong>白居易（白楽天）</strong></td><td>772-846</td><td>中唐。平易な表現で社会矛盾を批判。「長恨歌」（玄宗と楊貴妃）。日本にも影響。</td></tr>
+<tr><td>29</td><td><strong>柳宗元</strong></td><td>773-819</td><td>中唐。古文復興。唐宋八大家。韓愈と並ぶ。『封建論』。</td></tr>
+<tr><td>30</td><td><strong>杜牧</strong></td><td>803-852</td><td>晩唐。『阿房宮の賦』。李商隠と並称。杜甫と区別して「小杜」とも。</td></tr>
+<tr><td>31</td><td><strong>李商隠</strong></td><td>813頃-858頃</td><td>晩唐。絢爛な修辞。恋愛詩と政治風刺。杜牧と並称「小李杜」。</td></tr>
+<tr class="cat-header"><td colspan="4">▶ 中国 唐代 書画・仏教</td></tr>
+<tr><td>32</td><td><strong>王羲之</strong></td><td>303-361</td><td>東晋。「書聖」。行書の最高峰『蘭亭序』。</td></tr>
+<tr><td>33</td><td><strong>法顕</strong></td><td>337頃-422頃</td><td>東晋の僧。399年に長安→敦煌→タクラマカン砂漠→ホータン→パミール→ガンダーラ→インド。帰路は海路（セイロン→ジャワ→建康）。『仏国記』。</td></tr>
+<tr><td>34</td><td><strong>顧愷之</strong></td><td>344頃-405頃</td><td>東晋の画家。「画聖」。人物画の祖。『女史箴図巻』。</td></tr>
+<tr><td>35</td><td><strong>欧陽詢</strong></td><td>557-641</td><td>初唐三大家の一人。端正な楷書。『九成宮醴泉銘』。</td></tr>
+<tr><td>36</td><td><strong>虞世南</strong></td><td>558-638</td><td>初唐三大家。温雅な書風。太宗に重用。『孔子廟堂碑』。</td></tr>
+<tr><td>37</td><td><strong>褚遂良</strong></td><td>596-658</td><td>初唐三大家。太宗・高宗に仕える。王羲之の収集に携わる。『雁塔聖教序』。</td></tr>
+<tr><td>38</td><td><strong>玄奘</strong></td><td>602-664</td><td>唐の僧。629年に長安→高昌→天山→サマルカンド→カシュガル→ガンダーラ→ナーランダー僧院。645年に経典657部を持ち帰国。『大唐西域記』→西遊記のモデル。</td></tr>
+<tr><td>39</td><td><strong>義浄</strong></td><td>635-713</td><td>唐の僧。671年に広州→マラッカ海峡→シュリーヴィジャヤ→インド東岸→ナーランダー僧院。約25年滞在後、海路帰国。『南海寄帰内法伝』。</td></tr>
+<tr><td>40</td><td><strong>呉道玄</strong></td><td>680頃-740頃</td><td>盛唐。「画聖」。仏教壁画。</td></tr>
+<tr><td>41</td><td><strong>顔真卿</strong></td><td>709-785</td><td>盛唐〜中唐。楷書の大家。安史の乱で義軍を挙げた忠臣→のち李希烈の反乱で殺害。剛健な書風。</td></tr>
+<tr class="cat-header"><td colspan="4">▶ 中国 宋代</td></tr>
+<tr><td>42</td><td><strong>范仲淹</strong></td><td>989-1052</td><td>北宋の政治家・文人。「先憂後楽」(『岳陽楼記』)。慶暦の新政を推進。</td></tr>
+<tr><td>43</td><td><strong>畢昇</strong></td><td>990頃-1051頃</td><td>北宋。活版印刷術の発明（陶製活字）。グーテンベルクに約400年先行。四大発明。</td></tr>
+<tr><td>44</td><td><strong>欧陽脩</strong></td><td>1007-1072</td><td>北宋。唐宋八大家。『新唐書』『新五代史』。古文復興の継承者。蘇軾の恩師。</td></tr>
+<tr><td>45</td><td><strong>周敦頤</strong></td><td>1017-1073</td><td>宋学（新儒学）の先駆。太極図説。宇宙論的儒学。</td></tr><tr><td>46</td><td><strong>程顥</strong></td><td>1032-1085</td><td>北宋。程頤の兄。北宋五子の一人。理気論の発展。朱熹に絶大な影響(「程朱学」)。</td></tr><tr><td>47</td><td><strong>程頤</strong></td><td>1033-1107</td><td>北宋。程顥の弟。北宋五子。「性即理」を唱え、朱熹の朱子学の直接の理論的基礎となる。</td></tr>
+<tr><td>48</td><td><strong>司馬光</strong></td><td>1019-1086</td><td>『資治通鑑』（編年体の通史。戦国〜五代）。王安石の新法に反対する旧法党の領袖。</td></tr>
+<tr><td>49</td><td><strong>王安石</strong></td><td>1021-1086</td><td>北宋の政治家・文人。新法(青苗法・募役法等)を実施→旧法党(司馬光)と対立。唐宋八大家の一人。</td></tr>
+<tr><td>50</td><td><strong>沈括</strong></td><td>1031-1095</td><td>北宋。『夢渓筆談』（百科全書的著作）。磁針の偏角を発見。活版印刷の記録者。</td></tr>
+<tr><td>51</td><td><strong>蘇軾（蘇東坡）</strong></td><td>1037-1101</td><td>北宋。詩文・書画・政治。唐宋八大家の一人。王安石の新法を批判→左遷。</td></tr>
+<tr><td>52</td><td><strong>黄庭堅</strong></td><td>1045-1105</td><td>北宋。江西詩派の祖。書家としても宋四家の一。蘇軾の門人。</td></tr>
+<tr><td>53</td><td><strong>米芾</strong></td><td>1051-1107</td><td>北宋の書画家。宋四家(蘇軾・黄庭堅・米芾・蔡襄)の一人。奇行で知られる「米癲」。</td></tr>
+<tr><td>54</td><td><strong>李清照</strong></td><td>1084-1155頃</td><td>南宋。中国文学史最大の女性詞人。金軍の侵入で夫と南遷→未亡人となり流浪。哀感深い詞風。</td></tr>
+<tr><td>55</td><td><strong>陸游</strong></td><td>1125-1210</td><td>南宋。愛国詩人。金への抗戦を詠む。約9300首の詩を残す。</td></tr>
+<tr><td>56</td><td><strong>朱熹（朱子）</strong></td><td>1130-1200</td><td>朱子学（性即理）の大成者。『四書集注』。理気二元論。科挙の出題基準→東アジア全域に影響（朝鮮・日本・ベトナム）。</td></tr>
+<tr><td>57</td><td><strong>陸九淵</strong></td><td>1139-1193</td><td>心即理説。朱熹と対立（鵝湖の会）。陽明学の先駆。</td></tr>
+<tr><td>58</td><td><strong>辛棄疾</strong></td><td>1140-1207</td><td>南宋。愛国詞人。金に対する北伐を主張。豪放派の代表。</td></tr>
+<tr><td>59</td><td><strong>張択端</strong></td><td>12C前半</td><td>北宋末の画家。『清明上河図』(開封の都市風俗を描いた長大な巻物)。</td></tr>
+<tr><td>60</td><td><strong>文天祥</strong></td><td>1236-1283</td><td>南宋末の忠臣。モンゴル軍に抗戦→捕縛・処刑。獄中で『正気の歌』を作る。</td></tr>
+<tr class="cat-header"><td colspan="4">▶ 中国 元代</td></tr>
+<tr><td>61</td><td><strong>郭守敬</strong></td><td>1231-1316</td><td>元。天文学者・暦学者。授時暦(1281施行、1年=365.2425日、グレゴリオ暦と同値)。水利技術者。</td></tr>
+<tr><td>62</td><td><strong>関漢卿</strong></td><td>13C</td><td>元曲四大家の第一。『竇娥冤』(冤罪を晴らす雑劇)。</td></tr>
+<tr><td>63</td><td><strong>馬致遠</strong></td><td>1250頃-1321頃</td><td>元曲四大家。『漢宮秋』(王昭君の悲劇)。</td></tr>
+<tr><td>64</td><td><strong>王実甫</strong></td><td>13C末-14C初</td><td>元曲。『西廂記』(恋愛もの、中国文学の古典)。</td></tr>
+<tr><td>65</td><td><strong>趙孟頫</strong></td><td>1254-1322</td><td>元の書画家。復古主義（唐以前の古典回帰）。書・画ともに一流。南宋末の遺臣だが元に仕えた。</td></tr>
+<tr class="cat-header"><td colspan="4">▶ 中国 明代</td></tr>
+<tr><td>66</td><td><strong>羅貫中</strong></td><td>14C</td><td>『三国志演義』の作者（元末明初）。四大奇書の一つ。</td></tr>
+<tr><td>67</td><td><strong>施耐庵</strong></td><td>14C</td><td>『水滸伝』の作者（元末明初）。農民反乱を題材。四大奇書。</td></tr>
+<tr><td>68</td><td><strong>鄭和</strong></td><td>1371-1433</td><td>永楽帝の命で南海遠征（1405-33、7回）。ムスリムの宦官。南京→ベトナム→マラッカ→セイロン→カリカット→ホルムズ→アフリカ東岸（マリンディ）。朝貢貿易の拡大。</td></tr>
+<tr><td>69</td><td><strong>沈周</strong></td><td>1427-1509</td><td>明代呉派(明四家)の祖。文徴明の師。山水画。</td></tr>
+<tr><td>70</td><td><strong>文徴明</strong></td><td>1470-1559</td><td>明四家の一人。沈周の弟子。山水・花卉。文人画の典型。</td></tr>
+<tr><td>71</td><td><strong>唐寅</strong></td><td>1470-1524</td><td>明四家。科挙で不正疑惑に連座し挫折→画業に専念。大衆的人気。</td></tr>
+<tr><td>72</td><td><strong>王陽明</strong></td><td>1472-1529</td><td>陽明学。知行合一（知ることと行うことは一体）。致良知。日本の中江藤樹・大塩平八郎に影響。</td></tr>
+<tr><td>73</td><td><strong>仇英</strong></td><td>1494頃-1552頃</td><td>明四家。職業画家出身。精密な人物画・故実画。</td></tr>
+<tr><td>74</td><td><strong>呉承恩</strong></td><td>1500頃-1582頃</td><td>『西遊記』の作者（明代）。玄奘のインド旅行を題材。四大奇書。</td></tr>
+<tr><td>75</td><td><strong>李時珍</strong></td><td>1518-1593</td><td>明。『本草綱目』（薬物学の集大成。約1900種の薬物を分類・記載）。約27年かけて完成。ヨーロッパ・日本にも翻訳・影響。中国医薬学最大の業績。</td></tr>
+<tr><td>76</td><td><strong>李卓吾</strong></td><td>1527-1602</td><td>陽明学左派。「童心」を唱え既成の道徳を批判。明末の自由主義思想。</td></tr>
+<tr><td>77</td><td><strong>湯顕祖</strong></td><td>1550-1616</td><td>明の劇作家。代表作『牡丹亭』。「東洋のシェークスピア」とも。崑曲（こんきょく）の傑作。</td></tr>
+<tr><td>78</td><td><strong>董其昌</strong></td><td>1555-1636</td><td>明末。書画家・理論家。南北二宗論(文人画=南宗の優位)。後世の文人画観を規定。</td></tr>
+<tr><td>79</td><td><strong>徐光啓</strong></td><td>1562-1633</td><td>明末の政治家・学者。マテオ=リッチに学びキリスト教に入信。『農政全書』(農学の集大成)。『幾何原本』(ユークリッド)の中国語共訳。</td></tr>
+<tr><td>80</td><td><strong>徐霞客</strong></td><td>1586-1641</td><td>明末。地理学者・旅行家。『徐霞客遊記』(中国全土を30年以上踏査した記録)。</td></tr>
+<tr><td>81</td><td><strong>宋応星</strong></td><td>1587-1666頃</td><td>明末。『天工開物』（産業技術の百科全書。農業・手工業・鉱業等の技術を図解）。中国版「百科全書」。デニ＝ディドロの『百科全書』に先行。</td></tr>
+<tr class="cat-header"><td colspan="4">▶ 中国 明末〜清代</td></tr>
+<tr><td>82</td><td><strong>黄宗羲</strong></td><td>1610-1695</td><td>明末清初の思想家。君主専制を批判。「中国のルソー」と称される。</td></tr>
+<tr><td>83</td><td><strong>顧炎武</strong></td><td>1613-1682</td><td>考証学の祖。「経世致用」（学問は実社会に役立つべき）。反清・反満州の気概。</td></tr>
+<tr><td>84</td><td><strong>王夫之</strong></td><td>1619-1692</td><td>明末清初。唯物論的哲学。反清思想。</td></tr>
+<tr><td>85</td><td><strong>八大山人（朱耷）</strong></td><td>1626-1705</td><td>明の皇族→清代に遁世。孤高の画風。魚・鳥の水墨画で知られる。白眼の鳥が有名。</td></tr>
+<tr><td>86</td><td><strong>鄭板橋</strong></td><td>1693-1765</td><td>清の画家・書家。「揚州八怪」の一人。竹の水墨画で有名。科挙合格後も清廉を貫く。</td></tr>
+<tr><td>87</td><td><strong>曹雪芹</strong></td><td>1715頃-1763頃</td><td>『紅楼夢』の作者（清代）。貴族の衰退を描く。中国文学の最高傑作。</td></tr>
+<tr><td>88</td><td><strong>戴震</strong></td><td>1724-1777</td><td>清代考証学。朱子学の理気二元論を批判。人間の欲望を肯定。</td></tr>
+<tr><td>89</td><td><strong>銭大昕</strong></td><td>1728-1804</td><td>清代考証学の集大成者。精密な文献考証。</td></tr>
+<tr class="cat-header"><td colspan="4">▶ イエズス会士と中国</td></tr>
+<tr><td>90</td><td><strong>マテオ＝リッチ</strong></td><td>1552-1610</td><td>イタリア出身イエズス会士。1582年マカオ→広東→南京→北京。『坤輿万国全図』を作成。徐光啓と『幾何原本』を漢訳。儒教への適応主義。</td></tr>
+<tr><td>91</td><td><strong>フェルビースト</strong></td><td>1623-1688</td><td>ベルギー出身イエズス会士。清の康熙帝に仕える。天文台の改修。大砲鋳造にも協力。</td></tr>
+<tr><td>92</td><td><strong>ブーヴェ</strong></td><td>1656-1730</td><td>フランス出身イエズス会士。康熙帝に仕え『皇輿全覧図』（中国全土の実測地図）を作成。</td></tr>
+<tr><td>93</td><td><strong>カスティリオーネ（郎世寧）</strong></td><td>1688-1766</td><td>イタリア出身イエズス会士・画家。清の乾隆帝に仕える。西洋画法と中国画の融合。円明園の設計に参加。</td></tr>
+<tr class="cat-header"><td colspan="4">▶ 中国 清末〜民国</td></tr>
+<tr><td>94</td><td><strong>林則徐</strong></td><td>1785-1850</td><td>清。アヘン厳禁でアヘン戦争の直接原因。『四洲志』(西洋地理)→魏源の『海国図志』の基礎。</td></tr>
+<tr><td>95</td><td><strong>魏源</strong></td><td>1794-1857</td><td>清。『海国図志』(世界地理、1842)。「師夷之長技以制夷」。日本の幕末にも影響。</td></tr>
+<tr><td>96</td><td><strong>張之洞</strong></td><td>1837-1909</td><td>清の洋務派官僚。『勧学篇』(「中体西用」の標語)。湖広総督として産業振興。</td></tr>
+<tr><td>97</td><td><strong>厳復</strong></td><td>1854-1921</td><td>イギリス留学。ハクスリー『天演論』（進化論）・アダム＝スミス『国富論』を翻訳→西洋思想を中国に紹介。「物競天択、適者生存」。</td></tr>
+<tr><td>98</td><td><strong>康有為</strong></td><td>1858-1927</td><td>清末。公羊学派。『孔子改制考』(儒教を改革思想として再解釈)。戊戌の変法(1898)を主導→失敗・亡命。『大同書』(理想社会論)。</td></tr>
+<tr><td>99</td><td><strong>蔡元培</strong></td><td>1868-1940</td><td>民国期の教育家。北京大学総長(1916-)。陳独秀・胡適・魯迅らを招聘→新文化運動の中心基地とする。</td></tr>
+<tr><td>100</td><td><strong>章炳麟</strong></td><td>1869-1936</td><td>号は太炎。清末の革命派・国学者。辛亥革命に参加。『訄書』。考証学の継承者。</td></tr>
+<tr><td>101</td><td><strong>梁啓超</strong></td><td>1873-1929</td><td>康有為の弟子。戊戌変法の中心→亡命(日本)。啓蒙的な文筆活動で中国の近代化に絶大な影響。</td></tr>
+<tr><td>102</td><td><strong>陳独秀</strong></td><td>1879-1942</td><td>『新青年』(1915)創刊。文学革命・新文化運動の旗手。中国共産党創始者の一人(初代書記長)→後に失脚。</td></tr>
+<tr><td>103</td><td><strong>魯迅</strong></td><td>1881-1936</td><td>中国近代文学の父。『阿Q正伝』『狂人日記』。白話文学（口語文学）の確立。文学革命。</td></tr>
+<tr><td>104</td><td><strong>李大釗</strong></td><td>1889-1927</td><td>北京大学教授。中国最初のマルクス主義者。中国共産党創始者の一人。北洋軍閥に処刑。</td></tr>
+<tr><td>105</td><td><strong>胡適</strong></td><td>1891-1962</td><td>アメリカ留学。白話文学運動の提唱者。プラグマティズム。『文学改良芻議』（1917）→新文化運動。</td></tr>
+<tr><td>106</td><td><strong>郭沫若</strong></td><td>1892-1978</td><td>詩人・歴史家・政治家。日本留学。中国古代史・甲骨文研究。革命派文学者。</td></tr>
+<tr><td>107</td><td><strong>老舎</strong></td><td>1899-1966</td><td>北京出身。『駱駝祥子(らくだのシャンツ)』(北京の人力車夫の悲劇)。文化大革命で迫害→自殺。</td></tr>
+<tr><td>108</td><td><strong>巴金</strong></td><td>1904-2005</td><td>『家』『春』『秋』(激流三部作、旧家族制度の崩壊)。</td></tr>
+<tr class="cat-header"><td colspan="4">▶ 朝鮮・ベトナム</td></tr>
+<tr><td>109</td><td><strong>李退渓</strong></td><td>1501-1570</td><td>李朝の朱子学者。朱子学の朝鮮的展開。日本の山崎闇斎ら朱子学者にも絶大な影響。「東方の朱子」。</td></tr>
+<tr><td>110</td><td><strong>李栗谷</strong></td><td>1536-1584</td><td>李朝の朱子学者。李退渓と並ぶ朝鮮朱子学の双璧。経世実用を重視。</td></tr>
+<tr class="cat-header"><td colspan="4">▶ インド 文化・哲学</td></tr>
+<tr><td>111</td><td><strong>龍樹（ナーガールジュナ）</strong></td><td>150頃-250頃</td><td>南インド。大乗仏教中観派の祖。『中論』。「空」の思想を体系化。大乗仏教の理論的基礎。</td></tr>
+<tr><td>112</td><td><strong>カーリダーサ</strong></td><td>5C頃</td><td>グプタ朝。インド最大の詩人・劇作家。『シャクンタラー』。サンスクリット文学の最高峰。</td></tr>
+<tr><td>113</td><td><strong>ブラフマグプタ</strong></td><td>598-668頃</td><td>インドの数学者。0を含む算術規則を初めて体系化。負の数の計算法。</td></tr>
+<tr><td>114</td><td><strong>シャンカラ</strong></td><td>8C</td><td>南インド。ヴェーダーンタ哲学(不二一元論)。ウパニシャッドの解釈を統一。ヒンドゥー教の理論的骨格。</td></tr>
+<tr><td>115</td><td><strong>カビール</strong></td><td>1440頃-1518</td><td>インドの宗教詩人。ヒンドゥー教とイスラームの融合を説く。バクティ運動。ナーナクのシク教にも影響。</td></tr>
+<tr><td>116</td><td><strong>ナーナク</strong></td><td>1469-1539</td><td>シク教の開祖。ヒンドゥー教とイスラームの融合。カースト制度を否定。パンジャーブ地方。</td></tr>
+<tr class="cat-header"><td colspan="4">▶ インド 近代</td></tr>
+<tr><td>117</td><td><strong>ラビンドラナート＝タゴール</strong></td><td>1861-1941</td><td>インド。『ギーターンジャリ』→アジア初のノーベル文学賞（1913）。ベンガル＝ルネサンス。</td></tr>
+<tr class="cat-header"><td colspan="4">▶ イスラーム 学術・科学</td></tr>
+<tr><td>118</td><td><strong>フワーリズミー</strong></td><td>780頃-850頃</td><td>アッバース朝。「代数学（アルジェブラ）の父」。アルゴリズムの語源。知恵の館。</td></tr>
+<tr><td>119</td><td><strong>アル＝ラージー</strong></td><td>865頃-925頃</td><td>ペルシア出身の医学者・錬金術師。『包括医学全書』。天然痘と麻疹を初めて区別。中世ヨーロッパの医学に影響(ラテン名ラーゼス)。</td></tr>
+<tr><td>120</td><td><strong>イブン＝ハイサム（アルハゼン）</strong></td><td>965-1039</td><td>エジプト(ファーティマ朝)。『光学の書』。視覚の数学的・実験的研究。ケプラー・デカルトに影響。</td></tr>
+<tr><td>121</td><td><strong>ビールーニー</strong></td><td>973-1048</td><td>ホラズム出身。ガズナ朝に仕えインドに随行。『インド誌』。天文・数学・地理の百科全書的学者。</td></tr>
+<tr><td>122</td><td><strong>ウルグ＝ベク</strong></td><td>1394-1449</td><td>ティムール朝の君主にして天文学者。サマルカンドに天文台を建設→精密な天文表を作成。学問の保護者。</td></tr>
+<tr class="cat-header"><td colspan="4">▶ イスラーム 哲学・神学</td></tr>
+<tr><td>123</td><td><strong>アル＝キンディー</strong></td><td>801頃-873頃</td><td>アッバース朝バグダード。「アラブ人初の哲学者」。ギリシア哲学のアラビア語訳に従事。「知恵の館」で活動。</td></tr>
+<tr><td>124</td><td><strong>アル＝ファーラービー</strong></td><td>870頃-950</td><td>アッバース朝。プラトン・アリストテレスを継承し「第二の師」と呼ばれる。『有徳都市の住民の意見』。イスラーム哲学を体系化。</td></tr>
+<tr><td>125</td><td><strong>イブン＝シーナー（アヴィセンナ）</strong></td><td>980-1037</td><td>ブハラ近郊出身。『医学典範(カーヌーン)』(中世イスラーム・ヨーロッパ医学の基本書、ラテン訳されて16Cまで欧州大学の教科書)。アリストテレス的形而上学。</td></tr>
+<tr><td>126</td><td><strong>ガザーリー</strong></td><td>1058-1111</td><td>セルジューク朝。バグダードのニザーミーヤ学院教授。『哲学者の矛盾』でギリシア哲学を批判→スーフィズムに転向。スンナ派神学の正統を確立。</td></tr>
+<tr><td>127</td><td><strong>イブン＝ルシュド（アヴェロエス）</strong></td><td>1126-1198</td><td>コルドバ出身。アリストテレスの注釈者→ラテン訳を通じて西欧スコラ哲学に絶大な影響(ラテン=アヴェロエス主義)。『矛盾の矛盾』。</td></tr>
+<tr><td>128</td><td><strong>イブン＝タイミーヤ</strong></td><td>1263-1328</td><td>マムルーク朝のスンナ派法学者(ハンバル派)。クルアーンとスンナへの厳格な回帰を説く→後のワッハーブ運動の思想的源流。</td></tr>
+<tr class="cat-header"><td colspan="4">▶ イスラーム 歴史・旅行家</td></tr>
+<tr><td>129</td><td><strong>タバリー</strong></td><td>839-923</td><td>アッバース朝。『諸使徒と諸王の歴史』(創世〜イスラーム史の大年代記)。クルアーン注釈の大成。</td></tr>
+<tr><td>130</td><td><strong>ラシード＝ウッディーン</strong></td><td>1247-1318</td><td>イル＝ハン国の宰相。『集史』（モンゴル〜世界の通史）。</td></tr>
+<tr><td>131</td><td><strong>イブン＝バットゥータ</strong></td><td>1304-1368/69</td><td>モロッコ出身。1325年タンジール→北アフリカ→メッカ→東アフリカ→インド（デリーで裁判官）→東南アジア→中国（泉州）→サハラ横断→マリ王国。約30年・12万km。『三大陸周遊記』。</td></tr>
+<tr><td>132</td><td><strong>イブン＝ハルドゥーン</strong></td><td>1332-1406</td><td>チュニス出身。『世界史序説』。文明の興亡の法則。近代歴史学・社会学の先駆。ティムールと会見。</td></tr>
+<tr class="cat-header"><td colspan="4">▶ イスラーム 文学</td></tr>
+<tr><td>133</td><td><strong>フィルドゥシー</strong></td><td>934頃-1020頃</td><td>ガズナ朝時代。『シャー=ナーメ(王の書)』(イラン民族の神話・歴史を詠む大叙事詩、約30年かけて完成)。</td></tr>
+<tr><td>134</td><td><strong>ウマル=ハイヤーム</strong></td><td>1048-1131</td><td>セルジューク朝の数学者・天文学者・詩人。ジャラーリー暦の制定。詩集『ルバイヤート(四行詩集)』は19Cに欧州で発見されて大流行。</td></tr>
+<tr><td>135</td><td><strong>ニザーミー</strong></td><td>1141-1209</td><td>アゼルバイジャン。ペルシア語詩人。『ハムセ(五部作)』(『ライラとマジュヌーン』等)。</td></tr>
+<tr><td>136</td><td><strong>ルーミー</strong></td><td>1207-1273</td><td>アナトリア(ルーム=セルジューク朝)。ペルシア語の神秘主義(スーフィズム)詩人。『精神的マスナヴィー』。メヴレヴィー教団(旋舞教団)の祖。</td></tr>
+<tr><td>137</td><td><strong>サーディー</strong></td><td>1210頃-1291頃</td><td>シーラーズ。ペルシア文学の古典。『薔薇園(グリスターン)』『果樹園(ブースターン)』。</td></tr>
+<tr><td>138</td><td><strong>ハーフェズ</strong></td><td>1325頃-1390頃</td><td>シーラーズ。ペルシア抒情詩(ガザル)の完成者。『ハーフェズ詩集(ディーヴァーン)』。</td></tr>
+<tr class="cat-header"><td colspan="4">▶ イスラーム 建築・美術</td></tr>
+<tr><td>139</td><td><strong>ミマール＝スィナン</strong></td><td>1489-1588</td><td>オスマン帝国最大の建築家。スレイマン1世・セリム2世に仕える。スレイマニエ＝モスク(イスタンブル)・セリミエ＝モスク(エディルネ、傑作)。約300の建造物を設計。</td></tr>
+<tr class="cat-header"><td colspan="4">▶ アフリカ</td></tr>
+<tr><td>140</td><td><strong>ウォレ＝ショインカ</strong></td><td>1934-</td><td>ナイジェリアの劇作家・詩人。アフリカ初のノーベル文学賞（1986）。ヨルバ族の伝統と西洋演劇の融合。反体制活動で投獄経験。</td></tr>
+</tbody></table></div>
+<div class="tbl-wrap hidden" id="content2"><table>
+<thead><tr><th>様式/運動</th><th>特徴/キーワード</th><th>時期/年代</th><th>代表的作品・人物・備考</th></tr></thead>
+<tbody>
+<tr class="section-header"><td colspan="4">建築様式の変遷</td></tr>
+<tr><td class="name-cell">ギリシア建築</td><td class="feature-cell">ドーリア式・イオニア式・コリント式</td><td class="year-cell">前7C-前1C</td><td class="desc-cell">柱の様式が特徴。パルテノン神殿＝ドーリア式。エレクテイオン＝イオニア式。コリント式は装飾的。</td></tr>
+<tr><td class="name-cell">ローマ建築</td><td class="feature-cell">アーチ・ドーム・コンクリート</td><td class="year-cell">前3C-5C</td><td class="desc-cell">パンテオン（ドーム）・コロッセオ・カラカラ浴場・凱旋門。水道橋（ポン＝デュ＝ガール）。実用的大規模建築。</td></tr>
+<tr><td class="name-cell">ビザンツ建築</td><td class="feature-cell">ドーム＋モザイク装飾</td><td class="year-cell">6C-15C</td><td class="desc-cell">ハギア＝ソフィア聖堂（ユスティニアヌス帝）。サン＝マルコ聖堂（ヴェネツィア）。サン＝ヴィターレ聖堂（ラヴェンナ）。</td></tr>
+<tr><td class="name-cell">イスラーム建築</td><td class="feature-cell">モスク・ミナレット・アラベスク</td><td class="year-cell">7C-</td><td class="desc-cell">ドーム＝オブ＝ザ＝ロック（エルサレム）。アルハンブラ宮殿（グラナダ）。<br>タージ＝マハル（アグラ）。スレイマン＝モスク（建築家シナン）。偶像崇拝禁止→幾何学文様（アラベスク）。</td></tr>
+<tr><td class="name-cell">ロマネスク建築</td><td class="feature-cell">厚い壁・半円アーチ・小さい窓</td><td class="year-cell">10C-12C</td><td class="desc-cell">クリュニー修道院。ピサ大聖堂。「ローマ風」の意。重厚・暗い内部。巡礼路に沿って発展。</td></tr>
+<tr><td class="name-cell">ゴシック建築</td><td class="feature-cell">尖頭アーチ・リブヴォールト・飛び梁・ステンドグラス</td><td class="year-cell">12C-15C</td><td class="desc-cell">ノートルダム大聖堂（パリ）・シャルトル大聖堂・ケルン大聖堂・ミラノ大聖堂。<br>高さと光を追求→「天に向かう祈り」の表現。都市の富と信仰の象徴。</td></tr>
+<tr><td class="name-cell">ルネサンス建築</td><td class="feature-cell">古典的均衡・ドーム</td><td class="year-cell">15C-16C</td><td class="desc-cell">フィレンツェ大聖堂ドゥオモ（ブルネレスキ）。サン＝ピエトロ大聖堂（ブラマンテ→ミケランジェロ）。</td></tr>
+<tr><td class="name-cell">バロック建築</td><td class="feature-cell">壮大・動的・装飾過剰</td><td class="year-cell">17C-18C前半</td><td class="desc-cell">ヴェルサイユ宮殿。サン＝ピエトロ広場（ベルニーニ）。絶対王政の権力誇示。</td></tr>
+<tr><td class="name-cell">ロココ建築</td><td class="feature-cell">優雅・軽快・繊細</td><td class="year-cell">18C前半-後半</td><td class="desc-cell">サンスーシ宮殿（フリードリヒ2世、ポツダム）。貴族の私的空間。パステルカラー。</td></tr>
+<tr><td class="name-cell">新古典主義建築</td><td class="feature-cell">ギリシア・ローマの復興</td><td class="year-cell">18C後半-19C</td><td class="desc-cell">大英博物館・凱旋門（パリ）。啓蒙思想・フランス革命と連動。</td></tr>
+<tr class="section-header"><td colspan="4">美術運動・様式の変遷</td></tr><tr><td class="name-cell">ルネサンス</td><td class="feature-cell">人文主義・古典復興・遠近法</td><td class="year-cell">14C-16C</td><td class="desc-cell">メディチ家の保護。フィレンツェ→ローマ→ヴェネツィア。<br>人間中心主義。個人の才能の称揚。「万能人（ウォモ＝ウニヴェルサーレ）」の理想。</td></tr><tr><td class="name-cell">マニエリスム</td><td class="feature-cell">ルネサンスの洗練→誇張</td><td class="year-cell">16C後半</td><td class="desc-cell">エル＝グレコ。引き伸ばされた人体。ルネサンスからバロックへの過渡期。</td></tr><tr><td class="name-cell">バロック</td><td class="feature-cell">壮大・劇的・動的</td><td class="year-cell">17C</td><td class="desc-cell">カトリック改革（対抗宗教改革）の影響→信仰を視覚的に訴える。ルーベンス・ベルニーニ。</td></tr><tr><td class="name-cell">ロココ</td><td class="feature-cell">優美・軽快・享楽的</td><td class="year-cell">18C前半</td><td class="desc-cell">ワトー・フラゴナール。宮廷文化・貴族文化。フランス革命前夜の退廃とも。</td></tr><tr><td class="name-cell">ロマン主義</td><td class="feature-cell">感情・自然・民族・中世への憧憬</td><td class="year-cell">18C末-19C前半</td><td class="desc-cell">ドラクロワ・ターナー。フランス革命への幻滅・産業革命への反発。個人の感情重視。<br>バイロン・ユーゴー・ショパン。</td></tr><tr><td class="name-cell">新古典主義</td><td class="feature-cell">ギリシア・ローマへの回帰</td><td class="year-cell">18C後半</td><td class="desc-cell">ダヴィッド・アングル。フランス革命・ナポレオンと連動。理性・秩序の表現。</td></tr><tr><td class="name-cell">アール＝ヌーヴォー</td><td class="feature-cell">植物的曲線・有機的装飾</td><td class="year-cell">19C末-20C初</td><td class="desc-cell">「新芸術」。ガウディ・ミュシャ・ガレ・クリムト。建築・装飾・ポスター芸術。世紀末様式。</td></tr><tr><td class="name-cell">写実主義（レアリスム）</td><td class="feature-cell">現実のありのままの描写</td><td class="year-cell">19C半ば</td><td class="desc-cell">クールベ・ミレー。産業革命後の社会問題。理想化を排除。バルザック・フロベール。</td></tr><tr><td class="name-cell">印象派</td><td class="feature-cell">光と色の瞬間的印象</td><td class="year-cell">1860s-1880s</td><td class="desc-cell">モネ・ルノワール・ドガ。戸外制作。日本の浮世絵の影響→ジャポニスム。<br>「サロン（官展）」に反発→独自の展覧会。</td></tr><tr><td class="name-cell">自然主義</td><td class="feature-cell">科学的・客観的人間描写</td><td class="year-cell">19C後半</td><td class="desc-cell">ゾラ。遺伝と環境が人間を決定するという科学的視点。</td></tr><tr><td class="name-cell">ジャポニスム</td><td class="feature-cell">日本美術の影響を受けた西洋美術運動</td><td class="year-cell">19C後半</td><td class="desc-cell">1867パリ万博で日本美術が紹介→マネ・モネ・ゴッホ・ホイッスラー等に浮世絵が大きな影響。エミール＝ガレのガラス工芸にも。</td></tr><tr><td class="name-cell">後期印象派</td><td class="feature-cell">印象派を超えた個性的表現</td><td class="year-cell">1880s-1900s</td><td class="desc-cell">セザンヌ（形態）・ゴッホ（感情）・ゴーガン（象徴）。20世紀美術の源流。</td></tr><tr><td class="name-cell">フォーヴィスム（野獣派）</td><td class="feature-cell">原色の大胆な使用</td><td class="year-cell">1905-</td><td class="desc-cell">マティス。1905年のサロン＝ドートンヌで「野獣（フォーヴ）のよう」と批評。</td></tr><tr><td class="name-cell">表現主義</td><td class="feature-cell">内面の感情を激しく表現</td><td class="year-cell">1905-</td><td class="desc-cell">ムンク・キルヒナー。ドイツを中心。「ブリュッケ（橋）」「青騎士」。</td></tr><tr><td class="name-cell">キュビスム（立体派）</td><td class="feature-cell">対象を幾何学的に分解・再構成</td><td class="year-cell">1907-</td><td class="desc-cell">ピカソ・ブラック。『アヴィニョンの娘たち』が起点。アフリカ彫刻の影響。</td></tr><tr><td class="name-cell">抽象絵画</td><td class="feature-cell">具象を排した純粋な造形</td><td class="year-cell">1910s-</td><td class="desc-cell">カンディンスキー・モンドリアン。バウハウス（デザイン学校、1919-33）との関連。</td></tr><tr><td class="name-cell">ダダイスム</td><td class="feature-cell">反芸術・反合理主義</td><td class="year-cell">1916-22</td><td class="desc-cell">WW1の不条理への反発としてチューリッヒ・ダダから始まる。ツァラ・デュシャン・アルプ。シュルレアリスムへ移行。</td></tr><tr><td class="name-cell">アール＝デコ</td><td class="feature-cell">幾何学的・直線的装飾</td><td class="year-cell">1920s-30s</td><td class="desc-cell">アール＝ヌーヴォーの反動。1925年パリ装飾博の様式名から。クライスラー＝ビル・帝国議事堂等。</td></tr><tr><td class="name-cell">シュールレアリスム</td><td class="feature-cell">無意識・夢の世界</td><td class="year-cell">1924-</td><td class="desc-cell">ダリ・マグリット・エルンスト。フロイトの精神分析の影響。ブルトン『シュールレアリスム宣言』。</td></tr><tr><td class="name-cell">ポップ＝アート</td><td class="feature-cell">大衆文化の図像を芸術に</td><td class="year-cell">1950s-60s</td><td class="desc-cell">マスメディア・消費社会の象徴を芸術に取り込む。ウォーホル(マリリン・キャンベルスープ缶)・リキテンスタイン(漫画調)。</td></tr><tr class="section-header"><td colspan="4">文学潮流の変遷</td></tr>
+<tr><td class="name-cell">騎士道文学</td><td class="feature-cell">中世騎士の冒険・恋愛</td><td class="year-cell">11C-13C</td><td class="desc-cell">『ローランの歌』（フランス）。『アーサー王物語』（イギリス）。『ニーベルンゲンの歌』（ドイツ）。</td></tr>
+<tr><td class="name-cell">人文主義（ヒューマニズム）</td><td class="feature-cell">人間性の回復・古典復興</td><td class="year-cell">14C-16C</td><td class="desc-cell">ペトラルカ・エラスムス・トマス＝モア。中世のキリスト教的世界観からの解放。</td></tr>
+<tr><td class="name-cell">疾風怒濤（シュトルム＝ウント＝ドラング）</td><td class="feature-cell">感情の爆発・反古典主義</td><td class="year-cell">1770s</td><td class="desc-cell">ゲーテ『若きウェルテルの悩み』。シラー『群盗』。ヘルダーの影響。ドイツ。</td></tr>
+<tr><td class="name-cell">ロマン主義文学</td><td class="feature-cell">個人の感情・自然・民族</td><td class="year-cell">18C末-19C前半</td><td class="desc-cell">バイロン・ユーゴー・ハイネ。産業革命・フランス革命への反動。</td></tr>
+<tr><td class="name-cell">写実主義文学</td><td class="feature-cell">社会の現実をありのままに</td><td class="year-cell">19C半ば</td><td class="desc-cell">バルザック・ディケンズ・フロベール。産業社会の矛盾。</td></tr>
+<tr><td class="name-cell">自然主義文学</td><td class="feature-cell">科学的方法で人間を分析</td><td class="year-cell">19C後半</td><td class="desc-cell">ゾラ・イプセン。遺伝・環境の決定論。</td></tr>
+<tr><td class="name-cell">象徴主義</td><td class="feature-cell">暗示・象徴による内面表現</td><td class="year-cell">19C後半</td><td class="desc-cell">ボードレール・マラルメ・ランボー。反自然主義。「言葉の音楽性」。</td></tr>
+<tr><td class="name-cell">モダニズム文学</td><td class="feature-cell">実験的手法・内面描写</td><td class="year-cell">20C前半</td><td class="desc-cell">ジョイス（意識の流れ）・カフカ（不条理）・プルースト（記憶）。</td></tr>
+<tr><td class="name-cell">実存主義文学</td><td class="feature-cell">人間存在の不安・自由</td><td class="year-cell">20C半ば</td><td class="desc-cell">サルトル・カミュ。第二次大戦後の虚無感。「実存は本質に先立つ」。</td></tr>
+<tr><td class="name-cell">叙事詩</td><td class="feature-cell">英雄の冒険・戦争を歌う</td><td class="year-cell">古代</td><td class="desc-cell">ホメロス『イリアス』『オデュッセイア』。ヴェルギリウス『アエネイス』。フィルドゥシー『王書』。</td></tr>
+<tr class="section-header"><td colspan="4">宗教の変遷・公会議</td></tr>
+<tr><td class="name-cell">ニケーア公会議</td><td class="feature-cell"></td><td class="year-cell">325年</td><td class="desc-cell">コンスタンティヌス帝が招集。アタナシウス派（三位一体説）を正統、アリウス派を異端に。ニケーア信条の制定。</td></tr>
+<tr><td class="name-cell">エフェソス公会議</td><td class="feature-cell"></td><td class="year-cell">431年</td><td class="desc-cell">テオドシウス2世が招集。ネストリウス派を異端に→東方に伝播（唐代の景教）。</td></tr>
+<tr><td class="name-cell">カルケドン公会議</td><td class="feature-cell"></td><td class="year-cell">451年</td><td class="desc-cell">マルキアヌス帝が招集。キリスト単性論を異端に→コプト教会（エジプト）が分離。</td></tr>
+<tr><td class="name-cell">東西教会分裂</td><td class="feature-cell"></td><td class="year-cell">1054年</td><td class="desc-cell">ローマ＝カトリック教会（西）とギリシア正教会（東）の相互破門→大シスマ。<br>聖像崇拝問題（イコノクラスム,726）以来の対立が決定的に。</td></tr>
+<tr><td class="name-cell">クレルモン宗教会議</td><td class="feature-cell"></td><td class="year-cell">1095</td><td class="desc-cell">ウルバヌス2世が十字軍を提唱。「神がそれを望んでおられる」。第1回十字軍の起点。</td></tr>
+<tr><td class="name-cell">第4ラテラノ公会議</td><td class="feature-cell"></td><td class="year-cell">1215</td><td class="desc-cell">インノケンティウス3世が招集。教皇権の最盛期。異端審問の制度化。化体説を正式な教義に。毎年の告解と聖体拝領を義務化。</td></tr>
+<tr><td class="name-cell">教会大分裂（大シスマ）</td><td class="feature-cell"></td><td class="year-cell">1378-1417</td><td class="desc-cell">ローマとアヴィニョンに教皇が並立→コンスタンツ公会議（1414-18）で収束。<br>ウィクリフ・フスの先駆的宗教改革。</td></tr>
+<tr><td class="name-cell">コンスタンツ公会議</td><td class="feature-cell"></td><td class="year-cell">1414-18</td><td class="desc-cell">教会大分裂の収拾。マルティヌス5世を選出し統一回復。フスを異端として火刑→フス戦争の契機。</td></tr>
+<tr><td class="name-cell">トリエント公会議</td><td class="feature-cell"></td><td class="year-cell">1545-63</td><td class="desc-cell">カトリック改革（対抗宗教改革）。教皇の至上権・教義を再確認。<br>イエズス会の設立（イグナティウス＝ロヨラ,1534）と連動。禁書目録。</td></tr>
+<tr><td class="name-cell">第2バチカン公会議</td><td class="feature-cell"></td><td class="year-cell">1962-65</td><td class="desc-cell">ヨハネ23世→パウロ6世が招集。カトリック教会の近代化。他宗教との対話。典礼のラテン語から各国語への変更。</td></tr>
+<tr class="section-header"><td colspan="4">技術革新と文明の転換点</td></tr>
+<tr><td class="name-cell">グーテンベルクの印刷革命</td><td class="feature-cell">活版印刷術の実用化</td><td class="year-cell">1450s</td><td class="desc-cell">金属活字＋プレス機＋油性インク→大量印刷。42行聖書（1455頃）。<br>→宗教改革（ルターの著作の大量流通）・ルネサンス（古典の普及）・科学革命（知の共有）の前提条件。「メディア革命」。</td></tr>
+<tr><td class="name-cell">産業革命の技術</td><td class="feature-cell">蒸気機関・紡績機・鉄道</td><td class="year-cell">18C後半-19C</td><td class="desc-cell">ジョン＝ケイ（飛び杼,1733）→ハーグリーヴズ（ジェニー紡績機,1764）→アークライト（水力紡績機,1769）→ワット（蒸気機関改良,1769）→カートライト（力織機,1785）→スティーヴンソン（蒸気機関車）→リヴァプール＝マンチェスター鉄道（1830）</td></tr>
+<tr><td class="name-cell">第2次産業革命</td><td class="feature-cell">電力・石油・化学</td><td class="year-cell">19C後半</td><td class="desc-cell">重化学工業。エジソン（電球）・ベル（電話）・ダイムラー/ベンツ（自動車）・マルコーニ（無線）。<br>アメリカ・ドイツが台頭。独占資本（カルテル・トラスト・コンツェルン）の形成。帝国主義の経済的基盤。</td></tr>
+<tr><td class="name-cell">四大発明（中国）</td><td class="feature-cell">製紙法・印刷術・火薬・羅針盤</td><td class="year-cell">漢〜宋</td><td class="desc-cell">①製紙法（蔡倫,105）→タラス河畔（751）→ヨーロッパへ<br>②印刷術：木版（唐）→活版（畢昇,北宋）→グーテンベルク（独,15C）<br>③火薬：唐代に発明→モンゴルの征服で西伝→火器革命<br>④羅針盤：宋代に航海用に発展→大航海時代の前提<br>F.ベーコン「印刷・火薬・磁石は世界の面目を一変させた」</td></tr>
+<tr class="section-header"><td colspan="4">世界遺産・重要建造物</td></tr><tr><td class="name-cell">ギザのピラミッド群</td><td class="feature-cell">エジプト</td><td class="year-cell">前2500頃</td><td class="desc-cell">古王国時代。クフ王のピラミッドが最大（高さ約146m）。世界七不思議で唯一現存。スフィンクス。</td></tr><tr><td class="name-cell">ウルのジッグラト</td><td class="feature-cell">階段型神殿（聖塔）</td><td class="year-cell">前3千年紀</td><td class="desc-cell">シュメール都市国家ウル(現イラク南部)。月神ナンナを祀る。「天と地を結ぶ階段」の象徴。バベルの塔の原型。</td></tr><tr><td class="name-cell">メンフィス</td><td class="feature-cell">古王国の首都</td><td class="year-cell">前3千年紀</td><td class="desc-cell">初代ファラオのメネスが建設。古王国時代の中心。ピラミッドはメンフィス対岸のギザに集中。</td></tr><tr><td class="name-cell">カルナック神殿</td><td class="feature-cell">アメン神を祀るエジプト最大の神殿群</td><td class="year-cell">中王国〜新王国</td><td class="desc-cell">テーベ(現ルクソール)。新王国歴代ファラオが増築。多柱室の大列柱。</td></tr><tr><td class="name-cell">アブ＝シンベル神殿</td><td class="feature-cell">エジプト南部</td><td class="year-cell">前13C</td><td class="desc-cell">新王国ラメセス2世が建設。巨大岩窟神殿。アスワン＝ハイ＝ダム建設で移築（ユネスコ最初の救済事業）。</td></tr><tr><td class="name-cell">ニネヴェ</td><td class="feature-cell">アッシリア帝国の都</td><td class="year-cell">前7C</td><td class="desc-cell">アッシュールバニパルの図書館で有名→楔形文字の粘土板2万枚以上が発掘されメソポタミア文学(ギルガメシュ叙事詩等)を伝える。</td></tr><tr><td class="name-cell">バビロンのイシュタル門</td><td class="feature-cell">青色釉煉瓦の城門</td><td class="year-cell">前6C</td><td class="desc-cell">新バビロニア王ネブカドネザル2世が建設。ベルリンのペルガモン博物館に復元。空中庭園・バベルの塔と並ぶバビロンの象徴。</td></tr><tr><td class="name-cell">フォロ＝ロマーノ</td><td class="feature-cell">古代ローマの公共広場</td><td class="year-cell">前6C-</td><td class="desc-cell">元老院・神殿・公共建造物が集中。共和政〜帝政期のローマの政治・宗教の中心。</td></tr><tr><td class="name-cell">ペルセポリス</td><td class="feature-cell">イラン</td><td class="year-cell">前520-前330</td><td class="desc-cell">ダレイオス1世〜クセルクセス1世が建設。アケメネス朝の祭儀用宮殿。<br>アレクサンドロス大王が破壊（前330）。万国の門・アパダーナ（謁見の間）。</td></tr><tr><td class="name-cell">アクロポリス</td><td class="feature-cell">アテネの城山</td><td class="year-cell">前5C</td><td class="desc-cell">パルテノン神殿・エレクテイオン神殿・アテナ＝ニケ神殿・プロピュライアを擁する。ペリクレス時代の再建事業。</td></tr><tr><td class="name-cell">パルテノン神殿</td><td class="feature-cell">アテネ</td><td class="year-cell">前447-前432</td><td class="desc-cell">ドーリア式。フェイディアスが監督。ペリクレス時代の民主政の象徴。アクロポリスの丘。</td></tr><tr><td class="name-cell">万里の長城</td><td class="feature-cell">中国</td><td class="year-cell">前3C-17C</td><td class="desc-cell">秦の始皇帝が匈奴防衛のため築造開始（蒙恬が指揮）。明代に大規模改修。総延長約6000km。</td></tr><tr><td class="name-cell">ファロス灯台</td><td class="feature-cell">アレクサンドリアの大灯台</td><td class="year-cell">前3C</td><td class="desc-cell">プトレマイオス朝建造。世界の七不思議。地震で倒壊。ヘレニズム科学技術の象徴。</td></tr><tr><td class="name-cell">テオティワカン（太陽のピラミッド）</td><td class="feature-cell">メキシコ</td><td class="year-cell">前2C-7C</td><td class="desc-cell">メソアメリカ最大の都市遺跡。太陽のピラミッド（高さ65m）・月のピラミッド・「死者の大通り」。最盛期人口約10-20万人。</td></tr><tr><td class="name-cell">アジャンター石窟</td><td class="feature-cell">仏教石窟寺院</td><td class="year-cell">前2C-7C</td><td class="desc-cell">インド・マハーラーシュトラ州。グプタ朝期の壁画は古代インド絵画の傑作。1819年にイギリス人士官が発見。</td></tr><tr><td class="name-cell">ペトラ</td><td class="feature-cell">ナバテア王国の岩窟都市</td><td class="year-cell">前2C-2C</td><td class="desc-cell">ヨルダン。岩を削った神殿エル＝ハズネ。アラビア交易路の要衝。ローマ属州化後に衰退。</td></tr><tr><td class="name-cell">ポンペイ遺跡</td><td class="feature-cell">ヴェスヴィオ火山に埋もれた都市</td><td class="year-cell">79噴火で埋没</td><td class="desc-cell">79年の噴火で火山灰に埋もれ→18C以降の発掘で古代ローマ都市の生活が完全な形で出土。</td></tr><tr><td class="name-cell">コロッセオ</td><td class="feature-cell">ローマ</td><td class="year-cell">80</td><td class="desc-cell">フラウィウス円形闘技場。約5万人収容。ローマ帝国の力の象徴。</td></tr><tr><td class="name-cell">ハドリアヌスの長城</td><td class="feature-cell">ローマ帝国北辺の防壁</td><td class="year-cell">122-</td><td class="desc-cell">ハドリアヌス帝がブリタニアに築いた約120kmの長城。ピクト人の侵入を防ぐ。世界遺産。</td></tr><tr><td class="name-cell">パンテオン</td><td class="feature-cell">ローマ</td><td class="year-cell">125頃</td><td class="desc-cell">ハドリアヌス帝が再建。コンクリートドーム（直径43m）。「すべての神々の神殿」。古代建築技術の最高峰。</td></tr><tr><td class="name-cell">カラカラ浴場</td><td class="feature-cell">ローマ最大級の公共浴場</td><td class="year-cell">212-216</td><td class="desc-cell">カラカラ帝が建設。同時に1600人を収容。ローマの公共施設文化の象徴。</td></tr><tr><td class="name-cell">パルミラ</td><td class="feature-cell">シリアの隊商都市</td><td class="year-cell">1-3C</td><td class="desc-cell">ローマとパルティア・ササン朝の交易の中継点。ゼノビア女王(3C)の反乱で滅亡。世界遺産だが内戦で破壊。</td></tr><tr><td class="name-cell">敦煌莫高窟</td><td class="feature-cell">中国・甘粛省</td><td class="year-cell">4C-14C</td><td class="desc-cell">シルクロードのオアシス。約500の石窟に仏教壁画・彫塑。蔵経洞から大量の写本発見（スタイン・ペリオが持出し）。</td></tr><tr><td class="name-cell">麦積山石窟</td><td class="feature-cell">塑像中心の仏教石窟</td><td class="year-cell">4C-</td><td class="desc-cell">甘粛省天水。北魏〜隋唐〜宋代の塑像(泥塑)。「東洋の彫刻陳列館」と称される。</td></tr><tr><td class="name-cell">エローラ石窟</td><td class="feature-cell">仏教・ヒンドゥー教・ジャイナ教の混在石窟</td><td class="year-cell">5C-10C</td><td class="desc-cell">インド。三宗教が共存する稀有な遺跡。カイラーサナータ寺院は一枚岩を上から削り出した巨大ヒンドゥー寺院。</td></tr><tr><td class="name-cell">雲崗石窟</td><td class="feature-cell">北魏の仏教石窟</td><td class="year-cell">5C</td><td class="desc-cell">山西省大同(北魏の旧都平城)。北魏の文成帝が開削。巨大な石仏群はガンダーラ・グプタ美術の影響。</td></tr><tr><td class="name-cell">龍門石窟</td><td class="feature-cell">北魏〜唐の仏教石窟</td><td class="year-cell">5C-9C</td><td class="desc-cell">河南省洛陽。北魏が遷都後に開削開始→唐代まで継続。奉先寺の盧舎那仏は則天武后の発願。</td></tr><tr><td class="name-cell">ハギア＝ソフィア</td><td class="feature-cell">イスタンブル</td><td class="year-cell">537</td><td class="desc-cell">ユスティニアヌス帝が再建。巨大ドーム。ビザンツ建築最高傑作。<br>オスマン征服後モスク→1934年博物館→2020年再びモスク。4本のミナレット追加。</td></tr><tr><td class="name-cell">カンタベリー大聖堂</td><td class="feature-cell">イングランド国教会の総本山</td><td class="year-cell">6C-</td><td class="desc-cell">598年アウグスティヌスがイングランドに伝道→大司教座となる。トマス＝ベケット殉教の地。</td></tr><tr><td class="name-cell">バーミヤーン遺跡</td><td class="feature-cell">アフガニスタンの仏教遺跡</td><td class="year-cell">5-6C</td><td class="desc-cell">巨大な磨崖石仏(高さ55m・38m)が有名→2001年タリバンが破壊。シルクロード仏教東伝の中継点。</td></tr><tr><td class="name-cell">チチェン＝イッツァ</td><td class="feature-cell">メキシコ</td><td class="year-cell">7C-13C</td><td class="desc-cell">マヤ文明の代表的都市遺跡。ククルカン（羽毛の蛇）のピラミッド。春分・秋分に蛇の影。天文台カラコル。</td></tr><tr><td class="name-cell">ドーム＝オブ＝ザ＝ロック</td><td class="feature-cell">エルサレム</td><td class="year-cell">691</td><td class="desc-cell">ウマイヤ朝アブド＝アルマリク。岩のドーム。イスラーム最古級の建築。<br>ムハンマドの昇天の地。ユダヤ教の「神殿の丘」に建設→宗教対立の象徴。</td></tr><tr><td class="name-cell">ボロブドゥール</td><td class="feature-cell">インドネシア・ジャワ島</td><td class="year-cell">8C後半-9C</td><td class="desc-cell">シャイレンドラ朝。世界最大の仏教遺跡。大乗仏教。石造ストゥーパ群。</td></tr><tr><td class="name-cell">コルドバのメスキータ</td><td class="feature-cell">スペイン</td><td class="year-cell">8C-10C</td><td class="desc-cell">後ウマイヤ朝。モスク（850本の円柱の森）→レコンキスタ後にカトリック聖堂に転用。イスラーム建築の傑作。</td></tr><tr><td class="name-cell">プランバナン寺院群</td><td class="feature-cell">ジャワのヒンドゥー寺院</td><td class="year-cell">9-10C</td><td class="desc-cell">ジャワ島中部。古マタラム王国時代。シヴァ神を祀る塔など。ボロブドゥール(仏教)と並ぶ。</td></tr><tr><td class="name-cell">モン＝サン＝ミシェル</td><td class="feature-cell">フランス</td><td class="year-cell">966-</td><td class="desc-cell">ノルマンディー海岸の岩山の修道院。ゴシック建築。百年戦争で要塞。巡礼地。「西洋の驚異」。</td></tr><tr><td class="name-cell">グレート＝ジンバブエ</td><td class="feature-cell">ジンバブエ</td><td class="year-cell">11C-15C</td><td class="desc-cell">ショナ族の石造都市遺跡。サハラ以南アフリカ最大の石造建築群。金の交易で繁栄。</td></tr><tr><td class="name-cell">ウェストミンスター寺院</td><td class="feature-cell">イギリス王の戴冠式の場</td><td class="year-cell">11C-</td><td class="desc-cell">ロンドン。歴代国王の戴冠式と埋葬。エドワード懺悔王が創建。</td></tr><tr><td class="name-cell">アンコール＝ワット</td><td class="feature-cell">カンボジア</td><td class="year-cell">12C</td><td class="desc-cell">スールヤヴァルマン2世。ヒンドゥー教（ヴィシュヌ神）→のち仏教。世界最大の宗教建築。</td></tr><tr><td class="name-cell">アンコール＝トム</td><td class="feature-cell">カンボジア</td><td class="year-cell">12C末</td><td class="desc-cell">ジャヤヴァルマン7世。大乗仏教。バイヨン寺院の巨大仏面塔。</td></tr><tr><td class="name-cell">ルーヴル美術館</td><td class="feature-cell">パリの王宮を改装した美術館</td><td class="year-cell">12C宮殿/1793美術館</td><td class="desc-cell">フランス革命中に国民に開放→世界最大級の美術館に。ナポレオンが各地から略奪した美術品で拡充。</td></tr><tr><td class="name-cell">ノートルダム大聖堂</td><td class="feature-cell">パリ</td><td class="year-cell">1163-1345</td><td class="desc-cell">ゴシック建築の代表。尖頭アーチ・バラ窓・飛び梁。ユーゴー『ノートルダム＝ド＝パリ』の舞台。2019年火災。</td></tr><tr><td class="name-cell">ピサの斜塔</td><td class="feature-cell">大聖堂の鐘楼</td><td class="year-cell">1173着工</td><td class="desc-cell">イタリア。傾斜した円筒形大理石の鐘楼。ガリレイの落体実験伝説の舞台。</td></tr><tr><td class="name-cell">シャルトル大聖堂</td><td class="feature-cell">フランス</td><td class="year-cell">1194-1260</td><td class="desc-cell">ゴシック建築の最高傑作の一つ。ステンドグラス（「シャルトル・ブルー」）。彫刻群。</td></tr><tr><td class="name-cell">ケルン大聖堂</td><td class="feature-cell">ドイツ</td><td class="year-cell">1248-1880</td><td class="desc-cell">ゴシック建築。632年かけて完成。高さ157mの双塔。ドイツ統一の象徴として19世紀に完成。</td></tr><tr><td class="name-cell">サンタ＝マリア＝デル＝フィオーレ大聖堂</td><td class="feature-cell">フィレンツェ</td><td class="year-cell">1296-1436</td><td class="desc-cell">ブルネレスキのドゥオモ（1436完成）。ルネサンス建築の出発点。二重殻ドーム。</td></tr><tr><td class="name-cell">アルハンブラ宮殿</td><td class="feature-cell">スペイン・グラナダ</td><td class="year-cell">13-14C</td><td class="desc-cell">ナスル朝。アラベスク装飾の極致。「ライオンの中庭」。1492年陥落→レコンキスタ完了。</td></tr><tr><td class="name-cell">アヴィニョン教皇宮殿</td><td class="feature-cell">教皇のアヴィニョン捕囚時代の宮殿</td><td class="year-cell">14C</td><td class="desc-cell">フィリップ4世が教皇庁を南仏アヴィニョンに移して以降(1309-77)、歴代教皇の居所。要塞化された宮殿。</td></tr><tr><td class="name-cell">紫禁城（故宮）</td><td class="feature-cell">中国・北京</td><td class="year-cell">1406-20</td><td class="desc-cell">明の永楽帝が建設。清代まで皇帝の居城。世界最大の宮殿建築群（約72万㎡）。<br>太和殿・乾清宮・坤寧宮。南北の中軸線。風水思想に基づく配置。</td></tr><tr><td class="name-cell">クレムリン</td><td class="feature-cell">ロシア・モスクワ</td><td class="year-cell">15C-</td><td class="desc-cell">モスクワ大公国以来のロシアの権力の中枢。城壁・大聖堂群。赤の広場に隣接。ソ連/ロシア政府の所在地。</td></tr><tr><td class="name-cell">マチュ＝ピチュ</td><td class="feature-cell">ペルー</td><td class="year-cell">15C</td><td class="desc-cell">インカ帝国の空中都市遺跡。標高約2400m。段々畑・太陽の神殿。1911年ハイラム＝ビンガムが「発見」。</td></tr><tr><td class="name-cell">天壇</td><td class="feature-cell">皇帝が天を祀る祭壇</td><td class="year-cell">15C-</td><td class="desc-cell">北京。明の永楽帝が建設。皇帝が冬至に天を祀る儀礼の場。円形の祈年殿。世界遺産。</td></tr><tr><td class="name-cell">スコータイ遺跡</td><td class="feature-cell">タイ最初の王朝の都</td><td class="year-cell">13-15C</td><td class="desc-cell">タイ族最初の王朝スコータイ朝の首都。ラームカムヘーン王時代に最盛期。上座部仏教寺院群。</td></tr><tr><td class="name-cell">トプカプ宮殿</td><td class="feature-cell">イスタンブル</td><td class="year-cell">1465-</td><td class="desc-cell">メフメト2世が建設。オスマン帝国のスルタンの居城（約400年間）。ハレム。</td></tr><tr><td class="name-cell">サン＝ピエトロ大聖堂</td><td class="feature-cell">ローマ・バチカン</td><td class="year-cell">1506-1626</td><td class="desc-cell">ブラマンテ→ラファエロ→ミケランジェロ→マデルノ→ベルニーニ。<br>カトリック教会の総本山。ミケランジェロのドーム。ベルニーニの広場列柱廊。</td></tr><tr><td class="name-cell">スレイマン＝モスク</td><td class="feature-cell">イスタンブル</td><td class="year-cell">1550-57</td><td class="desc-cell">建築家ミマール＝シナンの最高傑作。スレイマン1世が建設。オスマン建築の頂点。</td></tr><tr><td class="name-cell">聖ワシリイ大聖堂</td><td class="feature-cell">ロシア・モスクワ</td><td class="year-cell">1555-61</td><td class="desc-cell">イヴァン4世がカザン＝ハン国征服を記念して建設。赤の広場。色鮮やかな玉ねぎ型ドーム。ロシア建築の象徴。</td></tr><tr><td class="name-cell">エスコリアル宮殿</td><td class="feature-cell">スペイン・マドリード郊外</td><td class="year-cell">1563-84</td><td class="desc-cell">フェリペ2世。修道院・宮殿・霊廟の複合建築。スペイン絶対王政の象徴。簡素で厳格なルネサンス様式。</td></tr><tr><td class="name-cell">タージ＝マハル</td><td class="feature-cell">インド・アグラ</td><td class="year-cell">1632-53</td><td class="desc-cell">ムガル帝国シャー＝ジャハーン。妃の墓廟。白大理石。インド＝イスラーム建築最高傑作。</td></tr><tr><td class="name-cell">ポタラ宮</td><td class="feature-cell">チベット・ラサ</td><td class="year-cell">17C</td><td class="desc-cell">ダライ＝ラマ5世が再建。チベット仏教の聖地。白宮（政務）と紅宮（宗教）。標高3700m。</td></tr><tr><td class="name-cell">イマーム広場</td><td class="feature-cell">イスファハーンの王の広場</td><td class="year-cell">17C</td><td class="desc-cell">サファヴィー朝アッバース1世の都の中心広場。「世界の半分」と称される。王のモスク・アリー＝カプ宮殿に囲まれる。</td></tr><tr><td class="name-cell">レギスタン広場</td><td class="feature-cell">サマルカンドのマドラサ群</td><td class="year-cell">14-17C</td><td class="desc-cell">ティムール朝以来のサマルカンドの中心広場。3つのマドラサ(ウルグ＝ベク等)に囲まれる。中央アジアのイスラーム文化の象徴。</td></tr><tr><td class="name-cell">ヴェルサイユ宮殿</td><td class="feature-cell">パリ郊外</td><td class="year-cell">1682</td><td class="desc-cell">ルイ14世。バロック建築。「鏡の間」。絶対王政の象徴。<br>ドイツ帝国成立宣言（1871）・ヴェルサイユ条約（1919）の舞台。</td></tr><tr><td class="name-cell">サンスーシ宮殿</td><td class="feature-cell">ドイツ・ポツダム</td><td class="year-cell">1745-47</td><td class="desc-cell">フリードリヒ2世。ロココ建築。「憂いなき宮殿」の意。ポツダム会談（1945）の近隣。</td></tr><tr><td class="name-cell">円明園</td><td class="feature-cell">中国・北京郊外</td><td class="year-cell">18C</td><td class="desc-cell">清の離宮。カスティリオーネらイエズス会士が西洋式庭園を設計。<br>アロー戦争（1860）で英仏連合軍が破壊・略奪→「中国のヴェルサイユ」の破壊は近代中国の屈辱の象徴。</td></tr><tr><td class="name-cell">アユタヤ遺跡</td><td class="feature-cell">タイの古都</td><td class="year-cell">14-18C</td><td class="desc-cell">アユタヤ朝(1351-1767)の都。シャム湾交易の中心地として繁栄→ビルマに破壊される。</td></tr><tr><td class="name-cell">エルミタージュ美術館</td><td class="feature-cell">ロシア・サンクトペテルブルク</td><td class="year-cell">1764-</td><td class="desc-cell">エカチェリーナ2世が創設。冬宮殿を中心とする世界最大級の美術館。約300万点収蔵。</td></tr><tr><td class="name-cell">エトワール凱旋門</td><td class="feature-cell">パリ・シャンゼリゼの凱旋門</td><td class="year-cell">1806着工/1836完成</td><td class="desc-cell">ナポレオン1世がアウステルリッツ戦勝記念に着工→ルイ＝フィリップ時代に完成。</td></tr><tr><td class="name-cell">頤和園</td><td class="feature-cell">清の離宮</td><td class="year-cell">18-19C</td><td class="desc-cell">北京郊外。乾隆帝が造営→英仏連合軍に破壊→西太后が再建(海軍経費を流用)。清末の象徴。</td></tr><tr><td class="name-cell">水晶宮(クリスタル＝パレス)</td><td class="feature-cell">ロンドン万国博覧会会場</td><td class="year-cell">1851</td><td class="desc-cell">世界初の万国博覧会のために建設された巨大な鉄とガラスの建造物。産業革命イギリスの威信。後に焼失。</td></tr><tr><td class="name-cell">スエズ運河</td><td class="feature-cell">地中海と紅海を結ぶ運河</td><td class="year-cell">1869開通</td><td class="desc-cell">レセップス建設。エジプトの財政破綻→英が株式を買収(1875)→英の支配下に。20Cに国有化(ナセル)。</td></tr><tr><td class="name-cell">サグラダ＝ファミリア</td><td class="feature-cell">スペイン・バルセロナ</td><td class="year-cell">1882-</td><td class="desc-cell">ガウディが設計に参加。未完の大聖堂。有機的曲線と自然からの着想。<br>アール＝ヌーヴォー。ガウディの死後も建設継続中。</td></tr><tr><td class="name-cell">自由の女神</td><td class="feature-cell">アメリカ・ニューヨーク</td><td class="year-cell">1886</td><td class="desc-cell">フランスがアメリカ独立100周年を記念して贈呈。エッフェルが鉄骨構造を設計。<br>移民の象徴。高さ93m（台座含む）。</td></tr><tr><td class="name-cell">エッフェル塔</td><td class="feature-cell">パリ</td><td class="year-cell">1889</td><td class="desc-cell">1889年パリ万博（フランス革命100周年）のために建設。高さ312m（当時世界最高）。<br>当初は批判されたが、パリのシンボルに。鉄骨建築の先駆。</td></tr><tr><td class="name-cell">パナマ運河</td><td class="feature-cell">太平洋と大西洋を結ぶ運河</td><td class="year-cell">1914開通</td><td class="desc-cell">フランス(レセップス)→失敗→米が建設。1903パナマ独立(米の支援)→米が運河地帯を租借。1999返還。</td></tr><tr><td class="name-cell">バウハウス校舎</td><td class="feature-cell">ドイツ・デッサウ</td><td class="year-cell">1925-26</td><td class="desc-cell">グロピウス設計。機能主義建築の代表作。ガラスのカーテンウォール。<br>バウハウス（1919-33）：芸術と技術の統合を目指した学校→ナチスにより閉鎖。モダンデザインの源流。</td></tr><tr><td class="name-cell">国立西洋美術館</td><td class="feature-cell">日本・東京</td><td class="year-cell">1959</td><td class="desc-cell">ル＝コルビュジエ設計。「無限成長美術館」の構想。ピロティ。<br>2016年世界文化遺産（「ル＝コルビュジエの建築作品」の一部として）。</td></tr></tbody></table></div>
+
+<script>var currentTab=0;function switchTab(n){document.getElementById("content"+currentTab).className="tbl-wrap hidden";document.getElementById("tab"+currentTab).className="tab";document.getElementById("content"+n).className="tbl-wrap";document.getElementById("tab"+n).className="tab on";currentTab=n;filterRows()}function filterRows(){var q=document.getElementById("search").value.toLowerCase();var w=document.getElementById("content"+currentTab);var r=w.querySelectorAll("tbody tr");var s=0;for(var i=0;i<r.length;i++){var isHeader=r[i].className.indexOf("cat-header")>=0;if(isHeader){r[i].style.display=q?"none":"";continue}var t=r[i].textContent.toLowerCase();if(!q||t.indexOf(q)>=0){r[i].style.display="";s++}else{r[i].style.display="none"}}document.getElementById("cnt").textContent=s+" 件"}filterRows();</script>
+<style>
+.chart-link{display:inline-block;font-size:6px;padding:1px 4px;margin:1px;border-radius:2px;background:rgba(201,169,110,.08);border:1px solid rgba(201,169,110,.12);color:#c9a96e;text-decoration:none;white-space:nowrap;vertical-align:middle;transition:all .15s}
+.chart-link:hover{background:rgba(201,169,110,.2);border-color:rgba(201,169,110,.3);color:#e8c888}
+.chart-links-wrap{display:inline;margin-left:3px}
+</style>
+
+</body></html>
