@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>先史時代の全体像</title><style>@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048;--border:rgba(201,169,110,.08)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+.hdr{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.hdr h1{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2)}
+.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
+.flow{max-width:760px;margin:0 auto;padding:24px 20px 60px}
+.phase{position:relative;margin-bottom:2px;padding:16px 16px 16px 60px;border-left:2px solid rgba(201,169,110,.08);margin-left:30px}
+.phase:last-child{border-left-color:transparent}
+.phase-label{position:absolute;left:-42px;top:16px;width:36px;font-family:'Cormorant Garamond',serif;font-size:10px;font-weight:700;color:var(--text3);text-align:right;line-height:1.3}
+.phase::before{content:'';position:absolute;left:-5px;top:22px;width:8px;height:8px;border-radius:50%;background:var(--bg);border:2px solid rgba(201,169,110,.25)}
+.node{background:rgba(255,255,255,.015);border:1px solid rgba(255,255,255,.04);border-radius:8px;padding:10px 14px;margin-bottom:8px;border-left:3px solid transparent}
+.node:hover{background:rgba(255,255,255,.03)}
+.node-title{font-family:'Noto Serif JP',serif;font-size:12px;font-weight:700;color:var(--gold2);margin-bottom:2px}
+.node-year{font-family:'Cormorant Garamond',serif;font-size:11px;color:var(--gold);opacity:.6;margin-bottom:4px}
+.node-desc{font-size:10px;color:var(--text2);line-height:1.7}
+.node-desc strong{color:var(--text);font-weight:600}
+.branch-row{display:flex;gap:8px;margin-bottom:8px}
+.branch-row .node{flex:1}
+.node.key{background:rgba(201,169,110,.04);border-color:rgba(201,169,110,.12)}
+.side-note{font-size:8px;color:var(--text3);padding:4px 8px;border-left:2px solid rgba(201,169,110,.1);margin:4px 0 8px;line-height:1.6}
+.note{text-align:center;padding:8px 20px 32px;max-width:720px;margin:0 auto}.note p{font-size:9px;color:var(--text3);line-height:1.8}.note strong{color:var(--gold)}
+.k{color:var(--text)}
+.node-title .k{color:var(--gold2)}
+.note .k{color:var(--gold)}
+.p1 .node{border-left-color:rgba(120,90,70,.3)}.p1::before{border-color:rgba(120,90,70,.5);background:rgba(120,90,70,.15)}
+.p2 .node{border-left-color:rgba(170,130,90,.3)}.p2::before{border-color:rgba(170,130,90,.5);background:rgba(170,130,90,.15)}
+.p3 .node{border-left-color:rgba(180,140,60,.3)}.p3::before{border-color:rgba(180,140,60,.5);background:rgba(180,140,60,.15)}
+.p4 .node{border-left-color:rgba(100,130,180,.3)}.p4::before{border-color:rgba(100,130,180,.4)}
+.p5 .node{border-left-color:rgba(80,150,120,.3)}.p5::before{border-color:rgba(80,150,120,.5);background:rgba(80,150,120,.15)}
+.p6 .node{border-left-color:rgba(180,80,80,.3)}.p6::before{border-color:rgba(180,80,80,.4)}
+.p7 .node{border-left-color:rgba(120,90,160,.3)}.p7::before{border-color:rgba(120,90,160,.4)}
+@media(max-width:600px){
+.hdr{padding:10px 12px}.hdr h1{font-size:12px}
+.flow{padding:16px 10px 40px}
+.phase{padding:12px 10px 12px 44px;margin-left:20px}
+.phase-label{left:-30px;width:28px;font-size:8px}
+.node{padding:8px 10px}.node-title{font-size:11px}.node-desc{font-size:9px}
+.branch-row{flex-direction:column}
+.side-note{font-size:7.5px}
+}
+</style></head>
+<body>
+
+<div class="hdr"><h1>先史時代 ― 地球誕生から文明の黎明へ(46億年前-BC3000頃)</h1><a href="index.html">← 戻る</a></div>
+
+<div class="flow">
+
+<div class="phase p1"><div class="phase-label">地質<br>年代</div>
+<div class="node key"><div class="node-title"><span class="k">★</span>地質年代と先カンブリア時代</div><div class="node-year">46億年前-前5.4億年</div>
+<div class="node-desc"><span class="k">★</span><strong>地質年代</strong>＝地球の歴史を地層の重なりと放射性同位体による<strong>絶対年代</strong>で区分した時間尺度＝<strong>地質学</strong>の成果。地球生成＝<span class="k">★</span><strong>ビッグバン</strong>の約138億年後(46億年前)→<strong>地殻</strong>の形成。<strong>先カンブリア時代</strong>(地球史の約9割を占める)は<span class="k">★</span><strong>始生代</strong>(約40-25億年前、生命誕生＝<strong>シアノバクテリア</strong>＝光合成生物が海中の酸素を放出、化石＝<span class="k">★</span><strong>ストロマトライト</strong>)→<strong>原生代</strong>(25億-5.4億年前、<strong>単細胞生物</strong>から多細胞生物へ、地球凍結＝<span class="k">★</span><strong>スノーボールアース(全球凍結)</strong>)。</div></div>
+<div class="node"><div class="node-title">顕生代 ― 生命の爆発と王者の交替</div><div class="node-year">前5.4億-現在</div>
+<div class="node-desc"><span class="k">★</span><strong>顕生代</strong>＝生命が化石として豊富に残る時代。<strong>古生代</strong>(前5.4億-前2.5億、冒頭に<span class="k">★</span><strong>カンブリア爆発</strong>＝多様な生物群が一挙に出現、代表化石＝<span class="k">★</span><strong>三葉虫</strong>)→<strong>中生代</strong>(前2.5億-前6600万、<span class="k">★</span><strong>恐竜</strong>の時代)→<strong>新生代</strong>(前6600万-現在、哺乳類の時代)。<span class="k">★</span><strong>大量絶滅</strong>(中生代末の恐竜絶滅等)は何度も起き、そのたびに生態系が入れ替わる。生物と環境の<strong>共進化</strong>が進化の原動力。</div></div>
+<div class="node"><div class="node-title">新生代 ― 人類登場への道</div><div class="node-year">前6600万-現在</div>
+<div class="node-desc">新生代は古第三紀・<strong>第三紀</strong>(古第三紀＋新第三紀、<strong>中新世</strong>＝類人猿分化)・<span class="k">★</span><strong>第四紀</strong>(前258万-現在、人類の時代、<strong>鮮新世</strong>末から猿人出現)に区分。第四紀はさらに<strong>更新世(洪積世)</strong>＝氷河時代(<strong>氷期</strong>と<strong>間氷期</strong>の繰り返し、<span class="k">★</span><strong>氷床</strong>の発達と縮小)→<strong>完新世(沖積世)</strong>＝約1万年前からの温暖期(<span class="k">★</span><strong>縄文海進</strong>)。現代は人類活動が地質にも痕跡を残す<span class="k">★</span><strong>人新世</strong>と呼ばれる提案もある。年代表記＝<span class="k">★</span><strong>紀元前(B.C.)・紀元後(A.D.)</strong>の<strong>西暦</strong>、大きな単位は<strong>世紀・千年紀</strong>。</div></div>
+<div class="node"><div class="node-title">先史時代の区分と史料</div>
+<div class="node-desc"><span class="k">★</span><strong>先史時代</strong>＝<strong>文字</strong>が生まれる以前の時代＝<strong>文献</strong>が残らないため、<strong>遺跡</strong>・<strong>遺物</strong>の研究＝<span class="k">★</span><strong>考古学</strong>によって復元する。放射性炭素(C14)を用いる<span class="k">★</span><strong>放射線炭素年代測定</strong>等の技術で絶対年代を決める。文字が生まれて以降は<span class="k">★</span><strong>歴史時代</strong>＝<strong>文字史料</strong>(同時代の一次史料・後世の二次史料)で解明される。先史時代の文化を<span class="k">★</span><strong>先史文化</strong>と総称する。</div></div>
+</div>
+
+<div class="phase p2"><div class="phase-label">猿人</div>
+<div class="node key"><div class="node-title"><span class="k">★</span>人類の誕生 ― 直立二足歩行の獲得</div><div class="node-year">700万-約200万年前</div>
+<div class="node-desc"><strong>人類</strong>＝<span class="k">★</span><strong>ヒト科</strong>の霊長類のうち<strong>直立二足歩行</strong>する生物(<span class="k">★</span><strong>チンパンジー・ボノボ・ゴリラ・オランウータン・テナガザル</strong>等の<strong>類人猿</strong>＝四足/半樹上生活と区別)。<span class="k">★</span><strong>直立二足歩行</strong>＝樹上生活から地上生活へ移行し、<strong>手</strong>が自由になる→<strong>道具</strong>の使用→<strong>脳容積</strong>の拡大→<strong>概念的知識</strong>と<span class="k">★</span><strong>コレクティブ=ラーニング</strong>(集団での学習蓄積)の可能性。人類の特徴＝<strong>犬歯</strong>の縮小・<strong>おとがい</strong>の発達・<strong>眼窩上隆起</strong>の縮小。人類進化の研究＝<strong>化石人類(古生人類)</strong>の発見と比較から。<span class="k">★</span><strong>哺乳類</strong>→霊長類→ヒト科という<strong>人類史</strong>＝<span class="k">★</span><strong>シヴァピテクス(シバピテクス/ラマピテクス)</strong>等のヒト科化石を経て猿人へ。</div></div>
+<div class="node"><div class="node-title"><span class="k">★</span>猿人 ― 最古の人類たち</div><div class="node-year">約700万-200万年前</div>
+<div class="node-desc"><span class="k">★</span><strong>猿人</strong>(南のサル＝<strong>アウストラロピテクス</strong>の意)＝最古の人類グループ、脳容積は類人猿並みだが直立二足歩行。最古＝<span class="k">★</span><strong>サヘラントロプス=チャデンシス(トゥーマイ猿人)</strong>＝チャドで発見、約700万年前、<span class="k">★</span><strong>トゥーマイ</strong>(現地語で「生きる希望」)。続いて<strong>オロリン</strong>(約600万年前)・<span class="k">★</span><strong>ラミダス猿人(アルディピテクス=ラミダス)</strong>(約440万年前、エチオピア、発見者に<span class="k">★</span><strong>諏訪元</strong>ら日本人研究者)。<strong>半樹上生活</strong>から地上へ適応。<strong>原始的</strong>な特徴を多く残す。</div></div>
+<div class="node"><div class="node-title"><span class="k">★</span>アウストラロピテクス属 ― 猿人の主役</div><div class="node-year">約400万-100万年前</div>
+<div class="node-desc">アフリカ東部・南部で繁栄した猿人の中心。<span class="k">★</span><strong>アウストラロピテクス=アファレンシス</strong>＝エチオピア<strong>ハダール</strong>で発見された有名な化石<span class="k">★</span><strong>ルーシー</strong>(約320万年前)で知られる。<strong>アウストラロピテクス=アフリカヌス</strong>＝南アフリカ<strong>クロムドラーイ</strong>等で発見。頑丈型の分岐＝<span class="k">★</span><strong>パラントロプス=ボイセイ・パラントロプス=ロブストゥス</strong>(強大な咀嚼器官、植物食に特化)。石器の始まり＝<span class="k">★</span><strong>打製石器</strong>(礫器＝礫石器・<strong>石核石器</strong>＝原石から剥片を打ち取った残りの核石器)＝最古級の道具(約260万年前、ハダール近辺)。</div></div>
+</div>
+
+<div class="phase p3"><div class="phase-label">原人</div>
+<div class="node key"><div class="node-title"><span class="k">★</span>原人 ― ホモ属の出現と出アフリカ</div><div class="node-year">約250万-30万年前</div>
+<div class="node-desc"><span class="k">★</span><strong>原人</strong>＝脳容積が拡大しホモ属として分類される段階。アフリカで誕生＝<span class="k">★</span><strong>ホモ=ハビリス</strong>(「器用な人」、<span class="k">★</span><strong>オルドヴァイ</strong>渓谷で発見、発見者<span class="k">★</span><strong>リーキー</strong>夫妻)→石器の<strong>調整石核</strong>技術や<strong>尖頭器(ポイント)・掻器(スクレーパー)</strong>を製作。<span class="k">★</span><strong>ホモ=エレクトゥス</strong>(直立する人)＝脳容積拡大し、<strong>環境適応能力</strong>に優れアフリカからユーラシアへ拡散(最初の<strong>出アフリカ</strong>)。<strong>火の使用</strong>(<span class="k">★</span><strong>照明・暖房・調理</strong>)と<strong>言語の使用</strong>が発達し、社会的<strong>分配</strong>が可能になる。</div></div>
+<div class="branch-row">
+<div class="node"><div class="node-title">ジャワ原人</div>
+<div class="node-desc"><span class="k">★</span><strong>ジャワ原人</strong>(ホモ=エレクトゥス)＝インドネシア<strong>トリニール・ガンドン・サンギラン</strong>等で発見。発見者＝<span class="k">★</span><strong>デュボワ</strong>。約100万年前。近縁の<span class="k">★</span><strong>フローレス原人</strong>(小型化した系統、フローレス島)や<strong>ソロ人(ホモ=ソロエンシス)</strong>(後期)も東南アジアで確認。</div></div>
+<div class="node"><div class="node-title">北京原人・中国の原人</div>
+<div class="node-desc"><span class="k">★</span><strong>北京原人(ホモ=エレクトゥス=ペキネンシス)</strong>＝<span class="k">★</span><strong>周口店</strong>の<strong>猿人洞</strong>(竜骨山)で発見、約50万年前。<strong>洞穴</strong>に住み、<strong>火の使用</strong>痕跡あり、<strong>竹・籘</strong>等の植物素材も利用したと推定。中国南西の<span class="k">★</span><strong>元謀原人</strong>(約170万年前)・陝西の<strong>藍田人(藍田原人)</strong>も原人段階。</div></div>
+<div class="node"><div class="node-title">ハイデルベルク人</div>
+<div class="node-desc"><span class="k">★</span><strong>ハイデルベルク人</strong>＝ドイツ<strong>ハイデルベルク</strong>や南フランス<strong>アラゴ洞窟</strong>で発見、約70万-20万年前。後期の原人〜旧人への過渡的段階。ネアンデルタール人・現生人類両方の共通祖先に近い。</div></div>
+</div>
+<div class="node"><div class="node-title"><span class="k">★</span>アシュール文化 ― 前期旧石器の代表</div>
+<div class="node-desc">原人段階の代表的石器文化＝<span class="k">★</span><strong>アシュール文化</strong>(<strong>前期旧石器時代</strong>)。代表石器＝<span class="k">★</span><strong>ハンドアックス(握斧)</strong>＝<strong>アシューリアン(アシューレアン)石器</strong>＝両面を調整した大型石器で、肉の切断・木の加工・掘削など多用途。大型動物解体用の<strong>クリーヴァー</strong>等も製作。フランス北部・アフリカ・西アジアで広く分布。</div></div>
+</div>
+
+<div class="phase p4"><div class="phase-label">旧人</div>
+<div class="node key"><div class="node-title"><span class="k">★</span>旧人 ― ネアンデルタール人の時代</div><div class="node-year">約30万-3万年前</div>
+<div class="node-desc"><span class="k">★</span><strong>旧人</strong>(<span class="k">★</span><strong>ホモ=ネアンデルターレンシス</strong>)＝<strong>中期旧石器時代</strong>の主役。ドイツ<strong>ネアンデル渓谷</strong>(<strong>デュッセルドルフ</strong>近郊)で最初に発見された<span class="k">★</span><strong>ネアンデルタール人</strong>が代表。ヨーロッパ・西アジアに広く分布。筋肉質で寒冷適応。近縁種として<strong>ソロ人(ホモ=ソロエンシス)</strong>(ジャワ)・<strong>ホモ=ローデシエンシス</strong>(アフリカ)・<span class="k">★</span><strong>デニソワ人</strong>(シベリア、DNAで確認)がいた。</div></div>
+<div class="node"><div class="node-title"><span class="k">★</span>ムスティエ文化と精神文化の萌芽</div>
+<div class="node-desc">旧人の石器文化＝<span class="k">★</span><strong>ムスティエ(ムスチエ/ムステリアン)文化</strong>＝精巧な<span class="k">★</span><strong>剥片石器</strong>(<span class="k">★</span><strong>ムスティエ石器</strong>)、<strong>骨</strong>や<strong>肉</strong>の加工に適する。<span class="k">★</span><strong>埋葬の習慣</strong>＝死者を<strong>屈葬</strong>し、花や副葬品を添える例＝<span class="k">★</span><strong>シャニダール洞窟</strong>(イラク、ネアンデルタール人の埋葬に花粉を確認)や<strong>カルメル山</strong>(パレスチナ)で発見→<span class="k">★</span><strong>死後の世界</strong>への意識＝<strong>宗教的行為</strong>(<span class="k">★</span><strong>宗教</strong>の萌芽)・<strong>習慣</strong>＝<span class="k">★</span><strong>精神文化</strong>の発達。</div></div>
+</div>
+
+<div class="phase p5"><div class="phase-label">新人</div>
+<div class="node key"><div class="node-title"><span class="k">★</span>新人(ホモ=サピエンス) ― 現生人類の登場</div><div class="node-year">約20万-現在</div>
+<div class="node-desc"><span class="k">★</span><strong>新人</strong>＝<span class="k">★</span><strong>ホモ=サピエンス</strong>＝現在の人類と同種(<span class="k">★</span><strong>現生人類</strong>)。アフリカ起源の<span class="k">★</span><strong>単一起源説</strong>が主流＝約20万年前のアフリカから世界に拡散し各地の旧人と置換。<strong>後期旧石器時代</strong>の主役。特徴＝高い脳容積、<strong>成人</strong>で発達した前頭葉、細かい<strong>石刃</strong>技術、<strong>骨角器</strong>(動物の<strong>角・歯牙</strong>から作る<strong>針・錐・銛</strong>)、芸術と象徴思考。言語能力＝<span class="k">★</span><strong>ソシュール</strong>・<span class="k">★</span><strong>チョムスキー</strong>ら現代<strong>言語学</strong>・<strong>認知科学</strong>の研究対象。</div></div>
+<div class="branch-row">
+<div class="node"><div class="node-title">ヨーロッパの新人</div>
+<div class="node-desc"><span class="k">★</span><strong>クロマニョン人</strong>＝フランス<strong>クロマニョン</strong>岩陰で発見、約4万年前。<span class="k">★</span><strong>オーリニャック文化</strong>(石刃革新)→<strong>ソリュートレ文化</strong>(精緻な<strong>矢</strong>・<strong>鏃(ヤジリ)</strong>石器)→<span class="k">★</span><strong>マドレーヌ(マグダレーヌ/マグダレン)文化</strong>(最盛期の洞穴絵画)。<strong>グリマルディ人</strong>・<strong>コンブ=カペル</strong>も同時期の新人化石。イギリス<strong>クラクトン</strong>・<strong>スウォンズコーム</strong>等も重要遺跡。</div></div>
+<div class="node"><div class="node-title">アジアの新人</div>
+<div class="node-desc">中国＝<span class="k">★</span><strong>周口店上洞人(山頂洞人)</strong>＝北京の<strong>竜骨山</strong>上洞で発見。南アフリカの<strong>ボスコップ人</strong>、日本列島の<strong>三々日人・浜北人</strong>等も新人段階。日本の<span class="k">★</span><strong>岩宿遺跡</strong>で<strong>後期旧石器時代</strong>の存在が確認された。</div></div>
+</div>
+<div class="node"><div class="node-title"><span class="k">★</span>洞穴絵画と宗教芸術</div>
+<div class="node-desc">新人は象徴的思考と芸術活動を飛躍的に発達させた。代表＝<span class="k">★</span><strong>洞穴絵画</strong>＝スペイン<strong>アルタミラ</strong>(<span class="k">★</span><strong>牛・野牛</strong>等の大型動物)・フランス<strong>ラスコー</strong>・<strong>ショーヴェ(ショベ)</strong>・<strong>ニオー洞窟</strong>。絵画は狩猟の成功や<strong>呪術</strong>・豊作祈願と結びつく宗教的行為(<strong>宗教画</strong>)。サハラ砂漠中央の<strong>タッシリ=ナジェール</strong>は野外の<strong>岩絵(ペトログリフ)</strong>で有名。女性裸像＝<span class="k">★</span><strong>ヴィレンドルフのヴィーナス</strong>(オーストリア、<strong>石のヴィーナス</strong>)＝強調された<strong>乳房・臀部</strong>→<strong>多産・豊作</strong>を祈る呪術像。<strong>キャンパス</strong>としての洞穴壁、<strong>パイソン</strong>(大蛇)を描いた例も。</div></div>
+<div class="node"><div class="node-title">中石器時代 ― 氷期の終わりと過渡期</div><div class="node-year">約1.5万-前8000頃</div>
+<div class="node-desc">氷期から<span class="k">★</span><strong>後氷期</strong>へ移行する<span class="k">★</span><strong>中石器時代</strong>(過渡期)＝<strong>大型動物</strong>(<span class="k">★</span><strong>マンモス</strong>・<strong>ナウマンゾウ</strong>＝命名者<strong>ハインリッヒ=エドムント=ナウマン</strong>・<strong>オオツノジカ</strong>・<strong>トナカイ</strong>)の絶滅→小動物・<strong>魚類</strong>・<strong>鳥獣</strong>・<strong>昆虫</strong>・<strong>木の実</strong>中心の生業へ。<span class="k">★</span><strong>細石器</strong>＝<strong>フリント</strong>(火打石)等の微小石器を<span class="k">★</span><strong>柄・刃</strong>に組み込んで使用、<strong>鎌</strong>で<strong>野生穀物</strong>の<span class="k">★</span><strong>刈り取り</strong>、<strong>矢</strong>には<strong>鏃</strong>。北アフリカの<span class="k">★</span><strong>カプサ文化</strong>が代表。この頃は群れ(<span class="k">★</span><strong>ホルド</strong>)単位の狩猟採集生活(<strong>狩猟+採集</strong>)。武器＝<strong>棒</strong>・<strong>投槍器(アストラル)</strong>・<strong>ブーメラン</strong>。</div></div>
+</div>
+
+<div class="phase p6"><div class="phase-label">新石器<br>革命</div>
+<div class="node key"><div class="node-title"><span class="k">★</span>食料生産革命 ― 獲得経済から生産経済へ</div><div class="node-year">約1万年前-</div>
+<div class="node-desc"><span class="k">★</span><strong>食料生産革命(新石器革命)</strong>＝<strong>完新世</strong>の温暖化に伴い、<strong>狩猟+採集</strong>の<span class="k">★</span><strong>獲得経済</strong>から<span class="k">★</span><strong>農耕+牧畜</strong>の<span class="k">★</span><strong>生産経済</strong>へ転換。起源地＝<span class="k">★</span><strong>西アジア</strong>の<span class="k">★</span><strong>肥沃な三日月地帯</strong>(命名者<span class="k">★</span><strong>ブレステッド</strong>)、特に<span class="k">★</span><strong>ザグロス山脈</strong>周辺の丘陵地。麦類・<strong>レンズ豆</strong>等の<strong>栽培種</strong>の成立＝人為選抜と<strong>突然変異</strong>・<strong>接ぎ木</strong>の活用。家畜化＝<span class="k">★</span><strong>ヤギ(山羊)・羊・豚・牛</strong>→<span class="k">★</span><strong>有畜農業</strong>(農耕と牧畜の結合)。<strong>定住農耕</strong>の開始→<span class="k">★</span><strong>集落</strong>・村落の成立。</div></div>
+<div class="branch-row">
+<div class="node"><div class="node-title"><span class="k">★</span>最古の農耕集落</div>
+<div class="node-desc"><span class="k">★</span><strong>イェリコ</strong>(<strong>ヨルダン川</strong>下流・<strong>死海</strong>北、BC9000頃)＝現存最古級の定住集落(城壁あり)。<strong>ジャルモ</strong>(イラク北部、BC7000頃)＝有畜農業の早期例。<span class="k">★</span><strong>チャタル=ヒュユク</strong>(アナトリア、BC7000頃)＝大規模集落。<strong>テル=サラサート</strong>等シリア・イラクの<span class="k">★</span><strong>遺丘(テル)</strong>＝長年の居住で土が積み上がった人工の丘。<span class="k">★</span><strong>ギョベクリ=テペ</strong>(アナトリア、BC9500頃)＝農耕開始以前の巨石神殿遺跡として注目。</div></div>
+<div class="node"><div class="node-title"><span class="k">★</span>磨製石器と土器</div>
+<div class="node-desc"><span class="k">★</span><strong>新石器時代</strong>の指標＝<span class="k">★</span><strong>磨製石器</strong>＝打製ではなく表面を<strong>砥石</strong>で磨いて刃を整える石器(<strong>石斧</strong>・<strong>石鎌</strong>・<strong>石包丁</strong>・<strong>石杵</strong>・<strong>石臼</strong>＝<strong>製粉</strong>用)。<span class="k">★</span><strong>土器</strong>の発明＝<strong>粘土</strong>を<strong>成形</strong>し<strong>素焼き</strong>、貯蔵・煮炊き・<strong>儀式</strong>に使用。装飾＝<span class="k">★</span><strong>彩文土器</strong>(<strong>顔料</strong>で幾何学文様や動植物を描く)・<strong>櫛目文土器</strong>(北欧〜東アジアに分布)。日本の<span class="k">★</span><strong>縄文時代</strong>も同じ新石器段階。</div></div>
+<div class="node"><div class="node-title">織物・住居・農法</div>
+<div class="node-desc"><strong>織物</strong>の発達＝<strong>経糸(縦糸)・緯糸(横糸)</strong>を組み合わせ、麻や<strong>獣毛</strong>から衣料を作る。住居＝<strong>湖上住居(杭上住居)</strong>(アルプス湖沼地帯)や泥レンガ住居。農法＝<span class="k">★</span><strong>乾地農法(天水農業/乾燥農業)</strong>＝<strong>雨水(天水)</strong>に依存、<strong>土壌</strong>の<strong>保水</strong>が課題、半乾燥地で主流だが<strong>略奪農法</strong>に陥りやすい。大河流域では<span class="k">★</span><strong>灌漑農業</strong>へ発展(古代文明成立の鍵)。</div></div>
+</div>
+<div class="node"><div class="node-title"><span class="k">★</span>メガリス(巨石)文化</div>
+<div class="node-desc">新石器時代末〜青銅器時代初頭、西欧を中心に巨石を使った宗教建造物が作られる。<span class="k">★</span><strong>ドルメン</strong>(2-3の支石+天井石の箱型墓)・<span class="k">★</span><strong>メンヒル</strong>(立石)・<span class="k">★</span><strong>ストーン=サークル(環状列石/クロムレック)</strong>、特に<span class="k">★</span><strong>ストーン=ヘンジ</strong>(南イングランド、BC3000-1500頃)や<span class="k">★</span><strong>カルナック</strong>(フランス・ブルターニュ、1kmを超える列石)が有名。天文観測・祭祀・墓所の機能を持つ宗教センター。</div></div>
+</div>
+
+<div class="phase p6"><div class="phase-label">金属器</div>
+<div class="node key"><div class="node-title"><span class="k">★</span>金属器時代 ― 青銅器と鉄器</div><div class="node-year">前3500頃-</div>
+<div class="node-desc"><span class="k">★</span><strong>金属器時代</strong>＝<strong>金属</strong>を加工する技術の登場で石器時代を脱した段階。まず<span class="k">★</span><strong>青銅器時代</strong>(前3500頃-)＝<strong>銅</strong>と錫の<span class="k">★</span><strong>合金</strong>＝<span class="k">★</span><strong>青銅</strong>の<span class="k">★</span><strong>鋳造</strong>。<strong>真鍮(黄銅)</strong>は銅と亜鉛の合金。青銅は武器・祭器・装飾品として支配層の権威を象徴。次いで<span class="k">★</span><strong>鉄器時代</strong>(前1500頃-、ヒッタイト起源)＝<span class="k">★</span><strong>鉄</strong>＝自然界の<span class="k">★</span><strong>隕鉄</strong>から始まり、製鉄技術(<span class="k">★</span><strong>冶金</strong>)の発達で農具・武器に普及→生産力を飛躍的に増大させる。</div></div>
+<div class="node"><div class="node-title"><span class="k">★</span>階級社会と国家の成立</div>
+<div class="node-desc">農業の生産力上昇→食料余剰→人口増加と<strong>職業分化</strong>→<strong>貧富の差</strong>と<span class="k">★</span><strong>階級</strong>の発生(支配階級の出現)。異集団との<strong>征服</strong>と統合→<span class="k">★</span><strong>国家</strong>(<strong>王</strong>・<strong>君主</strong>を頂点とする、<strong>住民</strong>・<strong>領土</strong>・<strong>政治的独立性</strong>を備えた政治単位)や<span class="k">★</span><strong>都市国家</strong>の成立。遠隔地との<span class="k">★</span><strong>交易</strong>・<strong>商業</strong>・<strong>貿易</strong>(<strong>琥珀</strong>・金属・塩等)が盛んに。<strong>文化・文明</strong>＝<strong>技術</strong>・<strong>制度</strong>・<strong>習俗</strong>・<strong>道徳</strong>・宗教の総合体。<span class="k">★</span><strong>トインビー</strong>は世界に数十の文明を認めたが、最古級が<span class="k">★</span><strong>四大文明</strong>(メソポタミア・エジプト・インダス・中国)。</div></div>
+<div class="node"><div class="node-title"><span class="k">★</span>文字の発明 ― 歴史時代の開始</div>
+<div class="node-desc"><span class="k">★</span><strong>文字の発明</strong>＝<strong>音声言語</strong>を視覚化。<span class="k">★</span><strong>絵文字</strong>から<span class="k">★</span><strong>表意文字</strong>(漢字・ヒエログリフ等)や<span class="k">★</span><strong>表音文字</strong>(アルファベット等)へ発展。文字により情報が時間と空間を超えて伝達可能に→<span class="k">★</span><strong>歴史時代</strong>の開始。史料は同時代の記録＝<span class="k">★</span><strong>一次史料</strong>(同時代人の<strong>文字史料</strong>)と、後世の編纂＝<span class="k">★</span><strong>二次史料</strong>に区別。<strong>概念</strong>(<strong>政治・経済・風俗</strong>等)を抽象的に記録できるようになり、国家運営・商業・宗教が文字に依存する社会へ。</div></div>
+</div>
+
+<div class="phase p7"><div class="phase-label">人種<br>語族</div>
+<div class="node key"><div class="node-title"><span class="k">★</span>人種(生物学的分類)</div>
+<div class="node-desc"><span class="k">★</span><strong>人種</strong>＝<strong>生物学</strong>的特徴(<span class="k">★</span><strong>皮膚</strong>・<strong>毛髪</strong>・<strong>目の色</strong>・<strong>身長</strong>・<strong>頭の形(頭蓋骨/頭骨)</strong>)による人類の<strong>分類</strong>。伝統的3区分＝<span class="k">★</span><strong>コーカソイド(白色人種)</strong>・<span class="k">★</span><strong>モンゴロイド(黄色人種)</strong>・<span class="k">★</span><strong>ネグロイド(黒色人種)</strong>。遺伝学的にはヒトの変異は非常に小さく、区分は相対的。人種と<strong>民族</strong>(文化的概念、政治・<strong>風俗</strong>を共有する集団)は別の<strong>概念</strong>で、<strong>民俗学</strong>の研究対象となる。</div></div>
+<div class="node key"><div class="node-title"><span class="k">★</span>語族 ― 言語による系統分類</div>
+<div class="node-desc"><strong>言語</strong>を歴史的な親子関係(同一祖語から派生)で分類した単位＝<span class="k">★</span><strong>語族</strong>(<strong>学問</strong>的には<strong>言語学</strong>の研究対象)。人種とは必ずしも一致しない。世界の主要語族は以下の通り。</div></div>
+<div class="branch-row">
+<div class="node"><div class="node-title"><span class="k">★</span>インド=ヨーロッパ語族</div>
+<div class="node-desc"><span class="k">★</span><strong>インド=ヨーロッパ語族(印欧語族)</strong>＝古代アーリア人に由来すると考えられる大語族。<strong>インド=イラン語派</strong>(サンスクリット・ペルシア語)・<span class="k">★</span><strong>イタリック語派</strong>(ラテン→ロマンス諸語)・<span class="k">★</span><strong>ヘレニック語派</strong>(ギリシア語)・<span class="k">★</span><strong>ケルト語派</strong>(アイルランド語等)・<span class="k">★</span><strong>ゲルマン語派</strong>(英独等)・<span class="k">★</span><strong>スラヴ語派</strong>(<strong>ロシア語</strong>等)。ヨーロッパ・イラン・北インドに広く分布。</div></div>
+<div class="node"><div class="node-title">ウラル・アルタイ諸語</div>
+<div class="node-desc"><strong>ウラル語族</strong>＝<strong>フィンランド語</strong>・<strong>エストニア語</strong>・<strong>ハンガリー語</strong>・<strong>サモエード語派</strong>。<span class="k">★</span><strong>アルタイ語族</strong>(諸説あり)＝<strong>トルコ語</strong>・<strong>ツングース語</strong>・<strong>ウイグル語</strong>等。日本語・<strong>朝鮮語</strong>＝系統不明だが一部の説でアルタイ系とされる。</div></div>
+</div>
+<div class="branch-row">
+<div class="node"><div class="node-title">アジアの諸語族</div>
+<div class="node-desc"><span class="k">★</span><strong>シナ=チベット語族</strong>＝<strong>漢語</strong>・<strong>チベット語</strong>・<strong>ビルマ語(ミャンマー語)</strong>・<strong>タイ語</strong>(タイはタイ=カダイ語族に分類される説も)。<span class="k">★</span><strong>オーストロアジア語族</strong>＝<strong>ベトナム語</strong>・<strong>クメール語(カンボジア語)</strong>・<strong>モン語</strong>・<strong>ムンダ語派</strong>。<span class="k">★</span><strong>オーストロネシア語族(マレー=ポリネシア語族)</strong>＝<strong>インドネシア語・マレーシア語・タガログ語・台湾語・ポリネシア語</strong>等、東南島嶼部〜太平洋に広がる大語族。<span class="k">★</span><strong>ドラヴィダ語族</strong>＝<strong>南インド</strong>先住民系、<strong>テルグ語・クルク語</strong>等。</div></div>
+<div class="node"><div class="node-title">アフリカ・アメリカの諸語</div>
+<div class="node-desc"><span class="k">★</span><strong>アフロ=アジア語族</strong>＝<strong>セム語派</strong>(アラビア語・ヘブライ語)・<strong>エジプト語派</strong>・<strong>チャド語派</strong>・<strong>アムハラ語</strong>等。<span class="k">★</span><strong>アフリカ諸語</strong>＝<strong>ニジェール=コンゴ系</strong>の<span class="k">★</span><strong>バントゥー諸語</strong>(ケニア・南部アフリカ)・<strong>ハウサ語・フルフルデ(フラニ)語</strong>(西アフリカ)・<strong>コイサン諸語</strong>(南部アフリカ)。<span class="k">★</span><strong>アメリカ諸語</strong>(インディアン諸語)＝<strong>ナヴァホ語・アサバスカ諸語・イヌイット語</strong>(北米)・<strong>ケチュア語・アイマラ語・マヤ諸語・グアラニー語</strong>(中南米)。</div></div>
+</div>
+</div>
+
+<div class="phase p7"><div class="phase-label">文明<br>の舞台</div>
+<div class="node key"><div class="node-title"><span class="k">★</span>古代文明成立の地理条件</div><div class="node-year">前3500頃-</div>
+<div class="node-desc">文字・国家・金属器・都市を備えた<span class="k">★</span><strong>古代</strong>文明は、灌漑農業が可能な<span class="k">★</span><strong>大河</strong>流域で成立。<strong>肥沃な三日月地帯</strong>＝<strong>メソポタミア</strong>(川のあいだの土地＝<strong>ティグリス川(チグリス川)・ユーフラテス川</strong>＝<strong>シャトルアラブ川</strong>で合流し<strong>ペルシア湾</strong>へ)・シリア〜パレスチナ・エジプトをつなぐ広大な<strong>流域</strong>＝<span class="k">★</span><strong>沖積平野</strong>。<span class="k">★</span><strong>アナトリア高原</strong>は北の山岳地帯。<strong>塩害</strong>は灌漑農業の宿命的課題。</div></div>
+<div class="branch-row">
+<div class="node"><div class="node-title"><span class="k">★</span>オリエント ― 日がのぼる地</div>
+<div class="node-desc"><span class="k">★</span><strong>オリエント</strong>(ラテン語で「日がのぼるところ」、ローマから見た東方)＝メソポタミア・<span class="k">★</span><strong>エジプト</strong>・<span class="k">★</span><strong>シリア(歴史的シリア/大シリア)</strong>・<span class="k">★</span><strong>パレスチナ</strong>・<span class="k">★</span><strong>北アフリカ</strong>の総称。対比語＝<span class="k">★</span><strong>オクシデント</strong>(日が沈む、西方)。<strong>生活必需品</strong>(穀物・金属・塩)の交易路が交差する古代世界の中心。沿岸の先住民にはパレスチナの<span class="k">★</span><strong>ペリシテ人(フィリスティア人)</strong>等の<strong>民族</strong>。セム語族＝<span class="k">★</span><strong>セム語系</strong>の諸民族が広く分布。</div></div>
+<div class="node"><div class="node-title">エジプト ― ナイルの賜物</div>
+<div class="node-desc"><span class="k">★</span><strong>ナイル川</strong>＝世界最長(<strong>ヴィクトリア湖</strong>と<strong>エチオピア高原(アビシニア高原)</strong>を水源に、<span class="k">★</span><strong>青ナイル</strong>＋<span class="k">★</span><strong>白ナイル</strong>が合流)。毎年の<span class="k">★</span><strong>氾濫</strong>が肥沃な土壌と<strong>紅花(ベニバナ)</strong>等の農業を支える→<span class="k">★</span><strong>ナイロメーター</strong>で水位を計測し年貢を決定。古代エジプトは<span class="k">★</span><strong>30王朝</strong>(プトレマイオス朝を加えるか諸説)を<strong>7期</strong>(古王国〜末期王朝)に区分、最初の王朝誌編纂者＝<span class="k">★</span><strong>マネト(マネトー/マネトン)</strong>(プトレマイオス朝期の神官)。文明の具体は次ページの古代オリエント・エジプト各章を参照。</div></div>
+</div>
+</div>
+
+</div>
+
+<div class="note"><p>先史時代は<span class="k">★</span><strong>地球の46億年史</strong>から<span class="k">★</span><strong>人類700万年史</strong>への段階的圧縮。進化の鍵は<span class="k">★</span><strong>直立二足歩行→脳の拡大→言語と道具→火→芸術と宗教</strong>。技術の鍵は<span class="k">★</span><strong>打製石器→磨製石器→青銅器→鉄器</strong>。社会の鍵は<span class="k">★</span><strong>獲得経済→生産経済(農耕牧畜)→都市・国家・文字</strong>。これらの交点で<strong>古代文明</strong>が誕生し、歴史時代が始まる。</p></div>
+
+</body>
+</html>

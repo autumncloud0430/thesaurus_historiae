@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>デリー=スルタン朝</title><style>@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048;--border:rgba(201,169,110,.08)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+.hdr{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.hdr h1{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2)}
+.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
+.flow{max-width:760px;margin:0 auto;padding:24px 20px 60px}
+.phase{position:relative;margin-bottom:2px;padding:16px 16px 16px 60px;border-left:2px solid rgba(201,169,110,.08);margin-left:30px}
+.phase:last-child{border-left-color:transparent}
+.phase-label{position:absolute;left:-42px;top:16px;width:36px;font-family:'Cormorant Garamond',serif;font-size:10px;font-weight:700;color:var(--text3);text-align:right;line-height:1.3}
+.phase::before{content:'';position:absolute;left:-5px;top:22px;width:8px;height:8px;border-radius:50%;background:var(--bg);border:2px solid rgba(201,169,110,.25)}
+.node{background:rgba(255,255,255,.015);border:1px solid rgba(255,255,255,.04);border-radius:8px;padding:10px 14px;margin-bottom:8px;border-left:3px solid transparent}
+.node:hover{background:rgba(255,255,255,.03)}
+.node-title{font-family:'Noto Serif JP',serif;font-size:12px;font-weight:700;color:var(--gold2);margin-bottom:2px}
+.node-year{font-family:'Cormorant Garamond',serif;font-size:11px;color:var(--gold);opacity:.6;margin-bottom:4px}
+.node-desc{font-size:10px;color:var(--text2);line-height:1.7}
+.node-desc strong{color:var(--text);font-weight:600}
+.branch-row{display:flex;gap:8px;margin-bottom:8px}
+.branch-row .node{flex:1}
+.node.key{background:rgba(201,169,110,.04);border-color:rgba(201,169,110,.12)}
+.side-note{font-size:8px;color:var(--text3);padding:4px 8px;border-left:2px solid rgba(201,169,110,.1);margin:4px 0 8px;line-height:1.6}
+.note{text-align:center;padding:8px 20px 32px;max-width:720px;margin:0 auto}.note p{font-size:9px;color:var(--text3);line-height:1.8}.note strong{color:var(--gold)}
+.p1 .node{border-left-color:rgba(180,140,60,.3)}.p1::before{border-color:rgba(180,140,60,.5);background:rgba(180,140,60,.15)}
+.p2 .node{border-left-color:rgba(100,130,180,.3)}.p2::before{border-color:rgba(100,130,180,.4)}
+.p3 .node{border-left-color:rgba(80,150,120,.3)}.p3::before{border-color:rgba(80,150,120,.5);background:rgba(80,150,120,.15)}
+.p4 .node{border-left-color:rgba(180,80,80,.3)}.p4::before{border-color:rgba(180,80,80,.4)}
+.p5 .node{border-left-color:rgba(120,90,160,.3)}.p5::before{border-color:rgba(120,90,160,.4)}
+@media(max-width:600px){
+.hdr{padding:10px 12px}.hdr h1{font-size:12px}
+.flow{padding:16px 10px 40px}
+.phase{padding:12px 10px 12px 44px;margin-left:20px}
+.phase-label{left:-30px;width:28px;font-size:8px}
+.node{padding:8px 10px}.node-title{font-size:11px}.node-desc{font-size:9px}
+.branch-row{flex-direction:column}
+.side-note{font-size:7.5px}
+.note p{font-size:8px}
+}
+</style>
+</head>
+<body>
+
+<div class="hdr"><h1>デリー=スルタン朝 ― インドにおけるイスラーム支配の成立と展開(1206-1526)</h1><a href="charts.html">← Ad Chartae</a></div>
+
+<div class="flow">
+
+<div class="phase p1"><div class="phase-label">前史</div>
+<div class="node key"><div class="node-title">★イスラーム勢力のインド侵入</div><div class="node-year">8-12C</div>
+<div class="node-desc">7C半ばにアラブ人がインダス川下流(シンド地方)に侵入(712年、★<strong>ウマイヤ朝の将軍ムハンマド=ビン=カーシム</strong>)→しかし本格的なインド侵入ではなく一時的な支配に留まる。本格的な侵入は★<strong>ガズナ朝</strong>から。ハルシャ=ヴァルダナ朝崩壊後(647)、北インドは★<strong>ラージプート諸国</strong>(クシャトリヤ系地方王国)が割拠する分裂状態→イスラーム勢力に対する統一的な抵抗ができない状態。</div></div>
+<div class="node"><div class="node-title">★ガズナ朝の略奪遠征</div><div class="node-year">10-11C</div>
+<div class="node-desc">★<strong>ガズナ朝</strong>(962年にサーマーン朝のトルコ系マムルーク出身のアルプ=テギンが建国)は、★<strong>アフガニスタン</strong>のガズナを都とするイスラーム王朝。最盛期のスルタン★<strong>マフムード</strong>(在位998-1030)は★<strong>17回にもわたる北インド遠征</strong>を実施→主目的は★<strong>略奪</strong>(寺院の金銀財宝)であり領土支配ではない。★<strong>ソームナート寺院(ソムナート寺院)</strong>(シヴァ神の巡礼地)の破壊が特に有名→ヒンドゥー社会に衝撃。マフムードの宮廷にはペルシア詩人★<strong>フィルドゥスィー</strong>(『シャー=ナーメ』)が仕えた。</div></div>
+<div class="node"><div class="node-title">★ゴール朝(ゴーリー朝)の本格的征服</div><div class="node-year">12C後半</div>
+<div class="node-desc">ガズナ朝が弱体化した後、アフガニスタンに★<strong>ゴール朝</strong>が台頭→★<strong>シハーブッディーン=ムハンマド(ムハンマド=ゴーリー/ムイッズッディーン)</strong>(ムイッズ=アッディーン)が本格的にインド征服を開始。★<strong>第1次タラーインの戦い(1191)</strong>ではラージプート連合に敗北→★<strong>第2次タラーインの戦い(1192)</strong>で勝利→★<strong>デリー占領</strong>→北インドの大半を征服。これが★<strong>インドにおけるイスラーム支配の本格的始まり</strong>。ムハンマド=ゴーリーは征服後もゴール本国に戻り、インドの統治を★<strong>マムルーク(奴隷軍人)の部下たち</strong>に任せた→これがデリー=スルタン朝の母体になる。</div></div>
+</div>
+
+<div class="phase p2"><div class="phase-label">奴隷</div>
+<div class="node key"><div class="node-title">★奴隷王朝(1206-1290) ― デリー=スルタン朝の始まり</div>
+<div class="node-desc">1206年、ムハンマド=ゴーリーが暗殺されると、部下だったマムルーク★<strong>クトゥブ=ウッディーン=アイバク</strong>がデリーで自立→★<strong>奴隷王朝</strong>(マムルーク朝)を建国。「奴隷」とは★<strong>マムルーク(奴隷軍人)出身のスルタンによる王朝</strong>の意味(エジプトのマムルーク朝と同じ構造)。★<strong>デリー=スルタン朝の5つの王朝のうち最初の王朝</strong>。首都＝★<strong>デリー</strong>。以後デリーはインドにおけるイスラーム権力の中心となる。</div></div>
+<div class="node"><div class="node-title">★奴隷王朝の3人の重要スルタン</div>
+<div class="node-desc">①★<strong>アイバク</strong>(在位1206-1210)＝建国者、デリーに★<strong>クトゥブ=ミナール</strong>(現存する世界最高の煉瓦造ミナレット、72m)の建設を開始(インド最古のイスラーム建築)。②★<strong>イルトゥトゥミシュ</strong>(在位1211-36)＝アイバクの娘婿、奴隷王朝を安定化、アッバース朝カリフから正式にスルタンとして承認される。③★<strong>ラジア=スルタナ</strong>(在位1236-40)＝イルトゥトゥミシュの娘、★<strong>インド史上唯一の女性スルタン</strong>、しかし4年で廃位・殺害される。③★<strong>バルバン</strong>(在位1266-87)＝ペルシア的な絶対君主制を導入、宮廷儀礼を整備。</div></div>
+</div>
+
+<div class="phase p3"><div class="phase-label">ハルジー</div>
+<div class="node key"><div class="node-title">★ハルジー朝(1290-1320) ― デリー=スルタン朝の拡大期</div>
+<div class="node-desc">1290年、奴隷王朝のスルタンを殺害した★<strong>ジャラール=ウッディーン=ハルジー</strong>が★<strong>ハルジー朝</strong>(ハルジー=トルコ系)を建国。短期間の王朝(30年)だがデリー=スルタン朝の★<strong>最大版図</strong>を実現→★<strong>南インドまで遠征</strong>に成功した初めての北インド王朝。</div></div>
+<div class="node key"><div class="node-title">★アラー=ウッディーン=ハルジー ― 南インド征服</div><div class="node-year">1296-1316</div>
+<div class="node-desc">★<strong>アラー=ウッディーン=ハルジー</strong>＝前王(叔父)を暗殺して即位した軍事天才。<strong>北西からのモンゴル侵入</strong>を何度も撃退(インド史上モンゴルを止めた唯一の王朝)。部下の★<strong>マリク=カーフル</strong>(もとヒンドゥー教徒の奴隷軍人、後にムスリム改宗)を司令官として南インドへ遠征→★<strong>デカン</strong>(ヤーダヴァ朝等)・★<strong>南インド</strong>(パーンディヤ朝等)まで征服→貢納を取り立てる。★<strong>インド史上初めて南端まで影響を及ぼしたイスラーム王朝</strong>。★<strong>市場統制(価格統制)</strong>の経済政策・★<strong>軍の財政改革</strong>等の行政改革でも有名。</div></div>
+</div>
+
+<div class="phase p3"><div class="phase-label">トゥグルク</div>
+<div class="node key"><div class="node-title">★トゥグルク朝(1320-1414) ― デリー=スルタン朝最大の王朝</div>
+<div class="node-desc">1320年、★<strong>ギヤースッディーン=トゥグルク</strong>が建国。デリー=スルタン朝の5王朝中★<strong>最長の王朝</strong>(約95年)。トルコ系マムルーク出身。前半は絶頂期、後半はティムールの侵入で崩壊するという典型的な盛衰パターン。</div></div>
+<div class="node key"><div class="node-title">★ムハンマド=トゥグルク(<strong>イブン=バトゥータ</strong>が滞在した皇帝) ― 奇行のスルタン</div><div class="node-year">1325-1351</div>
+<div class="node-desc">トゥグルク朝第2代、★<strong>中世インド史上最も論争の多いスルタン</strong>。学識豊かで理想家だが、★<strong>奇抜な政策</strong>を次々と実施して失敗。①★<strong>首都をデリーから南のダウラターバード(デカン)に遷都</strong>(1327)＝デリーの住民を強制移住→大量の死者→2年後にデリーに戻す。②★<strong>銅貨(トークン貨幣)の発行</strong>＝銀不足を補うため銅貨を銀貨と同価値で流通させようとする→偽造が横行して失敗。③南インドとの戦争失敗。これらの失敗でトゥグルク朝は急速に衰退し、南インドでは独立運動が起こる(後述)。★<strong>イブン=バットゥータ</strong>(モロッコの大旅行家)がこの時代にインドを訪問し、ムハンマド=トゥグルクの宮廷で働いた→『★<strong>三大陸周遊記</strong>』にインドの様子を記録→★<strong>14Cインドの貴重な史料</strong>。</div></div>
+<div class="node"><div class="node-title">★南インドの独立 ― バフマニー朝とヴィジャヤナガル王国</div><div class="node-year">14C半ば</div>
+<div class="node-desc">ムハンマド=トゥグルクの失政で南インドへの支配が緩むと、<strong>2つの重要な南インド王国</strong>が成立→以後200年間、デカン以南はデリー=スルタン朝の支配外となる。①★<strong>バフマニー朝(1347-1527)</strong>＝デカン地方の★<strong>イスラーム王朝</strong>、ペルシア文化を愛好、後に5小王国に分裂。②★<strong>ヴィジャヤナガル王国(1336-1649)</strong>＝南インドのタミル地方に成立した★<strong>ヒンドゥー王国</strong>、★<strong>南インド最後の大ヒンドゥー王朝</strong>として数世紀続く。首都のヴィジャヤナガル(現ハンピ)は世界最大級の都市の一つに数えられた。★<strong>バフマニーとヴィジャヤナガル</strong>は対立しつつデカンを南北に分ける形で並存。</div></div>
+<div class="node"><div class="node-title">★ティムールのインド侵入とトゥグルク朝の崩壊</div><div class="node-year">1398</div>
+<div class="node-desc">中央アジアの大征服者★<strong>ティムール</strong>(チャガタイ=ハン国の遺臣、サマルカンドを都にティムール朝を建国)が1398年にインドに侵入→★<strong>デリー占領・大虐殺</strong>→財宝を略奪して帰還→デリーは荒廃し、トゥグルク朝は決定的に弱体化。以後トゥグルク朝は名目的に存続するが支配領域は縮小→1414年に最後のスルタンが殺害されて滅亡。</div></div>
+</div>
+
+<div class="phase p4"><div class="phase-label">サイイド</div>
+<div class="node"><div class="node-title">★サイイド朝(1414-1451) ― デリー周辺のみの弱小王朝</div>
+<div class="node-desc">ティムールの侵入後の混乱の中、★<strong>ヒズル=ハーン</strong>(元ティムールの部下、サイイド=ムハンマドの子孫を称す→「サイイド」の名称の由来)がデリーを制圧して★<strong>サイイド朝</strong>を建国。支配領域は★<strong>デリーとその周辺のみ</strong>に縮小→実態としては地方政権に近い。37年の短命王朝。1451年、アフガン系の部下★<strong>ブフール=ロディー</strong>に禅譲して終焉。</div></div>
+</div>
+
+<div class="phase p4"><div class="phase-label">ロディー</div>
+<div class="node"><div class="node-title">★ロディー朝(1451-1526) ― デリー=スルタン朝最後の王朝</div>
+<div class="node-desc">★<strong>アフガン系(パシュトゥーン系)</strong>のロディー家が建国→★<strong>デリー=スルタン朝で唯一の非トルコ系王朝</strong>。それ以前の4王朝はすべてトルコ系(奴隷・ハルジー・トゥグルク・サイイド)だったが、ロディーはアフガン系という点で歴史的に異質。建国者★<strong>ブフール=ロディー</strong>→★<strong>シカンダル=ロディー</strong>(首都を★<strong>アーグラ</strong>に移す、後のムガル帝国の中心地の起源)→★<strong>イブラヒーム=ロディー</strong>(最後のスルタン)。アフガン系貴族との関係が安定せず、内紛が絶えない。</div></div>
+<div class="node key"><div class="node-title">★パーニーパットの戦いとムガル帝国の成立</div><div class="node-year">1526</div>
+<div class="node-desc">★<strong>1526年、パーニーパットの戦い</strong>(第1次)＝中央アジアから南下した★<strong>バーブル</strong>(ティムールの子孫、モンゴル系=「ムガル」の名前の由来)が、少数の兵力ながら★<strong>マスケット銃・大砲の近代兵器</strong>を駆使してイブラヒーム=ロディーを破り、デリーを占領。★<strong>ロディー朝滅亡→ムガル帝国の成立</strong>→★<strong>デリー=スルタン朝320年の歴史が終わる</strong>→★<strong>インドは新たにムガル帝国の時代へ</strong>。</div></div>
+</div>
+
+<div class="phase p5"><div class="phase-label">社会</div>
+<div class="node key"><div class="node-title">★デリー=スルタン朝の統治と社会 ― ヒンドゥーとムスリムの共存</div>
+<div class="node-desc">デリー=スルタン朝320年間は、インド社会に★<strong>イスラームを定着させた決定的な時期</strong>。統治の基本は★<strong>少数のムスリム支配層</strong>が★<strong>大多数のヒンドゥー教徒</strong>を統治する構造。①★<strong>ジズヤ</strong>(非ムスリムへの人頭税)を徴収するが、ヒンドゥー教徒は「★<strong>ズィンミー(保護民)</strong>」として改宗を強制されずに信仰を維持。②★<strong>イクター制</strong>＝軍人に徴税権を与える(中東のイクター制と同じ、後のジャーギール制の源)。③★<strong>ペルシア語</strong>が公用語→ペルシア文化がインドに根付く→<strong>インド=イスラーム文化の融合</strong>の基盤。</div></div>
+<div class="node"><div class="node-title">★宗教文化の融合 ― イスラームとヒンドゥーの対話</div>
+<div class="node-desc">デリー=スルタン朝期に、ヒンドゥー教とイスラームの文化的・宗教的対話が進行。①★<strong>スーフィー(イスラーム神秘主義)</strong>がインドで広く受容される→民衆への伝道の中心、★<strong>チシュティー教団</strong>(13C創設)等が有名。スーフィーの霊的修養はヒンドゥーの瞑想文化と親和性が高く、民衆レベルの宗教融合が進む。②★<strong>バクティ信仰(バクティ運動)</strong>＝ヒンドゥー教の信愛(バクティ)を重視する民衆宗教運動。カースト制への批判を含む。★<strong>カビール</strong>(15-16C)＝ヒンドゥー・イスラームを超えた一神教的信仰を説く詩人。★<strong>ナーナク</strong>(1469-1539)＝★<strong>シク教(総本山の<strong>黄金寺院</strong>はパンジャーブ地方の<strong>アムリットサル</strong>にある)</strong>を創始、ヒンドゥーとイスラームの融合的な一神教。③★<strong>インド=イスラーム建築</strong>＝クトゥブ=ミナール等、インドの石工技術とイスラームの建築様式が融合→後のムガル建築(タージ=マハル等)への道を開く。④★<strong>言語</strong>＝ペルシア語・アラビア語の語彙を取り入れた★<strong>ウルドゥー語</strong>(現パキスタンの国語)の起源もこの時代に遡る。</div></div>
+</div>
+
+<div class="phase p5"><div class="phase-label">総括</div>
+<div class="node key"><div class="node-title">★デリー=スルタン朝の歴史的意義</div>
+<div class="node-desc">デリー=スルタン朝320年(1206-1526)は、インド史における★<strong>決定的転換期</strong>。①★<strong>インドのイスラーム化</strong>＝ヒンドゥー教が依然として多数派だが、★<strong>現在のパキスタン・バングラデシュ地域のイスラーム多数派化</strong>の起源はこの時代。②★<strong>インド=イスラーム文化の成立</strong>＝ペルシア語の公用語化、スーフィズムの定着、インド=イスラーム建築、シク教等の融合宗教の発生→後のムガル文化の基盤。③★<strong>モンゴルの防波堤</strong>＝ハルジー朝がモンゴル侵入を撃退→インドがモンゴル帝国に併合されなかった決定的な要因。④★<strong>デリーの政治的中心化</strong>＝以後デリーはインドの政治的心臓であり続ける(現代のデリー=インドの首都)。⑤★<strong>ラージプート諸国・南インド王国との共存</strong>＝ヒンドゥー支配層が各地に残存し、完全なイスラーム化は起こらなかった→インドの宗教的多様性の維持。⑥★<strong>次のムガル帝国への道を準備</strong>＝デリー=スルタン朝の統治制度・文化融合が、ムガル帝国の栄光の前提条件となる。</div></div>
+</div>
+
+</div>
+
+<div class="note"><p>★<strong>5王朝</strong>＝(1)★<strong>奴隷王朝</strong>(1206-1290、マムルーク出身、アイバクが建国)→(2)★<strong>ハルジー朝</strong>(1290-1320、アラー=ウッディーンの南インド征服)→(3)★<strong>トゥグルク朝</strong>(1320-1414、最長、ムハンマド=トゥグルクの奇行、ティムール侵入で衰退)→(4)★<strong>サイイド朝</strong>(1414-1451、デリー周辺のみ)→(5)★<strong>ロディー朝</strong>(1451-1526、唯一のアフガン系、パーニーパットの戦いで滅亡)→★<strong>ムガル帝国へ</strong>。320年のイスラーム支配がインド=イスラーム文化・スーフィー・シク教を生み、ムガル帝国の栄光への基礎を築く。</p></div>
+
+</body>
+</html>

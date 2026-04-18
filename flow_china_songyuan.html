@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>宋元の変革</title><style>@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048;--border:rgba(201,169,110,.08)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+.hdr{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.hdr h1{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2)}
+.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
+.flow{max-width:760px;margin:0 auto;padding:24px 20px 60px}
+.phase{position:relative;margin-bottom:2px;padding:16px 16px 16px 60px;border-left:2px solid rgba(201,169,110,.08);margin-left:30px}
+.phase:last-child{border-left-color:transparent}
+.phase-label{position:absolute;left:-42px;top:16px;width:36px;font-family:'Cormorant Garamond',serif;font-size:10px;font-weight:700;color:var(--text3);text-align:right;line-height:1.3}
+.phase::before{content:'';position:absolute;left:-5px;top:22px;width:8px;height:8px;border-radius:50%;background:var(--bg);border:2px solid rgba(201,169,110,.25)}
+.node{background:rgba(255,255,255,.015);border:1px solid rgba(255,255,255,.04);border-radius:8px;padding:10px 14px;margin-bottom:8px;border-left:3px solid transparent}
+.node:hover{background:rgba(255,255,255,.03)}
+.node-title{font-family:'Noto Serif JP',serif;font-size:12px;font-weight:700;color:var(--gold2);margin-bottom:2px}
+.node-year{font-family:'Cormorant Garamond',serif;font-size:11px;color:var(--gold);opacity:.6;margin-bottom:4px}
+.node-desc{font-size:10px;color:var(--text2);line-height:1.7}
+.node-desc strong{color:var(--text);font-weight:600}
+.branch-row{display:flex;gap:8px;margin-bottom:8px}
+.branch-row .node{flex:1}
+.node.key{background:rgba(201,169,110,.04);border-color:rgba(201,169,110,.12)}
+.side-note{font-size:8px;color:var(--text3);padding:4px 8px;border-left:2px solid rgba(201,169,110,.1);margin:4px 0 8px;line-height:1.6}
+.note{text-align:center;padding:8px 20px 32px;max-width:720px;margin:0 auto}.note p{font-size:9px;color:var(--text3);line-height:1.8}.note strong{color:var(--gold)}
+.p1 .node{border-left-color:rgba(180,140,60,.3)}.p1::before{border-color:rgba(180,140,60,.5);background:rgba(180,140,60,.15)}
+.p2 .node{border-left-color:rgba(100,130,180,.3)}.p2::before{border-color:rgba(100,130,180,.4)}
+.p3 .node{border-left-color:rgba(80,150,120,.3)}.p3::before{border-color:rgba(80,150,120,.5);background:rgba(80,150,120,.15)}
+.p4 .node{border-left-color:rgba(180,80,80,.3)}.p4::before{border-color:rgba(180,80,80,.4)}
+.p5 .node{border-left-color:rgba(120,90,160,.3)}.p5::before{border-color:rgba(120,90,160,.4)}
+@media(max-width:600px){
+.hdr{padding:10px 12px}.hdr h1{font-size:12px}
+.flow{padding:16px 10px 40px}
+.phase{padding:12px 10px 12px 44px;margin-left:20px}
+.phase-label{left:-30px;width:28px;font-size:8px}
+.node{padding:8px 10px}.node-title{font-size:11px}.node-desc{font-size:9px}
+.branch-row{flex-direction:column}
+.side-note{font-size:7.5px}
+.note p{font-size:8px}
+}
+</style>
+</head>
+<body>
+
+<div class="hdr"><h1>宋元の変革 ― 商業革命・文治主義・モンゴル世界帝国(907-1368)</h1><a href="charts.html">← Ad Chartae</a></div>
+
+<div class="flow">
+
+<div class="phase p1"><div class="phase-label">五代</div>
+<div class="node key"><div class="node-title">★五代十国 ― 武人の時代</div><div class="node-year">907-960</div>
+<div class="node-desc">唐滅亡後、華北では★<strong>後梁(朱全忠)・後唐・後晋・後漢・後周</strong>の5王朝が交代(53年間)→★<strong>五代</strong>。同時に華南・四川に★<strong>10国</strong>(南唐・呉越・前蜀・後蜀等)が並立→★<strong>五代十国</strong>。★<strong>節度使</strong>出身の武人が次々皇帝となる、極端な軍閥政治の時代。★<strong>後晋の石敬瑭</strong>が契丹(遼)の支援を受ける代償として★<strong>燕雲十六州(<span class="k">★</span><strong>雲州</strong>(現大同)・<span class="k">★</span><strong>燕州</strong>(幽州、現北京)を含む華北の16州)</strong>(現・北京周辺)を割譲(936)→★<strong>以後宋代まで華北防衛の弱点に</strong>。★<strong>後周の世宗</strong>が改革を進めるが夭逝→部下の★<strong>趙匡胤(初代太祖)。弟の<span class="k">★</span><strong>宋太宗</strong>(在位976-997)が中国再統一を完成。趙匡胤</strong>が禅譲を受けて宋を建国。</div></div>
+</div>
+
+<div class="phase p2"><div class="phase-label">北宋</div>
+<div class="node key"><div class="node-title">★北宋の建国と文治主義</div><div class="node-year">960-1127</div>
+<div class="node-desc">★<strong>趙匡胤(太祖)</strong>＝後周の武将だったが、部下に推されて即位(★<strong>陳橋の変</strong>)→★<strong>北宋</strong>を建国、都＝★<strong>開封(東京・汴京)</strong>。五代以来の武人政治に懲りて★<strong>徹底した文治主義</strong>を採用。①★<strong>節度使の廃止・地方兵力の中央集中</strong>(★<strong>禁軍</strong>の設置)→★<strong>杯酒釈兵権</strong>(酒宴で将軍たちに退役を勧めた故事)。②★<strong>科挙の大拡充</strong>＝★<strong>殿試</strong>(皇帝自身が行う最終試験)の創始→科挙官僚が皇帝直属の「天子の門生」に→★<strong>科挙官僚が政治の主役</strong>に。③★<strong>州県制</strong>＝地方行政を中央から派遣した文官が担う。→★<strong>門閥貴族制の終焉と士大夫階級の成立</strong>。</div></div>
+<div class="node"><div class="node-title">★士大夫の台頭 ― 読書人と進士</div>
+<div class="node-desc">★<strong>士大夫</strong>(読書階級=<span class="k">★</span><strong>読書人</strong>、<span class="k">★</span><strong>進士</strong>科合格者は<span class="k">★</span><strong>官戸</strong>=官僚の家柄として免税特権を得た)＝科挙に合格した知識人官僚。唐までの門閥貴族と違い、★<strong>学問・教養(特に儒学の素養)</strong>を身分の根拠とする。出身は地方の★<strong>地主層(形勢戸)</strong>が多い。彼らは政治・学問・文芸を一身に兼ね、★<strong>儒学(特に朱子学)・書画・詩文</strong>に秀でる教養人でもあった。宋以後の中国を特徴付ける「学者官僚」の支配層が確立。</div></div>
+<div class="node"><div class="node-title">★文治主義の代償 ― 軍事的弱体化</div>
+<div class="node-desc">文治主義の徹底は軍事的弱体化をもたらす。★<strong>北方異民族</strong>の強大な圧迫に悩まされる。①★<strong>契丹(遼)</strong>＝10世紀初め、★<strong>耶律阿保機</strong>が建国。華北北端を支配、燕雲十六州(<span class="k">★</span><strong>雲州</strong>(現大同)・<span class="k">★</span><strong>燕州</strong>(幽州、現北京)を含む華北の16州)も領有。★<strong>澶淵の盟(1004)</strong>＝宋が契丹に★<strong>毎年絹20万匹・銀10万両を「歳幣」として支払う</strong>代わりに平和を得る(宋が「兄」、契丹が「弟」という名目)。②★<strong>西夏(都=<span class="k">★</span><strong>興慶府</strong>、現寧夏銀川)</strong>＝タングート族の<span class="k">★</span><strong>李徳明</strong>(元昊の父)を経て、子の<span class="k">★</span><strong>李元昊</strong>が11Cに建国(1038)→宋と戦う→★<strong>慶暦の和約(1044)</strong>で歳幣を支払う。③★<strong>女真(金)</strong>＝後に<span class="k">★</span><strong>澶州</strong>(1004年の澶淵の盟の舞台)・<span class="k">★</span><strong>雄州</strong>等の国境都市を経て、1127年の<strong>靖康の変</strong>。</div></div>
+<div class="node key"><div class="node-title">★文治国家として<span class="k">★</span><strong>仁宗《北宋》</strong>(在位1022-63、名君)・<span class="k">★</span><strong>英宗</strong>(1063-67)・神宗と続き、神宗期の宰相<span class="k">★</span><strong>王安石</strong>の新法 ― 危機への改革</div><div class="node-year">1069-</div>
+<div class="node-desc">★<strong>神宗</strong>の時代、宰相★<strong>王安石</strong>が財政危機と軍事弱体化を克服するため抜本的改革を断行。<strong>[財政]</strong>①★<strong>青苗法</strong>＝農民への低利融資(富農・高利貸の搾取を防止)②★<strong>市易法</strong>＝中小商人への低利融資・物価安定③★<strong>募役法</strong>＝労役を免除する代わりに税を徴収→その税で人を雇う④★<strong>均輸法</strong>＝物資輸送の効率化。<strong>[軍事]</strong>⑤★<strong>保甲法<small>(10戸=保・50戸=大保・<span class="k">★</span><strong>300戸</strong>=都保の民兵組織、治安維持と軍事動員)</small></strong>＝農民を10家毎に組織し訓練→★<strong>兵農一致の復活</strong>⑥★<strong>保馬法</strong>＝農民に軍馬を飼育させる。<strong>[行政]</strong>⑦★<strong>方田均税法</strong>＝土地測量と均等課税。</div></div>
+<div class="node"><div class="node-title">★新法党vs旧法党(<span class="k">★</span><strong>哲宗</strong>期に新法復活)の党争</div>
+<div class="node-desc">改革は★<strong>保守派(旧法党)</strong>の猛反発を招く。旧法党の代表＝★<strong>司馬光(『<span class="k">★</span><strong>資治通鑑</strong>』=編年体の通史)</strong>(『<strong>資治通鑑</strong>』の編纂者)・蘇軾・程頤。王安石らの新法派は★<strong>新法党</strong>と呼ばれる。神宗死後に司馬光が政権→新法廃止→王安石一派失脚。以後、政権が代わるたびに新法・旧法が交互に入れ替わる★<strong>長期の党争</strong>→宋の内政が混乱。★<strong>改革の挫折</strong>は宋の構造的弱体化を固定化→靖康の変の遠因。</div></div>
+<div class="node"><div class="node-title">★靖康の変 ― 北宋の滅亡</div><div class="node-year">1126-27</div>
+<div class="node-desc">★<strong>女真族(<span class="k">★</span><strong>ツングース(<span class="k">★</span><strong>ホーチォ族</strong>等)</strong>系)</strong>の★<strong>完顔阿骨打</strong>(ワンヤンアクダ)が<span class="k">★</span><strong>寧江州の戦い</strong>(1114)で遼を破り、★<strong>金</strong>を建国=都<span class="k">★</span><strong>会寧(上京会寧府)</strong>(現黒龍江省<span class="k">★</span><strong>阿城</strong>)(1115、初代太祖、2代<span class="k">★</span><strong>呉乞買(太宗)</strong>)。遼はほどなく金に滅ぼされた(1125、金(末代は<span class="k">★</span><strong>哀宗《金》</strong>)は後に<span class="k">★</span><strong>燕京(中都大興府/析津)</strong>=現北京に遷都)が(1125)、遼の王族<span class="k">★</span><strong>耶律大石</strong>が中央アジアに逃れて<strong>西遼(カラキタイ)</strong>を建国(1132、都ベラサグン・バラサグン、12世紀後半まで存続)→宋は★<strong>金と連合して遼を挟撃</strong>(海上の盟)→遼を滅ぼす(1125)→しかし金が想定以上に強力だと判明→今度は★<strong>金が宋に侵攻</strong>→★<strong>1126-27年、金軍が開封を占領</strong>→★<strong>徽宗・欽宗以下皇族3000人を捕虜として北方へ連行</strong>→★<strong>北宋滅亡(靖康の変)</strong>。宋代屈指の文人皇帝で画家としても高名だった★<strong>徽宗</strong>は金で悲惨な最期を遂げる。</div></div>
+</div>
+
+<div class="phase p3"><div class="phase-label">南宋(北宋から陥落した<strong>帰徳府</strong>=北宋の南京応天府で高宗が即位。金との国境は<span class="k">★</span><strong>秦嶺山脈</strong>・淮河ライン、西の要衝は<span class="k">★</span><strong>大散関</strong>)</div>
+<div class="node key"><div class="node-title">★南宋 ― 江南の洗練された繁栄</div><div class="node-year">1127-1279</div>
+<div class="node-desc">徽宗の子★<strong>高宗</strong>が江南に逃れて★<strong>南宋</strong>を建国、都＝★<strong>臨安(現・杭州)</strong>(景勝地<span class="k">★</span><strong>西湖</strong>で有名)。金と長く対峙。★<strong>岳飛</strong>＝金に徹底抗戦を主張した将軍、華北奪還を目指す。★<strong>秦檜</strong>＝和平派の宰相、岳飛を讒言により処刑→★<strong>紹興の和議(1141)</strong>＝淮河を境界とし、南宋が金に★<strong>「臣」</strong>として毎年歳貢(銀25万両・絹25万匹)を支払う屈辱的条件→しかしこれで江南の平和が長く保たれ、★<strong>経済・文化の繁栄</strong>をもたらす。</div></div>
+<div class="node key"><div class="node-title">★宋代の商業革命 ― 中国経済の頂点</div>
+<div class="node-desc">宋代は中国経済史上の画期で、★<strong>「唐宋変革」</strong>(内藤湖南)の中心。①★<strong>農業革命</strong>＝ベトナム(チャンパ)から★<strong>占城稲</strong>という早稲(早生品種)が導入→二毛作が可能に→米の生産性激増→「<strong>蘇湖熟すれば天下足る</strong>」(長江下流デルタが穀倉地帯)。②★<strong>佃戸</strong>制＝地主(★<strong>形勢戸</strong>)から土地を借りて耕作する小作農民が一般化→均田制的な土地国有の観念は完全に消滅、★<strong>土地私有が確立</strong>。③★<strong>商業都市の発達</strong>＝開封・臨安は人口100万の大都市、★<strong>夜市</strong>(夜の市場)。主要都市=<span class="k">★</span><strong>浙江省</strong>の<span class="k">★</span><strong>温州</strong>・<span class="k">★</span><strong>湖州</strong>・<span class="k">★</span><strong>秀州</strong>(現上海付近)、山東の<span class="k">★</span><strong>密州</strong>、広東の<span class="k">★</span><strong>番禺</strong>(広州旧称)、<span class="k">★</span><strong>江浙</strong>(長江下流域全体)地域が商業の中心。陶磁器=河北の<span class="k">★</span><strong>磁州</strong>窯が庶民向け陶器の主要産地が発達、★<strong>坊制の崩壊</strong>(唐の長安のような区画規制がなくなり商業区と居住区が混在)。④★<strong>遠隔地商業</strong>が発達→各地の商業地域(山西商人の起源)。</div></div>
+<div class="node"><div class="node-title">★世界初の紙幣「交子」と海上貿易(大型の<span class="k">★</span><strong>ジャンク船</strong>で東南アジア・インド洋・アラビアまで航行)</div>
+<div class="node-desc">★<strong>交子</strong>＝四川の民間で発行された★<strong>世界最古の紙幣</strong>(北宋、11C初)→やがて政府が公認→世界初の政府発行紙幣。南宋では★<strong>会子</strong>。★<strong>銅銭の大量鋳造</strong>＝日本にも大量流入(宋銭)→日本の貨幣経済を支える。★<strong>海上貿易の発達</strong>＝陸路のシルクロードが異民族に阻まれたため、★<strong>海上貿易が本格的な主役に</strong>。★<strong>市舶司</strong>＝貿易管理官庁を広州・泉州・明州(寧波)等に設置。★<strong>羅針盤(磁石)</strong>が航海に実用化→ムスリム商人・日本商人・東南アジア商人との交易が活発化。</div></div>
+<div class="node"><div class="node-title">★科学技術と三大発明</div>
+<div class="node-desc">宋代は中国科学技術の頂点。★<strong>「中国の三大発明」</strong>(羅針盤・火薬・活字印刷)が完成。★<strong>羅針盤</strong>＝海上交易に実用化。★<strong>火薬</strong>＝実戦に使用(金との戦い)→後にモンゴル→イスラーム世界→ヨーロッパへ伝播。★<strong>活字印刷</strong>＝★<strong>畢昇</strong>が11Cに★<strong>膠泥活字</strong>を発明(『夢渓筆談』に記載)→★<strong>書籍の大量生産</strong>が可能に→科挙の学習書・経典の普及→知識の民主化。★<strong>沈括</strong>『夢渓筆談』＝宋代科学の集大成。</div></div>
+<div class="node key"><div class="node-title">★朱子学と新道教</div>
+<div class="node-desc">★<strong>周敦頤</strong>(『太極図説』)→★<strong>程顥・程頤</strong>(二程)→★【道教の二大教団】=<span class="k">★</span><strong>全真教</strong>(金代の王重陽が創始、禅仏教の影響で出家と修養を重視)と<span class="k">★</span><strong>正一</strong>(正一道=後漢の五斗米道=天師道の系譜、世俗的で符籙・呪術が中心)=現代中国道教の基盤。【朱子学】<strong>朱熹(<span class="k">★</span><strong>資治通鑑綱目</strong>=司馬光『資治通鑑』を朱子が綱目体で再編)(朱子)</strong>(1130-1200)が大成→★<strong>朱子学(宋学)</strong>。仏教・道教に対抗し、儒学を★<strong>形而上学的・哲学的</strong>に再構成。★<strong>「理気二元論」</strong>＝宇宙は「理」(原理)と「気」(物質)で成り立つ。★<strong>「大義名分論」</strong>＝君臣・父子の秩序を絶対化(南宋の華北失地・対金屈辱への反発を背景に持つ)。★<strong>「格物致知」</strong>＝事物の理を究める。★<strong>四書</strong>(大学・中庸・論語・孟子)を五経より重視→科挙の基本教材に。<strong>影響</strong>＝以後の中国・朝鮮・日本・ベトナムの思想界を支配。朱熹のライバル★<strong>陸九淵(象山)</strong>＝心即理、後の陽明学の先駆。</div></div>
+<div class="node"><div class="node-title">★宋代の文化</div>
+<div class="node-desc">★<strong>宋詞</strong>＝新しい韻文形式、★<strong>蘇軾(東坡)</strong>・★<strong>李清照</strong>(女流詞人)・★<strong>辛棄疾</strong>。★<strong>散文</strong>＝欧陽脩(古文復興、唐宋八大家(唐の韓愈・柳宗元+宋の<span class="k">★</span><strong>欧陽脩</strong>・蘇軾・<span class="k">★</span><strong>蘇洵(老蘇、蘇軾の父)</strong>・<span class="k">★</span><strong>蘇轍(小蘇、蘇軾の弟)</strong>・<span class="k">★</span><strong>曽鞏</strong>・王安石))。★<strong>歴史書</strong>＝★<strong>司馬光</strong>『<strong>資治通鑑</strong>』(編年体、戦国〜五代)。★<strong>絵画=北宋の<span class="k">★</span><strong>李公麟</strong>(人物画)・<span class="k">★</span><strong>米芾</strong>(書画家)・南宋の<span class="k">★</span><strong>李迪</strong>・<span class="k">★</span><strong>梁楷</strong>(減筆体)・<span class="k">★</span><strong>牧谿</strong>(禅画)、元の「元四大家」=<span class="k">★</span><strong>黄公望</strong>・<span class="k">★</span><strong>王蒙</strong>・<span class="k">★</span><strong>呉鎮</strong>・<span class="k">★</span><strong>倪瓚</strong>(倪雲林)+<span class="k">★</span><strong>趙孟頫</strong>(趙子昂、宋室末裔)</strong>＝★<strong>院体画</strong>(画院の宮廷絵画、精緻な写実)と★<strong>文人画</strong>(士大夫の余技、水墨と筆致)の二潮流。★<strong>張択端</strong>「清明上河図」＝開封の都市景観。★<strong>趙佶(徽宗)</strong>の花鳥画。陶磁器(<span class="k">★</span><strong>江西</strong>省の<span class="k">★</span><strong>景徳鎮</strong>が宋以降の中心地)＝★<strong>青磁・白磁</strong>の高峰(汝窯・官窯・定窯・鈞窯・哥窯の宋代五大名窯)。</div></div>
+</div>
+
+<div class="phase p4"><div class="phase-label">モンゴル</div>
+<div class="node key"><div class="node-title">★モンゴル高原の諸部族=<span class="k">★</span><strong>オングト</strong>(ネストリウス派キリスト教徒)・<span class="k">★</span><strong>ケレイト</strong>(首長<span class="k">★</span><strong>ワン=ハン(オン=カン/トグリル)</strong>=一時テムジンの盟友)・<span class="k">★</span><strong>ジャライル</strong>・<span class="k">★</span><strong>メルキト</strong>(テムジン妻を略奪した仇敵)等が抗争。テムジンはモンゴル部の聖地<span class="k">★</span><strong>ブルカン山(ブルカン=カルドゥン)</strong>に近い<span class="k">★</span><strong>オノン川</strong>源流域で台頭。<br><br>モンゴル帝国の成立と拡大</div><div class="node-year">1206-</div>
+<div class="node-desc">★<strong>テムジン</strong>がモンゴル高原を統一し、1206年に★<strong>チンギス=ハン</strong>として即位→★<strong>大モンゴル帝国</strong>。★<strong>千戸制</strong>＝遊牧民を千戸単位で軍事組織化。★<strong>征服戦争</strong>＝西夏(1227)・金(1234)・中央アジアのホラズム朝(1220頃)・ロシア南部・東欧(ワールシュタットの戦い1241)・アッバース朝(1258、フラグ)等を次々征服。史上最大の陸上帝国を築く。★<strong></strong>。</div></div>
+<div class="node"><div class="node-title">★モンゴルの南宋征服と元の建国</div><div class="node-year">1271-79</div>
+<div class="node-desc">チンギス=ハンの孫★<strong>フビライ=ハン</strong>が★<strong>大都(現・北京)</strong>を都とし、1271年に★<strong>国号を「元」</strong>と改める(中国式王朝名)→★<strong>モンゴル帝国の中国王朝化</strong>。1276年に南宋の臨安を占領→南宋の幼帝は逃亡を続けるが、★<strong>1279年、厓山の戦い</strong>で南宋軍が全滅→★<strong>忠臣文天祥</strong>(「正気の歌」)の殉節→★<strong>南宋滅亡</strong>→★<strong>モンゴル人による中国全土統一</strong>(中国史上初の非漢民族による全土支配)。</div></div>
+<div class="node key"><div class="node-title">★元朝の統治 ― 四等人制と色目人</div>
+<div class="node-desc">元は★<strong>モンゴル人至上主義</strong>の身分制を敷く。★<strong>四等人制</strong>＝①★<strong>モンゴル人</strong>(支配者)②★<strong>色目人</strong>(中央アジア・西アジア出身、ウイグル・ペルシア人等、財政・行政で重用)③★<strong>漢人</strong>(旧金領の華北漢人・契丹人・女真人等)④★<strong>南人</strong>(旧南宋領の江南漢人、最下層)。★<strong>科挙は一時廃止</strong>→14Cに復活するが形式的。漢人官僚の影響力は大きく後退。中央政府＝★<strong>中書省</strong>、地方統治＝★<strong>行中書省(行省)</strong>＝後の「省」制度の起源。</div></div>
+<div class="node"><div class="node-title">★パクス=モンゴリカとユーラシアの一体化</div>
+<div class="node-desc">元は★<strong>モンゴル帝国の宗主国</strong>として、キプチャク=ハン国(ロシア)・チャガタイ=ハン国(中央アジア)・イル=ハン国(イラン)等のモンゴル諸国と名目的に連合→★<strong>ユーラシア大陸の東西が一つの政治圏に</strong>→★<strong>パクス=モンゴリカ(モンゴルの平和)</strong>。★<strong>駅伝制(ジャムチ)<br><br>元代商業の特色=皇帝・諸王が出資した<span class="k">★</span><strong>オルトク商人(オルタク商人/斡脱)</strong>(ウイグル系・ムスリム商人の組合)が東西交易を担当</strong>が整備→通行の安全と迅速さ→★<strong>東西交流の爆発的増加</strong>。★<strong><span class="k">★</span><strong>ニコロ=ポーロ</strong>(マルコの父)・<span class="k">★</span><strong>マッフェオ=ポーロ</strong>(叔父)・フランス王<span class="k">★</span><strong>ルイ9世</strong>がモンゴル宮廷に派遣した<strong>ルブルック</strong>(リュブリュキ、フランシスコ会修道士)、カトリック教皇インノケンティウス4世の使節<strong>プラノ=カルピニ</strong>、マルコ=ポーロ</strong>(帰途はクビライの姪<span class="k">★</span><strong>コケジン(コカチン)</strong>姫のイル=ハン国嫁入に同行)(イタリア、『東方見聞録(獄中でピサ人<span class="k">★</span><strong>ルスティケロ=ダ=ピサ</strong>が口述筆記)』)・★<strong>イブン=バットゥータ</strong>(モロッコ、『三大陸周遊記』)・★<strong>モンテ=コルヴィノ(14世紀前半の使節<span class="k">★</span><strong>マリニョーリ</strong>も継承、元代の景教徒<span class="k">★</span><strong>ラッバン=ソーマ(ラッバン=ソウマ)</strong>は逆に元から欧州に派遣されバチカンに至った)</strong>(ローマ教皇使節、大都の初代大司教)・★<strong>ラシード=ウッディーン</strong>(ペルシア、『集史』は史上初の世界史)等が自由に往来。★<strong>火薬・羅針盤・印刷術(<span class="k">★</span><strong>木版印刷術</strong>が発達、出版文化が爆発的に拡大)・紙</strong>がイスラーム経由でヨーロッパへ伝播→★<strong>ルネサンス・大航海時代の遠因</strong>。</div></div>
+<div class="node"><div class="node-title">★元の経済と文化</div>
+<div class="node-desc"><strong>経済</strong>＝海上貿易が継続して繁栄、★<strong>泉州</strong>(イブン=バットゥータが「世界最大の港」と記述)。★<strong>交鈔</strong>＝元の★<strong>紙幣</strong>、銀本位で当初は安定したが後に乱発→価値下落→経済混乱の原因。大運河を大都まで延長。<strong>文化</strong>＝★<strong>元曲(馬致遠『漢宮秋』=前漢の<span class="k">★</span><strong>王昭君</strong>伝説を題材にした戯曲の傑作)</strong>(演劇)が繁栄＝科挙が一時廃止され儒者が職を失ったため、通俗文学が花開く。★<strong>関漢卿</strong>『竇娥冤』・★<strong>王実甫</strong>『西廂記』・★<strong>馬致遠</strong>『漢宮秋』。★<strong>『水滸伝』『三国志演義』</strong>の原型もこの時期。★<strong>郭守敬</strong>＝イスラーム天文学を導入した暦法★<strong>授時暦</strong>(日本の貞享暦の原型)。宗教では★<strong>チベット仏教(ラマ教)</strong>を国教化、★<strong>パスパ文字</strong>の制定。</div></div>
+<div class="node"><div class="node-title">★元の衰退と紅巾の乱(白蓮教系の<span class="k">★</span><strong>韓山童</strong>が挙兵宣言、子の<span class="k">★</span><strong>韓林児</strong>が小明王を称した)</div><div class="node-year">14C中</div>
+<div class="node-desc">14C半ばから★<strong>帝位継承争い</strong>・★<strong>交鈔の乱発によるインフレ</strong>・★<strong>自然災害(黄河の氾濫)</strong>・★<strong>ペスト</strong>(ユーラシア全域で流行、★<strong>黒死病</strong>の発端)等で社会が動揺。★<strong>白蓮教</strong>(民間の弥勒信仰)を母体とする★<strong>紅巾の乱(1351-)</strong>が勃発→各地で反乱軍が蜂起→その中から★<strong>朱元璋</strong>が頭角を現す→1368年に大都を占領→★<strong>元はモンゴル高原に撤退</strong>(★<strong>北元</strong>)→★<strong>明の建国</strong>へ。</div></div>
+</div>
+
+<div class="phase p5"><div class="phase-label">総括</div>
+<div class="node key"><div class="node-title">★宋元の歴史的意義 ― 「唐宋変革」と世界の一体化</div>
+<div class="node-desc">宋元期は中国史上最大の構造転換期の一つ。①★<strong>唐宋変革(内藤湖南)</strong>＝門閥貴族制から★<strong>士大夫(科挙官僚)階級</strong>へ、律令制から★<strong>文治主義</strong>へ、均田制的土地国有から★<strong>土地私有(形勢戸・佃戸制)</strong>へ、人頭税から両税法的な財産課税へ、という中世から近世への転換。②★<strong>商業革命</strong>＝紙幣(交子・会子・交鈔)・遠隔地商業・海上貿易・都市の巨大化。③★<strong>三大発明</strong>(羅針盤・火薬・活字印刷)＝後に世界史を変える。④★<strong>朱子学</strong>＝東アジア思想の基本枠組みとなる。⑤★<strong>パクス=モンゴリカ</strong>＝ユーラシアの史上初の一体化、東西技術・文化・人の大交流→近世世界の胎動。宋の文治主義と経済繁栄、元の世界帝国性はいずれも中国史にとどまらない★<strong>世界史的意義</strong>を持つ。</div></div>
+</div>
+
+</div>
+
+<div class="note"><p>★<strong>五代十国</strong>(武人の時代)→★<strong>北宋</strong>(文治主義・王安石新法・党争)→★<strong>靖康の変</strong>→★<strong>南宋</strong>(商業革命・朱子学の完成・海上貿易)→★<strong>モンゴル→元</strong>(四等人制・パクス=モンゴリカ・東西交流)→★<strong>紅巾の乱→明建国</strong>。★<strong>唐宋変革</strong>による士大夫・商業・朱子学、そして★<strong>パクス=モンゴリカ</strong>による世界の一体化が、この時代の最大の歴史的意義。</p></div>
+
+</body>
+</html>

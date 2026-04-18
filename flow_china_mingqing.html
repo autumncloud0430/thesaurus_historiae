@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>明清帝国</title><style>@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048;--border:rgba(201,169,110,.08)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+.hdr{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.hdr h1{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2)}
+.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
+.flow{max-width:760px;margin:0 auto;padding:24px 20px 60px}
+.phase{position:relative;margin-bottom:2px;padding:16px 16px 16px 60px;border-left:2px solid rgba(201,169,110,.08);margin-left:30px}
+.phase:last-child{border-left-color:transparent}
+.phase-label{position:absolute;left:-42px;top:16px;width:36px;font-family:'Cormorant Garamond',serif;font-size:10px;font-weight:700;color:var(--text3);text-align:right;line-height:1.3}
+.phase::before{content:'';position:absolute;left:-5px;top:22px;width:8px;height:8px;border-radius:50%;background:var(--bg);border:2px solid rgba(201,169,110,.25)}
+.node{background:rgba(255,255,255,.015);border:1px solid rgba(255,255,255,.04);border-radius:8px;padding:10px 14px;margin-bottom:8px;border-left:3px solid transparent}
+.node:hover{background:rgba(255,255,255,.03)}
+.node-title{font-family:'Noto Serif JP',serif;font-size:12px;font-weight:700;color:var(--gold2);margin-bottom:2px}
+.node-year{font-family:'Cormorant Garamond',serif;font-size:11px;color:var(--gold);opacity:.6;margin-bottom:4px}
+.node-desc{font-size:10px;color:var(--text2);line-height:1.7}
+.node-desc strong{color:var(--text);font-weight:600}
+.branch-row{display:flex;gap:8px;margin-bottom:8px}
+.branch-row .node{flex:1}
+.node.key{background:rgba(201,169,110,.04);border-color:rgba(201,169,110,.12)}
+.side-note{font-size:8px;color:var(--text3);padding:4px 8px;border-left:2px solid rgba(201,169,110,.1);margin:4px 0 8px;line-height:1.6}
+.note{text-align:center;padding:8px 20px 32px;max-width:720px;margin:0 auto}.note p{font-size:9px;color:var(--text3);line-height:1.8}.note strong{color:var(--gold)}
+.p1 .node{border-left-color:rgba(180,140,60,.3)}.p1::before{border-color:rgba(180,140,60,.5);background:rgba(180,140,60,.15)}
+.p2 .node{border-left-color:rgba(100,130,180,.3)}.p2::before{border-color:rgba(100,130,180,.4)}
+.p3 .node{border-left-color:rgba(80,150,120,.3)}.p3::before{border-color:rgba(80,150,120,.5);background:rgba(80,150,120,.15)}
+.p4 .node{border-left-color:rgba(180,80,80,.3)}.p4::before{border-color:rgba(180,80,80,.4)}
+.p5 .node{border-left-color:rgba(120,90,160,.3)}.p5::before{border-color:rgba(120,90,160,.4)}
+@media(max-width:600px){
+.hdr{padding:10px 12px}.hdr h1{font-size:12px}
+.flow{padding:16px 10px 40px}
+.phase{padding:12px 10px 12px 44px;margin-left:20px}
+.phase-label{left:-30px;width:28px;font-size:8px}
+.node{padding:8px 10px}.node-title{font-size:11px}.node-desc{font-size:9px}
+.branch-row{flex-direction:column}
+.side-note{font-size:7.5px}
+.note p{font-size:8px}
+}
+</style>
+</head>
+<body>
+
+<div class="hdr"><h1>明清帝国 ― 最後の中華帝国と近世の展開(1368-1912)</h1><a href="charts.html">← Ad Chartae</a></div>
+
+<div class="flow">
+
+<div class="phase p1"><div class="phase-label">明初</div>
+<div class="node key"><div class="node-title">★明の建国 ― 安徽<span class="k">★</span><strong>濠州</strong>(鍾離)出身の朱元璋=紅巾軍<span class="k">★</span><strong>郭子興</strong>の婿として台頭し、<span class="k">★</span><strong>集慶</strong>(後の<span class="k">★</span><strong>金陵</strong>・南京)を占領して頭角を現した朱元璋(洪武帝)の独裁体制</div><div class="node-year">1368-98</div>
+<div class="node-desc">★<strong>朱元璋</strong>＝貧農出身、紅巾の乱に参加し頭角を現す→1368年、元最後の<span class="k">★</span><strong>順帝《元》</strong>は<span class="k">★</span><strong>応昌</strong>に逃れ客死、子<span class="k">★</span><strong>天元帝(トグス=テムル)</strong>が北元を継承。1368年に南京で即位、★<strong>明</strong>を建国、年号は★<strong>洪武</strong>→★<strong>洪武帝(太祖)</strong>。同年、徐達に大都(<span class="k">★</span><strong>北平</strong>=明代以降<span class="k">★</span><strong>順天府</strong>=北京)を占領させ、元を★<strong><span class="k">★</span><strong>チャハル部</strong><span class="k">★</span><strong>内モンゴル(内蒙)</strong>のモンゴル高原へ追い返す(北元)</strong>→約100年ぶりに★<strong>漢民族による中国統治が復活</strong>。都＝★<strong>南京(応天府)</strong>。★<strong>極端な皇帝独裁体制</strong>を確立＝宰相(中書省)を廃止し、六部を皇帝直属に→宰相のいない皇帝独裁が以後続く。★<strong>錦衣衛</strong>(皇帝直属の秘密警察)で官僚を監視。</div></div>
+<div class="node"><div class="node-title">★明初の諸制度(里甲制・魚鱗図冊・賦役黄冊)</div>
+<div class="node-desc">★<strong>里甲制</strong>＝110戸を1里、10戸を1甲として、★<strong>徴税・徭役・治安維持を村落自治に委ねる</strong>→中央が細部まで監督しきれない広域統治の工夫。★<strong>魚鱗図冊</strong>＝★<strong>土地台帳</strong>(図の形が魚の鱗に似る)→土地所有と面積を記録。★<strong>賦役黄冊</strong>＝★<strong>戸籍・税額台帳</strong>→人口と税の把握。これらで★<strong>税収の基盤</strong>を整える。★<strong>衛所制<small>(全国<span class="k">★</span><strong>300箇所</strong>の衛・所を配置)</small></strong>＝軍事制度、軍戸(世襲の兵士家系)が自給自足で駐屯する屯田兵制。★<strong>六諭</strong>＝朱元璋が民衆に示した6箇条の道徳的標語(親孝行・尊長・睦隣・教子・各業専念・非為禁止)→後の聖諭広訓へ。★<strong>科挙の再開</strong>と★<strong>八股文</strong>＝★<strong>形式的な答案文体の固定化</strong>(後の学問停滞の一因)。</div></div>
+<div class="node"><div class="node-title">★靖難の役(建文帝の忠臣<span class="k">★</span><strong>方孝孺</strong>は永楽帝に処刑)(朱元璋の長男<span class="k">★</span><strong>朱標</strong>太子早逝→孫建文帝→燕王朱棣が奪位)と永楽帝</div><div class="node-year">1399-1402</div>
+<div class="node-desc">洪武帝死後、孫の★<strong>建文帝(忠臣<span class="k">★</span><strong>方孝孺</strong>は永楽帝により「十族の誅」=処刑)</strong>が即位。諸王の弱体化を図るが、北京の★<strong>燕王(朱棣)</strong>が「君側の奸を除く」を名目に挙兵→★<strong>靖難の役</strong>→1402年に南京占領→建文帝失踪→燕王が即位→★<strong>永楽帝</strong>。★<strong>1421年、南京から北京へ<span class="k">★</span><strong>白河</strong>流域の北京への<span class="k">★</span><strong>白河</strong>流域の遷都</strong>→以後北京が中国の首都に。永楽帝は★<strong>紫禁城</strong>の造営、大運河の整備、<strong>対外積極政策</strong>を展開。</div></div>
+<div class="node key"><div class="node-title">★永楽帝の対外遠征 ― 鄭和の南海遠征</div><div class="node-year">1405-33</div>
+<div class="node-desc">★<strong>鄭和</strong>の南海遠征と『<span class="k">★</span><strong>永楽大典</strong>』編纂、<strong>鄭和</strong>＝雲南出身のイスラーム教徒の宦官。★<strong>大艦隊を率いて7回の南海遠征</strong>(1405-33、うち6回が永楽帝時代)。最大時★<strong>船200隻以上、乗員2万7000人</strong>、★<strong>「宝船」</strong>は長さ120mとされる(コロンブスの船の5倍)。★<strong>東南アジア(マラッカ等)・インド(カリカット)・アラビア半島(メッカ)・アフリカ東岸(マリンディ、現ケニア)</strong>にまで到達→★<strong>当時世界最大の航海事業</strong>(コロンブスより80年以上前)。目的は★<strong>朝貢貿易の拡大と建文帝の捜索</strong>とされる。しかし★<strong>商業(商売の神<span class="k">★</span><strong>関羽</strong>を祀る関帝廟が全国に普及)的利益はなく</strong>、永楽帝死後に中止→以後明は★<strong>海禁政策</strong>に転じる→対照的に後の西欧の大航海が世界史を変える。</div></div>
+<div class="node"><div class="node-title">★明の朝貢体制と海禁</div>
+<div class="node-desc">★<strong>朝貢貿易</strong>＝周辺諸国の王が明に「臣」として貢物を捧げる代わりに、明が「下賜」として多額の品を与える→★<strong>実質的に貿易</strong>だが、明が国家として管理する独占的・儀礼的貿易体制。朝鮮・琉球・ベトナム・マラッカ・日本(足利義満の「日本国王」冊封)等が参加。★<strong>海禁政策</strong>＝民間の海上貿易を禁止→これが★<strong>後期倭寇の首領<span class="k">★</span><strong>王直(汪直)</strong>や明の研究家<strong>鄭暁</strong>の時代、倭寇(江浙・<span class="k">★</span><strong>福建(福州)</strong>沿岸)</strong>の跋扈を招く。★<strong>明の朝貢体制</strong>は東アジア国際秩序の基本形→<strong></strong>。</div></div>
+</div>
+
+<div class="phase p2"><div class="phase-label">明中</div>
+<div class="node"><div class="node-title">★<span class="k">★</span><strong>土木の変</strong>(1449、正統帝が<strong>オイラト</strong>に捕囚、帰還後に<span class="k">★</span><strong>天順帝</strong>として再即位)と明の西端は<span class="k">★</span><strong>嘉峪関</strong>(万里の長城西端)。モンゴルは15世紀末に<span class="k">★</span><strong>ダヤン=ハーン</strong>が再統一、16世紀の<span class="k">★</span><strong>アルタン=ハーン</strong>が北京包囲(1550、庚戌の変)で明を圧迫=北虜南倭</div><div class="node-year">1449/16C</div>
+<div class="node-desc">★<strong><span class="k">★</span><strong>土木の変</strong>(1449、正統帝が<strong>オイラト</strong>に捕囚、帰還後に<span class="k">★</span><strong>天順帝</strong>として再即位)(1449)</strong>＝明の★<strong>正統帝(英宗)</strong>が★<strong>オイラトのエセン=ハン</strong>の侵入を迎え撃ち、土木堡で★<strong>皇帝自身が捕虜に</strong>される空前の事件。明は弟を即位させて対処、後に正統帝は釈放→明の軍事的弱体化が露呈。以後16Cにかけて★<strong>明の西端は<span class="k">★</span><strong>嘉峪関</strong>(万里の長城西端)。モンゴルは15世紀末に<span class="k">★</span><strong>ダヤン=ハーン</strong>が再統一、16世紀の<span class="k">★</span><strong>アルタン=ハーン</strong>が北京包囲(1550、庚戌の変)で明を圧迫=北虜南倭</strong>(北の遊牧民＋南の倭寇)が明を苦しめる。★<strong>アルタン=ハン</strong>(モンゴル)が北京周辺まで侵入(1550、庚戌の変)→明は和議(馬市開設)。★<strong>後期倭寇</strong>＝実態は中国人密貿易商が中心で、日本人を含む混成集団→海禁政策が生んだ構造的問題。</div></div>
+<div class="node"><div class="node-title">★一条鞭法 ― 銀納税制への統一</div><div class="node-year">16C後半</div>
+<div class="node-desc">★<strong>張居正</strong>(宰相、万暦帝の初期の実権者)の改革で全国に施行。★<strong>従来バラバラだった各種の税・徭役を統合し、★銀で一括納入</strong>させる画期的税制。背景には★<strong>日本・新大陸からの銀の大量流入</strong>(<strong></strong>)→★<strong>明代後期は世界経済の銀ハブ</strong>となっていた。一条鞭法は★<strong>中国史上初めて貨幣(銀)を税収の主体</strong>とする体制→以後の中国経済の基本構造を決定付ける。</div></div>
+<div class="node"><div class="node-title">明代の商業と江南・<span class="k">★</span><strong>湖広</strong>(<span class="k">★</span><strong>湖北省</strong>・湖南省)経済</div>
+<div class="node-desc">明代後期、江南の<span class="k">★</span><strong><span class="k">★</span><strong>太湖</strong>周辺(<span class="k">★</span><strong>蘇州</strong>・<span class="k">★</span><strong>杭州</strong>)</strong>周辺は中国随一の穀倉地帯(「蘇湖熟せば天下足る」の時代)。商業では遠隔取引を行う<span class="k">★</span><strong>客商</strong>(旅商)、商品取引の仲買を担う<span class="k">★</span><strong>牙人</strong>(仲介商人)、固定店舗の<span class="k">★</span><strong>坐賈</strong>(ざこ、常設商)が分業して発達した。山西商人・徽州商人(新安商人)等の広域商業集団も活動。窯業の中心地<span class="k">★</span><strong>景徳鎮</strong>(江西省)が<strong>青花(染付)</strong>・<strong>赤絵</strong>の陶磁器を輸出=世界各地のヨーロッパ王室・イスラーム世界の必需品に。海外に移住した漢人商人=<span class="k">★</span><strong>華僑</strong>が東南アジア・琉球・日本で商業網を形成。明代後期の銀経済は、日本の<strong>石見</strong>銀山、新大陸の<strong>メキシコ</strong>・<strong>ボリビア</strong>の<strong>ポトシ</strong>銀山から大量の銀が中国に流入したことで成立した(<strong>スペイン</strong>商人・<strong>レガスピ</strong>によるマニラ=ガレオン貿易、<strong>フェリペ2世</strong>期のスペイン帝国)。</div></div>
+<div class="node"><div class="node-title">★陽明学=王陽明(王守仁)・その影響下の急進派<span class="k">★</span><strong>李贄(李卓吾)</strong>(「焚書」「蔵書」著者、自害)。<span class="k">★</span><strong>隆慶帝</strong>・万暦帝の明末の保守派は<span class="k">★</span><strong>無錫</strong>の<span class="k">★</span><strong>顧憲成</strong>(北宋の理学者<span class="k">★</span><strong>楊時</strong>の伝統を継承)の東林書院=東林党・実学・四大奇書(明末清初の戯曲家<span class="k">★</span><strong>李漁</strong>も活躍)(三国志演義・水滸伝(梁山泊の宋江ら108英雄)・西遊記(孫悟空と三蔵の伝奇)・金瓶梅(西門慶の艶情小説))</div>
+<div class="node-desc">★<strong>王陽明(王守仁)</strong>(1472-1529)＝朱子学(『<span class="k">★</span><strong>四書大全</strong>』『五経大全』を国定テキスト化)の形式主義に反発し、南宋の陸九淵を継承。★<strong>「心即理」</strong>＝理は外ではなく心の中にある。★<strong>「致良知」</strong>＝人の本心(良知)に従えば正しい行いができる。★<strong>「知行合一」</strong>＝知識と実践は分けられない。★<strong>陽明学</strong>は明末に広く受容され、日本にも伝わる(中江藤樹・大塩平八郎)。明末には★<strong>実学</strong>の潮流＝★<strong>徐光啓</strong>(マテオ=リッチと協力、『農政全書』『幾何原本』翻訳)・★<strong>宋応星</strong>『<strong>天工開物</strong>』(産業技術の百科事典)・★<strong>李時珍</strong>『<strong>本草綱目</strong>』(薬物学)。</div></div>
+<div class="node"><div class="node-title">★明末のイエズス会宣教師(<span class="k">★</span><strong>マテオ=リッチ</strong>・アダム=シャール・フェルビースト・<span class="k">★</span><strong>ブーヴェ(白進/白晋)</strong>・<span class="k">★</span><strong>レジス(雷孝思)</strong>が中国地図を作成、<span class="k">★</span><strong>ブノワ</strong>、イタリア人<span class="k">★</span><strong>カスティリオーネ(郎世寧)</strong>は円明園の設計と宮廷画家)</div>
+<div class="node-desc">★<strong>マテオ=リッチ(利瑪竇)</strong>＝イタリア人、1582来華→★<strong>北京で布教</strong>→儒服を着て儒者として活動する適応主義。『<strong>坤輿万国全図</strong>』(世界地図)・『幾何原本』(ユークリッド幾何学の漢訳)。★<strong>徐光啓・李之藻</strong>等の士大夫が入信。★<strong>アダム=シャール(湯若望)</strong>＝ドイツ人、★<strong>崇禎暦書</strong>(後の時憲暦、清で採用)の編纂。★<strong>フェルビースト(南懐仁)</strong>＝清初でも活躍。西洋天文学・数学・地理学が中国にもたらされる(一方、中国文化も西欧に紹介→★<strong>シノワズリ</strong>の流行)。</div></div>
+<div class="node"><div class="node-title">★明末の混乱と<span class="k">★</span><strong>陝西省</strong>出身の李自成の乱(李自成は国号<span class="k">★</span><strong>大順</strong>を称した)</div><div class="node-year">17C前半</div>
+<div class="node-desc"><strong>万暦帝</strong>後半以降、皇帝の親政放棄、宦官の専横(★<strong>魏忠賢</strong>等)、★<strong>東林党vs宦官派の党争</strong>(東林書院の士大夫が宦官を批判)。加えて★<strong>倭寇</strong>・★<strong>豊臣秀吉の朝鮮出兵(壬辰・丁酉倭乱)</strong>への援軍で国力疲弊。17C初には★<strong>小氷期</strong>の気候変動で凶作→財政危機→増税→農民の困窮→★<strong>李自成の乱(李自成は国号<span class="k">★</span><strong>大順</strong>を称した)</strong>(1631-)。1644年、★<strong>李自成</strong>が北京占領→★<strong>崇禎帝</strong>が煤山で自殺→★<strong>明滅亡</strong>。しかし李自成政権は短命に終わる。</div></div>
+</div>
+
+<div class="phase p3"><div class="phase-label">清初</div>
+<div class="node key"><div class="node-title">★女真族(自称<span class="k">★</span><strong>満洲人</strong>=マンジュ)(自称<span class="k">★</span><strong>マンジュ</strong>=満州、<strong>ツングース</strong>系)の興起と清の建国</div><div class="node-year">1616-1644</div>
+<div class="node-desc">明の衰退期、★<strong>建州・<span class="k">★</span><strong>海西女真</strong>・<span class="k">★</span><strong>野人女真</strong>女真</strong>の★<strong>ヌルハチ(<span class="k">★</span><strong>ホトアラ(ヘトアラ/赫図阿拉)</strong>=<span class="k">★</span><strong>興京</strong>を拠点、<span class="k">★</span><strong>撫順関</strong>を越え明と対峙、1619年の<span class="k">★</span><strong>サルフ山</strong>の戦いで明軍を大破)</strong>(1559-1626)が女真諸部族を統一→1616年に★<strong>後金</strong>を建国→★<strong>八旗制(八旗兵に支給された<span class="k">★</span><strong>旗地</strong>・入関後に華北の漢人土地を収奪した<span class="k">★</span><strong>圏地</strong>制度も)</strong>を創設(後述)→★<strong>満洲文字</strong>を制定。★<strong>サルフの戦い(1619)</strong>で明軍(<span class="k">★</span><strong>山海関</strong>の守将<strong>呉三桂</strong>が清軍を招き入れた)を撃破→明の東北防衛崩壊。子の★<strong>ホンタイジ</strong>(太宗(都を<span class="k">★</span><strong>盛京(奉天/瀋陽)</strong>に定めた))は1636年に★<strong>国号を清</strong>と改め、モンゴル諸部族・朝鮮を服属。1644年、李自成の乱(李自成は国号<span class="k">★</span><strong>大順</strong>を称した)で明が滅亡した混乱に乗じて、★<strong>明の将軍呉三桂が清軍を招き入れる</strong>(故事「衝冠一怒為紅顔」)→清軍が北京占領→以後★<strong>清による中国統治</strong>が始まる。3代★<strong><span class="k">★</span><strong>ドルゴン(睿親王)</strong>(順治帝の摂政)・順治帝</strong>。</div></div>
+<div class="node"><div class="node-title">★八旗制 ― 清の軍事的根幹</div>
+<div class="node-desc">★<strong>八旗</strong>＝女真族・蒙古族・漢族をそれぞれ★<strong>8つの旗</strong>(軍団)に編成→<strong>満洲八旗・蒙古八旗・漢軍八旗</strong>の計24旗。★<strong>軍事と行政と社会組織</strong>を兼ねる→兵士は旗人として特権を持つ(俸給・土地)。★<strong>清の支配層の核心</strong>。征服後の中国統治の主力として配置。他に★<strong>緑営</strong>(漢人兵士、地方治安を担当、緑の旗)。</div></div>
+<div class="node key"><div class="node-title">★清の征服王朝としての統治 ― 硬軟両面</div>
+<div class="node-desc">清は★<strong>モンゴル帝国(元)以来の征服王朝</strong>だが、元の四等人制のような露骨な差別は避け、★<strong>漢人支配層を懐柔しつつ厳しい統制</strong>を敷く巧妙な手法を取る。<strong>[硬の面]</strong>①★<strong>辮髪</strong>の強制＝「留頭不留髪、留髪不留頭」(頭を残す者は髪を残さず、髪を残す者は頭を残さず)、漢人男子は満洲式の辮髪を強制。②★<strong>文字の獄</strong>＝反満的な文章を書いた学者を処罰→知識人を萎縮。③★<strong>禁書</strong>＝『四庫全書・<span class="k">★</span><strong>五体清文鑑</strong>(満・漢・蒙・蔵・ウイグル5言語対照辞典)』編纂の過程で不都合な書を廃棄。<strong>[軟の面]</strong>④★<strong>科挙の存続</strong>＝漢人官僚を登用、★<strong><span class="k">★</span><strong>満漢併用制(満漢偶数官制/満漢偶数制)</strong>=満漢併用制</strong>(重要職は満人と漢人を同数任命)。⑤★<strong>儒教の尊重</strong>、孔子廟の保護。⑥★<strong>聖諭広訓</strong>＝<span class="k">★</span><strong>康煕帝(聖祖)</strong>(<span class="k">★</span><strong>康煕字典</strong>=漢字辞典・<span class="k">★</span><strong>古今図書集成</strong>=百科全書を編纂)の16条を雍正帝(廟号<span class="k">★</span><strong>世宗《清》</strong>)が解説→民衆教化。</div></div>
+</div>
+
+<div class="phase p4"><div class="phase-label">盛清</div>
+<div class="node key"><div class="node-title">★康熙・雍正・乾隆 ― 清の全盛期(130年)</div><div class="node-year">1661-1795</div>
+<div class="node-desc">★<strong>康熙帝(1661-1722)・雍正帝(1722-1735)・乾隆帝(1735-1795)</strong>の3代130年が★<strong>清の黄金時代</strong>。中国史上屈指の有能な皇帝が連続。版図は★<strong>中国史上最大級</strong>に＝本土＋モンゴル＋<span class="k">★</span><strong>ツォンカパ</strong>が開いた<span class="k">★</span><strong>ダライ=ラマ1世(ゲンドゥン=ドゥプパ)</strong>=初代ゲルク派(黄教)の本拠<span class="k">★</span><strong>ラサ(拉薩)</strong>(<span class="k">★</span><strong>ヤルツァンポ川</strong>流域、<span class="k">★</span><strong>ポタラ山</strong>上の<span class="k">★</span><strong>ダライ=ラマ5世</strong>が造営したポタラ宮)を中心とする<span class="k">★</span><strong>青海</strong>・チベット＋新疆(東トルキスタン)＋台湾(当時は<span class="k">★</span><strong>オランダ人</strong>東インド会社が支配)＋東北(満洲)を支配。</div></div>
+<div class="node"><div class="node-title">★康熙帝 ― 清の真の確立者</div>
+<div class="node-desc">8歳即位、61年在位。★<strong>三藩の乱(<span class="k">★</span><strong>雲南+広東+福建</strong>の3漢人王=雲南の呉三桂・広東の<span class="k">★</span><strong>尚可喜</strong>/子<span class="k">★</span><strong>尚之信</strong>・福建の<span class="k">★</span><strong>耿継茂</strong>/子<span class="k">★</span><strong>耿精忠</strong>)(1673-81)</strong>＝明の旧臣★<strong>呉三桂</strong>ら3人の藩王の反乱→鎮圧→清の中国支配が安定。★<strong><span class="k">★</span><strong>鄭芝龍</strong>の子<strong>鄭成功(台湾で<span class="k">★</span><strong>厦門</strong>を拠点、子<span class="k">★</span><strong>鄭経</strong>と続く<span class="k">★</span><strong>鄭氏台湾</strong>)</strong></strong>(国姓爺、明の遺臣、台湾の<span class="k">★</span><strong>オランダ人</strong>東インド会社を1662年駆逐)が台湾で抵抗(<span class="k">★</span><strong>南明</strong>=明の遺臣が擁立した<span class="k">★</span><strong>福王</strong>=弘光帝、唐王、永明王ら諸王の系譜)→清朝は<span class="k">★</span><strong>遷界令</strong>(沿海住民を内陸に強制移住させる令)で対抗→1683年に清軍が台湾を征服(三藩の乱(<span class="k">★</span><strong>雲南+広東+福建</strong>の3漢人王=雲南の呉三桂・広東の<span class="k">★</span><strong>尚可喜</strong>/子<span class="k">★</span><strong>尚之信</strong>・福建の<span class="k">★</span><strong>耿継茂</strong>/子<span class="k">★</span><strong>耿精忠</strong>)鎮圧後)。★<strong>ネルチンスク条約(1689、<strong>康熙帝</strong>と<span class="k">★</span><strong>ピョートル1世</strong>のロシア皇帝、黒龍江沿岸の<span class="k">★</span><strong>アルバジン城</strong>の帰属を巡り、<span class="k">★</span><strong>スタノヴォイ山脈</strong>と<span class="k">★</span><strong>アルグン川</strong>を国境とする対等条約)、<span class="k">★</span><strong>バイカル湖</strong>以南のモンゴル地域を清領とする<span class="k">★</span><strong>キャフタ条約</strong>(1727、雍正帝)(1689)</strong>＝ロシアとの国境条約、イエズス会士が通訳、アムール川流域を清領と確定→★<strong>中国が平等の立場で西洋国家と結んだ最初の条約</strong>。★<strong>典礼問題(ローマ教皇<span class="k">★</span><strong>クレメンス11世</strong>が中国の祖先崇拝を禁じたことでキリスト教は清朝に禁教に至る)</strong>＝イエズス会が認めた孔子崇拝・祖先祭祀を、他の修道会(ドミニコ会等)が批判→教皇が偶像崇拝として禁止→康熙帝は激怒しイエズス会以外の宣教師を追放→後の雍正帝がキリスト教を全面禁止。</div></div>
+<div class="node"><div class="node-title">★雍正帝 ― 内政の引き締め</div>
+<div class="node-desc">★<strong>軍機処の設置(1729)</strong>＝皇帝直属の最高意思決定機関→内閣大学士よりも権限上→★<strong>皇帝独裁の完成形</strong>。★<strong>地丁銀制</strong>の本格施行＝★<strong>人頭税(丁銀)を土地税(地銀)に一括</strong>→実質的に人頭税が消滅→★<strong>中国史上、課税単位が「人」から「土地」へ完全に転換</strong>(唐代の両税法以来の長い過程の完成)→これにより戸籍把握が不要になり、★<strong>人口統計の急増</strong>が可能に(実は単に隠れた人口が可視化された)。★<strong>キリスト教禁教</strong>(1724)→典礼問題(ローマ教皇<span class="k">★</span><strong>クレメンス11世</strong>が中国の祖先崇拝を禁じたことでキリスト教は清朝に禁教に至る)の余波。</div></div>
+<div class="node"><div class="node-title">★乾隆帝から嘉慶・道光・咸豊・同治・光緒・宣統へ</div>
+<div class="node-desc">康熙帝を超えないよう60年で退位(実質65年)、清の最盛期。★<strong>「十全武功」</strong>＝10度の対外遠征を誇る(ジュンガル征服・回部征服・ビルマ・ベトナム・ネパール等)→<strong>新疆</strong>(「新しい領土」の意)の支配確立。★<strong>『四庫全書』</strong>の編纂＝中国史上最大の叢書(3500種類以上の書物を収録)、しかし同時に反満的な書物の焚書も行う。★<strong>マカートニー使節(1793)</strong>＝英が通商拡大を求めて派遣→乾隆帝が「中国は自足している、外国の品は不要」として拒絶→後のアヘン戦争の遠因。晩年には寵臣★<strong>和珅</strong>の腐敗、★<strong>白蓮教徒の乱(1796-1804)</strong>勃発→清の衰退が始まる。</div></div>
+<div class="node"><div class="node-title">★清の対外政策と藩部(<span class="k">★</span><strong>改土帰流</strong>=西南少数民族の土司(世襲首長)を罷免して清朝直轄の流官に置き換える政策)</div>
+<div class="node-desc">清の支配領域は<strong>3層構造</strong>。①★<strong>中国本土(内地十八省)</strong>＝漢人の伝統的居住地、省・府・州・県の通常の官僚制。②★<strong>満洲・モンゴル・チベット・新疆</strong>＝★<strong>藩部</strong>、現地の社会を温存しつつ清が支配する間接統治→★<strong>理藩院</strong>が管轄。③★<strong>朝貢国</strong>＝朝鮮・琉球・ベトナム・シャム・ビルマ・ネパール等、儀礼的従属関係。★<strong>チベット仏教(ラマ教)</strong>を重視しモンゴル・チベットを懐柔→康熙帝はポタラ宮を修復、乾隆帝は自らを文殊菩薩の化身と位置付ける。</div></div>
+<div class="node"><div class="node-title">★清代の小説=『<span class="k">★</span><strong>紅楼夢</strong>』(<span class="k">★</span><strong>曹雪芹</strong>・<span class="k">★</span><strong>高鶚(高蘭墅)</strong>、<span class="k">★</span><strong>賈宝玉</strong>主人公)・<span class="k">★</span><strong>呉敬梓</strong>『儒林外史』・<span class="k">★</span><strong>蒲松齢</strong>『聊斎志異』の経済と社会</div>
+<div class="node-desc">★<strong>人口の急増</strong>＝1600年頃1億人→1800年頃3億人→1850年頃4億人(★<strong>地丁銀制による戸籍解放＋新大陸作物導入</strong>)。★<strong>新大陸原産作物</strong>＝★<strong>トウモロコシ・サツマイモ・ジャガイモ・ラッカセイ</strong>がマニラ=ガレオン貿易経由で導入→★<strong>山地の開発</strong>が可能に→人口扶養力の増大。★<strong>公行(コホン)制度</strong>＝広州に限定した対外貿易、★<strong>広州十三行</strong>が独占→★<strong>広州システム</strong>(清の独占的貿易管理)。★<strong>山西商人・新安(徽州)商人</strong>の全国ネットワーク→会館・公所の建設。★<strong>考証学(<span class="k">★</span><strong>段玉裁</strong>『説文解字注』・<span class="k">★</span><strong>閻若璩</strong>『尚書古文疏証』)</strong>＝★<strong>顧炎武・黄宗羲・王夫之</strong>(明末清初の三大思想家、経世致用学を提唱)→★<strong>銭大昕・戴震</strong>等が経典の実証的研究を発展→文字の獄を避けるため政治から離れた学問的営為が主流に。</div></div>
+</div>
+
+<div class="phase p4"><div class="phase-label">衰退</div>
+<div class="node key"><div class="node-title">★19Cの清 ― 嘉慶・道光・咸豊帝時代と衰退</div>
+<div class="node-year">19C</div>
+<div class="node-desc">19Cの清は★<strong>「内憂外患」</strong>で急速に衰退。<strong>内政</strong>＝人口過剰・白蓮教徒の乱・官僚腐敗・銀流出(アヘン密輸)→社会不安。<strong>外圧</strong>＝★<strong>アヘン戦争(1840-42)</strong>→★<strong>南京条約</strong>(香港割譲・5港開港・領事裁判権・関税自主権喪失)→不平等条約体制の始まり。★<strong>太平天国の乱(1851-64)</strong>＝★<strong>洪秀全</strong>がキリスト教的理念(上帝会)を掲げる大規模農民反乱(<span class="k">★</span><strong>鄧茂七</strong>の乱1448等も頻発)、南京を14年間占領→清軍ではなく地方の★<strong>湘軍(曽国藩)・淮軍(李鴻章)</strong>等の郷勇が鎮圧→地方軍閥化の起源。★<strong>アロー戦争(1856-60)</strong>→天津条約・北京条約→外国公使駐在・キリスト教布教自由化・九竜半島割譲。</div></div>
+<div class="node"><div class="node-title">★洋務運動と変法運動</div>
+<div class="node-desc">★<strong>洋務運動(1860s-90s)</strong>＝★<strong>曽国藩・李鴻章・左宗棠・張之洞</strong>等の漢人官僚が★<strong>「中体西用」</strong>(中国の体制は維持し西洋の技術のみ採用)を掲げ、軍備・工業の近代化を目指す。★<strong>北洋艦隊</strong>の建設、造船所・機械工場の設立。しかし政治体制の改革を伴わず不徹底→★<strong>日清戦争(1894-95)</strong>で北洋艦隊が壊滅→★<strong>下関条約</strong>(台湾・遼東半島割譲、賠償2億両)→★<strong>洋務運動の限界が露呈</strong>。★<strong>戊戌の変法(1898)</strong>＝★<strong>康有為・梁啓超</strong>が★<strong>光緒帝</strong>を動かし、立憲君主制への急進改革を試みる→★<strong>西太后(北京郊外の離宮<span class="k">★</span><strong>頤和園</strong>の再建で知られる)のクーデタ(戊戌の政変)</strong>で103日で挫折→康有為・梁啓超は日本へ亡命。</div></div>
+<div class="node"><div class="node-title">★義和団事件、最後の<span class="k">★</span><strong>宣統帝溥儀</strong>(2歳で即位、1912年退位)と清の終焉</div><div class="node-year">1900-1912</div>
+<div class="node-desc">★<strong>義和団事件(1900)</strong>＝「扶清滅洋」を掲げる秘密結社★<strong>義和団</strong>が外国人・キリスト教徒を攻撃→西太后が義和団を支持して列強に宣戦→8カ国連合軍が北京占領→★<strong>北京議定書(辛丑和約、1901)</strong>で巨額の賠償金(4億5000万両)→清はほぼ破産。危機感を抱いた清は★<strong>光緒新政(1901-)</strong>＝科挙廃止(1905)・憲法大綱・新軍創設等の改革を試みるが遅すぎた。★<strong>辛亥革命(1911)</strong>＝★<strong>孫文の三民主義</strong>(民族・民権・民生)を掲げる革命派が武昌蜂起→各省が独立宣言→1912年★<strong>中華民国成立</strong>(臨時大総統孫文、後に★<strong>袁世凱</strong>)→宣統帝(溥儀)退位→★<strong>清朝滅亡</strong>→★<strong>2000年以上続いた中華帝国の終焉</strong>。</div></div>
+</div>
+
+<div class="phase p5"><div class="phase-label">総括</div>
+<div class="node key"><div class="node-title">★明清帝国の歴史的意義 ― 近世中国の形成と終焉</div>
+<div class="node-desc">明清550年は★<strong>中国の近世</strong>を形成し、★<strong>中華帝国の最終形</strong>を示した時代。①★<strong>皇帝独裁の完成</strong>＝明の洪武帝が宰相廃止、清の雍正帝が軍機処創設→2000年の中華帝国で最も皇帝権力が強大。②★<strong>銀経済と世界との一体化</strong>＝日本銀・新大陸銀の大量流入→一条鞭法・地丁銀制→中国は★<strong>初期グローバル経済の重要構成員</strong>。③★<strong>人口3倍</strong>＝新大陸作物の導入と税制改革(地丁銀)で1億→3億。④★<strong>版図の最大化</strong>＝清が本土＋藩部(満・蒙・蔵・新疆)→現代中国の領土の原型。⑤★<strong>朝貢体制</strong>＝★<strong>東アジア独自の国際秩序</strong>が最終的に完成(明)→西欧の条約体制に破壊される(清後期)。⑥★<strong>華夷秩序から条約体制へ</strong>＝アヘン戦争が象徴する近代の衝撃で、中国は伝統的世界観を失い近代国家への模索を始める。清の滅亡(1912)は★<strong>2000年以上の中華帝国の終焉</strong>であり、その後の中華民国・中華人民共和国への過渡期を準備した。</div></div>
+</div>
+
+</div>
+
+<div class="note"><p>★<strong>明</strong>(270年)＝朱元璋の独裁・鄭和の遠征・海禁・朝貢体制・明の西端は<span class="k">★</span><strong>嘉峪関</strong>(万里の長城西端)。モンゴルは15世紀末に<span class="k">★</span><strong>ダヤン=ハーン</strong>が再統一、16世紀の<span class="k">★</span><strong>アルタン=ハーン</strong>が北京包囲(1550、庚戌の変)で明を圧迫=北虜南倭・一条鞭法・陽明学→李自成の乱(李自成は国号<span class="k">★</span><strong>大順</strong>を称した)で滅亡。★<strong>清</strong>(270年)＝満洲族の征服王朝・康熙雍正乾隆の盛期・版図最大化・銀経済・人口3億→アヘン戦争以降の衰退・太平天国・洋務運動・戊戌の変法・義和団→辛亥革命で2000年の中華帝国が終焉。</p></div>
+
+</body>
+</html>
