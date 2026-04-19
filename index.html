@@ -35,7 +35,7 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
 .sh{display:flex;align-items:flex-end;gap:16px;margin-bottom:26px;position:relative;padding-bottom:14px}.sh::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:1px;background:linear-gradient(90deg,rgba(201,169,110,.2),rgba(201,169,110,.03) 60%,transparent)}
 .snum{font-family:'Cormorant Garamond',serif;font-size:50px;font-weight:300;color:var(--gold3);opacity:.12;line-height:.8;letter-spacing:2px}.stitles{padding-bottom:4px}
 .smain{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:var(--gold2);letter-spacing:3px}.sla{font-family:'Cormorant Garamond',serif;font-size:9.5px;font-style:italic;color:var(--gold);opacity:.35;letter-spacing:1.5px;margin-top:2px}
-.fg{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.fg{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
 .f{border:1px solid rgba(201,169,110,.05);border-radius:16px;padding:26px 22px;text-decoration:none;transition:all .4s cubic-bezier(.25,.8,.25,1);position:relative;overflow:hidden;background:linear-gradient(165deg,rgba(201,169,110,.018),transparent 60%)}
 .f::before{content:'';position:absolute;inset:-1px;border-radius:16px;padding:1px;background:linear-gradient(160deg,rgba(201,169,110,.1),transparent 35%,transparent 65%,rgba(201,169,110,.05));-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .4s}
 .f:hover{transform:translateY(-6px);box-shadow:0 24px 60px rgba(0,0,0,.35),0 0 60px rgba(201,169,110,.03)}.f:hover::before{opacity:1}
@@ -80,14 +80,16 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
   <div class="hm">Honos alit artes</div>
   <div class="hs"><span></span></div>
 </div>
-<div class="stats"><div class="st"><div class="sn">CXXXI</div><div class="sl">CHARTAE</div></div><div class="st"><div class="sn">XLVII</div><div class="sl">SAECULA</div></div><div class="st"><div class="sn">CXCIX</div><div class="sl">LOCI</div></div><div class="st"><div class="sn">CLXXVII</div><div class="sl">NATIONES</div></div></div>
+<div class="stats"><div class="st"><div class="sn">CXLIX</div><div class="sl">CHARTAE</div></div><div class="st"><div class="sn">C</div><div class="sl">CIVITATES</div></div><div class="st"><div class="sn">XXVI</div><div class="sl">CULTURAE</div></div><div class="st"><div class="sn">XLVII</div><div class="sl">SAECULA</div></div><div class="st"><div class="sn">CXCIX</div><div class="sl">LOCI</div></div><div class="st"><div class="sn">CLXXVII</div><div class="sl">NATIONES</div></div></div>
 <nav class="nav"><a href="#s1">INSTRUMENTA</a><a href="#s2">TABULAE</a><a href="#s3">MAPPAE</a><a href="#s4">SAECULA</a><a href="#s5">IMAGINES</a></nav>
 <div class="main">
 
 <div class="sec" id="s1">
   <div class="sh"><span class="snum">I</span><div class="stitles"><div class="smain">Instrumenta</div><div class="sla">主要ツール</div></div></div>
   <div class="fg">
-    <a href="charts.html" class="f"><span class="fn">CXXXI</span><div class="ft">CHARTAE</div><div class="fla">図表集 ― フロー・TL・比較表・関係図・循環図・家系図</div><div class="fd">全131本を13セクション×時代順に収録。横断検索機能付き。</div></a>
+    <a href="charts.html" class="f"><span class="fn">CXLIX</span><div class="ft">CHARTAE</div><div class="fla">図表集 ― フロー・TL・比較表・関係図・循環図・家系図</div><div class="fd">全149本を13セクション×時代順に収録。本文キーワード横断検索対応。</div></a>
+    <a href="civitates.html" class="f"><span class="fn">C</span><div class="ft">CIVITATES</div><div class="fla">国家史集 ― 世界100カ国・地域の通史</div><div class="fd">古代から現代まで、各国の歴史をフロー形式で一望。大陸・時代別15セクション。本文検索対応。</div></a>
+    <a href="cultura.html" class="f"><span class="fn">XXVI</span><div class="ft">CULTURA</div><div class="fla">文化史集 ― 思想・宗教・文学・芸術・科学</div><div class="fd">古代オリエントから現代まで、26枚の文化史フロー。時代・地域別8セクション。本文検索対応。</div></a>
     <a href="matrix.html" class="f"><span class="fn">XXXVII</span><div class="ft">MATRIX</div><div class="fla">同時代マトリクス ― 37時代×5地域</div><div class="fd">「その時、世界では何が起きていたか」を185セルで一望。BC1500〜AD2000。</div></a>
     <a href="causal_network.html" class="f"><span class="fn">VII</span><div class="ft">NEXUS</div><div class="fla">因果関係ネットワーク ― 7テーマ</div><div class="fd">複数の原因が合流し結果が分岐する網目状の因果を可視化。クリックでハイライト。</div></a>
   </div>
@@ -104,6 +106,7 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
     <a href="sheet_culture.html" class="c"><div class="cb">Tabula</div><div class="ct">文化・芸術一覧</div><div class="cs">Ars et Cultura</div></a>
     <a href="sheet_essay.html" class="c"><div class="cb">Tabula</div><div class="ct">論述テーマ集</div><div class="cs">Themata Dissertationum</div></a>
     <a href="sheet_crossref.html" class="c"><div class="cb">Tabula</div><div class="ct">横断整理表</div><div class="cs">Index Transversalis</div></a>
+    <a href="regna_extincta.html" class="c"><div class="cb">Tabula</div><div class="ct">亡国一覧</div><div class="cs">Regna Extincta</div></a>
     <a href="nengo_list.html" class="c"><div class="cb">Annales</div><div class="ct">年号＋横断索引</div><div class="cs">Annales Rerum Gestarum</div></a>
   </div>
 </div>
@@ -114,7 +117,7 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
   <div class="g2">
     <a href="geo_world_geography.html" class="mf"><span class="mfn">199</span><div class="mft">GEOGRAPHIA</div><div class="mfl">地理知識マップ ― 199地点＋ポリライン56本</div><div class="mfd">山脈・河川・海・湖・海峡・島・半島・高原・砂漠・運河・峠。</div></a>
     <a href="geo_countries.html" class="mf"><span class="mfn">177</span><div class="mft">NATIONES</div><div class="mfl">世界の国々 ― 177カ国</div><div class="mfd">GeoJSON境界線。主要75カ国に歴史的概要。大陸別色分け。</div></a>
-    <a href="world_history_all_points.html" class="mf"><span class="mfn">672</span><div class="mft">LOCI HISTORICI</div><div class="mfl">世界史地点総覧 ― 672地点</div><div class="mfd">戦場・条約締結地・都市・遺跡を全時代横断で表示。カテゴリ・時代で絞り込み可能。</div></a>
+    <a href="world_history_all_points.html" class="mf"><span class="mfn">788</span><div class="mft">LOCI HISTORICI</div><div class="mfl">世界史地点総覧 ― 788地点</div><div class="mfd">戦場・条約締結地・都市・遺跡を全時代横断で表示。カテゴリ・時代で絞り込み可能。</div></a>
   </div>
   <div class="g2" style="margin-top:10px">
     <a href="geo_us_states.html" class="c"><div class="cb">Mappa</div><div class="ct">アメリカ全州マップ</div><div class="cs">Civitates Foederatae Americae</div></a>
