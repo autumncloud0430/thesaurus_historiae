@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>法制度・行政・税制</title>
+<title>法律と制度</title>
 <style>@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@400;600;700&family=Cormorant+Garamond:wght@400;700&display=swap');
 :root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--gold-dim:rgba(201,169,110,.12);--text:#d4cfc6;--text2:#8a857d;--text3:#555048;--border:rgba(201,169,110,.08)}
 *{margin:0;padding:0;box-sizing:border-box}
@@ -30,26 +30,55 @@ td.desc-cell{color:#a8a39a;font-size:11px}
 tr:hover td{background:rgba(201,169,110,.03)}
 tr.section-header td{background:rgba(201,169,110,.06);color:var(--gold2);font-family:'Noto Serif JP',serif;font-weight:700;font-size:12px;padding:12px;letter-spacing:.06em;border-bottom:1px solid rgba(201,169,110,.1)}
 .hidden{display:none}
-@media(max-width:600px){
-.hdr{padding:10px 12px}.hdr h1{font-size:12px}
-th,td{padding:6px 8px;font-size:9px}
-th{font-size:10px}
-td:first-child{font-size:8.5px}
-.note p{font-size:8px}
-.side-note{font-size:7.5px}
+@media(max-width:1024px){
+.hdr{padding:12px 16px}
+.tabs{padding:8px 16px;grid-template-columns:repeat(auto-fill,minmax(120px,1fr))}
+.tbl-wrap{padding:4px 16px 32px}
+td.name-cell{width:auto;min-width:140px}
+td.desc-cell{font-size:10.5px}
+}
+@media(max-width:768px){
+.hdr{padding:10px 14px;flex-direction:column;align-items:flex-start;gap:8px}
+.hdr h1{font-size:13px}
+.tabs{padding:8px 12px;grid-template-columns:repeat(auto-fill,minmax(100px,1fr));gap:3px}
+.tab{padding:4px 6px;font-size:9px}
+.search-bar{padding:8px 12px}
+.si{width:100%;font-size:10px}
+.tbl-wrap{padding:4px 12px 24px}
+table{font-size:10px}
+th{padding:6px 8px;font-size:9px;letter-spacing:.04em}
+td{padding:6px 8px;line-height:1.6}
+td.no-cell{font-size:10px;width:28px}
+td.name-cell{width:auto;min-width:110px;font-size:10px}
+td.year-cell{font-size:10px;width:auto;min-width:60px}
+td.desc-cell{font-size:9.5px}
+tr.section-header td{padding:8px;font-size:10.5px}
+}
+@media(max-width:480px){
+.hdr h1{font-size:12px}
+.tabs{grid-template-columns:repeat(auto-fill,minmax(85px,1fr))}
+.tab{padding:4px 4px;font-size:8.5px}
+table{font-size:9px}
+th{padding:5px 6px;font-size:8px}
+td{padding:5px 6px}
+td.no-cell{font-size:9px;width:24px}
+td.name-cell{min-width:90px;font-size:9.5px}
+td.year-cell{font-size:9.5px;min-width:50px}
+td.desc-cell{font-size:9px;line-height:1.55}
+tr.section-header td{padding:6px;font-size:9.5px}
 }
 </style>
 </head><body>
-<div class="hdr"><h1>法制度・行政・税制</h1><a href="index.html">← Ad Indicem</a></div>
-<div class="tabs"><button class="tab on" onclick="switchTab(0)" id="tab0">古代〜フランク</button>
-<button class="tab" onclick="switchTab(1)" id="tab1">中世</button>
-<button class="tab" onclick="switchTab(2)" id="tab2">近世ヨーロッパ</button>
-<button class="tab" onclick="switchTab(3)" id="tab3">革命期</button>
-<button class="tab" onclick="switchTab(4)" id="tab4">19世紀ヨーロッパ</button>
-<button class="tab" onclick="switchTab(5)" id="tab5">19-20世紀アメリカ等</button>
-<button class="tab" onclick="switchTab(6)" id="tab6">20世紀</button>
-<button class="tab" onclick="switchTab(7)" id="tab7">中国の法制度</button>
-<button class="tab" onclick="switchTab(8)" id="tab8">行政・土地・税制の変遷</button>
+<div class="hdr"><h1>法律と制度</h1><a href="index.html">← Ad Indicem</a></div>
+<div class="tabs"><button class="tab on" onclick="switchTab(0)" id="tab0">古代〜中世の法</button>
+<button class="tab" onclick="switchTab(1)" id="tab1">近世〜18世紀の法</button>
+<button class="tab" onclick="switchTab(2)" id="tab2">革命期〜19世紀の法</button>
+<button class="tab" onclick="switchTab(3)" id="tab3">アメリカ合衆国の法</button>
+<button class="tab" onclick="switchTab(4)" id="tab4">20世紀世界の憲法・法律</button>
+<button class="tab" onclick="switchTab(5)" id="tab5">中国の法・行政制度通史</button>
+<button class="tab" onclick="switchTab(6)" id="tab6">朝鮮の法</button>
+<button class="tab" onclick="switchTab(7)" id="tab7">インド・東南アジアの法</button>
+<button class="tab" onclick="switchTab(8)" id="tab8">ヨーロッパ・ラ米の社会・土地制度</button>
 </div>
 <div class="search-bar"><input class="si" id="search" placeholder="法令名・内容で検索..." oninput="filterRows()"><span class="cnt" id="cnt"></span></div>
 <div class="tbl-wrap" id="content0"><table>
@@ -57,347 +86,401 @@ td:first-child{font-size:8.5px}
 <tbody>
 <tr class="section-header"><td colspan="4">古代オリエント</td></tr>
 <tr><td class="no-cell">1</td><td class="name-cell">ウルナンム法典</td><td class="year-cell">前2100頃</td><td class="desc-cell">現存最古の法典。ウル第3王朝（シュメール）で制定。ハンムラビ法典に先行する。罰金刑を中心とし、ハンムラビ法典の同害復讐法（タリオの法）よりも穏やかな内容。</td></tr>
-<tr><td class="no-cell">2</td><td class="name-cell">ハンムラビ法典</td><td class="year-cell">前18C</td><td class="desc-cell">バビロン第1王朝。「目には目を、歯には歯を」の同害復讐法（タリオの法）。身分による刑罰の差異。楔形文字で記される</td></tr>
-<tr class="section-header"><td colspan="4">古代ギリシア</td></tr>
-<tr><td class="no-cell">3</td><td class="name-cell">ドラコンの立法</td><td class="year-cell">前621</td><td class="desc-cell">アテネ最初の成文法。貴族の恣意的裁判を抑制</td></tr>
-<tr><td class="no-cell">4</td><td class="name-cell">ソロンの改革</td><td class="year-cell">前594</td><td class="desc-cell">財産政治（ティモクラティア）。負債の帳消し（重荷おろし）</td></tr>
-<tr class="section-header"><td colspan="4">古代ローマ</td></tr>
-<tr><td class="no-cell">5</td><td class="name-cell">十二表法</td><td class="year-cell">前450</td><td class="desc-cell">ローマ最初の成文法。貴族の法の独占を打破。平民（プレブス）の要求で制定</td></tr>
-<tr><td class="no-cell">6</td><td class="name-cell">リキニウス＝セクスティウス法</td><td class="year-cell">前367</td><td class="desc-cell">コンスル（執政官）の1人をプレブスから選出。大土地所有の制限</td></tr>
-<tr><td class="no-cell">7</td><td class="name-cell">ホルテンシウス法</td><td class="year-cell">前287</td><td class="desc-cell">平民会の決定が元老院の承認なしで国法に→貴族と平民の法的平等</td></tr>
-<tr><td class="no-cell">8</td><td class="name-cell">アントニヌス勅令</td><td class="year-cell">212</td><td class="desc-cell">カラカラ帝。全属州の自由民にローマ市民権付与→属州税収の減少</td></tr>
-<tr><td class="no-cell">9</td><td class="name-cell">ミラノ勅令</td><td class="year-cell">313</td><td class="desc-cell">コンスタンティヌス帝とリキニウス帝が共同で発布。<br><br>①<strong>キリスト教を公認</strong>=信仰の自由を認める、<br>②没収されていた教会財産の返還を規定、<br>③→のちに<strong>テオドシウス帝</strong>による<strong>ニケーア派キリスト教の国教化</strong>(392年、異教禁止令)へ。</td></tr>
-<tr><td class="no-cell">10</td><td class="name-cell">コロヌスの移動禁止令</td><td class="year-cell">332</td><td class="desc-cell">コンスタンティヌス帝。自由な小作人（コロヌス）の土地への緊縛→中世農奴制の起源</td></tr>
+<tr><td class="no-cell">2</td><td class="name-cell">リピト＝イシュタル法典</td><td class="year-cell">前1930頃</td><td class="desc-cell"><strong>イシン王朝</strong>(メソポタミア)のリピト=イシュタル王が制定。<strong>ウルナンム法典</strong>と<strong>ハンムラビ法典</strong>の中間に位置するシュメール語の法典。社会階層・債務・財産権等を規定。</td></tr>
+<tr><td class="no-cell">3</td><td class="name-cell">エシュヌンナ法典</td><td class="year-cell">前1900頃</td><td class="desc-cell">メソポタミアの<strong>エシュヌンナ王国</strong>(現イラクの古代都市)で制定。<strong>ハンムラビ法典</strong>(前18C)に先行する楔形文字法典。罰金刑が中心で、<strong>ウルナンム法典</strong>と並ぶ古代法の一例。</td></tr>
+<tr><td class="no-cell">4</td><td class="name-cell">ハンムラビ法典</td><td class="year-cell">前18C</td><td class="desc-cell">バビロン第1王朝。「目には目を、歯には歯を」の同害復讐法（タリオの法）。身分による刑罰の差異。楔形文字で記される</td></tr>
+<tr class="section-header"><td colspan="4">古代ペルシア</td></tr>
+<tr><td class="no-cell">5</td><td class="name-cell">サトラップ制</td><td class="year-cell">行政制度</td><td class="desc-cell">ダレイオス1世が整備。約20州にサトラップ（知事）を配置。「王の目」「王の耳」が巡回監視。「王の道」と駅伝制で中央と連結。</td></tr>
 <tr class="section-header"><td colspan="4">古代インド</td></tr>
-<tr><td class="no-cell">11</td><td class="name-cell">マヌ法典</td><td class="year-cell">前2C-後2C</td><td class="desc-cell">ヒンドゥー教の聖典的法典。カースト（ヴァルナ）制度を規定。四住期</td></tr>
+<tr><td class="no-cell">6</td><td class="name-cell">マヌ法典</td><td class="year-cell">前2C-後2C</td><td class="desc-cell">ヒンドゥー教の聖典的法典。カースト（ヴァルナ）制度を規定。四住期</td></tr>
+<tr class="section-header"><td colspan="4">古代ギリシア・ローマ</td></tr>
+<tr><td class="no-cell">7</td><td class="name-cell">十二表法</td><td class="year-cell">前450</td><td class="desc-cell">ローマ最初の成文法。貴族の法の独占を打破。平民（プレブス）の要求で制定</td></tr>
+<tr><td class="no-cell">8</td><td class="name-cell">カヌレイウス法</td><td class="year-cell">前445</td><td class="desc-cell">パトリキ(貴族)とプレブス(平民)の<strong>通婚禁止</strong>を撤廃したローマの法。<strong>十二表法</strong>で規定された通婚禁止条項を廃止し、両身分の融合を進めた=平民身分の地位向上の画期。</td></tr>
+<tr><td class="no-cell">9</td><td class="name-cell">リキニウス＝セクスティウス法</td><td class="year-cell">前367</td><td class="desc-cell">コンスル（執政官）の1人をプレブスから選出。大土地所有の制限</td></tr>
+<tr><td class="no-cell">10</td><td class="name-cell">ホルテンシウス法</td><td class="year-cell">前287</td><td class="desc-cell">平民会の決定が元老院の承認なしで国法に→貴族と平民の法的平等</td></tr>
+<tr><td class="no-cell">11</td><td class="name-cell">市民権法</td><td class="year-cell">前90-前88</td><td class="desc-cell"><strong>同盟市戦争</strong>(前91-88)を経て、ローマがイタリア半島の同盟諸都市民にローマ市民権を付与した一連の法。<strong>アントニヌス勅令</strong>(212)に至る帝国市民権拡大の出発点。</td></tr>
+<tr><td class="no-cell">12</td><td class="name-cell">アントニヌス勅令</td><td class="year-cell">212</td><td class="desc-cell">カラカラ帝。全属州の自由民にローマ市民権付与→属州税収の減少</td></tr>
+<tr><td class="no-cell">13</td><td class="name-cell">四帝分治制（テトラルキア）</td><td class="year-cell">293-313</td><td class="desc-cell"><strong>ディオクレティアヌス</strong>帝が制定したローマ帝国の統治体制=帝国を東西に2分し、各々に正帝(<strong>アウグストゥス</strong>)・副帝(<strong>カエサル</strong>)を置く=計4皇帝の<strong>分担統治</strong>。蛮族の侵入と内乱を効率的に対処したが、コンスタンティヌス帝期に解消。後の<strong>東西ローマ帝国</strong>分裂(395)の伏線。</td></tr>
+<tr><td class="no-cell">14</td><td class="name-cell">ミラノ勅令</td><td class="year-cell">313</td><td class="desc-cell">コンスタンティヌス帝とリキニウス帝が共同で発布。<br><br>①<strong>キリスト教を公認</strong>=信仰の自由を認める、<br>②没収されていた教会財産の返還を規定、<br>③→のちに<strong>テオドシウス帝</strong>による<strong>ニケーア派キリスト教の国教化</strong>(392年、異教禁止令)へ。</td></tr>
+<tr><td class="no-cell">15</td><td class="name-cell">コロヌスの移動禁止令</td><td class="year-cell">332</td><td class="desc-cell">コンスタンティヌス帝。自由な小作人（コロヌス）の土地への緊縛→中世農奴制の起源</td></tr>
+<tr><td class="no-cell">16</td><td class="name-cell">テオドシウス法典</td><td class="year-cell">438</td><td class="desc-cell">東ローマ皇帝<strong>テオドシウス2世</strong>の命で編纂された<strong>キリスト教化以後</strong>のローマ法集成。コンスタンティヌス帝以降の勅令を整理し、後の<strong>ユスティニアヌス『ローマ法大全』</strong>(6C)の前提となる。</td></tr>
 <tr class="section-header"><td colspan="4">ローマ法の集大成</td></tr>
-<tr><td class="no-cell">12</td><td class="name-cell">ローマ法大全</td><td class="year-cell">6C</td><td class="desc-cell">ユスティニアヌス帝。トリボニアヌスが編纂。ヨーロッパ法学の基盤</td></tr>
-<tr class="section-header"><td colspan="4">フランク王国</td></tr>
-<tr><td class="no-cell">13</td><td class="name-cell">サリカ法典</td><td class="year-cell">5-6C</td><td class="desc-cell">フランク王国の部族法典。女子の王位継承を禁止→百年戦争の遠因</td></tr>
-</tbody></table></div>
+<tr><td class="no-cell">17</td><td class="name-cell">ローマ法大全</td><td class="year-cell">6C</td><td class="desc-cell">ユスティニアヌス帝。トリボニアヌスが編纂。ヨーロッパ法学の基盤</td></tr>
+<tr class="section-header"><td colspan="4">ゲルマン・フランク</td></tr>
+<tr><td class="no-cell">18</td><td class="name-cell">サリカ法典</td><td class="year-cell">5-6C</td><td class="desc-cell">フランク王国の部族法典。女子の王位継承を禁止→百年戦争の遠因</td></tr>
+<tr class="section-header"><td colspan="4">ビザンツ帝国</td></tr>
+<tr><td class="no-cell">19</td><td class="name-cell">屯田兵制</td><td class="year-cell">7C〜</td><td class="desc-cell"><strong>ビザンツ帝国</strong>の<strong>テマ制</strong>と一体で運用された軍事制度=農民兵に土地を与え、平時は耕作・戦時は従軍させる=自給自足の防衛体制。<strong>ヘラクレイオス</strong>朝(7C)に確立し、ビザンツ復興期の軍事的基盤。後に<strong>プロノイア制</strong>(11C)に変質。</td></tr>
+<tr><td class="no-cell">20</td><td class="name-cell">聖像禁止令（イコノクラスム）</td><td class="year-cell">726</td><td class="desc-cell">レオン3世。聖像（イコン）崇拝を禁止→ローマ教会と対立→東西教会分裂の遠因</td></tr>
+<tr><td class="no-cell">21</td><td class="name-cell">テマ制（軍管区制）</td><td class="year-cell">行政・軍事</td><td class="desc-cell">帝国を軍管区（テマ）に分割し軍司令官が行政権を兼務。屯田兵による兵農一致。イスラーム勢力への防衛に機能。</td></tr>
+<tr><td class="no-cell">22</td><td class="name-cell">プロノイア制</td><td class="year-cell">土地制度</td><td class="desc-cell">軍人・官僚に国有地の徴税権を付与（終身→世襲化）。西欧封建制やオスマンのティマール制と類似。</td></tr>
+<tr class="section-header"><td colspan="4">中世教会</td></tr>
+<tr><td class="no-cell">23</td><td class="name-cell">教会法（カノン法）</td><td class="year-cell">中世</td><td class="desc-cell">ローマ教会が体系化した法体系。婚姻・異端審問・聖職者の規律などを規定。世俗法と並ぶ中世の二大法体系。ローマ法の継承。</td></tr>
+<tr class="section-header"><td colspan="4">中世イギリス</td></tr>
+<tr><td class="no-cell">24</td><td class="name-cell">クラレンドン法</td><td class="year-cell">1166</td><td class="desc-cell">英王<strong>ヘンリ2世</strong>がクラレンドン城で発布。<strong>陪審制(jury)</strong>の起源とされる<strong>大陪審制度</strong>を導入し、王の巡回裁判官を全国に派遣して司法権を国王に集中させた=英コモン=ロー成立の画期。</td></tr>
+<tr><td class="no-cell">25</td><td class="name-cell">大憲章（マグナ＝カルタ）</td><td class="year-cell">1215</td><td class="desc-cell">ジョン王が貴族に承認。王権の制限（不当な課税・逮捕の禁止）。イギリス立憲政治の原点</td></tr>
+<tr><td class="no-cell">26</td><td class="name-cell">オックスフォード条項</td><td class="year-cell">1258</td><td class="desc-cell">ヘンリ3世に対し貴族が突きつけた改革要求。15人の評議会による国政監視を規定→シモン＝ド＝モンフォールの議会（1265）へ。</td></tr>
+<tr><td class="no-cell">27</td><td class="name-cell">模範議会</td><td class="year-cell">1295</td><td class="desc-cell">エドワード1世。聖職者・貴族・州と都市の代表を招集→英国議会の起源。</td></tr>
+<tr class="section-header"><td colspan="4">中世セルビア・神聖ローマ</td></tr>
+<tr><td class="no-cell">28</td><td class="name-cell">ドゥシャン法典</td><td class="year-cell">1349</td><td class="desc-cell">中世セルビア王国。ビザンツ法の影響を受けた法典</td></tr>
+<tr><td class="no-cell">29</td><td class="name-cell">金印勅書</td><td class="year-cell">1356</td><td class="desc-cell">カール4世。7選帝侯による皇帝選出を法制化。選帝侯の領邦主権を確認→帝国の分権化</td></tr>
+<tr class="section-header"><td colspan="4">中世フランス</td></tr>
+<tr><td class="no-cell">30</td><td class="name-cell">三部会</td><td class="year-cell">1302〜</td><td class="desc-cell">フランスの身分制議会。フィリップ4世が初召集→1789年召集がフランス革命の発端。</td></tr>
+<tr class="section-header"><td colspan="4">中世イスラーム圏</td></tr>
+<tr><td class="no-cell">31</td><td class="name-cell">イクター制</td><td class="year-cell">ブワイフ朝〜</td><td class="desc-cell">軍人に土地の徴税権を付与。ティマール制の前身。</td></tr>
+<tr><td class="no-cell">32</td><td class="name-cell">ワクフ（寄進財）</td><td class="year-cell">社会制度</td><td class="desc-cell">モスク・マドラサ・病院等の公共施設維持のための寄進制度。財産を神に寄進し永久に運用益を公益に充てる。イスラーム都市のインフラを支えた。</td></tr>
+<tr><td class="no-cell">33</td><td class="name-cell">ジズヤ（人頭税）</td><td class="year-cell">税制</td><td class="desc-cell">非ムスリム（ズィンミー）に課された人頭税。ムスリムは免除。アクバルが廃止→アウラングゼーブが復活。</td></tr>
+<tr><td class="no-cell">34</td><td class="name-cell">ハラージュ（地租）</td><td class="year-cell">税制</td><td class="desc-cell">ムスリム・非ムスリムを問わず土地所有者に課される地租。アッバース朝以降はジズヤとの区別が明確化。</td></tr>
+</tbody>
+</table></div>
 <div class="tbl-wrap hidden" id="content1"><table>
 <thead><tr><th>No.</th><th>法令名</th><th>年代</th><th>内容・概要</th></tr></thead>
 <tbody>
-<tr class="section-header"><td colspan="4">ビザンツ帝国</td></tr>
-<tr><td class="no-cell">1</td><td class="name-cell">聖像禁止令（イコノクラスム）</td><td class="year-cell">726</td><td class="desc-cell">レオン3世。聖像（イコン）崇拝を禁止→ローマ教会と対立→東西教会分裂の遠因</td></tr>
-<tr class="section-header"><td colspan="4">中世教会</td></tr>
-<tr><td class="no-cell">2</td><td class="name-cell">教会法（カノン法）</td><td class="year-cell">中世</td><td class="desc-cell">ローマ教会が体系化した法体系。婚姻・異端審問・聖職者の規律などを規定。世俗法と並ぶ中世の二大法体系。ローマ法の継承。</td></tr>
-<tr class="section-header"><td colspan="4">中世イギリス</td></tr>
-<tr><td class="no-cell">3</td><td class="name-cell">大憲章（マグナ＝カルタ）</td><td class="year-cell">1215</td><td class="desc-cell">ジョン王が貴族に承認。王権の制限（不当な課税・逮捕の禁止）。イギリス立憲政治の原点</td></tr>
-<tr><td class="no-cell">4</td><td class="name-cell">オックスフォード条項</td><td class="year-cell">1258</td><td class="desc-cell">ヘンリ3世に対し貴族が突きつけた改革要求。15人の評議会による国政監視を規定→シモン＝ド＝モンフォールの議会（1265）へ。</td></tr>
-<tr class="section-header"><td colspan="4">中世セルビア</td></tr>
-<tr><td class="no-cell">5</td><td class="name-cell">ドゥシャン法典</td><td class="year-cell">1349</td><td class="desc-cell">中世セルビア王国。ビザンツ法の影響を受けた法典</td></tr>
-<tr class="section-header"><td colspan="4">神聖ローマ帝国</td></tr>
-<tr><td class="no-cell">6</td><td class="name-cell">金印勅書</td><td class="year-cell">1356</td><td class="desc-cell">カール4世。7選帝侯による皇帝選出を法制化。選帝侯の領邦主権を確認→帝国の分権化</td></tr>
-<tr><td class="no-cell">7</td><td class="name-cell">コンスタンツ公会議の決定</td><td class="year-cell">1414-18</td><td class="desc-cell">教会大分裂（シスマ）の収拾。マルティヌス5世を選出し統一回復。フスを異端として火刑→フス戦争の契機。</td></tr>
-</tbody></table></div>
-<div class="tbl-wrap hidden" id="content2"><table>
-<thead><tr><th>No.</th><th>法令名</th><th>年代</th><th>内容・概要</th></tr></thead>
-<tbody>
-<tr class="section-header"><td colspan="4">イギリス（テューダー朝〜ステュアート朝）</td></tr>
+<tr class="section-header"><td colspan="4">イギリス（テューダー〜ステュアート朝）</td></tr>
 <tr><td class="no-cell">1</td><td class="name-cell">首長法（国王至上法）</td><td class="year-cell">1534</td><td class="desc-cell">ヘンリ8世。英国国教会を設立。国王を教会の唯一最高の首長と規定→ローマ教皇と断絶</td></tr>
 <tr><td class="no-cell">2</td><td class="name-cell">統一法</td><td class="year-cell">1559</td><td class="desc-cell">エリザベス1世。英国国教会の礼拝を統一。カトリックとプロテスタントの中間路線</td></tr>
-<tr><td class="no-cell">3</td><td class="name-cell">救貧法</td><td class="year-cell">1601</td><td class="desc-cell">エリザベス1世。囲い込みで生じた貧民への対策。教区単位の救貧</td></tr>
-<tr><td class="no-cell">4</td><td class="name-cell">権利の請願</td><td class="year-cell">1628</td><td class="desc-cell">チャールズ1世に対し議会が提出。不法な課税・逮捕の禁止を要求</td></tr>
-<tr><td class="no-cell">5</td><td class="name-cell">航海法</td><td class="year-cell">1651</td><td class="desc-cell">クロムウェル。イギリス船とその植民地の船以外の貿易を制限→オランダに打撃→英蘭戦争</td></tr>
-<tr><td class="no-cell">6</td><td class="name-cell">審査法</td><td class="year-cell">1673</td><td class="desc-cell">チャールズ2世。公職をイギリス国教徒に限定→カトリック教徒を排除</td></tr>
-<tr><td class="no-cell">7</td><td class="name-cell">人身保護法</td><td class="year-cell">1679</td><td class="desc-cell">チャールズ2世。不法な逮捕・投獄からの保護。令状なしの拘禁を禁止</td></tr>
-<tr><td class="no-cell">8</td><td class="name-cell">権利の章典</td><td class="year-cell">1689</td><td class="desc-cell">ウィリアム3世・メアリ2世。名誉革命の成果を法文化。議会主権・国王の権限制限</td></tr>
-<tr class="section-header"><td colspan="4">フランス（アンシャンレジーム）</td></tr>
-<tr><td class="no-cell">9</td><td class="name-cell">ナントの王令</td><td class="year-cell">1598</td><td class="desc-cell">アンリ4世。ユグノーに信仰の自由→ユグノー戦争終結。ルイ14世が1685年に廃止→ユグノー国外流出</td></tr>
-<tr><td class="no-cell">10</td><td class="name-cell">フォンテーヌブロー勅令</td><td class="year-cell">1685</td><td class="desc-cell">ルイ14世がナントの王令を撤回→ユグノー（カルヴァン派）約20万人が国外亡命→フランスの商工業に大打撃。</td></tr>
-</tbody></table></div>
-<div class="tbl-wrap hidden" id="content3"><table>
+<tr><td class="no-cell">3</td><td class="name-cell">徒弟法</td><td class="year-cell">1563</td><td class="desc-cell"><strong>エリザベス1世</strong>期に制定。<strong>ギルド</strong>の規制下で職人の徒弟修業を国家が公認・統制した英国最初の労働立法。職人身分の固定化・賃金規制を含み、<strong>救貧法</strong>(1601)と並ぶエリザベス朝の社会立法の柱。</td></tr>
+<tr><td class="no-cell">4</td><td class="name-cell">国教忌避者処罰法</td><td class="year-cell">1593</td><td class="desc-cell"><strong>エリザベス1世</strong>期、<strong>イギリス国教会</strong>の礼拝に出席しない者(<strong>ピューリタン</strong>・<strong>カトリック</strong>等)を処罰した法。<strong>統一法</strong>(1559)を強化し、宗教統制を厳格化=後のピューリタン革命の遠因。</td></tr>
+<tr><td class="no-cell">5</td><td class="name-cell">救貧法</td><td class="year-cell">1601</td><td class="desc-cell">エリザベス1世。囲い込みで生じた貧民への対策。教区単位の救貧</td></tr>
+<tr><td class="no-cell">6</td><td class="name-cell">航海法</td><td class="year-cell">1651</td><td class="desc-cell">クロムウェル。イギリス船とその植民地の船以外の貿易を制限→オランダに打撃→英蘭戦争</td></tr>
+<tr><td class="no-cell">7</td><td class="name-cell">審査法</td><td class="year-cell">1673</td><td class="desc-cell">チャールズ2世。公職をイギリス国教徒に限定→カトリック教徒を排除</td></tr>
+<tr><td class="no-cell">8</td><td class="name-cell">人身保護法</td><td class="year-cell">1679</td><td class="desc-cell">チャールズ2世。不法な逮捕・投獄からの保護。令状なしの拘禁を禁止</td></tr>
+<tr><td class="no-cell">9</td><td class="name-cell">権利の章典</td><td class="year-cell">1689</td><td class="desc-cell">ウィリアム3世・メアリ2世。名誉革命の成果を法文化。議会主権・国王の権限制限</td></tr>
+<tr><td class="no-cell">10</td><td class="name-cell">寛容法</td><td class="year-cell">1689</td><td class="desc-cell"><strong>名誉革命</strong>後、<strong>ウィリアム3世</strong>期に制定。<strong>非国教徒(プロテスタント諸派)</strong>の信仰の自由を認めた=英国の宗教寛容の画期。ただし<strong>カトリック</strong>と<strong>ユニテリアン</strong>は除外。<strong>権利の章典</strong>(1689)と並ぶ宗教改革の到達点。</td></tr>
+<tr class="section-header"><td colspan="4">フランス（アンシャン=レジーム）</td></tr>
+<tr><td class="no-cell">11</td><td class="name-cell">ナントの王令</td><td class="year-cell">1598</td><td class="desc-cell">アンリ4世。ユグノーに信仰の自由→ユグノー戦争終結。ルイ14世が1685年に廃止→ユグノー国外流出</td></tr>
+<tr><td class="no-cell">12</td><td class="name-cell">フォンテーヌブロー勅令</td><td class="year-cell">1685</td><td class="desc-cell">ルイ14世がナントの王令を撤回→ユグノー（カルヴァン派）約20万人が国外亡命→フランスの商工業に大打撃。</td></tr>
+<tr class="section-header"><td colspan="4">オスマン帝国の制度</td></tr>
+<tr><td class="no-cell">13</td><td class="name-cell">ミッレト制</td><td class="year-cell">行政制度</td><td class="desc-cell">宗教共同体（ミッレト）ごとに自治を認める。ギリシア正教・アルメニア教会・ユダヤ教の各ミッレトが独自の法・教育を維持。多民族帝国の統治原理。</td></tr>
+<tr><td class="no-cell">14</td><td class="name-cell">ティマール制</td><td class="year-cell">土地・軍事</td><td class="desc-cell">オスマン帝国の軍事封土制。騎兵（シパーヒー）に土地の徴税権を付与する代わりに軍役を義務づける。イクター制の発展形。帝国の軍事力の基盤→17C以降衰退。</td></tr>
+<tr><td class="no-cell">15</td><td class="name-cell">カピチュレーション</td><td class="year-cell">16C〜</td><td class="desc-cell">オスマン帝国が西欧諸国の商人に与えた通商上の特権（関税免除・治外法権など）。当初はオスマン側が優位だったが、帝国衰退とともに不平等条約的性格に変質。</td></tr>
+<tr><td class="no-cell">16</td><td class="name-cell">徴税請負制（イルティザーム制）</td><td class="year-cell">17C-</td><td class="desc-cell"><strong>オスマン帝国</strong>後期の税制=<strong>ティマール制</strong>に代わって導入=徴税権を商人・有力者に競売で売却し、彼らが農民から税を取り立てる。中央財政を一時補填したが、徴税請負人の暴利と農民疲弊を招き、地方の<strong>アーヤーン(地方有力者)</strong>台頭の原因に=帝国衰退の制度的要因。</td></tr>
+<tr><td class="no-cell">17</td><td class="name-cell">デウシルメ</td><td class="year-cell">軍事制度</td><td class="desc-cell">キリスト教徒の子弟を強制徴用→イスラームに改宗させイェニチェリ（常備歩兵軍）や官僚に育成。<br>スルタン直属の精鋭軍→16世紀以降は特権集団化→マフムト2世が1826年に全廃。</td></tr>
+<tr class="section-header"><td colspan="4">ヨーロッパの議会・行政</td></tr>
+<tr><td class="no-cell">18</td><td class="name-cell">責任内閣制</td><td class="year-cell">政治制度</td><td class="desc-cell">ウォルポール(1721-)が事実上の初代首相。議会の信任に基づく内閣の成立・退陣。名誉革命後の立憲君主制の核心。王は「君臨すれども統治せず」。</td></tr>
+<tr><td class="no-cell">19</td><td class="name-cell">常備軍</td><td class="year-cell">軍事制度</td><td class="desc-cell">絶対王政の軍事的基盤。傭兵→常備軍への転換。ルイ14世・フリードリヒ＝ヴィルヘルム1世が整備。国王の権力集中を支える。</td></tr>
+</tbody>
+</table></div>
+<div class="tbl-wrap hidden" id="content2"><table>
 <thead><tr><th>No.</th><th>法令名</th><th>年代</th><th>内容・概要</th></tr></thead>
 <tbody>
 <tr class="section-header"><td colspan="4">アメリカ独立革命</td></tr>
 <tr><td class="no-cell">1</td><td class="name-cell">独立宣言</td><td class="year-cell">1776</td><td class="desc-cell">ジェファソン起草。生命・自由・幸福追求の権利。ロック・ルソーの影響。「すべての人は平等に造られている」</td></tr>
 <tr><td class="no-cell">2</td><td class="name-cell">合衆国憲法</td><td class="year-cell">1787</td><td class="desc-cell">人民主権・三権分立・連邦制。世界初の成文憲法（近代的成文憲法）</td></tr>
-<tr class="section-header"><td colspan="4">フランス革命期</td></tr>
-<tr><td class="no-cell">3</td><td class="name-cell">封建的特権の廃止宣言</td><td class="year-cell">1789.8</td><td class="desc-cell">国民議会。封建的特権の有償廃止（のち無償に）</td></tr>
-<tr><td class="no-cell">4</td><td class="name-cell">人権宣言</td><td class="year-cell">1789.8</td><td class="desc-cell">「人間および市民の権利宣言」。自由・平等・国民主権・私有財産の不可侵。ルソー・アメリカ独立宣言の影響</td></tr>
-<tr><td class="no-cell">5</td><td class="name-cell">ル＝シャプリエ法</td><td class="year-cell">1791</td><td class="desc-cell">労働者の団結・ストライキを禁止。ギルドの廃止→自由経済政策の推進</td></tr>
-<tr><td class="no-cell">6</td><td class="name-cell">1791年憲法</td><td class="year-cell">1791</td><td class="desc-cell">立憲君主政。制限選挙（財産による）</td></tr>
-<tr><td class="no-cell">7</td><td class="name-cell">ジャコバン憲法（1793年憲法）</td><td class="year-cell">1793</td><td class="desc-cell">男性普通選挙。社会権の保障。ただし施行されず</td></tr>
-<tr><td class="no-cell">8</td><td class="name-cell">最高価格令</td><td class="year-cell">1793</td><td class="desc-cell">ロベスピエール。穀物・生活必需品の価格統制。恐怖政治の一環</td></tr>
-<tr class="section-header"><td colspan="4">ナポレオン</td></tr>
-<tr><td class="no-cell">9</td><td class="name-cell">ナポレオン法典（フランス民法典）</td><td class="year-cell">1804</td><td class="desc-cell">私有財産の不可侵・契約の自由・法の前の平等を規定。革命の成果の法典化。欧州各国の民法典に影響<br>私的所有権の不可侵・契約の自由・家族制度を規定。近代市民法の模範→ヨーロッパ各国の法典に影響。</td></tr>
-<tr><td class="no-cell">10</td><td class="name-cell">大陸封鎖令（ベルリン勅令）</td><td class="year-cell">1806</td><td class="desc-cell">ナポレオン。大陸諸国にイギリスとの貿易を禁止。ロシアの違反→ロシア遠征の一因</td></tr>
-</tbody></table></div>
+<tr class="section-header"><td colspan="4">フランス革命</td></tr>
+<tr><td class="no-cell">3</td><td class="name-cell">身分別議決法</td><td class="year-cell">1789.5</td><td class="desc-cell"><strong>三部会</strong>(1789.5召集)で<strong>第一身分(聖職者)・第二身分(貴族)</strong>が主張した議決方式=身分ごとに1票=特権身分の優位を維持。これに対し<strong>第三身分(平民)</strong>は<strong>頭数別議決</strong>を要求し、認められず<strong>国民議会</strong>を結成(<strong>球戯場の誓い</strong>)=フランス革命の出発点。</td></tr>
+<tr><td class="no-cell">4</td><td class="name-cell">封建的特権の廃止宣言</td><td class="year-cell">1789.8</td><td class="desc-cell">国民議会。封建的特権の有償廃止（のち無償に）</td></tr>
+<tr><td class="no-cell">5</td><td class="name-cell">人権宣言</td><td class="year-cell">1789.8</td><td class="desc-cell">「人間および市民の権利宣言」。自由・平等・国民主権・私有財産の不可侵。ルソー・アメリカ独立宣言の影響</td></tr>
+<tr><td class="no-cell">6</td><td class="name-cell">貨幣法</td><td class="year-cell">1790</td><td class="desc-cell">フランス革命中、<strong>アシニャ紙幣</strong>を発行する根拠法=没収した教会財産を担保とした不換紙幣で、革命政府の財政を支えたが濫発によりインフレを招いた。</td></tr>
+<tr><td class="no-cell">7</td><td class="name-cell">県制度</td><td class="year-cell">1790</td><td class="desc-cell"><strong>フランス革命</strong>=旧来の<strong>州(プロヴァンス)</strong>を廃止し、全国を<strong>83県(département)</strong>に再区分する地方制度改革。中央集権を強化し、<strong>身分制</strong>の地方的基盤を破壊=現代フランス地方行政の起源。</td></tr>
+<tr><td class="no-cell">8</td><td class="name-cell">ル＝シャプリエ法</td><td class="year-cell">1791</td><td class="desc-cell">労働者の団結・ストライキを禁止。ギルドの廃止→自由経済政策の推進</td></tr>
+<tr><td class="no-cell">9</td><td class="name-cell">1791年憲法</td><td class="year-cell">1791</td><td class="desc-cell">立憲君主政。制限選挙（財産による）</td></tr>
+<tr><td class="no-cell">10</td><td class="name-cell">ジャコバン憲法（1793年憲法）</td><td class="year-cell">1793</td><td class="desc-cell">男性普通選挙。社会権の保障。ただし施行されず</td></tr>
+<tr><td class="no-cell">11</td><td class="name-cell">最高価格令</td><td class="year-cell">1793</td><td class="desc-cell">ロベスピエール。穀物・生活必需品の価格統制。恐怖政治の一環</td></tr>
+<tr><td class="no-cell">12</td><td class="name-cell">ヴァントーズ法</td><td class="year-cell">1794.2-3</td><td class="desc-cell"><strong>ジャコバン派</strong>(<strong>ロベスピエール</strong>政権)が制定。亡命貴族・反革命派の財産を没収して<strong>困窮愛国者</strong>に分配する法=<strong>恐怖政治</strong>下の社会革命的措置。<strong>テルミドール反動</strong>(1794.7)で実施されず。</td></tr>
+<tr><td class="no-cell">13</td><td class="name-cell">プレリアール法</td><td class="year-cell">1794.6</td><td class="desc-cell"><strong>ジャコバン派</strong>が制定した<strong>恐怖政治</strong>の最高法規=被告の弁護人・証人喚問を廃止し、判決は無罪か死刑のみに制限=<strong>大恐怖</strong>時代の元凶。<strong>テルミドール9日のクーデタ</strong>(1794.7、ロベスピエール処刑)の引き金。</td></tr>
+<tr><td class="no-cell">14</td><td class="name-cell">1795年憲法</td><td class="year-cell">1795</td><td class="desc-cell"><strong>テルミドール反動</strong>後の<strong>総裁政府</strong>が制定した<strong>第3の憲法</strong>=共和暦3年憲法。制限選挙・<strong>5人総裁制</strong>を採用=ジャコバン派の急進主義に反発した穏健派ブルジョワジーの体制。総裁政府は<strong>ナポレオン</strong>のブリュメール18日のクーデタ(1799)で崩壊。</td></tr>
+<tr class="section-header"><td colspan="4">ナポレオン期</td></tr>
+<tr><td class="no-cell">15</td><td class="name-cell">統領政府</td><td class="year-cell">1799-1804</td><td class="desc-cell"><strong>ナポレオン</strong>=<strong>ブリュメール18日のクーデタ</strong>(1799)で総裁政府を倒して樹立した政権=3人の<strong>統領</strong>(コンスル)が統治、ナポレオンが第一統領=実質独裁。<strong>1799年憲法</strong>(共和暦8年憲法)制定。1804年<strong>第一帝政</strong>に移行。</td></tr>
+<tr><td class="no-cell">16</td><td class="name-cell">ナポレオン法典（フランス民法典）</td><td class="year-cell">1804</td><td class="desc-cell">私有財産の不可侵・契約の自由・法の前の平等を規定。革命の成果の法典化。欧州各国の民法典に影響<br>私的所有権の不可侵・契約の自由・家族制度を規定。近代市民法の模範→ヨーロッパ各国の法典に影響。</td></tr>
+<tr><td class="no-cell">17</td><td class="name-cell">大陸封鎖令（ベルリン勅令）</td><td class="year-cell">1806</td><td class="desc-cell">ナポレオン。大陸諸国にイギリスとの貿易を禁止。ロシアの違反→ロシア遠征の一因</td></tr>
+<tr class="section-header"><td colspan="4">復古王政〜19世紀フランス</td></tr>
+<tr><td class="no-cell">18</td><td class="name-cell">1814年憲章</td><td class="year-cell">1814</td><td class="desc-cell"><strong>復古王政</strong>下、<strong>ルイ18世</strong>が制定した憲法的勅令=<strong>欽定憲法</strong>。立憲君主制を採用し、二院制議会・財産制限選挙を規定。<strong>1830年七月革命</strong>でシャルル10世(<strong>七月勅令</strong>)が破棄を試みて失敗→<strong>七月王政</strong>へ。</td></tr>
+<tr><td class="no-cell">19</td><td class="name-cell">十億フラン法</td><td class="year-cell">1825</td><td class="desc-cell"><strong>復古王政</strong>下、<strong>シャルル10世</strong>が制定。<strong>フランス革命</strong>で財産を没収された<strong>亡命貴族</strong>に10億フランの賠償を行う法=反動政策の象徴。財政負担とブルジョワジーの不満を招き、<strong>七月革命</strong>(1830)の遠因となる。</td></tr>
+<tr><td class="no-cell">20</td><td class="name-cell">七月勅令</td><td class="year-cell">1830</td><td class="desc-cell">フランスのシャルル10世が発布。<br><br>①<strong>出版の自由制限</strong>(新聞検閲)、<br>②衆議院解散、<br>③<strong>選挙権の制限</strong>(有産階級への限定)、<br>→反発して<strong>七月革命</strong>(1830)勃発=シャルル10世亡命=<strong>ルイ=フィリップ</strong>即位(七月王政)。</td></tr>
+<tr><td class="no-cell">21</td><td class="name-cell">第三共和国憲法</td><td class="year-cell">1875</td><td class="desc-cell">共和政を正式に規定。大統領の権限は弱い</td></tr>
+<tr><td class="no-cell">22</td><td class="name-cell">政教分離法</td><td class="year-cell">1905</td><td class="desc-cell">クレマンソー内閣。教会と国家の完全分離→ライシテの原則</td></tr>
+<tr class="section-header"><td colspan="4">イギリス（19世紀）</td></tr>
+<tr><td class="no-cell">23</td><td class="name-cell">穀物法（制定）</td><td class="year-cell">1815</td><td class="desc-cell">地主階級の利益を保護する保護関税法。安価な外国産穀物の輸入を制限→産業資本家・労働者が反対（反穀物法同盟：コブデン・ブライト）→1846年に廃止。</td></tr>
+<tr><td class="no-cell">24</td><td class="name-cell">団結禁止法廃止</td><td class="year-cell">1824</td><td class="desc-cell">1824年。イギリスで労働者の団結（労働組合の結成）を禁じていた団結禁止法を廃止→労働組合が合法化。1871年には労働組合法で組合の法的地位が確立。</td></tr>
+<tr><td class="no-cell">25</td><td class="name-cell">カトリック教徒解放法</td><td class="year-cell">1829</td><td class="desc-cell">オコンネルの運動。カトリック教徒にも公職を開放</td></tr>
+<tr><td class="no-cell">26</td><td class="name-cell">第1回選挙法改正</td><td class="year-cell">1832</td><td class="desc-cell">グレイ内閣。腐敗選挙区の廃止。産業資本家に選挙権拡大</td></tr>
+<tr><td class="no-cell">27</td><td class="name-cell">一般工場法</td><td class="year-cell">1833</td><td class="desc-cell">児童労働の制限。工場監督官の設置</td></tr>
+<tr><td class="no-cell">28</td><td class="name-cell">新救貧法</td><td class="year-cell">1834</td><td class="desc-cell">英国の<strong>ホイッグ党</strong>政権が制定=<strong>救貧法</strong>(1601)を抜本改訂。失業者を<strong>ワークハウス(救貧院)</strong>に収容して労働を強制=自由主義経済の貧困観(自助原則)に基づく。<strong>労働者階級</strong>の反発で<strong>チャーティスト運動</strong>(1837-)の背景に。</td></tr>
+<tr><td class="no-cell">29</td><td class="name-cell">鉱山保安法</td><td class="year-cell">1842</td><td class="desc-cell">英国の<strong>労働立法</strong>=女性・少年(10歳未満)の坑内労働を禁止。1830-40年代の<strong>工場法</strong>群と並ぶ社会改良立法=<strong>産業革命</strong>下の児童・女性労働問題への対応。</td></tr>
+<tr><td class="no-cell">30</td><td class="name-cell">穀物法廃止</td><td class="year-cell">1846</td><td class="desc-cell">コブデン・ブライトの反穀物法同盟の運動。自由貿易主義の勝利。穀物法は地主の利益を守る保護関税</td></tr>
+<tr><td class="no-cell">31</td><td class="name-cell">公衆衛生法</td><td class="year-cell">1848</td><td class="desc-cell">英国制定=<strong>産業革命</strong>下の都市問題(コレラ流行・劣悪衛生環境)に対応。<strong>チャドウィック</strong>の調査報告に基づき、地方衛生行政の制度化を実施=近代公衆衛生制度の先駆。</td></tr>
+<tr><td class="no-cell">32</td><td class="name-cell">第2回選挙法改正</td><td class="year-cell">1867</td><td class="desc-cell">ディズレーリ内閣。都市労働者に選挙権拡大</td></tr>
+<tr><td class="no-cell">33</td><td class="name-cell">アイルランド土地法</td><td class="year-cell">1870</td><td class="desc-cell">グラッドストン。小作農の権利保護</td></tr>
+<tr><td class="no-cell">34</td><td class="name-cell">第3回選挙法改正</td><td class="year-cell">1884</td><td class="desc-cell">グラッドストン。農業・鉱山労働者に選挙権拡大</td></tr>
+<tr><td class="no-cell">35</td><td class="name-cell">議席再配分法</td><td class="year-cell">1885</td><td class="desc-cell">英国の<strong>第3回選挙法改正</strong>(1884)に伴う付属法=選挙区の人口に応じた議席再配分を実施。都市と農村の格差を是正し、近代代議制の基盤を整備。</td></tr>
+<tr><td class="no-cell">36</td><td class="name-cell">国民保険法</td><td class="year-cell">1911</td><td class="desc-cell">英国<strong>自由党</strong>(<strong>ロイド=ジョージ</strong>蔵相)が成立。<strong>疾病保険</strong>と<strong>失業保険</strong>を制度化=英国福祉国家の出発点。<strong>ベヴァリッジ報告</strong>(1942)・戦後福祉国家への基盤。</td></tr>
+<tr><td class="no-cell">37</td><td class="name-cell">議会法</td><td class="year-cell">1911</td><td class="desc-cell">アスキス内閣。貴族院（上院）の権限を制限→庶民院（下院）の優越を確立</td></tr>
+<tr><td class="no-cell">38</td><td class="name-cell">アイルランド自治法</td><td class="year-cell">1914</td><td class="desc-cell">成立するも第一次世界大戦で実施延期</td></tr>
+<tr><td class="no-cell">39</td><td class="name-cell">第4回選挙法改正</td><td class="year-cell">1918</td><td class="desc-cell">ロイド＝ジョージ内閣。21歳以上の男性と30歳以上の女性に選挙権→初めて女性参政権が認められる。第一次大戦への女性の貢献が背景。</td></tr>
+<tr><td class="no-cell">40</td><td class="name-cell">アイルランド統治法</td><td class="year-cell">1920</td><td class="desc-cell">英議会が制定=<strong>アイルランド島</strong>を北部(プロテスタント多住、英連合王国に残留)と南部(カトリック多住、自治領化)に分割するホームルール法。<strong>イースター蜂起</strong>(1916)・<strong>アイルランド独立戦争</strong>(1919-21)を経て、<strong>1922年アイルランド自由国</strong>(後のアイルランド共和国)成立につながる。</td></tr>
+<tr><td class="no-cell">41</td><td class="name-cell">第5回選挙法改正</td><td class="year-cell">1928</td><td class="desc-cell">21歳以上の男女に平等な選挙権→完全普通選挙の実現。</td></tr>
+<tr><td class="no-cell">42</td><td class="name-cell">第6回選挙法改正</td><td class="year-cell">1969</td><td class="desc-cell">選挙権年齢を21歳→18歳に引下げ。ベトナム反戦運動など若者の政治参加要求が背景。</td></tr>
+<tr class="section-header"><td colspan="4">プロイセン・ドイツ帝国</td></tr>
+<tr><td class="no-cell">43</td><td class="name-cell">プロイセン欽定憲法</td><td class="year-cell">1850</td><td class="desc-cell"><strong>1848年三月革命</strong>後の反動期、<strong>フリードリヒ=ヴィルヘルム4世</strong>が制定。<strong>フランクフルト国民議会</strong>(1848)の自由主義憲法を退け、欽定形式で立憲君主制を導入したが<strong>三級選挙制</strong>(納税額別)を採用=保守的な制限選挙=<strong>大日本帝国憲法</strong>(1889)のモデル。</td></tr>
+<tr><td class="no-cell">44</td><td class="name-cell">社会主義者鎮圧法</td><td class="year-cell">1878</td><td class="desc-cell">ビスマルク。社会主義政党・労働運動を弾圧（飴と鞭の「鞭」）</td></tr>
+<tr><td class="no-cell">45</td><td class="name-cell">社会保険立法（疾病・労災・老齢）</td><td class="year-cell">1883-89</td><td class="desc-cell">ビスマルクの「飴と鞭」の「飴」。①疾病保険法（1883）、②労災保険法（1884）、③老齢・廃疾保険法（1889）→世界初の社会保険制度。</td></tr>
+<tr><td class="no-cell">46</td><td class="name-cell">艦隊法</td><td class="year-cell">1898</td><td class="desc-cell"><strong>ドイツ帝国</strong>=<strong>ヴィルヘルム2世</strong>期に<strong>ティルピッツ海相</strong>が成立させた海軍拡張法。英国の海軍力に匹敵する大艦隊を建設して<strong>世界政策</strong>を推進=<strong>英独建艦競争</strong>を引き起こし<strong>第一次世界大戦</strong>の遠因。</td></tr>
+<tr class="section-header"><td colspan="4">ロシア帝国</td></tr>
+<tr><td class="no-cell">47</td><td class="name-cell">農奴解放令</td><td class="year-cell">1861</td><td class="desc-cell">アレクサンドル2世。農奴の人格的自由。ただし土地はミール（農村共同体）を通じて有償→不十分</td></tr>
+<tr><td class="no-cell">48</td><td class="name-cell">ゼムストヴォ（地方自治会）</td><td class="year-cell">1864〜</td><td class="desc-cell">アレクサンドル2世の大改革。県・郡に設置された地方自治機関。教育・衛生・道路等を担当。ナロードニキの活動の場。</td></tr>
+<tr><td class="no-cell">49</td><td class="name-cell">ミール（農村共同体）</td><td class="year-cell">〜1906</td><td class="desc-cell">農村共同体。定期的に土地再配分。農奴解放令後も土地はミールを通じて有償で農民に分配→農民の土地緊縛。ストルイピン改革でミール解体を試みるも未完。</td></tr>
+<tr><td class="no-cell">50</td><td class="name-cell">十月宣言（十月勅令）</td><td class="year-cell">1905</td><td class="desc-cell">ニコライ2世。第1次ロシア革命を受け国会（ドゥーマ）開設・憲法制定を約束</td></tr>
+<tr class="section-header"><td colspan="4">ベルギー</td></tr>
+<tr><td class="no-cell">51</td><td class="name-cell">ベルギー憲法</td><td class="year-cell">1831</td><td class="desc-cell"><strong>1830年ベルギー独立革命</strong>後に制定=立憲君主制・議院内閣制・人権保障を規定した、19世紀<strong>欧州自由主義憲法のモデル</strong>。後のオランダ憲法(1848)・各国の立憲化に強い影響。</td></tr>
+<tr class="section-header"><td colspan="4">オスマン帝国（タンジマート期）</td></tr>
+<tr><td class="no-cell">52</td><td class="name-cell">ギュルハネ勅令</td><td class="year-cell">1839</td><td class="desc-cell">アブデュルメジド1世。タンジマート（恩恵的改革）の開始。法の前の平等・生命と財産の保障</td></tr>
+<tr><td class="no-cell">53</td><td class="name-cell">改革勅令</td><td class="year-cell">1856</td><td class="desc-cell"><strong>オスマン帝国</strong>=<strong>タンジマート</strong>(改革)期、<strong>アブデュルメジド1世</strong>がクリミア戦争中に発布。<strong>ギュルハネ勅令</strong>(1839)を継承し、ムスリム・非ムスリムの法的平等・徴兵制・教育制度・財産権を規定=オスマン近代化の到達点。</td></tr>
+<tr><td class="no-cell">54</td><td class="name-cell">ミドハト憲法</td><td class="year-cell">1876</td><td class="desc-cell">アジア最初の近代的憲法。二院制議会。しかし露土戦争を口実にアブデュルハミト2世が停止→専制復帰</td></tr>
+<tr class="section-header"><td colspan="4">近代ヨーロッパの軍制・農業</td></tr>
+<tr><td class="no-cell">55</td><td class="name-cell">マニュファクチュア</td><td class="year-cell">近世</td><td class="desc-cell">工場制手工業。問屋制家内工業と機械制工場の中間段階。分業による生産性向上。</td></tr>
+<tr><td class="no-cell">56</td><td class="name-cell">第1次囲い込み（16C）</td><td class="year-cell">農業変革</td><td class="desc-cell">毛織物工業の原料（羊毛）生産のため耕地を牧羊地に転換。「羊が人を食う」（トマス＝モア『ユートピア』）。</td></tr>
+<tr><td class="no-cell">57</td><td class="name-cell">ノーフォーク農法（18C）</td><td class="year-cell">農業変革</td><td class="desc-cell">四圃制（小麦→カブ→大麦→クローヴァー）で休耕地をなくす農業革命。→第2次囲い込みの背景。</td></tr>
+<tr><td class="no-cell">58</td><td class="name-cell">第2次囲い込み（18C）</td><td class="year-cell">農業変革</td><td class="desc-cell">議会による合法的な囲い込み→ヨーマン（独立自営農民）の没落→都市への労働力供給→産業革命の前提。</td></tr>
+<tr><td class="no-cell">59</td><td class="name-cell">徴兵制（国民皆兵）</td><td class="year-cell">軍事制度</td><td class="desc-cell">仏革命の義勇兵→1793年総動員令→ナポレオンの大陸軍の基盤。プロイセンのシャルンホルスト改革→クラウゼヴィッツ。国民国家と不可分の制度。</td></tr>
+<tr><td class="no-cell">60</td><td class="name-cell">再版農奴制（グーツヘルシャフト）</td><td class="year-cell">土地制度</td><td class="desc-cell">西欧の穀物需要増大→エルベ川以東の領主が農奴制を強化し大規模穀物生産。プロイセンのユンカー（地主貴族）が典型。西欧は農奴制解体が進む一方、東欧では逆行→東西格差の構造化。</td></tr>
+</tbody>
+</table></div>
+<div class="tbl-wrap hidden" id="content3"><table>
+<thead><tr><th>No.</th><th>法令名</th><th>年代</th><th>内容・概要</th></tr></thead>
+<tbody>
+<tr class="section-header"><td colspan="4">英植民地課税政策</td></tr>
+<tr><td class="no-cell">1</td><td class="name-cell">帽子法</td><td class="year-cell">1732</td><td class="desc-cell">英議会制定=北米植民地の<strong>帽子製造業</strong>を制限する法=植民地で製造した帽子の他植民地・本国への輸出を禁止し、英本国製造業を保護。<strong>羊毛法</strong>(1699)等と並ぶ<strong>植民地工業の制限立法</strong>の典型。</td></tr>
+<tr><td class="no-cell">2</td><td class="name-cell">糖蜜法</td><td class="year-cell">1733</td><td class="desc-cell">英議会制定=北米植民地が西インド諸島(英領以外、特に仏領)から輸入する糖蜜に高関税を課した法。<strong>砂糖法</strong>(1764)の前身=英の<strong>重商主義</strong>政策の典型。実施は緩慢だったが、後の本格的な植民地課税(<strong>砂糖法</strong>・<strong>印紙法</strong>)の前段階。</td></tr>
+<tr><td class="no-cell">3</td><td class="name-cell">砂糖法</td><td class="year-cell">1764</td><td class="desc-cell">植民地に対する課税強化→「代表なくして課税なし」</td></tr>
+<tr><td class="no-cell">4</td><td class="name-cell">通貨法</td><td class="year-cell">1764</td><td class="desc-cell">英議会が制定=北米植民地の<strong>紙幣発行</strong>を禁止し、英本国通貨を流通させる法。植民地経済の不振を招き、<strong>砂糖法</strong>(1764)・<strong>印紙法</strong>(1765)と並んで植民地の反英感情を激化=独立革命の遠因。</td></tr>
+<tr><td class="no-cell">5</td><td class="name-cell">印紙法</td><td class="year-cell">1765</td><td class="desc-cell">新聞・証書等に印紙貼付を義務化→植民地の猛反発→1766年撤廃</td></tr>
+<tr><td class="no-cell">6</td><td class="name-cell">茶法</td><td class="year-cell">1773</td><td class="desc-cell">東インド会社に茶の独占販売権→ボストン茶会事件の直接の原因</td></tr>
+<tr><td class="no-cell">7</td><td class="name-cell">ケベック法</td><td class="year-cell">1774</td><td class="desc-cell">英議会制定=<strong>仏領ケベック</strong>(<strong>仏インディアン戦争</strong>後英領化)に対し、フランス民法・カトリック信仰を承認し、領域をオハイオ川流域まで拡大=北米13植民地の西方拡張を阻害=<strong>耐え難い諸法</strong>(1774)の一つとして独立革命を加速。</td></tr>
+<tr><td class="no-cell">8</td><td class="name-cell">マサチューセッツ弾圧法</td><td class="year-cell">1774</td><td class="desc-cell">英議会制定=<strong>ボストン茶会事件</strong>(1773)への報復として、ボストン港閉鎖・マサチューセッツ自治剥奪・将兵宿営を強制した諸法の総称=<strong>耐え難い諸法</strong>(intolerable acts)の中核。<strong>第1回大陸会議</strong>(1774)を招集させ独立戦争の直接原因。</td></tr>
+<tr class="section-header"><td colspan="4">独立〜南北戦争期</td></tr>
+<tr><td class="no-cell">9</td><td class="name-cell">ミズーリ協定</td><td class="year-cell">1820</td><td class="desc-cell">ミズーリ州の連邦加入をめぐる自由州・奴隷州の妥協案。<br><br>①北緯<strong>36度30分以北</strong>を自由州、<strong>以南</strong>を奴隷州とする、<br>②ミズーリを奴隷州として加入させる代わりに、マサチューセッツから分離した<strong>メーン州</strong>を自由州として加入、<br>→奴隷制をめぐる対立の一時的解決。<strong>カンザス=ネブラスカ法(1854)</strong>で廃棄=南北戦争への道。</td></tr>
+<tr><td class="no-cell">10</td><td class="name-cell">インディアン強制移住法</td><td class="year-cell">1830</td><td class="desc-cell">ジャクソン大統領。先住民をミシシッピ川以西に強制移住</td></tr>
+<tr><td class="no-cell">11</td><td class="name-cell">逃亡奴隷法</td><td class="year-cell">1850</td><td class="desc-cell"><strong>1850年妥協</strong>の一環として米連邦議会が制定=<strong>奴隷制反対派(自由州)</strong>の住民にも逃亡奴隷の捜索・引き渡しに協力する義務を課した。北部の反発を招き<strong>南北戦争</strong>(1861-65)の重要な原因の一つ=ストー『<strong>アンクル=トムの小屋</strong>』(1852)の背景。</td></tr>
+<tr><td class="no-cell">12</td><td class="name-cell">カンザス＝ネブラスカ法</td><td class="year-cell">1854</td><td class="desc-cell">ミズーリ協定を破棄。奴隷州か自由州かは住民が決定→南北対立激化</td></tr>
+<tr><td class="no-cell">13</td><td class="name-cell">ホームステッド法</td><td class="year-cell">1862</td><td class="desc-cell">西部の公有地160エーカーを5年間耕作した者に無償で与える→西部開拓の促進</td></tr>
+<tr><td class="no-cell">14</td><td class="name-cell">奴隷解放宣言</td><td class="year-cell">1863</td><td class="desc-cell">リンカーン。南部連合の奴隷を解放（北部の奴隷は対象外）。ゲティスバーグ演説</td></tr>
+<tr><td class="no-cell">15</td><td class="name-cell">憲法修正第14条</td><td class="year-cell">1868</td><td class="desc-cell">南北戦争後、<strong>再建期</strong>に成立。<br><br>①<strong>合衆国生まれの者すべてに市民権</strong>(=解放された黒人奴隷の市民権を承認)、<br>②<strong>法の下の平等</strong>(equal protection)=州は市民の権利を侵害してはならない、<br>③<strong>デュー=プロセス</strong>(正当な法的手続)=個人の権利保障、<br>→後の<strong>公民権運動</strong>・黒人差別撤廃の法的基盤=Brown v. Board判決(1954)などで活用。</td></tr>
+<tr class="section-header"><td colspan="4">帝国主義〜20世紀前半</td></tr>
+<tr><td class="no-cell">16</td><td class="name-cell">英領北アメリカ法</td><td class="year-cell">1867</td><td class="desc-cell">英議会が制定=<strong>カナダ自治領(ドミニオン)</strong>を成立させた法。北米諸植民地(オンタリオ・ケベック・ノヴァスコシア・ニューブランズウィック)を連邦国家に統合=<strong>カナダ建国</strong>=英連邦自治領体制の先駆。</td></tr>
+<tr><td class="no-cell">17</td><td class="name-cell">グレンジャー法</td><td class="year-cell">1870年代</td><td class="desc-cell">米中西部諸州で制定された<strong>農民保護立法</strong>=農民組織<strong>グレンジ運動</strong>の成果として、鉄道・倉庫業者の運賃・料金を規制。<strong>反トラスト運動</strong>(<strong>シャーマン反トラスト法</strong>1890)の先駆。</td></tr>
+<tr><td class="no-cell">18</td><td class="name-cell">1882年移民法</td><td class="year-cell">1882</td><td class="desc-cell">米国制定=<strong>中国人排斥法</strong>(Chinese Exclusion Act)とも。<strong>中国人労働者</strong>の入国を10年間禁止する法=<strong>排日移民法</strong>(1924)に先立つ最初の人種差別的入国制限法。</td></tr>
+<tr><td class="no-cell">19</td><td class="name-cell">インディアン一般土地割当法(ドーズ法)</td><td class="year-cell">1887</td><td class="desc-cell">ドーズ上院議員の提案。<br><br>①インディアン部族の<strong>共有地(保留地)を解体</strong>、<br>②各家族に土地を個別割り当て(=白人との同化を強制)、<br>③<strong>同化政策の画期</strong>=インディアンを「アメリカ市民」として白人社会に吸収しようとする政策、<br>→結果的に多くの土地が白人入植者に売却され、インディアンの土地は激減。<strong>1934年インディアン再組織法</strong>で廃止。</td></tr>
+<tr><td class="no-cell">20</td><td class="name-cell">州際取引法</td><td class="year-cell">1887</td><td class="desc-cell">米連邦議会制定=州を跨ぐ商取引(特に<strong>鉄道</strong>)を連邦が規制する法=<strong>州際通商委員会(ICC)</strong>を設立。<strong>反トラスト運動</strong>の起点となり、後の<strong>シャーマン反トラスト法</strong>(1890)・<strong>クレイトン反トラスト法</strong>(1914)につながる。</td></tr>
+<tr><td class="no-cell">21</td><td class="name-cell">シャーマン反トラスト法</td><td class="year-cell">1890</td><td class="desc-cell">トラスト（企業合同）を規制。独占禁止の嚆矢</td></tr>
+<tr><td class="no-cell">22</td><td class="name-cell">クレイトン反トラスト法</td><td class="year-cell">1914</td><td class="desc-cell">米国<strong>ウィルソン</strong>政権下で制定=<strong>シャーマン反トラスト法</strong>(1890)を補強し、価格差別・抱き合わせ販売・株式持合い等の独占的行為を禁止。同時に<strong>労働組合</strong>の活動を反トラスト法の適用外とした=米独占禁止法体系の確立。</td></tr>
+<tr><td class="no-cell">23</td><td class="name-cell">ジョーンズ法</td><td class="year-cell">1916</td><td class="desc-cell">米議会制定=<strong>フィリピン</strong>に大幅な自治権を認め、米国の最終的独立付与方針を確認した法。<strong>タイディングズ・マクダフィー法</strong>(1934)・<strong>フィリピン独立法</strong>(1934)の前段階。</td></tr>
+<tr><td class="no-cell">24</td><td class="name-cell">禁酒法</td><td class="year-cell">1920-33</td><td class="desc-cell">酒類の製造・販売を禁止→マフィアの密造・密売。失敗し撤廃</td></tr>
+<tr><td class="no-cell">25</td><td class="name-cell">国別割り当て法</td><td class="year-cell">1921</td><td class="desc-cell">米国制定=最初の出身国別<strong>移民数枠</strong>を導入した法=1910年国勢調査を基準に各国出身者を年間3%に制限。<strong>1924年移民法(排日移民法)</strong>の前段階。</td></tr>
+<tr><td class="no-cell">26</td><td class="name-cell">フォードニー＝マッカンバー法</td><td class="year-cell">1922</td><td class="desc-cell">米国<strong>ハーディング</strong>政権下で制定された<strong>高関税法</strong>=戦後の自国産業保護のため関税を大幅引き上げ。1920年代の米国の<strong>孤立主義</strong>・保護貿易主義を象徴し、後の<strong>スムート・ホーリー法</strong>(1930)につながる。</td></tr>
+<tr><td class="no-cell">27</td><td class="name-cell">排日移民法</td><td class="year-cell">1924</td><td class="desc-cell">1924年。アメリカで日本人移民を全面禁止。日米紳士協約（1907年）の自主規制を超え法的に排除→日米関係の悪化。背景にカリフォルニア州の排日運動・黄禍論。</td></tr>
+<tr><td class="no-cell">28</td><td class="name-cell">スムート・ホーリー関税法</td><td class="year-cell">1930</td><td class="desc-cell"><strong>世界恐慌</strong>(1929-)直後、米<strong>フーヴァー</strong>政権下で制定された<strong>高関税法</strong>=2万品目以上に過去最高の関税を課す。各国の<strong>報復関税</strong>を招き、世界貿易が縮小=<strong>ブロック経済</strong>を加速=世界恐慌深刻化の元凶。</td></tr>
+<tr><td class="no-cell">29</td><td class="name-cell">タイディングズ・マクダフィー法</td><td class="year-cell">1934</td><td class="desc-cell">米議会制定=<strong>フィリピン独立法</strong>とも=10年後(1946)のフィリピン独立を約束した法。<strong>F.ローズヴェルト</strong>政権の植民地政策転換を象徴=戦後<strong>フィリピン独立</strong>(1946.7.4)の根拠。</td></tr>
+<tr><td class="no-cell">30</td><td class="name-cell">フィリピン独立法</td><td class="year-cell">1934</td><td class="desc-cell">米議会。10年後のフィリピン独立を約束→ケソン大統領の独立準備政府</td></tr>
+<tr><td class="no-cell">31</td><td class="name-cell">中立法</td><td class="year-cell">1935-37</td><td class="desc-cell">ヨーロッパの戦争への不干渉。孤立主義</td></tr>
+<tr class="section-header"><td colspan="4">ニューディール</td></tr>
+<tr><td class="no-cell">32</td><td class="name-cell">農業調整法（AAA）</td><td class="year-cell">1933</td><td class="desc-cell">1933年。ニューディール政策の柱。農産物の生産制限と価格安定を目的とし、農家に補助金を支給→1936年に最高裁で違憲判決→修正法で再制定。</td></tr>
+<tr><td class="no-cell">33</td><td class="name-cell">全国産業復興法（NIRA）</td><td class="year-cell">1933</td><td class="desc-cell">企業間の公正競争規約。労働者の団結権を保障</td></tr>
+<tr><td class="no-cell">34</td><td class="name-cell">テネシー川流域開発公社（TVA）</td><td class="year-cell">1933</td><td class="desc-cell">ニューディール政策の柱。テネシー川流域にダム建設・発電・治水・植林を行う総合地域開発。<br>政府主導の大規模公共事業→雇用創出と地域開発の両立。<br>民間企業との競合が批判されたが、ニューディールの象徴的事業として知られる。</td></tr>
+<tr><td class="no-cell">35</td><td class="name-cell">連邦緊急救済法</td><td class="year-cell">1933</td><td class="desc-cell"><strong>F.ローズヴェルト</strong>=<strong>ニューディール</strong>政策第一期=失業救済のための連邦救済庁(FERA)を設立し、各州に救済資金を交付。<strong>公共事業局(PWA)</strong>等と並ぶ大量失業対策の柱。</td></tr>
+<tr><td class="no-cell">36</td><td class="name-cell">連邦証券法</td><td class="year-cell">1933</td><td class="desc-cell"><strong>ニューディール</strong>政策の一環=<strong>証券取引</strong>を連邦規制下に置く法。世界恐慌の直接原因となった<strong>1929年株価大暴落</strong>を踏まえ、<strong>証券取引委員会(SEC)</strong>(1934)設立の前提となる金融改革。</td></tr>
+<tr><td class="no-cell">37</td><td class="name-cell">互恵通商協定法</td><td class="year-cell">1934</td><td class="desc-cell">米<strong>ローズヴェルト</strong>政権下、<strong>コーデル=ハル</strong>国務長官が成立させた=スムート・ホーリー法の高関税を緩和し、相互的関税引き下げを進める法。<strong>戦後GATT</strong>(1947)・<strong>自由貿易体制</strong>の出発点。</td></tr>
+<tr><td class="no-cell">38</td><td class="name-cell">ワグナー法（全国労働関係法）</td><td class="year-cell">1935</td><td class="desc-cell">労働者の団結権・団体交渉権を保障。CIO（産業別労働組合会議）の成長</td></tr>
+<tr><td class="no-cell">39</td><td class="name-cell">社会保障法</td><td class="year-cell">1935</td><td class="desc-cell">老齢年金・失業保険。アメリカ初の社会保障制度</td></tr>
+<tr><td class="no-cell">40</td><td class="name-cell">武器貸与法</td><td class="year-cell">1941</td><td class="desc-cell">連合国に武器を貸与・供与→事実上の参戦準備</td></tr>
+<tr class="section-header"><td colspan="4">戦後アメリカ</td></tr>
+<tr><td class="no-cell">41</td><td class="name-cell">国家安全保障法</td><td class="year-cell">1947</td><td class="desc-cell"><strong>トルーマン</strong>大統領期、<strong>冷戦初期</strong>の国家安全保障機構の基盤。<br><br>①<strong>国家安全保障会議(NSC)</strong>の設置=大統領直属の安全保障政策決定機関、<br>②<strong>中央情報局(CIA)</strong>の設置=対外情報機関、<br>③陸海空軍を統合する<strong>国防総省</strong>の前身設立、<br>→冷戦期のアメリカの対外介入・情報戦の法的基盤。</td></tr>
+<tr><td class="no-cell">42</td><td class="name-cell">タフト＝ハートレー法</td><td class="year-cell">1947</td><td class="desc-cell">トルーマン政権期。ワグナー法を修正し労働組合の活動を制限。クローズドショップの禁止。共産主義者の排除。</td></tr>
+<tr><td class="no-cell">43</td><td class="name-cell">台湾関係法</td><td class="year-cell">1979</td><td class="desc-cell"><strong>米中国交正常化</strong>(1979.1)に伴う米国制定=<strong>米華相互防衛条約</strong>(1954)失効後、台湾(<strong>中華民国</strong>)との非公式な関係維持・武器供与を米国内法で規定=以後の<strong>米台関係</strong>・<strong>米中対立</strong>(<strong>台湾海峡危機</strong>等)の法的根拠。</td></tr>
+<tr class="section-header"><td colspan="4">人種差別・公民権</td></tr>
+<tr><td class="no-cell">44</td><td class="name-cell">ジム＝クロウ法</td><td class="year-cell">1876-1964</td><td class="desc-cell">南部諸州の人種隔離法の総称。公共施設・交通機関・学校での黒人と白人の分離。「分離すれども平等」（プレッシー対ファーガソン判決,1896）。1964年公民権法で撤廃。</td></tr>
+<tr><td class="no-cell">45</td><td class="name-cell">公民権法</td><td class="year-cell">1964</td><td class="desc-cell">ジョンソン大統領。人種差別を法的に禁止。ジム＝クロウ制度の撤廃</td></tr>
+<tr><td class="no-cell">46</td><td class="name-cell">投票権法</td><td class="year-cell">1965</td><td class="desc-cell">公民権法（1964）を補完。南部諸州の識字テスト等による黒人投票妨害を禁止。セルマ→モンゴメリー行進が契機。</td></tr>
+</tbody>
+</table></div>
 <div class="tbl-wrap hidden" id="content4"><table>
 <thead><tr><th>No.</th><th>法令名</th><th>年代</th><th>内容・概要</th></tr></thead>
 <tbody>
-<tr class="section-header"><td colspan="4">イギリス（19世紀）</td></tr>
-<tr><td class="no-cell">1</td><td class="name-cell">穀物法（制定）</td><td class="year-cell">1815</td><td class="desc-cell">地主階級の利益を保護する保護関税法。安価な外国産穀物の輸入を制限→産業資本家・労働者が反対（反穀物法同盟：コブデン・ブライト）→1846年に廃止。</td></tr>
-<tr><td class="no-cell">2</td><td class="name-cell">団結禁止法廃止</td><td class="year-cell">1824</td><td class="desc-cell">1824年。イギリスで労働者の団結（労働組合の結成）を禁じていた団結禁止法を廃止→労働組合が合法化。1871年には労働組合法で組合の法的地位が確立。</td></tr>
-<tr><td class="no-cell">3</td><td class="name-cell">カトリック教徒解放法</td><td class="year-cell">1829</td><td class="desc-cell">オコンネルの運動。カトリック教徒にも公職を開放</td></tr>
-<tr><td class="no-cell">4</td><td class="name-cell">第1回選挙法改正</td><td class="year-cell">1832</td><td class="desc-cell">グレイ内閣。腐敗選挙区の廃止。産業資本家に選挙権拡大</td></tr>
-<tr><td class="no-cell">5</td><td class="name-cell">一般工場法</td><td class="year-cell">1833</td><td class="desc-cell">児童労働の制限。工場監督官の設置</td></tr>
-<tr><td class="no-cell">6</td><td class="name-cell">穀物法廃止</td><td class="year-cell">1846</td><td class="desc-cell">コブデン・ブライトの反穀物法同盟の運動。自由貿易主義の勝利。穀物法は地主の利益を守る保護関税</td></tr>
-<tr><td class="no-cell">7</td><td class="name-cell">第2回選挙法改正</td><td class="year-cell">1867</td><td class="desc-cell">ディズレーリ内閣。都市労働者に選挙権拡大</td></tr>
-<tr><td class="no-cell">8</td><td class="name-cell">アイルランド土地法</td><td class="year-cell">1870</td><td class="desc-cell">グラッドストン。小作農の権利保護</td></tr>
-<tr><td class="no-cell">9</td><td class="name-cell">第3回選挙法改正</td><td class="year-cell">1884</td><td class="desc-cell">グラッドストン。農業・鉱山労働者に選挙権拡大</td></tr>
-<tr><td class="no-cell">10</td><td class="name-cell">議会法</td><td class="year-cell">1911</td><td class="desc-cell">アスキス内閣。貴族院（上院）の権限を制限→庶民院（下院）の優越を確立</td></tr>
-<tr><td class="no-cell">11</td><td class="name-cell">アイルランド自治法</td><td class="year-cell">1914</td><td class="desc-cell">成立するも第一次世界大戦で実施延期</td></tr>
-<tr><td class="no-cell">12</td><td class="name-cell">第4回選挙法改正</td><td class="year-cell">1918</td><td class="desc-cell">ロイド＝ジョージ内閣。21歳以上の男性と30歳以上の女性に選挙権→初めて女性参政権が認められる。第一次大戦への女性の貢献が背景。</td></tr>
-<tr><td class="no-cell">13</td><td class="name-cell">第5回選挙法改正</td><td class="year-cell">1928</td><td class="desc-cell">21歳以上の男女に平等な選挙権→完全普通選挙の実現。</td></tr>
-<tr><td class="no-cell">14</td><td class="name-cell">ベヴァリッジ報告</td><td class="year-cell">1942</td><td class="desc-cell">「ゆりかごから墓場まで」。社会保険・国民保健サービス（NHS）等の福祉国家構想→戦後アトリー労働党政権が実施。</td></tr>
-<tr><td class="no-cell">15</td><td class="name-cell">第6回選挙法改正</td><td class="year-cell">1969</td><td class="desc-cell">選挙権年齢を21歳→18歳に引下げ。ベトナム反戦運動など若者の政治参加要求が背景。</td></tr>
-<tr class="section-header"><td colspan="4">プロイセン・ドイツ</td></tr>
-<tr><td class="no-cell">16</td><td class="name-cell">プロイセン改革（シュタイン・ハルデンベルク）</td><td class="year-cell">1807-12</td><td class="desc-cell">イエナの戦い敗北後の近代化改革。①農奴解放令（1807）、②都市自治令（1808）、③営業の自由、④軍制改革（シャルンホルスト・グナイゼナウ）。</td></tr>
-<tr><td class="no-cell">17</td><td class="name-cell">社会主義者鎮圧法</td><td class="year-cell">1878</td><td class="desc-cell">ビスマルク。社会主義政党・労働運動を弾圧（飴と鞭の「鞭」）</td></tr>
-<tr><td class="no-cell">18</td><td class="name-cell">社会保険立法（疾病・労災・老齢）</td><td class="year-cell">1883-89</td><td class="desc-cell">ビスマルクの「飴と鞭」の「飴」。①疾病保険法（1883）、②労災保険法（1884）、③老齢・廃疾保険法（1889）→世界初の社会保険制度。</td></tr>
-<tr class="section-header"><td colspan="4">ロシア</td></tr>
-<tr><td class="no-cell">19</td><td class="name-cell">農奴解放令</td><td class="year-cell">1861</td><td class="desc-cell">アレクサンドル2世。農奴の人格的自由。ただし土地はミール（農村共同体）を通じて有償→不十分</td></tr>
-<tr><td class="no-cell">20</td><td class="name-cell">十月宣言（十月勅令）</td><td class="year-cell">1905</td><td class="desc-cell">ニコライ2世。第1次ロシア革命を受け国会（ドゥーマ）開設・憲法制定を約束</td></tr>
-<tr class="section-header"><td colspan="4">フランス（19世紀）</td></tr>
-<tr><td class="no-cell">21</td><td class="name-cell">七月勅令</td><td class="year-cell">1830</td><td class="desc-cell">フランスのシャルル10世が発布。<br><br>①<strong>出版の自由制限</strong>(新聞検閲)、<br>②衆議院解散、<br>③<strong>選挙権の制限</strong>(有産階級への限定)、<br>→反発して<strong>七月革命</strong>(1830)勃発=シャルル10世亡命=<strong>ルイ=フィリップ</strong>即位(七月王政)。</td></tr>
-<tr><td class="no-cell">22</td><td class="name-cell">第三共和国憲法</td><td class="year-cell">1875</td><td class="desc-cell">共和政を正式に規定。大統領の権限は弱い</td></tr>
-<tr><td class="no-cell">23</td><td class="name-cell">政教分離法</td><td class="year-cell">1905</td><td class="desc-cell">クレマンソー内閣。教会と国家の完全分離→ライシテの原則</td></tr>
-<tr class="section-header"><td colspan="4">オスマン帝国</td></tr>
-<tr><td class="no-cell">24</td><td class="name-cell">ギュルハネ勅令</td><td class="year-cell">1839</td><td class="desc-cell">アブデュルメジド1世。タンジマート（恩恵的改革）の開始。法の前の平等・生命と財産の保障</td></tr>
-<tr><td class="no-cell">25</td><td class="name-cell">ミドハト憲法</td><td class="year-cell">1876</td><td class="desc-cell">アジア最初の近代的憲法。二院制議会。しかし露土戦争を口実にアブデュルハミト2世が停止→専制復帰</td></tr>
-<tr class="section-header"><td colspan="4">日本</td></tr>
-<tr><td class="no-cell">26</td><td class="name-cell">大日本帝国憲法</td><td class="year-cell">1889</td><td class="desc-cell">プロイセン憲法を模範。天皇主権。欽定憲法</td></tr>
-</tbody></table></div>
+<tr class="section-header"><td colspan="4">メキシコ革命</td></tr>
+<tr><td class="no-cell">1</td><td class="name-cell">メキシコ憲法</td><td class="year-cell">1917</td><td class="desc-cell"><strong>メキシコ革命</strong>(1910-)の最終段階で<strong>カランサ</strong>大統領期に制定された画期的憲法=土地改革・労働者の権利・教会財産制限・地下資源国有化を規定=後の<strong>カルデナス</strong>(1934-40)の<strong>石油国有化</strong>(1938)の根拠。<strong>ロシア革命</strong>(1917)以前の最初の社会権憲法。</td></tr>
+<tr class="section-header"><td colspan="4">ロシア革命〜ソ連</td></tr>
+<tr><td class="no-cell">2</td><td class="name-cell">平和に関する布告</td><td class="year-cell">1917.11</td><td class="desc-cell"><strong>十月革命</strong>直後、<strong>レーニン</strong>が<strong>第2回全ロシア=ソヴィエト大会</strong>で発表=全ての交戦国に<strong>無併合・無賠償・民族自決</strong>に基づく即時講和を呼びかけた。<strong>ブレスト=リトフスク条約</strong>(1918.3、対独単独講和)に至る。</td></tr>
+<tr><td class="no-cell">3</td><td class="name-cell">土地に関する布告</td><td class="year-cell">1917.11</td><td class="desc-cell"><strong>十月革命</strong>直後、<strong>レーニン</strong>が発表=地主的土地所有を無償没収し、農民共同体に分配する布告=<strong>ボリシェヴィキ</strong>政権が農民の支持を獲得する決定的政策。後の<strong>戦時共産主義</strong>(1918-21)・<strong>ネップ</strong>(1921-28)の出発点。</td></tr>
+<tr><td class="no-cell">4</td><td class="name-cell">1918年ロシア共和国憲法</td><td class="year-cell">1918.7</td><td class="desc-cell"><strong>ロシア=ソヴィエト連邦社会主義共和国(RSFSR)</strong>の最初の憲法=<strong>レーニン</strong>主導で<strong>第5回全ロシア=ソヴィエト大会</strong>で採択。プロレタリア独裁・<strong>ソヴィエト</strong>を主権機関とする社会主義憲法の世界最初の事例=後の<strong>ソ連憲法</strong>(1924, 1936)の母体。</td></tr>
+<tr><td class="no-cell">5</td><td class="name-cell">スターリン憲法</td><td class="year-cell">1936</td><td class="desc-cell">ソヴィエト社会主義憲法。社会主義の達成を宣言。形式的な権利保障</td></tr>
+<tr class="section-header"><td colspan="4">ヴァイマル〜ナチス=ドイツ</td></tr>
+<tr><td class="no-cell">6</td><td class="name-cell">ヴァイマル憲法</td><td class="year-cell">1919</td><td class="desc-cell">ヴァイマル共和国。国民主権・男女普通選挙・社会権の保障。当時「世界で最も民主的な憲法」</td></tr>
+<tr><td class="no-cell">7</td><td class="name-cell">緊急勅令</td><td class="year-cell">1933.2</td><td class="desc-cell"><strong>ヒトラー</strong>政権下、<strong>国会議事堂放火事件</strong>を口実に発布された<strong>大統領緊急令</strong>=ヴァイマル憲法の市民的自由(言論・集会・結社)を停止。直後の<strong>全権委任法</strong>(1933.3)と並びナチス独裁の法的基盤。</td></tr>
+<tr><td class="no-cell">8</td><td class="name-cell">全権委任法</td><td class="year-cell">1933</td><td class="desc-cell">ヒトラー。政府に立法権を付与→ヴァイマル憲法を事実上停止。独裁の法的根拠</td></tr>
+<tr><td class="no-cell">9</td><td class="name-cell">ニュルンベルク法</td><td class="year-cell">1935</td><td class="desc-cell">ユダヤ人の市民権を剥奪。ドイツ国籍を否定→ホロコーストへの法的基盤</td></tr>
+<tr class="section-header"><td colspan="4">戦後ドイツ</td></tr>
+<tr><td class="no-cell">10</td><td class="name-cell">ボン基本法</td><td class="year-cell">1949</td><td class="desc-cell"><strong>西ドイツ(ドイツ連邦共和国)</strong>の基本法=「憲法」と称さず「<strong>基本法</strong>」とした(将来の東西統一憲法を見据えた措置)。<strong>ヴァイマル憲法</strong>の反省から首相主導・連邦制・違憲審査(連邦憲法裁判所)を強化。<strong>1990年再統一</strong>後も統一ドイツの基本法として継続。</td></tr>
+<tr><td class="no-cell">11</td><td class="name-cell">連邦補償法</td><td class="year-cell">1953</td><td class="desc-cell">西ドイツ(<strong>アデナウアー</strong>政権)制定=ナチス時代に迫害を受けたユダヤ人・政治犯・少数民族等への<strong>補償</strong>を制度化=<strong>戦後ドイツの過去克服</strong>の柱。<strong>ホロコースト</strong>被害者個人補償の基礎。</td></tr>
+<tr><td class="no-cell">12</td><td class="name-cell">一般兵役義務法</td><td class="year-cell">1956</td><td class="desc-cell"><strong>西ドイツ</strong>=<strong>アデナウアー</strong>政権下、再軍備の一環として<strong>徴兵制</strong>を導入。<strong>NATO</strong>加盟(1955)・<strong>連邦軍(ブンデスヴェーア)</strong>創設(1955)の連動立法=戦後ドイツの軍事的再建。</td></tr>
+<tr class="section-header"><td colspan="4">トルコ・中東</td></tr>
+<tr><td class="no-cell">13</td><td class="name-cell">トルコ共和国憲法</td><td class="year-cell">1924</td><td class="desc-cell"><strong>ケマル=パシャ</strong>(<strong>アタテュルク</strong>)が<strong>トルコ共和国</strong>(1923年建国)の基本法として制定=政教分離・国民主権・大統領制を規定。<strong>カリフ制廃止</strong>(1924)・近代化諸改革と一体で、イスラーム圏初の世俗共和制憲法。</td></tr>
+<tr><td class="no-cell">14</td><td class="name-cell">レバノン憲法</td><td class="year-cell">1926</td><td class="desc-cell">仏委任統治下のレバノンで制定=<strong>マロン派キリスト教徒・スンナ派・シーア派</strong>等の宗教共同体間の<strong>権力分配</strong>(コンフェッショナリズム)を制度化。1943年独立後も継続し、レバノン政治の宗派対立構造の起源=<strong>レバノン内戦</strong>(1975-90)の背景。</td></tr>
+<tr class="section-header"><td colspan="4">東欧・冷戦終結</td></tr>
+<tr><td class="no-cell">15</td><td class="name-cell">憲章77</td><td class="year-cell">1977</td><td class="desc-cell"><strong>チェコスロヴァキア</strong>の反体制人権宣言=<strong>ハヴェル</strong>(後の大統領)・<strong>パトチカ</strong>等が起草=<strong>ヘルシンキ宣言</strong>(1975)の人権条項を根拠に共産党政権の人権侵害を批判。<strong>ビロード革命</strong>(1989)へ続く東欧民主化運動の精神的支柱。</td></tr>
+<tr><td class="no-cell">16</td><td class="name-cell">パリ憲章</td><td class="year-cell">1990.11</td><td class="desc-cell"><strong>欧州安全保障協力会議(CSCE)</strong>パリ首脳会議で採択=「新しいヨーロッパのためのパリ憲章」。<strong>冷戦終結</strong>を公式に確認し、欧州における民主主義・人権・市場経済を共通価値として宣言=<strong>欧州安全保障協力機構(OSCE、1995)</strong>への発展の出発点。</td></tr>
+<tr><td class="no-cell">17</td><td class="name-cell">EU憲法</td><td class="year-cell">2004</td><td class="desc-cell"><strong>欧州連合(EU)</strong>の統一憲法草案=2004年に署名されたが、2005年フランス・オランダの<strong>国民投票で否決</strong>=発効せず。代替として<strong>リスボン条約</strong>(2007)が締結され、その内容を引き継ぐ=EU統合の制度的限界を示した事件。</td></tr>
+<tr class="section-header"><td colspan="4">英帝国・自治領</td></tr>
+<tr><td class="no-cell">18</td><td class="name-cell">ウェストミンスター憲章</td><td class="year-cell">1931</td><td class="desc-cell"><strong>バルフォア報告書(1926)</strong>の法制化。<br><br>①英本国と自治領(<strong>カナダ・オーストラリア・ニュージーランド・南アフリカ・ニューファンドランド・アイルランド自由国</strong>)を<strong>対等な独立国家</strong>として規定、<br>②英議会は自治領に法律を押し付けられない、<br>③→<strong>英連邦(Commonwealth of Nations)</strong>の法的基盤=英帝国の段階的解体の始まり。</td></tr>
+<tr class="section-header"><td colspan="4">南アフリカ</td></tr>
+<tr><td class="no-cell">19</td><td class="name-cell">背徳法</td><td class="year-cell">1949/1950改正</td><td class="desc-cell"><strong>南アフリカ共和国</strong>=<strong>アパルトヘイト</strong>の核心=異なる人種間の<strong>性的関係・結婚</strong>を禁止する法。<strong>人口登録法</strong>(1950)と組み合わさって人種分離を徹底。1985年廃止=アパルトヘイト解体の出発点。</td></tr>
+<tr><td class="no-cell">20</td><td class="name-cell">人口登録法</td><td class="year-cell">1950</td><td class="desc-cell"><strong>南アフリカ共和国</strong>=<strong>アパルトヘイト</strong>(人種隔離政策)の中核=全国民を人種(白人・カラード・アフリカ人・アジア人)に分類して登録する法。背徳法・集団地域法等と並び、社会全体を人種で固定化する基幹立法。1991年廃止=アパルトヘイト終焉。</td></tr>
+<tr><td class="no-cell">21</td><td class="name-cell">南アフリカ共和国憲法</td><td class="year-cell">1996</td><td class="desc-cell">アパルトヘイト廃止後の新憲法。マンデラ政権下で制定。人権保障条項が極めて充実。</td></tr>
+<tr class="section-header"><td colspan="4">韓国</td></tr>
+<tr><td class="no-cell">22</td><td class="name-cell">反共法</td><td class="year-cell">1961</td><td class="desc-cell"><strong>韓国</strong>=<strong>朴正煕</strong>政権が制定=共産主義的活動を広範に取り締まる法。<strong>国家保安法</strong>と並ぶ反共体制の柱で、民主化運動・労働運動の弾圧に用いられた。1980年廃止=韓国民主化の一里塚。</td></tr>
+<tr class="section-header"><td colspan="4">太平洋</td></tr>
+<tr><td class="no-cell">23</td><td class="name-cell">ニュージーランド反核法</td><td class="year-cell">1987</td><td class="desc-cell"><strong>ニュージーランド労働党政権</strong>(<strong>ロンギ</strong>首相)制定=NZ領海・領空への<strong>核兵器搭載艦船・航空機</strong>の進入を禁止する法。<strong>ANZUS条約</strong>(米豪NZ)から事実上の脱退=非核地帯化の象徴。<strong>太平洋反核運動</strong>の到達点。</td></tr>
+<tr class="section-header"><td colspan="4">香港</td></tr>
+<tr><td class="no-cell">24</td><td class="name-cell">国家安全維持法</td><td class="year-cell">2020.6</td><td class="desc-cell"><strong>香港国家安全維持法</strong>=<strong>中国全国人民代表大会常務委員会</strong>が制定し<strong>香港特別行政区</strong>に直接施行。国家分裂・政権転覆・テロ・外国勢力との結託を犯罪化し、最高刑は無期懲役=<strong>1997年返還</strong>後の「<strong>一国二制度</strong>」事実上の終焉、香港民主化運動への大規模弾圧の根拠。</td></tr>
+<tr class="section-header"><td colspan="4">国際機関の憲章</td></tr>
+<tr><td class="no-cell">25</td><td class="name-cell">ユネスコ憲章</td><td class="year-cell">1945.11</td><td class="desc-cell"><strong>国際連合教育科学文化機関(UNESCO)</strong>の設立基本文書=「戦争は人の心の中で生まれる、平和の砦も人の心の中に築かなければならない」の前文で有名。<strong>サンフランシスコ会議</strong>(1945)直後、<strong>ロンドン</strong>で採択=戦後の文化的国際協力の出発点。</td></tr>
+<tr><td class="no-cell">26</td><td class="name-cell">ボゴタ憲章</td><td class="year-cell">1948</td><td class="desc-cell"><strong>米州機構(OAS)</strong>を設立した憲章=<strong>第9回汎米会議</strong>(コロンビア=ボゴタ)で採択。米州21か国(米国を含む)が地域的安全保障・紛争解決・経済協力に合意=<strong>冷戦下の西半球</strong>の地域組織として機能。</td></tr>
+</tbody>
+</table></div>
 <div class="tbl-wrap hidden" id="content5"><table>
 <thead><tr><th>No.</th><th>法令名</th><th>年代</th><th>内容・概要</th></tr></thead>
 <tbody>
-<tr class="section-header"><td colspan="4">イギリスの植民地課税政策</td></tr>
-<tr><td class="no-cell">1</td><td class="name-cell">砂糖法</td><td class="year-cell">1764</td><td class="desc-cell">植民地に対する課税強化→「代表なくして課税なし」</td></tr>
-<tr><td class="no-cell">2</td><td class="name-cell">印紙法</td><td class="year-cell">1765</td><td class="desc-cell">新聞・証書等に印紙貼付を義務化→植民地の猛反発→1766年撤廃</td></tr>
-<tr><td class="no-cell">3</td><td class="name-cell">茶法</td><td class="year-cell">1773</td><td class="desc-cell">東インド会社に茶の独占販売権→ボストン茶会事件の直接の原因</td></tr>
-<tr class="section-header"><td colspan="4">アメリカ合衆国（独立〜南北戦争期）</td></tr>
-<tr><td class="no-cell">4</td><td class="name-cell">ミズーリ協定</td><td class="year-cell">1820</td><td class="desc-cell">ミズーリ州の連邦加入をめぐる自由州・奴隷州の妥協案。<br><br>①北緯<strong>36度30分以北</strong>を自由州、<strong>以南</strong>を奴隷州とする、<br>②ミズーリを奴隷州として加入させる代わりに、マサチューセッツから分離した<strong>メーン州</strong>を自由州として加入、<br>→奴隷制をめぐる対立の一時的解決。<strong>カンザス=ネブラスカ法(1854)</strong>で廃棄=南北戦争への道。</td></tr>
-<tr><td class="no-cell">5</td><td class="name-cell">インディアン強制移住法</td><td class="year-cell">1830</td><td class="desc-cell">ジャクソン大統領。先住民をミシシッピ川以西に強制移住</td></tr>
-<tr><td class="no-cell">6</td><td class="name-cell">カンザス＝ネブラスカ法</td><td class="year-cell">1854</td><td class="desc-cell">ミズーリ協定を破棄。奴隷州か自由州かは住民が決定→南北対立激化</td></tr>
-<tr><td class="no-cell">7</td><td class="name-cell">ホームステッド法</td><td class="year-cell">1862</td><td class="desc-cell">西部の公有地160エーカーを5年間耕作した者に無償で与える→西部開拓の促進</td></tr>
-<tr><td class="no-cell">8</td><td class="name-cell">奴隷解放宣言</td><td class="year-cell">1863</td><td class="desc-cell">リンカーン。南部連合の奴隷を解放（北部の奴隷は対象外）。ゲティスバーグ演説</td></tr>
-<tr><td class="no-cell">9</td><td class="name-cell">憲法修正第14条</td><td class="year-cell">1868</td><td class="desc-cell">南北戦争後、<strong>再建期</strong>に成立。<br><br>①<strong>合衆国生まれの者すべてに市民権</strong>(=解放された黒人奴隷の市民権を承認)、<br>②<strong>法の下の平等</strong>(equal protection)=州は市民の権利を侵害してはならない、<br>③<strong>デュー=プロセス</strong>(正当な法的手続)=個人の権利保障、<br>→後の<strong>公民権運動</strong>・黒人差別撤廃の法的基盤=Brown v. Board判決(1954)などで活用。</td></tr>
-<tr class="section-header"><td colspan="4">帝国主義〜20世紀前半</td></tr>
-<tr><td class="no-cell">10</td><td class="name-cell">インディアン一般土地割当法(ドーズ法)</td><td class="year-cell">1887</td><td class="desc-cell">ドーズ上院議員の提案。<br><br>①インディアン部族の<strong>共有地(保留地)を解体</strong>、<br>②各家族に土地を個別割り当て(=白人との同化を強制)、<br>③<strong>同化政策の画期</strong>=インディアンを「アメリカ市民」として白人社会に吸収しようとする政策、<br>→結果的に多くの土地が白人入植者に売却され、インディアンの土地は激減。<strong>1934年インディアン再組織法</strong>で廃止。</td></tr>
-<tr><td class="no-cell">11</td><td class="name-cell">シャーマン反トラスト法</td><td class="year-cell">1890</td><td class="desc-cell">トラスト（企業合同）を規制。独占禁止の嚆矢</td></tr>
-<tr><td class="no-cell">12</td><td class="name-cell">禁酒法</td><td class="year-cell">1920-33</td><td class="desc-cell">酒類の製造・販売を禁止→マフィアの密造・密売。失敗し撤廃</td></tr>
-<tr><td class="no-cell">13</td><td class="name-cell">排日移民法</td><td class="year-cell">1924</td><td class="desc-cell">1924年。アメリカで日本人移民を全面禁止。日米紳士協約（1907年）の自主規制を超え法的に排除→日米関係の悪化。背景にカリフォルニア州の排日運動・黄禍論。</td></tr>
-<tr><td class="no-cell">14</td><td class="name-cell">中立法</td><td class="year-cell">1935-37</td><td class="desc-cell">ヨーロッパの戦争への不干渉。孤立主義</td></tr>
-<tr class="section-header"><td colspan="4">ニューディール関連</td></tr>
-<tr><td class="no-cell">15</td><td class="name-cell">農業調整法（AAA）</td><td class="year-cell">1933</td><td class="desc-cell">1933年。ニューディール政策の柱。農産物の生産制限と価格安定を目的とし、農家に補助金を支給→1936年に最高裁で違憲判決→修正法で再制定。</td></tr>
-<tr><td class="no-cell">16</td><td class="name-cell">全国産業復興法（NIRA）</td><td class="year-cell">1933</td><td class="desc-cell">企業間の公正競争規約。労働者の団結権を保障</td></tr>
-<tr><td class="no-cell">17</td><td class="name-cell">テネシー川流域開発公社（TVA）</td><td class="year-cell">1933</td><td class="desc-cell">ニューディール政策の柱。テネシー川流域にダム建設・発電・治水・植林を行う総合地域開発。<br>政府主導の大規模公共事業→雇用創出と地域開発の両立。<br>民間企業との競合が批判されたが、ニューディールの象徴的事業として知られる。</td></tr>
-<tr><td class="no-cell">18</td><td class="name-cell">ワグナー法（全国労働関係法）</td><td class="year-cell">1935</td><td class="desc-cell">労働者の団結権・団体交渉権を保障。CIO（産業別労働組合会議）の成長</td></tr>
-<tr><td class="no-cell">19</td><td class="name-cell">社会保障法</td><td class="year-cell">1935</td><td class="desc-cell">老齢年金・失業保険。アメリカ初の社会保障制度</td></tr>
-<tr><td class="no-cell">20</td><td class="name-cell">武器貸与法</td><td class="year-cell">1941</td><td class="desc-cell">連合国に武器を貸与・供与→事実上の参戦準備</td></tr>
-<tr class="section-header"><td colspan="4">戦後労働法</td></tr>
-<tr><td class="no-cell">21</td><td class="name-cell">タフト＝ハートレー法</td><td class="year-cell">1947</td><td class="desc-cell">トルーマン政権期。ワグナー法を修正し労働組合の活動を制限。クローズドショップの禁止。共産主義者の排除。</td></tr>
-<tr class="section-header"><td colspan="4">人種差別・公民権</td></tr>
-<tr><td class="no-cell">22</td><td class="name-cell">ジム＝クロウ法</td><td class="year-cell">1876-1964</td><td class="desc-cell">南部諸州の人種隔離法の総称。公共施設・交通機関・学校での黒人と白人の分離。「分離すれども平等」（プレッシー対ファーガソン判決,1896）。1964年公民権法で撤廃。</td></tr>
-<tr><td class="no-cell">23</td><td class="name-cell">公民権法</td><td class="year-cell">1964</td><td class="desc-cell">ジョンソン大統領。人種差別を法的に禁止。ジム＝クロウ制度の撤廃</td></tr>
-<tr><td class="no-cell">24</td><td class="name-cell">投票権法</td><td class="year-cell">1965</td><td class="desc-cell">公民権法（1964）を補完。南部諸州の識字テスト等による黒人投票妨害を禁止。セルマ→モンゴメリー行進が契機。</td></tr>
-</tbody></table></div>
+<tr class="section-header"><td colspan="4">殷周</td></tr>
+<tr><td class="no-cell">1</td><td class="name-cell">封建制（分封制）</td><td class="year-cell">地方制度</td><td class="desc-cell">王が血縁・功臣に土地を分封。宗法（嫡長子相続）に基づく。諸侯は貢納・軍役の義務→春秋戦国で形骸化。</td></tr>
+<tr><td class="no-cell">2</td><td class="name-cell">井田制</td><td class="year-cell">土地制度</td><td class="desc-cell">周王が土地を諸侯に分封。井の字型に9区画に分け、中央の1区画を公田として共同耕作→実在性に疑問。</td></tr>
+<tr><td class="no-cell">3</td><td class="name-cell">土地私有制</td><td class="year-cell">土地制度</td><td class="desc-cell">商鞅の変法（秦）で土地の私有・売買を公認→大土地所有（豪族の荘園化）の進行。</td></tr>
+<tr class="section-header"><td colspan="4">秦</td></tr>
+<tr><td class="no-cell">4</td><td class="name-cell">郡県制</td><td class="year-cell">前221</td><td class="desc-cell">始皇帝。全国を郡・県に分け中央から官吏を派遣→中央集権体制の確立</td></tr>
+<tr class="section-header"><td colspan="4">漢</td></tr>
+<tr><td class="no-cell">5</td><td class="name-cell">推恩の令</td><td class="year-cell">前127</td><td class="desc-cell">武帝。王領を子弟に分割相続させ実質的に郡県制化</td></tr>
+<tr><td class="no-cell">6</td><td class="name-cell">均輸法・平準法</td><td class="year-cell">前115頃</td><td class="desc-cell">武帝。桑弘羊の献策。物資の輸送調整と物価安定→国家による経済統制</td></tr>
+<tr><td class="no-cell">7</td><td class="name-cell">党錮の禁</td><td class="year-cell">166/169</td><td class="desc-cell">宦官勢力と対立した清流派知識人（太学生・官僚）を弾圧。2度にわたり儒学者を禁錮刑に。→後漢の政治的腐敗と知識人弾圧の典型。黄巾の乱(184)の背景。</td></tr>
+<tr><td class="no-cell">8</td><td class="name-cell">郡国制</td><td class="year-cell">地方制度</td><td class="desc-cell">郡県制と封国制の併用。皇帝直轄地は郡県制、功臣・一族には王国を封じる。→呉楚七国の乱(前154)→武帝の推恩の令で王国を弱体化。</td></tr>
+<tr><td class="no-cell">9</td><td class="name-cell">郷挙里選</td><td class="year-cell">官吏登用</td><td class="desc-cell">地方長官が孝廉（孝行・廉潔な者）を推薦→中央に送る。<br>→推薦制のため有力豪族が独占→形骸化。</td></tr>
+<tr><td class="no-cell">10</td><td class="name-cell">限田策→王田制</td><td class="year-cell">土地制度</td><td class="desc-cell">前漢末に土地集中の弊害が深刻化→王莽の新が「王田制」で土地の売買を禁止→失敗し混乱→前漢の土地私有制に戻る。</td></tr>
+<tr><td class="no-cell">11</td><td class="name-cell">屯田制</td><td class="year-cell">土地制度</td><td class="desc-cell">曹操が荒廃地に農民・兵士を入植させ穀物を生産。軍屯（兵士が耕作）と民屯（農民を組織）。戦乱期の食糧確保策→のち均田制へと発展。</td></tr>
+<tr class="section-header"><td colspan="4">魏晋南北朝</td></tr>
+<tr><td class="no-cell">12</td><td class="name-cell">占田・課田法</td><td class="year-cell">280頃</td><td class="desc-cell">西晋。土地所有と耕作の上限を規定</td></tr>
+<tr><td class="no-cell">13</td><td class="name-cell">三長制</td><td class="year-cell">485</td><td class="desc-cell"><strong>北魏・孝文帝</strong>期の地方制度=5家を「隣」、5隣を「里」、5里を「党」とする三段階の郷村組織。徴税・治安維持・徴兵の単位として機能=<strong>均田制</strong>(485)と一体で施行された。後の唐宋の郷村制度の原型。</td></tr>
+<tr><td class="no-cell">14</td><td class="name-cell">土断法</td><td class="year-cell">4-6C</td><td class="desc-cell"><strong>東晋・南朝</strong>期の戸籍政策=北方からの<strong>流民</strong>を現居住地で正式な戸籍に登録(従来は出身地戸籍を保持=「白籍」)。土地と人口を実態に合わせて把握する=<strong>南朝の財政基盤</strong>確立。<strong>北魏均田制</strong>に通じる土地・戸籍政策。</td></tr>
+<tr><td class="no-cell">15</td><td class="name-cell">九品中正法（九品官人法）</td><td class="year-cell">官吏登用</td><td class="desc-cell">魏の曹丕が陳群の建議で導入。中正官が人物を9等級に評価→官位を決定。<br>→名門貴族が「上品に寒門なく、下品に勢族なし」と独占→門閥貴族の固定化。</td></tr>
+<tr class="section-header"><td colspan="4">隋唐</td></tr>
+<tr><td class="no-cell">16</td><td class="name-cell">均田制</td><td class="year-cell">485-780</td><td class="desc-cell">北魏孝文帝が開始。成人男女に土地を支給→死後に国家に返還。隋・唐でも継承。780年両税法施行で崩壊。<br>※⑤行政・土地・税制にも関連項目あり</td></tr>
+<tr><td class="no-cell">17</td><td class="name-cell">都城制</td><td class="year-cell">隋唐〜</td><td class="desc-cell"><strong>長安</strong>(隋唐都城)に代表される計画都市制度=城壁で囲まれた方形の中に碁盤目状の街路と坊(区画)を配置。<strong>渤海上京龍泉府</strong>・日本の<strong>平城京</strong>・<strong>平安京</strong>等東アジア諸国の都城に影響=東アジア国際秩序の文化的基盤。</td></tr>
+<tr><td class="no-cell">18</td><td class="name-cell">唐律疏議（唐律）</td><td class="year-cell">653</td><td class="desc-cell">唐の基本法典。律・令・格・式の律令格式体制。長孫無忌らが編纂。日本（大宝律令）・朝鮮・ベトナムに影響→東アジア法制圏の基盤。</td></tr>
+<tr><td class="no-cell">19</td><td class="name-cell">租庸調制</td><td class="year-cell">唐</td><td class="desc-cell">均田制を基盤とした税制。租（穀物）・庸（労役の代納）・調（繊維製品）。成人男性が対象。<br>※⑤行政・土地・税制にも関連項目あり</td></tr>
+<tr><td class="no-cell">20</td><td class="name-cell">良賤法</td><td class="year-cell">唐</td><td class="desc-cell">唐の<strong>身分制度</strong>=「<strong>良民</strong>(自由民)」と「<strong>賤民</strong>(奴婢・部曲等)」を区別する法。<strong>均田制</strong>下で良民にのみ口分田を支給=唐律の身分秩序の基盤=東アジア律令制諸国(日本・新羅等)に影響。</td></tr>
+<tr><td class="no-cell">21</td><td class="name-cell">節度使</td><td class="year-cell">唐中期〜</td><td class="desc-cell">唐の辺境軍司令官。安史の乱(755)以降、内地にも設置→藩鎮（地方軍閥）化。軍事・行政・財政権を掌握→唐の中央集権を形骸化。五代十国は藩鎮の割拠の帰結。</td></tr>
+<tr><td class="no-cell">22</td><td class="name-cell">両税法</td><td class="year-cell">780</td><td class="desc-cell">楊炎の建議。夏・秋の2回徴税。資産に応じた課税→均田制・租庸調制に代わる。銭納原則。<br>※⑤行政・土地・税制にも関連項目あり</td></tr>
+<tr><td class="no-cell">23</td><td class="name-cell">州県制</td><td class="year-cell">地方制度</td><td class="desc-cell">郡を廃し州・県の二層制に簡素化。刺史が州を管轄。科挙官僚を地方に派遣→中央集権の強化。</td></tr>
+<tr><td class="no-cell">24</td><td class="name-cell">都護府</td><td class="year-cell">辺境統治</td><td class="desc-cell">辺境の異民族地域に設置（安西・安北・安東・安南・北庭・単于の六都護府）。現地の首長を利用する羈縻政策と併用。</td></tr>
+<tr><td class="no-cell">25</td><td class="name-cell">羈縻政策（羈縻州）</td><td class="year-cell">異民族統治</td><td class="desc-cell">辺境の異民族に自治を認め、現地の首長を都督・刺史に任命。間接統治。唐の多民族帝国を支えた柔軟な制度。</td></tr>
+<tr><td class="no-cell">26</td><td class="name-cell">三省六部</td><td class="year-cell">中央官制</td><td class="desc-cell">中書省（詔勅の起草）・門下省（審議）・尚書省（執行、六部を統括）。三省の長官が合議で国政を運営。皇帝独裁を抑制する機能。</td></tr>
+<tr><td class="no-cell">27</td><td class="name-cell">御史台</td><td class="year-cell">監察制度</td><td class="desc-cell">官僚の監察・弾劾を担う機関。中央の百官から地方官まで監視。三省六部と並ぶ唐の中央官制の柱。明では都察院に改組。</td></tr>
+<tr><td class="no-cell">28</td><td class="name-cell">科挙の創始</td><td class="year-cell">官吏登用</td><td class="desc-cell">隋の文帝が選挙制度として開始→煬帝が進士科を設置（606頃）。<br>試験による官吏登用→門閥貴族の排除と皇帝権力の強化。</td></tr>
+<tr><td class="no-cell">29</td><td class="name-cell">科挙（唐代）</td><td class="year-cell">官吏登用</td><td class="desc-cell">進士科（文学・詩文中心）が最も重視。明経科（経書の暗記）もあり。<br>→門閥の影響は残るが新興官僚（科挙官僚）が台頭。</td></tr>
+<tr><td class="no-cell">30</td><td class="name-cell">府兵制</td><td class="year-cell">軍事制度</td><td class="desc-cell">均田制とセット。農民を兵士に（兵農一致）。平時は農業、有事に召集。<br>唐初期まで有効→安史の乱で崩壊→募兵制に移行。</td></tr>
+<tr><td class="no-cell">31</td><td class="name-cell">募兵制</td><td class="year-cell">軍事制度</td><td class="desc-cell">安史の乱後、府兵制の崩壊を受け職業軍人を雇用。節度使が軍閥化→藩鎮の割拠→五代十国の混乱へ。</td></tr>
+<tr class="section-header"><td colspan="4">宋</td></tr>
+<tr><td class="no-cell">32</td><td class="name-cell">差役法</td><td class="year-cell">王安石新法以前</td><td class="desc-cell">宋初の地方労役制度=戸単位で職役(吏胥・里正等)を割り当てる制度。富裕層の負担が重く農村疲弊の原因となったため、<strong>王安石</strong>が<strong>募役法(雇役法)</strong>に置き換えた=新法の一環。</td></tr>
+<tr><td class="no-cell">33</td><td class="name-cell">王安石の新法</td><td class="year-cell">1069-</td><td class="desc-cell">神宗が登用。青苗法・募役法・保甲法・市易法・方田均税法など→司馬光ら旧法党の反対</td></tr>
+<tr><td class="no-cell">34</td><td class="name-cell">青苗法</td><td class="year-cell">1069</td><td class="desc-cell"><strong>王安石の新法</strong>=春に農民に低利で銭穀を貸付け、収穫時に返済させる<strong>富国策</strong>の柱。地主・大商人の高利貸し独占を打破し、農民の小経営を保護=<strong>司馬光</strong>ら旧法党の反発を招く。</td></tr>
+<tr><td class="no-cell">35</td><td class="name-cell">募役法</td><td class="year-cell">1069</td><td class="desc-cell"><strong>王安石の新法</strong>=旧来の<strong>差役法</strong>(戸別の労役課税)を廃止し、銭納(<strong>免役銭</strong>)に変更。官府はその銭で雇役者を雇う制度=農民の労役負担軽減・商品経済化を促進。<strong>雇役法</strong>とも。</td></tr>
+<tr><td class="no-cell">36</td><td class="name-cell">保馬法</td><td class="year-cell">1069-</td><td class="desc-cell"><strong>王安石の新法</strong>の一つ=農民に軍馬を飼育させ、平時は農耕、戦時は軍馬として徴発する制度。<strong>保甲法</strong>と並び<strong>強兵策</strong>の柱だが、農民に過重な負担を強いて反発を招き、新法廃止と共に消滅。</td></tr>
+<tr><td class="no-cell">37</td><td class="name-cell">農田水利法</td><td class="year-cell">1069-</td><td class="desc-cell"><strong>王安石の新法</strong>の一つ=灌漑施設・水利事業に低利融資を行い農業生産力を高める法。<strong>青苗法</strong>・<strong>市易法</strong>と並び<strong>富国策</strong>の柱。地主層の反発と保守派(<strong>司馬光</strong>)の批判で、後の宰相期に廃止。</td></tr>
+<tr><td class="no-cell">38</td><td class="name-cell">均輸法（宋）</td><td class="year-cell">1069</td><td class="desc-cell"><strong>王安石の新法</strong>=各地の物資を中央が一元管理して輸送=価格平準化と輸送費削減を実現する商業統制。漢の<strong>均輸法</strong>(武帝、前115頃)を継承した制度。</td></tr>
+<tr><td class="no-cell">39</td><td class="name-cell">保甲法</td><td class="year-cell">1070</td><td class="desc-cell"><strong>王安石の新法</strong>=農村を「保(10戸)」「大保(50戸)」「都保(500戸)」に編成し、相互監視・治安維持・民兵訓練を義務化=<strong>強兵策</strong>の柱。<strong>保馬法</strong>と組み合わせ、農民を兵士化。</td></tr>
+<tr><td class="no-cell">40</td><td class="name-cell">市易法</td><td class="year-cell">1072</td><td class="desc-cell"><strong>王安石の新法</strong>=都市の中小商人に政府が低利融資し、大商人による市場独占を打破=<strong>富国策</strong>の柱。後に保守派から「政府の商業介入」と批判され、新法廃止と共に消滅。</td></tr>
+<tr><td class="no-cell">41</td><td class="name-cell">方田均税法</td><td class="year-cell">1072</td><td class="desc-cell"><strong>王安石の新法</strong>=土地を測量して<strong>方田</strong>(等級別)に区分し、土地等級に応じた公平な課税を実現する税制改革=大土地所有者の脱税を防ぐ。<strong>形勢戸</strong>の反発で実施は限定的。</td></tr>
+<tr><td class="no-cell">42</td><td class="name-cell">市舶司</td><td class="year-cell">宋〜明</td><td class="desc-cell">海上貿易を管理する官庁。広州・泉州・明州等に設置。関税の徴収・密貿易の取り締まり。明初に海禁政策で縮小→隆慶開海（1567）で民間貿易を解禁。</td></tr>
+<tr><td class="no-cell">43</td><td class="name-cell">文治主義の官制</td><td class="year-cell">中央官制</td><td class="desc-cell">殿試の導入で科挙を皇帝直轄化。宰相の権限を分散（枢密院・三司）。文官優位→軍事力の弱体化。</td></tr>
+<tr><td class="no-cell">44</td><td class="name-cell">科挙の完成</td><td class="year-cell">官吏登用</td><td class="desc-cell">殿試の導入で最終選抜を皇帝が直接実施→科挙を皇帝直轄化。門閥貴族の排除→士大夫層（科挙官僚）の時代に。</td></tr>
+<tr><td class="no-cell">45</td><td class="name-cell">形勢戸の大土地所有</td><td class="year-cell">土地制度</td><td class="desc-cell">均田制は完全に消滅。大地主（形勢戸）と佃戸（小作人）の関係が支配的に。<br>佃戸制（小作制度）が広まる。王安石の新法（青苗法・募役法等）は大地主への対策。</td></tr>
+<tr class="section-header"><td colspan="4">遼・金</td></tr>
+<tr><td class="no-cell">46</td><td class="name-cell">二重統治体制</td><td class="year-cell">10C-</td><td class="desc-cell"><strong>遼(契丹)</strong>が遊牧民(契丹人)と農耕民(漢人・渤海人)に対して採用した行政体制=<strong>北面官</strong>(部族制で遊牧民統治)・<strong>南面官</strong>(州県制で農耕民統治)の二重組織。<strong>金</strong>・<strong>元</strong>でも類似制度が踏襲=北方民族の中国支配の基本形。</td></tr>
+<tr class="section-header"><td colspan="4">元</td></tr>
+<tr><td class="no-cell">47</td><td class="name-cell">千戸制</td><td class="year-cell">13C初</td><td class="desc-cell"><strong>チンギス=カン</strong>が制定した<strong>モンゴル帝国</strong>の軍事・行政制度=遊牧民を1000人(千戸)単位で編成し、<strong>千戸長</strong>に支配権を与える。10戸・100戸・万戸も併設。<strong>ジャムチ(駅伝制)</strong>と並ぶモンゴル統治の核心制度=元朝にも継承。</td></tr>
+<tr><td class="no-cell">48</td><td class="name-cell">駅伝制（ジャムチ）</td><td class="year-cell">13C-</td><td class="desc-cell"><strong>モンゴル帝国</strong>の交通・通信網=主要街道に約30km毎に<strong>站(ジャムチ)</strong>(駅)を設置し、馬・食糧・宿泊を提供。皇帝の使者は<strong>パイザ(牌符)</strong>を提示して利用=広大な帝国を結ぶインフラ。<strong>ペルシア=アケメネス朝</strong>の「<strong>王の道</strong>」・<strong>インカ帝国</strong>のキプ運用と並ぶ古代帝国の交通網。</td></tr>
+<tr><td class="no-cell">49</td><td class="name-cell">行省（行中書省）</td><td class="year-cell">地方制度</td><td class="desc-cell">元が中書省の出先機関として各地に設置した地方行政単位。広域的な地方統治→明清の省制度の直接的起源。現在の中国の「省」の語源。</td></tr>
+<tr><td class="no-cell">50</td><td class="name-cell">中書省（元）</td><td class="year-cell">中央官制</td><td class="desc-cell">三省のうち中書省のみを残し最高行政機関に一元化。行中書省（行省）を地方に設置→省制度の起源。</td></tr>
+<tr><td class="no-cell">51</td><td class="name-cell">科差</td><td class="year-cell">税制</td><td class="desc-cell">モンゴル式の人頭税。包銀（銀納税）・絹糸税。色目人が徴税請負→農民の負担増大。</td></tr>
+<tr><td class="no-cell">52</td><td class="name-cell">科挙の中断</td><td class="year-cell">官吏登用</td><td class="desc-cell">モンゴル人を優遇し科挙を一時中断（1313年に復活するも漢人は不利）。<br>→中断期には民間で通俗文学（元曲・雑劇）が発展。</td></tr>
+<tr class="section-header"><td colspan="4">明</td></tr>
+<tr><td class="no-cell">53</td><td class="name-cell">一世一元の制</td><td class="year-cell">1368-</td><td class="desc-cell"><strong>明・洪武帝(朱元璋)</strong>が制定=皇帝一代で一つの<strong>元号</strong>のみ使用する制度。それまでは皇帝在位中に複数の元号を改元するのが一般的だったが、明清期に踏襲=元号と皇帝が一致(「永楽帝」「乾隆帝」等の呼称も可能に)。</td></tr>
+<tr><td class="no-cell">54</td><td class="name-cell">里甲制＋魚鱗図冊</td><td class="year-cell">土地・行政</td><td class="desc-cell">洪武帝が整備。<br>①里甲制：110戸を1里とし戸籍管理・徴税の単位。<br>②魚鱗図冊：土地台帳（土地の形状が魚の鱗に似る）。<br>③賦役黄冊：戸籍台帳。→中期以降に形骸化。</td></tr>
+<tr><td class="no-cell">55</td><td class="name-cell">海禁</td><td class="year-cell">明初</td><td class="desc-cell">洪武帝〜。民間人の海外渡航・貿易を禁止→朝貢貿易の独占</td></tr>
+<tr><td class="no-cell">56</td><td class="name-cell">一条鞭法</td><td class="year-cell">16C後半</td><td class="desc-cell">張居正が推進。土地税・人頭税・労役を一括して銀で納入→銀経済の発展。税制の簡素化。<br>※⑤行政・土地・税制にも関連項目あり</td></tr>
+<tr><td class="no-cell">57</td><td class="name-cell">衛所制</td><td class="year-cell">軍事制度</td><td class="desc-cell">洪武帝が整備。軍戸を指定し世襲で兵士を供給。全国に衛（5600人）と所（1120人）を設置。<br>中期以降に形骸化→戚継光らが私兵（募兵）で倭寇に対処。</td></tr>
+<tr><td class="no-cell">58</td><td class="name-cell">五軍都督府</td><td class="year-cell">軍事制度</td><td class="desc-cell">明の軍事統括機関。前・後・左・右・中の五軍に分け都督府を設置。衛所制の軍を管轄するが兵の動員権は兵部が握る→皇帝に軍権が集中する仕組み。朱元璋が丞相廃止と合わせ皇帝独裁体制を確立。</td></tr>
+<tr><td class="no-cell">59</td><td class="name-cell">内閣大学士</td><td class="year-cell">中央官制</td><td class="desc-cell">朱元璋が中書省・宰相を廃止し皇帝親政。永楽帝以降、内閣大学士が実質的な宰相機能を担う→後期は宦官との対立。</td></tr>
+<tr><td class="no-cell">60</td><td class="name-cell">科挙（明代）</td><td class="year-cell">官吏登用</td><td class="desc-cell">八股文（形式的な文章）による解答を義務化→思想の画一化・形骸化。<br>科挙合格者が士大夫＝紳士（ジェントリ）層を形成→地方行政の実質的担い手。</td></tr>
+<tr class="section-header"><td colspan="4">清</td></tr>
+<tr><td class="no-cell">61</td><td class="name-cell">総理衙門</td><td class="year-cell">外交機関</td><td class="desc-cell">アロー戦争後に設置(1861)。西洋諸国との外交を担当。洋務運動の推進母体。1901年に外務部に改組。</td></tr>
+<tr><td class="no-cell">62</td><td class="name-cell">大清律例</td><td class="year-cell">清</td><td class="desc-cell">明律を基礎に編纂した清朝の基本法典。律と例の二層構造。</td></tr>
+<tr><td class="no-cell">63</td><td class="name-cell">文字の獄</td><td class="year-cell">清代</td><td class="desc-cell">清朝が反満洲的な著作・言論を厳しく弾圧。康熙〜乾隆帝期に特に頻発。呂留良事件等。知識人の思想的萎縮→考証学（文献考証に専念）への傾斜を促す。</td></tr>
+<tr><td class="no-cell">64</td><td class="name-cell">満漢併用制</td><td class="year-cell">清</td><td class="desc-cell"><strong>清</str�>が制定した中央官制=主要官庁の長官に<strong>満洲人</strong>と<strong>漢人</strong>を同数配置(<strong>満漢偶数官制</strong>とも)=少数支配民族(満洲)と多数被支配民族(漢)の調和を図った特異な制度。<strong>八旗</strong>と並ぶ清の融和統治の象徴。</td></tr>
+<tr><td class="no-cell">65</td><td class="name-cell">地丁銀制</td><td class="year-cell">1723-</td><td class="desc-cell">雍正帝。人頭税（丁税）を地税に統合→人口増加を促進。一条鞭法をさらに発展。<br>※⑤行政・土地・税制にも関連項目あり</td></tr>
+<tr><td class="no-cell">66</td><td class="name-cell">密建の法</td><td class="year-cell">1723-</td><td class="desc-cell">清の<strong>雍正帝</strong>が定めた<strong>皇位継承制度</strong>=皇帝が後継者の名を密書にして<strong>乾清宮</strong>「正大光明」額の裏に保管、皇帝崩御後に開封して継承=継承争いを防ぐ制度。乾隆帝以降も継承され、清の安定統治の基盤。</td></tr>
+<tr><td class="no-cell">67</td><td class="name-cell">理藩院</td><td class="year-cell">辺境統治</td><td class="desc-cell">モンゴル・チベット・ウイグル等の藩部を管轄。六部と並立。清の多民族帝国統治の要。</td></tr>
+<tr><td class="no-cell">68</td><td class="name-cell">八旗・緑営</td><td class="year-cell">軍事制度</td><td class="desc-cell">①八旗：満州族の軍事・行政組織（ヌルハチ創設）。満洲八旗・蒙古八旗・漢軍八旗。<br>②緑営：漢人の正規軍。→太平天国の乱で無力化→曾国藩の湘軍・李鴻章の淮軍（郷勇＝義勇兵）が台頭。</td></tr>
+<tr><td class="no-cell">69</td><td class="name-cell">湘軍・淮軍</td><td class="year-cell">軍事制度</td><td class="desc-cell">太平天国鎮圧のため曽国藩（湘軍）・李鴻章（淮軍）が組織した漢人義勇軍。八旗・緑営の弱体化を補う→漢人官僚の軍事力掌握→洋務運動の推進主体。地方軍閥化の起源。</td></tr>
+<tr><td class="no-cell">70</td><td class="name-cell">新軍</td><td class="year-cell">軍事制度</td><td class="desc-cell">清末新政の一環で編成された近代式軍隊。西洋式訓練・装備。しかし革命思想が浸透→武昌蜂起(1911)は新軍の反乱→辛亥革命の直接的原動力。</td></tr>
+<tr><td class="no-cell">71</td><td class="name-cell">軍機処</td><td class="year-cell">中央官制</td><td class="desc-cell">雍正帝が設置。皇帝の最側近による最高意思決定機関。内閣を形骸化→皇帝独裁の極致。</td></tr>
+<tr><td class="no-cell">72</td><td class="name-cell">科挙の廃止</td><td class="year-cell">官吏登用</td><td class="desc-cell">1905年に科挙を廃止（光緒新政の一環）。<br>約1300年続いた制度の終焉→近代的学校制度へ移行。日本留学の奨励。</td></tr>
+<tr class="section-header"><td colspan="4">近現代の中国</td></tr>
+<tr><td class="no-cell">73</td><td class="name-cell">天朝田畝制度</td><td class="year-cell">1853</td><td class="desc-cell">太平天国。男女の別なく均等に土地を分配する構想（実施されず）</td></tr>
+<tr><td class="no-cell">74</td><td class="name-cell">チベット独立の布告</td><td class="year-cell">1913</td><td class="desc-cell"><strong>清朝崩壊</strong>(1912)直後、<strong>ダライ=ラマ13世</strong>がチベットの独立を宣言した布告=モンゴルの独立宣言と同時期に発出。中華民国・英国の関与を経て<strong>シムラ会議</strong>(1913-14)で「自治」が国際的に確認されたが、独立は完全には認められず=後の中国による侵攻(1950)の歴史的背景。</td></tr>
+<tr><td class="no-cell">75</td><td class="name-cell">中華民国憲法</td><td class="year-cell">1946</td><td class="desc-cell"><strong>蔣介石</strong>政権下、<strong>政治協商会議</strong>(1946)を経て国民大会で制定。<strong>三民主義</strong>(孫文)を基調とし、五院制(行政・立法・司法・考試・監察)を採用。1949年国民党の台湾移転後も台湾(<strong>中華民国</strong>)で施行。</td></tr>
+<tr><td class="no-cell">76</td><td class="name-cell">土地改革法</td><td class="year-cell">1950</td><td class="desc-cell">中華人民共和国。地主の土地を没収し農民に分配</td></tr>
+<tr class="section-header"><td colspan="4">東アジア国際秩序</td></tr>
+<tr><td class="no-cell">77</td><td class="name-cell">冊封体制</td><td class="year-cell">前漢〜清</td><td class="desc-cell"><strong>中華帝国</strong>を中心とする東アジア国際秩序=周辺諸国の君主が中国皇帝に<strong>朝貢</strong>し、皇帝が「<strong>王</strong>」等の称号を授与(<strong>冊封</strong>)=皇帝-周辺王の名目的君臣関係。漢の<strong>南越</strong>冊封・隋唐の<strong>新羅・日本</strong>・明の<strong>琉球・朝鮮</strong>等。アヘン戦争・<strong>下関条約</strong>(1895、清・朝鮮宗属関係解消)で崩壊。</td></tr>
+</tbody>
+</table></div>
 <div class="tbl-wrap hidden" id="content6"><table>
 <thead><tr><th>No.</th><th>法令名</th><th>年代</th><th>内容・概要</th></tr></thead>
 <tbody>
-<tr class="section-header"><td colspan="4">東南アジア植民地</td></tr>
-<tr><td class="no-cell">1</td><td class="name-cell">強制栽培制度</td><td class="year-cell">1830-</td><td class="desc-cell">オランダ領東インド。住民に商品作物（コーヒー・砂糖等）の栽培を強制</td></tr>
-<tr><td class="no-cell">2</td><td class="name-cell">フィリピン独立法</td><td class="year-cell">1934</td><td class="desc-cell">米議会。10年後のフィリピン独立を約束→ケソン大統領の独立準備政府</td></tr>
-<tr class="section-header"><td colspan="4">中国（近代以降）</td></tr>
-<tr><td class="no-cell">3</td><td class="name-cell">天朝田畝制度</td><td class="year-cell">1853</td><td class="desc-cell">太平天国。男女の別なく均等に土地を分配する構想（実施されず）</td></tr>
-<tr><td class="no-cell">4</td><td class="name-cell">土地改革法</td><td class="year-cell">1950</td><td class="desc-cell">中華人民共和国。地主の土地を没収し農民に分配</td></tr>
-<tr class="section-header"><td colspan="4">インド</td></tr>
-<tr><td class="no-cell">5</td><td class="name-cell">サティー（寡婦殉死）禁止令</td><td class="year-cell">1829</td><td class="desc-cell">ベンティンク総督。ヒンドゥー教の寡婦殉死を禁止。ラーム＝モーハン＝ローイの社会改革運動が背景。</td></tr>
-<tr><td class="no-cell">6</td><td class="name-cell">ベンガル分割令</td><td class="year-cell">1905</td><td class="desc-cell">カーゾン総督。ベンガル州をヒンドゥー・ムスリムで分割→民族運動激化（スワデーシ・スワラージ）</td></tr>
-<tr><td class="no-cell">7</td><td class="name-cell">マクマホン＝ライン</td><td class="year-cell">1914</td><td class="desc-cell">英領インドとチベットの境界線。中国（中華民国）は承認せず→中印国境紛争（1962）の原因。</td></tr>
-<tr><td class="no-cell">8</td><td class="name-cell">ローラット法</td><td class="year-cell">1919</td><td class="desc-cell">令状なしの逮捕・裁判なしの投獄を可能にする弾圧立法→アムリットサル事件の契機</td></tr>
-<tr><td class="no-cell">9</td><td class="name-cell">インド統治法（1919年）</td><td class="year-cell">1919</td><td class="desc-cell">制限的な自治。しかしローラット法と矛盾</td></tr>
-<tr><td class="no-cell">10</td><td class="name-cell">インド統治法（1935年）</td><td class="year-cell">1935</td><td class="desc-cell">州の自治を拡大。しかし中央の権限は英が保持。ビルマをインドから分離</td></tr>
-<tr><td class="no-cell">11</td><td class="name-cell">インド独立法</td><td class="year-cell">1947</td><td class="desc-cell">インドとパキスタンの分離独立を規定</td></tr>
-<tr class="section-header"><td colspan="4">ドイツ（ヴァイマル〜ナチス）</td></tr>
-<tr><td class="no-cell">12</td><td class="name-cell">ヴァイマル憲法</td><td class="year-cell">1919</td><td class="desc-cell">ヴァイマル共和国。国民主権・男女普通選挙・社会権の保障。当時「世界で最も民主的な憲法」</td></tr>
-<tr><td class="no-cell">13</td><td class="name-cell">全権委任法</td><td class="year-cell">1933</td><td class="desc-cell">ヒトラー。政府に立法権を付与→ヴァイマル憲法を事実上停止。独裁の法的根拠</td></tr>
-<tr><td class="no-cell">14</td><td class="name-cell">ニュルンベルク法</td><td class="year-cell">1935</td><td class="desc-cell">ユダヤ人の市民権を剥奪。ドイツ国籍を否定→ホロコーストへの法的基盤</td></tr>
-<tr class="section-header"><td colspan="4">ソ連</td></tr>
-<tr><td class="no-cell">15</td><td class="name-cell">スターリン憲法</td><td class="year-cell">1936</td><td class="desc-cell">ソヴィエト社会主義憲法。社会主義の達成を宣言。形式的な権利保障</td></tr>
-<tr class="section-header"><td colspan="4">日本（近現代）</td></tr>
-<tr><td class="no-cell">16</td><td class="name-cell">治安維持法</td><td class="year-cell">1925</td><td class="desc-cell">国体の変革・私有財産制度の否認を目的とする結社を処罰。共産主義運動の弾圧。1928年改正で最高刑を死刑に。</td></tr>
-<tr><td class="no-cell">17</td><td class="name-cell">国家総動員法</td><td class="year-cell">1938</td><td class="desc-cell">近衛文麿内閣。政府に人的・物的資源の動員権限を付与。議会の承認なしに勅令で統制可能に→「白紙委任」と批判。</td></tr>
-<tr><td class="no-cell">18</td><td class="name-cell">日本国憲法</td><td class="year-cell">1947</td><td class="desc-cell">国民主権・平和主義・基本的人権の尊重。GHQ主導で制定</td></tr>
-<tr class="section-header"><td colspan="4">イギリス帝国</td></tr>
-<tr><td class="no-cell">19</td><td class="name-cell">バルフォア報告書</td><td class="year-cell">1926</td><td class="desc-cell">英帝国会議で自治領とイギリス本国の対等な地位を確認→ウェストミンスター憲章（1931）の前提。</td></tr>
-<tr><td class="no-cell">20</td><td class="name-cell">ウェストミンスター憲章</td><td class="year-cell">1931</td><td class="desc-cell"><strong>バルフォア報告書(1926)</strong>の法制化。<br><br>①英本国と自治領(<strong>カナダ・オーストラリア・ニュージーランド・南アフリカ・ニューファンドランド・アイルランド自由国</strong>)を<strong>対等な独立国家</strong>として規定、<br>②英議会は自治領に法律を押し付けられない、<br>③→<strong>英連邦(Commonwealth of Nations)</strong>の法的基盤=英帝国の段階的解体の始まり。</td></tr>
-<tr class="section-header"><td colspan="4">南アフリカ</td></tr>
-<tr><td class="no-cell">21</td><td class="name-cell">南アフリカ共和国憲法</td><td class="year-cell">1996</td><td class="desc-cell">アパルトヘイト廃止後の新憲法。マンデラ政権下で制定。人権保障条項が極めて充実。</td></tr>
-<tr class="section-header"><td colspan="4">アメリカ(戦後)</td></tr>
-<tr><td class="no-cell">22</td><td class="name-cell">国家安全保障法</td><td class="year-cell">1947</td><td class="desc-cell"><strong>トルーマン</strong>大統領期、<strong>冷戦初期</strong>の国家安全保障機構の基盤。<br><br>①<strong>国家安全保障会議(NSC)</strong>の設置=大統領直属の安全保障政策決定機関、<br>②<strong>中央情報局(CIA)</strong>の設置=対外情報機関、<br>③陸海空軍を統合する<strong>国防総省</strong>の前身設立、<br>→冷戦期のアメリカの対外介入・情報戦の法的基盤。</td></tr>
-<tr class="section-header"><td colspan="4">東南アジア</td></tr>
-<tr><td class="no-cell">23</td><td class="name-cell">ブミプトラ政策</td><td class="year-cell">1971-</td><td class="desc-cell">マレーシアで1971年から開始。<br><br>①<strong>5・13事件(1969)</strong>=マレー系と華人系の民族暴動を受けて制定、<br>②<strong>マレー系住民(ブミプトラ=「土地の子」)優遇政策</strong>=大学入学・公務員採用・企業所有・土地取得で優遇、<br>③経済的に不利なマレー系の地位向上を図る、<br>→華人系・インド系との格差問題=国際的には逆差別との批判もあるが、<strong>マハティール</strong>政権下で継続強化。</td></tr>
-</tbody></table></div>
+<tr class="section-header"><td colspan="4">新羅</td></tr>
+<tr><td class="no-cell">1</td><td class="name-cell">骨品制</td><td class="year-cell">新羅</td><td class="desc-cell"><strong>新羅</strong>の身分制度=王族を「<strong>聖骨</strong>」「<strong>真骨</strong>」、貴族を「<strong>六頭品</strong>」以下に厳格に分け、官位・婚姻・服装まで規定。<strong>真骨</strong>のみが王位継承可能。新羅の中央集権化と貴族支配を支えた基幹制度。</td></tr>
+<tr class="section-header"><td colspan="4">朝鮮王朝</td></tr>
+<tr><td class="no-cell">2</td><td class="name-cell">科田法</td><td class="year-cell">1391</td><td class="desc-cell"><strong>李成桂</strong>(後の<strong>朝鮮王朝</strong>初代国王)が高麗末に断行した<strong>土地改革</strong>。私田を国家に没収し、官僚階級<strong>両班</strong>に再分配=<strong>朝鮮王朝</strong>建国(1392)の基盤=<strong>新興士大夫</strong>の支持を獲得し朝鮮の田制の出発点となる。</td></tr>
+<tr><td class="no-cell">3</td><td class="name-cell">大同法</td><td class="year-cell">17C</td><td class="desc-cell"><strong>朝鮮王朝</strong>後期の税制改革=各種雑税を米納・布納に一元化し、<strong>宣祖</strong>~<strong>粛宗</strong>期にかけて全国に拡大。地方豪族の中間搾取を排除=朝鮮版の<strong>一条鞭法</strong>。商品経済発展の促進に貢献。</td></tr>
+</tbody>
+</table></div>
 <div class="tbl-wrap hidden" id="content7"><table>
 <thead><tr><th>No.</th><th>法令名</th><th>年代</th><th>内容・概要</th></tr></thead>
 <tbody>
-<tr class="section-header"><td colspan="4">秦〜漢</td></tr>
-<tr><td class="no-cell">1</td><td class="name-cell">郡県制</td><td class="year-cell">前221</td><td class="desc-cell">始皇帝。全国を郡・県に分け中央から官吏を派遣→中央集権体制の確立</td></tr>
-<tr><td class="no-cell">2</td><td class="name-cell">推恩の令</td><td class="year-cell">前127</td><td class="desc-cell">武帝。王領を子弟に分割相続させ実質的に郡県制化</td></tr>
-<tr><td class="no-cell">3</td><td class="name-cell">均輸法・平準法</td><td class="year-cell">前115頃</td><td class="desc-cell">武帝。桑弘羊の献策。物資の輸送調整と物価安定→国家による経済統制</td></tr>
-<tr class="section-header"><td colspan="4">魏晋南北朝</td></tr>
-<tr><td class="no-cell">4</td><td class="name-cell">占田・課田法</td><td class="year-cell">280頃</td><td class="desc-cell">西晋。土地所有と耕作の上限を規定</td></tr>
-<tr class="section-header"><td colspan="4">隋〜唐</td></tr>
-<tr><td class="no-cell">5</td><td class="name-cell">均田制</td><td class="year-cell">485-780</td><td class="desc-cell">北魏孝文帝が開始。成人男女に土地を支給→死後に国家に返還。隋・唐でも継承。780年両税法施行で崩壊。<br>※⑤行政・土地・税制にも関連項目あり</td></tr>
-<tr><td class="no-cell">6</td><td class="name-cell">唐律疏議（唐律）</td><td class="year-cell">653</td><td class="desc-cell">唐の基本法典。律・令・格・式の律令格式体制。長孫無忌らが編纂。日本（大宝律令）・朝鮮・ベトナムに影響→東アジア法制圏の基盤。</td></tr>
-<tr><td class="no-cell">7</td><td class="name-cell">両税法</td><td class="year-cell">780</td><td class="desc-cell">楊炎の建議。夏・秋の2回徴税。資産に応じた課税→均田制・租庸調制に代わる。銭納原則。<br>※⑤行政・土地・税制にも関連項目あり</td></tr>
-<tr><td class="no-cell">8</td><td class="name-cell">租庸調制</td><td class="year-cell">唐</td><td class="desc-cell">均田制を基盤とした税制。租（穀物）・庸（労役の代納）・調（繊維製品）。成人男性が対象。<br>※⑤行政・土地・税制にも関連項目あり</td></tr>
-<tr class="section-header"><td colspan="4">宋</td></tr>
-<tr><td class="no-cell">9</td><td class="name-cell">王安石の新法</td><td class="year-cell">1069-</td><td class="desc-cell">神宗が登用。青苗法・募役法・保甲法・市易法・方田均税法など→司馬光ら旧法党の反対</td></tr>
-<tr class="section-header"><td colspan="4">明</td></tr>
-<tr><td class="no-cell">10</td><td class="name-cell">一条鞭法</td><td class="year-cell">16C後半</td><td class="desc-cell">張居正が推進。土地税・人頭税・労役を一括して銀で納入→銀経済の発展。税制の簡素化。<br>※⑤行政・土地・税制にも関連項目あり</td></tr>
-<tr><td class="no-cell">11</td><td class="name-cell">海禁</td><td class="year-cell">明初</td><td class="desc-cell">洪武帝〜。民間人の海外渡航・貿易を禁止→朝貢貿易の独占</td></tr>
-<tr class="section-header"><td colspan="4">清</td></tr>
-<tr><td class="no-cell">12</td><td class="name-cell">地丁銀制</td><td class="year-cell">1723-</td><td class="desc-cell">雍正帝。人頭税（丁税）を地税に統合→人口増加を促進。一条鞭法をさらに発展。<br>※⑤行政・土地・税制にも関連項目あり</td></tr>
-<tr><td class="no-cell">13</td><td class="name-cell">戊戌の変法</td><td class="year-cell">1898</td><td class="desc-cell">康有為・譚嗣同が光緒帝を動かした改革運動。科挙改革・立憲・議会開設等を目指すも、西太后のクーデター（戊戌の政変）で挫折。</td></tr>
-<tr><td class="no-cell">14</td><td class="name-cell">光緒新政</td><td class="year-cell">1901-11</td><td class="desc-cell">義和団事件後の清末改革。科挙廃止（1905）・新式学堂設立・憲法大綱公布（1908）。しかし満洲族特権維持への不満→辛亥革命の背景。</td></tr>
-<tr><td class="no-cell">15</td><td class="name-cell">大清律例</td><td class="year-cell">清</td><td class="desc-cell">明律を基礎に編纂した清朝の基本法典。律と例の二層構造。</td></tr>
-</tbody></table></div>
+<tr class="section-header"><td colspan="4">英領インド統治</td></tr>
+<tr><td class="no-cell">1</td><td class="name-cell">規制法</td><td class="year-cell">1773</td><td class="desc-cell"><strong>レギュレーティング・アクト</strong>=英議会が東インド会社を最初に統制した法=ベンガル総督職を新設(<strong>ヘースティングズ</strong>初代)し、会社の独占権を維持しつつ政治監督権を本国に集中。<strong>1784年インド統治法</strong>へつながる。</td></tr>
+<tr><td class="no-cell">2</td><td class="name-cell">1784年インド統治法</td><td class="year-cell">1784</td><td class="desc-cell"><strong>小ピット</strong>政権下、英議会制定=<strong>東インド会社</strong>を本国政府の管理下に置く法=会社の政治・軍事は<strong>監督局</strong>(本国大臣)が監督、商業のみ会社が担当する二元体制。<strong>レギュレーティング・アクト</strong>(1773)を補強し、後のインド統治法シリーズへの起点。</td></tr>
+<tr><td class="no-cell">3</td><td class="name-cell">サティー（寡婦殉死）禁止令</td><td class="year-cell">1829</td><td class="desc-cell">ベンティンク総督。ヒンドゥー教の寡婦殉死を禁止。ラーム＝モーハン＝ローイの社会改革運動が背景。</td></tr>
+<tr><td class="no-cell">4</td><td class="name-cell">クリミナルトライブ法</td><td class="year-cell">1871</td><td class="desc-cell">英領インド政庁が制定=特定部族・カーストを「<strong>犯罪部族</strong>」と指定し、登録・移動制限・強制労働を課した。植民地統治下のヒンドゥー社会の<strong>カースト制度</strong>を権力で固定化=戦後インド独立後に廃止(1952)。</td></tr>
+<tr><td class="no-cell">5</td><td class="name-cell">ベンガル分割令</td><td class="year-cell">1905</td><td class="desc-cell">カーゾン総督。ベンガル州をヒンドゥー・ムスリムで分割→民族運動激化（スワデーシ・スワラージ）</td></tr>
+<tr><td class="no-cell">6</td><td class="name-cell">インド防衛法</td><td class="year-cell">1915</td><td class="desc-cell"><strong>第一次世界大戦</strong>下、英領インド政庁が制定=戦時非常事態として令状なし逮捕・裁判なき投獄を可能にした弾圧法。<strong>ローラット法</strong>(1919)の前身=ガンディー登場の前夜、インド民族主義への弾圧を強化。</td></tr>
+<tr><td class="no-cell">7</td><td class="name-cell">ローラット法</td><td class="year-cell">1919</td><td class="desc-cell">令状なしの逮捕・裁判なしの投獄を可能にする弾圧立法→アムリットサル事件の契機</td></tr>
+<tr><td class="no-cell">8</td><td class="name-cell">インド統治法（1919年）</td><td class="year-cell">1919</td><td class="desc-cell">制限的な自治。しかしローラット法と矛盾</td></tr>
+<tr><td class="no-cell">9</td><td class="name-cell">インド統治法（1935年）</td><td class="year-cell">1935</td><td class="desc-cell">州の自治を拡大。しかし中央の権限は英が保持。ビルマをインドから分離</td></tr>
+<tr><td class="no-cell">10</td><td class="name-cell">ビルマ統治法</td><td class="year-cell">1935</td><td class="desc-cell">英議会制定=<strong>ビルマ</strong>を従来の<strong>英領インド</strong>から分離し、独立植民地として再編成する法。<strong>1935年インド統治法</strong>と同年、植民地統治の細分化=東南アジアの<strong>独立運動</strong>(<strong>アウンサン</strong>等)を促した。</td></tr>
+<tr><td class="no-cell">11</td><td class="name-cell">インド独立法</td><td class="year-cell">1947</td><td class="desc-cell">インドとパキスタンの分離独立を規定</td></tr>
+<tr class="section-header"><td colspan="4">ムガル〜英植民地下のインドの土地制度</td></tr>
+<tr><td class="no-cell">12</td><td class="name-cell">マンサブダール制</td><td class="year-cell">官僚・軍事</td><td class="desc-cell">官僚・軍人にマンサブ（位階）を与え俸給として土地の徴税権（ジャーギール）を付与。非世襲制。</td></tr>
+<tr><td class="no-cell">13</td><td class="name-cell">ザミンダーリー制</td><td class="year-cell">土地制度</td><td class="desc-cell">ベンガル地方。ザミンダール（地主）に徴税を請負わせる→土地所有権を付与→地主制の固定化。コーンウォリスが導入。</td></tr>
+<tr><td class="no-cell">14</td><td class="name-cell">ライヤットワーリー制</td><td class="year-cell">土地制度</td><td class="desc-cell">マドラス・ボンベイ地方。ライヤット（農民）から直接徴税。→地主制を排除するも重税で農民困窮。</td></tr>
+</tbody>
+</table></div>
 <div class="tbl-wrap hidden" id="content8"><table>
-<thead><tr><th>王朝・時代</th><th>制度名</th><th>分類</th><th>内容・特徴・変遷</th></tr></thead>
+<thead><tr><th>No.</th><th>法令名</th><th>年代</th><th>内容・概要</th></tr></thead>
 <tbody>
-<tr class="section-header"><td colspan="4">中国の土地・税制の変遷</td></tr>
-<tr><td class="no-cell">1</td><td class="name-cell">均田制</td><td class="year-cell">485-780</td><td class="desc-cell">北魏孝文帝が開始。成人男女に土地を支給→死後に国家に返還。隋・唐でも継承。780年両税法施行で崩壊。<br>※⑤行政・土地・税制にも関連項目あり</td></tr>
-<tr><td class="no-cell">2</td><td class="name-cell">両税法</td><td class="year-cell">780</td><td class="desc-cell">楊炎の建議。夏・秋の2回徴税。資産に応じた課税→均田制・租庸調制に代わる。銭納原則。<br>※⑤行政・土地・税制にも関連項目あり</td></tr>
-<tr><td class="no-cell">3</td><td class="name-cell">一条鞭法</td><td class="year-cell">16C後半</td><td class="desc-cell">張居正が推進。土地税・人頭税・労役を一括して銀で納入→銀経済の発展。税制の簡素化。<br>※⑤行政・土地・税制にも関連項目あり</td></tr>
-<tr><td class="no-cell">4</td><td class="name-cell">地丁銀制</td><td class="year-cell">1723-</td><td class="desc-cell">雍正帝。人頭税（丁税）を地税に統合→人口増加を促進。一条鞭法をさらに発展。<br>※⑤行政・土地・税制にも関連項目あり</td></tr>
-<tr><td class="no-cell">5</td><td class="name-cell">井田制</td><td class="year-cell">土地制度</td><td class="desc-cell">周王が土地を諸侯に分封。井の字型に9区画に分け、中央の1区画を公田として共同耕作→実在性に疑問。</td></tr>
-<tr><td class="no-cell">6</td><td class="name-cell">土地私有制</td><td class="year-cell">土地制度</td><td class="desc-cell">商鞅の変法（秦）で土地の私有・売買を公認→大土地所有（豪族の荘園化）の進行。</td></tr>
-<tr><td class="no-cell">7</td><td class="name-cell">屯田制</td><td class="year-cell">土地制度</td><td class="desc-cell">曹操が荒廃地に農民・兵士を入植させ穀物を生産。軍屯（兵士が耕作）と民屯（農民を組織）。戦乱期の食糧確保策→のち均田制へと発展。</td></tr>
-<tr><td class="no-cell">8</td><td class="name-cell">限田策→王田制</td><td class="year-cell">土地制度</td><td class="desc-cell">前漢末に土地集中の弊害が深刻化→王莽の新が「王田制」で土地の売買を禁止→失敗し混乱→前漢の土地私有制に戻る。</td></tr>
-<tr><td class="no-cell">9</td><td class="name-cell">租庸調制</td><td class="year-cell">唐</td><td class="desc-cell">均田制を基盤とした税制。租（穀物）・庸（労役の代納）・調（繊維製品）。成人男性が対象。<br>※⑤行政・土地・税制にも関連項目あり</td></tr>
-<tr><td class="no-cell">10</td><td class="name-cell">形勢戸の大土地所有</td><td class="year-cell">土地制度</td><td class="desc-cell">均田制は完全に消滅。大地主（形勢戸）と佃戸（小作人）の関係が支配的に。<br>佃戸制（小作制度）が広まる。王安石の新法（青苗法・募役法等）は大地主への対策。</td></tr>
-<tr><td class="no-cell">11</td><td class="name-cell">科差</td><td class="year-cell">税制</td><td class="desc-cell">モンゴル式の人頭税。包銀（銀納税）・絹糸税。色目人が徴税請負→農民の負担増大。</td></tr>
-<tr><td class="no-cell">12</td><td class="name-cell">里甲制＋魚鱗図冊</td><td class="year-cell">土地・行政</td><td class="desc-cell">洪武帝が整備。<br>①里甲制：110戸を1里とし戸籍管理・徴税の単位。<br>②魚鱗図冊：土地台帳（土地の形状が魚の鱗に似る）。<br>③賦役黄冊：戸籍台帳。→中期以降に形骸化。</td></tr>
-<tr class="section-header"><td colspan="4">中国の軍事制度の変遷</td></tr>
-<tr><td class="no-cell">13</td><td class="name-cell">府兵制</td><td class="year-cell">軍事制度</td><td class="desc-cell">均田制とセット。農民を兵士に（兵農一致）。平時は農業、有事に召集。<br>唐初期まで有効→安史の乱で崩壊→募兵制に移行。</td></tr>
-<tr><td class="no-cell">14</td><td class="name-cell">募兵制</td><td class="year-cell">軍事制度</td><td class="desc-cell">安史の乱後、府兵制の崩壊を受け職業軍人を雇用。節度使が軍閥化→藩鎮の割拠→五代十国の混乱へ。</td></tr>
-<tr><td class="no-cell">15</td><td class="name-cell">節度使</td><td class="year-cell">唐中期〜</td><td class="desc-cell">唐の辺境軍司令官。安史の乱(755)以降、内地にも設置→藩鎮（地方軍閥）化。軍事・行政・財政権を掌握→唐の中央集権を形骸化。五代十国は藩鎮の割拠の帰結。</td></tr>
-<tr><td class="no-cell">16</td><td class="name-cell">衛所制</td><td class="year-cell">軍事制度</td><td class="desc-cell">洪武帝が整備。軍戸を指定し世襲で兵士を供給。全国に衛（5600人）と所（1120人）を設置。<br>中期以降に形骸化→戚継光らが私兵（募兵）で倭寇に対処。</td></tr>
-<tr><td class="no-cell">17</td><td class="name-cell">五軍都督府</td><td class="year-cell">軍事制度</td><td class="desc-cell">明の軍事統括機関。前・後・左・右・中の五軍に分け都督府を設置。衛所制の軍を管轄するが兵の動員権は兵部が握る→皇帝に軍権が集中する仕組み。朱元璋が丞相廃止と合わせ皇帝独裁体制を確立。</td></tr>
-<tr><td class="no-cell">18</td><td class="name-cell">八旗・緑営</td><td class="year-cell">軍事制度</td><td class="desc-cell">①八旗：満州族の軍事・行政組織（ヌルハチ創設）。満洲八旗・蒙古八旗・漢軍八旗。<br>②緑営：漢人の正規軍。→太平天国の乱で無力化→曾国藩の湘軍・李鴻章の淮軍（郷勇＝義勇兵）が台頭。</td></tr>
-<tr><td class="no-cell">19</td><td class="name-cell">湘軍・淮軍</td><td class="year-cell">軍事制度</td><td class="desc-cell">太平天国鎮圧のため曽国藩（湘軍）・李鴻章（淮軍）が組織した漢人義勇軍。八旗・緑営の弱体化を補う→漢人官僚の軍事力掌握→洋務運動の推進主体。地方軍閥化の起源。</td></tr>
-<tr><td class="no-cell">20</td><td class="name-cell">新軍</td><td class="year-cell">軍事制度</td><td class="desc-cell">清末新政の一環で編成された近代式軍隊。西洋式訓練・装備。しかし革命思想が浸透→武昌蜂起(1911)は新軍の反乱→辛亥革命の直接的原動力。</td></tr>
-<tr class="section-header"><td colspan="4">中国の官吏登用制度の変遷</td></tr>
-<tr><td class="no-cell">21</td><td class="name-cell">郷挙里選</td><td class="year-cell">官吏登用</td><td class="desc-cell">地方長官が孝廉（孝行・廉潔な者）を推薦→中央に送る。<br>→推薦制のため有力豪族が独占→形骸化。</td></tr>
-<tr><td class="no-cell">22</td><td class="name-cell">九品中正法（九品官人法）</td><td class="year-cell">官吏登用</td><td class="desc-cell">魏の曹丕が陳群の建議で導入。中正官が人物を9等級に評価→官位を決定。<br>→名門貴族が「上品に寒門なく、下品に勢族なし」と独占→門閥貴族の固定化。</td></tr>
-<tr><td class="no-cell">23</td><td class="name-cell">科挙の創始</td><td class="year-cell">官吏登用</td><td class="desc-cell">隋の文帝が選挙制度として開始→煬帝が進士科を設置（606頃）。<br>試験による官吏登用→門閥貴族の排除と皇帝権力の強化。</td></tr>
-<tr><td class="no-cell">24</td><td class="name-cell">科挙（唐代）</td><td class="year-cell">官吏登用</td><td class="desc-cell">進士科（文学・詩文中心）が最も重視。明経科（経書の暗記）もあり。<br>→門閥の影響は残るが新興官僚（科挙官僚）が台頭。</td></tr>
-<tr><td class="no-cell">25</td><td class="name-cell">科挙の完成</td><td class="year-cell">官吏登用</td><td class="desc-cell">殿試の導入で最終選抜を皇帝が直接実施→科挙を皇帝直轄化。門閥貴族の排除→士大夫層（科挙官僚）の時代に。</td></tr>
-<tr><td class="no-cell">26</td><td class="name-cell">科挙の中断</td><td class="year-cell">官吏登用</td><td class="desc-cell">モンゴル人を優遇し科挙を一時中断（1313年に復活するも漢人は不利）。<br>→中断期には民間で通俗文学（元曲・雑劇）が発展。</td></tr>
-<tr><td class="no-cell">27</td><td class="name-cell">科挙（明代）</td><td class="year-cell">官吏登用</td><td class="desc-cell">八股文（形式的な文章）による解答を義務化→思想の画一化・形骸化。<br>科挙合格者が士大夫＝紳士（ジェントリ）層を形成→地方行政の実質的担い手。</td></tr>
-<tr><td class="no-cell">28</td><td class="name-cell">科挙の廃止</td><td class="year-cell">官吏登用</td><td class="desc-cell">1905年に科挙を廃止（光緒新政の一環）。<br>約1300年続いた制度の終焉→近代的学校制度へ移行。日本留学の奨励。</td></tr>
-<tr class="section-header"><td colspan="4">中国の中央官制・地方制度の変遷</td></tr>
-<tr><td class="no-cell">29</td><td class="name-cell">郡県制</td><td class="year-cell">前221</td><td class="desc-cell">始皇帝。全国を郡・県に分け中央から官吏を派遣→中央集権体制の確立</td></tr>
-<tr><td class="no-cell">30</td><td class="name-cell">封建制（分封制）</td><td class="year-cell">地方制度</td><td class="desc-cell">王が血縁・功臣に土地を分封。宗法（嫡長子相続）に基づく。諸侯は貢納・軍役の義務→春秋戦国で形骸化。</td></tr>
-<tr><td class="no-cell">31</td><td class="name-cell">郡国制</td><td class="year-cell">地方制度</td><td class="desc-cell">郡県制と封国制の併用。皇帝直轄地は郡県制、功臣・一族には王国を封じる。→呉楚七国の乱(前154)→武帝の推恩の令で王国を弱体化。</td></tr>
-<tr><td class="no-cell">32</td><td class="name-cell">州県制</td><td class="year-cell">地方制度</td><td class="desc-cell">郡を廃し州・県の二層制に簡素化。刺史が州を管轄。科挙官僚を地方に派遣→中央集権の強化。</td></tr>
-<tr><td class="no-cell">33</td><td class="name-cell">都護府</td><td class="year-cell">辺境統治</td><td class="desc-cell">辺境の異民族地域に設置（安西・安北・安東・安南・北庭・単于の六都護府）。現地の首長を利用する羈縻政策と併用。</td></tr>
-<tr><td class="no-cell">34</td><td class="name-cell">羈縻政策（羈縻州）</td><td class="year-cell">異民族統治</td><td class="desc-cell">辺境の異民族に自治を認め、現地の首長を都督・刺史に任命。間接統治。唐の多民族帝国を支えた柔軟な制度。</td></tr>
-<tr><td class="no-cell">35</td><td class="name-cell">三省六部</td><td class="year-cell">中央官制</td><td class="desc-cell">中書省（詔勅の起草）・門下省（審議）・尚書省（執行、六部を統括）。三省の長官が合議で国政を運営。皇帝独裁を抑制する機能。</td></tr>
-<tr><td class="no-cell">36</td><td class="name-cell">御史台</td><td class="year-cell">監察制度</td><td class="desc-cell">官僚の監察・弾劾を担う機関。中央の百官から地方官まで監視。三省六部と並ぶ唐の中央官制の柱。明では都察院に改組。</td></tr>
-<tr><td class="no-cell">37</td><td class="name-cell">節度使</td><td class="year-cell">唐中期〜</td><td class="desc-cell">唐の辺境軍司令官。安史の乱(755)以降、内地にも設置→藩鎮（地方軍閥）化。軍事・行政・財政権を掌握→唐の中央集権を形骸化。五代十国は藩鎮の割拠の帰結。</td></tr>
-<tr><td class="no-cell">38</td><td class="name-cell">文治主義の官制</td><td class="year-cell">中央官制</td><td class="desc-cell">殿試の導入で科挙を皇帝直轄化。宰相の権限を分散（枢密院・三司）。文官優位→軍事力の弱体化。</td></tr>
-<tr><td class="no-cell">39</td><td class="name-cell">行省（行中書省）</td><td class="year-cell">地方制度</td><td class="desc-cell">元が中書省の出先機関として各地に設置した地方行政単位。広域的な地方統治→明清の省制度の直接的起源。現在の中国の「省」の語源。</td></tr>
-<tr><td class="no-cell">40</td><td class="name-cell">中書省（元）</td><td class="year-cell">中央官制</td><td class="desc-cell">三省のうち中書省のみを残し最高行政機関に一元化。行中書省（行省）を地方に設置→省制度の起源。</td></tr>
-<tr><td class="no-cell">41</td><td class="name-cell">内閣大学士</td><td class="year-cell">中央官制</td><td class="desc-cell">朱元璋が中書省・宰相を廃止し皇帝親政。永楽帝以降、内閣大学士が実質的な宰相機能を担う→後期は宦官との対立。</td></tr>
-<tr><td class="no-cell">42</td><td class="name-cell">軍機処</td><td class="year-cell">中央官制</td><td class="desc-cell">雍正帝が設置。皇帝の最側近による最高意思決定機関。内閣を形骸化→皇帝独裁の極致。</td></tr>
-<tr><td class="no-cell">43</td><td class="name-cell">理藩院</td><td class="year-cell">辺境統治</td><td class="desc-cell">モンゴル・チベット・ウイグル等の藩部を管轄。六部と並立。清の多民族帝国統治の要。</td></tr>
-<tr><td class="no-cell">44</td><td class="name-cell">総理衙門</td><td class="year-cell">外交機関</td><td class="desc-cell">アロー戦争後に設置(1861)。西洋諸国との外交を担当。洋務運動の推進母体。1901年に外務部に改組。</td></tr>
-<tr class="section-header"><td colspan="4">中国の思想統制</td></tr>
-<tr><td class="no-cell">45</td><td class="name-cell">党錮の禁</td><td class="year-cell">166/169</td><td class="desc-cell">宦官勢力と対立した清流派知識人（太学生・官僚）を弾圧。2度にわたり儒学者を禁錮刑に。→後漢の政治的腐敗と知識人弾圧の典型。黄巾の乱(184)の背景。</td></tr>
-<tr><td class="no-cell">46</td><td class="name-cell">文字の獄</td><td class="year-cell">清代</td><td class="desc-cell">清朝が反満洲的な著作・言論を厳しく弾圧。康熙〜乾隆帝期に特に頻発。呂留良事件等。知識人の思想的萎縮→考証学（文献考証に専念）への傾斜を促す。</td></tr>
-<tr class="section-header"><td colspan="4">中国20世紀の政策</td></tr>
-<tr><td class="no-cell">47</td><td class="name-cell">大躍進</td><td class="year-cell">1958-60</td><td class="desc-cell">毛沢東主導。人民公社・土法高炉→大飢饉（推定2000-4500万人餓死）→毛沢東は国家主席辞任。</td></tr>
-<tr><td class="no-cell">48</td><td class="name-cell">文化大革命</td><td class="year-cell">1966-76</td><td class="desc-cell">毛沢東が紅衛兵を動員し「実権派」を打倒。知識人迫害・伝統文化破壊→四人組逮捕で終結。</td></tr>
-<tr><td class="no-cell">49</td><td class="name-cell">改革開放</td><td class="year-cell">1978〜</td><td class="desc-cell">鄧小平主導。人民公社解体・経済特区設置→「社会主義市場経済」。深圳等の経済特区。天安門事件(1989)後も経済開放を継続。</td></tr>
-<tr class="section-header"><td colspan="4">イスラーム世界の税制・社会制度</td></tr>
-<tr><td class="no-cell">50</td><td class="name-cell">ジズヤ（人頭税）</td><td class="year-cell">税制</td><td class="desc-cell">非ムスリム（ズィンミー）に課された人頭税。ムスリムは免除。アクバルが廃止→アウラングゼーブが復活。</td></tr>
-<tr><td class="no-cell">51</td><td class="name-cell">ハラージュ（地租）</td><td class="year-cell">税制</td><td class="desc-cell">ムスリム・非ムスリムを問わず土地所有者に課される地租。アッバース朝以降はジズヤとの区別が明確化。</td></tr>
-<tr><td class="no-cell">52</td><td class="name-cell">イクター制</td><td class="year-cell">ブワイフ朝〜</td><td class="desc-cell">軍人に土地の徴税権を付与。ティマール制の前身。</td></tr>
-<tr><td class="no-cell">53</td><td class="name-cell">ワクフ（寄進財）</td><td class="year-cell">社会制度</td><td class="desc-cell">モスク・マドラサ・病院等の公共施設維持のための寄進制度。財産を神に寄進し永久に運用益を公益に充てる。イスラーム都市のインフラを支えた。</td></tr>
-<tr><td class="no-cell">54</td><td class="name-cell">ウラマー</td><td class="year-cell">宗教・法</td><td class="desc-cell">イスラーム法学者・知識人の総称。シャリーア（イスラーム法）の解釈権を持つ。スルタンの権力を宗教的に正当化/制約する存在。</td></tr>
-<tr><td class="no-cell">55</td><td class="name-cell">マドラサ（学院）</td><td class="year-cell">教育制度</td><td class="desc-cell">イスラームの高等教育機関。11Cセルジューク朝のニザーミーヤ学院が有名。ウラマー（法学者）を養成。ワクフで運営。</td></tr>
-<tr><td class="no-cell">56</td><td class="name-cell">カーディー</td><td class="year-cell">司法制度</td><td class="desc-cell">イスラームの裁判官。シャリーアに基づき民事・刑事を裁く。カリフまたはスルタンが任命。イスラーム法治国家の司法の担い手。</td></tr>
-<tr class="section-header"><td colspan="4">ビザンツ帝国の行政制度</td></tr>
-<tr><td class="no-cell">57</td><td class="name-cell">テマ制（軍管区制）</td><td class="year-cell">行政・軍事</td><td class="desc-cell">帝国を軍管区（テマ）に分割し軍司令官が行政権を兼務。屯田兵による兵農一致。イスラーム勢力への防衛に機能。</td></tr>
-<tr><td class="no-cell">58</td><td class="name-cell">プロノイア制</td><td class="year-cell">土地制度</td><td class="desc-cell">軍人・官僚に国有地の徴税権を付与（終身→世襲化）。西欧封建制やオスマンのティマール制と類似。</td></tr>
-<tr class="section-header"><td colspan="4">オスマン帝国の制度</td></tr>
-<tr><td class="no-cell">59</td><td class="name-cell">カピチュレーション</td><td class="year-cell">16C〜</td><td class="desc-cell">オスマン帝国が西欧諸国の商人に与えた通商上の特権（関税免除・治外法権など）。当初はオスマン側が優位だったが、帝国衰退とともに不平等条約的性格に変質。</td></tr>
-<tr><td class="no-cell">60</td><td class="name-cell">ティマール制</td><td class="year-cell">土地・軍事</td><td class="desc-cell">オスマン帝国の軍事封土制。騎兵（シパーヒー）に土地の徴税権を付与する代わりに軍役を義務づける。イクター制の発展形。帝国の軍事力の基盤→17C以降衰退。</td></tr>
-<tr><td class="no-cell">61</td><td class="name-cell">デウシルメ</td><td class="year-cell">軍事制度</td><td class="desc-cell">キリスト教徒の子弟を強制徴用→イスラームに改宗させイェニチェリ（常備歩兵軍）や官僚に育成。<br>スルタン直属の精鋭軍→16世紀以降は特権集団化→マフムト2世が1826年に全廃。</td></tr>
-<tr><td class="no-cell">62</td><td class="name-cell">ミッレト制</td><td class="year-cell">行政制度</td><td class="desc-cell">宗教共同体（ミッレト）ごとに自治を認める。ギリシア正教・アルメニア教会・ユダヤ教の各ミッレトが独自の法・教育を維持。多民族帝国の統治原理。</td></tr>
-<tr class="section-header"><td colspan="4">ペルシアの行政制度</td></tr>
-<tr><td class="no-cell">63</td><td class="name-cell">サトラップ制</td><td class="year-cell">行政制度</td><td class="desc-cell">ダレイオス1世が整備。約20州にサトラップ（知事）を配置。「王の目」「王の耳」が巡回監視。「王の道」と駅伝制で中央と連結。</td></tr>
-<tr class="section-header"><td colspan="4">ヨーロッパの議会制度</td></tr>
-<tr><td class="no-cell">64</td><td class="name-cell">模範議会</td><td class="year-cell">1295</td><td class="desc-cell">エドワード1世。聖職者・貴族・州と都市の代表を招集→英国議会の起源。</td></tr>
-<tr><td class="no-cell">65</td><td class="name-cell">三部会</td><td class="year-cell">1302〜</td><td class="desc-cell">フランスの身分制議会。フィリップ4世が初召集→1789年召集がフランス革命の発端。</td></tr>
-<tr><td class="no-cell">66</td><td class="name-cell">責任内閣制</td><td class="year-cell">政治制度</td><td class="desc-cell">ウォルポール(1721-)が事実上の初代首相。議会の信任に基づく内閣の成立・退陣。名誉革命後の立憲君主制の核心。王は「君臨すれども統治せず」。</td></tr>
-<tr><td class="no-cell">67</td><td class="name-cell">チャーティスト運動</td><td class="year-cell">政治運動</td><td class="desc-cell">労働者階級の選挙権獲得運動。人民憲章（男子普通選挙・秘密投票等6項目）を要求。直接は失敗→しかし後の選挙法改正(1867,1884)に影響。</td></tr>
-<tr class="section-header"><td colspan="4">ヨーロッパの軍事制度</td></tr>
-<tr><td class="no-cell">68</td><td class="name-cell">常備軍</td><td class="year-cell">軍事制度</td><td class="desc-cell">絶対王政の軍事的基盤。傭兵→常備軍への転換。ルイ14世・フリードリヒ＝ヴィルヘルム1世が整備。国王の権力集中を支える。</td></tr>
-<tr><td class="no-cell">69</td><td class="name-cell">徴兵制（国民皆兵）</td><td class="year-cell">軍事制度</td><td class="desc-cell">仏革命の義勇兵→1793年総動員令→ナポレオンの大陸軍の基盤。プロイセンのシャルンホルスト改革→クラウゼヴィッツ。国民国家と不可分の制度。</td></tr>
-<tr class="section-header"><td colspan="4">ヨーロッパの土地・農業制度の変遷</td></tr>
-<tr><td class="no-cell">70</td><td class="name-cell">ラティフンディア</td><td class="year-cell">土地制度</td><td class="desc-cell">ポエニ戦争後に拡大した奴隷制大農場経営。属州から安価な穀物→イタリア半島の自由農民が没落→無産市民の増加→グラックス兄弟の改革→内乱の1世紀の社会的背景。</td></tr>
-<tr><td class="no-cell">71</td><td class="name-cell">コロナートゥス（コロヌス制）</td><td class="year-cell">土地制度</td><td class="desc-cell">3-4Cに拡大。ラティフンディアの衰退後、大土地所有者が没落農民を小作人（コロヌス）として土地に緊縛。コンスタンティヌス帝の移動禁止令(332)→中世農奴制の直接的起源。</td></tr>
-<tr><td class="no-cell">72</td><td class="name-cell">荘園制</td><td class="year-cell">土地制度</td><td class="desc-cell">領主が農奴を支配する自給自足の経営単位。直営地＋保有地。農奴は移動の自由なし。<br>三圃制（春耕地・秋耕地・休耕地の輪作）が一般的。</td></tr>
-<tr><td class="no-cell">73</td><td class="name-cell">恩貸地制（ベネフィキウム）</td><td class="year-cell">封建制度</td><td class="desc-cell">主君が臣下（家臣）に軍事奉仕の見返りとして土地（封土）を付与する制度。従士制（主従関係）と結合→西欧封建制の基本構造。「臣下の臣下は臣下にあらず」（双務的契約）。</td></tr>
-<tr><td class="no-cell">74</td><td class="name-cell">三圃制</td><td class="year-cell">農業制度</td><td class="desc-cell">春耕地・秋耕地・休耕地を3年周期でローテーション。重量有輪犂・三圃制・水車の普及→中世農業革命。11-13Cの人口増加と大開墾運動を支える。</td></tr>
-<tr><td class="no-cell">75</td><td class="name-cell">ギルド（ツンフト）</td><td class="year-cell">都市制度</td><td class="desc-cell">同業者の組合。商人ギルドが都市の市政を独占→手工業者のツンフトが参政権を要求（ツンフト闘争）→都市自治の発展。閉鎖的な性格→近代に入り自由競争を阻害する存在として批判・解体。</td></tr>
-<tr><td class="no-cell">76</td><td class="name-cell">第1次囲い込み（16C）</td><td class="year-cell">農業変革</td><td class="desc-cell">毛織物工業の原料（羊毛）生産のため耕地を牧羊地に転換。「羊が人を食う」（トマス＝モア『ユートピア』）。</td></tr>
-<tr><td class="no-cell">77</td><td class="name-cell">再版農奴制（グーツヘルシャフト）</td><td class="year-cell">土地制度</td><td class="desc-cell">西欧の穀物需要増大→エルベ川以東の領主が農奴制を強化し大規模穀物生産。プロイセンのユンカー（地主貴族）が典型。西欧は農奴制解体が進む一方、東欧では逆行→東西格差の構造化。</td></tr>
-<tr><td class="no-cell">78</td><td class="name-cell">ノーフォーク農法（18C）</td><td class="year-cell">農業変革</td><td class="desc-cell">四圃制（小麦→カブ→大麦→クローヴァー）で休耕地をなくす農業革命。→第2次囲い込みの背景。</td></tr>
-<tr><td class="no-cell">79</td><td class="name-cell">第2次囲い込み（18C）</td><td class="year-cell">農業変革</td><td class="desc-cell">議会による合法的な囲い込み→ヨーマン（独立自営農民）の没落→都市への労働力供給→産業革命の前提。</td></tr>
-<tr><td class="no-cell">80</td><td class="name-cell">マニュファクチュア</td><td class="year-cell">近世</td><td class="desc-cell">工場制手工業。問屋制家内工業と機械制工場の中間段階。分業による生産性向上。</td></tr>
-<tr class="section-header"><td colspan="4">インドの土地制度</td></tr>
-<tr><td class="no-cell">81</td><td class="name-cell">マンサブダール制</td><td class="year-cell">官僚・軍事</td><td class="desc-cell">官僚・軍人にマンサブ（位階）を与え俸給として土地の徴税権（ジャーギール）を付与。非世襲制。</td></tr>
-<tr><td class="no-cell">82</td><td class="name-cell">ザミンダーリー制</td><td class="year-cell">土地制度</td><td class="desc-cell">ベンガル地方。ザミンダール（地主）に徴税を請負わせる→土地所有権を付与→地主制の固定化。コーンウォリスが導入。</td></tr>
-<tr><td class="no-cell">83</td><td class="name-cell">ライヤットワーリー制</td><td class="year-cell">土地制度</td><td class="desc-cell">マドラス・ボンベイ地方。ライヤット（農民）から直接徴税。→地主制を排除するも重税で農民困窮。</td></tr>
+<tr class="section-header"><td colspan="4">古代ローマの土地・農業</td></tr>
+<tr><td class="no-cell">1</td><td class="name-cell">ラティフンディア</td><td class="year-cell">土地制度</td><td class="desc-cell">ポエニ戦争後に拡大した奴隷制大農場経営。属州から安価な穀物→イタリア半島の自由農民が没落→無産市民の増加→グラックス兄弟の改革→内乱の1世紀の社会的背景。</td></tr>
+<tr><td class="no-cell">2</td><td class="name-cell">コロナートゥス（コロヌス制）</td><td class="year-cell">土地制度</td><td class="desc-cell">3-4Cに拡大。ラティフンディアの衰退後、大土地所有者が没落農民を小作人（コロヌス）として土地に緊縛。コンスタンティヌス帝の移動禁止令(332)→中世農奴制の直接的起源。</td></tr>
+<tr class="section-header"><td colspan="4">中世ヨーロッパの土地・社会</td></tr>
+<tr><td class="no-cell">3</td><td class="name-cell">恩貸地制（ベネフィキウム）</td><td class="year-cell">封建制度</td><td class="desc-cell">主君が臣下（家臣）に軍事奉仕の見返りとして土地（封土）を付与する制度。従士制（主従関係）と結合→西欧封建制の基本構造。「臣下の臣下は臣下にあらず」（双務的契約）。</td></tr>
+<tr><td class="no-cell">4</td><td class="name-cell">荘園制</td><td class="year-cell">土地制度</td><td class="desc-cell">領主が農奴を支配する自給自足の経営単位。直営地＋保有地。農奴は移動の自由なし。<br>三圃制（春耕地・秋耕地・休耕地の輪作）が一般的。</td></tr>
+<tr><td class="no-cell">5</td><td class="name-cell">三圃制</td><td class="year-cell">農業制度</td><td class="desc-cell">春耕地・秋耕地・休耕地を3年周期でローテーション。重量有輪犂・三圃制・水車の普及→中世農業革命。11-13Cの人口増加と大開墾運動を支える。</td></tr>
+<tr><td class="no-cell">6</td><td class="name-cell">ギルド（ツンフト）</td><td class="year-cell">都市制度</td><td class="desc-cell">同業者の組合。商人ギルドが都市の市政を独占→手工業者のツンフトが参政権を要求（ツンフト闘争）→都市自治の発展。閉鎖的な性格→近代に入り自由競争を阻害する存在として批判・解体。</td></tr>
+<tr class="section-header"><td colspan="4">近世ヨーロッパの宗教制度</td></tr>
+<tr><td class="no-cell">7</td><td class="name-cell">司教制（主教制）</td><td class="year-cell">古代-</td><td class="desc-cell"><strong>カトリック教会</strong>・<strong>英国国教会</strong>の階層制組織=<strong>教皇</strong>(ローマ司教)を頂点に、<strong>大司教(metropolitan)</strong>・<strong>司教(bishop)</strong>・司祭(priest)・助祭(deacon)の<strong>階層制(ヒエラルキア)</strong>。古代教会から継承され、<strong>長老主義</strong>(カルヴァン派)・<strong>会衆派</strong>と対立。</td></tr>
+<tr><td class="no-cell">8</td><td class="name-cell">長老主義（長老制）</td><td class="year-cell">16C-</td><td class="desc-cell"><strong>カルヴァン</strong>派の教会組織=司教制を否定し、信徒から選出された<strong>長老</strong>と牧師による合議で教会を運営=<strong>司教制(カトリック・英国国教会)</strong>と対立。<strong>スコットランド</strong>・<strong>ピューリタン</strong>・<strong>ハンガリー改革派</strong>等で採用。</td></tr>
+<tr><td class="no-cell">9</td><td class="name-cell">領邦教会制</td><td class="year-cell">1555-</td><td class="desc-cell"><strong>アウクスブルクの和議</strong>(1555)で確立=「<strong>領主の宗教がその領邦の宗教となる</strong>(クイウス・レギオ・エイウス・レリギオ)」原則の下、<strong>神聖ローマ帝国</strong>各領邦の君主が領内の宗教を決定=ローマ教皇の超国家的権威に対する<strong>領邦君主</strong>の宗教的主権確立。</td></tr>
 <tr class="section-header"><td colspan="4">ラテンアメリカの植民地制度</td></tr>
-<tr><td class="no-cell">84</td><td class="name-cell">エンコミエンダ制</td><td class="year-cell">16C</td><td class="desc-cell">スペイン植民地で征服者（コンキスタドール）に先住民の管理・教化を委託し、その見返りに労働力を徴発できる制度。事実上の強制労働→ラス＝カサスの批判→廃止へ。</td></tr>
-<tr><td class="no-cell">85</td><td class="name-cell">アシエンダ制</td><td class="year-cell">16C末〜</td><td class="desc-cell">大土地所有制度。プランテーションと異なり、自給的農業を含む荘園的経営。ラテンアメリカの土地問題の根源→メキシコ革命（1910）の背景。</td></tr>
-<tr><td class="no-cell">86</td><td class="name-cell">ミタ制</td><td class="year-cell">スペイン植民地</td><td class="desc-cell">先住民の強制労働制度。特にポトシ銀山での過酷な労働。インカ帝国のミタ（賦役）を転用。</td></tr>
-<tr class="section-header"><td colspan="4">貿易・経済体制</td></tr>
-<tr><td class="no-cell">87</td><td class="name-cell">プランテーション制度</td><td class="year-cell">16C〜</td><td class="desc-cell">単一の商品作物（砂糖・綿花・タバコ・コーヒー等）を大規模に栽培する農業経営形態。アフリカから連行された黒人奴隷が労働力。大西洋三角貿易と不可分。</td></tr>
-<tr><td class="no-cell">88</td><td class="name-cell">重商主義</td><td class="year-cell">16-18C</td><td class="desc-cell">国家の富＝金銀の蓄積。輸出奨励・輸入制限。コルベール（仏）の典型。→アダム＝スミスの自由貿易論で批判。</td></tr>
-<tr><td class="no-cell">89</td><td class="name-cell">重農主義</td><td class="year-cell">18C</td><td class="desc-cell">ケネーが提唱。農業が唯一の富の源泉。レッセフェール（自由放任）。重商主義への批判。</td></tr>
-<tr><td class="no-cell">90</td><td class="name-cell">公行（コホン）制度</td><td class="year-cell">1757-1842</td><td class="desc-cell">広州に限定した対外貿易で、特許商人組合（公行）が貿易を独占。南京条約で廃止。</td></tr>
-<tr><td class="no-cell">91</td><td class="name-cell">三角貿易</td><td class="year-cell">17-19C</td><td class="desc-cell">①大西洋三角貿易：欧州→アフリカ（武器・酒）→アメリカ（奴隷）→欧州（砂糖・綿花）。<br>②英仏印中の三角貿易：英→印（綿製品）→中国（アヘン）→英（茶）→アヘン戦争の背景。</td></tr>
-<tr><td class="no-cell">92</td><td class="name-cell">朝貢貿易</td><td class="year-cell">明</td><td class="desc-cell">冊封体制に基づく対外貿易形式。朝貢国が皇帝に貢物→皇帝が回賜（返礼）。民間貿易は海禁で制限。</td></tr>
-<tr><td class="no-cell">93</td><td class="name-cell">市舶司</td><td class="year-cell">宋〜明</td><td class="desc-cell">海上貿易を管理する官庁。広州・泉州・明州等に設置。関税の徴収・密貿易の取り締まり。明初に海禁政策で縮小→隆慶開海（1567）で民間貿易を解禁。</td></tr>
-<tr class="section-header"><td colspan="4">身分・差別制度</td></tr>
-<tr><td class="no-cell">94</td><td class="name-cell">ジム＝クロウ法</td><td class="year-cell">1876-1964</td><td class="desc-cell">南部諸州の人種隔離法の総称。公共施設・交通機関・学校での黒人と白人の分離。「分離すれども平等」（プレッシー対ファーガソン判決,1896）。1964年公民権法で撤廃。</td></tr>
-<tr><td class="no-cell">95</td><td class="name-cell">アパルトヘイト</td><td class="year-cell">1948-91</td><td class="desc-cell">人種隔離政策。マンデラの闘争→1991年撤廃。</td></tr>
-<tr><td class="no-cell">96</td><td class="name-cell">カースト制度</td><td class="year-cell">古代〜現代</td><td class="desc-cell">ヴァルナ（4種姓）とジャーティ（世襲集団）。マヌ法典が規範。インド憲法（1950）で差別禁止。</td></tr>
-<tr><td class="no-cell">97</td><td class="name-cell">辮髪</td><td class="year-cell">清</td><td class="desc-cell">満州族の髪型を漢人に強制。清朝支配の象徴。</td></tr>
-<tr class="section-header"><td colspan="4">宣言・政策・ドクトリン</td></tr>
-<tr><td class="no-cell">98</td><td class="name-cell">モンロー宣言</td><td class="year-cell">1823</td><td class="desc-cell">①欧州のアメリカ大陸への新植民地化の禁止、②米の欧州不干渉→孤立主義の基調。</td></tr>
-<tr><td class="no-cell">99</td><td class="name-cell">門戸開放宣言</td><td class="year-cell">1899-1900</td><td class="desc-cell">ジョン＝ヘイ国務長官。中国市場への門戸開放・機会均等・中国の領土保全を主張。列強の中国分割に出遅れた米の外交戦略。</td></tr>
-<tr><td class="no-cell">100</td><td class="name-cell">十四カ条の平和原則</td><td class="year-cell">1918</td><td class="desc-cell">ウィルソンが議会で発表。秘密外交の廃止・民族自決・国際平和機構（国際連盟）の設立等。</td></tr>
-<tr><td class="no-cell">101</td><td class="name-cell">ドーズ案</td><td class="year-cell">1924</td><td class="desc-cell">ドイツの賠償金支払額を軽減・米からの資本投入→ドイツ経済の安定→ロカルノ条約へ。</td></tr>
-<tr><td class="no-cell">102</td><td class="name-cell">ヤング案</td><td class="year-cell">1929</td><td class="desc-cell">ドーズ案を修正。賠償金総額確定・支払期間59年→世界恐慌で崩壊→フーヴァー＝モラトリアム。</td></tr>
-<tr><td class="no-cell">103</td><td class="name-cell">トルーマン＝ドクトリン</td><td class="year-cell">1947</td><td class="desc-cell">ギリシア・トルコへの軍事・経済援助→封じ込め政策の開始。冷戦の本格化。</td></tr>
-<tr><td class="no-cell">104</td><td class="name-cell">マーシャル＝プラン</td><td class="year-cell">1947</td><td class="desc-cell">西欧への大規模経済援助（約130億ドル）。ソ連・東欧は拒否→欧州の東西分断固定化。</td></tr>
-<tr class="section-header"><td colspan="4">ロシア・ソ連の政策・制度</td></tr>
-<tr><td class="no-cell">105</td><td class="name-cell">ゼムストヴォ（地方自治会）</td><td class="year-cell">1864〜</td><td class="desc-cell">アレクサンドル2世の大改革。県・郡に設置された地方自治機関。教育・衛生・道路等を担当。ナロードニキの活動の場。</td></tr>
-<tr><td class="no-cell">106</td><td class="name-cell">ミール（農村共同体）</td><td class="year-cell">〜1906</td><td class="desc-cell">農村共同体。定期的に土地再配分。農奴解放令後も土地はミールを通じて有償で農民に分配→農民の土地緊縛。ストルイピン改革でミール解体を試みるも未完。</td></tr>
-<tr><td class="no-cell">107</td><td class="name-cell">戦時共産主義</td><td class="year-cell">1918-21</td><td class="desc-cell">内戦中の非常経済政策。穀物の強制徴発・企業の国有化・市場取引の禁止→経済の壊滅→ネップへ転換。</td></tr>
-<tr><td class="no-cell">108</td><td class="name-cell">ネップ（新経済政策）</td><td class="year-cell">1921-28</td><td class="desc-cell">レーニンが導入。部分的な市場経済の復活（穀物の現物税・中小企業の私営許可）→経済復興→スターリンが廃止し五カ年計画へ。</td></tr>
-<tr><td class="no-cell">109</td><td class="name-cell">五カ年計画</td><td class="year-cell">1928〜</td><td class="desc-cell">スターリンが開始。重工業化・農業集団化（コルホーズ・ソフホーズ）。急速な工業化達成もウクライナ大飢饉。</td></tr>
-<tr><td class="no-cell">110</td><td class="name-cell">ペレストロイカ</td><td class="year-cell">1985〜</td><td class="desc-cell">ゴルバチョフの政治・経済改革。市場原理の部分導入・共産党独裁の緩和→保守派クーデタ未遂→ソ連解体。</td></tr>
-<tr><td class="no-cell">111</td><td class="name-cell">グラスノスチ</td><td class="year-cell">1986〜</td><td class="desc-cell">ゴルバチョフ。情報公開。チェルノブイリ原発事故が契機→共産党批判噴出→ソ連解体の一因。</td></tr>
-<tr class="section-header"><td colspan="4">国際経済体制</td></tr>
-<tr><td class="no-cell">112</td><td class="name-cell">金本位制</td><td class="year-cell">1816-1930s</td><td class="desc-cell">イギリスが1816年に確立。金と通貨の交換を保証→為替の安定→国際貿易の拡大。1930s世界恐慌で各国離脱→ブロック経済→ブレトンウッズ体制（金ドル本位制）で形を変えて復活。</td></tr>
-<tr><td class="no-cell">113</td><td class="name-cell">委任統治制度</td><td class="year-cell">1920-</td><td class="desc-cell">国際連盟規約に基づく旧敵国植民地の管理制度。A式（旧オスマン領→英仏）・B式（旧独領アフリカ）・C式（太平洋諸島→日本等）。実質は植民地支配の継続→戦後は国連の信託統治に移行。</td></tr>
-<tr><td class="no-cell">114</td><td class="name-cell">ブロック経済</td><td class="year-cell">1930年代</td><td class="desc-cell">世界恐慌後の排他的経済圏。自国と植民地を関税障壁で囲い→「持たざる国」の不満。</td></tr>
-<tr><td class="no-cell">115</td><td class="name-cell">ブレトンウッズ体制</td><td class="year-cell">1944-71</td><td class="desc-cell">IMF・IBRD設立。ドル基軸通貨の固定相場制（1ドル＝360円）→1971年ニクソン＝ショックで崩壊。</td></tr>
-<tr><td class="no-cell">116</td><td class="name-cell">ニクソン＝ショック</td><td class="year-cell">1971</td><td class="desc-cell">ドルと金の交換停止→変動相場制に移行。ベトナム戦費増大で米の国際収支悪化が背景。</td></tr>
-<tr><td class="no-cell">117</td><td class="name-cell">第1次オイルショック</td><td class="year-cell">1973</td><td class="desc-cell">第4次中東戦争→OAPECが原油価格4倍に→高度経済成長の終焉・スタグフレーション。</td></tr>
-<tr><td class="no-cell">118</td><td class="name-cell">プラザ合意</td><td class="year-cell">1985</td><td class="desc-cell">G5がドル高是正で合意→急激な円高→日本のバブル経済の遠因。</td></tr>
-</tbody></table></div>
+<tr><td class="no-cell">10</td><td class="name-cell">エンコミエンダ制</td><td class="year-cell">16C</td><td class="desc-cell">スペイン植民地で征服者（コンキスタドール）に先住民の管理・教化を委託し、その見返りに労働力を徴発できる制度。事実上の強制労働→ラス＝カサスの批判→廃止へ。</td></tr>
+<tr><td class="no-cell">11</td><td class="name-cell">ミタ制</td><td class="year-cell">スペイン植民地</td><td class="desc-cell">先住民の強制労働制度。特にポトシ銀山での過酷な労働。インカ帝国のミタ（賦役）を転用。</td></tr>
+<tr><td class="no-cell">12</td><td class="name-cell">アシエンダ制</td><td class="year-cell">16C末〜</td><td class="desc-cell">大土地所有制度。プランテーションと異なり、自給的農業を含む荘園的経営。ラテンアメリカの土地問題の根源→メキシコ革命（1910）の背景。</td></tr>
+</tbody>
+</table></div>
 
 <script>
 var currentTab=0;

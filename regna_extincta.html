@@ -58,9 +58,54 @@ table.nt tbody tr.hidden{display:none}
 .top-bar{padding:20px 16px 10px}.top-bar h1{font-size:24px}
 .search-area,.nav-pills,.content{padding-left:12px;padding-right:12px}
 .search-area input{width:100%;max-width:none}
-table.nt{font-size:10px}table.nt th,table.nt td{padding:5px 4px}
-.col-n{width:auto;min-width:110px;font-size:10.5px}.col-c{display:none}
-.col-r{width:auto;font-size:9.5px}.col-d{display:none}
+/* テーブルをカード型レイアウトに変換 */
+.sec table.nt{display:block}
+.sec table.nt thead{display:none}
+.sec table.nt tbody{display:block}
+.sec table.nt tr{
+  display:block;
+  border:1px solid rgba(201,169,110,.12);
+  border-radius:6px;
+  margin-bottom:10px;
+  padding:10px 12px;
+  background:rgba(201,169,110,.015);
+}
+.sec table.nt tr:hover{background:rgba(201,169,110,.04)}
+.sec table.nt td{
+  display:block;
+  border:none;
+  padding:2px 0;
+  width:auto !important;
+  min-width:0 !important;
+}
+/* 国名: 大きく見出し化 */
+.sec table.nt td.col-n{
+  font-size:14px;
+  color:var(--gold2);
+  font-weight:700;
+  padding-bottom:6px;
+  margin-bottom:6px;
+  border-bottom:1px solid rgba(201,169,110,.08);
+  width:auto;
+}
+.sec table.nt td.col-n .alt{font-size:10px;color:var(--text3);margin-top:2px}
+/* ラベル付き表示 */
+.sec table.nt td.col-c::before{content:'首都 ';color:var(--gold);opacity:.6;font-size:9px;letter-spacing:1px;margin-right:4px}
+.sec table.nt td.col-f::before{content:'建国 ';color:var(--gold);opacity:.6;font-size:9px;letter-spacing:1px;margin-right:4px}
+.sec table.nt td.col-e::before{content:'滅亡 ';color:var(--gold);opacity:.6;font-size:9px;letter-spacing:1px;margin-right:4px}
+.sec table.nt td.col-r::before{content:'原因 ';color:var(--gold);opacity:.6;font-size:9px;letter-spacing:1px;margin-right:4px;display:block;margin-top:4px}
+.sec table.nt td.col-d::before{content:'';display:block;margin-top:6px;border-top:1px dotted rgba(201,169,110,.1);padding-top:6px}
+.sec table.nt td.col-c{font-size:11px;color:var(--text2)}
+.sec table.nt td.col-f, .sec table.nt td.col-e{
+  display:inline-block;
+  font-size:11px;
+  color:var(--gold3);
+  font-family:'Cormorant Garamond',serif;
+  margin-right:14px;
+  text-align:left;
+}
+.sec table.nt td.col-r{font-size:10.5px;color:var(--text2);line-height:1.55}
+.sec table.nt td.col-d{font-size:10.5px;color:var(--text);line-height:1.65}
 }
 </style>
 </head>
