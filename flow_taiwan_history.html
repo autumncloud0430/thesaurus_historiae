@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>台湾史 ― オランダ植民地から民主化・現代台湾まで(1624-2024)</title><style>@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>台湾史</title><style>@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
 :root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048;--border:rgba(201,169,110,.08)}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
-body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
 .hdr{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
 .hdr h1{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2)}
 .hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
@@ -21,13 +21,16 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
 .node-desc{font-size:10px;color:var(--text2);line-height:1.7}
 .node-desc strong{color:var(--text);font-weight:600}
 .node.key{background:rgba(201,169,110,.04);border-color:rgba(201,169,110,.12)}
-.note{text-align:center;padding:8px 20px 32px;max-width:720px;margin:0 auto}.note p{font-size:9px;color:var(--text3);line-height:1.8}.note strong{color:var(--gold)}
-.k{color:var(--text)}.node-title .k{color:var(--gold2)}.note .k{color:var(--gold)}
-.p1 .node{border-left-color:rgba(180,140,60,.3)}.p1::before{border-color:rgba(180,140,60,.5);background:rgba(180,140,60,.15)}
-.p2 .node{border-left-color:rgba(100,130,180,.3)}.p2::before{border-color:rgba(100,130,180,.5);background:rgba(100,130,180,.15)}
-.p3 .node{border-left-color:rgba(80,150,120,.3)}.p3::before{border-color:rgba(80,150,120,.5);background:rgba(80,150,120,.15)}
-.p4 .node{border-left-color:rgba(180,80,80,.3)}.p4::before{border-color:rgba(180,80,80,.4)}
-.p5 .node{border-left-color:rgba(120,90,160,.3)}.p5::before{border-color:rgba(120,90,160,.5);background:rgba(120,90,160,.15)}
+.note{text-align:center;padding:8px 20px 32px;max-width:720px;margin:0 auto}.note p{font-size:11px;color:#b0aba2;line-height:1.8}.note strong{color:var(--gold)}
+.k{color:var(--text)}
+.node-title .k{color:var(--gold2)}
+.note .k{color:var(--gold)}
+.p1 .node{border-left-color:rgba(120,90,70,.3)}.p1::before{border-color:rgba(120,90,70,.5);background:rgba(120,90,70,.15)}
+.p2 .node{border-left-color:rgba(170,130,90,.3)}.p2::before{border-color:rgba(170,130,90,.5);background:rgba(170,130,90,.15)}
+.p3 .node{border-left-color:rgba(180,140,60,.3)}.p3::before{border-color:rgba(180,140,60,.5);background:rgba(180,140,60,.15)}
+.p4 .node{border-left-color:rgba(100,130,180,.3)}.p4::before{border-color:rgba(100,130,180,.4)}
+.p5 .node{border-left-color:rgba(80,150,120,.3)}.p5::before{border-color:rgba(80,150,120,.5);background:rgba(80,150,120,.15)}
+.p6 .node{border-left-color:rgba(180,80,80,.3)}.p6::before{border-color:rgba(180,80,80,.4)}
 @media(max-width:600px){
 .hdr{padding:10px 12px}.hdr h1{font-size:12px}
 .flow{padding:16px 10px 40px}
@@ -35,31 +38,30 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
 .phase-label{left:-30px;width:28px;font-size:8px}
 .node{padding:8px 10px}.node-title{font-size:11px}.node-desc{font-size:9px}
 }
-</style></head>
-<body>
-<div class="hdr"><h1>台湾史 ― オランダ植民地から民主化・現代台湾まで(1624-2024)</h1><a href="index.html">&larr; 戻る</a></div>
+</style></head><body>
+<div class="hdr"><h1>台湾史 ― オランダ・スペイン進出から鄭氏台湾・清朝・日本統治・国民党政権・民主化まで(17C-現在)</h1><a href="index.html">&larr; Ad Indicem</a></div>
 <div class="flow">
-
-<div class="phase p1"><div class="phase-label">先住民<br>〜オランダ</div>
-<div class="node key"><div class="node-title">原住民と欧州人の来航</div><div class="node-year">先史-1662</div>
-<div class="node-desc">•台湾の<span class="k">★</span><strong>原住民(先住民)</strong>=オーストロネシア語族=<strong>高砂族</strong>(日本時代の呼称)・現在16の公認民族=タイヤル・アミ・パイワン・ブヌン・ルカイ・ピュマ・ツォウ・サイシャト等=中国大陸との文化的つながりは限定的。<br>•16世紀までは欧中両方から「無人の島」扱い=福建省の漁民・海賊の寄港地。<br>•1544年頃ポルトガル船が通過=島を<span class="k">★</span><strong>「フォルモサ(Ilha Formosa、美麗島)」</strong>と命名=以後西洋での台湾の呼称。<br>•<strong>1624年オランダ東インド会社</strong>=澎湖諸島を追われて<strong>台南</strong>に<span class="k">★</span><strong>ゼーランディア城(熱蘭遮城)</strong>を築城=約38年間の<span class="k">★</span><strong>オランダ領台湾</strong>=砂糖・鹿皮の輸出=中国人農民・日本人商人・原住民を巻き込んだ貿易拠点。<br>•1626-42年<span class="k">★</span><strong>スペインが台湾北部</strong>(基隆・淡水)を占領=サント=ドミンゴ城建設=しかし1642年オランダに追放=スペイン支配は16年で終焉。<br>•<strong>中国人移民</strong>=明末清初の混乱期に福建・広東から漢族移民が急増=客家人と福建人=原住民との接触と衝突。<br><br><strong>鄭氏政権</strong>(1662-1683):<br>•<span class="k">★</span><strong>鄭成功(国姓爺)</strong>(1624-62、福建の明商人・日本人母の混血)=明朝再興を目指す<strong>反清復明</strong>運動の指導者=1661年<strong>ゼーランディア城包囲</strong>=1662年オランダ軍降伏=台湾を<span class="k">★</span><strong>東寧国</strong>として明朝系政権の拠点に=鄭成功は直後に死去。<br>•息子<strong>鄭経</strong>・孫<strong>鄭克塽</strong>が継承=21年間台湾統治=中国大陸からの移民拡大。<br>•1683年<strong>清朝の施琅</strong>将軍が台湾侵攻=鄭氏降伏=<strong>鄭氏政権終焉</strong>。</div></div>
+<div class="phase p1"><div class="phase-label">近世台湾
+鄭氏台湾</div>
+<div class="node key"><div class="node-title"><span class="k">★</span>近世台湾 ― 鄭成功と清朝編入</div>
+<div class="node-year">17-19世紀</div>
+<div class="node-desc">台湾島は、東シナ海と南シナ海の境に位置する全長400km・東西150kmの大きな島で、北端は日本の南西諸島(沖縄・八重山)に接近し、南端はバシー海峡を介してフィリピン・ルソン島と対峙する、東アジア海域の戦略的要衝に位置する。先住民族(オーストロネシア系の高山族・平埔族)が長らく独立的に居住していたが、本格的に国際舞台に登場するのは16世紀大航海時代以降である。<br><br>ポルトガル船が1554年に台湾を発見、「美しい島」を意味するイラ=フォルモサ(イルハ=フォルモサ)と命名、これがその後の西洋諸国による台湾の呼称「フォルモサ」の起源となった。17世紀前半、オランダ東インド会社が1624年に台湾南部の<strong>ゼーランディア城</strong>(現台南)に拠点を築き、1626年からはスペインが台湾北部にも進出、両者は1642年までに台湾全島の西半分をオランダが支配する形で決着した。オランダは台湾を中国本土・日本・東南アジアを結ぶ中継基地として運営、福建・広東からの漢族移民を呼び寄せて開拓を進めた。<br><br>17世紀半ば、中国大陸では明朝が清朝に取って代わられた。明朝復興運動を担った海上勢力の領袖が、福建出身の<span class="k">★</span><strong>鄭成功</strong>(1624-1662)である。彼は母が日本人(田川マツ、肥前国平戸生まれ)・父が福建の海賊兼商人鄭芝龍という国際的背景を持ち、明朝最後の皇族・隆武帝から国姓「朱」を授けられたことから「国姓爺(コクセンヤ)」と尊称された。日本では江戸時代の浄瑠璃『国性爺合戦』(近松門左衛門作)の主人公として有名で、現代でも東アジア各地で英雄として記憶されている。<br><br>鄭成功は東シナ海・南シナ海を支配する海上勢力として、長く清朝に抵抗を続けたが、本土での反撃が困難になると、1661年に2万5千の軍を率いて台湾に渡海、オランダ東インド会社のゼーランディア城を1662年2月に陥落させ、オランダ勢力を台湾から駆逐した。鄭成功はその直後の1662年6月に病没したが、子の鄭経・孫の鄭克塽が王朝を継承、<strong>鄭氏台湾</strong>(1662-1683)として20年余り台湾を統治した。鄭氏は明朝復興を旗印とし続け、漢族文化(科挙制度・儒教教育・漢字)を本格的に台湾に持ち込んだ最初の政権となった。<br><br>1683年、清の康熙帝は施琅率いる水軍を派遣、澎湖海戦で鄭氏水軍を撃破、鄭氏台湾は降伏、清朝に編入された。清朝の台湾統治はその後200年余続いたが、19世紀後半まで「化外の地」=辺境として消極的経営に終始した。</div>
+</div>
+</div>
+<div class="phase p2"><div class="phase-label">日本統治</div>
+<div class="node key"><div class="node-title"><span class="k">★</span>日本統治と中華民国編入</div>
+<div class="node-year">1874-1945</div>
+<div class="node-desc">19世紀後半、台湾は東アジア国際関係の焦点となった。1871年に琉球(現沖縄)宮古島の漁民が台湾南部に漂着、現地原住民に殺害される事件が発生、日本の明治政府は1874年5月に「日本人保護」を名目に<strong>台湾出兵</strong>を実施、3000人の軍を派遣して台湾南部の原住民集落を制圧した。清朝は当初台湾は清の領土ではないと弁明、後に英国の仲介で日本と妥協、賠償金を支払って撤兵させた。この事件は、近代日本の最初の海外軍事行動であり、その後の対外膨張の出発点となった。<br><br>清朝はこの事件を契機に台湾の重要性を認識、1885年に台湾を福建省から分離して台湾省に昇格、近代化政策(鉄道建設・電報網整備・郵便制度導入)を進めた。だが1894-95年の日清戦争で清が日本に敗北、1895年4月の下関条約で台湾・澎湖諸島は日本に割譲された。日本軍が上陸すると、台湾人は短期間ながら「台湾民主国」を樹立して抵抗したが、半年以内に鎮圧された。これによって台湾は1895年から1945年までの50年間、日本の植民地として統治された。<br><br>日本統治期の台湾は、初期(1895-1918)の武力鎮圧期、中期(1918-1937)の同化期、後期(1937-1945)の皇民化政策期に分かれる。統治機関として日本政府は<strong>台湾総督府</strong>を台北に置き、軍人(初代乃木希典・第4代児玉源太郎ら)・後に文官を総督として派遣し台湾を統治した。総督府による近代化政策で、台湾全土に鉄道(縦貫鉄道)・道路・港湾・電力・上水道・近代医療制度が整備され、サトウキビ・米の二大商品作物の大規模商業生産が確立された。教育面では小学校(公学校)・中学校・高等学校・帝国大学(台北帝国大学、1928年設立)が整備、台湾人の知的エリートが育成されたが、政治的権利の剥奪と社会的差別は続いた。<br><br>1937年の日中戦争勃発で日本は台湾人の「日本人化」を急務とする皇民化政策を実施、台湾語使用禁止・日本式氏名強制・神社参拝強制などを進めた。1945年8月、日本敗戦により台湾は日本支配から離脱、中華民国(国民党政権)に編入された。</div>
+</div>
+</div>
+<div class="phase p3"><div class="phase-label">戦後台湾
+民主化</div>
+<div class="node key"><div class="node-title"><span class="k">★</span>戦後台湾と民主化</div>
+<div class="node-year">1945-現在</div>
+<div class="node-desc">1945年10月25日、中華民国軍が日本軍から台湾を接収、台湾は中華民国の一省として組み込まれた。だが、中国本土から派遣された国民党官吏の腐敗・専横が台湾人の怒りを呼び、1947年2月28日にタバコ密売摘発を発端とする台湾人の抗議運動が始まり、これに対する国民党軍の組織的虐殺で2-3万人の台湾人が殺害される<strong>二・二八事件</strong>が起こった。<br><br>1949年、中国本土の国共内戦で蒋介石率いる中華民国政府が敗北、約100万人の国民党関係者・軍人が台湾へ逃れ、中華民国政府は台北を「臨時首都」とした。蒋介石は1949年5月に台湾全土に<strong>戒厳令</strong>を発令、共産党シンパや台湾独立論者を徹底的に弾圧する「白色テロ」が約40年間続いた。同時に経済面では、米国の援助と日本統治期に整備されたインフラを基盤に、1950-60年代に農業改革、1960-70年代に輸出指向工業化を進め、80年代には「アジア四小龍」の一つに数えられる新興工業国家として台頭した。<br><br>民主化への転機を作ったのが、台湾人として初めて中華民国総統となった<span class="k">★</span><strong>李登輝</strong>(1923-2020、総統在位1988-2000)である。その先代の蒋経国は、中国本土の中華人民共和国に対しては「不接触・不談判・不妥協」の<strong>三不政策</strong>(1979年策定)を堅持して中華民国としての正統性を主張する一方、対内的には開放路線を進め、1987年7月に<strong>戒厳令解除</strong>を断行した。1988年に蒋経国が死去すると、副総統だった李登輝が総統に昇格、国民党内の本省人(台湾系)派の領袖として政治改革を進めた。李登輝は野党(民主進歩党)の合法化、国会議員の改選、総統直接選挙制の導入(1996年)など、台湾の民主化を着実に進めた。1996年3月の最初の総統直接選挙では李登輝自身が当選、台湾は事実上の独立的民主主義国家として国際社会に登場した。<br><br>2000年に民主進歩党の陳水扁が総統に当選、初の政権交代を達成、台湾アイデンティティの強化を進めた。2008年に国民党の馬英九が政権を奪還、中国大陸との経済関係を緊密化した。2016年、民進党の<span class="k">★</span><strong>蔡英文</strong>(1956-)が女性として初の総統に当選、2020年に再選、香港の民主化抑圧に対する反対と台湾アイデンティティ強化を進め、米中対立の中で台湾の国際的位置を強化した。2024年の総統選挙では、民進党の頼清徳が当選、民進党の政権が3期連続で続いている。<br><br>現代の台湾は、中華人民共和国が「台湾は中国の一部」と主張する一方、事実上の独立国家として民主主義・市場経済・先進的半導体産業(TSMCを中心とする)で世界経済の中核を担っている。台湾海峡をめぐる緊張は21世紀の東アジア国際政治の最大の焦点となっている。</div>
+</div>
+</div>
 </div>
 
-<div class="phase p2"><div class="phase-label">清朝〜日本</div>
-<div class="node key"><div class="node-title">清朝統治と日本領有</div><div class="node-year">1683-1945</div>
-<div class="node-desc"><strong>清朝統治</strong>(1683-1895):<br>•1683年清朝が台湾を領有=福建省<strong>台湾府</strong>を設置=中国王朝による最初の台湾統治。<br>•18-19世紀中国本土から漢族大量移民=原住民の<strong>平埔族</strong>は漢化=高地の<strong>山地原住民</strong>は独立性維持。<br>•台湾各地で反清蜂起(朱一貴事件1721・林爽文事件1786・戴潮春事件1862等)=「3年1小反、5年1大乱」の諺=不安定な統治。<br>•1884-85年<strong>清仏戦争</strong>で仏軍が台湾北部を一時占領→1885年<strong>台湾省</strong>昇格=<strong>劉銘伝</strong>初代巡撫の近代化(鉄道・電信・郵便)=しかし短命。<br><br>日本統治(1895-1945):<br>•1894-95年<span class="k">★</span><strong>日清戦争</strong>敗北→<span class="k">★</span><strong>下関条約</strong>で<span class="k">★</span><strong>台湾・澎湖諸島を日本に割譲</strong>=「<strong>台湾民主国</strong>」短命の独立運動(1895年5-10月、国際的承認なし)→日本軍の<strong>台湾征討</strong>で鎮圧。<br>•1895-1945年=50年の<span class="k">★</span><strong>日本統治(日治時代)</strong>=<span class="k">★</span><strong>台湾総督府</strong>(台北)=<strong>後藤新平</strong>民政長官の近代化政策=インフラ整備(鉄道・港湾・道路)・教育普及・衛生改善・農業近代化(米・砂糖産業)=「<strong>内地延長主義</strong>」の同化政策。<br>•<strong>霧社事件</strong>(1930)=原住民セデック族の反日蜂起→弾圧=<strong>モーナ=ルダオ</strong>。<br>•1937年<strong>日中戦争</strong>開始以降=<span class="k">★</span><strong>皇民化運動</strong>=日本語強制・創氏改名・神社参拝=台湾人の日本兵募集(80万人が戦争協力)。<br>•<strong>後期インフラ</strong>=日月潭水力発電・嘉南大圳灌漑=現代台湾の基礎に。<br>•台湾の知識人階層=日本語教育世代=後に「本省人」と呼ばれる人々の独特の経験=民主化・日台関係の基盤。<br>•1945年日本敗戦で台湾は<strong>中華民国</strong>に編入=蒋介石政府が接収=50年日本統治の終焉。</div></div>
-<div class="node key"><div class="node-title"><span class="k">★</span>中華民国台湾(国民党統治)</div><div class="node-year">1945-1987</div>
-<div class="node-desc">•1945年10月25日<strong>中華民国接収</strong>=<strong>陳儀</strong>行政長官着任=しかし官僚の腐敗・経済失策・物価高騰+日本統治下で近代化した台湾人と大陸からの本省人との文化ギャップ=社会不満蓄積。<br>•<span class="k">★</span><strong>1947年二二八事件</strong>(2月28日)=台北のタバコ売り女性への暴力事件がきっかけの大衆蜂起→国民党軍の弾圧=<strong>数千~数万人(推定1.8-2.8万人)</strong>が虐殺=知識人階層が壊滅=台湾独立運動の原点=50年間タブー(1987年まで)。<br>•1949年<strong>中国内戦</strong>で敗北した<span class="k">★</span><strong>蒋介石</strong>と国民党(<strong>国民政府</strong>)・約200万人の<strong>外省人</strong>が台湾に逃亡=<strong>中華民国の臨時首都を台北に</strong>=<span class="k">★</span><strong>戒厳令</strong>(1949-87、世界最長の38年)下の独裁。<br>•1950年代<span class="k">★</span><strong>白色テロ</strong>=反共名目での政治犯数千人の処刑・投獄=<strong>本省人</strong>(日本統治以前の住民の子孫)vs<strong>外省人</strong>(1949年以降の移民)の対立構造。<br><br>冷戦期:<br>•1950年朝鮮戦争勃発→米の台湾防衛決定=<strong>台湾海峡中立化</strong>。<br>•1954年<strong>米華相互防衛条約</strong>=米軍の台湾駐留開始。<br>•1954-58年<strong>第1次・第2次台湾海峡危機</strong>=中共軍の金門・馬祖島砲撃。<br>•1960-70年代<strong>経済の奇跡</strong>=輸出志向工業化=<strong>アジア四小龍(香港・シンガポール・韓国・台湾)</strong>の一員=日米輸出で高度成長。<br>•<strong>10大建設</strong>(1974-79、蒋経国)=インフラ整備。<br><br>国際的孤立:<br>•<span class="k">★</span><strong>1971年国連脱退</strong>=アルバニア決議で中華人民共和国が安保理常任理事国=中華民国は国連から排除=「中国代表権」を失う。<br>•<span class="k">★</span><strong>1972年日中国交正常化</strong>=日台断交(ただし交流維持)。<br>•<span class="k">★</span><strong>1979年米中国交正常化</strong>=米台断交=同年米議会<strong>台湾関係法</strong>=米の事実上の台湾防衛コミット継続。<br>•1978年<strong>蒋経国</strong>(蒋介石息子)総統就任=父ほどの独裁ではなく漸進的自由化志向。<br>•1986年<strong>民主進歩党(民進党、DPP)</strong>結成=野党として台湾独立志向・民主化運動=<strong>美麗島事件</strong>(1979)起訴組が指導層。<br>•1987年<span class="k">★</span><strong>戒厳令解除</strong>=政治的自由化の始まり=1988年蒋経国死去→<strong>李登輝</strong>副総統(本省人・台湾大学農業経済学博士)が継承=「台湾人総統」の時代へ。</div></div>
-</div>
-
-<div class="phase p3"><div class="phase-label">民主化〜<br>現代</div>
-<div class="node key"><div class="node-title"><span class="k">★</span>民主化と台湾アイデンティティ</div><div class="node-year">1987-2024</div>
-<div class="node-desc"><span class="k">★</span><strong>李登輝時代</strong>(1988-2000):<br>•本省人初の総統=国民党内での権力闘争(主流派vs非主流派)を経て権力基盤固め。<br>•1991年「動員戡乱時期」終結=事実上の対中戦争状態の終結。<br>•1992年「<span class="k">★</span><strong>92年コンセンサス(九二共識)</strong>」=「一つの中国」を認めつつ解釈の違いを棚上げ=中台関係の枠組み(後に民進党は否認)。<br>•1996年<span class="k">★</span><strong>初の総統直接選挙</strong>=李登輝当選=民主化の完成=中共軍のミサイル演習による威嚇(<strong>1995-96年台湾海峡危機</strong>)→米空母派遣で緊張緩和=米の関与が明確化。<br>•「<strong>二国論</strong>」(1999年、独の記者取材に)=「中台は特殊な国と国の関係」=中共の激怒。<br>•教育の「<strong>台湾化</strong>」=国家アイデンティティの再構築。<br><br><span class="k">★</span><strong>陳水扁時代</strong>(2000-08、民進党):<br>•国民党から民進党への<span class="k">★</span><strong>初の政権交代</strong>=台湾民主主義の成熟=台湾独立志向。<br>•「<strong>一辺一国論</strong>」(2002)・「<strong>台湾名義での国連加盟</strong>」提案等で中共との緊張激化。<br>•2005年中国<strong>反国家分裂法</strong>=独立宣言時の軍事介入を明文化。<br>•経済は停滞+家族汚職事件(後に投獄)=支持率低下。<br><br><strong>馬英九時代</strong>(2008-16、国民党):<br>•政権交代(国民党復帰)。<br>•2010年<span class="k">★</span><strong>ECFA(両岸経済協力枠組み協定)</strong>=中台経済統合促進=親中路線。<br>•2014年<span class="k">★</span><strong>ひまわり学生運動(太陽花運動)</strong>=ECFA関連法案への学生抗議=立法院24日間占拠=台湾独自性への強い世論。<br>•2015年<strong>馬英九=習近平会談</strong>(シンガポール)=1949年以来初の両岸首脳会談。<br><br><span class="k">★</span><strong>蔡英文時代</strong>(2016-24、民進党):<br>•台湾初の女性総統=92年コンセンサス受諾拒否=中国の経済・軍事圧力=台湾パスポートの「台湾」表記拡大。<br>•2016年以降<strong>中国による外交圧力</strong>=22→13カ国に国交国減少(パナマ・ドミニカ共和国・ソロモン諸島等が中国に乗り換え)。<br>•2019年<strong>同性婚合法化</strong>=アジア初。<br>•2020年<strong>コロナ対応</strong>=世界的に称賛(死者50人以下)=台湾の国際的存在感向上。<br>•2022年<span class="k">★</span><strong>ナンシー=ペロシ米下院議長訪台</strong>=米中関係の緊張最高潮=中国の台湾包囲軍事演習。<br>•<strong>TSMC(台湾積体電路製造)</strong>=世界半導体製造の中核=米中対立の焦点=「シリコン=シールド」。<br><br>2024年1月選挙=<span class="k">★</span><strong>頼清徳</strong>民進党候補が当選(副総統は<strong>蕭美琴</strong>、元駐米代表)=3期連続民進党政権=ただし立法院では国民党・民衆党が過半数=「ねじれ国会」。<br>•中国の軍事圧力継続・「いつ侵攻するか」の議論=2027年(習近平3期目終了)・2035年(人民解放軍近代化目標)等の予測=21世紀の世界地政学の最大焦点の一つ。<br>•2024年6月ラーム=エマニュエル米駐日大使「台湾海峡の平和は日米の最大関心事」=台湾有事への関心。</div></div>
-</div>
-
-</div>
-
-<div class="note"><p><strong>CIVITATES</strong> — 原住民(オーストロネシア系、16民族)→ポルトガル「フォルモサ」命名→1624年オランダのゼーランディア城・スペインの北部支配(1626-42)→1661-83年鄭成功・鄭経・鄭克塽の東寧国(反清復明)→1683年清朝編入・台湾府→1884-85年清仏戦争・1885年台湾省→1895年下関条約で日本領・台湾民主国→1895-1945年日本統治(台湾総督府・後藤新平・霧社事件・皇民化運動)→1945年中華民国接収→1947年二二八事件(2.8万人虐殺)→1949年蒋介石と200万外省人の移住・38年戒厳令・白色テロ→1954年米華相互防衛条約・台湾海峡危機→1960-70年代アジア四小龍の経済奇跡→1971年国連脱退・1972年日中・1979年米中国交正常化と台湾関係法→1987年戒厳令解除→李登輝の民主化・1996年初の直接選挙・1995-96年台湾海峡危機→2000年陳水扁初の政権交代・反国家分裂法→馬英九のECFA・2014年ひまわり運動・馬習会談→蔡英文女性総統・同性婚合法化・コロナ対応・2022年ペロシ訪台・TSMC・2024年頼清徳当選まで、17世紀から現代までを概観する。</p></div>
-
-</body>
-</html>
+<div class="note"><p>台湾通史の流れ ─ 17世紀前半オランダ・スペインが進出、ゼーランディア城拠点→1661年明朝復興運動の★鄭成功がオランダを駆逐、鄭氏台湾(1662-83)成立、漢族文化を本格的に台湾に持ち込む→1683清朝編入、200年余「化外の地」として消極的経営→1874明治政府の台湾出兵=日本最初の海外軍事行動→1895日清戦争下関条約で日本に割譲、50年の日本植民地統治期(近代化と差別)→1945日本敗戦で中華民国編入、1947二・二八事件、1949国民党政権が台北退避、戒厳令40年→1987戒厳令解除→★李登輝総統(1988-2000)が民主化進展、1996総統直接選挙→2000陳水扁で初の政権交代、2008馬英九、2016★蔡英文初の女性総統(再選2020)、2024頼清徳、民進党政権継続→米中対立下で台湾は事実上の独立民主国家として半導体産業(TSMC)で世界経済の中核を担う。</p></div>
+</body></html>

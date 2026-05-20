@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>人類の進化と旧石器時代 ― 700万年の前史</title><style>@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048;--border:rgba(201,169,110,.08)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+.hdr{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.hdr h1{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2)}
+.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
+.flow{max-width:760px;margin:0 auto;padding:24px 20px 60px}
+.phase{position:relative;margin-bottom:2px;padding:16px 16px 16px 60px;border-left:2px solid rgba(201,169,110,.08);margin-left:30px}
+.phase:last-child{border-left-color:transparent}
+.phase-label{position:absolute;left:-42px;top:16px;width:36px;font-family:'Cormorant Garamond',serif;font-size:10px;font-weight:700;color:var(--text3);text-align:right;line-height:1.3}
+.phase::before{content:'';position:absolute;left:-5px;top:22px;width:8px;height:8px;border-radius:50%;background:var(--bg);border:2px solid rgba(201,169,110,.25)}
+.node{background:rgba(255,255,255,.015);border:1px solid rgba(255,255,255,.04);border-radius:8px;padding:10px 14px;margin-bottom:8px;border-left:3px solid transparent}
+.node:hover{background:rgba(255,255,255,.03)}
+.node-title{font-family:'Noto Serif JP',serif;font-size:12px;font-weight:700;color:var(--gold2);margin-bottom:2px}
+.node-year{font-family:'Cormorant Garamond',serif;font-size:11px;color:var(--gold);opacity:.6;margin-bottom:4px}
+.node-desc{font-size:10px;color:var(--text2);line-height:1.7}
+.node-desc strong{color:var(--text);font-weight:600}
+.branch-row{display:flex;gap:8px;margin-bottom:8px}
+.branch-row .node{flex:1}
+.node.key{background:rgba(201,169,110,.04);border-color:rgba(201,169,110,.12)}
+.side-note{font-size:8px;color:var(--text3);padding:4px 8px;border-left:2px solid rgba(201,169,110,.1);margin:4px 0 8px;line-height:1.6}
+.note{text-align:center;padding:8px 20px 32px;max-width:720px;margin:0 auto}.note p{font-size:11px;color:#b0aba2;line-height:1.8}.note strong{color:var(--gold)}
+.k{color:var(--text)}
+.node-title .k{color:var(--gold2)}
+.note .k{color:var(--gold)}
+.p1 .node{border-left-color:rgba(120,90,70,.3)}.p1::before{border-color:rgba(120,90,70,.5);background:rgba(120,90,70,.15)}
+.p2 .node{border-left-color:rgba(170,130,90,.3)}.p2::before{border-color:rgba(170,130,90,.5);background:rgba(170,130,90,.15)}
+.p3 .node{border-left-color:rgba(180,140,60,.3)}.p3::before{border-color:rgba(180,140,60,.5);background:rgba(180,140,60,.15)}
+.p4 .node{border-left-color:rgba(100,130,180,.3)}.p4::before{border-color:rgba(100,130,180,.4)}
+.p5 .node{border-left-color:rgba(80,150,120,.3)}.p5::before{border-color:rgba(80,150,120,.5);background:rgba(80,150,120,.15)}
+.p6 .node{border-left-color:rgba(180,80,80,.3)}.p6::before{border-color:rgba(180,80,80,.4)}
+@media(max-width:600px){
+.hdr{padding:10px 12px}.hdr h1{font-size:12px}
+.flow{padding:16px 10px 40px}
+.phase{padding:12px 10px 12px 44px;margin-left:20px}
+.phase-label{left:-30px;width:28px;font-size:8px}
+.node{padding:8px 10px}.node-title{font-size:11px}.node-desc{font-size:9px}
+.branch-row{flex-direction:column}
+.side-note{font-size:7.5px}
+}
+</style></head>
+<body>
+<div class="hdr"><h1>人類の進化と旧石器時代 ― 700万年の前史</h1><a href="index.html">&larr; Ad Indicem</a></div>
+
+<div class="flow">
+
+<div class="phase p1"><div class="phase-label">地球史と人類史</div>
+<div class="node">
+<div class="node-title">先史時代と地質年代の枠組み</div>
+<div class="node-desc">文字記録の有無を境に、人類の歩んだ時間は<strong>先史時代</strong>と歴史時代に分けられる。文字の発明は約5000年前にメソポタミアで始まったから、人類史700万年の99.9%以上は先史時代であり、研究者は文字に頼らず、骨や石器・洞窟の絵・住居跡といった物質的痕跡から過去を再構成する。<br><br>この圧倒的な前史を記述する基盤が<strong>地質年代</strong>である。地球46億年の歴史は、生命の出現や絶滅を区切りに代・紀・世といった階層に分けられ、特に人類進化の舞台となるのは新生代第四紀(約260万年前以降)である。第四紀はさらに氷期と間氷期がくり返した<strong>更新世</strong>と、最終氷期が終わった約1.1万年前以降の<strong>完新世</strong>に区分され、この枠組のなかで猿人から新人までの進化と、旧石器時代から新石器時代への文化の転換が起きていく。</div>
+</div>
+</div>
+
+<div class="phase p2"><div class="phase-label">人類の進化</div>
+<div class="node key">
+<div class="node-title"><span class="k">★</span>猿人 ― 直立二足歩行の起源</div>
+<div class="node-year">700万-200万年前</div>
+<div class="node-desc"><strong>人類</strong>(ヒト科)が<strong>類人猿</strong>(チンパンジー類)から分岐したのは、約700万年前のアフリカである。両者を分ける決定的な特徴が<strong>直立二足歩行</strong>であり、これによって両手が移動から解放されて道具の製作と運搬に使えるようになり、視野が高まって遠方の捕食者や獲物を見渡せるようになった。骨・歯・遺物として残された人類進化の痕跡を総称して<strong>化石人類</strong>と呼ぶ。<br><br>最古の人類化石は2001年にサハラ南縁の<span class="k">★</span><strong>チャド</strong>共和国で発見された<strong>サヘラントロプス=チャデンシス</strong>(通称<strong>トゥーマイ</strong>、約700万年前)である。頭骨の真下にある大後頭孔の位置から、すでに直立二足歩行に近い姿勢をとっていたと推定される。続いて約440万年前のエチオピアでは<strong>ラミダス猿人</strong>が知られ、これは日本人古人類学者<span class="k">★</span><strong>諏訪元</strong>らが参加する国際チーム(エチオピア・米・日)が「アルディ」と呼ばれる女性骨格を復元した発見で、樹上生活と地上歩行を併用していた段階を示している。<br><br>その後、東アフリカから南アフリカにかけて広く展開したのが<strong>猿人</strong>=<strong>アウストラロピテクス</strong>属(約420-200万年前)で、エチオピア・ハダール出土の女性全身骨格「ルーシー」(約320万年前、アウストラロピテクス=アファレンシス)は完全な直立二足歩行の決定的証拠となった。脳容量はチンパンジー並みの400-500ml程度に過ぎなかったが、礫を打ち欠いた最初期の<strong>打製石器</strong>を用いた痕跡もあり、文化的萌芽はすでにこの段階で始まっていた。</div>
+</div>
+
+<div class="node key">
+<div class="node-title"><span class="k">★</span>原人 ― 石器・火・言語の獲得</div>
+<div class="node-year">240万-20万年前</div>
+<div class="node-desc">約250万年前、脳容量が大きく増大した初期のホモ属が登場し、ここから<strong>原人</strong>の段階に入る。最古がタンザニアの<strong>オルドヴァイ</strong>峡谷で英国人古人類学者<strong>リーキー</strong>夫妻が発見した<span class="k">★</span><strong>ホモ=ハビリス</strong>(「器用な人」、約240-140万年前)で、礫を叩き割った単純な石器(オルドワン石器)を組織的に作って肉食を本格化させた。脳の拡大と肉食の開始は連動しており、栄養摂取の効率化が脳をさらに支えるという循環がここから始まる。<br><br>続く<span class="k">★</span><strong>ホモ=エレクトゥス</strong>(直立する人、約180万-数十万年前)はアフリカを出てユーラシア全域へと拡散した最初の人類である。インドネシア中部ジャワの<strong>トリニール</strong>遺跡で1891年にオランダ人軍医<strong>デュボワ</strong>が発見した<strong>ジャワ原人</strong>(約100万年前)、北京郊外の<span class="k">★</span><strong>周口店</strong>で1920年代に発見された<strong>北京原人</strong>(ホモ=エレクトゥス=ペキネンシス、約60-40万年前)、そしてドイツ西南部の都市名に由来する<strong>ハイデルベルク</strong>人(約70-20万年前)などは、いずれも欧亜各地に拡散した同系統の原人である。<br><br>原人の技術的な飛躍は両面加工の握斧=<strong>ハンドアックス</strong>(アシュール型石器)で、解体・木材加工・掘削など多用途に使える「人類初の万能工具」としてアフリカから西アジア・欧州・インドへ広まった。北京原人の遺跡には焚き火の跡が残り、<strong>火の使用</strong>が確認できる。火は調理によって栄養吸収を高め、暖房と照明で行動圏を寒冷地と夜間に広げ、猛獣を遠ざけて住居を防衛した。さらに集団で狩りを行い食料を分配する協力行動には、複雑な意思疎通が不可欠であり、解剖学的にも喉の構造の変化からこの段階で<strong>言語の使用</strong>が始まったと考えられている。</div>
+</div>
+
+<div class="node key">
+<div class="node-title"><span class="k">★</span>旧人 ― 剥片石器と埋葬</div>
+<div class="node-year">40万-3万年前</div>
+<div class="node-desc">約30-40万年前以降、脳容量がほぼ現代人並み(1300-1500ml)に達した<strong>旧人</strong>が現れる。代表は欧州・西アジアの<strong>ネアンデルタール人</strong>(約40-3万年前)で、1856年にドイツ・デュッセルドルフ近郊の<span class="k">★</span><strong>ネアンデル渓谷</strong>で発見されたことに名の由来をもつ。氷期の寒冷気候に適応してずんぐりとした体格と太い眉骨をもち、寒冷地でも生き抜く生理的特徴を獲得していた。<br><br>道具製作も革新された。原人のハンドアックスが「打ち欠いた本体」を道具にしたのに対し、旧人は石核から薄く<strong>剥</strong>がした石片(剥片)を加工する<strong>剥片石器</strong>(ムスティエ型石器)を発達させ、削器・尖頭器・ナイフなど用途別に道具を分化させた。同じ石材から多数の道具を取れるため効率も高い。<br><br>さらに決定的なのが、旧人が初めて死者を弔った証拠である。イラク北東部ザグロス山中の<strong>シャニダール洞窟</strong>では、遺体に花粉が伴って出土したと報告され、花を手向ける<strong>埋葬の習慣</strong>を持っていた可能性が指摘されている。死後の世界への観念=原初の宗教意識が芽生えたことは、人類が単に道具を扱う動物から「意味を持つ存在」へと変わった画期であり、後の精神文化のすべての出発点となる。ネアンデルタール人は数万年にわたり新人と共存し、現代人のDNAにも一部交雑の痕跡が残ることが近年明らかになっている。</div>
+</div>
+
+<div class="node key">
+<div class="node-title"><span class="k">★</span>新人 ― 出アフリカと世界拡散</div>
+<div class="node-year">20万-1万年前</div>
+<div class="node-desc">約20-30万年前、アフリカで<strong>新人</strong>(ホモ=サピエンス、「賢い人」=現生人類)が誕生した。低い眉骨と高い額・丸い頭蓋・明確なおとがいを特徴とし、ほぼ現代人と同じ姿である。約6-7万年前、新人は本格的な「出アフリカ」を開始し、数万年のあいだに西アジア・欧州・東アジア・オーストラリア・南北アメリカへと地球規模で拡散していった。<br><br>欧州では約4万年前、フランス西南部ドルドーニュ地方の<span class="k">★</span><strong>クロマニョン</strong>岩陰で1868年に発見された<strong>クロマニョン人</strong>(約4-1万年前)が代表的存在で、ネアンデルタール人と入れ替わるかたちで西欧に定着した。同じ時期、地中海岸モナコ近くのグリマルディ洞窟で見つかった<span class="k">★</span><strong>グリマルディ人</strong>もアフリカ的特徴をとどめる新人として知られる。東アジアでは北京郊外周口店の山頂洞遺跡から発見された<strong>周口店上洞人</strong>(約3-1万年前)が、東アジアにおける新人の到来を示している。<br><br>新人は石器をさらに精緻化し、両面加工の鋭利な穂先石器を多様化させて投げ槍や弓矢の先端に装着、遠距離からの狩猟を可能にした。動物の骨や角・牙・象牙を素材とする<strong>骨角器</strong>(ニードル状の縫い針・銛・釣り針など)が登場したのもこの段階で、これによって動物の毛皮を縫い合わせた防寒衣を作れるようになり、北方シベリアやベーリング陸橋を越えて南北アメリカ大陸に達するほどの寒冷地適応を獲得した。装身具・楽器・地域固有のスタイルを持つ石器が広く現れるなど、文化の地域分化もこの時期に始まる。</div>
+</div>
+</div>
+
+<div class="phase p3"><div class="phase-label">旧石器の文化</div>
+<div class="node key">
+<div class="node-title"><span class="k">★</span>洞窟壁画と女性裸像 ― 象徴文化の開花</div>
+<div class="node-year">約3万-1万年前</div>
+<div class="node-desc">新人の到来と並行して、人類は初めて体系的な視覚芸術を生み出した。獲物となる大型動物を生き生きと描いた<strong>洞穴絵画</strong>と、女性の体を造形した小立像(<strong>女性裸像</strong>)が代表で、いずれも実用品ではなく、狩猟の成功や多産・豊穣を祈る呪術的な精神文化の産物と考えられている。<br><br>洞窟壁画の双璧が、フランス西南ドルドーニュ地方で1940年に発見された<span class="k">★</span><strong>ラスコー</strong>洞窟(約2万-1.5万年前)と、スペイン北部カンタブリア地方で1879年に発見された<span class="k">★</span><strong>アルタミラ</strong>洞窟(約1.8-1.4万年前)である。野牛・馬・鹿・マンモスなどが多色顔料で躍動的に描かれ、洞窟という閉鎖空間の暗闇の奥に儀礼的に配置されているのが共通の特徴である。アルタミラの色鮮やかなバイソン像は当初、その完成度から偽物と疑われたほどであった。<br><br>これに先立つ女性裸像の代表は、1908年にオーストリア東部の遺跡で出土した<strong>ヴィレンドルフ</strong>のヴィーナス(約2.5万年前、石灰岩製の高さ約11cmの小立像)で、豊満な乳房と腹・臀部を強調した造形は多産や生命再生を祈る母神信仰の現れと解釈される。同種の女性像はフランスからシベリアまで広く出土しており、後期旧石器時代の新人がユーラシアの広範囲で類似の精神世界を共有していたことを示す。狩りの成功を祈り、動物の魂を鎮め、生殖と豊穣を願う儀礼を通じて、人類は「意味を作り出す動物」としての文化能力を確立していった。</div>
+</div>
+</div>
+
+<div class="phase p4"><div class="phase-label">人類の多様化</div>
+<div class="node key">
+<div class="node-title"><span class="k">★</span>人種・民族・語族 ― 拡散がもたらした多様性</div>
+<div class="node-desc">新人が地球規模で拡散していくなかで、各地の気候・環境への長期的な適応によって生まれた身体的特徴の地域差が<strong>人種</strong>であり、言語・宗教・生活様式・帰属意識といった文化的特徴を共有する集団が<strong>民族</strong>である。人種は生物学的、民族は文化的な区分であり、両者は重なり合うこともずれることもある。<br><br>同系統の祖語から派生したと推定される諸言語のグループを<strong>語族</strong>と呼び、各語族の分布は人類拡散と歴史的移動の足跡を反映している。ユーラシア大陸を東西に大きく覆うのが<span class="k">★</span><strong>インド=ヨーロッパ語族</strong>で、サンスクリット・ペルシア語・ギリシア語・ラテン語・ゲルマン諸語・スラヴ諸語などが共通の祖先言語をもつとされ、紀元前後の大規模な拡散と数千年の分化が背後にある。北東欧から西シベリアにかけてフィン語・ハンガリー語などの<strong>ウラル語族</strong>が分布し、中央アジアからシベリア・モンゴル・トルコ・朝鮮半島にかけてはトルコ系・モンゴル系・ツングース系の言語をまとめる<strong>アルタイ語族</strong>がある(その同系性については議論が続いている)。<br><br>東アジアの中国語とチベット・ビルマ系言語をまとめる<span class="k">★</span><strong>シナ=チベット語族</strong>、東南アジア大陸部のクメール語・ベトナム語などをまとめる<strong>オーストロアジア語族</strong>、台湾を起点にフィリピン・インドネシア・マダガスカル・ポリネシアまで広がった海洋民の言語群が<strong>オーストロネシア語族</strong>で、紀元前数千年からの大航海による拡散の証拠になっている。<span class="k">★</span><strong>南インド</strong>のタミル語などは独自の<strong>ドラヴィダ語族</strong>を形成しており、北からアーリヤ系印欧語が侵入する以前のインド亜大陸先住諸民族の言語的遺産である。<br><br>西アジアから北アフリカ全域には、アラビア語・ヘブライ語・古代エジプト語などをまとめる<strong>アフロ=アジア語族</strong>(セム=ハム語族)が広がる。サハラ以南のアフリカは<strong>アフリカ諸語</strong>(ニジェール=コンゴ語族・ナイル=サハラ語族・コイサン語族など)に細分され、新大陸の先住民が話す多数の言語群は<strong>アメリカ諸語</strong>として括られる。語族の地図はそのまま、人類が出アフリカ以来歩んできた拡散と定住の歴史地図そのものである。</div>
+</div>
+</div>
+
+<div class="phase p5"><div class="phase-label">氷期の終焉</div>
+<div class="node key">
+<div class="node-title"><span class="k">★</span>更新世から完新世へ ― 旧石器時代の終幕</div>
+<div class="node-year">2万-1万年前</div>
+<div class="node-desc">第四紀の前半を占める<strong>更新世</strong>(約260万-1.1万年前)は、寒冷な氷期と温暖な間氷期が約10万年周期で交替した時代である。最終氷期の最盛期(最終氷期極大期、約2万年前)には海水面が現在より約120m低く、日本列島は大陸とほぼ陸続きで、ベーリング海峡も陸橋となっていたため、人類の新大陸到達が可能になった。<br><br>この氷期の北ユーラシアには大型哺乳類群が繁栄した。ステップ草原ではマンモス・ケナガサイ・トナカイ・オオツノジカが、極東ではナウマンゾウなどが、人類の主要な狩猟対象だった。打製石器を用いる狩猟採集の生活様式=<strong>旧石器時代</strong>は、まさにこれら大型獣を追う移動生活であった。<br><br>1.1万年前ごろに最終氷期が終わって地球が温暖化に向かうと、第四紀後半の<strong>完新世</strong>が始まる。氷河の融解で海水面が上昇し、日本列島は大陸から切り離され、低地は水没して海岸線が複雑化した。森林帯が北上して針葉樹林からブナやナラの落葉広葉樹林へと植生が変わり、マンモスなどの大型獣は絶滅または極北へと後退、人々の獲物は中・小型動物・魚介類・植物性食料へとシフトしていく。<br><br>この移行期に登場するのが<strong>中石器時代</strong>(欧州や西アジアで使われる時代区分)で、小型・幾何学形に整形された石片を木や骨の柄に複数組み合わせる<strong>細石器</strong>が特徴である。これは矢尻・銛・鎌など多用途の合成道具を作るための部品であり、機動性の高い小型化技術はやがて新石器時代の磨製石器・農耕牧畜・定住生活へと連なっていく。打製石器一辺倒の旧石器時代は、ここで幕を下ろす。</div>
+</div>
+</div>
+
+<div class="note"><p>人類進化の階梯=<strong>猿人(直立二足歩行)→原人(石器・火・言語)→旧人(剥片石器・埋葬)→新人(芸術・拡散)</strong>。技術の鍵は<span class="k">★</span><strong>打製石器→剥片石器→骨角器・細石器</strong>。氷期の終了と完新世への移行が、磨製石器・土器・農耕牧畜による<strong>新石器時代</strong>への扉を開く。</p></div>
+
+</div>
+</body>
+</html>
