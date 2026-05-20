@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>古代オリエント文化 ― メソポタミア・エジプト・ヘブライの源流</title><style>@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>古代オリエント文化 ― 神話・文字・法典・一神教の起源</title><style>@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
 :root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048;--border:rgba(201,169,110,.08)}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
-body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
 .hdr{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
 .hdr h1{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2)}
 .hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
@@ -21,13 +21,16 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
 .node-desc{font-size:10px;color:var(--text2);line-height:1.7}
 .node-desc strong{color:var(--text);font-weight:600}
 .node.key{background:rgba(201,169,110,.04);border-color:rgba(201,169,110,.12)}
-.note{text-align:center;padding:8px 20px 32px;max-width:720px;margin:0 auto}.note p{font-size:9px;color:var(--text3);line-height:1.8}.note strong{color:var(--gold)}
-.k{color:var(--text)}.node-title .k{color:var(--gold2)}.note .k{color:var(--gold)}
-.p1 .node{border-left-color:rgba(180,140,60,.3)}.p1::before{border-color:rgba(180,140,60,.5);background:rgba(180,140,60,.15)}
-.p2 .node{border-left-color:rgba(100,130,180,.3)}.p2::before{border-color:rgba(100,130,180,.5);background:rgba(100,130,180,.15)}
-.p3 .node{border-left-color:rgba(80,150,120,.3)}.p3::before{border-color:rgba(80,150,120,.5);background:rgba(80,150,120,.15)}
-.p4 .node{border-left-color:rgba(180,80,80,.3)}.p4::before{border-color:rgba(180,80,80,.4)}
-.p5 .node{border-left-color:rgba(120,90,160,.3)}.p5::before{border-color:rgba(120,90,160,.5);background:rgba(120,90,160,.15)}
+.note{text-align:center;padding:8px 20px 32px;max-width:720px;margin:0 auto}.note p{font-size:11px;color:#b0aba2;line-height:1.8}.note strong{color:var(--gold)}
+.k{color:var(--text)}
+.node-title .k{color:var(--gold2)}
+.note .k{color:var(--gold)}
+.p1 .node{border-left-color:rgba(120,90,70,.3)}.p1::before{border-color:rgba(120,90,70,.5);background:rgba(120,90,70,.15)}
+.p2 .node{border-left-color:rgba(170,130,90,.3)}.p2::before{border-color:rgba(170,130,90,.5);background:rgba(170,130,90,.15)}
+.p3 .node{border-left-color:rgba(180,140,60,.3)}.p3::before{border-color:rgba(180,140,60,.5);background:rgba(180,140,60,.15)}
+.p4 .node{border-left-color:rgba(100,130,180,.3)}.p4::before{border-color:rgba(100,130,180,.4)}
+.p5 .node{border-left-color:rgba(80,150,120,.3)}.p5::before{border-color:rgba(80,150,120,.5);background:rgba(80,150,120,.15)}
+.p6 .node{border-left-color:rgba(180,80,80,.3)}.p6::before{border-color:rgba(180,80,80,.4)}
 @media(max-width:600px){
 .hdr{padding:10px 12px}.hdr h1{font-size:12px}
 .flow{padding:16px 10px 40px}
@@ -37,48 +40,102 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
 }
 </style></head>
 <body>
-<div class="hdr"><h1>古代オリエント文化 ― メソポタミア・エジプト・ヘブライの源流</h1><a href="charts.html">&larr; Ad Chartae</a></div>
+<div class="hdr"><h1>古代オリエント文化 ― 神話・文字・法典・一神教の起源</h1><a href="index.html">&larr; Ad Indicem</a></div>
+
 <div class="flow">
 
-<div class="phase p1"><div class="phase-label">先史<br>時代</div>
-<div class="node key"><div class="node-title">★人類の進化</div><div class="node-year">数百万年前-</div>
-<div class="node-desc">・<strong>猿人</strong>: <strong>アウストラロピテクス</strong>(南アフリカ、タウング/オルドヴァイ遺跡)。<strong>リーキー</strong>父子の発掘で有名。<br>・<strong>原人</strong>: <strong>ホモ=エレクトゥス</strong>=<strong>ジャワ原人</strong>(<strong>デュボワ</strong>が発見、トリニール)・<strong>北京原人</strong>(<strong>周口店</strong>上洞人・山頂洞人)・<strong>ハイデルベルク人</strong>。<strong>火・言語</strong>の使用。<br>・<strong>旧人</strong>: <strong>ネアンデルタール人</strong>(ネアンデル渓谷、死者埋葬の習慣=シャニダール洞窟)。<br>・<strong>新人(ホモ=サピエンス)</strong>: <strong>クロマニョン人</strong>・<strong>グリマルディ人</strong>・周口店上洞人。現在の人類の直接的祖先。</div></div>
-<div class="node key"><div class="node-title">★旧石器時代の美術</div><div class="node-year">前3万年頃</div>
-<div class="node-desc">クロマニョン人の文化。<br>・洞窟壁画: <strong>ラスコー洞窟</strong>(フランス)・<strong>アルタミラ洞窟</strong>(スペイン)=狩猟の豊穣祈願。<br>・小彫像: <strong>ヴィレンドルフのヴィーナス</strong>(オーストリア)=豊穣・母性の象徴。<br>・<strong>打製石器(剥片石器)</strong>、骨角器=<strong>獲得経済</strong>(狩猟・採集)。</div></div>
-<div class="node"><div class="node-title">新石器革命</div><div class="node-year">前9000-7000頃</div>
-<div class="node-desc"><strong>イェリコ</strong>(パレスチナ)・<strong>ジャルモ</strong>(イラク北東部)等=最古の農耕集落。<br>・<strong>生産経済</strong>=農耕(麦)・牧畜(羊・山羊)の開始=<strong>農耕革命</strong>。<br>・<strong>磨製石器</strong>、土器=新石器時代の指標。<br>・集落定住→階級の発生→都市・国家形成への道。</div></div>
+<div class="phase p1"><div class="phase-label">メソポタミア宗教</div>
+<div class="node key">
+<div class="node-title"><span class="k">★</span>シュメールの多神教世界</div>
+<div class="node-desc">紀元前3500年頃にシュメール人がメソポタミア南部に築いた都市国家群では、各都市が固有の守護神を祀り、神に代わって地上を統治するという神権政治が運営の根幹に据えられた。神官と王が政治・経済・宗教を一体的に統括し、都市の中央には階段状の聖塔=<strong>ジッグラト</strong>がそびえ、徴収した穀物の貯蔵・分配・遠隔交易を統括する経済機関でもあった。後代、旧約聖書の「バベルの塔」のモデルとされたのも、こうしたジッグラトの威容である。<br><br>シュメール人の信仰は<strong>多神教</strong>で、天空神アヌ(アン)、風と嵐の古代メソポタミア宗教の中心でニップル市の主神<span class="k">★</span><strong>エンリル</strong>、水と知恵の神エンキ(エア)、太陽神シャマシュ、豊穣女神イシュタル、月神ナンナルなどが万神殿の頂点を占めた。やがてセム系のアッカド王国期に神々の名前がアッカド語に置き換わり、紀元前18世紀のバビロン第一王朝(ハンムラビ王の時代)には、バビロン市の守護神<span class="k">★</span><strong>マルドゥク</strong>が国家神に昇格、創造神話『エヌマ=エリシュ』では他神を打ち破って世界を創造する最高神として祀り上げられた。北のアッシリア帝国では同名の都市神<span class="k">★</span><strong>アッシュル</strong>が国家神として君臨した。</div>
 </div>
 
-<div class="phase p2"><div class="phase-label">メソポタ<br>ミア</div>
-<div class="node key"><div class="node-title">★シュメール人の都市文明</div><div class="node-year">前3500頃-</div>
-<div class="node-desc"><strong>ティグリス・ユーフラテス川</strong>流域の<strong>メソポタミア</strong>南部(シュメール)。<br>・都市国家: <strong>ウル</strong>・<strong>ウルク</strong>・<strong>ラガシュ</strong>・<strong>ニップル</strong>等。<br>・<strong>楔形文字</strong>の発明(前3000頃)=粘土板に葦で刻む=最古の文字体系の一つ。<br>・<strong>ジッグラト(聖塔)</strong>=階段状の神殿(バベルの塔の原型)。<br>・<strong>神権政治</strong>・<strong>60進法</strong>(時間・角度の単位)・<strong>太陰暦</strong>・<strong>1週7日制</strong>。</div></div>
-<div class="node"><div class="node-title">アッカド・バビロニア</div><div class="node-year">前24-16C</div>
-<div class="node-desc">・<strong>アッカド王国</strong>(サルゴン1世、前24C)=メソポタミア初の統一国家、セム系。<br>・<strong>バビロン第1王朝(古バビロニア)</strong>=<strong>ハンムラビ王</strong>(前18C)。<br>・守護神<strong>マルドゥク</strong>(バビロン主神)・ベル神。<br>・<strong>ハンムラビ法典</strong>=「<strong>目には目を、歯には歯を</strong>」(同害復讐法/タリオの法)、身分で量刑が異なる=メソポタミア法の集大成。ルーヴル美術館所蔵。</div></div>
-<div class="node"><div class="node-title">アッシリア・新バビロニア</div><div class="node-year">前8-6C</div>
-<div class="node-desc">・<strong>アッシリア帝国</strong>=最初の<strong>オリエント統一</strong>(前7C、アッシュル=バニパル)。<strong>ニネヴェの大図書館</strong>(楔形文字粘土板=バビロニア文学を保存)。<br>・『<strong>ギルガメシュ叙事詩</strong>』=シュメール起源、アッシリア時代に整備=<strong>人類最古の文学作品</strong>。洪水神話を含む(ノアの箱舟の原型)。<br>・<strong>新バビロニア</strong>(カルデア)=<strong>ネブカドネザル2世</strong>、<strong>バビロンの空中庭園</strong>(世界七不思議)、<strong>バビロン捕囚</strong>(前586)。</div></div>
+<div class="node">
+<div class="node-title"><span class="k">★</span>初期王朝美術 ― ウルのスタンダード</div>
+<div class="node-desc">シュメール最古の都市文明を物質的に証明したのは、英国人考古学者<span class="k">★</span><strong>ウーリー</strong>による1922-34年のウル遺跡発掘である。彼は王墓群とそこから出土した華麗な副葬品を世に示し、シュメール文明の実在を確固たるものにした。代表的な出土品が<strong>ウルのスタンダード</strong>と呼ばれる長方形の木製箱で、ラピスラズリ・赤色石灰岩・貝殻のモザイクで「戦争」と「平和」の場面を細密に描いている。一方の面では戦車に乗る王と歩兵が敵を踏みつぶし、他方の面では王が貴族と饗宴を催している ─ 神権政治下の階級社会と戦争・宗教儀礼の風景を、紀元前26世紀の同時代資料として今に伝える。</div>
 </div>
 
-<div class="phase p3"><div class="phase-label">エジプト</div>
-<div class="node key"><div class="node-title">★エジプト文明の特質</div><div class="node-year">前3000-</div>
-<div class="node-desc"><strong>ナイル川の賜物</strong>(ヘロドトス)=<strong>太陽暦</strong>(1年365日)・<strong>測地術</strong>の発達。<br>・<strong>ファラオ</strong>=神と崇められた絶対君主。<br>・<strong>多神教</strong>: 太陽神<strong>ラー</strong>、冥府の神<strong>オシリス</strong>、その妻<strong>イシス</strong>(後にイシス教として全地中海に広まる)、再生の神<strong>ホルス</strong>、太陽神<strong>アメン</strong>(アモン)。<br>・<strong>アトン一神教改革</strong>: <strong>アメンホテプ4世(イクナートン)</strong>が<strong>アマルナ遷都</strong>(前14C)、アトン神のみを崇拝=一神教の先駆、死後は否定。</div></div>
-<div class="node key"><div class="node-title">★エジプトの文字・書物</div><div class="node-year">前3000-</div>
-<div class="node-desc">・<strong>ヒエログリフ(神聖文字)</strong>=神殿等の刻印用。<strong>ヒエラティック(神官文字)</strong>・<strong>デモティック(民衆文字)</strong>。<br>・<strong>パピルス</strong>=ナイル沿岸の植物製の紙=後のpaperの語源。<br>・『<strong>死者の書</strong>』=死後の審判・来世信仰の指南書=ミイラと共に埋葬。<br>・<strong>ロゼッタ石</strong>(前2C、プトレマイオス朝)=ヒエログリフ・デモティック・ギリシア文字の3語併記→<strong>シャンポリオン</strong>(1822)が解読=エジプト学の成立。</div></div>
-<div class="node"><div class="node-title">ピラミッド・神殿</div><div class="node-year">前27-15C</div>
-<div class="node-desc">・<strong>ピラミッド</strong>(古王国、前27C頃)=クフ王・カフラー王・メンカウラー王のギザの三大ピラミッド+<strong>スフィンクス</strong>。王の墓。<br>・<strong>ルクソール神殿</strong>・<strong>カルナック神殿</strong>(新王国、テーベ)=アメン神信仰の中心。<br>・<strong>ミイラ</strong>=死後の復活信仰に基づく。<br>・<strong>ツタンカーメン王墓</strong>(前14C、カーター発掘1922)=大量の黄金副葬品。</div></div>
+<div class="node key">
+<div class="node-title"><span class="k">★</span>ギルガメシュ叙事詩と洪水伝説</div>
+<div class="node-desc">シュメール文学の最高峰が、ウルク市の伝説的英雄王を主人公とする叙事詩『<strong>ギルガメシュ叙事詩</strong>』である。原型はシュメール語の諸断片で、後にアッカド語の標準版にまとめられて粘土板でアッシリアの図書館などに伝わった。半神半人の英雄<span class="k">★</span><strong>ギルガメシュ</strong>(後代アッシュルバニパル王の図書館で発見)が親友エンキドゥの死をきっかけに永遠の生命を求めて旅し、賢者ウトナピシュティム ─ 神々が人類を滅ぼすため起こした大洪水を箱舟で生き延びた人物 ─ から人間の宿命を学んで帰還する物語である。<br><br>注目すべきは、この大洪水説話が旧約聖書『創世記』第6-9章の神が悪に満ちた人類を洪水で滅ぼしてノアの一家と動物たちのみを救う<span class="k">★</span><strong>ノア</strong>の方舟伝承と細部まで一致する点である。船の建造、動物の収容、洪水の継続日数、鳥を放って陸地を確認する場面 ─ いずれもメソポタミア説話のほうが千年以上古いことが楔形文字粘土板の年代から確定しており、ヘブライ宗教伝統がメソポタミア神話を継承・改変したことを示す動かぬ証拠とされる。神々の罰として洪水を理解する点はメソポタミア型と聖書型に共通するが、聖書では人類の罪に対する一神の道徳的審判という主題が前面に出ている点に、後の一神教へと向かう思考の特異性が現れている。</div>
+</div>
 </div>
 
-<div class="phase p4"><div class="phase-label">地中海<br>東岸</div>
-<div class="node"><div class="node-title">フェニキア人</div><div class="node-year">前15C-</div>
-<div class="node-desc"><strong>シドン・ティルス・ビブロス</strong>等の都市国家。<strong>地中海交易</strong>を独占、<strong>カルタゴ</strong>(北アフリカ)・<strong>マッサリア</strong>(マルセイユ)等を植民。<br>・<strong>フェニキア文字(アルファベット)</strong>=表音文字=後の<strong>ギリシア文字・ラテン文字</strong>の祖=<strong>現代アルファベットの起源</strong>。</div></div>
-<div class="node key"><div class="node-title">★ヘブライ人とユダヤ教</div><div class="node-year">前13C-</div>
-<div class="node-desc"><strong>ヘブライ人(イスラエル人/ユダヤ人)</strong>=セム系遊牧民、パレスチナに定住。<br>・<strong>モーセ</strong>=エジプトから「出エジプト」(前13C頃)、<strong>十戒</strong>をシナイ山で授かる。<br>・<strong>ダヴィデ王</strong>・<strong>ソロモン王</strong>の繁栄(前10C)、<strong>エルサレム神殿</strong>建設。<br>・北のイスラエル王国(前722アッシリアに滅亡)・南のユダ王国(前586新バビロニアに滅亡=<strong>バビロン捕囚</strong>)。<br>・<strong>ユダヤ教</strong>=唯一絶対の神<strong>ヤハウェ</strong>、選民思想、救世主待望、預言者(<strong>イザヤ</strong>・<strong>エレミヤ</strong>等)。<br>・『<strong>旧約聖書</strong>』=<strong>モーセ五書</strong>(『<strong>創世記</strong>』『出エジプト記』『レビ記』『民数記』『申命記』)・預言書・諸書=<strong>キリスト教・イスラームの共通聖典</strong>。</div></div>
-<div class="node"><div class="node-title">アラム人・セム諸民族</div><div class="node-year">前12C-</div>
-<div class="node-desc"><strong>アラム人</strong>=ダマスクスを拠点に<strong>陸上交易</strong>を支配。<strong>アラム文字</strong>=後のヘブライ文字・アラビア文字・モンゴル文字等の祖、<strong>アラム語</strong>はオリエントの共通語に(イエスの時代まで)。</div></div>
+<div class="phase p2"><div class="phase-label">楔形文字・暦・法</div>
+<div class="node key">
+<div class="node-title"><span class="k">★</span>楔形文字と粘土板 ― 解読史</div>
+<div class="node-desc">シュメール人は神殿経済の記録のため、葦のペン(尖筆)で湿った粘土板に楔型の刻印を組み合わせて文字を刻む技術を発明した。これが<strong>楔形文字</strong>(英 cuneiform)である。最初は牛・麦・羊などを表わす絵文字から発展し、やがて音節を表わす表音記号として体系化された。粘土板は焼成すれば数千年保存可能で、メソポタミアからイラン高原・小アジアにかけて、推定数十万枚が現代に伝わっている。アッカド語・エラム語・古代ペルシア語・ヒッタイト語・フルリ語・ウガリト語など多くの言語が楔形文字で記された ─ 特に印欧語系の諸言語を話したヒッタイトが楔形文字を採用した経緯は、文字技術が言語系統の壁を越えて伝播した好例となる。<br><br>楔形文字の解読は、古代世界を取り戻す18-19世紀の知的冒険譚である。最初の鍵を握ったのが、ドイツの古典学者<span class="k">★</span><strong>グローテフェント</strong>で、彼は1802年、ペルセポリス遺跡の銘文に含まれる古代ペルシア語楔形文字を分析し、繰り返し現れる文字列を「ダレイオス王・大王・諸王の王・ヒュスタスペスの子」というアケメネス朝の称号定型と推定して、楔形文字の音価を初めて科学的に推定した。続いて英国軍人ローリンソンがイラン西部ベヒストゥン崖の三言語碑文(古代ペルシア語・エラム語・アッカド語の併記)を写し取って解読を完成させ、これによってアッシリア・バビロニアの膨大な文献世界が現代に開かれた。</div>
 </div>
 
+<div class="node">
+<div class="node-title"><span class="k">★</span>暦と占星術</div>
+<div class="node-desc">天空の運行を観察することは、ジッグラト神官の重要な務めであった。月の満ち欠けを基準に1月を29日または30日とする<strong>太陰暦</strong>がまず作られ、これだけでは1年12月で約11日のずれが生じて季節と合わなくなるため、数年に1度の閏月を挿入して太陽の運行と整合させる<strong>太陰太陽暦</strong>へと発展した。これは現在のユダヤ暦・イスラーム暦・東アジアの旧暦の祖型である。<br><br>シュメール人は天体の位置を細かく記録し、その動きから人間社会の出来事を予測する<strong>占星術</strong>を発達させた。やがてこれは黄道12宮(おひつじ・おうし・ふたご…)の体系へと整備され、ギリシア・ローマを経て中世イスラーム・ヨーロッパ世界にまで継承される。1日24時間・1時間60分・1分60秒という時間の60進法、および円周360度の度量法も、シュメール起源の遺産である。さらに、肉眼で見える太陽・月と5つの惑星(水星・金星・火星・木星・土星)を7日に振り分け、これを1週間として暦に組み込む<strong>一週七日制</strong>(七曜)もメソポタミア起源とされ、ユダヤ教の安息日とともに継承され、ローマ帝国期を経て現代の曜日制度の起源となった。</div>
 </div>
 
-<div class="note"><p><p><strong>CULTURA</strong> — <strong>人類の進化</strong>からヴィレンドルフ・ラスコーの先史美術、<strong>メソポタミア</strong>の楔形文字・ハンムラビ法典・ギルガメシュ叙事詩、<strong>エジプト</strong>の象形文字・ピラミッド・『死者の書』、そして<strong>フェニキア</strong>のアルファベット・<strong>ヘブライ</strong>のユダヤ教まで。<br>→ <strong>ギリシア・ローマ文化</strong>の前提、<strong>キリスト教・イスラーム</strong>の源流。西アジア発の<span class="k">文字文明・一神教の起点</span>。</p></p></div>
+<div class="node key">
+<div class="node-title"><span class="k">★</span>ハンムラビ法典の精神 ― 「目には目を」</div>
+<div class="node-desc">メソポタミアは世界最古の成文法の伝統を持つ。古い順に、前2100年頃に現存最古の体系的法典として、ウル第三王朝の創始者の名を冠した<strong>ウル=ナンム法典</strong>、続いてイシン王朝の<strong>リピト=イシュタル法典</strong>(前1930年頃)、エシュヌンナ王国の<strong>エシュヌンナ法典</strong>(前1770年頃)、そしてシュメール都市国家時代から積み重なった習慣法を含む広義の<strong>シュメール法</strong>群がある。これらを集大成として完成させたのがバビロン第一王朝のハンムラビ王による<strong>ハンムラビ法典</strong>(前1750年頃)である。<br><br>玄武岩の石碑に楔形文字で刻まれた全282条のうち、現在最も有名なのが「<strong>目には目を、歯には歯を</strong>」(第196・200条等)という<strong>復讐法(同害復讐法)</strong>の規定である。被害と同等の報復を法的に許容することで、過剰な私的復讐の連鎖を抑止し国家裁判の枠内に閉じ込めるという思想である。同時に、被害者と加害者の身分(自由人・半自由人・奴隷)によって賠償額や刑罰が異なる<strong>身分制社会</strong>の現実も明示している。法典は神の命令ではなく王の権威で公布されたが、王はマルドゥクとシャマシュ(裁きの神)から法を授かったとする神話的根拠も併用された。後の旧約聖書「出エジプト記」の律法、ローマ十二表法、イスラーム法などにいずれも復讐法の系譜が見出せ、ハンムラビ法典は古代世界の法理念の源流に位置づけられる。<br><br>なお石碑そのものは紀元前12世紀のエラム遠征でスーサに戦利品として運ばれ、20世紀初頭の発掘でフランス隊が出土させ、現在はパリ・ルーヴル美術館に展示されている。</div>
+</div>
+</div>
 
+<div class="phase p3"><div class="phase-label">エジプト宗教・葬制</div>
+<div class="node key">
+<div class="node-title"><span class="k">★</span>エジプト多神教 ― ラー・アメン・オシリス</div>
+<div class="node-desc">古代エジプトの宗教も多神教を基盤とし、各地方都市が固有の主神を祀って覇権争いを反映した。古王国期にヘリオポリス市の神として地位を確立した最高神の太陽神<span class="k">★</span><strong>ラー</strong>、これとテーベ市の地方神で「隠れたる者」を意味する大気神<span class="k">★</span><strong>アメン</strong>が新王国期に習合して<span class="k">★</span><strong>アメン=ラー</strong>となり、エジプトの公的国家神として君臨した。テーベの神官団はその祭祀を独占して莫大な富を蓄積し、王権を脅かすほどの政治的影響力を持つに至った。<br><br>第18王朝のアメンヘテプ4世(イクナートン/アクエンアテン)は、このアメン神官団の権力を抑えるため、太陽の輝く円盤として可視化される唯一神<span class="k">★</span><strong>アテン</strong>を最高神として称揚する宗教改革を断行した。伝統的多神教に対する一神教的な改革で、王の死後すぐに棄却されたが、後の世界宗教史に「ファラオの一神教実験」として記録される事件である。<br><br>万神殿の中で特に庶民信仰を支配したのが、冥界神<span class="k">★</span><strong>オシリス</strong>(緑の肌で死と再生を司る)・その妻イシス・隼の頭をもつ天空神でファラオの権威の象徴である息子<span class="k">★</span><strong>ホルス</strong>・破壊神セト・葬送神アヌビス(ジャッカルの頭)・愛と音楽の女神ハトホル・知恵神トト(朱鷺の頭)・創造神プタハら、後代までエジプト美術を彩る神々である。神々の系譜と葛藤を巡る神話「オシリス神話」。セトに殺されたオシリスがイシスの魔法で復活し、息子ホルスがセトを倒すという神話は、ファラオの来世観・死と再生の循環の物語的根拠となった。</div>
+</div>
+
+<div class="node key">
+<div class="node-title"><span class="k">★</span>来世観と葬送 ― マスタバ・ピラミッド・死者の書</div>
+<div class="node-desc">エジプト人は来世での復活を強く信じ、王の遺体を腐敗から守るために<strong>ミイラ</strong>として保存し、副葬品とともに永遠の住まいに納めた。最古の王墓形式は、長方形・台形の日干し煉瓦造の墓室<span class="k">★</span><strong>マスタバ</strong>(アラビア語で「ベンチ」の意)で、第3王朝のジェセル王のもとで宰相イムホテプがマスタバを6層重ねた階段ピラミッドを発案、これが第4王朝のクフ王・カフラー王・メンカウラー王の大<strong>ピラミッド</strong>群へと発展した。王権の天への上昇を象徴する建築形式である。カフラー王のピラミッドの前に立つ巨大な人面獣身像<strong>スフィンクス</strong>はファラオの守護者であり、王の永遠の生命を象徴する。<br><br>新王国期になると、王墓は盗掘を防ぐためテーベ西岸の険しい谷に岩窟を掘って造られるようになり、これが王家の谷である。盗掘を免れた数少ない事例ツタンカーメン王墓の副葬品は、現代に古代エジプトの豪華絢爛な来世観を伝える。<br><br>来世への手引書として副葬されたのが<strong>死者の書</strong>(エジプト名「日のもとへ出る書」)である。パピルス巻物に呪文・讃歌・絵画を組み合わせた葬送文書で、死者がオシリスの審判廷で「真実の羽根」と心臓を秤にかけて生前の善悪を測られる「冥界裁判」の場面は最も有名である。心臓が羽根より軽ければ来世に進めるが、重ければ怪物アメミトに食われて永遠の死に至るとされた。新王国期に普及し、ピラミッド時代の「ピラミッド=テキスト」(王墓壁面の呪文)・中王国期の「コフィン=テキスト」(棺の内壁の呪文)を継承して、葬送文学の最終形となった。</div>
+</div>
+
+<div class="node">
+<div class="node-title">エジプト神殿建築 ― オベリスク・カルナック・ルクソール・アブ=シンベル</div>
+<div class="node-desc">テーベ近郊のナイル東岸には新王国期の歴代ファラオが増築を重ねたアメン=ラーを主神とする巨大複合神殿<strong>カルナック神殿</strong>があり、その南3kmにアメンホテプ3世とラメセス2世が完成させた<strong>ルクソール神殿</strong>が築かれて、両神殿はスフィンクスの並ぶ参道で結ばれた。神殿の入口や中庭には、太陽光線を象徴する一本石の角柱<strong>オベリスク</strong>が建てられた。先端は金箔貼りの円錐形(ピラミディオン)で朝陽を反射する設計である。多くがローマ帝国期に略奪されてローマ・コンスタンティノープルに運ばれ、近代に再びパリ(コンコルド広場)・ロンドン(クレオパトラの針)・ニューヨーク(セントラルパーク)など世界各地に分散した。<br><br>ラメセス2世はヌビア南部のナイル河畔に巨大な岩窟神殿<span class="k">★</span><strong>アブ=シンベル神殿</strong>を建立した。岩山を直接刳り抜いて入口に高さ20m超の自身の坐像4体を並べた壮大な建造物で、20世紀のアスワン=ハイ=ダム建設による水没の危機をユネスコの国際協力で救われ、丘の上に移築されたエピソードでも知られる。</div>
+</div>
+
+<div class="node key">
+<div class="node-title"><span class="k">★</span>エジプト文字とシャンポリオンの解読</div>
+<div class="node-desc">エジプトで紀元前3000年頃から発達した文字体系は、目的・媒体に応じて3種類が並用された。神殿・墓室の壁面・石碑に刻まれる正式な絵文字風の<strong>神聖文字(ヒエログリフ)</strong>、神官が宗教文書を書くために草書化した<strong>神官文字(ヒエラティック)</strong>、末期王朝期に庶民が日用文書に用いるよう発達した略書体<strong>民用文字(デモティック)</strong>の三層である。ヒエログリフは表意・表音を併用する複雑な体系で、母音は表記しないという特徴がある。<br><br>これら3種の文字は紀元4世紀末以降ほぼ忘れ去られ、千数百年間「神秘の象徴文字」として誤解され続けた。転機となったのが1799年、ナポレオンのエジプト遠征に従軍したフランス兵がナイル=デルタ西部の港町<strong>ロゼッタ</strong>(現ラシード)で発見した玄武岩石碑「<strong>ロゼッタ=ストーン</strong>」である。プトレマイオス5世(前196年)を顕彰する内容を、(1)神聖文字、(2)民用文字、(3)ギリシア文字 の3種で同時に刻んだ碑文で、可読のギリシア文字を鍵として未解読の2書体に挑む手がかりとなった。<br><br>解読を達成したのが、フランスの天才言語学者<span class="k">★</span><strong>シャンポリオン</strong>で、彼は1822年、ヒエログリフのカルトゥーシュ(王名を囲む楕円枠)に注目し、「プトレマイオス」「クレオパトラ」「ラメセス」「トトメス」など複数の王名を相互に比較することでヒエログリフの音価を体系的に確定した。彼の業績によりエジプト学が学問として成立し、3000年に及ぶ古代エジプトの膨大な記録が現代に開かれた。</div>
+</div>
+
+<div class="node">
+<div class="node-title">エジプトの実用科学 ― 太陽暦・測地術</div>
+<div class="node-desc">古代ギリシアの歴史家ヘロドトスは「<strong>エジプトはナイルのたまもの</strong>」と評したが、ナイルの恵みを最大限に活用する技術もエジプト文明の根幹であった。毎年のナイル氾濫の時期を予測するため、エジプト人は1年を365日、12月×30日+5日(年末の余日)とする<strong>太陽暦</strong>を発明した。これはメソポタミアの太陰太陽暦と異なり、季節と暦が完全に一致する利点がある。後にローマのユリウス=カエサルがアレクサンドリアの天文学者ソシゲネスに命じて改良したのがユリウス暦、さらに16世紀のグレゴリオ暦へと連なる、現代世界共通の暦の祖型である。<br><br>毎年の氾濫で農地の境界が消失するため、農地を再分割する必要から発達したのが<strong>測地術</strong>(土地の幾何学的測量)である。ロープを直角三角形に張って直角を作る「ロープ張り術師」(ハルペドナプタイ)の技法は、後にギリシア人ターレスがエジプト遊学中に学んだとされ、ピタゴラス学派の幾何学・ユークリッド原論へと連なる西洋数学の源流となった。「幾何学」(geometry)の語源そのものが「土地(geo)を測ること(metron)」である。さらにナイル氾濫の高さを精密に測るため、階段や柱で水位を計測する装置「ナイロメーター」が各地に設けられ、徴税の基準として活用された。これらの実用知識の集積が、後のヘレニズム期アレクサンドリアの科学繁栄の土壌となる。</div>
+</div>
+</div>
+
+<div class="phase p4"><div class="phase-label">文字の伝播</div>
+<div class="node key">
+<div class="node-title"><span class="k">★</span>フェニキア文字とアルファベットの誕生</div>
+<div class="node-desc">紀元前12世紀以降、地中海東岸の港湾都市国家を拠点に海上交易を展開したフェニキア人は、迅速な記帳のため、ナイル河岸に自生する植物の茎を縦横に並べて圧着したエジプト由来の筆記材パピルスに、簡素な記号を書く習慣を発達させた。彼らはシナイ半島の鉱山労働民らがヒエログリフから発展させた原始的な表音記号(原シナイ文字)を整理し、紀元前11世紀頃には子音のみを表わす22文字の<strong>フェニキア文字</strong>を完成させた。これは絵文字と離れた純粋な表音文字としては世界最初級のもので、覚えるべき記号数を数百から22に劇的に減らした「文字の革命」であった。<br><br>フェニキア文字は地中海を通じて瞬く間に広まり、これを受容したギリシア人は紀元前8世紀頃、子音字のうちセム語特有の音(ヘブライ語のアレフ・ヘー・ヴァヴ・ヨッドなど)に当たる字をギリシア語の母音字(α・ε・υ・ι)に転用することで、世界初の母音表記をもつ完全な表音文字=<strong>ギリシア文字(アルファベット)</strong>を成立させた。「アルファベット」の名前自体、ギリシア文字の最初の2文字「アルファ・ベータ」(=フェニキア文字の「アレフ・ベート」=「牛・家」)に由来する。ギリシア文字は東方でロシア・東欧のキリル文字へ、西方でローマ帝国のラテン文字(現代欧文の祖)へと派生し、世界の主要な表音文字体系の源流となった。<br><br>セム語族系では、フェニキア文字を改良した<strong>ヘブライ文字</strong>(現代イスラエルのヘブライ語表記、旧約聖書の原典文字)、同系の<strong>アラム文字</strong>(後述)が分化していく。</div>
+</div>
+
+<div class="node">
+<div class="node-title"><span class="k">★</span>アラム語・アラム文字 ― 古代世界の交易共通語</div>
+<div class="node-desc">シリア内陸部に展開したセム系のアラム人は、紀元前12世紀以降ダマスクスを中心に、メソポタミア・小アジア・エジプトを結ぶラクダ商隊交易の動脈を支配した。彼らの言語<strong>アラム語</strong>は、商人と異民族の間の取引言語=「リングア=フランカ」として東地中海から内陸に広まり、紀元前8世紀のアッシリア帝国でも公的書簡言語として採用された。ペルシア帝国(アケメネス朝)はこれを引き継ぎ、帝国の公用語の一つに位置づけて、エジプトからインドまでの広大な版図の行政文書をアラム語で運用した。後のイエス時代のパレスチナ住民の日常語もアラム語であった。<br><br>表記には、フェニキア文字を改良した<strong>アラム文字</strong>が用いられた。子音のみを記す22文字体系で書きやすく、後世に膨大な系譜を残す ─ 現代のヘブライ文字・アラビア文字・シリア文字・ソグド文字へ、さらに中央アジアでウイグル文字、モンゴル文字、満洲文字へと、東方系表音文字の祖となった。古代世界の文字の伝播ルートを語るうえで、アラム文字は最も重要な分岐点の一つである。</div>
+</div>
+</div>
+
+<div class="phase p5"><div class="phase-label">ヘブライ宗教・一神教</div>
+<div class="node key">
+<div class="node-title"><span class="k">★</span>ヘブライ人の宗教 ― ヤハウェ信仰の確立</div>
+<div class="node-desc">カナーン地方南部のヘブライ人(イスラエル人/ユダヤ人)は、当初メソポタミア・カナーンと共通する多神教の世界に生きていたが、独自の宗教伝統として唯一神信仰を発展させていった。彼らの伝承(旧約聖書)によれば、紀元前2000年紀頃にカルデアのウルから族長<span class="k">★</span><strong>アブラハム</strong>が一神<strong>ヤハウェ</strong>の啓示を受けてカナーンへ移住したのが信仰の起源とされる。アブラハムはイサクの父、ヤコブ(イスラエル)の祖父として系譜の始祖となる。<br><br>続いて紀元前13世紀頃、預言者<span class="k">★</span><strong>モーセ</strong>がエジプト新王国の強制労働下にあった同胞を率いて脱出(出エジプト)、シナイ半島の<strong>シナイ山</strong>でヤハウェから契約の戒律=「<strong>十戒</strong>」を授かった。十戒は「我のほか何ものも神とすべからず」「偶像を作るべからず」「主の名をみだりに唱えるべからず」「安息日を守るべし」「父母を敬うべし」「殺すなかれ」「姦淫するなかれ」「盗むなかれ」「偽証するなかれ」「隣人のものを欲するなかれ」の10項目で、ヤハウェ唯一神信仰と倫理的義務を最も簡潔に規定した中核文書である。<br><br>こうして確立されたヘブライ宗教の特徴は、(1)唯一無二の創造神ヤハウェのみを礼拝し偶像崇拝を厳禁する<strong>一神教</strong>、(2)神に選ばれた特別な民として独自の使命を負う<strong>選民思想</strong>、(3)やがて「油注がれた者」が現れて民を救うという終末論的期待である<strong>救世主(メシア)</strong>待望、の三本柱にある。これらは後世のキリスト教・イスラーム教にも継承され、世界の宗教史を決定づけた。<br><br>神名<strong>ヤハウェ</strong>はヘブライ語の四文字「YHWH」(神聖四文字テトラグラマトン)に由来する。ヘブライ語は子音のみを書き母音を補う体系のため、本来の発音は「ヤハウェ」と推定されるが、ユダヤ教徒は神名をみだりに口にすることを避け、聖書朗読時には「アドナイ(主)」と読み替えてきた。「エホバ」は中世のキリスト教学者がYHWHにアドナイの母音を当てて読んだ慣習読みである。</div>
+</div>
+
+<div class="node key">
+<div class="node-title"><span class="k">★</span>旧約聖書 ― 創世記からダニエル書まで</div>
+<div class="node-desc">ヘブライ宗教の聖典が<strong>旧約聖書</strong>(ユダヤ教では単に「聖書」、ヘブライ語ではタナハ)である。紀元前12世紀から紀元前2世紀にかけて、ヘブライ語(一部はアラム語)で書かれた39巻(プロテスタント聖書区分)の文書群で、(1)律法(モーセ五書)、(2)預言者(ヨシュア記~マラキ書)、(3)諸書(詩篇~歴代誌)の三層構造をなす。「旧約」(古い契約)という呼び方はキリスト教の側からの用語で、ユダヤ教徒自身は単に「聖書」と呼ぶ。<br><br>冒頭に置かれるのが『<span class="k">★</span><strong>創世記</strong>』(ヘブライ語ベレシート=「初めに」)である。ヤハウェによる7日間の天地創造、エデンの園と最初の人類アダム・イブ、最初の殺人(カインによるアベル殺害)、ノアの方舟と大洪水、バベルの塔(神への驕りで人類の言語が混乱した由来譚)、族長アブラハム・イサク・ヤコブ・ヨセフの物語まで、ヘブライ宗教の宇宙観・人類観・民族の起源を物語る。創造神話には先述の通りメソポタミア叙事詩の影響が色濃く認められる一方、神を一者に統一し、悪と善を人類の道徳的選択に帰す点に独自性がある。<br><br>続く『出エジプト記』が<span class="k">★</span><strong>モーセ</strong>と十戒、『レビ記』が祭司階級向け律法、『民数記』『申命記』がモーセ最後の説法と続き、ヨシュアによる約束の地カナーンへの侵攻、サウル・ダヴィデ・ソロモンの王国時代、王国分裂、預言者の活動、バビロン捕囚、帰還と神殿再建までを物語る。「旧約」全体が、ヘブライ人の歴史的・宗教的アイデンティティの自己理解を編んだ巨大な叙事である。聖書信仰の枠組みのもと、ヘブライ人は周囲の多神教文化と一線を画して<strong>ユダヤ教</strong>を確立した。</div>
+</div>
+
+<div class="node key">
+<div class="node-title"><span class="k">★</span>バビロン捕囚と離散 ― 預言者の登場</div>
+<div class="node-desc">ヘブライ宗教の決定的な転換点となったのが、紀元前586年に新バビロニアのネブカドネザル2世がユダ王国を滅ぼし、首都イェルサレムの第一神殿を破壊、住民の主要部分をバビロンへ強制連行したバビロン捕囚(前586-前538)である。神殿を失い異郷に暮らす苦境のなかで、ユダヤ人は逆に宗教的アイデンティティを強化した。土地と神殿に縛られない、書かれた聖典(律法)と日々の祈りを中心とする宗教へと変貌したのである。<br><br>この時期に活躍したのが<strong>預言者</strong>と呼ばれる宗教的指導者たちである。彼らは祭司ではなく民衆や王に直接「ヤハウェの言葉」を伝え、社会の不正を糾弾し、悔い改めと一神への忠誠を呼びかけた。代表が<strong>イザヤ</strong>(前8世紀後半)。アッシリアの脅威下でユダ王国を励まし、メシア来臨を予言した預言者・バビロン侵攻を予言し捕囚を「神の罰」と説いた<strong>エレミヤ</strong>(前7-6世紀)・エゼキエル(捕囚地で活動、神殿再建を幻視)・第二イザヤ(捕囚末期、苦難の僕の歌でメシア像を発展)らである。彼らの言葉は旧約聖書の預言書として収録された。<br><br>ペルシアのキュロス2世が新バビロニアを征服した際、解放令(前538年)によりユダヤ人は故郷帰還を許可された。エルサレム神殿が再建され(第二神殿、前515年完成)、捕囚以降のユダヤ教の宗教的中心となる。しかし第二神殿も紀元70年のローマ帝国による破壊で消滅し、神殿の西壁の遺構だけが現在<span class="k">★</span><strong>嘆きの壁</strong>(西壁/コーテル=ハーマアラヴィー)として、ユダヤ人にとって最も神聖な祈りの場となっている。<br><br>神殿を失ったユダヤ人は世界各地に散らばって独自の宗教共同体を保ち続けた。これが<strong>ディアスポラ(民族離散)</strong>(ギリシア語で「種をまく」「散らす」の意)である。バビロン・アレクサンドリア・ローマ・後の中世ヨーロッパに広がるユダヤ人共同体は、土地に縛られない宗教的・文化的アイデンティティの古典的事例となり、世界史を通じて独自の存在感を保ち続けることになる。</div>
+</div>
+</div>
+
+<div class="note"><p>古代オリエント文化は、<span class="k">★</span><strong>多神教世界(シュメール・エジプト)→楔形文字とヒエログリフ→法典伝統(ハンムラビ法典)→アルファベット革命(フェニキア)→一神教(ヘブライ)</strong>という流れで、その後の地中海・西アジア文明の宗教・文字・法・科学のすべての枠組みを準備した。神話伝承(ギルガメシュ叙事詩→創世記)、文字体系(フェニキア文字→ギリシア文字・ラテン文字)、法理念(復讐法→ローマ法→近代刑法)、宗教(ヤハウェ信仰→キリスト教・イスラーム)のいずれにおいても、現代世界の知的伝統の根源がここに胚胎している。</p></div>
+
+</div>
 </body>
 </html>

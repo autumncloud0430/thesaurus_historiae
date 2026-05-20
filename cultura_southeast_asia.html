@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>東南アジア文化 ― インド化・アンコール・上座部仏教・イスラーム化</title><style>@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>東南アジア文化</title><style>@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
 :root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048;--border:rgba(201,169,110,.08)}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
-body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
 .hdr{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
 .hdr h1{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2)}
 .hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
@@ -21,13 +21,16 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
 .node-desc{font-size:10px;color:var(--text2);line-height:1.7}
 .node-desc strong{color:var(--text);font-weight:600}
 .node.key{background:rgba(201,169,110,.04);border-color:rgba(201,169,110,.12)}
-.note{text-align:center;padding:8px 20px 32px;max-width:720px;margin:0 auto}.note p{font-size:9px;color:var(--text3);line-height:1.8}.note strong{color:var(--gold)}
-.k{color:var(--text)}.node-title .k{color:var(--gold2)}.note .k{color:var(--gold)}
-.p1 .node{border-left-color:rgba(180,140,60,.3)}.p1::before{border-color:rgba(180,140,60,.5);background:rgba(180,140,60,.15)}
-.p2 .node{border-left-color:rgba(100,130,180,.3)}.p2::before{border-color:rgba(100,130,180,.5);background:rgba(100,130,180,.15)}
-.p3 .node{border-left-color:rgba(80,150,120,.3)}.p3::before{border-color:rgba(80,150,120,.5);background:rgba(80,150,120,.15)}
-.p4 .node{border-left-color:rgba(180,80,80,.3)}.p4::before{border-color:rgba(180,80,80,.4)}
-.p5 .node{border-left-color:rgba(120,90,160,.3)}.p5::before{border-color:rgba(120,90,160,.5);background:rgba(120,90,160,.15)}
+.note{text-align:center;padding:8px 20px 32px;max-width:720px;margin:0 auto}.note p{font-size:11px;color:#b0aba2;line-height:1.8}.note strong{color:var(--gold)}
+.k{color:var(--text)}
+.node-title .k{color:var(--gold2)}
+.note .k{color:var(--gold)}
+.p1 .node{border-left-color:rgba(120,90,70,.3)}.p1::before{border-color:rgba(120,90,70,.5);background:rgba(120,90,70,.15)}
+.p2 .node{border-left-color:rgba(170,130,90,.3)}.p2::before{border-color:rgba(170,130,90,.5);background:rgba(170,130,90,.15)}
+.p3 .node{border-left-color:rgba(180,140,60,.3)}.p3::before{border-color:rgba(180,140,60,.5);background:rgba(180,140,60,.15)}
+.p4 .node{border-left-color:rgba(100,130,180,.3)}.p4::before{border-color:rgba(100,130,180,.4)}
+.p5 .node{border-left-color:rgba(80,150,120,.3)}.p5::before{border-color:rgba(80,150,120,.5);background:rgba(80,150,120,.15)}
+.p6 .node{border-left-color:rgba(180,80,80,.3)}.p6::before{border-color:rgba(180,80,80,.4)}
 @media(max-width:600px){
 .hdr{padding:10px 12px}.hdr h1{font-size:12px}
 .flow{padding:16px 10px 40px}
@@ -35,44 +38,25 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
 .phase-label{left:-30px;width:28px;font-size:8px}
 .node{padding:8px 10px}.node-title{font-size:11px}.node-desc{font-size:9px}
 }
-</style></head>
-<body>
-<div class="hdr"><h1>東南アジア文化 ― インド化・アンコール・上座部仏教・イスラーム化</h1><a href="charts.html">&larr; Ad Chartae</a></div>
+</style></head><body>
+<div class="hdr"><h1>東南アジア文化 ― インド化・ボロブドゥール・アンコール=ワット・ワヤン・上座部仏教とイスラーム化(1-16C)</h1><a href="index.html">&larr; Ad Indicem</a></div>
 <div class="flow">
-
-<div class="phase p1"><div class="phase-label">インド化<br>時代</div>
-<div class="node key"><div class="node-title">★インド化(1-5C)</div><div class="node-year">1-5C</div>
-<div class="node-desc">インド商人・僧がもたらした<strong>ヒンドゥー教・仏教・サンスクリット語・インド式王権観念</strong>が東南アジアを変容=<strong>インド化</strong>。<br>・<strong>扶南</strong>(1-7C、メコン下流):インド化最初の国家、港市国家<strong>オケオ</strong>=ローマ・中国・インドの交易の中継地。<br>・<strong>チャンパー</strong>(2-17C、ベトナム中南部):インド文化+海上交易、ヒンドゥー遺跡<strong>ミーソン</strong>。<br>・<strong>シュリーヴィジャヤ</strong>(7-14C、スマトラ)=上座部仏教の拠点。</div></div>
+<div class="phase p1"><div class="phase-label">大陸部
+宗教建築</div>
+<div class="node key"><div class="node-title"><span class="k">★</span>インド化と大陸部の宗教建築</div>
+<div class="node-year">1-15世紀</div>
+<div class="node-desc">東南アジアの古代文明史は、紀元後数世紀から始まる<strong>インド化</strong>という現象によって決定的な性格を帯びる。インド亜大陸の宗教(ヒンドゥー教・仏教)、サンスクリット語・パーリ語、ヒンドゥー王権思想、インド式建築・彫刻様式、文字(現地語の表記システムとしてのインド系文字)が東南アジア全域に波及、現地土着のオーストロアジア・オーストロネシア系諸民族の社会と融合して独自の文明圏を形成した過程である。<br><br>インド化の媒介者は、インドからの商人と僧侶であった。1世紀以降、ローマ・パルティア・サータヴァーハナ朝期のインド経済繁栄を背景に、インド洋・南シナ海の季節風航海ルートを介して、東南アジアの港市と内陸の盆地国家にインド商人・僧侶が流入、現地の支配者層がインド文化を選択的に受容することで、宗教都市国家が次々と成立した。インド化はインド人の植民地化ではなく、現地支配者が自らの権威の正当化・社会の文明化のためにインド文化を主体的に取り入れる選択行為であった。<br><br>インド化が最も濃密に進行したのが、メコン川中流以南の大陸部=現カンボジア・ベトナム南部・タイ・ラオスの諸地域である。これら諸地域では、ヒンドゥー教と大乗仏教が王権の宗教として並列・融合、王が神格化された「神王(デーヴァラージャ)」として君臨する独特の政治宗教体制が成立した。これによって、王の絶対的権威と神への帰依を可視化する壮大な石造建築=寺院・都城が大量に造営された。<br><br>その最大の遺産が、現カンボジア西北部の<strong>アンコール地方</strong>に残るアンコール朝(802-1431)の遺跡群である。<strong>アンコール朝</strong>はクメール系の<strong>カンボジア</strong>(真臘)を統合した9世紀の王ジャヤヴァルマン2世が802年に建国した王朝で、12世紀のスールヤヴァルマン2世とジャヤヴァルマン7世の治世にアジア最大級の宗教都市群を建設した。<br><br><span class="k">★</span><strong>アンコール=ワット</strong>(都城寺院)はスールヤヴァルマン2世(在位1113-1150)が建立した、ヒンドゥー教ヴィシュヌ神に捧げる壮大な寺院である。東西1.5km・南北1.3kmの広大な敷地に幅190mの大堀を巡らし、5基の中央塔を持つ三重回廊形式で配置されている。中央塔は宇宙の中心メル山(須弥山)を象徴、回廊は山を取り巻く海と山脈を表現するヒンドゥー宇宙論の三次元的表現である。回廊レリーフには『ラーマーヤナ』『マハーバーラタ』のヒンドゥー神話と王の業績が彫刻され、12世紀東南アジア美術の精華と評される。<br><br>続く12世紀末の<strong>アンコール=トム</strong>(大都城)はジャヤヴァルマン7世(在位1181-1218頃)が建立した新都城である。仏教徒であった彼は大乗仏教を国教化し、観音菩薩の四面顔を四方に向けるバイヨン寺院を都城中央に建造、その他にも領内に多数の仏教寺院・医療施設・宿駅を整備した。アンコール=ワットとアンコール=トムは、現在まで世界文化遺産として保存され、東南アジア文明の到達点を示す不朽の記念碑として、世界各地から年間数百万人が訪れる観光地・巡礼地となっている。</div>
+</div>
+</div>
+<div class="phase p2"><div class="phase-label">島嶼部
+ボロブドゥール
+ワヤン</div>
+<div class="node key"><div class="node-title"><span class="k">★</span>島嶼部の宗教建築 ― ボロブドゥールとワヤン</div>
+<div class="node-year">8-現代</div>
+<div class="node-desc">東南アジア島嶼部=現インドネシア・マレーシア・フィリピンの諸島では、大陸部と並行して、しかし別個に独自のインド化が進行した。中心はジャワ島と、ジャワ・スマトラを跨ぐマラッカ海峡地域である。スマトラ島では<strong>シュリーヴィジャヤ</strong>王国(7-13世紀、漢籍では<strong>三仏斉</strong>とも記される)が海上交易で繁栄し、大乗仏教国家として中国・インド・東南アジアを結ぶ宗教・商業のネットワークの中核を担った。<br><br>ジャワ島中部では、シュリーヴィジャヤと並行して<strong>シャイレンドラ朝</strong>(シャイレーンドラ朝、8-9世紀)が興った。シャイレンドラとはサンスクリット語で「山の王」を意味し、王朝はインド系の起源を持つとも伝えられる。シャイレンドラ朝は大乗仏教を信奉し、その宗教情熱の頂点として建立されたのが、世界最大の仏教建築物<span class="k">★</span><strong>ボロブドゥール</strong>(8-9世紀)である。<br><br>ボロブドゥールは、ジャワ島中部マグラン近郊に8世紀末から9世紀初頭にかけて建立された、巨大なストゥーパ(仏塔)複合建築である。一辺120mの方形基壇の上に9層の段壇が積み上げられ、最上部に大ストゥーパが置かれる構造で、全体は宇宙曼荼羅を地上に具現化したものと解釈されている。下層から上層へ昇りながら、回廊の壁面に彫刻された釈迦の前世物語(ジャータカ)・釈迦伝・大乗仏教の哲学を表す浮き彫りを順次見ていくことで、巡礼者が悟りに向かって精神的に上昇する体験を視覚化する、独特の宗教建築装置として設計されている。10世紀以降にジャワの政治中心が東部に移ったため、ボロブドゥールは火山灰に埋もれて忘却され、19世紀にイギリス人ラッフルズ(後のシンガポール建設者)によって再発見、20世紀後半にユネスコの大規模修復事業を経て、現在は世界文化遺産として保存されている。<br><br>ジャワ島・スマトラ島・バリ島の伝統文化のなかで、最も独特な民衆芸能が<span class="k">★</span><strong>ワヤン</strong>(影絵芝居)である。ワヤン・クリッ(影絵人形劇)は、水牛の皮を細かく加工して作った人形を、白いスクリーンの後ろから油ランプの光で映し出し、ダラン(操演者)が一人で全配役の声色を使い分けて演じる、極めて複雑な伝統芸能である。物語はインドの『ラーマーヤナ』『マハーバーラタ』を中心とし、それらをジャワ風に翻案した独自のレパートリー(プニャエン)を持つ。1回の上演は伝統的に夕方から翌朝までの一晩(約8-9時間)に及び、ガムラン(青銅製楽器の合奏)の音楽伴奏とともに行われる。<br><br>ワヤンは単なる娯楽ではなく、ジャワ社会の宇宙論・倫理・歴史認識を物語化して伝える、いわばジャワ文明の「動く百科事典」である。15世紀以降のジャワのイスラム化に際しても、ワヤンは形を変えながら継承され、現代のジャワ・バリの祭礼・通過儀礼で不可欠の役割を担い続けている。2003年にユネスコの無形文化遺産に登録された。<br><br>東南アジア文明のインド化は、現代の世界宗教分布図に決定的な刻印を残した。タイ・ミャンマー・ラオス・カンボジアは現代まで上座部仏教国であり、ベトナムは大乗仏教と儒教の混合、インドネシアとマレーシアは15世紀以降にイスラム化、フィリピンは16世紀以降にカトリック化、と多様だが、いずれの場合も最初期のインド化が文明的基層を形成し、その上に後の宗教層が積み重なる多層構造を取っている。</div>
+</div>
+</div>
 </div>
 
-<div class="phase p3"><div class="phase-label">宗教建築<br>の巨塔</div>
-<div class="node key"><div class="node-title">★ボロブドゥール</div><div class="node-year">8-9C</div>
-<div class="node-desc">ジャワ島中部の<strong>シャイレンドラ朝</strong>が建立=世界最大級の<strong>大乗仏教</strong>の石造遺跡。<br>・9層のピラミッド状構造、各層が<strong>三界</strong>(欲界/色界/無色界)を表現=曼荼羅の立体化。<br>・1814年英ラッフルズが再発見、現在は世界遺産。</div></div>
-<div class="node key"><div class="node-title">★アンコール=ワット</div><div class="node-year">12C</div>
-<div class="node-desc">クメール(カンボジア)の<strong>アンコール朝</strong>の<strong>スールヤヴァルマン2世</strong>が建立(12C前半)=最初は<strong>ヒンドゥー教</strong>(ヴィシュヌ神殿)、後に<strong>仏教</strong>寺院。<br>・アンコール朝の創建者=<strong>ジャヤヴァルマン2世</strong>(9C)。<br>・<strong>アンコール=トム</strong>(<strong>ジャヤヴァルマン7世</strong>、12-13C)=仏教都市、<strong>バイヨン寺院</strong>(四面仏)。<br>・浮彫に『ラーマーヤナ』『マハーバーラタ』の場面=インド叙事詩が東南アジアに浸透。</div></div>
-<div class="node key"><div class="node-title">★パガン朝</div><div class="node-year">11-13C</div>
-<div class="node-desc">ミャンマー(ビルマ)の<strong>パガン朝</strong>(11-13C)=<strong>上座部仏教</strong>を国教化。<br>・<strong>アノーヤター王</strong>が創始。<br>・<strong>パガン平原</strong>に3000以上の仏塔=「ビルマの奇跡」。モンゴルに滅ぼされる(13C末)。</div></div>
-</div>
-
-<div class="phase p2"><div class="phase-label">上座部仏教<br>圏</div>
-<div class="node"><div class="node-title">タイ・ラオスの仏教</div><div class="node-year">13-18C</div>
-<div class="node-desc">・<strong>スコータイ朝</strong>(13-14C):タイ最初の統一王朝、<strong>上座部仏教</strong>を国教化、<strong>タイ文字</strong>を創始(1283、ラームカムヘーン王)。<br>・<strong>アユタヤ朝</strong>(14-18C):タイの長期王朝、仏教美術の傑作が多数。<br>・<strong>ランサーン王国</strong>(14-18C、ラオス)。<br>→ 上座部仏教は現在も<strong>タイ・ミャンマー・カンボジア・ラオス</strong>の国民的宗教。</div></div>
-<div class="node"><div class="node-title">ベトナムの儒教文化</div><div class="node-year">10-15C</div>
-<div class="node-desc">ベトナムは東南アジアで例外的に<strong>中国文化圏</strong>。<br>・<strong>李朝</strong>(11-13C):<strong>科挙</strong>導入、儒教・仏教双方を重視、<strong>大越</strong>を名乗る。<br>・<strong>陳朝</strong>(13-14C):モンゴル撃退、<strong>チュノム(字喃)</strong>=漢字を基にしたベトナム独自文字。<br>・<strong>黎朝</strong>(15-18C):朱子学的統治、中国型官僚制。</div></div>
-</div>
-
-<div class="phase p5"><div class="phase-label">イスラーム<br>化と<br>海上交流</div>
-<div class="node key"><div class="node-title">★東南アジアのイスラーム化</div><div class="node-year">13-17C</div>
-<div class="node-desc">ムスリム商人・スーフィーの布教で東南アジア島嶼部がイスラーム化。<br>・<strong>マラッカ王国</strong>(15C、マレー半島)=イスラーム港市王国、<strong>ポルトガルに占領</strong>(1511)。<br>・<strong>マタラム王国</strong>(ジャワ、16-17C)・<strong>アチェ王国</strong>(スマトラ北端)=イスラーム王国。<br>・現在の<strong>インドネシア</strong>が世界最大のイスラーム教徒人口。</div></div>
-<div class="node"><div class="node-title">フィリピンのキリスト教化</div><div class="node-year">16-19C</div>
-<div class="node-desc"><strong>マゼラン</strong>(1521)の到達、<strong>ラプラプ</strong>に殺害される。<br>・スペインが<strong>フィリピン</strong>を植民地化(16C後半)=アジア唯一のカトリック国家に(ミンダナオ島南部はイスラーム)。<br>・<strong>ホセ=リサール</strong>(19C)=フィリピン民族運動家。</div></div>
-<div class="node"><div class="node-title">植民地期の文化交流</div><div class="node-year">17-19C</div>
-<div class="node-desc">・<strong>ノックス</strong>(17C、英)=セイロン(スリランカ)に20年拘束、『セイロン島誌』=西欧への南アジア情報。<br>・オランダ領東インド(現インドネシア)=バタビア(現ジャカルタ)が東アジア貿易の中心。<br>・<strong>バンコク・サイゴン・マニラ</strong>が19世紀末の商業都市として発展。</div></div>
-</div>
-
-</div>
-
-<div class="note"><p><p><strong>CULTURA</strong> — <strong>インド化</strong>(扶南・チャンパー・シュリーヴィジャヤ)→<strong>ボロブドゥール</strong>(大乗仏教)・<strong>アンコール=ワット/トム</strong>(ヒンドゥー→仏教)・<strong>パガン朝</strong>(上座部仏教)の壮大な宗教建築→<strong>上座部仏教</strong>の定着(タイ・ミャンマー・カンボジア・ラオス)→<strong>ベトナム</strong>の儒教文化(科挙・チュノム)→<strong>イスラーム化</strong>(マラッカ・マタラム・アチェ)と<strong>フィリピンのキリスト教化</strong>(スペイン植民地)。<br>→ インド・中国・イスラーム・欧州の<span class="k">文化交錯地帯</span>として独自の複合文化圏を形成。</p></p></div>
-
-</body>
-</html>
+<div class="note"><p>紀元後数世紀からインド化=現地支配者がインド宗教・サンスクリット・建築様式を主体的に受容→大陸部ではカンボジアにアンコール朝(802-1431)、12世紀★アンコール=ワット(ヒンドゥー教ヴィシュヌ神に捧げる宇宙曼荼羅型寺院、スールヤヴァルマン2世)→12世紀末アンコール=トム(ジャヤヴァルマン7世、大乗仏教化)→島嶼部では8-9世紀ジャワ島中部にシャイレンドラ朝が★ボロブドゥール(世界最大の仏教建築、9層段壇に釈迦伝レリーフ、宇宙曼荼羅の三次元表現)→ジャワの民衆芸能★ワヤン(影絵芝居)はラーマーヤナ・マハーバーラタを8-9時間語る、ジャワ社会の「動く百科事典」、現代に継承(ユネスコ無形文化遺産2003)。15世紀以降の島嶼部イスラム化・大陸部上座部仏教定着でも、インド化文明が文化的基層として残存。</p></div>
+</body></html>

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>古代インド文化 ― ヴェーダ・仏教・ヒンドゥー・サンスクリット</title><style>@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>ローマ文化 ― ラテン文学・ローマ法・ストア哲学・建築</title><style>@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
 :root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048;--border:rgba(201,169,110,.08)}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
-body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
 .hdr{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
 .hdr h1{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2)}
 .hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
@@ -21,13 +21,16 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
 .node-desc{font-size:10px;color:var(--text2);line-height:1.7}
 .node-desc strong{color:var(--text);font-weight:600}
 .node.key{background:rgba(201,169,110,.04);border-color:rgba(201,169,110,.12)}
-.note{text-align:center;padding:8px 20px 32px;max-width:720px;margin:0 auto}.note p{font-size:9px;color:var(--text3);line-height:1.8}.note strong{color:var(--gold)}
-.k{color:var(--text)}.node-title .k{color:var(--gold2)}.note .k{color:var(--gold)}
-.p1 .node{border-left-color:rgba(180,140,60,.3)}.p1::before{border-color:rgba(180,140,60,.5);background:rgba(180,140,60,.15)}
-.p2 .node{border-left-color:rgba(100,130,180,.3)}.p2::before{border-color:rgba(100,130,180,.5);background:rgba(100,130,180,.15)}
-.p3 .node{border-left-color:rgba(80,150,120,.3)}.p3::before{border-color:rgba(80,150,120,.5);background:rgba(80,150,120,.15)}
-.p4 .node{border-left-color:rgba(180,80,80,.3)}.p4::before{border-color:rgba(180,80,80,.4)}
-.p5 .node{border-left-color:rgba(120,90,160,.3)}.p5::before{border-color:rgba(120,90,160,.5);background:rgba(120,90,160,.15)}
+.note{text-align:center;padding:8px 20px 32px;max-width:720px;margin:0 auto}.note p{font-size:11px;color:#b0aba2;line-height:1.8}.note strong{color:var(--gold)}
+.k{color:var(--text)}
+.node-title .k{color:var(--gold2)}
+.note .k{color:var(--gold)}
+.p1 .node{border-left-color:rgba(120,90,70,.3)}.p1::before{border-color:rgba(120,90,70,.5);background:rgba(120,90,70,.15)}
+.p2 .node{border-left-color:rgba(170,130,90,.3)}.p2::before{border-color:rgba(170,130,90,.5);background:rgba(170,130,90,.15)}
+.p3 .node{border-left-color:rgba(180,140,60,.3)}.p3::before{border-color:rgba(180,140,60,.5);background:rgba(180,140,60,.15)}
+.p4 .node{border-left-color:rgba(100,130,180,.3)}.p4::before{border-color:rgba(100,130,180,.4)}
+.p5 .node{border-left-color:rgba(80,150,120,.3)}.p5::before{border-color:rgba(80,150,120,.5);background:rgba(80,150,120,.15)}
+.p6 .node{border-left-color:rgba(180,80,80,.3)}.p6::before{border-color:rgba(180,80,80,.4)}
 @media(max-width:600px){
 .hdr{padding:10px 12px}.hdr h1{font-size:12px}
 .flow{padding:16px 10px 40px}
@@ -35,51 +38,38 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
 .phase-label{left:-30px;width:28px;font-size:8px}
 .node{padding:8px 10px}.node-title{font-size:11px}.node-desc{font-size:9px}
 }
-</style></head>
-<body>
-<div class="hdr"><h1>古代インド文化 ― ヴェーダ・仏教・ヒンドゥー・サンスクリット</h1><a href="charts.html">&larr; Ad Chartae</a></div>
+</style></head><body>
+<div class="hdr"><h1>古代インド文化 ― ヴェーダ・仏教・ガンダーラ美術・サンスクリット古典・ヴァルダナ朝(前15C-後7C)</h1><a href="index.html">&larr; Ad Indicem</a></div>
 <div class="flow">
-
-<div class="phase p1"><div class="phase-label">インダス<br>文明</div>
-<div class="node key"><div class="node-title">★インダス文明</div><div class="node-year">前2600-1800頃</div>
-<div class="node-desc"><strong>インダス川</strong>流域の都市文明=<strong>モヘンジョ=ダロ</strong>(シンド)・<strong>ハラッパー</strong>(パンジャブ)・<strong>ドーラーヴィーラー</strong>等。<br>・計画都市(碁盤状街路・排水溝・<strong>大浴場</strong>・倉庫)、焼成煉瓦建築。<br>・<strong>インダス文字</strong>(印章)=未解読。<br>・<strong>ドラヴィダ系</strong>の人々が担い手と推定。前1800頃に衰退=原因不明(気候変動・水位低下説)。</div></div>
+<div class="phase p1"><div class="phase-label">ヴェーダ時代
+バラモン教</div>
+<div class="node key"><div class="node-title"><span class="k">★</span>ヴェーダ時代とバラモン教</div>
+<div class="node-year">前1500-前6世紀</div>
+<div class="node-desc">南アジアの古代文明史は、インダス文明(前2600-前1900頃)の衰退後、紀元前1500年頃にインド=ヨーロッパ語族のアーリヤ人(自称アーリヤ「高貴な者」)がイラン高原方面からインダス川流域に進入したところから新たに始まる。彼らは半遊牧的な部族社会を基盤に、紀元前1500-前1000年頃の前期ヴェーダ時代(リグ=ヴェーダ時代)に独自の宗教文化を発達させた。<br><br>アーリヤ人の聖典が<strong>ヴェーダ</strong>(知識の意)である。最古最重要が<span class="k">★</span><strong>リグ=ヴェーダ</strong>(賛歌のヴェーダ)で、約1000編の神々への讃歌からなる、インド最古の文献である。後に<strong>サーマ=ヴェーダ</strong>(詠唱のヴェーダ、祭式での旋律詠唱集)、<strong>ヤジュル=ヴェーダ</strong>(祭式のヴェーダ、祭式の祈祷文集)、<strong>アタルヴァ=ヴェーダ</strong>(呪文のヴェーダ、呪術的呪文集)が加わって四ヴェーダが整備された。これらは口承で千年以上正確に伝承され、文字化されるのは紀元前後である。リグ=ヴェーダの讃歌の中心的神格が<strong>インドラ</strong>=雷神・軍神で、ヒンドゥー教の最高神の一つとして後にも崇拝された。<br><br>ヴェーダの儀礼を執行する祭司階級が<strong>バラモン</strong>(婆羅門)で、彼らが特権的地位を確立したのが後期ヴェーダ時代(前1000-前600頃)である。アーリヤ人の生活地はインダス川流域からガンジス川流域へ拡大、農耕社会化が進む中で、バラモン中心の祭祀宗教=<strong>バラモン教</strong>が形成された。バラモン教は四ヴェーダを聖典とし、複雑な祭式を中心とする宗教で、その思想体系を支えたのがウパニシャッド哲学=梵我一如思想(宇宙の根本原理ブラフマンと個我アートマンの本質的同一性を説く哲学)である。<br><br>社会階級制度として<strong>ヴァルナ</strong>=「色」を意味する語で表される四階級制度がこの時代に形成された。最上位がバラモン(祭司)、その下にクシャトリヤ(王侯・武士)、ヴァイシャ(平民・農牧民・商人)、最下位がシュードラ(隷属民、被征服民)の四階級で、後の時代にこれが細かい職業集団=ジャーティと結合して、現代まで続くカースト制度(カースト=ポルトガル語起源、純血)の起源となった。<br><br>バラモン教と社会階級制度の硬直化・形式化に対する批判として、紀元前6-5世紀に新興宗教として仏教とジャイナ教が誕生する。ジャイナ教の開祖<strong>ヴァルダマーナ</strong>(尊称マハーヴィーラ「偉大な英雄」)はクシャトリヤ階級の出身で、徹底した不殺生(アヒンサー)と苦行による解脱を説いた。仏教の開祖ガウタマ=シッダールタ(尊称ブッダ、釈迦)はシャーキャ族の王子から出家して悟りを開き、極端な快楽も苦行も排した「中道」と、苦の生因たる執著を断つ「四諦」と、これを実践する<strong>八正道</strong>(正見・正思惟・正語・正業・正命・正精進・正念・正定)を説いた。両宗教に共通するのが、業(カルマ)に応じて生まれ変わりを繰り返すという<strong>輪廻転生</strong>からの解脱を究極の目的とする世界観で、これはバラモン教・ヒンドゥー教からも受け継がれたインド思想の根本前提である。両者は祭式とカースト制を否定し、より普遍的・倫理的な宗教を提示、特にクシャトリヤ・ヴァイシャ層に支持を広げた。<br><br>紀元前4世紀以降の北インドにマウリヤ朝が成立、第3代<strong>アショーカ王</strong>(在位前268-前232頃)が<strong>仏教</strong>を保護、各地に<strong>磨崖碑+石柱碑</strong>=岩や石柱に勅令を刻んだ碑を建立して、不殺生・倫理的<strong>ダルマ</strong>(法)の教えを広めた。ダルマは元来「保持されるべきもの」「世界秩序」を意味するインド思想の根本概念である。アショーカ王のもとで、釈迦の教えを正確に伝えるための<strong>仏典結集</strong>(けっしゅう、僧侶が集まって経・律を確認・編纂する集会)の第3回が首都パータリプトラで開催された(第1回は釈迦没後すぐの王舎城、第2回はその約100年後)。彼は仏教を国外にも宣布し、特に<strong>セイロン島布教</strong>(現スリランカへの仏教伝来)は王子マヒンダの派遣で達成され、これがその後の東南アジアへの上座部仏教伝播の出発点となった。</div>
+</div>
+</div>
+<div class="phase p2"><div class="phase-label">大乗仏教
+ガンダーラ美術</div>
+<div class="node key"><div class="node-title"><span class="k">★</span>大乗仏教とガンダーラ美術</div>
+<div class="node-year">前後-3世紀</div>
+<div class="node-desc">マウリヤ朝崩壊後の前2世紀から後3世紀にかけて、北インドのパンジャーブ・ガンダーラ地方では、ギリシア系・スキタイ系・パルティア系・クシャーン朝の諸勢力が交替で支配、ユーラシア東西文化の交流地として独特の文明圏を形成した。<br><br>仏教はマウリヤ朝以来の長期繁栄期に、教義・教団の発展を続けた。前後数世紀の時期に、仏教教団は教義解釈の違いで多数の学派に分裂、これが<strong>部派仏教</strong>(分裂仏教、約20の学派が並立)である。部派仏教の主流は出家僧の修行と<strong>パーリ語</strong>(西部インドの古代俗語)による教団内伝承を重視、自己解脱を目指す厳格な修行を特徴とした。これが<span class="k">★</span><strong>上座部仏教</strong>(テーラワーダ、長老の教えの意)で、後にスリランカ・ミャンマー・タイ・カンボジア・ラオスに広がる東南アジア大陸部の上座部仏教の祖となる。<br><br>これに対し、紀元前後に新興した革新派が、出家者だけでなく在家者も含む救済の宗教としての仏教を提唱した。これが<span class="k">★</span><strong>大乗仏教</strong>(マハーヤーナ、大きな乗物の意)で、利他的菩薩行=他者を救うための修行=<strong>菩薩信仰</strong>を中心思想とした。菩薩は将来の仏陀候補で、自らの悟りを後回しにして衆生救済を志す存在として崇拝された。大乗仏教は、サンスクリット語による経典(『法華経』『般若経』『華厳経』など)を整備し、複雑な哲学体系を発達させた。代表的哲学派が龍樹(ナーガールジュナ、2-3世紀頃)が創始した<strong>中観派</strong>=「空」の思想を中心とする学派で、後の東アジア仏教(中国・日本)の主要な思想的基盤となった。大乗仏教側は対抗的に部派仏教を「<strong>小乗仏教</strong>」(小さな乗物、利己的解脱主義の蔑称)と呼んだが、これは大乗側からの呼称であり、現代では中立的に「上座部仏教」と呼ぶのが一般的である。<br><br>クシャーン朝のカニシカ王(2世紀前半)の時代に、北インドのガンダーラ地方を中心に、独特の仏教美術様式が生まれた。これが<span class="k">★</span><strong>ガンダーラ美術</strong>である。ギリシア・ローマ風の人物彫刻・ドラピング技法・写実的表情というヘレニズム=ローマ美術の様式と、インド仏教の主題が融合した独特の美術で、ガンダーラ美術の仏像は東洋人の顔と西洋古典彫刻の衣装・体躯を組み合わせた、極めて独創的な造形を示す。これがその後、シルクロード経由で中央アジア・中国・日本まで広がり、東アジア仏教美術の祖型となった。北インドの<strong>マトゥラー</strong>地方でも、ガンダーラ様式と並行して独自の仏像彫刻様式(マトゥラー美術、よりインド固有の造形)が発展した。</div>
+</div>
+</div>
+<div class="phase p3"><div class="phase-label">ヒンドゥー教
+グプタ朝文化</div>
+<div class="node key"><div class="node-title"><span class="k">★</span>ヒンドゥー教成立とグプタ朝文化</div>
+<div class="node-year">4-6世紀</div>
+<div class="node-desc">仏教・ジャイナ教の挑戦を受けたバラモン教は、紀元前後から土着信仰を取り込んで再編成、新しい宗教として<strong>ヒンドゥー教</strong>へと発展していった。ヒンドゥー教はバラモン教を基盤としつつ、土着の神々・教義・儀礼を融合する包摂的な宗教で、絶対的な創始者・聖典・教団組織を持たない、生活と一体化した「インド人の宗教」として形成された。<br><br>主要神格として、創造神<strong>ブラフマー</strong>、維持神<span class="k">★</span><strong>ヴィシュヌ</strong>、破壊神シヴァの三神一体(トリムールティ)が中核となった。中でもヴィシュヌ神は、世界を維持する慈悲深い神として民衆的人気が高く、ラーマ・クリシュナなどの様々な「化身」(アヴァターラ)として地上に現れて世界を救うと信じられた。8-9世紀の思想家<strong>シャンカラ</strong>(700頃-750頃)は不二一元論=梵我一如を最も精緻に体系化した最高の哲学者で、後のヒンドゥー神学の頂点を画した。<br><br>ヒンドゥー教の社会的基盤として整備されたのが、<strong>マヌ法典</strong>(2世紀頃成立)である。これは古代インドの大法典で、伝説的な人類の始祖<strong>マヌ</strong>に帰せられる包括的法典として、宗教・社会・政治の規範を網羅した。カースト制(四ヴァルナ+不可触民)・家族法・刑罰・財産・国王の義務などについて詳細に規定し、これが後のインド社会の規範的基礎となった。<br><br>4-6世紀のグプタ朝(320-550頃)期に、古典サンスクリット文学が爛熟期を迎えた。最大の傑作が、二大叙事詩<span class="k">★</span><strong>マハーバーラタ</strong>と<span class="k">★</span><strong>ラーマーヤナ</strong>である。<br><br>マハーバーラタは、<strong>バラタ族</strong>の王族間の継承戦争を主題とする10万行以上の世界最長の叙事詩で、紀元前後から数百年をかけて累積的に形成された。物語の中心はパーンドゥ王家とドリタラーシュトラ王家の対立で、英雄<strong>アルジュナ</strong>(パーンドゥ王家の三男)の活躍を中心に展開される。叙事詩の中央部に挿入された宗教哲学詩『バガヴァッド=ギーター』(神の歌、約700節)は、戦闘前のアルジュナと、その馭者として化身したヴィシュヌ神のクリシュナの対話を通じて、行為のヨーガ・知識のヨーガ・信愛のヨーガを説く、ヒンドゥー教最高峰の聖典として現代も愛読されている。<br><br>ラーマーヤナは、賢者<strong>ヴァールミーキ</strong>が編んだ約2万4千行の叙事詩である。主人公はコーサラ国の王子<strong>ラーマ</strong>(ヴィシュヌの化身の一つ)で、妃<strong>シーター</strong>を魔王ラーヴァナに誘拐されたラーマが、猿の王ハヌマーンの助けを借りてシーターを救出する英雄譚である。ラーマーヤナはマハーバーラタと並ぶインド・東南アジア共通の文化的記憶として、現代まで読み継がれ、舞台化・映画化され続けている。<br><br>詩文学の最高峰は5世紀頃のグプタ朝期の宮廷詩人<strong>カーリダーサ</strong>である。彼の戯曲『<strong>シャクンタラー</strong>』は、王ドゥフシャンタと美少女<strong>シャクンタラー</strong>(マハーバーラタの登場人物)の恋愛物語で、サンスクリット文学最高の戯曲として後にゲーテも絶賛した。<br><br>科学・数学の業績では、<strong>ゼロの概念</strong>=空を意味するシューニヤから発展した数学的ゼロの発見が、5世紀頃のインドの数学者(アーリヤバタら)によって達成された。これがアラビア経由でヨーロッパに伝わり、近代数学の基礎となった。インドの十進法位取り記数法も同時期に完成、現代世界の標準的数字体系の起源となっている。<br><br>グプタ朝期の仏教美術も独特の発展を遂げた。<strong>グプタ様式</strong>と呼ばれる仏像彫刻は、ガンダーラ・マトゥラー両様式を統合した、より精緻で内面的な美しさを持つ古典様式として、後のインド・東南アジア仏教美術の祖型となった。</div>
+</div>
+</div>
+<div class="phase p4"><div class="phase-label">ヴァルダナ朝
+エフタル</div>
+<div class="node key"><div class="node-title"><span class="k">★</span>古代インドの終末 ― ヴァルダナ朝とエフタル</div>
+<div class="node-year">5-7世紀</div>
+<div class="node-desc">グプタ朝の繁栄期は、5世紀後半の<strong>クマーラグプタ1世</strong>(在位415-455頃)の治世まで続いたが、6世紀になると北インドからの遊牧民の侵入で衰退期に入った。5世紀末から6世紀前半、中央アジアから南下してきた<span class="k">★</span><strong>エフタル</strong>(白フン)が、ササン朝・グプタ朝の両大国を圧迫、特にグプタ朝には致命的打撃を与えた。グプタ朝は550年頃に崩壊、北インドは小王国分立の時代に入った。<br><br>7世紀前半の北インド統一に成功したのが<span class="k">★</span><strong>ヴァルダナ朝</strong>で、その最盛期を築いたのが<span class="k">★</span><strong>ハルシャ王</strong>(在位606-647)である。ヴァルダナ朝はもともと6世紀後半に北インドの小王国として興り、ハルシャの父プラバーカラ=ヴァルダナの代までに有力化していたが、ハルシャ即位後に北インド大半を統合する大帝国に発展した。彼は、ガンジス川の支流<strong>ヤムナー川</strong>流域の<strong>カナウジ</strong>を首都として、北インド一帯を統合する大帝国を築いた。<br><br>ハルシャ王は仏教を保護し、当代最大の知識人として知られた中国・唐の僧侶<strong>玄奘三蔵</strong>(602-664)を厚遇した。玄奘は629年から645年までの約17年間インドに滞在、その間ナーランダ大学で約5年学んだ後、最終期にハルシャ王の宮廷に招かれて大歓迎を受け、カナウジでの大論議でも主役を務めた。玄奘の旅行記『大唐西域記』はハルシャ王時代の北インドの政治・宗教・社会・地理の最重要史料となっている。ハルシャ王自身も詩人・劇作家としての才能を持ち、サンスクリット戯曲を3編残している。<br><br>ハルシャ王の死後、ヴァルダナ朝は急速に崩壊、北インドは再度の分裂期に入った。並行して、南インドのデカン地方ではドラヴィダ系民族の諸王朝が独自の発展を遂げた。デカン高原の中央部で勢力を伸ばしたのが<strong>前期チャールキヤ朝</strong>(6-8世紀)で、首都バーダーミーを中心に、北のヴァルダナ朝と対峙、ハルシャ王の南進を撃退した実績でも知られる。<br><br>南インドのドラヴィダ系言語<strong>タミル語</strong>は、紀元前後から独自の古典文学を発達させ、サンガム文学と呼ばれる古典詩の一大伝統を作り上げた。タミル語文学はサンスクリット文学とは独立した、南アジア最古の世俗的文学伝統として、現代まで途切れず続いている。タミル諸王朝(チョーラ朝、パーンディヤ朝など)は南インド・スリランカ・東南アジア・西アジアと活発な海上交易を展開、紀元前後にギリシア人航海士が記述した『<strong>エリュトゥラー海案内記</strong>』(エーゲ海ではなくインド洋を意味するエリュトゥラー海の航海記)にも、ローマと南インド・東南アジアとの香辛料貿易の活況が記録されている。<br><br>7世紀以降の北インドは、ハルシャ王没後の本格的分裂期に入る。8世紀以降にイスラーム勢力(ガズナ朝・ゴール朝)の侵入を受けて中世イスラーム時代に移行することになる。インドの古代史は、ヴェーダ時代の宗教文化から始まり、マウリヤ朝・グプタ朝・ヴァルダナ朝の三大統一期を経て、独自の宗教(ヒンドゥー教・仏教)・文学・哲学・科学を生み出し、東南アジア・東アジアに広範な影響を与えた、世界文明史上の主要な独立的文明として記憶されることになる。</div>
+</div>
+</div>
 </div>
 
-<div class="phase p2"><div class="phase-label">ヴェーダ<br>バラモン教</div>
-<div class="node key"><div class="node-title">★ヴェーダの宗教</div><div class="node-year">前15-前6C</div>
-<div class="node-desc"><strong>アーリヤ人</strong>が北西からパンジャブに侵入(前1500頃)、後にガンジス流域へ。<br>・<strong>ヴェーダ</strong>=アーリヤ人の聖典。<br>・最古の『<strong>リグ=ヴェーダ</strong>』(前1200頃)+<strong>サーマ=ヴェーダ</strong>・<strong>ヤジュル=ヴェーダ</strong>・<strong>アタルヴァ=ヴェーダ</strong>=四大ヴェーダ。<br>・多神教: <strong>インドラ</strong>(雷神)・<strong>アグニ</strong>(火神)・ヴァルナ(水神)・ルドラ(嵐の神)。<br>・<strong>バラモン教</strong>=祭祀至上主義+<strong>ヴァルナ(カースト)制度</strong>(バラモン=司祭・クシャトリヤ=王侯戦士・ヴァイシャ=庶民・シュードラ=隷属民)。</div></div>
-<div class="node"><div class="node-title">ウパニシャッド哲学</div><div class="node-year">前8-前5C</div>
-<div class="node-desc">『<strong>ウパニシャッド</strong>(奥義書)』=ヴェーダの哲学的発展。<br>・<strong>梵我一如(ブラフマン=アートマン)</strong>=宇宙の根本原理(梵)と個人の自我(我)は一つ。<br>・<strong>輪廻転生(サンサーラ)</strong>と<strong>解脱(モークシャ)</strong>・<strong>業(カルマ)</strong>=後のインド思想の共通基盤。</div></div>
-</div>
-
-<div class="phase p5"><div class="phase-label">仏教<br>ジャイナ教</div>
-<div class="node key"><div class="node-title">★仏教(ブッダの教え)</div><div class="node-year">前6-前5C</div>
-<div class="node-desc"><strong>ガウタマ=シッダールタ(釈迦/ブッダ/シャカ族)</strong>(前5-前4C、ヒマラヤ山麓カピラヴァストゥ)。<br>・<strong>四諦(苦集滅道)</strong>・<strong>八正道</strong>・<strong>縁起</strong>=苦しみからの解放の道。<br>・<strong>ヴァルナ制を否定</strong>、祭祀主義を批判。<br>・マガダ国で<strong>サンガ(僧伽)</strong>を形成。弟子に<strong>舎利弗(サーリプッタ)</strong>等。<br>・<strong>仏典結集</strong>(前5C〜前1C)=ブッダ死後、口伝を文書化。<br>・<strong>アショーカ王</strong>(マウリヤ朝、前3C)が仏教保護=<strong>ダルマ(法)</strong>による統治。</div></div>
-<div class="node key"><div class="node-title">★仏教の二派</div><div class="node-year">前3-後2C</div>
-<div class="node-desc">・<strong>上座部仏教</strong>(<strong>南伝仏教</strong>)=出家者中心、伝統保守。スリランカ→東南アジア(ミャンマー・タイ・カンボジア・ラオス)。<br>・<strong>大乗仏教</strong>(<strong>北伝仏教</strong>、前後1C)=<strong>菩薩</strong>による衆生救済、在家信者も重視。中央アジア→中国→日本・朝鮮。<br>・<strong>ナーガールジュナ(竜樹)</strong>=大乗仏教の<strong>空の思想</strong>(中観派)の完成者。</div></div>
-<div class="node"><div class="node-title">ジャイナ教</div><div class="node-year">前6-前5C</div>
-<div class="node-desc"><strong>マハーヴィーラ(ヴァルダマーナ)</strong>が開祖(ブッダとほぼ同時代)。<br>・<strong>アヒンサー(不殺生)</strong>の徹底=農業を避け商業・金融業に従事。<br>・禁欲主義。現在もインドのグジャラート州等で信者多数。</div></div>
-</div>
-
-<div class="phase p3"><div class="phase-label">ヒンドゥー<br>教の確立</div>
-<div class="node key"><div class="node-title">★ヒンドゥー教</div><div class="node-year">4-6C</div>
-<div class="node-desc"><strong>グプタ朝</strong>期(4-6C)に<strong>バラモン教が仏教・民間信仰を吸収</strong>して成立=<strong>ヒンドゥー教</strong>。<br>・三大神: <strong>ブラフマー</strong>(創造)・<strong>ヴィシュヌ</strong>(維持、<strong>クリシュナ</strong>・<strong>ラーマ</strong>等の化身)・<strong>シヴァ</strong>(破壊と再生)。<br>・<strong>マヌ法典</strong>(前後2C頃)=ヒンドゥー社会の法典、ヴァルナ制度・儀礼・日常倫理を規定。<br>・<strong>カースト制度(ジャーティ)</strong>が固定化=インド社会の中核。</div></div>
-<div class="node"><div class="node-title">二大叙事詩</div><div class="node-year">前4C-後4C</div>
-<div class="node-desc"><strong>サンスクリット語</strong>で綴られた国民的叙事詩:<br>・『<strong>マハーバーラタ</strong>』=クル族とパンドゥ族の戦争物語、『<strong>バガヴァッド=ギーター</strong>』(クリシュナとアルジュナの対話)を含む=ヒンドゥー教最重要経典の一つ。<br>・『<strong>ラーマーヤナ</strong>』=<strong>ラーマ王子</strong>と妻シーターの物語、東南アジア(ラーマーヤナ劇)にも広まる。</div></div>
-</div>
-
-<div class="phase p2"><div class="phase-label">グプタ朝<br>文化</div>
-<div class="node key"><div class="node-title">★サンスクリット文学の黄金期</div><div class="node-year">4-5C</div>
-<div class="node-desc"><strong>チャンドラグプタ2世</strong>期(グプタ朝最盛期):<br>・<strong>カーリダーサ</strong>=「インドのシェイクスピア」。『<strong>シャクンタラー</strong>』=王と森の娘の恋愛劇、ゲーテに絶賛される。『メーガ=ドゥータ(雲の使者)』。<br>・<strong>十進法</strong>・<strong>ゼロの概念</strong>の発見=インドから<strong>アラビア数字</strong>経由で世界へ。<br>・『<strong>実利論(アルタシャーストラ)</strong>』=<strong>カウティリヤ</strong>(チャンドラグプタ1世の宰相)の政治・経済論。</div></div>
-<div class="node key"><div class="node-title">★仏教美術</div><div class="node-year">1-7C</div>
-<div class="node-desc">・<strong>ガンダーラ美術</strong>(クシャーナ朝、1-3C)=<strong>ヘレニズム影響</strong>の仏像(ギリシア風の顔立ち)=最初の仏像(仏教が最初は像を作らなかった)。カニシカ王の保護。<br>・<strong>マトゥラー美術</strong>=インド土着スタイルの仏像。<br>・<strong>アジャンター石窟</strong>・<strong>エローラ石窟</strong>=仏教・ヒンドゥー・ジャイナ教混在の石窟寺院、仏教絵画の傑作。</div></div>
-<div class="node"><div class="node-title">玄奘の巡礼</div><div class="node-year">7C</div>
-<div class="node-desc">唐の僧<strong>玄奘</strong>(三蔵法師)が陸路でインドに留学(629-645)。<strong>ナーランダー僧院</strong>で学ぶ。帰国後『<strong>大唐西域記</strong>』を著す=インド古代史の貴重な資料。</div></div>
-</div>
-
-</div>
-
-<div class="note"><p><p><strong>CULTURA</strong> — <strong>インダス文明</strong>(モヘンジョ=ダロ)→アーリヤ人の<strong>ヴェーダ</strong>・<strong>ウパニシャッド</strong>哲学(梵我一如・輪廻)→前6-5Cに<strong>ブッダ</strong>と<strong>マハーヴィーラ</strong>の新宗教(仏教・ジャイナ教)→<strong>アショーカ王</strong>の保護で仏教拡大→<strong>上座部</strong>と<strong>大乗</strong>の分化→グプタ朝期に<strong>ヒンドゥー教</strong>成立・<strong>カーリダーサ</strong>のサンスクリット文学・<strong>十進法/ゼロ</strong>・<strong>マハーバーラタ・ラーマーヤナ</strong>。<strong>ガンダーラ</strong>・<strong>マトゥラー</strong>仏像。<br>→ 仏教は<span class="k">中央アジア経由で中国・朝鮮・日本</span>へ、上座部は<span class="k">東南アジア</span>へ拡散。</p></p></div>
-
-</body>
-</html>
+<div class="note"><p>古代インド文化の流れ ─ 前1500頃アーリヤ人がインダス進入、聖典ヴェーダ→バラモン教形成、四ヴァルナ制とウパニシャッド哲学(梵我一如)→前6世紀仏教・ジャイナ教誕生→マウリヤ朝アショーカ王が仏教保護、磨崖碑+石柱碑にダルマを刻む、セイロン島布教→部派仏教(上座部仏教=パーリ語・東南アジア大陸部へ)と大乗仏教(サンスクリット・菩薩信仰・中観派、東アジアへ)に分裂→クシャーン朝期にガンダーラ美術=ギリシア風仏像→4世紀以降バラモン教がヒンドゥー教に再編、三神一体(ブラフマー・ヴィシュヌ・シヴァ)、マヌ法典→グプタ朝の古典サンスクリット文学:マハーバーラタ(バラタ族の戦い、バガヴァッド=ギーター挿入)・ラーマーヤナ(ヴァールミーキ作、ラーマとシーター)・カーリダーサ『シャクンタラー』、ゼロの概念と十進法、グプタ様式仏像→5-6世紀エフタル侵入でグプタ朝崩壊→7世紀ハルシャ王のヴァルダナ朝(カナウジ、玄奘訪問)→南インドはドラヴィダ系タミル語文学とチャールキヤ朝・チョーラ朝の独自発展、海上交易で『エリュトゥラー海案内記』に記録。</p></div>
+</body></html>

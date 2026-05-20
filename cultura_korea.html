@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>朝鮮文化 ― 仏教美術・ハングル・朝鮮朱子学</title><style>@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>朝鮮文化</title><style>@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
 :root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048;--border:rgba(201,169,110,.08)}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
-body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
 .hdr{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
 .hdr h1{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2)}
 .hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
@@ -21,13 +21,16 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
 .node-desc{font-size:10px;color:var(--text2);line-height:1.7}
 .node-desc strong{color:var(--text);font-weight:600}
 .node.key{background:rgba(201,169,110,.04);border-color:rgba(201,169,110,.12)}
-.note{text-align:center;padding:8px 20px 32px;max-width:720px;margin:0 auto}.note p{font-size:9px;color:var(--text3);line-height:1.8}.note strong{color:var(--gold)}
-.k{color:var(--text)}.node-title .k{color:var(--gold2)}.note .k{color:var(--gold)}
-.p1 .node{border-left-color:rgba(180,140,60,.3)}.p1::before{border-color:rgba(180,140,60,.5);background:rgba(180,140,60,.15)}
-.p2 .node{border-left-color:rgba(100,130,180,.3)}.p2::before{border-color:rgba(100,130,180,.5);background:rgba(100,130,180,.15)}
-.p3 .node{border-left-color:rgba(80,150,120,.3)}.p3::before{border-color:rgba(80,150,120,.5);background:rgba(80,150,120,.15)}
-.p4 .node{border-left-color:rgba(180,80,80,.3)}.p4::before{border-color:rgba(180,80,80,.4)}
-.p5 .node{border-left-color:rgba(120,90,160,.3)}.p5::before{border-color:rgba(120,90,160,.5);background:rgba(120,90,160,.15)}
+.note{text-align:center;padding:8px 20px 32px;max-width:720px;margin:0 auto}.note p{font-size:11px;color:#b0aba2;line-height:1.8}.note strong{color:var(--gold)}
+.k{color:var(--text)}
+.node-title .k{color:var(--gold2)}
+.note .k{color:var(--gold)}
+.p1 .node{border-left-color:rgba(120,90,70,.3)}.p1::before{border-color:rgba(120,90,70,.5);background:rgba(120,90,70,.15)}
+.p2 .node{border-left-color:rgba(170,130,90,.3)}.p2::before{border-color:rgba(170,130,90,.5);background:rgba(170,130,90,.15)}
+.p3 .node{border-left-color:rgba(180,140,60,.3)}.p3::before{border-color:rgba(180,140,60,.5);background:rgba(180,140,60,.15)}
+.p4 .node{border-left-color:rgba(100,130,180,.3)}.p4::before{border-color:rgba(100,130,180,.4)}
+.p5 .node{border-left-color:rgba(80,150,120,.3)}.p5::before{border-color:rgba(80,150,120,.5);background:rgba(80,150,120,.15)}
+.p6 .node{border-left-color:rgba(180,80,80,.3)}.p6::before{border-color:rgba(180,80,80,.4)}
 @media(max-width:600px){
 .hdr{padding:10px 12px}.hdr h1{font-size:12px}
 .flow{padding:16px 10px 40px}
@@ -35,44 +38,31 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
 .phase-label{left:-30px;width:28px;font-size:8px}
 .node{padding:8px 10px}.node-title{font-size:11px}.node-desc{font-size:9px}
 }
-</style></head>
-<body>
-<div class="hdr"><h1>朝鮮文化 ― 仏教美術・ハングル・朝鮮朱子学</h1><a href="charts.html">&larr; Ad Chartae</a></div>
+</style></head><body>
+<div class="hdr"><h1>朝鮮文化 ― 三国時代の仏教受容・統一新羅の仏国寺・高麗版大蔵経と高麗青磁・朝鮮朱子学とハングル文学(4-19C)</h1><a href="index.html">&larr; Ad Indicem</a></div>
 <div class="flow">
-
-<div class="phase p1"><div class="phase-label">三国時代<br>の文化</div>
-<div class="node key"><div class="node-title">★三国の仏教受容</div><div class="node-year">4-7C</div>
-<div class="node-desc"><strong>高句麗・百済・新羅</strong>の三国時代。<br>・<strong>高句麗</strong>:4C後半に<strong>小獣林王</strong>が仏教公認(前秦から)、<strong>広開土王碑</strong>(414、子の長寿王建立)=古代東アジア国際関係の一級史料。<br>・<strong>百済</strong>:4C後半に仏教公認。<strong>聖明王</strong>(位523-554)が日本(倭)に仏教を伝える(552年説)。<br>・<strong>新羅</strong>:<strong>法興王</strong>(6C)公認。<strong>仏国寺</strong>・<strong>石窟庵</strong>(慶州、8C統一新羅)=朝鮮仏教美術の頂点。</div></div>
-<div class="node"><div class="node-title">三国史記・新靺鞨</div><div class="node-year">12C</div>
-<div class="node-desc"><strong>『三国史記』</strong>(高麗、<strong>金富軾</strong>編、12C)=朝鮮最古の歴史書、紀伝体、三国時代史の基本資料。<br>・『<strong>新靺鞨</strong>』=新羅代の楽曲として中国側文献に残る。<br>・『<strong>三国遺事</strong>』(高麗末、<strong>一然</strong>編、13C)=伝説・仏教史を補う。檀君神話を収録。</div></div>
+<div class="phase p1"><div class="phase-label">新羅・高麗
+仏教文化</div>
+<div class="node key"><div class="node-title"><span class="k">★</span>統一新羅・高麗の仏教文化</div>
+<div class="node-year">7-13世紀</div>
+<div class="node-desc">朝鮮半島は中国大陸と日本列島の間に位置する地理的特性から、古代以来、中国大陸の高度文明を受容しつつ独自の文化を発達させ、それを日本へ伝えるという文化的中継地として機能してきた。半島内部では7世紀後半に新羅が三国(高句麗・百済・新羅)を統一(676年)、統一新羅(676-935)が建国された。この時代に半島は本格的な仏教文化期を迎える。<br><br>統一新羅期の仏教思想を代表するのが、新羅僧の元暁(617-686)と義湘(625-702)である。元暁は唐への留学を断念して新羅で活動、華厳思想を独自に体系化した『大乗起信論疏』などの著作で東アジア華厳学の発展に大きく貢献、後世に「海東宗」とも称された朝鮮独自の仏教思想を樹立した。義湘は唐に留学して華厳第二祖智儼に学び、帰国後に半島に華厳宗を伝え、慶尚北道の浮石寺など華厳系大寺院を建立した。両者の活動によって新羅は8世紀に東アジア仏教界の重要な中心地となった。<br><br>統一新羅の都・慶州周辺には、現在も世界文化遺産に登録される仏教遺跡群が残る。代表が751年に金大城が建立を開始した仏国寺と石窟庵である。仏国寺は新羅仏教建築の精華で、二重の石造基壇上に多宝塔・釈迦塔という美しい対比をなす2基の石塔を配し、新羅仏教彫刻の最高水準を示している。仏国寺背後の山中にある石窟庵は、人工石窟内に本尊釈迦如来坐像を中央に置き、その周囲に十大弟子・菩薩などのレリーフを配する独特の構造で、新羅仏教彫刻の頂点とされる。これら新羅仏教美術の様式は、ほぼ同時期の奈良時代の日本=東大寺大仏建立にも一定の影響を与えている。<br><br>935年、新羅は地方豪族王建の高麗に取って代わられた。<strong>高麗</strong>(918-1392)は、仏教を国家統合の精神的基盤とする徹底した仏教国家で、王室主導で大規模な仏教事業を実施した。最大の業績が<span class="k">★</span><strong>高麗版大蔵経</strong>(八万大蔵経)の刊行である。これは11世紀前半に第1次版が刊行された後、13世紀のモンゴル襲来で焼失したため、1236-1251年の16年をかけて再刊された再雕本で、約8万枚の経板に仏教経典の全集成を彫刻したものである。経板は現在も韓国南部・伽倻山の海印寺に完全な形で保存されており、世界記憶遺産・世界文化遺産に登録されている。木版印刷技術の到達点として、また東アジア仏教の集大成として、世界文化史上極めて貴重な遺産である。<br><br>高麗はまた、東アジア最高水準の陶磁器=<span class="k">★</span><strong>高麗青磁</strong>を生み出した。11-13世紀に栄えた高麗青磁は、青緑色の釉薬下に細い線で文様を彫り、白土と黒土を象嵌する「象嵌青磁」が特に有名で、その精緻な技法と優雅な造形は宋・元の青磁にも比肩する高水準であった。中国の青磁工人が高麗の青磁工人の技を学んだとの記録も残る。高麗時代にはまた、世界初の金属活字印刷が13世紀に実用化されたとされており、グーテンベルク以前の東アジア印刷技術の頂点を示す。</div>
+</div>
+</div>
+<div class="phase p2"><div class="phase-label">朝鮮の朱子学
+科挙</div>
+<div class="node key"><div class="node-title"><span class="k">★</span>朝鮮王朝の朱子学と科挙</div>
+<div class="node-year">14-19世紀</div>
+<div class="node-desc">1392年、高麗の武将・李成桂が王朝を簒奪して朝鮮(李氏朝鮮、1392-1910)を建国した。新王朝は仏教中心の高麗の路線を逆転、中国・明朝の影響下で<span class="k">★</span><strong>朱子学</strong>を国教として採用した。朱子学は南宋の朱熹(1130-1200)が確立した宋学の新展開で、宇宙の根本原理=理と、事物を構成する物質的要素=気の二元論によって万象を説明する形而上学的儒教である。朝鮮はこれを最も忠実に受容した東アジアの国であり、19世紀末まで500年にわたって、世界で最も純粋な朱子学国家として機能することになる。<br><br>国家統治の中心制度が<span class="k">★</span><strong>科挙</strong>であった。朝鮮の科挙は中国制度を倣ったもので、文官試験(文科)・武官試験(武科)・雑科(技術官試験)に分かれ、儒教経典に対する深い理解と漢文作詩能力を基準として上級官僚を選抜した。文科の合格者(年30人前後)は朝廷の高位高官に就任、政治・行政の中核を担った。朝鮮の科挙の特色は、合格者を出した家系を世襲的に高貴な身分(<strong>両班</strong>ヤンバン、文武両班の意)として制度的に区別したことで、これによって両班層が朝鮮社会の支配階級として確立した。両班は儒教経典学習と漢詩漢文の作成、礼儀作法の遵守を生活の中心とし、官職に就くことを最高の名誉とした、中国の士大夫階級にきわめて近い知的・文化的エリート層であった。<br><br>朝鮮朱子学の隆盛期は16世紀の李退渓(李滉、1501-1570)と李栗谷(李珥、1536-1584)に頂点を迎える。両者は朱子学の理気論の解釈をめぐって生涯にわたる論争を展開、東アジア朱子学史上最も精緻な議論を残した。退渓は理を重視する立場(主理派)、栗谷は気の運動を重視する立場(主気派)で、両派は後世にそれぞれ嶺南学派・畿湖学派として継承され、朝鮮政治の党派対立の思想的基盤ともなった。退渓の主著『朱子書節要』『聖学十図』は日本の江戸時代儒学にも輸入され、藤原惺窩・林羅山らに大きな影響を与えた。<br><br>17世紀以降、朱子学の硬直化に対する批判から、現実問題を実証的に研究する学派=<strong>実学</strong>が台頭した。代表的人物が18世紀の丁若鏞(1762-1836)である。彼は朱子学の形而上学を退け、土地制度改革・農業技術改良・科学技術導入による民生改善を主張、『牧民心書』『欽欽新書』など民生改善のための実用的著作を多数残した。実学派は近代化への萌芽を示したが、保守的官僚層の抵抗で実現には至らず、19世紀の朝鮮は朱子学的伝統に固執したまま西洋列強の進出を迎えることになる。<br><br>王朝末期の19世紀末から20世紀初頭、朝鮮は深刻な近代化危機に直面した。1875年の江華島事件以後の日本の進出、1894年の東学党の乱と日清戦争、1905年の日露戦争を経て、1910年8月29日に日韓併合条約により、朝鮮王朝は事実上の植民地として大日本帝国に吸収された。500年続いた朝鮮王朝の終焉と同時に、独自の朱子学的政治文化も実質的に終わりを告げ、20世紀の朝鮮は植民地・分断・独立という波乱の道を歩むことになる。</div>
+</div>
+</div>
+<div class="phase p3"><div class="phase-label">ハングル文学
+民衆文化</div>
+<div class="node key"><div class="node-title"><span class="k">★</span>ハングル文学と民衆文化</div>
+<div class="node-year">15-19世紀</div>
+<div class="node-desc">朝鮮王朝の文化的事業の頂点が、独自の表音文字<strong>ハングル</strong>(訓民正音)の創製であった。第4代世宗大王(在位1418-1450)が儒学者集団・集賢殿の学者たちを動員して1443年に創製、1446年に『訓民正音』として正式公布、これによって朝鮮語を直接表記できる科学的に設計された表音文字体系が成立した。ハングルは子音字母14・母音字母10の組み合わせで、子音字母は発音時の口の形をモデル化、母音字母は天・地・人の三才を象徴とする極めて合理的・哲学的な体系を持つ、世界の言語学者から「世界で最も科学的な文字」と評価されている。<br><br>しかし朱子学的伝統に従う朝鮮の支配層は、漢字こそ正統と見なし、ハングルを下層階級・女性が使用する卑俗な文字と長らく軽視した。両班知識人は科挙の漢文・漢詩を中心とする学問世界に留まり、ハングルは民衆と女性の文字として、社会の下層の文化的世界で密かに発達することになる。<br><br>このハングル普及によって生まれたのが、朝鮮独自の民衆文学である。中でも最も愛唱されたのが17-18世紀に成立した古典的恋愛小説『<strong>春香伝</strong>』(チュニャンジョン)である。両班の青年李夢龍と妓生の娘春香の身分を超えた純愛と、悪辣な使道(地方官)に対する春香の貞節の物語で、朝鮮民衆の道徳観・恋愛観を反映した古典的傑作として、現代まで愛され続けている。並ぶ古典が『<strong>洪吉童伝</strong>』(ホンギルドンチョン)で、これは17世紀初頭に儒学者の許筠が書いたとされる朝鮮初の本格的ハングル小説である。庶子として差別を受けた英雄洪吉童が、義賊集団を率いて貧民を救い、最終的に海外に理想国家を建てるという冒険・社会批判小説で、朝鮮の身分制への鋭い批判を含んでいる。<br><br>民衆芸能では<strong>パンソリ</strong>が代表である。これは1人の歌い手(ソリックン)が太鼓打ち(コス)の伴奏で、長大な物語を歌唱と口語朗唱を交えて何時間も語り続ける朝鮮独特の口承音楽演芸である。『春香歌』『沈清歌』『興夫歌』など5つの代表演目が伝承され、各演目は数時間に及ぶ完全上演形式を取る。観客との掛け合い(チュイムセ)が独特の参加型エンターテイメントとして、現代も韓国のユネスコ無形文化遺産として保存・継承されている。<br><br>仮面劇では<strong>タルチュム</strong>(仮面舞)が各地の村落祭祀に伴って発達し、両班・僧侶・地主など権力者を風刺する民衆的喜劇として、朝鮮社会への鋭い批評を担った。19世紀には地方の市場・農村祭礼でタルチュムが上演され、両班層が真面目に振る舞っていた朱子学的礼儀作法の表側を、民衆が裏側から笑いと風刺で告発する重要な文化的役割を果たした。<br><br>朝鮮王朝期の民衆文化は、上層の朱子学的厳格主義との鮮やかな対比をなす、生命力あふれる別世界として共存し、20世紀以降の韓国大衆文化・現代の韓流(K-POP・K-DRAMA)の遠い源流ともなっている。</div>
+</div>
+</div>
 </div>
 
-<div class="phase p3"><div class="phase-label">統一新羅<br>高麗</div>
-<div class="node"><div class="node-title">統一新羅の文化</div><div class="node-year">7-9C</div>
-<div class="node-desc">・<strong>慶州</strong>が都。唐文化を積極受容。<br>・<strong>仏国寺・石窟庵</strong>(751-)=華厳宗寺院、石窟庵の<strong>釈迦如来坐像</strong>は東アジア仏教彫刻の傑作。<br>・<strong>崔致遠</strong>=新羅末の文人、唐に留学し科挙合格=<strong>東アジア国際文人</strong>の典型。</div></div>
-<div class="node key"><div class="node-title">★高麗青磁と仏教</div><div class="node-year">10-14C</div>
-<div class="node-desc"><strong>高麗王朝</strong>(918-1392)=仏教を国教、<strong>文官貴族</strong>の文人文化。<br>・<strong>高麗青磁</strong>=11-12Cに発展、<strong>象嵌技法</strong>=世界最高水準の青磁。<br>・<strong>高麗版大蔵経(八万大蔵経)</strong>=モンゴル侵攻撃退祈願、江華島で彫刻、<strong>海印寺</strong>に現存=世界遺産。<br>・<strong>金属活字</strong>=高麗末に発明(グーテンベルクより約200年早い)。『<strong>直指心体要節</strong>』(1377)=現存最古の金属活字本、ユネスコ世界記憶遺産。</div></div>
-</div>
-
-<div class="phase p5"><div class="phase-label">朝鮮王朝<br>儒教文化</div>
-<div class="node key"><div class="node-title">★訓民正音(ハングル)</div><div class="node-year">1443</div>
-<div class="node-desc"><strong>世宗</strong>(朝鮮第4代王、位1418-50)が制定=「<strong>訓民正音(民を訓える正しい音)</strong>」=15世紀の<strong>表音文字</strong>。<br>・漢字を読めない民衆のための文字=朝鮮独自のアルファベット。<br>・制定当初は両班(貴族)に軽蔑されたが、近代以降ハングルとして普及。<br>・集賢殿(朝鮮の学術機関)の学者たちが補佐。</div></div>
-<div class="node key"><div class="node-title">★朝鮮朱子学</div><div class="node-year">16C</div>
-<div class="node-desc"><strong>朱子学</strong>(性理学)を中国よりも徹底して正統視=朝鮮王朝の<strong>国家イデオロギー</strong>。<br>・<strong>李退渓(李滉)</strong>(1501-70):『聖学十図』=<strong>朝鮮朱子学</strong>の最高峰。日本の林羅山らにも影響。<br>・<strong>李栗谷(李珥)</strong>(1536-84):退渓と並ぶ大儒者。<br>・<strong>両班</strong>=文官貴族=儒教士大夫の理想化。<br>・<strong>朋党政治</strong>=党派対立の温床にも。</div></div>
-<div class="node"><div class="node-title">朝鮮の法典・地図</div><div class="node-year">15-16C</div>
-<div class="node-desc">・<strong>『経国大典』</strong>(成宗期、1485完成)=朝鮮王朝の<strong>基本法典</strong>=儒教的統治の基盤。<br>・<strong>『混一疆理歴代国都之図』</strong>(1402、太宗期)=当時世界最大最古の世界地図、アフリカ・アラビア・ヨーロッパを描写。<br>・<strong>『東医宝鑑』</strong>(17C、<strong>許浚</strong>)=朝鮮医学の集大成、東アジア医書。</div></div>
-</div>
-
-<div class="phase p2"><div class="phase-label">朝鮮文学<br>芸術</div>
-<div class="node"><div class="node-title">朝鮮文学</div><div class="node-year">16-19C</div>
-<div class="node-desc">・『<strong>春香伝</strong>』=ハングル小説、朝鮮版『ロミオとジュリエット』。<br>・『<strong>沈清伝</strong>』=孝行の物語。<br>・『<strong>洪吉童伝</strong>』=<strong>許筠</strong>作、朝鮮初のハングル小説、義賊物語。<br>・『<strong>謝氏南征記</strong>』・<strong>パンソリ</strong>(朝鮮の語り物芸能)。</div></div>
-<div class="node"><div class="node-title">朝鮮白磁・民画</div><div class="node-year">15-19C</div>
-<div class="node-desc">・<strong>朝鮮白磁</strong>=15世紀以降、儒教的な質素清廉の美=茶器として日本にも珍重(千利休)。<br>・<strong>民画</strong>=民衆の願いを描く装飾画。<br>・<strong>檀園金弘道</strong>・<strong>蕙園申潤福</strong>=18C風俗画家。</div></div>
-</div>
-
-</div>
-
-<div class="note"><p><p><strong>CULTURA</strong> — 三国時代の<strong>仏教受容</strong>(広開土王碑・聖明王の日本伝授)→統一新羅の<strong>仏国寺・石窟庵</strong>→高麗の<strong>高麗青磁</strong>・<strong>八万大蔵経</strong>・<strong>金属活字</strong>(『直指心体要節』)→朝鮮王朝の<strong>世宗の訓民正音(ハングル)</strong>・<strong>李退渓</strong>の朱子学・<strong>経国大典</strong>・<strong>混一疆理歴代国都之図</strong>・<strong>東医宝鑑</strong>→朝鮮文学(春香伝・沈清伝・洪吉童伝)・朝鮮白磁。<br>→ <span class="k">中国文化を受容しつつ独自化</span>した東アジア文化の一極、日本への仏教・儒教・製陶技術の媒介者。</p></p></div>
-
-</body>
-</html>
+<div class="note"><p>統一新羅(7世紀)の元暁・義湘の華厳思想、仏国寺・石窟庵→高麗(918-1392)の★高麗版大蔵経(八万大蔵経、海印寺現存)・★高麗青磁象嵌技法・世界初の金属活字→朝鮮王朝(1392-1910)が★朱子学を国教化、500年最も純粋な朱子学国家→★科挙と両班士大夫支配→16世紀李退渓・李栗谷の朱子学頂点→17世紀以降実学(丁若鏞『牧民心書』)→世宗大王が1443年ハングル創製=最も科学的な文字→ハングル文学(『春香伝』『洪吉童伝』)・パンソリ・タルチュム(仮面舞)=民衆文化が両班朱子学と対比、現代K-POP/K-DRAMAの源流。</p></div>
+</body></html>

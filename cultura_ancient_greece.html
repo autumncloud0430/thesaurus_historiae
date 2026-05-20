@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>古代ギリシア文化 ― 神話・叙事詩・哲学・悲劇・美術</title><style>@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>古代ギリシア文化 ― 神話・哲学・劇・美術</title><style>@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
 :root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048;--border:rgba(201,169,110,.08)}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
-body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
 .hdr{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
 .hdr h1{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2)}
 .hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
@@ -21,13 +21,16 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
 .node-desc{font-size:10px;color:var(--text2);line-height:1.7}
 .node-desc strong{color:var(--text);font-weight:600}
 .node.key{background:rgba(201,169,110,.04);border-color:rgba(201,169,110,.12)}
-.note{text-align:center;padding:8px 20px 32px;max-width:720px;margin:0 auto}.note p{font-size:9px;color:var(--text3);line-height:1.8}.note strong{color:var(--gold)}
-.k{color:var(--text)}.node-title .k{color:var(--gold2)}.note .k{color:var(--gold)}
-.p1 .node{border-left-color:rgba(180,140,60,.3)}.p1::before{border-color:rgba(180,140,60,.5);background:rgba(180,140,60,.15)}
-.p2 .node{border-left-color:rgba(100,130,180,.3)}.p2::before{border-color:rgba(100,130,180,.5);background:rgba(100,130,180,.15)}
-.p3 .node{border-left-color:rgba(80,150,120,.3)}.p3::before{border-color:rgba(80,150,120,.5);background:rgba(80,150,120,.15)}
-.p4 .node{border-left-color:rgba(180,80,80,.3)}.p4::before{border-color:rgba(180,80,80,.4)}
-.p5 .node{border-left-color:rgba(120,90,160,.3)}.p5::before{border-color:rgba(120,90,160,.5);background:rgba(120,90,160,.15)}
+.note{text-align:center;padding:8px 20px 32px;max-width:720px;margin:0 auto}.note p{font-size:11px;color:#b0aba2;line-height:1.8}.note strong{color:var(--gold)}
+.k{color:var(--text)}
+.node-title .k{color:var(--gold2)}
+.note .k{color:var(--gold)}
+.p1 .node{border-left-color:rgba(120,90,70,.3)}.p1::before{border-color:rgba(120,90,70,.5);background:rgba(120,90,70,.15)}
+.p2 .node{border-left-color:rgba(170,130,90,.3)}.p2::before{border-color:rgba(170,130,90,.5);background:rgba(170,130,90,.15)}
+.p3 .node{border-left-color:rgba(180,140,60,.3)}.p3::before{border-color:rgba(180,140,60,.5);background:rgba(180,140,60,.15)}
+.p4 .node{border-left-color:rgba(100,130,180,.3)}.p4::before{border-color:rgba(100,130,180,.4)}
+.p5 .node{border-left-color:rgba(80,150,120,.3)}.p5::before{border-color:rgba(80,150,120,.5);background:rgba(80,150,120,.15)}
+.p6 .node{border-left-color:rgba(180,80,80,.3)}.p6::before{border-color:rgba(180,80,80,.4)}
 @media(max-width:600px){
 .hdr{padding:10px 12px}.hdr h1{font-size:12px}
 .flow{padding:16px 10px 40px}
@@ -37,75 +40,95 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
 }
 </style></head>
 <body>
-<div class="hdr"><h1>古代ギリシア文化 ― 神話・叙事詩・哲学・悲劇・美術</h1><a href="charts.html">&larr; Ad Chartae</a></div>
+<div class="hdr"><h1>古代ギリシア文化 ― 神話・哲学・劇・美術</h1><a href="index.html">&larr; Ad Indicem</a></div>
+
 <div class="flow">
 
-<div class="phase p1"><div class="phase-label">神話<br>叙事詩</div>
-<div class="node key"><div class="node-title">★ギリシア神話 ― オリンポス12神</div><div class="node-year">(神話時代)</div>
-<div class="node-desc">ギリシア人の世界観・倫理観の基礎。<strong>オリンポス山</strong>に住む12神を中心に、無数の神話が伝えられた。<br>・<strong>主神</strong>: <strong>ゼウス</strong>(雷・天、ローマ名ユピテル)、<strong>ヘラ</strong>(結婚、ユノー/ジュノー)、<strong>ポセイドン</strong>(海、ネプチューン)<br>・<strong>オリンピアの神</strong>: <strong>アポロン</strong>(太陽・音楽・予言)、<strong>アルテミス</strong>(月・狩猟、ダイアナ)、<strong>アテナ</strong>(知恵、ミネルヴァ)、<strong>アフロディテ</strong>(愛・美、ヴィーナス)、<strong>アレス</strong>(戦争、マルス)、<strong>ヘルメス</strong>(伝令・商業、マーキュリー)、<strong>ヘファイストス</strong>(鍛冶、ヴァルカン)、<strong>デメテル</strong>(農耕、ケレス)、<strong>ディオニュソス</strong>(酒・演劇、バッカス)、<strong>ヘスティア</strong>(家庭、ヴェスタ)<br>・<strong>原初神</strong>: <strong>ガイア</strong>(大地)、<strong>ウラノス</strong>(天)。冥界の神は<strong>ハデス</strong>。<br>・<strong>英雄神話</strong>: <strong>ヘラクレス</strong>(12の功業)、<strong>ペルセウス</strong>(メデューサ退治)、<strong>プロメテウス</strong>(火を人間に与えた)、<strong>オルフェウス</strong>(冥界下降)。<br>→<strong>ローマ神話</strong>に吸収され、<strong>西洋文学・美術の源泉</strong>。</div></div>
-<div class="node key"><div class="node-title">★ホメロス</div><div class="node-year">前8C頃</div>
-<div class="node-desc">イオニア地方出身の伝説的吟遊詩人(盲目の伝承)。ギリシア最古の二大<strong>叙事詩</strong>の作者とされる=長らく<strong>口誦</strong>で伝承。<br>・『<strong>イーリアス</strong>』: トロイア戦争末期、英雄<strong>アキレウス</strong>の怒りを軸に、<strong>ヘクトール</strong>・<strong>ヘレネー</strong>等を描く。<br>・『<strong>オデュッセイア</strong>』: 王<strong>オデュッセウス</strong>の10年の漂流・帰還=冒険譚の原型。<br>→ギリシア人の精神的支柱=教養の基礎。<strong>シュリーマン</strong>のトロイア発掘(1871-)で一部の史実性が裏付け。</div></div>
-<div class="node"><div class="node-title">ヘシオドス</div><div class="node-year">前8-7C</div>
-<div class="node-desc"><strong>ボイオティア</strong>地方の農民詩人。<br>・『<strong>神統記(テオゴニア)</strong>』=ギリシア神々の系譜を体系化=神話の整理。<br>・『<strong>労働と日々</strong>』=農民の労働と正義の賛美=労働倫理の古典。</div></div>
-<div class="node"><div class="node-title">抒情詩人たち</div><div class="node-year">前7-6C</div>
-<div class="node-desc"><strong>サッフォー</strong>(<strong>レスボス島</strong>、女性抒情詩人、愛の歌)、<strong>ピンダロス</strong>(オリンピア祭の<strong>祝勝歌</strong>)、<strong>アナクレオン</strong>(酒と愛の詩)、<strong>テュルタイオス</strong>(スパルタの戦士讃歌)。<strong>ポリス的生活</strong>の個人感情を豊かに表現。</div></div>
-<div class="node"><div class="node-title">イソップ寓話</div><div class="node-year">前6C頃</div>
-<div class="node-desc"><strong>イソップ(アイソポス)</strong>に帰せられる動物寓話集。「ウサギとカメ」「アリとキリギリス」「オオカミ少年」等。<strong>教訓を含む短編</strong>は世界中に翻訳・翻案され、イスラームの『カリーラとディムナ』とも交流。</div></div>
+<div class="phase p1"><div class="phase-label">神話と解読史</div>
+<div class="node">
+<div class="node-title"><span class="k">★</span>エーゲ世界の地理 ― 神話と歴史の舞台</div>
+<div class="node-desc">古代ギリシア文化の舞台となるのが<span class="k">★</span><strong>エーゲ海</strong>の周辺世界である。ギリシア本土と小アジア(現トルコ西岸)に挟まれた多島海で、北のテッサリアから南のクレタ島まで南北約650km、東西約400kmにわたる。海の南端に位置する<span class="k">★</span><strong>クレタ島</strong>は東西約260kmの細長い島で、青銅器時代のクレタ文明の中心地となった。本土側の南半分を占める<span class="k">★</span><strong>ペロポネソス半島</strong>は神話の英雄ペロプスにちなんで「ペロプスの島」を意味し、北のコリント地峡で本土と繋がる「ほぼ島」の地形で、スパルタ・ミケーネ・コリント・オリンピアなどの歴史的拠点が並ぶ。<br><br>これらの土地に紀元前2000年紀から定着した印欧語族のギリシア語派<span class="k">★</span><strong>ギリシア人</strong>は、自らをヘレネスと総称する自意識を持ちながら、神話・叙事詩・哲学・劇・美術といった文化的遺産を生み出していく。彼らの神話世界はテッサリア北部の最高峰<strong>オリンポス山</strong>を頂点とする<strong>オリンポス12神</strong>を中核に体系化され、後世の西洋文学・芸術の不滅の主題となる。主神<strong>ゼウス</strong>(ローマ神話のジュピターと同一視される)を頂点に、その妻<strong>ヘラ</strong>、海神<strong>ポセイドン</strong>、太陽神<strong>アポロン</strong>、知恵の女神<strong>アテナ</strong>、月と狩猟の女神<strong>アルテミス</strong>、愛と美の女神<strong>アフロディテ</strong>、軍神アレス、伝令神ヘルメス、鍛冶神<strong>ヘファイストス</strong>、農耕神<strong>デメテル</strong>、炉の女神<strong>ヘスティア</strong>、酒神<strong>ディオニュソス</strong>が並ぶ。これらの<strong>ギリシア神話</strong>体系はホメロスとヘシオドスによって文字化され、後世の西洋文化に決定的影響を与えた。トロイア戦争で活躍するトロイア王プリアモスの長子<strong>ヘクトール</strong>、人類に火を与えて罰せられた巨神<strong>プロメテウス</strong>などの神話人物も、後の悲劇・絵画・文学の主題として永続する。<br><br>ギリシア人が政治的にはポリスごとに分立しつつも文化的・宗教的に一体感をもったのは、共通の言語・神話に加えて、各ポリスが参加する汎ギリシア的(パンヘレニック)聖地と祭典が機能していたためである。最大の聖地が、ペロポネソス半島西部の<strong>オリンピア</strong>に置かれた主神ゼウスの神域で、ここで4年に一度開催された<strong>オリンピアの祭典</strong>(古代五輪)は前776年を第1回として全ギリシアからアスリートが集い、競技中は加盟ポリス間の戦闘も停止される神聖な期間とされた。もう一つの最重要聖地がギリシア中部パルナッソス山中腹の<strong>デルフォイ</strong>で、太陽神アポロンの神殿が建ち、巫女ピュティアを介して神の託宣を伝える<strong>デルフォイの神託</strong>(アポロンの神託)が古代世界最高の権威ある神託として機能した。ポリスが戦争・植民・統治の重大決定を行う前にここに使者を送って託宣を仰ぐ慣習があり、ヘロドトスの『歴史』にも数多くのエピソードが記される。</div>
 </div>
 
-<div class="phase p2"><div class="phase-label">自然<br>哲学</div>
-<div class="node key"><div class="node-title">★イオニア自然哲学(ミレトス学派)</div><div class="node-year">前6C</div>
-<div class="node-desc">小アジアの<strong>ミレトス</strong>で始まる=<strong>哲学(フィロソフィア)</strong>の起源。万物の根源(<strong>アルケー</strong>)を自然の原理で説明する試み=<strong>神話から合理的思考へ</strong>。<br>・<strong>タレス</strong>: 「<strong>万物の根源は水</strong>」。日食予言(前585)。タレスの定理。<strong>哲学の父</strong>。<br>・<strong>アナクシマンドロス</strong>: 万物の根源は<strong>アペイロン(無限定のもの)</strong>。<br>・<strong>アナクシメネス</strong>: 「万物の根源は<strong>空気</strong>」=凝縮と希薄化で変化を説明。</div></div>
-<div class="node"><div class="node-title">ピタゴラス</div><div class="node-year">前6C</div>
-<div class="node-desc"><strong>サモス島</strong>出身、南イタリア(クロトン)で学派創設。「<strong>万物の根源は数</strong>」=数学的秩序が宇宙を支配。<strong>ピタゴラスの定理</strong>。霊魂不滅・輪廻転生を信じる宗教的共同体を形成。</div></div>
-<div class="node"><div class="node-title">ヘラクレイトス</div><div class="node-year">前540-480頃</div>
-<div class="node-desc">エフェソス。「<strong>万物は流転する(パンタ=レイ)</strong>」「同じ川に二度入ることはできない」。万物の根源は<strong>火</strong>。対立物の相克(<strong>ロゴス</strong>)が世界を動かす=弁証法的思考の源流。</div></div>
-<div class="node"><div class="node-title">エレア派</div><div class="node-year">前6-5C</div>
-<div class="node-desc">南イタリアの<strong>エレア</strong>。<strong>パルメニデス</strong>=「あるもののみがある(存在一元論)」=<strong>変化を否定</strong>、ヘラクレイトスと対極。<strong>ゼノン(エレア)</strong>の運動の否定(アキレスと亀)=逆説論法。</div></div>
-<div class="node"><div class="node-title">多元論・霊魂論</div><div class="node-year">前5C</div>
-<div class="node-desc">エレア派の「存在一」とイオニア派の「変化」を統合する多元論:<br>・<strong>エンペドクレス</strong>: <strong>四元素説</strong>(土・水・火・空気)+愛と憎しみによる変化。<br>・<strong>アナクサゴラス</strong>(<strong>クラゾメナイ</strong>): 万物は無限のスペルマタ(種子)から成り、<strong>ヌース(知性)</strong>が秩序を与える。<br>・<strong>クセノファネス</strong>(<strong>コロフォン</strong>): 人間的な神像を批判=抽象的一神論の先駆。</div></div>
-<div class="node key"><div class="node-title">★デモクリトス(原子論)</div><div class="node-year">前460-370頃</div>
-<div class="node-desc"><strong>アブデラ</strong>出身。<strong>原子論</strong>(<strong>アトム</strong>=分割不能な微粒子)を完成=古代最も完成された自然哲学。「<strong>万物は原子と空虚(ケノン)からなる</strong>」=<strong>唯物論・機械論</strong>の源流。<br>→後の<strong>エピクロス派</strong>・<strong>ルクレティウス</strong>・近代科学(ガリレオ・ドルトン)に影響。</div></div>
+<div class="node key">
+<div class="node-title"><span class="k">★</span>クレタ神話 ― ミノス王とミノタウロス</div>
+<div class="node-desc">クレタ島の青銅器文明=クレタ文明(ミノア文明)の名は、神話上のクレタ王<span class="k">★</span><strong>ミノス</strong>に由来する。ゼウスとフェニキアの王女エウロペの息子で、クレタ島の正義の王として君臨し、死後は冥界の三裁判官の一人となったとされる。<br><br>ミノスの神話で最も有名なのが、王妃パシパエが牡牛に魅入られて産んだ怪物<span class="k">★</span><strong>ミノタウロス</strong>の伝説である。頭が牛で身体が人間の姿をしたこの怪物を、ミノス王は地下迷宮(ラビュリントス)に閉じ込め、毎年アテネから少年少女を生贄として送らせた。アテネの英雄テセウスがミノス王の娘アリアドネの助力で迷宮に入り、ミノタウロスを倒して脱出した物語は、後世まで西洋美術の頻出主題となった。<br><br>20世紀のクノッソス宮殿発掘で、複雑な平面構造と牛跳び競技を描いた壁画が出土し、迷宮神話と牡牛信仰がクレタ文明の実態に根ざしていたことが裏付けられた。神話の世界がそのまま考古学的事実と接続する稀有な事例である。</div>
 </div>
 
-<div class="phase p3"><div class="phase-label">古典期<br>民主政下<br>の諸学</div>
-<div class="node key"><div class="node-title">★三大悲劇詩人</div><div class="node-year">前5C</div>
-<div class="node-desc">アテネの<strong>ディオニュソス祭</strong>で上演=悲劇の黄金期。<br>・<strong>アイスキュロス</strong>(前525-456):『<strong>アガメムノン</strong>』(『オレステイア』三部作)・『<strong>縛られたプロメテウス</strong>』・『<strong>嘆願する女たち</strong>』・『<strong>ペルシア人</strong>』(サラミスの海戦を扱う唯一の同時代悲劇)。悲劇の創始者。<br>・<strong>ソフォクレス</strong>(前496-406):『<strong>オイディプス王</strong>』『<strong>アンティゴネ</strong>』『<strong>エレクトラ</strong>』。<strong>3人の俳優</strong>を導入。運命と倫理。<br>・<strong>エウリピデス</strong>(前480-406):『<strong>メデイア</strong>』『<strong>トロイアの女</strong>』『<strong>バッカスの女たち</strong>』『<strong>アンドロマケー</strong>』。<strong>女性・弱者の心理</strong>を描く。</div></div>
-<div class="node"><div class="node-title">アリストファネス(喜劇)</div><div class="node-year">前445-385頃</div>
-<div class="node-desc">アテネの<strong>喜劇作家</strong>。『<strong>雲</strong>』(ソクラテスを批判)・『<strong>女の平和</strong>』(反戦・女性の性ストライキ)・『<strong>蛙</strong>』(悲劇詩人論)・『<strong>女の議会</strong>』・『<strong>蜂</strong>』。政治家・知識人を風刺=アテネ民主政下の<strong>言論の自由</strong>の象徴。</div></div>
-<div class="node key"><div class="node-title">★歴史学の誕生</div><div class="node-year">前5C</div>
-<div class="node-desc"><strong>ヘロドトス</strong>(前485-425頃、<strong>ハリカルナソス</strong>):『<strong>歴史</strong>』(ペルシア戦争)=「<strong>歴史の父</strong>」(キケロ評)。<strong>物語的</strong>・<strong>民族誌</strong>の記述が豊富。<br><strong>トゥキディデス</strong>(前460-400頃):『<strong>歴史</strong>』(ペロポネソス戦争)=<strong>史料批判</strong>に基づく<strong>科学的歴史叙述</strong>の祖。人間本性から戦争を分析=合理主義的。</div></div>
-<div class="node"><div class="node-title">クセノフォン</div><div class="node-year">前430-354頃</div>
-<div class="node-desc">アテネの武人・著述家、<strong>ソクラテスの弟子</strong>。<br>・『<strong>アナバシス</strong>』=ペルシア奥地(<strong>小キュロス</strong>のギリシア傭兵遠征)からの1万人のギリシア軍撤退記=古典期の大ベストセラー・軍事文学の古典。<br>・『<strong>ソクラテスの思い出</strong>』=プラトンと並ぶソクラテス伝の二大資料。</div></div>
-<div class="node"><div class="node-title">ソフィスト</div><div class="node-year">前5C</div>
-<div class="node-desc">アテネ民主政下で<strong>弁論術・倫理</strong>を教える職業教師。「<strong>知恵ある者</strong>」(sophistes)の意。<strong>相対主義・主観主義</strong>。<br>・<strong>プロタゴラス</strong>: 「<strong>人間は万物の尺度</strong>」=普遍的真理の否定。<br>・<strong>ゴルギアス</strong>:弁論術の達人、極端な懐疑主義。<br>・プラトン・ソクラテスから「<strong>詭弁</strong>」と批判される。<br>・弁論家(アテネ民主政末期): <strong>デモステネス</strong>=反マケドニア演説(『フィリッピカ(ピリッポス弾劾演説)』)。<strong>イソクラテス</strong>=パン=ヘレニズム(ギリシア統一)を説く、弁論教師。</div></div>
-<div class="node"><div class="node-title">ヒポクラテス</div><div class="node-year">前460-370頃</div>
-<div class="node-desc"><strong>コス島</strong>出身。「<strong>西洋医学の祖</strong>」。病気を超自然から切り離し、<strong>四体液説</strong>(血液・粘液・黒胆汁・黄胆汁)で説明=<strong>医学の合理化</strong>。<strong>ヒポクラテスの誓い</strong>=医の倫理の原点。</div></div>
+<div class="node">
+<div class="node-title"><span class="k">★</span>ミケーネ伝承 ― アガメムノンとトロイア戦争</div>
+<div class="node-desc">本土側のミケーネ文明の伝承的中心人物が、ミケーネ王<span class="k">★</span><strong>アガメムノン</strong>である。ホメロス『イリアス』においてトロイア戦争におけるギリシア連合軍の総大将として登場、弟メネラオスの妻ヘレネがトロイア王子パリスに連れ去られた事件を契機に、各地のアカイア人諸侯を率いて10年にわたるトロイア攻囲戦を指揮した。戦争中、アキレウスとの怒りの確執など複雑な人間関係が語られ、戦争後は妻クリュタイムネストラに殺害されるという悲劇的結末を迎えた。<br><br>シュリーマンが1876年にミケーネで発掘した「アガメムノンの黄金マスク」は、実際の年代は伝承より古い前16世紀のもので、戦闘的な王の存在を示す物証としてエーゲ文明研究の象徴となった。ミケーネ伝承と考古学的事実は完全に一致するわけではないが、ホメロス叙事詩の世界が史実の反映であることを示す重要な手がかりとされている。</div>
 </div>
 
-<div class="phase p5"><div class="phase-label">三哲人</div>
-<div class="node key"><div class="node-title">★ソクラテス</div><div class="node-year">前469-399</div>
-<div class="node-desc">アテネの石工の子、晩年は街で<strong>対話</strong>活動。<strong>著作なし</strong>=プラトンの対話篇・<strong>クセノフォンの『ソクラテスの思い出』</strong>で伝わる。<br>・<strong>「無知の知」</strong>=「自分が何も知らないと知る」が知恵の出発点。<br>・<strong>問答法(助産術/産婆術)</strong>=対話で相手の矛盾を露わにし真理へ導く。<br>・<strong>知徳合一</strong>=徳は知識、無知が悪を生む(主知主義)。<br>・前399年、「青年を堕落させ、国家の神を信じない」罪で告発→<strong>毒杯</strong>を仰いで死=<strong>哲学に殉じた</strong>。</div></div>
-<div class="node key"><div class="node-title">★プラトン</div><div class="node-year">前427-347</div>
-<div class="node-desc">アテネの貴族出身、ソクラテスの弟子。<strong>アカデメイア</strong>(前387、学園)を創立=学園の原型。<br><strong>主著(対話篇)</strong>: 『<strong>ソクラテスの弁明</strong>』『<strong>クリトン</strong>』『<strong>パイドン</strong>』『<strong>饗宴(シュンポシオン)</strong>』『<strong>メノン</strong>』『<strong>国家</strong>』『<strong>法律</strong>』。<br>・<strong>イデア論</strong>=感覚世界は仮象、<strong>真・善・美</strong>の不変のイデア(形相)の世界が実在。<strong>洞窟の比喩</strong>。<br>・<strong>哲人政治</strong>=哲学者が王となるべき(『国家』)。<strong>魂の三分説</strong>(理性・気概・欲望)=徳との対応。</div></div>
-<div class="node key"><div class="node-title">★アリストテレス</div><div class="node-year">前384-322</div>
-<div class="node-desc">マケドニア<strong>カルキディケ</strong>出身、プラトンの弟子。アレクサンドロス大王の家庭教師。アテネに<strong>リュケイオン</strong>(前335、学園)を創立=<strong>ペリパトス学派(逍遥学派)</strong>。<br>「<strong>万学の祖</strong>」=論理学・自然学・形而上学・倫理学・政治学・修辞学・生物学を体系化。<br><strong>主著</strong>: 『<strong>オルガノン</strong>』『<strong>トピカ</strong>』(論理学)、『<strong>自然学</strong>』『<strong>形而上学</strong>』、『<strong>ニコマコス倫理学</strong>』(中庸の徳)、『<strong>政治学</strong>』(人間はポリス的動物)、『<strong>アテネ人の国制</strong>』。<br>・<strong>形相と質料</strong>、<strong>四原因説</strong>、<strong>四元素説</strong>、<strong>三段論法</strong>(形式論理学)。<br>→中世<strong>スコラ学</strong>(トマス=アクィナス)の哲学的基盤、イスラーム世界経由で西欧に再輸入(12C)。</div></div>
+<div class="node key">
+<div class="node-title"><span class="k">★</span>エーゲ文明解読史 ― エヴァンズ・シュリーマン・ヴェントリス</div>
+<div class="node-desc">エーゲ文明は19-20世紀の3人の探究者の業績で蘇った。<br><br>第一が、ドイツの実業家<span class="k">★</span><strong>シュリーマン</strong>である。ロシアでの貿易事業で成功して莫大な財産を築いた後、少年期からの夢だったホメロス叙事詩の実証に晩年を捧げた。彼は独学で古代ギリシア語を含む多言語を習得し、1870年代にトロイア(現トルコ西北のヒサルリク丘)とミケーネで発掘を強行、青銅器時代の都市遺跡と王墓を出土させた。発掘日記・自伝『古代への情熱』は、考古学を志す若者に大きな影響を与えた。発掘手法そのものは後世から見れば破壊的で、複数の文化層を貫通して掘り下げる粗暴さが批判されたが、ホメロス世界の実在を世界に示した功績は揺るがない。<br><br>第二が、イギリスの考古学者<span class="k">★</span><strong>エヴァンズ</strong>である。1900年からクレタ島クノッソス宮殿の発掘を開始し、シュリーマンとは対照的な慎重な層位的発掘でクレタ文明の全貌を明らかにした。彼は出土した粘土板の文字を、クレタ人固有の言語を絵文字風に表記して現在も未解読の<strong>線文字A</strong>と、より整理されて後にギリシア語と判明する<strong>線文字B</strong>に分類、エーゲ文明研究の方法論的基礎を築いた。<br><br>第三が、イギリスの建築家<span class="k">★</span><strong>ヴェントリス</strong>である。第二次大戦中の暗号解読の経験を活かし、1952年に未解読のままだった線文字Bが古代ギリシア語の音節表記であることを実証した。これにより、ミケーネ文明を担ったアカイア人がギリシア語族であることが言語学的に確定し、エーゲ文明とギリシア古典文化の連続性が立証された。ヴェントリスは34歳で交通事故死したが、彼の解読はエーゲ文明研究の最終的な決定打となった。</div>
+</div>
 </div>
 
-<div class="phase p2"><div class="phase-label">美術<br>建築</div>
-<div class="node key"><div class="node-title">★古典期の彫刻家</div><div class="node-year">前5C</div>
-<div class="node-desc">・<strong>フェイディアス</strong>(前480-430頃): アテネ、<strong>パルテノン神殿の『アテナ女神像』</strong>(金と象牙)、<strong>『オリンピアのゼウス像』</strong>(世界七不思議の一、<strong>本尊</strong>)を制作=古典期美術の頂点。<br>・<strong>ミュロン</strong>: 『<strong>円盤投げ像(ディスコボロス)</strong>』=運動の瞬間を静止で表現。<br>・<strong>ポリュクレイトス</strong>: 『<strong>ドリュフォロス</strong>(槍をもつ人)』・「カノン(規範)」=<strong>人体の理想比例</strong>を数学的に定式化。</div></div>
-<div class="node key"><div class="node-title">★パルテノン神殿</div><div class="node-year">前447-432</div>
-<div class="node-desc">アテネの<strong>アクロポリス</strong>に建立=<strong>ペリクレス</strong>治下の公共事業。<strong>イクティノス</strong>・<strong>カリクラテス</strong>設計、<strong>フェイディアス</strong>監修。<br>・アテナ女神に捧げる、<strong>ドーリア式</strong>の代表作。<br>・<strong>フリーズ(欄間)</strong>・ペディメント・メトペ=フェイディアス工房の浮彫。<br>・<strong>エレクテイオン神殿</strong>(カリアティデス=女人像柱、イオニア式)・<strong>ニケ神殿(アテーナー=ニーケー神殿)</strong>もアクロポリスに隣接。<br>→<strong>エルギン=マーブル</strong>(大英博物館所蔵)=19世紀にエルギン伯爵が持ち出した浮彫群=返還問題の象徴。</div></div>
-<div class="node"><div class="node-title">建築の三様式</div><div class="node-year">前6-4C</div>
-<div class="node-desc">柱頭の形で分類:<br>・<strong>ドーリア式(ドリス式)</strong>: 簡素・<strong>荘重</strong>(パルテノン)。<br>・<strong>イオニア式</strong>: <strong>渦巻装飾</strong>・<strong>優美</strong>(エレクテイオン・ニケ神殿)。<br>・<strong>コリント式</strong>: <strong>アカンサスの葉</strong>の装飾・<strong>華麗</strong>(前4C登場、<strong>ゼウス=オリンピオス神殿</strong>、ローマ時代に流行)。</div></div>
-<div class="node"><div class="node-title">後古典期の彫刻家</div><div class="node-year">前4C</div>
-<div class="node-desc">古典期からヘレニズムへの移行期。<br>・<strong>プラクシテレス</strong>: 『<strong>クニドスのアフロディテ</strong>』=<strong>女性裸体像</strong>の先駆、優雅なS字形。『ヘルメス神像(幼いディオニューソスを抱くヘルメス)』。<br>・<strong>スコパス</strong>: 感情表現に長ける(ハリカルナソスのマウソロス霊廟)。<br>・<strong>リュシッポス</strong>: アレクサンドロス大王の肖像彫刻家。細身の様式=ヘレニズム彫刻への橋渡し。</div></div>
+<div class="phase p2"><div class="phase-label">叙事詩と神話</div>
+<div class="node key">
+<div class="node-title"><span class="k">★</span>ホメロス ― 西洋文学最古の叙事詩</div>
+<div class="node-year">前8世紀頃</div>
+<div class="node-desc">ギリシア文学の起点となるのが、伝説の盲目の吟遊詩人<span class="k">★</span><strong>ホメロス</strong>(前8世紀頃)である。実在の単一人物か複数の口承詩人の集合的呼称かは古来論争があるが(「ホメロス問題」)、彼の名で伝わる二大叙事詩がギリシア精神文化の出発点となった。<br><br>第一が全24巻・約16,000行の『<strong>イリアス</strong>』である。トロイア戦争の最終年における英雄<span class="k">★</span><strong>アキレウス</strong>の怒りを主題とする。アキレウスは全身が不死身の戦士で、唯一の弱点が踵にあり、これが「アキレス腱」の語源となった。ギリシア軍の総大将アガメムノンとの確執、親友パトロクロスの死、トロイア最大の英雄ヘクトルとの一騎打ちと殺害、敵王プリアモスとの和解の場面など、戦争の悲惨さと英雄の名誉(クレオス)・運命(モイラ)を巡る人間ドラマが壮大に展開する。<br><br>第二が全24巻・約12,000行の『<strong>オデュッセイア</strong>』である。トロイア戦争に勝利したイタケー王<span class="k">★</span><strong>オデュッセウス</strong>が、神々の怒りを買って10年も故郷に帰れず、地中海を漂流して様々な怪物・魔女・妖精と出会いながら最終的に故郷に帰還する冒険譚である。一つ目巨人キュクロプス・歌で船乗りを誘惑するセイレーン・人を豚に変える魔女キルケなど、後世の西洋文学に無数の引用を残す豊饒な物語世界が展開する。<br><br>両叙事詩は前8世紀頃に文字に固定されたとされるが、それ以前から数百年にわたる口承伝承の集大成である。ホメロス叙事詩はギリシア人の精神的紐帯となり、子供は学校で暗唱し、政治家は引用で論を武装した。「英雄叙事詩」の永遠の祖型として、後の西洋文学のすべてがこの2作の影響下にあるといっても過言ではない。<br><br>ホメロス世界の代表的な英雄として、半神半人の<strong>ヘラクレス</strong>も挙げられる。ゼウスとアルクメネの息子で、ネメアの獅子退治・ヒュドラ退治・アウゲイアスの牛舎掃除など12の難業を成し遂げた怪力無双の英雄である。死後に神々の仲間入りを果たし、現代でも星座(ヘラクレス座)・植物名・地名・運動競技に名を残す。</div>
 </div>
 
+<div class="node key">
+<div class="node-title"><span class="k">★</span>ヘシオドスとサッフォー ― 教訓詩と叙情詩</div>
+<div class="node-year">前8-前6世紀</div>
+<div class="node-desc">ホメロスとほぼ同時代に活動した詩人<span class="k">★</span><strong>ヘシオドス</strong>(前700年頃)は、ボイオティア地方アスクラの農民出身で、ホメロスの英雄叙事詩とは対照的な「教訓詩・神話詩」の系譜を切り開いた。<br><br>第一作『<strong>神統記(テオゴニア)</strong>』は、混沌(カオス)から始まる宇宙の創造、ガイア・ウラノスら原初神の誕生、ティタン神族のクロノスとレアの世代、そしてゼウスを頂点とするオリンポス12神の体系化までを系譜的に語る神話宇宙論である。それまで地方ごとに分散していたギリシア神話を一本の系譜に統合した、ギリシア神話の標準体系の祖となった。<br><br>第二作『<strong>労働と日々(仕事と日々)</strong>』は、ヘシオドス自身が遺産を巡って争った愚弟ペルセスへの教訓詩である。「正義は神の意志である」「勤勉な労働だけが食を保証する」など、農村の自営小農の倫理観を素朴に説く。プロメテウスとパンドラの神話・人類五時代説(黄金・白銀・青銅・英雄・鉄の各時代)もここで述べられ、後の西洋思想史に影響を与えた。<br><br>叙情詩の代表が女性詩人<span class="k">★</span><strong>サッフォー</strong>(前7-前6世紀)である。エーゲ海北東部のレスボス島ミティリーニ出身で、後世「サッフォー学校」と呼ばれる女性たちの詩集会を主宰し、愛と美を主題とする叙情詩を多数残した。古代の評者は彼女を「第10のミューズ」と讃え、プラトンも『パイドロス』で言及している。彼女の詩の多くは断片しか残らないが、女性同士の愛情を歌った内容から、現代英語で「レズビアン(レスボス島の)」「サフィスト」の語源となった。古代ギリシアにおける女性表現の希少な記録である。<br><br>叙情詩の系譜では他に、テーベ出身の合唱叙情詩の大家<strong>ピンダロス</strong>(前518頃-前438頃)がいる。オリンピア・ピュティア・ネメア・イストミア4祭典の競技勝利者を讃える勝利歌『オリンピア祝勝歌』等を残した。小アジア・イオニアの<strong>テオス</strong>出身の詩人<strong>アナクレオン</strong>(前572頃-前485頃)は、酒と恋を歌う軽妙な短詩を多数残し、後世の「アナクレオンティック詩」の祖となった。<br><br>ギリシア植民市の文化的中心の一つが、シチリア島東岸の<span class="k">★</span><strong>シラクサ</strong>である。前734年にコリントスからの植民で建設され、ギリシア世界最大級の植民市として古典期からヘレニズム期まで栄え、悲劇詩人アイスキュロスが最晩年に滞在し、プラトンが哲人政治の実験を試み、後にはアルキメデスを輩出するなど、文化と科学の重要な舞台となった。</div>
+</div>
 </div>
 
-<div class="note"><p><p><strong>CULTURA</strong> — <strong>ポリス形成期</strong>の<span class="k">神話・ホメロス叙事詩</span>・イオニア<span class="k">自然哲学</span>から、<strong>古典期アテネ</strong>の<span class="k">三大悲劇詩人</span>・<span class="k">歴史叙述</span>(ヘロドトス/トゥキディデス)・<span class="k">ソクラテス=プラトン=アリストテレス</span>の三代哲学者、そして<strong>パルテノン神殿</strong>・<span class="k">フェイディアス</span>の古典期美術まで。<br>→ <strong>ヘレニズム文化</strong>(別途 Cultura)・<strong>古代ローマ</strong>・<strong>イスラーム</strong>・<strong>中世ヨーロッパ</strong>へと継承された<span class="k">西洋文化の源流</span>。</p></p></div>
+<div class="phase p3"><div class="phase-label">自然哲学</div>
+<div class="node key">
+<div class="node-title"><span class="k">★</span>イオニア自然哲学 ― 「アルケー」を求める知</div>
+<div class="node-year">前6-前5世紀</div>
+<div class="node-desc">前6世紀、小アジア西岸のミレトスを中心とするイオニア地方で、神話的説明を退けて世界の根源であるアルケー(原理)を合理的に探究する新しい思考運動が生まれた。これが<strong>イオニア自然哲学</strong>(イオニア学派)である。「フィロソフィア(philosophia=知を愛する)」=哲学の語源を生んだ運動でもある。<br><br>創始者がギリシア七賢人の一人に数えられるミレトス出身の<strong>タレス</strong>(前624頃-前546頃)で、彼は「万物のアルケーは水である」と説いた。日蝕の予言・三角形の幾何学的性質の証明・エジプト遊学による測量術の習得などでも知られ、神話に頼らない自然観の可能性を初めて提示した。続いて<strong>アナクシマンドロス</strong>はアルケーを無限定なるもの(アペイロン)と説き、<strong>アナクシメネス</strong>はアルケーを空気とした。彼らがミレトス学派を形成した。<br><br>エフェソス出身の<strong>ヘラクレイトス</strong>(前535頃-前475頃)は「万物は流転する(パンタ・レイ)」と説き、世界を絶え間ない変化と対立の調和(ロゴス)として捉えた。象徴的な格言「同じ川には2度入れない」が知られる。これに対立する立場が、南イタリアのエレア学派の<strong>パルメニデス</strong>(前515頃-前450頃)で、「あるものはあり、ないものはない」と論じて変化を否定する厳格な存在論を展開、後のプラトン形而上学に大きな影響を与えた。<br><br>初期自然哲学者には、コロフォン出身で神々の人間化的描写を批判した<strong>クセノファネス</strong>(前570頃-前478頃)、アテネで活動しペリクレスの友人として「太陽は灼熱した石塊にすぎない」と主張して不敬罪に問われた<strong>アナクサゴラス</strong>(前500頃-前428頃)もいる。彼らは多神教的世界観に対する合理的批判の先駆者であった。<br><br>南イタリアのクロトン(ギリシア植民市)で活動した<span class="k">★</span><strong>ピタゴラス</strong>(前570頃-前495頃)はサモス島出身の数学・哲学者で、「万物のアルケーは数」と説き、宇宙を数的調和(ハルモニア)として理解した。彼が創設した宗教的=哲学的教団<strong>ピタゴラス学派</strong>は数学の整数論・幾何学(<strong>ピタゴラスの定理</strong>)・音楽の音律理論で多大な業績を残し、霊魂不滅・転生説を信奉した。後の西洋数学・音楽理論・神秘主義の源流となる。<br><br>後期自然哲学の代表がトラキア地方アブデラ出身の<span class="k">★</span><strong>デモクリトス</strong>(前460頃-前370頃)で、彼は「万物は、これ以上分けられない分割不可能な原子(アトム=atomon)とそれが運動する空虚から成る」とする<strong>原子論</strong>を体系化した。物質を究極の粒子に還元する原子論は、後の近代化学・物理学にいたるまで自然観の祖型となる。同時期に<strong>エンペドクレス</strong>(前493頃-前433頃)は「万物は土・水・火・空気の4つの根源元素から成る」とする<strong>四元素説</strong>を提唱、これは後にアリストテレスに継承され、中世ヨーロッパの物質観の基礎となった。</div>
+</div>
+</div>
 
+<div class="phase p4"><div class="phase-label">古典期哲学・劇・歴史</div>
+<div class="node key">
+<div class="node-title"><span class="k">★</span>三大悲劇詩人と喜劇 ― アテネ演劇の黄金期</div>
+<div class="node-year">前5世紀</div>
+<div class="node-desc">前5世紀のアテネは演劇の都となった。年に1度開かれるディオニュソス祭の競技会で、悲劇・喜劇が大規模な野外劇場で上演され、市民全員が観劇する文化的祭典となった。<br><br>悲劇の三大詩人が、(1)<span class="k">★</span><strong>アイスキュロス</strong>(前525頃-前456、ペルシア戦争のサラミス海戦に参戦)、(2)<span class="k">★</span><strong>ソフォクレス</strong>(前496頃-前406)、(3)<span class="k">★</span><strong>エウリピデス</strong>(前480頃-前406頃)である。<br><br>アイスキュロスは合唱隊主体の素朴な悲劇から、俳優を1人から2人に増やして対話劇を成立させ、ギリシア悲劇の枠組みを確立した。代表作『縛られたプロメテウス』『オレステイア』三部作など。ソフォクレスは俳優を3人に増やし、神々の運命に対する人間の自覚的な抵抗を主題とした。代表作『オイディプス王』(運命に翻弄される王の物語)・『アンティゴネ』・『<strong>エレクトラ</strong>』など。エウリピデスは合理的・心理的な人間描写を導入し、神々を批判的に描いた近代的な作風で知られる。代表作『メデイア』『トロイアの女』など。3人で計32本の悲劇が現存する(古代に書かれた悲劇は数千本と推定されるが、ほとんどが散逸)。<br><br>喜劇の代表が<span class="k">★</span><strong>アリストファネス</strong>(前450頃-前388頃)である。当時の政治家(クレオン)・哲学者(ソクラテス)・詩人(エウリピデス)を実名で揶揄し、戦争反対・女性権利擁護を主張する社会風刺の作品を多数残した。代表作『雲』『女の平和』など、現代まで上演される古典喜劇の祖となる。</div>
+</div>
+
+<div class="node key">
+<div class="node-title"><span class="k">★</span>ソフィストとソクラテス ― 知の転換</div>
+<div class="node-year">前5世紀</div>
+<div class="node-desc">前5世紀後半のアテネ民主政の発展は、新たな知的階層を生み出した。市民が民会・裁判で発言力を持つには弁論術が必要であり、これを職業的に教えた弁論家たちが<strong>ソフィスト</strong>(「賢者」「教師」)である。彼らはアテネ各地を回って高額な授業料で弁論術・修辞学・道徳論を講義した。<br><br>代表的なソフィストがトラキア出身の<span class="k">★</span><strong>プロタゴラス</strong>(前490頃-前420頃)で、「<strong>万物の尺度は人間(人間は万物の尺度)</strong>」と説いた。ある人にAと感じられるものはAであり、別の人にBと感じられればBとなる、という相対主義の宣言である。これは絶対的な真理を否定し、価値判断は人間の主観に依存するとする立場で、当時の伝統的な道徳・宗教の権威を相対化する激しい思想転換となった。<br><br>ソフィストの相対主義に対して、絶対的な真理の存在を主張したのがアテネ生まれの<span class="k">★</span><strong>ソクラテス</strong>(前470頃-前399)である。彼は文字で著作を残さず、市場(アゴラ)で若者と問答(対話法、産婆術)を交わしながら、相手の常識的見解を吟味し、無自覚な無知を自覚させる手法で知られた。自分が知らないことを知っていることが真の知の出発点だとする「<strong>無知の知</strong>」、知ることと徳を行うことは一体だとする「<strong>知徳合一</strong>」が彼の核心的命題である。彼は若者を腐敗させた・国家の神々を信じない・新しい神を持ち込んだという罪状で告発され、前399年に毒杯(ヘムロック)を仰いで死刑に処された。彼の弁明は後にプラトンが『ソクラテスの弁明』『パイドン』『クリトン』として書き留めた。<br><br>ソクラテスの弟子で、彼の死後アテネを離れた<strong>クセノフォン</strong>(前431頃-前354頃)は、後にペルシアのキュロス王子の遠征軍に傭兵として参加、ペルシアからギリシアへの帰還行程を記録した遠征記『<strong>アナバシス</strong>』(「上りのぼる旅」の意)を著した。これは古代の傭兵戦記の傑作として知られる。彼はソクラテスの想い出を綴った『ソクラテスの思い出』も残した。<br><br>ソクラテスの精神を引き継ぎつつ放浪・無欲生活を実践した極端な思想家が、現トルコ北部の港町<strong>シノペ</strong>出身の<strong>ディオゲネス</strong>(前412頃-前323)である。彼は犬のように生きる(キュニコス=「犬の」、英cynic=皮肉屋の語源)生活を実践、樽を住居とし、アレクサンドロス大王が会いに来て「何が望みか」と尋ねたとき「日陰になっているからどいてくれ」と答えた逸話で知られる。社会の慣習を一切拒否する徹底した自己充足(アウタルケイア)の哲学である。</div>
+</div>
+
+<div class="node key">
+<div class="node-title"><span class="k">★</span>プラトンとアリストテレス ― 古代哲学の双璧</div>
+<div class="node-year">前4世紀</div>
+<div class="node-desc">ソクラテスの忠実な弟子でアテネ貴族出身の<span class="k">★</span><strong>プラトン</strong>(前427-前347)が、師の問答法と思想を整理・発展させ、西洋哲学史上最大の思想家の一人となった。彼はアテネ郊外に自身の学園「アカデメイア」(後の英academy=学院・学術機関の語源)を創設し、ここで哲学・数学・天文学・政治学を一体的に教えた。学園は紀元529年に東ローマ皇帝ユスティニアヌス1世が閉鎖するまで900年間存続し、古代世界最長の教育機関となった。<br><br>プラトンの中心思想が<strong>イデア</strong>論である。我々が見る感覚的世界は仮の影にすぎず、真の実在は永遠不変のイデア界にあるとする二元論で、有名な「洞窟の比喩」(『国家』)で説明される。最高のイデアは「善」であり、これを認識した者(哲人)が国家を治めるべきだとする「哲人政治」の構想は、彼の対話篇『国家』で展開された。プラトンの著作はすべて対話篇形式で、ソクラテスを主役とすることが多く、計26篇が残る。代表作は『ソクラテスの弁明』『饗宴』『パイドロス』『パイドン』『国家』『法律』『ティマイオス』など。<br><br>プラトンの最も優秀な弟子が、北方ギリシア(マケドニア領)スタゲイラ出身の<span class="k">★</span><strong>アリストテレス</strong>(前384-前322)である。彼はアカデメイアで20年学んだ後、独自の道を切り開き、前342-前340年に若きアレクサンドロス大王の家庭教師を務めた経歴を持つ。後にアテネに戻って自身の学園「リュケイオン」を設立、散歩しながら講義したことから「逍遥学派(ペリパトス学派)」と呼ばれた。<br><br>アリストテレスはプラトンのイデア論を批判的に継承し、感覚的個物の中にこそ本質(エイドス、形相)があると主張する経験論的・実在論的立場を取った。彼の業績は哲学(<strong>形而上学</strong>=meta-physica、「自然学の後の」の意=存在論)・倫理学(『ニコマコス倫理学』、徳倫理学の祖)・政治学(『政治学』、ポリス分析)・三段論法を体系化した論理学・修辞学・詩学・<strong>自然学</strong>(『自然学』、四元素説・目的因論)・生物学(動物分類学)・天文学・経済学にわたり、古代世界の知の総合体系を構築した。「万学の祖」と呼ばれる所以である。彼の著作はアレクサンドリアのムセイオン経由で東ローマ・イスラーム世界に継承され、12世紀ヨーロッパに「アリストテレス再発見」をもたらして、中世スコラ哲学の中核となる。中世スコラ哲学者が「我々はすべて、アリストテレスの注釈者だ」と自称するまで言わしめた、西洋思想史最大の影響力を誇る。<br><br>主著には、存在の存在性を論じる全14巻の『<strong>形而上学</strong>』、運動・原因・空間・時間を論じる全8巻の『<strong>自然学</strong>』があり、現代も哲学・科学史の必読書である。<br><br>同時代のアテネには、哲学とは別系統の「弁論術」の伝統が花開いた。ソフィスト系の弁論家<strong>イソクラテス</strong>(前436-前338)はアテネに修辞学校を開き、文書化された政治弁論を通じてポリス間の和解と汎ギリシア統一を提唱した。<strong>デモステネス</strong>(前384-前322)は古代世界最大の雄弁家として知られ、北方マケドニアの台頭に対し『フィリッピカ』と呼ばれる一連の対マケドニア演説でアテネ市民に抵抗を訴え続けた。しかしマケドニア王フィリッポス2世が前338年のカイロネイアの戦いでギリシア連合軍を破ると、翌年フィリッポス2世はギリシア諸ポリスを糾合し<strong>コリントス同盟</strong>(ヘラス同盟)を結成、ペルシア遠征の準備を整えた。フィリッポス2世が暗殺された後、若き息子アレクサンドロスがこの同盟と遠征計画を継承し、世界帝国への道を歩むことになる。デモステネスは祖国の自由が失われた後に毒杯を仰いで自決し、ポリスの自由と弁論文化の終焉を象徴する人物となった。</div>
+</div>
+
+<div class="node key">
+<div class="node-title"><span class="k">★</span>医学と歴史記述 ― ヒポクラテス・ヘロドトス・トゥキディデス</div>
+<div class="node-year">前5世紀</div>
+<div class="node-desc">医学の祖が、エーゲ海南東のドーリア人の島<span class="k">★</span><strong>コス島</strong>出身の<span class="k">★</span><strong>ヒポクラテス</strong>(前460頃-前370頃)である。彼は病気を神々の罰や呪いとする伝統的見方を退け、四体液説(血液・粘液・黄胆汁・黒胆汁)に基づく科学的観察と臨床経験で医学を実践した。彼の名で伝わる「ヒポクラテスの誓い」は患者への奉仕・守秘義務・薬物濫用の禁止などを定めた医師の倫理規定で、現代医学倫理の祖型として今も医学部入学式で読み上げられる。コス島には彼の名にちなむ医学校が栄え、ギリシア医学の伝統を後世に継承した。<br><br>歴史記述の祖が、小アジアハリカルナッソス出身の<span class="k">★</span><strong>ヘロドトス</strong>(前484頃-前425頃)である。彼の主著『<strong>歴史</strong>』は全9巻からなる別名「ペルシア戦争史」で、ペルシア戦争を主題としつつ、エジプト・ペルシア・スキタイ・インドなど周辺諸民族の風習を博覧的に記述した「西洋最古の歴史書」である。「歴史」(ヒストリア=「探究」「調査」の意)の語源そのものを彼が創出した。事実検証より物語性を優先する叙述で、後にアリストテレスからは「物語(ミュトス)に近い」と批判もされたが、古代世界の記憶を保存した功績は計り知れない。「エジプトはナイルのたまもの」の有名な記述もこの『歴史』に見える。<br><br>歴史記述を厳格な事実検証の学問に高めたのが、アテネ将軍出身の<span class="k">★</span><strong>トゥキディデス</strong>(前460頃-前395頃)である。彼の主著『<strong>歴史</strong>』は全8巻・未完で、別名「ペロポネソス戦争史」と呼ばれる。彼自身がペロポネソス戦争に従軍した経験(後に戦略失敗で追放)に基づき、神々の介入を排除して因果関係(国家利益・恐怖・名誉)から戦争を分析した。「過去を正確に知ることは未来の指針となる」とする実証主義的歴史観の祖型で、近代歴史学の出発点とされる。彼が記録したペリクレスの「葬送演説」は古代民主政を称揚する古典的政治言説となった。</div>
+</div>
+</div>
+
+<div class="phase p5"><div class="phase-label">古典期美術と建築</div>
+<div class="node key">
+<div class="node-title"><span class="k">★</span>古典期彫刻 ― フェイディアスとミュロン</div>
+<div class="node-year">前5世紀</div>
+<div class="node-desc">古典期(前5-前4世紀)のギリシア彫刻は「人体の理想美」を追求した古代世界の頂点である。<br><br>その代表がアテネ出身の<span class="k">★</span><strong>フェイディアス(ペイディアス)</strong>(前480頃-前430頃)である。彼はペリクレスの友人で、アクロポリス再建事業の総監督を務め、パルテノン神殿の彫刻装飾を主導した。代表作が神殿内陣に置かれた高さ約12mの巨大な<strong>アテナ女神像</strong>で、黄金と象牙の合金=クリュセレファンティノス技法で作られた。さらにオリンピアのゼウス神殿には同じく金象牙のゼウス像を制作し、世界七不思議の一つに数えられた。両像とも完全に失われたが、現存するパルテノン神殿の浮彫装飾(現在はロンドン大英博物館蔵=エルギン=マーブル)が彼の作風を伝える。理想化された荘厳な神々の表現で、後世の西洋彫刻の規範となった。<br><br>同時代の<strong>ミュロン</strong>(前480頃-前440頃)は、運動する人体の一瞬を捉える写実彫刻で名高い。代表作の前450年頃の『円盤投げ(ディスコボロス)』は原作のブロンズが現存せず、後の大理石によるローマ模刻が現存する。円盤投げ選手が円盤を投げる直前の捻れた姿勢を捉えた古代彫刻の最高傑作の一つで、現代に至るまで体育・美術の象徴となっている。<br><br>建築彫刻の協働者として、パルテノン神殿の建築設計を担当した<strong>イクティノス</strong>(前5世紀)と<strong>カリクラテス</strong>(前5世紀)も忘れてはならない。彼らはペリクレスの命を受けて前447-前432年に神殿本体を設計、フェイディアスの彫刻装飾と組み合わせて古典様式の頂点を実現した。<br><br>古典期後期(前4世紀)の代表的彫刻家が<strong>プラクシテレス</strong>(前390頃-前320頃)で、フェイディアスの厳格な理想美に対し、より優美で人間的な情感を湛えた表現を確立した。代表作の一つが前340年頃の<strong>ヘルメス神像</strong>(現オリンピア考古博物館蔵)で、伝令神ヘルメスが幼いディオニューソスを抱きあやす親密な場面を、柔らかな大理石の肌合いと優しい表情で表現し、ヘレニズム彫刻の前駆となる。</div>
+</div>
+
+<div class="node key">
+<div class="node-title"><span class="k">★</span>神殿建築の三様式と代表作</div>
+<div class="node-desc">古代ギリシアの石造神殿建築は、柱頭の形式によって3様式に分類される。これはローマ建築・ルネサンス建築・近代古典主義建築にいたるまで、西洋建築の基本的な「文法」となる。<br><br>第一が<strong>ドーリア式(ドリス式)</strong>で、最も古く厳格・荘重な様式である。柱は20本のフルートの溝彫りを持ち、柱頭は装飾のないシンプルな円盤と方板の組み合わせ、柱身は太く力強い。代表作がアテネのアクロポリスに前447-前432年に再建された<strong>パルテノン神殿</strong>で、処女神アテナ=アテナ・パルテノスを祀る神殿である。設計はイクティノス・カリクラテス、彫刻装飾はフェイディアス監督である。8×17本の周柱、神殿本体は完璧な比例(列柱の高さ・直径・間隔の比例関係)で組まれ、全体に柱中央部の僅かなふくらみエンタシス・柱の傾き・基壇のカーブなど微妙な歪み補正を施して視覚的完璧さを達成している。古代世界の建築美の最高傑作で、現在もアテネのアクロポリスに半壊状態で立つ。<br><br>第二が<strong>イオニア式</strong>で、より洗練された優美な様式である。柱頭に左右の渦巻き(ヴォルート)装飾を持ち、柱身は細く高く、フルートも24本と多い。アクロポリスの<strong>ニケ神殿</strong>(前426-前421頃)が代表作で、勝利の女神ニケを祀る小さな神殿である。エフェソスのアルテミス神殿(世界七不思議の一つ)もイオニア式である。<br><br>第三が<strong>コリント式</strong>で、最も新しく装飾的な様式である。柱頭をアカンサスの葉文様で彩る豊麗な意匠で、ヘレニズム時代以降に普及した。代表作がアテネ南東の<span class="k">★</span><strong>ゼウス=オリンピオス神殿</strong>(オリンピア=ゼウス神殿)で、前6世紀から建造を開始し、ローマ皇帝ハドリアヌス治下の132年に完成したコリント式列柱の壮大な神殿である。<br><br>三様式はギリシア人の美意識の段階的発展(質実剛健→優雅→絢爛)を示すもので、ローマ建築ではこれにトスカナ式とコンポジット式が加わって5様式となり、近代の古典建築理論にまで継承される。</div>
+</div>
+</div>
+
+<div class="note"><p>古代ギリシア文化は、★エーゲ文明の神話的記憶→ホメロス・ヘシオドスの叙事詩→自然哲学の合理的探究→悲劇・喜劇・哲学・歴史の古典期黄金時代→建築様式と彫刻の理想美の達成という流れで、西洋文明のすべての基層を準備した。★ソクラテス・プラトン・アリストテレスの哲学的伝統、★ヘロドトス・トゥキディデスの歴史記述、★三大悲劇詩人の劇作、★フェイディアス・パルテノン神殿の彫刻と建築は、後のヘレニズム時代・ローマ・中世イスラーム世界・ルネサンスを経て、現代世界にいたる人類精神史の不滅の遺産となった。ヘレニズム期の文化(ムセイオン・ストア派・エピクロス派・アルキメデスら)と政治史については別途扱う。</p></div>
+
+</div>
 </body>
 </html>

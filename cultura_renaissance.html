@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>ルネサンス ― メディチ家・三巨匠・人文主義</title><style>@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>ルネサンス文化 ─ 三大詩人・三大巨匠・北方ルネサンス(14-17世紀)</title><style>@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
 :root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048;--border:rgba(201,169,110,.08)}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
-body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
 .hdr{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
 .hdr h1{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2)}
 .hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
@@ -21,13 +21,16 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
 .node-desc{font-size:10px;color:var(--text2);line-height:1.7}
 .node-desc strong{color:var(--text);font-weight:600}
 .node.key{background:rgba(201,169,110,.04);border-color:rgba(201,169,110,.12)}
-.note{text-align:center;padding:8px 20px 32px;max-width:720px;margin:0 auto}.note p{font-size:9px;color:var(--text3);line-height:1.8}.note strong{color:var(--gold)}
-.k{color:var(--text)}.node-title .k{color:var(--gold2)}.note .k{color:var(--gold)}
-.p1 .node{border-left-color:rgba(180,140,60,.3)}.p1::before{border-color:rgba(180,140,60,.5);background:rgba(180,140,60,.15)}
-.p2 .node{border-left-color:rgba(100,130,180,.3)}.p2::before{border-color:rgba(100,130,180,.5);background:rgba(100,130,180,.15)}
-.p3 .node{border-left-color:rgba(80,150,120,.3)}.p3::before{border-color:rgba(80,150,120,.5);background:rgba(80,150,120,.15)}
-.p4 .node{border-left-color:rgba(180,80,80,.3)}.p4::before{border-color:rgba(180,80,80,.4)}
-.p5 .node{border-left-color:rgba(120,90,160,.3)}.p5::before{border-color:rgba(120,90,160,.5);background:rgba(120,90,160,.15)}
+.note{text-align:center;padding:8px 20px 32px;max-width:720px;margin:0 auto}.note p{font-size:11px;color:#b0aba2;line-height:1.8}.note strong{color:var(--gold)}
+.k{color:var(--text)}
+.node-title .k{color:var(--gold2)}
+.note .k{color:var(--gold)}
+.p1 .node{border-left-color:rgba(120,90,70,.3)}.p1::before{border-color:rgba(120,90,70,.5);background:rgba(120,90,70,.15)}
+.p2 .node{border-left-color:rgba(170,130,90,.3)}.p2::before{border-color:rgba(170,130,90,.5);background:rgba(170,130,90,.15)}
+.p3 .node{border-left-color:rgba(180,140,60,.3)}.p3::before{border-color:rgba(180,140,60,.5);background:rgba(180,140,60,.15)}
+.p4 .node{border-left-color:rgba(100,130,180,.3)}.p4::before{border-color:rgba(100,130,180,.4)}
+.p5 .node{border-left-color:rgba(80,150,120,.3)}.p5::before{border-color:rgba(80,150,120,.5);background:rgba(80,150,120,.15)}
+.p6 .node{border-left-color:rgba(180,80,80,.3)}.p6::before{border-color:rgba(180,80,80,.4)}
 @media(max-width:600px){
 .hdr{padding:10px 12px}.hdr h1{font-size:12px}
 .flow{padding:16px 10px 40px}
@@ -37,44 +40,46 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
 }
 </style></head>
 <body>
-<div class="hdr"><h1>ルネサンス ― メディチ家・三巨匠・人文主義</h1><a href="charts.html">&larr; Ad Chartae</a></div>
+<div class="hdr"><h1>ルネサンス文化 ─ 三大詩人・三大巨匠・北方ルネサンス(14-17世紀)</h1><a href="index.html">&larr; Ad Indicem</a></div>
+
 <div class="flow">
 
-<div class="phase p1"><div class="phase-label">イタリア<br>ルネサンス<br>の背景</div>
-<div class="node key"><div class="node-title">★ルネサンスの画期性</div><div class="node-year">14-16C</div>
-<div class="node-desc"><strong>ルネサンス</strong>=<strong>再生(Rinascimento)</strong>=<strong>古代ギリシア・ローマの再発見</strong>。<br>・中世の神中心から<strong>人間中心(ヒューマニズム)</strong>へ=<strong>人文主義</strong>。<br>・<strong>中世からの連続性</strong>も指摘(ブルクハルト対ホイジンガ論争)。<br>・<strong>毛織物業・銀行業</strong>で富裕化したイタリア都市(フィレンツェ・ヴェネツィア・ミラノ)が中心地。<br>・<strong>ビザンツ帝国滅亡</strong>(1453)以後、ギリシア学者がイタリアへ亡命=古典研究加速。</div></div>
-<div class="node key"><div class="node-title">★メディチ家の文芸保護</div><div class="node-year">15-16C</div>
-<div class="node-desc"><strong>フィレンツェ</strong>の<strong>メディチ家</strong>=毛織物・銀行業で富裕化=芸術家・学者の<strong>パトロン</strong>。<br>・<strong>コジモ(コシモ)=デ=メディチ</strong>(大コジモ、15C前半):<strong>プラトン=アカデミー</strong>を設立(プレソン触発)、ギリシア古典翻訳を支援。<br>・<strong>ロレンツォ=デ=メディチ(豪華王)</strong>(15C後半):ボッティチェリ・若きミケランジェロを庇護。<br>・<strong>サヴォナローラ</strong>(15C末):<strong>メディチ家追放</strong>後、厳格な神権政治→虚栄の焼却・異端として処刑(1498)。</div></div>
+<div class="phase p1"><div class="phase-label">ルネサンスの起源
+イタリアの萌芽</div>
+
+<div class="node key">
+<div class="node-title"><span class="k">★</span>ルネサンスの起源とイタリア諸都市の繁栄</div>
+<div class="node-year">14-15世紀</div>
+<div class="node-desc">14世紀イタリアで始まった文化運動「<strong>ルネサンス</strong>」(「再生」の意、古典文化の再評価)は、中世神中心の文化観から、人間性・現世生活・古典学術の重視へと文化のパラダイム転換をもたらした。その背景には、(1)11-13世紀の十字軍と地中海交易による経済発展、(2)1204年の第四回十字軍コンスタンティノープル略奪と1453年の同市陥落でビザンツ・ギリシア古典文献がイタリアに流入したこと、(3)北イタリア諸都市(フィレンツェ・ヴェネツィア・ジェノヴァ・ミラノ)の経済繁栄と中産市民階級の成熟、(4)ローマ教皇庁・諸侯家の経済力と芸術擁護者<strong>パトロン</strong>としての役割が大きい。<br><br>運動の中心地は、北イタリア・トスカーナ州の<strong>フィレンツェ</strong>であった。<strong>アルノ川</strong>沿いの中世都市で、毛織物・銀行業で繁栄、13-15世紀に欧州最大級の金融資本となった。最大のパトロンは<strong>メディチ家</strong>で、特に「コジモ」(<strong>コジモ</strong>=デ=メディチ、1389-1464)が古典文献収集・芸術家保護・プラトン=アカデミー設立を進めた。孫のロレンツォ=イル=マニフィコ(1449-1492、「華麗王」)の時代がフィレンツェ・ルネサンスの絶頂となった。<br><br>15世紀末、フィレンツェの修道士ドミニコ会の宗教的禁欲主義の急進派<strong>サヴォナローラ</strong>(1452-1498)が、メディチ家追放後の共和制下に厳格な神権政治を試みたが、1498年に異端として火刑に処された。これはルネサンスの世俗主義と中世的宗教倫理の衝突を象徴する事件であった。<br><br>15世紀後半、ローマ教皇庁の活動も活発化、教皇<strong>ニコラウス5世</strong>(在位1447-1455、ヴァチカン図書館の創設者)が古典写本収集と古典学者の保護を進めた。メディチ家出身の教皇<strong>レオ10世</strong>(在位1513-1521)はラファエロらを庇護、教皇国家のローマでルネサンス芸術が結実した。一方、ルター宗教改革(1517-)が起こった時の教皇でもあり、贖宥状を発行してサン=ピエトロ大聖堂の改築費を捻出したことが宗教改革の直接的契機となった。<br><br>運動の理論的中心となったのが<strong>ヒューマニスト</strong>(人文主義者、フマニスタ)である。彼らは古代ギリシア・ラテン文学を研究、人間性の尊重・古典的修辞学・教養としての歴史を重視した。フィレンツェの<strong>ピコ=デラ=ミランドラ</strong>(1463-1494)が『人間の尊厳について』(1486)で自由意志の哲学を展開、ルネサンス的人間観の典型を示した。19世紀のスイス人歴史家<strong>ブルクハルト</strong>(1818-1897)が『イタリア=ルネサンスの文化』(1860)で「個性の発見」「世界の発見」と性格付けて以来、近代の起点として位置付けられたが、後の研究では中世カトリック世界からの<strong>中世からの連続性</strong>も指摘されている。古代ローマ建築の柱・アーチ・ドームを再現する「<strong>ルネサンス様式</strong>」として古代の理想を復活させ、後の近世ヨーロッパの文化的基盤となった。</div>
+</div>
 </div>
 
-<div class="phase p2"><div class="phase-label">文学<br>人文主義</div>
-<div class="node key"><div class="node-title">★イタリア三大文学者</div><div class="node-year">14C</div>
-<div class="node-desc">・<strong>ダンテ</strong>(1265-1321、フィレンツェ):『<strong>神曲</strong>』=地獄・煉獄・天国、ラテン語でなく<strong>トスカナ方言</strong>で書く=<strong>イタリア文学の祖</strong>。『新生』。<br>・<strong>ペトラルカ</strong>(14C):『<strong>叙情詩集(カンツォニエーレ)</strong>』=ラウラへの愛を歌う=ルネサンス抒情詩の創始者、<strong>桂冠詩人</strong>。<br>・<strong>ボッカチオ</strong>(14C):『<strong>デカメロン</strong>』=ペスト流行下にフィレンツェ郊外で語られる100話=<strong>散文の傑作</strong>。</div></div>
-<div class="node key"><div class="node-title">★人文主義(ヒューマニズム)</div><div class="node-year">15-16C</div>
-<div class="node-desc"><strong>古典研究</strong>+<strong>人間性の探求</strong>。<br>・<strong>ヴァッラ</strong>(15C):文献学的批判で『<strong>コンスタンティヌスの寄進状</strong>』を偽書と証明。<br>・<strong>ピコ=デラ=ミランドラ</strong>:『人間の尊厳について』=人間の自由意志。<br>・<strong>マキァヴェリ</strong>(1469-1527、フィレンツェ):『<strong>君主論</strong>』=現実主義政治学、目的は手段を正当化する、「<strong>ライオンの力と狐の狡猾さ</strong>」。『ローマ史論(ディスコルシ)』。<br>・<strong>カスティリオーネ</strong>:『<strong>宮廷人</strong>』=宮廷の理想人。<br>・<strong>グイッチャルディーニ</strong>:『イタリア史』。</div></div>
-<div class="node"><div class="node-title">北方ルネサンス文学</div><div class="node-year">15-16C</div>
-<div class="node-desc">・<strong>エラスムス</strong>(1466頃-1536、オランダ):『<strong>愚神礼讃(痴愚神礼讃)</strong>』=聖職者・王侯の諷刺=<strong>宗教改革の先駆</strong>。ギリシア語新約聖書校訂=ルター訳の底本。<br>・<strong>トマス=モア</strong>(英):『<strong>ユートピア</strong>』=理想社会(共産制)で当時の英国社会を批判、ヘンリ8世に処刑。<br>・<strong>モンテーニュ</strong>(仏):『<strong>エセー(随想録)</strong>』=エッセイの祖、「<strong>私は何を知るか(Que sais-je)</strong>」=懐疑主義・寛容。<br>・<strong>ラブレー</strong>(仏):『<strong>ガルガンチュアとパンタグリュエル</strong>』=諷刺小説。<br>・<strong>セルバンテス</strong>(西):『<strong>ドン=キホーテ</strong>』=近代小説の祖、騎士道の諷刺。<br>・<strong>シェイクスピア</strong>(英、1564-1616):『<strong>ハムレット</strong>』『オセロー』『リア王』『マクベス』(四大悲劇)・『ロミオとジュリエット』・『真夏の夜の夢』等。</div></div>
+
+<div class="phase p2"><div class="phase-label">ルネサンス文学
+ダンテからセルバンテス</div>
+
+<div class="node key">
+<div class="node-title"><span class="k">★</span>ルネサンス文学 ─ 三大詩人と俗語文学</div>
+<div class="node-year">14-17世紀</div>
+<div class="node-desc">ルネサンス文学の出発点となったのが、フィレンツェ出身の<span class="k">★</span><strong>ダンテ</strong>(1265-1321)である。1304年から執筆を始めた『神曲』(全3部:地獄篇・煉獄篇・天国篇)は、トスカーナ方言で書かれた壮大な叙事詩で、これがイタリア標準語の基礎となった。詩人ヴェルギリウスに導かれた地獄巡りの物語は、中世神学と俗世間の総合的なルネサンスの代表作となった。<br><br>2人目の巨匠が<span class="k">★</span><strong>ペトラルカ</strong>(1304-1374)である。彼は古典ラテン文学の写本収集に努め、「ヒューマニズムの父」と呼ばれた。生涯にわたって理想の女性<strong>ラウラ</strong>(現実か虚構か不明)に捧げた抒情詩集『<strong>叙情詩集</strong>』(カンツォニエーレ)は、後の欧州近代抒情詩の手本となった。<br><br>3人目が<span class="k">★</span><strong>ボッカチオ</strong>(1313-1375)である。1351-1353年に書かれた短編物語集『デカメロン』(十日物語、ペスト流行下に避難した男女10人が語る100話)は、世俗生活・恋愛・宗教者の偽善を風刺、ヨーロッパ近代散文の起点となった。これら3人は「<strong>イタリア三大詩人</strong>」と称される。<br><br>続く16世紀北方ルネサンスでは、ロッテルダム出身のオランダの人文主義者<span class="k">★</span><strong>エラスムス</strong>(1466頃-1536)が活動した。彼は1509年に風刺作品『愚神礼讃』(<strong>愚神礼賛</strong>とも表記)(モリア・エンコミウム、聖職者・修道士・神学者を辛辣に風刺)を発表、ギリシア語新約聖書を校訂出版(1516)してルター宗教改革の前提を整えた。彼の友人だったホルバインが描いた『<strong>エラスムス像</strong>』(肖像画の傑作)もこの時期の作品。<br><br>フランスでは、医師・人文主義者<strong>ラブレー</strong>(1494頃-1553)が、『<strong>ガルガンチュアとパンタグリュエルの物語</strong>』(巨人王<strong>ガルガンチュア</strong>父子の風刺小説)を著した。同時期の<strong>モンテーニュ</strong>(1533-1592)は、内省・懐疑・寛容の精神を示した1580年の内省的散文集『<strong>エセー</strong>』(随想録)を完成、近代エッセイの祖と呼ばれた。<br><br>スペインでは、騎士道物語の凋落期に<span class="k">★</span><strong>セルバンテス</strong>(1547-1616)が、騎士道物語をパロディ化した長編小説『ドン=キホーテ』(1605・1615、没落貴族と従者<strong>サンチョ=パンサ</strong>の遍歴)を発表、近代小説の傑作となった。<br><br>イングランドでは、人文主義者<strong>トマス=モア</strong>(1478-1535)が「どこにもない場所」を意味する1516年ラテン語の『<strong>ユートピア</strong>』を著し、彼はヘンリ8世の離婚問題に反対して1535年に処刑された。エリザベス1世時代の劇作家<span class="k">★</span><strong>シェークスピア</strong>(1564-1616)が、37本の戯曲を書いた。『ロミオとジュリエット』『ハムレット』『マクベス』『リア王』『オセロー』『ヴェニスの商人』など、現代まで世界で最も上演される作品群を残し、英文学の頂点とされる。北方ルネサンスでは政治思想として、フィレンツェの外交官<span class="k">★</span><strong>マキャヴェリ</strong>(1469-1527)が目的のために手段を選ばない冷徹な政治論『<strong>君主論</strong>』(1513)と、共和主義論『<strong>ローマ史論</strong>』を著した。彼は教皇アレクサンデル6世の子<strong>チェーザレ=ボルジア</strong>(1475-1507、軍事政治家)を理想の君主像とした。マキャヴェリは近代政治学の祖と呼ばれる。</div>
+</div>
 </div>
 
-<div class="phase p3"><div class="phase-label">美術</div>
-<div class="node key"><div class="node-title">★ルネサンス三巨匠</div><div class="node-year">15-16C</div>
-<div class="node-desc">・<strong>レオナルド=ダ=ヴィンチ</strong>(1452-1519、フィレンツェ):『<strong>モナ=リザ</strong>』『<strong>最後の晩餐</strong>』(ミラノ)・『ウィトルウィウス人』=科学・解剖・発明も=<strong>万能人(uomo universale)</strong>の典型。<br>・<strong>ミケランジェロ</strong>(1475-1564):『<strong>ダヴィデ像</strong>』『<strong>ピエタ</strong>』『<strong>システィナ礼拝堂天井画</strong>』(創世記)・『<strong>最後の審判</strong>』=壮大で力強い人体表現。サン=ピエトロ大聖堂のドーム設計。<br>・<strong>ラファエロ</strong>(1483-1520):『<strong>聖母子像</strong>』『<strong>アテネの学堂</strong>』=プラトン・アリストテレスを中央に古代の賢人を集めた壁画。</div></div>
-<div class="node key"><div class="node-title">★初期・盛期ルネサンス</div><div class="node-year">14-16C</div>
-<div class="node-desc">初期ルネサンス:<br>・<strong>ジョット</strong>(13-14C):パドヴァ・スクロヴェーニ礼拝堂フレスコ=遠近法の先駆。<br>・<strong>ブルネレスキ</strong>:フィレンツェ大聖堂(ドゥオーモ)のドーム。<br>・<strong>ドナテルロ</strong>:『<strong>ダヴィデ像</strong>(ブロンズ)』=古代以来初の裸体彫刻。<br>・<strong>ボッティチェリ</strong>:『<strong>春(プリマヴェーラ)</strong>』『<strong>ヴィーナスの誕生</strong>』。<br>・<strong>マサッチョ</strong>:線遠近法の本格導入。<br><br>ヴェネツィア派:<strong>ティツィアーノ</strong>・<strong>ジョルジョーネ</strong>=色彩豊かな油絵。</div></div>
-<div class="node key"><div class="node-title">★北方ルネサンス美術</div><div class="node-year">15-16C</div>
-<div class="node-desc"><strong>油絵技法</strong>(フランドル発祥)で精緻な細密描写。<br>・<strong>ファン=アイク兄弟</strong>(フランドル、15C):『<strong>アルノルフィニ夫妻像</strong>』=油絵の先駆、写実の極致。<br>・<strong>ボス(ボッシュ)</strong>:『快楽の園』=奇怪な幻想。<br>・<strong>ブリューゲル</strong>(父子、16C):『<strong>バベルの塔</strong>』・『農民の踊り』=庶民の生活を描く。<br>・<strong>デューラー</strong>(独):『<strong>四人の使徒</strong>』・自画像・版画=北方ルネサンスの最高峰。<br>・<strong>ホルバイン(子)</strong>(独):『<strong>エラスムス像</strong>』『ヘンリ8世像』=肖像画の名手。<br>・<strong>グリューネヴァルト</strong>:『イーゼンハイム祭壇画』。</div></div>
+
+<div class="phase p3"><div class="phase-label">ルネサンス美術
+イタリア三大巨匠</div>
+
+<div class="node key">
+<div class="node-title"><span class="k">★</span>ルネサンス美術 ─ ジョットから三大巨匠まで</div>
+<div class="node-year">14-16世紀</div>
+<div class="node-desc">ルネサンス美術の出発点が、フィレンツェの<strong>ジョット</strong>(1267頃-1337)である。彼はビザンツ風の平面的画法を脱して、立体感・遠近感・人間的表情を備えた絵画を生み出した(パドヴァ・スクロヴェーニ礼拝堂のフレスコ画)。これがルネサンス絵画の起点となった。<br><br>15世紀のフィレンツェでは、彫刻家<strong>ドナテルロ</strong>(1386頃-1466)、画家ボッティチェリ(1445-1510、『春』『ヴィーナスの誕生』)らが活動、絵画では遠近法の発見・人体解剖学に基づく写実性が確立した。建築家ブルネレスキ(1377-1446)は、フィレンツェ大聖堂(<strong>サンタ=マリア大聖堂</strong>、花の聖母マリア大聖堂とも称される)の有名な巨大ドームを設計、ルネサンス建築の起点となった。<br><br>15世紀末-16世紀初頭が、ルネサンス美術の頂点「盛期ルネサンス」である。北イタリアの<span class="k">★</span><strong>レオナルド=ダ=ヴィンチ</strong>(1452-1519、トスカーナ地方の<strong>ヴィンチ村</strong>出身)は、絵画(『モナ=リザ』『最後の晩餐』)・解剖学・科学・発明など多分野で天才的業績を残した万能の天才(uomo universale)である。<br><br>同時代の<span class="k">★</span><strong>ミケランジェロ</strong>(1475-1564)は彫刻・絵画・建築・詩で活躍、フィレンツェの<strong>ダヴィデ像</strong>(1501-1504、5mの大理石彫刻)、ローマ教皇の<strong>システィナ礼拝堂</strong>(システィーナ礼拝堂)の天井画(1508-1512、創世記など)と祭壇画『<strong>最後の審判</strong>』(1535-1541)、聖母子像『<strong>ピエタ</strong>』(1499、サン=ピエトロ大聖堂)を残した。彼はサン=ピエトロ大聖堂のドームの設計も手がけた。<br><br>3人目の巨匠が<span class="k">★</span><strong>ラファエロ</strong>(1483-1520)である。彼は教皇宮殿の壁画『アテネの学堂』(プラトン・アリストテレス像)・聖母子像群で、調和と理想美を実現した。同時代、貴族・廷臣の理想像を描いたカスティリオーネの『<strong>宮廷人</strong>』(コルティジャーノ、1528)が、近世ヨーロッパの紳士道の典型を提示した。早世(37歳)ながら、ルネサンス絵画の理想美の完成者として位置付けられている。<br><br>ヴェネツィア派では、<strong>ジョルジョーネ</strong>(1477頃-1510)・ヴェネツィア派の頂点として肖像画・神話画を残した<strong>ティツィアーノ</strong>(1490頃-1576)が、色彩豊かな絵画を発展させた。建築では、教皇<strong>シクストゥス4世</strong>(在位1471-1484、システィナ礼拝堂の建設者)・ユリウス2世(レオナルド・ミケランジェロ・ラファエロの庇護者)・<strong>レオ10世</strong>らがルネサンス建築の中心パトロンとなった。ヴァチカン市国の中心でブラマンテ・ミケランジェロらが設計した<strong>サン=ピエトロ大聖堂</strong>はルネサンス建築の最高峰である。<br><br>北方では、ドイツの<strong>デューラー</strong>(1471-1528)が版画・自画像・宗教画で、ドイツ・ルネサンスの頂点となった。彼の連作版画『<strong>黙示録</strong>』(1498、ヨハネ黙示録に基づく15枚組の木版画)は北方ルネサンス美術の傑作である。フランドルの<strong>ホルバイン</strong>(1497頃-1543)・<strong>ブリューゲル</strong>(1525頃-1569)も活躍した。代表作に『<strong>農民の踊り</strong>』『農民の婚宴』『バベルの塔』があり、フランドル(現ベルギー)の<strong>フランドル派</strong>の画家による農民の日常生活を描く絵画は、北方ルネサンスの庶民的特徴を示している。<strong>ヤン=ファン=アイク</strong>(<strong>ファン=アイク兄弟</strong>の弟、1390頃-1441)らが15世紀前半に<strong>油絵</strong>技法を確立、これがイタリアにも伝わり絵画表現の革命的進歩を生んだ。<br><br>科学・哲学では、<strong>ジョルダーノ=ブルーノ</strong>(1548-1600、無限宇宙論で1600年に火刑)・ポーランドの天文学者<strong>コペルニクス</strong>(1473-1543)が、それまでの地球中心説<strong>天動説</strong>を否定して地動説を提唱、新しい自然観を打ち出した。これは後の科学革命の起点となった。同時期、火器(火砲・鉄砲)の発達と歩兵中心の戦術への転換が「<strong>軍事革命</strong>」(15-17世紀の軍事構造の変革)と呼ばれる現象を引き起こした。1450年頃、ドイツのマインツで<span class="k">★</span><strong>グーテンベルク</strong>(1400頃-1468)が活版印刷術を実用化、文化の大衆化と宗教改革・科学革命の基盤を整えた。</div>
+</div>
 </div>
 
-<div class="phase p4"><div class="phase-label">教皇と<br>ローマの<br>芸術</div>
-<div class="node"><div class="node-title">ルネサンス期の教皇</div><div class="node-year">15-16C</div>
-<div class="node-desc">ルネサンス期のローマ教皇=芸術の庇護者でもあり、世俗化批判の対象でもある。<br>・<strong>シクストゥス4世</strong>(位1471-84):<strong>システィナ礼拝堂</strong>建立(自身の名前を冠)。<br>・<strong>アレクサンデル6世</strong>(ボルジア家、位1492-1503):<strong>教皇子午線</strong>(1493)=スペイン・ポルトガル間の境界線設定。世俗化の象徴、子にチェーザレ=ボルジア。<br>・<strong>ユリウス2世</strong>(位1503-13):<strong>サン=ピエトロ大聖堂</strong>再建開始、ミケランジェロ・ラファエロを起用。<br>・<strong>レオ10世</strong>(メディチ家、位1513-21):<strong>贖宥状</strong>販売を拡大→<strong>ルターの95ヵ条論題</strong>(1517)の原因。</div></div>
-<div class="node"><div class="node-title">科学・地理の先駆</div><div class="node-year">15-16C</div>
-<div class="node-desc">・<strong>トスカネリ</strong>(フィレンツェ):地球球体論、西回りのアジア到達を主張=コロンブスに影響。<br>・<strong>マルテルス</strong>の世界図。<br>・<strong>コペルニクス</strong>(1473-1543、ポーランド):『<strong>天球の回転について</strong>』(1543)=<strong>地動説(太陽中心説)</strong>=近代科学革命の嚆矢(→科学革命は別枠)。</div></div>
+
+<div class="note">
+<p>★ルネサンス(14-16世紀)は、イタリアで始まった古典古代の再発見と人間中心主義の文化運動である。★人文主義の祖ペトラルカ、ボッカチオ『デカメロン』を経て、15世紀フィレンツェのメディチ家庇護下にダンテ『神曲』・マキャヴェリ『君主論』・★ピコ=デラ=ミランドラ・エラスムス『愚神礼讃』らが活躍した。美術では★レオナルド=ダ=ヴィンチ・ミケランジェロ・ラファエロの三大巨匠、ボッティチェリ・ジョット・ブルネレスキらが、遠近法と人間身体の写実を確立した。北方ではフランドルのファン=エイク兄弟・デューラー・ホルバイン・ブリューゲルが、写実と宗教改革の精神を表現した。文学ではシェイクスピア・セルバンテス『ドン=キホーテ』・ラブレー・モンテーニュが諸国で結実、政治思想ではモア『ユートピア』が社会批判を展開した。15世紀★グーテンベルクの活版印刷が知識普及を加速、これらの遺産は近代ヨーロッパの世俗文化・国民文学・科学的精神の基盤を築いた。</p>
 </div>
-
 </div>
-
-<div class="note"><p><p><strong>CULTURA</strong> — <strong>メディチ家</strong>(コジモ・ロレンツォ豪華王)の文芸保護→<strong>ダンテ『神曲』</strong>・<strong>ペトラルカ</strong>・<strong>ボッカチオ『デカメロン』</strong>のイタリア三大文学→<strong>人文主義</strong>(ヴァッラ・<strong>マキァヴェリ『君主論』</strong>・エラスムス『愚神礼讃』・トマス=モア『ユートピア』・モンテーニュ・ラブレー・セルバンテス・シェイクスピア)→<strong>三巨匠</strong>(<strong>レオナルド</strong>・<strong>ミケランジェロ</strong>・<strong>ラファエロ</strong>)・ボッティチェリ・ブルネレスキ・ドナテルロ→北方ルネサンス(ファン=アイク・ブリューゲル・デューラー・ホルバイン)→<strong>ユリウス2世</strong>・<strong>レオ10世</strong>の芸術庇護と世俗化。<br>→ <span class="k">宗教改革</span>・<span class="k">大航海時代</span>・<span class="k">科学革命</span>の前提となる人間中心の文化革新。</p></p></div>
-
 </body>
 </html>
