@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THESAURUS HISTORIAE ― Ad Annales</title>
+<style>@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+.top-bar{padding:28px 32px 18px;border-bottom:1px solid rgba(201,169,110,.06)}
+.top-bar h1{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:700;color:var(--gold2);letter-spacing:3px}
+.top-bar .meta{display:flex;align-items:center;gap:16px;margin-top:4px}
+.top-bar .meta a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.4}.top-bar .meta a:hover{opacity:1}
+.top-bar .meta .cnt{font-size:11px;color:var(--text3);font-family:'Cormorant Garamond',serif;font-size:14px;letter-spacing:1px}
+.top-bar::after{content:'HISTORIAE UNIVERSALIS LECTIONARIUM · ANNALES · LXV CAPITULA';display:block;font-family:'Cormorant Garamond',serif;font-size:11px;color:var(--text3);letter-spacing:3px;margin-top:6px;opacity:.4}
+.nav-pills{display:flex;gap:5px;padding:10px 32px;flex-wrap:wrap;border-bottom:1px solid rgba(201,169,110,.04)}
+.nav-pills a{font-size:8px;padding:4px 10px;border:1px solid;border-radius:20px;text-decoration:none;transition:all .15s;opacity:.7}
+.nav-pills a:hover{opacity:1;background:rgba(201,169,110,.04)}
+.nav-pills::before{content:'· NAVIGATIO ·';font-family:'Cormorant Garamond',serif;font-size:8px;color:var(--text3);letter-spacing:3px;opacity:.3;margin-right:8px}
+.content{max-width:1100px;margin:0 auto;padding:20px 32px 80px}
+.sec{margin-bottom:32px}
+.sec-hdr{display:flex;align-items:center;gap:10px;padding:10px 0;margin-bottom:10px;border-bottom:1px solid rgba(201,169,110,.06);position:relative;padding-top:12px}
+.sec-hdr::before{content:'';display:block;width:100%;height:1px;background:linear-gradient(90deg,rgba(201,169,110,.15),rgba(201,169,110,.03));position:absolute;top:0}
+.sec-icon{font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:700;opacity:.6}
+.sec-hdr h2{font-family:'Noto Serif JP',serif;font-size:15px;font-weight:700;color:var(--gold2)}
+.sec-cnt{font-size:9px;color:var(--text3);margin-left:auto;font-family:'Cormorant Garamond',serif;font-size:12px}
+.latin{font-family:'Cormorant Garamond',serif;font-size:10px;font-weight:400;font-style:italic;color:var(--gold);margin-left:10px;letter-spacing:1px;opacity:.6}
+.sec-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:8px}
+.card{display:flex;flex-direction:column;gap:5px;padding:10px 14px;border:1px solid rgba(201,169,110,.04);border-radius:8px;background:rgba(255,255,255,.006);text-decoration:none;transition:all .2s;position:relative}
+.card:hover{background:rgba(201,169,110,.04);border-color:rgba(201,169,110,.12);transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.2)}
+.card-num{font-family:'Cormorant Garamond',serif;font-size:10px;color:var(--gold);opacity:.7;letter-spacing:.5px}
+.card-main{font-size:11px;color:var(--text);font-weight:600;line-height:1.5}
+.divider{text-align:center;padding:4px 0;border-bottom:1px solid rgba(201,169,110,.04)}
+.divider span{font-family:Cormorant Garamond,serif;font-size:9px;color:rgba(201,169,110,.15);letter-spacing:6px}
+@media(max-width:600px){
+.top-bar{padding:18px 16px 12px}
+.top-bar h1{font-size:24px}
+.nav-pills{padding:8px 16px}
+.content{padding:16px 16px 40px}
+.sec-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="top-bar"><h1>ANNALES</h1><div class="meta"><span class="cnt">LXV capitula</span><a href="index.html">&larr; Ad Indicem</a></div></div>
+<div class="divider"><span>✦ HISTORIA UNIVERSALIS ✦</span></div>
+<div class="nav-pills">
+<a href="#ch0" style="border-color:#d4c08844;color:#d4c088">0. 序章</a>
+<a href="#ch1" style="border-color:#d4c08844;color:#d4c088">I. 文明の成立と古代文明の特質</a>
+<a href="#ch2" style="border-color:#88b0d444;color:#88b0d4">II. 中央ユーラシアと東アジア世界</a>
+<a href="#ch3" style="border-color:#88d4b044;color:#88d4b0">III. 南アジア世界と東南アジア世界の展開</a>
+<a href="#ch4" style="border-color:#d4a08844;color:#d4a088">IV. 西アジアと地中海周辺の国家形成</a>
+<a href="#ch5" style="border-color:#d4888844;color:#d48888">V. イスラーム教の成立とヨーロッパ世界の</a>
+<a href="#ch6" style="border-color:#d4c08844;color:#d4c088">VI. イスラーム教の伝播と西アジアの動向</a>
+<a href="#ch7" style="border-color:#a0a0d444;color:#a0a0d4">VII. ヨーロッパ世界の変容と展開</a>
+<a href="#ch8" style="border-color:#88b0d444;color:#88b0d4">VIII. 東アジア世界の展開とモンゴル帝国</a>
+<a href="#ch9" style="border-color:#c0a0d444;color:#c0a0d4">IX. 大交易・大交流の時代</a>
+<a href="#ch10" style="border-color:#88d4b044;color:#88d4b0">X. アジアの諸帝国の繁栄</a>
+<a href="#ch11" style="border-color:#b8d08844;color:#b8d088">XI. 近世ヨーロッパ世界の動向</a>
+<a href="#ch12" style="border-color:#d4a08844;color:#d4a088">XII. 産業革命と環大西洋革命</a>
+<a href="#ch13" style="border-color:#d4888844;color:#d48888">XIII. イギリスの優位と欧米国民国家の形成</a>
+<a href="#ch14" style="border-color:#88b0d444;color:#88b0d4">XIV. アジア諸地域の動揺</a>
+<a href="#ch15" style="border-color:#88d4b044;color:#88d4b0">XV. 帝国主義とアジアの民族運動</a>
+<a href="#ch16" style="border-color:#d4c08844;color:#d4c088">XVI. 第一次世界大戦と世界の変容</a>
+<a href="#ch17" style="border-color:#a0a0d444;color:#a0a0d4">XVII. 第二次世界大戦と新しい国際秩序の形成</a>
+<a href="#ch18" style="border-color:#88b0d444;color:#88b0d4">XVIII. 冷戦と第三世界の台頭</a>
+<a href="#ch19" style="border-color:#c0a0d444;color:#c0a0d4">XIX. 冷戦の終結と今日の世界</a>
+</div>
+<div class="content">
+<section class="sec" id="ch0">
+<div class="sec-hdr"><span class="sec-icon" style="color:#d4c088">0</span><h2>序章 <span class="latin">Prologus</span></h2><span class="sec-cnt">1 sectiones</span></div>
+<div class="sec-grid">
+<a href="ann_00_0.html" class="card"><span class="card-num">0-0</span><div class="card-main">世界史へのまなざし</div></a>
+</div>
+</section>
+<section class="sec" id="ch1">
+<div class="sec-hdr"><span class="sec-icon" style="color:#d4c088">I</span><h2>文明の成立と古代文明の特質 <span class="latin">Civilizationes Antiquae</span></h2><span class="sec-cnt">5 sectiones</span></div>
+<div class="sec-grid">
+<a href="ann_01_1.html" class="card"><span class="card-num">1-1</span><div class="card-main">文明の誕生</div></a>
+<a href="ann_01_2.html" class="card"><span class="card-num">1-2</span><div class="card-main">古代オリエント文明とその周辺</div></a>
+<a href="ann_01_3.html" class="card"><span class="card-num">1-3</span><div class="card-main">南アジアの古代文明</div></a>
+<a href="ann_01_4.html" class="card"><span class="card-num">1-4</span><div class="card-main">中国の古代文明</div></a>
+<a href="ann_01_5.html" class="card"><span class="card-num">1-5</span><div class="card-main">南北アメリカ文明</div></a>
+</div>
+</section>
+<section class="sec" id="ch2">
+<div class="sec-hdr"><span class="sec-icon" style="color:#88b0d4">II</span><h2>中央ユーラシアと東アジア世界 <span class="latin">Eurasia Centralis et Oriens</span></h2><span class="sec-cnt">4 sectiones</span></div>
+<div class="sec-grid">
+<a href="ann_02_1.html" class="card"><span class="card-num">2-1</span><div class="card-main">中央ユーラシア</div></a>
+<a href="ann_02_2.html" class="card"><span class="card-num">2-2</span><div class="card-main">秦・漢帝国</div></a>
+<a href="ann_02_3.html" class="card"><span class="card-num">2-3</span><div class="card-main">中国の動乱と変容</div></a>
+<a href="ann_02_4.html" class="card"><span class="card-num">2-4</span><div class="card-main">東アジア文化圏の形成</div></a>
+</div>
+</section>
+<section class="sec" id="ch3">
+<div class="sec-hdr"><span class="sec-icon" style="color:#88d4b0">III</span><h2>南アジア世界と東南アジア世界の展開 <span class="latin">India et Asia Sudorientalis</span></h2><span class="sec-cnt">3 sectiones</span></div>
+<div class="sec-grid">
+<a href="ann_03_1.html" class="card"><span class="card-num">3-1</span><div class="card-main">仏教の成立と南アジアの統一国家</div></a>
+<a href="ann_03_2.html" class="card"><span class="card-num">3-2</span><div class="card-main">インド古典文化とヒンドゥー教の定着</div></a>
+<a href="ann_03_3.html" class="card"><span class="card-num">3-3</span><div class="card-main">東南アジア世界の形成と展開</div></a>
+</div>
+</section>
+<section class="sec" id="ch4">
+<div class="sec-hdr"><span class="sec-icon" style="color:#d4a088">IV</span><h2>西アジアと地中海周辺の国家形成 <span class="latin">Asia Occidentalis et Mare Internum</span></h2><span class="sec-cnt">4 sectiones</span></div>
+<div class="sec-grid">
+<a href="ann_04_1.html" class="card"><span class="card-num">4-1</span><div class="card-main">イラン諸国家の興亡とイラン文明</div></a>
+<a href="ann_04_2.html" class="card"><span class="card-num">4-2</span><div class="card-main">ギリシア人の都市国家</div></a>
+<a href="ann_04_3.html" class="card"><span class="card-num">4-3</span><div class="card-main">ローマと地中海支配</div></a>
+<a href="ann_04_4.html" class="card"><span class="card-num">4-4</span><div class="card-main">キリスト教の成立と発展</div></a>
+</div>
+</section>
+<section class="sec" id="ch5">
+<div class="sec-hdr"><span class="sec-icon" style="color:#d48888">V</span><h2>イスラーム教の成立とヨーロッパ世界の形成 <span class="latin">Origo Islam et Europa</span></h2><span class="sec-cnt">2 sectiones</span></div>
+<div class="sec-grid">
+<a href="ann_05_1.html" class="card"><span class="card-num">5-1</span><div class="card-main">アラブの大征服とイスラーム政権の成立</div></a>
+<a href="ann_05_2.html" class="card"><span class="card-num">5-2</span><div class="card-main">ヨーロッパ世界の形成</div></a>
+</div>
+</section>
+<section class="sec" id="ch6">
+<div class="sec-hdr"><span class="sec-icon" style="color:#d4c088">VI</span><h2>イスラーム教の伝播と西アジアの動向 <span class="latin">Diffusio Islam</span></h2><span class="sec-cnt">2 sectiones</span></div>
+<div class="sec-grid">
+<a href="ann_06_1.html" class="card"><span class="card-num">6-1</span><div class="card-main">イスラーム教の諸地域への伝播</div></a>
+<a href="ann_06_2.html" class="card"><span class="card-num">6-2</span><div class="card-main">西アジアの動向</div></a>
+</div>
+</section>
+<section class="sec" id="ch7">
+<div class="sec-hdr"><span class="sec-icon" style="color:#a0a0d4">VII</span><h2>ヨーロッパ世界の変容と展開 <span class="latin">Mutationes Europaeae</span></h2><span class="sec-cnt">4 sectiones</span></div>
+<div class="sec-grid">
+<a href="ann_07_1.html" class="card"><span class="card-num">7-1</span><div class="card-main">西ヨーロッパの封建社会とその展開</div></a>
+<a href="ann_07_2.html" class="card"><span class="card-num">7-2</span><div class="card-main">東ヨーロッパ世界の展開</div></a>
+<a href="ann_07_3.html" class="card"><span class="card-num">7-3</span><div class="card-main">西ヨーロッパ世界の変容</div></a>
+<a href="ann_07_4.html" class="card"><span class="card-num">7-4</span><div class="card-main">西ヨーロッパの中世文化</div></a>
+</div>
+</section>
+<section class="sec" id="ch8">
+<div class="sec-hdr"><span class="sec-icon" style="color:#88b0d4">VIII</span><h2>東アジア世界の展開とモンゴル帝国 <span class="latin">Oriens et Imperium Mongolicum</span></h2><span class="sec-cnt">2 sectiones</span></div>
+<div class="sec-grid">
+<a href="ann_08_1.html" class="card"><span class="card-num">8-1</span><div class="card-main">アジア諸地域の自立化と宋</div></a>
+<a href="ann_08_2.html" class="card"><span class="card-num">8-2</span><div class="card-main">モンゴルの大帝国</div></a>
+</div>
+</section>
+<section class="sec" id="ch9">
+<div class="sec-hdr"><span class="sec-icon" style="color:#c0a0d4">IX</span><h2>大交易・大交流の時代 <span class="latin">Aetas Commerciorum</span></h2><span class="sec-cnt">2 sectiones</span></div>
+<div class="sec-grid">
+<a href="ann_09_1.html" class="card"><span class="card-num">9-1</span><div class="card-main">アジア交易世界の興隆</div></a>
+<a href="ann_09_2.html" class="card"><span class="card-num">9-2</span><div class="card-main">ヨーロッパの海洋進出とアメリカ大陸の変容</div></a>
+</div>
+</section>
+<section class="sec" id="ch10">
+<div class="sec-hdr"><span class="sec-icon" style="color:#88d4b0">X</span><h2>アジアの諸帝国の繁栄 <span class="latin">Imperia Asiana</span></h2><span class="sec-cnt">3 sectiones</span></div>
+<div class="sec-grid">
+<a href="ann_10_1.html" class="card"><span class="card-num">10-1</span><div class="card-main">オスマン帝国とサファヴィー朝</div></a>
+<a href="ann_10_2.html" class="card"><span class="card-num">10-2</span><div class="card-main">ムガル帝国の興隆</div></a>
+<a href="ann_10_3.html" class="card"><span class="card-num">10-3</span><div class="card-main">清代の中国と隣接諸地域</div></a>
+</div>
+</section>
+<section class="sec" id="ch11">
+<div class="sec-hdr"><span class="sec-icon" style="color:#b8d088">XI</span><h2>近世ヨーロッパ世界の動向 <span class="latin">Europa Modernae Aetatis</span></h2><span class="sec-cnt">6 sectiones</span></div>
+<div class="sec-grid">
+<a href="ann_11_1.html" class="card"><span class="card-num">11-1</span><div class="card-main">ルネサンス</div></a>
+<a href="ann_11_2.html" class="card"><span class="card-num">11-2</span><div class="card-main">宗教改革</div></a>
+<a href="ann_11_3.html" class="card"><span class="card-num">11-3</span><div class="card-main">主権国家体制の成立</div></a>
+<a href="ann_11_4.html" class="card"><span class="card-num">11-4</span><div class="card-main">オランダ・イギリス・フランスの台頭</div></a>
+<a href="ann_11_5.html" class="card"><span class="card-num">11-5</span><div class="card-main">北欧・東欧の動向</div></a>
+<a href="ann_11_6.html" class="card"><span class="card-num">11-6</span><div class="card-main">科学革命と啓蒙思想</div></a>
+</div>
+</section>
+<section class="sec" id="ch12">
+<div class="sec-hdr"><span class="sec-icon" style="color:#d4a088">XII</span><h2>産業革命と環大西洋革命 <span class="latin">Revolutio Industrialis et Atlantica</span></h2><span class="sec-cnt">4 sectiones</span></div>
+<div class="sec-grid">
+<a href="ann_12_1.html" class="card"><span class="card-num">12-1</span><div class="card-main">産業革命</div></a>
+<a href="ann_12_2.html" class="card"><span class="card-num">12-2</span><div class="card-main">アメリカ合衆国の独立と発展</div></a>
+<a href="ann_12_3.html" class="card"><span class="card-num">12-3</span><div class="card-main">フランス革命とナポレオンの支配</div></a>
+<a href="ann_12_4.html" class="card"><span class="card-num">12-4</span><div class="card-main">中南米諸国の独立</div></a>
+</div>
+</section>
+<section class="sec" id="ch13">
+<div class="sec-hdr"><span class="sec-icon" style="color:#d48888">XIII</span><h2>イギリスの優位と欧米国民国家の形成 <span class="latin">Primatus Britannicus</span></h2><span class="sec-cnt">4 sectiones</span></div>
+<div class="sec-grid">
+<a href="ann_13_1.html" class="card"><span class="card-num">13-1</span><div class="card-main">ウィーン体制とヨーロッパの政治・社会の変動</div></a>
+<a href="ann_13_2.html" class="card"><span class="card-num">13-2</span><div class="card-main">列強体制の動揺とヨーロッパの再編成</div></a>
+<a href="ann_13_3.html" class="card"><span class="card-num">13-3</span><div class="card-main">アメリカ合衆国の発展</div></a>
+<a href="ann_13_4.html" class="card"><span class="card-num">13-4</span><div class="card-main">19世紀欧米文化の展開と市民文化の繁栄</div></a>
+</div>
+</section>
+<section class="sec" id="ch14">
+<div class="sec-hdr"><span class="sec-icon" style="color:#88b0d4">XIV</span><h2>アジア諸地域の動揺 <span class="latin">Tumultus Asiani</span></h2><span class="sec-cnt">3 sectiones</span></div>
+<div class="sec-grid">
+<a href="ann_14_1.html" class="card"><span class="card-num">14-1</span><div class="card-main">西アジア地域の変容</div></a>
+<a href="ann_14_2.html" class="card"><span class="card-num">14-2</span><div class="card-main">南アジア・東南アジアの植民地化</div></a>
+<a href="ann_14_3.html" class="card"><span class="card-num">14-3</span><div class="card-main">東アジアの激動</div></a>
+</div>
+</section>
+<section class="sec" id="ch15">
+<div class="sec-hdr"><span class="sec-icon" style="color:#88d4b0">XV</span><h2>帝国主義とアジアの民族運動 <span class="latin">Imperialismus et Motus Nationales</span></h2><span class="sec-cnt">3 sectiones</span></div>
+<div class="sec-grid">
+<a href="ann_15_1.html" class="card"><span class="card-num">15-1</span><div class="card-main">第2次産業革命と帝国主義</div></a>
+<a href="ann_15_2.html" class="card"><span class="card-num">15-2</span><div class="card-main">列強の世界分割と列強体制の二分化</div></a>
+<a href="ann_15_3.html" class="card"><span class="card-num">15-3</span><div class="card-main">アジア諸国の変革と民族運動</div></a>
+</div>
+</section>
+<section class="sec" id="ch16">
+<div class="sec-hdr"><span class="sec-icon" style="color:#d4c088">XVI</span><h2>第一次世界大戦と世界の変容 <span class="latin">Bellum Primum Mundanum</span></h2><span class="sec-cnt">3 sectiones</span></div>
+<div class="sec-grid">
+<a href="ann_16_1.html" class="card"><span class="card-num">16-1</span><div class="card-main">第一次世界大戦とロシア革命</div></a>
+<a href="ann_16_2.html" class="card"><span class="card-num">16-2</span><div class="card-main">ヴェルサイユ体制下の欧米諸国</div></a>
+<a href="ann_16_3.html" class="card"><span class="card-num">16-3</span><div class="card-main">アジア・アフリカ地域の民族運動</div></a>
+</div>
+</section>
+<section class="sec" id="ch17">
+<div class="sec-hdr"><span class="sec-icon" style="color:#a0a0d4">XVII</span><h2>第二次世界大戦と新しい国際秩序の形成 <span class="latin">Bellum Secundum Mundanum</span></h2><span class="sec-cnt">3 sectiones</span></div>
+<div class="sec-grid">
+<a href="ann_17_1.html" class="card"><span class="card-num">17-1</span><div class="card-main">世界恐慌とヴェルサイユ体制の破壊</div></a>
+<a href="ann_17_2.html" class="card"><span class="card-num">17-2</span><div class="card-main">第二次世界大戦</div></a>
+<a href="ann_17_3.html" class="card"><span class="card-num">17-3</span><div class="card-main">新しい国際秩序の形成</div></a>
+</div>
+</section>
+<section class="sec" id="ch18">
+<div class="sec-hdr"><span class="sec-icon" style="color:#88b0d4">XVIII</span><h2>冷戦と第三世界の台頭 <span class="latin">Bellum Frigidum</span></h2><span class="sec-cnt">3 sectiones</span></div>
+<div class="sec-grid">
+<a href="ann_18_1.html" class="card"><span class="card-num">18-1</span><div class="card-main">冷戦の展開</div></a>
+<a href="ann_18_2.html" class="card"><span class="card-num">18-2</span><div class="card-main">第三世界の台頭とキューバ危機</div></a>
+<a href="ann_18_3.html" class="card"><span class="card-num">18-3</span><div class="card-main">冷戦体制の動揺</div></a>
+</div>
+</section>
+<section class="sec" id="ch19">
+<div class="sec-hdr"><span class="sec-icon" style="color:#c0a0d4">XIX</span><h2>冷戦の終結と今日の世界 <span class="latin">Mundus Hodiernus</span></h2><span class="sec-cnt">4 sectiones</span></div>
+<div class="sec-grid">
+<a href="ann_19_1.html" class="card"><span class="card-num">19-1</span><div class="card-main">産業構造の変容</div></a>
+<a href="ann_19_2.html" class="card"><span class="card-num">19-2</span><div class="card-main">冷戦の終結</div></a>
+<a href="ann_19_3.html" class="card"><span class="card-num">19-3</span><div class="card-main">今日の世界</div></a>
+<a href="ann_19_4.html" class="card"><span class="card-num">19-4</span><div class="card-main">現代文明の諸相</div></a>
+</div>
+</section>
+</div>
+</body>
+</html>
