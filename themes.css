@@ -1,0 +1,34 @@
+/* =====================================================
+   THESAURUS HISTORIAE ― themes.css(LUX固定版)
+   生成りの紙 + 墨の本文 + 朱筆(★語) + 金茶の構造色。
+   retheme_inject.py が各HTMLに埋め込む。編集後は再実行。
+   ===================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&display=swap');
+
+:root { --axr: 201, 169, 110; --shu: #c9a96e; }
+
+html[data-theme="lux"] {
+  --bg:#f1ecdf;
+  --gold:#8b6f4e; --gold2:#59452a; --gold3:#9c855f;
+  --text:#2b241b; --text2:#6d6353; --text3:#a89a80;
+  --line:rgba(43,36,27,.16); --border:rgba(43,36,27,.16);
+  --gold-dim:rgba(139,111,78,.16);
+  --axr:139,111,78;
+  --shu:#a2331e;
+}
+
+html[data-theme="lux"] body {
+  background:var(--bg);
+  font-family:'Shippori Mincho','Noto Serif JP',serif;
+}
+html[data-theme="lux"] body::before { opacity:.55; }
+html[data-theme="lux"] p { line-height:2.05; }
+html[data-theme="lux"] * { text-shadow:none !important; }
+
+/* 強調の二段化: 通常太字=墨 / ★語=朱 */
+html[data-theme="lux"] strong { color:var(--text) !important; font-weight:600; }
+html[data-theme="lux"] span.k,
+html[data-theme="lux"] span.k + strong,
+html[data-theme="lux"] .node-title .k { color:var(--shu) !important; }
+html[data-theme="lux"] span.k + strong { font-weight:700; }
+html[data-theme="lux"] ::selection { background:rgba(162,51,30,.18); }

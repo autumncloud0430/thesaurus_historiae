@@ -1,0 +1,11 @@
+# Claude Code local session data
+.claude/
+
+# Internal authoring tools, term registry, and scratch/working files
+# (not part of the published site)
+_tools/
+_work/
+*.csv
+*.txt
+*.py
+*.bak

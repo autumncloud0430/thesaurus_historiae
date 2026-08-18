@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>タイ史</title><style>@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048;--border:rgba(var(--axr),.08)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+.hdr{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.hdr h1{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2)}
+.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
+.flow{max-width:760px;margin:0 auto;padding:24px 20px 60px}
+.phase{position:relative;margin-bottom:2px;padding:16px 16px 16px 60px;border-left:2px solid rgba(var(--axr),.08);margin-left:30px}
+.phase:last-child{border-left-color:transparent}
+.phase-label{position:absolute;left:-42px;top:16px;width:36px;font-family:'Cormorant Garamond',serif;font-size:10px;font-weight:700;color:var(--text3);text-align:right;line-height:1.3}
+.phase::before{content:'';position:absolute;left:-5px;top:22px;width:8px;height:8px;border-radius:50%;background:var(--bg);border:2px solid rgba(var(--axr),.25)}
+.node{background:rgba(255,255,255,.015);border:1px solid rgba(255,255,255,.04);border-radius:8px;padding:10px 14px;margin-bottom:8px;border-left:3px solid transparent}
+.node:hover{background:rgba(255,255,255,.03)}
+.node-title{font-family:'Noto Serif JP',serif;font-size:12px;font-weight:700;color:var(--gold2);margin-bottom:2px}
+.node-year{font-family:'Cormorant Garamond',serif;font-size:11px;color:var(--gold);opacity:.6;margin-bottom:4px}
+.node-desc{font-size:10px;color:var(--text2);line-height:1.7}
+.node-desc strong{color:var(--text);font-weight:600}
+.node.key{background:rgba(var(--axr),.04);border-color:rgba(var(--axr),.12)}
+.note{text-align:center;padding:8px 20px 32px;max-width:720px;margin:0 auto}.note p{font-size:11px;color:#b0aba2;line-height:1.8}.note strong{color:var(--gold)}
+.k{color:var(--text)}
+.node-title .k{color:var(--gold2)}
+.note .k{color:var(--gold)}
+.p1 .node{border-left-color:rgba(120,90,70,.3)}.p1::before{border-color:rgba(120,90,70,.5);background:rgba(120,90,70,.15)}
+.p2 .node{border-left-color:rgba(170,130,90,.3)}.p2::before{border-color:rgba(170,130,90,.5);background:rgba(170,130,90,.15)}
+.p3 .node{border-left-color:rgba(180,140,60,.3)}.p3::before{border-color:rgba(180,140,60,.5);background:rgba(180,140,60,.15)}
+.p4 .node{border-left-color:rgba(100,130,180,.3)}.p4::before{border-color:rgba(100,130,180,.4)}
+.p5 .node{border-left-color:rgba(80,150,120,.3)}.p5::before{border-color:rgba(80,150,120,.5);background:rgba(80,150,120,.15)}
+.p6 .node{border-left-color:rgba(180,80,80,.3)}.p6::before{border-color:rgba(180,80,80,.4)}
+.p7 .node{border-left-color:rgba(155,126,194,.3)}
+.p7::before{border-color:rgba(155,126,194,.5);background:rgba(155,126,194,.15)}
+@media(max-width:600px){
+.hdr{padding:10px 12px}.hdr h1{font-size:12px}
+.flow{padding:16px 10px 40px}
+.phase{padding:12px 10px 12px 44px;margin-left:20px}
+.phase-label{left:-30px;width:28px;font-size:8px}
+.node{padding:8px 10px}.node-title{font-size:11px}.node-desc{font-size:9px}
+}
+</style><style id="thThemes">/* =====================================================
+   THESAURUS HISTORIAE ― themes.css(LUX固定版)
+   生成りの紙 + 墨の本文 + 朱筆(★語) + 金茶の構造色。
+   retheme_inject.py が各HTMLに埋め込む。編集後は再実行。
+   ===================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&display=swap');
+
+:root { --axr: 201, 169, 110; --shu: #c9a96e; }
+
+html[data-theme="lux"] {
+  --bg:#f1ecdf;
+  --gold:#8b6f4e; --gold2:#59452a; --gold3:#9c855f;
+  --text:#2b241b; --text2:#6d6353; --text3:#a89a80;
+  --line:rgba(43,36,27,.16); --border:rgba(43,36,27,.16);
+  --gold-dim:rgba(139,111,78,.16);
+  --axr:139,111,78;
+  --shu:#a2331e;
+}
+
+html[data-theme="lux"] body {
+  background:var(--bg);
+  font-family:'Shippori Mincho','Noto Serif JP',serif;
+}
+html[data-theme="lux"] body::before { opacity:.55; }
+html[data-theme="lux"] p { line-height:2.05; }
+html[data-theme="lux"] * { text-shadow:none !important; }
+
+/* 強調の二段化: 通常太字=墨 / ★語=朱 */
+html[data-theme="lux"] strong { color:var(--text) !important; font-weight:600; }
+html[data-theme="lux"] span.k,
+html[data-theme="lux"] span.k + strong,
+html[data-theme="lux"] .node-title .k { color:var(--shu) !important; }
+html[data-theme="lux"] span.k + strong { font-weight:700; }
+html[data-theme="lux"] ::selection { background:rgba(162,51,30,.18); }
+</style><script id="thScript">document.documentElement.setAttribute('data-theme','lux');</script></head><body>
+<div class="hdr"><h1>タイ史 ― スコータイ・アユタヤ・トンブリー・ラタナコーシン朝・チャクリ改革・立憲革命・ラーマ9世まで(13C-現在)</h1><a href="index.html">&larr; Ad Indicem</a></div>
+<div class="flow">
+<div class="phase p1"><div class="phase-label">スコータイ朝
+アユタヤ朝</div>
+<div class="node key"><div class="node-title"><span class="k">★</span>スコータイ朝とアユタヤ朝</div>
+<div class="node-year">13-18世紀</div>
+<div class="node-desc">現代タイの民族<strong>タイ人</strong>(シャム人)は、もともと中国南部=雲南地方の山岳系民族で、7-13世紀にかけて少しずつ南下してインドシナ半島中央部に定着した。先住のモン人・クメール人・マレー人が形成していた高度文明地帯に流入したタイ人は、その文化を吸収しながら独自の王国を築いていく。タイ人南下以前の東南アジア海域では、スマトラ島の<strong>シュリーヴィジャヤ</strong>(漢籍では<strong>三仏斉</strong>とも記され、7-13世紀)がマラッカ海峡を制圧して大乗仏教の海上王国を築き、マレー半島南部のタイ地域もその影響下にあった。<br><br>タイ人最初の本格的統一王朝が、13世紀にチャオプラヤ川中流に成立した<span class="k">★</span><strong>スコータイ朝</strong>(1238/57-15世紀)である。これはクメール系アンコール朝の北辺の支配下にあった<strong>スコータイ</strong>地方で、タイ人の首長たちがクメール支配を倒して自立、建国した。タイ史最初の独立王朝として、後のタイ国民の精神的故郷とされる。<br><br>スコータイ朝の最盛期を築いたのが第3代<span class="k">★</span><strong>ラームカムヘーン</strong>大王(在位1279頃-1298頃)である。彼は周辺の小国を征服して領土を北のラオス・南のマレー半島まで拡大、また独自の文字「タイ文字」を1283年に創製したと伝えられる。タイ文字はクメール文字を改良した独自の表音文字で、現代タイ語表記の基礎となっている。さらに彼の治世にスリランカから上座部仏教を導入、これがタイの国教となる宗教伝統の起点となった。スコータイ朝のクメール風寺院遺跡・仏像彫刻は、タイ独自の様式に発展しつつ、後のタイ仏教美術の祖型を作った。<br><br>14世紀半ば、チャオプラヤ川下流に新興勢力が興った。これがウートン王(後のラーマーティボディー1世)が1351年に建国した<span class="k">★</span><strong>アユタヤ朝</strong>(1351-1767)で、首都<strong>アユタヤ</strong>を中心とする海洋交易国家となった。アユタヤはチャオプラヤ川の中州にある天然の要害で、周囲に運河を巡らした「東のヴェニス」的水上都市として発展、最盛期には世界有数の国際商業都市となった。<br><br>アユタヤ朝は400年以上にわたって存続、その間に北のスコータイを併合(15世紀)、東のクメール王国の旧アンコール地方を征服(1431年アンコール陥落)、西のミャンマー(ビルマ)諸王朝との長期戦争、南のマレー半島への進出など、東南アジア大陸部の覇権を握る大帝国として君臨した。17世紀のナーラーイ王の治世にはフランス・オランダ・イギリス・日本などの商人が訪れる国際都市となり、フランス・ルイ14世の使節も派遣された記録が残る。1767年、ビルマのコンバウン朝の侵攻で首都アユタヤは陥落・破壊され、王朝は滅亡した。同時期、東隣のメコン川中流域では、タイ人と同系統のタイ系民族である<strong>ラオ人</strong>が14世紀にファー=グム(ファー=ングム)のもとで「百万頭の象」を意味する<strong>ラーンサーン王国</strong>(ランサン王国、1353-1707)を建国していた。これが現ラオスの起源にあたる。同王国も1707年に内紛で分裂し、北部の<strong>ルアンプラバン王国</strong>、中部のヴィエンチャン王国、南部のチャムパーサック王国の三国に分かれ、18世紀末以降にシャム(タイ)のラタナコーシン朝の宗主下に組み込まれていく。</div>
+</div>
+</div>
+<div class="phase p2"><div class="phase-label">ラタナコーシン朝
+チャクリ改革</div>
+<div class="node key"><div class="node-title"><span class="k">★</span>トンブリー朝・ラタナコーシン朝とチャクリ改革</div>
+<div class="node-year">1767-1925</div>
+<div class="node-desc">アユタヤ陥落の混乱を収拾したのが、中華系の将軍タークシンである。彼はチャオプラヤ川下流の新拠点トンブリーを首都として<strong>トンブリー朝</strong>(1767-1782)を樹立、タイ王国を再興した。しかし精神的不安定で晩年は政治を混乱させ、1782年にクーデタで失脚、処刑された。<br><br>タークシンに代わって即位したのが、彼の有力武将であった<span class="k">★</span><strong>ラーマ1世</strong>(在位1782-1809)である。彼はチャオプラヤ川対岸の新都<span class="k">★</span><strong>バンコク</strong>に遷都、ここに<span class="k">★</span><strong>ラタナコーシン朝</strong>(チャクリ朝、バンコク朝)を樹立、これが現代まで続くタイ王室の起源である。ラタナコーシン朝はアユタヤの政治伝統を継承しつつ、絶対君主制と仏教保護を柱とする統治体制を確立、19世紀の西洋帝国主義の波を乗り切るための基盤を整えた。<br><br>19世紀後半、東南アジア各地が次々と植民地化されていくなか、タイは独立を維持した唯一の東南アジア国家として特異な歴史を歩む。その鍵となったのが、ラタナコーシン朝の19世紀後半の二人の改革君主である。<br><br><span class="k">★</span><strong>ラーマ4世</strong>(在位1851-1868)は青年時代に長期の僧侶修行を経験、その間に英語・ラテン語・天文学・近代科学を独学した教養人であった。彼は西洋諸国との不平等条約を覚悟の上で締結する道を選び、開国による近代化を進めた。1855年、彼はイギリスの外交官<strong>ジョン=バウリング</strong>と<strong>バウリング条約</strong>を締結、これがタイ最初の不平等条約=治外法権・関税自主権喪失を伴う通商条約であった。続いてアメリカ・フランス・他の欧州諸国とも同様の条約を結んでいったが、これによってタイは西洋諸国を国内に引き込み、それらの相互牽制を利用して独立を保持する外交戦略を採用した。タイ国王のことを当時の欧州人が「シャム王」と呼んだ国名<span class="k">★</span><strong>シャム</strong>は、20世紀前半まで国際的に通用する。<br><br>続く<span class="k">★</span><strong>ラーマ5世</strong>=<span class="k">★</span><strong>チュラロンコン</strong>(在位1868-1910)は近代化を本格化させた。彼は奴隷制廃止(1874-1905年の段階的廃止)、行政の中央集権化、近代教育制度の導入、軍隊の近代化、欧州型法制度の整備など包括的改革を実施、これらは<strong>チャクリ改革</strong>と総称される。彼自身ヨーロッパに2度長期訪問してウィーン・パリ・ベルリン・ロンドンの宮廷で歓迎を受け、子供たちもヨーロッパに留学させて近代的人材を育てた。ラーマ5世のチャクリ改革によってタイは東南アジアで唯一独立を維持する近代国家となる礎を築いた。</div>
+</div>
+</div>
+<div class="phase p3"><div class="phase-label">立憲革命
+現代タイ</div>
+<div class="node key"><div class="node-title"><span class="k">★</span>立憲革命から現代タイへ</div>
+<div class="node-year">1932-現在</div>
+<div class="node-desc">20世紀に入ると、タイの絶対王政には改革派の不満が募った。1932年6月24日、ヨーロッパ留学経験を持つ少壮軍人・文官グループが無血クーデタで権力を掌握、絶対王政から立憲君主制への転換を実現した。これが<strong>タイ立憲革命</strong>である。<strong>ラーマ7世</strong>(在位1925-1935)は立憲君主として残ったが、1935年に退位して亡命、子のラーマ8世を経て、後の戦後タイの長期君主ラーマ9世(プーミポン=アドゥンラヤデート、在位1946-2016)に繋がる。<br><br>立憲革命後の政治は、軍人と文民の対立を軸に展開、最終的に1938年から<span class="k">★</span><strong>ピブン</strong>(1897-1964)率いる軍部派が実権を握った。ピブン政権は1939年に国名を「シャム」から「タイ(自由の意)」に変更、民族主義的国家建設路線を採用した。第二次大戦中、ピブン政権は日本と同盟、1941年に日本軍のマレー進駐を黙認、英米に宣戦布告した。1944年戦況悪化でピブンは失脚、戦後の戦犯訴追を免れて1948年に首相に復帰、1957年まで権力を握り続けた。<br><br>戦後のタイは冷戦下で米国と緊密な同盟を結び、ベトナム戦争では米軍の重要な後方基地となった。国内政治は軍部クーデタの繰り返しで不安定だったが、長く在位した<strong>ラーマ9世</strong>(在位1946-2016)が国民統合の精神的象徴として君臨、彼の70年間に及ぶ統治はタイ国民の精神的支柱となった。<br><br>経済的には1980年代から急速な経済成長を遂げ、東南アジア新興工業国として台頭、観光・農産物輸出・自動車産業を主な経済基盤としつつ、ASEAN中核国家としての地位を確立した。2010年代以降は、タクシン派(地方農民層基盤)と王党派(都市中産階級・軍部)の政治対立が継続、軍部クーデタ(2006年、2014年)が起こったが、それでも東南アジアで最も安定的に独立を維持してきた国家として、独自の歴史的位置を持ち続けている。</div>
+</div>
+</div>
+</div>
+
+<div class="note"><p>タイ通史の流れ ─ 13世紀タイ人がクメール支配を脱して★スコータイ朝を建国、第3代★ラームカムヘーン大王がタイ文字創製・上座部仏教導入→1351年★アユタヤ朝建国、海洋交易国家として400年繁栄、1431年クメールのアンコール陥落→1767年ビルマのコンバウン朝侵攻でアユタヤ滅亡→トンブリー朝経て1782年★ラーマ1世がバンコク遷都、ラタナコーシン朝(チャクリ朝)樹立→19世紀後半、東南アジアで唯一独立を維持。ラーマ4世(モンクット)が1855年バウリング条約で開国、ラーマ5世(★チュラロンコン)がチャクリ改革で奴隷制廃止・行政中央集権化・近代教育を実現、国名はシャム→1932タイ立憲革命で立憲君主制、ラーマ7世退位→1938ピブン軍部政権、1939国名「タイ」に変更、第二次大戦中は日本と同盟→戦後ラーマ9世(プーミポン)が70年在位で国民統合の象徴→1980年代以降の経済成長でASEAN中核国家へ。</p></div>
+</body></html>

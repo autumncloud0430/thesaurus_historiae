@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>台湾史</title><style>@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048;--border:rgba(var(--axr),.08)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+.hdr{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.hdr h1{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2)}
+.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
+.flow{max-width:760px;margin:0 auto;padding:24px 20px 60px}
+.phase{position:relative;margin-bottom:2px;padding:16px 16px 16px 60px;border-left:2px solid rgba(var(--axr),.08);margin-left:30px}
+.phase:last-child{border-left-color:transparent}
+.phase-label{position:absolute;left:-42px;top:16px;width:36px;font-family:'Cormorant Garamond',serif;font-size:10px;font-weight:700;color:var(--text3);text-align:right;line-height:1.3}
+.phase::before{content:'';position:absolute;left:-5px;top:22px;width:8px;height:8px;border-radius:50%;background:var(--bg);border:2px solid rgba(var(--axr),.25)}
+.node{background:rgba(255,255,255,.015);border:1px solid rgba(255,255,255,.04);border-radius:8px;padding:10px 14px;margin-bottom:8px;border-left:3px solid transparent}
+.node:hover{background:rgba(255,255,255,.03)}
+.node-title{font-family:'Noto Serif JP',serif;font-size:12px;font-weight:700;color:var(--gold2);margin-bottom:2px}
+.node-year{font-family:'Cormorant Garamond',serif;font-size:11px;color:var(--gold);opacity:.6;margin-bottom:4px}
+.node-desc{font-size:10px;color:var(--text2);line-height:1.7}
+.node-desc strong{color:var(--text);font-weight:600}
+.node.key{background:rgba(var(--axr),.04);border-color:rgba(var(--axr),.12)}
+.note{text-align:center;padding:8px 20px 32px;max-width:720px;margin:0 auto}.note p{font-size:11px;color:#b0aba2;line-height:1.8}.note strong{color:var(--gold)}
+.k{color:var(--text)}
+.node-title .k{color:var(--gold2)}
+.note .k{color:var(--gold)}
+.p1 .node{border-left-color:rgba(120,90,70,.3)}.p1::before{border-color:rgba(120,90,70,.5);background:rgba(120,90,70,.15)}
+.p2 .node{border-left-color:rgba(170,130,90,.3)}.p2::before{border-color:rgba(170,130,90,.5);background:rgba(170,130,90,.15)}
+.p3 .node{border-left-color:rgba(180,140,60,.3)}.p3::before{border-color:rgba(180,140,60,.5);background:rgba(180,140,60,.15)}
+.p4 .node{border-left-color:rgba(100,130,180,.3)}.p4::before{border-color:rgba(100,130,180,.4)}
+.p5 .node{border-left-color:rgba(80,150,120,.3)}.p5::before{border-color:rgba(80,150,120,.5);background:rgba(80,150,120,.15)}
+.p6 .node{border-left-color:rgba(180,80,80,.3)}.p6::before{border-color:rgba(180,80,80,.4)}
+@media(max-width:600px){
+.hdr{padding:10px 12px}.hdr h1{font-size:12px}
+.flow{padding:16px 10px 40px}
+.phase{padding:12px 10px 12px 44px;margin-left:20px}
+.phase-label{left:-30px;width:28px;font-size:8px}
+.node{padding:8px 10px}.node-title{font-size:11px}.node-desc{font-size:9px}
+}
+</style><style id="thThemes">/* =====================================================
+   THESAURUS HISTORIAE ― themes.css(LUX固定版)
+   生成りの紙 + 墨の本文 + 朱筆(★語) + 金茶の構造色。
+   retheme_inject.py が各HTMLに埋め込む。編集後は再実行。
+   ===================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&display=swap');
+
+:root { --axr: 201, 169, 110; --shu: #c9a96e; }
+
+html[data-theme="lux"] {
+  --bg:#f1ecdf;
+  --gold:#8b6f4e; --gold2:#59452a; --gold3:#9c855f;
+  --text:#2b241b; --text2:#6d6353; --text3:#a89a80;
+  --line:rgba(43,36,27,.16); --border:rgba(43,36,27,.16);
+  --gold-dim:rgba(139,111,78,.16);
+  --axr:139,111,78;
+  --shu:#a2331e;
+}
+
+html[data-theme="lux"] body {
+  background:var(--bg);
+  font-family:'Shippori Mincho','Noto Serif JP',serif;
+}
+html[data-theme="lux"] body::before { opacity:.55; }
+html[data-theme="lux"] p { line-height:2.05; }
+html[data-theme="lux"] * { text-shadow:none !important; }
+
+/* 強調の二段化: 通常太字=墨 / ★語=朱 */
+html[data-theme="lux"] strong { color:var(--text) !important; font-weight:600; }
+html[data-theme="lux"] span.k,
+html[data-theme="lux"] span.k + strong,
+html[data-theme="lux"] .node-title .k { color:var(--shu) !important; }
+html[data-theme="lux"] span.k + strong { font-weight:700; }
+html[data-theme="lux"] ::selection { background:rgba(162,51,30,.18); }
+</style><script id="thScript">document.documentElement.setAttribute('data-theme','lux');</script></head><body>
+<div class="hdr"><h1>台湾史 ― オランダ・スペイン進出から鄭氏台湾・清朝・日本統治・国民党政権・民主化まで(17C-現在)</h1><a href="index.html">&larr; Ad Indicem</a></div>
+<div class="flow">
+<div class="phase p1"><div class="phase-label">近世台湾
+鄭氏台湾</div>
+<div class="node key"><div class="node-title"><span class="k">★</span>近世台湾 ― 鄭成功と清朝編入</div>
+<div class="node-year">17-19世紀</div>
+<div class="node-desc">台湾島は、東シナ海と南シナ海の境に位置する全長400km・東西150kmの大きな島で、北端は日本の南西諸島(沖縄・八重山)に接近し、南端はバシー海峡を介してフィリピン・ルソン島と対峙する、東アジア海域の戦略的要衝に位置する。先住民族(オーストロネシア系の高山族・平埔族)が長らく独立的に居住していたが、本格的に国際舞台に登場するのは16世紀大航海時代以降である。<br><br>ポルトガル船が1554年に台湾を発見、「美しい島」を意味するイラ=フォルモサ(イルハ=フォルモサ)と命名、これがその後の西洋諸国による台湾の呼称「フォルモサ」の起源となった。17世紀前半、オランダ東インド会社が1624年に台湾南部の<strong>ゼーランディア城</strong>(現台南)に拠点を築き、1626年からはスペインが台湾北部にも進出、両者は1642年までに台湾全島の西半分をオランダが支配する形で決着した。オランダは台湾を中国本土・日本・東南アジアを結ぶ中継基地として運営、福建・広東からの漢族移民を呼び寄せて開拓を進めた。<br><br>17世紀半ば、中国大陸では明朝が清朝に取って代わられた。明朝復興運動を担った海上勢力の領袖が、福建出身の<span class="k">★</span><strong>鄭成功</strong>(1624-1662)である。彼は母が日本人(田川マツ、肥前国平戸生まれ)・父が福建の海賊兼商人鄭芝龍という国際的背景を持ち、明朝最後の皇族・隆武帝から国姓「朱」を授けられたことから「国姓爺(コクセンヤ)」と尊称された。日本では江戸時代の浄瑠璃『国性爺合戦』(近松門左衛門作)の主人公として有名で、現代でも東アジア各地で英雄として記憶されている。<br><br>鄭成功は東シナ海・南シナ海を支配する海上勢力として、長く清朝に抵抗を続けたが、本土での反撃が困難になると、1661年に2万5千の軍を率いて台湾に渡海、オランダ東インド会社のゼーランディア城を1662年2月に陥落させ、オランダ勢力を台湾から駆逐した。鄭成功はその直後の1662年6月に病没したが、子の鄭経・孫の鄭克塽が王朝を継承、<strong>鄭氏台湾</strong>(1662-1683)として20年余り台湾を統治した。鄭氏は明朝復興を旗印とし続け、漢族文化(科挙制度・儒教教育・漢字)を本格的に台湾に持ち込んだ最初の政権となった。<br><br>1683年、清の康熙帝は施琅率いる水軍を派遣、澎湖海戦で鄭氏水軍を撃破、鄭氏台湾は降伏、清朝に編入された。清朝の台湾統治はその後200年余続いたが、19世紀後半まで「化外の地」=辺境として消極的経営に終始した。</div>
+</div>
+</div>
+<div class="phase p2"><div class="phase-label">日本統治</div>
+<div class="node key"><div class="node-title"><span class="k">★</span>日本統治と中華民国編入</div>
+<div class="node-year">1874-1945</div>
+<div class="node-desc">19世紀後半、台湾は東アジア国際関係の焦点となった。1871年に琉球(現沖縄)宮古島の漁民が台湾南部に漂着、現地原住民に殺害される事件が発生、日本の明治政府は1874年5月に「日本人保護」を名目に<strong>台湾出兵</strong>を実施、3000人の軍を派遣して台湾南部の原住民集落を制圧した。清朝は当初台湾は清の領土ではないと弁明、後に英国の仲介で日本と妥協、賠償金を支払って撤兵させた。この事件は、近代日本の最初の海外軍事行動であり、その後の対外膨張の出発点となった。<br><br>清朝はこの事件を契機に台湾の重要性を認識、1885年に台湾を福建省から分離して台湾省に昇格、近代化政策(鉄道建設・電報網整備・郵便制度導入)を進めた。だが1894-95年の日清戦争で清が日本に敗北、1895年4月の下関条約で台湾・澎湖諸島は日本に割譲された。日本軍が上陸すると、台湾人は短期間ながら「台湾民主国」を樹立して抵抗したが、半年以内に鎮圧された。これによって台湾は1895年から1945年までの50年間、日本の植民地として統治された。<br><br>日本統治期の台湾は、初期(1895-1918)の武力鎮圧期、中期(1918-1937)の同化期、後期(1937-1945)の皇民化政策期に分かれる。統治機関として日本政府は<strong>台湾総督府</strong>を台北に置き、軍人(初代乃木希典・第4代児玉源太郎ら)・後に文官を総督として派遣し台湾を統治した。総督府による近代化政策で、台湾全土に鉄道(縦貫鉄道)・道路・港湾・電力・上水道・近代医療制度が整備され、サトウキビ・米の二大商品作物の大規模商業生産が確立された。教育面では小学校(公学校)・中学校・高等学校・帝国大学(台北帝国大学、1928年設立)が整備、台湾人の知的エリートが育成されたが、政治的権利の剥奪と社会的差別は続いた。<br><br>1937年の日中戦争勃発で日本は台湾人の「日本人化」を急務とする皇民化政策を実施、台湾語使用禁止・日本式氏名強制・神社参拝強制などを進めた。1945年8月、日本敗戦により台湾は日本支配から離脱、中華民国(国民党政権)に編入された。</div>
+</div>
+</div>
+<div class="phase p3"><div class="phase-label">戦後台湾
+民主化</div>
+<div class="node key"><div class="node-title"><span class="k">★</span>戦後台湾と民主化</div>
+<div class="node-year">1945-現在</div>
+<div class="node-desc">1945年10月25日、中華民国軍が日本軍から台湾を接収、台湾は中華民国の一省として組み込まれた。だが、中国本土から派遣された国民党官吏の腐敗・専横が台湾人の怒りを呼び、1947年2月28日にタバコ密売摘発を発端とする台湾人の抗議運動が始まり、これに対する国民党軍の組織的虐殺で2-3万人の台湾人が殺害される<strong>二・二八事件</strong>が起こった。<br><br>1949年、中国本土の国共内戦で蒋介石率いる中華民国政府が敗北、約100万人の国民党関係者・軍人が台湾へ逃れ、中華民国政府は台北を「臨時首都」とした。蒋介石は1949年5月に台湾全土に<strong>戒厳令</strong>を発令、共産党シンパや台湾独立論者を徹底的に弾圧する「白色テロ」が約40年間続いた。同時に経済面では、米国の援助と日本統治期に整備されたインフラを基盤に、1950-60年代に農業改革、1960-70年代に輸出指向工業化を進め、80年代には「アジア四小龍」の一つに数えられる新興工業国家として台頭した。<br><br>民主化への転機を作ったのが、台湾人として初めて中華民国総統となった<span class="k">★</span><strong>李登輝</strong>(1923-2020、総統在位1988-2000)である。その先代の蒋経国は、中国本土の中華人民共和国に対しては「不接触・不談判・不妥協」の<strong>三不政策</strong>(1979年策定)を堅持して中華民国としての正統性を主張する一方、対内的には開放路線を進め、1987年7月に<strong>戒厳令解除</strong>を断行した。1988年に蒋経国が死去すると、副総統だった李登輝が総統に昇格、国民党内の本省人(台湾系)派の領袖として政治改革を進めた。李登輝は野党(民主進歩党)の合法化、国会議員の改選、総統直接選挙制の導入(1996年)など、台湾の民主化を着実に進めた。1996年3月の最初の総統直接選挙では李登輝自身が当選、台湾は事実上の独立的民主主義国家として国際社会に登場した。<br><br>2000年に民主進歩党の陳水扁が総統に当選、初の政権交代を達成、台湾アイデンティティの強化を進めた。2008年に国民党の馬英九が政権を奪還、中国大陸との経済関係を緊密化した。2016年、民進党の<span class="k">★</span><strong>蔡英文</strong>(1956-)が女性として初の総統に当選、2020年に再選、香港の民主化抑圧に対する反対と台湾アイデンティティ強化を進め、米中対立の中で台湾の国際的位置を強化した。2024年の総統選挙では、民進党の頼清徳が当選、民進党の政権が3期連続で続いている。<br><br>現代の台湾は、中華人民共和国が「台湾は中国の一部」と主張する一方、事実上の独立国家として民主主義・市場経済・先進的半導体産業(TSMCを中心とする)で世界経済の中核を担っている。台湾海峡をめぐる緊張は21世紀の東アジア国際政治の最大の焦点となっている。</div>
+</div>
+</div>
+</div>
+
+<div class="note"><p>台湾通史の流れ ─ 17世紀前半オランダ・スペインが進出、ゼーランディア城拠点→1661年明朝復興運動の★鄭成功がオランダを駆逐、鄭氏台湾(1662-83)成立、漢族文化を本格的に台湾に持ち込む→1683清朝編入、200年余「化外の地」として消極的経営→1874明治政府の台湾出兵=日本最初の海外軍事行動→1895日清戦争下関条約で日本に割譲、50年の日本植民地統治期(近代化と差別)→1945日本敗戦で中華民国編入、1947二・二八事件、1949国民党政権が台北退避、戒厳令40年→1987戒厳令解除→★李登輝総統(1988-2000)が民主化進展、1996総統直接選挙→2000陳水扁で初の政権交代、2008馬英九、2016★蔡英文初の女性総統(再選2020)、2024頼清徳、民進党政権継続→米中対立下で台湾は事実上の独立民主国家として半導体産業(TSMC)で世界経済の中核を担う。</p></div>
+</body></html>

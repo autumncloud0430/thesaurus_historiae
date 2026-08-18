@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>ANNALES 1-1 文明の誕生</title><style>@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048;--border:rgba(var(--axr),.08)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+.hdr{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.hdr h1{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2);flex:1;min-width:200px}
+.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
+.flow{max-width:760px;margin:0 auto;padding:24px 20px 60px}
+.phase{position:relative;margin-bottom:2px;padding:16px 16px 16px 60px;border-left:2px solid rgba(var(--axr),.08);margin-left:30px}
+.phase:last-child{border-left-color:transparent}
+.phase-label{position:absolute;left:-42px;top:16px;width:36px;font-family:'Cormorant Garamond',serif;font-size:10px;font-weight:700;color:var(--text3);text-align:right;line-height:1.3}
+.phase::before{content:'';position:absolute;left:-5px;top:22px;width:8px;height:8px;border-radius:50%;background:var(--bg);border:2px solid rgba(var(--axr),.25)}
+.node{background:rgba(255,255,255,.015);border:1px solid rgba(255,255,255,.04);border-radius:8px;padding:10px 14px;margin-bottom:8px;border-left:3px solid transparent}
+.node:hover{background:rgba(255,255,255,.03)}
+.node-title{font-family:'Noto Serif JP',serif;font-size:12px;font-weight:700;color:var(--gold2);margin-bottom:2px}
+.node-year{font-family:'Cormorant Garamond',serif;font-size:11px;color:var(--gold);opacity:.6;margin-bottom:4px}
+.node-desc{font-size:10px;color:var(--text2);line-height:1.7}
+.node-desc strong{color:var(--text);font-weight:600}
+.node.key{background:rgba(var(--axr),.04);border-color:rgba(var(--axr),.12)}
+.note{text-align:center;padding:8px 20px 32px;max-width:720px;margin:0 auto}.note p{font-size:11px;color:#b0aba2;line-height:1.8}.note strong{color:var(--gold)}
+.k{color:var(--text)}.node-title .k{color:var(--gold2)}.note .k{color:var(--gold)}
+.p1 .node{border-left-color:rgba(180,140,60,.3)}.p1::before{border-color:rgba(180,140,60,.5);background:rgba(180,140,60,.15)}
+.p2 .node{border-left-color:rgba(180,80,80,.3)}.p2::before{border-color:rgba(180,80,80,.4);background:rgba(180,80,80,.15)}
+.p3 .node{border-left-color:rgba(100,140,180,.3)}.p3::before{border-color:rgba(100,140,180,.4);background:rgba(100,140,180,.15)}
+.p4 .node{border-left-color:rgba(100,160,120,.3)}.p4::before{border-color:rgba(100,160,120,.4);background:rgba(100,160,120,.15)}
+.p5 .node{border-left-color:rgba(160,100,160,.3)}.p5::before{border-color:rgba(160,100,160,.4);background:rgba(160,100,160,.15)}
+.bottom-nav{max-width:720px;margin:0 auto;padding:16px 20px 60px;border-top:1px solid var(--border);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:11px}
+.bottom-nav a{color:var(--gold);text-decoration:none;opacity:.6}
+.bottom-nav a:hover{opacity:1}
+@media(max-width:600px){
+.hdr{padding:10px 12px}.hdr h1{font-size:12px}
+.flow{padding:16px 10px 40px}
+.phase{padding:12px 10px 12px 44px;margin-left:20px}
+.phase-label{left:-30px;width:28px;font-size:8px}
+.node{padding:8px 10px}.node-title{font-size:11px}.node-desc{font-size:9px}
+}
+</style><style id="thThemes">/* =====================================================
+   THESAURUS HISTORIAE ― themes.css(LUX固定版)
+   生成りの紙 + 墨の本文 + 朱筆(★語) + 金茶の構造色。
+   retheme_inject.py が各HTMLに埋め込む。編集後は再実行。
+   ===================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&display=swap');
+
+:root { --axr: 201, 169, 110; --shu: #c9a96e; }
+
+html[data-theme="lux"] {
+  --bg:#f1ecdf;
+  --gold:#8b6f4e; --gold2:#59452a; --gold3:#9c855f;
+  --text:#2b241b; --text2:#6d6353; --text3:#a89a80;
+  --line:rgba(43,36,27,.16); --border:rgba(43,36,27,.16);
+  --gold-dim:rgba(139,111,78,.16);
+  --axr:139,111,78;
+  --shu:#a2331e;
+}
+
+html[data-theme="lux"] body {
+  background:var(--bg);
+  font-family:'Shippori Mincho','Noto Serif JP',serif;
+}
+html[data-theme="lux"] body::before { opacity:.55; }
+html[data-theme="lux"] p { line-height:2.05; }
+html[data-theme="lux"] * { text-shadow:none !important; }
+
+/* 強調の二段化: 通常太字=墨 / ★語=朱 */
+html[data-theme="lux"] strong { color:var(--text) !important; font-weight:600; }
+html[data-theme="lux"] span.k,
+html[data-theme="lux"] span.k + strong,
+html[data-theme="lux"] .node-title .k { color:var(--shu) !important; }
+html[data-theme="lux"] span.k + strong { font-weight:700; }
+html[data-theme="lux"] ::selection { background:rgba(162,51,30,.18); }
+</style><script id="thScript">document.documentElement.setAttribute('data-theme','lux');</script></head>
+<body>
+<div class="hdr"><h1>ANNALES 1-1 文明の誕生</h1><a href="ann_00_0.html">&larr; 0-0</a> <a href="annales.html">目次</a> <a href="ann_01_2.html">1-2 &rarr;</a></div>
+<div class="flow">
+
+<div class="phase p1"><div class="phase-label">農耕<br>牧畜</div>
+<div class="node key"><div class="node-title"><span class="k">★</span>農耕と牧畜のはじまり</div><div class="node-year">前1万-前4000頃</div>
+<div class="node-desc">人類は約1万年前の更新世末に至るまで、自然界にすでに存在するものを獲得して暮らす段階にあった。動物をしとめてその肉を得る狩猟と、野生の植物や果実を集める採集とを巧みに組み合わせたこの生業を<span class="k">★</span><strong>狩猟・採集</strong>と呼ぶ。獲物の中心は陸に生息する<strong>鳥獣</strong>と河海に生きる<strong>魚類</strong>で、これに加えて補助的な食料源として<strong>昆虫</strong>や<strong>木の実</strong>も日々の食生活において重要な位置を占めていた。狩猟に用いる道具は鋭利な石器を装着した武器と素朴な<strong>棒</strong>で、これらを携えた数十人規模の集団<strong>ホルド</strong>(群)が、獲物の移動と季節の巡りを追いながら広い範囲を絶えず移動して回った。独自の生産手段を持たず、あくまで自然の恵みだけに依存したままで生計を立てるこの初期の経済形態を、後の時代に登場する生産経済と対比して<span class="k">★</span><strong>獲得経済</strong>と呼ぶ。こうしたなか、気候が完新世の温暖期に転じた約1万年前を境に、生活様式は大きく変化する。人類は、野生種の植物を注意深く選別して育て、その収穫物を計画的に得る農耕と、野生の獣を根気強く飼い慣らして繁殖させ、畜産物を継続的に得る牧畜とを、並行して始めるようになった。これを合わせて<span class="k">★</span><strong>農耕・牧畜</strong>と総称し、両者をあわせて経営する形態を特に<strong>有畜農業</strong>(<strong>農牧</strong>)と呼んで区別する。栽培される植物は世代を重ねるなかでの遺伝的変異の蓄積によって野生種と区別される<strong>栽培種</strong>として固定化され、<strong>突然変異</strong>を選別する人為的な品種改良や、果樹を殖やす<strong>接ぎ木</strong>の技法が、長い年月をかけてゆっくりと発達していった。食料をみずからの手で生み出すこの新たな段階が<span class="k">★</span><strong>生産経済</strong>であり、獲得経済からこの生産経済への転換は、人類史上まれに見る大きな飛躍となった。<br><br><strong>西アジア</strong>、なかでも特にイラン高原西縁の<strong>ザグロス山脈</strong>の麓一帯と、その西方に広がる地中海沿岸地域が、この農耕と牧畜の発祥地として最も早い時期から知られている。野生種の麦・<strong>レンズ豆</strong>などの豆類が豊富に自生し、<strong>羊</strong>・<strong>ヤギ</strong>(山羊)・<strong>豚</strong>といった有用な獣が広く分布していたこの恵まれた地で、前9000年頃から家畜化と栽培化がほぼ並行して着実に進んでいった。狩猟採集を基本とする移動生活から<strong>定住農耕</strong>へと生活様式が大きく変わり、人々はより安定した水源のある河川や泉のほとりに恒常的な<strong>集落</strong>を築くようになっていった。こうして西アジアの各地には、順を追って最古の農耕集落が次々と登場していった。代表的なのが<span class="k">★</span><strong>イェリコ</strong>(ジェリコ)で、<span class="k">★</span><strong>ヨルダン川</strong>下流、<span class="k">★</span><strong>死海</strong>の北方に位置し、前8千年紀に入る頃には日干し煉瓦を用いた集落と石造の塔を備えた城壁都市の原型へと大きく成長を遂げていた。イラク北部の<strong>ジャルモ</strong>遺跡は世界最古級の農耕村落の一つとして知られ、最古級の麦栽培の痕跡と山羊・羊の家畜化の証拠がともに確認されている。トルコ中部高原のアナトリア中央部に位置する<strong>チャタル=ヒュユク</strong>は前7千年紀の大規模集落で、密集して建てられた日干し煉瓦の家屋には壁に出入口を設けず屋根上から出入りする独特の構造があり、鮮やかな室内壁画や牛角を用いた祭祀施設の存在が知られている。北イラクの<strong>テル=サラサート</strong>もこの時期を代表する重要遺跡の一つで、幾世代にもわたって住居が築き直され、その跡が積み重なって形成された人工の丘<strong>遺丘</strong>(<strong>テル</strong>)の典型例として知られる。<br><br>この経済的な大転換を、オーストラリア生まれの考古学者ゴードン=チャイルドは、単なる旧石器・新石器という道具区分を超えた社会全体の質的転換と捉え、<span class="k">★</span><strong>食料生産革命</strong>(<strong>新石器革命</strong>)と名づけた。獲得経済から生産経済への移行は、余剰食料を背景とする人口の急増、定住生活の定着、そして社会階層の発生をもたらし、後の都市文明を支える物質的基盤を形作っていった。こうした定住生活は道具の発達も促した。石の細部まで丹念に磨き上げて鋭く仕上げる<span class="k">★</span><strong>磨製石器</strong>の製作技術が前9千年紀以降に体系化し、これが新石器時代を特徴づける重要な指標となっていく。穂を刈り取るための<strong>石鎌</strong>と<strong>石包丁</strong>、刃を整える<strong>砥石</strong>、穀粒を粉に挽く<strong>石臼</strong>と<strong>石杵</strong>、樹木を伐採する<strong>石斧</strong>などの多様な道具が一通り揃い、<strong>製粉</strong>を経た穀物加工の食文化が各地に広がっていった。これら磨製石器を生活の基盤とする段階を<span class="k">★</span><strong>新石器時代</strong>と呼び、日本列島の縄文土器を伴う<strong>縄文時代</strong>も世界的にはこの段階に位置づけられる。湖や河川の上に杭を打ち込んで床を高く上げた<strong>湖上住居</strong>(<strong>杭上住居</strong>)が、外敵からの防御と湿地対策を兼ねて中欧を中心とするアルプス周辺の湖沼地帯で数多く建てられた。<br><br>並行して粘土を素材とする<span class="k">★</span><strong>土器</strong>の使用が各地で始まっていった。これは<strong>粘土</strong>を丹念に捏ねて器の形に<strong>成形</strong>し、それを焼成して仕上げる技術で、穀物の貯蔵・日々の調理・祭祀の儀式など幅広い用途に用いられた。装飾がとりわけ大きく発達した代表的な例が<span class="k">★</span><strong>彩文土器</strong>で、表面に酸化鉄・酸化マンガンなどの<strong>顔料</strong>を用いて<strong>幾何学文様</strong>や動物文様を丹念に描いた<strong>素焼き</strong>の器であり、規則的に並ぶ<strong>文様</strong>がその大きな特徴となっている。この様式は西アジア・中央アジア・東アジアの各地でそれぞれ独自の発展を遂げ、後の中華文明の仰韶文化やインダス文明のハラッパーなどに見られる彩文土器の伝統へと連なっていった。一方北東アジアでは、表面に櫛のような道具で連続した点を刻みつける<strong>櫛目文土器</strong>が彩文土器とは異なる独自の系統を成し、新石器時代の朝鮮半島やシベリア南部を中心に広く分布し、日本の九州地方の縄文土器にもその影響が及んだ。また衣服素材として<span class="k">★</span><strong>織物</strong>も誕生した。羊や山羊などから得た<strong>獣毛</strong>を紡いで糸とし、これを織機で交互に組み合わせて布を作りあげる技術であった。織機上に縦に張った<strong>経糸</strong>(縦糸)に、横から交互に通す<strong>緯糸</strong>(横糸)を規則的に交差させて織り上げる構造で、毛織物・麻織物としてまず西アジア各地で発達し、やがて周辺地域にも広がっていった。さらに新石器時代の祭祀的・象徴的構築物として、各地に巨石記念物が築かれた。アナトリア南東部の<span class="k">★</span><strong>ギョベクリ=テペ</strong>は前1万年紀に遡る世界最古級の祭祀遺跡で、巨大なT字型石柱に動物の浮彫を刻んだ円形施設が並ぶ。これは農耕が始まるよりもさらに以前の段階から、すでに大規模な共同祭祀が存在していた可能性を強く示唆するもので、従来の人類史像に対する大きな見直しを迫る重要な発見となった。フランス西部ブルターニュ地方の<strong>カルナック</strong>には数千本もの<strong>メンヒル</strong>(立石)が直線状に整然と並ぶ壮大な列石群が、英国南部ソールズベリー平原の<strong>ストーン=ヘンジ</strong>には円形に巨石を配した<strong>ストーン=サークル</strong>(<strong>環状列石</strong>)が、そして北西欧の各地には石板で構成する箱型石室の<strong>ドルメン</strong>などが、今もなお当時の姿をとどめて残されている。これらの巨石建造物は、それぞれ集団の祭祀・天体観測・墓所としての機能を果たしていた。新石器時代の生活道具としては、オーストラリア先住民が獲物を狩るのに用いた回転投擲具<strong>ブーメラン</strong>、槍の飛距離を大きく伸ばす<strong>投槍器</strong>(<strong>アトラトル</strong>)、装飾用の交易品となる樹脂化石<strong>琥珀</strong>などが各地でそれぞれ広く用いられていた。</div></div>
+</div>
+
+<div class="phase p2"><div class="phase-label">文明<br>誕生</div>
+<div class="node key"><div class="node-title"><span class="k">★</span>文明の誕生</div><div class="node-year">前4000-前1000頃</div>
+<div class="node-desc">新石器時代の農耕は、雨水と河川水の有無で大きく二系統に分化した。降雨に依存して耕作する<span class="k">★</span><strong>乾地農法</strong>(<strong>天水農業</strong>)は<strong>雨水</strong>(天水)のみで作物を育てる方式で、半乾燥地の表層に広がる<strong>土壌</strong>に深い溝を掘って限られた<strong>保水</strong>を図り、地力の消耗を防ぐために一定の周期で耕地をあえて放置する休耕をも伴う方式であった。地力を徹底的に奪い尽くしてしまっては、また別の土地へと移り住む<strong>略奪農法</strong>は、それらの中でもさらに古い原初的な形態であったとされる。これに対して、大河の豊かな水を人工の水路によって計画的に引き込む<span class="k">★</span><strong>灌漑農業</strong>は、降雨が乏しい乾燥地であっても高い生産性を実現できる有力な技術であったが、その分大規模な土木工事と多くの労働力の動員を要した。この両者の間にある技術的な差は、その後の段階における社会組織のあり方そのものをも大きく分けることとなった。乾地農法は小規模な共同体による自立的な経営に適していたが、灌漑農業の地域では水路の維持と水の分配を統括する強力な権力が必要となり、これが後の都市国家形成の重要な母体となっていく。こうして大河流域に広がる灌漑農業地帯には大規模な人口集中が急速に起こり、共同祭祀・分業・防衛といった目的のための集住がいっそう進んで、より複合的で高度な社会が各地に現れることとなった。人間の生活様式の総体を、まとめて<span class="k">★</span><strong>文化・文明</strong>と呼ぶ。文化が<strong>技術</strong>・<strong>習俗</strong>・<strong>制度</strong>・<strong>道徳</strong>を含む人間生活の様式全般を広く指すのに対し、文明はそのうちでも特に都市的・記録的・組織的な発展段階にまで到達した状態を指す、より限定された概念である。20世紀の英国の歴史家<strong>トインビー</strong>は、大著『歴史の研究』のなかで世界の諸文明をつぶさに比較・類型化し、外部世界からの挑戦とそれへの応戦の繰り返しによって文明が興亡していくという、独自のサイクル史観を打ち出した。古代において灌漑農業を基盤として大規模文明が成立した代表的な地域が、メソポタミア・エジプト・インダス、そして黄河と長江流域の中華文明という4地域であり、これらを合わせて<span class="k">★</span><strong>四大文明</strong>と総称する慣習が長きにわたり用いられてきた。<br><br>こうした文明の誕生と並行して、人々を統治する政治組織もまた発達していった。一定数の<strong>住民</strong>と定まった領土を有し、共通の支配秩序のもとにまとまる集団が<span class="k">★</span><strong>国家</strong>であり、その統治者は<strong>王</strong>または<strong>君主</strong>と呼ばれた。初期の国家形態は、周囲を城壁で囲んで独立した政治的領域を確立する<span class="k">★</span><strong>都市国家</strong>であり、神官・戦士・職人がそれぞれ階層を成す<strong>支配階級</strong>を有し、みずからの<strong>政治的独立性</strong>を保ちながら近隣の諸都市と絶えず競合していた。シュメールのウル・ウルクに代表されるメソポタミア南部の諸都市、エジプトのノモス、ギリシアのポリス、フェニキアのテュロス・シドンなどが、こうした都市国家の代表的な例として挙げられる。続いて、内外との物資のやり取りが、都市国家の発展を支えた。地域内で行われる物資のやり取りである商業と、より広範な地域間の貿易とを合わせて<span class="k">★</span><strong>交易</strong>と呼び、初期の段階では神殿がその倉庫と取引の中心的な役割を担った。生産と消費の分業がしだいに進んでいくと社会内には<strong>職業分化</strong>が着実に起こり、蓄積される富の量に個人ごとの差が生じることで<strong>貧富の差</strong>が次第に顕在化していった。これに伴って社会的な身分秩序としての<span class="k">★</span><strong>階級</strong>が次第に明確な形で固定化していき、近隣都市への征服戦争を繰り返し重ねることを通じて、支配する側とされる側との関係がいっそう強化されていった。<br><br>同時に、道具と技術という側面でも、それまでの新石器の水準を超える大きな転換が起こっていった。鉱石から精錬した<strong>金属</strong>を用いて作られた道具や武器を日々の生活と戦争の両方に用いるようになった段階が<span class="k">★</span><strong>金属器時代</strong>である。このうち<span class="k">★</span><strong>青銅器</strong>が最初に登場し、比較的軟らかい<strong>銅</strong>にわずかな錫を加えて硬度を高めた<strong>合金</strong>である<strong>青銅</strong>を、いったん溶かして型に流し込む<strong>鋳造</strong>という手法で成形した。前4千年紀後半になって西アジア一帯に急速に普及し、これを基盤とする<span class="k">★</span><strong>青銅器時代</strong>には農具・武器・祭器といった生活の道具が一斉に金属化を遂げていった。銅と亜鉛の合金である<strong>真鍮</strong>(<strong>黄銅</strong>)は、青銅よりも遅れて登場し、その美しい光沢からのちに装飾品や貨幣などに広く用いられるようになっていく。続いて<span class="k">★</span><strong>鉄器</strong>が前2千年紀のヒッタイトで最初に本格的に用いられるようになり、その王国の滅亡を契機として各地へと急速に拡散していった。<strong>鉄</strong>は青銅よりも融点が高く高度な<strong>冶金</strong>技術を必要としたが、地殻中にはるかに豊富に存在し硬度でも青銅に勝るため、いったん普及すると農具と武器双方の効率を劇的に一変させることとなった。空から落ちてきた<strong>隕鉄</strong>を素材として作られた、人類最初期の鉄器も各地で発見されている。鉄器を基盤とする<span class="k">★</span><strong>鉄器時代</strong>に入ると農業生産力は飛躍的に向上し、それに伴って軍事力も大きく拡大していき、これがのちの古代帝国の成立を可能にする重要な物質的条件の一つとなっていった。<br><br>こうした技術と社会の発達と並行して、人間の貴重な経験と知識を後世に確実に伝える手段もまた誕生することとなった。それが<span class="k">★</span><strong>文字の発明</strong>である。口頭で伝える<strong>音声言語</strong>のみに頼っていた段階から、まず図像によって意味を伝える<strong>絵文字</strong>の段階を経て、やがて高度に抽象化された記号としての<strong>文字</strong>が生み出されるに至った。文字には、事物の概念をそのまま記号として表す<strong>表意文字</strong>(漢字・楔形文字の一部・神聖文字など)と、音節や音素を表現する<strong>表音文字</strong>(アルファベットなど)の二種類があり、いずれも前4千年紀後半から前3千年紀にかけての西アジア・エジプトでほぼ並行して体系化されていった。文字による史料が体系的に残されるようになって以降の時代を、まとめて<span class="k">★</span><strong>歴史時代</strong>と呼んで、文字を持たなかったそれ以前の時代と明確に区別する。歴史時代の研究はもっぱら残された<strong>文字史料</strong>に依拠しており、出来事の当事者や直接その場に居合わせた同時代人が残した記録を<strong>一次史料</strong>、それをもとに後世の人物があらためて編纂・転載したものを<strong>二次史料</strong>として、厳密に区別する。なお年代を表す単位として、千年という長期の区分には<span class="k">★</span><strong>千年紀</strong>(ミレニアム、紀元前後を千年単位で区切る用法)が、それより短い百年単位には<strong>世紀</strong>が、それぞれ慣習的に用いられる。具体的な例を挙げると、前4千年紀は前4000年から前3001年までを、前3千年紀は前3000年から前2001年までをそれぞれ指す。こうして文字の発明から金属器・国家・都市の出現を経て、人類は口承のみに頼っていた過去から脱し、記録に基づいて自己を理解し、その知識を確実に次世代へ継承していく時代へとついに入っていったのである。</div></div>
+</div>
+
+</div>
+<div class="note"><p><strong>ANNALES 1-1</strong> &middot; 完新世の温暖化を機に約1万年前、人類は野生種の<strong>狩猟・採集</strong>による<strong>獲得経済</strong>から、栽培種・家畜を計画的に得る<strong>農耕・牧畜</strong>の<strong>生産経済</strong>へと飛躍した。<strong>西アジア</strong>のザグロス山脈麓を発祥地として羊・ヤギ・豚の家畜化と麦・レンズ豆の栽培化が並行して進行、ヨルダン川下流、死海北方の<strong>イェリコ</strong>、北イラクのジャルモ、アナトリア中央部のチャタル=ヒュユク、北イラクのテル=サラサートなど遺丘(テル)を形作る最古の農耕集落が成立した。この経済的飛躍をゴードン=チャイルドは<strong>食料生産革命</strong>(新石器革命)と呼んだ。<strong>磨製石器</strong>(石鎌・石包丁・石臼・石斧)・土器・<strong>彩文土器</strong>・櫛目文土器・<strong>織物</strong>(経糸と緯糸の織機)・湖上住居が<strong>新石器時代</strong>の生活基盤となり、ギョベクリ=テペ・カルナック・ストーン=ヘンジ・ドルメン・メンヒルなど巨石記念物が祭祀施設として築かれた。降雨依存の<strong>乾地農法</strong>と大河を引き込む<strong>灌漑農業</strong>の分化が次の段階の社会組織を分け、灌漑農業地帯に人口集中が起こって<strong>文化・文明</strong>が成立、メソポタミア・エジプト・インダス・中華の四大文明という呼称が長く用いられてきた。<strong>国家</strong>(王・君主・住民・領土)と<strong>都市国家</strong>(支配階級・領域)が成立、<strong>交易</strong>と職業分化から階級・貧富の差が固定化した。技術面では<strong>金属器時代</strong>に入り、銅と錫の合金を鋳造する<strong>青銅器</strong>から、より硬く豊富な<strong>鉄器</strong>(冶金・隕鉄)へと進み、農具と武器の効率を一変させた。経験継承の手段として<strong>文字の発明</strong>(絵文字→表意文字・表音文字)がなされ、文字史料が残る<strong>歴史時代</strong>が始まる。年代単位は<strong>千年紀</strong>と世紀で区切られる。</p></div>
+
+<div class="bottom-nav"><a href="ann_00_0.html">&larr; 0-0 世界史へのまなざし</a> <a href="ann_01_2.html">1-2 古代オリエント文明とその周辺 &rarr;</a></div>
+
+</body></html>

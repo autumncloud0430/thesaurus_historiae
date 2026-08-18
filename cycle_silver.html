@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>16-17C 銀の世界循環</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+.hdr{padding:16px 20px;border-bottom:1px solid rgba(var(--axr),.08);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.hdr h1{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2)}
+.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
+.wrap{display:flex;justify-content:center;padding:24px 16px 8px}
+.desc{max-width:740px;margin:0 auto;padding:0 20px 40px}
+.desc h2{font-family:'Noto Serif JP',serif;font-size:12px;font-weight:700;color:var(--gold2);margin:16px 0 6px;padding-left:8px;border-left:3px solid rgba(var(--axr),.3)}
+.desc p{font-size:9.5px;color:var(--text2);line-height:1.8;margin-bottom:8px}
+.desc p strong{color:var(--text);font-weight:600}
+.desc .side-note{font-size:8px;color:var(--text3);padding:4px 8px;border-left:2px solid rgba(var(--axr),.1);margin:6px 0 10px;line-height:1.6}
+.note{text-align:center;padding:8px 20px 32px;max-width:740px;margin:0 auto}.note p{font-size:9px;color:var(--text3);line-height:1.8}.note strong{color:var(--gold)}
+
+@media(max-width:600px){
+.hdr{padding:10px 12px}.hdr h1{font-size:12px}
+.wrap{padding:12px 8px}
+svg{max-width:100%;height:auto}
+.desc p{font-size:9px}
+.desc h2{font-size:11px}
+.side-note{font-size:7.5px}
+.note p{font-size:8px}
+}
+</style>
+<style id="thThemes">/* =====================================================
+   THESAURUS HISTORIAE ― themes.css(LUX固定版)
+   生成りの紙 + 墨の本文 + 朱筆(★語) + 金茶の構造色。
+   retheme_inject.py が各HTMLに埋め込む。編集後は再実行。
+   ===================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&display=swap');
+
+:root { --axr: 201, 169, 110; --shu: #c9a96e; }
+
+html[data-theme="lux"] {
+  --bg:#f1ecdf;
+  --gold:#8b6f4e; --gold2:#59452a; --gold3:#9c855f;
+  --text:#2b241b; --text2:#6d6353; --text3:#a89a80;
+  --line:rgba(43,36,27,.16); --border:rgba(43,36,27,.16);
+  --gold-dim:rgba(139,111,78,.16);
+  --axr:139,111,78;
+  --shu:#a2331e;
+}
+
+html[data-theme="lux"] body {
+  background:var(--bg);
+  font-family:'Shippori Mincho','Noto Serif JP',serif;
+}
+html[data-theme="lux"] body::before { opacity:.55; }
+html[data-theme="lux"] p { line-height:2.05; }
+html[data-theme="lux"] * { text-shadow:none !important; }
+
+/* 強調の二段化: 通常太字=墨 / ★語=朱 */
+html[data-theme="lux"] strong { color:var(--text) !important; font-weight:600; }
+html[data-theme="lux"] span.k,
+html[data-theme="lux"] span.k + strong,
+html[data-theme="lux"] .node-title .k { color:var(--shu) !important; }
+html[data-theme="lux"] span.k + strong { font-weight:700; }
+html[data-theme="lux"] ::selection { background:rgba(162,51,30,.18); }
+</style><script id="thScript">document.documentElement.setAttribute('data-theme','lux');</script></head>
+<body>
+<div class="hdr"><h1>16-17C 銀の世界循環 ― なぜ銀が世界をつないだか</h1><a href="charts.html">← Ad Chartae</a></div>
+
+<div class="wrap">
+<svg viewBox="0 0 720 540" xmlns="http://www.w3.org/2000/svg" style="width:720px;max-width:100%;height:auto">
+<defs>
+ <marker id="ah" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="rgba(var(--axr),.5)"/></marker>
+ <marker id="ah2" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="rgba(180,140,80,.6)"/></marker>
+ <marker id="ah3" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="rgba(100,150,180,.5)"/></marker>
+</defs>
+
+<!-- Background region labels -->
+<text x="115" y="22" text-anchor="middle" fill="rgba(var(--axr),.12)" font-size="11" font-family="Cormorant Garamond" font-weight="700">新大陸</text>
+<text x="355" y="22" text-anchor="middle" fill="rgba(var(--axr),.12)" font-size="11" font-family="Cormorant Garamond" font-weight="700">ヨーロッパ</text>
+<text x="595" y="22" text-anchor="middle" fill="rgba(var(--axr),.12)" font-size="11" font-family="Cormorant Garamond" font-weight="700">アジア</text>
+
+<!-- ===== NODES ===== -->
+<!-- Potosi / Mexico (top-left) -->
+<rect x="30" y="120" width="170" height="70" rx="10" fill="rgba(180,80,80,.08)" stroke="rgba(180,80,80,.25)" stroke-width="1"/>
+<text x="115" y="143" text-anchor="middle" fill="rgba(220,130,130,.9)" font-size="11" font-family="Noto Serif JP" font-weight="700">新大陸の銀山</text>
+<text x="115" y="160" text-anchor="middle" fill="var(--text2)" font-size="7.5">ポトシ(ボリビア)・サカテカス(メキシコ)</text>
+<text x="115" y="173" text-anchor="middle" fill="var(--text3)" font-size="6.5">先住民・アフリカ人奴隷の強制労働(ミタ制)</text>
+
+<!-- Seville / Spain (center-top) -->
+<rect x="270" y="80" width="170" height="70" rx="10" fill="rgba(180,140,60,.08)" stroke="rgba(180,140,60,.25)" stroke-width="1"/>
+<text x="355" y="103" text-anchor="middle" fill="rgba(220,190,100,.9)" font-size="11" font-family="Noto Serif JP" font-weight="700">スペイン(セビリャ)</text>
+<text x="355" y="120" text-anchor="middle" fill="var(--text2)" font-size="7.5">カサ・デ・コントラタシオン(通商院)</text>
+<text x="355" y="133" text-anchor="middle" fill="var(--text3)" font-size="6.5">★銀はスペインを「通過」するだけ→国内産業に投資されず</text>
+
+<!-- Netherlands / England (center) -->
+<rect x="270" y="230" width="170" height="70" rx="10" fill="rgba(80,150,120,.08)" stroke="rgba(80,150,120,.25)" stroke-width="1"/>
+<text x="355" y="253" text-anchor="middle" fill="rgba(140,210,170,.9)" font-size="11" font-family="Noto Serif JP" font-weight="700">オランダ・イギリス</text>
+<text x="355" y="270" text-anchor="middle" fill="var(--text2)" font-size="7.5">アムステルダム＝世界金融の中心(17C)</text>
+<text x="355" y="283" text-anchor="middle" fill="var(--text3)" font-size="6.5">★銀を資本として産業・貿易に再投資→覇権の移動</text>
+
+<!-- India (bottom-left, moved away from Manila-China path) -->
+<rect x="100" y="360" width="160" height="60" rx="10" fill="rgba(130,100,160,.08)" stroke="rgba(130,100,160,.25)" stroke-width="1"/>
+<text x="180" y="383" text-anchor="middle" fill="rgba(190,160,220,.9)" font-size="11" font-family="Noto Serif JP" font-weight="700">インド</text>
+<text x="180" y="400" text-anchor="middle" fill="var(--text2)" font-size="7.5">綿織物(キャラコ)・香辛料を輸出→銀が流入</text>
+
+<!-- Japan (top-right) -->
+<rect x="530" y="40" width="150" height="55" rx="10" fill="rgba(100,130,180,.08)" stroke="rgba(100,130,180,.25)" stroke-width="1"/>
+<text x="605" y="60" text-anchor="middle" fill="rgba(160,180,220,.9)" font-size="11" font-family="Noto Serif JP" font-weight="700">日本</text>
+<text x="605" y="76" text-anchor="middle" fill="var(--text2)" font-size="7.5">石見銀山(世界の銀の約1/3を一時産出)</text>
+<text x="605" y="88" text-anchor="middle" fill="var(--text3)" font-size="6.5">ポルトガル商人が仲介→中国へ</text>
+
+<!-- China (right-center) -->
+<rect x="510" y="160" width="170" height="80" rx="10" fill="rgba(150,80,80,.08)" stroke="rgba(150,80,80,.25)" stroke-width="1"/>
+<text x="595" y="183" text-anchor="middle" fill="rgba(210,140,140,.9)" font-size="11" font-family="Noto Serif JP" font-weight="700">明・清(中国)</text>
+<text x="595" y="200" text-anchor="middle" fill="var(--text2)" font-size="7.5">一条鞭法(明)→地丁銀(清)＝銀納税制</text>
+<text x="595" y="213" text-anchor="middle" fill="var(--text2)" font-size="7.5">絹・茶・陶磁器を輸出→銀が流入</text>
+<text x="595" y="226" text-anchor="middle" fill="var(--text3)" font-size="6.5">★世界の銀の最終到達地＝「銀の吸引機」</text>
+
+<!-- Manila (bottom-right, directly below China) -->
+<rect x="520" y="340" width="160" height="55" rx="10" fill="rgba(180,130,80,.08)" stroke="rgba(180,130,80,.25)" stroke-width="1"/>
+<text x="600" y="360" text-anchor="middle" fill="rgba(220,180,120,.9)" font-size="11" font-family="Noto Serif JP" font-weight="700">マニラ(フィリピン)</text>
+<text x="600" y="376" text-anchor="middle" fill="var(--text2)" font-size="7.5">★マニラ・ガレオン貿易(アカプルコ航路)</text>
+<text x="600" y="388" text-anchor="middle" fill="var(--text3)" font-size="6.5">メキシコ銀→太平洋→マニラ→中国の絹・陶磁器</text>
+
+<!-- Price Revolution (bottom-left corner) -->
+<rect x="30" y="260" width="170" height="55" rx="10" fill="rgba(var(--axr),.05)" stroke="rgba(var(--axr),.15)" stroke-width="1" stroke-dasharray="4,3"/>
+<text x="115" y="282" text-anchor="middle" fill="var(--gold)" font-size="10" font-family="Noto Serif JP" font-weight="700">★価格革命</text>
+<text x="115" y="297" text-anchor="middle" fill="var(--text2)" font-size="7">欧州全体の物価が2-3倍に上昇</text>
+<text x="115" y="309" text-anchor="middle" fill="var(--text3)" font-size="6.5">固定地代の領主没落→商人(ブルジョワ)台頭</text>
+
+<!-- ===== ARROWS ===== -->
+<!-- Potosi → Seville (silver) -->
+<path d="M200,145 Q240,100 270,108" fill="none" stroke="rgba(var(--axr),.5)" stroke-width="2" marker-end="url(#ah)"/>
+<text x="228" y="104" text-anchor="middle" fill="var(--gold)" font-size="7" font-weight="700">銀 →</text>
+<text x="228" y="114" text-anchor="middle" fill="var(--text3)" font-size="5.5">大西洋を船団(フロータ)で輸送</text>
+
+<!-- Seville → NL/England (silver flows out) -->
+<path d="M355,150 L355,230" fill="none" stroke="rgba(var(--axr),.4)" stroke-width="2" marker-end="url(#ah)"/>
+<text x="310" y="190" text-anchor="end" fill="var(--gold)" font-size="7" font-weight="700">銀が流出 ↓</text>
+<text x="310" y="200" text-anchor="end" fill="var(--text3)" font-size="5.5">蘭英の製品を購入</text>
+
+<!-- NL/England → China (silver for goods) -->
+<path d="M440,250 Q480,210 510,195" fill="none" stroke="rgba(var(--axr),.5)" stroke-width="2" marker-end="url(#ah)"/>
+<text x="478" y="210" text-anchor="middle" fill="var(--gold)" font-size="7" font-weight="700">銀 →</text>
+
+<!-- China → NL/England (goods back) -->
+<path d="M510,215 Q475,240 440,260" fill="none" stroke="rgba(100,150,180,.4)" stroke-width="1.5" marker-end="url(#ah3)" stroke-dasharray="4,2"/>
+<text x="460" y="248" text-anchor="start" fill="rgba(160,200,220,.7)" font-size="6.5">← 絹・茶・陶磁器</text>
+
+<!-- NL/England → India (silver, going down-left) -->
+<path d="M290,290 Q240,330 260,365" fill="none" stroke="rgba(var(--axr),.4)" stroke-width="1.5" marker-end="url(#ah)"/>
+<text x="245" y="330" text-anchor="end" fill="var(--gold)" font-size="6.5">銀 ↓</text>
+
+<!-- India → NL/England (goods back, going up-right) -->
+<path d="M250,360 Q235,320 280,285" fill="none" stroke="rgba(100,150,180,.4)" stroke-width="1.5" marker-end="url(#ah3)" stroke-dasharray="4,2"/>
+<text x="218" y="318" text-anchor="end" fill="rgba(160,200,220,.7)" font-size="6.5">綿織物・香辛料 →</text>
+
+<!-- Japan → China (silver via Portuguese) -->
+<path d="M605,95 L605,160" fill="none" stroke="rgba(var(--axr),.5)" stroke-width="1.5" marker-end="url(#ah)"/>
+<text x="625" y="125" text-anchor="start" fill="var(--gold)" font-size="6.5">銀 ↓</text>
+<text x="625" y="136" text-anchor="start" fill="var(--text3)" font-size="5.5">葡商人が仲介</text>
+
+<!-- Potosi → Manila (via Acapulco, curves below India) -->
+<path d="M115,190 Q115,460 520,370" fill="none" stroke="rgba(180,140,80,.5)" stroke-width="1.5" marker-end="url(#ah2)"/>
+<text x="300" y="460" text-anchor="middle" fill="rgba(220,180,120,.8)" font-size="7" font-weight="700">メキシコ銀(太平洋ルート)</text>
+<text x="300" y="472" text-anchor="middle" fill="var(--text3)" font-size="5.5">アカプルコ→太平洋→マニラ(マニラ・ガレオン貿易)</text>
+
+<!-- Manila → China (short upward arrow, no crossing) -->
+<path d="M600,340 L600,240" fill="none" stroke="rgba(180,140,80,.5)" stroke-width="1.5" marker-end="url(#ah2)"/>
+<text x="620" y="285" text-anchor="start" fill="rgba(220,180,120,.7)" font-size="6.5">銀 ↑</text>
+
+<!-- China → Manila (silk/ceramics back) -->
+<path d="M588,240 L588,340" fill="none" stroke="rgba(100,150,180,.4)" stroke-width="1" marker-end="url(#ah3)" stroke-dasharray="3,2"/>
+<text x="568" y="295" text-anchor="end" fill="rgba(160,200,220,.6)" font-size="5.5">絹・陶磁器 ↓</text>
+
+<!-- Potosi → Price Revolution (dashed) -->
+<path d="M115,190 L115,260" fill="none" stroke="rgba(var(--axr),.25)" stroke-width="1.5" stroke-dasharray="3,3"/>
+
+<!-- Legend -->
+<rect x="20" y="495" width="680" height="35" rx="6" fill="rgba(255,255,255,.01)" stroke="rgba(var(--axr),.06)" stroke-width="0.5"/>
+<line x1="40" y1="513" x2="70" y2="513" stroke="rgba(var(--axr),.5)" stroke-width="2"/>
+<text x="75" y="516" fill="var(--text3)" font-size="7">銀の流れ(実線)</text>
+<line x1="170" y1="513" x2="200" y2="513" stroke="rgba(100,150,180,.4)" stroke-width="1.5" stroke-dasharray="4,2"/>
+<text x="205" y="516" fill="var(--text3)" font-size="7">商品の流れ(破線)</text>
+<line x1="310" y1="513" x2="340" y2="513" stroke="rgba(180,140,80,.5)" stroke-width="1.5"/>
+<text x="345" y="516" fill="var(--text3)" font-size="7">太平洋ルート(マニラ・ガレオン)</text>
+<text x="560" y="516" fill="var(--text3)" font-size="7">★=入試超ポイント</text>
+</svg>
+</div>
+
+<div class="desc">
+<h2>銀の世界循環とは何か</h2>
+<p>16-17世紀、新大陸(ポトシ銀山・サカテカス銀山)で採掘された<strong>大量の銀</strong>が、二つのルートで世界を循環した。①<strong>大西洋ルート</strong>＝新大陸→セビリャ→ヨーロッパ各国→アジア(中国・インド)。②<strong>太平洋ルート(マニラ・ガレオン貿易)</strong>＝メキシコのアカプルコ→太平洋→マニラ(フィリピン)→中国。これに加え<strong>日本の石見銀山</strong>(世界の銀産出量の約1/3を一時占めた)からポルトガル商人を介して中国に銀が流入した。</p>
+
+<h2>なぜ銀は中国に集まったか</h2>
+<p>明(万暦帝の時代)が<strong>一条鞭法</strong>(税の銀納一本化)を全国実施→中国経済が銀本位に→<strong>膨大な銀の需要</strong>が発生。中国は絹・茶・陶磁器を輸出し銀を吸収する「<strong>銀の吸引機</strong>」だった。インドも綿織物(キャラコ)・香辛料の輸出で銀を獲得。★ヨーロッパは中国・インドに対して売れる工業製品がほとんどなく、<strong>銀でしか対価を支払えなかった</strong>＝19世紀に英がアヘンで逆転するまでこの構造が続いた。</p>
+
+<h2>なぜスペインは衰退しオランダ・イギリスが台頭したか</h2>
+<p>スペインは銀を大量に受け取ったが<strong>国内産業に投資せず</strong>→戦争費用・宮廷の浪費・カトリック布教に消費→銀はオランダ・イギリスの工業製品の購入代金として流出。<strong>「銀はスペインを通過しただけ」</strong>。一方、オランダ・イギリスは<strong>受け取った銀を資本として再投資</strong>→商業・金融・工業の発展→覇権の移動(西葡→蘭→英)。</p>
+
+<h2>価格革命とその影響</h2>
+<p>新大陸の銀がヨーロッパに大量流入→<strong>物価が約2-3倍に上昇(価格革命)</strong>。結果：<strong>固定地代で生活する封建領主が没落</strong>し、商品を売って利益を得る<strong>商人(ブルジョワジー)が台頭</strong>＝封建社会の解体を加速。農民は物価上昇に苦しみ、賃金労働者の実質賃金は低下→社会の不安定化。</p>
+<div class="side-note">★入試超：「価格革命＝新大陸の銀→物価上昇→領主没落・商人台頭」「一条鞭法→地丁銀＝中国の銀経済」「マニラ・ガレオン貿易＝太平洋ルート」「スペイン衰退の理由＝銀を産業に投資せず」</div>
+</div>
+
+<div class="note"><p>16-17C銀の世界循環＝<strong>「世界の一体化」の経済的基盤</strong>。入試では①<strong>二つのルート(大西洋＋太平洋)</strong> ②<strong>銀の最終到達地＝中国(一条鞭法→銀経済)</strong> ③<strong>価格革命(物価上昇→封建制崩壊)</strong> ④<strong>スペインの衰退(銀を通過→オランダ・イギリスに流出)</strong> ⑤<strong>日本銀(石見銀山)</strong>が。銀の流れを追うことで16-17Cの世界全体のつながりが見える。</p></div>
+</body></html>
