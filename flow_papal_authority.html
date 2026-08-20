@@ -11,23 +11,23 @@
 body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
 body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
 .hdr{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
-.hdr h1{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2)}
-.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
+.hdr h1{font-family:'Noto Serif JP',serif;font-size:20px;font-weight:700;color:var(--gold2)}
+.hdr a{font-size:14px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
 .wrap{overflow-x:auto;padding:16px 20px 0}
 .inner{min-width:1600px;position:relative}
 
 /* Graph area */
-.graph-label{font-family:'Noto Serif JP',serif;font-size:9px;color:var(--gold);position:absolute;left:4px;writing-mode:vertical-rl;letter-spacing:.1em}
+.graph-label{font-family:'Noto Serif JP',serif;font-size:12px;color:var(--gold);position:absolute;left:4px;writing-mode:vertical-rl;letter-spacing:.1em}
 
 /* Event cards below the graph */
 .events{display:flex;gap:0;align-items:flex-start;padding-top:8px;border-top:1px solid rgba(var(--axr),.06)}
 .ev{flex:1;min-width:0;padding:6px 8px;border-left:1px solid rgba(var(--axr),.04);position:relative}
 .ev:first-child{border-left:none}
-.ev-year{font-family:'Cormorant Garamond',serif;font-size:9px;font-weight:700;color:var(--gold);opacity:.6;margin-bottom:2px}
-.ev-title{font-family:'Noto Serif JP',serif;font-size:9px;font-weight:700;color:var(--gold2);margin-bottom:3px;line-height:1.4}
-.ev-desc{font-size:8px;color:var(--text2);line-height:1.6}
+.ev-year{font-family:'Cormorant Garamond',serif;font-size:12px;font-weight:700;color:var(--gold);opacity:.6;margin-bottom:2px}
+.ev-title{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2);margin-bottom:3px;line-height:1.4}
+.ev-desc{font-size:13px;color:var(--text2);line-height:1.6}
 .ev-desc strong{color:var(--text);font-weight:600}
-.ev-note{font-size:7px;color:var(--text3);margin-top:4px;padding-top:3px;border-top:1px solid rgba(255,255,255,.03);line-height:1.5}
+.ev-note{font-size:10px;color:var(--text3);margin-top:4px;padding-top:3px;border-top:1px solid rgba(255,255,255,.03);line-height:1.5}
 
 /* Phase color bars at top of each event */
 .ev::before{content:'';display:block;height:3px;border-radius:2px;margin-bottom:6px}
@@ -37,22 +37,22 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
 .ev-low::before{background:rgba(100,100,130,.3)}
 .ev-reform::before{background:rgba(130,100,160,.4)}
 
-.note{text-align:center;padding:12px 20px 32px;max-width:900px;margin:0 auto}.note p{font-size:9px;color:var(--text3);line-height:1.8}.note strong{color:var(--gold)}
+.note{text-align:center;padding:12px 20px 32px;max-width:900px;margin:0 auto}.note p{font-size:15px;color:var(--text3);line-height:1.8}.note strong{color:var(--gold)}
 
 /* Tooltip */
 .tt{display:none;position:fixed;z-index:9000;background:rgba(12,15,22,.97);border:1px solid rgba(var(--axr),.25);border-radius:6px;padding:8px 12px;max-width:320px;pointer-events:none;box-shadow:0 8px 30px rgba(0,0,0,.5)}
-.tt-name{font-family:'Noto Serif JP',serif;font-size:10px;font-weight:700;color:var(--gold2);margin-bottom:3px}
-.tt-desc{font-size:8px;color:var(--text);line-height:1.6}
+.tt-name{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2);margin-bottom:3px}
+.tt-desc{font-size:13px;color:var(--text);line-height:1.6}
 
 @media(max-width:600px){
-.hdr{padding:10px 12px}.hdr h1{font-size:12px}
+.hdr{padding:10px 12px}.hdr h1{font-size:17px}
 .flow{padding:16px 10px 40px}
 .phase{padding:12px 10px 12px 44px;margin-left:20px}
-.phase-label{left:-30px;width:28px;font-size:8px}
-.node{padding:8px 10px}.node-title{font-size:11px}.node-desc{font-size:9px}
+.phase-label{left:-30px;width:28px;font-size:12px}
+.node{padding:8px 10px}.node-title{font-size:15px}.node-desc{font-size:12px}
 .branch-row{flex-direction:column}
-.side-note{font-size:7.5px}
-.note p{font-size:8px}
+.side-note{font-size:10px}
+.note p{font-size:12px}
 }
 </style>
 <style id="thThemes">/* =====================================================
