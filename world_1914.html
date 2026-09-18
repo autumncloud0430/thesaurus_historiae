@@ -290,8 +290,7 @@ function getCol(name,subj){
 }
 
 var map=L.map("map",{center:[30,20],zoom:3,minZoom:2,maxZoom:12,worldCopyJump:true});
-L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png",{
-attribution:"OSM+CARTO",subdomains:"abcd",maxZoom:19,noWrap:false}).addTo(map);
+L.tileLayer("https://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}",{attribution:'Esri',maxZoom:16,noWrap:false}).addTo(map);
 
 function shiftGJ(gj,off){
 return{type:"FeatureCollection",features:gj.features.map(function(f){

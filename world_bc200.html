@@ -289,8 +289,7 @@ function getCol(name,subj){
 // ═══ MAP ═══
 var map=L.map("map",{center:[28,35],zoom:3,minZoom:2,maxZoom:12,worldCopyJump:true,preferCanvas:false});
 // Render order: territories first, then points on top
-L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png",{
-  attribution:'&copy; OSM &copy; CARTO',subdomains:"abcd",maxZoom:19,noWrap:false}).addTo(map);
+L.tileLayer("https://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}",{attribution:'Esri',maxZoom:16,noWrap:false}).addTo(map);
 
 // ═══ RENDER TERRITORIES ═══
 function shiftGJ(gj,off){

@@ -94,7 +94,8 @@ html[data-theme="lux"] ::selection { background:rgba(162,51,30,.18); }
 <script>
 function initMap(){
 var map = L.map('map',{center:[46,12],zoom:4,minZoom:3,maxZoom:7,zoomControl:true,worldCopyJump:true,maxBounds:[[25,-25],[62,60]],maxBoundsViscosity:0.5});
-L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',{attribution:'CARTO',subdomains:'abcd',maxZoom:19}).addTo(map);
+L.tileLayer('https://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}',{attribution:'Esri',maxZoom:16}).addTo(map);
+L.tileLayer('https://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}',{attribution:'Esri',maxZoom:16}).addTo(map);
 
 var nameJa500 = {"Visigoths":"西ゴート王国","Ostrogoths":"東ゴート王国","Vandals":"ヴァンダル王国","Franks":"フランク王国","Anglo-Saxons":"アングロ・サクソン七王国","Burgunds":"ブルグンド王国","Saxons":"サクソン族","Turingians":"テューリンゲン族","Sveves":"スエビ王国","Eastern Roman Empire":"東ローマ帝国","Western Roman Empire":"旧西ローマ帝国領","Armorica":"アルモリカ","Basks":"バスク","Swedes":"スウェーデン人","Saami":"サーミ人"};
 

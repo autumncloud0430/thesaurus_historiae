@@ -73,7 +73,7 @@ var INFO={"USA":["アメリカ合衆国","ワシントンD.C.","1776独立。世
 var cColors={Africa:'#b07acc',Asia:'#d4a040','Europe':'#4a90d9','North America':'#6aaa64','South America':'#e06666','Oceania':'#3a9fbf','Antarctica':'#888','Seven seas (open ocean)':'#444'};
 
 var map=L.map('map',{zoomControl:true,attributionControl:false}).setView([20,20],2);
-L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}@2x.png',{maxZoom:10,minZoom:2}).addTo(map);
+L.tileLayer('https://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}',{attribution:'Esri',maxZoom:10,minZoom:2}).addTo(map);
 
 var geoLayer=L.geoJSON(TERR,{
   style:function(f){

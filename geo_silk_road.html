@@ -76,7 +76,8 @@ html[data-theme="lux"] ::selection { background:rgba(162,51,30,.18); }
 <script>
 function initMap(){
 var map = L.map('map',{center:[28,65],zoom:3,minZoom:2,maxZoom:6,zoomControl:true,worldCopyJump:true,maxBounds:[[-60,-30],[70,180]],maxBoundsViscosity:0.8});
-L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',{attribution:'CARTO',subdomains:'abcd',maxZoom:19}).addTo(map);
+L.tileLayer('https://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}',{attribution:'Esri',maxZoom:16}).addTo(map);
+L.tileLayer('https://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}',{attribution:'Esri',maxZoom:16}).addTo(map);
 L.polyline([[34.3, 108.9], [34.7, 112.5]],{color:'#c9a96e',weight:2.5,opacity:0.6}).addTo(map);
 L.polyline([[34.3, 108.9], [36.0, 103.8]],{color:'#c9a96e',weight:2.5,opacity:0.6}).addTo(map);
 L.polyline([[36.0, 103.8], [38.0, 100.0], [39.0, 97.0], [39.5, 96.0], [40.1, 94.7]],{color:'#c9a96e',weight:2.5,opacity:0.6}).addTo(map);
