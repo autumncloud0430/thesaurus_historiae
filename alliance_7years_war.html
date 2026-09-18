@@ -15,6 +15,7 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
 .hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5;transition:opacity .2s}.hdr a:hover{opacity:1}
 .panels{display:flex;gap:0;justify-content:center;flex-wrap:wrap;padding:10px}
 .panel{flex:1;min-width:440px;max-width:520px;padding:10px 12px}
+@media(max-width:460px){.panel{min-width:0;max-width:none;width:100%}}
 .panel:first-child{border-right:1px solid rgba(var(--axr),.06)}
 .panel-title{text-align:center;margin-bottom:6px}
 .panel-title h2{font-family:'Noto Serif JP',serif;font-size:13px;font-weight:700;color:var(--gold2)}

@@ -14,6 +14,7 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
 .hdr h1{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2)}
 .hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
 .wrap{display:flex;justify-content:center;padding:24px 16px 8px}
+@media(max-width:750px){.wrap{overflow-x:auto;justify-content:flex-start}.wrap svg{max-width:none!important;flex-shrink:0!important}}
 .desc{max-width:740px;margin:0 auto;padding:0 20px 40px}
 .desc h2{font-family:'Noto Serif JP',serif;font-size:12px;font-weight:700;color:var(--gold2);margin:16px 0 6px;padding-left:8px;border-left:3px solid rgba(var(--axr),.3)}
 .desc p{font-size:9.5px;color:var(--text2);line-height:1.8;margin-bottom:8px}

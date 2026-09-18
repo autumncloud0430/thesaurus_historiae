@@ -17,6 +17,7 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
 .hdr a:hover{opacity:1}
 .tree-wrap{padding:24px 16px 20px;overflow-x:auto}
 .tree{display:flex;flex-direction:column;align-items:center;min-width:980px}
+@media(max-width:650px){.tree{min-width:0;width:100%}.row{flex-wrap:wrap;justify-content:center}.branch{flex-wrap:wrap;justify-content:center}}
 /* Node */
 .nd{position:relative;text-align:center;cursor:default;transition:transform .2s}
 .nd:hover{transform:translateY(-2px)}

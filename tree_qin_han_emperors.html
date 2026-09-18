@@ -11,6 +11,7 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
 .hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5;transition:opacity .2s}.hdr a:hover{opacity:1}
 .wrap{padding:20px 16px 10px;overflow-x:auto}
 .tree{display:flex;flex-direction:column;align-items:center;min-width:600px;gap:0}
+@media(max-width:650px){.tree{min-width:0;width:100%}.row{flex-wrap:wrap;justify-content:center}}
 .nd{position:relative;text-align:center;cursor:pointer;transition:transform .15s}.nd:hover{transform:translateY(-1px)}
 .nb{border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:7px 12px;background:rgba(255,255,255,.02);transition:all .2s;border-left:3px solid rgba(91,100,138,.4)}
 .nd:hover .nb{border-color:rgba(var(--axr),.3);background:rgba(var(--axr),.04)}
