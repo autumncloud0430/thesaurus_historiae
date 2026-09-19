@@ -1,0 +1,101 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>神聖ローマ帝国の構造</title><style>@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048;--border:rgba(var(--axr),.08)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+.hdr{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.hdr h1{font-family:'Noto Serif JP',serif;font-size:20px;font-weight:700;color:var(--gold2)}
+.hdr a{font-size:14px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
+.flow{max-width:720px;margin:0 auto;padding:24px 20px 60px}
+.phase{position:relative;margin-bottom:2px;padding:16px 16px 16px 60px;border-left:2px solid rgba(var(--axr),.08);margin-left:30px}
+.phase:last-child{border-left-color:transparent}
+.phase-label{position:absolute;left:-42px;top:16px;width:36px;font-family:'Cormorant Garamond',serif;font-size:13px;font-weight:700;color:var(--text3);text-align:right;line-height:1.3}
+.phase::before{content:'';position:absolute;left:-5px;top:22px;width:8px;height:8px;border-radius:50%;background:var(--bg);border:2px solid rgba(var(--axr),.25)}
+.node{background:rgba(255,255,255,.015);border:1px solid rgba(255,255,255,.04);border-radius:8px;padding:10px 14px;margin-bottom:8px;border-left:3px solid transparent}
+.node:hover{background:rgba(255,255,255,.03)}
+.node-title{font-family:'Noto Serif JP',serif;font-size:18px;font-weight:700;color:var(--gold2);margin-bottom:2px}
+.node-year{font-family:'Cormorant Garamond',serif;font-size:14px;color:var(--gold);opacity:.6;margin-bottom:4px}
+.node-desc{font-size:15px;color:var(--text2);line-height:1.7}
+.node-desc strong{color:var(--text);font-weight:600}
+.arrow{display:flex;align-items:center;gap:6px;padding:2px 0 2px 8px;margin-bottom:6px}
+.arrow-line{width:16px;height:1px;background:rgba(var(--axr),.15)}
+.arrow-text{font-size:8px;color:var(--text3)}
+.arrow-icon{color:rgba(var(--axr),.3);font-size:10px}
+.branch-row{display:flex;gap:8px;margin-bottom:8px}
+.branch-row .node{flex:1}
+.node.key{background:rgba(var(--axr),.04);border-color:rgba(var(--axr),.12)}
+.side-note{font-size:8px;color:var(--text3);padding:4px 8px;border-left:2px solid rgba(var(--axr),.1);margin:4px 0 8px;line-height:1.6}
+.note{text-align:center;padding:8px 20px 32px;max-width:700px;margin:0 auto}.note p{font-size:15px;color:var(--text3);line-height:1.8}.note strong{color:var(--gold)}
+
+.p1 .node{border-left-color:rgba(100,100,180,.3)}.p1::before{border-color:rgba(100,100,180,.4)}.p2 .node{border-left-color:rgba(130,100,80,.3)}.p2::before{border-color:rgba(130,100,80,.4)}.p3 .node{border-left-color:rgba(180,140,60,.3)}.p3::before{border-color:rgba(180,140,60,.5);background:rgba(180,140,60,.15)}.p4 .node{border-left-color:rgba(180,80,80,.3)}.p4::before{border-color:rgba(180,80,80,.5);background:rgba(180,80,80,.15)}.p5 .node{border-left-color:rgba(140,140,140,.3)}.p5::before{border-color:rgba(140,140,140,.5);background:rgba(140,140,140,.15)}
+@media(max-width:600px){
+.hdr{padding:10px 12px}.hdr h1{font-size:17px}
+.flow{padding:16px 10px 40px}
+.phase{padding:12px 10px 12px 44px;margin-left:20px}
+.phase-label{left:-30px;width:28px;font-size:12px}
+.node{padding:8px 10px}.node-title{font-size:15px}.node-desc{font-size:12px}
+.branch-row{flex-direction:column}
+.side-note{font-size:7.5px}
+.note p{font-size:8px}
+}
+</style><style id="thThemes">/* =====================================================
+   THESAURUS HISTORIAE ― themes.css(LUX固定版)
+   生成りの紙 + 墨の本文 + 朱筆(★語) + 金茶の構造色。
+   retheme_inject.py が各HTMLに埋め込む。編集後は再実行。
+   ===================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&display=swap');
+
+:root { --axr: 201, 169, 110; --shu: #c9a96e; }
+
+html[data-theme="lux"] {
+  --bg:#f1ecdf;
+  --gold:#8b6f4e; --gold2:#59452a; --gold3:#9c855f;
+  --text:#2b241b; --text2:#6d6353; --text3:#a89a80;
+  --line:rgba(43,36,27,.16); --border:rgba(43,36,27,.16);
+  --gold-dim:rgba(139,111,78,.16);
+  --axr:139,111,78;
+  --shu:#a2331e;
+}
+
+html[data-theme="lux"] body {
+  background:var(--bg);
+  font-family:'Shippori Mincho','Noto Serif JP',serif;
+}
+html[data-theme="lux"] body::before { opacity:.55; }
+html[data-theme="lux"] p { line-height:2.05; }
+html[data-theme="lux"] * { text-shadow:none !important; }
+
+/* 強調の二段化: 通常太字=墨 / ★語=朱 */
+html[data-theme="lux"] strong { color:var(--text) !important; font-weight:600; }
+html[data-theme="lux"] span.k,
+html[data-theme="lux"] span.k + strong,
+html[data-theme="lux"] .node-title .k { color:var(--shu) !important; }
+html[data-theme="lux"] span.k + strong { font-weight:700; }
+html[data-theme="lux"] ::selection { background:rgba(162,51,30,.18); }
+</style><script id="thScript">document.documentElement.setAttribute('data-theme','lux');</script></head><body>
+<div class="hdr"><h1>神聖ローマ帝国の構造 ― なぜ皇帝権は形骸化したか(962-1806)</h1><a href="charts.html">← Ad Chartae</a></div>
+<div class="flow">
+<div class="phase p1"><div class="phase-label">成立<br>962</div>
+  <div class="node key"><div class="node-title">★オットー1世の戴冠</div><div class="node-year">962</div>
+  <div class="node-desc">東フランク王<strong>オットー1世</strong>がローマで教皇★<strong>ヨハネス12世</strong>から戴冠→「ローマ皇帝」の称号を獲得。★<strong>カール大帝(800戴冠)の帝国の後継</strong>を自任するが、実態は<strong>ドイツ王が兼任する称号</strong>にすぎず、最初から「皇帝権＝ドイツ国内の諸侯連合の上に立つ名目的権威」という性格を内包していた。</div></div>
+  <div class="node"><div class="node-title">帝国教会政策</div>
+  <div class="node-desc">皇帝は聖職者(司教・修道院長)を任命し諸侯として統治に利用→のち★<strong>叙任権闘争</strong>(グレゴリウス7世 vs ハインリヒ4世、★<strong>カノッサの屈辱</strong>1077)で皇帝権が動揺</div></div></div>
+
+<div class="phase p2"><div class="phase-label">分裂の<br>制度化<br>1356</div>
+  <div class="node key"><div class="node-title">★★金印勅書</div><div class="node-year">1356</div>
+  <div class="node-desc">皇帝★<strong>カール4世</strong>(ルクセンブルク家)が発布。皇帝を選出する★<strong>七選帝侯</strong>を正式制度化＝聖界3(マインツ・ケルン・トリーア大司教)＋世俗4(ライン宮中伯・ザクセン公・ブランデンブルク辺境伯・ベーメン王)。★<strong>皇帝は世襲ではなく選挙で選出</strong>される(＝選挙帝政)。選帝侯の領邦には★<strong>事実上の主権(高権)</strong>を承認→<strong>皇帝権の分散が法的に確定</strong>した決定的転換点。</div></div></div>
+
+<div class="phase p3"><div class="phase-label">宗教的<br>分裂<br>1517-1555</div>
+  <div class="node key"><div class="node-title">★宗教改革との衝突</div><div class="node-year">1517-1555</div>
+  <div class="node-desc"><strong>ルター</strong>の宗教改革(1517)→皇帝★<strong>カール5世</strong>(ハプスブルク家)が対抗するが、諸侯の多くがルター派を支持し皇帝権への抵抗の口実にも利用→シュマルカルデン戦争を経て★<strong>アウクスブルクの和議</strong>(1555)＝<strong>「領邦の宗教はその領邦の主が決める」</strong>(cuius regio, eius religio)。★<strong>宗教の統一すら領邦単位</strong>となり、帝国の分裂が信仰の次元にも及んだ。</div></div></div>
+
+<div class="phase p4"><div class="phase-label">事実上の<br>解体<br>1618-1648</div>
+  <div class="node key"><div class="node-title">★★三十年戦争 → ウェストファリア条約</div><div class="node-year">1618-1648</div>
+  <div class="node-desc">ドイツを主戦場に周辺諸国(仏・スウェーデン・デンマーク等)が介入する国際戦争へ拡大→国土は荒廃(人口の3割前後が失われたとされる)。★<strong>ウェストファリア条約</strong>(1648)で各領邦に★<strong>ほぼ完全な主権</strong>(外交権・条約締結権を含む)を正式承認→神聖ローマ帝国は<strong>「300以上の領邦から成る緩やかな連合体」</strong>と化す。★<strong>ヴォルテールの評</strong>「神聖でもなく、ローマでもなく、帝国でもない」はこの状態を指す。</div></div>
+  <div class="side-note">この時点で皇帝位は★<strong>1438年以降ほぼハプスブルク家が世襲的に独占</strong>(選挙自体は形式上継続)→カール大帝の後継を自任した帝国は、実質的に<strong>ハプスブルク家の家産</strong>と化していく</div></div>
+
+<div class="phase p5"><div class="phase-label">消滅<br>1806</div>
+  <div class="node key"><div class="node-title">★皇帝フランツ2世の帝冠返上</div><div class="node-year">1806</div>
+  <div class="node-desc">★<strong>ナポレオン</strong>がドイツ諸邦を再編し★<strong>ライン同盟</strong>を結成(1806)→神聖ローマ帝国は空文化→皇帝<strong>フランツ2世</strong>が帝冠を正式に返上し<strong>神聖ローマ帝国は消滅</strong>。フランツ2世は先んじて創設していた★<strong>オーストリア皇帝(フランツ1世)</strong>の地位に一本化された。</div></div></div>
+
+</div><div class="note"><p>神聖ローマ帝国の理解の核心＝<strong>「なぜドイツ統一は1871年までかかったか」</strong>に直結する。入試最頻出は①★<strong>金印勅書(1356)＝選帝侯制度の法制化</strong> ②★<strong>ウェストファリア条約(1648)＝領邦主権の確定</strong>の2点。両者を「皇帝権が法的・実質的に空洞化していく2つの節目」として対で覚えるのが効率的。</p></div></body></html>
