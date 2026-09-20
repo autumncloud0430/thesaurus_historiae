@@ -24,6 +24,15 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
 .tooltip-box strong{color:var(--gold2)}.tooltip-box b{color:var(--gold)}
 .note{text-align:center;padding:8px 20px 32px;max-width:800px;margin:0 auto}.note p{font-size:9px;color:var(--text3);line-height:1.8}.note strong{color:var(--gold)}
 @media(max-width:600px){body{font-size:12px}.container{padding:8px}h1{font-size:14px}}
+/* LUX(明色)背景でのノード文字・矢印ラベルのコントラスト確保 */
+html[data-theme="lux"] .nd text[fill="#d4c088"],html[data-theme="lux"] .nd text[fill="#e8c888"]{fill:#6f5212}
+html[data-theme="lux"] .nd text[fill="#d48888"],html[data-theme="lux"] .nd text[fill="#d47070"]{fill:#8e2a2a}
+html[data-theme="lux"] .nd text[fill="#88d4b0"],html[data-theme="lux"] .nd text[fill="#a0c0a0"]{fill:#1f6347}
+html[data-theme="lux"] .nd text[fill="#88b0d4"],html[data-theme="lux"] .nd text[fill="#a0a0d4"]{fill:#27507c}
+html[data-theme="lux"] .nd text[fill="#c0a0d4"]{fill:#5b3a7a}
+html[data-theme="lux"] .nd text[fill="#c0c0a0"]{fill:#55533a}
+html[data-theme="lux"] .nd text[fill="#d4a088"],html[data-theme="lux"] .nd text[fill="#d4a080"]{fill:#86452a}
+html[data-theme="lux"] .ed text{fill:var(--text2)}
 </style><style id="thThemes">/* =====================================================
    THESAURUS HISTORIAE ― themes.css(LUX固定版)
    生成りの紙 + 墨の本文 + 朱筆(★語) + 金茶の構造色。
@@ -60,9 +69,16 @@ html[data-theme="lux"] span.k + strong { font-weight:700; }
 html[data-theme="lux"] ::selection { background:rgba(162,51,30,.18); }
 </style><script id="thScript">document.documentElement.setAttribute('data-theme','lux');</script></head><body>
 <div class="hdr"><h1>因果関係ネットワーク ― 「なぜそうなったか」を辿る</h1><a href="index.html">← Ad Indicem</a></div>
-<div class="tabs"><button class=" active" data-key="20c">20世紀の因果連鎖</button>
+<div class="tabs"><button class=" active" data-key="rome">ローマ帝国の変容と衰亡</button>
+<button class="" data-key="islam">イスラーム世界の成立と分裂</button>
+<button class="" data-key="tangsong">唐宋変革</button>
+<button class="" data-key="mongol">モンゴル帝国とユーラシアの一体化</button>
+<button class="" data-key="crisis14">14世紀の危機と封建社会の解体</button>
 <button class="" data-key="econ">経済の因果連鎖</button>
 <button class="" data-key="thought">思想と政治の因果連鎖</button>
+<button class="" data-key="crisis17">「17世紀の危機」と主権国家</button>
+<button class="" data-key="atlantic">大西洋革命の連鎖</button>
+<button class="" data-key="20c">20世紀の因果連鎖</button>
 <button class="" data-key="coldwar">冷戦と第三世界</button>
 <button class="" data-key="mideast">中東問題の因果連鎖</button>
 <button class="" data-key="china">中国近現代の因果連鎖</button>
@@ -70,7 +86,7 @@ html[data-theme="lux"] ::selection { background:rgba(162,51,30,.18); }
 </div>
 <div class="hint">ノードをクリック → 関連する因果関係がハイライト＋詳細表示 / 余白クリックで解除</div>
 <div class="wrap">
-<div class="theme-svg" id="theme-20c" style="">
+<div class="theme-svg" id="theme-20c" style="display:none">
 <svg viewBox="0 0 880 780" xmlns="http://www.w3.org/2000/svg" style="width:880px;height:780px;min-width:880px">
 <defs><marker id="ah_20c" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="rgba(var(--axr),.7)"/></marker></defs>
 
@@ -217,7 +233,7 @@ html[data-theme="lux"] ::selection { background:rgba(162,51,30,.18); }
 
 </svg>
 </div>
-<div class="theme-svg" id="theme-econ" style="display:none;">
+<div class="theme-svg" id="theme-econ" style="display:none">
 <svg viewBox="0 0 840 680" xmlns="http://www.w3.org/2000/svg" style="width:840px;height:680px;min-width:840px">
 <defs><marker id="ah_econ" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="rgba(var(--axr),.7)"/></marker></defs>
 
@@ -328,7 +344,7 @@ html[data-theme="lux"] ::selection { background:rgba(162,51,30,.18); }
 
 </svg>
 </div>
-<div class="theme-svg" id="theme-thought" style="display:none;">
+<div class="theme-svg" id="theme-thought" style="display:none">
 <svg viewBox="0 0 840 660" xmlns="http://www.w3.org/2000/svg" style="width:840px;height:660px;min-width:840px">
 <defs><marker id="ah_thought" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="rgba(var(--axr),.7)"/></marker></defs>
 
@@ -427,7 +443,7 @@ html[data-theme="lux"] ::selection { background:rgba(162,51,30,.18); }
 
 </svg>
 </div>
-<div class="theme-svg" id="theme-coldwar" style="display:none;">
+<div class="theme-svg" id="theme-coldwar" style="display:none">
 <svg viewBox="0 0 880 720" xmlns="http://www.w3.org/2000/svg" style="width:880px;height:720px;min-width:880px">
 <defs><marker id="ah_coldwar" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="rgba(var(--axr),.7)"/></marker></defs>
 
@@ -546,7 +562,7 @@ html[data-theme="lux"] ::selection { background:rgba(162,51,30,.18); }
 
 </svg>
 </div>
-<div class="theme-svg" id="theme-mideast" style="display:none;">
+<div class="theme-svg" id="theme-mideast" style="display:none">
 <svg viewBox="0 0 880 720" xmlns="http://www.w3.org/2000/svg" style="width:880px;height:720px;min-width:880px">
 <defs><marker id="ah_mideast" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="rgba(var(--axr),.7)"/></marker></defs>
 
@@ -753,6 +769,949 @@ html[data-theme="lux"] ::selection { background:rgba(162,51,30,.18); }
 <g class="nd" data-id="coldwar_ea" data-desc="<strong>冷戦と東アジア(1945-)</strong><br>★<b>米ソ冷戦</b>→東アジアの分断＝★<b>朝鮮半島の南北分断</b>(1948)→朝鮮戦争(1950-53)→★<b>中国大陸と台湾の分断</b>。<br>日米安保体制(1951)＋日韓基本条約(1965)＋日中国交正常化(1972)。<br>★<b>冷戦の終結(1989)</b>→ただし東アジアでは★<b>冷戦構造が残存</b>(北朝鮮・台湾問題・米中対立)→★<b>21世紀の「新冷戦」</b>へ？<br>★冊封体制→条約体制→帝国主義→冷戦→米中二極という<b>東アジア国際秩序の重層的変容</b>。"><rect x="295" y="780" width="210" height="36" rx="6" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/><text x="400" y="802" text-anchor="middle" fill="#d4c088" font-size="8" font-family="Noto Serif JP" font-weight="700">冷戦と東アジア(1945-)</text></g>
 
 </svg></div>
+<!--NEXUS-PREMODERN-START-->
+<div class="theme-svg" id="theme-rome" style="">
+<svg viewBox="0 0 880 820" xmlns="http://www.w3.org/2000/svg" style="width:880px;height:820px;min-width:880px">
+<defs><marker id="ah_rome" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="rgba(var(--axr),.7)"/></marker></defs>
+
+<g class="ed" data-from="pax" data-to="crisis3">
+<path d="M150,57 Q275,57 396,131" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_rome)"/>
+<text x="274" y="85" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">征服の停止→財政難</text>
+</g>
+<g class="ed" data-from="lati" data-to="crisis3">
+<path d="M450,57 Q425,57 404,131" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_rome)"/>
+<text x="460" y="85" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">奴隷供給の減少</text>
+</g>
+<g class="ed" data-from="press" data-to="crisis3">
+<line x1="701" y1="158" x2="498" y2="158" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_rome)"/>
+<text x="600" y="151" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">防衛負担・軍の発言力増大</text>
+</g>
+<g class="ed" data-from="crisis3" data-to="domi">
+<path d="M400,182 Q265,182 134,256" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_rome)"/>
+<text x="266" y="210" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">秩序回復へ皇帝権を強化</text>
+</g>
+<g class="ed" data-from="crisis3" data-to="city">
+<line x1="400" y1="182" x2="390" y2="256" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_rome)"/>
+<text x="441" y="222" text-anchor="start" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">内乱と悪貨で商業が停滞</text>
+</g>
+<g class="ed" data-from="crisis3" data-to="colo">
+<path d="M400,182 Q505,182 606,256" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_rome)"/>
+<text x="534" y="204" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">奴隷から小作人へ</text>
+</g>
+<g class="ed" data-from="domi" data-to="city">
+<line x1="212" y1="278" x2="316" y2="278" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_rome)"/>
+<text x="264" y="271" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">軍・官僚の維持費</text>
+</g>
+<g class="ed" data-from="city" data-to="colo">
+<line x1="462" y1="278" x2="536" y2="278" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_rome)"/>
+<text x="499" y="271" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">没落農民が流入</text>
+</g>
+<g class="ed" data-from="domi" data-to="christ">
+<line x1="130" y1="297" x2="130" y2="376" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_rome)"/>
+<text x="136" y="339" text-anchor="start" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">皇帝崇拝の強制→大迫害は失敗</text>
+</g>
+<g class="ed" data-from="domi" data-to="const">
+<path d="M130,297 Q275,297 416,376" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_rome)"/>
+<text x="274" y="326" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">分治で重心が東へ</text>
+</g>
+<g class="ed" data-from="press" data-to="migr">
+<line x1="775" y1="177" x2="775" y2="376" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_rome)"/>
+<text x="781" y="279" text-anchor="start" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">フン人の西進が引き金</text>
+</g>
+<g class="ed" data-from="const" data-to="split">
+<line x1="420" y1="417" x2="420" y2="496" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_rome)"/>
+<text x="426" y="459" text-anchor="start" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">東西の分割統治が常態化</text>
+</g>
+<g class="ed" data-from="split" data-to="fall">
+<line x1="420" y1="537" x2="420" y2="611" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_rome)"/>
+<text x="426" y="577" text-anchor="start" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">西は経済基盤が脆弱</text>
+</g>
+<g class="ed" data-from="split" data-to="byz">
+<path d="M420,537 Q580,537 736,616" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_rome)"/>
+<text x="579" y="566" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">東は都市・貨幣が健在</text>
+</g>
+<g class="ed" data-from="migr" data-to="fall">
+<path d="M775,417 Q597,417 424,611" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_rome)"/>
+<text x="598" y="475" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">傭兵隊長オドアケル</text>
+</g>
+<g class="ed" data-from="christ" data-to="medi">
+<path d="M130,417 Q120,640 296,736" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_rome)"/>
+<text x="166" y="618" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">教会がゲルマン人に布教</text>
+</g>
+<g class="ed" data-from="fall" data-to="medi">
+<path d="M420,662 Q360,662 304,736" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_rome)"/>
+<text x="361" y="690" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">ゲルマン諸国家の分立</text>
+</g>
+<g class="nd" data-id="pax" data-desc="<strong>「ローマの平和」と拡大の停止(2C)</strong><br>五賢帝時代、トラヤヌス帝のとき最大版図。以後は征服が止まり、<b>戦利品と奴隷の流入が先細り</b>になる。<br>★長大な国境(ライン・ドナウ・東方)の防衛費だけが残る構造。">
+<rect x="64" y="20" width="172" height="36" rx="6" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
+<text x="150.0" y="42.0" text-anchor="middle" fill="#d4c088" font-size="9" font-family="Noto Serif JP" font-weight="700">「ローマの平和」と拡大の停止(2C)</text>
+</g>
+<g class="nd" data-id="lati" data-desc="<strong>ラティフンディアの行き詰まり</strong><br>征服戦争の捕虜＝奴隷に依存した大農場経営。<br>★征服の停止で<b>奴隷の供給が減り価格が上昇</b>→奴隷制経営が不採算に。">
+<rect x="380" y="20" width="140" height="36" rx="6" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
+<text x="450.0" y="42.0" text-anchor="middle" fill="#88d4b0" font-size="9" font-family="Noto Serif JP" font-weight="700">奴隷制大農場の行き詰まり</text>
+</g>
+<g class="nd" data-id="crisis3" data-desc="<strong>★3世紀の危機(軍人皇帝時代 235-284)</strong><br>各地の軍団が皇帝を擁立しては廃位。約50年間に20人以上の皇帝が乱立。<br>内乱・外敵・疫病に<b>貨幣の悪鋳によるインフレ</b>が重なり、帝国は解体の瀬戸際に。">
+<rect x="305" y="135" width="189" height="46" rx="6" fill="rgba(180,80,80,.2)" stroke="rgba(180,80,80,.4)" stroke-width="1.5"/>
+<text x="400.0" y="162.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700">★3世紀の危機(軍人皇帝時代 235-284)</text>
+</g>
+<g class="nd" data-id="press" data-desc="<strong>外圧の増大(3C-)</strong><br>北＝ゲルマン人がライン・ドナウ国境に侵入。東＝パルティアに代わった<b>ササン朝(224-)</b>が攻勢。<br>★260年、皇帝ウァレリアヌスがシャープール1世に敗れ捕虜となる(エデッサの戦い)。">
+<rect x="703" y="140" width="143" height="36" rx="6" fill="rgba(100,130,180,.15)" stroke="rgba(100,130,180,.3)" stroke-width="1.5"/>
+<text x="775.0" y="162.0" text-anchor="middle" fill="#88b0d4" font-size="9" font-family="Noto Serif JP" font-weight="700">ゲルマン人・ササン朝の圧力</text>
+</g>
+<g class="nd" data-id="domi" data-desc="<strong>専制君主政(ドミナトゥス 284-)</strong><br><b>ディオクレティアヌス帝</b>＝四帝分治制(テトラルキア)・皇帝崇拝の強制・軍と官僚の大増員。<br>★元首政(プリンキパトゥス)の共和政的な外見を捨て、東方的な専制へ。">
+<rect x="50" y="260" width="160" height="36" rx="6" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
+<text x="130.0" y="282.0" text-anchor="middle" fill="#d4c088" font-size="9" font-family="Noto Serif JP" font-weight="700">専制君主政(ドミナトゥス 284-)</text>
+</g>
+<g class="nd" data-id="city" data-desc="<strong>重税と都市の衰退</strong><br>膨張した軍と官僚を支えるための重税。徴税責任を負わされた都市の有力者(都市参事会員)が没落・逃亡。<br>★<b>職業・身分の世襲化と固定化</b>。地中海の都市的な古代世界が変質する。">
+<rect x="320" y="260" width="140" height="36" rx="6" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
+<text x="390.0" y="282.0" text-anchor="middle" fill="#88d4b0" font-size="9" font-family="Noto Serif JP" font-weight="700">重税と都市の衰退</text>
+</g>
+<g class="nd" data-id="colo" data-desc="<strong>コロナトゥス(小作制)への移行</strong><br>奴隷に代えて<b>コロヌス(土地に縛られた小作人)</b>を使う大所領経営へ。没落した中小農民もコロヌス化。<br>★コンスタンティヌス帝がコロヌスの移動を禁止(332)→中世の農奴制の先駆。">
+<rect x="540" y="260" width="140" height="36" rx="6" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
+<text x="610.0" y="282.0" text-anchor="middle" fill="#88d4b0" font-size="9" font-family="Noto Serif JP" font-weight="700">コロナトゥス(小作制)</text>
+</g>
+<g class="nd" data-id="christ" data-desc="<strong>キリスト教の公認→国教化</strong><br>ディオクレティアヌス帝の大迫害(303)→コンスタンティヌス帝の<b>ミラノ勅令(313)</b>で公認→ニケーア公会議(325)でアタナシウス派が正統→<b>テオドシウス帝が国教化(392)</b>。<br>★迫害の対象から帝国統合の柱へ。">
+<rect x="60" y="380" width="140" height="36" rx="6" fill="rgba(130,100,160,.15)" stroke="rgba(130,100,160,.3)" stroke-width="1.5"/>
+<text x="130.0" y="402.0" text-anchor="middle" fill="#c0a0d4" font-size="9" font-family="Noto Serif JP" font-weight="700">キリスト教の公認→国教化</text>
+</g>
+<g class="nd" data-id="const" data-desc="<strong>コンスタンティノープル遷都(330)</strong><br>コンスタンティヌス帝がビザンティウムに新都を建設。<b>ソリドゥス金貨</b>を発行して貨幣を安定させた。<br>★帝国の重心が、経済力のある東方へ移る。">
+<rect x="336" y="380" width="168" height="36" rx="6" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
+<text x="420.0" y="402.0" text-anchor="middle" fill="#d4c088" font-size="9" font-family="Noto Serif JP" font-weight="700">コンスタンティノープル遷都(330)</text>
+</g>
+<g class="nd" data-id="migr" data-desc="<strong>ゲルマン人の大移動(375-)</strong><br><b>フン人の西進</b>に押された西ゴート人がドナウ川を越える→アドリアノープルの戦い(378)で皇帝ウァレンス戦死。<br>★410年、西ゴート王アラリックがローマを略奪。諸部族が帝国領内に次々と建国。">
+<rect x="705" y="380" width="140" height="36" rx="6" fill="rgba(100,130,180,.15)" stroke="rgba(100,130,180,.3)" stroke-width="1.5"/>
+<text x="775.0" y="402.0" text-anchor="middle" fill="#88b0d4" font-size="9" font-family="Noto Serif JP" font-weight="700">ゲルマン人の大移動(375-)</text>
+</g>
+<g class="nd" data-id="split" data-desc="<strong>★帝国の東西分裂(395)</strong><br>テオドシウス帝が死に際して帝国を2子に分与(東＝アルカディウス、西＝ホノリウス)。<br>以後、再統一されることはなかった。">
+<rect x="350" y="500" width="140" height="36" rx="6" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/>
+<text x="420.0" y="522.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700">★帝国の東西分裂(395)</text>
+</g>
+<g class="nd" data-id="fall" data-desc="<strong>★西ローマ帝国の滅亡(476)</strong><br>ゲルマン人傭兵隊長<b>オドアケル</b>が西ローマ皇帝ロムルス＝アウグストゥルスを廃位。<br>★西方は都市と貨幣経済が弱く、ゲルマン諸部族の建国で税収の基盤を失っていた。">
+<rect x="349" y="615" width="141" height="46" rx="6" fill="rgba(180,80,80,.2)" stroke="rgba(180,80,80,.4)" stroke-width="1.5"/>
+<text x="420.0" y="642.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700">★西ローマ帝国の滅亡(476)</text>
+</g>
+<g class="nd" data-id="byz" data-desc="<strong>東ローマ(ビザンツ)帝国の存続(-1453)</strong><br>東方は都市と貨幣経済が健在で、首都は堅固な城壁に守られた。<br>★6世紀、<b>ユスティニアヌス帝</b>が地中海の再統一を試み、『ローマ法大全』を編纂させた。">
+<rect x="663" y="620" width="153" height="36" rx="6" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
+<text x="740.0" y="642.0" text-anchor="middle" fill="#d4c088" font-size="9" font-family="Noto Serif JP" font-weight="700">東ローマ(ビザンツ)帝国の存続</text>
+</g>
+<g class="nd" data-id="medi" data-desc="<strong>西ヨーロッパ中世世界の形成</strong><br>ゲルマン国家(フランク王国)・<b>ローマ＝カトリック教会</b>・ローマの遺産(ラテン語・法)の3要素が融合。コロナトゥスは農奴制・荘園制の源流に。<br>★クローヴィスの改宗(496)→カール大帝の戴冠(800)へ。">
+<rect x="228" y="740" width="143" height="36" rx="6" fill="rgba(130,100,160,.15)" stroke="rgba(130,100,160,.3)" stroke-width="1.5"/>
+<text x="300.0" y="762.0" text-anchor="middle" fill="#c0a0d4" font-size="9" font-family="Noto Serif JP" font-weight="700">西ヨーロッパ中世世界の形成</text>
+</g>
+
+</svg>
+</div>
+<div class="theme-svg" id="theme-islam" style="display:none">
+<svg viewBox="0 0 880 940" xmlns="http://www.w3.org/2000/svg" style="width:880px;height:940px;min-width:880px">
+<defs><marker id="ah_islam" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="rgba(var(--axr),.7)"/></marker></defs>
+
+<g class="ed" data-from="war" data-to="mecca">
+<line x1="228" y1="38" x2="386" y2="38" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_islam)"/>
+<text x="307" y="31" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">交易路が迂回</text>
+</g>
+<g class="ed" data-from="mecca" data-to="muha">
+<line x1="460" y1="57" x2="460" y2="131" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_islam)"/>
+<text x="466" y="97" text-anchor="start" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">富の独占への批判</text>
+</g>
+<g class="ed" data-from="tribe" data-to="muha">
+<path d="M750,57 Q605,57 464,131" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_islam)"/>
+<text x="606" y="85" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">部族を超える共同体へ</text>
+</g>
+<g class="ed" data-from="war" data-to="conq">
+<path d="M150,57 Q150,200 196,256" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_islam)"/>
+<text x="161" y="188" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">両大国の疲弊→急速な征服</text>
+</g>
+<g class="ed" data-from="muha" data-to="conq">
+<path d="M460,182 Q330,182 204,256" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_islam)"/>
+<text x="331" y="210" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">半島統一→対外拡大</text>
+</g>
+<g class="ed" data-from="muha" data-to="shia">
+<path d="M460,182 Q595,182 726,256" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_islam)"/>
+<text x="594" y="210" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">後継者(カリフ)問題</text>
+</g>
+<g class="ed" data-from="conq" data-to="umay">
+<line x1="200" y1="297" x2="200" y2="376" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_islam)"/>
+<text x="206" y="339" text-anchor="start" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">カリフ位の世襲化</text>
+</g>
+<g class="ed" data-from="shia" data-to="umay">
+<path d="M730,297 Q465,297 204,376" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_islam)"/>
+<text x="544" y="316" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">アリー暗殺(661)</text>
+</g>
+<g class="ed" data-from="umay" data-to="mawa">
+<line x1="287" y1="398" x2="430" y2="398" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_islam)"/>
+<text x="358" y="391" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">アラブ人優遇の税制</text>
+</g>
+<g class="ed" data-from="mawa" data-to="abba">
+<path d="M520,417 Q480,417 444,491" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_islam)"/>
+<text x="481" y="445" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">ホラーサーンで蜂起</text>
+</g>
+<g class="ed" data-from="shia" data-to="abba">
+<path d="M730,297 Q760,440 444,491" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_islam)"/>
+<text x="673" y="427" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">反ウマイヤ運動に合流</text>
+</g>
+<g class="ed" data-from="abba" data-to="bagh">
+<path d="M440,542 Q290,542 144,616" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_islam)"/>
+<text x="291" y="570" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">ムスリムの平等・東西交易</text>
+</g>
+<g class="ed" data-from="abba" data-to="three">
+<line x1="440" y1="542" x2="440" y2="616" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_islam)"/>
+<text x="446" y="582" text-anchor="start" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">ウマイヤ家がイベリアへ</text>
+</g>
+<g class="ed" data-from="abba" data-to="mamluk">
+<path d="M440,542 Q595,542 746,616" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_islam)"/>
+<text x="594" y="570" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">親衛隊に採用</text>
+</g>
+<g class="ed" data-from="three" data-to="buya">
+<path d="M440,657 Q345,657 254,736" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_islam)"/>
+<text x="346" y="686" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">地方政権が都を制圧</text>
+</g>
+<g class="ed" data-from="mamluk" data-to="selj">
+<path d="M750,657 Q695,657 644,736" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_islam)"/>
+<text x="696" y="686" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">トルコ人の西進とイスラーム化</text>
+</g>
+<g class="ed" data-from="buya" data-to="selj">
+<line x1="336" y1="758" x2="547" y2="758" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_islam)"/>
+<text x="441" y="751" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">スンナ派の擁護者として追放</text>
+</g>
+<g class="ed" data-from="buya" data-to="end">
+<line x1="250" y1="777" x2="250" y2="856" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_islam)"/>
+<text x="256" y="819" text-anchor="start" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">カリフは名目的存在に</text>
+</g>
+<g class="ed" data-from="selj" data-to="crus">
+<line x1="640" y1="777" x2="640" y2="856" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_islam)"/>
+<text x="646" y="819" text-anchor="start" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">マンジケルトの戦い(1071)</text>
+</g>
+<g class="nd" data-id="war" data-desc="<strong>ビザンツ帝国とササン朝の抗争(6C後半-7C初)</strong><br>両大国の長期戦で、メソポタミア経由の東西交易路が途絶えがちに。<br>★交易路が<b>アラビア半島西岸(ヒジャーズ地方)へ迂回</b>。両国は疲弊し、のちのアラブ軍の征服を容易にした。">
+<rect x="74" y="20" width="152" height="36" rx="6" fill="rgba(100,130,180,.15)" stroke="rgba(100,130,180,.3)" stroke-width="1.5"/>
+<text x="150.0" y="42.0" text-anchor="middle" fill="#88b0d4" font-size="9" font-family="Noto Serif JP" font-weight="700">ビザンツ帝国とササン朝の抗争</text>
+</g>
+<g class="nd" data-id="mecca" data-desc="<strong>メッカの商業的繁栄</strong><br>クライシュ族が隊商交易を掌握。カーバ神殿は多神教の聖地として巡礼者を集めた。<br>★富の独占と<b>貧富の差の拡大</b>、部族的な相互扶助の弛緩。">
+<rect x="390" y="20" width="140" height="36" rx="6" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
+<text x="460.0" y="42.0" text-anchor="middle" fill="#88d4b0" font-size="9" font-family="Noto Serif JP" font-weight="700">メッカの繁栄と貧富の差</text>
+</g>
+<g class="nd" data-id="tribe" data-desc="<strong>部族社会の対立</strong><br>アラブ人は血縁にもとづく部族ごとに分かれ、抗争が絶えなかった。<br>★部族を超えて人々を結びつける原理が存在しなかった。">
+<rect x="680" y="20" width="140" height="36" rx="6" fill="rgba(130,130,100,.15)" stroke="rgba(130,130,100,.3)" stroke-width="1.5"/>
+<text x="750.0" y="42.0" text-anchor="middle" fill="#c0c0a0" font-size="9" font-family="Noto Serif JP" font-weight="700">部族間の対立・多神教</text>
+</g>
+<g class="nd" data-id="muha" data-desc="<strong>★ムハンマドとウンマの成立</strong><br>610年頃、唯一神アッラーの啓示を受け、神の前の平等と富の独占への批判を説く→メッカの大商人が迫害→<b>622年メディナへ移住(ヒジュラ)</b>。<br>★信仰にもとづく共同体<b>ウンマ</b>を建設。630年メッカ征服、アラビア半島をほぼ統一。">
+<rect x="355" y="135" width="209" height="46" rx="6" fill="rgba(130,100,160,.2)" stroke="rgba(130,100,160,.4)" stroke-width="1.5"/>
+<text x="460.0" y="162.0" text-anchor="middle" fill="#c0a0d4" font-size="9" font-family="Noto Serif JP" font-weight="700">★ムハンマドとウンマの成立(622 ヒジュラ)</text>
+</g>
+<g class="nd" data-id="conq" data-desc="<strong>正統カリフ時代の大征服(632-661)</strong><br>アブー＝バクル→ウマル→ウスマーン→アリー。<b>ニハーヴァンドの戦い(642)</b>でササン朝を破り、ビザンツ帝国からシリア・エジプトを奪う。<br>★征服地に軍営都市(ミスル)を建設。">
+<rect x="115" y="260" width="170" height="36" rx="6" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/>
+<text x="200.0" y="282.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700">正統カリフ時代の大征服(632-661)</text>
+</g>
+<g class="nd" data-id="shia" data-desc="<strong>カリフ位をめぐる対立</strong><br>第4代カリフの<b>アリー</b>がシリア総督ムアーウィヤと対立し、661年に暗殺される。<br>★アリーとその子孫のみを指導者(イマーム)と認める<b>シーア派</b>が成立。多数派はスンナ派。">
+<rect x="649" y="260" width="161" height="36" rx="6" fill="rgba(130,100,160,.15)" stroke="rgba(130,100,160,.3)" stroke-width="1.5"/>
+<text x="730.0" y="282.0" text-anchor="middle" fill="#c0a0d4" font-size="9" font-family="Noto Serif JP" font-weight="700">カリフ位をめぐる対立→シーア派</text>
+</g>
+<g class="nd" data-id="umay" data-desc="<strong>ウマイヤ朝(661-750)</strong><br>ムアーウィヤがダマスクスに開き、カリフ位を世襲化。西はイベリア半島(西ゴート王国を滅ぼす 711)、東は中央アジア・インダス川流域へ。<br>★<b>アラブ人が特権を持つ「アラブ帝国」</b>。トゥール・ポワティエ間の戦い(732)で西進が止まる。">
+<rect x="115" y="380" width="170" height="36" rx="6" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
+<text x="200.0" y="402.0" text-anchor="middle" fill="#d4c088" font-size="9" font-family="Noto Serif JP" font-weight="700">ウマイヤ朝(661-750)＝アラブ帝国</text>
+</g>
+<g class="nd" data-id="mawa" data-desc="<strong>マワーリーの不満</strong><br>征服地の住民は改宗しても<b>ジズヤ(人頭税)とハラージュ(地租)</b>を課され続け、アラブ人は免除。<br>★「神の前の平等」という教えとの矛盾が、イラン人改宗者を中心に反ウマイヤ感情を生む。">
+<rect x="434" y="380" width="171" height="36" rx="6" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
+<text x="520.0" y="402.0" text-anchor="middle" fill="#88d4b0" font-size="9" font-family="Noto Serif JP" font-weight="700">非アラブ改宗者(マワーリー)の不満</text>
+</g>
+<g class="nd" data-id="abba" data-desc="<strong>★アッバース朝の成立(750)</strong><br>ホラーサーン地方で蜂起、シーア派やマワーリーの支持を得てウマイヤ朝を打倒。<br>★アラブ人の特権を廃止：<b>ムスリムならジズヤ免除、アラブ人も土地を持てばハラージュを負担</b>＝「イスラーム帝国」。イラン人を官僚に登用。">
+<rect x="342" y="495" width="195" height="46" rx="6" fill="rgba(180,80,80,.2)" stroke="rgba(180,80,80,.4)" stroke-width="1.5"/>
+<text x="440.0" y="522.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700">★アッバース革命(750)＝イスラーム帝国</text>
+</g>
+<g class="nd" data-id="bagh" data-desc="<strong>バグダードの繁栄</strong><br>第2代カリフのマンスールが建設。ハールーン＝アッラシードの時代に全盛。タラス河畔の戦い(751)を機に製紙法が伝わる。<br>★<b>「知恵の館」</b>でギリシア語文献をアラビア語に翻訳→のちラテン語に重訳され西欧の12世紀ルネサンスへ。">
+<rect x="55" y="620" width="170" height="36" rx="6" fill="rgba(130,100,160,.15)" stroke="rgba(130,100,160,.3)" stroke-width="1.5"/>
+<text x="140.0" y="642.0" text-anchor="middle" fill="#c0a0d4" font-size="9" font-family="Noto Serif JP" font-weight="700">バグダードの繁栄・イスラーム文化</text>
+</g>
+<g class="nd" data-id="three" data-desc="<strong>地方政権の自立と3カリフの鼎立(10C)</strong><br>ウマイヤ家の一族がイベリア半島に<b>後ウマイヤ朝(756-)</b>。シーア派(イスマーイール派)の<b>ファーティマ朝(909-)</b>は北アフリカ(チュニジア)での建国当初からカリフを称してアッバース朝の権威を否定→後ウマイヤ朝のアブド＝アッラフマーン3世も対抗してカリフを称した(929)。ファーティマ朝は969年にエジプトを征服し、新都カイロを建設。<br>★イスラーム世界の政治的統一は失われる。">
+<rect x="361" y="620" width="157" height="36" rx="6" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
+<text x="440.0" y="642.0" text-anchor="middle" fill="#d4c088" font-size="9" font-family="Noto Serif JP" font-weight="700">地方政権の自立→3カリフの鼎立</text>
+</g>
+<g class="nd" data-id="mamluk" data-desc="<strong>マムルークの台頭(9C-)</strong><br>カリフが騎馬戦士として優秀な<b>トルコ人の奴隷を親衛隊に採用</b>。<br>★やがて軍人がカリフの廃立を左右するようになり、カリフの実権が失われていく。">
+<rect x="673" y="620" width="153" height="36" rx="6" fill="rgba(100,130,180,.15)" stroke="rgba(100,130,180,.3)" stroke-width="1.5"/>
+<text x="750.0" y="642.0" text-anchor="middle" fill="#88b0d4" font-size="9" font-family="Noto Serif JP" font-weight="700">マムルーク(トルコ人軍人奴隷)</text>
+</g>
+<g class="nd" data-id="buya" data-desc="<strong>ブワイフ朝(932-1062)</strong><br>イラン系のシーア派軍事政権。946年バグダードに入城し、カリフから<b>大アミール</b>に任じられて実権を掌握。<br>★軍人に俸給の代わりに徴税権を与える<b>イクター制</b>を開始→セルジューク朝以降に継承。">
+<rect x="166" y="740" width="168" height="36" rx="6" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
+<text x="250.0" y="762.0" text-anchor="middle" fill="#88d4b0" font-size="9" font-family="Noto Serif JP" font-weight="700">ブワイフ朝のバグダード入城(946)</text>
+</g>
+<g class="nd" data-id="selj" data-desc="<strong>セルジューク朝(1038-1194)</strong><br>トルコ系でスンナ派。<b>トゥグリル＝ベク</b>が1055年バグダードに入城しブワイフ朝を追放、カリフから<b>スルタン</b>の称号を得る。<br>★カリフ＝宗教的権威、スルタン＝世俗の支配者という分業。ニザーミーヤ学院でスンナ派の学問を振興。">
+<rect x="551" y="740" width="178" height="36" rx="6" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
+<text x="640.0" y="762.0" text-anchor="middle" fill="#d4c088" font-size="9" font-family="Noto Serif JP" font-weight="700">セルジューク朝(1038-)とスルタン制</text>
+</g>
+<g class="nd" data-id="end" data-desc="<strong>アッバース朝の滅亡(1258)</strong><br>カリフは名目的な存在のまま存続したが、モンゴルの<b>フラグ</b>がバグダードを攻略して滅ぼした。<br>★以後、イスラーム世界の中心はマムルーク朝のカイロへ。">
+<rect x="180" y="860" width="140" height="36" rx="6" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/>
+<text x="250.0" y="882.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700">アッバース朝の滅亡(1258)</text>
+</g>
+<g class="nd" data-id="crus" data-desc="<strong>十字軍の契機</strong><br>セルジューク朝が<b>マンジケルトの戦い(1071)</b>でビザンツ帝国を破り、アナトリアへ進出。<br>★ビザンツ皇帝の救援要請→教皇ウルバヌス2世のクレルモン宗教会議(1095)→第1回十字軍。アナトリアのトルコ化も始まる。">
+<rect x="564" y="860" width="151" height="36" rx="6" fill="rgba(100,130,180,.15)" stroke="rgba(100,130,180,.3)" stroke-width="1.5"/>
+<text x="640.0" y="882.0" text-anchor="middle" fill="#88b0d4" font-size="9" font-family="Noto Serif JP" font-weight="700">ビザンツ圧迫→十字軍(1096-)</text>
+</g>
+
+</svg>
+</div>
+<div class="theme-svg" id="theme-tangsong" style="display:none">
+<svg viewBox="0 0 880 940" xmlns="http://www.w3.org/2000/svg" style="width:880px;height:940px;min-width:880px">
+<defs><marker id="ah_tangsong" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="rgba(var(--axr),.7)"/></marker></defs>
+
+<g class="ed" data-from="juntian" data-to="jiedu">
+<line x1="242" y1="38" x2="396" y2="38" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_tangsong)"/>
+<text x="319" y="31" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">府兵制の崩壊→募兵制</text>
+</g>
+<g class="ed" data-from="jiedu" data-to="anshi">
+<path d="M470,57 Q455,57 444,131" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_tangsong)"/>
+<text x="456" y="85" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">安禄山が3節度使を兼任</text>
+</g>
+<g class="ed" data-from="xuan" data-to="anshi">
+<path d="M750,57 Q595,57 444,131" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_tangsong)"/>
+<text x="596" y="85" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">楊国忠との対立</text>
+</g>
+<g class="ed" data-from="anshi" data-to="fanzhen">
+<path d="M440,182 Q295,182 154,256" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_tangsong)"/>
+<text x="296" y="210" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">内地にも節度使を配置</text>
+</g>
+<g class="ed" data-from="anshi" data-to="liangshui">
+<line x1="440" y1="182" x2="440" y2="256" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_tangsong)"/>
+<text x="446" y="222" text-anchor="start" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">租調庸の崩壊→財政再建</text>
+</g>
+<g class="ed" data-from="anshi" data-to="uighur">
+<path d="M440,182 Q590,182 736,256" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_tangsong)"/>
+<text x="589" y="210" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">ウイグルの援軍で鎮圧</text>
+</g>
+<g class="ed" data-from="fanzhen" data-to="huang">
+<path d="M150,297 Q220,297 286,376" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_tangsong)"/>
+<text x="199" y="326" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">節度使の朱全忠が唐を滅ぼす</text>
+</g>
+<g class="ed" data-from="liangshui" data-to="huang">
+<path d="M440,297 Q365,297 294,376" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_tangsong)"/>
+<text x="406" y="326" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">塩専売の強化→密売商人の反乱</text>
+</g>
+<g class="ed" data-from="huang" data-to="noble">
+<line x1="380" y1="398" x2="566" y2="398" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_tangsong)"/>
+<text x="473" y="391" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">戦乱で荘園と命を失う</text>
+</g>
+<g class="ed" data-from="huang" data-to="wudai">
+<line x1="290" y1="417" x2="290" y2="496" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_tangsong)"/>
+<text x="296" y="459" text-anchor="start" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">節度使が次々に建国</text>
+</g>
+<g class="ed" data-from="noble" data-to="land">
+<line x1="640" y1="417" x2="640" y2="496" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_tangsong)"/>
+<text x="646" y="459" text-anchor="start" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">貴族の荘園の解体</text>
+</g>
+<g class="ed" data-from="liangshui" data-to="land">
+<path d="M440,297 Q470,470 636,496" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_tangsong)"/>
+<text x="456" y="443" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">土地私有の公認→土地の集積</text>
+</g>
+<g class="ed" data-from="wudai" data-to="song">
+<line x1="290" y1="537" x2="290" y2="611" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_tangsong)"/>
+<text x="296" y="577" text-anchor="start" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">武人の権限を剥奪</text>
+</g>
+<g class="ed" data-from="land" data-to="shi">
+<line x1="640" y1="537" x2="650" y2="616" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_tangsong)"/>
+<text x="651" y="579" text-anchor="start" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">経済力を背景に科挙へ</text>
+</g>
+<g class="ed" data-from="song" data-to="shi">
+<line x1="374" y1="638" x2="576" y2="638" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_tangsong)"/>
+<text x="475" y="631" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">科挙の整備・殿試の創設</text>
+</g>
+<g class="ed" data-from="song" data-to="mili">
+<path d="M290,662 Q220,662 154,736" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_tangsong)"/>
+<text x="221" y="690" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">禁軍の中央集中・文官優位</text>
+</g>
+<g class="ed" data-from="song" data-to="comm">
+<path d="M290,662 Q375,662 456,736" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_tangsong)"/>
+<text x="374" y="690" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">商業統制の緩和・国内の安定</text>
+</g>
+<g class="ed" data-from="shi" data-to="cult">
+<path d="M650,657 Q700,657 746,736" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_tangsong)"/>
+<text x="699" y="686" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">士大夫が文化の担い手に</text>
+</g>
+<g class="ed" data-from="comm" data-to="cult">
+<line x1="532" y1="758" x2="676" y2="758" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_tangsong)"/>
+<text x="604" y="751" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">都市の繁栄→庶民文化</text>
+</g>
+<g class="ed" data-from="mili" data-to="wang">
+<line x1="150" y1="777" x2="150" y2="856" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_tangsong)"/>
+<text x="156" y="819" text-anchor="start" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">歳幣と軍事費で財政難</text>
+</g>
+<g class="nd" data-id="juntian" data-desc="<strong>律令体制の動揺(8C)</strong><br>人口増加と土地不足、貴族・寺院の荘園拡大で<b>均田制</b>が行き詰まり、重い負担を嫌った農民が逃亡。<br>★農民から徴兵する<b>府兵制</b>が維持できなくなり、傭兵を用いる<b>募兵制</b>へ。">
+<rect x="79" y="20" width="161" height="36" rx="6" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
+<text x="160.0" y="42.0" text-anchor="middle" fill="#88d4b0" font-size="9" font-family="Noto Serif JP" font-weight="700">均田制・租調庸制・府兵制の動揺</text>
+</g>
+<g class="nd" data-id="jiedu" data-desc="<strong>節度使</strong><br>募兵を率いて辺境を守る軍団の司令官。玄宗の時代に10の節度使が置かれた。<br>★軍事だけでなく、任地の<b>民政・財政まで握る</b>ようになり、半独立の勢力に成長。">
+<rect x="400" y="20" width="140" height="36" rx="6" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
+<text x="470.0" y="42.0" text-anchor="middle" fill="#d4c088" font-size="9" font-family="Noto Serif JP" font-weight="700">節度使の設置(辺境防衛)</text>
+</g>
+<g class="nd" data-id="xuan" data-desc="<strong>玄宗の治世後半</strong><br>前半は「開元の治」と称えられたが、晩年は楊貴妃を寵愛し、その一族の楊国忠が実権を握る。<br>★ソグド系の節度使<b>安禄山</b>と楊国忠の対立が深まる。">
+<rect x="680" y="20" width="140" height="36" rx="6" fill="rgba(130,130,100,.15)" stroke="rgba(130,130,100,.3)" stroke-width="1.5"/>
+<text x="750.0" y="42.0" text-anchor="middle" fill="#c0c0a0" font-size="9" font-family="Noto Serif JP" font-weight="700">玄宗治世後半の政治の弛緩</text>
+</g>
+<g class="nd" data-id="anshi" data-desc="<strong>★安史の乱(755-763)</strong><br>平盧・范陽・河東の<b>3節度使を兼ねた安禄山</b>と部下の史思明が挙兵。洛陽・長安が陥落し、玄宗は四川へ逃れた。<br>★<b>ウイグルの援軍</b>を得てようやく鎮圧。唐の支配は根本から変質する。">
+<rect x="370" y="135" width="140" height="46" rx="6" fill="rgba(180,80,80,.2)" stroke="rgba(180,80,80,.4)" stroke-width="1.5"/>
+<text x="440.0" y="162.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700">★安史の乱(755-763)</text>
+</g>
+<g class="nd" data-id="fanzhen" data-desc="<strong>藩鎮の割拠</strong><br>乱の鎮圧のため内地にも節度使を配置。彼らは軍事・行政・財政を握って<b>藩鎮</b>として自立し、とくに河北では租税を中央に送らなかった。<br>★唐の財政は、大運河で結ばれた江南の税収と塩の専売に依存するようになった。">
+<rect x="80" y="260" width="140" height="36" rx="6" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
+<text x="150.0" y="282.0" text-anchor="middle" fill="#d4c088" font-size="9" font-family="Noto Serif JP" font-weight="700">藩鎮の割拠</text>
+</g>
+<g class="nd" data-id="liangshui" data-desc="<strong>両税法(780)</strong><br>宰相<b>楊炎</b>の建議。租調庸に代え、現住地で<b>実際に持つ土地・資産に応じて夏・秋2回</b>課税。銭納が原則。<br>★国家が<b>土地私有(大土地所有)を公認</b>したことを意味する。あわせて塩の専売が財政の柱に。">
+<rect x="370" y="260" width="140" height="36" rx="6" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
+<text x="440.0" y="282.0" text-anchor="middle" fill="#88d4b0" font-size="9" font-family="Noto Serif JP" font-weight="700">両税法(780)・塩の専売</text>
+</g>
+<g class="nd" data-id="uighur" data-desc="<strong>周辺勢力の圧迫</strong><br>ウイグルは援軍の見返りに不利な<b>絹馬貿易</b>を唐に強いた。吐蕃は763年に一時長安を占領し、河西回廊を押さえる。<br>★唐は西域への影響力を失う。">
+<rect x="670" y="260" width="140" height="36" rx="6" fill="rgba(100,130,180,.15)" stroke="rgba(100,130,180,.3)" stroke-width="1.5"/>
+<text x="740.0" y="282.0" text-anchor="middle" fill="#88b0d4" font-size="9" font-family="Noto Serif JP" font-weight="700">ウイグル・吐蕃の圧迫</text>
+</g>
+<g class="nd" data-id="huang" data-desc="<strong>黄巣の乱→唐の滅亡</strong><br>塩の密売商人の<b>黄巣</b>らが蜂起し、全国を転戦して長安を占領。<br>★乱の中で台頭した節度使の<b>朱全忠</b>が907年に唐を滅ぼし、後梁を建国。">
+<rect x="201" y="380" width="177" height="36" rx="6" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/>
+<text x="290.0" y="402.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700">黄巣の乱(875-884)→唐の滅亡(907)</text>
+</g>
+<g class="nd" data-id="noble" data-desc="<strong>門閥貴族の没落</strong><br>魏晋南北朝以来、家柄を誇り高級官職を占めてきた貴族が、戦乱の中で荘園を失い、多くが殺害された。<br>★家柄にもとづく支配層が消滅。">
+<rect x="570" y="380" width="140" height="36" rx="6" fill="rgba(130,130,100,.15)" stroke="rgba(130,130,100,.3)" stroke-width="1.5"/>
+<text x="640.0" y="402.0" text-anchor="middle" fill="#c0c0a0" font-size="9" font-family="Noto Serif JP" font-weight="700">門閥貴族の没落</text>
+</g>
+<g class="nd" data-id="wudai" data-desc="<strong>五代十国(907-979)</strong><br>華北に後梁・後唐・後晋・後漢・後周の5王朝、各地に10余りの国。いずれも節度使出身の武人が建てた。<br>★後晋が建国の援助の代償に<b>燕雲十六州を契丹(遼)に割譲</b>(936)。">
+<rect x="214" y="500" width="152" height="36" rx="6" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/>
+<text x="290.0" y="522.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700">五代十国(907-979)＝武断政治</text>
+</g>
+<g class="nd" data-id="land" data-desc="<strong>新興地主層の台頭</strong><br>貴族に代わり、土地を買い集めた新興の地主＝<b>形勢戸</b>が成長。小作人の<b>佃戸</b>に耕作させて収穫の半分ほどを小作料として取る。<br>★家柄ではなく経済力にもとづく新しい支配層。">
+<rect x="570" y="500" width="140" height="36" rx="6" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
+<text x="640.0" y="522.0" text-anchor="middle" fill="#88d4b0" font-size="9" font-family="Noto Serif JP" font-weight="700">新興地主(形勢戸)と佃戸制</text>
+</g>
+<g class="nd" data-id="song" data-desc="<strong>★宋(北宋 960-1127)の文治主義</strong><br><b>趙匡胤(太祖)</b>が節度使の権限を奪い、精鋭を皇帝直属の<b>禁軍</b>に集中。軍事・行政・財政の全権を皇帝に集めた。<br>★科挙の最終試験として皇帝自らが行う<b>殿試</b>を創設。">
+<rect x="208" y="615" width="164" height="46" rx="6" fill="rgba(180,140,60,.2)" stroke="rgba(180,140,60,.4)" stroke-width="1.5"/>
+<text x="290.0" y="642.0" text-anchor="middle" fill="#d4c088" font-size="9" font-family="Noto Serif JP" font-weight="700">★宋の文治主義・君主独裁(960-)</text>
+</g>
+<g class="nd" data-id="shi" data-desc="<strong>士大夫の成立</strong><br>科挙に合格して官僚となった、儒学の教養を備えた知識人層。多くは形勢戸の出身で、官僚を出した家は<b>官戸</b>として特権を得た。<br>★貴族に代わる新しい支配層。ただし地位は世襲できず、代々科挙に合格する必要があった。">
+<rect x="580" y="620" width="140" height="36" rx="6" fill="rgba(130,100,160,.15)" stroke="rgba(130,100,160,.3)" stroke-width="1.5"/>
+<text x="650.0" y="642.0" text-anchor="middle" fill="#c0a0d4" font-size="9" font-family="Noto Serif JP" font-weight="700">科挙官僚＝士大夫の成立</text>
+</g>
+<g class="nd" data-id="mili" data-desc="<strong>対外的な劣勢</strong><br>文官優位で軍の指揮系統が弱体化。遼と<b>澶淵の盟(1004)</b>、西夏と<b>慶暦の和約(1044)</b>を結び、毎年銀や絹を贈って平和を買った。<br>★1127年には金に華北を奪われる(靖康の変)。">
+<rect x="65" y="740" width="170" height="36" rx="6" fill="rgba(100,130,180,.15)" stroke="rgba(100,130,180,.3)" stroke-width="1.5"/>
+<text x="150.0" y="762.0" text-anchor="middle" fill="#88b0d4" font-size="9" font-family="Noto Serif JP" font-weight="700">軍事力の弱体化→遼・西夏への歳幣</text>
+</g>
+<g class="nd" data-id="comm" data-desc="<strong>経済の飛躍的発展</strong><br>占城稲の導入と囲田の造成→<b>「蘇湖(江浙)熟すれば天下足る」</b>。都市では夜間や場所の営業規制がなくなり、城外に<b>草市・鎮</b>が成立。行(商人)・作(手工業者)。<br>★銅銭の大量鋳造に加え、世界最初の紙幣<b>交子</b>。">
+<rect x="390" y="740" width="140" height="36" rx="6" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
+<text x="460.0" y="762.0" text-anchor="middle" fill="#88d4b0" font-size="9" font-family="Noto Serif JP" font-weight="700">江南開発と商業の発展</text>
+</g>
+<g class="nd" data-id="cult" data-desc="<strong>宋代の文化</strong><br>担い手は士大夫と都市の庶民。宇宙の原理と人間の本性を探究する<b>宋学</b>→南宋の<b>朱熹</b>が大成(朱子学)、大義名分論と華夷の別を強調。<br>★詞・雑劇、文人画と院体画、木版印刷の普及・羅針盤・火薬。">
+<rect x="680" y="740" width="140" height="36" rx="6" fill="rgba(130,100,160,.15)" stroke="rgba(130,100,160,.3)" stroke-width="1.5"/>
+<text x="750.0" y="762.0" text-anchor="middle" fill="#c0a0d4" font-size="9" font-family="Noto Serif JP" font-weight="700">宋学(朱子学)と庶民文化</text>
+</g>
+<g class="nd" data-id="wang" data-desc="<strong>王安石の新法</strong><br>膨大な軍事費と歳幣、官僚の増加で財政難に。神宗が<b>王安石</b>を登用：青苗法・均輸法・市易法・募役法・保甲法・保馬法。<br>★大地主や大商人の利益を抑えたため、<b>司馬光</b>ら旧法党が反発→党争で国力を消耗。">
+<rect x="74" y="860" width="151" height="36" rx="6" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
+<text x="150.0" y="882.0" text-anchor="middle" fill="#d4c088" font-size="9" font-family="Noto Serif JP" font-weight="700">財政難→王安石の新法(1069-)</text>
+</g>
+
+</svg>
+</div>
+<div class="theme-svg" id="theme-mongol" style="display:none">
+<svg viewBox="0 0 880 820" xmlns="http://www.w3.org/2000/svg" style="width:880px;height:820px;min-width:880px">
+<defs><marker id="ah_mongol" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="rgba(var(--axr),.7)"/></marker></defs>
+
+<g class="ed" data-from="steppe" data-to="chin">
+<path d="M150,57 Q300,57 446,131" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_mongol)"/>
+<text x="299" y="85" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">諸部族を統合</text>
+</g>
+<g class="ed" data-from="army" data-to="chin">
+<line x1="450" y1="57" x2="450" y2="131" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_mongol)"/>
+<text x="496" y="97" text-anchor="start" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">部族制の解体と再編</text>
+</g>
+<g class="ed" data-from="merch" data-to="chin">
+<path d="M750,57 Q600,57 454,131" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_mongol)"/>
+<text x="601" y="85" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">情報・資金・文書行政</text>
+</g>
+<g class="ed" data-from="chin" data-to="west">
+<path d="M450,182 Q300,182 154,256" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_mongol)"/>
+<text x="301" y="210" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">子孫が遠征を継続</text>
+</g>
+<g class="ed" data-from="chin" data-to="yuan">
+<line x1="450" y1="182" x2="450" y2="256" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_mongol)"/>
+<text x="476" y="222" text-anchor="start" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">金・南宋へ</text>
+</g>
+<g class="ed" data-from="chin" data-to="succ">
+<path d="M450,182 Q600,182 746,256" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_mongol)"/>
+<text x="599" y="210" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">一族への分封と後継者争い</text>
+</g>
+<g class="ed" data-from="west" data-to="local">
+<line x1="150" y1="297" x2="130" y2="376" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_mongol)"/>
+<text x="156" y="339" text-anchor="start" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">少数の支配層が現地に同化</text>
+</g>
+<g class="ed" data-from="west" data-to="pax">
+<path d="M150,297 Q315,297 476,371" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_mongol)"/>
+<text x="248" y="315" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">西アジア・ロシアまで支配下に</text>
+</g>
+<g class="ed" data-from="yuan" data-to="pax">
+<path d="M450,297 Q465,297 476,371" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_mongol)"/>
+<text x="412" y="333" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">中国の経済力を取り込む</text>
+</g>
+<g class="ed" data-from="succ" data-to="pax">
+<path d="M750,297 Q615,297 484,371" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_mongol)"/>
+<text x="669" y="315" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">和解後もゆるやかな連合を維持</text>
+</g>
+<g class="ed" data-from="local" data-to="succr">
+<line x1="130" y1="417" x2="130" y2="496" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_mongol)"/>
+<text x="136" y="459" text-anchor="start" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">ハン国の分裂・解体</text>
+</g>
+<g class="ed" data-from="pax" data-to="jam">
+<path d="M480,422 Q415,422 354,496" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_mongol)"/>
+<text x="416" y="450" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">広域支配のもとで陸海の交通網を連結</text>
+</g>
+<g class="ed" data-from="pax" data-to="cult">
+<path d="M480,422 Q527,422 571,496" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_mongol)"/>
+<text x="496" y="468" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">使節・商人・宣教師の往来</text>
+</g>
+<g class="ed" data-from="pax" data-to="silver">
+<path d="M480,422 Q632,422 781,496" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_mongol)"/>
+<text x="631" y="450" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">広域の決済手段が必要に</text>
+</g>
+<g class="ed" data-from="jam" data-to="plague">
+<line x1="350" y1="537" x2="350" y2="616" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_mongol)"/>
+<text x="356" y="579" text-anchor="start" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">交易路に沿って拡散</text>
+</g>
+<g class="ed" data-from="silver" data-to="infl">
+<line x1="785" y1="537" x2="785" y2="616" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_mongol)"/>
+<text x="791" y="579" text-anchor="start" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">銀の流出・紙幣への依存</text>
+</g>
+<g class="ed" data-from="infl" data-to="hong">
+<path d="M785,657 Q702,657 624,731" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_mongol)"/>
+<text x="703" y="685" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">物価高騰・飢饉・黄河の氾濫</text>
+</g>
+<g class="nd" data-id="steppe" data-desc="<strong>草原世界の分裂(9C半ば-12C)</strong><br>840年にウイグルがキルギスに滅ぼされて以後、モンゴル高原には統一勢力がなく、諸部族が抗争。<br>★華北の金は、諸部族を互いに争わせて統制していた。">
+<rect x="78" y="20" width="143" height="36" rx="6" fill="rgba(130,130,100,.15)" stroke="rgba(130,130,100,.3)" stroke-width="1.5"/>
+<text x="150.0" y="42.0" text-anchor="middle" fill="#c0c0a0" font-size="9" font-family="Noto Serif JP" font-weight="700">ウイグル滅亡後の草原の分裂</text>
+</g>
+<g class="nd" data-id="army" data-desc="<strong>軍事・社会組織</strong><br>遊牧民の騎馬戦術と高い機動力。チンギス＝ハンは部族制を解体し、遊牧民を<b>千戸制</b>(1000戸単位の軍事・行政組織)に再編した。<br>★血縁による部族連合から、ハンに直属する軍事国家へ。">
+<rect x="380" y="20" width="140" height="36" rx="6" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
+<text x="450.0" y="42.0" text-anchor="middle" fill="#d4c088" font-size="9" font-family="Noto Serif JP" font-weight="700">騎馬軍団の機動力と千戸制</text>
+</g>
+<g class="nd" data-id="merch" data-desc="<strong>商人と定住民の協力</strong><br>中央アジアのムスリム商人やウイグル人が、情報・資金・文書行政の技術を提供。<br>★モンゴルは交易路の安全を保障し、商人は帝国の財務を担う共生関係。元では<b>色目人</b>として重用された。">
+<rect x="669" y="20" width="161" height="36" rx="6" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
+<text x="750.0" y="42.0" text-anchor="middle" fill="#88d4b0" font-size="9" font-family="Noto Serif JP" font-weight="700">ムスリム商人・ウイグル人の協力</text>
+</g>
+<g class="nd" data-id="chin" data-desc="<strong>★チンギス＝ハン(位1206-27)</strong><br>1206年、クリルタイでハン位につき大モンゴル国を建てる。ナイマン、<b>ホラズム＝シャー朝</b>、西夏を次々に滅ぼした。<br>★東西交易路の掌握をめざす征服。">
+<rect x="354" y="135" width="191" height="46" rx="6" fill="rgba(180,80,80,.2)" stroke="rgba(180,80,80,.4)" stroke-width="1.5"/>
+<text x="450.0" y="162.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700">★チンギス＝ハンの統一(1206)と大征服</text>
+</g>
+<g class="nd" data-id="west" data-desc="<strong>西方遠征</strong><br><b>バトゥ</b>がロシア・東欧へ遠征、<b>ワールシュタットの戦い(1241)</b>でドイツ・ポーランド連合軍を破る。<b>フラグ</b>は1258年にバグダードを攻略してアッバース朝を滅ぼした。<br>★キプチャク＝ハン国、イル＝ハン国の成立。">
+<rect x="80" y="260" width="140" height="36" rx="6" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/>
+<text x="150.0" y="282.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700">西方遠征(バトゥ・フラグ)</text>
+</g>
+<g class="nd" data-id="yuan" data-desc="<strong>中国の征服と元</strong><br>オゴタイが金を滅ぼす(1234)。<b>フビライ</b>が大都(現在の北京)に遷都し、1271年に国号を元とする→1276年に臨安を占領して南宋を滅ぼす。<br>★モンゴル人第一主義。色目人を財務に重用し、科挙は一時停止された。">
+<rect x="380" y="260" width="140" height="36" rx="6" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
+<text x="450.0" y="282.0" text-anchor="middle" fill="#d4c088" font-size="9" font-family="Noto Serif JP" font-weight="700">金・南宋の征服→元(1271)</text>
+</g>
+<g class="nd" data-id="succ" data-desc="<strong>帝国の分立</strong><br>フビライの即位に反対して<b>ハイドゥの乱</b>(1266頃-1301)。チャガタイ＝ハン国、キプチャク＝ハン国、イル＝ハン国が事実上自立した。<br>★ただし14世紀初めに和解し、大ハン(元の皇帝)を宗主とするゆるやかな連合は保たれた。">
+<rect x="674" y="260" width="152" height="36" rx="6" fill="rgba(130,130,100,.15)" stroke="rgba(130,130,100,.3)" stroke-width="1.5"/>
+<text x="750.0" y="282.0" text-anchor="middle" fill="#c0c0a0" font-size="9" font-family="Noto Serif JP" font-weight="700">帝位継承争い→諸ハン国の分立</text>
+</g>
+<g class="nd" data-id="local" data-desc="<strong>諸ハン国の土着化</strong><br>少数の支配者モンゴル人が、現地のトルコ系・イラン系住民に同化。イル＝ハン国は<b>ガザン＝ハン</b>の時(1295)にイスラーム教を国教とした。<br>★宰相ラシード＝アッディーンがペルシア語で世界史『集史』を編纂。">
+<rect x="60" y="380" width="140" height="36" rx="6" fill="rgba(130,100,160,.15)" stroke="rgba(130,100,160,.3)" stroke-width="1.5"/>
+<text x="130.0" y="402.0" text-anchor="middle" fill="#c0a0d4" font-size="9" font-family="Noto Serif JP" font-weight="700">西方3ハン国のイスラーム化</text>
+</g>
+<g class="nd" data-id="pax" data-desc="<strong>★ユーラシアの一体化(「モンゴルの平和」)</strong><br>ユーラシアの大半が一つの政治的枠組みに入り、関税の簡素化と交通路の整備で<b>ヒト・モノ・情報の移動がかつてなく活発に</b>。<br>★「草原の道」「オアシスの道」「海の道」が、大都を終点として一つに結ばれた。">
+<rect x="381" y="375" width="197" height="46" rx="6" fill="rgba(80,150,120,.2)" stroke="rgba(80,150,120,.4)" stroke-width="1.5"/>
+<text x="480.0" y="402.0" text-anchor="middle" fill="#88d4b0" font-size="9" font-family="Noto Serif JP" font-weight="700">★ユーラシアの一体化(13C後半-14C前半)</text>
+</g>
+<g class="nd" data-id="succr" data-desc="<strong>後継勢力の台頭(14C後半-)</strong><br>分裂した西チャガタイ＝ハン国から<b>ティムール</b>が台頭(1370)。ロシアは約240年の「タタールのくびき」の下で<b>モスクワ大公国</b>が徴税を請け負って力をつけ、1480年にイヴァン3世が自立。<br>★モンゴルの遺産の上に次の時代の帝国が育つ。">
+<rect x="45" y="500" width="170" height="36" rx="6" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
+<text x="130.0" y="522.0" text-anchor="middle" fill="#d4c088" font-size="9" font-family="Noto Serif JP" font-weight="700">ティムール・モスクワなど後継勢力</text>
+</g>
+<g class="nd" data-id="jam" data-desc="<strong>交通・交易網の整備</strong><br>オゴタイの時代に整備が始まり、帝国の拡大とともにユーラシア規模に広がった。幹線道路に沿って一定の距離ごとに駅を置き、牌符(通行証)を持つ使節や商人に馬や食料を提供する<b>駅伝制(ジャムチ)</b>。大運河を補修し、海運も発達。<br>★杭州・泉州・広州などの港市が繁栄し、ムスリム商人が活躍した。">
+<rect x="273" y="500" width="153" height="36" rx="6" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
+<text x="350.0" y="522.0" text-anchor="middle" fill="#88d4b0" font-size="9" font-family="Noto Serif JP" font-weight="700">駅伝制(ジャムチ)と陸海交易網</text>
+</g>
+<g class="nd" data-id="cult" data-desc="<strong>東西の人と文化の往来</strong><br>プラノ＝カルピニ、ルブルック、<b>マルコ＝ポーロ</b>(『世界の記述』)、大都の大司教<b>モンテ＝コルヴィノ</b>、<b>イブン＝バットゥータ</b>(『大旅行記』)。<br>★イスラーム天文学→郭守敬の<b>授時暦</b>。中国絵画→イランの細密画(ミニアチュール)。コバルト顔料→染付。">
+<rect x="505" y="500" width="140" height="36" rx="6" fill="rgba(130,100,160,.15)" stroke="rgba(130,100,160,.3)" stroke-width="1.5"/>
+<text x="575.0" y="522.0" text-anchor="middle" fill="#c0a0d4" font-size="9" font-family="Noto Serif JP" font-weight="700">東西文化の交流</text>
+</g>
+<g class="nd" data-id="silver" data-desc="<strong>銀と紙幣</strong><br>銀がユーラシア共通の決済手段に。元は銀との交換を前提に紙幣<b>交鈔</b>を発行して主要な通貨とした。<br>★徴税の請負や塩の専売で集めた銀が、ムスリム商人への投資を通じて西方へ流れた。">
+<rect x="715" y="500" width="140" height="36" rx="6" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
+<text x="785.0" y="522.0" text-anchor="middle" fill="#88d4b0" font-size="9" font-family="Noto Serif JP" font-weight="700">銀を基準とする経済と交鈔</text>
+</g>
+<g class="nd" data-id="plague" data-desc="<strong>疫病の伝播</strong><br>活発化した交通路に沿ってペストが広がり、1347年以降、西アジア・北アフリカ・ヨーロッパで大流行した。<br>★ヨーロッパでは人口の約3分の1が失われたとされる(→「14世紀の危機」)。">
+<rect x="265" y="620" width="169" height="36" rx="6" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/>
+<text x="350.0" y="642.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700">ペスト(黒死病)の大流行(14C半ば)</text>
+</g>
+<g class="nd" data-id="infl" data-desc="<strong>元の財政の破綻</strong><br>チベット仏教への莫大な寄進や宮廷の浪費、帝位をめぐる内紛が続く→<b>交鈔の濫発で物価が高騰</b>。専売の強化も民衆を圧迫した。">
+<rect x="715" y="620" width="140" height="36" rx="6" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
+<text x="785.0" y="642.0" text-anchor="middle" fill="#88d4b0" font-size="9" font-family="Noto Serif JP" font-weight="700">交鈔の濫発・財政の破綻</text>
+</g>
+<g class="nd" data-id="hong" data-desc="<strong>★紅巾の乱→明の成立</strong><br>黄河の治水工事への徴発をきっかけに、白蓮教徒などが蜂起した<b>紅巾の乱</b>。その中から貧農出身の<b>朱元璋</b>が台頭し、1368年に南京で明を建てた。<br>★元はモンゴル高原へ退いた(北元)。">
+<rect x="524" y="735" width="191" height="46" rx="6" fill="rgba(180,80,80,.2)" stroke="rgba(180,80,80,.4)" stroke-width="1.5"/>
+<text x="620.0" y="762.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700">★紅巾の乱(1351-66)→明の成立(1368)</text>
+</g>
+
+</svg>
+</div>
+<div class="theme-svg" id="theme-crisis14" style="display:none">
+<svg viewBox="0 0 880 700" xmlns="http://www.w3.org/2000/svg" style="width:880px;height:700px;min-width:880px">
+<defs><marker id="ah_crisis14" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="rgba(var(--axr),.7)"/></marker></defs>
+
+<g class="ed" data-from="clim" data-to="pop">
+<path d="M130,57 Q200,57 266,136" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_crisis14)"/>
+<text x="199" y="86" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">大飢饉(1315-17)</text>
+</g>
+<g class="ed" data-from="plag" data-to="pop">
+<path d="M420,62 Q345,62 274,136" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_crisis14)"/>
+<text x="366" y="90" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">数年で全欧に拡大</text>
+</g>
+<g class="ed" data-from="money" data-to="rent">
+<path d="M720,57 Q705,57 694,136" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_crisis14)"/>
+<text x="706" y="86" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">領主が貨幣収入を求める</text>
+</g>
+<g class="ed" data-from="pop" data-to="labor">
+<path d="M270,177 Q200,177 134,256" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_crisis14)"/>
+<text x="201" y="206" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">働き手の希少化→賃金上昇</text>
+</g>
+<g class="ed" data-from="pop" data-to="lord">
+<path d="M270,177 Q355,177 436,256" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_crisis14)"/>
+<text x="354" y="206" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">耕作者と地代収入の減少</text>
+</g>
+<g class="ed" data-from="rent" data-to="lord">
+<path d="M690,177 Q565,177 444,256" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_crisis14)"/>
+<text x="566" y="206" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">固定地代が実質目減り</text>
+</g>
+<g class="ed" data-from="war" data-to="lord">
+<line x1="662" y1="278" x2="514" y2="278" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_crisis14)"/>
+<text x="588" y="271" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">戦費の負担と荒廃</text>
+</g>
+<g class="ed" data-from="lord" data-to="react">
+<path d="M440,297 Q385,297 334,376" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_crisis14)"/>
+<text x="386" y="326" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">収入の回復をねらう</text>
+</g>
+<g class="ed" data-from="labor" data-to="revolt">
+<path d="M130,297 Q120,420 216,491" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_crisis14)"/>
+<text x="142" y="407" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">得た地位を守ろうとする</text>
+</g>
+<g class="ed" data-from="react" data-to="revolt">
+<path d="M330,417 Q275,417 224,491" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_crisis14)"/>
+<text x="276" y="445" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">賦役の復活・地代引き上げ・賃金統制</text>
+</g>
+<g class="ed" data-from="war" data-to="revolt">
+<path d="M750,297 Q560,470 224,491" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_crisis14)"/>
+<text x="549" y="431" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">戦費のための重税(人頭税)・戦乱の荒廃</text>
+</g>
+<g class="ed" data-from="lord" data-to="knight">
+<path d="M440,297 Q600,330 616,496" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_crisis14)"/>
+<text x="564" y="373" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">所領経営の破綻</text>
+</g>
+<g class="ed" data-from="war" data-to="knight">
+<path d="M750,297 Q760,420 624,496" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_crisis14)"/>
+<text x="723" y="418" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">長弓兵・火砲・傭兵の時代へ</text>
+</g>
+<g class="ed" data-from="revolt" data-to="yeoman">
+<line x1="220" y1="542" x2="220" y2="616" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_crisis14)"/>
+<text x="226" y="582" text-anchor="start" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">鎮圧後も農奴制は維持できず</text>
+</g>
+<g class="ed" data-from="knight" data-to="king">
+<line x1="620" y1="537" x2="640" y2="611" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_crisis14)"/>
+<text x="636" y="577" text-anchor="start" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">廷臣として国王に従属</text>
+</g>
+<g class="ed" data-from="war" data-to="king">
+<path d="M750,297 Q900,480 644,611" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_crisis14)"/>
+<text x="732" y="492" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">諸侯の疲弊・国民意識の芽生え</text>
+</g>
+<g class="nd" data-id="clim" data-desc="<strong>気候の寒冷化(14C初-)</strong><br>11-13世紀の温暖期と大開墾時代が終わり、気候が寒冷化して凶作と飢饉が頻発(1315-17年の大飢饉など)。<br>★耕地の拡大は限界に達し、増えすぎた人口を養えなくなっていた。">
+<rect x="60" y="20" width="140" height="36" rx="6" fill="rgba(130,130,100,.15)" stroke="rgba(130,130,100,.3)" stroke-width="1.5"/>
+<text x="130.0" y="42.0" text-anchor="middle" fill="#c0c0a0" font-size="9" font-family="Noto Serif JP" font-weight="700">気候の寒冷化・凶作・飢饉</text>
+</g>
+<g class="nd" data-id="plag" data-desc="<strong>★黒死病の大流行(1347-)</strong><br>モンゴル帝国のもとで活発化した交易路を通って、黒海沿岸からイタリア商人の船で地中海へ。数年で全ヨーロッパに拡大した。<br>★社会不安の中でユダヤ人の迫害も起こった。">
+<rect x="335" y="15" width="170" height="46" rx="6" fill="rgba(180,80,80,.2)" stroke="rgba(180,80,80,.4)" stroke-width="1.5"/>
+<text x="420.0" y="42.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700">★黒死病(ペスト)の大流行(1347-)</text>
+</g>
+<g class="nd" data-id="money" data-desc="<strong>貨幣経済の浸透(12-13C-)</strong><br>十字軍以降の遠隔地商業と都市の発展により、農村にも貨幣経済が広がった。<br>★領主も貨幣収入を必要とするようになり、農民は余剰の生産物を市場で売って貨幣を蓄えはじめた。">
+<rect x="650" y="20" width="140" height="36" rx="6" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
+<text x="720.0" y="42.0" text-anchor="middle" fill="#88d4b0" font-size="9" font-family="Noto Serif JP" font-weight="700">貨幣経済の浸透</text>
+</g>
+<g class="nd" data-id="pop" data-desc="<strong>人口の激減</strong><br>飢饉と黒死病で、ヨーロッパの人口の約3分の1が失われたとされる。<br>★耕作者を失って放棄される村(廃村)も各地に現れた。">
+<rect x="200" y="140" width="140" height="36" rx="6" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/>
+<text x="270.0" y="162.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700">人口の激減(約3分の1)</text>
+</g>
+<g class="nd" data-id="rent" data-desc="<strong>地代の変化</strong><br>領主は直営地での<b>賦役(労働地代)をやめて直営地を農民に貸し出し</b>、生産物や貨幣で地代を取る(純粋荘園)。<br>★農民は領主への人格的な従属から離れ、経済的に力をつける。とくにイギリスで進んだ。">
+<rect x="620" y="140" width="140" height="36" rx="6" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
+<text x="690.0" y="162.0" text-anchor="middle" fill="#88d4b0" font-size="9" font-family="Noto Serif JP" font-weight="700">地代の金納化・賦役の廃止</text>
+</g>
+<g class="nd" data-id="labor" data-desc="<strong>農民の地位の向上</strong><br>働き手が希少になって賃金が上昇。領主は農民を引き留めるために待遇を改善せざるをえず、農民は有利な条件を求めて移動した。">
+<rect x="58" y="260" width="143" height="36" rx="6" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
+<text x="130.0" y="282.0" text-anchor="middle" fill="#88d4b0" font-size="9" font-family="Noto Serif JP" font-weight="700">労働力不足→農民の地位向上</text>
+</g>
+<g class="nd" data-id="lord" data-desc="<strong>領主の経済的な困窮</strong><br>農民の減少で地代収入が減る一方、賃金と物価は上昇。貨幣で固定された地代は、貨幣価値の下落で実質的に目減りした。">
+<rect x="370" y="260" width="140" height="36" rx="6" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
+<text x="440.0" y="282.0" text-anchor="middle" fill="#d4c088" font-size="9" font-family="Noto Serif JP" font-weight="700">領主層の困窮</text>
+</g>
+<g class="nd" data-id="war" data-desc="<strong>百年戦争と戦術の変化</strong><br>クレシーの戦い(1346)でイギリスの<b>長弓兵</b>がフランスの重装騎士軍を破る。やがて<b>火砲</b>も普及し、傭兵や常備軍が軍の主力となった。<br>★長期の戦争は、重税と国土の荒廃ももたらした。">
+<rect x="664" y="260" width="171" height="36" rx="6" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/>
+<text x="750.0" y="282.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700">百年戦争(1339-1453)と戦術の変化</text>
+</g>
+<g class="nd" data-id="react" data-desc="<strong>封建反動</strong><br>困窮した領主が、<b>賦役の復活や地代の引き上げ、賃金の統制</b>によって農民への支配を再び強めようとした動き。<br>★イギリスの労働者規制法(1351)＝賃金を黒死病以前の水準に固定しようとした。">
+<rect x="260" y="380" width="140" height="36" rx="6" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
+<text x="330.0" y="402.0" text-anchor="middle" fill="#d4c088" font-size="9" font-family="Noto Serif JP" font-weight="700">封建反動</text>
+</g>
+<g class="nd" data-id="revolt" data-desc="<strong>★大規模な農民一揆</strong><br>フランス＝<b>ジャックリーの乱(1358)</b>。イギリス＝<b>ワット＝タイラーの乱(1381)</b>：人頭税への反発、聖職者ジョン＝ボール「アダムが耕しイヴが紡いだとき、だれが貴族であったか」。<br>★いずれも鎮圧されたが、領主は農奴制を維持できなくなった。">
+<rect x="112" y="495" width="216" height="46" rx="6" fill="rgba(180,80,80,.2)" stroke="rgba(180,80,80,.4)" stroke-width="1.5"/>
+<text x="220.0" y="522.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700">★農民一揆(ジャックリー・ワット＝タイラー)</text>
+</g>
+<g class="nd" data-id="knight" data-desc="<strong>諸侯・騎士の没落</strong><br>所領経営の悪化と、戦場での役割の低下により、中小領主である騎士が没落した。<br>★国王の宮廷に仕える<b>廷臣</b>となるか、地方の地主(イギリスのジェントリ)として生き残る道を選ぶ。">
+<rect x="550" y="500" width="140" height="36" rx="6" fill="rgba(130,130,100,.15)" stroke="rgba(130,130,100,.3)" stroke-width="1.5"/>
+<text x="620.0" y="522.0" text-anchor="middle" fill="#c0c0a0" font-size="9" font-family="Noto Serif JP" font-weight="700">諸侯・騎士の没落</text>
+</g>
+<g class="nd" data-id="yeoman" data-desc="<strong>農奴解放</strong><br>農民は貨幣で解放金を支払って農奴身分から解放された。イギリスでは<b>独立自営農民(ヨーマン)</b>が成長。<br>★荘園制と農奴制＝封建社会の経済的な基盤が解体する。(エルベ川以東では逆に農奴制が強化されていく)">
+<rect x="134" y="620" width="171" height="36" rx="6" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
+<text x="220.0" y="642.0" text-anchor="middle" fill="#88d4b0" font-size="9" font-family="Noto Serif JP" font-weight="700">農奴解放→独立自営農民(ヨーマン)</text>
+</g>
+<g class="nd" data-id="king" data-desc="<strong>★王権の伸張</strong><br>国王は大商人と結んで財源を確保し、官僚制と常備軍を整えた。フランス＝シャルル7世が財政を再建して常備軍を創設。イギリス＝バラ戦争(1455-85)で諸侯が共倒れ→<b>テューダー朝</b>。<br>★封建的な主従関係にもとづく分権的な国家から、国王を中心とする中央集権国家へ。">
+<rect x="564" y="615" width="152" height="46" rx="6" fill="rgba(180,140,60,.2)" stroke="rgba(180,140,60,.4)" stroke-width="1.5"/>
+<text x="640.0" y="642.0" text-anchor="middle" fill="#d4c088" font-size="9" font-family="Noto Serif JP" font-weight="700">★王権の伸張→中央集権国家へ</text>
+</g>
+
+</svg>
+</div>
+<div class="theme-svg" id="theme-crisis17" style="display:none">
+<svg viewBox="0 0 880 700" xmlns="http://www.w3.org/2000/svg" style="width:880px;height:700px;min-width:880px">
+<defs><marker id="ah_crisis17" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="rgba(var(--axr),.7)"/></marker></defs>
+
+<g class="ed" data-from="reli" data-to="crisis">
+<path d="M140,57 Q290,57 436,131" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_crisis17)"/>
+<text x="289" y="85" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">対立が政治問題化</text>
+</g>
+<g class="ed" data-from="clim" data-to="crisis">
+<line x1="440" y1="57" x2="440" y2="131" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_crisis17)"/>
+<text x="476" y="97" text-anchor="start" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">凶作・人口の停滞</text>
+</g>
+<g class="ed" data-from="silver" data-to="crisis">
+<path d="M740,57 Q590,57 444,131" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_crisis17)"/>
+<text x="591" y="85" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">好況の終わり</text>
+</g>
+<g class="ed" data-from="reli" data-to="thirty">
+<line x1="140" y1="57" x2="130" y2="256" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_crisis17)"/>
+<text x="145" y="159" text-anchor="start" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">ベーメンの新教徒の反乱</text>
+</g>
+<g class="ed" data-from="crisis" data-to="engl">
+<path d="M440,182 Q402,182 369,256" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_crisis17)"/>
+<text x="355" y="220" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">課税をめぐり国王と議会が対立</text>
+</g>
+<g class="ed" data-from="crisis" data-to="fronde">
+<path d="M440,182 Q515,182 586,256" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_crisis17)"/>
+<text x="575" y="220" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">戦費のための増税に反発</text>
+</g>
+<g class="ed" data-from="silver" data-to="ming">
+<path d="M740,57 Q762,57 781,256" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_crisis17)"/>
+<text x="765" y="116" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">銀不足で納税が困難に</text>
+</g>
+<g class="ed" data-from="thirty" data-to="westf">
+<line x1="130" y1="297" x2="130" y2="376" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_crisis17)"/>
+<text x="136" y="339" text-anchor="start" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">帝国の分裂が確定</text>
+</g>
+<g class="ed" data-from="engl" data-to="parl">
+<line x1="365" y1="297" x2="365" y2="376" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_crisis17)"/>
+<text x="371" y="339" text-anchor="start" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">王権を法と議会で制限</text>
+</g>
+<g class="ed" data-from="fronde" data-to="absol">
+<line x1="590" y1="297" x2="590" y2="371" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_crisis17)"/>
+<text x="596" y="337" text-anchor="start" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">貴族の反乱を抑え王権強化</text>
+</g>
+<g class="ed" data-from="ming" data-to="qing">
+<line x1="785" y1="297" x2="785" y2="376" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_crisis17)"/>
+<text x="791" y="339" text-anchor="start" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">清が中国を再統一</text>
+</g>
+<g class="ed" data-from="engl" data-to="dutch">
+<path d="M365,297 Q190,420 304,496" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_crisis17)"/>
+<text x="190" y="459" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">共和政下の航海法(1651)→英蘭戦争</text>
+</g>
+<g class="ed" data-from="parl" data-to="second">
+<path d="M365,417 Q412,417 456,616" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_crisis17)"/>
+<text x="443" y="444" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">国債とイングランド銀行で戦費を調達</text>
+</g>
+<g class="ed" data-from="absol" data-to="merc">
+<path d="M590,422 Q605,422 616,496" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_crisis17)"/>
+<text x="604" y="450" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">コルベールの重商主義</text>
+</g>
+<g class="ed" data-from="dutch" data-to="second">
+<path d="M300,537 Q380,537 456,616" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_crisis17)"/>
+<text x="379" y="566" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">オランダ後退→英仏の争いへ</text>
+</g>
+<g class="ed" data-from="merc" data-to="second">
+<path d="M620,537 Q540,537 464,616" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_crisis17)"/>
+<text x="541" y="566" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">植民地と市場の奪い合い</text>
+</g>
+<g class="nd" data-id="reli" data-desc="<strong>宗派対立</strong><br>アウクスブルクの和議(1555)は「領主の宗教がその領民の宗教」とし、個人の信仰の自由とカルヴァン派は認めなかった。<br>★宗派の対立が、各国の政治的な対立と結びついていく。">
+<rect x="70" y="20" width="140" height="36" rx="6" fill="rgba(130,100,160,.15)" stroke="rgba(130,100,160,.3)" stroke-width="1.5"/>
+<text x="140.0" y="42.0" text-anchor="middle" fill="#c0a0d4" font-size="9" font-family="Noto Serif JP" font-weight="700">宗教改革後の宗派対立</text>
+</g>
+<g class="nd" data-id="clim" data-desc="<strong>気候の寒冷化</strong><br>17世紀は「小氷期」のなかでもとくに寒冷な時期で、凶作・飢饉・疫病が頻発した。<br>★16世紀に増加を続けたヨーロッパの人口は停滞に転じた。">
+<rect x="368" y="20" width="144" height="36" rx="6" fill="rgba(130,130,100,.15)" stroke="rgba(130,130,100,.3)" stroke-width="1.5"/>
+<text x="440.0" y="42.0" text-anchor="middle" fill="#c0c0a0" font-size="9" font-family="Noto Serif JP" font-weight="700">小氷期(寒冷化)・凶作・疫病</text>
+</g>
+<g class="nd" data-id="silver" data-desc="<strong>銀の流入の減少</strong><br>16世紀の好況を支えたアメリカ大陸の銀の流入が、17世紀に入って減少。価格革命による物価の上昇が止まり、経済は停滞に向かった。<br>★銀に依存した交易は世界規模でつながっていたため、影響は東アジアにも及んだ。">
+<rect x="670" y="20" width="140" height="36" rx="6" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
+<text x="740.0" y="42.0" text-anchor="middle" fill="#88d4b0" font-size="9" font-family="Noto Serif JP" font-weight="700">アメリカ銀の流入減少</text>
+</g>
+<g class="nd" data-id="crisis" data-desc="<strong>★「17世紀の危機」</strong><br>16世紀の経済成長が止まり、人口の停滞、物価の下落、凶作、疫病、戦乱、反乱が同時に各地を襲った。<br>★限られた富をめぐって、国家の間でも、国内の身分や集団の間でも争いが激化。各国が異なる形で危機に対応し、その後の進路が分かれた。">
+<rect x="336" y="135" width="207" height="46" rx="6" fill="rgba(180,80,80,.2)" stroke="rgba(180,80,80,.4)" stroke-width="1.5"/>
+<text x="440.0" y="162.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700">★「17世紀の危機」＝経済の停滞と社会不安</text>
+</g>
+<g class="nd" data-id="thirty" data-desc="<strong>三十年戦争(1618-48)</strong><br>ベーメン(ボヘミア)の新教徒の反乱から始まり、デンマーク・スウェーデン・フランスが介入。宗教戦争から、ハプスブルク家とフランスの覇権争いへ変質した。<br>★傭兵軍の略奪でドイツの人口は大きく減少。">
+<rect x="60" y="260" width="140" height="36" rx="6" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/>
+<text x="130.0" y="282.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700">三十年戦争(1618-48)</text>
+</g>
+<g class="nd" data-id="engl" data-desc="<strong>イギリス革命</strong><br>ステュアート朝の専制と国教の強制、議会の同意のない課税に、ジェントリやピューリタンが多い議会が反発→<b>ピューリタン革命</b>(チャールズ1世を処刑 1649)→クロムウェルの共和政→王政復古→<b>名誉革命</b>。">
+<rect x="280" y="260" width="169" height="36" rx="6" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/>
+<text x="365.0" y="282.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700">イギリス革命(1640-60・1688-89)</text>
+</g>
+<g class="nd" data-id="fronde" data-desc="<strong>フロンドの乱(1648-53)</strong><br>三十年戦争の戦費のための増税と王権の強化に、高等法院や貴族が反乱。幼いルイ14世は一時パリを追われた。<br>★宰相マザランが鎮圧。フランスで最後の大規模な貴族の反乱となった。">
+<rect x="520" y="260" width="140" height="36" rx="6" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/>
+<text x="590.0" y="282.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700">フロンドの乱(1648-53)</text>
+</g>
+<g class="nd" data-id="ming" data-desc="<strong>明清交替(1644)</strong><br>寒冷化による飢饉、北方の防衛のための増税に、銀の流入の減少が重なる。<b>李自成</b>の反乱軍が北京を占領して明が滅び、明の武将の呉三桂に導かれた清が入関した。<br>★東アジアも同じ時期に動乱を経験した。">
+<rect x="715" y="260" width="140" height="36" rx="6" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/>
+<text x="785.0" y="282.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700">明清交替(1644)</text>
+</g>
+<g class="nd" data-id="westf" data-desc="<strong>ウェストファリア条約(1648)</strong><br>ドイツの領邦にほぼ完全な主権を認める→神聖ローマ帝国は有名無実に。スイスとオランダの独立を正式に承認。フランスがアルザスを獲得。<br>★対等な<b>主権国家</b>が並び立つ国際秩序が確立した。">
+<rect x="60" y="380" width="140" height="36" rx="6" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
+<text x="130.0" y="402.0" text-anchor="middle" fill="#d4c088" font-size="9" font-family="Noto Serif JP" font-weight="700">主権国家体制の確立(1648)</text>
+</g>
+<g class="nd" data-id="parl" data-desc="<strong>イギリスの立憲王政</strong><br><b>権利の章典(1689)</b>＝議会の同意のない課税や法の停止を否定し、議会主権にもとづく立憲王政が確立。のちハノーヴァー朝(1714-)のもとでウォルポールの責任内閣制が成立し、「王は君臨すれども統治せず」の原則が定着した。<br>★議会が保証する国債と<b>イングランド銀行(1694)</b>により、戦費を低利で大量に調達できる体制が整った(財政革命)。">
+<rect x="295" y="380" width="140" height="36" rx="6" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
+<text x="365.0" y="402.0" text-anchor="middle" fill="#d4c088" font-size="9" font-family="Noto Serif JP" font-weight="700">議会主権・立憲王政(1689)</text>
+</g>
+<g class="nd" data-id="absol" data-desc="<strong>★ルイ14世の親政(1661-1715)</strong><br>反乱を抑え込んだ王権が貴族を宮廷に取り込む(ヴェルサイユ宮殿)。「朕は国家なり」、王権神授説、官僚制と常備軍。<br>★ナントの王令の廃止(1685)→ユグノーの商工業者が国外に流出した。">
+<rect x="517" y="375" width="145" height="46" rx="6" fill="rgba(180,140,60,.2)" stroke="rgba(180,140,60,.4)" stroke-width="1.5"/>
+<text x="590.0" y="402.0" text-anchor="middle" fill="#d4c088" font-size="9" font-family="Noto Serif JP" font-weight="700">★絶対王政の完成(ルイ14世)</text>
+</g>
+<g class="nd" data-id="qing" data-desc="<strong>清の支配の安定</strong><br>康熙帝が三藩の乱を鎮圧し、台湾の鄭氏を降伏させる(1683)→海禁を解除し、交易が回復。<br>★18世紀には人口が急増し、「盛世」と呼ばれる繁栄へ。">
+<rect x="715" y="380" width="140" height="36" rx="6" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
+<text x="785.0" y="402.0" text-anchor="middle" fill="#d4c088" font-size="9" font-family="Noto Serif JP" font-weight="700">清の中国支配と海禁の解除</text>
+</g>
+<g class="nd" data-id="dutch" data-desc="<strong>商業覇権の移動</strong><br>危機の時代に例外的に繁栄したのが<b>オランダ</b>：中継貿易・東インド会社・アムステルダムの金融。これに対抗してイギリスが<b>航海法(1651)</b>→3回の英蘭戦争(1652-74)。<br>★商業覇権はオランダからイギリスへ。">
+<rect x="224" y="500" width="152" height="36" rx="6" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
+<text x="300.0" y="522.0" text-anchor="middle" fill="#88d4b0" font-size="9" font-family="Noto Serif JP" font-weight="700">オランダの繁栄→英の商業覇権</text>
+</g>
+<g class="nd" data-id="merc" data-desc="<strong>重商主義</strong><br>世界の富の総量は一定と考え、国家が貿易と産業を統制して富を奪い合う。フランス＝財務総監<b>コルベール</b>が王立マニュファクチュアの設立と東インド会社の再建を進めた。<br>★北アメリカ・インド・カリブ海で植民地を争奪。">
+<rect x="550" y="500" width="140" height="36" rx="6" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
+<text x="620.0" y="522.0" text-anchor="middle" fill="#88d4b0" font-size="9" font-family="Noto Serif JP" font-weight="700">重商主義と植民地の争奪</text>
+</g>
+<g class="nd" data-id="second" data-desc="<strong>第2次英仏百年戦争(1689-1815)</strong><br>ヨーロッパでの戦争のたびに、植民地でも英仏が戦った：ウィリアム王戦争、アン女王戦争、ジョージ王戦争、フレンチ＝インディアン戦争。<br>★戦費の調達力にまさるイギリスが、<b>パリ条約(1763)</b>で北アメリカとインドでの優位を確立した。">
+<rect x="381" y="620" width="158" height="36" rx="6" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/>
+<text x="460.0" y="642.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700">第2次英仏百年戦争(1689-1815)</text>
+</g>
+
+</svg>
+</div>
+<div class="theme-svg" id="theme-atlantic" style="display:none">
+<svg viewBox="0 0 880 940" xmlns="http://www.w3.org/2000/svg" style="width:880px;height:940px;min-width:880px">
+<defs><marker id="ah_atlantic" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="rgba(var(--axr),.7)"/></marker></defs>
+
+<g class="ed" data-from="seven" data-to="ukfin">
+<path d="M440,62 Q375,62 314,136" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_atlantic)"/>
+<text x="360" y="90" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">戦費の負債・防衛費</text>
+</g>
+<g class="ed" data-from="seven" data-to="frfin">
+<path d="M440,62 Q540,62 636,136" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_atlantic)"/>
+<text x="555" y="90" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">敗北と植民地の喪失</text>
+</g>
+<g class="ed" data-from="atl" data-to="ukfin">
+<path d="M750,57 Q530,57 314,136" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_atlantic)"/>
+<text x="618" y="70" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">成長した植民地が統制に反発</text>
+</g>
+<g class="ed" data-from="enl" data-to="usa">
+<path d="M110,57 Q100,250 306,251" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_atlantic)"/>
+<text x="154" y="212" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">抵抗権→独立宣言</text>
+</g>
+<g class="ed" data-from="ukfin" data-to="usa">
+<line x1="310" y1="177" x2="310" y2="251" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_atlantic)"/>
+<text x="316" y="217" text-anchor="start" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">「代表なくして課税なし」</text>
+</g>
+<g class="ed" data-from="frfin" data-to="fr">
+<path d="M640,177 Q640,330 564,371" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_atlantic)"/>
+<text x="665" y="312" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">特権身分への課税→三部会</text>
+</g>
+<g class="ed" data-from="usa" data-to="fr">
+<path d="M310,302 Q435,302 556,371" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_atlantic)"/>
+<text x="434" y="329" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">参戦で財政破綻・理念の逆流</text>
+</g>
+<g class="ed" data-from="fr" data-to="haiti">
+<path d="M560,422 Q380,422 204,496" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_atlantic)"/>
+<text x="381" y="450" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">人権宣言の理念が波及→奴隷蜂起(1791)</text>
+</g>
+<g class="ed" data-from="fr" data-to="napo">
+<path d="M560,422 Q600,422 636,496" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_atlantic)"/>
+<text x="599" y="450" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">革命の収拾と対外戦争</text>
+</g>
+<g class="ed" data-from="napo" data-to="iber">
+<line x1="640" y1="537" x2="640" y2="616" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_atlantic)"/>
+<text x="646" y="579" text-anchor="start" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">大陸封鎖令の徹底</text>
+</g>
+<g class="ed" data-from="haiti" data-to="latam">
+<path d="M200,537 Q290,537 376,731" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_atlantic)"/>
+<text x="289" y="595" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">最初の独立・ボリバルを支援</text>
+</g>
+<g class="ed" data-from="iber" data-to="latam">
+<path d="M640,657 Q510,657 384,731" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_atlantic)"/>
+<text x="511" y="685" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">クリオーリョの自治→独立へ</text>
+</g>
+<g class="ed" data-from="monroe" data-to="latam">
+<line x1="670" y1="758" x2="487" y2="758" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_atlantic)"/>
+<text x="578" y="751" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">列強の干渉を阻止</text>
+</g>
+<g class="ed" data-from="latam" data-to="after">
+<line x1="380" y1="782" x2="380" y2="856" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_atlantic)"/>
+<text x="386" y="822" text-anchor="start" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">社会構造は変わらず</text>
+</g>
+<g class="nd" data-id="enl" data-desc="<strong>啓蒙思想</strong><br>ロック＝抵抗権(革命権)、モンテスキュー＝三権分立、ルソー＝人民主権。<br>★アメリカ独立宣言と、フランス人権宣言の理論的な支柱となった。">
+<rect x="40" y="20" width="140" height="36" rx="6" fill="rgba(130,100,160,.15)" stroke="rgba(130,100,160,.3)" stroke-width="1.5"/>
+<text x="110.0" y="42.0" text-anchor="middle" fill="#c0a0d4" font-size="9" font-family="Noto Serif JP" font-weight="700">啓蒙思想</text>
+</g>
+<g class="nd" data-id="seven" data-desc="<strong>★七年戦争(1756-63)</strong><br>ヨーロッパ・北アメリカ(フレンチ＝インディアン戦争)・インド(プラッシーの戦い)で英仏が戦った世界規模の戦争。<br>★<b>パリ条約(1763)</b>でイギリスが勝利したが、勝者も敗者も巨額の負債を抱えた。">
+<rect x="370" y="15" width="140" height="46" rx="6" fill="rgba(180,80,80,.2)" stroke="rgba(180,80,80,.4)" stroke-width="1.5"/>
+<text x="440.0" y="42.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700">★七年戦争(1756-63)</text>
+</g>
+<g class="nd" data-id="atl" data-desc="<strong>大西洋経済の発展</strong><br>砂糖やタバコ、奴隷貿易を軸に大西洋の両岸が結びつき、植民地の社会が経済的に成熟。13植民地は植民地議会による自治の伝統を持ち、ラテンアメリカでは植民地生まれの白人<b>クリオーリョ</b>が地主として成長した。<br>★本国の重商主義的な統制が、しだいに足かせとなる。">
+<rect x="674" y="20" width="152" height="36" rx="6" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
+<text x="750.0" y="42.0" text-anchor="middle" fill="#88d4b0" font-size="9" font-family="Noto Serif JP" font-weight="700">大西洋経済と植民地社会の成長</text>
+</g>
+<g class="nd" data-id="ukfin" data-desc="<strong>イギリスの課税強化</strong><br>戦費の負債と植民地の防衛費を植民地にも負担させようとした：<b>印紙法(1765)</b>→「代表なくして課税なし」→<b>茶法(1773)</b>→ボストン茶会事件。<br>★フランスの脅威が消えたことで、植民地側は本国の軍事力を必要としなくなっていた。">
+<rect x="229" y="140" width="161" height="36" rx="6" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
+<text x="310.0" y="162.0" text-anchor="middle" fill="#d4c088" font-size="9" font-family="Noto Serif JP" font-weight="700">英の財政難→植民地への課税強化</text>
+</g>
+<g class="nd" data-id="frfin" data-desc="<strong>フランスの財政難</strong><br>七年戦争の敗北で北アメリカとインドの植民地の大半を失い、負債が累積。<br>★イギリスへの報復の機会をうかがう。">
+<rect x="570" y="140" width="140" height="36" rx="6" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
+<text x="640.0" y="162.0" text-anchor="middle" fill="#d4c088" font-size="9" font-family="Noto Serif JP" font-weight="700">仏の財政難(敗戦と負債)</text>
+</g>
+<g class="nd" data-id="usa" data-desc="<strong>★アメリカ独立革命</strong><br>レキシントン・コンコードで開戦(1775)→トマス＝ペイン『コモン＝センス』→<b>独立宣言(1776 ジェファソンら起草)</b>→フランス(1778)・スペインが参戦、ロシアなどの武装中立同盟→ヨークタウンの戦い→<b>パリ条約(1783)</b>。<br>★1787年に合衆国憲法＝人民主権・連邦主義・三権分立。">
+<rect x="234" y="255" width="152" height="46" rx="6" fill="rgba(180,80,80,.2)" stroke="rgba(180,80,80,.4)" stroke-width="1.5"/>
+<text x="310.0" y="282.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700">★アメリカ独立革命(1775-83)</text>
+</g>
+<g class="nd" data-id="fr" data-desc="<strong>★フランス革命</strong><br>特権身分への課税をはかって<b>三部会を招集(1789)</b>→国民議会→バスティーユ牢獄の襲撃→<b>人権宣言</b>→王政の廃止(1792)→ジャコバン派の独裁→総裁政府。<br>★アメリカ独立戦争に義勇兵として参加したラ＝ファイエットが人権宣言を起草。">
+<rect x="490" y="375" width="140" height="46" rx="6" fill="rgba(180,80,80,.2)" stroke="rgba(180,80,80,.4)" stroke-width="1.5"/>
+<text x="560.0" y="402.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700">★フランス革命(1789-99)</text>
+</g>
+<g class="nd" data-id="haiti" data-desc="<strong>ハイチ革命</strong><br>フランス領サン＝ドマングは世界最大級の砂糖の生産地。1791年に黒人奴隷が蜂起し、<b>トゥサン＝ルヴェルチュール</b>が指導。国民公会は1794年に奴隷制の廃止を決議。ナポレオンの派遣軍を破り<b>1804年に独立</b>。<br>★史上初の黒人共和国、ラテンアメリカで最初の独立国。">
+<rect x="130" y="500" width="140" height="36" rx="6" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/>
+<text x="200.0" y="522.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700">ハイチ革命(1791-1804)</text>
+</g>
+<g class="nd" data-id="napo" data-desc="<strong>ナポレオンの支配</strong><br>革命の成果(法の前の平等、所有権の不可侵＝ナポレオン法典)をヨーロッパ各地に広める一方で、征服された地域の民族意識を呼び覚ました。<br>★大陸封鎖令(1806)に従わないポルトガルへ出兵し、スペインにも介入。">
+<rect x="568" y="500" width="144" height="36" rx="6" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/>
+<text x="640.0" y="522.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700">ナポレオン戦争(1799-1815)</text>
+</g>
+<g class="nd" data-id="iber" data-desc="<strong>本国の権力の空白</strong><br>ポルトガルの王室はブラジルへ避難(1807)。スペインではナポレオンが兄のジョゼフを王位につける(1808)→スペインの民衆が反乱(半島戦争)。<br>★植民地は従うべき正統な国王を失い、各地でクリオーリョが自治の組織をつくった。">
+<rect x="541" y="620" width="197" height="36" rx="6" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
+<text x="640.0" y="642.0" text-anchor="middle" fill="#d4c088" font-size="9" font-family="Noto Serif JP" font-weight="700">イベリア侵攻(1807-08)→本国の権力空白</text>
+</g>
+<g class="nd" data-id="latam" data-desc="<strong>★ラテンアメリカ諸国の独立</strong><br>北部＝<b>シモン＝ボリバル</b>(ベネズエラ・コロンビア・ボリビア)、南部＝<b>サン＝マルティン</b>(アルゼンチン・チリ・ペルー)、メキシコ＝司祭イダルゴの蜂起(1810)→1821年に独立。ブラジル＝ポルトガルの王子が皇帝に即位して帝国として独立(1822)。">
+<rect x="277" y="735" width="206" height="46" rx="6" fill="rgba(180,80,80,.2)" stroke="rgba(180,80,80,.4)" stroke-width="1.5"/>
+<text x="380.0" y="762.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700">★ラテンアメリカ諸国の独立(1810-20年代)</text>
+</g>
+<g class="nd" data-id="monroe" data-desc="<strong>独立を助けた国際環境</strong><br>ウィーン体制の列強は干渉をはかったが、イギリスの外相<b>カニング</b>は新しい市場を期待して独立を支持。アメリカ合衆国は<b>モンロー宣言(1823)</b>で、ヨーロッパとアメリカ大陸の相互不干渉を唱えた。">
+<rect x="672" y="740" width="155" height="36" rx="6" fill="rgba(100,130,180,.15)" stroke="rgba(100,130,180,.3)" stroke-width="1.5"/>
+<text x="750.0" y="762.0" text-anchor="middle" fill="#88b0d4" font-size="9" font-family="Noto Serif JP" font-weight="700">英の支持・モンロー宣言(1823)</text>
+</g>
+<g class="nd" data-id="after" data-desc="<strong>独立後のラテンアメリカ</strong><br>独立を主導したのは地主のクリオーリョで、大土地所有制や、先住民・黒人への社会的な差別は温存された(奴隷制の廃止はハイチを除くと遅れた)。軍事的な実力者<b>カウディーリョ</b>による政権の争奪が続く。<br>★原料や食料を輸出して工業製品を輸入する、イギリスへの経済的な従属。">
+<rect x="272" y="860" width="215" height="36" rx="6" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
+<text x="380.0" y="882.0" text-anchor="middle" fill="#88d4b0" font-size="9" font-family="Noto Serif JP" font-weight="700">独立後：クリオーリョ支配と英への経済的従属</text>
+</g>
+
+</svg>
+</div>
+<!--NEXUS-PREMODERN-END-->
 </div>
 <div class="tooltip-box" id="tooltip"></div>
 <script>
