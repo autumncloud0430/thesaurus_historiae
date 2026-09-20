@@ -24,6 +24,8 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
 .ntag{font-size:7px;font-weight:600;letter-spacing:.06em;margin-top:2px;padding:1px 6px;border-radius:100px;display:inline-block}
 .peak .nb{border-color:rgba(var(--axr),.35);background:rgba(var(--axr),.06);padding:10px 14px}
 .peak .nn{font-size:15px;background:linear-gradient(135deg,#c9a96e,#e8c888,#c9a96e);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+/* LUX: gradient name was illegible on the paper background */
+html[data-theme="lux"] .peak .nn{background:none;-webkit-background-clip:border-box;background-clip:border-box;-webkit-text-fill-color:currentColor;color:var(--gold2)}
 .h-car .nb{border-left:3px solid rgba(138,120,91,.4)} .h-car .ntag{background:rgba(138,120,91,.2);color:#d4c0a0}
 .h-wfr .nb{border-left:3px solid rgba(100,80,140,.4)} .h-wfr .ntag{background:rgba(100,80,140,.2);color:#b8a0d4}
 .h-mfr .nb{border-left:3px solid rgba(91,120,91,.4)} .h-mfr .ntag{background:rgba(91,120,91,.2);color:#a0c8a0}

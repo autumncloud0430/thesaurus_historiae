@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>カペー朝・ヴァロワ朝の系譜 ― ユーグ＝カペーから王位継承問題、ユグノー戦争まで(987-1589)</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048;--border:rgba(var(--axr),.08)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
+.hdr{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.hdr h1{font-family:'Noto Serif JP',serif;font-size:15px;font-weight:700;color:var(--gold2)}
+.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5;transition:opacity .2s}
+.hdr a:hover{opacity:1}
+.wrap{padding:20px 16px 10px;overflow-x:auto}
+.tree{display:flex;flex-direction:column;align-items:center;min-width:820px;gap:0}
+@media(max-width:650px){.tree{min-width:0;width:100%}.row{flex-wrap:wrap;justify-content:center}.branch{flex-wrap:wrap;justify-content:center}}
+.nd{position:relative;text-align:center;cursor:pointer;transition:transform .15s}
+.nd:hover{transform:translateY(-1px)}
+.nb{border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:7px 12px;background:rgba(255,255,255,.02);transition:all .2s}
+.nd:hover .nb{border-color:rgba(var(--axr),.3);background:rgba(var(--axr),.04)}
+.nn{font-family:'Noto Serif JP',serif;font-size:11px;font-weight:700;color:var(--gold2);white-space:nowrap}
+.ni{font-size:7.5px;color:var(--text2);margin-top:1px;white-space:nowrap}
+.ntag{font-size:7px;font-weight:600;letter-spacing:.06em;margin-top:2px;padding:1px 6px;border-radius:100px;display:inline-block}
+/* House colors */
+.h-fra .nb{border-left:3px solid rgba(100,80,140,.4)} .h-fra .ntag{background:rgba(100,80,140,.2);color:#b8a0d4}
+.h-spa .nb{border-left:3px solid rgba(140,80,80,.4)} .h-spa .ntag{background:rgba(140,80,80,.2);color:#d4a8a8}
+.h-nap .nb{border-left:3px solid rgba(140,120,80,.4)} .h-nap .ntag{background:rgba(140,120,80,.2);color:#d4c8a0}
+.h-cap .nb{border-left:3px solid rgba(80,110,160,.45)} .h-cap .ntag{background:rgba(80,110,160,.2);color:#a0b8d4}
+.h-val .nb{border-left:3px solid rgba(100,80,140,.45)} .h-val .ntag{background:rgba(100,80,140,.2);color:#b8a0d4}
+.h-eng .nb{border-left:3px solid rgba(160,80,80,.45)} .h-eng .ntag{background:rgba(160,80,80,.2);color:#d4a8a8}
+.crisis{border:1px dashed rgba(160,80,80,.35);border-radius:8px;padding:8px 14px;margin:4px 0;max-width:620px;text-align:center;font-size:9px;line-height:1.8;color:var(--text2)}
+.crisis strong{color:var(--gold)}
+html[data-theme="lux"] .h-cap .ntag{color:#2f4f7a} html[data-theme="lux"] .h-val .ntag{color:#553a78} html[data-theme="lux"] .h-eng .ntag{color:#8a2f2f}
+/* Highlight */
+.peak .nb{border-color:rgba(var(--axr),.35);background:rgba(var(--axr),.06);padding:9px 14px}
+.peak .nn{font-size:14px;background:linear-gradient(135deg,#c9a96e,#e8c888,#c9a96e);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+/* LUX: gradient name was illegible on the paper background */
+html[data-theme="lux"] .peak .nn{background:none;-webkit-background-clip:border-box;background-clip:border-box;-webkit-text-fill-color:currentColor;color:var(--gold2)}
+.end .nb{border-color:rgba(140,60,60,.3);background:rgba(140,60,60,.04)}
+/* Layout */
+.cv{width:1px;height:14px;background:rgba(var(--axr),.15);margin:0 auto}
+.cv.l{height:20px}
+.row{display:flex;align-items:flex-start;gap:16px;justify-content:center}
+.branch{display:flex;flex-direction:column;align-items:center}
+.inherit{font-size:7px;color:var(--text3);text-align:center;margin:2px 0;font-style:italic}
+.inherit strong{color:var(--gold);font-style:normal}
+.split-label{font-family:'Cormorant Garamond',serif;font-size:9px;font-weight:700;letter-spacing:.15em;color:var(--gold);text-align:center;padding:6px 0 3px;opacity:.6}
+.tp{display:none}
+/* Bracket for Spanish branch */
+.bracket{border-left:1px dashed rgba(140,80,80,.25);padding-left:14px;margin-left:10px}
+.bracket-label{font-size:7px;color:var(--text3);writing-mode:vertical-rl;position:absolute;left:-20px;top:50%;transform:translateY(-50%);letter-spacing:.1em}
+/* Note */
+.note{text-align:center;padding:6px 20px 32px;font-size:9px;color:var(--text3);line-height:1.8;max-width:800px;margin:0 auto}
+.note strong{color:var(--gold)}
+.legend{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;padding:10px 20px}
+.legend-item{display:flex;align-items:center;gap:5px;font-size:9px;color:var(--text3)}
+.legend-dot{width:12px;height:8px;border-radius:2px}
+/* Family compact annotation */
+.compact{position:relative;border:1px dashed rgba(74,144,194,.2);border-radius:8px;padding:8px 14px;margin:8px 0}
+.compact-label{font-size:8px;color:rgba(74,144,194,.7);text-align:center;font-weight:600}
+
+@media(max-width:600px){
+.hdr{padding:10px 12px}.hdr h1{font-size:12px}
+.legend .li{font-size:7px}
+.note p{font-size:8px}
+}
+</style>
+<style id="thThemes">/* =====================================================
+   THESAURUS HISTORIAE ― themes.css(LUX固定版)
+   生成りの紙 + 墨の本文 + 朱筆(★語) + 金茶の構造色。
+   retheme_inject.py が各HTMLに埋め込む。編集後は再実行。
+   ===================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&display=swap');
+
+:root { --axr: 201, 169, 110; --shu: #c9a96e; }
+
+html[data-theme="lux"] {
+  --bg:#f1ecdf;
+  --gold:#8b6f4e; --gold2:#59452a; --gold3:#9c855f;
+  --text:#2b241b; --text2:#6d6353; --text3:#a89a80;
+  --line:rgba(43,36,27,.16); --border:rgba(43,36,27,.16);
+  --gold-dim:rgba(139,111,78,.16);
+  --axr:139,111,78;
+  --shu:#a2331e;
+}
+
+html[data-theme="lux"] body {
+  background:var(--bg);
+  font-family:'Shippori Mincho','Noto Serif JP',serif;
+}
+html[data-theme="lux"] body::before { opacity:.55; }
+html[data-theme="lux"] p { line-height:2.05; }
+html[data-theme="lux"] * { text-shadow:none !important; }
+
+/* 強調の二段化: 通常太字=墨 / ★語=朱 */
+html[data-theme="lux"] strong { color:var(--text) !important; font-weight:600; }
+html[data-theme="lux"] span.k,
+html[data-theme="lux"] span.k + strong,
+html[data-theme="lux"] .node-title .k { color:var(--shu) !important; }
+html[data-theme="lux"] span.k + strong { font-weight:700; }
+html[data-theme="lux"] ::selection { background:rgba(162,51,30,.18); }
+</style><script id="thScript">document.documentElement.setAttribute('data-theme','lux');</script></head>
+<body>
+
+<div class="hdr">
+  <h1>カペー朝・ヴァロワ朝の系譜 ― ユーグ＝カペーから王位継承問題、ユグノー戦争まで(987-1589)</h1>
+  <a href="charts.html">← Ad Chartae</a>
+</div>
+
+<div class="wrap">
+<div class="tree">
+
+<!-- ===== カロリング朝からの接続 ===== -->
+<div class="nd " style="opacity:.6"><div class="nb">
+  <div class="nn" style="font-size:10px">西フランク王国のカロリング朝の断絶(987)</div>
+  <div class="ni">ルイ5世が後継ぎなく死去→諸侯がパリ伯を国王に選出</div>
+</div><div class="tp"><p>ヴェルダン条約(843)・メルセン条約(870)で成立した西フランク王国では、ノルマン人の侵入を防げなかったカロリング家の権威が低下。パリをノルマン人から守って名声を得たロベール家が台頭し、987年にカロリング家が断絶すると、同家のパリ伯ユーグ＝カペーが諸侯に推されて王位についた。</p></div></div>
+<div class="cv l"></div>
+<div class="inherit"><strong>カペー朝(987-1328)の開始</strong></div>
+<div class="cv"></div>
+<div class="nd h-cap"><div class="nb">
+  <div class="nn">ユーグ＝カペー</div>
+  <div class="ni">在位 987-996 ｜ カペー朝初代</div>
+  <div class="ntag">王領はパリ周辺のみ</div>
+</div><div class="tp"><p>パリ伯から国王に選ばれた。しかし王領は<strong>パリ周辺(イル＝ド＝フランス)</strong>に限られ、ノルマンディー公・アキテーヌ公・フランドル伯などの大諸侯は国王をしのぐ領地を持っていた。王権はきわめて弱く、「同輩中の第一人者」にすぎなかった。ただし生前に息子を共同王として戴冠させ、選挙王政を事実上の世襲王政に変えていく道を開いた。</p></div></div>
+<div class="cv"></div>
+<div class="inherit">↓ 約200年間、王権は弱体。ただし男子の直系相続が途切れず続き、王位の世襲が定着</div>
+<div class="cv"></div>
+<div class="nd h-cap peak"><div class="nb">
+  <div class="nn">フィリップ2世(尊厳王)</div>
+  <div class="ni">在位 1180-1223 ｜ 王権伸張の出発点</div>
+  <div style="display:flex;gap:3px;justify-content:center;flex-wrap:wrap;margin-top:2px">
+    <span class="ntag">ジョン王から大陸領を奪う</span>
+    <span class="ntag">第3回十字軍</span>
+    <span class="ntag">ブーヴィーヌの戦い(1214)</span>
+  </div>
+</div><div class="tp"><p>フランスの西半分を領有していたイギリスのプランタジネット朝と争う。第3回十字軍にはリチャード1世とともに参加したが途中で帰国。その弟の<strong>ジョン王</strong>から、ノルマンディー・アンジューなど大陸領の大半を奪った(→ジョン王は戦費のための重税で貴族の反発を招き、マグナ＝カルタ(1215)へ)。<strong>ブーヴィーヌの戦い(1214)</strong>でジョン王と結んだ神聖ローマ皇帝オットー4世らの連合軍を破り、王領を一挙に拡大。治世中に南フランスの異端カタリ派に対する<strong>アルビジョワ十字軍(1209-29)</strong>が始まる。</p></div></div>
+<div class="cv"></div>
+<div class="inherit">↓ ルイ8世(1223-26)</div>
+<div class="cv"></div>
+<div class="nd h-cap"><div class="nb">
+  <div class="nn">ルイ9世(聖王)</div>
+  <div class="ni">在位 1226-1270 ｜ フィリップ2世の孫</div>
+  <div style="display:flex;gap:3px;justify-content:center;flex-wrap:wrap;margin-top:2px">
+    <span class="ntag">アルビジョワ十字軍を完了</span>
+    <span class="ntag">第6回・第7回十字軍</span>
+    <span class="ntag">ルブルックを派遣</span>
+  </div>
+</div><div class="tp"><p>アルビジョワ十字軍を完了させ、<strong>南フランスに王権を広げた</strong>。国王裁判権を強化し、王の貨幣を全国に流通させるなど内政を充実。敬虔なキリスト教徒で、<strong>第6回十字軍</strong>(エジプトを攻撃するが捕虜となる)と<strong>第7回十字軍</strong>(チュニスで病死)をおこした。モンゴル帝国との提携を探って修道士<strong>ルブルック</strong>をカラコルムへ派遣(1253)。死後に列聖された。</p></div></div>
+<div class="cv"></div>
+<div class="nd h-cap"><div class="nb">
+  <div class="nn" style="font-size:10px">フィリップ3世</div>
+  <div class="ni">在位 1270-1285</div>
+</div><div class="tp"><p>ルイ9世の子。父の第7回十字軍に従軍し、チュニスで即位した。長男ルイが早世したため次男のフィリップ4世が王位を継ぎ、その弟が<strong>ヴァロワ伯シャルル</strong>＝のちのヴァロワ朝の祖。この兄弟の分かれ目が、1328年の王位継承問題の伏線となる。</p></div></div>
+<div class="cv"></div>
+<div class="split-label">フィリップ3世の息子たち ― 直系(兄フィリップ4世)とヴァロワ家(弟シャルル)</div>
+<div class="cv"></div>
+<div class="row" style="gap:40px">
+
+<!-- 直系 -->
+<div class="branch">
+<div class="nd h-cap peak"><div class="nb">
+  <div class="nn">フィリップ4世(端麗王)</div>
+  <div class="ni">在位 1285-1314 ｜ 中世フランス王権の絶頂</div>
+  <div style="display:flex;gap:3px;justify-content:center;flex-wrap:wrap;margin-top:2px">
+    <span class="ntag">三部会(1302)</span>
+    <span class="ntag">アナーニ事件(1303)</span>
+    <span class="ntag">教皇のバビロン捕囚(1309-77)</span>
+  </div>
+</div><div class="tp"><p>聖職者への課税をめぐって教皇<strong>ボニファティウス8世</strong>と対立。国内の支持を固めるため、聖職者・貴族・平民の代表からなる<strong>三部会(1302)</strong>を初めて招集した。翌年、教皇をローマ近郊のアナーニで捕らえ(<strong>アナーニ事件</strong>)、教皇は屈辱のうちに急死。のちフランス人教皇を立てて教皇庁を南フランスの<strong>アヴィニョン</strong>に移させた(「教皇のバビロン捕囚」1309-77)。莫大な財産を持つテンプル騎士団を解散させて財産を没収。ローマ法に通じた法曹官僚(レジスト)を用いて王権を強化した。</p></div></div>
+<div class="cv"></div>
+<div class="inherit">↓ 3人の息子が相次いで即位、娘はイギリス王妃に</div>
+<div class="cv"></div>
+<div class="row" style="gap:8px">
+<div class="nd h-cap"><div class="nb">
+  <div class="nn" style="font-size:10px">ルイ10世</div>
+  <div class="ni">在位 1314-16</div>
+</div><div class="tp"><p>フィリップ4世の長男。在位2年で死去。死後に生まれた息子ジャン1世も生後数日で死去し、娘には王位が認められなかった→「女子は王位を継げない」という先例ができる。</p></div></div>
+<div class="nd h-cap"><div class="nb">
+  <div class="nn" style="font-size:10px">フィリップ5世</div>
+  <div class="ni">在位 1316-22</div>
+</div><div class="tp"><p>フィリップ4世の次男。兄の娘を退けて即位した。自身も男子を残さずに死去。</p></div></div>
+<div class="nd h-cap end"><div class="nb">
+  <div class="nn" style="font-size:10px">シャルル4世</div>
+  <div class="ni">在位 1322-28 ｜ 直系最後</div>
+</div><div class="tp"><p>フィリップ4世の三男。1328年に男子なく死去し、ユーグ＝カペー以来341年続いた<strong>カペー朝の直系が断絶</strong>した。</p></div></div>
+</div>
+<div class="cv"></div>
+<div class="nd h-eng"><div class="nb">
+  <div class="nn">イザベル → エドワード3世</div>
+  <div class="ni">フィリップ4世の娘 ｜ イギリス王エドワード2世の妃</div>
+  <div class="ntag">母を通じて仏王位を主張</div>
+</div><div class="tp"><p>フィリップ4世の娘<strong>イザベル</strong>はイギリス王エドワード2世に嫁ぎ、<strong>エドワード3世</strong>(在位1327-77)を生んだ。エドワード3世は「フィリップ4世の孫」であり、血縁の近さではヴァロワ家のフィリップ6世(フィリップ4世の甥)にまさる。いったんはフィリップ6世の即位を認めたが、フランス王がギュイエンヌ(ギエンヌ)の没収を宣言すると、<strong>母方の血統を根拠にフランス王位を要求</strong>して開戦した。</p></div></div>
+</div>
+
+<!-- ヴァロワ家 -->
+<div class="branch">
+<div class="nd h-val"><div class="nb">
+  <div class="nn" style="font-size:10px">ヴァロワ伯シャルル</div>
+  <div class="ni">フィリップ4世の弟 ｜ 王にはならず</div>
+  <div class="ntag">ヴァロワ家の祖</div>
+</div><div class="tp"><p>フィリップ3世の子で、フィリップ4世の弟。ヴァロワ伯領を与えられた。自身は王位につかなかったが、息子のフィリップが1328年に国王に選ばれ、ヴァロワ朝を開く。</p></div></div>
+<div class="cv"></div>
+<div class="inherit">↓ 息子</div>
+<div class="cv"></div>
+<div class="nd h-val"><div class="nb">
+  <div class="nn">フィリップ6世</div>
+  <div class="ni">在位 1328-1350 ｜ ヴァロワ朝初代</div>
+  <div style="display:flex;gap:3px;justify-content:center;flex-wrap:wrap;margin-top:2px">
+    <span class="ntag">クレシーの戦い(1346)で大敗</span>
+    <span class="ntag">カレー喪失(1347)</span>
+    <span class="ntag">黒死病</span>
+  </div>
+</div><div class="tp"><p>シャルル4世の従兄。諸侯の会議で、<strong>男系で最も近い親族</strong>として国王に選ばれた。毛織物工業の中心地<strong>フランドル</strong>の支配と、ぶどう酒の産地<strong>ギュイエンヌ</strong>(イギリス王の領地)をめぐってイギリスと対立し、百年戦争が始まる。<strong>クレシーの戦い(1346)</strong>でエドワード3世の長弓兵に重装騎士軍が大敗し、翌年には港市カレーを失った。同じ頃、黒死病が大流行。</p></div></div>
+</div>
+
+</div><!-- row -->
+
+<div class="cv"></div>
+<div class="crisis"><strong>1328年の王位継承問題 → 百年戦争(1339-1453)</strong><br>フランスの諸侯は、女子とその子孫による継承(女系)を認めず、男系のヴァロワ家を選んだ(のちに古いフランク人の法「サリカ法典」を根拠として正当化された)。<br>イギリス王エドワード3世は母イザベルの血統を理由に王位を要求。背景にはフランドルとギュイエンヌをめぐる経済的な利害の対立があった。</div>
+<div class="cv"></div>
+<div class="inherit"><strong>ヴァロワ朝(1328-1589)</strong></div>
+<div class="cv"></div>
+<div class="nd h-val end"><div class="nb">
+  <div class="nn">ジャン2世(善良王)</div>
+  <div class="ni">在位 1350-1364</div>
+  <div style="display:flex;gap:3px;justify-content:center;flex-wrap:wrap;margin-top:2px">
+    <span class="ntag">ポワティエの戦い(1356)で捕虜に</span>
+    <span class="ntag">ジャックリーの乱(1358)</span>
+    <span class="ntag">ブレティニー条約(1360)</span>
+  </div>
+</div><div class="tp"><p><strong>ポワティエの戦い(1356)</strong>でエドワード黒太子に敗れ、国王自身が捕虜となってロンドンへ送られた。国王不在のなか、パリでは商人頭エティエンヌ＝マルセルが王政の改革を求めて蜂起し、農村では<strong>ジャックリーの乱(1358)</strong>が起こる。ブレティニー条約(1360)で、巨額の身代金に加えてフランス南西部の広大な領土をイギリスに割譲した。</p></div></div>
+<div class="cv"></div>
+<div class="nd h-val"><div class="nb">
+  <div class="nn">シャルル5世(賢明王)</div>
+  <div class="ni">在位 1364-1380</div>
+  <div style="display:flex;gap:3px;justify-content:center;flex-wrap:wrap;margin-top:2px">
+    <span class="ntag">失地の大半を回復</span>
+    <span class="ntag">税制の整備</span>
+  </div>
+</div><div class="tp"><p>父が捕虜となっていた間、摂政として国内の反乱を収拾した。即位後は正面からの決戦を避け、名将デュ＝ゲクランを起用して小規模な戦闘を重ね、<strong>イギリスに奪われた領土の大半を回復</strong>した。恒常的な課税制度を整えて王国の財政を立て直す。</p></div></div>
+<div class="cv"></div>
+<div class="nd h-val end"><div class="nb">
+  <div class="nn">シャルル6世</div>
+  <div class="ni">在位 1380-1422</div>
+  <div style="display:flex;gap:3px;justify-content:center;flex-wrap:wrap;margin-top:2px">
+    <span class="ntag">国内が二派に分裂</span>
+    <span class="ntag">アザンクールの戦い(1415)</span>
+    <span class="ntag">トロワ条約(1420)</span>
+  </div>
+</div><div class="tp"><p>精神の病で統治が困難になり、王族が<strong>ブルゴーニュ派とアルマニャック派(オルレアン派)</strong>に分かれて内戦に。これに乗じたイギリス王ヘンリ5世が侵攻し、<strong>アザンクールの戦い(1415)</strong>で大勝。ブルゴーニュ派はイギリスと結び、<strong>トロワ条約(1420)</strong>で、ヘンリ5世がシャルル6世の娘と結婚してフランス王位の継承者となることが定められた(王太子シャルルは廃嫡)。フランスは北半分をイギリスとブルゴーニュ公に押さえられ、滅亡の危機に。</p></div></div>
+<div class="cv"></div>
+<div class="nd h-val peak"><div class="nb">
+  <div class="nn">シャルル7世(勝利王)</div>
+  <div class="ni">在位 1422-1461 ｜ 百年戦争に勝利</div>
+  <div style="display:flex;gap:3px;justify-content:center;flex-wrap:wrap;margin-top:2px">
+    <span class="ntag">ジャンヌ＝ダルク</span>
+    <span class="ntag">オルレアン解放(1429)</span>
+    <span class="ntag">常備軍の創設</span>
+  </div>
+</div><div class="tp"><p>廃嫡された王太子としてロワール川以南(ブールジュ)に逃れていたが、農民の娘<strong>ジャンヌ＝ダルク</strong>が現れて包囲されていた<strong>オルレアンを解放(1429)</strong>。歴代国王の戴冠の地ランスで正式に戴冠し、正統な王であることを示した。ブルゴーニュ公と和解(1435)して形勢を逆転させ、<strong>1453年、カレーを除く全土からイギリス軍を駆逐</strong>して百年戦争を終わらせた。大商人ジャック＝クールを財務官に登用して財政を再建し、国王直属の<strong>常備軍</strong>を創設→諸侯・騎士が没落し、中央集権化が進む。</p></div></div>
+<div class="cv"></div>
+<div class="nd h-val"><div class="nb">
+  <div class="nn">ルイ11世</div>
+  <div class="ni">在位 1461-1483</div>
+  <div style="display:flex;gap:3px;justify-content:center;flex-wrap:wrap;margin-top:2px">
+    <span class="ntag">ブルゴーニュ公領を併合(1477)</span>
+    <span class="ntag">王国の統一をほぼ完成</span>
+  </div>
+</div><div class="tp"><p>王国内で最大の勢力だったブルゴーニュ公<strong>シャルル(突進公)</strong>と争う。突進公がナンシーの戦い(1477)で戦死すると、ブルゴーニュ公領などを王領に併合し、フランスの領域的な統一をほぼ完成させた。ただし突進公の娘マリーがハプスブルク家のマクシミリアン(のちの神聖ローマ皇帝マクシミリアン1世)と結婚したため、<strong>ネーデルラントはハプスブルク家の手に</strong>→以後200年以上続くフランス王家とハプスブルク家の対立の起源。</p></div></div>
+<div class="cv"></div>
+<div class="nd h-val"><div class="nb">
+  <div class="nn">シャルル8世</div>
+  <div class="ni">在位 1483-1498</div>
+  <div class="ntag">イタリア戦争を開始(1494)</div>
+</div><div class="tp"><p>ブルターニュ公国の女公アンヌと結婚し、最後に残った大諸侯領ブルターニュを王国に結びつけた。ナポリ王位の継承権を主張してイタリアに侵入(1494)し、<strong>イタリア戦争(1494-1559)</strong>を開始。ルネサンス期のイタリアを舞台に、フランス王家とハプスブルク家が争う長期の戦争となる。後継ぎなく事故で急死し、ヴァロワ家の直系が絶えた。</p></div></div>
+<div class="cv"></div>
+<div class="inherit">↓ 傍系のルイ12世(在位1498-1515、オルレアン家)を経て、さらに傍系のアングレーム家へ</div>
+<div class="cv"></div>
+<div class="nd h-val peak"><div class="nb">
+  <div class="nn">フランソワ1世</div>
+  <div class="ni">在位 1515-1547 ｜ フランス＝ルネサンスの王</div>
+  <div style="display:flex;gap:3px;justify-content:center;flex-wrap:wrap;margin-top:2px">
+    <span class="ntag">皇帝選挙でカール5世に敗北(1519)</span>
+    <span class="ntag">パヴィアの戦い(1525)で捕虜</span>
+    <span class="ntag">オスマン帝国と提携</span>
+  </div>
+</div><div class="tp"><p>神聖ローマ皇帝の選挙(1519)に立候補したが、スペイン王カルロス1世(<strong>皇帝カール5世</strong>)に敗れた。ハプスブルク家の領土に東西から挟まれる形となり、生涯にわたってカール5世とイタリア戦争を戦う。<strong>パヴィアの戦い(1525)</strong>では捕虜となった。カール5世に対抗するため、異教徒であるオスマン帝国の<strong>スレイマン1世</strong>と手を結び、ドイツのルター派諸侯も支援した。晩年の<strong>レオナルド＝ダ＝ヴィンチ</strong>をフランスに招くなどルネサンス文化を保護。公文書でのフランス語の使用を定めた(ヴィレル＝コトレの勅令 1539)。カルティエをカナダ探検に派遣。</p></div></div>
+<div class="cv"></div>
+<div class="nd h-val"><div class="nb">
+  <div class="nn">アンリ2世</div>
+  <div class="ni">在位 1547-1559</div>
+  <div style="display:flex;gap:3px;justify-content:center;flex-wrap:wrap;margin-top:2px">
+    <span class="ntag">カトー＝カンブレジ条約(1559)</span>
+    <span class="ntag">妃カトリーヌ＝ド＝メディシス</span>
+  </div>
+</div><div class="tp"><p>妃はフィレンツェのメディチ家出身の<strong>カトリーヌ＝ド＝メディシス</strong>。<strong>カトー＝カンブレジ条約(1559)</strong>でイタリア戦争を終結させ、フランスはイタリアへの権利を放棄した(イギリスからカレーを奪回したことは認められた)。この講和を祝う馬上槍試合での事故で急死。国内ではカルヴァン派(<strong>ユグノー</strong>)が貴族や商工業者に広がっており、強力な国王の急死が内乱への道を開いた。</p></div></div>
+<div class="cv"></div>
+<div class="inherit">↓ 3人の息子が相次いで即位 ― 母后カトリーヌ＝ド＝メディシスが実権</div>
+<div class="cv"></div>
+<div class="row" style="gap:8px">
+<div class="nd h-val"><div class="nb">
+  <div class="nn" style="font-size:10px">フランソワ2世</div>
+  <div class="ni">在位 1559-60</div>
+</div><div class="tp"><p>アンリ2世の長男。妃はスコットランド女王<strong>メアリ＝ステュアート</strong>。その外戚で強硬なカトリックのギーズ公が実権を握り、ユグノーとの対立が激化。在位1年余りで病死。</p></div></div>
+<div class="nd h-val"><div class="nb">
+  <div class="nn" style="font-size:10px">シャルル9世</div>
+  <div class="ni">在位 1560-74</div>
+  <div class="ntag">サン＝バルテルミの虐殺(1572)</div>
+</div><div class="tp"><p>10歳で即位し、母后カトリーヌが摂政に。<strong>ユグノー戦争(1562-98)</strong>が始まる。1572年、妹マルグリットとユグノーの指導者ナヴァル王アンリ(のちのアンリ4世)の結婚式のためにパリに集まったユグノーが多数殺害された(<strong>サン＝バルテルミの虐殺</strong>)。</p></div></div>
+<div class="nd h-val end"><div class="nb">
+  <div class="nn" style="font-size:10px">アンリ3世</div>
+  <div class="ni">在位 1574-89 ｜ ヴァロワ朝最後</div>
+  <div style="display:flex;gap:3px;justify-content:center;flex-wrap:wrap;margin-top:2px">
+    <span class="ntag">「3アンリの戦い」</span>
+    <span class="ntag">暗殺(1589)</span>
+  </div>
+</div><div class="tp"><p>カトリック同盟を率いるギーズ公アンリ、ユグノーの指導者ナヴァル王アンリとの三つ巴の争い(「3アンリの戦い」)。ギーズ公を暗殺させたが、自身も1589年に狂信的なカトリック修道士に暗殺された。男子がなく、<strong>ヴァロワ朝は断絶</strong>。</p></div></div>
+</div>
+<div class="cv"></div>
+<div class="nd " style="opacity:.7"><div class="nb">
+  <div class="nn" style="font-size:10px">ブルボン朝へ(1589) → アンリ4世</div>
+  <div class="ni">ブルボン家のナヴァル王アンリが即位</div>
+</div><div class="tp"><p>ブルボン家は<strong>ルイ9世の末子</strong>を祖とするカペー家の分家。男系で最も近い親族として、ユグノーの指導者だったナヴァル王アンリが<strong>アンリ4世</strong>として即位した。カトリックに改宗してパリに入り、ナントの王令(1598)でユグノー戦争を終わらせる。</p></div></div>
+<div class="inherit" style="font-size:9px;margin-top:6px"><a href="bourbon_tree.html" style="color:var(--gold)">→ 続きは「ブルボン家の系譜」へ</a></div>
+
+</div><!-- tree -->
+</div><!-- wrap -->
+
+<div class="legend">
+  <div class="legend-item"><div class="legend-dot" style="background:rgba(80,110,160,.45)"></div>カペー朝(直系)</div>
+  <div class="legend-item"><div class="legend-dot" style="background:rgba(100,80,140,.45)"></div>ヴァロワ朝</div>
+  <div class="legend-item"><div class="legend-dot" style="background:rgba(160,80,80,.45)"></div>イギリス王家(プランタジネット朝)</div>
+</div>
+
+<div class="note">
+  <strong>カペー朝・ヴァロワ朝のポイント：</strong><br>
+  ❶ 出発点は「パリ周辺だけの弱い王」→ フィリップ2世(対ジョン王)・ルイ9世(南仏)・フィリップ4世(対教皇)の3人の王のもとで王権が伸張<br>
+  ❷ フィリップ4世＝三部会(1302)→アナーニ事件(1303)→教皇のバビロン捕囚(1309-77) ＝ 教皇権の衰退と王権の伸張が同時に進む<br>
+  ❸ 1328年カペー朝直系の断絶→ヴァロワ朝。エドワード3世は「母イザベル＝フィリップ4世の娘」を根拠に王位を要求 → 百年戦争<br>
+  ❹ シャルル7世＝ジャンヌ＝ダルク・常備軍・財政再建 → 諸侯・騎士の没落 → ルイ11世がブルゴーニュ公領を併合し統一をほぼ完成<br>
+  ❺ ブルゴーニュ公女マリーの結婚でネーデルラントがハプスブルク家へ → イタリア戦争(フランソワ1世 vs カール5世) → 外交革命(1756)まで続く両家の対立<br>
+  ❻ アンリ2世の急死 → 幼い王が続き、ユグノー戦争(1562-98) → ヴァロワ朝断絶 → ブルボン朝アンリ4世のナントの王令(1598)
+</div>
+
+<!-- Tooltip system -->
+<div id="tooltip-overlay" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;z-index:8000" onclick="closeTip()"></div>
+<div id="tooltip-box" style="display:none;position:fixed;z-index:9000;background:var(--bg);border:1px solid rgba(var(--axr),.25);border-radius:8px;padding:12px 16px;max-width:320px;width:calc(100vw - 32px);box-shadow:0 8px 30px rgba(0,0,0,.6)">
+  <div id="tooltip-content" style="font-size:10px;color:var(--text2);line-height:1.7"></div>
+</div>
+<script>
+(function(){
+  var ov=document.getElementById("tooltip-overlay");
+  var bx=document.getElementById("tooltip-box");
+  var ct=document.getElementById("tooltip-content");
+  window.closeTip=function(){bx.style.display="none";ov.style.display="none"};
+  function openTip(nd){
+    var tp=nd.querySelector(".tp");if(!tp)return;closeTip();
+    ct.innerHTML=tp.innerHTML;ov.style.display="block";bx.style.display="block";
+    var r=nd.getBoundingClientRect();
+    var w=Math.min(320,window.innerWidth-32);bx.style.width=w+"px";
+    var l=r.left+r.width/2-w/2;
+    if(l<16)l=16;if(l+w>window.innerWidth-16)l=window.innerWidth-16-w;
+    bx.style.left=l+"px";bx.style.top=(r.bottom+8)+"px";bx.style.bottom="auto";
+    var br=bx.getBoundingClientRect();
+    if(br.bottom>window.innerHeight-16){var t=r.top-br.height-8;if(t<16)t=16;bx.style.top=t+"px"}
+  }
+  var tm=false,tt=null;
+  document.addEventListener("touchstart",function(e){tm=false;tt=e.target},{passive:true});
+  document.addEventListener("touchmove",function(){tm=true},{passive:true});
+  document.addEventListener("touchend",function(e){
+    if(tm)return;var nd=tt?tt.closest(".nd"):null;
+    if(nd){e.preventDefault();openTip(nd)}else if(!tt||!tt.closest("#tooltip-box"))closeTip();tt=null;
+  });
+  document.addEventListener("click",function(e){
+    if("ontouchstart"in window)return;var nd=e.target.closest(".nd");
+    if(nd)openTip(nd);else if(!e.target.closest("#tooltip-box"))closeTip();
+  });
+})();
+</script>
+
+</body>
+</html>
