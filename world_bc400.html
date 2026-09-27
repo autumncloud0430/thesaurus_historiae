@@ -54,7 +54,16 @@ body{font-family:'Noto Sans JP',sans-serif;background:#080b14;color:#e0dcd6;heig
 .tb{font-size:8px;padding:2px 6px}
 .note p{font-size:8px}
 }
-/*LUX-HDR*/html[data-theme="lux"] .top h1{color:#59452a}html[data-theme="lux"] .top p{color:#6d6353}html[data-theme="lux"] .top a{color:#8b6f4e!important;opacity:.8!important}html[data-theme="lux"] .tb{color:#6d6353;background:rgba(43,36,27,.06)}html[data-theme="lux"] .tb.on{color:#2b241b;border-color:rgba(43,36,27,.3)}html[data-theme="lux"] .cnt{color:#8b6f4e}html[data-theme="lux"] .si{color:#2b241b;border-color:rgba(43,36,27,.25);background:rgba(43,36,27,.04)}html[data-theme="lux"] .si::placeholder{color:#a89a80}html[data-theme="lux"] .leg-toggle{color:#6d6353}/*/LUX-HDR*/</style>
+/*LUX-HDR*/html[data-theme="lux"] .top h1{color:#59452a}html[data-theme="lux"] .top p{color:#6d6353}html[data-theme="lux"] .top a{color:#8b6f4e!important;opacity:.8!important}html[data-theme="lux"] .tb{color:#6d6353;background:rgba(43,36,27,.06)}html[data-theme="lux"] .tb.on{color:#2b241b;border-color:rgba(43,36,27,.3)}html[data-theme="lux"] .cnt{color:#8b6f4e}html[data-theme="lux"] .si{color:#2b241b;border-color:rgba(43,36,27,.25);background:rgba(43,36,27,.04)}html[data-theme="lux"] .si::placeholder{color:#a89a80}html[data-theme="lux"] .leg-toggle{color:#6d6353}/*/LUX-HDR*//*ERA-PANEL-CSS*/
+/* era summary panel */
+.era-pt{background:rgba(8,11,20,.94);border:1px solid rgba(255,255,255,.12);border-radius:8px;color:#e0dcd6;font-family:'Noto Sans JP',sans-serif;max-width:340px;box-shadow:0 8px 32px rgba(0,0,0,.6)}
+.era-pt summary{cursor:pointer;list-style:none;padding:6px 10px;font-size:11px;font-weight:700;color:#c9b99a;user-select:none}
+.era-pt summary::-webkit-details-marker{display:none}
+.era-pt .in{padding:0 10px 8px;font-size:11px;line-height:1.75;max-height:46vh;overflow-y:auto}
+.era-pt .in p{margin:0 0 5px;color:#d0ccc4}
+.era-pt .in strong,html[data-theme="lux"] .era-pt .in strong{color:#e8c888!important;font-weight:700}
+@media(max-width:600px){.era-pt{max-width:240px}.era-pt .in{font-size:10px}}
+/*/ERA-PANEL-CSS*/</style>
 <style id="thThemes">/* =====================================================
    THESAURUS HISTORIAE ― themes.css(LUX固定版)
    生成りの紙 + 墨の本文 + 朱筆(★語) + 金茶の構造色。
@@ -160,7 +169,14 @@ var DESC={
 "Kingdom of Macedon":"アルケラオス王が近代化。ギリシア文化を積極的に受容。フィリッポス2世(前359-)・アレクサンドロス3世(前336-)の台頭はこれから。",
 "Scythians":"黒海北方の騎馬遊牧民。動物意匠の黄金工芸品で有名。ヘロドトスが詳細に記録。ペルシアのダレイオス1世の遠征を撃退した強力な遊牧国家。",
 "Gojoseon":"朝鮮半島の古代国家。檀君神話に基づく伝承。箕子朝鮮期とも呼ばれる。後の衛満朝鮮(前194-)・三韓・三国時代へと続く朝鮮の始祖国家。",
-"Kush":"メロエに遷都(前590年頃)。ナイル上流の製鉄王国。エジプト文化を独自に継承しながらアフリカ的独自性を保つ。"
+"Kush":"メロエに遷都(前590年頃)。ナイル上流の製鉄王国。エジプト文化を独自に継承しながらアフリカ的独自性を保つ。",
+"Simhala":"スリランカ最古の王朝。伝承では前543年頃ヴィジャヤ王子が北インドから渡来して建国したとされる。仏教伝来(前3世紀)以前のアヌラーダプラ王国初期にあたる。",
+"Greek colonies":"前8世紀以降ギリシア人が地中海・黒海沿岸に建てた植民市群。南イタリア・シチリアは「マグナ＝グラエキア」と呼ばれ商業で繁栄した。",
+"Olmec":"メキシコ湾岸に栄えたメソアメリカ最古の文明。前400年頃には最大の中心地ラ・ベンタも衰退し、後の中米諸文明に影響を残した。",
+"Hindu kingdoms":"ガンジス川流域の十六大国のうちマガダ以外の諸国や、南インドのドラヴィダ系諸勢力を含む。バラモン教の祭式重視から仏教・ジャイナ教への転換期。",
+"Xiongnu":"モンゴル高原の遊牧民集団。前400年頃はまだ小部族段階で、冒頓単于による統一(前209年頃)以前。戦国時代に入った中国北辺との抗争はこれから本格化する。",
+"Etruscans":"イタリア中部に都市国家連合を築いた民族。ローマ建国期の王政に強い影響を与えたが、この頃ローマ・ケルト人の圧迫で徐々に衰退していた。",
+"Nabatean Kingdom":"アラビア半島北西部の遊牧民ナバテア人。前400年頃はまだ天幕生活の遊牧民で、隊商交易により富を築きつつあった。都となるペトラの都市化は前4世紀末以降。",
 };
 
 var PCOLORS={
@@ -1125,6 +1141,10 @@ function dbl(){if(lt)clearTimeout(lt);lt=setTimeout(updateLabels,150)}
 map.on("zoomend",dbl);map.on("moveend",dbl);
 
 renderPoints();
+//ERA-PANEL-JS
+// ═══ ERA SUMMARY PANEL ═══
+(function(){var c=L.control({position:"topright"});c.onAdd=function(){var d=L.DomUtil.create("div");d.innerHTML="<details class=\"era-pt\" open><summary>▼ 前400年の世界 ― この時代の要点(クリックで開閉)</summary><div class=\"in\"><p><strong>地中海世界</strong>：ギリシアはペロポネソス戦争(前431-404)終結後の混乱期でスパルタが覇権を握り、プラトンら哲学者が活躍する古典期の頂点にあった。ローマは共和政のもとエトルリアの都市ウェイイを攻囲し(前406-396)対外拡大を進め、カルタゴは西地中海の海上帝国として繁栄した。</p><p><strong>西アジア</strong>：アケメネス朝ペルシアはアルタクセルクセス2世のもとサトラップ制・王の道で小アジアから東はインダス川まで広大な領域を統治し、依然として最大の帝国であり続けたが、エジプトは前404年に独立し支配は及ばなかった。</p><p><strong>南アジア</strong>：ガンジス川流域ではシシュナーガ朝マガダ国が十六大国中で最強に成長し、ブッダとマハーヴィーラの活動を経て仏教・ジャイナ教が広まった。スリランカでは伝承上シンハラ王国が成立した。</p><p><strong>東アジア</strong>：中国は三家分晋(前403)で韓・魏・趙が諸侯となり戦国時代が本格化し、儒家・道家・法家など諸子百家が百家争鳴した。朝鮮半島では古朝鮮が伝承上の始祖国家として存在した。</p><p><strong>内陸・北方</strong>：黒海北方ではスキタイが騎馬遊牧国家として繁栄し黄金工芸で知られ、東方のモンゴル高原では後の匈奴につながる遊牧諸集団が形成されつつあった。</p><p><strong>アフリカ・アメリカ</strong>：ナイル上流ではクシュ王国がメロエを中心に製鉄と独自文化を発展させ、中米ではオルメカ文明が最大の中心地ラ・ベンタを失い衰退期に入っていた。</p></div></details>";L.DomEvent.disableClickPropagation(d);L.DomEvent.disableScrollPropagation(d);if(window.innerWidth<700)d.querySelector("details").removeAttribute("open");return d;};c.addTo(map);})();
+//-ERA-PANEL-JS
 </script>
 </body>
 </html>
