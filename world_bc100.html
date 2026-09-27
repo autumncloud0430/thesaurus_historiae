@@ -54,7 +54,16 @@ body{font-family:'Noto Sans JP',sans-serif;background:#080b14;color:#e0dcd6;heig
 .tb{font-size:8px;padding:2px 6px}
 .note p{font-size:8px}
 }
-/*LUX-HDR*/html[data-theme="lux"] .top h1{color:#59452a}html[data-theme="lux"] .top p{color:#6d6353}html[data-theme="lux"] .top a{color:#8b6f4e!important;opacity:.8!important}html[data-theme="lux"] .tb{color:#6d6353;background:rgba(43,36,27,.06)}html[data-theme="lux"] .tb.on{color:#2b241b;border-color:rgba(43,36,27,.3)}html[data-theme="lux"] .cnt{color:#8b6f4e}html[data-theme="lux"] .si{color:#2b241b;border-color:rgba(43,36,27,.25);background:rgba(43,36,27,.04)}html[data-theme="lux"] .si::placeholder{color:#a89a80}html[data-theme="lux"] .leg-toggle{color:#6d6353}/*/LUX-HDR*/</style>
+/*LUX-HDR*/html[data-theme="lux"] .top h1{color:#59452a}html[data-theme="lux"] .top p{color:#6d6353}html[data-theme="lux"] .top a{color:#8b6f4e!important;opacity:.8!important}html[data-theme="lux"] .tb{color:#6d6353;background:rgba(43,36,27,.06)}html[data-theme="lux"] .tb.on{color:#2b241b;border-color:rgba(43,36,27,.3)}html[data-theme="lux"] .cnt{color:#8b6f4e}html[data-theme="lux"] .si{color:#2b241b;border-color:rgba(43,36,27,.25);background:rgba(43,36,27,.04)}html[data-theme="lux"] .si::placeholder{color:#a89a80}html[data-theme="lux"] .leg-toggle{color:#6d6353}/*/LUX-HDR*//*ERA-PANEL-CSS*/
+/* era summary panel */
+.era-pt{background:rgba(8,11,20,.94);border:1px solid rgba(255,255,255,.12);border-radius:8px;color:#e0dcd6;font-family:'Noto Sans JP',sans-serif;max-width:340px;box-shadow:0 8px 32px rgba(0,0,0,.6)}
+.era-pt summary{cursor:pointer;list-style:none;padding:6px 10px;font-size:11px;font-weight:700;color:#c9b99a;user-select:none}
+.era-pt summary::-webkit-details-marker{display:none}
+.era-pt .in{padding:0 10px 8px;font-size:11px;line-height:1.75;max-height:46vh;overflow-y:auto}
+.era-pt .in p{margin:0 0 5px;color:#d0ccc4}
+.era-pt .in strong,html[data-theme="lux"] .era-pt .in strong{color:#e8c888!important;font-weight:700}
+@media(max-width:600px){.era-pt{max-width:240px}.era-pt .in{font-size:10px}}
+/*/ERA-PANEL-CSS*/</style>
 <style id="thThemes">/* =====================================================
    THESAURUS HISTORIAE ― themes.css(LUX固定版)
    生成りの紙 + 墨の本文 + 朱筆(★語) + 金茶の構造色。
@@ -173,7 +182,24 @@ var DESC={
 "Seleucid Kingdom":"前190年のマグネシアの戦いでローマに敗北後、急速に縮小。各地で属国が独立。シリアのみを支配する小国に没落しつつある。",
 "Meroe":"クシュ王国のメロエ期の繁栄が続く。ローマとの交易関係。ナイル川流域の鉄器生産・農業。独自のメロエ文字で碑文を残す。",
 "Teotihuacán":"メキシコ盆地で急成長中の都市。太陽・月のピラミッドの建設が始まる。前後100年頃には人口10万を超えるメソアメリカ最大の都市へ成長。",
-"Xiongnu":"漢の武帝の積極的遠征(前119)で北方に追い払われ衰退期に入る。後に東西に分裂し北匈奴は西方へ移動してフン族の起源になるとも言われる。"
+"Xiongnu":"漢の武帝の積極的遠征(前119)で北方に追い払われ衰退期に入る。後に東西に分裂し北匈奴は西方へ移動してフン族の起源になるとも言われる。",
+"Simhala":"スリランカのアヌラーダプラ朝。仏教を国教として保護し、獅子国としてインド洋交易にも参画した仏教国家。",
+"Maya chiefdoms and states":"マヤ文明の先古典期後期。エル・ミラドールなど巨大都市が繁栄し、後の古典期マヤ文明の基盤を築いた。",
+"Numidia":"ユグルタ戦争(前112-105)でローマに敗れた後、王国は分割・弱体化しローマの属国的立場に置かれた。",
+"Nabatean Kingdom":"ペトラを都に隊商交易で栄えるアラブ人国家。乳香・没薬の交易路を支配し、この頃ハスモン朝ユダヤと抗争した。",
+"Saba":"イエメンの香料交易国家。マーリブを都に灌漑農業を営み、乳香・没薬を地中海世界へ運ぶ隊商交易で栄えた。",
+"Hindu kingdoms":"マウリヤ朝崩壊後のインド。シュンガ朝がマガダ地方を支配し、南インドではサータヴァーハナ朝が台頭しつつあった。",
+"Min-Yue":"南越などと並ぶ百越の国の一つ。前110年に前漢武帝に滅ぼされ、住民は移住させられて直轄支配下に置かれた。",
+"Nan-Yue":"趙佗の子孫が治めた広東の国家。前111年に前漢武帝に滅ぼされて九郡が置かれ、直轄支配下に入った。",
+"Bosporan Kingdom":"黒海北岸のギリシア植民市連合。小麦・魚の輸出で栄え、この頃ポントス王国のミトリダテス6世の支配下に入った。",
+"Mauretania":"北西アフリカのベルベル人王国。ユグルタ戦争でボックス1世がユグルタをローマに引き渡し、その信頼を得た。",
+"Nazca":"ペルー南海岸の文化。この頃、地上に巨大な図像を描くナスカの地上絵の制作が始まり、多彩色土器でも知られる。",
+"Sarmatians":"黒海北方の草原地帯の遊牧イラン系民族。衰退したスキタイに代わって台頭し、南ロシアの覇権を握りつつあった。",
+"Dacians":"ドナウ川下流域のトラキア系民族。後にブレビスタ王のもとで統一国家を形成し、ローマと対峙する基盤を築きつつあった。",
+"Scythians":"南ロシアの騎馬遊牧民族。台頭するサルマタイに圧迫されて衰退し、クリミア半島などへ勢力を後退させつつあった。",
+"Sakas":"中央アジアの遊牧イラン系民族。大月氏に圧迫されて南下し、この頃バクトリア・西北インド方面へ進出しつつあった。",
+"Arakan":"ビルマ西部の古王国。ベンガル湾に面し、インドと東南アジアを結ぶ海上交易の中継地として発展した。",
+"Yuezhi":"匈奴に敗れて中央アジアを西走した遊牧民。バクトリア地方を征服して大月氏となり、後のクシャーン朝の基盤となる。",
 };
 
 var PCOLORS={
@@ -1138,6 +1164,10 @@ function dbl(){if(lt)clearTimeout(lt);lt=setTimeout(updateLabels,150)}
 map.on("zoomend",dbl);map.on("moveend",dbl);
 
 renderPoints();
+//ERA-PANEL-JS
+// ═══ ERA SUMMARY PANEL ═══
+(function(){var c=L.control({position:"topright"});c.onAdd=function(){var d=L.DomUtil.create("div");d.innerHTML="<details class=\"era-pt\" open><summary>▼ 前100年の世界 ― この時代の要点(クリックで開閉)</summary><div class=\"in\"><p><strong>地中海世界</strong>：ローマ共和政はグラックス兄弟の改革(前133-121)が挫折した後、マリウスが軍制を改革して私兵化を招き、スラが独裁官として権力を握る(前82)など「内乱の一世紀」に突入した。カルタゴ・コリントスを滅ぼし(前146)地中海の覇者となったが政治的混乱は深まった。</p><p><strong>西アジア</strong>：パルティアはミトリダテス2世のもとで全盛期を迎え、セレウコス朝からメソポタミアを奪い東西交易の要となった。セレウコス朝はローマに敗れて以降縮小を続け、小アジアではポントス王国のミトリダテス6世が勢力を拡大しローマと対立を深めていた。</p><p><strong>南アジア</strong>：マウリヤ朝崩壊後のインドはシュンガ朝など諸王朝に分裂し、南インドではサータヴァーハナ朝が台頭した。西北方では大月氏に追われたサカ族(スキタイ系)が流入しはじめ、スリランカでは仏教を国教とするシンハラ王朝が栄えていた。</p><p><strong>東アジア</strong>：前漢は武帝のもとで全盛期を迎え、衛青・霍去病の遠征で匈奴を漠北に追い、張騫の派遣でシルクロードが開かれた。南越・閩越を征服して南方に領土を広げ、朝鮮にも進出するなど、中華帝国は最大版図に近づいていた。</p><p><strong>内陸・北方</strong>：漢の攻勢で衰退した匈奴に代わり、西走した月氏はバクトリアを征服して大月氏となった。黒海北方の草原ではサルマタイが台頭し、衰退したスキタイを圧迫するなど、南ロシアの遊牧民勢力の交代が進んでいた。</p><p><strong>その他の地域</strong>：アフリカではクシュ王国(メロエ)がナイル交易で繁栄し、北アフリカのヌミディア・マウレタニアはユグルタ戦争を経てローマの影響下に入った。メソアメリカではテオティワカンが急成長し、アンデスではナスカ文化が独自の文化を築くなど、各地で地域文明が発展していた。</p></div></details>";L.DomEvent.disableClickPropagation(d);L.DomEvent.disableScrollPropagation(d);if(window.innerWidth<700)d.querySelector("details").removeAttribute("open");return d;};c.addTo(map);})();
+//-ERA-PANEL-JS
 </script>
 </body>
 </html>
