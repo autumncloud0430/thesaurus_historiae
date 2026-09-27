@@ -54,7 +54,16 @@ body{font-family:'Noto Sans JP',sans-serif;background:#080b14;color:#e0dcd6;heig
 .tb{font-size:8px;padding:2px 6px}
 .note p{font-size:8px}
 }
-/*LUX-HDR*/html[data-theme="lux"] .top h1{color:#59452a}html[data-theme="lux"] .top p{color:#6d6353}html[data-theme="lux"] .top a{color:#8b6f4e!important;opacity:.8!important}html[data-theme="lux"] .tb{color:#6d6353;background:rgba(43,36,27,.06)}html[data-theme="lux"] .tb.on{color:#2b241b;border-color:rgba(43,36,27,.3)}html[data-theme="lux"] .cnt{color:#8b6f4e}html[data-theme="lux"] .si{color:#2b241b;border-color:rgba(43,36,27,.25);background:rgba(43,36,27,.04)}html[data-theme="lux"] .si::placeholder{color:#a89a80}html[data-theme="lux"] .leg-toggle{color:#6d6353}/*/LUX-HDR*/</style>
+/*LUX-HDR*/html[data-theme="lux"] .top h1{color:#59452a}html[data-theme="lux"] .top p{color:#6d6353}html[data-theme="lux"] .top a{color:#8b6f4e!important;opacity:.8!important}html[data-theme="lux"] .tb{color:#6d6353;background:rgba(43,36,27,.06)}html[data-theme="lux"] .tb.on{color:#2b241b;border-color:rgba(43,36,27,.3)}html[data-theme="lux"] .cnt{color:#8b6f4e}html[data-theme="lux"] .si{color:#2b241b;border-color:rgba(43,36,27,.25);background:rgba(43,36,27,.04)}html[data-theme="lux"] .si::placeholder{color:#a89a80}html[data-theme="lux"] .leg-toggle{color:#6d6353}/*/LUX-HDR*//*ERA-PANEL-CSS*/
+/* era summary panel */
+.era-pt{background:rgba(8,11,20,.94);border:1px solid rgba(255,255,255,.12);border-radius:8px;color:#e0dcd6;font-family:'Noto Sans JP',sans-serif;max-width:340px;box-shadow:0 8px 32px rgba(0,0,0,.6)}
+.era-pt summary{cursor:pointer;list-style:none;padding:6px 10px;font-size:11px;font-weight:700;color:#c9b99a;user-select:none}
+.era-pt summary::-webkit-details-marker{display:none}
+.era-pt .in{padding:0 10px 8px;font-size:11px;line-height:1.75;max-height:46vh;overflow-y:auto}
+.era-pt .in p{margin:0 0 5px;color:#d0ccc4}
+.era-pt .in strong,html[data-theme="lux"] .era-pt .in strong{color:#e8c888!important;font-weight:700}
+@media(max-width:600px){.era-pt{max-width:240px}.era-pt .in{font-size:10px}}
+/*/ERA-PANEL-CSS*/</style>
 <style id="thThemes">/* =====================================================
    THESAURUS HISTORIAE ― themes.css(LUX固定版)
    生成りの紙 + 墨の本文 + 朱筆(★語) + 金茶の構造色。
@@ -172,7 +181,23 @@ var DESC={
 "Roman Republic":"第二次・第三次サムニウム戦争(前326-290)でイタリア半島南部を征服しつつある。ピュロス戦争(前280-275)を前に着実に拡大する共和政ローマ。",
 "Carthaginian Empire":"地中海西部を支配する海洋帝国の最盛期。アフリカ北岸・スペイン・シチリア・サルデーニャを支配。第1次ポエニ戦争(前264-)はまだ先。",
 "Meroe":"クシュ王国のメロエ期。独自のメロエ文字・鉄器生産・ピラミッド建設。エジプト(プトレマイオス朝)と緊張関係を保ちながら繁栄。",
-"Greek city-states":"イプソスの戦い(前301)直前。ディアドコイ戦争でギリシア諸ポリスはマケドニアの支配下に。アテネは文化的影響力は維持するが政治的独立は形式的。"
+"Greek city-states":"イプソスの戦い(前301)直前。ディアドコイ戦争でギリシア諸ポリスはマケドニアの支配下に。アテネは文化的影響力は維持するが政治的独立は形式的。",
+"Simhala":"スリランカ北部のアヌラーダプラを都とする王国。建国から数世紀を経て発展していた。仏教伝来(前3世紀半ば、アショーカ王の子マヒンダによる)はまだこれから。",
+"Monte Albán":"サポテカ文明の中心都市国家。オアハカ盆地の山上都市として前500年頃建設され、独自文字と暦を用いる先古典期の政治・宗教的中心地であった。",
+"Maya chiefdoms and states":"マヤ文明の先古典期後期にあたる。ユカタン半島やグアテマラ低地に都市国家・首長国が分立し、後の古典期都市文明の基盤が形成されつつあった。",
+"Hindu kingdoms":"マウリヤ朝の支配がまだ及ばない南インド方面に残る、ヒンドゥー・バラモン系の地方王権群。マガダ中心の統一とは別の独自の政治秩序を保っていた。",
+"Bosporan Kingdom":"クリミア半島の黒海北岸を支配するギリシア系王国。スパルトコス朝のもとで穀物交易を通じてアテネなどギリシア本土と結びつき繁栄していた。",
+"Saba":"南アラビア(イエメン)の王国。マーリブを都とし、乳香・没薬など香料の隊商交易で栄え、古代地中海世界で豊かな地として知られていた。",
+"Hindu kingdoms and republics":"マウリヤ朝の統一に組み込まれつつも、なお北西インドなどにガナ(部族共和制)や小王国が残存し、ヒンドゥー・バラモン的祭祀文化を保持していた。",
+"Zhou states":"周王は権威を失い名目的存在にすぎず、実権は楚・斉・燕・韓・趙・魏ら戦国の七雄が握る。各国は変法により富国強兵を進め、天下統一を争っていた。",
+"Yue":"前306年頃に楚に滅ぼされた越の王族・遺民が江南沿海部で保持した残存勢力。もはや戦国七雄に伍する国力は持たない。",
+"Armenia":"オロンテス朝の統治するアルメニア。かつてアケメネス朝の総督領で、アレクサンドロス没後はセレウコス朝の影響下で半独立を保っていた。",
+"Cappadocia":"アナトリア中央部のイラン系王国。アリアラテス朝が統治し、アレクサンドロス没後の混乱の中で独立を保った。後にローマの属州として併合される。",
+"Crete":"クノッソスやゴルティンなど独立したギリシア系ポリスが分立する島。統一王権はなく、後には海賊の根拠地としても知られるようになる。",
+"Nabatean Kingdom":"アラビア半島北西部の遊牧民ナバテア人が建てた王国。都ペトラを拠点に隊商交易で繁栄し、前312年にはアンティゴノスの遠征を撃退していた。",
+"Kingdom of Lysimachus":"ディアドコイの一人リュシマコスがトラキアと小アジア西部を支配する王国。前301年のイプソスの戦いでは他の後継者と結んでアンティゴノスを破った。",
+"Kingdom of Kassander":"アンティパトロスの子カッサンドロスがマケドニア本国とギリシア大部分を支配する王国。前301年のイプソスの戦いでは連合を組みアンティゴノスと戦った。",
+"Bithynia":"小アジア北西部の王国。アケメネス朝以来の地方王家が自立し、アレクサンドロス帝国の解体後も独立を保持していた。後にローマに遺贈される。",
 };
 
 var PCOLORS={
@@ -1137,6 +1162,10 @@ function dbl(){if(lt)clearTimeout(lt);lt=setTimeout(updateLabels,150)}
 map.on("zoomend",dbl);map.on("moveend",dbl);
 
 renderPoints();
+//ERA-PANEL-JS
+// ═══ ERA SUMMARY PANEL ═══
+(function(){var c=L.control({position:"topright"});c.onAdd=function(){var d=L.DomUtil.create("div");d.innerHTML="<details class=\"era-pt\" open><summary>▼ 前300年の世界 ― この時代の要点(クリックで開閉)</summary><div class=\"in\"><p><strong>地中海西部</strong>：ローマは第二次・第三次サムニウム戦争(前326-290)でイタリア半島南部の征服を進める共和政国家。カルタゴは北アフリカ・スペイン・シチリアを支配する海洋帝国の最盛期にあり、両者の激突(第1次ポエニ戦争)はまだ先のことであった。</p><p><strong>ギリシア・ヘレニズム世界</strong>：前323年のアレクサンドロス大王没後のディアドコイ戦争は、前301年のイプソスの戦いで山場を迎えアンティゴノスが戦死。マケドニア・トラキア・シリア・エジプトの四王国分立体制が定まりつつあった。</p><p><strong>西アジア</strong>：セレウコス朝が旧アレクサンドロス帝国の東半(シリア〜中央アジア)を支配。周辺にはアルメニア・カッパドキア・ビティニアなど旧アケメネス系の小王国、南アラビアには乳香交易で栄えるサバ王国、北西アラビアにはナバテア王国が自立していた。</p><p><strong>南アジア</strong>：チャンドラグプタ・マウリヤがナンダ朝を倒して建国(前322)したマウリヤ朝が北インドをほぼ統一。アショーカ王(前268-232)による仏教帝国化はまだこれから。スリランカではシンハラ王国(都アヌラーダプラ)が発展し、仏教伝来を控えていた。</p><p><strong>東アジア</strong>：周王は名目的存在に過ぎず、実権は楚・斉・燕・韓・趙・魏ら戦国の七雄が握る。秦は商鞅の変法以来の富国強兵で最強国に成長しつつあり、始皇帝による統一(前221)はなお先のこと。</p><p><strong>その他の地域</strong>：アフリカでは、クシュ王国がメロエを都に鉄器生産で繁栄し、メキシコではサポテカ文明のモンテ・アルバンやマヤの都市・首長国群が並立していた。黒海北岸ではボスポロス王国がギリシア世界へ穀物を供給していた。</p></div></details>";L.DomEvent.disableClickPropagation(d);L.DomEvent.disableScrollPropagation(d);if(window.innerWidth<700)d.querySelector("details").removeAttribute("open");return d;};c.addTo(map);})();
+//-ERA-PANEL-JS
 </script>
 </body>
 </html>
