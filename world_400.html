@@ -54,7 +54,16 @@ body{font-family:'Noto Sans JP',sans-serif;background:#080b14;color:#e0dcd6;heig
 .tb{font-size:8px;padding:2px 6px}
 .note p{font-size:8px}
 }
-/*LUX-HDR*/html[data-theme="lux"] .top h1{color:#59452a}html[data-theme="lux"] .top p{color:#6d6353}html[data-theme="lux"] .top a{color:#8b6f4e!important;opacity:.8!important}html[data-theme="lux"] .tb{color:#6d6353;background:rgba(43,36,27,.06)}html[data-theme="lux"] .tb.on{color:#2b241b;border-color:rgba(43,36,27,.3)}html[data-theme="lux"] .cnt{color:#8b6f4e}html[data-theme="lux"] .si{color:#2b241b;border-color:rgba(43,36,27,.25);background:rgba(43,36,27,.04)}html[data-theme="lux"] .si::placeholder{color:#a89a80}html[data-theme="lux"] .leg-toggle{color:#6d6353}/*/LUX-HDR*/</style>
+/*LUX-HDR*/html[data-theme="lux"] .top h1{color:#59452a}html[data-theme="lux"] .top p{color:#6d6353}html[data-theme="lux"] .top a{color:#8b6f4e!important;opacity:.8!important}html[data-theme="lux"] .tb{color:#6d6353;background:rgba(43,36,27,.06)}html[data-theme="lux"] .tb.on{color:#2b241b;border-color:rgba(43,36,27,.3)}html[data-theme="lux"] .cnt{color:#8b6f4e}html[data-theme="lux"] .si{color:#2b241b;border-color:rgba(43,36,27,.25);background:rgba(43,36,27,.04)}html[data-theme="lux"] .si::placeholder{color:#a89a80}html[data-theme="lux"] .leg-toggle{color:#6d6353}/*/LUX-HDR*//*ERA-PANEL-CSS*/
+/* era summary panel */
+.era-pt{background:rgba(8,11,20,.94);border:1px solid rgba(255,255,255,.12);border-radius:8px;color:#e0dcd6;font-family:'Noto Sans JP',sans-serif;max-width:340px;box-shadow:0 8px 32px rgba(0,0,0,.6)}
+.era-pt summary{cursor:pointer;list-style:none;padding:6px 10px;font-size:11px;font-weight:700;color:#c9b99a;user-select:none}
+.era-pt summary::-webkit-details-marker{display:none}
+.era-pt .in{padding:0 10px 8px;font-size:11px;line-height:1.75;max-height:46vh;overflow-y:auto}
+.era-pt .in p{margin:0 0 5px;color:#d0ccc4}
+.era-pt .in strong,html[data-theme="lux"] .era-pt .in strong{color:#e8c888!important;font-weight:700}
+@media(max-width:600px){.era-pt{max-width:240px}.era-pt .in{font-size:10px}}
+/*/ERA-PANEL-CSS*/</style>
 <style id="thThemes">/* =====================================================
    THESAURUS HISTORIAE ― themes.css(LUX固定版)
    生成りの紙 + 墨の本文 + 朱筆(★語) + 金茶の構造色。
@@ -177,7 +186,33 @@ var DESC={
 "Gupta Empire":"チャンドラグプタ2世(ヴィクラマーディティア)の全盛期(375-415)。法顕がインドを訪問(399-414)。科学・文学・芸術の「インド黄金時代」。アーリャバタの数学・天文学。",
 "Koguryo":"広開土大王(好太王・374-413)の全盛期。満州・朝鮮半島北部・遼東を支配。碑文に日本(倭)との戦いが記録される。",
 "Sasanian Empire":"ヤズデギルド1世の比較的寛容な治世。ローマとの平和条約。ゾロアスター教の隆盛。",
-"Teotihuacán":"最大人口(15〜20万)の時代。マヤ最大都市ティカルにも軍事的影響を与える。「神々の都市」として宗教的中心地。"
+"Teotihuacán":"最大人口(15〜20万)の時代。マヤ最大都市ティカルにも軍事的影響を与える。「神々の都市」として宗教的中心地。",
+"Meroe":"ナイル中流のクシュ系農耕国家。製鉄と対エジプト交易で栄えたが、350年頃アクスム王国の攻撃で滅亡し、旧領はヌビア系諸集団が割拠する状態にあった。",
+"Satavahana":"デカン高原に興ったドラヴィダ系王朝。プラークリット語碑文や対ローマ交易で栄えたが、220年頃に滅亡し、旧領は諸侯国が分立する状態が続いていた。",
+"Himyarite Kingdom":"南アラビア(イエメン)の王国。乳香・没薬の交易で栄え、サバ王国などを併合してイエメン全域を支配し、アクスムと紅海交易を争った。",
+"Paekche":"朝鮮半島南西部の国家。384年に仏教を公認し、高句麗の南下に対抗して倭と結び、七支刀を贈るなど密接な関係を築いた。",
+"Jin":"江南に成立した亡命漢族王朝。この頃、孫恩の乱(399-402)など内乱が続き弱体化し、後に劉裕によって滅ぼされる運命にあった。",
+"Hainan":"中国南方の島。晋(東晋)の統治下にあり、黎族など先住民が居住。海上交易の中継地として利用され始めた。",
+"Simhala":"セイロン島(スリランカ)の仏教国。アヌラーダプラを都とし、上座部仏教の中心地として、5世紀初めの法顕来訪前後に栄えた。",
+"Maya chiefdoms and states":"中米マヤ文明の都市国家群。ティカルが全盛期を迎え、378年頃テオティワカンの影響下で新王朝が成立し勢力を拡大した。",
+"Moche":"南米ペルー北部海岸の文化。太陽のワカなど巨大な日干しレンガ建造物を築き、精巧な土器や金属工芸で知られる最盛期にあった。",
+"Axum":"エチオピア高原の王国。4世紀にキリスト教を国教化し、メロエ王国を滅ぼして紅海交易を掌握、独自のゲエズ文字を用いた。",
+"Hindu kingdoms":"グプタ朝の支配が及ばない南インドなどには、ヴァーカータカ朝をはじめとする地方のヒンドゥー教系王朝が割拠していた。",
+"Visigoths":"ゲルマン系西ゴート族。フン族に圧迫されローマ帝国内に移住し、この頃アラリックの指導下でイタリア侵攻へ向かっていた。",
+"Caucasian Alans":"イラン系遊牧民アラン人の一派。コーカサス地方に居住し、この頃西進してきたフン族に服属し、その支配下に置かれた。",
+"Alamans":"ライン川上流(現スイス・アルザス方面)に住むゲルマン系部族連合。しばしばローマ領ガリアに侵入し、帝国の防衛を脅かした。",
+"Ostrogoths":"ゲルマン系東ゴート族。375年頃フン族に敗れて服属し、この時期はフン帝国の支配下で従属的な地位に置かれていた。",
+"Gepids":"カルパチア山脈方面に住むゲルマン系部族。東ゴート族と同系ともされ、この頃はフン帝国に服属してその一翼を担っていた。",
+"Northern Liang":"五胡十六国の一つ。397年に建国され甘粛(河西回廊)を支配した。仏教が盛んで、後に北魏に滅ぼされるまで存続した。",
+"Gaya":"朝鮮半島南部の小国連合。鉄の産地として知られ倭と結んだが、400年の高句麗の南征により大きな打撃を受けた。",
+"Silla":"朝鮮半島南東部の国家。倭の侵攻を受け高句麗に救援を求め、400年広開土王の派兵で撃退されたが、その影響下に置かれた。",
+"Sixteen Kingdoms":"匈奴・鮮卑・氐・羌・羯の五胡が華北に建てた諸王朝の総称。この頃は後秦・北魏などが並び立ち、興亡を繰り返していた。",
+"Ruanruan":"モンゴル高原の遊牧民。鮮卑の一派が中心となり、匈奴退去後の草原地帯で台頭しつつあった。後に北魏と対立する。",
+"Nazca":"南米ペルー南部海岸の文化。地上に描かれた巨大な地上絵(ナスカの地上絵)や精巧な多色土器で知られ、この頃最盛期にあった。",
+"Empire of Ghana":"西アフリカ、サハラ南縁のソニンケ人の国家。金と塩の交易で台頭し始めた萌芽期にあり、後にガーナ帝国として発展する。",
+"Franks":"ライン川下流域に定着したゲルマン系フランク族。ローマの同盟部族として勢力を広げ、後のメロヴィング朝建国の基盤となった。",
+"Burgunds":"ゲルマン系部族。ライン川方面からガリアへ移動し、410年代にウォルムス周辺で建国するが、後にフン族傭兵により滅ぼされる。",
+"Swedes":"スカンディナヴィア半島東部に住むゲルマン系部族。この頃はまだ小首長国の段階にあり、後にスウェーデン王国の母体となる。",
 };
 
 var PCOLORS={
@@ -1146,6 +1181,10 @@ function dbl(){if(lt)clearTimeout(lt);lt=setTimeout(updateLabels,150)}
 map.on("zoomend",dbl);map.on("moveend",dbl);
 
 renderPoints();
+//ERA-PANEL-JS
+// ═══ ERA SUMMARY PANEL ═══
+(function(){var c=L.control({position:"topright"});c.onAdd=function(){var d=L.DomUtil.create("div");d.innerHTML="<details class=\"era-pt\" open><summary>▼ 400年の世界 ― この時代の要点(クリックで開閉)</summary><div class=\"in\"><p><strong>西ヨーロッパ・地中海</strong>：395年にテオドシウス帝没後、ローマ帝国は東西に分裂して固定化。西ローマは弱体化が進み、フン族に圧迫された西ゴート族がアラリックの下でイタリアへ侵攻を始めるなど、ゲルマン諸族の大移動が本格化していた。</p><p><strong>西アジア</strong>：ササン朝ペルシアではヤズデギルド1世が東ローマと和平を保ち、ゾロアスター教を奉じつつ比較的寛容な統治を行った。南アラビアではヒムヤル王国が紅海交易をめぐりアクスム王国と競った。</p><p><strong>南アジア</strong>：北インドではグプタ朝のチャンドラグプタ2世が全盛期を迎え、法顕来訪(399-414)に象徴される「インド黄金時代」を築いた。セイロン島では上座部仏教国シンハラ王国が栄え、デカンでは220年頃に滅亡したサータヴァーハナ朝に代わり諸侯国が分立していた。</p><p><strong>東アジア</strong>：中国は南の東晋と華北の五胡十六国諸政権に分裂し、東晋では孫恩の乱など内乱が続いた。朝鮮半島では高句麗の広開土王が全盛期を迎え、400年に新羅救援のため出兵して倭・加耶の勢力を退けた。</p><p><strong>内陸・北方</strong>：モンゴル高原ではフン族が去った後、鮮卑の一派である柔然が台頭しつつあった。中央アジアではフン帝国がウルディンの下でヴォルガ以西を制し、東ゴート・アラン・ゲピドなど諸族を服属させ、ゲルマン民族大移動の引き金となっていた。</p><p><strong>その他(アフリカ・アメリカ)</strong>：アフリカでは紅海のアクスム王国が350年頃ナイルのメロエ王国を滅ぼし、西アフリカでは金と塩の交易を基盤にガーナ王国が萌芽期を迎えていた。中米ではテオティワカンとマヤ(ティカル)が、南米ではモチェ・ナスカ両文化が最盛期にあった。</p></div></details>";L.DomEvent.disableClickPropagation(d);L.DomEvent.disableScrollPropagation(d);if(window.innerWidth<700)d.querySelector("details").removeAttribute("open");return d;};c.addTo(map);})();
+//-ERA-PANEL-JS
 </script>
 </body>
 </html>
