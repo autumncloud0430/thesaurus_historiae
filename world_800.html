@@ -54,7 +54,16 @@ body{font-family:'Noto Sans JP',sans-serif;background:#080b14;color:#e0dcd6;heig
 .tb{font-size:8px;padding:2px 6px}
 .note p{font-size:8px}
 }
-</style>
+/*LUX-HDR*/html[data-theme="lux"] .top h1{color:#59452a}html[data-theme="lux"] .top p{color:#6d6353}html[data-theme="lux"] .top a{color:#8b6f4e!important;opacity:.8!important}html[data-theme="lux"] .tb{color:#6d6353;background:rgba(43,36,27,.06)}html[data-theme="lux"] .tb.on{color:#2b241b;border-color:rgba(43,36,27,.3)}html[data-theme="lux"] .cnt{color:#8b6f4e}html[data-theme="lux"] .si{color:#2b241b;border-color:rgba(43,36,27,.25);background:rgba(43,36,27,.04)}html[data-theme="lux"] .si::placeholder{color:#a89a80}html[data-theme="lux"] .leg-toggle{color:#6d6353}/*/LUX-HDR*//*ERA-PANEL-CSS*/
+/* era summary panel */
+.era-pt{background:rgba(8,11,20,.94);border:1px solid rgba(255,255,255,.12);border-radius:8px;color:#e0dcd6;font-family:'Noto Sans JP',sans-serif;max-width:340px;box-shadow:0 8px 32px rgba(0,0,0,.6)}
+.era-pt summary{cursor:pointer;list-style:none;padding:6px 10px;font-size:11px;font-weight:700;color:#c9b99a;user-select:none}
+.era-pt summary::-webkit-details-marker{display:none}
+.era-pt .in{padding:0 10px 8px;font-size:11px;line-height:1.75;max-height:46vh;overflow-y:auto}
+.era-pt .in p{margin:0 0 5px;color:#d0ccc4}
+.era-pt .in strong,html[data-theme="lux"] .era-pt .in strong{color:#e8c888!important;font-weight:700}
+@media(max-width:600px){.era-pt{max-width:240px}.era-pt .in{font-size:10px}}
+/*/ERA-PANEL-CSS*/</style>
 <style id="thThemes">/* =====================================================
    THESAURUS HISTORIAE ― themes.css(LUX固定版)
    生成りの紙 + 墨の本文 + 朱筆(★語) + 金茶の構造色。
@@ -203,6 +212,58 @@ var CAPS={
 
 // ═══ DESCRIPTIONS ═══
 var DESC={
+"Cyprus":"ビザンツ帝国の影響下にあったが、7世紀の条約以来イスラーム勢力にも貢納する共同統治下という特異な地位にあった。",
+"Hainan":"唐が南方統治の拠点として州県を置いた辺境の島で、先住民が住み、中央からは流刑地としても用いられていた。",
+"Champa":"チャム人がベトナム中部に築いたヒンドゥー教文化の海上交易国家で、唐や東南アジア諸国と盛んに通商していた。",
+"Mon state":"モン族がイラワジ川下流域に築いた上座部仏教国家群で、海上交易とインド文化の受容により栄えていた。",
+"Pyu state":"ピュー人がビルマ中部に築いた都市国家群で、仏教文化を受容しつつ中国とインドを結ぶ交易で栄えていた。",
+"Makkura":"ヌビアのキリスト教王国で都はドンゴラ。イスラーム勢力とバクト協定を結び、金や奴隷を貢納して独立を保っていた。",
+"Alwa":"ヌビア南部のキリスト教王国で都はソバ。マックラ王国とともにナイル川流域でキリスト教文化を保持していた。",
+"Wessex":"アングロサクソン七王国の一つで、後にエグバートのもとマーシアを破り覇権を握る前段階の勢力にあった。",
+"Maya city-states":"ユカタン半島などにティカルなど都市国家が分立していたが、800年頃から古典期の衰退・放棄が始まっていた。",
+"Toltec Empire":"メキシコ中央高原でトルテカ人が勢力を形成しつつあった時期で、後の都トゥーラ建設に至る基盤が築かれていた。",
+"Mesoamerican city-states and chiefdoms":"テオティワカン衰退後のメキシコ中央部に分立した都市国家や首長制社会が並立していた。",
+"Mixtecs":"メキシコ南部オアハカ地方の先住民で、小王国に分立していたが、独自の絵文書文化の確立は後古典期以降を待つ段階にあった。",
+"Huari Empire":"アンデス中部高地に築かれた帝国で、道路網を整備し800年頃には最盛期を迎えていた。",
+"Tiahuanaco Empire":"ティティカカ湖畔を中心に栄えた帝国で、農業技術と広域の交易網により最盛期にあった。",
+"Axum":"かつて紅海交易で栄えたキリスト教国だが、イスラーム勢力の進出により交易路を失い衰退期にあった。",
+"Aghlabid Emirate":"800年にイブラーヒーム＝イブン＝アグラブが建てた王朝で、アッバース朝に名目上服属しつつ北アフリカを自立統治した。",
+"Asturias":"西ゴート貴族の子孫が建てた王国で、後ウマイヤ朝への抵抗を続け国土回復運動の拠点となっていた。",
+"Lombard duchies":"ランゴバルド王国は774年にカール大帝に滅ぼされたが、南イタリアのベネヴェント公国などは自立を保っていた。",
+"Idrisid Caliphate":"アリー一族の子孫イドリース1世が789年頃モロッコに建てたシーア派王朝で、都フェスの建設が進められていた。",
+"Welsh":"ケルト系ブリトン人の諸王国が分立し、隣接するマーシア王国との境界にオファの防塁が築かれていた。",
+"Rashtrakuta state":"8世紀半ばに成立しデカン高原を支配した王朝で、パーラ朝・プラティーハーラ朝と北インド支配権を争っていた。",
+"Nan Chao":"雲南に興った国家で、唐と吐蕃の間で離合を繰り返しながら勢力を保ち、800年前後には唐に接近していた。",
+"Dvaravati":"モン族系の仏教文化圏で、チャオプラヤ川流域に都市国家が分立し、上座部仏教とインド文化を受容していた。",
+"Chen-La":"8世紀に陸真臘・水真臘に分裂し小国分立の状態にあったが、802年頃のジャヤヴァルマン2世による統一を目前にしていた。",
+"Pallava state":"カーンチープラムを都に南インドを支配したドラヴィダ系王朝で、パーンディヤ朝やラーシュトラクータ朝と抗争していた。",
+"Pandya state":"マドゥライを都に南インド南端を支配した王朝で、パッラヴァ朝と抗争しつつ勢力を拡大しつつあった。",
+"Sinhalese kingdoms":"スリランカでアヌラーダプラを都に上座部仏教文化を発展させた王朝で、南インド勢力の侵入をたびたび受けていた。",
+"minor Hindu & Buddhist states":"北インド・デカンで有力三勢力の周辺に分立した、ヒンドゥー教・仏教系の中小諸王国群であった。",
+"Mataram":"ジャワ島中部に興った王朝で、800年前後には大乗仏教の大伽藍ボロブドゥールの建立が進められていた。",
+"Northumbria":"アングロサクソン七王国の一つで、かつて学問文化で栄えたが793年のリンディスファーン襲撃以降ヴァイキングの侵攻を受け始めていた。",
+"Kent":"アングロサクソン七王国の一つで、かつて最初にキリスト教を受容したが800年頃はマーシア王国の支配下にあった。",
+"Essex":"アングロサクソン七王国の一つで、勢力は弱く800年頃はマーシア王国の影響下に置かれていた。",
+"Mercia":"アングロサクソン七王国中の最強国で、796年没のオファ王が築いた覇権を、後継のコエンウルフ王が引き継いでいた。",
+"Uyghurs":"モンゴル高原の遊牧国家で、安史の乱で唐を援助し、絹馬貿易で富を得てマニ教を受容するなど最盛期にあった。",
+"Magyars":"ウラル系遊牧民で、この頃は南ロシアの草原地帯におり、後にパンノニアへ移動し建国する前段階にあった。",
+"Kanem":"チャド湖北東岸に興った王国で、サハラ縦断交易を通じて北アフリカのイスラーム世界と接触を始めていた。",
+"Gurjara Pratihara":"北インドを支配した王朝で、パーラ朝・ラーシュトラクータ朝とカナウジの支配権を巡る三国抗争を繰り広げていた。",
+"Swedes and Goths":"スウェーデン東部のスヴェア人と南部のイェータ人からなり、ヴァイキングとして東方の川を通じ交易・略奪を行っていた。",
+"Celtic kingdoms":"ブリテン島西部に残存したケルト系諸族の小王国群で、アングロサクソン勢力の圧迫を受けつつ独自の文化を保っていた。",
+"Picts":"スコットランド北部・東部の先住民で、独自の文化を保持しつつスコット人との統合が進む前段階にあった。",
+"Scots":"アイルランドから移住したゲール系民族で、スコットランド西部にダルリアダ王国を築きピクト人と対峙していた。",
+"Ireland":"多くの小王国が分立し修道院を中心にケルト文化が栄えたが、795年頃からヴァイキングの襲撃を受け始めていた。",
+"Baltic tribes":"バルト海南岸に住むバルト系の諸部族で、まだ国家形成に至らない部族社会の段階にあった。",
+"Khazars":"黒海・カスピ海北方の草原を支配した遊牧国家で、この頃支配層がユダヤ教に改宗し東西交易路を統括していた。",
+"Brittany":"ケルト系ブルトン人が住む地域で、フランク王国に抵抗しつつも辺境として服属圧力を受けていた。",
+"Rus' Khaganate":"スカンディナヴィア系ヴァイキングが東欧に築いた勢力で、後のノヴゴロド国やキエフ公国の起源となった。",
+"Volga Bulgars":"ヴォルガ川中流域のテュルク系民族で、毛皮交易で栄え、後にイスラームを受容する前の段階にあった。",
+"Finns":"バルト海北岸のフィン系諸部族で、まだ国家を形成せず狩猟・漁労を中心とした社会にあった。",
+"Papal States":"教皇レオ3世が800年のクリスマスにカール大帝へ西ローマ皇帝の帝冠を授け、西欧キリスト教世界の守護者と位置づけた。",
+"Palas":"ベンガル地方に興った仏教保護で知られる王朝で、ラーシュトラクータ朝・プラティーハーラ朝とカナウジを巡り抗争していた。",
+"Northmen":"スカンディナヴィア半島の北方ゲルマン人で、793年のリンディスファーン襲撃を機に本格的なヴァイキング時代に入っていた。",
+"Danes":"デンマークを本拠とするヴァイキングで、カール大帝の勢力拡大に対抗しつつ西欧沿岸への侵攻を強めていた。",
 "First Bulgarian Empire":"クルム・ハンの時代。ビザンツ帝国と抗争。スラヴ人を統合してバルカン半島北部を支配。",
 "Carolingian Empire":"カール大帝(シャルルマーニュ)がローマ教皇レオ3世から西ローマ皇帝の冠を授かる(800.12.25)。西ヨーロッパ初の統一的キリスト教帝国。封建制・荘園制の基礎を築く。没後3分割(843年ヴェルダン条約)。",
 "Abbasid Caliphate":"ハールーン・アッラシード(786-809)の黄金時代。バグダード(「千夜一夜物語」の舞台)が世界最大の都市(人口100万)。「知恵の館」(バイト・アル・ヒクマ)でギリシア哲学の翻訳・科学が発展。",
@@ -1182,6 +1243,13 @@ function dbl(){if(lt)clearTimeout(lt);lt=setTimeout(updateLabels,150)}
 map.on("zoomend",dbl);map.on("moveend",dbl);
 
 renderPoints();
+//ERA-PANEL-JS
+// ═══ ERA SUMMARY PANEL ═══
+(function(){var c=L.control({position:"topright"});c.onAdd=function(){var d=L.DomUtil.create("div");d.innerHTML="<details class=\"era-pt\" open><summary>▼ 800年の世界 ― この時代の要点(クリックで開閉)</summary><div class=\"in\"><p><strong>西ヨーロッパ</strong>：800年のクリスマス、教皇レオ3世がカール大帝に帝冠を授け、西ローマ帝国の「復活」を宣言。ローマ・ゲルマン・キリスト教の3要素が融合した西欧中世世界が成立し、東のビザンツ帝国とは別の政治・宗教圏に分かれた(→843年ヴェルダン条約で3分割)。</p><p><strong>ビザンツ帝国</strong>：787年の第2ニカイア公会議で聖像崇拝は回復されていたが(第2次禁止令は814年〜)、ローマ教会との溝は残る。カールの戴冠を認めず、アッバース朝とアナトリアで対峙。</p><p><strong>イスラーム世界</strong>：アッバース朝のハールーン＝アッラシード治下で最盛期。バグダードは世界最大級の都市に。一方でイベリアの後ウマイヤ朝(756-)、モロッコのイドリース朝、チュニジアのアグラブ朝と、地方政権の自立が始まる。</p><p><strong>東アジア</strong>：唐は安史の乱(755-63)後の再建期。両税法(780)で財政を立て直したが、節度使の割拠が続く。周辺には統一新羅・渤海・南詔・吐蕃、日本は平安京遷都(794)直後。</p><p><strong>内陸・北方ユーラシア</strong>：ウイグルがモンゴル高原を支配し、唐と絹馬貿易。黒海北岸のハザールは交易で繁栄。北欧ではヴァイキングの活動が始まり(793年リンディスファーン襲撃)、ブリテン島は七王国時代。</p><p><strong>インド・東南アジア・アフリカ・アメリカ</strong>：インドはパーラ朝・プラティーハーラ朝・ラーシュトラクータ朝の三つ巴。東南アジアはシュリーヴィジャヤとジャワのシャイレンドラ朝(ボロブドゥール建立)。西アフリカではガーナ王国がサハラ縦断交易で繁栄。マヤは古典期の末期。</p></div></details>";L.DomEvent.disableClickPropagation(d);L.DomEvent.disableScrollPropagation(d);if(window.innerWidth<700)d.querySelector("details").removeAttribute("open");return d;};c.addTo(map);})();
+//-ERA-PANEL-JS
+
+
+
 </script>
 </body>
 </html>
