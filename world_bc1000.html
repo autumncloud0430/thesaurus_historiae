@@ -54,7 +54,16 @@ body{font-family:'Noto Sans JP',sans-serif;background:#080b14;color:#e0dcd6;heig
 .tb{font-size:8px;padding:2px 6px}
 .note p{font-size:8px}
 }
-/*LUX-HDR*/html[data-theme="lux"] .top h1{color:#59452a}html[data-theme="lux"] .top p{color:#6d6353}html[data-theme="lux"] .top a{color:#8b6f4e!important;opacity:.8!important}html[data-theme="lux"] .tb{color:#6d6353;background:rgba(43,36,27,.06)}html[data-theme="lux"] .tb.on{color:#2b241b;border-color:rgba(43,36,27,.3)}html[data-theme="lux"] .cnt{color:#8b6f4e}html[data-theme="lux"] .si{color:#2b241b;border-color:rgba(43,36,27,.25);background:rgba(43,36,27,.04)}html[data-theme="lux"] .si::placeholder{color:#a89a80}html[data-theme="lux"] .leg-toggle{color:#6d6353}/*/LUX-HDR*/</style>
+/*LUX-HDR*/html[data-theme="lux"] .top h1{color:#59452a}html[data-theme="lux"] .top p{color:#6d6353}html[data-theme="lux"] .top a{color:#8b6f4e!important;opacity:.8!important}html[data-theme="lux"] .tb{color:#6d6353;background:rgba(43,36,27,.06)}html[data-theme="lux"] .tb.on{color:#2b241b;border-color:rgba(43,36,27,.3)}html[data-theme="lux"] .cnt{color:#8b6f4e}html[data-theme="lux"] .si{color:#2b241b;border-color:rgba(43,36,27,.25);background:rgba(43,36,27,.04)}html[data-theme="lux"] .si::placeholder{color:#a89a80}html[data-theme="lux"] .leg-toggle{color:#6d6353}/*/LUX-HDR*//*ERA-PANEL-CSS*/
+/* era summary panel */
+.era-pt{background:rgba(8,11,20,.94);border:1px solid rgba(255,255,255,.12);border-radius:8px;color:#e0dcd6;font-family:'Noto Sans JP',sans-serif;max-width:340px;box-shadow:0 8px 32px rgba(0,0,0,.6)}
+.era-pt summary{cursor:pointer;list-style:none;padding:6px 10px;font-size:11px;font-weight:700;color:#c9b99a;user-select:none}
+.era-pt summary::-webkit-details-marker{display:none}
+.era-pt .in{padding:0 10px 8px;font-size:11px;line-height:1.75;max-height:46vh;overflow-y:auto}
+.era-pt .in p{margin:0 0 5px;color:#d0ccc4}
+.era-pt .in strong,html[data-theme="lux"] .era-pt .in strong{color:#e8c888!important;font-weight:700}
+@media(max-width:600px){.era-pt{max-width:240px}.era-pt .in{font-size:10px}}
+/*/ERA-PANEL-CSS*/</style>
 <style id="thThemes">/* =====================================================
    THESAURUS HISTORIAE ― themes.css(LUX固定版)
    生成りの紙 + 墨の本文 + 朱筆(★語) + 金茶の構造色。
@@ -165,7 +174,15 @@ var DESC={
 "Saba":"アラビア半島南部の王国。乳香・没薬交易で繁栄。シバの女王伝説の舞台。マアリブのダムによる灌漑農業。",
 "Olmec":"サン・ロレンソからラ・ベンタへの移行期。巨石人頭像・ゴム球技場・神聖文字の前身を持つメソアメリカ母体文明。",
 "Greek city-states":"「暗黒時代」(前1200-800年)の末期。ミケーネ文明崩壊後の再建期。ポリスの萌芽が各地に生まれつつある。ホメロスの叙事詩が語り継がれる時代。",
-"Neo-Hittite states":"ヒッタイト帝国崩壊(前1200年・海の民の侵攻)後に残存した小国群。シリア北部でアラム文化と混合しながら存続。"
+"Neo-Hittite states":"ヒッタイト帝国崩壊(前1200年・海の民の侵攻)後に残存した小国群。シリア北部でアラム文化と混合しながら存続。",
+"Elam":"スサを中心とするイラン高原西部の古代王国。前1120年頃バビロニアに敗れて以降衰退し、この頃は記録に乏しい低迷期にあった。後代に新エラム王国として再興する。",
+"Aramean kingdoms":"シリア内陸部に諸都市国家を築いたアラム人の政治勢力。ダマスクスなどを中心に交易で栄え、後にイスラエル・アッシリアと抗争を繰り返すことになる。",
+"Arameans":"セム系の遊牧民アラム人。前1000年頃シリア各地に定着して都市国家を形成しつつあった。アラム語は後に西アジアの国際商業語として広く用いられる。",
+"Wu":"周の一族が長江下流域に建てたと伝えられる封建国。この頃はまだ辺境の小勢力にすぎないが、春秋時代に南方の大国として台頭する。",
+"Thrace":"バルカン半島東部に住むトラキア人の諸部族社会。この頃はまだ統一国家を持たず、後にペルシア戦争やアレクサンドロス東征に関わることになる。",
+"Illyrians":"バルカン半島西部の山岳地帯に住むインド＝ヨーロッパ語系の諸部族。この頃はまだ小部族段階で、後にローマと激しく戦い(イリュリア戦争)属州化される。",
+"Phrygians":"ヒッタイト帝国崩壊後にアナトリア中央部へ移住したインド＝ヨーロッパ語系の民族。この頃はまだ小勢力だが、後にゴルディオンを都に王国を築きミダス王の伝説で知られる。",
+"Cimmerians":"南ロシアの黒海北岸を本拠とする遊牧騎馬民族。この頃はまだこの地にとどまるが、前8〜7世紀にスキタイに圧迫されてアナトリアへ南下しフリュギア王国などを滅ぼす。",
 };
 
 var PCOLORS={
@@ -1126,6 +1143,10 @@ function dbl(){if(lt)clearTimeout(lt);lt=setTimeout(updateLabels,150)}
 map.on("zoomend",dbl);map.on("moveend",dbl);
 
 renderPoints();
+//ERA-PANEL-JS
+// ═══ ERA SUMMARY PANEL ═══
+(function(){var c=L.control({position:"topright"});c.onAdd=function(){var d=L.DomUtil.create("div");d.innerHTML="<details class=\"era-pt\" open><summary>▼ 前1000年の世界 ― この時代の要点(クリックで開閉)</summary><div class=\"in\"><p><strong>地中海東岸・レヴァント</strong>：フェニキア人がティルス・シドンなどの海洋都市国家から地中海貿易を担い、フェニキア文字を各地に伝えた。イスラエル・ユダはダビデ・ソロモン両王のもとで統一王国の最盛期を迎えていた。</p><p><strong>メソポタミア・イラン</strong>：バビロニアはイシン第2王朝末期で衰退期にあり、アッシリアは中期から新アッシリア帝国への移行期にあった。エラムも記録の乏しい低迷期で、勢力交代への過渡期にあたる。</p><p><strong>アナトリア・アルメニア高原</strong>：ヒッタイト帝国崩壊後、新ヒッタイト諸国やフリュギア人の勢力がアナトリアに分立し、アルメニア高原ではのちのウラルトゥ王国につながる勢力が形成されつつあった。</p><p><strong>ギリシア・バルカン</strong>：ミケーネ文明崩壊後の「暗黒時代」中期にあたり、ポリス形成前の再建期。バルカン半島にはトラキア人・イリュリア人が部族社会を営んでいた。</p><p><strong>東アジア</strong>：中国では周王朝(西周)が封建制のもとで安定を保ち、呉など地方の封建国はなお辺境の小勢力にすぎなかった。東遷(前771)による東周・春秋時代の開始までなお約200年ある。</p><p><strong>アフリカ・アメリカ</strong>：エジプトは第3中間期で神官国家と王権が分裂し衰退期にあった一方、南のクシュ王国(ナパタ)やアラビア半島南部のサバ王国は独自に繁栄した。メソアメリカではオルメカ文明が母体文明として発展していた。</p></div></details>";L.DomEvent.disableClickPropagation(d);L.DomEvent.disableScrollPropagation(d);if(window.innerWidth<700)d.querySelector("details").removeAttribute("open");return d;};c.addTo(map);})();
+//-ERA-PANEL-JS
 </script>
 </body>
 </html>
