@@ -54,7 +54,16 @@ body{font-family:'Noto Sans JP',sans-serif;background:#080b14;color:#e0dcd6;heig
 .tb{font-size:8px;padding:2px 6px}
 .note p{font-size:8px}
 }
-/*LUX-HDR*/html[data-theme="lux"] .top h1{color:#59452a}html[data-theme="lux"] .top p{color:#6d6353}html[data-theme="lux"] .top a{color:#8b6f4e!important;opacity:.8!important}html[data-theme="lux"] .tb{color:#6d6353;background:rgba(43,36,27,.06)}html[data-theme="lux"] .tb.on{color:#2b241b;border-color:rgba(43,36,27,.3)}html[data-theme="lux"] .cnt{color:#8b6f4e}html[data-theme="lux"] .si{color:#2b241b;border-color:rgba(43,36,27,.25);background:rgba(43,36,27,.04)}html[data-theme="lux"] .si::placeholder{color:#a89a80}html[data-theme="lux"] .leg-toggle{color:#6d6353}/*/LUX-HDR*/</style>
+/*LUX-HDR*/html[data-theme="lux"] .top h1{color:#59452a}html[data-theme="lux"] .top p{color:#6d6353}html[data-theme="lux"] .top a{color:#8b6f4e!important;opacity:.8!important}html[data-theme="lux"] .tb{color:#6d6353;background:rgba(43,36,27,.06)}html[data-theme="lux"] .tb.on{color:#2b241b;border-color:rgba(43,36,27,.3)}html[data-theme="lux"] .cnt{color:#8b6f4e}html[data-theme="lux"] .si{color:#2b241b;border-color:rgba(43,36,27,.25);background:rgba(43,36,27,.04)}html[data-theme="lux"] .si::placeholder{color:#a89a80}html[data-theme="lux"] .leg-toggle{color:#6d6353}/*/LUX-HDR*//*ERA-PANEL-CSS*/
+/* era summary panel */
+.era-pt{background:rgba(8,11,20,.94);border:1px solid rgba(255,255,255,.12);border-radius:8px;color:#e0dcd6;font-family:'Noto Sans JP',sans-serif;max-width:340px;box-shadow:0 8px 32px rgba(0,0,0,.6)}
+.era-pt summary{cursor:pointer;list-style:none;padding:6px 10px;font-size:11px;font-weight:700;color:#c9b99a;user-select:none}
+.era-pt summary::-webkit-details-marker{display:none}
+.era-pt .in{padding:0 10px 8px;font-size:11px;line-height:1.75;max-height:46vh;overflow-y:auto}
+.era-pt .in p{margin:0 0 5px;color:#d0ccc4}
+.era-pt .in strong,html[data-theme="lux"] .era-pt .in strong{color:#e8c888!important;font-weight:700}
+@media(max-width:600px){.era-pt{max-width:240px}.era-pt .in{font-size:10px}}
+/*/ERA-PANEL-CSS*/</style>
 <style id="thThemes">/* =====================================================
    THESAURUS HISTORIAE ― themes.css(LUX固定版)
    生成りの紙 + 墨の本文 + 朱筆(★語) + 金茶の構造色。
@@ -218,7 +227,62 @@ var DESC={
 "Khmer Empire":"ヤショヴァルマン1世(889-910)がアンコール(ヤショダラプラ)を建設開始。東南アジア最大の帝国へ向かう全盛期の幕開け。",
 "East Francia":"カロリング朝の最後の時代。ルートヴィヒ4世の子孫が断絶(911)後、東フランク貴族がコンラート1世を選出→神聖ローマ帝国への移行。",
 "Wessex":"アルフレッド大王(871-899)がデーン人の侵攻を撃退しイングランドを統一しつつある。後のイングランド王国の基礎。",
-"Samanid Empire":"イスラーム文化圏最初のペルシア語復興。ブハラを中心にイランの文化的再生。後にガズナ朝・セルジューク朝の前身的役割。"
+"Samanid Empire":"イスラーム文化圏最初のペルシア語復興。ブハラを中心にイランの文化的再生。後にガズナ朝・セルジューク朝の前身的役割。",
+"Hainan":"唐末の嶺南道に属する島。まもなく建国される十国の南漢がこの地を治め、海上交易の拠点として発展させた。",
+"Champa":"ベトナム中南部のチャム人によるヒンドゥー教国。海上交易で栄え、唐末の安南(ベトナム北部)やクメールとの抗争を繰り返した。",
+"Pagan":"ビルマ(ミャンマー)のパガンを中心とする都市国家。後の1044年アノーヤター王による統一の前段階にあたる建国期。",
+"Mon States":"ビルマ(ミャンマー)南部やタイに拠るモン人の国家群。ドヴァーラヴァティーなど海上交易で栄えたが、後にパガン朝などに服属していく。",
+"Ghana":"西アフリカの黒人王国。サハラ越えの金と塩の交易を支配し全盛期を迎えていた。後にイスラーム勢力の侵入で衰退する。",
+"Maya city-states":"メキシコ・ユカタン半島の都市文明。9世紀末に南部の古典期都市が放棄され、中心が北部のユカタン半島へ移りつつあった。",
+"Toltec Empire":"メキシコ高原に興ったトルテカ人の国家。まもなく都トゥーラを中心に建国し、後のアステカに文化的影響を与える。",
+"Huari Empire":"ペルー中南部を支配したアンデスの都市国家連合。ティワナクと並ぶ文明を築いたが、900年頃には崩壊期を迎えていた。",
+"Tiahuanaco Empire":"ボリビアのティティカカ湖畔を中心としたアンデス文明の国家。900年頃には全盛期を過ぎ衰退期に入っていた。",
+"Aghlabid Emirate":"アッバース朝から自立したチュニジアのイスラーム王朝。シチリア島への侵攻を進め、地中海交易でも栄えた。",
+"Asturias":"イベリア半島北部のキリスト教国。レコンキスタの拠点となり、まもなく都をレオンに移してレオン王国となる。",
+"Lombard duchies":"カール大帝に征服されたランゴバルド王国の残存勢力。南イタリアのベネヴェント公国などが自立を保っていた。",
+"Idrisid Caliphate":"アリーの子孫が建てたモロッコ最初のイスラーム王朝。シーア派系とされ、フェスを都として北アフリカ西部を支配した。",
+"Emirate of Córdoba":"後ウマイヤ朝が建てたイベリア半島のイスラーム政権。まもなく即位するアブド・アッラフマーン3世の下でカリフ国へ発展する。",
+"West Francia":"カロリング朝の分裂で成立した西フランク王国。王権は弱く諸侯が割拠し、後のフランス王国の母体となる。",
+"Welsh":"ブリテン島西部のケルト系諸王国。イングランドの拡大に抵抗しつつ独自の言語・文化を保っていた。",
+"Cholas":"南インドのタミル系王朝。900年頃は台頭期にあたり、まもなくパーンディヤ朝を破り南インド最大の勢力となる。",
+"Nan Chao":"雲南を中心にチベット・ビルマ系民族が建てた国。唐と抗争を繰り返したが、この頃は衰退し滅亡が近い末期にあたる。",
+"Tibetan Empire":"7世紀に成立したチベットの統一国家。842年の内紛で崩壊し、900年時点では諸勢力に分裂した状態が続いていた。",
+"Pallava":"南インドの古王朝。都カーンチープラムを中心に栄えたが、897年頃チョーラ朝に敗れて事実上滅亡した直後にあたる。",
+"Pandya state":"南インド最南端のタミル系王朝。900年頃はチョーラ朝の圧迫を受けて劣勢に立たされていた。",
+"Mataram":"中部ジャワのヒンドゥー・仏教王朝。ボロブドゥールなどを築いたが、東ジャワへの遷都は929年で、この頃はまだ中部ジャワが都であった。",
+"Northumbria":"イングランド北部の旧七王国の一つ。デーン人に征服され、ヨークを中心とするヴァイキング勢力の支配下にあった。",
+"Kent":"イングランド南東部の旧七王国の一つ。825年頃ウェセックスに服属し、独立王国としては実質的に消滅していた。",
+"Essex":"イングランド南東部の旧七王国の一つ。9世紀にはウェセックスの支配下に入り、独立性を失っていた。",
+"Mercia":"イングランド中部の旧七王国。東部はデーン人支配下(デーンロー)に入り、西部はウェセックスと同盟して抵抗を続けた。",
+"Uyghurs":"840年の帝国崩壊後、中央アジア各地へ離散したウイグル人の集団。天山方面などにオアシス国家を形成しつつあった。",
+"Magyars":"南ロシアの草原から西方へ移動した遊牧民。896年頃カルパティア盆地に定住し、西欧各地への侵入を開始していた。",
+"Kanem":"チャド湖周辺に成立した黒人王国。サハラ越え交易で栄え、後にイスラームを受容してカネム＝ボルヌー帝国へ発展する。",
+"Swedes and Goths":"スカンディナヴィア半島東部の民族集団。ヴァイキングとして東方へ進出し、ルーシ建国にも関与したとされる。",
+"Celtic kingdoms":"ブリテン島に残存したケルト系の諸小王国。コーンウォールやストラスクライドなどが独自の勢力を保っていた。",
+"Scots":"スコットランドのゲール系民族。900年頃までにピクト人と統合してアルバ王国(スコットランドの前身)を形成しつつあった。",
+"Ireland":"多数の小王国(トゥアハ)に分立していたケルト系の島。ヴァイキングの侵攻を受けつつもダブリンなどの都市が築かれた。",
+"Kingdom of Norway":"872年頃ハーラル美髪王が統一したノルウェー王国。統一を嫌う一部の首長がアイスランドなどへ移住した。",
+"Brittany":"フランス北西部のケルト系ブルトン人の国。西フランク王権から自立していたが、ヴァイキングの侵攻にも苦しんだ。",
+"Emirate of Sicily":"アグラブ朝の侵攻により成立したイスラーム政権。ビザンツからシチリア島の大半を奪い、地中海交易の要衝とした。",
+"Great Moravia":"中欧のスラブ系国家。キュリロスとメトディオスの布教で知られたが、906年頃マジャール人に滅ぼされる衰退期にあった。",
+"Serbia":"バルカン半島西部のスラブ系公国。ビザンツ帝国とブルガリアの間で勢力争いに翻弄される初期国家段階にあった。",
+"Croatian kingdom":"バルカン半島西部のスラブ系国家。925年頃トミスラヴが王を称する直前の段階で、ローマ教会の影響を受けていた。",
+"Slavic tribes":"エルベ川東方や東欧に広がる未統一のスラヴ系諸部族。ポラーニェ人など、後のポーランド・ボヘミア建国の母体となる集団が割拠していた。",
+"Palas":"ベンガル地方の仏教擁護王朝。ナーランダー僧院などを保護し、北インドの覇権をめぐりプラティーハーラ朝らと争った。",
+"Srivijaya Empire":"スマトラ島を拠点とする海上交易国家。マラッカ海峡を支配し、仏教も栄えて東西交易の中継地として繁栄した。",
+"Arakan":"ビルマ(ミャンマー)西岸の仏教国。インドと東南アジアを結ぶベンガル湾交易の中継地として栄えていた。",
+"Balhae":"靺鞨人と高句麗の遺民が満州東部に建てた国。「海東の盛国」と称されたが、926年に契丹(遼)に滅ぼされる直前の末期。",
+"Khitans":"モンゴル系遊牧民。耶律阿保機が諸部族を統一しつつあり、まもなく916年に建国を宣言して遼(契丹)となる。",
+"Oghuz Turks":"中央アジアの草原に住むテュルク系遊牧民。後にセルジューク朝を興す一族を含み、イスラーム世界への進出を進めていた。",
+"Khazars":"南ロシア草原のテュルク系遊牧国家。ユダヤ教を国教としたことで知られるが、900年頃には最盛期を過ぎ衰退に向かっていた。",
+"Sindh":"711年にアラブ人が征服したインダス川流域。アッバース朝の衰退に伴いハッバール朝など地方政権が自立し、事実上独立していた。",
+"Hindu Shahis":"カーブルからパンジャーブ地方を支配したヒンドゥー系王朝。後にガズナ朝マフムードの侵攻を受け衰亡する。",
+"Gurjara Pratihara":"北インドの王朝。パーラ朝・ラーシュトラクータ朝と覇権を争う三国分立抗争の一角を占めた。",
+"Rashtrakuta":"デカン高原を支配した王朝。エローラ石窟寺院を造営したことで知られ、北インドの覇権争いにも介入した。",
+"Karluks":"中央アジアのテュルク系遊牧民。トルコ系として初めてイスラームを受容し、後のカラハン朝建国の中心となった。",
+"Saffarids":"イラン東部シスタン地方に興ったイラン系イスラーム王朝。アッバース朝から自立したが、900年のバルフの戦いでサーマーン朝に大敗し勢力を失った。",
+"Danes":"北欧デンマークを出自とするヴァイキング。イングランド東部を征服してデーンロー地域を築き、ウェセックスと抗争した。",
+"Pechenegs":"南ロシア草原のテュルク系遊牧民。ハザールに圧迫されて西進し、キエフ・ルーシやビザンツと交戦・通商を行った。",
 };
 
 var PCOLORS={
@@ -1187,6 +1251,10 @@ function dbl(){if(lt)clearTimeout(lt);lt=setTimeout(updateLabels,150)}
 map.on("zoomend",dbl);map.on("moveend",dbl);
 
 renderPoints();
+//ERA-PANEL-JS
+// ═══ ERA SUMMARY PANEL ═══
+(function(){var c=L.control({position:"topright"});c.onAdd=function(){var d=L.DomUtil.create("div");d.innerHTML="<details class=\"era-pt\" open><summary>▼ 900年の世界 ― この時代の要点(クリックで開閉)</summary><div class=\"in\"><p><strong>西ヨーロッパ/地中海</strong>：カロリング朝の分裂で東西フランクが並立し王権は弱体化、ヴァイキング(ノルマン人)やマジャール人の侵入が続く。イングランドではアルフレッド大王がデーン人を撃退し統一を進めた。</p><p><strong>西アジア・イスラーム</strong>：アッバース朝カリフの権威が形骸化し、サーマーン朝・サッファール朝・アグラブ朝など地方王朝が各地で自立。トルコ系軍人の台頭も進み、後のブワイフ朝によるバグダード入城(946)への流れが始まっていた。</p><p><strong>南アジア</strong>：北インドではパーラ朝・グルジャラ・プラティーハーラ朝・ラーシュトラクータ朝が覇権を争う三国分立が続き、南インドではパッラヴァ朝に代わりチョーラ朝が台頭してパーンディヤ朝を圧迫していた。</p><p><strong>東アジア</strong>：唐は黄巣の乱後に節度使が割拠し滅亡(907)が迫り、まもなく五代十国の分裂時代に入る。朝鮮半島では統一新羅が動揺し後三国時代へ、日本では醍醐天皇が摂政・関白を置かず親政を行い(延喜の治)、律令制再建を目指した。</p><p><strong>内陸・北方</strong>：モンゴル高原では耶律阿保機が契丹諸部族を統一し遼建国(916)へ向かい、渤海は衰退して契丹の脅威にさらされた。キエフ・ルーシがオレグ公のもとで建国され、ハザールは衰退期に入っていた。</p><p><strong>その他(アフリカ・アメリカ・東南アジア)</strong>：西アフリカではガーナ王国が金と塩の交易で全盛期を迎え、メソアメリカではマヤ古典期都市が放棄されユカタン半島へ中心が移った。東南アジアではクメール帝国がアンコールの建設を開始し繁栄への道を歩み始めた。</p></div></details>";L.DomEvent.disableClickPropagation(d);L.DomEvent.disableScrollPropagation(d);if(window.innerWidth<700)d.querySelector("details").removeAttribute("open");return d;};c.addTo(map);})();
+//-ERA-PANEL-JS
 </script>
 </body>
 </html>
