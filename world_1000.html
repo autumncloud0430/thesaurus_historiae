@@ -54,7 +54,16 @@ body{font-family:'Noto Sans JP',sans-serif;background:#080b14;color:#e0dcd6;heig
 .tb{font-size:8px;padding:2px 6px}
 .note p{font-size:8px}
 }
-/*LUX-HDR*/html[data-theme="lux"] .top h1{color:#59452a}html[data-theme="lux"] .top p{color:#6d6353}html[data-theme="lux"] .top a{color:#8b6f4e!important;opacity:.8!important}html[data-theme="lux"] .tb{color:#6d6353;background:rgba(43,36,27,.06)}html[data-theme="lux"] .tb.on{color:#2b241b;border-color:rgba(43,36,27,.3)}html[data-theme="lux"] .cnt{color:#8b6f4e}html[data-theme="lux"] .si{color:#2b241b;border-color:rgba(43,36,27,.25);background:rgba(43,36,27,.04)}html[data-theme="lux"] .si::placeholder{color:#a89a80}html[data-theme="lux"] .leg-toggle{color:#6d6353}/*/LUX-HDR*/</style>
+/*LUX-HDR*/html[data-theme="lux"] .top h1{color:#59452a}html[data-theme="lux"] .top p{color:#6d6353}html[data-theme="lux"] .top a{color:#8b6f4e!important;opacity:.8!important}html[data-theme="lux"] .tb{color:#6d6353;background:rgba(43,36,27,.06)}html[data-theme="lux"] .tb.on{color:#2b241b;border-color:rgba(43,36,27,.3)}html[data-theme="lux"] .cnt{color:#8b6f4e}html[data-theme="lux"] .si{color:#2b241b;border-color:rgba(43,36,27,.25);background:rgba(43,36,27,.04)}html[data-theme="lux"] .si::placeholder{color:#a89a80}html[data-theme="lux"] .leg-toggle{color:#6d6353}/*/LUX-HDR*//*ERA-PANEL-CSS*/
+/* era summary panel */
+.era-pt{background:rgba(8,11,20,.94);border:1px solid rgba(255,255,255,.12);border-radius:8px;color:#e0dcd6;font-family:'Noto Sans JP',sans-serif;max-width:340px;box-shadow:0 8px 32px rgba(0,0,0,.6)}
+.era-pt summary{cursor:pointer;list-style:none;padding:6px 10px;font-size:11px;font-weight:700;color:#c9b99a;user-select:none}
+.era-pt summary::-webkit-details-marker{display:none}
+.era-pt .in{padding:0 10px 8px;font-size:11px;line-height:1.75;max-height:46vh;overflow-y:auto}
+.era-pt .in p{margin:0 0 5px;color:#d0ccc4}
+.era-pt .in strong,html[data-theme="lux"] .era-pt .in strong{color:#e8c888!important;font-weight:700}
+@media(max-width:600px){.era-pt{max-width:240px}.era-pt .in{font-size:10px}}
+/*/ERA-PANEL-CSS*/</style>
 <style id="thThemes">/* =====================================================
    THESAURUS HISTORIAE ― themes.css(LUX固定版)
    生成りの紙 + 墨の本文 + 朱筆(★語) + 金茶の構造色。
@@ -229,7 +238,55 @@ var DESC={
 "Ghana":"西アフリカ最初の帝国。金と塩の交易を支配。サハラ交易の要衝。1076年にムラービトに征服される。",
 "Chola state":"ラージャラージャ1世の治世。南インドからスリランカ・モルジブまで征服。東南アジアに遠征しシュリーヴィジャヤを攻撃。",
 "Venice":"ドージェ制の確立期。東地中海交易で急成長。ビザンツ帝国から特権を獲得。",
-"Toltec Empire":"トゥーラを首都にメキシコ盆地を支配。アステカ文明の前身的存在。ケツァルコアトル神話の舞台。"
+"Toltec Empire":"トゥーラを首都にメキシコ盆地を支配。アステカ文明の前身的存在。ケツァルコアトル神話の舞台。",
+"Magyars":"元遊牧民マジャール人の国家。イシュトヴァーン1世が1000年頃に戴冠しハンガリー王国を建国、カトリックを受容してローマ教会圏に入った。",
+"Xixia":"チベット系タングート族の国家。李継遷ら拓跋氏が宋・遼と渡り合い自立を強め、後の西夏建国(1038)の基盤を築きつつある段階。",
+"Tibet":"吐蕃王朝崩壊(9世紀)後、統一権力を失い地方勢力が割拠する分裂期。仏教は徐々に再興し始めるが、政治的統一は宋代を通じて回復しなかった。",
+"Nanzhao":"南詔滅亡後に雲南で成立した国家。仏教(密教)が篤く信仰され、宋と朝貢・交易関係を保ちつつ独自の支配を続けたが、のちフビライの遠征(1253)で滅亡した。",
+"Annam":"唐の支配を脱した後のベトナム北部。丁朝・前黎朝を経て、まもなく李朝(1009-)が成立し大越国として独自の国家体制を固めていく。",
+"Champa":"チャム人がベトナム中部に築いたヒンドゥー教国家。海上交易で栄え、北の大越・南のクメールと抗争を繰り返した。",
+"Yemen":"アラビア半島南西部。地方王朝が分立し、紅海とインド洋交易を結ぶ要衝として繁栄した地域であった。",
+"Muscat":"アラビア半島東岸オマーンの港市。インド洋交易の中継地として栄え、イバード派イスラームの影響が強い地域であった。",
+"Chalukya Empire":"南インド・デカン高原の王朝。タイラ2世の再興以来ラーシュトラクータ朝に代わって台頭し、西インドの覇権を握っていた。",
+"Georgia":"コーカサスのキリスト教国。バグラティド朝のバグラト3世がアブハジアとカルトリを統合しつつあり、まもなくジョージア初の統一王となる。",
+"Armenia":"バグラティド朝下のアルメニア。ビザンツとイスラーム諸勢力の間で自立を保つが、11世紀にはビザンツへ併合されていく。",
+"Buwayhid Emirates":"シーア派イラン系の軍事政権。バグダードのアッバース朝カリフを擁立しつつ実権を握る「大アミール」体制の時代であった。",
+"Duchy of Benevento":"南イタリアのランゴバルド系公国。ビザンツ・イスラーム勢力と接し、まもなくノルマン人の南イタリア進出に飲み込まれていく。",
+"Duchy of Burgundy":"フランス王国東部の大諸侯領。カペー朝の王権に対し半独立的な地位を保ち、後のブルゴーニュ公国発展の基礎となった。",
+"Croatia":"アドリア海沿岸のクロアチア人国家。997年のドゥルジスラヴ王没後、子のクレシミル3世らが1000年頃王位を継ぎ発展、カトリックを奉じた。",
+"Kanem":"チャド湖北東岸のドゥグワ王朝下の国家。サハラ縦断交易の要衝として栄え、11世紀以降に王のイスラーム改宗が進んでいく。",
+"Mali":"のちのマリ帝国の母体となるマンデ人社会。この時期はソソ王国の圧迫下にあり、13世紀のスンジャタによる建国を待つ段階であった。",
+"Chimú Empire":"ペルー北海岸のチムー王国。首都チャンチャンを拠点に灌漑農業と金属工芸で繁栄し、15世紀にインカ帝国に征服されるまで北海岸最大の国家であった。",
+"Huari Empire":"アンデス中央高地ワリを都に沿岸部まで広がった帝国。道路網など後のインカに繋がる統治制度を残したが、内部分裂と干魃で1000年頃に解体した。",
+"Tiahuanaco Empire":"チチカカ湖畔を中心にアンデス高地から海岸部まで広がった国家。石造建築と農業技術で栄えたが、11世紀頃に衰退・解体した。",
+"Maya city-states":"ユカタン半島でチチェン・イツァなどの都市国家が分立するマヤ文明後古典期。石造神殿とマヤ文字・暦法が発達した。",
+"England":"エゼルレッド2世(無策王)の治世。デーン人(ヴァイキング)の侵入に苦しみ、991年以降デーンゲルド(貢納金)を支払い続けた。",
+"Scotland":"ピクト人とスコット人が統合されて成立した王国。北のノース人(オークニー伯)、南のイングランドと境を接し自立を模索した。",
+"Sweden":"スウェーデン人とイェート人の統合が進んだ時期。オーロヴ・シェートコヌングは北欧で最初にキリスト教を受容した王とされる。",
+"Navarre":"ピレネー山中のバスク人国家。まもなくサンチョ3世(大王)の下で全盛期を迎え、イベリア北部キリスト教国の盟主となる。",
+"León":"イベリア北西部のキリスト教国。国土回復運動(レコンキスタ)の中心勢力の一つだが、コルドバ・カリフ国の攻撃で荒廃していた。",
+"Castilla":"レオン王国から自立しつつあった伯領。この後独立の王国として台頭し、レコンキスタの主導権を握っていく。",
+"Kingdom of France":"ユーグ・カペーが創始したカペー朝(987-)の初期。王権はごく弱く、パリ周辺の直轄領のみを実効支配する名目的な王国であった。",
+"Aragón":"ピレネー南麓の小王国。ナヴァラ王国の影響下にありつつ自立を保ち、後のレコンキスタで勢力を拡大していく。",
+"Brittany":"フランス北西部のブルトン人(ケルト系)公国。フランス王権から半独立を保ち、独自の言語・文化を維持した。",
+"Emirate of Sicily":"9世紀にアグラブ朝が征服したシチリアのイスラーム政権。地中海交易の要衝として繁栄したが、後にノルマン人に征服される。",
+"Poland":"ピャスト朝のボレスワフ1世(勇敢王)の治世。1000年のグニェズノ会見で神聖ローマ皇帝オットー3世と会し、教会組織を整えた。",
+"Kingdom of Georgia":"コーカサスのキリスト教国。バグラティド朝のバグラト3世がアブハジアとカルトリを統合しつつあり、まもなくジョージア初の統一王となる。",
+"Khazars":"かつて南ロシア草原を支配した遊牧国家。965年キエフ大公スヴャトスラフの攻撃で事実上崩壊し、この頃には勢力を大きく失っていた。",
+"Pechenegs":"南ロシア草原の遊牧テュルク系民族。ビザンツやキエフ・ルーシと抗争を繰り返し、キエフのウラジーミル1世は10世紀末に防衛線を築くほど脅威であった。",
+"Serbia":"バルカン西部のセルビア人公国。ビザンツと第一次ブルガリア帝国の間で従属と自立を繰り返した小勢力であった。",
+"Bulgar Khanate":"サムイル(サムエル)の下でマケドニア方面に勢力を広げるが、ビザンツ皇帝バシレイオス2世の攻勢を受け滅亡へと向かっていく。",
+"Denmark":"スヴェン1世(八字髭王)の治世。イングランドへの侵攻を繰り返し、まもなく息子クヌート(カヌート)が英丁両国を支配する。",
+"Kalinga":"インド東部オリッサ地方の王朝地域。かつてアショーカ王に征服された故地で、この頃はソーマヴァンシ朝など地方王朝が割拠した。",
+"Rajput kingdoms":"北インドに割拠した武人集団ラージプートの諸王国。プラティーハーラ朝衰退後の権力の空白を埋め、後のイスラーム勢力南下に抵抗した。",
+"Senas":"インド東部ベンガル地方の一地方勢力。この時点ではまだパーラ朝の支配下にあり、独立王朝としての台頭は11世紀後半を待つ。",
+"Palas":"ベンガル・ビハール地方を支配した仏教保護王朝。ヴィクラマシラー僧院などを建立し仏教教学の中心地となり、この頃はマヒーパーラ1世の下で勢力回復期にあった。",
+"Pratiharas":"かつて北インドに覇を唱えた王朝。ラーシュトラクータ朝との抗争で疲弊し、この頃には領土を失い地方勢力へと没落していた。",
+"Chauhans":"北インド・アジメール地方のラージプート系王朝。プラティーハーラ朝の衰退に乗じて勢力を伸ばし、後にゴール朝と抗争する。",
+"Khmer Empire":"アンコールを都とするクメール人の帝国。ジャヤヴァルマン5世の治世末期にあたり、ヒンドゥー教と大乗仏教が国教として繁栄していた。",
+"Dvaravati":"チャオプラヤ川流域のモン人仏教国家。上座部仏教文化の中心地の一つであったが、この頃クメール勢力の圧迫を受け衰退しつつあった。",
+"Kingdom of Pagan":"エーヤワディー川流域に成立しつつあったビルマ人国家。11世紀のアノーヤター王の下で統一され上座部仏教国家として発展する前段階であった。",
+"Srivijaya Empire":"スマトラ島パレンバンを中心とするマラッカ海峡の海上交易国家。仏教の一大拠点として繁栄したが、25年後にチョーラ朝の遠征を受け衰退へ向かう。",
 };
 
 var PCOLORS={
@@ -1190,6 +1247,10 @@ function dbl(){if(lt)clearTimeout(lt);lt=setTimeout(updateLabels,150)}
 map.on("zoomend",dbl);map.on("moveend",dbl);
 
 renderPoints();
+//ERA-PANEL-JS
+// ═══ ERA SUMMARY PANEL ═══
+(function(){var c=L.control({position:"topright"});c.onAdd=function(){var d=L.DomUtil.create("div");d.innerHTML="<details class=\"era-pt\" open><summary>▼ 1000年の世界 ― この時代の要点(クリックで開閉)</summary><div class=\"in\"><p><strong>西ヨーロッパ</strong>：カペー朝フランスやオットー朝ドイツは王権が弱く封建諸侯が実権を握る分権的な時代。1000年のグニェズノ会見でオットー3世とポーランドのボレスワフ1世が会し、東方への教会拡大を象徴した。</p><p><strong>地中海・イベリア</strong>：後ウマイヤ朝コルドバ・カリフ国が実力者アル＝マンスールの下で最盛期を迎える一方、北のレオン・カスティーリャ・ナヴァラ・アラゴンなどキリスト教諸国がレコンキスタを進めつつあった。</p><p><strong>西アジア・イスラーム</strong>：アッバース朝カリフは名目化し、イラン系ブワイフ朝がバグダードで実権を握った。エジプトではシーア派ファーティマ朝がカイロを都に繁栄し、東方ではガズナ朝がインド遠征を開始した。</p><p><strong>南アジア</strong>：南インドはチョーラ朝ラージャラージャ1世が全盛期を迎えセイロンへ遠征する一方、北インドではパーラ朝がマヒーパーラ1世の下で勢力を回復しつつも、ラージプート諸勢力の分立とガズナ朝の侵入が始まりつつあった。</p><p><strong>東アジア</strong>：宋(北宋)の真宗が契丹(遼)と澶淵の盟(1004)を結び長期の平和を確立し、文治主義と科挙官僚制が定着した。日本は藤原道長の摂関政治全盛期にあたり国風文化が花開いた。</p><p><strong>内陸・北方とその他</strong>：契丹(遼)が北アジアの覇者となり、キエフ・ルーシはウラジーミル1世のキリスト教国教化(988)で東欧最大の国家に成長した。西アフリカではガーナ王国が黄金交易で繁栄し、中米ではマヤ都市国家群が後古典期を迎えていた。</p></div></details>";L.DomEvent.disableClickPropagation(d);L.DomEvent.disableScrollPropagation(d);if(window.innerWidth<700)d.querySelector("details").removeAttribute("open");return d;};c.addTo(map);})();
+//-ERA-PANEL-JS
 </script>
 </body>
 </html>

@@ -54,7 +54,16 @@ body{font-family:'Noto Sans JP',sans-serif;background:#080b14;color:#e0dcd6;heig
 .tb{font-size:8px;padding:2px 6px}
 .note p{font-size:8px}
 }
-/*LUX-HDR*/html[data-theme="lux"] .top h1{color:#59452a}html[data-theme="lux"] .top p{color:#6d6353}html[data-theme="lux"] .top a{color:#8b6f4e!important;opacity:.8!important}html[data-theme="lux"] .tb{color:#6d6353;background:rgba(43,36,27,.06)}html[data-theme="lux"] .tb.on{color:#2b241b;border-color:rgba(43,36,27,.3)}html[data-theme="lux"] .cnt{color:#8b6f4e}html[data-theme="lux"] .si{color:#2b241b;border-color:rgba(43,36,27,.25);background:rgba(43,36,27,.04)}html[data-theme="lux"] .si::placeholder{color:#a89a80}html[data-theme="lux"] .leg-toggle{color:#6d6353}/*/LUX-HDR*/</style>
+/*LUX-HDR*/html[data-theme="lux"] .top h1{color:#59452a}html[data-theme="lux"] .top p{color:#6d6353}html[data-theme="lux"] .top a{color:#8b6f4e!important;opacity:.8!important}html[data-theme="lux"] .tb{color:#6d6353;background:rgba(43,36,27,.06)}html[data-theme="lux"] .tb.on{color:#2b241b;border-color:rgba(43,36,27,.3)}html[data-theme="lux"] .cnt{color:#8b6f4e}html[data-theme="lux"] .si{color:#2b241b;border-color:rgba(43,36,27,.25);background:rgba(43,36,27,.04)}html[data-theme="lux"] .si::placeholder{color:#a89a80}html[data-theme="lux"] .leg-toggle{color:#6d6353}/*/LUX-HDR*//*ERA-PANEL-CSS*/
+/* era summary panel */
+.era-pt{background:rgba(8,11,20,.94);border:1px solid rgba(255,255,255,.12);border-radius:8px;color:#e0dcd6;font-family:'Noto Sans JP',sans-serif;max-width:340px;box-shadow:0 8px 32px rgba(0,0,0,.6)}
+.era-pt summary{cursor:pointer;list-style:none;padding:6px 10px;font-size:11px;font-weight:700;color:#c9b99a;user-select:none}
+.era-pt summary::-webkit-details-marker{display:none}
+.era-pt .in{padding:0 10px 8px;font-size:11px;line-height:1.75;max-height:46vh;overflow-y:auto}
+.era-pt .in p{margin:0 0 5px;color:#d0ccc4}
+.era-pt .in strong,html[data-theme="lux"] .era-pt .in strong{color:#e8c888!important;font-weight:700}
+@media(max-width:600px){.era-pt{max-width:240px}.era-pt .in{font-size:10px}}
+/*/ERA-PANEL-CSS*/</style>
 <style id="thThemes">/* =====================================================
    THESAURUS HISTORIAE ― themes.css(LUX固定版)
    生成りの紙 + 墨の本文 + 朱筆(★語) + 金茶の構造色。
@@ -199,7 +208,47 @@ var DESC={
 "Tibetan Empire":"吐蕃の最盛期。唐・アラブ・突厥と対峙しながら中央アジアで強大な影響力。タラス川の戦い(751)を前に中央アジアの覇権を争う。",
 "Frankish Kingdom":"ペピン2世の宮宰独裁期。732年のポワティエの戦いでイスラームを撃退するカール・マルテルの台頭まであと30年。",
 "Silla":"三国統一(668)後の統一新羅。中国・唐の制度を採用し朝鮮初の統一国家を建設。仏教文化が全盛。",
-"Huari Empire":"アンデス高地(アヤクーチョ周辺)を中心とする帝国。ティワナクと並ぶアンデス中間期の二大帝国。"
+"Huari Empire":"アンデス高地(アヤクーチョ周辺)を中心とする帝国。ティワナクと並ぶアンデス中間期の二大帝国。",
+"Hainan":"唐が南海交易の要衝として支配する島。中央からの流刑地としても知られ、黎族など先住民が居住した。",
+"Champa":"チャム人が中部ベトナム沿岸に建てたヒンドゥー教国。海上交易で栄え、唐や東南アジア諸国と盛んに交流した。",
+"Tiahuanaco Empire":"アンデス高地チチカカ湖畔を中心に勢力を広げた帝国。ワリ帝国と並びアンデス中間期を代表する二大勢力の一つ。",
+"Simhala":"スリランカのシンハラ人による仏教国家。南インド諸王朝と抗争しつつ、上座部仏教の中心地であり続けた。",
+"Teotihuacán":"メソアメリカ最大級の都市文明。8世紀初頭までに政治的中心としての機能を失い、廃墟と化した後の姿。",
+"Maya states":"ユカタン半島などに割拠するマヤ文明の都市国家群。古典期後期の最盛期にあり、ティカルなど有力都市が競合した。",
+"Moche":"ペルー北部海岸で栄えた文化で、この頃には衰退期に入り、後継のシカン文化などへ移行しつつあった。",
+"Axum":"紅海交易で栄えた東アフリカのキリスト教国。イスラーム勢力の台頭により交易路を奪われ衰退期にあった。",
+"Dvaravati":"モン人が現在のタイ中部に建てた仏教国家。中国史料に「堕羅鉢底」と記され、インド文化の影響が強い。",
+"Chen-La":"扶南に代わってメコン川流域に台頭したクメール人の国。この頃は水真臘・陸真臘に分裂し抗争していた。",
+"Palas":"ヴァルダナ朝崩壊後のベンガルは無政府状態(魚の理法)にあり、パーラ朝の成立(750年頃)はまだ先だった。",
+"Pallavas":"南インドのカーンチープラムを都とするヒンドゥー王朝。チャールキヤ朝と抗争しつつドラヴィダ様式建築を発展させた。",
+"Mataram":"ジャワ島中部で勃興しつつあったヒンドゥー教勢力。数十年後にサンジャヤが統一し、ボロブドゥール建立の基盤となる王国が成立する。",
+"Avars":"パンノニア平原を拠点とする遊牧民の国家。かつてビザンツを脅かした勢力だが、この頃は既に衰退に向かっていた。",
+"Danes":"ユトランド半島に拠るゲルマン系の一派。ヴァイキング時代の到来を前に、部族社会を形成していた。",
+"Saxons":"エルベ川下流域に住むゲルマン系部族。フランク王国の圧力を受けつつ独立を保ち、後にカール大帝と抗争する。",
+"Slavs":"東欧からバルカン半島に広く拡散した民族集団。ビザンツ帝国領内やバルカンへの定住・移動を進めていた。",
+"Göktürks":"モンゴル高原の遊牧国家。唐に一時服属したが7世紀末に復興(後突厥)し、モンゴル高原を再統一した。",
+"Swedes":"スカンディナヴィア半島東部のゲルマン系部族。ヴァイキング(ヴァリャーグ)としてロシア方面へ進出する前段階。",
+"Uyghurs":"モンゴル高原のトルコ系遊牧民。突厥に服属していたが台頭しつつあり、後に突厥に代わり草原の覇者となる。",
+"Karluks":"中央アジアの草原地帯に勢力を持つトルコ系遊牧民。突厥に服属しつつ、後に西突厥解体後の中央アジアで台頭する。",
+"Czechs":"ボヘミア地方に定着したスラブ系部族。後のモラヴィア王国やチェコ国家形成の母体となる。",
+"Moravians":"モラヴィア地方に住むスラブ系部族。後に大モラヴィア王国を建て、キュリロスとメトディオスの布教を受け入れる。",
+"Kushites":"ナイル川上流(スーダン)を中心に栄えた古代王国の系譜を引く人々。かつてアクスムに滅ぼされ、ヌビアの地に痕跡を残す。",
+"Danube Bulgars":"南ロシアの草原からドナウ川流域に移動したブルガール人。ハン・アスパルフに率いられスラブ人と融合しつつあった。",
+"Empire of Ghana":"西アフリカのニジェール川上流域で金・塩交易により繁栄したソニンケ人の国。サハラ交易で大きな富を得た。",
+"Magyars":"ウラル語族系の遊牧民。この頃はカスピ海北方の草原にあり、後に西進してハンガリー平原へ移住する。",
+"Bulgars":"ドナウ＝ブルガールが681年にバルカン半島北東部に建てた国家。ビザンツとの講和で独立を承認され、抗争しつつ勢力を広げた。",
+"Georgian Kingdom":"コーカサス地方のキリスト教国。ビザンツとイスラーム勢力の間で自立を模索する小国家群が分立していた。",
+"Khazars":"南ロシア草原からカスピ海北方を支配する遊牧国家。東西交易で繁栄し、ウマイヤ朝の北進を阻んだ。",
+"Armenia":"コーカサス南部のキリスト教国。7世紀後半にウマイヤ朝の支配下に入り、自治を保ちつつ服属していた。",
+"Caucasian Albania":"現在のアゼルバイジャン地域にあった古代からのキリスト教国。この頃はウマイヤ朝の支配・影響下にあった。",
+"Visigothic Kingdom":"イベリア半島を支配するゲルマン系国家。内紛で弱体化しており、まもなく711年にウマイヤ朝の侵攻を受け滅亡する。",
+"Eastern Roman Empire":"コンスタンティノープルを都とするキリスト教帝国。皇帝の頻繁な交替など混乱期にあり、イスラーム勢力の圧迫を受けていた。",
+"Pandyas":"南インド最南端を支配するタミル系王朝。パッラヴァ朝と抗争しつつ、マドゥライを都に勢力を保った。",
+"Cholas":"南インドのタミル系王朝。この時期は勢力が弱く、後の10世紀以降に大帝国として復興する前段階にあたる。",
+"Nan-Zhao":"雲南地方に分立する六詔の一つ、蒙舎詔(後の南詔)。唐と吐蕃の間で勢力を伸ばし、738年の六詔統一へ向かう途上にあった。",
+"Chalukyas":"デカン高原を支配するヒンドゥー王朝。パッラヴァ朝と抗争を繰り返し、南インドの覇権を争っていた。",
+"Western Gokturk Khaganate":"中央アジアの遊牧国家だったが、7世紀半ばに唐に服属・解体され、この頃は残存勢力として存続するのみだった。",
+"Lombard principalities":"北イタリアを支配するゲルマン系国家。教皇領やビザンツ領と対立しつつ、南部にはベネヴェント公国などが分立していた。",
 };
 
 var PCOLORS={
@@ -1168,6 +1217,10 @@ function dbl(){if(lt)clearTimeout(lt);lt=setTimeout(updateLabels,150)}
 map.on("zoomend",dbl);map.on("moveend",dbl);
 
 renderPoints();
+//ERA-PANEL-JS
+// ═══ ERA SUMMARY PANEL ═══
+(function(){var c=L.control({position:"topright"});c.onAdd=function(){var d=L.DomUtil.create("div");d.innerHTML="<details class=\"era-pt\" open><summary>▼ 700年の世界 ― この時代の要点(クリックで開閉)</summary><div class=\"in\"><p><strong>西ヨーロッパ・地中海</strong>：フランク王国は宮宰ペピン2世が実権を握り、王権は形骸化(カロリング家台頭前夜)。西ゴート王国は内紛で弱体化し、711年のウマイヤ朝征服を目前に控える。東ローマ帝国は皇帝交替が続く混乱期にあった。</p><p><strong>西アジア・イスラーム</strong>：ウマイヤ朝はアブド・アルマリクからワリード1世への治世交代期で、まもなく最大版図を実現する。711年の西ゴート王国征服、732年のトゥール・ポワティエ間の戦いを間近に控え、北方ではハザールが進出を阻んでいた。</p><p><strong>南アジア</strong>：北インドは統一王朝を欠き分裂状態(ヴァルダナ朝滅亡後)で、ベンガルはパーラ朝成立(750年頃)を待つ無政府状態にあった。南インドではパッラヴァ朝・チャールキヤ朝・パーンディヤ朝が並立・抗争し、後の大帝国チョーラ朝はまだ勢力を蓄える前段階にあった。</p><p><strong>東アジア</strong>：唐は則天武后の武周から復位した後で、まもなく玄宗の開元の治(713-741)を迎える全盛期直前。日本は大宝律令(701)により律令国家を確立し、平城京遷都(710)を間近に控える。朝鮮半島は統一新羅の下で仏教文化が栄えた。</p><p><strong>内陸・北方</strong>：チベット(吐蕃)は最盛期を迎え、唐・突厥と中央アジアの覇権を争う。突厥は後突厥として復興し、ウイグルが台頭しつつあった。ハザールやアヴァールなど遊牧国家がユーラシア草原に割拠していた。</p><p><strong>その他(アフリカ・アメリカ・東南アジア)</strong>：西アフリカではガーナ帝国が金・塩交易で繁栄。メソアメリカではテオティワカンが崩壊しマヤ諸都市が古典期後期の最盛期を迎える。東南アジアではチャンパ・真臘・ドヴァーラヴァティーなど諸国家が分立していた。</p></div></details>";L.DomEvent.disableClickPropagation(d);L.DomEvent.disableScrollPropagation(d);if(window.innerWidth<700)d.querySelector("details").removeAttribute("open");return d;};c.addTo(map);})();
+//-ERA-PANEL-JS
 </script>
 </body>
 </html>
