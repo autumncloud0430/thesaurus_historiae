@@ -54,7 +54,16 @@ body{font-family:'Noto Sans JP',sans-serif;background:#080b14;color:#e0dcd6;heig
 .tb{font-size:8px;padding:2px 6px}
 .note p{font-size:8px}
 }
-/*LUX-HDR*/html[data-theme="lux"] .top h1{color:#59452a}html[data-theme="lux"] .top p{color:#6d6353}html[data-theme="lux"] .top a{color:#8b6f4e!important;opacity:.8!important}html[data-theme="lux"] .tb{color:#6d6353;background:rgba(43,36,27,.06)}html[data-theme="lux"] .tb.on{color:#2b241b;border-color:rgba(43,36,27,.3)}html[data-theme="lux"] .cnt{color:#8b6f4e}html[data-theme="lux"] .si{color:#2b241b;border-color:rgba(43,36,27,.25);background:rgba(43,36,27,.04)}html[data-theme="lux"] .si::placeholder{color:#a89a80}html[data-theme="lux"] .leg-toggle{color:#6d6353}/*/LUX-HDR*/</style>
+/*LUX-HDR*/html[data-theme="lux"] .top h1{color:#59452a}html[data-theme="lux"] .top p{color:#6d6353}html[data-theme="lux"] .top a{color:#8b6f4e!important;opacity:.8!important}html[data-theme="lux"] .tb{color:#6d6353;background:rgba(43,36,27,.06)}html[data-theme="lux"] .tb.on{color:#2b241b;border-color:rgba(43,36,27,.3)}html[data-theme="lux"] .cnt{color:#8b6f4e}html[data-theme="lux"] .si{color:#2b241b;border-color:rgba(43,36,27,.25);background:rgba(43,36,27,.04)}html[data-theme="lux"] .si::placeholder{color:#a89a80}html[data-theme="lux"] .leg-toggle{color:#6d6353}/*/LUX-HDR*//*ERA-PANEL-CSS*/
+/* era summary panel */
+.era-pt{background:rgba(8,11,20,.94);border:1px solid rgba(255,255,255,.12);border-radius:8px;color:#e0dcd6;font-family:'Noto Sans JP',sans-serif;max-width:340px;box-shadow:0 8px 32px rgba(0,0,0,.6)}
+.era-pt summary{cursor:pointer;list-style:none;padding:6px 10px;font-size:11px;font-weight:700;color:#c9b99a;user-select:none}
+.era-pt summary::-webkit-details-marker{display:none}
+.era-pt .in{padding:0 10px 8px;font-size:11px;line-height:1.75;max-height:46vh;overflow-y:auto}
+.era-pt .in p{margin:0 0 5px;color:#d0ccc4}
+.era-pt .in strong,html[data-theme="lux"] .era-pt .in strong{color:#e8c888!important;font-weight:700}
+@media(max-width:600px){.era-pt{max-width:240px}.era-pt .in{font-size:10px}}
+/*/ERA-PANEL-CSS*/</style>
 <style id="thThemes">/* =====================================================
    THESAURUS HISTORIAE ― themes.css(LUX固定版)
    生成りの紙 + 墨の本文 + 朱筆(★語) + 金茶の構造色。
@@ -233,7 +242,56 @@ var DESC={
 "Khmer Empire":"スールヤヴァルマン2世のアンコール・ワット建設期(1113-50)直前。帝国の最盛期へ向かう。",
 "Chola Empire":"クロトゥンガ1世の全盛期。南インドからマレー半島まで影響圏を持つ海洋帝国。",
 "Almoravid dynasty":"ユースフ・イブン・ターシュフィーンが北アフリカ・イベリア半島を統合。レコンキスタに対抗。",
-"Venice":"アドリア海の海洋共和国。十字軍支援で東地中海進出。コムネノス朝との交易特権を獲得。"
+"Venice":"アドリア海の海洋共和国。十字軍支援で東地中海進出。コムネノス朝との交易特権を獲得。",
+"Norway":"統一ノルウェー王国。マグヌス3世(裸足王)の下でオークニー諸島やマン島など北海の島々に勢力を広げる、ヴァイキング的拡張の最後の時代。",
+"Hungary":"アールパード朝のカールマーン1世(学識王)の治世。1102年にクロアチアを併合し同君連合を形成、西欧的な法整備も進めた。",
+"East Java":"中部ジャワの古マタラム朝の後継として東ジャワに興ったヒンドゥー・仏教王国。ジャヤバヤ王による文学黄金期を迎える前段階にあたる。",
+"Xixia":"タングート族の李元昊が建てた王朝。仏教文化とチベット文字を参考にした西夏文字を用い、宋・遼と鼎立する独自の国家を築いた。",
+"Tibet":"吐蕃王国崩壊後の分裂期。仏教が再び盛んになる「後伝期」にあたり、アティーシャらの影響下でカダム派など諸宗派が形成されつつある。",
+"Nanzhao":"南詔の後継として雲南に成立した白族の仏教国家。宋と冊封・朝貢関係を保ちつつ存続し、後にモンゴル軍に滅ぼされる(1253)。",
+"Dai Viet":"李朝(大越)の全盛期。1075年に科挙を開始し儒教官僚制を整備。李常傑が宋の侵攻を撃退するなど独立国家の基盤を固めた。",
+"Champa":"チャム人のヒンドゥー教国。中部ベトナム沿岸を拠点に海上交易で栄え、大越(李朝)やクメール帝国と抗争を繰り返す。",
+"Srivijaya Empire":"スマトラを中心にマラッカ海峡交易を支配した海上帝国。1025年のチョーラ朝の遠征以降弱体化し、衰退期に入っている。",
+"Liao":"契丹(キタイ)人が建てた征服王朝。二重統治体制で中国北部と北方遊牧民を統治するが、女真族の台頭により衰退期に入る。",
+"Yemen":"アデンを拠点とするズライイド朝が支配。宗主のイスマーイール派スライヒ朝のもと、女王アルワーが実権を握る時代。",
+"Muscat":"オマーン沿岸の要衝都市。イバード派イスラームの伝統を持つ地域で、インド洋交易の中継港として機能した。",
+"Ghaznavid Emirate":"アフガニスタンを本拠とするトルコ系イスラーム王朝。最盛期のマフムードの後、セルジューク朝に西方領を奪われ北インドのみを保つ。",
+"Duchy of Benevento":"南イタリアのランゴバルド系公国。ノルマン人の南伊征服で周辺領を失い、教皇領に編入された都市国家として存続する。",
+"Duchy of Burgundy":"フランス王国内の有力封建諸侯。カペー家傍系が統治し、1098年創設のシトー修道会など教会改革運動の拠点ともなった。",
+"Croatia":"アドリア海沿岸のクロアチア人王国。1102年、ハンガリー王カールマーンとの同君連合(協約)によりハンガリーの支配下に入る。",
+"Bulgar Khanate":"第一次ブルガリア帝国はビザンツ皇帝バシレイオス2世に征服され(1018)既に滅亡。この時点で独立国はなく住民はビザンツ支配下にある。",
+"Poland":"ピャスト朝ポーランド。ボレスワフ3世(傾き口公)が国内統一を進め、ポモージェ(ポメラニア)地方への勢力拡大を図る時代。",
+"Kanem":"チャド湖畔に興った西アフリカの黒人イスラーム国家。サイフ朝の下、11世紀末頃イスラームを受容し交易路支配で勢力を広げる。",
+"Ghana":"西アフリカの黒人王国。金と塩の交易で栄えたが、11世紀後半のムラービト朝の圧力や交易路の変化により衰退が進む時代。",
+"Mali":"後のマリ帝国の母体となるマンデ系諸勢力の地。この時点ではソソ人勢力の伸長期で、スンジャタによる統一建国(13世紀)以前にあたる。",
+"Chimú Empire":"ワリ帝国衰退後、ペルー北海岸に興った王国。首都チャンチャンを中心に灌漑農業を発達させ、後にインカに征服される(15世紀)。",
+"Huari Empire":"6～10世紀にペルー中部高地を中心に栄えた最初期の広域国家。この時点では既に衰退・解体しており、地方勢力へ分裂した後にあたる。",
+"Tiahuanaco Empire":"ボリビア高地(チチカカ湖畔)を中心に栄えた宗教都市国家。この頃までに衰退・崩壊が進行し、後継の地方勢力に分裂しつつある。",
+"Maya city-states":"古典期マヤの崩壊(9世紀)後、ユカタン半島で都市国家群が分立する後古典期。チチェン・イツァの覇権が衰えつつある移行期にあたる。",
+"Toltec Empire":"メキシコ高原のトゥーラを都とした軍事国家。後のアステカに文化的模範とされたが、この時期は最盛期を過ぎ衰退の兆しが見え始める。",
+"Scotland":"マルカム3世の子エドガーの治世。イングランドの影響を受けつつ王権の集権化と封建制導入が進む、ノルマン化の初期段階にある。",
+"Sweden":"インゲ1世の治世。キリスト教化が進むが異教勢力の抵抗も残り、統一王権の確立途上にある北方の新興王国。",
+"Denmark":"エーリク1世(善良王)の治世前後。デンマーク教会の整備が進み、1104年にはルンド大司教座が設置され北欧教会の中心となる。",
+"Navarre":"1076年よりアラゴン王国と同君連合下にある。レコンキスタの最前線でイスラーム勢力(タイファ諸国)と戦う小王国。",
+"León":"アルフォンソ6世の治世。1085年にトレドを奪回しレコンキスタを大きく前進させたが、晩年はムラービト朝の反撃に苦しむ。",
+"Castilla":"アルフォンソ6世の下レオン王国と同君連合。エル・シッドの活躍(バレンシア占領1094)で知られるレコンキスタ最前線の王国。",
+"Aragón":"ペドロ1世の治世。1096年にイスラーム勢力からウエスカを奪回。ナバラ王国と同君連合を組みレコンキスタを進める。",
+"Brittany":"フランス王国内の半独立公国。ケルト系ブルトン人の伝統を保持し、公アラン4世は第1回十字軍にも参加した。",
+"Oghuz":"セルジューク朝や後のトルコ系王朝の母体となったテュルク系遊牧部族連合。中央アジア草原に一部が遊牧生活を続ける集団も残る。",
+"Karkhanids":"中央アジア初のテュルク系イスラーム王朝。東西分裂の後、西カラハン朝はセルジューク朝の影響下でトランスオクシアナを支配する。",
+"Mongols":"モンゴル高原で諸部族が抗争する時代。まだ統一勢力はなく、チンギス・ハンによる統一(1206)の一世紀前の分裂期にあたる。",
+"Maskat":"オマーン沿岸の要衝都市。イバード派イスラームの伝統を持つ地域で、インド洋交易の中継港として機能した。",
+"Kingdom of Georgia":"ダヴィド4世(建設王)の治世。セルジューク勢力を排除し中央集権化を進め、ジョージア「黄金時代」の基礎を築いている最中にある。",
+"Armenia":"バグラトゥニ朝の滅亡後、ビザンツ・セルジュークの支配下に入るが、一部はキリキア地方に移住し後のアルメニア王国の基盤を築く。",
+"Cuman-Kipchak confederation":"南ロシア草原のテュルク系遊牧民連合。ロシアでは「ポロヴェツ」と呼ばれキエフ諸公国と抗争。『イーゴリ遠征物語』にも登場する。",
+"Papal States":"ウルバヌス2世の死(1099)直後、パスカリス2世が継承。神聖ローマ皇帝との叙任権闘争を継続する教皇の直轄領。",
+"Serbia":"ラシュカを中心とするセルビア人の大公国。ビザンツ帝国の宗主権下にありつつ自立性を強め、後のネマニッチ朝建国の基盤となる。",
+"Palas":"ベンガル地方の仏教保護王朝。ナーランダー僧院などを庇護したが、この時期は衰退期に入りセーナ朝の台頭に押されつつある。",
+"Senas":"ベンガル地方でパーラ朝に代わって勢力を伸ばすヒンドゥー王朝。ヴィジャヤセーナが基礎を築き、仏教保護のパーラ朝を圧迫する。",
+"Paramas":"中インド・マールワー地方の王朝。学者王ボージャの時代に文化的最盛期を迎えたが、この時期は西方チャールキヤ朝の圧力で衰退期にある。",
+"Pratiharas":"かつて北インドに広大な版図を築いた王朝だが、10世紀までに衰退・解体。この時点では旧領内の一地方勢力として存続するのみ。",
+"Chauhans":"ラージャスターン地方(アジメール)を拠点とするラージプート王朝。後の英雄プリトヴィラージ以前の勃興期で、周辺勢力と領土を争う。",
+"Chandellas":"中インドの王朝。カジュラーホーの壮麗なヒンドゥー教寺院群をほぼ完成させた後の時期で、周辺のチャウハーン朝などと勢力を争う。",
 };
 
 var PCOLORS={
@@ -1194,6 +1252,10 @@ function dbl(){if(lt)clearTimeout(lt);lt=setTimeout(updateLabels,150)}
 map.on("zoomend",dbl);map.on("moveend",dbl);
 
 renderPoints();
+//ERA-PANEL-JS
+// ═══ ERA SUMMARY PANEL ═══
+(function(){var c=L.control({position:"topright"});c.onAdd=function(){var d=L.DomUtil.create("div");d.innerHTML="<details class=\"era-pt\" open><summary>▼ 1100年の世界 ― この時代の要点(クリックで開閉)</summary><div class=\"in\"><p><strong>西ヨーロッパ・地中海</strong>：第1回十字軍がエルサレムを奪回(1099)し十字軍国家群を建てた直後。神聖ローマ皇帝とローマ教皇は叙任権闘争(1076-1122)の最中で、ヴェネツィアなどイタリア海洋都市が東方交易で台頭している。</p><p><strong>西アジア・イスラーム</strong>：大セルジューク朝がマリク・シャーの死後分裂し、十字軍にエルサレムを奪われた(1099)。ファーティマ朝は衰退し、各地にアタベクなどの地方政権が自立する分裂期にある。</p><p><strong>南アジア</strong>：南インドではチョーラ朝が最盛期を迎え東南アジア方面にも影響力を及ぼす一方、北インドはパーラ朝の衰退とセーナ朝の台頭、諸ラージプート王朝の抗争が続く分裂状態にある。</p><p><strong>東アジア</strong>：北宋は徽宗の治世に入り文化的爛熟期を迎えるが軍事的には脆弱。契丹の遼は衰退期に入り、女真族が後の金朝建国(1115)に向けて力を蓄えつつある。高麗は仏教文化の全盛期を迎える。</p><p><strong>内陸・北方</strong>：モンゴル高原は諸部族が割拠しチンギス・ハンによる統一(1206)以前の分裂期。南ロシア草原ではクマン(ポロヴェツ)人がキエフ・ルーシと抗争し、中央アジアは西カラハン朝などテュルク系政権が分立する。</p><p><strong>その他(アフリカ・アメリカ・東南アジア)</strong>：西アフリカはガーナ王国の衰退とムラービト朝の圧力が重なる転換期。東南アジアはクメール帝国がアンコール・ワット建設(1113-)直前の最盛期に向かい、アメリカ大陸はトルテカ文明が最盛期を過ぎ、アンデスはワリ・ティワナク帝国衰退後の地方分裂期にある。</p></div></details>";L.DomEvent.disableClickPropagation(d);L.DomEvent.disableScrollPropagation(d);if(window.innerWidth<700)d.querySelector("details").removeAttribute("open");return d;};c.addTo(map);})();
+//-ERA-PANEL-JS
 </script>
 </body>
 </html>
