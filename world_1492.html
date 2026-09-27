@@ -54,7 +54,16 @@ body{font-family:'Noto Sans JP',sans-serif;background:#080b14;color:#e0dcd6;heig
 .tb{font-size:8px;padding:2px 6px}
 .note p{font-size:8px}
 }
-/*LUX-HDR*/html[data-theme="lux"] .top h1{color:#59452a}html[data-theme="lux"] .top p{color:#6d6353}html[data-theme="lux"] .top a{color:#8b6f4e!important;opacity:.8!important}html[data-theme="lux"] .tb{color:#6d6353;background:rgba(43,36,27,.06)}html[data-theme="lux"] .tb.on{color:#2b241b;border-color:rgba(43,36,27,.3)}html[data-theme="lux"] .cnt{color:#8b6f4e}html[data-theme="lux"] .si{color:#2b241b;border-color:rgba(43,36,27,.25);background:rgba(43,36,27,.04)}html[data-theme="lux"] .si::placeholder{color:#a89a80}html[data-theme="lux"] .leg-toggle{color:#6d6353}/*/LUX-HDR*/</style>
+/*LUX-HDR*/html[data-theme="lux"] .top h1{color:#59452a}html[data-theme="lux"] .top p{color:#6d6353}html[data-theme="lux"] .top a{color:#8b6f4e!important;opacity:.8!important}html[data-theme="lux"] .tb{color:#6d6353;background:rgba(43,36,27,.06)}html[data-theme="lux"] .tb.on{color:#2b241b;border-color:rgba(43,36,27,.3)}html[data-theme="lux"] .cnt{color:#8b6f4e}html[data-theme="lux"] .si{color:#2b241b;border-color:rgba(43,36,27,.25);background:rgba(43,36,27,.04)}html[data-theme="lux"] .si::placeholder{color:#a89a80}html[data-theme="lux"] .leg-toggle{color:#6d6353}/*/LUX-HDR*//*ERA-PANEL-CSS*/
+/* era summary panel */
+.era-pt{background:rgba(8,11,20,.94);border:1px solid rgba(255,255,255,.12);border-radius:8px;color:#e0dcd6;font-family:'Noto Sans JP',sans-serif;max-width:340px;box-shadow:0 8px 32px rgba(0,0,0,.6)}
+.era-pt summary{cursor:pointer;list-style:none;padding:6px 10px;font-size:11px;font-weight:700;color:#c9b99a;user-select:none}
+.era-pt summary::-webkit-details-marker{display:none}
+.era-pt .in{padding:0 10px 8px;font-size:11px;line-height:1.75;max-height:46vh;overflow-y:auto}
+.era-pt .in p{margin:0 0 5px;color:#d0ccc4}
+.era-pt .in strong,html[data-theme="lux"] .era-pt .in strong{color:#e8c888!important;font-weight:700}
+@media(max-width:600px){.era-pt{max-width:240px}.era-pt .in{font-size:10px}}
+/*/ERA-PANEL-CSS*/</style>
 <style id="thThemes">/* =====================================================
    THESAURUS HISTORIAE ― themes.css(LUX固定版)
    生成りの紙 + 墨の本文 + 朱筆(★語) + 金茶の構造色。
@@ -246,7 +255,61 @@ var DESC={
 "Vijayanagara":"南インドのヒンドゥー王国。デカン・スルタン諸国と対峙しながら最盛期に向かう。",
 "Malacca":"香辛料貿易の要衝。イスラーム化が進む。ポルトガルの征服(1511)まで19年。",
 "France":"シャルル8世。イタリア戦争(1494-)の直前。フランス・ルネサンスが始まりつつある。",
-"Japan":"応仁の乱(1467-77)後の戦国時代初期。室町幕府の権威は形骸化。全国で群雄割拠。"
+"Japan":"応仁の乱(1467-77)後の戦国時代初期。室町幕府の権威は形骸化。全国で群雄割拠。",
+"Madagascar":"マレー系マダガスカル人による諸小王国が分立する島。統一王国はまだ成立せず、アフリカ本土や東南アジアとの交易も行われていた。",
+"Denmark-Norway":"カルマル同盟の中核をなす王国。デンマーク王ハンスがノルウェーも統治するが、スウェーデンは事実上分離し同盟は動揺していた。",
+"England":"ヘンリー7世がばら戦争(1455-85)を終結させテューダー朝を開いた。王権強化と財政再建に努めた治世であった。",
+"Scotland":"ジェームズ4世の治世。スチュアート朝のもとイングランドと抗争しつつ、王権強化とルネサンス文化の導入を進めていた。",
+"Papal States":"1492年、ボルジア家出身のロドリーゴがアレクサンデル6世として即位。世俗権力の強化と一族優遇(ネポティズム)で知られる。",
+"Congo":"バントゥー系の中央アフリカの王国。1483年ポルトガルと接触し、1491年に国王が改宗するなどキリスト教化が始まっていた。",
+"Cambodia":"アユタヤの攻撃でアンコールを放棄し都をプノンペンへ移した後のクメール王国。かつての繁栄から衰退期にあった。",
+"Islamic city-states":"キルワ・モンバサ・マリンディなど東アフリカ海岸のムスリム商業都市群。金や象牙を扱うインド洋交易で栄えたが、まもなくポルトガルの進出を受ける。",
+"Ayutthaya":"チャオプラヤ川流域のタイ人王朝。1431年にアンコールを攻略し、東南アジア随一の交易国家として繁栄していた。",
+"Sweden":"カルマル同盟下にあるが、摂政スチューレ家がデンマーク王権に抵抗し事実上の自立を保っていた。のちの同盟離脱の萌芽期。",
+"Sinhalese kingdoms":"スリランカ島のシンハラ人諸王国。コーッテ王国が有力で、北部にはタミル系のジャフナ王国が並存していた。",
+"Aceh":"スマトラ島北端の港市国家。マラッカと並ぶ交易拠点として台頭し、イスラーム化が進みつつあった。",
+"Georgia":"カフカースのキリスト教国。1490年ごろの内紛でカルトリ・カヘティ・イメレティなど複数の王国に分裂したばかりであった。",
+"Teutonic Knights":"バルト海沿岸の宗教騎士修道会領。1466年の第二次トルンの和約でポーランド王の宗主権下に入り、勢力は縮小していた。",
+"Poland-Lithuania":"ヤギェウォ家による同君連合。1492年、カジミェシュ4世の死で王位が兄弟に分かれて継承され、両国の結びつきは一時緩んだ。",
+"Imperial Hungary":"マーチャーシュ(コルヴィヌス)の死(1490)後、ヤギェウォ家のウラースロー2世が即位。王権は弱まり貴族の力が強まった。",
+"Navarre":"ピレネー山脈にまたがる小王国。フランスとスペインの間で独立を保つが、20年後にカスティーリャに南部を併合される。",
+"Wattasid Caliphate":"モロッコのフェスを都とするイスラーム王朝。マリーン朝を倒して成立(1465年ごろ)し、北アフリカ西部を支配していた。",
+"Zayyanid Caliphate":"アルジェリアのトレムセンを都とする王朝(1235年以来)。マグリブ諸国の分立の中で命脈を保つが、勢力は衰えていた。",
+"Hafsid Caliphate":"チュニスを都とするマグリブの王朝(1229年以来)。地中海交易の要衝として繁栄したが、後にオスマンとスペインの角逐の場となる。",
+"Ethiopia":"アクスム以来のキリスト教帝国(ソロモン朝)。アフリカの角の高原を支配し、周辺のムスリム勢力と抗争を続けていた。",
+"Mwenemutapa":"グレートジンバブエの後継王国。ショナ人が金・象牙交易を支配し、スワヒリ都市を介したインド洋交易で栄えていた。",
+"Benin":"西アフリカ森林地帯の王国。精巧なブロンズ彫刻で知られ、1480年代にポルトガルと接触し交易を開始していた。",
+"Mali":"最盛期を過ぎ、ソンガイ帝国に領土の大半を奪われて衰退した末期のマリ帝国。西方の一地方勢力に縮小していた。",
+"Hausa States":"ニジェール川東方のハウサ人による都市国家群(カノ・カツィナなど)。サハラ交易南端の拠点としてイスラーム化が進んでいた。",
+"Bornu-Kanem":"チャド湖周辺のイスラーム王国。8世紀以来のカネム王国が母体で、14世紀に都をボルヌーへ移しサハラ縦断交易で繁栄した。",
+"Yemen":"南部はターヒル朝が支配し紅海交易で繁栄。北部の山岳地帯はザイド派イマームが統治する分裂状態が続いていた。",
+"Muscat":"オマーン海岸の港市。インド洋交易の要衝でホルムズ王国の影響下にあった。まもなくポルトガルに占領される(1507)。",
+"Emirate of the White Sheep Turks":"トルクメン系の王朝(白羊朝)。イランからイラクまで支配したが、1490年のヤアクーブの死後は内紛が激化し急速に衰退していた。",
+"Sultanate of Delhi":"デリー・スルタン朝最後の王朝ローディー朝。アフガン系で、1489年に即位したスィカンダルが北インドで勢力を広げていた。",
+"Bengal":"デリーから独立したベンガル地方のイスラーム王朝。ガンジス下流域の農業生産力を背景に独自の文化を育んでいた。",
+"Tibet":"元・明代を通じ統一政権を持たず、諸侯や仏教教団(ゲルク派など)が地域ごとに割拠する分権状態が続いていた。",
+"Arakan":"ベンガル湾岸のビルマ系仏教王国。1430年にベンガル・スルタン国の援助でミャウー朝が成立し、独自の文化を築いた。",
+"Champa":"1471年に大越の攻撃で都ヴィジャヤを失い、領土の大半を失ったチャム人によるかつての海上交易国家の残存勢力。",
+"Laos":"1353年建国のラオス系仏教王国。メコン川流域を支配し、上座部仏教の受容を通じてタイ・カンボジアとも結びついていた。",
+"Đại Việt":"黎朝の全盛期。聖宗(レ・タイン・トン)のもとチャンパを攻略(1471)して南方に拡大し、法典整備など国家体制を確立した。",
+"Burmese kingdoms":"上ビルマのアヴァ朝はシャン族の侵入で衰退し、南部のペグー(モン人)と並立する分裂状態で、統一はまだ実現していなかった。",
+"Swiss Confederation":"アルプスの自治都市・州が結んだ同盟。神聖ローマ皇帝の宗主権下にあるが実質的に自立し、まもなく戦争(1499)で独立を確立する。",
+"Crimean Khanate":"ジョチ家の系譜を引くタタール系ハン国。1475年にオスマン帝国の属国となり、黒海北岸で奴隷交易などにより勢力を保っていた。",
+"Brittany":"アンヌ女公の治世。1491年にフランス王シャルル8世と結婚し、事実上フランスとの統合が始まった最後の独立公国。",
+"Chagatai Khanate":"かつてのモンゴル帝国分封国。西方はティムール朝に取って代わられ、東方はモグーリスタンとして遊牧政権が命脈を保っていた。",
+"Oirat Confederation":"西モンゴルの遊牧諸部族連合。エセン・ハンの死(1454)後は往時の統一を失い、東方のモンゴル系諸部族と対立していた。",
+"Timurid Emirates":"ティムール朝末期の分裂状態。ヘラートのフサイン・バイカラの宮廷で文芸(ティムール朝ルネサンス)が花開く一方、王朝は解体に向かっていた。",
+"Aragón":"フェルナンド2世の王国。イサベルとの結婚(1469)でカスティーリャと同君連合を成すが制度は別で、地中海に領土を広げていた。",
+"Gujarat":"1407年に独立したイスラーム王朝。西インドの海港を支配し、アラビア海交易とインド洋貿易で大いに繁栄していた。",
+"Nepal":"カトマンズ盆地のマッラ朝。1482年、王の死後に王国がカトマンズ・パタン・バクタプルの3王国に分裂したばかりであった。",
+"Punjab":"デリー・スルタン朝の西北辺境地帯。中央権力の統制は弱く、地方領主やアフガン系集団が割拠する不安定な地域であった。",
+"Bijapur":"バフマニー朝の分裂(1490)で成立したデカン地方のイスラーム王朝(アーディル・シャーヒー朝)。成立直後の新興国家であった。",
+"Korea":"李朝の成宗の治世。『経国大典』の完成(1485)など儒教的統治体制の整備が進んだ、朝鮮王朝の安定期であった。",
+"Adal":"エチオピア東方のイスラーム・スルタン国。紅海交易の要衝を占め、キリスト教国エチオピア帝国としばしば抗争を繰り返していた。",
+"Khanate of Sibir":"西シベリアのタタール系ハン国。イルティシュ川流域を中心に毛皮交易で栄え、周辺のウゴル系諸民族を支配していた。",
+"Sind":"インダス川下流域。サンマ朝が支配するイスラーム政権で、海港タッタを拠点にアラビア海交易で栄えていた。",
+"Rajastan":"インド北西部の高原地帯。メーワールなどラージプート諸侯が割拠し、独自の武人文化を保っていた。",
+"Pegu":"エーヤワディー川下流域のモン人王朝。ダンマゼディ王のもとで仏教教団の粛正(カリヤーニ碑文)を行い、交易で栄えた黄金期にあった。",
 };
 
 var PCOLORS={
@@ -1233,6 +1296,10 @@ function dbl(){if(lt)clearTimeout(lt);lt=setTimeout(updateLabels,150)}
 map.on("zoomend",dbl);map.on("moveend",dbl);
 
 renderPoints();
+//ERA-PANEL-JS
+// ═══ ERA SUMMARY PANEL ═══
+(function(){var c=L.control({position:"topright"});c.onAdd=function(){var d=L.DomUtil.create("div");d.innerHTML="<details class=\"era-pt\" open><summary>▼ 1492年の世界 ― この時代の要点(クリックで開閉)</summary><div class=\"in\"><p><strong>西ヨーロッパ・地中海</strong>：スペインは1492年、グラナダ陥落(1月)でレコンキスタを完成、同年8月にコロンブスが大西洋を横断した。ポルトガルは喜望峰到達(1488)を経てインド航路開拓を目前に控え、フランスはシャルル8世のもとイタリア戦争(1494-)前夜にあった。</p><p><strong>西アジア・イスラーム世界</strong>：オスマン帝国はバヤジット2世のもとコンスタンティノープル征服(1453)後の安定期を迎え、マムルーク朝エジプトと対立していた。ティムール朝はサマルカンド・ヘラートに分裂し、ヘラートでは文芸が栄えた。</p><p><strong>南アジア</strong>：北インドはデリー・スルタン朝最後のローディー朝が支配し、バフマニー朝の分裂でビジャープルなどデカンの諸王国が次々に自立した。南インドではヒンドゥー王国ヴィジャヤナガルが最盛期に向かっていた。</p><p><strong>東アジア</strong>：明は弘治帝のもと安定期で海禁政策を維持し、朝鮮では李朝の成宗が『経国大典』を完成させ儒教的統治を整備した。日本は応仁の乱後の戦国時代初期で、室町幕府の権威は形骸化していた。</p><p><strong>内陸アジア・北方</strong>：モスクワ大公国のイヴァン3世がモンゴルの支配(タタールのくびき)から脱し(1480)、ビザンツ皇帝家の後継を自称した。モンゴル高原ではオイラトが往時の統一を失い、諸部族が分立していた。</p><p><strong>アフリカ・アメリカ・東南アジア</strong>：西アフリカではソンガイ帝国がサハラ交易を制覇して全盛期を迎え、アメリカ大陸ではアステカ・インカが最大版図に向かっていた。同年コロンブスが到達し、両大陸の接触の時代が始まる。</p></div></details>";L.DomEvent.disableClickPropagation(d);L.DomEvent.disableScrollPropagation(d);if(window.innerWidth<700)d.querySelector("details").removeAttribute("open");return d;};c.addTo(map);})();
+//-ERA-PANEL-JS
 </script>
 </body>
 </html>
