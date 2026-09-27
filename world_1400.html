@@ -54,7 +54,16 @@ body{font-family:'Noto Sans JP',sans-serif;background:#080b14;color:#e0dcd6;heig
 .tb{font-size:8px;padding:2px 6px}
 .note p{font-size:8px}
 }
-/*LUX-HDR*/html[data-theme="lux"] .top h1{color:#59452a}html[data-theme="lux"] .top p{color:#6d6353}html[data-theme="lux"] .top a{color:#8b6f4e!important;opacity:.8!important}html[data-theme="lux"] .tb{color:#6d6353;background:rgba(43,36,27,.06)}html[data-theme="lux"] .tb.on{color:#2b241b;border-color:rgba(43,36,27,.3)}html[data-theme="lux"] .cnt{color:#8b6f4e}html[data-theme="lux"] .si{color:#2b241b;border-color:rgba(43,36,27,.25);background:rgba(43,36,27,.04)}html[data-theme="lux"] .si::placeholder{color:#a89a80}html[data-theme="lux"] .leg-toggle{color:#6d6353}/*/LUX-HDR*/</style>
+/*LUX-HDR*/html[data-theme="lux"] .top h1{color:#59452a}html[data-theme="lux"] .top p{color:#6d6353}html[data-theme="lux"] .top a{color:#8b6f4e!important;opacity:.8!important}html[data-theme="lux"] .tb{color:#6d6353;background:rgba(43,36,27,.06)}html[data-theme="lux"] .tb.on{color:#2b241b;border-color:rgba(43,36,27,.3)}html[data-theme="lux"] .cnt{color:#8b6f4e}html[data-theme="lux"] .si{color:#2b241b;border-color:rgba(43,36,27,.25);background:rgba(43,36,27,.04)}html[data-theme="lux"] .si::placeholder{color:#a89a80}html[data-theme="lux"] .leg-toggle{color:#6d6353}/*/LUX-HDR*//*ERA-PANEL-CSS*/
+/* era summary panel */
+.era-pt{background:rgba(8,11,20,.94);border:1px solid rgba(255,255,255,.12);border-radius:8px;color:#e0dcd6;font-family:'Noto Sans JP',sans-serif;max-width:340px;box-shadow:0 8px 32px rgba(0,0,0,.6)}
+.era-pt summary{cursor:pointer;list-style:none;padding:6px 10px;font-size:11px;font-weight:700;color:#c9b99a;user-select:none}
+.era-pt summary::-webkit-details-marker{display:none}
+.era-pt .in{padding:0 10px 8px;font-size:11px;line-height:1.75;max-height:46vh;overflow-y:auto}
+.era-pt .in p{margin:0 0 5px;color:#d0ccc4}
+.era-pt .in strong,html[data-theme="lux"] .era-pt .in strong{color:#e8c888!important;font-weight:700}
+@media(max-width:600px){.era-pt{max-width:240px}.era-pt .in{font-size:10px}}
+/*/ERA-PANEL-CSS*/</style>
 <style id="thThemes">/* =====================================================
    THESAURUS HISTORIAE ― themes.css(LUX固定版)
    生成りの紙 + 墨の本文 + 朱筆(★語) + 金茶の構造色。
@@ -231,7 +240,54 @@ var DESC={
 "Venice":"東地中海貿易の覇者。コンスタンティノープル陥落後も商業帝国を維持。",
 "Poland-Lithuania":"ヤドヴィガとヤギェウォの同君連合。タンネンベルクの戦い(1410)でドイツ騎士団を撃破。",
 "Castile":"エンリケ3世の治世。レコンキスタの継続中。のちにアラゴンと合同しスペイン王国へ。",
-"Khmer Empire":"アンコール朝の衰退期。タイのアユタヤ朝に圧迫される。15世紀にアンコールを放棄。"
+"Khmer Empire":"アンコール朝の衰退期。タイのアユタヤ朝に圧迫される。15世紀にアンコールを放棄。",
+"Madagascar":"マレー系移民の子孫が住むインド洋の島。中央集権国家は未成立で地方首長制の段階。東アフリカ・アラブ商人との交易が行われた。",
+"Sardinia":"地中海の島。教皇から領有権を認められたアラゴン家に対し、アルボレーア王国が抵抗を続け、この頃もなお征服途上にあった(完全征服は1420年)。",
+"Hainan":"明朝統治下の南海の島。黎族など先住民が居住し、しばしば流刑地とされた。南海交易の中継地としての役割も持つ。",
+"Sinhalese kingdom":"スリランカ島の仏教徒シンハラ人の王国。ガンポラ朝末期にあたり、まもなくコーッテ朝などへ分裂・抗争へ向かう。北部はタミル系ジャフナ王国と対峙した。",
+"Teutonic Knights":"バルト海南岸を支配するカトリック騎士修道会国家。東方植民を進めたが、まもなくタンネンベルクの戦い(1410)でポーランド＝リトアニアに大敗する。",
+"Navarre":"ピレネー山中の小王国。エヴルー家統治下でカスティーリャ・アラゴン・フランスの間で独立を保った。後年カスティーリャに併合される。",
+"Benin":"ギニア湾岸、現ナイジェリアのエド人の王国。オバ(王)が統治し、精巧なブロンズ彫刻で知られる。のちポルトガルと交易を開始する。",
+"Bornu-Kanem":"チャド湖周辺のサハラ交易で栄えたイスラーム王国。カネム王国がボルヌーへ拠点を移しつつ勢力を保った、サハラ縦断交易の要衝。",
+"Yemen":"アラビア半島南端。ラスール朝が支配し紅海・インド洋交易で繁栄したが、まもなく内紛により衰退へ向かう。",
+"Maya city-states":"ユカタン半島の都市国家群。この頃はマヤパン同盟が主導したが、内紛により15世紀半ばに崩壊へ向かう。",
+"Chimú Empire":"ペルー北部海岸の王国。都チャンチャンを中心に高度な灌漑農業と金属工芸で栄えたが、まもなくインカに征服される。",
+"Morocco":"マグリブ西部を支配するベルベル系イスラーム王朝。フェスを都とするが、この頃は内紛が続き衰退期にあった。",
+"Ethiopia":"アクスム王国の後継を称するキリスト教帝国。ソロモン朝のもとイスラーム勢力と抗争しつつ領土拡大を進めた。",
+"Great Zimbabwe":"南部アフリカの石造都市遺跡を中心とする王国。金・銅交易で繁栄したが、この頃ムウェネムタパ王国へ移行する時期にあった。",
+"Muscat":"アラビア半島東端の港市。インド洋交易の要衝として栄え、この頃はホルムズ王国の影響下にあった。",
+"Islamic city-states":"キルワなどスワヒリ海岸の港市群。金・象牙交易とインド洋交易で繁栄し、イスラーム化が進んだ東アフリカの交易文化圏。",
+"Đại Việt":"陳朝末期にあたり、まもなく胡朝が成立(1400)する時期。まもなく明の永楽帝による征服(1407)で一時支配される。",
+"Champa":"インドシナ半島東岸のチャム人の国家。ヒンドゥー・仏教文化が融合し、大越(ベトナム)との抗争が続いた。",
+"Tibet":"元の宗主権を脱し、パクモドゥパ政権が実権を握る時期。まもなくツォンカパによるゲルク派創始(1409)で仏教改革が進む。",
+"Kashmir and Ladakh":"ヒマラヤ西部の地域。カシミールはこの頃シャーミール朝のイスラーム王権下にあり、ラダックはチベット仏教文化圏に属した。",
+"Novgorod":"北ロシアの商業都市国家。ハンザ同盟と交易し独自の共和政を維持したが、後にモスクワ大公国に併合される。",
+"Bosnia":"バルカン半島の王国。この頃オスマン帝国の圧迫を受け属国化が進み、15世紀後半に完全征服される。",
+"Papal States":"教皇の世俗領地。この頃は教会大分裂(1378-1417)でローマとアヴィニョンに教皇が並立し混乱していた。",
+"Sicily":"地中海の島国。シチリアの晩鐘事件(1282)以来アラゴン家が支配し、この頃も同君連合下にあった。",
+"Kingdom of Hungary":"中欧の王国。ルクセンブルク家のジギスムントが統治し、のち神聖ローマ皇帝も兼ねる。オスマン帝国北上への防波堤となる。",
+"Granada":"イベリア半島最後のイスラーム王朝。ナスル朝が支配しアルハンブラ宮殿を残す。レコンキスタの圧力を受けつつ存続する。",
+"Hafsid Caliphate":"チュニジアを中心とするベルベル系イスラーム王朝。地中海交易で繁栄したが、この頃は勢力が縮小し分裂傾向にあった。",
+"Trebizond":"黒海南岸の小帝国。ビザンツ帝国の分家コムネノス家が建国し、この頃も存続。1461年にオスマン帝国に滅ぼされる。",
+"Georgia":"カフカスのキリスト教王国。ティムールの度重なる侵攻(1386-1403)で大きな打撃を受け、この頃国力が衰退していた。",
+"Principality of Wallachia":"ドナウ川下流のルーマニア人公国。ミルチャ老公のもとオスマン帝国の北上に抵抗するが、まもなく従属を強いられる。",
+"Aceh":"スマトラ島北端の港市。この頃はまだ小規模な地方勢力の段階で、アチェ王国としての統一・成立は15世紀末以降である。",
+"Scotland":"イングランドと抗争を続けるステュアート朝の王国。ロバート3世の治世で、フランスと結ぶ対イングランド同盟を維持した。",
+"Bulgar Khanate":"オスマン帝国に征服されたブルガリア人地域。ドナウ以南でオスマン支配下に組み込まれ、実質的な独立は失われていた。",
+"Brittany":"フランス北西部の半独立公国。百年戦争ではイングランド・フランス双方と結び自立を維持したが、16世紀にフランスへ併合される。",
+"Nanzan":"沖縄本島南部の按司連合による王国。三山時代の一角を占め明に朝貢したが、1429年に中山により統一される。",
+"Great Khanate":"元朝が明に追われモンゴル高原に退いた後の政権(北元)。この頃はハン位をめぐる内紛が続き、勢力は分裂・混乱していた。",
+"Chūzan":"沖縄本島中部の王国。三山のうち最も有力で明への朝貢貿易により栄え、1429年に南山・北山を統一し琉球王国を成立させる。",
+"Hokuzan":"沖縄本島北部の按司連合による王国。三山の一つとして明に朝貢したが勢力は弱く、1416年頃に中山に滅ぼされる。",
+"Moldova":"ドナウ下流の公国。この頃アレクサンドル善良公のもとで最盛期を迎えるが、後にオスマン帝国の宗主権下に入る。",
+"Kalmar Union":"デンマーク女王マルグレーテ1世が主導し1397年に成立した、デンマーク・ノルウェー・スウェーデンの同君連合。",
+"Blue Horde":"ジョチ・ウルス(キプチャク・ハン国)を構成した分国の一つ。ウラル川以東を支配したが、この頃は金帳汗国全体が動揺し弱体化していた。",
+"White Horde":"ジョチ・ウルスを構成した分国の一つ。バトゥの兄オルダの系統がアラル海北方を支配し、14世紀末には金帳汗国の王座も左右した。",
+"Chagatai Khanate":"モンゴル帝国の中央アジア分国。西部はすでにティムールに実質吸収され、東部(モグーリスタン)のみ別に存続していた。",
+"Aragón":"イベリア東部の王国。地中海に進出しシチリア・サルデーニャを支配した。のちカスティーリャと合同しスペイン王国の母体となる。",
+"Sultanate of Delhi":"ティムールの侵入(1398)による荒廃直後で、トゥグルク朝末期の混乱期。まもなくサイイド朝が成立(1414)し再建が図られる。",
+"Ayutthaya":"チャオプラヤ川流域のタイ人王朝。1351年成立。この頃クメール(アンコール朝)を圧迫し、東南アジア大陸部の強国へ成長した。",
+"Sukhothai":"タイ最初期の王朝。最盛期のラームカムヘーン王没後は衰退し、この頃はアユタヤ朝の属国として存続するのみだった。",
 };
 
 var PCOLORS={
@@ -1218,6 +1274,10 @@ function dbl(){if(lt)clearTimeout(lt);lt=setTimeout(updateLabels,150)}
 map.on("zoomend",dbl);map.on("moveend",dbl);
 
 renderPoints();
+//ERA-PANEL-JS
+// ═══ ERA SUMMARY PANEL ═══
+(function(){var c=L.control({position:"topright"});c.onAdd=function(){var d=L.DomUtil.create("div");d.innerHTML="<details class=\"era-pt\" open><summary>▼ 1400年の世界 ― この時代の要点(クリックで開閉)</summary><div class=\"in\"><p><strong>西ヨーロッパ・地中海</strong>：百年戦争(1337-)が続く中、フランスは国王シャルル6世の精神病により混乱。教会大分裂(1378-1417)でローマ・アヴィニョンに教皇が並立し、コンスタンツ公会議(1414-18)まで収拾しない。</p><p><strong>西アジア・イスラーム世界</strong>：ティムールがダマスクス攻略(1400-01)・デリー侵入(1398)を経てアンカラの戦い(1402)でオスマン帝国のバヤジット1世を捕虜とし最大版図を築くが、1405年の死後急速に分裂。オスマン帝国は空位時代(1402-13)へ入る。</p><p><strong>南アジア</strong>：ティムールの侵入でデリー・スルタン朝(トゥグルク朝)は荒廃・弱体化し、まもなくサイイド朝(1414-)へ交代する。北インドの混乱に乗じ、南インドではヒンドゥー国家が独自の発展を続けた。</p><p><strong>東アジア</strong>：明では靖難の役(1399-1402)を経て永楽帝が即位し、まもなく鄭和の南海遠征(1405-)を開始する。朝鮮は李成桂が高麗を倒し朝鮮王朝を建国(1392)したばかり。日本は足利義満が南北朝を合一(1392)し日明貿易を開始した。</p><p><strong>内陸アジア・北方</strong>：モンゴル高原では元朝の後裔(北元)がハン位をめぐり内紛を繰り返し、キプチャク・ハン国(金帳汗国)も分裂含みで弱体化した。中央アジアではティムール帝国がサマルカンドを都に最盛期を迎えている。</p><p><strong>その他(アフリカ・アメリカ・東南アジア)</strong>：西アフリカではマリ帝国が衰退しソンガイ帝国が台頭。ジャワのマジャパヒト王国はハヤム・ウルク王の没後(1389)衰退期へ向かう。メソアメリカではアステカを中心とする三都市同盟の成立(1428頃)が近づいていた。</p></div></details>";L.DomEvent.disableClickPropagation(d);L.DomEvent.disableScrollPropagation(d);if(window.innerWidth<700)d.querySelector("details").removeAttribute("open");return d;};c.addTo(map);})();
+//-ERA-PANEL-JS
 </script>
 </body>
 </html>
