@@ -54,7 +54,16 @@ body{font-family:'Noto Sans JP',sans-serif;background:#080b14;color:#e0dcd6;heig
 .tb{font-size:8px;padding:2px 6px}
 .note p{font-size:8px}
 }
-/*LUX-HDR*/html[data-theme="lux"] .top h1{color:#59452a}html[data-theme="lux"] .top p{color:#6d6353}html[data-theme="lux"] .top a{color:#8b6f4e!important;opacity:.8!important}html[data-theme="lux"] .tb{color:#6d6353;background:rgba(43,36,27,.06)}html[data-theme="lux"] .tb.on{color:#2b241b;border-color:rgba(43,36,27,.3)}html[data-theme="lux"] .cnt{color:#8b6f4e}html[data-theme="lux"] .si{color:#2b241b;border-color:rgba(43,36,27,.25);background:rgba(43,36,27,.04)}html[data-theme="lux"] .si::placeholder{color:#a89a80}html[data-theme="lux"] .leg-toggle{color:#6d6353}/*/LUX-HDR*/</style>
+/*LUX-HDR*/html[data-theme="lux"] .top h1{color:#59452a}html[data-theme="lux"] .top p{color:#6d6353}html[data-theme="lux"] .top a{color:#8b6f4e!important;opacity:.8!important}html[data-theme="lux"] .tb{color:#6d6353;background:rgba(43,36,27,.06)}html[data-theme="lux"] .tb.on{color:#2b241b;border-color:rgba(43,36,27,.3)}html[data-theme="lux"] .cnt{color:#8b6f4e}html[data-theme="lux"] .si{color:#2b241b;border-color:rgba(43,36,27,.25);background:rgba(43,36,27,.04)}html[data-theme="lux"] .si::placeholder{color:#a89a80}html[data-theme="lux"] .leg-toggle{color:#6d6353}/*/LUX-HDR*//*ERA-PANEL-CSS*/
+/* era summary panel */
+.era-pt{background:rgba(8,11,20,.94);border:1px solid rgba(255,255,255,.12);border-radius:8px;color:#e0dcd6;font-family:'Noto Sans JP',sans-serif;max-width:340px;box-shadow:0 8px 32px rgba(0,0,0,.6)}
+.era-pt summary{cursor:pointer;list-style:none;padding:6px 10px;font-size:11px;font-weight:700;color:#c9b99a;user-select:none}
+.era-pt summary::-webkit-details-marker{display:none}
+.era-pt .in{padding:0 10px 8px;font-size:11px;line-height:1.75;max-height:46vh;overflow-y:auto}
+.era-pt .in p{margin:0 0 5px;color:#d0ccc4}
+.era-pt .in strong,html[data-theme="lux"] .era-pt .in strong{color:#e8c888!important;font-weight:700}
+@media(max-width:600px){.era-pt{max-width:240px}.era-pt .in{font-size:10px}}
+/*/ERA-PANEL-CSS*/</style>
 <style id="thThemes">/* =====================================================
    THESAURUS HISTORIAE ― themes.css(LUX固定版)
    生成りの紙 + 墨の本文 + 朱筆(★語) + 金茶の構造色。
@@ -156,7 +165,9 @@ var DESC={
 "Kush":"ナイル川上流のヌビアの王国。エジプト新王国に征服されトトメス3世の属領に。後に独立しエジプトを征服する(前8世紀)。",
 "Olmec":"メソアメリカ最古の文明(前1500〜400年頃)。サン・ロレンソを中心に巨石人頭像を制作。後のマヤ・アステカ文明の母体。",
 "Elam":"中期エラム。バビロニアとの抗争を続ける。前12世紀にシュトルック・ナフンテ1世がカッシートを滅ぼし最盛期を迎える。",
-"Canaan":"地中海東岸の都市国家群(ウガリット・ビュブロス・ティルス等)。フェニキア文字の前身であるアルファベット原型がこの地で生まれる。"
+"Canaan":"地中海東岸の都市国家群(ウガリット・ビュブロス・ティルス等)。フェニキア文字の前身であるアルファベット原型がこの地で生まれる。",
+"Thrace":"バルカン半島東部に住むインド＝ヨーロッパ系トラキア人の居住域。青銅器文化の段階で、後にホメロスやヘロドトスの記述に登場する民族となる。",
+"Illyrians":"バルカン半島西部のアドリア海沿岸に住むインド＝ヨーロッパ系イリュリア人の居住地。後にローマとのイリュリア戦争(前3-2世紀)で服属する。",
 };
 
 var PCOLORS={
@@ -1117,6 +1128,10 @@ function dbl(){if(lt)clearTimeout(lt);lt=setTimeout(updateLabels,150)}
 map.on("zoomend",dbl);map.on("moveend",dbl);
 
 renderPoints();
+//ERA-PANEL-JS
+// ═══ ERA SUMMARY PANEL ═══
+(function(){var c=L.control({position:"topright"});c.onAdd=function(){var d=L.DomUtil.create("div");d.innerHTML="<details class=\"era-pt\" open><summary>▼ 前1500年の世界 ― この時代の要点(クリックで開閉)</summary><div class=\"in\"><p><strong>地中海・エーゲ海</strong>：ギリシア本土ではミケーネ文明が勃興しつつあり、後に線文字Bを用いた宮殿中心の支配体制を築く。小アジアではヒッタイトが台頭しつつあり、後に鉄器使用の先駆者としてオリエントの強国となる。</p><p><strong>西アジア(メソポタミア)</strong>：北メソポタミアではフルリ人のミタンニ王国が馬と戦車の技術で覇権を握り、南メソポタミアではカッシート朝バビロニアが長期安定政権を築いた。東方のエラムはバビロニアと抗争を続けた。</p><p><strong>東地中海沿岸・アフリカ北東部</strong>：エジプトは新王国第18王朝のトトメス3世が積極的な対外遠征を行い、メギドの戦い(前1457)でシリア・パレスチナ(カナン)を制圧して最大版図を築いた。南のヌビアにはクシュ王国がエジプトの属領として存在した。</p><p><strong>南アジア</strong>：インダス文明はすでに衰退・消滅しており、中央アジア方面からアーリヤ人の移動・侵入が進行しつつあった時期にあたる(『リグ・ヴェーダ』の成立はこの後である)。</p><p><strong>東アジア</strong>：中国では商(殷)王朝が黄河流域を支配し、青銅器による高度な文明を築いていた。王権は占いによって正当化され、甲骨文字の使用は後の殷墟時代に始まる。周王朝による交代(前1046年頃)はまだ先のことである。</p><p><strong>その他の地域(アメリカ・バルカン半島)</strong>：メソアメリカでは最古の文明とされるオルメカ文明が興り、後のマヤ・アステカ文明の母体となった。バルカン半島にはインド=ヨーロッパ系のトラキア人・イリュリア人が居住していた。</p></div></details>";L.DomEvent.disableClickPropagation(d);L.DomEvent.disableScrollPropagation(d);if(window.innerWidth<700)d.querySelector("details").removeAttribute("open");return d;};c.addTo(map);})();
+//-ERA-PANEL-JS
 </script>
 </body>
 </html>
