@@ -54,7 +54,16 @@ body{font-family:'Noto Sans JP',sans-serif;background:#080b14;color:#e0dcd6;heig
 .tb{font-size:8px;padding:2px 6px}
 .note p{font-size:8px}
 }
-/*LUX-HDR*/html[data-theme="lux"] .top h1{color:#59452a}html[data-theme="lux"] .top p{color:#6d6353}html[data-theme="lux"] .top a{color:#8b6f4e!important;opacity:.8!important}html[data-theme="lux"] .tb{color:#6d6353;background:rgba(43,36,27,.06)}html[data-theme="lux"] .tb.on{color:#2b241b;border-color:rgba(43,36,27,.3)}html[data-theme="lux"] .cnt{color:#8b6f4e}html[data-theme="lux"] .si{color:#2b241b;border-color:rgba(43,36,27,.25);background:rgba(43,36,27,.04)}html[data-theme="lux"] .si::placeholder{color:#a89a80}html[data-theme="lux"] .leg-toggle{color:#6d6353}/*/LUX-HDR*/</style>
+/*LUX-HDR*/html[data-theme="lux"] .top h1{color:#59452a}html[data-theme="lux"] .top p{color:#6d6353}html[data-theme="lux"] .top a{color:#8b6f4e!important;opacity:.8!important}html[data-theme="lux"] .tb{color:#6d6353;background:rgba(43,36,27,.06)}html[data-theme="lux"] .tb.on{color:#2b241b;border-color:rgba(43,36,27,.3)}html[data-theme="lux"] .cnt{color:#8b6f4e}html[data-theme="lux"] .si{color:#2b241b;border-color:rgba(43,36,27,.25);background:rgba(43,36,27,.04)}html[data-theme="lux"] .si::placeholder{color:#a89a80}html[data-theme="lux"] .leg-toggle{color:#6d6353}/*/LUX-HDR*//*ERA-PANEL-CSS*/
+/* era summary panel */
+.era-pt{background:rgba(8,11,20,.94);border:1px solid rgba(255,255,255,.12);border-radius:8px;color:#e0dcd6;font-family:'Noto Sans JP',sans-serif;max-width:340px;box-shadow:0 8px 32px rgba(0,0,0,.6)}
+.era-pt summary{cursor:pointer;list-style:none;padding:6px 10px;font-size:11px;font-weight:700;color:#c9b99a;user-select:none}
+.era-pt summary::-webkit-details-marker{display:none}
+.era-pt .in{padding:0 10px 8px;font-size:11px;line-height:1.75;max-height:46vh;overflow-y:auto}
+.era-pt .in p{margin:0 0 5px;color:#d0ccc4}
+.era-pt .in strong,html[data-theme="lux"] .era-pt .in strong{color:#e8c888!important;font-weight:700}
+@media(max-width:600px){.era-pt{max-width:240px}.era-pt .in{font-size:10px}}
+/*/ERA-PANEL-CSS*/</style>
 <style id="thThemes">/* =====================================================
    THESAURUS HISTORIAE ― themes.css(LUX固定版)
    生成りの紙 + 墨の本文 + 朱筆(★語) + 金茶の構造色。
@@ -226,7 +235,59 @@ var DESC={
 "Holy Roman Empire":"ルドルフ1世(ハプスブルク朝初代)。大空位時代(1254-73)を終結させ、オーストリアを獲得。",
 "Sultanate of Delhi":"バルバン。モンゴルの侵攻を撃退し北インドを防衛。強固な中央集権国家を確立。",
 "Mali":"マンサ・ムーサへの途上。西アフリカ最大の黄金帝国として発展中。",
-"Venice":"東地中海貿易の覇者。コンスタンティノープル再陥落後もビザンツと協力関係を再構築。"
+"Venice":"東地中海貿易の覇者。コンスタンティノープル再陥落後もビザンツと協力関係を再構築。",
+"Madagascar":"マダガスカル沿岸にはアフリカ・アラビア半島と交易するイスラーム商人が来航していたが、内陸に統一王権はまだなく諸部族社会が並存していた。",
+"Portugal":"アフォンソ3世が1249年のアルガルヴェ征服でレコンキスタを完了し現在の国境を確定させた。1279年に子のディニス1世へ王位を譲った。",
+"Sardinia":"在地のジュディカーティ(小王国)は衰退し、海洋都市ピサとジェノヴァが島内の港湾・鉱山の権益をめぐって抗争を続けていた。",
+"Hainan":"南宋滅亡(1279年、崖山の戦い)に伴い元の統治下に入った島。古来、王朝から要人が流された辺境の地としても知られる。",
+"Sinhalese kingdom":"南インド勢力の圧迫で北部の都を放棄し、ヤーパフワなどへ遷都を重ねた時期。仏歯を保持し王権の正統性を示した。",
+"Teutonic Knights":"北方十字軍の主体としてプロイセンをほぼ征服し(完成は1283年)、バルト海沿岸で異教徒への十字軍と東方植民を進めた騎士修道会領。",
+"Navarre":"1274年にエンリケ1世が没し幼い女子フアナ1世が即位。後継をめぐりフランス・アラゴン・カスティーリャが介入する係争地となった。",
+"Benin":"ナイジェリア南部のエド人による王国。初期の王朝段階にあたり、後の壮麗なブロンズ美術で知られる時代(15世紀以降)以前にあたる。",
+"Bornu-Kanem":"チャド湖畔のイスラーム国家。サイフ朝のもとサハラ縦断交易で栄えたカネム王国の段階で、後代に都をボルヌーへ移す以前にあたる。",
+"Yemen":"ラスール朝が支配。アイユーブ朝から自立した王朝で、紅海とインド洋を結ぶ交易の要衝として繁栄していた。",
+"Maya city-states":"古典期の衰退後、後古典期にはユカタン半島北部でマヤパンが盟主となる都市国家群として存続していた。",
+"Chimú Empire":"ペルー北岸のチムー文化。都チャン・チャンを中心に勢力を広げつつあった時期で、後にインカに滅ぼされる(1470年頃)以前の拡大期にあたる。",
+"Merinides":"アルモハド朝を倒しフェスを都に成立したベルベル系王朝。イベリア半島に介入しグラナダを支援してカスティーリャと戦った。",
+"Abdelouadides":"トレムセンを都に建国されたベルベル系王朝。マリーン朝・ハフス朝とともにアルモハド朝分裂後のマグリブ三王朝の一つとして鼎立した。",
+"Ethiopia":"1270年頃、イクノ・アムラクがザグウェ朝を倒しソロモン朝を復興。ソロモン・シバの女王の血統を称し王権の正統性を主張した。",
+"Great Zimbabwe":"ショナ人の石造都市遺跡。金や象牙の交易で栄え、この頃から壮大な石造建築(グレート・エンクロージャー)の造営が進んだ。",
+"Muscat":"オマーンの港市。イバード派を奉じる地元勢力のもと、ペルシア湾とインド洋を結ぶ交易の中継地として栄えた。",
+"Islamic city-states":"キルワなどスワヒリ海岸の港市群。金や象牙をインド洋交易網で扱い、モスク建設などイスラーム文化が根付いていた。",
+"Pandya state":"南インドの王朝。この頃チョーラ朝を圧倒して衰退させ、南インド最大の勢力として最盛期を迎えていた。",
+"minor Hindu kingdoms":"ホイサラ朝・カーカティーヤ朝などデカン高原の諸王朝。デリー・スルタン朝の南下以前、独自に繁栄を保っていた。",
+"Pagan":"ナラティーハパテ王のもと繁栄したが、1277年の元との緒戦に敗れ北方領土を失った。本格的侵攻(1283年)前の緊張期にあたる。",
+"Đại Việt":"陳朝が統治するベトナムの王朝国家。1258年の元の侵攻を撃退しており、この頃陳仁宗が即位し次なる元の侵攻に備えた。",
+"Khmer Empire":"アンコールを都に繁栄したが、ジャヤヴァルマン7世の没後は最盛期を過ぎ、西方でスコータイ朝が自立するなど衰退へ向かっていた。",
+"Champa":"インドシナ半島東岸のチャム人国家。元から服属要求を受けており、まもなく始まる元軍の遠征(1283年)を控えた緊張期にあった。",
+"Tibet":"サキャ派の指導者パクパが元の帝師となり、仏教を介した間接統治のもとでチベットは元の影響下に置かれていた。",
+"Kashmir and Ladakh":"カシミールは衰退期のヒンドゥー王朝が統治し、イスラーム化(14世紀)以前の時期。ラダックはチベット仏教文化圏の王国であった。",
+"Chagatai Khanate":"チンギス・カンの子チャガタイの系統が中央アジアを支配。この頃はカイドゥと結んでフビライの元と抗争を続けていた。",
+"Poland":"ピアスト朝の分裂で多数の公国に分立した状態が続く。1241年のモンゴル襲来(レグニツァの戦い)も経験し、再統一は14世紀を待つ。",
+"Lithuania":"トライデニス大公のもとドイツ騎士団やルーシ諸公国と抗争しつつ勢力を広げた、ヨーロッパ最後の異教国家の一つ。",
+"Bulgar Khanate":"モンゴル(金帳汗国)の圧迫と内紛が続き、1277年には農民反乱の指導者イヴァイロが皇帝に即位するなど混乱期にあった。",
+"Novgorod":"都市共和政ヴェーチェが実権を握る自治都市国家。モンゴルの直接破壊は免れたが金帳汗国に貢納し、ハンザ貿易で繁栄した。",
+"Serbia":"ネマニッチ朝のステファン・ドラグティン王のもと勢力を広げつつあった王国。後の最盛期(14世紀のドゥシャン帝)以前の発展期にあたる。",
+"Papal States":"教皇ニコラウス3世のもと中部イタリアの領国支配を固め、シチリア王シャルル・ダンジューと神聖ローマ皇帝の間で均衡を図った。",
+"Sicily":"アンジュー家のシャルル1世が統治。ホーエンシュタウフェン家を破り獲得したが重税で民心は離れ、まもなく反乱(シチリアの晩鐘、1282年)を招く。",
+"Hungary":"「クン人王」ラースロー4世が統治。母方のクマン人との関係を背景に、貴族勢力の台頭で王権が動揺していた時期。",
+"Granada":"ナスル朝のムハンマド2世が統治。イベリア半島最後のイスラーム王朝として、カスティーリャへの朝貢とマリーン朝の支援の間で均衡を保った。",
+"Castile":"「賢王」アルフォンソ10世が統治。法典編纂や学芸奨励で知られるが、1275年の王太子急死で王位継承問題が深刻化していた。",
+"Hafsid Caliphate":"アルモハド朝から自立したイフリーキヤ(チュニジア)の王朝。1270年にはルイ9世の十字軍(第8回)の標的ともなった。",
+"Trebizond":"コムネノス朝が黒海沿岸に築いた小帝国。1261年のニカイアによるコンスタンティノープル奪還後も独立を保ち、モンゴルとの通交で存続した。",
+"Georgia":"1240年代よりモンゴルに服属し貢納を課された王国。イル・ハン国の宗主権のもとで分裂・弱体化が進んでいた。",
+"Aceh":"北スマトラの港市国家群。1267年建国のサムドラ・パサイなど、東南アジア最古級のイスラーム政権がこの地域に成立しつつあった。",
+"Kediri":"旧クディリ王国の地。1222年にケン・アロクの興したシンガサリ朝に併合され、この頃はクルタナガラ王のもとジャワ制覇が進められていた。",
+"Sukhothai":"1238年の建国から約40年、この頃ラームカムヘーン王が即位。まもなく領域を拡大し、タイ文字創製(1283年)など独自文化を築く画期を迎える。",
+"Scotland":"アレクサンダー3世が統治する安定期。1286年の突然の死後に生じる王位継承危機とイングランドとの対立の前の平和な時代であった。",
+"English territory":"エドワード1世が統治。1277年の第1次ウェールズ戦争でリュウェリンを屈服させ、王権を強化しつつ議会制度の基盤を築きつつあった。",
+"Denmark":"エーリク5世が統治。貴族勢力の伸張により王権が制約を受けつつあり、これ以降貴族との対立が続く不安定な時代であった。",
+"Brittany":"ジャン1世公が統治。フランス王の封臣でありながら高い自治を保ち、経済的にはイングランドとの羊毛貿易などで結び付いていた。",
+"Sweden":"マグヌス3世(ラドゥロース)が統治。貴族に免税特権を与える代わりに軍事奉仕を求める封建的制度を整え、王権基盤を固めつつあった。",
+"Seljuk Caliphate":"アナトリアのセルジューク朝はイル・ハン国の属国と化し実権を失い、辺境では後のオスマン朝に連なるトルコ系君侯国が台頭し始めていた。",
+"Aragón":"ペドロ3世が統治。ホーエンシュタウフェン家出身の王妃コンスタンサを通じてシチリア王位請求権を持ち、地中海進出を図っていた。",
+"Norway":"「法改良王」マグヌス6世が統治。1274年制定の国法など法典整備を進め、ノルウェー中世王権の最盛期を築いた。",
+"Byzantine Empire":"ミカエル8世パレオロゴス帝が統治。1261年の奪還後、シャルル・ダンジューの脅威に対抗すべく1274年のリヨン教会合同を進め国内の反発を招いた。",
 };
 
 var PCOLORS={
@@ -1223,6 +1284,10 @@ function dbl(){if(lt)clearTimeout(lt);lt=setTimeout(updateLabels,150)}
 map.on("zoomend",dbl);map.on("moveend",dbl);
 
 renderPoints();
+//ERA-PANEL-JS
+// ═══ ERA SUMMARY PANEL ═══
+(function(){var c=L.control({position:"topright"});c.onAdd=function(){var d=L.DomUtil.create("div");d.innerHTML="<details class=\"era-pt\" open><summary>▼ 1279年の世界 ― この時代の要点(クリックで開閉)</summary><div class=\"in\"><p><strong>西ヨーロッパ・地中海</strong>：フランスはフィリップ3世のもとカペー朝が勢力を広げ、神聖ローマ帝国はハプスブルク家のルドルフ1世が大空位時代を終えた。地中海ではアンジュー家のシチリア支配への反発が高まり、まもなくシチリアの晩鐘(1282年)を招くことになる。</p><p><strong>西アジア・イスラーム世界</strong>：モンゴルのフラグ・ウルス(イル・ハン国)がイランを支配し、アイン・ジャールートの戦い(1260年)でマムルーク朝に敗れた後は、エジプトのマムルーク朝と東地中海で対峙する構図が続いていた。</p><p><strong>南アジア</strong>：デリー・スルタン朝はバルバンのもとでモンゴルの侵入を撃退して北インドの支配を固め、南インドではパーンディヤ朝がチョーラ朝を圧倒して最盛期を迎えていた。</p><p><strong>東アジア</strong>：フビライ・カンは1279年、崖山の戦いで南宋を滅ぼして中国全土を統一し、モンゴル帝国最大の版図を築いた。日本では鎌倉幕府の北条時宗が元寇への備えを進めていた。</p><p><strong>内陸・北方ユーラシア</strong>：モンゴル帝国はチャガタイ・ハン国や金帳汗国(キプチャク・ハン国)などに分立し、オゴデイ家のカイドゥがフビライの元と抗争を続けるなど帝国は事実上分裂していた。</p><p><strong>その他(アフリカ・アメリカ・東南アジア)</strong>：西アフリカではマリ帝国が黄金交易で繁栄し、エチオピアでは1270年頃にソロモン朝が復興した。東南アジアではスコータイ朝やスマトラの初期イスラーム政権が興り、中米ではマヤ都市国家群がユカタンで存続していた。</p></div></details>";L.DomEvent.disableClickPropagation(d);L.DomEvent.disableScrollPropagation(d);if(window.innerWidth<700)d.querySelector("details").removeAttribute("open");return d;};c.addTo(map);})();
+//-ERA-PANEL-JS
 </script>
 </body>
 </html>
