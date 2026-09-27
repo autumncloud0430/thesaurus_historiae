@@ -54,7 +54,16 @@ body{font-family:'Noto Sans JP',sans-serif;background:#080b14;color:#e0dcd6;heig
 .tb{font-size:8px;padding:2px 6px}
 .note p{font-size:8px}
 }
-/*LUX-HDR*/html[data-theme="lux"] .top h1{color:#59452a}html[data-theme="lux"] .top p{color:#6d6353}html[data-theme="lux"] .top a{color:#8b6f4e!important;opacity:.8!important}html[data-theme="lux"] .tb{color:#6d6353;background:rgba(43,36,27,.06)}html[data-theme="lux"] .tb.on{color:#2b241b;border-color:rgba(43,36,27,.3)}html[data-theme="lux"] .cnt{color:#8b6f4e}html[data-theme="lux"] .si{color:#2b241b;border-color:rgba(43,36,27,.25);background:rgba(43,36,27,.04)}html[data-theme="lux"] .si::placeholder{color:#a89a80}html[data-theme="lux"] .leg-toggle{color:#6d6353}/*/LUX-HDR*/</style>
+/*LUX-HDR*/html[data-theme="lux"] .top h1{color:#59452a}html[data-theme="lux"] .top p{color:#6d6353}html[data-theme="lux"] .top a{color:#8b6f4e!important;opacity:.8!important}html[data-theme="lux"] .tb{color:#6d6353;background:rgba(43,36,27,.06)}html[data-theme="lux"] .tb.on{color:#2b241b;border-color:rgba(43,36,27,.3)}html[data-theme="lux"] .cnt{color:#8b6f4e}html[data-theme="lux"] .si{color:#2b241b;border-color:rgba(43,36,27,.25);background:rgba(43,36,27,.04)}html[data-theme="lux"] .si::placeholder{color:#a89a80}html[data-theme="lux"] .leg-toggle{color:#6d6353}/*/LUX-HDR*//*ERA-PANEL-CSS*/
+/* era summary panel */
+.era-pt{background:rgba(8,11,20,.94);border:1px solid rgba(255,255,255,.12);border-radius:8px;color:#e0dcd6;font-family:'Noto Sans JP',sans-serif;max-width:340px;box-shadow:0 8px 32px rgba(0,0,0,.6)}
+.era-pt summary{cursor:pointer;list-style:none;padding:6px 10px;font-size:11px;font-weight:700;color:#c9b99a;user-select:none}
+.era-pt summary::-webkit-details-marker{display:none}
+.era-pt .in{padding:0 10px 8px;font-size:11px;line-height:1.75;max-height:46vh;overflow-y:auto}
+.era-pt .in p{margin:0 0 5px;color:#d0ccc4}
+.era-pt .in strong,html[data-theme="lux"] .era-pt .in strong{color:#e8c888!important;font-weight:700}
+@media(max-width:600px){.era-pt{max-width:240px}.era-pt .in{font-size:10px}}
+/*/ERA-PANEL-CSS*/</style>
 <style id="thThemes">/* =====================================================
    THESAURUS HISTORIAE ― themes.css(LUX固定版)
    生成りの紙 + 墨の本文 + 朱筆(★語) + 金茶の構造色。
@@ -168,7 +177,27 @@ var DESC={
 "Jin":"司馬炎(武帝)が三国を統一(280)した直後の短命統一期。八王の乱(291-306)が間もなく始まり分裂へ向かう。",
 "Han Zhao":"匈奴系劉淵が建国した前趙。洛陽を陥落させ(311)西晋を滅亡させる(316)まであと十数年。五胡十六国時代の先駆け。",
 "Axum":"エザナ王の時代へ向かう(4世紀)。キリスト教国家化・メロエ王国征服を経て全盛期を迎える。",
-"Koguryo":"朝鮮半島北部の強国。美川王の時代。楽浪郡を滅ぼし(313)朝鮮半島から漢の影響力を一掃。"
+"Koguryo":"朝鮮半島北部の強国。美川王の時代。楽浪郡を滅ぼし(313)朝鮮半島から漢の影響力を一掃。",
+"Meroe":"ナイル中流域のクシュ人の国家。製鉄で栄えたが交易路の衰退で国力は衰え、300年頃は末期にあたり、まもなくアクスム王国に滅ぼされる。",
+"Saka Kingdom":"中央アジア起源の遊牧イラン系サカ人が北西インドに建てた王国群。西クシャトラパとして西インドに残存し、後にグプタ朝に併合される。",
+"Satavahana":"デカン高原に興ったアーンドラ系の王朝。海上交易で栄えたが3世紀前半に滅亡し、300年頃はイクシュヴァーク朝など後継諸勢力が分立する時代であった。",
+"Himyarite Kingdom":"南アラビア(イエメン)の王国。300年頃までにサバア王国などを併合し、乳香交易路を支配して南アラビアの統一王朝となっていた。",
+"Armenia":"アルサケス朝の分家が統治するアルメニア王国。ティリダテス3世のもとで、まもなく世界初のキリスト教国教化(301年頃)を迎える。",
+"Hainan":"中国南方の島。前漢以来中国王朝の郡県支配下にあり、300年頃は西晋の統治下。黎族など先住民が住み、中原からは辺境とみなされた。",
+"Simhala":"セイロン島(スリランカ)のシンハラ人の王国。アヌラーダプラを都とし、上座部仏教を奉じてインド洋交易にも関与した。",
+"Maya chiefdoms and states":"中米ユカタン半島のマヤ文明。300年頃は古典期の幕開けで、ティカルなど都市国家群が台頭し、独自の暦法と神殿建築を発達させていく。",
+"Moche":"ペルー北部海岸のアンデス文明の地域文化。精巧な土器と太陽のワカなど日干し煉瓦の神殿建築で知られ、300年頃は最盛期にあたる。",
+"Kalinga":"インド東部沿岸の地域勢力。前3世紀にアショーカ王の遠征で服属した地として知られ、300年頃はグプタ朝台頭前の独立諸勢力の一つ。",
+"Hindu kingdoms":"北インドに割拠する複数のヒンドゥー系地方王国群。マガダ地方でグプタ朝が台頭する直前の分裂状況を示す。",
+"Rome (Maximian)":"ディオクレティアヌスの四帝統治(テトラルキア)における西の正帝。イタリア・アフリカを統治し、ミラノを拠点とした。",
+"Rome (Galerius)":"四帝統治における東の副帝(カエサル)。バルカン半島(イリュリクム)を統治し、後にキリスト教徒迫害を主導する。",
+"Rome (Diocletianus)":"四帝統治を創始した東の正帝。ニコメディアを拠点に帝国再建を進め、後にキリスト教徒への大迫害(303年-)を行う。",
+"Teotihuacán":"メキシコ高原の巨大都市文明。太陽・月のピラミッドで知られ、300年頃は古典期の絶頂に向かい中米最大級の都市として繁栄した。",
+"Nazca":"ペルー南部海岸のアンデス文明の地域文化。モチェ文化と同時期に栄え、地上絵と精巧な彩色土器で知られる。",
+"Empire of Ghana":"西アフリカでサハラ交易により後に栄える黒人王国。建国は7世紀頃とされ、300年時点はソニンケ人による国家形成以前の段階にあたる。",
+"Gaya":"朝鮮半島南部の小国連合。鉄の産地として知られ倭・百済と交流したが、統一王権を持たぬまま後に新羅に併合される。",
+"Paekche":"朝鮮半島南西部の国。馬韓の地から興り、300年頃は近肖古王の時代へ向けて国家体制を整えつつあり、後に高句麗と抗争する。",
+"Silla":"朝鮮半島南東部の国。辰韓の地から興り、300年頃はなお小国連合的な段階にあったが、後に加耶・百済と並ぶ三国の一つとなる。",
 };
 
 var PCOLORS={
@@ -1137,6 +1166,10 @@ function dbl(){if(lt)clearTimeout(lt);lt=setTimeout(updateLabels,150)}
 map.on("zoomend",dbl);map.on("moveend",dbl);
 
 renderPoints();
+//ERA-PANEL-JS
+// ═══ ERA SUMMARY PANEL ═══
+(function(){var c=L.control({position:"topright"});c.onAdd=function(){var d=L.DomUtil.create("div");d.innerHTML="<details class=\"era-pt\" open><summary>▼ 300年の世界 ― この時代の要点(クリックで開閉)</summary><div class=\"in\"><p><strong>地中海世界</strong>：ディオクレティアヌス帝が四帝統治(テトラルキア、293年-)を開始し、広大なローマ帝国を東西南北に分割して統治。軍人皇帝時代の混乱を収拾し、専制君主政(ドミナトゥス)へと移行しつつあった。</p><p><strong>西アジア</strong>：サーサーン朝ペルシアはナルセス1世からホルミズド2世の治世に入り、ゾロアスター教を国教としてローマと抗争を続けた。南アラビアではヒムヤル王国がサバア王国を併合し統一を進めた。</p><p><strong>南アジア</strong>：北インドではマガダ地方でグプタ朝が台頭しつつあり(建国320年頃)、南インドでは3世紀前半にサータヴァーハナ朝が滅亡し、デカンは地方政権の分立期にあった。</p><p><strong>東アジア</strong>：中国は西晋が三国を統一(280年)した直後の平和期にあったが、まもなく八王の乱(291-306)が起こり分裂へ向かう。朝鮮半島では高句麗が楽浪郡を滅ぼし(313年)漢の勢力を一掃し、百済・新羅・加耶も台頭しつつあった。</p><p><strong>内陸・北方</strong>：匈奴系の劉淵が漢趙(前趙)を建て、まもなく洛陽を陥落させ(311年)、長安も落として西晋を滅ぼす(316年)など、五胡十六国時代の幕開けを告げた。モンゴル高原や中央アジアでは遊牧諸族の再編が進んでいた。</p><p><strong>その他(アフリカ・アメリカ)</strong>：アフリカではメロエ王国が衰退期に入る一方、アクスム王国が台頭した。中米ではテオティワカンとマヤ文明が古典期の繁栄へ向かい、アンデスではモチェ・ナスカ両文化が最盛期を迎えていた。</p></div></details>";L.DomEvent.disableClickPropagation(d);L.DomEvent.disableScrollPropagation(d);if(window.innerWidth<700)d.querySelector("details").removeAttribute("open");return d;};c.addTo(map);})();
+//-ERA-PANEL-JS
 </script>
 </body>
 </html>
