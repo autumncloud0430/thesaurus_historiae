@@ -54,7 +54,16 @@ body{font-family:'Noto Sans JP',sans-serif;background:#080b14;color:#e0dcd6;heig
 .tb{font-size:8px;padding:2px 6px}
 .note p{font-size:8px}
 }
-/*LUX-HDR*/html[data-theme="lux"] .top h1{color:#59452a}html[data-theme="lux"] .top p{color:#6d6353}html[data-theme="lux"] .top a{color:#8b6f4e!important;opacity:.8!important}html[data-theme="lux"] .tb{color:#6d6353;background:rgba(43,36,27,.06)}html[data-theme="lux"] .tb.on{color:#2b241b;border-color:rgba(43,36,27,.3)}html[data-theme="lux"] .cnt{color:#8b6f4e}html[data-theme="lux"] .si{color:#2b241b;border-color:rgba(43,36,27,.25);background:rgba(43,36,27,.04)}html[data-theme="lux"] .si::placeholder{color:#a89a80}html[data-theme="lux"] .leg-toggle{color:#6d6353}/*/LUX-HDR*/</style>
+/*LUX-HDR*/html[data-theme="lux"] .top h1{color:#59452a}html[data-theme="lux"] .top p{color:#6d6353}html[data-theme="lux"] .top a{color:#8b6f4e!important;opacity:.8!important}html[data-theme="lux"] .tb{color:#6d6353;background:rgba(43,36,27,.06)}html[data-theme="lux"] .tb.on{color:#2b241b;border-color:rgba(43,36,27,.3)}html[data-theme="lux"] .cnt{color:#8b6f4e}html[data-theme="lux"] .si{color:#2b241b;border-color:rgba(43,36,27,.25);background:rgba(43,36,27,.04)}html[data-theme="lux"] .si::placeholder{color:#a89a80}html[data-theme="lux"] .leg-toggle{color:#6d6353}/*/LUX-HDR*//*ERA-PANEL-CSS*/
+/* era summary panel */
+.era-pt{background:rgba(8,11,20,.94);border:1px solid rgba(255,255,255,.12);border-radius:8px;color:#e0dcd6;font-family:'Noto Sans JP',sans-serif;max-width:340px;box-shadow:0 8px 32px rgba(0,0,0,.6)}
+.era-pt summary{cursor:pointer;list-style:none;padding:6px 10px;font-size:11px;font-weight:700;color:#c9b99a;user-select:none}
+.era-pt summary::-webkit-details-marker{display:none}
+.era-pt .in{padding:0 10px 8px;font-size:11px;line-height:1.75;max-height:46vh;overflow-y:auto}
+.era-pt .in p{margin:0 0 5px;color:#d0ccc4}
+.era-pt .in strong,html[data-theme="lux"] .era-pt .in strong{color:#e8c888!important;font-weight:700}
+@media(max-width:600px){.era-pt{max-width:240px}.era-pt .in{font-size:10px}}
+/*/ERA-PANEL-CSS*/</style>
 <style id="thThemes">/* =====================================================
    THESAURUS HISTORIAE ― themes.css(LUX固定版)
    生成りの紙 + 墨の本文 + 朱筆(★語) + 金茶の構造色。
@@ -174,7 +183,21 @@ var DESC={
 "Bactria":"ギリシア系バクトリア王国(大夏)の全盛期。ディオドトス朝→エウテュデモス朝。後に月氏に滅ぼされるがインド・ギリシア王国を形成。",
 "Ptolemaic Kingdom":"プトレマイオス5世の幼少期。大臣たちによる統治。ロゼッタ・ストーン(前196)が制作される時代。ローマの圧力が増大。",
 "Carthage":"第二次ポエニ戦争(前218-201)でハンニバルが善戦するも最終的に敗北。領土と艦隊を失い賠償金を課される。第三次ポエニ戦争(前149-146)での滅亡に向かう。",
-"Pergamon":"エウメネス1世。ガラテア人の侵入を撃退。小アジアで強大化。ローマと同盟してセレウコス朝・マケドニアに対抗。"
+"Pergamon":"エウメネス1世。ガラテア人の侵入を撃退。小アジアで強大化。ローマと同盟してセレウコス朝・マケドニアに対抗。",
+"Simhala":"スリランカ北部に成立したシンハラ人の王国。都はアヌラーダプラ。前3世紀頃アショーカ王の子マヒンダにより仏教が伝来し、仏教国家として発展しつつある。",
+"Meroe":"ナイル上流のクシュ王国。都は前6世紀以来メロエに置かれ、製鉄業や独自のメロエ文字を用いる文明として栄えていた。",
+"Parthia":"イラン高原の遊牧イラン系国家。アルサケス朝がセレウコス朝から自立し勢力を広げつつある時期で、後にミトリダテス1世のもとで大帝国に発展する。",
+"Nabatean Kingdom":"アラビア半島北西部の隊商都市国家。都ペトラを拠点に香料交易で繁栄し、地中海世界との関係を強めつつあった。",
+"Saba":"アラビア半島南西部(イエメン)の古王国。都マアリブを拠点にマアリブダムの灌漑で栄え、乳香交易路の要衝として繁栄した。",
+"Min-Yue":"秦末の混乱に乗じて自立した越系の国。前202年頃、漢の高祖により閩越王に封じられ、現在の福建省にあたる地域を支配した。",
+"Nan-Yue":"秦の官吏であった趙佗が秦末の混乱に乗じて建てた国。広東・広西からベトナム北部を支配し、独立した王として君臨していた。",
+"Bosporan Kingdom":"黒海北岸のクリミア半島を中心とするギリシア人植民市の連合国家。スパルトコス朝のもとで穀物交易により繁栄した。",
+"Mauretania":"北アフリカ西部(現モロッコ)のベルベル人王国。ヌミディアと並ぶ地域勢力として自立を保ち、後にローマの影響を強めていく。",
+"Yuezhi":"甘粛回廊一帯で活動した遊牧民族。この頃はまだ勢力を保つが、匈奴の冒頓単于の攻撃を受けて圧迫され、後に大月氏として西方へ移動する。",
+"Scythians":"黒海北方の草原地帯で活動したイラン系遊牧民。前4世紀頃が全盛期で、この頃は東方から進出したサルマタイ人に圧迫され衰退期に入っている。",
+"Arakan":"ベンガル湾に面したラカイン地方(現ミャンマー西部)の古代王国。インドと東南アジアを結ぶ交易路上に位置し、早くからインド文化の影響を受けたとされる。",
+"Monte Albán":"メキシコ南部オアハカ盆地に成立したサポテカ人の都市国家。中心地モンテ・アルバンでは独自の文字体系や暦法を持つ都市文明が形成されつつあった。",
+"Maya chiefdoms and states":"ユカタン半島を中心に成立したマヤ人の都市国家群。先古典期後期にあたり、エル・ミラドールなど巨大な神殿都市が繁栄していた。",
 };
 
 var PCOLORS={
@@ -1139,6 +1162,10 @@ function dbl(){if(lt)clearTimeout(lt);lt=setTimeout(updateLabels,150)}
 map.on("zoomend",dbl);map.on("moveend",dbl);
 
 renderPoints();
+//ERA-PANEL-JS
+// ═══ ERA SUMMARY PANEL ═══
+(function(){var c=L.control({position:"topright"});c.onAdd=function(){var d=L.DomUtil.create("div");d.innerHTML="<details class=\"era-pt\" open><summary>▼ 前200年の世界 ― この時代の要点(クリックで開閉)</summary><div class=\"in\"><p><strong>地中海世界</strong>：ザマの戦い(前202)で第二次ポエニ戦争が終結し、ローマがカルタゴを屈服させた。ローマは第二次マケドニア戦争(前200年開始)でフィリッポス5世と衝突し、地中海の覇権国家への道を歩み始める。</p><p><strong>西アジア</strong>：セレウコス朝はアンティオコス3世(大王)のもとで東方遠征を行い一時勢力を回復したが、後にローマとの戦いで衰退へ向かう。新興のパルティアが自立を強め、アラビアではナバテア王国が隊商交易で繁栄した。</p><p><strong>南アジア</strong>：マウリヤ朝はアショーカ王の死後急速に分裂・衰退し、まもなくシュンガ朝に取って代わられる。西北インドではギリシア系のバクトリア王国が全盛期を迎え、スリランカでは仏教を受容したシンハラ王国が発展した。</p><p><strong>東アジア</strong>：劉邦(高祖)が項羽を破り漢を建国(前202)したが、白登山の戦い(前200)で匈奴の冒頓単于に敗れ和親策をとった。南方では閩越が漢に服属する一方、南越の趙佗は独立王として君臨していた。</p><p><strong>内陸・北方ユーラシア</strong>：モンゴル高原では冒頓単于のもとで匈奴が最盛期を迎え、月氏を圧迫して西方へ追いやりつつあった。黒海北方ではスキタイがサルマタイの進出を受けて衰退期に入っている。</p><p><strong>アフリカ・アメリカ</strong>：ナイル上流ではクシュ王国が都をメロエに置き製鉄などで栄え、北アフリカではヌミディア・マウレタニアなどベルベル人の王国が勢力を持った。中南米ではサポテカ人やマヤ人の都市文明が形成されつつあった。</p></div></details>";L.DomEvent.disableClickPropagation(d);L.DomEvent.disableScrollPropagation(d);if(window.innerWidth<700)d.querySelector("details").removeAttribute("open");return d;};c.addTo(map);})();
+//-ERA-PANEL-JS
 </script>
 </body>
 </html>
