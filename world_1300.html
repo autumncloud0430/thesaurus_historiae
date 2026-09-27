@@ -54,7 +54,16 @@ body{font-family:'Noto Sans JP',sans-serif;background:#080b14;color:#e0dcd6;heig
 .tb{font-size:8px;padding:2px 6px}
 .note p{font-size:8px}
 }
-/*LUX-HDR*/html[data-theme="lux"] .top h1{color:#59452a}html[data-theme="lux"] .top p{color:#6d6353}html[data-theme="lux"] .top a{color:#8b6f4e!important;opacity:.8!important}html[data-theme="lux"] .tb{color:#6d6353;background:rgba(43,36,27,.06)}html[data-theme="lux"] .tb.on{color:#2b241b;border-color:rgba(43,36,27,.3)}html[data-theme="lux"] .cnt{color:#8b6f4e}html[data-theme="lux"] .si{color:#2b241b;border-color:rgba(43,36,27,.25);background:rgba(43,36,27,.04)}html[data-theme="lux"] .si::placeholder{color:#a89a80}html[data-theme="lux"] .leg-toggle{color:#6d6353}/*/LUX-HDR*/</style>
+/*LUX-HDR*/html[data-theme="lux"] .top h1{color:#59452a}html[data-theme="lux"] .top p{color:#6d6353}html[data-theme="lux"] .top a{color:#8b6f4e!important;opacity:.8!important}html[data-theme="lux"] .tb{color:#6d6353;background:rgba(43,36,27,.06)}html[data-theme="lux"] .tb.on{color:#2b241b;border-color:rgba(43,36,27,.3)}html[data-theme="lux"] .cnt{color:#8b6f4e}html[data-theme="lux"] .si{color:#2b241b;border-color:rgba(43,36,27,.25);background:rgba(43,36,27,.04)}html[data-theme="lux"] .si::placeholder{color:#a89a80}html[data-theme="lux"] .leg-toggle{color:#6d6353}/*/LUX-HDR*//*ERA-PANEL-CSS*/
+/* era summary panel */
+.era-pt{background:rgba(8,11,20,.94);border:1px solid rgba(255,255,255,.12);border-radius:8px;color:#e0dcd6;font-family:'Noto Sans JP',sans-serif;max-width:340px;box-shadow:0 8px 32px rgba(0,0,0,.6)}
+.era-pt summary{cursor:pointer;list-style:none;padding:6px 10px;font-size:11px;font-weight:700;color:#c9b99a;user-select:none}
+.era-pt summary::-webkit-details-marker{display:none}
+.era-pt .in{padding:0 10px 8px;font-size:11px;line-height:1.75;max-height:46vh;overflow-y:auto}
+.era-pt .in p{margin:0 0 5px;color:#d0ccc4}
+.era-pt .in strong,html[data-theme="lux"] .era-pt .in strong{color:#e8c888!important;font-weight:700}
+@media(max-width:600px){.era-pt{max-width:240px}.era-pt .in{font-size:10px}}
+/*/ERA-PANEL-CSS*/</style>
 <style id="thThemes">/* =====================================================
    THESAURUS HISTORIAE ― themes.css(LUX固定版)
    生成りの紙 + 墨の本文 + 朱筆(★語) + 金茶の構造色。
@@ -234,7 +243,53 @@ var DESC={
 "Shogun Japan (Kamakura)":"北条氏の専制体制(得宗専制)。後醍醐天皇との対立・鎌倉幕府滅亡(1333)まであと30年。",
 "Portugal":"ディニス1世(農夫王)。農業・海事・文化の発展。大学創設(1290)。レコンキスタ後の安定期。",
 "Byzantine Empire":"パライオロゴス朝アンドロニコス2世。モンゴル・オスマンの圧力が増す。帝国は縮小の一途。",
-"Khmer Empire":"ジャヤヴァルマン8世の末期。タイのスコータイ・アユタヤに圧迫される。衰退の始まり。"
+"Khmer Empire":"ジャヤヴァルマン8世の末期。タイのスコータイ・アユタヤに圧迫される。衰退の始まり。",
+"Madagascar":"マレー系とアフリカ系の混血住民が住む島。稲作農耕と牧畜が中心で、まだ統一王国はなく複数の首長制社会が分立する段階にあった。",
+"Norway":"ヴァイキングの後継国家。アイスランド・グリーンランドを支配下に置く北海の王国。14世紀後半のカルマル同盟成立前の独立王国期。",
+"Sardinia":"地中海の要衝。ピサ・ジェノヴァの勢力争いの舞台となり、まもなくアラゴン王国が進出して領有を争うことになる島。",
+"Hainan":"元朝の統治下にある南海の島。宋代以来、流刑地・海上交易の中継地として利用された、中国南方の辺境地域。",
+"Sinhalese kingdom":"スリランカの仏教王国。北方からのタミル勢力の圧迫を受け、都を転々としながら仏教文化を守り続けた。",
+"Teutonic Knights":"北方十字軍を通じプロイセンを征服したドイツ騎士修道会領。バルト海沿岸の異教徒改宗と植民を進め、後の東方植民の中心となった。",
+"Navarre":"ピレネー山中のバスク系王国。1284年よりフランス王家との同君連合下にあり、この時期はフィリップ4世が王を兼ねた。",
+"Benin":"西アフリカ、ニジェール川下流域のエド人の王国。オバと呼ばれる王を中心に都市国家を形成し、後にブロンズ美術で知られる。",
+"Bornu-Kanem":"チャド湖畔のイスラーム国家。サハラ縦断交易路の要衝を押さえ、奴隷・象牙・岩塩の交易で繁栄した黒人イスラーム王国。",
+"Yemen":"ラスール朝が統治するアラビア半島南端の地。紅海・インド洋交易の要衝として栄え、独自のイスラーム文化を育んだ。",
+"Maya city-states":"中央アメリカ、ユカタン半島のマヤ文明。古典期崩壊後も後古典期の都市国家群(マヤパンなど)が存続し、交易と信仰の中心であり続けた。",
+"Chimú Empire":"アンデス北部海岸のチムー文化。灌漑農業と金属工芸に優れ、都チャンチャンを中心に勢力を拡大しつつあった。後にインカに征服される。",
+"Morocco":"ベルベル系マリーン朝が支配する北西アフリカ。ムワッヒド朝を倒して成立し、イベリア半島のイスラーム勢力(グラナダ)を支援した。",
+"Ethiopia":"1270年イクノ・アムラクが創始したソロモン朝キリスト教帝国。周辺のイスラーム勢力と対峙しつつエチオピア高原の統一を進めた。",
+"Great Zimbabwe":"南部アフリカ内陸の石造都市遺跡を中心とするショナ人の国家。金・象牙をインド洋交易網に供給し、この頃最盛期を迎えた。",
+"Muscat":"オマーン、ペルシア湾口の港市。インド洋と紅海・地中海を結ぶ中継貿易で栄え、香料や馬の取引で知られた。",
+"Islamic city-states":"キルワなどスワヒリ海岸のイスラーム化した港市群。金・象牙・奴隷をインド洋交易網に供給し、この頃最盛期を迎えていた。",
+"Pandya state":"南インド、タミル地方の王朝。13世紀後半に最盛期を迎えたが、まもなくデリー・スルタン朝の南インド遠征を受け衰退へ向かう。",
+"minor Hindu kingdoms":"デリー・スルタン朝の支配が及ばない中南部インドに割拠する複数のヒンドゥー教諸侯国。地方文化と信仰を保持し続けた。",
+"Pagan":"ビルマ(ミャンマー)の仏教王朝。元軍の侵攻(1287年)を受けて弱体化し、地方勢力の台頭で解体へ向かう衰退期にあった。",
+"Đại Việt":"ベトナム北部の陳朝大越国。元(モンゴル)軍の3度の侵攻(13世紀後半)を撃退し、独立を保った。",
+"Champa":"ベトナム中南部のチャム人の海上交易国家。大越・元との抗争を経ながら、インド洋・南シナ海交易で存続した。",
+"Tibet":"仏教サキャ派が元の保護下でチベットを統治する政教一致体制(サキャ・モンゴル体制)。仏教文化が高揚した時代。",
+"Kashmir and Ladakh":"ヒンドゥークシュ・ヒマラヤ山中の地方。カシミールは独自のヒンドゥー・仏教文化を保ち、ラダックはチベット仏教圏に属した。",
+"Chagatai Khanate":"中央アジアの遊牧国家。チンギス・カンの子チャガタイの系統で、この頃トルコ化・イスラーム化が進行しつつあった。",
+"Poland":"諸公国に分裂していたポーランド。1300年ボヘミア王ヴァーツラフ2世が王位を奪い支配下に置くが、亡命中のヴワディスワフ1世が1320年に王として復権し統一を果たす。",
+"Bulgar Khanate":"スラヴ系の帝国。13世紀後半にモンゴル(金帳汗国)の圧力で衰退したが、この頃テオドア・スヴェトスラフのもとで一時的に勢力を回復した。",
+"Novgorod":"北ロシアの商業都市共和国。ヴェーチェ(市民会議)による自治とハンザ商業網との交易で栄え、金帳汗国への服属下でも自治を保った。",
+"Papal States":"ボニファティウス8世が統治する教皇領。1300年に最初の聖年(ジュビリー)を宣言。まもなくフランス王と対立しアヴィニョン捕囚(1309-)へ向かう。",
+"Sicily":"シチリア晩祷(1282)後、アンジュー家はナポリを中心とする南イタリアを支配。シチリア島本土はアラゴン家が領有し対立が続いた。",
+"Hungary":"アールパード朝末期のハンガリー王国。1301年に王統が断絶し、アンジュー家のカーロイ1世を迎える王位継承の混乱期にあった。",
+"Castile":"イベリア半島中央部のレコンキスタの中核国家。フェルナンド4世の治世で、グラナダなど残存イスラーム勢力との攻防を続けた。",
+"Hafsid Caliphate":"北アフリカ、チュニジアを中心とするベルベル系イスラーム王朝。ムワッヒド朝の後継として地中海交易で繁栄した。",
+"Trebizond":"黒海南岸のギリシア系国家。第4回十字軍によるコンスタンティノープル陥落(1204)を機にコムネノス家が建国し、東西交易で栄えた。",
+"Seljuk Caliphate":"アナトリアのトルコ系イスラーム王朝。モンゴルの侵攻(1243年)以降イル・ハン国に服属し弱体化、地方のトルコ系君侯国の台頭を招いた末期。",
+"Georgia":"コーカサスのキリスト教王国。13世紀にモンゴルに服属したが、この頃イル・ハン国の混乱に乗じて自立の動きを強めた。",
+"Khanate of the Golden Horde":"南ロシア・キプチャク草原を支配するモンゴル系遊牧国家。ロシア諸公国から貢納を取り、この頃トクタが治めイスラーム化が進んだ。",
+"Aceh":"スマトラ島北端の港市国家。1267年頃成立のサムドラ・パサイ王国に始まる東南アジア最古のイスラーム政権で、香辛料交易で栄えた。",
+"Kediri":"ジャワ島東部の旧クディリ王国の地。1222年にシンガサリ朝に滅ぼされ、1293年成立のマジャパヒト王国へと継承された。",
+"minor Hindu and Buddhist kingdoms":"スマトラ・ジャワ以外の島々に割拠するヒンドゥー教・仏教系の諸小国。マジャパヒトなど大国の影響下で独自の文化を保持した。",
+"Sukhothai":"タイ系初の統一王朝。ラームカムヘン大王(在位13世紀末)の全盛期を過ぎ、この頃から徐々に衰退へ向かった。",
+"Scotland":"イングランドのエドワード1世の征服に対し、ウィリアム・ウォレスらが蜂起。ロバート・ブルースの独立戦争(1306-)を控えた抵抗の時代。",
+"Brittany":"フランス北西部のケルト系公国。フランス王権に臣従しつつも独自の自治を保つ、半独立的な諸侯領。",
+"Denmark":"北海・バルト海に勢力を張るデンマーク王国。エーリク6世のもとハンザ都市や北ドイツ諸侯との抗争を繰り広げた。",
+"Sweden":"フォルクング朝が統治するスウェーデン王国。ビルイェル王のもとで王権強化を図るも、後に兄弟間の内紛(1310年代)を招いた。",
+"Aragón":"イベリア半島東部の王国。地中海進出を進め、シチリア・サルデーニャの領有権を巡ってアンジュー家やジェノヴァと争った。",
 };
 
 var PCOLORS={
@@ -1231,6 +1286,10 @@ function dbl(){if(lt)clearTimeout(lt);lt=setTimeout(updateLabels,150)}
 map.on("zoomend",dbl);map.on("moveend",dbl);
 
 renderPoints();
+//ERA-PANEL-JS
+// ═══ ERA SUMMARY PANEL ═══
+(function(){var c=L.control({position:"topright"});c.onAdd=function(){var d=L.DomUtil.create("div");d.innerHTML="<details class=\"era-pt\" open><summary>▼ 1300年の世界 ― この時代の要点(クリックで開閉)</summary><div class=\"in\"><p><strong>西ヨーロッパ/地中海</strong>：フランス王フィリップ4世(美王)が教皇ボニファティウス8世と対立(アナーニ事件1303)、教皇はまもなくアヴィニョン捕囚(1309-)へ。シチリア晩祷(1282)後、地中海はアンジュー家とアラゴン家の抗争の舞台となった。</p><p><strong>西アジア・イスラーム</strong>：イル・ハン国のガザン・カンがイスラームに改宗(1295)し統治を安定させる一方、マムルーク朝はモンゴル軍を撃退(1303年マルジュ・アッサファルの戦い)しシリア・エジプトの支配を確保した。</p><p><strong>南アジア</strong>：デリー・スルタン朝はハルジー朝のアラー・ウッディーンのもとで北インドを固め、モンゴルの度重なる侵攻を撃退しつつあった。南インド遠征による最大版図の実現は1308年以降に控えていた。南方のパーンディヤ朝は最盛期を過ぎつつあった。</p><p><strong>東アジア</strong>：元はフビライ没後(1294)の成宗テムルの治世で安定期を迎え、マルコ・ポーロが帰国した時代。日本では鎌倉幕府の北条氏得宗専制が続き、元寇後の御家人の窮乏が幕府滅亡(1333)への遠因となった。</p><p><strong>内陸・北方</strong>：モンゴル帝国はチャガタイ・ハン国、金帳汗国、イル・ハン国に分立。金帳汗国支配下でモスクワ大公国が建国(1283)され自立の芽が生まれ、リトアニア大公国も急速に勢力を拡大した。</p><p><strong>その他(アフリカ・アメリカ・東南アジア)</strong>：西アフリカではマリ帝国が黄金交易で繁栄しマンサ・ムーサ登場前夜を迎え、東南アジアでは大越・チャンパ・スコータイが割拠。アメリカ大陸ではマヤ後古典期の都市国家群やアンデスのチムー文化が発展した。</p></div></details>";L.DomEvent.disableClickPropagation(d);L.DomEvent.disableScrollPropagation(d);if(window.innerWidth<700)d.querySelector("details").removeAttribute("open");return d;};c.addTo(map);})();
+//-ERA-PANEL-JS
 </script>
 </body>
 </html>
