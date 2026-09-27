@@ -54,7 +54,16 @@ body{font-family:'Noto Sans JP',sans-serif;background:#080b14;color:#e0dcd6;heig
 .tb{font-size:8px;padding:2px 6px}
 .note p{font-size:8px}
 }
-/*LUX-HDR*/html[data-theme="lux"] .top h1{color:#59452a}html[data-theme="lux"] .top p{color:#6d6353}html[data-theme="lux"] .top a{color:#8b6f4e!important;opacity:.8!important}html[data-theme="lux"] .tb{color:#6d6353;background:rgba(43,36,27,.06)}html[data-theme="lux"] .tb.on{color:#2b241b;border-color:rgba(43,36,27,.3)}html[data-theme="lux"] .cnt{color:#8b6f4e}html[data-theme="lux"] .si{color:#2b241b;border-color:rgba(43,36,27,.25);background:rgba(43,36,27,.04)}html[data-theme="lux"] .si::placeholder{color:#a89a80}html[data-theme="lux"] .leg-toggle{color:#6d6353}/*/LUX-HDR*/</style>
+/*LUX-HDR*/html[data-theme="lux"] .top h1{color:#59452a}html[data-theme="lux"] .top p{color:#6d6353}html[data-theme="lux"] .top a{color:#8b6f4e!important;opacity:.8!important}html[data-theme="lux"] .tb{color:#6d6353;background:rgba(43,36,27,.06)}html[data-theme="lux"] .tb.on{color:#2b241b;border-color:rgba(43,36,27,.3)}html[data-theme="lux"] .cnt{color:#8b6f4e}html[data-theme="lux"] .si{color:#2b241b;border-color:rgba(43,36,27,.25);background:rgba(43,36,27,.04)}html[data-theme="lux"] .si::placeholder{color:#a89a80}html[data-theme="lux"] .leg-toggle{color:#6d6353}/*/LUX-HDR*//*ERA-PANEL-CSS*/
+/* era summary panel */
+.era-pt{background:rgba(8,11,20,.94);border:1px solid rgba(255,255,255,.12);border-radius:8px;color:#e0dcd6;font-family:'Noto Sans JP',sans-serif;max-width:340px;box-shadow:0 8px 32px rgba(0,0,0,.6)}
+.era-pt summary{cursor:pointer;list-style:none;padding:6px 10px;font-size:11px;font-weight:700;color:#c9b99a;user-select:none}
+.era-pt summary::-webkit-details-marker{display:none}
+.era-pt .in{padding:0 10px 8px;font-size:11px;line-height:1.75;max-height:46vh;overflow-y:auto}
+.era-pt .in p{margin:0 0 5px;color:#d0ccc4}
+.era-pt .in strong,html[data-theme="lux"] .era-pt .in strong{color:#e8c888!important;font-weight:700}
+@media(max-width:600px){.era-pt{max-width:240px}.era-pt .in{font-size:10px}}
+/*/ERA-PANEL-CSS*/</style>
 <style id="thThemes">/* =====================================================
    THESAURUS HISTORIAE ― themes.css(LUX固定版)
    生成りの紙 + 墨の本文 + 朱筆(★語) + 金茶の構造色。
@@ -164,7 +173,23 @@ var DESC={
 "Kushan Empire":"カニシカ1世の最盛期(127-150頃)を過ぎた後。仏教の中央アジア・中国伝播の担い手。シルクロード交易で繁栄。",
 "Koguryo":"朝鮮半島北部と満州に拡大する強国。高句麗・百済・新羅の三国鼎立が形成されつつある。",
 "Axum":"アフリカの角・アラビア半島南部を結ぶ海洋交易国家の台頭期。象牙・金の輸出。後にキリスト教を国教化(4世紀)。",
-"Teotihuacán":"メキシコ盆地で急速に拡大する大都市。太陽のピラミッドが建設中。マヤ・サポテカに強い影響力を持つ。"
+"Teotihuacán":"メキシコ盆地で急速に拡大する大都市。太陽のピラミッドが建設中。マヤ・サポテカに強い影響力を持つ。",
+"Meroe":"ナイル中流のクシュ王国の都。鉄器生産とローマとの交易で繁栄したが、200年頃はアクスム王国の台頭により衰退期に入りつつあった。",
+"Satavahana":"デカン高原を支配したドラヴィダ系王朝。南インド遠征やローマとの季節風貿易で栄え、200年頃は最盛期を過ぎ諸侯の自立化が進みつつあった。",
+"Himyarite Kingdom":"アラビア半島南部イエメンの王国。乳香・没薬の交易で栄え、200年頃はサバ王国と抗争しつつ勢力を拡大していた(後にイエメンを統一)。",
+"Hainan":"南海に浮かぶ島。前漢の郡は前1世紀に放棄され、200年頃は後漢の直接統治下になかったが、中国南方の海上交易路の要衝で真珠・香料の産地として知られた。",
+"Simhala":"スリランカ(セイロン島)の仏教王国アヌラーダプラ朝。インド洋交易の中継地として栄え、南伝仏教(上座部仏教)の中心地の一つであった。",
+"Maya chiefdoms and states":"ユカタン半島からグアテマラ高地に分立するマヤ系都市国家群。統一王朝は持たず、独自の文字と暦を発達させ、ティカルなど都市の台頭が始まっていた。",
+"Moche":"ペルー北部海岸で栄えた文化。ワカ・デル・ソルなど日干しレンガのピラミッドを築き、精巧な土器や金属加工技術で知られる灌漑農耕社会であった。",
+"Kalinga":"インド東海岸の王国。前3世紀にアショーカ王に征服された地として知られ、その後独立を回復し海上交易で栄えたとされる。",
+"Chola":"南インド・タミル地方の王朝。チェーラ朝・パーンディヤ朝と並ぶ古代タミル三王朝の一つで、東西交易(ローマとの季節風貿易)で栄えた。",
+"Armenia":"コーカサス地方の王国。ローマとパルティアの緩衝国として争奪の的となり、200年頃はパルティア系のアルサケス朝が王位にあった。",
+"Bosporian Kingdom":"黒海北岸クリミアのギリシア人植民市を起源とする王国。ローマの属国として穀物交易を担い、遊牧民サルマタイの文化的影響を強く受けた。",
+"Southern Xiongnu":"後漢に服属し長城以南に定住した匈奴の一派。北匈奴が西方へ去った後も勢力を保ち、後漢の衰退に伴い自立の動きを強めていた。",
+"Gaya":"朝鮮半島南部の小国連合。統一王権は持たず、鉄の産地として倭・新羅・百済と交易しつつ、後に新羅に併合されていく途上にあった。",
+"Silla":"朝鮮半島南東部の辰韓に興った国。200年頃はなお小国のひとつに過ぎないが、後に高句麗・百済と並ぶ三国の一つへと成長していく。",
+"Nazca":"ペルー南部海岸で栄えた文化。多彩な文様の土器や巨大な地上絵(ナスカの地上絵)で知られ、灌漑農業を基盤とする社会を築いた。",
+"Paekche":"朝鮮半島南西部の馬韓に興った国。200年頃はなお小国段階だが、後に高句麗・新羅と並ぶ三国の一つとして発展していく。",
 };
 
 var PCOLORS={
@@ -1133,6 +1158,10 @@ function dbl(){if(lt)clearTimeout(lt);lt=setTimeout(updateLabels,150)}
 map.on("zoomend",dbl);map.on("moveend",dbl);
 
 renderPoints();
+//ERA-PANEL-JS
+// ═══ ERA SUMMARY PANEL ═══
+(function(){var c=L.control({position:"topright"});c.onAdd=function(){var d=L.DomUtil.create("div");d.innerHTML="<details class=\"era-pt\" open><summary>▼ 200年の世界 ― この時代の要点(クリックで開閉)</summary><div class=\"in\"><p><strong>地中海世界</strong>：ローマ帝国はセウェルス朝のもとで広大な領土を維持するが、まもなく軍人皇帝時代の混乱に向かう。212年にはカラカラ帝勅令により全属州民にローマ市民権が与えられた。</p><p><strong>西アジア</strong>：パルティア(アルサケス朝)はローマとの長年の抗争で疲弊し、224年にアルダシール1世のサーサーン朝に滅ぼされる直前であった。アラビア半島南部ではサバ王国とヒムヤル王国が交易の覇権を争っていた。</p><p><strong>南アジア</strong>：クシャーナ朝はカニシカ王の最盛期を過ぎ、デカンのサータヴァーハナ朝も衰退期に入った。南端ではチェーラ・チョーラ・パーンディヤの古代タミル三王朝がローマとの季節風貿易で栄えた。</p><p><strong>東アジア</strong>：後漢は黄巾の乱後の混乱が続き、まもなく曹操・劉備・孫権が割拠する三国時代(220年-)を迎える。朝鮮半島では高句麗が勢力を広げ、南部で新羅・百済・加耶が形成されつつあった。</p><p><strong>内陸・北方</strong>：モンゴル高原以北では北匈奴が西走した後の草原情勢が流動化し、長城以南に定住した南匈奴は後漢の衰退に伴い自立の動きを強めていた。</p><p><strong>その他地域</strong>：アフリカ東岸ではアクスム王国が台頭する一方、メロエ王国は交易路の変化で衰退期に入った。中南米ではテオティワカンが急拡大し、マヤ・サポテカ・モチェ・ナスカなど諸文化がそれぞれ独自に発展していた。</p></div></details>";L.DomEvent.disableClickPropagation(d);L.DomEvent.disableScrollPropagation(d);if(window.innerWidth<700)d.querySelector("details").removeAttribute("open");return d;};c.addTo(map);})();
+//-ERA-PANEL-JS
 </script>
 </body>
 </html>
