@@ -54,7 +54,16 @@ body{font-family:'Noto Sans JP',sans-serif;background:#080b14;color:#e0dcd6;heig
 .tb{font-size:8px;padding:2px 6px}
 .note p{font-size:8px}
 }
-/*LUX-HDR*/html[data-theme="lux"] .top h1{color:#59452a}html[data-theme="lux"] .top p{color:#6d6353}html[data-theme="lux"] .top a{color:#8b6f4e!important;opacity:.8!important}html[data-theme="lux"] .tb{color:#6d6353;background:rgba(43,36,27,.06)}html[data-theme="lux"] .tb.on{color:#2b241b;border-color:rgba(43,36,27,.3)}html[data-theme="lux"] .cnt{color:#8b6f4e}html[data-theme="lux"] .si{color:#2b241b;border-color:rgba(43,36,27,.25);background:rgba(43,36,27,.04)}html[data-theme="lux"] .si::placeholder{color:#a89a80}html[data-theme="lux"] .leg-toggle{color:#6d6353}/*/LUX-HDR*/</style>
+/*LUX-HDR*/html[data-theme="lux"] .top h1{color:#59452a}html[data-theme="lux"] .top p{color:#6d6353}html[data-theme="lux"] .top a{color:#8b6f4e!important;opacity:.8!important}html[data-theme="lux"] .tb{color:#6d6353;background:rgba(43,36,27,.06)}html[data-theme="lux"] .tb.on{color:#2b241b;border-color:rgba(43,36,27,.3)}html[data-theme="lux"] .cnt{color:#8b6f4e}html[data-theme="lux"] .si{color:#2b241b;border-color:rgba(43,36,27,.25);background:rgba(43,36,27,.04)}html[data-theme="lux"] .si::placeholder{color:#a89a80}html[data-theme="lux"] .leg-toggle{color:#6d6353}/*/LUX-HDR*//*ERA-PANEL-CSS*/
+/* era summary panel */
+.era-pt{background:rgba(8,11,20,.94);border:1px solid rgba(255,255,255,.12);border-radius:8px;color:#e0dcd6;font-family:'Noto Sans JP',sans-serif;max-width:340px;box-shadow:0 8px 32px rgba(0,0,0,.6)}
+.era-pt summary{cursor:pointer;list-style:none;padding:6px 10px;font-size:11px;font-weight:700;color:#c9b99a;user-select:none}
+.era-pt summary::-webkit-details-marker{display:none}
+.era-pt .in{padding:0 10px 8px;font-size:11px;line-height:1.75;max-height:46vh;overflow-y:auto}
+.era-pt .in p{margin:0 0 5px;color:#d0ccc4}
+.era-pt .in strong,html[data-theme="lux"] .era-pt .in strong{color:#e8c888!important;font-weight:700}
+@media(max-width:600px){.era-pt{max-width:240px}.era-pt .in{font-size:10px}}
+/*/ERA-PANEL-CSS*/</style>
 <style id="thThemes">/* =====================================================
    THESAURUS HISTORIAE ― themes.css(LUX固定版)
    生成りの紙 + 墨の本文 + 朱筆(★語) + 金茶の構造色。
@@ -136,12 +145,11 @@ var CAPS={
 // ═══ DESCRIPTIONS ═══
 var DESC={
 "Sumerian city-states":"世界最古の都市文明。楔形文字(前3400年頃)・車輪・灌漑農業を発明。ウルク・ウル・ラガシュ・エリドゥなどが競合。ジッグラト(聖塔)を中心とした神殿国家。",
-"Ur":"シュメールの主要都市国家。ウル第1王朝(前2600年頃)がこの後に最盛期を迎える。「ウルの王名表」に残る最古の王朝群の一つ。",
+"Ur":"シュメールの主要都市国家。ウル第1王朝(前2600年頃)がこの後に最盛期を迎える。「シュメール王名表」に残る最古の王朝群の一つ。",
 "Egypt":"メネス(ナルメル)王が上下エジプトを統一(前3100年頃)した直後の初期王朝期。メンフィスを首都に。ヒエログリフが確立しつつある。",
 "Elam":"現在のイラン南西部。スーサを中心とする原エラム文明期。シュメールと交易・競合し独自の文字(原エラム文字)を持つ。",
 "Indus valley civilization":"インダス川流域で都市文明が芽生えつつある初期段階。ハラッパー・モヘンジョ＝ダロが本格化するのは前2600年頃から。計画的な都市設計と排水システムが特徴。",
 "Minoan":"エーゲ海クレタ島の初期青銅器文明。前3000年頃から集落が発展。後の宮殿文明(前2000年頃〜)の礎。",
-"Norte Chico":"ペルー海岸のノルテ・チコ文明。アメリカ大陸最古の文明の一つ(前3000年頃〜)。神殿・灌漑農業を持つが文字は未発達。"
 };
 
 var PCOLORS={
@@ -1102,6 +1110,10 @@ function dbl(){if(lt)clearTimeout(lt);lt=setTimeout(updateLabels,150)}
 map.on("zoomend",dbl);map.on("moveend",dbl);
 
 renderPoints();
+//ERA-PANEL-JS
+// ═══ ERA SUMMARY PANEL ═══
+(function(){var c=L.control({position:"topright"});c.onAdd=function(){var d=L.DomUtil.create("div");d.innerHTML="<details class=\"era-pt\" open><summary>▼ 前3000年の世界 ― この時代の要点(クリックで開閉)</summary><div class=\"in\"><p><strong>地中海・エーゲ海</strong>：エーゲ海のクレタ島やギリシア本土では新石器時代末期から小規模な集落が発達し、後のミノア文明成立の基盤となる。西ヨーロッパでは巨石文化が盛んで、ブリテン島のストーンヘンジもこの頃に建設が始まったとされる。文字を持つ国家はまだ現れていない。</p><p><strong>西アジア</strong>：ティグリス・ユーフラテス両河間でシュメール人がウルク・ウル・ラガシュなどの都市国家を形成し、世界最古の文明を築く。楔形文字(前3400年頃)を用い、車輪や灌漑農業も発達。東方のイラン高原ではエラム人がスーサを中心に原エラム文字による独自の文明を営み、シュメールと交易・競合した。</p><p><strong>エジプト</strong>：メネス(ナルメル)王が上下エジプトを統一(前3100年頃)し、初期王朝時代が始まる。都はメンフィスに置かれ、ナイル川の氾濫を利用した灌漑農業と統一王権が結びつき、ヒエログリフ(神聖文字)も確立されつつあった。</p><p><strong>南アジア</strong>：インダス川流域では都市文明形成の先行段階にあたり、集落から都市への移行が進んでいた。計画的な都市設計で知られるハラッパー・モヘンジョ=ダロの本格的な繁栄は前2600年頃以降で、この時点ではまだ準備期にある。</p><p><strong>東アジア</strong>：中国では黄河流域の仰韶文化(彩陶)から竜山文化(黒陶)への移行期にあたり、長江流域でも独自の新石器文化が並立していた。まだ文字や王朝は成立しておらず、後の「三皇五帝」伝説が投影される時代にあたる。</p><p><strong>内陸・北方ユーラシア・その他</strong>：南ロシアの草原地帯ではヤムナ文化などの牧畜民が活動し、インド=ヨーロッパ語族の拡散の起点になったとする説がある。エジプト・メソポタミア・インダスの各文明以外の地域では、なお新石器段階の農耕・牧畜社会が広がっていた。</p></div></details>";L.DomEvent.disableClickPropagation(d);L.DomEvent.disableScrollPropagation(d);if(window.innerWidth<700)d.querySelector("details").removeAttribute("open");return d;};c.addTo(map);})();
+//-ERA-PANEL-JS
 </script>
 </body>
 </html>
