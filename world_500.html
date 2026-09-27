@@ -54,7 +54,16 @@ body{font-family:'Noto Sans JP',sans-serif;background:#080b14;color:#e0dcd6;heig
 .tb{font-size:8px;padding:2px 6px}
 .note p{font-size:8px}
 }
-/*LUX-HDR*/html[data-theme="lux"] .top h1{color:#59452a}html[data-theme="lux"] .top p{color:#6d6353}html[data-theme="lux"] .top a{color:#8b6f4e!important;opacity:.8!important}html[data-theme="lux"] .tb{color:#6d6353;background:rgba(43,36,27,.06)}html[data-theme="lux"] .tb.on{color:#2b241b;border-color:rgba(43,36,27,.3)}html[data-theme="lux"] .cnt{color:#8b6f4e}html[data-theme="lux"] .si{color:#2b241b;border-color:rgba(43,36,27,.25);background:rgba(43,36,27,.04)}html[data-theme="lux"] .si::placeholder{color:#a89a80}html[data-theme="lux"] .leg-toggle{color:#6d6353}/*/LUX-HDR*/</style>
+/*LUX-HDR*/html[data-theme="lux"] .top h1{color:#59452a}html[data-theme="lux"] .top p{color:#6d6353}html[data-theme="lux"] .top a{color:#8b6f4e!important;opacity:.8!important}html[data-theme="lux"] .tb{color:#6d6353;background:rgba(43,36,27,.06)}html[data-theme="lux"] .tb.on{color:#2b241b;border-color:rgba(43,36,27,.3)}html[data-theme="lux"] .cnt{color:#8b6f4e}html[data-theme="lux"] .si{color:#2b241b;border-color:rgba(43,36,27,.25);background:rgba(43,36,27,.04)}html[data-theme="lux"] .si::placeholder{color:#a89a80}html[data-theme="lux"] .leg-toggle{color:#6d6353}/*/LUX-HDR*//*ERA-PANEL-CSS*/
+/* era summary panel */
+.era-pt{background:rgba(8,11,20,.94);border:1px solid rgba(255,255,255,.12);border-radius:8px;color:#e0dcd6;font-family:'Noto Sans JP',sans-serif;max-width:340px;box-shadow:0 8px 32px rgba(0,0,0,.6)}
+.era-pt summary{cursor:pointer;list-style:none;padding:6px 10px;font-size:11px;font-weight:700;color:#c9b99a;user-select:none}
+.era-pt summary::-webkit-details-marker{display:none}
+.era-pt .in{padding:0 10px 8px;font-size:11px;line-height:1.75;max-height:46vh;overflow-y:auto}
+.era-pt .in p{margin:0 0 5px;color:#d0ccc4}
+.era-pt .in strong,html[data-theme="lux"] .era-pt .in strong{color:#e8c888!important;font-weight:700}
+@media(max-width:600px){.era-pt{max-width:240px}.era-pt .in{font-size:10px}}
+/*/ERA-PANEL-CSS*/</style>
 <style id="thThemes">/* =====================================================
    THESAURUS HISTORIAE ― themes.css(LUX固定版)
    生成りの紙 + 墨の本文 + 朱筆(★語) + 金茶の構造色。
@@ -188,7 +197,35 @@ var DESC={
 "Koguryo":"長寿王(413-491)の全盛期後。南下政策で百済・新羅と激しく競合。朝鮮半島の覇権をめぐる三国の争いが激化。",
 "Sasanian Empire":"カワード1世。マズダク教の反乱に悩まされる。ホスロー1世(531-579)の黄金時代への助走期。",
 "Gupta Empire":"スカンダグプタ没後の衰退期。フン族の侵攻で北西部を失いつつある。ナーランダー大学は依然繁栄。",
-"Axum":"エザナ王のキリスト教改宗(4世紀)後。エリトリア・南アラビアまで支配する全盛期。"
+"Axum":"エザナ王のキリスト教改宗(4世紀)後。エリトリア・南アラビアまで支配する全盛期。",
+"Simhala":"スリランカの仏教国家(獅子国)。アヌラーダプラを都に上座部仏教の中心として栄え、東晋の法顕が5世紀初めに訪れ仏典を持ち帰ったことで知られる。",
+"Teotihuacán":"メキシコ高原に栄えたメソアメリカ最大級の都市文明。太陽・月のピラミッドを中心に人口10万規模の巨大都市を築き、最盛期を過ぎてなお周辺地域に強い影響力を保っていた。",
+"Maya states":"ユカタン半島からグアテマラにかけて栄えた古典期マヤ文明の都市国家群。ティカル・コパン・パレンケなど各都市が独自の王朝を持ち、マヤ文字や精密な暦を発達させた。",
+"Paekche":"朝鮮半島南西部の国家。475年に高句麗に漢城を奪われ熊津に遷都し、国力の立て直しを図る時期。まもなく武寧王のもとで中興を迎える。",
+"Silla":"朝鮮半島南東部の国家。高句麗・百済に比べ発展が遅れていたが、6世紀に入り智証王のもとで国号・王号を整え国家体制を強化していく時期。",
+"Moche":"ペルー北部海岸に栄えたアンデスの地域文化。日干し煉瓦のピラミッド(ワカ)を築き、精巧な土器・金属器や灌漑農業で高度な文明を発達させた。",
+"Himyarite Kingdom":"南アラビア(イエメン)に栄えた王国。紅海交易の要衝を支配し、ユダヤ教が広まっていた。まもなくキリスト教国アクスムとの対立が激化していく。",
+"Champa":"インドシナ半島東岸(現ベトナム中南部)のインド化した海洋国家。中国史料では林邑と呼ばれ、ヒンドゥー教を奉じ中国の南朝と朝貢・交易関係を保った。",
+"Vakataka":"デカン高原を支配したヒンドゥー王朝。グプタ朝と婚姻同盟を結び、ハリシェーナ王の時代にアジャンター石窟の造営を後援したが、まもなく衰退に向かう。",
+"Pandyas":"南インドの古代タミル王朝の一つ。前3世紀のアショーカ王碑文にも記録される古い王統で、6世紀頃から勢力を回復し南インドで再び台頭していく。",
+"Ruanruan":"モンゴル高原を支配した遊牧国家。可汗号を初めて用いたとされ、北魏と抗争を繰り返した。6世紀半ば、突厥の台頭により滅ぼされることになる。",
+"Nazca":"ペルー南部の海岸地帯に栄えたアンデスの地域文化。地上に描かれた巨大な地上絵(ナスカの地上絵)や多彩色の土器で知られる。",
+"Empire of Ghana":"西アフリカのニジェール川上流域でソニンケ人が築いた国家。サハラ縦断交易で金と塩を扱い台頭を始めた時期。後にイスラーム勢力と接し交易帝国として繁栄する。",
+"Suebi":"イベリア半島北西部(現ガリシア地方)に建てたゲルマン人の王国。西ゴート王国と並存し、当初はアリウス派を奉じたが後にカトリックへ改宗する。",
+"Basques":"ピレネー山脈周辺に古くから住む系統不明の民族。ローマ化・ゲルマン化を免れ独自の言語と社会を保ち、西ゴート王国の支配にも頑強に抵抗し続けた。",
+"Anglo-Saxons":"ローマ撤退後のブリテン島に大陸から渡来したゲルマン人が建てた諸王国群。先住ケルト系ブリトン人と抗争しつつ、後のヘプターキー(七王国)の基礎を築いた。",
+"Thuringians":"中部ドイツに存在したゲルマン人の王国。フランク王国やザクセン人と境を接し、6世紀前半にクロヴィスの子らによって滅ぼされフランクに併合される。",
+"Ostrogoths":"テオドリック大王がイタリアに建てた東ゴート王国。ラヴェンナを都にローマの制度・文化を保護しつつ統治したが、アリウス派を奉じローマ教会とは一線を画した。",
+"Burgunds":"ローヌ川流域(現フランス東部)に建てたゲルマン人の王国。フランク王国と婚姻関係を結びつつも従属を強められ、6世紀前半にフランクに併合される。",
+"Saxons":"北ドイツに残った大陸のゲルマン人サクソン族。ブリテン島へ渡らなかった一派で独自の部族社会を保ち、後にカール大帝による征服とキリスト教化を受ける。",
+"Vandals":"北アフリカ(旧カルタゴ)を支配したゲルマン人の王国。455年にローマを略奪したことで知られ、地中海の制海権を握る有力な勢力を保っていた。",
+"Swedes":"スカンディナヴィア半島に住むゲルマン系の人々。まだ統一国家を持たず部族社会の段階にあり、後のヴァイキング時代・スウェーデン王国成立の基盤となる。",
+"Cheras":"インド南西部ケーララ地方を支配した古代タミル系王朝。チョーラ・パーンディヤと並ぶ南インドの古い王統で、アショーカ王碑文にもその名が記される。",
+"Cholas":"カーヴェーリ川下流域を支配した南インドの王朝。この時期は勢力を弱めていたが、9世紀以降に勢力を回復し南インド随一の帝国へと発展していく。",
+"Pallavas":"南インド東部を支配したヒンドゥー王朝。カーンチープラムを都に、後にチャールキヤ朝と抗争を繰り広げ、南インドの寺院建築文化を発展させていく。",
+"Jin Empire":"長江流域を支配した南朝の南斉。江南の開発を進め貴族文化・仏教が栄えた。北魏と対峙し南北朝の分立が続く中、まもなく502年に武将蕭衍が禅譲を受け梁を建てる。",
+"Funan":"メコン川下流域に栄えたインド化国家。海上交易で栄え、外港オケオを通じて中国・インドと交流した。中国の史書には扶南として朝貢国に記録される。",
+"Visigoths":"西ゴート王国はガリア南部からイベリア半島にかけて大国を築いていたが、まもなく507年にフランクに敗れ(ヴイエの戦い)、拠点をイベリア半島へ移す。",
 };
 
 var PCOLORS={
@@ -1157,6 +1194,10 @@ function dbl(){if(lt)clearTimeout(lt);lt=setTimeout(updateLabels,150)}
 map.on("zoomend",dbl);map.on("moveend",dbl);
 
 renderPoints();
+//ERA-PANEL-JS
+// ═══ ERA SUMMARY PANEL ═══
+(function(){var c=L.control({position:"topright"});c.onAdd=function(){var d=L.DomUtil.create("div");d.innerHTML="<details class=\"era-pt\" open><summary>▼ 500年の世界 ― この時代の要点(クリックで開閉)</summary><div class=\"in\"><p><strong>西ヨーロッパ・地中海</strong>：476年の西ローマ帝国滅亡後、東ゴート・西ゴート・ヴァンダル・ブルグントなどのゲルマン諸国家が地中海世界に分立した。フランク王国はクロヴィス1世がカトリックに改宗(496)し他のアリウス派諸国と一線を画し、東方ではビザンツ帝国がアナスタシウス1世のもとで財政再建を進めていた。</p><p><strong>西アジア</strong>：ササン朝ペルシアはカワード1世のもとマズダク教徒の社会運動に揺れていたが、まもなくホスロー1世の時代に黄金期を迎える基盤を築きつつあった。紅海方面ではキリスト教国アクスムとユダヤ教が広まるヒムヤル王国が交易の主導権を争っていた。</p><p><strong>南アジア</strong>：グプタ朝はスカンダグプタの死後、フン族(エフタル系)の侵入を受けて弱体化し、北西インドの支配権を失いつつあった。デカン高原のヴァーカータカ朝も衰退に向かう一方、南インドではパッラヴァ・チョーラ・パーンディヤ・チェーラなど諸王朝が並立していた。</p><p><strong>東アジア</strong>：華北では北魏が孝文帝の漢化政策により統治を安定させ、江南では東晋の後を継ぐ南朝が貴族文化を発展させて南北朝の対峙が続いた。朝鮮半島では高句麗の南下に対し百済(熊津)・新羅が抵抗し、日本列島では大和政権のもとで古墳文化が最盛期を迎えていた。</p><p><strong>内陸・北方</strong>：モンゴル高原では柔然が可汗を称して勢力を誇り、北魏と抗争を繰り返した。中央アジアではエフタル(フン族の一派)が強勢となり、グプタ朝やササン朝など南方・西方の大国を脅かしていた。</p><p><strong>その他(アフリカ・アメリカ・東南アジア)</strong>：アフリカでは紅海交易で栄えるアクスム王国が全盛期を迎え、西アフリカではガーナ王国が台頭を始めた。中米ではテオティワカンやマヤの都市国家群が繁栄し、東南アジアではメコン流域の扶南やインドシナのチャンパが中国・インドとの交易で栄えていた。</p></div></details>";L.DomEvent.disableClickPropagation(d);L.DomEvent.disableScrollPropagation(d);if(window.innerWidth<700)d.querySelector("details").removeAttribute("open");return d;};c.addTo(map);})();
+//-ERA-PANEL-JS
 </script>
 </body>
 </html>
