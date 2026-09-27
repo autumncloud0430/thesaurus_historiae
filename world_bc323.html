@@ -54,7 +54,16 @@ body{font-family:'Noto Sans JP',sans-serif;background:#080b14;color:#e0dcd6;heig
 .tb{font-size:8px;padding:2px 6px}
 .note p{font-size:8px}
 }
-/*LUX-HDR*/html[data-theme="lux"] .top h1{color:#59452a}html[data-theme="lux"] .top p{color:#6d6353}html[data-theme="lux"] .top a{color:#8b6f4e!important;opacity:.8!important}html[data-theme="lux"] .tb{color:#6d6353;background:rgba(43,36,27,.06)}html[data-theme="lux"] .tb.on{color:#2b241b;border-color:rgba(43,36,27,.3)}html[data-theme="lux"] .cnt{color:#8b6f4e}html[data-theme="lux"] .si{color:#2b241b;border-color:rgba(43,36,27,.25);background:rgba(43,36,27,.04)}html[data-theme="lux"] .si::placeholder{color:#a89a80}html[data-theme="lux"] .leg-toggle{color:#6d6353}/*/LUX-HDR*/</style>
+/*LUX-HDR*/html[data-theme="lux"] .top h1{color:#59452a}html[data-theme="lux"] .top p{color:#6d6353}html[data-theme="lux"] .top a{color:#8b6f4e!important;opacity:.8!important}html[data-theme="lux"] .tb{color:#6d6353;background:rgba(43,36,27,.06)}html[data-theme="lux"] .tb.on{color:#2b241b;border-color:rgba(43,36,27,.3)}html[data-theme="lux"] .cnt{color:#8b6f4e}html[data-theme="lux"] .si{color:#2b241b;border-color:rgba(43,36,27,.25);background:rgba(43,36,27,.04)}html[data-theme="lux"] .si::placeholder{color:#a89a80}html[data-theme="lux"] .leg-toggle{color:#6d6353}/*/LUX-HDR*//*ERA-PANEL-CSS*/
+/* era summary panel */
+.era-pt{background:rgba(8,11,20,.94);border:1px solid rgba(255,255,255,.12);border-radius:8px;color:#e0dcd6;font-family:'Noto Sans JP',sans-serif;max-width:340px;box-shadow:0 8px 32px rgba(0,0,0,.6)}
+.era-pt summary{cursor:pointer;list-style:none;padding:6px 10px;font-size:11px;font-weight:700;color:#c9b99a;user-select:none}
+.era-pt summary::-webkit-details-marker{display:none}
+.era-pt .in{padding:0 10px 8px;font-size:11px;line-height:1.75;max-height:46vh;overflow-y:auto}
+.era-pt .in p{margin:0 0 5px;color:#d0ccc4}
+.era-pt .in strong,html[data-theme="lux"] .era-pt .in strong{color:#e8c888!important;font-weight:700}
+@media(max-width:600px){.era-pt{max-width:240px}.era-pt .in{font-size:10px}}
+/*/ERA-PANEL-CSS*/</style>
 <style id="thThemes">/* =====================================================
    THESAURUS HISTORIAE ― themes.css(LUX固定版)
    生成りの紙 + 墨の本文 + 朱筆(★語) + 金茶の構造色。
@@ -164,7 +173,16 @@ var DESC={
 "Qin":"商鞅の変法(前356-338)で強大化した秦。戦国七雄の中で最強。始皇帝による中国統一(前221)まで約100年。法家思想に基づく強力な中央集権国家。",
 "Meroe":"クシュ王国のメロエ期。鉄器生産の中心。独自のメロエ文字を使用。エジプト文化を継承しながらサハラ以南との交易で繁栄。",
 "Nabatean Kingdom":"アラビア砂漠の商人王国。岩窟都市ペトラを建設しつつある。乳香・香辛料交易を支配。",
-"Bosporan Kingdom":"クリミア半島の黒海沿岸王国。ギリシア系とスキタイ系が混合した文化。アテネへの穀物輸出で繁栄。"
+"Bosporan Kingdom":"クリミア半島の黒海沿岸王国。ギリシア系とスキタイ系が混合した文化。アテネへの穀物輸出で繁栄。",
+"Hindu kingdoms":"ガンジス川流域や南インドに分立するバラモン教的な諸王国・部族国家群。マガダ国のナンダ朝が強大化する一方、いまだ統一されていない。",
+"Hindu kingdoms and republics":"前326年のアレクサンドロス遠征で抵抗した、パンジャーブ地方などに残る古代インドの部族制共和国(ガナ・サンガ)群。",
+"Yue":"句践のもとで一時覇者となった長江下流域の国。前333年に楚に大敗して以降は衰退し、この頃には沿海部の小勢力に分裂している。",
+"Armenia":"アケメネス朝の元サトラップ(総督)家系オロンテス朝が統治するイラン系の国。ペルシア帝国崩壊後も事実上自立を保つ。のちセレウコス朝の影響下に入る。",
+"Maya chiefdoms and states":"ユカタン半島などにマヤ人が築いた都市文明の首長国群。この頃は先古典期後期にあたり、エル・ミラドールなど大規模都市が台頭しつつあった。",
+"Zhou states":"都は洛邑にあるが周王の権威は名目化している。黄河・長江流域には秦・楚など戦国七雄をはじめ有力諸侯が並び立ち、富国強兵や合従連衡を競う。",
+"Cappadocia":"小アジア中東部の高原地帯を支配するイラン系の国。アケメネス朝の総督家系が自立して成立し、アレクサンドロスの直接征服を免れた。",
+"Simhala":"スリランカ(セイロン島)に成立した古代王国。伝承では始祖ヴィジャヤ王に始まる。都はアヌラーダプラ。仏教伝来(前3世紀)以前の時期にあたる。「獅子国」の意。",
+"Saba":"アラビア半島南部(イエメン)の王国。乳香や香辛料の交易とマアリブ・ダムによる灌漑農業で繁栄し、シバの女王伝説を生んだ。",
 };
 
 var PCOLORS={
@@ -1129,6 +1147,10 @@ function dbl(){if(lt)clearTimeout(lt);lt=setTimeout(updateLabels,150)}
 map.on("zoomend",dbl);map.on("moveend",dbl);
 
 renderPoints();
+//ERA-PANEL-JS
+// ═══ ERA SUMMARY PANEL ═══
+(function(){var c=L.control({position:"topright"});c.onAdd=function(){var d=L.DomUtil.create("div");d.innerHTML="<details class=\"era-pt\" open><summary>▼ 前323年の世界 ― この時代の要点(クリックで開閉)</summary><div class=\"in\"><p><strong>地中海・西ヨーロッパ</strong>：前323年6月、アレクサンドロス大王がバビロンで急死(32歳)。後継者(ディアドコイ)の抗争が始まる一方、ギリシア諸ポリスはマケドニア覇権下で自治を失う。ローマはサムニウム戦争(前343-290)でイタリア半島制圧を進め、西地中海はカルタゴが握る。</p><p><strong>西アジア・イラン高原</strong>：アレクサンドロス帝国の中心地。摂政ペルディッカスが幼王を擁して統治するが、まもなく後継者間の内戦(ディアドコイ戦争)で分裂。旧アケメネス朝の総督家系がアルメニア・カッパドキアなどで自立を強める。</p><p><strong>南アジア</strong>：前326年のアレクサンドロス遠征でパンジャーブ地方に一時侵入されたが、大王は撤退した。マガダ国ではナンダ朝が衰退し、まもなくチャンドラグプタがこれを倒してマウリヤ朝を建てる(前322年頃)、インド統一の前夜にあたる。</p><p><strong>東アジア</strong>：中国は戦国時代のただ中。商鞅の変法(前356-338)で強大化した秦が七雄の中で頭角を現す一方、周王は洛邑で名目的権威を保つのみ。始皇帝による統一(前221)まではなお一世紀を要する。</p><p><strong>内陸アジア・北方</strong>：モンゴル高原や中央アジアの草原地帯は、まだスキタイなど遊牧諸部族が割拠する時代。匈奴が冒頓単于のもとで統一国家を築くのは100年余り後(前209年頃)のことである。</p><p><strong>アフリカ・アメリカ・東南アジア</strong>：ナイル川上流ではクシュ王国がメロエを都に鉄器生産と交易で繁栄。中米ではマヤ人が先古典期後期の都市文明を築き、東南アジアではドンソン文化などの青銅器文化が広がりつつあった。</p></div></details>";L.DomEvent.disableClickPropagation(d);L.DomEvent.disableScrollPropagation(d);if(window.innerWidth<700)d.querySelector("details").removeAttribute("open");return d;};c.addTo(map);})();
+//-ERA-PANEL-JS
 </script>
 </body>
 </html>
