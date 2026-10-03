@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>INDEX ― 全ページ横断検索</title>
+<style>@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+:root{--bg:#05080d;--gold:#c9a96e;--gold2:#e8c888;--gold3:#a08550;--text:#d4cfc6;--text2:#8a857d;--text3:#555048;--line:rgba(var(--axr),.06)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden}
+.top-bar{padding:28px 32px 18px;border-bottom:1px solid var(--line)}
+.top-bar h1{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:700;color:var(--gold2);letter-spacing:3px}
+.top-bar h1 small{font-family:'Noto Serif JP',serif;font-size:13px;font-weight:400;letter-spacing:2px;color:var(--text2);margin-left:14px}
+.meta{display:flex;align-items:center;gap:16px;margin-top:4px}
+.meta a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.55}.meta a:hover{opacity:1}
+.wrap{max-width:880px;margin:0 auto;padding:26px 24px 80px}
+.qbox{position:relative}
+#q{width:100%;font:inherit;font-size:17px;color:var(--text);background:rgba(var(--axr),.05);border:1px solid rgba(var(--axr),.28);border-radius:10px;padding:14px 46px 14px 18px;outline:none;transition:border-color .2s,background .2s}
+#q:focus{border-color:rgba(var(--axr),.6);background:rgba(var(--axr),.08)}
+#clr{position:absolute;right:10px;top:50%;transform:translateY(-50%);border:0;background:none;color:var(--text3);font-size:20px;cursor:pointer;padding:4px 8px;display:none}
+.ex{margin-top:10px;font-size:12px;color:var(--text3);line-height:2}
+.ex a{white-space:nowrap;color:var(--gold);text-decoration:none;border-bottom:1px dotted rgba(var(--axr),.4);margin:0 4px;cursor:pointer}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:18px 0 6px}
+.chip{font:inherit;font-size:12px;color:var(--text2);background:none;border:1px solid var(--line);border-radius:999px;padding:4px 12px;cursor:pointer}
+.chip b{font-weight:600;margin-left:4px;color:var(--gold)}
+.chip.on{background:var(--gold2);border-color:var(--gold2);color:var(--bg)}.chip.on b{color:var(--bg)}
+.chip:disabled{opacity:.35;cursor:default}
+#st{font-size:12px;color:var(--text3);margin:8px 0 14px;min-height:18px}
+.pg{border-top:1px solid var(--line);padding:16px 0 14px}
+.ph{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.fam{font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:2px;color:var(--gold);border:1px solid rgba(var(--axr),.35);border-radius:4px;padding:0 6px;white-space:nowrap}
+.ph a{font-family:'Noto Serif JP',serif;font-size:16px;font-weight:700;color:var(--gold2);text-decoration:none}.ph a:hover{text-decoration:underline}
+.ph .n{font-size:11px;color:var(--text3)}
+.hit{display:block;text-decoration:none;color:var(--text);margin:9px 0 0 2px;padding:6px 10px;border-left:2px solid rgba(var(--axr),.25);border-radius:0 6px 6px 0;font-size:13.5px;line-height:1.85}
+.hit:hover{background:rgba(var(--axr),.07);border-left-color:var(--gold)}
+.hit .h{display:block;font-size:11px;color:var(--text2);letter-spacing:.5px}
+mark{background:rgba(162,51,30,.14);color:var(--shu);font-weight:600;padding:0 1px;border-radius:2px}
+.more{font:inherit;font-size:12px;color:var(--gold);background:none;border:0;cursor:pointer;margin:8px 0 0 12px;padding:2px 0;border-bottom:1px dotted rgba(var(--axr),.5)}
+#moreP{display:block;margin:22px auto 0;font-size:13px}
+.empty{color:var(--text2);font-size:14px;line-height:2;padding:20px 0}
+.note{margin-top:40px;font-size:11.5px;color:var(--text3);line-height:2;border-top:1px solid var(--line);padding-top:14px}
+@media(max-width:640px){.top-bar{padding:20px 16px 14px}.top-bar h1{font-size:26px}.top-bar h1 small{display:block;margin:4px 0 0}.wrap{padding:18px 16px 60px}#q{font-size:16px}.hit{font-size:13px}}
+</style>
+<style id="thThemes">/* =====================================================
+   THESAURUS HISTORIAE ― themes.css(LUX固定版)
+   生成りの紙 + 墨の本文 + 朱筆(★語) + 金茶の構造色。
+   retheme_inject.py が各HTMLに埋め込む。編集後は再実行。
+   ===================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&display=swap');
+
+:root { --axr: 201, 169, 110; --shu: #c9a96e; }
+
+html[data-theme="lux"] {
+  --bg:#f1ecdf;
+  --gold:#8b6f4e; --gold2:#59452a; --gold3:#9c855f;
+  --text:#2b241b; --text2:#6d6353; --text3:#a89a80;
+  --line:rgba(43,36,27,.16); --border:rgba(43,36,27,.16);
+  --gold-dim:rgba(139,111,78,.16);
+  --axr:139,111,78;
+  --shu:#a2331e;
+}
+
+html[data-theme="lux"] body {
+  background:var(--bg);
+  font-family:'Shippori Mincho','Noto Serif JP',serif;
+}
+html[data-theme="lux"] body::before { opacity:.55; }
+html[data-theme="lux"] p { line-height:2.05; }
+html[data-theme="lux"] * { text-shadow:none !important; }
+
+/* 強調の二段化: 通常太字=墨 / ★語=朱 */
+html[data-theme="lux"] strong { color:var(--text) !important; font-weight:600; }
+html[data-theme="lux"] span.k,
+html[data-theme="lux"] span.k + strong,
+html[data-theme="lux"] .node-title .k { color:var(--shu) !important; }
+html[data-theme="lux"] span.k + strong { font-weight:700; }
+html[data-theme="lux"] ::selection { background:rgba(162,51,30,.18); }
+</style><script id="thScript">document.documentElement.setAttribute('data-theme','lux');</script></head>
+<body>
+<div class="top-bar"><h1>INDEX<small>全ページ横断検索</small></h1><div class="meta"><a href="index.html">← Ad Indicem</a></div></div>
+<div class="wrap">
+  <div class="qbox"><input id="q" type="search" autocomplete="off" spellcheck="false" placeholder="用語・人名・地名・年号で検索" aria-label="全ページ横断検索"><button id="clr" aria-label="消去">×</button></div>
+  <div class="ex">例：<a>ナントの王令</a><a>1648</a><a>両税法</a><a>ハンザ同盟</a><a>冊封</a><a>ビスマルク 外交</a></div>
+  <div class="chips" id="chips"></div>
+  <div id="st"></div>
+  <div id="res"></div>
+  <div class="note">通史(ANNALES)・一覧表・国家史・文化史・図表・地図・写真資料の本文をすべて検索します。空白で区切ると、すべての語を含む箇所を探します。「＝」「・」の有無、ひらがなとカタカナ、全角と半角の違いは区別しません。抜粋をクリックすると、そのページの該当箇所に移動します。</div>
+</div>
+<script>
+(function(){
+var FAM=[['ANNALES','通史'],['TABULA','一覧表'],['CIVITATES','国家史'],['CULTURA','文化史'],['CHARTAE','図表'],['MATRIX','同時代表'],['NEXUS','因果網'],['MAPPAE','地図'],['IMAGINES','写真']];
+var FAMJ={};FAM.forEach(function(f){FAMJ[f[0]]=f[1]});
+var FBONUS={ANNALES:40,TABULA:18,CIVITATES:10,CULTURA:10,CHARTAE:6,MATRIX:4,NEXUS:4};
+var D=[],TN=[],SD=[],SH=[],ST=[],SN=[],HN={},loaded=0,total=0,fam='',lastQ=null,showPages=40,openAll={};
+var $q=document.getElementById('q'),$res=document.getElementById('res'),$st=document.getElementById('st'),$chips=document.getElementById('chips'),$clr=document.getElementById('clr');
+var IGN=/[\s　=＝・･·★☆]/g;
+function nz(s){return s.normalize('NFKC').toLowerCase().replace(/[ぁ-ゖ]/g,function(c){return String.fromCharCode(c.charCodeAt(0)+96)}).replace(IGN,'')}
+function nmap(s){var o='',m=[];for(var i=0;i<s.length;i++){var c=s.charAt(i);var cc=s.charCodeAt(i);if(cc>=0xD800&&cc<0xDC00&&i+1<s.length){c=s.substr(i,2)}var n=nz(c);for(var k=0;k<n.length;k++){o+=n.charAt(k);m.push(i)}if(c.length===2)i++}m.push(s.length);return{s:o,m:m}}
+function esc(s){return s.replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+
+/* ---- load ---- */
+fetch('search_idx/manifest.json').then(function(r){return r.json()}).then(function(m){
+  D=m.d;TN=D.map(function(d){return nz(d[1])});total=m.shards.length;status();
+  m.shards.forEach(function(name){
+    fetch('search_idx/'+name).then(function(r){return r.json()}).then(function(x){
+      var hb=x.h;
+      x.s.forEach(function(r){SD.push(r[0]);SH.push(hb[r[1]]);ST.push(r[2]);SN.push(nz(r[2]))});
+      loaded++;lastQ=null;schedule(0);
+    }).catch(function(){loaded++;status('一部の索引を読み込めませんでした。')});
+  });
+}).catch(function(){$st.textContent='索引を読み込めませんでした。時間をおいて再読み込みしてください。'});
+
+var tm=null;function schedule(ms){clearTimeout(tm);tm=setTimeout(run,ms)}
+function status(extra){var s=loaded<total?'索引を読み込み中… '+loaded+'/'+total+'　':'';$st.textContent=s+(extra||'')}
+function hn(h){if(!(h in HN))HN[h]=nz(h);return HN[h]}
+
+/* ---- search ---- */
+var R=null;
+function run(){
+  var raw=$q.value.trim();$clr.style.display=raw?'block':'none';
+  var key=raw+'|'+loaded;if(key===lastQ&&R)return render();lastQ=key;
+  var terms=raw.split(/[\s　]+/).map(nz).filter(Boolean);
+  try{var u=new URL(location.href);if(raw)u.searchParams.set('q',raw);else u.searchParams.delete('q');if(fam)u.searchParams.set('f',fam);else u.searchParams.delete('f');history.replaceState(null,'',u)}catch(e){}
+  if(!terms.length){R=null;$res.innerHTML='';drawChips({});status();return}
+  var full=(1<<terms.length)-1,P={},joined=terms.join('');
+  for(var i=0;i<SN.length;i++){
+    var t=SN[i],mk=0;
+    for(var k=0;k<terms.length;k++)if(t.indexOf(terms[k])>=0)mk|=1<<k;
+    if(!mk)continue;
+    var d=SD[i],p=P[d];if(!p)p=P[d]={d:d,mask:0,segs:[]};
+    p.mask|=mk;p.segs.push([i,mk]);
+  }
+  var out=[];
+  for(var d in P){
+    var p=P[d],tm=0;
+    for(var k=0;k<terms.length;k++)if(TN[d].indexOf(terms[k])>=0)tm|=1<<k;
+    if(((p.mask|tm)&full)!==full)continue;
+    if(p.segs.some(function(s){return s[1]===full}))p.segs=p.segs.filter(function(s){return s[1]===full});
+    var sc=(tm===full&&!/^\d+$/.test(joined)?60:0)+(TN[d]===joined?300:0)+(FBONUS[D[d][2]]||0),nf=0;
+    p.segs.forEach(function(s){
+      var h=hn(SH[s[0]]),w=0,hh=h.slice(h.lastIndexOf('›')+1);
+      if(s[1]===full){w=4;nf++;if(terms.length===1&&(h===terms[0]||hh===terms[0]||hh.indexOf(terms[0])===0&&hh.length<=terms[0].length+6))w+=20;else if(terms.every(function(x){return h.indexOf(x)>=0}))w+=10;var j=SN[s[0]].indexOf(terms[0]);if(j>=0&&j<14)w+=12}
+      else w=1;
+      s.push(w);
+    });
+    p.segs.sort(function(a,b){return b[2]-a[2]||a[0]-b[0]});
+    var top=0;p.segs.slice(0,3).forEach(function(s){top+=s[2]});
+    p.sc=sc+top+Math.min(nf,20)*1.5;p.nf=nf;out.push(p);
+  }
+  out.sort(function(a,b){return b.sc-a.sc||a.d-b.d});
+  R={terms:terms,pages:out};showPages=40;openAll={};render();
+}
+function drawChips(cnt){
+  var all=0;for(var k in cnt)all+=cnt[k];
+  var h='<button class="chip'+(fam===''?' on':'')+'" data-f="">すべて'+(R?'<b>'+all+'</b>':'')+'</button>';
+  FAM.forEach(function(f){var n=cnt[f[0]]||0;h+='<button class="chip'+(fam===f[0]?' on':'')+'" data-f="'+f[0]+'"'+(R&&!n&&fam!==f[0]?' disabled':'')+'>'+f[1]+(R?'<b>'+n+'</b>':'')+'</button>'});
+  $chips.innerHTML=h;
+}
+function snippet(i,terms,mk){
+  var t=ST[i],nm=nmap(t),pos=-1,len=0;
+  for(var k=0;k<terms.length;k++){if(!(mk&(1<<k)))continue;var j=nm.s.indexOf(terms[k]);if(j>=0&&(pos<0||j<pos)){pos=j;len=terms[k].length}}
+  var o0=pos>=0?nm.m[pos]:0,o1=pos>=0?nm.m[pos+len-1]+1:0;
+  var a=Math.max(0,o0-36),b=Math.min(t.length,o0+96);
+  if(a>0){var cut=t.lastIndexOf('。',o0-1);if(cut>=a-30&&cut<o0)a=cut+1}
+  var sl=t.slice(a,b),sm=nmap(sl),marks=[];
+  terms.forEach(function(x){var j=0;while((j=sm.s.indexOf(x,j))>=0){marks.push([sm.m[j],sm.m[j+x.length-1]+1]);j+=x.length}});
+  marks.sort(function(p,q){return p[0]-q[0]});
+  var h='',c=0;marks.forEach(function(r){if(r[0]<c)return;h+=esc(sl.slice(c,r[0]))+'<mark>'+esc(sl.slice(r[0],r[1]))+'</mark>';c=r[1]});
+  h+=esc(sl.slice(c));
+  return{html:(a>0?'…':'')+h+(b<t.length?'…':''),hl:t.slice(o0,o1),ctx:t.slice(Math.max(0,o0-12),Math.min(t.length,o1+12))};
+}
+function link(d,i,sn){
+  var f=D[d][0],u=f+'?hl='+encodeURIComponent(sn.hl||'')+'&c='+encodeURIComponent(sn.ctx||'');
+  var h=SH[i];if(/^world_/.test(f)&&h&&h.indexOf('この時代の要点')!==0)u+='&p='+encodeURIComponent(h);
+  return u;
+}
+function render(){
+  if(!R)return;
+  var cnt={},list=[];
+  R.pages.forEach(function(p){var f=D[p.d][2];cnt[f]=(cnt[f]||0)+1;if(!fam||fam===f)list.push(p)});
+  drawChips(cnt);
+  var nseg=0;list.forEach(function(p){nseg+=p.segs.length});
+  status(list.length?list.length+' ページ・'+nseg+' 箇所':'');
+  if(!list.length){$res.innerHTML='<div class="empty">'+(loaded<total?'検索中…':'該当する箇所はありません。語を短くするか、表記を変えてお試しください。')+'</div>';return}
+  var h='';
+  list.slice(0,showPages).forEach(function(p){
+    var d=D[p.d],lim=openAll[p.d]?30:3,first=null;
+    var hits='';
+    p.segs.slice(0,lim).forEach(function(s){
+      var sn=snippet(s[0],R.terms,s[1]);if(!first)first=link(p.d,s[0],sn);
+      var hd=SH[s[0]];
+      hits+='<a class="hit" href="'+esc(link(p.d,s[0],sn))+'">'+(hd&&hd!==d[1]?'<span class="h">'+esc(hd)+'</span>':'')+sn.html+'</a>';
+    });
+    h+='<div class="pg"><div class="ph"><span class="fam">'+esc(FAMJ[d[2]]||d[2])+'</span><a href="'+esc(first||d[0])+'">'+esc(d[1])+'</a><span class="n">'+p.segs.length+' 箇所</span></div>'+hits;
+    if(p.segs.length>lim)h+=openAll[p.d]?'<div class="ph n" style="margin:8px 0 0 12px">ほか '+(p.segs.length-lim)+' 件はページ内で</div>':'<button class="more" data-d="'+p.d+'">このページの他の '+(Math.min(p.segs.length,30)-lim)+' 件を表示</button>';
+    h+='</div>';
+  });
+  if(list.length>showPages)h+='<button class="more" id="moreP">さらに表示(残り '+(list.length-showPages)+' ページ)</button>';
+  $res.innerHTML=h;
+}
+$res.addEventListener('click',function(e){
+  var b=e.target.closest('.more');if(!b)return;
+  if(b.id==='moreP'){showPages+=40}else{openAll[b.getAttribute('data-d')]=1}
+  render();
+});
+$chips.addEventListener('click',function(e){var b=e.target.closest('.chip');if(!b||b.disabled)return;fam=b.getAttribute('data-f');lastQ=null;run()});
+$q.addEventListener('input',function(){schedule(180)});
+$q.addEventListener('keydown',function(e){if(e.key==='Escape'){$q.value='';run()}if(e.key==='Enter'){schedule(0)}});
+$clr.addEventListener('click',function(){$q.value='';run();$q.focus()});
+document.querySelector('.ex').addEventListener('click',function(e){if(e.target.tagName==='A'){$q.value=e.target.textContent;run()}});
+try{var u=new URL(location.href);$q.value=u.searchParams.get('q')||'';fam=u.searchParams.get('f')||''}catch(e){}
+drawChips({});if($q.value)schedule(0);else $q.focus();
+})();
+</script>
+</body>
+</html>
