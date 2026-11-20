@@ -102,7 +102,15 @@ html[data-theme="lux"] .si { background:var(--paper) !important; border:1px soli
 html[data-theme="lux"] .nb { background:var(--paper) !important; border-radius:2px !important; }
 html[data-theme="lux"] .nn { color:var(--text) !important; }
 html[data-theme="lux"] .ntag { letter-spacing:0 !important; border-radius:2px !important; }
-</style><script id="thScript">document.documentElement.setAttribute('data-theme','lux');</script></head><body><div class="hdr"><h1>両大戦タイムライン(1914-1945) ― 国別通史</h1><a href="charts.html">← Ad Chartae</a></div><div class="legend">
+
+/* 目次ページの見出し: 和名 + 小さなラテン名 */
+html[data-theme="lux"] .top-bar h1 small { font-size:13px; font-weight:400; color:var(--text3); margin-left:12px; letter-spacing:.06em; }
+html[data-theme="lux"] .top-bar h1 { font-size:28px !important; }
+
+html[data-theme="lux"] .sec-lat,
+html[data-theme="lux"] .asm-type { display:none !important; }
+
+</style><script id="thScript">document.documentElement.setAttribute('data-theme','lux');</script></head><body><div class="hdr"><h1>両大戦タイムライン(1914-1945) ― 国別通史</h1><a href="charts.html">← 図表一覧</a></div><div class="legend">
 <div class="li"><div class="ld" style="background:rgba(70,120,180,.3);border:1px solid rgba(70,120,180,.45)"></div>連合国として参戦</div>
 <div class="li"><div class="ld" style="background:rgba(190,60,60,.3);border:1px solid rgba(190,60,60,.45)"></div>同盟/枢軸国として参戦</div>
 <div class="li"><div class="ld" style="background:rgba(160,155,130,.15);border:1px solid rgba(160,155,130,.25)"></div>中立</div>

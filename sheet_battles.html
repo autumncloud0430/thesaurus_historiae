@@ -141,8 +141,16 @@ html[data-theme="lux"] .si { background:var(--paper) !important; border:1px soli
 html[data-theme="lux"] .nb { background:var(--paper) !important; border-radius:2px !important; }
 html[data-theme="lux"] .nn { color:var(--text) !important; }
 html[data-theme="lux"] .ntag { letter-spacing:0 !important; border-radius:2px !important; }
+
+/* 目次ページの見出し: 和名 + 小さなラテン名 */
+html[data-theme="lux"] .top-bar h1 small { font-size:13px; font-weight:400; color:var(--text3); margin-left:12px; letter-spacing:.06em; }
+html[data-theme="lux"] .top-bar h1 { font-size:28px !important; }
+
+html[data-theme="lux"] .sec-lat,
+html[data-theme="lux"] .asm-type { display:none !important; }
+
 </style><script id="thScript">document.documentElement.setAttribute('data-theme','lux');</script></head><body>
-<div class="hdr"><h1>戦い・戦争一覧</h1><a href="index.html">← Ad Indicem</a></div>
+<div class="hdr"><h1>戦い・戦争一覧</h1><a href="index.html">← 目次</a></div>
 <div class="search-bar"><input class="si" id="search" placeholder="戦争名・年代・内容で検索..." oninput="filterRows()"><span class="cnt" id="cnt"></span></div>
 <div class="tbl-wrap"><table>
 <thead><tr><th>No.</th><th>名称</th><th>年代</th><th>内容・経過・結果・影響</th><th>因果の連鎖（前→本事象→後）</th></tr></thead>

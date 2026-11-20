@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>THESAURUS HISTORIAE ― Ad Chartae</title>
+<title>図表 CHARTAE ― 世界史資料集</title>
 <style>
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&display=swap');
@@ -147,11 +147,19 @@ html[data-theme="lux"] .si { background:var(--paper) !important; border:1px soli
 html[data-theme="lux"] .nb { background:var(--paper) !important; border-radius:2px !important; }
 html[data-theme="lux"] .nn { color:var(--text) !important; }
 html[data-theme="lux"] .ntag { letter-spacing:0 !important; border-radius:2px !important; }
+
+/* 目次ページの見出し: 和名 + 小さなラテン名 */
+html[data-theme="lux"] .top-bar h1 small { font-size:13px; font-weight:400; color:var(--text3); margin-left:12px; letter-spacing:.06em; }
+html[data-theme="lux"] .top-bar h1 { font-size:28px !important; }
+
+html[data-theme="lux"] .sec-lat,
+html[data-theme="lux"] .asm-type { display:none !important; }
+
 </style><script id="thScript">document.documentElement.setAttribute('data-theme','lux');</script></head>
 <body>
-<div class="top-bar"><h1>CHARTAE</h1><div class="meta"><span class="cnt">CLIV chartae</span><a href="index.html">← Ad Indicem</a></div></div>
+<div class="top-bar"><h1>図表<small>CHARTAE</small></h1><div class="meta"><span class="cnt">154本</span><a href="index.html">← 目次</a></div></div>
 <div class="divider" style="text-align:center;padding:4px 0;border-bottom:1px solid rgba(var(--axr),.04)"><span style="font-family:Shippori Mincho,serif;font-size:9px;color:rgba(var(--axr),.15);letter-spacing:.04em">✦ SENATUS POPULUSQUE HISTORIAE ✦</span></div>
-<div class="search-area"><input type="text" id="search" placeholder="Quaere — キーワードで横断検索"><span class="result" id="result"></span><span class="hint" style="font-size:9px;color:var(--text3);opacity:.7;margin-left:8px">★ = 本文ヒット</span></div>
+<div class="search-area"><input type="text" id="search" placeholder="キーワードで横断検索"><span class="result" id="result"></span><span class="hint" style="font-size:9px;color:var(--text3);opacity:.7;margin-left:8px">★ = 本文ヒット</span></div>
 <div class="nav-pills"><a href="#sec-orient" style="border-color:#d4c08844;color:#776531">Ⅰ. 古代オリエント・エジプト</a>
 <a href="#sec-greek_rome" style="border-color:#88b0d444;color:#315677">Ⅱ. 古代ギリシア・ローマ</a>
 <a href="#sec-ancient_asia" style="border-color:#d4888844;color:#773131">Ⅲ. 古代〜中世アジア</a>

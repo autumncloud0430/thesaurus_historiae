@@ -3,91 +3,42 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>THESAURUS HISTORIAE ― 世界史資料集</title>
-<style>@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&display=swap');
-:root{--bg:#05080d;--gold:#c9a96e;--gold2:#e8c888;--gold3:#a08550;--text:#d4cfc6;--text2:#8a857d;--text3:#555048;--line:rgba(var(--axr),.06)}
+<title>世界史資料集 ― THESAURUS HISTORIAE</title>
+<style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden}
-body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.5}
-.hero{text-align:center;padding:0 20px;position:relative;overflow:hidden;height:100vh;min-height:480px;max-height:800px;display:flex;flex-direction:column;align-items:center;justify-content:center}
-.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 45% at 50% 40%,rgba(var(--axr),.05) 0%,transparent 100%)}
-.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:100px;background:linear-gradient(to top,var(--bg),transparent)}
-.hf{position:absolute;width:70px;height:70px;pointer-events:none;opacity:.1}.hf-tl{top:24px;left:24px;border-top:1px solid var(--gold);border-left:1px solid var(--gold)}.hf-tr{top:24px;right:24px;border-top:1px solid var(--gold);border-right:1px solid var(--gold)}.hf-bl{bottom:24px;left:24px;border-bottom:1px solid var(--gold);border-left:1px solid var(--gold)}.hf-br{bottom:24px;right:24px;border-bottom:1px solid var(--gold);border-right:1px solid var(--gold)}
-.ho{font-family:'Shippori Mincho',serif;font-size:9px;color:var(--gold3);letter-spacing:.04em;opacity:0;text-transform:none;animation:ru .8s ease .2s forwards}
-.hero h1{font-family:'Shippori Mincho',serif;font-weight:600;color:var(--gold2);letter-spacing:.04em;line-height:1.1;opacity:0;animation:ru .8s ease .35s forwards}
-.hero h1 .l1{display:block;font-size:60px}.hero h1 .l2{display:block;font-size:42px;letter-spacing:.04em;margin-top:6px;opacity:.65;font-weight:400}
-.hero .sj{font-family:'Noto Serif JP',serif;font-size:12px;color:var(--text2);margin-top:20px;letter-spacing:.04em;opacity:0;animation:ru .8s ease .5s forwards}
-.hr2{width:140px;height:1px;margin:26px auto 0;background:linear-gradient(90deg,transparent,var(--gold3),transparent);opacity:0;animation:ru .8s ease .6s forwards}
-.hm{font-family:'Shippori Mincho',serif;font-size:11px;color:var(--gold3);letter-spacing:.04em;font-style:normal;opacity:0;margin-top:14px;animation:ru .8s ease .7s forwards}
-.hs{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);opacity:0;animation:ru .8s ease 1.2s forwards}
-.hs span{display:block;width:1px;height:26px;background:linear-gradient(to bottom,var(--gold3),transparent);margin:0 auto;animation:sp 2s ease-in-out infinite}
-@keyframes ru{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
-@keyframes sp{0%,100%{opacity:.2;transform:scaleY(1)}50%{opacity:.5;transform:scaleY(1.3)}}
-.stats{display:flex;justify-content:center;gap:0;border-bottom:1px solid var(--line);background:rgba(var(--axr),.012)}
-.st{padding:18px 32px;text-align:center;position:relative}.st+.st::before{content:'';position:absolute;left:0;top:25%;bottom:25%;width:1px;background:rgba(var(--axr),.08)}
-.sn{font-family:'Shippori Mincho',serif;font-size:26px;font-weight:600;color:var(--gold2);letter-spacing:.04em}
-.sl{font-size:7.5px;color:var(--text3);margin-top:2px;letter-spacing:.04em}
-.nav{display:flex;justify-content:center;gap:0;border-bottom:1px solid var(--line);background:rgba(5,8,13,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);position:sticky;top:0;z-index:100}
-.nav a{font-family:'Shippori Mincho',serif;font-size:10.5px;color:var(--text3);text-decoration:none;letter-spacing:.04em;transition:all .3s;padding:14px 22px;position:relative}
-.nav a:hover{color:var(--gold2);background:rgba(var(--axr),.03)}.nav a::after{content:'';position:absolute;bottom:0;left:50%;width:0;height:2px;background:var(--gold);transition:all .3s;transform:translateX(-50%)}.nav a:hover::after{width:50%}
-.main{max-width:920px;margin:0 auto;padding:60px 24px 80px}
-.sec{margin-bottom:68px;opacity:0;transform:translateY(20px);transition:all .65s cubic-bezier(.25,.8,.25,1)}.sec.v{opacity:1;transform:translateY(0)}
-.sh{display:flex;align-items:flex-end;gap:16px;margin-bottom:26px;position:relative;padding-bottom:14px}.sh::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:1px;background:linear-gradient(90deg,rgba(var(--axr),.2),rgba(var(--axr),.03) 60%,transparent)}
-.snum{font-family:'Shippori Mincho',serif;font-size:50px;font-weight:300;color:var(--gold3);opacity:.12;line-height:.8;letter-spacing:.04em}.stitles{padding-bottom:4px}
-.smain{font-family:'Shippori Mincho',serif;font-size:20px;font-weight:600;color:var(--gold2);letter-spacing:.04em}.sla{font-family:'Shippori Mincho',serif;font-size:9.5px;font-style:normal;color:var(--gold);opacity:.35;letter-spacing:1.5px;margin-top:2px}
-.fg{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
-.f{border:1px solid rgba(var(--axr),.05);border-radius:16px;padding:26px 22px;text-decoration:none;transition:all .4s cubic-bezier(.25,.8,.25,1);position:relative;overflow:hidden;background:linear-gradient(165deg,rgba(var(--axr),.018),transparent 60%)}
-.f::before{content:'';position:absolute;inset:-1px;border-radius:16px;padding:1px;background:linear-gradient(160deg,rgba(var(--axr),.1),transparent 35%,transparent 65%,rgba(var(--axr),.05));-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .4s}
-.f:hover{box-shadow:0 24px 60px rgba(0,0,0,.35),0 0 60px rgba(var(--axr),.03)}.f:hover::before{opacity:1}
-.fn{font-family:'Shippori Mincho',serif;font-size:28px;font-weight:700;color:var(--gold3);opacity:.1;position:absolute;top:18px;right:20px;letter-spacing:.04em}
-.ft{font-family:'Shippori Mincho',serif;font-size:18px;font-weight:700;color:var(--gold2);margin-bottom:5px;letter-spacing:.04em}.fla{font-size:9px;color:var(--text2);margin-bottom:10px;line-height:1.5}.fd{font-size:8.5px;color:var(--text3);line-height:1.9}
-.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.g2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.c{border:1px solid rgba(var(--axr),.035);border-radius:12px;padding:16px 15px;text-decoration:none;transition:all .3s;position:relative;overflow:hidden}
-.c::after{content:'';position:absolute;inset:0;background:linear-gradient(165deg,rgba(var(--axr),.02),transparent 50%);opacity:0;transition:opacity .3s;border-radius:12px}
-.c:hover{border-color:rgba(var(--axr),.12);box-shadow:0 8px 28px rgba(0,0,0,.25)}.c:hover::after{opacity:1}
-.c>*{position:relative;z-index:1}
-.cb{font-family:'Shippori Mincho',serif;font-size:7.5px;color:var(--gold);opacity:.4;margin-bottom:6px;letter-spacing:.04em;text-transform:none}
-.ct{font-family:'Noto Serif JP',serif;font-size:11px;color:var(--text);font-weight:700;line-height:1.5}.cs{font-family:'Shippori Mincho',serif;font-size:8.5px;color:var(--gold3);margin-top:4px;font-style:normal;letter-spacing:.5px;opacity:.5}
-.mf{border:1px solid rgba(var(--axr),.05);border-radius:14px;padding:22px 20px;text-decoration:none;transition:all .35s;position:relative;overflow:hidden;background:linear-gradient(160deg,rgba(var(--axr),.015),transparent)}
-.mf:hover{border-color:rgba(var(--axr),.15);box-shadow:0 14px 40px rgba(0,0,0,.3)}
-.mfn{font-family:'Shippori Mincho',serif;font-size:30px;font-weight:700;color:var(--gold3);opacity:.1;position:absolute;top:14px;right:18px}
-.mft{font-family:'Shippori Mincho',serif;font-size:17px;font-weight:700;color:var(--gold2);letter-spacing:.04em;margin-bottom:3px}.mfl{font-size:9px;color:var(--text2);margin-bottom:9px}.mfd{font-size:8.5px;color:var(--text3);line-height:1.85}
-.el{font-family:'Shippori Mincho',serif;font-size:10px;color:var(--gold);opacity:.4;letter-spacing:.04em;margin:22px 0 8px;font-style:normal;padding-left:2px}
-.eg{display:grid;grid-template-columns:repeat(auto-fill,minmax(105px,1fr));gap:6px}
-.ec{border:1px solid rgba(var(--axr),.03);border-radius:8px;padding:10px 8px;text-decoration:none;transition:all .25s;text-align:center}.ec:hover{background:rgba(var(--axr),.035);border-color:rgba(var(--axr),.1);}
-.ey{font-family:'Shippori Mincho',serif;font-size:15px;font-weight:600;color:var(--gold2);letter-spacing:1px}.es{font-size:7px;color:var(--text3);margin-top:3px;line-height:1.35}
-.ei{font-size:9px;color:var(--text2);line-height:1.85;margin-bottom:6px}
-.pg{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-.pc{border:1px solid rgba(var(--axr),.04);border-radius:12px;padding:20px 14px;text-decoration:none;transition:all .3s;text-align:center;position:relative;overflow:hidden}
-.pc::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(var(--axr),.025),transparent 70%);opacity:0;transition:opacity .3s}
-.pc:hover{border-color:rgba(var(--axr),.12);box-shadow:0 8px 24px rgba(0,0,0,.25)}.pc:hover::before{opacity:1}
-.pc>*{position:relative;z-index:1}
-.pcb{font-family:'Shippori Mincho',serif;font-size:7px;letter-spacing:.04em;color:var(--gold);opacity:.35;margin-bottom:7px;text-transform:none}
-.pct{font-family:'Noto Serif JP',serif;font-size:12px;color:var(--text);font-weight:700}.pcl{font-family:'Shippori Mincho',serif;font-size:9px;color:var(--gold3);margin-top:4px;font-style:normal;opacity:.45;letter-spacing:1px}
-.dv{text-align:center;height:32px;display:flex;align-items:center;justify-content:center;gap:12px}.dv i{display:block;width:3px;height:3px;border-radius:50%;background:rgba(var(--axr),.12)}.dv span{display:block;width:40px;height:1px;background:rgba(var(--axr),.08)}
-.footer{text-align:center;padding:44px 24px;position:relative}.footer::before{content:'';position:absolute;top:0;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,rgba(var(--axr),.08),transparent)}
-.footer p{font-family:'Shippori Mincho',serif;font-size:14px;color:var(--gold3);letter-spacing:.04em;opacity:.25;font-style:normal}
-@media(max-width:768px){.hero{min-height:380px;max-height:600px}.hero h1 .l1{font-size:34px;letter-spacing:.04em}.hero h1 .l2{font-size:24px;letter-spacing:.04em}.hf{width:36px;height:36px}.stats{flex-wrap:wrap}.st{padding:12px 16px;flex:1;min-width:70px}.sn{font-size:18px}.nav{flex-wrap:wrap;justify-content:center}.nav a{padding:10px 12px;font-size:9px;letter-spacing:1.5px}.main{padding:36px 14px 60px}.fg{grid-template-columns:1fr}.g4,.pg{grid-template-columns:repeat(2,1fr)}.g2{grid-template-columns:1fr}.eg{grid-template-columns:repeat(auto-fill,minmax(85px,1fr))}.snum{font-size:34px}.smain{font-size:17px}.sec{margin-bottom:48px}}
-@media(max-width:400px){.hero h1 .l1{font-size:26px;letter-spacing:.04em}.hero h1 .l2{font-size:18px;letter-spacing:.04em}.ho{font-size:7px;letter-spacing:.04em}.st{padding:10px 10px}.sn{font-size:15px}.sl{font-size:6px}.nav a{padding:8px 8px;font-size:8px}.g4,.pg{grid-template-columns:1fr}.eg{grid-template-columns:repeat(3,1fr)}}
-/* ---- 全ページ横断検索 ---- */
-.hq{position:relative;z-index:2;display:flex;width:min(460px,100%);margin:26px auto 0;opacity:0;animation:ru .8s ease .8s forwards}
-.hq input{flex:1;min-width:0;font:inherit;font-size:14px;color:var(--text);background:rgba(var(--axr),.06);border:1px solid rgba(var(--axr),.35);border-right:0;border-radius:24px 0 0 24px;padding:11px 18px;outline:none}
-.hq input:focus{border-color:rgba(var(--axr),.7);background:rgba(var(--axr),.1)}
-.hq button{border:1px solid rgba(var(--axr),.35);border-left:0;border-radius:0 24px 24px 0;background:rgba(var(--axr),.06);padding:0 16px;cursor:pointer;display:flex;align-items:center}
-.hq button svg{width:17px;height:17px;stroke:var(--gold)}
-.hq input:focus+button{border-color:rgba(var(--axr),.7);background:rgba(var(--axr),.1)}
-/* ---- TABULA TEMPORUM(年表帯) ---- */
-.tband{position:relative;width:100vw;margin:36px 0 0;padding:20px 0 24px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;opacity:0;animation:ru .8s ease .95s forwards}
-.tflow{display:flex;width:max-content;animation:tslide 230s linear infinite}
-@keyframes tslide{to{transform:translateX(-50%)}}
-.tcell{width:190px;flex:none;text-align:center;position:relative;padding:0 10px;display:flex;flex-direction:column;justify-content:center}
-.tcell::before{content:'';position:absolute;left:0;top:-20px;bottom:-24px;width:1px;background:var(--line)}
-.tcell .d{font-family:'Shippori Mincho',serif;font-size:10.5px;letter-spacing:.04em;color:var(--text2);min-height:13px}
-.tcell .c{font-family:'Shippori Mincho',serif;font-size:15px;letter-spacing:1.5px;color:var(--gold2);line-height:1.4;margin-top:6px}
-.tcur{position:absolute;left:50%;top:6px;bottom:6px;width:1px;background:var(--shu,#c9a96e);opacity:.8}
-.tcur::before{content:'';position:absolute;top:-1px;left:-4px;border-left:4.5px solid transparent;border-right:4.5px solid transparent;border-top:7px solid var(--shu,#c9a96e)}
-@media (max-width:640px){.tcell{width:150px}.tcell .c{font-size:12.5px}}
-@media (prefers-reduced-motion: reduce){.tflow{animation:none}}
+body{font-size:15px;line-height:1.8}
+a{color:inherit;text-decoration:none}
+.page{max-width:920px;margin:0 auto;padding:0 24px 72px}
+header{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;padding:44px 0 18px;border-bottom:2px solid var(--text)}
+.ttl h1{font-size:34px;font-weight:700;letter-spacing:.06em;line-height:1.2}
+.ttl p{font-size:13px;color:var(--text3);letter-spacing:.08em;margin-top:6px}
+.q{display:flex;width:min(380px,100%)}
+.q input{flex:1;min-width:0;font:inherit;font-size:15px;color:var(--text);background:var(--paper);border:1px solid var(--line2);border-right:0;padding:8px 12px;outline:none;border-radius:2px 0 0 2px}
+.q input:focus{border-color:var(--text)}
+.q button{font:inherit;font-size:14px;color:var(--bg);background:var(--text);border:1px solid var(--text);padding:0 16px;cursor:pointer;border-radius:0 2px 2px 0}
+.lead{font-size:14px;color:var(--text2);padding:14px 0 0}
+h2{display:flex;align-items:baseline;gap:12px;font-size:19px;font-weight:700;margin:44px 0 6px;padding-bottom:6px;border-bottom:1px solid var(--text)}
+h2 .no{color:var(--shu);font-variant-numeric:tabular-nums;min-width:1.6em}
+h2 small{font-size:12px;font-weight:400;color:var(--text3);letter-spacing:.04em}
+.toc a{display:grid;grid-template-columns:1fr auto;column-gap:16px;padding:12px 0 11px;border-bottom:1px solid var(--line)}
+.toc a:hover .nm{color:var(--shu)}
+.toc .hd{display:flex;align-items:baseline;gap:10px;min-width:0}
+.toc .nm{font-size:17px;font-weight:700}
+.toc .la{font-size:11.5px;color:var(--text3);letter-spacing:.06em}
+.toc .ds{grid-column:1/-1;font-size:13.5px;color:var(--text2);line-height:1.75;margin-top:2px}
+.toc .ct{font-size:14px;color:var(--text2);font-variant-numeric:tabular-nums;white-space:nowrap;align-self:baseline}
+.cols{display:grid;grid-template-columns:1fr 1fr;column-gap:36px}
+.cols a{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid var(--line);font-size:15px}
+.cols a span{font-size:12px;color:var(--text3)}
+.cols a:hover{color:var(--shu)}
+.era{display:grid;grid-template-columns:7em 1fr;border-bottom:1px solid var(--line)}
+.era>div:first-child{font-size:14px;font-weight:700;padding:10px 0;color:var(--text2)}
+.yrs{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
+.yrs a{padding:9px 10px 9px 0;font-size:12.5px;color:var(--text3);line-height:1.5}
+.yrs a b{display:block;font-size:15px;color:var(--text);font-weight:700;font-variant-numeric:tabular-nums}
+.yrs a:hover b{color:var(--shu)}
+footer{margin-top:56px;padding-top:12px;border-top:1px solid var(--line);font-size:12px;color:var(--text3)}
+@media(max-width:640px){.page{padding:0 16px 56px}header{padding-top:28px}.ttl h1{font-size:27px}.cols{grid-template-columns:1fr}.era{grid-template-columns:1fr}.era>div:first-child{padding-bottom:0}.yrs{grid-template-columns:repeat(2,1fr)}}
 </style>
 <style id="thThemes">/* =====================================================
    THESAURUS HISTORIAE ― themes.css(LUX v2: 印刷資料集)
@@ -182,179 +133,78 @@ html[data-theme="lux"] .si { background:var(--paper) !important; border:1px soli
 html[data-theme="lux"] .nb { background:var(--paper) !important; border-radius:2px !important; }
 html[data-theme="lux"] .nn { color:var(--text) !important; }
 html[data-theme="lux"] .ntag { letter-spacing:0 !important; border-radius:2px !important; }
+
+/* 目次ページの見出し: 和名 + 小さなラテン名 */
+html[data-theme="lux"] .top-bar h1 small { font-size:13px; font-weight:400; color:var(--text3); margin-left:12px; letter-spacing:.06em; }
+html[data-theme="lux"] .top-bar h1 { font-size:28px !important; }
+
+html[data-theme="lux"] .sec-lat,
+html[data-theme="lux"] .asm-type { display:none !important; }
+
 </style><script id="thScript">document.documentElement.setAttribute('data-theme','lux');</script></head>
 <body>
-<div class="hero">
-  <div class="hf hf-tl"></div><div class="hf hf-tr"></div><div class="hf hf-bl"></div><div class="hf hf-br"></div>
-  <div class="ho">Encyclopaedia</div>
-  <h1><span class="l1">THESAURUS</span><span class="l2">HISTORIAE</span></h1>
-  <div class="sj">世 界 史 資 料 集</div>
-  <div class="hr2"></div>
-  <div class="hm">Honos alit artes</div>
-  <form class="hq" action="search.html" method="get" role="search"><input name="q" type="search" placeholder="全ページ横断検索 ― 用語・人名・年号" aria-label="全ページ横断検索" autocomplete="off"><button type="submit" aria-label="検索"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21"/></svg></button></form>
-  <div class="tband"><div class="tcur"></div><div class="tflow" id="tflow"></div></div>
-  <div class="hs"><span></span></div>
-</div>
-<div class="stats"><div class="st"><div class="sn">CLIV</div><div class="sl">CHARTAE</div></div><div class="st"><div class="sn">C</div><div class="sl">CIVITATES</div></div><div class="st"><div class="sn">XXVI</div><div class="sl">CULTURAE</div></div><div class="st"><div class="sn">XLVII</div><div class="sl">SAECULA</div></div><div class="st"><div class="sn">CXCIX</div><div class="sl">LOCI</div></div><div class="st"><div class="sn">CLXXVII</div><div class="sl">NATIONES</div></div></div>
-<nav class="nav"><a href="#s1">INSTRUMENTA</a><a href="#s2">TABULAE</a><a href="#s3">MAPPAE</a><a href="#s4">SAECULA</a><a href="#s5">IMAGINES</a></nav>
-<div class="main">
+<div class="page">
+<header>
+  <div class="ttl"><h1>世界史資料集</h1><p>THESAURUS HISTORIAE</p></div>
+  <form class="q" action="search.html" method="get" role="search"><input name="q" type="search" placeholder="用語・人名・年号" aria-label="全ページ横断検索" autocomplete="off"><button type="submit">検索</button></form>
+</header>
+<p class="lead">通史・図表・一覧表・地図・写真資料を横断する世界史の資料集。用語は『世界史用語集』と各社教科書の掲載語にもとづく。</p>
 
-<div class="sec" id="s1">
-  <div class="sh"><span class="snum">I</span><div class="stitles"><div class="smain">Instrumenta</div><div class="sla">主要ツール</div></div></div>
-  <div class="fg">
-    <a href="annales.html" class="f"><span class="fn">LXV</span><div class="ft">ANNALES</div><div class="fla">時代順通史 ― 教科書順の超詳細年代記</div><div class="fd">先史から現代まで全65節の通史。各節は用語集全用語を本文に展開した3000-5000字の散文。</div></a>
-    <a href="charts.html" class="f"><span class="fn">CLIV</span><div class="ft">CHARTAE</div><div class="fla">図表集 ― フロー・TL・比較表・関係図・循環図・家系図</div><div class="fd">全154本を13セクション×時代順に収録。本文キーワード横断検索対応。</div></a>
-    <a href="civitates.html" class="f"><span class="fn">XCVIII</span><div class="ft">CIVITATES</div><div class="fla">国家史集 ― 世界98カ国・地域の通史</div><div class="fd">古代から現代まで、各国の歴史をフロー形式で一望。大陸・時代別15セクション。本文検索対応。</div></a>
-    <a href="cultura.html" class="f"><span class="fn">XXVI</span><div class="ft">CULTURA</div><div class="fla">文化史集 ― 思想・宗教・文学・芸術・科学</div><div class="fd">古代オリエントから現代まで、26枚の文化史フロー。時代・地域別8セクション。本文検索対応。</div></a>
-    <a href="matrix.html" class="f"><span class="fn">XXXVII</span><div class="ft">MATRIX</div><div class="fla">同時代マトリクス ― 37時代×5地域</div><div class="fd">「その時、世界では何が起きていたか」を185セルで一望。BC1500〜AD2000。</div></a>
-    <a href="causal_network.html" class="f"><span class="fn">XIV</span><div class="ft">NEXUS</div><div class="fla">因果関係ネットワーク ― 14テーマ</div><div class="fd">複数の原因が合流し結果が分岐する網目状の因果を可視化。クリックでハイライト。</div></a>
-  </div>
-</div>
-<div class="dv"><span></span><i></i><span></span></div>
-
-<div class="sec" id="s2">
-  <div class="sh"><span class="snum">II</span><div class="stitles"><div class="smain">Tabulae</div><div class="sla">データ集</div></div></div>
-  <div class="g4">
-    <a href="sheet_leaders.html" class="c"><div class="cb">Tabula</div><div class="ct">各国指導者一覧</div><div class="cs">Reges et Imperatores</div></a>
-    <a href="sheet_treaties.html" class="c"><div class="cb">Tabula</div><div class="ct">条約・協定一覧</div><div class="cs">Foedera et Pacta</div></a>
-    <a href="sheet_battles.html" class="c"><div class="cb">Tabula</div><div class="ct">戦争・戦闘一覧</div><div class="cs">Bella et Proelia</div></a>
-    <a href="sheet_laws.html" class="c"><div class="cb">Tabula</div><div class="ct">法令・制度一覧</div><div class="cs">Leges et Instituta</div></a>
-    <a href="sheet_culture.html" class="c"><div class="cb">Tabula</div><div class="ct">文化・芸術一覧</div><div class="cs">Ars et Cultura</div></a>
-    <a href="sheet_essay.html" class="c"><div class="cb">Tabula</div><div class="ct">論述テーマ集</div><div class="cs">Themata Dissertationum</div></a>
-    <a href="sheet_crossref.html" class="c"><div class="cb">Tabula</div><div class="ct">横断整理表</div><div class="cs">Index Transversalis</div></a>
-    <a href="regna_extincta.html" class="c"><div class="cb">Tabula</div><div class="ct">亡国一覧</div><div class="cs">Regna Extincta</div></a>
-    <a href="nengo_list.html" class="c"><div class="cb">Annales</div><div class="ct">年号＋横断索引</div><div class="cs">Annales Rerum Gestarum</div></a>
-  </div>
-</div>
-<div class="dv"><span></span><i></i><span></span></div>
-
-<div class="sec" id="s3">
-  <div class="sh"><span class="snum">III</span><div class="stitles"><div class="smain">Mappae Mundi</div><div class="sla">地図・地理</div></div></div>
-  <div class="g2">
-    <a href="geo_world_geography.html" class="mf"><span class="mfn">199</span><div class="mft">GEOGRAPHIA</div><div class="mfl">地理知識マップ ― 199地点＋ポリライン56本</div><div class="mfd">山脈・河川・海・湖・海峡・島・半島・高原・砂漠・運河・峠。</div></a>
-    <a href="geo_countries.html" class="mf"><span class="mfn">177</span><div class="mft">NATIONES</div><div class="mfl">世界の国々 ― 177カ国</div><div class="mfd">GeoJSON境界線。主要75カ国に歴史的概要。大陸別色分け。</div></a>
-    <a href="world_history_all_points.html" class="mf"><span class="mfn">788</span><div class="mft">LOCI HISTORICI</div><div class="mfl">世界史地点総覧 ― 788地点</div><div class="mfd">戦場・条約締結地・都市・遺跡を全時代横断で表示。カテゴリ・時代で絞り込み可能。</div></a>
-  </div>
-  <div class="g2" style="margin-top:10px">
-    <a href="geo_us_states.html" class="c"><div class="cb">Mappa</div><div class="ct">アメリカ全州マップ</div><div class="cs">Civitates Foederatae Americae</div></a>
-    <a href="geo_china_provinces.html" class="c"><div class="cb">Mappa</div><div class="ct">中国 省・自治区マップ</div><div class="cs">Provinciae Sinarum</div></a>
-  </div>
-</div>
-<div class="dv"><span></span><i></i><span></span></div>
-
-<div class="sec" id="s4">
-  <div class="sh"><span class="snum">IV</span><div class="stitles"><div class="smain">Orbis Terrarum per Saecula</div><div class="sla">時代別世界地図 ― 47時代</div></div></div>
-  <div class="ei">BC3000年〜AD2010年の47時代の世界地図。各時代の国家・帝国の版図を色分けで再現。クリックで王朝名・首都・特徴を表示。</div>
-  <div class="el">Antiquitas ― 古代</div>
-  <div class="eg">
-    <a href="world_bc3000.html" class="ec"><div class="ey">BC 3000</div><div class="es">エジプト初期王朝<br>シュメール都市国家</div></a>
-    <a href="world_bc2000.html" class="ec"><div class="ey">BC 2000</div><div class="es">エジプト中王国<br>バビロン第一王朝</div></a>
-    <a href="world_bc1500.html" class="ec"><div class="ey">BC 1500</div><div class="es">エジプト新王国<br>ヒッタイト・殷</div></a>
-    <a href="world_bc1000.html" class="ec"><div class="ey">BC 1000</div><div class="es">ヘブライ統一王国<br>西周</div></a>
-    <a href="world_bc700.html" class="ec"><div class="ey">BC 700</div><div class="es">アッシリア帝国<br>春秋時代</div></a>
-    <a href="world_bc400.html" class="ec"><div class="ey">BC 400</div><div class="es">ペルシア帝国<br>戦国時代</div></a>
-    <a href="world_bc323.html" class="ec"><div class="ey">BC 323</div><div class="es">アレクサンドロス<br>帝国の最大版図</div></a>
-    <a href="world_bc300.html" class="ec"><div class="ey">BC 300</div><div class="es">ヘレニズム三国<br>マウリヤ朝</div></a>
-    <a href="world_bc200.html" class="ec"><div class="ey">BC 200</div><div class="es">ローマの拡大<br>秦→前漢</div></a>
-    <a href="world_bc100.html" class="ec"><div class="ey">BC 100</div><div class="es">ローマ内乱の世紀<br>漢の武帝</div></a>
-    <a href="world_bc1.html" class="ec"><div class="ey">BC 1</div><div class="es">パクス＝ロマーナ<br>前漢末期</div></a>
-  </div>
-  <div class="el">Medium Aevum ― 中世</div>
-  <div class="eg">
-    <a href="world_100.html" class="ec"><div class="ey">AD 100</div><div class="es">ローマ五賢帝<br>後漢・クシャーナ</div></a>
-    <a href="world_200.html" class="ec"><div class="ey">200</div><div class="es">ローマ帝国最大版図<br>三国時代</div></a>
-    <a href="world_300.html" class="ec"><div class="ey">300</div><div class="es">ローマ分裂前夜<br>ササン朝・西晋</div></a>
-    <a href="world_400.html" class="ec"><div class="ey">400</div><div class="es">ゲルマン大移動<br>グプタ朝・五胡</div></a>
-    <a href="world_500.html" class="ec"><div class="ey">500</div><div class="es">西ローマ滅亡後<br>南北朝</div></a>
-    <a href="world_600.html" class="ec"><div class="ey">600</div><div class="es">ユスティニアヌス後<br>隋→唐</div></a>
-    <a href="world_700.html" class="ec"><div class="ey">700</div><div class="es">イスラーム大征服<br>唐の全盛</div></a>
-    <a href="world_800.html" class="ec"><div class="ey">800</div><div class="es">カール大帝戴冠<br>アッバース朝</div></a>
-    <a href="world_900.html" class="ec"><div class="ey">900</div><div class="es">カロリング分裂<br>唐滅亡</div></a>
-    <a href="world_1000.html" class="ec"><div class="ey">1000</div><div class="es">ヴァイキング<br>北宋・セルジューク</div></a>
-    <a href="world_1100.html" class="ec"><div class="ey">1100</div><div class="es">十字軍時代<br>サラディン</div></a>
-    <a href="world_1200.html" class="ec"><div class="ey">1200</div><div class="es">モンゴル帝国前夜<br>南宋・アイユーブ</div></a>
-    <a href="world_1279.html" class="ec"><div class="ey">1279</div><div class="es">モンゴル帝国<br>パクス＝モンゴリカ</div></a>
-    <a href="world_1300.html" class="ec"><div class="ey">1300</div><div class="es">モンゴル四ハン国<br>黒死病前夜</div></a>
-    <a href="world_1400.html" class="ec"><div class="ey">1400</div><div class="es">ティムール帝国<br>明・百年戦争</div></a>
-  </div>
-  <div class="el">Aetas Moderna ― 近世</div>
-  <div class="eg">
-    <a href="world_1492.html" class="ec"><div class="ey">1492</div><div class="es">コロンブス<br>レコンキスタ完了</div></a>
-    <a href="world_1500.html" class="ec"><div class="ey">1500</div><div class="es">大航海時代<br>オスマン全盛</div></a>
-    <a href="world_1530.html" class="ec"><div class="ey">1530</div><div class="es">宗教改革<br>ムガル帝国建国</div></a>
-    <a href="world_1600.html" class="ec"><div class="ey">1600</div><div class="es">絶対王政<br>オランダ黄金時代</div></a>
-    <a href="world_1650.html" class="ec"><div class="ey">1650</div><div class="es">ウェストファリア<br>清の成立</div></a>
-    <a href="world_1700.html" class="ec"><div class="ey">1700</div><div class="es">ルイ14世<br>康熙帝</div></a>
-    <a href="world_1715.html" class="ec"><div class="ey">1715</div><div class="es">ユトレヒト条約<br>ピョートル大帝</div></a>
-    <a href="world_1783.html" class="ec"><div class="ey">1783</div><div class="es">アメリカ独立<br>パリ条約</div></a>
-  </div>
-  <div class="el">Aetas Contemporanea ― 近現代</div>
-  <div class="eg">
-    <a href="world_1800.html" class="ec"><div class="ey">1800</div><div class="es">ナポレオン<br>産業革命</div></a>
-    <a href="world_1815.html" class="ec"><div class="ey">1815</div><div class="es">ウィーン体制<br>ワーテルロー後</div></a>
-    <a href="world_1880.html" class="ec"><div class="ey">1880</div><div class="es">帝国主義<br>アフリカ分割前夜</div></a>
-    <a href="world_1900.html" class="ec"><div class="ey">1900</div><div class="es">帝国主義の頂点<br>義和団事件</div></a>
-    <a href="world_1914.html" class="ec"><div class="ey">1914</div><div class="es">第一次世界大戦<br>開戦時</div></a>
-    <a href="world_1920.html" class="ec"><div class="ey">1920</div><div class="es">ヴェルサイユ体制<br>委任統治</div></a>
-    <a href="world_1930.html" class="ec"><div class="ey">1930</div><div class="es">世界恐慌<br>ファシズムの台頭</div></a>
-    <a href="world_1938.html" class="ec"><div class="ey">1938</div><div class="es">ミュンヘン会談<br>ナチスの拡大</div></a>
-    <a href="world_1945.html" class="ec"><div class="ey">1945</div><div class="es">第二次世界大戦<br>終結時</div></a>
-    <a href="world_1960.html" class="ec"><div class="ey">1960</div><div class="es">アフリカの年<br>冷戦最盛期</div></a>
-    <a href="world_1994.html" class="ec"><div class="ey">1994</div><div class="es">冷戦後<br>ソ連崩壊後の世界</div></a>
-    <a href="world_2000.html" class="ec"><div class="ey">2000</div><div class="es">21世紀<br>グローバリゼーション</div></a>
-    <a href="world_2010.html" class="ec"><div class="ey">2010</div><div class="es">現代世界<br>アラブの春後</div></a>
-  </div>
-
-</div>
-<div class="dv"><span></span><i></i><span></span></div>
-
-<div class="sec" id="s5">
-  <div class="sh"><span class="snum">V</span><div class="stitles"><div class="smain">Imagines</div><div class="sla">写真資料集</div></div></div>
-  <div class="pg">
-    <a href="photo_ancient.html" class="pc"><div class="pcb">Imago</div><div class="pct">古代篇</div><div class="pcl">Antiquitas</div></a>
-    <a href="photo_medieval.html" class="pc"><div class="pcb">Imago</div><div class="pct">中世篇</div><div class="pcl">Medium Aevum</div></a>
-    <a href="photo_early_modern.html" class="pc"><div class="pcb">Imago</div><div class="pct">近世篇</div><div class="pcl">Aetas Moderna</div></a>
-    <a href="photo_modern.html" class="pc"><div class="pcb">Imago</div><div class="pct">近現代篇</div><div class="pcl">Aetas Contemporanea</div></a>
-  </div>
+<h2><span class="no">1</span>本編<small>通史と図表</small></h2>
+<div class="toc">
+  <a href="annales.html"><div class="hd"><span class="nm">通史</span><span class="la">ANNALES</span></div><span class="ct">65節</span><div class="ds">先史から現代まで、教科書の章立ての順に用語集の全用語を本文に展開した通史。</div></a>
+  <a href="charts.html"><div class="hd"><span class="nm">図表</span><span class="la">CHARTAE</span></div><span class="ct" id="n-chartae">154本</span><div class="ds">フロー図・年表・比較表・関係図・循環図・家系図。13分野を時代順に収録。</div></a>
+  <a href="civitates.html"><div class="hd"><span class="nm">国家史</span><span class="la">CIVITATES</span></div><span class="ct">98か国・地域</span><div class="ds">古代から現代まで、各国の歴史を一つの流れで通覧する。大陸・時代別15分類。</div></a>
+  <a href="cultura.html"><div class="hd"><span class="nm">文化史</span><span class="la">CULTURA</span></div><span class="ct">28枚</span><div class="ds">思想・宗教・文学・芸術・科学。古代オリエントから現代まで、時代・地域別8分類。</div></a>
+  <a href="matrix.html"><div class="hd"><span class="nm">同時代表</span><span class="la">MATRIX</span></div><span class="ct">37時代×5地域</span><div class="ds">前1500年から2000年まで、同じ時期に各地域で何が起きていたかを一表で比べる。</div></a>
+  <a href="causal_network.html"><div class="hd"><span class="nm">因果関係図</span><span class="la">NEXUS</span></div><span class="ct">14テーマ</span><div class="ds">複数の原因が合流し、結果が分岐する因果の網目。項目を選ぶと関係する線をたどれる。</div></a>
 </div>
 
+<h2><span class="no">2</span>一覧表</h2>
+<div class="cols">
+  <a href="sheet_leaders.html">各国指導者一覧<span>君主・首相</span></a>
+  <a href="sheet_treaties.html">条約・協定一覧<span></span></a>
+  <a href="sheet_battles.html">戦争・戦闘一覧<span></span></a>
+  <a href="sheet_laws.html">法令・制度一覧<span></span></a>
+  <a href="sheet_culture.html">文化・芸術一覧<span></span></a>
+  <a href="sheet_essay.html">論述テーマ集<span></span></a>
+  <a href="sheet_crossref.html">横断整理表<span>紛らわしい事項</span></a>
+  <a href="regna_extincta.html">亡国一覧<span></span></a>
+  <a href="nengo_list.html">年号一覧<span>年代順</span></a>
 </div>
-<div class="footer"><p>Honos alit artes</p></div>
-<script>
-var o=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting)x.target.classList.add('v')});},{threshold:.08});
-document.querySelectorAll('.sec').forEach(function(s){o.observe(s)});
-</script>
-<script>
-(function(){
-  var data=[
-    ['SAEC. XXX A.C.N.','PRIMAE URBES'],['SAEC. XXVI A.C.N.','AETAS PYRAMIDUM'],
-    ['SAEC. XVIII A.C.N.','LEX HAMMURABI'],['SAEC. XIII A.C.N.','EXODUS'],
-    ['SAEC. VII A.C.N.','IMPERIUM ASSYRIUM'],['SAEC. VI A.C.N.','AETAS AXIALIS'],
-    ['SAEC. V A.C.N.','GRAECIA CLASSICA'],['SAEC. IV A.C.N.','ALEXANDER MAGNUS'],
-    ['SAEC. III A.C.N.','IMPERIUM QIN'],['SAEC. I A.C.N.','FINIS REI PUBLICAE'],
-    ['SAEC. II','PAX ROMANA'],['SAEC. IV','MIGRATIO GENTIUM'],
-    ['SAEC. VI','AETAS IUSTINIANI'],['SAEC. VII','ORTUS ISLAMI'],
-    ['SAEC. VIII','ABBASIDAE'],['SAEC. VIII','CAROLUS MAGNUS'],
-    ['SAEC. X','DYNASTIA SONG'],['SAEC. XI','CANOSSA'],
-    ['SAEC. XI','EXPEDITIONES SACRAE'],['SAEC. XIII','IMPERIUM MONGOLICUM'],
-    ['SAEC. XIV','PESTIS NIGRA'],['SAEC. XV','CASUS CONSTANTINOPOLIS'],
-    ['SAEC. XV','AETAS NAVIGATIONUM'],['SAEC. XVI','REFORMATIO'],
-    ['SAEC. XVII','PAX WESTPHALICA'],['SAEC. XVII','REVOLUTIO GLORIOSA'],
-    ['SAEC. XVIII','REVOLUTIO INDUSTRIALIS'],['SAEC. XVIII','REVOLUTIO GALLICA'],
-    ['SAEC. XIX','CONGRESSUS VINDOBONENSIS'],['SAEC. XIX','AETAS NATIONUM'],
-    ['SAEC. XIX','AETAS IMPERIALISMI'],['SAEC. XX','BELLUM MUNDANUM I'],
-    ['SAEC. XX','BELLUM MUNDANUM II'],['SAEC. XX','BELLUM FRIGIDUM'],
-    ['SAEC. XX','FINIS BELLI FRIGIDI'],['SAEC. XXI','AETAS GLOBALIS']
-  ];
-  var f=document.getElementById('tflow'); if(!f) return;
-  var loop=data.concat(data), html='';
-  loop.forEach(function(d,i){
-    var prev=loop[(i-1+loop.length)%loop.length];
-    var lab=(prev[0]===d[0])?'':d[0];
-    html+='<div class="tcell"><div class="d">'+lab+'</div><div class="c">'+d[1]+'</div></div>';
-  });
-  f.innerHTML=html;
-})();
-</script>
+
+<h2><span class="no">3</span>地図</h2>
+<div class="cols">
+  <a href="geo_world_geography.html">地理知識地図<span>山脈・河川・海峡など199地点</span></a>
+  <a href="geo_countries.html">現在の国々<span>177か国</span></a>
+  <a href="world_history_all_points.html">世界史地点総覧<span>戦場・条約締結地・都市・遺跡</span></a>
+  <a href="geo_us_states.html">アメリカ合衆国の州<span></span></a>
+  <a href="geo_china_provinces.html">中国の省・自治区<span></span></a>
+</div>
+
+<h2><span class="no">4</span>時代別世界地図<small>47時代 ・ 各時代の国家の版図と要点</small></h2>
+<div class="era"><div>古代</div><div class="yrs">
+  <a href="world_bc3000.html"><b>前3000</b>エジプト初期王朝</a><a href="world_bc2000.html"><b>前2000</b>エジプト中王国</a><a href="world_bc1500.html"><b>前1500</b>新王国・ヒッタイト・殷</a><a href="world_bc1000.html"><b>前1000</b>ヘブライ王国・西周</a><a href="world_bc700.html"><b>前700</b>アッシリア・春秋</a><a href="world_bc400.html"><b>前400</b>アケメネス朝・戦国</a><a href="world_bc323.html"><b>前323</b>アレクサンドロス没</a><a href="world_bc300.html"><b>前300</b>ヘレニズム・マウリヤ朝</a><a href="world_bc200.html"><b>前200</b>ローマの拡大・前漢</a><a href="world_bc100.html"><b>前100</b>内乱の1世紀・武帝</a><a href="world_bc1.html"><b>前1</b>帝政ローマ・前漢末</a>
+</div></div>
+<div class="era"><div>中世</div><div class="yrs">
+  <a href="world_100.html"><b>100</b>五賢帝・後漢</a><a href="world_200.html"><b>200</b>ローマ・三国時代</a><a href="world_300.html"><b>300</b>ササン朝・西晋</a><a href="world_400.html"><b>400</b>民族移動・五胡</a><a href="world_500.html"><b>500</b>西ローマ滅亡後・南北朝</a><a href="world_600.html"><b>600</b>隋・ビザンツ</a><a href="world_700.html"><b>700</b>イスラームの拡大・唐</a><a href="world_800.html"><b>800</b>カール戴冠・アッバース朝</a><a href="world_900.html"><b>900</b>フランク分裂・唐滅亡</a><a href="world_1000.html"><b>1000</b>北宋・ヴァイキング</a><a href="world_1100.html"><b>1100</b>十字軍</a><a href="world_1200.html"><b>1200</b>南宋・アイユーブ朝</a><a href="world_1279.html"><b>1279</b>モンゴル帝国</a><a href="world_1300.html"><b>1300</b>モンゴルの諸ハン国</a><a href="world_1400.html"><b>1400</b>ティムール・明</a>
+</div></div>
+<div class="era"><div>近世</div><div class="yrs">
+  <a href="world_1492.html"><b>1492</b>レコンキスタ完了</a><a href="world_1500.html"><b>1500</b>大航海時代</a><a href="world_1530.html"><b>1530</b>宗教改革・ムガル建国</a><a href="world_1600.html"><b>1600</b>東インド会社設立</a><a href="world_1650.html"><b>1650</b>ウェストファリア後・清</a><a href="world_1700.html"><b>1700</b>ルイ14世・康熙帝</a><a href="world_1715.html"><b>1715</b>ユトレヒト条約後</a><a href="world_1783.html"><b>1783</b>アメリカ独立</a>
+</div></div>
+<div class="era"><div>近現代</div><div class="yrs">
+  <a href="world_1800.html"><b>1800</b>ナポレオン</a><a href="world_1815.html"><b>1815</b>ウィーン体制</a><a href="world_1880.html"><b>1880</b>アフリカ分割前夜</a><a href="world_1900.html"><b>1900</b>帝国主義</a><a href="world_1914.html"><b>1914</b>第一次世界大戦開戦</a><a href="world_1920.html"><b>1920</b>ヴェルサイユ体制</a><a href="world_1930.html"><b>1930</b>世界恐慌</a><a href="world_1938.html"><b>1938</b>ミュンヘン会談</a><a href="world_1945.html"><b>1945</b>第二次世界大戦終結</a><a href="world_1960.html"><b>1960</b>アフリカの年</a><a href="world_1994.html"><b>1994</b>冷戦後</a><a href="world_2000.html"><b>2000</b>21世紀へ</a><a href="world_2010.html"><b>2010</b>現代</a>
+</div></div>
+
+<h2><span class="no">5</span>写真資料</h2>
+<div class="cols">
+  <a href="photo_ancient.html">古代<span></span></a>
+  <a href="photo_medieval.html">中世<span></span></a>
+  <a href="photo_early_modern.html">近世<span></span></a>
+  <a href="photo_modern.html">近現代<span></span></a>
+</div>
+
+<footer>THESAURUS HISTORIAE ― 世界史資料集</footer>
+</div>
 <script src="search_jump.js" defer></script></body>
 </html>

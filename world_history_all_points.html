@@ -136,9 +136,17 @@ html[data-theme="lux"] .si { background:var(--paper) !important; border:1px soli
 html[data-theme="lux"] .nb { background:var(--paper) !important; border-radius:2px !important; }
 html[data-theme="lux"] .nn { color:var(--text) !important; }
 html[data-theme="lux"] .ntag { letter-spacing:0 !important; border-radius:2px !important; }
+
+/* 目次ページの見出し: 和名 + 小さなラテン名 */
+html[data-theme="lux"] .top-bar h1 small { font-size:13px; font-weight:400; color:var(--text3); margin-left:12px; letter-spacing:.06em; }
+html[data-theme="lux"] .top-bar h1 { font-size:28px !important; }
+
+html[data-theme="lux"] .sec-lat,
+html[data-theme="lux"] .asm-type { display:none !important; }
+
 </style><script id="thScript">document.documentElement.setAttribute('data-theme','lux');</script></head>
 <body>
-<div class="top"><a href="index.html" style="font-size:10px;color:#c9a96e;text-decoration:none;opacity:.5;margin-left:auto">← Ad Indicem</a>
+<div class="top"><a href="index.html" style="font-size:10px;color:#c9a96e;text-decoration:none;opacity:.5;margin-left:auto">← 目次</a>
 <h1>世界史地図 ― 全1183地点</h1>
 <p>86箇所が複数時代に登場（計259エントリー）</p>
 <button class="tb on" id="pb" onclick="toggleCat('B')">⚔戦場</button>

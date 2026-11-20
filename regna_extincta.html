@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>THESAURUS HISTORIAE — Regna Extincta</title>
+<title>亡国一覧 ― 世界史資料集</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&display=swap');
 :root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--gold3:#a08550;--text:#d4cfc6;--text2:#8a857d;--text3:#555048}
@@ -201,11 +201,19 @@ html[data-theme="lux"] .si { background:var(--paper) !important; border:1px soli
 html[data-theme="lux"] .nb { background:var(--paper) !important; border-radius:2px !important; }
 html[data-theme="lux"] .nn { color:var(--text) !important; }
 html[data-theme="lux"] .ntag { letter-spacing:0 !important; border-radius:2px !important; }
+
+/* 目次ページの見出し: 和名 + 小さなラテン名 */
+html[data-theme="lux"] .top-bar h1 small { font-size:13px; font-weight:400; color:var(--text3); margin-left:12px; letter-spacing:.06em; }
+html[data-theme="lux"] .top-bar h1 { font-size:28px !important; }
+
+html[data-theme="lux"] .sec-lat,
+html[data-theme="lux"] .asm-type { display:none !important; }
+
 </style><script id="thScript">document.documentElement.setAttribute('data-theme','lux');</script></head>
 <body>
 <a id="top"></a>
-<div class="top-bar"><h1>REGNA EXTINCTA</h1><div class="meta"><span class="cnt" id="topcnt">regna</span><a href="index.html">← Ad Indicem</a></div></div>
-<div class="search-area"><input type="text" id="search" placeholder="Quaere — 国名・首都・原因等で横断検索"><span class="result" id="result"></span><button onclick="document.querySelectorAll('.sec').forEach(s=>s.classList.toggle('folded'))">Fold / Unfold</button><button onclick="resetSort()">Reset Order</button></div>
+<div class="top-bar"><h1>亡国一覧<small>REGNA EXTINCTA</small></h1><div class="meta"><span class="cnt" id="topcnt"></span><a href="index.html">← 目次</a></div></div>
+<div class="search-area"><input type="text" id="search" placeholder="国名・首都・原因等で横断検索"><span class="result" id="result"></span><button onclick="document.querySelectorAll('.sec').forEach(s=>s.classList.toggle('folded'))">すべて開閉</button><button onclick="resetSort()">元の順に戻す</button></div>
 <div class="nav-pills" id="toc"><a href="#s1" style="border-color:#d4c08844;color:#776531">I. 古代オリエント(29)</a><a href="#s2" style="border-color:#d4888844;color:#773131">II. 古代中国 夏〜秦漢(23)</a><a href="#s3" style="border-color:#d4888844;color:#773131">III. 三国〜元(54)</a><a href="#s4" style="border-color:#c0a0d444;color:#5b3474">IV. 古代・中世南アジア(20)</a><a href="#s5" style="border-color:#88d4b044;color:#317756">V. 古代・中世東南アジア(20)</a><a href="#s6" style="border-color:#88b0d444;color:#315677">VI. 古代ギリシア・ローマ(30)</a><a href="#s7" style="border-color:#b8d08844;color:#607731">VII. イスラーム・中世アフリカ(41)</a><a href="#s8" style="border-color:#a0a0d444;color:#343474">VIII. 中世欧州(69)</a><a href="#s9" style="border-color:#d4a08844;color:#774731">IX. モンゴル・中央アジア(22)</a><a href="#s10" style="border-color:#88d4d444;color:#317777">X. 朝鮮・琉球(10)</a><a href="#s11" style="border-color:#d4888c44;color:#773135">XI. 明清近世アジア(31)</a><a href="#s12" style="border-color:#b0b08844;color:#656543">XII. 近世欧州+先コロンブス期ア(22)</a><a href="#s13" style="border-color:#c8a8d444;color:#613871">XIII. 19世紀(ナポレオン〜)(55)</a><a href="#s14" style="border-color:#d4888844;color:#773131">XIV. 帝国主義期(23)</a><a href="#s15" style="border-color:#a0c8d444;color:#346574">XV. 20世紀前半(17)</a><a href="#s16" style="border-color:#88b0d444;color:#315677">XVI. 20世紀後半(20)</a></div>
 <div class="content">
 <section class="sec" id="s1">
@@ -213,8 +221,8 @@ html[data-theme="lux"] .ntag { letter-spacing:0 !important; border-radius:2px !i
 <span class="sec-icon" style="color:#776531">I</span>
 <h2>古代オリエント</h2>
 <span class="sec-lat">Oriens Antiquus</span>
-<span class="sec-cnt">29 regna</span>
-<a href="#top" class="sec-top">▲ top</a>
+<span class="sec-cnt">29国</span>
+<a href="#top" class="sec-top">▲ 先頭へ</a>
 </div>
 <table class="nt">
 <thead><tr>
@@ -263,8 +271,8 @@ html[data-theme="lux"] .ntag { letter-spacing:0 !important; border-radius:2px !i
 <span class="sec-icon" style="color:#773131">II</span>
 <h2>古代中国 夏〜秦漢</h2>
 <span class="sec-lat">Sinae Antiquae</span>
-<span class="sec-cnt">23 regna</span>
-<a href="#top" class="sec-top">▲ top</a>
+<span class="sec-cnt">23国</span>
+<a href="#top" class="sec-top">▲ 先頭へ</a>
 </div>
 <table class="nt">
 <thead><tr>
@@ -307,8 +315,8 @@ html[data-theme="lux"] .ntag { letter-spacing:0 !important; border-radius:2px !i
 <span class="sec-icon" style="color:#773131">III</span>
 <h2>三国〜元</h2>
 <span class="sec-lat">Sinae Mediaevales</span>
-<span class="sec-cnt">54 regna</span>
-<a href="#top" class="sec-top">▲ top</a>
+<span class="sec-cnt">54国</span>
+<a href="#top" class="sec-top">▲ 先頭へ</a>
 </div>
 <table class="nt">
 <thead><tr>
@@ -382,8 +390,8 @@ html[data-theme="lux"] .ntag { letter-spacing:0 !important; border-radius:2px !i
 <span class="sec-icon" style="color:#5b3474">IV</span>
 <h2>古代・中世南アジア</h2>
 <span class="sec-lat">India Mediaevalis</span>
-<span class="sec-cnt">20 regna</span>
-<a href="#top" class="sec-top">▲ top</a>
+<span class="sec-cnt">20国</span>
+<a href="#top" class="sec-top">▲ 先頭へ</a>
 </div>
 <table class="nt">
 <thead><tr>
@@ -423,8 +431,8 @@ html[data-theme="lux"] .ntag { letter-spacing:0 !important; border-radius:2px !i
 <span class="sec-icon" style="color:#317756">V</span>
 <h2>古代・中世東南アジア</h2>
 <span class="sec-lat">India Extra Gangem</span>
-<span class="sec-cnt">20 regna</span>
-<a href="#top" class="sec-top">▲ top</a>
+<span class="sec-cnt">20国</span>
+<a href="#top" class="sec-top">▲ 先頭へ</a>
 </div>
 <table class="nt">
 <thead><tr>
@@ -464,8 +472,8 @@ html[data-theme="lux"] .ntag { letter-spacing:0 !important; border-radius:2px !i
 <span class="sec-icon" style="color:#315677">VI</span>
 <h2>古代ギリシア・ローマ</h2>
 <span class="sec-lat">Graecia et Roma</span>
-<span class="sec-cnt">30 regna</span>
-<a href="#top" class="sec-top">▲ top</a>
+<span class="sec-cnt">30国</span>
+<a href="#top" class="sec-top">▲ 先頭へ</a>
 </div>
 <table class="nt">
 <thead><tr>
@@ -515,8 +523,8 @@ html[data-theme="lux"] .ntag { letter-spacing:0 !important; border-radius:2px !i
 <span class="sec-icon" style="color:#607731">VII</span>
 <h2>イスラーム・中世アフリカ</h2>
 <span class="sec-lat">Islamica et Africa Mediaev.</span>
-<span class="sec-cnt">41 regna</span>
-<a href="#top" class="sec-top">▲ top</a>
+<span class="sec-cnt">41国</span>
+<a href="#top" class="sec-top">▲ 先頭へ</a>
 </div>
 <table class="nt">
 <thead><tr>
@@ -577,8 +585,8 @@ html[data-theme="lux"] .ntag { letter-spacing:0 !important; border-radius:2px !i
 <span class="sec-icon" style="color:#343474">VIII</span>
 <h2>中世欧州</h2>
 <span class="sec-lat">Europa Mediaevalis</span>
-<span class="sec-cnt">69 regna</span>
-<a href="#top" class="sec-top">▲ top</a>
+<span class="sec-cnt">69国</span>
+<a href="#top" class="sec-top">▲ 先頭へ</a>
 </div>
 <table class="nt">
 <thead><tr>
@@ -667,8 +675,8 @@ html[data-theme="lux"] .ntag { letter-spacing:0 !important; border-radius:2px !i
 <span class="sec-icon" style="color:#774731">IX</span>
 <h2>モンゴル・中央アジア</h2>
 <span class="sec-lat">Mongolia et Asia Centralis</span>
-<span class="sec-cnt">22 regna</span>
-<a href="#top" class="sec-top">▲ top</a>
+<span class="sec-cnt">22国</span>
+<a href="#top" class="sec-top">▲ 先頭へ</a>
 </div>
 <table class="nt">
 <thead><tr>
@@ -710,8 +718,8 @@ html[data-theme="lux"] .ntag { letter-spacing:0 !important; border-radius:2px !i
 <span class="sec-icon" style="color:#317777">X</span>
 <h2>朝鮮・琉球</h2>
 <span class="sec-lat">Corea et Ryukyuus</span>
-<span class="sec-cnt">10 regna</span>
-<a href="#top" class="sec-top">▲ top</a>
+<span class="sec-cnt">10国</span>
+<a href="#top" class="sec-top">▲ 先頭へ</a>
 </div>
 <table class="nt">
 <thead><tr>
@@ -741,8 +749,8 @@ html[data-theme="lux"] .ntag { letter-spacing:0 !important; border-radius:2px !i
 <span class="sec-icon" style="color:#773135">XI</span>
 <h2>明清近世アジア</h2>
 <span class="sec-lat">Asia Orientalis Recens</span>
-<span class="sec-cnt">31 regna</span>
-<a href="#top" class="sec-top">▲ top</a>
+<span class="sec-cnt">31国</span>
+<a href="#top" class="sec-top">▲ 先頭へ</a>
 </div>
 <table class="nt">
 <thead><tr>
@@ -793,8 +801,8 @@ html[data-theme="lux"] .ntag { letter-spacing:0 !important; border-radius:2px !i
 <span class="sec-icon" style="color:#656543">XII</span>
 <h2>近世欧州+先コロンブス期ア</h2>
 <span class="sec-lat">Europa Recens et Americae</span>
-<span class="sec-cnt">22 regna</span>
-<a href="#top" class="sec-top">▲ top</a>
+<span class="sec-cnt">22国</span>
+<a href="#top" class="sec-top">▲ 先頭へ</a>
 </div>
 <table class="nt">
 <thead><tr>
@@ -836,8 +844,8 @@ html[data-theme="lux"] .ntag { letter-spacing:0 !important; border-radius:2px !i
 <span class="sec-icon" style="color:#613871">XIII</span>
 <h2>19世紀(ナポレオン〜)</h2>
 <span class="sec-lat">Saeculum XIX Primum</span>
-<span class="sec-cnt">55 regna</span>
-<a href="#top" class="sec-top">▲ top</a>
+<span class="sec-cnt">55国</span>
+<a href="#top" class="sec-top">▲ 先頭へ</a>
 </div>
 <table class="nt">
 <thead><tr>
@@ -912,8 +920,8 @@ html[data-theme="lux"] .ntag { letter-spacing:0 !important; border-radius:2px !i
 <span class="sec-icon" style="color:#773131">XIV</span>
 <h2>帝国主義期</h2>
 <span class="sec-lat">Aetas Imperialismi</span>
-<span class="sec-cnt">23 regna</span>
-<a href="#top" class="sec-top">▲ top</a>
+<span class="sec-cnt">23国</span>
+<a href="#top" class="sec-top">▲ 先頭へ</a>
 </div>
 <table class="nt">
 <thead><tr>
@@ -956,8 +964,8 @@ html[data-theme="lux"] .ntag { letter-spacing:0 !important; border-radius:2px !i
 <span class="sec-icon" style="color:#346574">XV</span>
 <h2>20世紀前半</h2>
 <span class="sec-lat">Saeculum XX Primum</span>
-<span class="sec-cnt">17 regna</span>
-<a href="#top" class="sec-top">▲ top</a>
+<span class="sec-cnt">17国</span>
+<a href="#top" class="sec-top">▲ 先頭へ</a>
 </div>
 <table class="nt">
 <thead><tr>
@@ -994,8 +1002,8 @@ html[data-theme="lux"] .ntag { letter-spacing:0 !important; border-radius:2px !i
 <span class="sec-icon" style="color:#315677">XVI</span>
 <h2>20世紀後半</h2>
 <span class="sec-lat">Saeculum XX Alterum</span>
-<span class="sec-cnt">20 regna</span>
-<a href="#top" class="sec-top">▲ top</a>
+<span class="sec-cnt">20国</span>
+<a href="#top" class="sec-top">▲ 先頭へ</a>
 </div>
 <table class="nt">
 <thead><tr>
@@ -1079,7 +1087,7 @@ document.querySelectorAll('table.nt th').forEach(th=>{
     rows.forEach(r=>tbody.appendChild(r));
   });
 });
-document.getElementById('topcnt').textContent=allRows.length+' regna';
+document.getElementById('topcnt').textContent=allRows.length+'国';
 </script>
 <script src="search_jump.js" defer></script></body>
 </html>
