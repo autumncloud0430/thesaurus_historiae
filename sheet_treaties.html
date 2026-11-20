@@ -4,11 +4,11 @@
 .search-bar{padding:10px 20px;display:flex;gap:10px;align-items:center}.si{padding:6px 14px;border-radius:100px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);color:var(--text);font-size:11px;font-family:inherit;width:240px;outline:none;transition:border-color .2s}.si:focus{border-color:rgba(var(--axr),.3)}.si::placeholder{color:var(--text3)}.cnt{font-size:9px;color:var(--text3);font-family:'Shippori Mincho',serif;letter-spacing:.1em}
 .tbl-wrap{padding:4px 20px 40px;overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:11px}
 th{background:rgba(var(--axr),.08);color:var(--gold);font-family:'Noto Serif JP',serif;font-weight:700;font-size:10px;letter-spacing:.08em;text-align:left;padding:8px 12px;border-bottom:1px solid rgba(var(--axr),.15);white-space:nowrap}
-td{padding:8px 12px;border-bottom:1px solid rgba(255,255,255,.025);color:#bbb;vertical-align:top;line-height:1.7}
+td{padding:8px 12px;border-bottom:1px solid rgba(255,255,255,.025);color:#3f372d;vertical-align:top;line-height:1.7}
 td.no{color:var(--text3);font-family:'Shippori Mincho',serif;font-size:12px;text-align:center;font-weight:600;width:36px}
 td.nm{color:var(--text);font-weight:600;width:160px}
 td.yr{color:var(--gold);opacity:.7;font-family:'Shippori Mincho',serif;font-size:12px;white-space:nowrap;width:90px}
-td.ds{color:#a8a39a;font-size:11px}
+td.ds{color:#3f372d;font-size:11px}
 tr:hover td{background:rgba(var(--axr),.03)}
 tr.sh td{background:rgba(var(--axr),.06);color:var(--gold2);font-family:'Noto Serif JP',serif;font-weight:700;font-size:12px;padding:12px;letter-spacing:.06em;border-bottom:1px solid rgba(var(--axr),.1)}
 .hidden{display:none}
@@ -644,8 +644,8 @@ html[data-theme="lux"] .ntag { letter-spacing:0 !important; border-radius:2px !i
 <script>var currentTab=0;function switchTab(n){document.getElementById("content"+currentTab).className="tbl-wrap hidden";document.getElementById("tab"+currentTab).className="tab";document.getElementById("content"+n).className="tbl-wrap";document.getElementById("tab"+n).className="tab on";currentTab=n;filterRows()}function filterRows(){var q=document.getElementById("search").value.toLowerCase();var w=document.getElementById("content"+currentTab);var r=w.querySelectorAll("tbody tr");var s=0;for(var i=0;i<r.length;i++){var t=r[i].textContent.toLowerCase();if(!q||t.indexOf(q)>=0){r[i].style.display="";s++}else{r[i].style.display="none"}}document.getElementById("cnt").textContent=s+" 件"}filterRows();</script>
 
 <style>
-.chart-link{display:inline-block;font-size:6px;padding:1px 4px;margin:1px;border-radius:2px;background:rgba(var(--axr),.08);border:1px solid rgba(var(--axr),.12);color:#c9a96e;text-decoration:none;white-space:nowrap;vertical-align:middle;transition:all .15s}
-.chart-link:hover{background:rgba(var(--axr),.2);border-color:rgba(var(--axr),.3);color:#e8c888}
+.chart-link{display:inline-block;font-size:6px;padding:1px 4px;margin:1px;border-radius:2px;background:rgba(var(--axr),.08);border:1px solid rgba(var(--axr),.12);color:#775f31;text-decoration:none;white-space:nowrap;vertical-align:middle;transition:all .15s}
+.chart-link:hover{background:rgba(var(--axr),.2);border-color:rgba(var(--axr),.3);color:#776031}
 .chart-links-wrap{display:inline;margin-left:3px}
 </style>
 <script>
