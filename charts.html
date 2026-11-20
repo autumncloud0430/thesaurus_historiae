@@ -6,17 +6,17 @@
 <title>THESAURUS HISTORIAE ― Ad Chartae</title>
 <style>
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&display=swap');
 :root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
 body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
 
 .top-bar{padding:28px 32px 18px;border-bottom:1px solid rgba(var(--axr),.06)}
-.top-bar h1{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:700;color:var(--gold2);letter-spacing:3px}
+.top-bar h1{font-family:'Shippori Mincho',serif;font-size:32px;font-weight:700;color:var(--gold2);letter-spacing:.04em}
 .top-bar .meta{display:flex;align-items:center;gap:16px;margin-top:4px}
 .top-bar .meta a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.4}.top-bar .meta a:hover{opacity:1}
-.top-bar .meta .cnt{font-size:11px;color:var(--text3);font-family:'Cormorant Garamond',serif;font-size:14px;letter-spacing:1px}
+.top-bar .meta .cnt{font-size:11px;color:var(--text3);font-family:'Shippori Mincho',serif;font-size:14px;letter-spacing:1px}
 
 .search-area{padding:14px 32px;border-bottom:1px solid rgba(var(--axr),.04);display:flex;align-items:center;gap:12px}
 .search-area input{background:rgba(var(--axr),.03);border:1px solid rgba(var(--axr),.08);border-radius:8px;padding:10px 20px;color:var(--text);font-size:13px;font-family:inherit;width:420px;outline:none;transition:all .2s}
@@ -32,24 +32,24 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
 
 .sec{margin-bottom:32px}
 .sec-hdr{display:flex;align-items:center;gap:10px;padding:10px 0;margin-bottom:10px;border-bottom:1px solid rgba(var(--axr),.06)}
-.sec-icon{font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:700;opacity:.6}
+.sec-icon{font-family:'Shippori Mincho',serif;font-size:14px;font-weight:700;opacity:.6}
 .sec-hdr h2{font-family:'Noto Serif JP',serif;font-size:15px;font-weight:700;color:var(--gold2)}
-.sec-cnt{font-size:9px;color:var(--text3);margin-left:auto;font-family:'Cormorant Garamond',serif;font-size:12px}
+.sec-cnt{font-size:9px;color:var(--text3);margin-left:auto;font-family:'Shippori Mincho',serif;font-size:12px}
 
 .sec-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:8px}
 
 .card{display:flex;flex-direction:column;gap:5px;padding:10px 14px;border:1px solid rgba(var(--axr),.04);border-radius:8px;background:rgba(255,255,255,.006);text-decoration:none;transition:all .2s}
-.card:hover{background:rgba(var(--axr),.04);border-color:rgba(var(--axr),.12);transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.2)}
+.card:hover{background:rgba(var(--axr),.04);border-color:rgba(var(--axr),.12);box-shadow:0 4px 12px rgba(0,0,0,.2)}
 .card.hidden{display:none}
 .card-badge{font-size:7px;padding:2px 7px;border-radius:4px;align-self:flex-start;font-weight:600}
 .card-main{font-size:10.5px;color:var(--text);font-weight:600;line-height:1.5}
 .card-sub{font-size:8px;color:var(--text3);line-height:1.4}
 
-.latin{font-family:'Cormorant Garamond',serif;font-size:10px;font-weight:400;font-style:italic;color:var(--gold);margin-left:10px;letter-spacing:1px;opacity:.6}
-.top-bar::after{content:'TABVLAE · SCHEMATA · ARBORES · COMPARATIONES';display:block;font-family:'Cormorant Garamond',serif;font-size:11px;color:var(--text3);letter-spacing:3px;margin-top:6px;opacity:.4}
+.latin{font-family:'Shippori Mincho',serif;font-size:10px;font-weight:400;font-style:normal;color:var(--gold);margin-left:10px;letter-spacing:1px;opacity:.6}
+.top-bar::after{content:'TABVLAE · SCHEMATA · ARBORES · COMPARATIONES';display:block;font-family:'Shippori Mincho',serif;font-size:11px;color:var(--text3);letter-spacing:.04em;margin-top:6px;opacity:.4}
 .sec-hdr::before{content:'';display:block;width:100%;height:1px;background:linear-gradient(90deg,rgba(var(--axr),.15),rgba(var(--axr),.03));position:absolute;top:0}
 .sec-hdr{position:relative;padding-top:12px}
-.nav-pills::before{content:'· NAVIGATIO ·';font-family:'Cormorant Garamond',serif;font-size:8px;color:var(--text3);letter-spacing:3px;opacity:.3;margin-right:8px}
+.nav-pills::before{content:'· NAVIGATIO ·';font-family:'Shippori Mincho',serif;font-size:8px;color:var(--text3);letter-spacing:.04em;opacity:.3;margin-right:8px}
 
 .card.match-body{border-color:rgba(var(--axr),.25)!important;background:rgba(var(--axr),.05)!important;position:relative}
 .card.match-body::after{content:'★';position:absolute;top:6px;right:8px;font-size:8px;color:var(--gold);opacity:.7}
@@ -150,7 +150,7 @@ html[data-theme="lux"] .ntag { letter-spacing:0 !important; border-radius:2px !i
 </style><script id="thScript">document.documentElement.setAttribute('data-theme','lux');</script></head>
 <body>
 <div class="top-bar"><h1>CHARTAE</h1><div class="meta"><span class="cnt">CLIV chartae</span><a href="index.html">← Ad Indicem</a></div></div>
-<div class="divider" style="text-align:center;padding:4px 0;border-bottom:1px solid rgba(var(--axr),.04)"><span style="font-family:Cormorant Garamond,serif;font-size:9px;color:rgba(var(--axr),.15);letter-spacing:6px">✦ SENATUS POPULUSQUE HISTORIAE ✦</span></div>
+<div class="divider" style="text-align:center;padding:4px 0;border-bottom:1px solid rgba(var(--axr),.04)"><span style="font-family:Shippori Mincho,serif;font-size:9px;color:rgba(var(--axr),.15);letter-spacing:.04em">✦ SENATUS POPULUSQUE HISTORIAE ✦</span></div>
 <div class="search-area"><input type="text" id="search" placeholder="Quaere — キーワードで横断検索"><span class="result" id="result"></span><span class="hint" style="font-size:9px;color:var(--text3);opacity:.7;margin-left:8px">★ = 本文ヒット</span></div>
 <div class="nav-pills"><a href="#sec-orient" style="border-color:#d4c08844;color:#d4c088">Ⅰ. 古代オリエント・エジプト</a>
 <a href="#sec-greek_rome" style="border-color:#88b0d444;color:#88b0d4">Ⅱ. 古代ギリシア・ローマ</a>

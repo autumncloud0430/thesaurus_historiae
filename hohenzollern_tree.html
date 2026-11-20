@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ホーエンツォレルン家の系譜</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&display=swap');
 :root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048;--border:rgba(var(--axr),.08)}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
@@ -16,7 +16,7 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
 .wrap{padding:20px 16px 10px;overflow-x:auto}
 .tree{display:flex;flex-direction:column;align-items:center;min-width:600px;gap:0}
 @media(max-width:650px){.tree{min-width:0;width:100%}.row{flex-wrap:wrap;justify-content:center}}
-.nd{position:relative;text-align:center;cursor:pointer;transition:transform .15s}.nd:hover{transform:translateY(-1px)}
+.nd{position:relative;text-align:center;cursor:pointer;transition:transform .15s}.nd:hover{}
 .nb{border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:7px 12px;background:rgba(255,255,255,.02);transition:all .2s;border-left:3px solid rgba(120,100,80,.4)}
 .nd:hover .nb{border-color:rgba(var(--axr),.3);background:rgba(var(--axr),.04)}
 .nn{font-family:'Noto Serif JP',serif;font-size:11px;font-weight:700;color:var(--gold2);white-space:nowrap}
@@ -28,8 +28,8 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
 html[data-theme="lux"] .peak .nn{background:none;-webkit-background-clip:border-box;background-clip:border-box;-webkit-text-fill-color:currentColor;color:var(--gold2)}
 .end .nb{border-color:rgba(140,60,60,.3);background:rgba(140,60,60,.04)}
 .cv{width:1px;height:14px;background:rgba(var(--axr),.15);margin:0 auto}.cv.l{height:20px}
-.inherit{font-size:7px;color:var(--text3);text-align:center;margin:2px 0;font-style:italic}.inherit strong{color:var(--gold);font-style:normal}
-.split-label{font-family:'Cormorant Garamond',serif;font-size:9px;font-weight:700;letter-spacing:.15em;color:var(--gold);text-align:center;padding:6px 0 3px;opacity:.6}
+.inherit{font-size:7px;color:var(--text3);text-align:center;margin:2px 0;font-style:normal}.inherit strong{color:var(--gold);font-style:normal}
+.split-label{font-family:'Shippori Mincho',serif;font-size:9px;font-weight:700;letter-spacing:.15em;color:var(--gold);text-align:center;padding:6px 0 3px;opacity:.6}
 .tp{display:none}
 .note{text-align:center;padding:6px 20px 32px;font-size:9px;color:var(--text3);line-height:1.8;max-width:800px;margin:0 auto}.note strong{color:var(--gold)}
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>年号リスト＋横断索引</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&display=swap');
 :root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048;--border:rgba(var(--axr),.08)}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
@@ -23,19 +23,19 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
 table{border-collapse:collapse;width:100%;min-width:700px}
 th{background:rgba(var(--axr),.06);color:var(--gold2);font-family:'Noto Serif JP',serif;font-size:9px;font-weight:700;padding:7px 10px;text-align:left;border-bottom:1px solid rgba(var(--axr),.12);position:sticky;top:0}
 td{padding:5px 10px;border-bottom:1px solid rgba(255,255,255,.03);font-size:8.5px;color:var(--text2);line-height:1.5;vertical-align:top}
-td.yr{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:11px;color:var(--gold);white-space:nowrap;min-width:55px}
+td.yr{font-family:'Shippori Mincho',serif;font-weight:700;font-size:11px;color:var(--gold);white-space:nowrap;min-width:55px}
 td.ev{color:var(--text);min-width:180px}
 td.mm{min-width:250px}
 td.st{font-size:9px;color:rgba(var(--axr),.6);white-space:nowrap}
 tr:hover td{background:rgba(var(--axr),.02)}
 .sbox{padding:10px 20px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-.sbox input{background:rgba(255,255,255,.04);border:1px solid rgba(var(--axr),.15);border-radius:6px;padding:7px 12px;color:var(--text);font-family:'Cormorant Garamond',serif;font-size:15px;width:110px;outline:none}
+.sbox input{background:rgba(255,255,255,.04);border:1px solid rgba(var(--axr),.15);border-radius:6px;padding:7px 12px;color:var(--text);font-family:'Shippori Mincho',serif;font-size:15px;width:110px;outline:none}
 .sbox input:focus{border-color:rgba(var(--axr),.4)}
 .sbox input::placeholder{color:var(--text3)}
 .sbox .hint{font-size:7.5px;color:var(--text3)}
 .yg{margin:0 16px 10px;border:1px solid rgba(var(--axr),.06);border-radius:6px;overflow:hidden}
 .yg-h{background:rgba(var(--axr),.04);padding:6px 12px;font-family:'Noto Serif JP',serif;font-size:11px;font-weight:700;color:var(--gold2);display:flex;justify-content:space-between}
-.yg-h .yn{font-family:'Cormorant Garamond',serif;font-size:14px;color:var(--gold)}
+.yg-h .yn{font-family:'Shippori Mincho',serif;font-size:14px;color:var(--gold)}
 .yr-row{display:flex;border-bottom:1px solid rgba(255,255,255,.02);padding:4px 12px;gap:8px}
 .yr-row:last-child{border-bottom:none}
 .yr-rg{font-family:'Noto Serif JP',serif;font-size:7.5px;font-weight:700;color:var(--gold);opacity:.7;min-width:55px;padding-top:1px}
