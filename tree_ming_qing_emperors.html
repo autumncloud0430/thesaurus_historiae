@@ -169,16 +169,12 @@ table.tb{width:100%;border-collapse:collapse}
 .tb td.p{font-family:'Noto Serif JP',serif;font-weight:700;color:var(--gold2);white-space:nowrap}
 .tb td.p small{display:block;font-family:'Cormorant Garamond',serif;font-weight:700;font-size:14px;color:var(--gold)}
 .tb-note{font-size:13px;color:var(--text2);line-height:1.8;margin:6px 2px 0}
-@media(max-width:640px){
-.cols.c2,.cols.c3{grid-template-columns:1fr;gap:6px}
-.col-h{margin-top:6px}
-}
 @media(max-width:600px){
 .kp p{font-size:13px}
 .legend{font-size:12px}
-.line,.cols .line{padding-left:16px;margin-left:5px}
-.ru::before,.cols .ru::before{left:-23px}
-.dyn::before,.cols .dyn::before{left:-24px}
+.line{padding-left:16px;margin-left:5px}
+.ru::before{left:-23px}
+.dyn::before{left:-24px}
 .ru{padding:3px 9px 4px}
 .ru-n{font-size:14.5px}.ru.big .ru-n{font-size:15.5px}
 .ru-y{font-size:14.5px}
@@ -191,7 +187,26 @@ table.tb{width:100%;border-collapse:collapse}
 .tb td{font-size:13px;padding:5px 5px}
 .tb-note{font-size:12.5px}
 }
-</style><style id="thThemes">/* =====================================================
+/* 2026-11-28 (famtree brief): parallel dynasties stay side by side on phones too - stacking them hid which
+   dynasties co-existed. Narrow columns get a thinner rail and smaller cards (text stays >=11px). */
+@media(max-width:640px){
+.cols.c2{gap:6px}.cols.c3{gap:4px}
+.col-h{font-size:13px;padding:0 2px 3px;line-height:1.4}
+.col-h small{display:block;margin-left:0;font-size:11px}
+.cols .line{margin-left:3px;padding-left:9px}
+.cols .ru::before{left:-15px;top:7px;width:6px;height:6px}
+.cols .dyn::before{left:-16px;width:8px;height:8px;margin-top:-6px}
+.cols .ru{padding:2px 6px 3px;border-radius:7px}
+.cols .ru-h{gap:0 4px}
+.cols .ru-n{font-size:13.5px}.cols .ru.big .ru-n{font-size:14px}.cols .ru.sm .ru-n{font-size:13px}
+.cols .ru-y,.cols .ru.sm .ru-y{font-size:13px}
+.cols .ru-a{font-size:11px}
+.cols .ru-r{font-size:11px;padding:0 4px}
+.cols .ru-d{font-size:12px;line-height:1.5}
+.cols .skip{font-size:11.5px;line-height:1.5}
+.cols .dyn{padding:2px 6px;gap:0 5px}.cols .dyn b{font-size:13.5px}.cols .dyn .y{font-size:13.5px}.cols .dyn small{font-size:11px}
+}
+.ftseg{max-width:520px;margin:6px 0 8px}</style><style id="thThemes">/* =====================================================
    THESAURUS HISTORIAE ― themes.css(LUX固定版)
    生成りの紙 + 墨の本文 + 朱筆(★語) + 金茶の構造色。
    retheme_inject.py が各HTMLに埋め込む。編集後は再実行。
@@ -243,7 +258,71 @@ html[data-theme="lux"] .detail { color:var(--text2); }
 <p class="lead">紅巾の乱から出た朱元璋が<b>明</b>を建て(1368)、皇帝独裁の体制をつくった。明は李自成の乱で滅び(1644)、東北から興った満洲人の<b>清</b>が中国を支配した。清は18世紀に最盛期を迎えたが、19世紀に欧米との戦争や内乱が続き、辛亥革命で倒れた(1912)。</p>
 <div class="sec-hdr"><span class="sec-icon">Ⅰ</span><h2>系図 <span class="latin">Stemma</span></h2></div><p class="cap">上から順に帝位の継承を示す。並んだ列は同時に存在した王朝。</p>
 <div class="legend"><span><i class="lg-big"></i>特に重要な皇帝</span><span><b>子</b>前の皇帝との続柄</span><span><b class="x">簒奪</b>帝位の奪取・王朝の交代</span><span><i class="lg-brk"></i>王朝の交代・分裂</span><span>⋮ 省略した皇帝</span></div>
-<div class="brk"><span class="y">1351</span><span class="t">紅巾の乱</span><span class="d">元に対する反乱のなかから朱元璋が台頭</span></div><div class="line"><div class="dyn"><b>明</b><span class="y">1368–1644</span><small>都：南京 → 北京(1421)</small></div><div class="ru big"><div class="ru-h"><span class="ru-n">洪武帝</span><span class="ru-a">朱元璋</span><span class="ru-y">1368–1398</span></div><div class="ru-d">中書省を廃止し皇帝独裁。里甲制、一世一元の制</div></div><div class="ru sm"><div class="ru-h"><span class="ru-r">孫</span><span class="ru-n">建文帝</span><span class="ru-y">1398–1402</span></div><div class="ru-d">諸王の力を削り、靖難の役を招く</div></div><div class="ru big"><div class="ru-h"><span class="ru-r x">叔父・簒奪</span><span class="ru-n">永楽帝</span><span class="ru-a">燕王朱棣</span><span class="ru-y">1402–1424</span></div><div class="ru-d">北京に遷都。鄭和の南海遠征</div></div><div class="skip">⋮ 洪熙帝</div><div class="ru sm"><div class="ru-h"><span class="ru-r">洪熙帝の子</span><span class="ru-n">宣徳帝</span><span class="ru-y">1425–1435</span></div><div class="ru-d">最後の鄭和の遠征を送る</div></div><div class="ru sm"><div class="ru-h"><span class="ru-r">子</span><span class="ru-n">正統帝</span><span class="ru-y">1435–49, 1457–64</span></div><div class="ru-d">土木の変(1449)でオイラトの捕虜に</div></div><div class="skip">⋮ 景泰帝(正統帝の弟)・成化帝・弘治帝・正徳帝</div><div class="ru sm"><div class="ru-h"><span class="ru-r">正徳帝のいとこ</span><span class="ru-n">嘉靖帝</span><span class="ru-y">1521–1566</span></div><div class="ru-d">北虜南倭(モンゴルと倭寇)に苦しむ</div></div><div class="skip">⋮ 隆慶帝 ― 海禁をゆるめる</div></div><div class="cols c2"><div class="col"><div class="col-h">明末</div><div class="line"><div class="ru big"><div class="ru-h"><span class="ru-r">隆慶帝の子</span><span class="ru-n">万暦帝</span><span class="ru-y">1572–1620</span></div><div class="ru-d">張居正が一条鞭法を広める。朝鮮に援軍</div></div><div class="skip">⋮ 泰昌帝</div><div class="ru sm"><div class="ru-h"><span class="ru-r">泰昌帝の子</span><span class="ru-n">天啓帝</span><span class="ru-y">1620–1627</span></div><div class="ru-d">宦官の魏忠賢が東林派を弾圧</div></div><div class="ru end"><div class="ru-h"><span class="ru-r">弟</span><span class="ru-n">崇禎帝</span><span class="ru-y">1627–1644</span></div><div class="ru-d">李自成軍が北京に入り、自殺</div></div></div></div><div class="col"><div class="col-h">後金 → 清<small>1616〜</small></div><div class="line"><div class="ru big"><div class="ru-h"><span class="ru-n">ヌルハチ</span><span class="ru-a">太祖</span><span class="ru-y">1616–1626</span></div><div class="ru-d">女真を統一し後金を建国。八旗、満洲文字</div></div><div class="ru"><div class="ru-h"><span class="ru-r">子</span><span class="ru-n">ホンタイジ</span><span class="ru-a">太宗</span><span class="ru-y">1626–1643</span></div><div class="ru-d">国号を清と改める(1636)。朝鮮を服属</div></div></div></div></div><div class="brk"><span class="y">1644</span><span class="t">明の滅亡と清の入関</span><span class="d">李自成が北京を占領 → 呉三桂の導きで清軍が北京に入る</span></div><div class="line"><div class="dyn"><b>清の中国支配</b><span class="y">1644–1912</span><small>都：北京</small></div><div class="ru"><div class="ru-h"><span class="ru-r">ホンタイジの子</span><span class="ru-n">順治帝</span><span class="ru-y">1643–1661</span></div><div class="ru-d">北京に入り中国支配を始める。辮髪を強制</div></div><div class="ru big"><div class="ru-h"><span class="ru-r">子</span><span class="ru-n">康煕帝</span><span class="ru-y">1661–1722</span></div><div class="ru-d">三藩の乱を平定、台湾を領有。ネルチンスク条約</div></div><div class="ru"><div class="ru-h"><span class="ru-r">子</span><span class="ru-n">雍正帝</span><span class="ru-y">1722–1735</span></div><div class="ru-d">軍機処を設置。地丁銀制を広め、キャフタ条約</div></div><div class="ru big"><div class="ru-h"><span class="ru-r">子</span><span class="ru-n">乾隆帝</span><span class="ru-y">1735–1795</span></div><div class="ru-d">ジュンガルを滅ぼし領土最大に。貿易を広州に限定</div></div><div class="ru sm"><div class="ru-h"><span class="ru-r">子</span><span class="ru-n">嘉慶帝</span><span class="ru-y">1796–1820</span></div><div class="ru-d">白蓮教徒の乱(1796–1804)</div></div><div class="ru sm"><div class="ru-h"><span class="ru-r">子</span><span class="ru-n">道光帝</span><span class="ru-y">1820–1850</span></div><div class="ru-d">アヘン戦争(1840–42)、南京条約</div></div><div class="ru sm"><div class="ru-h"><span class="ru-r">子</span><span class="ru-n">咸豊帝</span><span class="ru-y">1850–1861</span></div><div class="ru-d">太平天国(1851–64)、アロー戦争</div></div><div class="ru sm"><div class="ru-h"><span class="ru-r">子</span><span class="ru-n">同治帝</span><span class="ru-y">1861–1875</span></div><div class="ru-d">母の西太后が実権を握る。洋務運動</div></div><div class="ru"><div class="ru-h"><span class="ru-r">いとこ</span><span class="ru-n">光緒帝</span><span class="ru-y">1875–1908</span></div><div class="ru-d">日清戦争に敗れる。戊戌の変法が挫折</div></div><div class="ru end"><div class="ru-h"><span class="ru-r">甥</span><span class="ru-n">宣統帝</span><span class="ru-a">溥儀</span><span class="ru-y">1908–1912</span></div><div class="ru-d">辛亥革命で退位し、清が滅亡</div></div></div><div class="brk"><span class="y">1912</span><span class="t">清の滅亡</span><span class="d">中華民国が成立し、始皇帝以来の皇帝政治が終わる</span></div>
+<div class="brk"><span class="y">1351</span><span class="t">紅巾の乱</span><span class="d">元に対する反乱のなかから朱元璋が台頭</span></div><div class="line"><div class="dyn"><b>明</b><span class="y">1368–1644</span><small>都：南京 → 北京(1421)</small></div></div><div class="ftseg"><style>
+.ft-wrap{position:relative;margin:6px 0 4px}
+.ft{position:relative;display:grid;column-gap:10px;row-gap:28px;align-items:start;z-index:1}
+.ft-svg{position:absolute;left:0;top:0;width:100%;height:100%;z-index:0;pointer-events:none;overflow:visible}
+.ft-p{position:relative;justify-self:center;width:100%;max-width:210px;border:1px solid rgba(var(--axr),.3);border-radius:9px;background:#f7f1e4;padding:5px 7px 5px;text-align:center;line-height:1.35}
+.ft-p b{display:block;font-family:'Noto Serif JP',serif;font-size:14px;color:var(--gold2)}
+.ft-p .s{display:block;font-size:11.5px;color:var(--text2);margin-top:1px}
+.ft-p .n{display:block;font-size:11.5px;color:var(--text);margin-top:2px;border-top:1px solid rgba(var(--axr),.12);padding-top:2px}
+.ft-p.main{border-color:rgba(var(--axr),.6);background:#f2e8d4;box-shadow:0 0 0 2px rgba(var(--axr),.07)}
+.ft-p.main b{font-size:15px}
+.ft-p.minor{border-style:dashed;background:transparent;padding:3px 6px}
+.ft-p.minor b{font-size:12.5px;font-weight:600}
+.ft-p.out{border-style:dashed;border-color:rgba(var(--axr),.45);background:rgba(var(--axr),.03)}
+.ft-p.end{border-color:rgba(162,51,30,.45)}
+.ft-p.end .s,.ft-p.end .n{color:var(--shu)}
+.ft-b{position:relative;z-index:1;align-self:center;text-align:center;font-size:12px;color:var(--gold2);background:#efe5d0;border-radius:6px;padding:3px 8px;line-height:1.5}
+.ft-b.shu{background:rgba(162,51,30,.07);color:var(--shu)}
+.ft-lbl{font-family:'Noto Sans JP',sans-serif;font-size:11px;fill:var(--gold2)}
+.ft-key{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:11.5px;color:var(--text2);margin:2px 0 10px}
+.ft-key span{display:inline-flex;align-items:center;gap:5px}
+.ft-key i{display:inline-block;width:22px;height:0;border-top:1px solid var(--gold)}
+.ft-key i.m{border-top:3px double var(--gold2)}.ft-key i.d{border-top:1.5px dashed var(--gold)}
+@media(max-width:600px){
+.ft{column-gap:6px;row-gap:26px}
+.ft-p{padding:4px 3px}
+.ft-p b{font-size:12.5px}.ft-p.main b{font-size:13.5px}.ft-p.minor b{font-size:11.5px}
+.ft-p .s,.ft-p .n{font-size:11px}
+.ft-b{font-size:11.5px;padding:3px 5px}
+}
+</style><div class="ft-wrap" data-ft="{&quot;m&quot;: [], &quot;c&quot;: [[[&quot;hw&quot;], [&quot;zb&quot;, &quot;yl&quot;], &quot;&quot;], [[&quot;zb&quot;], [&quot;jw&quot;], &quot;&quot;]], &quot;d&quot;: []}"><svg class="ft-svg" aria-hidden="true"></svg><div class="ft" style="grid-template-columns:repeat(2,minmax(0,1fr))"><div class="ft-p main" data-id="hw" style="grid-column:1/span 2;grid-row:1"><b>洪武帝</b><span class="s">朱元璋 1368–1398</span><span class="n">中書省を廃止し皇帝独裁。里甲制、一世一元の制</span></div><div class="ft-p minor" data-id="zb" style="grid-column:1/span 1;grid-row:2"><b>朱標</b><span class="s">皇太子</span><span class="n">即位前に死去(1392)</span></div><div class="ft-p " data-id="jw" style="grid-column:1/span 1;grid-row:3"><b>建文帝</b><span class="s">1398–1402</span><span class="n">諸王の力を削り、靖難の役を招く</span></div><div class="ft-p main" data-id="yl" style="grid-column:2/span 1;grid-row:3"><b>永楽帝</b><span class="s">燕王朱棣 1402–1424</span><span class="n">北京に遷都。鄭和の南海遠征</span></div><div class="ft-b shu" style="grid-column:1/span 2;grid-row:4"><b>靖難の役</b>(1399–1402) 叔父の燕王が挙兵し、甥の建文帝から帝位を奪う</div></div></div><script>
+(function(){
+function draw(w){
+  var ft=w.querySelector('.ft'), svg=w.querySelector('.ft-svg'), D=JSON.parse(w.getAttribute('data-ft'));
+  var base=ft.getBoundingClientRect(), NS='http://www.w3.org/2000/svg';
+  while(svg.firstChild) svg.removeChild(svg.firstChild);
+  svg.setAttribute('width',base.width); svg.setAttribute('height',base.height);
+  function R(id){var e=ft.querySelector('[data-id="'+id+'"]');var r=e.getBoundingClientRect();
+    return {l:r.left-base.left,r:r.right-base.left,t:r.top-base.top,b:r.bottom-base.top,cx:(r.left+r.right)/2-base.left,cy:(r.top+r.bottom)/2-base.top};}
+  function line(x1,y1,x2,y2,st){var l=document.createElementNS(NS,'line');l.setAttribute('x1',x1);l.setAttribute('y1',y1);l.setAttribute('x2',x2);l.setAttribute('y2',y2);
+    l.setAttribute('stroke',st&&st.c||'rgba(139,111,78,.6)');l.setAttribute('stroke-width',st&&st.w||1.4);if(st&&st.d)l.setAttribute('stroke-dasharray',st.d);svg.appendChild(l);}
+  function text(x,y,s,anchor){var t=document.createElementNS(NS,'text');t.setAttribute('x',x);t.setAttribute('y',y);t.setAttribute('class','ft-lbl');
+    t.setAttribute('text-anchor',anchor||'middle');t.textContent=s;svg.appendChild(t);}
+  var mid={};
+  D.m.forEach(function(m){var a=R(m[0]),b=R(m[1]);if(a.cx>b.cx){var t=a;a=b;b=t;}
+    var y=Math.min(a.cy,b.cy);line(a.r,y-1.5,b.l,y-1.5,{c:'rgba(89,69,42,.75)',w:1.1});line(a.r,y+1.5,b.l,y+1.5,{c:'rgba(89,69,42,.75)',w:1.1});
+    var mx=(a.r+b.l)/2;
+    // year label in the free row-gap just under the couple, beside the drop line (the gap between cards is too narrow)
+    if(m[2])text(mx+4,Math.max(a.b,b.b)+12,m[2]+'年結婚','start');
+    mid[m[0]+'|'+m[1]]={x:mx,y:y+1.5};mid[m[1]+'|'+m[0]]=mid[m[0]+'|'+m[1]];});
+  D.c.forEach(function(c){var src,par=c[0];
+    if(par.length==2){src=mid[par[0]+'|'+par[1]];}else{var p=R(par[0]);src={x:p.cx,y:p.b};}
+    var kids=c[1].map(R);var top=Math.min.apply(null,kids.map(function(k){return k.t;}));var bus=top-11;
+    line(src.x,src.y,src.x,bus);
+    var xs=kids.map(function(k){return k.cx;}).concat([src.x]);line(Math.min.apply(null,xs),bus,Math.max.apply(null,xs),bus);
+    kids.forEach(function(k){line(k.cx,bus,k.cx,k.t);});
+    if(c[2])text(src.x+5,bus-4,c[2],'start');});
+  D.d.forEach(function(e){var a=R(e[0]),b=R(e[1]);var x1=a.cx,y1=a.b,x2=b.cx,y2=b.t,ym=y2-11;
+    line(x1,y1,x1,ym,{d:'4 3'});line(x1,ym,x2,ym,{d:'4 3'});line(x2,ym,x2,y2,{d:'4 3'});
+    if(e[2])text((Math.abs(x1-x2)<4?x1+5:(x1+x2)/2),ym-4,e[2],Math.abs(x1-x2)<4?'start':'middle');});
+}
+function all(){document.querySelectorAll('.ft-wrap').forEach(draw);}
+window.addEventListener('load',all);window.addEventListener('resize',all);
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(all);
+})();
+</script></div><div class="line"><div class="skip">⋮ 洪熙帝(永楽帝の子)</div><div class="ru sm"><div class="ru-h"><span class="ru-r">洪熙帝の子</span><span class="ru-n">宣徳帝</span><span class="ru-y">1425–1435</span></div><div class="ru-d">最後の鄭和の遠征を送る</div></div><div class="ru sm"><div class="ru-h"><span class="ru-r">子</span><span class="ru-n">正統帝</span><span class="ru-y">1435–49, 1457–64</span></div><div class="ru-d">土木の変(1449)でオイラトの捕虜に</div></div><div class="skip">⋮ 景泰帝(正統帝の弟)・成化帝・弘治帝・正徳帝</div><div class="ru sm"><div class="ru-h"><span class="ru-r">正徳帝のいとこ</span><span class="ru-n">嘉靖帝</span><span class="ru-y">1521–1566</span></div><div class="ru-d">北虜南倭(モンゴルと倭寇)に苦しむ</div></div><div class="skip">⋮ 隆慶帝 ― 海禁をゆるめる</div></div><div class="cols c2"><div class="col"><div class="col-h">明末</div><div class="line"><div class="ru big"><div class="ru-h"><span class="ru-r">隆慶帝の子</span><span class="ru-n">万暦帝</span><span class="ru-y">1572–1620</span></div><div class="ru-d">張居正が一条鞭法を広める。朝鮮に援軍</div></div><div class="skip">⋮ 泰昌帝</div><div class="ru sm"><div class="ru-h"><span class="ru-r">泰昌帝の子</span><span class="ru-n">天啓帝</span><span class="ru-y">1620–1627</span></div><div class="ru-d">宦官の魏忠賢が東林派を弾圧</div></div><div class="ru end"><div class="ru-h"><span class="ru-r">弟</span><span class="ru-n">崇禎帝</span><span class="ru-y">1627–1644</span></div><div class="ru-d">李自成軍が北京に入り、自殺</div></div></div></div><div class="col"><div class="col-h">後金 → 清<small>1616〜</small></div><div class="line"><div class="ru big"><div class="ru-h"><span class="ru-n">ヌルハチ</span><span class="ru-a">太祖</span><span class="ru-y">1616–1626</span></div><div class="ru-d">女真を統一し後金を建国。八旗、満洲文字</div></div><div class="ru"><div class="ru-h"><span class="ru-r">子</span><span class="ru-n">ホンタイジ</span><span class="ru-a">太宗</span><span class="ru-y">1626–1643</span></div><div class="ru-d">国号を清と改める(1636)。朝鮮を服属</div></div></div></div></div><div class="brk"><span class="y">1644</span><span class="t">明の滅亡と清の入関</span><span class="d">李自成が北京を占領 → 呉三桂の導きで清軍が北京に入る</span></div><div class="line"><div class="dyn"><b>清の中国支配</b><span class="y">1644–1912</span><small>都：北京</small></div><div class="ru"><div class="ru-h"><span class="ru-r">ホンタイジの子</span><span class="ru-n">順治帝</span><span class="ru-y">1643–1661</span></div><div class="ru-d">北京に入り中国支配を始める。辮髪を強制</div></div><div class="ru big"><div class="ru-h"><span class="ru-r">子</span><span class="ru-n">康煕帝</span><span class="ru-y">1661–1722</span></div><div class="ru-d">三藩の乱を平定、台湾を領有。ネルチンスク条約</div></div><div class="ru"><div class="ru-h"><span class="ru-r">子</span><span class="ru-n">雍正帝</span><span class="ru-y">1722–1735</span></div><div class="ru-d">軍機処を設置。地丁銀制を広め、キャフタ条約</div></div><div class="ru big"><div class="ru-h"><span class="ru-r">子</span><span class="ru-n">乾隆帝</span><span class="ru-y">1735–1795</span></div><div class="ru-d">ジュンガルを滅ぼし領土最大に。貿易を広州に限定</div></div><div class="ru sm"><div class="ru-h"><span class="ru-r">子</span><span class="ru-n">嘉慶帝</span><span class="ru-y">1796–1820</span></div><div class="ru-d">白蓮教徒の乱(1796–1804)</div></div><div class="ru sm"><div class="ru-h"><span class="ru-r">子</span><span class="ru-n">道光帝</span><span class="ru-y">1820–1850</span></div><div class="ru-d">アヘン戦争(1840–42)、南京条約</div></div><div class="ru sm"><div class="ru-h"><span class="ru-r">子</span><span class="ru-n">咸豊帝</span><span class="ru-y">1850–1861</span></div><div class="ru-d">太平天国(1851–64)、アロー戦争</div></div><div class="ru sm"><div class="ru-h"><span class="ru-r">子</span><span class="ru-n">同治帝</span><span class="ru-y">1861–1875</span></div><div class="ru-d">母の西太后が実権を握る。洋務運動</div></div><div class="ru"><div class="ru-h"><span class="ru-r">いとこ</span><span class="ru-n">光緒帝</span><span class="ru-y">1875–1908</span></div><div class="ru-d">日清戦争に敗れる。戊戌の変法が挫折</div></div><div class="ru end"><div class="ru-h"><span class="ru-r">甥</span><span class="ru-n">宣統帝</span><span class="ru-a">溥儀</span><span class="ru-y">1908–1912</span></div><div class="ru-d">辛亥革命で退位し、清が滅亡</div></div></div><div class="brk"><span class="y">1912</span><span class="t">清の滅亡</span><span class="d">中華民国が成立し、始皇帝以来の皇帝政治が終わる</span></div>
 <div class="sec-hdr"><span class="sec-icon">Ⅱ</span><h2>要点 <span class="latin">Summarium</span></h2></div>
 <div class="kp"><p>❶ <b>明</b>：洪武帝が皇帝独裁の体制をつくる → <b>永楽帝</b>が帝位を奪い、北京遷都・鄭和の遠征</p><p>❷ 土木の変(1449)以後は守勢に → 16世紀は<b>北虜南倭</b>。万暦帝の時代に<b>一条鞭法</b></p><p>❸ 李自成の乱で明が滅亡(1644) → 呉三桂の導きで<b>清</b>が北京に入る</p><p>❹ 清：<b>康煕帝・雍正帝・乾隆帝</b>の3代が最盛期。領土は最大になる</p><p>❺ 19世紀：アヘン戦争・太平天国・日清戦争 → <b>辛亥革命</b>で清が滅亡(1912)</p></div>
 </main>

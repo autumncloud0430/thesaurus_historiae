@@ -238,22 +238,71 @@ html[data-theme="lux"] .detail { color:var(--text2); }
 <p class="lead">ハプスブルク家は婚姻によって領土を広げ、<b>カール5世</b>はオーストリア・ネーデルラント・スペインと新大陸・南イタリアを一人で受け継いだ。1556年の退位で、家は<b>スペイン系</b>と<b>オーストリア系</b>に分かれた。</p>
 <div class="sec-hdr"><span class="sec-icon">Ⅰ</span><h2>系図 <span class="latin">Stemma</span></h2></div>
 <div class="tree">
-<div class="split n2"><div class="br d-a"><div class="br-h">ハプスブルク家 × ブルゴーニュ家</div><div class="mar"><div class="mar-s"><div class="nd d-a mn"><div class="nm">マクシミリアン1世<span class="yr">皇帝 在位 <i>1493-1519</i></span></div><div class="dd">皇帝フリードリヒ3世の子</div></div></div><div class="mar-x"><em>×</em>結婚<br>1477</div><div class="mar-s"><div class="nd d-f mn"><div class="nm">マリー</div><div class="dd">ブルゴーニュ公シャルル(突進公)の娘。ネーデルラントを相続</div></div></div></div>
-<div class="down"><span>子</span></div>
-<div class="nd d-a mn"><div class="nm">フィリップ<small>美公</small></div><div class="dd">ネーデルラントを継ぐ</div></div></div><div class="br d-c"><div class="br-h">スペイン王家</div><div class="mar"><div class="mar-s"><div class="nd d-c mn"><div class="nm">フェルナンド2世<span class="yr">アラゴン王 在位 <i>1479-1516</i></span></div></div></div><div class="mar-x"><em>×</em>結婚<br>1469</div><div class="mar-s"><div class="nd d-c mn"><div class="nm">イサベル1世<span class="yr">カスティーリャ女王 在位 <i>1474-1504</i></span></div></div></div></div>
-<div class="down"><span>娘</span></div>
-<div class="nd d-c mn"><div class="nm">フアナ</div><div class="dd">スペインと新大陸を継ぐ。妹キャサリンは英王妃</div></div></div></div>
-<div class="down"><span>フィリップとフアナの結婚(1496) → 長男</span></div>
-<div class="nd d-a pk"><div class="nm">カール5世<span class="yr">スペイン王(カルロス1世)・皇帝(1519-) <i>1516-1556</i></span></div><div class="dd">4家の領土を相続。フランス・オスマン・ルター派と対立</div></div>
-<div class="down"><span>1556年の退位 ― 子フェリペと弟フェルディナントに分ける</span></div><div class="split n2"><div class="br d-c"><div class="br-h">スペイン＝ハプスブルク家</div><div class="nd d-c pk"><div class="nm">フェリペ2世<span class="yr">在位 <i>1556-1598</i></span></div><div class="dd">ポルトガル併合(1580)。アルマダの敗北(1588)</div></div>
-<div class="down dash"><span>フェリペ3世・4世を経て</span></div>
-<div class="nd d-c"><div class="nm">カルロス2世<span class="tg">断絶</span><span class="yr">在位 <i>1665-1700</i></span></div><div class="dd">子なく死去 → スペイン継承戦争</div></div>
-<div class="down"></div>
-<div class="nd d-c mn gh"><div class="nm">ブルボン朝へ<span class="yr"><i>1700</i></span></div><div class="dd">ルイ14世の孫フェリペ5世が即位</div></div></div><div class="br d-b"><div class="br-h">オーストリア＝ハプスブルク家</div><div class="nd d-b"><div class="nm">フェルディナント1世<span class="yr">皇帝 在位 <i>1556-1564</i></span></div><div class="dd">カールの弟。ベーメン・ハンガリー王(1526-)</div></div>
-<div class="down dash"><span>レオポルト1世・カール6世などを経て</span></div>
-<div class="nd d-b pk"><div class="nm">マリア＝テレジア<span class="yr">在位 <i>1740-1780</i></span></div><div class="dd">オーストリア継承戦争。夫はロートリンゲン家</div></div>
-<div class="down"><span>子孫(ハプスブルク＝ロートリンゲン家)</span></div>
-<div class="nd d-b mn gh"><div class="nm">ヨーゼフ2世 … フランツ＝ヨーゼフ1世<span class="yr"><i>-1918</i></span></div><div class="dd">神聖ローマ皇帝位は1806年まで。1918年に帝国解体</div></div></div></div>
+<style>
+.ft-wrap{position:relative;margin:6px 0 4px}
+.ft{position:relative;display:grid;column-gap:10px;row-gap:28px;align-items:start;z-index:1}
+.ft-svg{position:absolute;left:0;top:0;width:100%;height:100%;z-index:0;pointer-events:none;overflow:visible}
+.ft-p{position:relative;justify-self:center;width:100%;max-width:210px;border:1px solid rgba(var(--axr),.3);border-radius:9px;background:#f7f1e4;padding:5px 7px 5px;text-align:center;line-height:1.35}
+.ft-p b{display:block;font-family:'Noto Serif JP',serif;font-size:14px;color:var(--gold2)}
+.ft-p .s{display:block;font-size:11.5px;color:var(--text2);margin-top:1px}
+.ft-p .n{display:block;font-size:11.5px;color:var(--text);margin-top:2px;border-top:1px solid rgba(var(--axr),.12);padding-top:2px}
+.ft-p.main{border-color:rgba(var(--axr),.6);background:#f2e8d4;box-shadow:0 0 0 2px rgba(var(--axr),.07)}
+.ft-p.main b{font-size:15px}
+.ft-p.minor{border-style:dashed;background:transparent;padding:3px 6px}
+.ft-p.minor b{font-size:12.5px;font-weight:600}
+.ft-p.out{border-style:dashed;border-color:rgba(var(--axr),.45);background:rgba(var(--axr),.03)}
+.ft-p.end{border-color:rgba(162,51,30,.45)}
+.ft-p.end .s,.ft-p.end .n{color:var(--shu)}
+.ft-b{position:relative;z-index:1;align-self:center;text-align:center;font-size:12px;color:var(--gold2);background:#efe5d0;border-radius:6px;padding:3px 8px;line-height:1.5}
+.ft-b.shu{background:rgba(162,51,30,.07);color:var(--shu)}
+.ft-lbl{font-family:'Noto Sans JP',sans-serif;font-size:11px;fill:var(--gold2)}
+.ft-key{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:11.5px;color:var(--text2);margin:2px 0 10px}
+.ft-key span{display:inline-flex;align-items:center;gap:5px}
+.ft-key i{display:inline-block;width:22px;height:0;border-top:1px solid var(--gold)}
+.ft-key i.m{border-top:3px double var(--gold2)}.ft-key i.d{border-top:1.5px dashed var(--gold)}
+@media(max-width:600px){
+.ft{column-gap:6px;row-gap:26px}
+.ft-p{padding:4px 3px}
+.ft-p b{font-size:12.5px}.ft-p.main b{font-size:13.5px}.ft-p.minor b{font-size:11.5px}
+.ft-p .s,.ft-p .n{font-size:11px}
+.ft-b{font-size:11.5px;padding:3px 5px}
+}
+</style><div class="ft-key"><span><i class="m"></i>婚姻</span><span><i></i>親子</span><span><i class="d"></i>数代をはさむ継承・別の家への継承</span></div><div class="ft-wrap" data-ft="{&quot;m&quot;: [[&quot;fer&quot;, &quot;isa&quot;, &quot;1469&quot;], [&quot;max1&quot;, &quot;mar&quot;, &quot;1477&quot;], [&quot;phi&quot;, &quot;jua&quot;, &quot;1496&quot;], [&quot;mt&quot;, &quot;fz1&quot;, &quot;1736&quot;]], &quot;c&quot;: [[[&quot;fr3&quot;], [&quot;max1&quot;], &quot;&quot;], [[&quot;cha&quot;], [&quot;mar&quot;], &quot;&quot;], [[&quot;fer&quot;, &quot;isa&quot;], [&quot;jua&quot;], &quot;&quot;], [[&quot;max1&quot;, &quot;mar&quot;], [&quot;phi&quot;], &quot;&quot;], [[&quot;phi&quot;, &quot;jua&quot;], [&quot;k5&quot;, &quot;fe1&quot;], &quot;&quot;], [[&quot;k5&quot;], [&quot;ph2&quot;], &quot;&quot;], [[&quot;fe1&quot;], [&quot;mx2&quot;], &quot;&quot;], [[&quot;ka6&quot;], [&quot;mt&quot;], &quot;&quot;], [[&quot;mt&quot;, &quot;fz1&quot;], [&quot;jo2&quot;, &quot;le2&quot;, &quot;man&quot;], &quot;&quot;], [[&quot;le2&quot;], [&quot;fz2&quot;], &quot;&quot;], [[&quot;fz2&quot;], [&quot;mlu&quot;], &quot;&quot;]], &quot;d&quot;: [[&quot;ph2&quot;, &quot;sp34&quot;, &quot;&quot;], [&quot;sp34&quot;, &quot;ca2&quot;, &quot;&quot;], [&quot;mx2&quot;, &quot;au17&quot;, &quot;&quot;], [&quot;au17&quot;, &quot;ka6&quot;, &quot;&quot;], [&quot;ca2&quot;, &quot;ph5&quot;, &quot;スペイン継承戦争&quot;], [&quot;fz2&quot;, &quot;fj&quot;, &quot;孫&quot;], [&quot;fj&quot;, &quot;k1&quot;, &quot;弟の孫&quot;]]}"><svg class="ft-svg" aria-hidden="true"></svg><div class="ft" style="grid-template-columns:repeat(4,minmax(0,1fr))"><div class="ft-p " data-id="fr3" style="grid-column:1/span 1;grid-row:1"><b>フリードリヒ3世</b><span class="s">神聖ローマ皇帝</span></div><div class="ft-p out" data-id="cha" style="grid-column:2/span 1;grid-row:1"><b>シャルル</b><span class="s">ブルゴーニュ公</span></div><div class="ft-p out" data-id="fer" style="grid-column:3/span 1;grid-row:1"><b>フェルナンド2世</b><span class="s">アラゴン王</span></div><div class="ft-p out" data-id="isa" style="grid-column:4/span 1;grid-row:1"><b>イサベル1世</b><span class="s">カスティーリャ女王</span></div><div class="ft-p " data-id="max1" style="grid-column:1/span 1;grid-row:2"><b>マクシミリアン1世</b><span class="s">皇帝 1493-1519</span></div><div class="ft-p out" data-id="mar" style="grid-column:2/span 1;grid-row:2"><b>マリー</b><span class="s">ネーデルラントを相続</span></div><div class="ft-p " data-id="phi" style="grid-column:2/span 1;grid-row:3"><b>フィリップ</b></div><div class="ft-p out" data-id="jua" style="grid-column:3/span 1;grid-row:3"><b>フアナ</b><span class="s">スペインと新大陸を相続</span></div><div class="ft-p main" data-id="k5" style="grid-column:2/span 1;grid-row:4"><b>カール5世</b><span class="s">スペイン王 1516-56<br>皇帝 1519-56</span></div><div class="ft-p " data-id="fe1" style="grid-column:3/span 1;grid-row:4"><b>フェルディナント1世</b><span class="s">皇帝 1556-64<br>ボヘミア・ハンガリー王</span></div><div class="ft-b " style="grid-column:1/span 4;grid-row:5">1556 カール5世の退位 ― <b>スペイン系</b>と<b>オーストリア系</b>に分立</div><div class="ft-p main" data-id="ph2" style="grid-column:1/span 2;grid-row:6"><b>フェリペ2世</b><span class="s">1556-98</span><span class="n">ポルトガル併合(1580)</span></div><div class="ft-p " data-id="mx2" style="grid-column:3/span 2;grid-row:6"><b>マクシミリアン2世</b><span class="s">皇帝 1564-76</span></div><div class="ft-p minor" data-id="sp34" style="grid-column:1/span 2;grid-row:7"><b>フェリペ3世・4世</b></div><div class="ft-p minor" data-id="au17" style="grid-column:3/span 2;grid-row:7"><b>ルドルフ2世〜レオポルト1世</b></div><div class="ft-p end" data-id="ca2" style="grid-column:1/span 2;grid-row:8"><b>カルロス2世</b><span class="s">1665-1700</span><span class="n">子がなく断絶</span></div><div class="ft-p " data-id="ka6" style="grid-column:3/span 2;grid-row:8"><b>カール6世</b><span class="s">皇帝 1711-40</span><span class="n">国事詔書(1713)</span></div><div class="ft-p out" data-id="ph5" style="grid-column:1/span 2;grid-row:9"><b>フェリペ5世</b><span class="s">ルイ14世の孫</span><span class="n">スペイン＝ブルボン朝</span></div><div class="ft-p main" data-id="mt" style="grid-column:3/span 1;grid-row:9"><b>マリア＝テレジア</b><span class="s">1740-80</span><span class="n">オーストリア継承戦争</span></div><div class="ft-p out" data-id="fz1" style="grid-column:4/span 1;grid-row:9"><b>フランツ1世</b><span class="s">ロレーヌ公<br>皇帝 1745-65</span></div><div class="ft-b " style="grid-column:2/span 3;grid-row:10">ハプスブルク＝ロートリンゲン家</div><div class="ft-p " data-id="jo2" style="grid-column:2/span 1;grid-row:11"><b>ヨーゼフ2世</b><span class="s">皇帝 1765-90</span><span class="n">啓蒙専制</span></div><div class="ft-p " data-id="le2" style="grid-column:3/span 1;grid-row:11"><b>レオポルト2世</b><span class="s">皇帝 1790-92</span></div><div class="ft-p " data-id="man" style="grid-column:4/span 1;grid-row:11"><b>マリ＝アントワネット</b><span class="s">ルイ16世の妃</span></div><div class="ft-p main" data-id="fz2" style="grid-column:3/span 1;grid-row:12"><b>フランツ2世</b><span class="s">最後の神聖ローマ皇帝<br>(〜1806)</span><span class="n">オーストリア皇帝(1804〜)</span></div><div class="ft-p " data-id="mlu" style="grid-column:4/span 1;grid-row:13"><b>マリ＝ルイーズ</b><span class="s">ナポレオンの妃(1810)</span></div><div class="ft-p main" data-id="fj" style="grid-column:2/span 2;grid-row:14"><b>フランツ＝ヨーゼフ1世</b><span class="s">1848-1916</span><span class="n">オーストリア＝ハンガリー帝国(1867)</span></div><div class="ft-p end" data-id="k1" style="grid-column:2/span 2;grid-row:15"><b>カール1世</b><span class="s">1916-18</span><span class="n">帝国の解体(1918)</span></div></div></div><script>
+(function(){
+function draw(w){
+  var ft=w.querySelector('.ft'), svg=w.querySelector('.ft-svg'), D=JSON.parse(w.getAttribute('data-ft'));
+  var base=ft.getBoundingClientRect(), NS='http://www.w3.org/2000/svg';
+  while(svg.firstChild) svg.removeChild(svg.firstChild);
+  svg.setAttribute('width',base.width); svg.setAttribute('height',base.height);
+  function R(id){var e=ft.querySelector('[data-id="'+id+'"]');var r=e.getBoundingClientRect();
+    return {l:r.left-base.left,r:r.right-base.left,t:r.top-base.top,b:r.bottom-base.top,cx:(r.left+r.right)/2-base.left,cy:(r.top+r.bottom)/2-base.top};}
+  function line(x1,y1,x2,y2,st){var l=document.createElementNS(NS,'line');l.setAttribute('x1',x1);l.setAttribute('y1',y1);l.setAttribute('x2',x2);l.setAttribute('y2',y2);
+    l.setAttribute('stroke',st&&st.c||'rgba(139,111,78,.6)');l.setAttribute('stroke-width',st&&st.w||1.4);if(st&&st.d)l.setAttribute('stroke-dasharray',st.d);svg.appendChild(l);}
+  function text(x,y,s,anchor){var t=document.createElementNS(NS,'text');t.setAttribute('x',x);t.setAttribute('y',y);t.setAttribute('class','ft-lbl');
+    t.setAttribute('text-anchor',anchor||'middle');t.textContent=s;svg.appendChild(t);}
+  var mid={};
+  D.m.forEach(function(m){var a=R(m[0]),b=R(m[1]);if(a.cx>b.cx){var t=a;a=b;b=t;}
+    var y=Math.min(a.cy,b.cy);line(a.r,y-1.5,b.l,y-1.5,{c:'rgba(89,69,42,.75)',w:1.1});line(a.r,y+1.5,b.l,y+1.5,{c:'rgba(89,69,42,.75)',w:1.1});
+    var mx=(a.r+b.l)/2;
+    // year label in the free row-gap just under the couple, beside the drop line (the gap between cards is too narrow)
+    if(m[2])text(mx+4,Math.max(a.b,b.b)+12,m[2]+'年結婚','start');
+    mid[m[0]+'|'+m[1]]={x:mx,y:y+1.5};mid[m[1]+'|'+m[0]]=mid[m[0]+'|'+m[1]];});
+  D.c.forEach(function(c){var src,par=c[0];
+    if(par.length==2){src=mid[par[0]+'|'+par[1]];}else{var p=R(par[0]);src={x:p.cx,y:p.b};}
+    var kids=c[1].map(R);var top=Math.min.apply(null,kids.map(function(k){return k.t;}));var bus=top-11;
+    line(src.x,src.y,src.x,bus);
+    var xs=kids.map(function(k){return k.cx;}).concat([src.x]);line(Math.min.apply(null,xs),bus,Math.max.apply(null,xs),bus);
+    kids.forEach(function(k){line(k.cx,bus,k.cx,k.t);});
+    if(c[2])text(src.x+5,bus-4,c[2],'start');});
+  D.d.forEach(function(e){var a=R(e[0]),b=R(e[1]);var x1=a.cx,y1=a.b,x2=b.cx,y2=b.t,ym=y2-11;
+    line(x1,y1,x1,ym,{d:'4 3'});line(x1,ym,x2,ym,{d:'4 3'});line(x2,ym,x2,y2,{d:'4 3'});
+    if(e[2])text((Math.abs(x1-x2)<4?x1+5:(x1+x2)/2),ym-4,e[2],Math.abs(x1-x2)<4?'start':'middle');});
+}
+function all(){document.querySelectorAll('.ft-wrap').forEach(draw);}
+window.addEventListener('load',all);window.addEventListener('resize',all);
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(all);
+})();
+</script>
 </div>
 <div class="sec-hdr"><span class="sec-icon">Ⅱ</span><h2>要点 <span class="latin">Summarium</span></h2></div>
 <div class="kp"><p>❶ マクシミリアン1世とマリーの結婚(1477)でネーデルラント、フィリップとフアナの結婚(1496)でスペインと新大陸</p><p>❷ カール5世はフランソワ1世・スレイマン1世・ルター派と同時に争い、1556年に退位した</p><p>❸ スペイン系はフェリペ2世が最盛期、1700年に断絶 → スペイン継承戦争 → ブルボン朝</p><p>❹ オーストリア系は神聖ローマ皇帝位を継ぎ、マリア＝テレジアの子孫が1918年まで続いた</p></div>

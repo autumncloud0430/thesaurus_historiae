@@ -238,26 +238,71 @@ html[data-theme="lux"] .detail { color:var(--text2); }
 <p class="lead">メロヴィング朝の宮宰だったカロリング家が王位を得て(751)、<b>カール大帝</b>のとき西ヨーロッパの大部分を統一した。孫の代に<b>ヴェルダン条約(843)・メルセン条約(870)</b>で分かれ、のちのフランス・ドイツ・イタリアのもとができた。</p>
 <div class="sec-hdr"><span class="sec-icon">Ⅰ</span><h2>系図 <span class="latin">Stemma</span></h2></div>
 <div class="tree">
-<div class="nd d-x gh mn"><div class="nm">メロヴィング朝<span class="yr"><i>481-751</i></span></div><div class="dd">クローヴィスが建国。後期は宮宰が実権を握る</div></div>
-<div class="down"><span>宮宰(マヨル＝ドムス)</span></div>
-<div class="nd d-a"><div class="nm">カール＝マルテル<span class="yr">宮宰 <i>〜741</i></span></div><div class="dd"><b>トゥール＝ポワティエ間の戦い(732)</b>でイスラーム軍を撃退</div></div>
-<div class="down"><span>子</span></div>
-<div class="brk"><div class="brk-t">王朝交代 メロヴィング朝 → カロリング朝<i>(751)</i></div><p>教皇の支持を得て、ピピンが王を廃し即位</p></div>
-<div class="down"></div>
-<div class="dyn d-a"><span>カロリング朝<i>751-987</i></span></div>
-<div class="down"></div>
-<div class="nd d-a pk"><div class="nm">ピピン3世<small>小ピピン</small><span class="yr">在位 <i>751-768</i></span></div><div class="dd"><b>ピピンの寄進(756)</b>＝教皇領の始まり</div></div>
-<div class="down"><span>子</span></div>
-<div class="nd d-a pk"><div class="nm">カール大帝<small>シャルルマーニュ</small><span class="yr">在位 <i>768-814</i></span></div><div class="dd">西欧の大部分を統一。<b>800年 ローマ皇帝として戴冠</b></div></div>
-<div class="down"><span>子</span></div>
-<div class="nd d-a"><div class="nm">ルートヴィヒ1世<small>敬虔帝</small><span class="yr">在位 <i>814-840</i></span></div><div class="dd">晩年、息子たちが反乱。死後に分割へ</div></div>
-<div class="down"><span>ヴェルダン条約(843) ― 3人の子が三分</span></div><div class="split n3"><div class="br d-f"><div class="br-h">西フランク<small>→ フランス</small></div><div class="nd d-f mn"><div class="nm">シャルル2世<small>禿頭王</small><span class="yr">在位 <i>843-877</i></span></div><div class="dd">末子</div></div>
-<div class="down"><span>断絶(987)</span></div>
-<div class="nd d-f gh mn"><div class="nm">カペー朝<span class="yr"><i>987-</i></span></div><div class="dd">パリ伯ユーグ＝カペーを諸侯が選出</div></div></div><div class="br d-e"><div class="br-h">中部フランク<small>→ イタリア</small></div><div class="nd d-e mn"><div class="nm">ロタール1世<span class="yr">在位 <i>843-855</i></span></div><div class="dd">長男。皇帝の位を継ぐ</div></div>
-<div class="down"><span>子ロタール2世の死後 メルセン条約(870)</span></div>
-<div class="nd d-e gh mn"><div class="nm">北部を東西フランクが分割</div><div class="dd">北部のロートリンゲンを分割。イタリアは残る</div></div></div><div class="br d-b"><div class="br-h">東フランク<small>→ ドイツ</small></div><div class="nd d-b mn"><div class="nm">ルートヴィヒ2世<small>ドイツ人王</small><span class="yr">在位 <i>843-876</i></span></div><div class="dd">東フランク王</div></div>
-<div class="down"><span>断絶(911)</span></div>
-<div class="nd d-b gh mn"><div class="nm">神聖ローマ帝国<span class="yr"><i>962-</i></span></div><div class="dd">ザクセン家オットー1世が皇帝に戴冠</div></div></div></div>
+<div class="ft-key"><span><i></i>親子</span><span><i class="d"></i>数代をはさむ継承・別の家への継承</span><span>破線の枠 カロリング家でない者</span></div><style>
+.ft-wrap{position:relative;margin:6px 0 4px}
+.ft{position:relative;display:grid;column-gap:10px;row-gap:28px;align-items:start;z-index:1}
+.ft-svg{position:absolute;left:0;top:0;width:100%;height:100%;z-index:0;pointer-events:none;overflow:visible}
+.ft-p{position:relative;justify-self:center;width:100%;max-width:210px;border:1px solid rgba(var(--axr),.3);border-radius:9px;background:#f7f1e4;padding:5px 7px 5px;text-align:center;line-height:1.35}
+.ft-p b{display:block;font-family:'Noto Serif JP',serif;font-size:14px;color:var(--gold2)}
+.ft-p .s{display:block;font-size:11.5px;color:var(--text2);margin-top:1px}
+.ft-p .n{display:block;font-size:11.5px;color:var(--text);margin-top:2px;border-top:1px solid rgba(var(--axr),.12);padding-top:2px}
+.ft-p.main{border-color:rgba(var(--axr),.6);background:#f2e8d4;box-shadow:0 0 0 2px rgba(var(--axr),.07)}
+.ft-p.main b{font-size:15px}
+.ft-p.minor{border-style:dashed;background:transparent;padding:3px 6px}
+.ft-p.minor b{font-size:12.5px;font-weight:600}
+.ft-p.out{border-style:dashed;border-color:rgba(var(--axr),.45);background:rgba(var(--axr),.03)}
+.ft-p.end{border-color:rgba(162,51,30,.45)}
+.ft-p.end .s,.ft-p.end .n{color:var(--shu)}
+.ft-b{position:relative;z-index:1;align-self:center;text-align:center;font-size:12px;color:var(--gold2);background:#efe5d0;border-radius:6px;padding:3px 8px;line-height:1.5}
+.ft-b.shu{background:rgba(162,51,30,.07);color:var(--shu)}
+.ft-lbl{font-family:'Noto Sans JP',sans-serif;font-size:11px;fill:var(--gold2)}
+.ft-key{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:11.5px;color:var(--text2);margin:2px 0 10px}
+.ft-key span{display:inline-flex;align-items:center;gap:5px}
+.ft-key i{display:inline-block;width:22px;height:0;border-top:1px solid var(--gold)}
+.ft-key i.m{border-top:3px double var(--gold2)}.ft-key i.d{border-top:1.5px dashed var(--gold)}
+@media(max-width:600px){
+.ft{column-gap:6px;row-gap:26px}
+.ft-p{padding:4px 3px}
+.ft-p b{font-size:12.5px}.ft-p.main b{font-size:13.5px}.ft-p.minor b{font-size:11.5px}
+.ft-p .s,.ft-p .n{font-size:11px}
+.ft-b{font-size:11.5px;padding:3px 5px}
+}
+</style><div class="ft-wrap" data-ft="{&quot;m&quot;: [], &quot;c&quot;: [[[&quot;pp2&quot;], [&quot;cm&quot;], &quot;&quot;], [[&quot;cm&quot;], [&quot;pp3&quot;], &quot;&quot;], [[&quot;pp3&quot;], [&quot;kd&quot;], &quot;&quot;], [[&quot;kd&quot;], [&quot;lu1&quot;], &quot;&quot;], [[&quot;lu1&quot;], [&quot;ch2&quot;, &quot;lo1&quot;, &quot;lu2&quot;], &quot;&quot;], [[&quot;lo1&quot;], [&quot;lo2&quot;], &quot;&quot;]], &quot;d&quot;: [[&quot;ch2&quot;, &quot;hc&quot;, &quot;断絶(987)&quot;], [&quot;lu2&quot;, &quot;kon&quot;, &quot;断絶(911)&quot;], [&quot;kon&quot;, &quot;o1&quot;, &quot;&quot;]]}"><svg class="ft-svg" aria-hidden="true"></svg><div class="ft" style="grid-template-columns:repeat(3,minmax(0,1fr))"><div class="ft-p out" data-id="mero" style="grid-column:1/span 1;grid-row:1"><b>メロヴィング朝</b><span class="s">481-751</span><span class="n">クローヴィスが建国。後期は宮宰が実権を握る</span></div><div class="ft-p " data-id="pp2" style="grid-column:2/span 1;grid-row:1"><b>ピピン2世</b><span class="s">中ピピン・宮宰</span><span class="n">〜714</span></div><div class="ft-p " data-id="cm" style="grid-column:2/span 1;grid-row:2"><b>カール＝マルテル</b><span class="s">宮宰(マヨル＝ドムス)<br>〜741</span><span class="n">トゥール＝ポワティエ間の戦い(732)でイスラーム軍を撃退</span></div><div class="ft-b shu" style="grid-column:1/span 3;grid-row:3">751 王朝交代 ― ピピンが教皇の支持を得てメロヴィング朝の王を廃し即位 → <b>カロリング朝</b>(751-987)</div><div class="ft-p main" data-id="pp3" style="grid-column:2/span 1;grid-row:4"><b>ピピン3世</b><span class="s">小ピピン 751-768</span><span class="n">ピピンの寄進(756)＝教皇領の始まり</span></div><div class="ft-p main" data-id="kd" style="grid-column:2/span 1;grid-row:5"><b>カール大帝</b><span class="s">シャルルマーニュ<br>768-814</span><span class="n">800年 ローマ皇帝として戴冠</span></div><div class="ft-p " data-id="lu1" style="grid-column:2/span 1;grid-row:6"><b>ルートヴィヒ1世</b><span class="s">敬虔帝 814-840</span><span class="n">晩年、息子たちが反乱</span></div><div class="ft-b " style="grid-column:1/span 3;grid-row:7"><b>ヴェルダン条約(843)</b> ― 3人の子が王国を三分</div><div class="ft-p " data-id="ch2" style="grid-column:1/span 1;grid-row:8"><b>シャルル2世</b><span class="s">禿頭王 843-877</span><span class="n">末子。西フランク王</span></div><div class="ft-p " data-id="lo1" style="grid-column:2/span 1;grid-row:8"><b>ロタール1世</b><span class="s">843-855</span><span class="n">長男。皇帝の位と中部フランク</span></div><div class="ft-p " data-id="lu2" style="grid-column:3/span 1;grid-row:8"><b>ルートヴィヒ2世</b><span class="s">ドイツ人王 843-876</span><span class="n">東フランク王</span></div><div class="ft-p " data-id="lo2" style="grid-column:2/span 1;grid-row:9"><b>ロタール2世</b><span class="s">855-869</span><span class="n">北部(ロートリンゲン)を継ぐ</span></div><div class="ft-b " style="grid-column:1/span 3;grid-row:10"><b>メルセン条約(870)</b> ― ロタール2世の死後、北部のロートリンゲンを東西フランクが分割。イタリアは残る</div><div class="ft-p out" data-id="kon" style="grid-column:3/span 1;grid-row:11"><b>コンラート1世</b><span class="s">911-918</span><span class="n">諸侯が選んだ東フランク王</span></div><div class="ft-p out" data-id="hc" style="grid-column:1/span 1;grid-row:12"><b>ユーグ＝カペー</b><span class="s">パリ伯</span><span class="n">諸侯が王に選び、カペー朝を開く(987)</span></div><div class="ft-p out" data-id="o1" style="grid-column:3/span 1;grid-row:12"><b>オットー1世</b><span class="s">ザクセン家</span><span class="n">962 皇帝に戴冠<br>→ 神聖ローマ帝国</span></div></div></div><script>
+(function(){
+function draw(w){
+  var ft=w.querySelector('.ft'), svg=w.querySelector('.ft-svg'), D=JSON.parse(w.getAttribute('data-ft'));
+  var base=ft.getBoundingClientRect(), NS='http://www.w3.org/2000/svg';
+  while(svg.firstChild) svg.removeChild(svg.firstChild);
+  svg.setAttribute('width',base.width); svg.setAttribute('height',base.height);
+  function R(id){var e=ft.querySelector('[data-id="'+id+'"]');var r=e.getBoundingClientRect();
+    return {l:r.left-base.left,r:r.right-base.left,t:r.top-base.top,b:r.bottom-base.top,cx:(r.left+r.right)/2-base.left,cy:(r.top+r.bottom)/2-base.top};}
+  function line(x1,y1,x2,y2,st){var l=document.createElementNS(NS,'line');l.setAttribute('x1',x1);l.setAttribute('y1',y1);l.setAttribute('x2',x2);l.setAttribute('y2',y2);
+    l.setAttribute('stroke',st&&st.c||'rgba(139,111,78,.6)');l.setAttribute('stroke-width',st&&st.w||1.4);if(st&&st.d)l.setAttribute('stroke-dasharray',st.d);svg.appendChild(l);}
+  function text(x,y,s,anchor){var t=document.createElementNS(NS,'text');t.setAttribute('x',x);t.setAttribute('y',y);t.setAttribute('class','ft-lbl');
+    t.setAttribute('text-anchor',anchor||'middle');t.textContent=s;svg.appendChild(t);}
+  var mid={};
+  D.m.forEach(function(m){var a=R(m[0]),b=R(m[1]);if(a.cx>b.cx){var t=a;a=b;b=t;}
+    var y=Math.min(a.cy,b.cy);line(a.r,y-1.5,b.l,y-1.5,{c:'rgba(89,69,42,.75)',w:1.1});line(a.r,y+1.5,b.l,y+1.5,{c:'rgba(89,69,42,.75)',w:1.1});
+    var mx=(a.r+b.l)/2;
+    // year label in the free row-gap just under the couple, beside the drop line (the gap between cards is too narrow)
+    if(m[2])text(mx+4,Math.max(a.b,b.b)+12,m[2]+'年結婚','start');
+    mid[m[0]+'|'+m[1]]={x:mx,y:y+1.5};mid[m[1]+'|'+m[0]]=mid[m[0]+'|'+m[1]];});
+  D.c.forEach(function(c){var src,par=c[0];
+    if(par.length==2){src=mid[par[0]+'|'+par[1]];}else{var p=R(par[0]);src={x:p.cx,y:p.b};}
+    var kids=c[1].map(R);var top=Math.min.apply(null,kids.map(function(k){return k.t;}));var bus=top-11;
+    line(src.x,src.y,src.x,bus);
+    var xs=kids.map(function(k){return k.cx;}).concat([src.x]);line(Math.min.apply(null,xs),bus,Math.max.apply(null,xs),bus);
+    kids.forEach(function(k){line(k.cx,bus,k.cx,k.t);});
+    if(c[2])text(src.x+5,bus-4,c[2],'start');});
+  D.d.forEach(function(e){var a=R(e[0]),b=R(e[1]);var x1=a.cx,y1=a.b,x2=b.cx,y2=b.t,ym=y2-11;
+    line(x1,y1,x1,ym,{d:'4 3'});line(x1,ym,x2,ym,{d:'4 3'});line(x2,ym,x2,y2,{d:'4 3'});
+    if(e[2])text((Math.abs(x1-x2)<4?x1+5:(x1+x2)/2),ym-4,e[2],Math.abs(x1-x2)<4?'start':'middle');});
+}
+function all(){document.querySelectorAll('.ft-wrap').forEach(draw);}
+window.addEventListener('load',all);window.addEventListener('resize',all);
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(all);
+})();
+</script>
 </div>
 <div class="sec-hdr"><span class="sec-icon">Ⅱ</span><h2>要点 <span class="latin">Summarium</span></h2></div>
 <div class="kp"><p>❶ 3代の役割：<b>カール＝マルテル</b>(732 撃退)→子<b>ピピン3世</b>(751 王朝開始・756 寄進)→孫<b>カール大帝</b>(800 戴冠)</p><p>❷ ピピンの寄進とカールの戴冠で、ローマ教会とフランク王国が結びついた</p><p>❸ ヴェルダン条約(843)→メルセン条約(870)で、のちの<b>仏・独・伊</b>のもとができた</p><p>❹ 西フランク→カペー朝(987)、東フランク→オットー1世の戴冠(962)</p></div>

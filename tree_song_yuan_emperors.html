@@ -169,16 +169,12 @@ table.tb{width:100%;border-collapse:collapse}
 .tb td.p{font-family:'Noto Serif JP',serif;font-weight:700;color:var(--gold2);white-space:nowrap}
 .tb td.p small{display:block;font-family:'Cormorant Garamond',serif;font-weight:700;font-size:14px;color:var(--gold)}
 .tb-note{font-size:13px;color:var(--text2);line-height:1.8;margin:6px 2px 0}
-@media(max-width:640px){
-.cols.c2,.cols.c3{grid-template-columns:1fr;gap:6px}
-.col-h{margin-top:6px}
-}
 @media(max-width:600px){
 .kp p{font-size:13px}
 .legend{font-size:12px}
-.line,.cols .line{padding-left:16px;margin-left:5px}
-.ru::before,.cols .ru::before{left:-23px}
-.dyn::before,.cols .dyn::before{left:-24px}
+.line{padding-left:16px;margin-left:5px}
+.ru::before{left:-23px}
+.dyn::before{left:-24px}
 .ru{padding:3px 9px 4px}
 .ru-n{font-size:14.5px}.ru.big .ru-n{font-size:15.5px}
 .ru-y{font-size:14.5px}
@@ -190,6 +186,25 @@ table.tb{width:100%;border-collapse:collapse}
 .tb th{font-size:12px;padding:6px 5px}
 .tb td{font-size:13px;padding:5px 5px}
 .tb-note{font-size:12.5px}
+}
+/* 2026-11-28 (famtree brief): parallel dynasties stay side by side on phones too - stacking them hid which
+   dynasties co-existed. Narrow columns get a thinner rail and smaller cards (text stays >=11px). */
+@media(max-width:640px){
+.cols.c2{gap:6px}.cols.c3{gap:4px}
+.col-h{font-size:13px;padding:0 2px 3px;line-height:1.4}
+.col-h small{display:block;margin-left:0;font-size:11px}
+.cols .line{margin-left:3px;padding-left:9px}
+.cols .ru::before{left:-15px;top:7px;width:6px;height:6px}
+.cols .dyn::before{left:-16px;width:8px;height:8px;margin-top:-6px}
+.cols .ru{padding:2px 6px 3px;border-radius:7px}
+.cols .ru-h{gap:0 4px}
+.cols .ru-n{font-size:13.5px}.cols .ru.big .ru-n{font-size:14px}.cols .ru.sm .ru-n{font-size:13px}
+.cols .ru-y,.cols .ru.sm .ru-y{font-size:13px}
+.cols .ru-a{font-size:11px}
+.cols .ru-r{font-size:11px;padding:0 4px}
+.cols .ru-d{font-size:12px;line-height:1.5}
+.cols .skip{font-size:11.5px;line-height:1.5}
+.cols .dyn{padding:2px 6px;gap:0 5px}.cols .dyn b{font-size:13.5px}.cols .dyn .y{font-size:13.5px}.cols .dyn small{font-size:11px}
 }
 </style><style id="thThemes">/* =====================================================
    THESAURUS HISTORIAE ― themes.css(LUX固定版)
