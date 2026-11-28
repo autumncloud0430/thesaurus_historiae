@@ -1,63 +1,189 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>WW2の同盟関係</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
-:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048}
+<style>@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');:root{--bg:#f1ecdf;--gold:#8b6f4e;--gold2:#59452a;--text:#2b241b;--text2:#6d6353;--text3:#a89a80;--axr:139,111,78;--shu:#a2331e}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
-body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
-.hdr{padding:16px 20px;border-bottom:1px solid rgba(var(--axr),.08);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
-.hdr h1{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2)}
-.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
-.content{padding:12px 16px;overflow-x:auto}.content-inner{min-width:760px}
-@media(max-width:800px){.content-inner{min-width:0}}
-.phase{margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid rgba(var(--axr),.04)}.phase:last-child{border-bottom:none}
-.phase-hdr{display:flex;align-items:baseline;gap:8px;margin-bottom:6px}
-.phase-era{font-family:'Cormorant Garamond',serif;font-size:13px;font-weight:700;color:var(--gold);letter-spacing:.1em;min-width:90px}
-.phase-title{font-family:'Noto Serif JP',serif;font-size:11px;font-weight:700;color:var(--gold2)}
-.phase-sub{font-size:8px;color:var(--text3);margin-left:4px}
-.phase-body{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
-.cn{border-radius:6px;padding:4px 9px;text-align:center;cursor:pointer;transition:all .15s}.cn:hover{filter:brightness(1.15);transform:translateY(-1px)}
-.cn .nm{font-family:'Noto Serif JP',serif;font-size:9px;font-weight:700;white-space:nowrap}
-.cn .sub{font-size:6px;color:var(--text3);margin-top:1px;white-space:nowrap}
-.cn-ax{background:rgba(160,80,80,.06);border:1px solid rgba(160,80,80,.2)}.cn-ax .nm{color:#d4a0a0}
-.cn-al{background:rgba(74,120,194,.06);border:1px solid rgba(74,120,194,.2)}.cn-al .nm{color:#8ab0d4}
-.cn-dim{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05)}.cn-dim .nm{color:var(--text3)}
-.grp{border-radius:8px;padding:8px 10px;display:flex;gap:5px;align-items:center;flex-wrap:wrap;position:relative}
-.grp-ax{border:1px solid rgba(160,80,80,.12);background:rgba(160,80,80,.02)}
-.grp-al{border:1px solid rgba(74,120,194,.12);background:rgba(74,120,194,.02)}
-.grp-label{font-size:7px;font-weight:600;letter-spacing:.06em;position:absolute;top:-7px;left:12px;padding:0 4px;background:var(--bg)}
-.grp-label-ax{color:rgba(160,80,80,.6)}.grp-label-al{color:rgba(74,120,194,.6)}
-.vs{font-family:'Cormorant Garamond',serif;font-size:12px;font-weight:700;color:rgba(194,90,74,.4);padding:0 5px}
-.ev{font-size:7px;color:var(--gold);background:rgba(var(--axr),.06);border:1px solid rgba(var(--axr),.1);border-radius:4px;padding:2px 6px;cursor:pointer;transition:all .15s;white-space:nowrap}.ev:hover{filter:brightness(1.2)}
-.ev-bad{color:#c25a5a;background:rgba(194,74,74,.06);border-color:rgba(194,74,74,.1)}
-.ar{font-size:8px;color:var(--text3);padding:0 2px}
-.detail{font-size:6.5px;color:var(--text3);margin:3px 0 0 4px;line-height:1.6}.detail b{color:var(--gold);font-weight:600}
-.tp{display:none}
-.note{text-align:center;padding:8px 20px 32px;max-width:820px;margin:0 auto}.note p{font-size:9px;color:var(--text3);line-height:1.8}.note strong{color:var(--gold)}
-.nd-svg{cursor:pointer}
-.hdr h1{font-size:12px}
-th,td{padding:6px 8px;font-size:9px}
-th{font-size:10px}
-td:first-child{font-size:8.5px}
-.note p{font-size:8px}
-.side-note{font-size:7.5px}
+.hdr{padding:16px 20px;border-bottom:1px solid rgba(var(--axr),.12);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.hdr h1{font-family:'Noto Serif JP',serif;font-size:20px;font-weight:700;color:var(--gold2)}
+.hdr a{font-size:14px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
+main{max-width:760px;margin:0 auto;padding:24px 20px 60px}
+.lead{font-size:15px;line-height:2}
+.lead b{color:var(--gold2)}
+.sec-hdr{display:flex;align-items:center;gap:10px;padding:10px 0;margin:34px 0 4px;border-bottom:1px solid rgba(var(--axr),.15)}
+.sec-icon{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:700;color:var(--gold);opacity:.75}
+.sec-hdr h2{font-family:'Noto Serif JP',serif;font-size:18px;font-weight:700;color:var(--gold2)}
+.latin{font-family:'Cormorant Garamond',serif;font-size:13px;font-weight:400;font-style:italic;color:var(--gold);margin-left:10px;letter-spacing:1px;opacity:.75}
+.cap{font-size:13px;color:var(--text2);margin:8px 0 14px;line-height:1.8}
+.x{color:var(--shu)}
+/* I lineage */
+.lin-row{display:flex;justify-content:center;gap:8px}
+.box{flex:1;max-width:220px;border:1px solid rgba(var(--axr),.3);border-radius:10px;background:rgba(var(--axr),.05);padding:8px 8px 7px;text-align:center;line-height:1.35}
+.box b{display:block;font-family:'Noto Serif JP',serif;font-size:17px;color:var(--gold2)}
+.box .by{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:15px;color:var(--gold)}
+.box small{display:block;font-size:12px;color:var(--text2);margin-top:2px}
+.box.big{max-width:420px}.box.big b{font-size:21px}
+.box.eu{border-color:rgba(var(--axr),.55);background:rgba(var(--axr),.09);box-shadow:0 0 0 3px rgba(var(--axr),.06)}
+.box .note2{border-top:1px solid rgba(var(--axr),.15);margin-top:6px;padding-top:5px}
+.merge,.down{position:relative;text-align:center;padding:10px 0 13px}
+.merge::before,.down::before{content:'';position:absolute;left:50%;top:0;bottom:0;border-left:1.5px solid rgba(var(--axr),.45)}
+.merge::after,.down::after{content:'';position:absolute;left:calc(50% - 5px);bottom:-1px;border:5px solid transparent;border-top:7px solid rgba(var(--axr),.6);border-bottom:0}
+.merge span,.down span{position:relative;background:var(--bg);font-size:12.5px;color:var(--gold);padding:0 8px}
+.merge span b,.down span b{font-family:'Cormorant Garamond',serif;font-size:14px}
+.three{position:relative;padding-bottom:10px}
+.three::after{content:'';position:absolute;left:16%;right:16%;bottom:0;border-bottom:1.5px solid rgba(var(--axr),.45)}
+.three .box{position:relative}
+.three .box::after{content:'';position:absolute;left:50%;bottom:-12px;height:10px;border-left:1.5px solid rgba(var(--axr),.45)}
+.side-h{margin:22px 0 6px;font-size:12px;color:var(--gold);font-family:'Cormorant Garamond',serif;font-style:italic;letter-spacing:1px}
+.side{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.sbox{border:1px solid rgba(var(--axr),.18);border-radius:8px;background:rgba(var(--axr),.03);padding:7px 10px;font-size:13px;line-height:1.5;color:var(--gold2)}
+.sbox b{font-family:'Noto Serif JP',serif}
+.sbox small{display:block;font-size:12px;color:var(--text2);margin-top:3px;line-height:1.65}
+.sbox.dash{border-style:dashed}
+/* II deepening x widening */
+.dw{border:1px solid rgba(var(--axr),.15);border-radius:10px;overflow:hidden;background:rgba(var(--axr),.02)}
+.dw-h,.dw-r{display:grid;grid-template-columns:48px 1fr 1fr;column-gap:10px;padding-left:10px;padding-right:10px}
+.dw-h{font-family:'Noto Serif JP',serif;font-size:13px;font-weight:700;color:var(--gold2);padding-top:8px;padding-bottom:8px;background:rgba(var(--axr),.07)}
+.dw-h span small{display:block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;color:var(--gold);font-size:11.5px;letter-spacing:1px}
+.dw-r{padding-top:6px;padding-bottom:6px;border-top:1px solid rgba(var(--axr),.08);font-size:13.5px;line-height:1.6;align-items:start}
+.dw-r:nth-child(odd){background:rgba(var(--axr),.025)}
+.dw-r .y{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:16px;color:var(--gold);line-height:1.4}
+.dw-r .d{border-right:1px solid rgba(var(--axr),.12);padding-right:10px}
+.cnt{display:flex;align-items:center;gap:6px;margin-top:4px}
+.cnt i{display:block;height:6px;border-radius:3px;background:rgba(var(--axr),.45);max-width:calc(100% - 28px)}
+.cnt b{font-size:13px;font-family:'Cormorant Garamond',serif;color:var(--gold2)}
+/* III UK */
+.uk{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;counter-reset:u}
+.uk li{position:relative;border:1px solid rgba(var(--axr),.15);border-radius:8px;background:rgba(var(--axr),.04);padding:6px 10px 7px 32px;font-size:13.5px;line-height:1.55;counter-increment:u}
+.uk li::before{content:counter(u,upper-roman);position:absolute;left:9px;top:7px;font-family:'Cormorant Garamond',serif;font-weight:700;font-size:13px;color:var(--gold);opacity:.7}
+.uk li .y{display:block;font-family:'Cormorant Garamond',serif;font-weight:700;color:var(--gold);font-size:15px}
+.uk li.ux{border-color:rgba(162,51,30,.35);background:rgba(162,51,30,.04)}.uk li.ux .y{color:var(--shu)}
+/* summary */
+.kp{background:rgba(var(--axr),.04);border:1px solid rgba(var(--axr),.12);border-radius:10px;padding:14px 18px}
+.kp p{font-size:13.5px;line-height:1.9;margin:2px 0}
+.kp b{color:var(--gold2)}
+/* IV per-phase (flow_ style) */
+.toc{display:flex;flex-wrap:wrap;gap:4px 14px;margin:4px 0 14px}
+.toc a{font-size:12.5px;color:var(--text2);text-decoration:none}
+.toc a span{font-family:'Cormorant Garamond',serif;font-weight:700;color:var(--gold);margin-right:5px}
+.toc a:hover{color:var(--gold2)}
+.phase{position:relative;padding:14px 4px 14px 22px;border-left:2px solid rgba(var(--axr),.15);margin-left:46px;scroll-margin-top:8px}
+.phase:last-child{border-left-color:transparent}
+.phase::before{content:'';position:absolute;left:-6px;top:20px;width:8px;height:8px;border-radius:50%;background:var(--bg);border:2px solid rgba(var(--axr),.45)}
+.phase-label{position:absolute;left:-50px;top:15px;width:40px;font-family:'Cormorant Garamond',serif;font-size:13px;font-weight:700;color:var(--gold);text-align:right;line-height:1.25}
+.ph-head{margin-bottom:8px}
+.ph-title{display:block;font-family:'Noto Serif JP',serif;font-size:17px;font-weight:700;color:var(--gold2)}
+.ph-sub{display:block;font-size:12.5px;color:var(--text2);margin-top:1px}
+.event{background:rgba(var(--axr),.03);border:1px solid rgba(var(--axr),.1);border-radius:8px;padding:8px 12px;margin-bottom:8px}
+.event.org{background:rgba(var(--axr),.07);border-color:rgba(var(--axr),.22)}
+.event.bad-ev{background:rgba(162,51,30,.035);border-color:rgba(162,51,30,.22)}
+.ev-title{font-family:'Noto Serif JP',serif;font-size:15px;font-weight:700;color:var(--gold2);display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 10px}
+.bad-ev .ev-title{color:var(--shu)}
+.orgname{font-size:16px}
+.ev-year{font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:700;color:var(--gold)}
+.org-sub{font-size:12px;color:var(--text2)}
+.bad{font-family:'Noto Sans JP',sans-serif;font-size:10.5px;font-weight:400;color:var(--shu);border:1px solid rgba(162,51,30,.4);border-radius:4px;padding:0 6px}
+.ev-desc{font-size:14px;color:var(--text);line-height:1.8;margin-top:3px}
+.ev-desc b{color:var(--gold2)}
+.side-note{font-size:13px;color:var(--text2);line-height:1.8;padding:6px 10px;border-left:2px solid rgba(var(--axr),.25);margin:4px 0 8px}
+.side-note b,.side-note strong{color:var(--gold2)}
+.out{color:var(--shu)}
+@media(max-width:600px){
+.hdr{padding:12px 14px}.hdr h1{font-size:16px}
+main{padding:16px 14px 60px}
+.lead{font-size:14px}
+.sec-hdr h2{font-size:16px}.latin{font-size:12px;margin-left:6px}
+.box b{font-size:15px}.box small{font-size:11px}.box{padding:6px 4px}
+.box.big b{font-size:18px}
+.merge span,.down span{font-size:11.5px}
+.side{grid-template-columns:1fr}
+.dw-h,.dw-r{grid-template-columns:36px 1fr 1fr;column-gap:7px;padding-left:7px;padding-right:7px}
+.dw-r{font-size:12.5px}.dw-r .y{font-size:14px}.dw-r .d{padding-right:7px}
+.uk{grid-template-columns:1fr 1fr}.uk li{font-size:12.5px}
+.kp{padding:12px 14px}.kp p{font-size:12.5px}
+.phase{margin-left:38px;padding-left:16px}.phase-label{left:-42px;width:34px;font-size:12px}
+.ph-title{font-size:15.5px}
+.ev-title{font-size:14px}.orgname{font-size:15px}.ev-desc{font-size:13px}
+.side-note{font-size:12.5px}
 }
 
+/* ---- alliance pages (alliance_lib_modern.py) ---- */
+:root{--blu:46,94,158;--red:170,66,40;--inkb:#2c4565;--inkr:#7a2e1f}
+.hdr h1{line-height:1.45}
+/* I alignment table */
+.mx-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:6px 0 8px}
+.mx{width:100%;border-collapse:separate;border-spacing:3px;table-layout:fixed}
+.mx th,.mx td{border-radius:7px;text-align:center;vertical-align:middle;line-height:1.3}
+.mx thead th{font-family:'Noto Serif JP',serif;font-size:12.5px;font-weight:700;color:var(--gold2);padding:5px 2px 4px;background:rgba(var(--axr),.07)}
+.mx thead th small{display:block;font-family:'Cormorant Garamond',serif;font-size:13px;font-weight:700;color:var(--gold);letter-spacing:.3px}
+.mx thead th.corner{background:transparent}
+.mx tbody th{font-family:'Noto Serif JP',serif;font-size:13px;font-weight:700;color:var(--gold2);text-align:left;padding:4px 4px 4px 6px;background:rgba(var(--axr),.05)}
+.mx td{font-size:13px;padding:5px 2px;color:var(--text);border:1px solid transparent}
+.mx td b{display:block;font-weight:600}
+.mx td small{display:block;font-size:11px;color:var(--text2);margin-top:1px}
+.mx td.b{background:rgba(var(--blu),.16);border-color:rgba(var(--blu),.26)}
+.mx td.b b{color:var(--inkb)}
+.mx td.r{background:rgba(var(--red),.10);border-color:rgba(var(--red),.22)}
+.mx td.r b{color:var(--inkr)}
+.mx td.n{background:rgba(var(--axr),.035);border-color:rgba(var(--axr),.10)}
+.mx td.n b{color:var(--text2);font-weight:400}
+.mx td.sw{box-shadow:inset 0 0 0 1.5px rgba(var(--axr),.55)}
+.legend{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:12px;color:var(--text2);margin:6px 0 4px;line-height:1.6}
+.legend span{display:inline-flex;align-items:center;gap:5px}
+.legend i{display:inline-block;width:16px;height:11px;border-radius:3px}
+.legend i.b{background:rgba(var(--blu),.22);border:1px solid rgba(var(--blu),.3)}
+.legend i.r{background:rgba(var(--red),.14);border:1px solid rgba(var(--red),.3)}
+.legend i.n{background:rgba(var(--axr),.05);border:1px solid rgba(var(--axr),.18)}
+.legend i.sw{background:transparent;box-shadow:inset 0 0 0 1.5px rgba(var(--axr),.6)}
+.mx-notes{list-style:none;margin:8px 0 0;padding:0}
+.mx-notes li{font-size:13px;line-height:1.75;color:var(--text2);padding-left:1.1em;text-indent:-1.1em}
+.mx-notes li b{color:var(--gold2)}
+/* III per-phase camps */
+.lineup{display:none}
+.camps{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:4px 0 10px;align-items:start}
+.camps.one{grid-template-columns:1fr}
+.camp{border-radius:10px;padding:8px 8px 2px;border:1px solid rgba(var(--axr),.14);background:rgba(var(--axr),.03)}
+.camp.b{background:rgba(var(--blu),.06);border-color:rgba(var(--blu),.22)}
+.camp.r{background:rgba(var(--red),.05);border-color:rgba(var(--red),.22)}
+.camp-h{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2);padding:0 4px 6px;line-height:1.45}
+.camp.b .camp-h{color:var(--inkb)}.camp.r .camp-h{color:var(--inkr)}
+.camp-h small{display:block;font-family:'Noto Sans JP',sans-serif;font-size:12px;font-weight:400;color:var(--text2)}
+.mem{background:rgba(255,255,255,.42);border:1px solid rgba(var(--axr),.12);border-radius:8px;padding:7px 10px 8px;margin-bottom:6px}
+.mem-n{font-family:'Noto Serif JP',serif;font-size:15px;font-weight:700;color:var(--gold2);display:flex;flex-wrap:wrap;align-items:baseline;gap:0 8px;line-height:1.45}
+.mem-n small{font-family:'Noto Sans JP',sans-serif;font-size:12px;font-weight:400;color:var(--text2)}
+.mem-d{font-size:14px;line-height:1.8;color:var(--text);margin-top:2px}
+.mem-d b,.ev-desc b{color:var(--gold2);font-weight:600}
+.ev-desc ol,.ev-desc ul{margin:2px 0 0 1.3em}
+.ev-desc li{margin:1px 0}
+.ev-desc .d{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:15px;color:var(--gold);margin-right:3px}
+.kp p{padding-left:1.4em;text-indent:-1.4em}
+.ev-desc a,.side-note a{color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(var(--axr),.3);white-space:nowrap}
 @media(max-width:600px){
-.hdr{padding:10px 12px}.hdr h1{font-size:12px}
-th,td{padding:6px 8px;font-size:9px}
-th{font-size:10px}
-td:first-child{font-size:8.5px}
-.note p{font-size:8px}
-.side-note{font-size:7.5px}
+.mx{border-spacing:2px}
+.mx thead th{font-size:11px;padding:4px 1px}
+.mx thead th small{font-size:12px}
+.mx tbody th{font-size:12px;padding:3px 2px 3px 4px}
+.mx td{font-size:12px;padding:4px 1px}
+.mx td small{font-size:11px;letter-spacing:-.2px}
+.legend{font-size:12px}
+.mx-notes li{font-size:13px}
+.camps{grid-template-columns:1fr;gap:8px}
+.lineup{display:flex;align-items:stretch;gap:6px;margin:2px 0 8px}
+.lineup span{flex:1;border-radius:8px;padding:5px 8px;font-size:13px;line-height:1.55;color:var(--text)}
+.lineup span b{display:block;font-family:'Noto Serif JP',serif;font-size:12px}
+.lineup .b{background:rgba(var(--blu),.08);border:1px solid rgba(var(--blu),.2)}.lineup .b b{color:var(--inkb)}
+.lineup .r{background:rgba(var(--red),.07);border:1px solid rgba(var(--red),.2)}.lineup .r b{color:var(--inkr)}
+.lineup .n{background:rgba(var(--axr),.04);border:1px solid rgba(var(--axr),.14)}.lineup .n b{color:var(--gold2)}
+.lineup em{align-self:center;font-style:normal;font-size:12px;color:var(--gold)}
+.camp{padding:7px 6px 1px}
+.mem{padding:6px 9px 7px}
+.mem-n{font-size:14.5px}
+.mem-d{font-size:13.5px}
+.ev-desc{font-size:13.5px}
+.kp p{font-size:13px}
+.side-note{font-size:13px}
+.toc a{font-size:12.5px}
 }
-</style>
-<style id="thThemes">/* =====================================================
+</style><style id="thThemes">/* =====================================================
    THESAURUS HISTORIAE ― themes.css(LUX固定版)
    生成りの紙 + 墨の本文 + 朱筆(★語) + 金茶の構造色。
    retheme_inject.py が各HTMLに埋め込む。編集後は再実行。
@@ -104,122 +230,113 @@ html[data-theme="lux"] .arrow-text,
 html[data-theme="lux"] .detail { color:var(--text2); }
 </style><script id="thScript">document.documentElement.setAttribute('data-theme','lux');</script></head>
 <body>
-<div class="hdr"><h1>WW2の同盟関係 ― 枢軸国 vs 連合国</h1><a href="charts.html">← Ad Chartae</a></div>
-<div class="content"><div class="content-inner">
-
-<div class="phase">
-<div class="phase-hdr"><div class="phase-era">1936-1939</div><div class="phase-title">開戦前 ― 枢軸の形成と宥和政策の破綻</div></div>
-<div class="phase-body" style="margin-bottom:6px">
-<div class="ev nd-svg" data-tip="w0-axis">ベルリン＝ローマ枢軸(1936)</div><span class="ar">→</span>
-<div class="ev nd-svg" data-tip="w0-pact">日独伊三国防共協定(1936-37)</div><span class="ar">→</span>
-<div class="ev nd-svg" data-tip="w0-munich">ミュンヘン会談(1938) ← 宥和政策</div><span class="ar">→</span>
-<div class="ev ev-bad nd-svg" data-tip="w0-nazi-soviet">独ソ不可侵条約(1939.8)</div>
+<div class="hdr"><h1>第二次世界大戦の同盟関係 ― 枢軸国と連合国</h1><a href="charts.html">← Ad Chartae</a></div>
+<main>
+<p class="lead">第二次世界大戦は、ドイツ・イタリア・日本の<b>枢軸国</b>と、イギリス・フランス、のちにソ連・アメリカ・中国などが加わった<b>連合国</b>との戦争である。開戦時、ソ連はドイツと不可侵条約を結び、アメリカは中立だった。<b>1941年</b>の独ソ戦と太平洋戦争の開始で陣営が固まり、枢軸国はイタリア(1943)・ドイツ(1945.5)・日本(1945.8)の順に降伏した。</p>
+<div class="sec-hdr"><span class="sec-icon">Ⅰ</span><h2>陣営の移り変わり <span class="latin">Ordo Partium</span></h2></div><p class="cap">大戦の各段階で、主な国がどちらの側にいたかを示す。小さな字はその段階の主なできごと。</p>
+<div class="mx-wrap"><table class="mx"><colgroup><col style="width:17%">
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup><thead><tr><th class="corner"></th>
+<th>開戦<small>1939.9</small></th>
+<th>仏降伏・三国同盟<small>1940</small></th>
+<th>独ソ戦<small>1941.6</small></th>
+<th>太平洋戦争<small>1941.12</small></th>
+<th>伊降伏・終戦<small>1943-45</small></th>
+</tr></thead><tbody>
+<tr><th>ドイツ</th>
+<td class="r"><b>枢軸</b></td>
+<td class="r"><b>枢軸</b></td>
+<td class="r"><b>枢軸</b></td>
+<td class="r"><b>枢軸</b></td>
+<td class="r"><b>枢軸</b><small>45年5月降伏</small></td>
+</tr>
+<tr><th>イタリア</th>
+<td class="n"><b>参戦せず</b></td>
+<td class="r"><b>枢軸</b><small>40年6月参戦</small></td>
+<td class="r"><b>枢軸</b></td>
+<td class="r"><b>枢軸</b></td>
+<td class="b"><b>連合国側</b><small>43年降伏後</small></td>
+</tr>
+<tr><th>日本</th>
+<td class="r"><b>防共協定</b><small>日中戦争中</small></td>
+<td class="r"><b>枢軸</b><small>三国同盟</small></td>
+<td class="r"><b>枢軸</b><small>日ソ中立条約</small></td>
+<td class="r"><b>枢軸</b><small>米英と開戦</small></td>
+<td class="r"><b>枢軸</b><small>45年8月降伏</small></td>
+</tr>
+<tr><th>イギリス</th>
+<td class="b"><b>連合国</b></td>
+<td class="b"><b>連合国</b></td>
+<td class="b"><b>連合国</b></td>
+<td class="b"><b>連合国</b></td>
+<td class="b"><b>連合国</b></td>
+</tr>
+<tr><th>フランス</th>
+<td class="b"><b>連合国</b></td>
+<td class="n"><b>降伏</b><small>ヴィシー政府</small></td>
+<td class="n"><b>占領下</b><small>自由フランス</small></td>
+<td class="n"><b>占領下</b><small>自由フランス</small></td>
+<td class="b"><b>連合国</b><small>44年解放</small></td>
+</tr>
+<tr><th>ソ連</th>
+<td class="n"><b>独と不可侵</b><small>ポーランド侵攻</small></td>
+<td class="n"><b>中立</b><small>バルト3国併合</small></td>
+<td class="b"><b>連合国</b></td>
+<td class="b"><b>連合国</b><small>日本とは中立</small></td>
+<td class="b"><b>連合国</b><small>45年8月対日参戦</small></td>
+</tr>
+<tr><th>アメリカ</th>
+<td class="n"><b>中立</b></td>
+<td class="n"><b>中立</b><small>英を支援</small></td>
+<td class="n"><b>中立</b><small>武器貸与法</small></td>
+<td class="b"><b>連合国</b><small>参戦</small></td>
+<td class="b"><b>連合国</b></td>
+</tr>
+<tr><th>中国</th>
+<td class="b"><b>対日抗戦</b></td>
+<td class="b"><b>対日抗戦</b></td>
+<td class="b"><b>対日抗戦</b></td>
+<td class="b"><b>連合国</b><small>日独伊に宣戦</small></td>
+<td class="b"><b>連合国</b></td>
+</tr>
+</tbody></table></div>
+<div class="legend"><span><i class="r"></i>枢軸国の側</span><span><i class="b"></i>連合国の側(枢軸国と戦う側)</span><span><i class="n"></i>中立・参戦せず・降伏後の占領</span></div>
+<ul class="mx-notes"><li>・<b>ソ連</b>は<b>独ソ不可侵条約(1939.8)</b>によってドイツと戦わず、ポーランド東部やバルト3国を併合した。1941年6月にドイツが侵攻するとイギリス・アメリカと結んだ。日本とは<b>日ソ中立条約(1941.4)</b>を結んでいたが、1945年8月、条約の有効期間中に日本に宣戦した。</li><li>・<b>イタリア</b>は1940年6月にドイツ側で参戦したが、1943年9月に降伏し、10月にはドイツに宣戦した。北部はドイツに占領された。</li><li>・<b>フランス</b>は1940年6月に降伏し、南部にはドイツに協力する<b>ヴィシー政府</b>ができた。ロンドンではド＝ゴールが<b>自由フランス</b>を組織して抗戦を続け、1944年8月にパリが解放された。</li><li>・<b>アメリカ</b>は中立を守りながら<b>武器貸与法(1941.3)</b>でイギリスなどに武器を送り、日本の真珠湾攻撃をきっかけに参戦した。</li></ul>
+<div class="sec-hdr"><span class="sec-icon">Ⅱ</span><h2>要点 <span class="latin">Summarium</span></h2></div>
+<div class="kp"><p>❶ 枢軸の形成：<b>ベルリン＝ローマ枢軸(1936)</b>、<b>日独伊三国防共協定(1937)</b>、<b>日独伊三国同盟(1940)</b></p><p>❷ イギリス・フランスはドイツの要求に譲歩する<b>宥和政策</b>をとり、<b>ミュンヘン会談(1938)</b>でズデーテン地方の割譲を認めた。英仏に不信をもったソ連はドイツと<b>独ソ不可侵条約(1939.8)</b>を結び、直後にドイツはポーランドに侵攻した</p><p>❸ <b>1941年</b>に陣営が固まった。独ソ戦の開始(6月)でソ連が連合国側に入り、日本の真珠湾攻撃(12月)でアメリカが参戦した。1942年1月には26カ国が<b>連合国共同宣言</b>を出した</p><p>❹ 戦局の転換点は<b>ミッドウェー海戦(1942.6)</b>と<b>スターリングラードの戦い(1942-43)</b>。枢軸国はイタリア(1943.9)・ドイツ(1945.5)・日本(1945.8)の順に降伏した</p><p>❺ 連合国の首脳会談で戦後処理が話し合われた：<b>カイロ会談(1943.11)</b>、<b>テヘラン会談(1943.11-12)</b>、<b>ヤルタ会談(1945.2)</b>、<b>ポツダム会談(1945.7-8)</b>。ポーランドなど東欧をめぐる米英とソ連の対立は、戦後の冷戦につながった</p><p>❻ フランスは、ドイツに協力する<b>ヴィシー政府</b>(ペタン)と、ロンドンで抗戦を続けた<b>自由フランス</b>(ド＝ゴール)に分かれた</p></div>
+<div class="sec-hdr"><span class="sec-icon">Ⅲ</span><h2>時期別の解説 <span class="latin">Per Aetates</span></h2></div>
+<nav class="toc"><a href="#ph1"><span>1936-39</span>開戦前</a><a href="#ph2"><span>1939-41</span>ドイツの攻勢</a><a href="#ph3"><span>1941-43</span>大戦の拡大</a><a href="#ph4"><span>1943-45</span>連合国の勝利</a></nav>
+<div class="phase" id="ph1"><div class="phase-label">1935<br>〜39</div>
+<div class="ph-head"><span class="ph-title">開戦前 ― 枢軸の形成と宥和政策</span><span class="ph-sub">ドイツ・イタリア・日本の接近と、英仏の譲歩</span></div>
+<div class="lineup"><span class="r"><b>枢軸の形成</b>ドイツ・イタリア・日本</span><em>対</em><span class="b"><b>宥和政策をとった国</b>イギリス・フランス</span></div>
+<div class="camps"><div class="camp r"><div class="camp-h">枢軸の形成</div><div class="mem"><div class="mem-n">ドイツ<small>ヒトラー</small></div><div class="mem-d">ヴェルサイユ体制の打破をかかげ、再軍備を宣言し(1935)、ラインラントに進駐した(1936)。1938年にオーストリアを併合し、チェコスロヴァキアに<b>ズデーテン地方</b>の割譲を要求した。</div></div><div class="mem"><div class="mem-n">イタリア<small>ムッソリーニ</small></div><div class="mem-d"><b>エチオピア侵攻(1935-36)</b>で国際連盟の経済制裁を受けてドイツに接近し、<b>ベルリン＝ローマ枢軸(1936)</b>が成立した。ムッソリーニが両国の関係をヨーロッパの「枢軸」とよんだことから、枢軸国の名がおこった。両国はスペイン内戦(1936-39)でフランコの側を支援した。</div></div><div class="mem"><div class="mem-n">日本</div><div class="mem-d">ドイツと<b>日独防共協定(1936)</b>を結び、翌1937年にイタリアが加わって<b>三国防共協定</b>となった。コミンテルン(共産主義の国際組織)に対抗することを名目とした。1937年からは日中戦争を続けていた。</div></div></div><div class="camp b"><div class="camp-h">宥和政策をとった国</div><div class="mem"><div class="mem-n">イギリス・フランス</div><div class="mem-d">ドイツの要求にある程度応じて戦争を避ける<b>宥和政策</b>をとった。イギリス首相はネヴィル＝チェンバレン、フランス首相はダラディエ。</div></div></div></div>
+<div class="event"><div class="ev-title">ミュンヘン会談<span class="ev-year">1938.9</span></div><div class="ev-desc">ネヴィル＝チェンバレン・ダラディエ・ヒトラー・ムッソリーニが会談し、ズデーテン地方のドイツへの割譲を認めた。しかしドイツは1939年3月にチェコスロヴァキアを解体し、宥和政策は行きづまった。</div></div>
+<div class="event bad-ev"><div class="ev-title">独ソ不可侵条約<span class="ev-year">1939.8</span></div><div class="ev-desc">対立していたドイツとソ連が不可侵条約を結び、世界を驚かせた。<b>秘密議定書</b>で、ポーランドの分割と、バルト地方などをソ連の勢力圏とすることを定めた。ドイツは東西二正面での戦争を避けられるようになり、9月1日にポーランドに侵攻した。イギリス・フランスはドイツに宣戦し、第二次世界大戦が始まった。</div></div>
 </div>
-<div class="detail"><b>独ソ不可侵条約</b>の秘密議定書でポーランド・バルト三国の分割を密約→1939.9.1 <b>ドイツがポーランド侵攻→WW2開戦</b></div>
+<div class="phase" id="ph2"><div class="phase-label">1939<br>〜41</div>
+<div class="ph-head"><span class="ph-title">大戦前半 ― ドイツの攻勢(1939-41)</span><span class="ph-sub">ソ連はドイツと不可侵、アメリカは中立</span></div>
+<div class="lineup"><span class="r"><b>枢軸国</b>ドイツ・イタリア・日本</span><em>対</em><span class="b"><b>連合国</b>イギリス・フランス(1940年6月降伏)</span></div>
+<div class="camps"><div class="camp r"><div class="camp-h">枢軸国</div><div class="mem"><div class="mem-n">ドイツ<small>ヒトラー</small></div><div class="mem-d">機動力を生かした<b>電撃戦</b>でポーランドを破り(1939)、1940年にはデンマーク・ノルウェー、オランダ・ベルギーを占領して、6月にフランスを降伏させた。しかしイギリスとの航空戦(<b>バトル＝オブ＝ブリテン</b>)で制空権を奪えず、イギリス本土への上陸はできなかった。</div></div><div class="mem"><div class="mem-n">イタリア<small>ムッソリーニ</small></div><div class="mem-d">フランスの敗北が決定的になった1940年6月にドイツ側で参戦した。しかし北アフリカやギリシアで苦戦し、ドイツの援軍を受けた。</div></div><div class="mem"><div class="mem-n">日本</div><div class="mem-d">1940年9月、北部仏印進駐とほぼ同時に<b>日独伊三国同盟</b>を結んだ。1941年4月には<b>日ソ中立条約</b>を結んで北方の安全をはかり、7月に南部仏印に進駐した。これに対しアメリカは対日石油輸出を禁止した(1941.8)。</div></div></div><div class="camp b"><div class="camp-h">連合国<small>この時点ではイギリス・フランスなど</small></div><div class="mem"><div class="mem-n">イギリス<small>チャーチル</small></div><div class="mem-d">1940年5月、宥和政策をとったネヴィル＝チェンバレンにかわってチャーチルが首相となった。フランスの降伏後はほぼ単独でドイツと戦い、ドイツ空軍の攻撃に耐えた。</div></div><div class="mem"><div class="mem-n">フランス</div><div class="mem-d">1940年6月、ドイツ軍の侵攻から約6週間で降伏した。北部はドイツに占領され、南部には<b>ペタン</b>を首班としてドイツに協力する<b>ヴィシー政府</b>が成立した。ロンドンに亡命した<b>ド＝ゴール</b>は<b>自由フランス</b>を組織し、抗戦を呼びかけた。</div></div></div></div>
+<div class="event"><div class="ev-title">ソ連 ― ドイツとの不可侵<span class="ev-year">1939-41</span></div><div class="ev-desc">独ソ不可侵条約にもとづいてポーランド東部に侵攻した(1939.9)。フィンランドに侵攻して(ソ連＝フィンランド戦争, 1939-40)国際連盟から除名され、1940年にはバルト3国を併合した。1941年6月まではドイツと戦わなかった。</div></div>
+<div class="event"><div class="ev-title">アメリカ ― 中立と援助<span class="ev-year">1939-41</span></div><div class="ev-desc">中立を守ったが、<b>武器貸与法(1941.3)</b>でイギリスなどに武器を送った。1941年8月、フランクリン＝ローズヴェルト大統領とチャーチルは<b>大西洋憲章</b>を発表し、戦後の平和の原則を示した。</div></div>
 </div>
-
-<div class="phase">
-<div class="phase-hdr"><div class="phase-era">1939-1941</div><div class="phase-title">枢軸国の攻勢 ― 電撃戦とソ連の中立</div></div>
-<div class="phase-body">
-<div class="grp grp-ax"><div class="grp-label grp-label-ax">枢軸国</div>
-<div class="cn cn-ax nd-svg" data-tip="w1-ger"><div class="nm">ドイツ</div><div class="sub">ヒトラー ｜ 電撃戦</div></div>
-<div class="cn cn-ax nd-svg" data-tip="w1-ita"><div class="nm">イタリア</div><div class="sub">ムッソリーニ(1940参戦)</div></div>
-<div class="cn cn-ax nd-svg" data-tip="w1-jpn"><div class="nm">日本</div><div class="sub">日独伊三国同盟(1940)</div></div>
+<div class="phase" id="ph3"><div class="phase-label">1941<br>〜43</div>
+<div class="ph-head"><span class="ph-title">大戦の拡大 ― 独ソ戦と太平洋戦争(1941-43)</span><span class="ph-sub">1941年、連合国の陣営が固まる</span></div>
+<div class="event bad-ev"><div class="ev-title">独ソ戦<span class="ev-year">1941.6</span></div><div class="ev-desc">ドイツは不可侵条約を破ってソ連に侵攻した。ドイツ軍はモスクワに迫ったが、1941年冬に阻まれた。<b>スターリングラードの戦い</b>(1942-43)でドイツ軍が降伏し、東部戦線の形勢は逆転した。</div></div>
+<div class="event bad-ev"><div class="ev-title">太平洋戦争の開始<span class="ev-year">1941.12</span></div><div class="ev-desc">1941年12月8日(日本時間)、日本はイギリス領マレー半島に上陸し、ハワイの<b>真珠湾</b>を攻撃して、アメリカ・イギリスに宣戦した。ドイツ・イタリアもアメリカに宣戦し、戦争は世界規模に広がった。</div></div>
+<div class="lineup"><span class="r"><b>枢軸国</b>ドイツ・イタリア・日本</span><em>対</em><span class="b"><b>連合国</b>アメリカ・イギリス・ソ連・中国</span></div>
+<div class="camps"><div class="camp r"><div class="camp-h">枢軸国</div><div class="mem"><div class="mem-n">ドイツ</div><div class="mem-d">東のソ連と、西・南のイギリス・アメリカを同時に相手にする<b>二正面戦争</b>となった。スターリングラードでの敗北が大きな転換点となった。</div></div><div class="mem"><div class="mem-n">イタリア</div><div class="mem-d">北アフリカでイギリス軍に押された。1943年7月に連合軍がシチリア島に上陸すると、ムッソリーニは失脚した。</div></div><div class="mem"><div class="mem-n">日本</div><div class="mem-d">開戦後、東南アジアと太平洋の広い地域を占領した。<b>ミッドウェー海戦(1942.6)</b>で主力空母を失ってから、アメリカの反攻を受けるようになった。</div></div></div><div class="camp b"><div class="camp-h">連合国<small>アメリカ・イギリス・ソ連・中国など</small></div><div class="mem"><div class="mem-n">アメリカ<small>フランクリン＝ローズヴェルト</small></div><div class="mem-d">参戦後はヨーロッパと太平洋の両方で戦い、連合国に大量の兵器と物資を送った。原子爆弾の開発(<b>マンハッタン計画</b>)も進めた。</div></div><div class="mem"><div class="mem-n">イギリス<small>チャーチル</small></div><div class="mem-d"><b>エル＝アラメインの戦い(1942)</b>で北アフリカのドイツ・イタリア軍を破った。アメリカとともに北アフリカ・イタリア、のちにはフランスへの上陸作戦を進めた。</div></div><div class="mem"><div class="mem-n">ソ連<small>スターリン</small></div><div class="mem-d">スターリングラードの戦い(1942.8-43.2)でドイツ軍を包囲して降伏させ、以後ドイツ軍を西へ押し返してベルリンまで進んだ。戦争による死者は2000万人をこえたとされる。</div></div><div class="mem"><div class="mem-n">中国<small>国民政府(蒋介石)</small></div><div class="mem-d">1937年からの日中戦争を続け、太平洋戦争の開始後に日本・ドイツ・イタリアに正式に宣戦した。重慶に移った国民政府は、米英の<b>援蒋ルート</b>を通じて物資の支援を受けた。</div></div></div></div>
+<div class="side-note"><b>連合国共同宣言(1942.1)</b>：アメリカ・イギリス・ソ連・中国など26カ国が、大西洋憲章の原則を確認し、枢軸国と単独で講和しないことを約束した。戦後の<b>国際連合</b>の名はここから来ている。</div>
 </div>
-<div class="vs">VS</div>
-<div class="grp grp-al"><div class="grp-label grp-label-al">連合国（この時点）</div>
-<div class="cn cn-al nd-svg" data-tip="w1-uk"><div class="nm">イギリス</div><div class="sub">チャーチル(1940〜)</div></div>
-<div class="cn cn-al nd-svg" data-tip="w1-fra"><div class="nm">フランス</div><div class="sub">1940年降伏→ヴィシー政権/自由フランス</div></div>
+<div class="phase" id="ph4"><div class="phase-label">1943<br>〜45</div>
+<div class="ph-head"><span class="ph-title">連合国の勝利と戦後構想(1943-45)</span><span class="ph-sub">枢軸国の降伏と、連合国の首脳会談</span></div>
+<div class="lineup"><span class="r"><b>枢軸国の降伏</b>イタリア(1943.9)・ドイツ(1945.5)・日本(1945.8)</span><em>対</em><span class="b"><b>連合国の首脳会談</b>カイロ・テヘラン・ヤルタ・ポツダム</span></div>
+<div class="camps"><div class="camp r"><div class="camp-h">枢軸国の降伏</div><div class="mem"><div class="mem-n">イタリア<small>1943.9 降伏</small></div><div class="mem-d">ムッソリーニの失脚後、バドリオ政府が連合国に無条件降伏した。ドイツ軍は北部・中部を占領し、救出したムッソリーニに政府を立てさせた。バドリオ政府は1943年10月にドイツに宣戦し、連合国側で戦った(共同交戦国)。</div></div><div class="mem"><div class="mem-n">ドイツ<small>1945.5 降伏</small></div><div class="mem-d">1944年6月、アイゼンハワーの指揮する連合軍が<b>ノルマンディー上陸作戦</b>を行い、ドイツは東西から攻められるようになった。8月にはパリが解放された。1945年4月、ソ連軍がベルリンに迫るなかでヒトラーが自殺し、5月に無条件降伏した。</div></div><div class="mem"><div class="mem-n">日本<small>1945.8 降伏</small></div><div class="mem-d">アメリカは広島(8.6)と長崎(8.9)に原子爆弾を投下し、ソ連は日ソ中立条約の有効期間中に日本に宣戦した(8.8)。日本は8月14日に<b>ポツダム宣言</b>を受け入れ、15日に国民に発表した。9月2日に降伏文書に調印した。</div></div></div><div class="camp b"><div class="camp-h">連合国の首脳会談</div><div class="mem"><div class="mem-n">カイロ会談<small>1943.11 米・英・中</small></div><div class="mem-d">フランクリン＝ローズヴェルト・チャーチル・蒋介石が、日本が無条件降伏するまで戦うこと、日本が奪った領土の返還、朝鮮の独立などを決めた(<b>カイロ宣言</b>)。</div></div><div class="mem"><div class="mem-n">テヘラン会談<small>1943.11-12 米・英・ソ</small></div><div class="mem-d">フランクリン＝ローズヴェルト・チャーチル・スターリンの初めての三首脳会談。北フランスへの上陸作戦(第二戦線)を1944年に行うことで合意した。</div></div><div class="mem"><div class="mem-n">ヤルタ会談<small>1945.2 米・英・ソ</small></div><div class="mem-d">ドイツの戦後処理(米・英・仏・ソによる分割占領など)や国際連合の設立について話し合った。秘密協定で、ソ連がドイツ降伏後に対日参戦すること、その見返りに南樺太・千島列島をソ連に与えることを決めた。ポーランドなど東欧の扱いをめぐって、米英とソ連の対立が表に出はじめた。</div></div><div class="mem"><div class="mem-n">ポツダム会談<small>1945.7-8 米・英・ソ</small></div><div class="mem-d">トルーマン(フランクリン＝ローズヴェルトの死後に大統領)・チャーチル(途中からアトリー)・スターリンが、ドイツの非軍事化・非ナチ化などの戦後処理を話し合った。日本に無条件降伏を求める<b>ポツダム宣言</b>は、アメリカ・イギリス・中国の名で出され、ソ連は対日参戦後に加わった。</div></div></div></div>
+<div class="side-note"><b>戦後へ</b>：1945年10月に<b>国際連合</b>が発足し、アメリカ・イギリス・フランス・ソ連・中国が安全保障理事会の常任理事国となった。戦争中の協力関係は、東欧やドイツの扱いをめぐる米ソの対立に変わり、冷戦が始まった。<a href="alliance_cold_war.html">→ 冷戦構造の変遷</a></div>
 </div>
-<div class="cn cn-dim nd-svg" data-tip="w1-ussr"><div class="nm">ソ連</div><div class="sub">中立（独ソ不可侵条約）</div></div>
-<div class="cn cn-dim nd-svg" data-tip="w1-usa"><div class="nm">アメリカ</div><div class="sub">中立（武器貸与法1941で支援）</div></div>
-</div>
-<div class="detail"><b>1940</b>：独がデンマーク・ノルウェー・仏を次々征服。バトル＝オブ＝ブリテンで英は持ちこたえる。<b>仏降伏</b>→ヴィシー政権(独に協力)とド＝ゴールの自由フランスに分裂</div>
-</div>
-
-<div class="phase">
-<div class="phase-hdr"><div class="phase-era">1941-1943</div><div class="phase-title">転換点 ― 独ソ戦と真珠湾で「大同盟」成立</div></div>
-<div class="phase-body" style="margin-bottom:6px">
-<div class="ev ev-bad nd-svg" data-tip="w2-barb">独ソ戦開始(1941.6) → 不可侵条約を破棄</div><span class="ar">→</span>
-<div class="ev ev-bad nd-svg" data-tip="w2-pearl">真珠湾攻撃(1941.12) → 米参戦</div>
-</div>
-<div class="phase-body">
-<div class="grp grp-ax"><div class="grp-label grp-label-ax">枢軸国</div>
-<div class="cn cn-ax nd-svg" data-tip="w2-ger"><div class="nm">ドイツ</div><div class="sub">二正面戦争に</div></div>
-<div class="cn cn-ax nd-svg" data-tip="w2-ita"><div class="nm">イタリア</div></div>
-<div class="cn cn-ax nd-svg" data-tip="w2-jpn"><div class="nm">日本</div><div class="sub">太平洋で米と対決</div></div>
-</div>
-<div class="vs">VS</div>
-<div class="grp grp-al"><div class="grp-label grp-label-al">連合国（「大同盟」＝米英ソ）</div>
-<div class="cn cn-al nd-svg" data-tip="w2-usa"><div class="nm">アメリカ</div><div class="sub">「民主主義の兵器廠」</div></div>
-<div class="cn cn-al nd-svg" data-tip="w2-uk"><div class="nm">イギリス</div><div class="sub">チャーチル</div></div>
-<div class="cn cn-al nd-svg" data-tip="w2-ussr"><div class="nm">ソ連</div><div class="sub">独ソ戦→スターリングラード(1942-43)</div></div>
-<div class="cn cn-al nd-svg" data-tip="w2-china"><div class="nm">中国</div><div class="sub">日中戦争を継続</div></div>
-</div>
-</div>
-<div class="detail"><b>1941年</b>が最大の転換点：独ソ戦＋真珠湾→米英ソの「大同盟」成立→<b>工業力・人口で枢軸を圧倒</b>。<b>スターリングラード(1942-43)</b>＋<b>ミッドウェー(1942)</b>で攻守逆転</div>
-</div>
-
-<div class="phase">
-<div class="phase-hdr"><div class="phase-era">1943-1945</div><div class="phase-title">連合国の勝利と戦後構想</div></div>
-<div class="phase-body" style="margin-bottom:6px">
-<div class="ev nd-svg" data-tip="w3-italy">伊降伏(1943.9)→共同交戦国に</div><span class="ar">→</span>
-<div class="ev nd-svg" data-tip="w3-dday">ノルマンディー上陸(1944.6)</div><span class="ar">→</span>
-<div class="ev nd-svg" data-tip="w3-ger">独降伏(1945.5)</div><span class="ar">→</span>
-<div class="ev nd-svg" data-tip="w3-jpn">日本降伏(1945.8)</div>
-</div>
-<div class="phase-body" style="margin-bottom:6px">
-<div class="ev nd-svg" data-tip="w3-tehran">テヘラン会談(1943)</div><span class="ar">→</span>
-<div class="ev nd-svg" data-tip="w3-yalta">ヤルタ会談(1945.2)</div><span class="ar">→</span>
-<div class="ev nd-svg" data-tip="w3-potsdam">ポツダム会談(1945.7)</div>
-</div>
-<div class="detail"><b>首脳会談</b>で戦後構想を議論→しかし米英vsソ連の対立が表面化→<b>冷戦の伏線</b>。ヤルタでポーランド問題・国連・ソ連の対日参戦を密約。<b>国際連合(1945.10)</b>成立→安保理常任理事国5カ国体制</div>
-</div>
-
-</div></div>
-
-<div class="tp" id="tip-w0-axis"><p><strong>ベルリン＝ローマ枢軸(1936)</strong> ― 独伊が接近。ムッソリーニが「ヨーロッパの軸(axis)」と表現→「枢軸国」の語源。エチオピア侵攻(1935)で孤立した伊がドイツに接近。</p></div>
-<div class="tp" id="tip-w0-pact"><p><strong>日独伊防共協定(1936-37)</strong> ― 反コミンテルンを名目に独日(1936)→伊(1937)。1940年に<strong>日独伊三国同盟</strong>に発展→軍事同盟に。</p></div>
-<div class="tp" id="tip-w0-munich"><p><strong>ミュンヘン会談(1938)</strong> ― 英チェンバレン・仏ダラディエがヒトラーにズデーテン地方を譲歩（<strong>宥和政策</strong>）。「我々の時代の平和」→しかし1939年にチェコスロヴァキア解体→宥和の破綻。</p></div>
-<div class="tp" id="tip-w0-nazi-soviet"><p><strong>独ソ不可侵条約(1939.8)</strong> ― イデオロギー的に対極の独ソが不可侵条約→世界に衝撃。<strong>秘密議定書</strong>でポーランド分割・バルト三国のソ連勢力圏を密約。ヒトラーは二正面戦争を回避→9月にポーランド侵攻。</p></div>
-<div class="tp" id="tip-w1-ger"><p><strong>ドイツ</strong> ― 電撃戦(Blitzkrieg)でポーランド(1939)→デンマーク・ノルウェー→ベルギー・オランダ・<strong>フランス(1940.6降伏)</strong>を次々征服。バトル＝オブ＝ブリテンでは英の制空権を奪えず→英上陸を断念。</p></div>
-<div class="tp" id="tip-w1-ita"><p><strong>イタリア</strong> ― 仏の敗北を見て1940年6月に参戦（「バスに乗り遅れるな」）。しかし北アフリカ・ギリシアで苦戦→独の救援が必要に。</p></div>
-<div class="tp" id="tip-w1-jpn"><p><strong>日本</strong> ― <strong>日独伊三国同盟(1940.9)</strong>で枢軸に正式参加。仏印進駐→米が石油禁輸→真珠湾への道。</p></div>
-<div class="tp" id="tip-w1-uk"><p><strong>イギリス</strong> ― チェンバレン辞任→<strong>チャーチル</strong>(1940)。バトル＝オブ＝ブリテン(1940)で独の空襲に耐える。「我々は海岸で戦う」。</p></div>
-<div class="tp" id="tip-w1-fra"><p><strong>フランス</strong> ― 6週間で降伏(1940.6)。北部は独が占領、南部に<strong>ヴィシー政権</strong>（ペタン＝独に協力）。ロンドンで<strong>ド＝ゴールが「自由フランス」</strong>を組織→抵抗を継続。</p></div>
-<div class="tp" id="tip-w1-ussr"><p><strong>ソ連</strong> ― 独ソ不可侵条約で中立。ポーランド東部・バルト三国・フィンランド（冬戦争）に侵攻→勢力圏を拡大。1941年6月まで独との協力関係を維持。</p></div>
-<div class="tp" id="tip-w1-usa"><p><strong>アメリカ</strong> ― 孤立主義だが<strong>武器貸与法(1941.3)</strong>で英ソを支援→「民主主義の兵器廠」。大西洋憲章(1941.8)でチャーチルと戦後構想を発表。</p></div>
-<div class="tp" id="tip-w2-barb"><p><strong>独ソ戦（バルバロッサ作戦, 1941.6）</strong> ― ヒトラーが不可侵条約を破りソ連に侵攻。300万人規模の史上最大の地上戦。初期は独軍が快進撃→しかし<strong>モスクワ攻防(1941冬)</strong>で阻止→スターリングラード(1942-43)で形勢逆転。</p></div>
-<div class="tp" id="tip-w2-pearl"><p><strong>真珠湾攻撃(1941.12.7)</strong> ― 日本がハワイの米太平洋艦隊を奇襲→<strong>米が参戦</strong>。「Remember Pearl Harbor」。ルーズベルトは独にも宣戦→<strong>米英ソの「大同盟」が成立</strong>→圧倒的な工業力・人口が連合国に。</p></div>
-<div class="tp" id="tip-w2-ger"><p><strong>ドイツ</strong> ― 独ソ戦＋対米宣戦で<strong>二正面戦争</strong>に。スターリングラード(1942-43)の敗北が決定的転機。</p></div>
-<div class="tp" id="tip-w2-ita"><p><strong>イタリア</strong> ― 北アフリカで英に劣勢。1943年に連合軍がシチリア上陸→ムッソリーニ失脚→降伏。</p></div>
-<div class="tp" id="tip-w2-jpn"><p><strong>日本</strong> ― ミッドウェー海戦(1942.6)の敗北が転換点。以後は米の反攻が続く。</p></div>
-<div class="tp" id="tip-w2-usa"><p><strong>アメリカ</strong> ― 「民主主義の兵器廠」。太平洋と欧州の二正面で戦う。北アフリカ→イタリア→ノルマンディー。原爆開発（マンハッタン計画）。</p></div>
-<div class="tp" id="tip-w2-uk"><p><strong>イギリス</strong> ― エル＝アラメイン(1942)で北アフリカの形勢を逆転。ノルマンディー上陸を米と共同で計画。</p></div>
-<div class="tp" id="tip-w2-ussr"><p><strong>ソ連</strong> ― <strong>スターリングラードの戦い(1942.8-1943.2)</strong>で独軍を包囲・壊滅→東部戦線の転換点。以後はベルリンまで進撃。2000万人以上の犠牲。</p></div>
-<div class="tp" id="tip-w2-china"><p><strong>中国</strong> ― 日中戦争(1937-)を継続。蒋介石の国民政府が連合国に参加。米の援蒋ルート。</p></div>
-<div class="tp" id="tip-w3-italy"><p><strong>伊降伏(1943.9)</strong> ― ムッソリーニ失脚→バドリオ政権が連合国に降伏。独がイタリア北部を占領→「共同交戦国」として連合国側で再参戦。</p></div>
-<div class="tp" id="tip-w3-dday"><p><strong>ノルマンディー上陸(1944.6.6)</strong> ― 「D-Day」。史上最大の上陸作戦。アイゼンハワー指揮。西部の第二戦線が開かれる→独は東西から挟撃される。</p></div>
-<div class="tp" id="tip-w3-ger"><p><strong>独降伏(1945.5.8)</strong> ― ソ連軍がベルリンを包囲→ヒトラー自殺(4/30)→無条件降伏。ヨーロッパ戦線終結。</p></div>
-<div class="tp" id="tip-w3-jpn"><p><strong>日本降伏(1945.8.15)</strong> ― 広島(8/6)・長崎(8/9)への原爆投下＋ソ連の対日参戦(8/8)→ポツダム宣言受諾→9/2に降伏文書調印→WW2完全終結。</p></div>
-<div class="tp" id="tip-w3-tehran"><p><strong>テヘラン会談(1943.11)</strong> ― ルーズベルト・チャーチル・スターリンの初の三首脳会談。第二戦線（ノルマンディー上陸）を1944年に開くことで合意。</p></div>
-<div class="tp" id="tip-w3-yalta"><p><strong>ヤルタ会談(1945.2)</strong> ― 戦後構想を議論。<strong>①国連設立②ドイツの分割占領③ポーランドの国境④ソ連の対日参戦（千島・南樺太の代償）</strong>。ポーランドの扱い・東欧の自由選挙をめぐり米英vsソ連の対立→冷戦の伏線。</p></div>
-<div class="tp" id="tip-w3-potsdam"><p><strong>ポツダム会談(1945.7)</strong> ― トルーマン(ルーズベルト死去)・チャーチル(→アトリー)・スターリン。ドイツの非軍事化・非ナチ化。日本への最後通牒（ポツダム宣言）。米ソ対立がさらに鮮明に。</p></div>
-
-<div class="note"><p>
-<strong>重要ポイント：</strong><br>
-❶ <strong>独ソ不可侵条約(1939)</strong>＝秘密議定書でポーランド分割→開戦の直接の引き金。1941年に独が破棄→独ソ戦<br>
-❷ <strong>1941年が最大の転換点</strong>：独ソ戦(6月)＋真珠湾(12月)→米英ソの「大同盟」成立→工業力で枢軸を圧倒<br>
-❸ <strong>スターリングラード(1942-43)</strong>＝東部戦線の転機。<strong>ミッドウェー(1942)</strong>＝太平洋の転機<br>
-❹ <strong>ヤルタ会談(1945.2)</strong>＝戦後構想→ポーランド問題・東欧の扱いで米英vsソ連→冷戦の伏線<br>
-❺ <strong>イタリアの離脱(1943)</strong>と<strong>日本の降伏(1945.8)</strong>：枢軸の崩壊順序＝伊→独→日<br>
-❻ <strong>仏の分裂</strong>＝ヴィシー政権(独に協力)vs自由フランス(ド＝ゴール)→戦後の仏の複雑な記憶
-</p></div>
-
-<div id="tooltip-overlay" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;z-index:8000" onclick="closeTip()"></div>
-<div id="tooltip-box" style="display:none;position:fixed;z-index:9000;background:var(--bg);border:1px solid rgba(var(--axr),.25);border-radius:8px;padding:12px 16px;max-width:320px;width:calc(100vw - 32px);box-shadow:0 8px 30px rgba(0,0,0,.6)">
-<div id="tooltip-content" style="font-size:10px;color:var(--text2);line-height:1.7"></div></div>
-<script>
-(function(){var ov=document.getElementById("tooltip-overlay"),bx=document.getElementById("tooltip-box"),ct=document.getElementById("tooltip-content");window.closeTip=function(){bx.style.display="none";ov.style.display="none"};function openTip(el){var tipId=el.getAttribute("data-tip");var tipEl=tipId?document.getElementById("tip-"+tipId):null;if(!tipEl)return;closeTip();ct.innerHTML=tipEl.innerHTML;ov.style.display="block";bx.style.display="block";var r=el.getBoundingClientRect(),w=Math.min(320,window.innerWidth-32);bx.style.width=w+"px";var l=r.left+r.width/2-w/2;if(l<16)l=16;if(l+w>window.innerWidth-16)l=window.innerWidth-16-w;bx.style.left=l+"px";bx.style.top=(r.bottom+8)+"px";bx.style.bottom="auto";var br=bx.getBoundingClientRect();if(br.bottom>window.innerHeight-16){var t=r.top-br.height-8;if(t<16)t=16;bx.style.top=t+"px"}}var tm=false,tt=null;document.addEventListener("touchstart",function(e){tm=false;tt=e.target},{passive:true});document.addEventListener("touchmove",function(){tm=true},{passive:true});document.addEventListener("touchend",function(e){if(tm)return;var nd=tt?tt.closest(".nd-svg"):null;if(nd){e.preventDefault();openTip(nd)}else if(!tt||!tt.closest("#tooltip-box"))closeTip();tt=null});document.addEventListener("click",function(e){if("ontouchstart"in window)return;var nd=e.target.closest(".nd-svg");if(nd)openTip(nd);else if(!e.target.closest("#tooltip-box"))closeTip()})})();
-</script>
+</main>
 <script src="search_jump.js" defer></script></body></html>

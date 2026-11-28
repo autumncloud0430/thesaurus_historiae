@@ -1,41 +1,182 @@
-<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>宗教改革の対立構造</title><style>@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
-:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048}
-*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
-.hdr{padding:16px 20px;border-bottom:1px solid rgba(var(--axr),.08);display:flex;align-items:center;gap:14px;flex-wrap:wrap}.hdr h1{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2)}.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
-.content{padding:12px 16px;overflow-x:auto}.content-inner{min-width:760px}
-@media(max-width:800px){.content-inner{min-width:0}}
-.phase{margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid rgba(var(--axr),.04)}.phase:last-child{border-bottom:none}
-.phase-hdr{display:flex;align-items:baseline;gap:8px;margin-bottom:6px}
-.phase-era{font-family:'Cormorant Garamond',serif;font-size:13px;font-weight:700;color:var(--gold);letter-spacing:.1em;min-width:80px}
-.phase-title{font-family:'Noto Serif JP',serif;font-size:11px;font-weight:700;color:var(--gold2)}
-.phase-sub{font-size:8px;color:var(--text3);margin-left:4px}
-.phase-body{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
-.cn{border-radius:6px;padding:5px 10px;text-align:center;cursor:pointer;transition:all .15s}.cn:hover{filter:brightness(1.15);transform:translateY(-1px)}
-.cn .nm{font-family:'Noto Serif JP',serif;font-size:9px;font-weight:700;white-space:nowrap}
-.cn .sub{font-size:6px;color:var(--text3);margin-top:1px;white-space:nowrap}
-.cn-cat{background:rgba(194,120,74,.06);border:1px solid rgba(194,120,74,.2)}.cn-cat .nm{color:#d4b898}
-.cn-pro{background:rgba(74,120,194,.06);border:1px solid rgba(74,120,194,.2)}.cn-pro .nm{color:#8ab0d4}
-.cn-cal{background:rgba(74,160,120,.06);border:1px solid rgba(74,160,120,.2)}.cn-cal .nm{color:#8ad4b0}
-.cn-ang{background:rgba(160,120,74,.06);border:1px solid rgba(160,120,74,.2)}.cn-ang .nm{color:#d4c898}
-.cn-pol{background:rgba(100,80,160,.06);border:1px solid rgba(100,80,160,.2)}.cn-pol .nm{color:#b8a0d4}
-.grp{border-radius:8px;padding:8px 10px;display:flex;gap:5px;align-items:center;flex-wrap:wrap;position:relative}
-.grp-cat{border:1px solid rgba(194,120,74,.12);background:rgba(194,120,74,.02)}
-.grp-pro{border:1px solid rgba(74,120,194,.12);background:rgba(74,120,194,.02)}
-.grp-cal{border:1px solid rgba(74,160,120,.12);background:rgba(74,160,120,.02)}
-.grp-label{font-size:7px;font-weight:600;letter-spacing:.06em;position:absolute;top:-7px;left:12px;padding:0 4px;background:var(--bg)}
-.grp-label-cat{color:rgba(194,120,74,.6)}.grp-label-pro{color:rgba(74,120,194,.6)}.grp-label-cal{color:rgba(74,160,120,.6)}
-.vs{font-family:'Cormorant Garamond',serif;font-size:12px;font-weight:700;color:rgba(194,90,74,.4);padding:0 5px}
-.ar{font-size:8px;color:var(--text3);padding:0 2px}
-.ev{font-size:7px;color:var(--gold);background:rgba(var(--axr),.06);border:1px solid rgba(var(--axr),.1);border-radius:4px;padding:2px 6px;cursor:pointer;white-space:nowrap}
-.detail{font-size:6.5px;color:var(--text3);margin:3px 0 0 4px;line-height:1.6}.detail b{color:var(--gold);font-weight:600}
-.note{text-align:center;padding:8px 20px 32px;max-width:820px;margin:0 auto}.note p{font-size:9px;color:var(--text3);line-height:1.8}.note strong{color:var(--gold)}
+<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>宗教改革の対立構造</title>
+<style>@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+:root{--bg:#f1ecdf;--gold:#8b6f4e;--gold2:#59452a;--text:#2b241b;--text2:#6d6353;--text3:#a89a80;--axr:139,111,78;--shu:#a2331e}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+.hdr{padding:16px 20px;border-bottom:1px solid rgba(var(--axr),.12);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.hdr h1{font-family:'Noto Serif JP',serif;font-size:20px;font-weight:700;color:var(--gold2)}
+.hdr a{font-size:14px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
+main{max-width:760px;margin:0 auto;padding:24px 20px 60px}
+.lead{font-size:15px;line-height:2}
+.lead b{color:var(--gold2)}
+.sec-hdr{display:flex;align-items:center;gap:10px;padding:10px 0;margin:34px 0 4px;border-bottom:1px solid rgba(var(--axr),.15)}
+.sec-icon{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:700;color:var(--gold);opacity:.75}
+.sec-hdr h2{font-family:'Noto Serif JP',serif;font-size:18px;font-weight:700;color:var(--gold2)}
+.latin{font-family:'Cormorant Garamond',serif;font-size:13px;font-weight:400;font-style:italic;color:var(--gold);margin-left:10px;letter-spacing:1px;opacity:.75}
+.cap{font-size:13px;color:var(--text2);margin:8px 0 14px;line-height:1.8}
+.x{color:var(--shu)}
+/* I lineage */
+.lin-row{display:flex;justify-content:center;gap:8px}
+.box{flex:1;max-width:220px;border:1px solid rgba(var(--axr),.3);border-radius:10px;background:rgba(var(--axr),.05);padding:8px 8px 7px;text-align:center;line-height:1.35}
+.box b{display:block;font-family:'Noto Serif JP',serif;font-size:17px;color:var(--gold2)}
+.box .by{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:15px;color:var(--gold)}
+.box small{display:block;font-size:12px;color:var(--text2);margin-top:2px}
+.box.big{max-width:420px}.box.big b{font-size:21px}
+.box.eu{border-color:rgba(var(--axr),.55);background:rgba(var(--axr),.09);box-shadow:0 0 0 3px rgba(var(--axr),.06)}
+.box .note2{border-top:1px solid rgba(var(--axr),.15);margin-top:6px;padding-top:5px}
+.merge,.down{position:relative;text-align:center;padding:10px 0 13px}
+.merge::before,.down::before{content:'';position:absolute;left:50%;top:0;bottom:0;border-left:1.5px solid rgba(var(--axr),.45)}
+.merge::after,.down::after{content:'';position:absolute;left:calc(50% - 5px);bottom:-1px;border:5px solid transparent;border-top:7px solid rgba(var(--axr),.6);border-bottom:0}
+.merge span,.down span{position:relative;background:var(--bg);font-size:12.5px;color:var(--gold);padding:0 8px}
+.merge span b,.down span b{font-family:'Cormorant Garamond',serif;font-size:14px}
+.three{position:relative;padding-bottom:10px}
+.three::after{content:'';position:absolute;left:16%;right:16%;bottom:0;border-bottom:1.5px solid rgba(var(--axr),.45)}
+.three .box{position:relative}
+.three .box::after{content:'';position:absolute;left:50%;bottom:-12px;height:10px;border-left:1.5px solid rgba(var(--axr),.45)}
+.side-h{margin:22px 0 6px;font-size:12px;color:var(--gold);font-family:'Cormorant Garamond',serif;font-style:italic;letter-spacing:1px}
+.side{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.sbox{border:1px solid rgba(var(--axr),.18);border-radius:8px;background:rgba(var(--axr),.03);padding:7px 10px;font-size:13px;line-height:1.5;color:var(--gold2)}
+.sbox b{font-family:'Noto Serif JP',serif}
+.sbox small{display:block;font-size:12px;color:var(--text2);margin-top:3px;line-height:1.65}
+.sbox.dash{border-style:dashed}
+/* II deepening x widening */
+.dw{border:1px solid rgba(var(--axr),.15);border-radius:10px;overflow:hidden;background:rgba(var(--axr),.02)}
+.dw-h,.dw-r{display:grid;grid-template-columns:48px 1fr 1fr;column-gap:10px;padding-left:10px;padding-right:10px}
+.dw-h{font-family:'Noto Serif JP',serif;font-size:13px;font-weight:700;color:var(--gold2);padding-top:8px;padding-bottom:8px;background:rgba(var(--axr),.07)}
+.dw-h span small{display:block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;color:var(--gold);font-size:11.5px;letter-spacing:1px}
+.dw-r{padding-top:6px;padding-bottom:6px;border-top:1px solid rgba(var(--axr),.08);font-size:13.5px;line-height:1.6;align-items:start}
+.dw-r:nth-child(odd){background:rgba(var(--axr),.025)}
+.dw-r .y{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:16px;color:var(--gold);line-height:1.4}
+.dw-r .d{border-right:1px solid rgba(var(--axr),.12);padding-right:10px}
+.cnt{display:flex;align-items:center;gap:6px;margin-top:4px}
+.cnt i{display:block;height:6px;border-radius:3px;background:rgba(var(--axr),.45);max-width:calc(100% - 28px)}
+.cnt b{font-size:13px;font-family:'Cormorant Garamond',serif;color:var(--gold2)}
+/* III UK */
+.uk{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;counter-reset:u}
+.uk li{position:relative;border:1px solid rgba(var(--axr),.15);border-radius:8px;background:rgba(var(--axr),.04);padding:6px 10px 7px 32px;font-size:13.5px;line-height:1.55;counter-increment:u}
+.uk li::before{content:counter(u,upper-roman);position:absolute;left:9px;top:7px;font-family:'Cormorant Garamond',serif;font-weight:700;font-size:13px;color:var(--gold);opacity:.7}
+.uk li .y{display:block;font-family:'Cormorant Garamond',serif;font-weight:700;color:var(--gold);font-size:15px}
+.uk li.ux{border-color:rgba(162,51,30,.35);background:rgba(162,51,30,.04)}.uk li.ux .y{color:var(--shu)}
+/* summary */
+.kp{background:rgba(var(--axr),.04);border:1px solid rgba(var(--axr),.12);border-radius:10px;padding:14px 18px}
+.kp p{font-size:13.5px;line-height:1.9;margin:2px 0}
+.kp b{color:var(--gold2)}
+/* IV per-phase (flow_ style) */
+.toc{display:flex;flex-wrap:wrap;gap:4px 14px;margin:4px 0 14px}
+.toc a{font-size:12.5px;color:var(--text2);text-decoration:none}
+.toc a span{font-family:'Cormorant Garamond',serif;font-weight:700;color:var(--gold);margin-right:5px}
+.toc a:hover{color:var(--gold2)}
+.phase{position:relative;padding:14px 4px 14px 22px;border-left:2px solid rgba(var(--axr),.15);margin-left:46px;scroll-margin-top:8px}
+.phase:last-child{border-left-color:transparent}
+.phase::before{content:'';position:absolute;left:-6px;top:20px;width:8px;height:8px;border-radius:50%;background:var(--bg);border:2px solid rgba(var(--axr),.45)}
+.phase-label{position:absolute;left:-50px;top:15px;width:40px;font-family:'Cormorant Garamond',serif;font-size:13px;font-weight:700;color:var(--gold);text-align:right;line-height:1.25}
+.ph-head{margin-bottom:8px}
+.ph-title{display:block;font-family:'Noto Serif JP',serif;font-size:17px;font-weight:700;color:var(--gold2)}
+.ph-sub{display:block;font-size:12.5px;color:var(--text2);margin-top:1px}
+.event{background:rgba(var(--axr),.03);border:1px solid rgba(var(--axr),.1);border-radius:8px;padding:8px 12px;margin-bottom:8px}
+.event.org{background:rgba(var(--axr),.07);border-color:rgba(var(--axr),.22)}
+.event.bad-ev{background:rgba(162,51,30,.035);border-color:rgba(162,51,30,.22)}
+.ev-title{font-family:'Noto Serif JP',serif;font-size:15px;font-weight:700;color:var(--gold2);display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 10px}
+.bad-ev .ev-title{color:var(--shu)}
+.orgname{font-size:16px}
+.ev-year{font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:700;color:var(--gold)}
+.org-sub{font-size:12px;color:var(--text2)}
+.bad{font-family:'Noto Sans JP',sans-serif;font-size:10.5px;font-weight:400;color:var(--shu);border:1px solid rgba(162,51,30,.4);border-radius:4px;padding:0 6px}
+.ev-desc{font-size:14px;color:var(--text);line-height:1.8;margin-top:3px}
+.ev-desc b{color:var(--gold2)}
+.side-note{font-size:13px;color:var(--text2);line-height:1.8;padding:6px 10px;border-left:2px solid rgba(var(--axr),.25);margin:4px 0 8px}
+.side-note b,.side-note strong{color:var(--gold2)}
+.out{color:var(--shu)}
 @media(max-width:600px){
-.hdr{padding:10px 12px}.hdr h1{font-size:12px}
-th,td{padding:6px 8px;font-size:9px}
-th{font-size:10px}
-td:first-child{font-size:8.5px}
-.note p{font-size:8px}
-.side-note{font-size:7.5px}
+.hdr{padding:12px 14px}.hdr h1{font-size:16px}
+main{padding:16px 14px 60px}
+.lead{font-size:14px}
+.sec-hdr h2{font-size:16px}.latin{font-size:12px;margin-left:6px}
+.box b{font-size:15px}.box small{font-size:11px}.box{padding:6px 4px}
+.box.big b{font-size:18px}
+.merge span,.down span{font-size:11.5px}
+.side{grid-template-columns:1fr}
+.dw-h,.dw-r{grid-template-columns:36px 1fr 1fr;column-gap:7px;padding-left:7px;padding-right:7px}
+.dw-r{font-size:12.5px}.dw-r .y{font-size:14px}.dw-r .d{padding-right:7px}
+.uk{grid-template-columns:1fr 1fr}.uk li{font-size:12.5px}
+.kp{padding:12px 14px}.kp p{font-size:12.5px}
+.phase{margin-left:38px;padding-left:16px}.phase-label{left:-42px;width:34px;font-size:12px}
+.ph-title{font-size:15.5px}
+.ev-title{font-size:14px}.orgname{font-size:15px}.ev-desc{font-size:13px}
+.side-note{font-size:12.5px}
+}
+
+/* ---- alliance pages (2026-11-28) ---- */
+.lead{margin-top:2px}
+.tb-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid rgba(var(--axr),.15);border-radius:10px;background:rgba(var(--axr),.02)}
+table.tb{width:100%;border-collapse:collapse}
+.tb th{font-family:'Noto Serif JP',serif;font-size:13px;font-weight:700;color:var(--gold2);background:rgba(var(--axr),.07);padding:7px 8px;line-height:1.35;text-align:left;vertical-align:bottom}
+.tb th .y{display:block;font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:700;color:var(--gold)}
+.tb td{font-size:13.5px;line-height:1.65;color:var(--text);padding:7px 8px;border-top:1px solid rgba(var(--axr),.08);vertical-align:top}
+.tb tbody tr:nth-child(even) td{background:rgba(var(--axr),.02)}
+.tb td.p{font-family:'Noto Serif JP',serif;font-weight:700;color:var(--gold2);white-space:nowrap}
+.tb td.p small{display:block;font-family:'Noto Sans JP',sans-serif;font-weight:400;font-size:11.5px;color:var(--text2)}
+.tb td.y{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:15px;color:var(--gold);white-space:nowrap}
+.tb td.n{font-family:'Cormorant Garamond',serif;font-weight:700;color:var(--gold);text-align:center;width:4.6em;white-space:nowrap}
+.tb td.n b{display:block;font-size:20px;line-height:1.1}
+.tb td.n span{display:block;font-size:14px}
+.tb.cr td:nth-child(2){width:38%}
+.tb tr.g td{background:rgba(var(--axr),.07);font-family:'Noto Serif JP',serif;font-size:13px;font-weight:700;color:var(--gold2);padding:5px 8px}
+.tb tr.g td i{font-family:'Cormorant Garamond',serif;font-weight:400;color:var(--gold);margin-left:8px;letter-spacing:.5px}
+.tb tr.mid td{background:rgba(162,51,30,.035);font-size:13px;color:var(--text)}
+.tb tr.mid td .y{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:15px;color:var(--shu);margin-right:6px}
+/* alignment matrix */
+table.mx th{text-align:center}
+table.mx th:first-child{text-align:left}
+table.mx td{text-align:center;vertical-align:middle;padding:6px 5px}
+table.mx td.p{text-align:left}
+.chip{display:inline-block;min-width:3.4em;padding:1px 7px;border-radius:999px;font-size:12.5px;line-height:1.6;color:var(--text);white-space:nowrap}
+.chip.a{background:rgba(162,51,30,.09);border:1px solid rgba(162,51,30,.3)}
+.chip.b{background:rgba(52,86,140,.09);border:1px solid rgba(52,86,140,.3)}
+.chip.c{background:rgba(var(--axr),.08);border:1px dashed rgba(var(--axr),.55)}
+.chip.n{color:var(--text2);border:1px solid transparent}
+.chip.sw{border-width:2px;font-weight:700;padding:0 6px}
+.chip.n.sw{border-color:rgba(var(--axr),.5);color:var(--text)}
+.mx-key{display:flex;flex-wrap:wrap;gap:4px 14px;margin:8px 2px 0;font-size:12px;color:var(--text2);line-height:1.7}
+.mx-key .chip{min-width:0;margin-right:4px}
+.mx th .hn{display:none}
+.mx-cols{display:none}
+.mx-note{font-size:13px;color:var(--text2);line-height:1.8;margin:6px 2px 0}
+/* camps (per-phase) */
+.camps{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:2px 0 8px}
+.camp{border-radius:10px;padding:8px 11px 2px;border:1px solid rgba(var(--axr),.2);background:rgba(var(--axr),.03)}
+.camp.a{background:rgba(162,51,30,.035);border-color:rgba(162,51,30,.2)}
+.camp.b{background:rgba(52,86,140,.035);border-color:rgba(52,86,140,.2)}
+.camp.c{border-style:dashed;border-color:rgba(var(--axr),.4);grid-column:1/-1}
+.camp-h{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2);padding-bottom:5px;margin-bottom:7px;border-bottom:1px solid rgba(var(--axr),.14)}
+.camp.a .camp-h{color:#7a2b1c;border-bottom-color:rgba(162,51,30,.16)}
+.camp.b .camp-h{color:#2c4569;border-bottom-color:rgba(52,86,140,.16)}
+.mem{margin-bottom:9px}
+.mem-n{font-family:'Noto Serif JP',serif;font-size:14.5px;font-weight:700;color:var(--text);display:flex;flex-wrap:wrap;align-items:baseline;gap:0 8px;line-height:1.5}
+.mem-r{font-family:'Noto Sans JP',sans-serif;font-size:12px;font-weight:400;color:var(--text2)}
+.mem-d{font-size:13.5px;line-height:1.8;color:var(--text);margin-top:1px}
+.mem-d b,.ev-desc b{color:var(--gold2)}
+.ph-body{margin-top:2px}
+.sub-h{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;color:var(--gold);letter-spacing:1px;margin:10px 0 5px}
+.rail .tb-wrap{margin:2px 0 8px}
+@media(max-width:600px){
+.kp p{font-size:13px}
+.side-note{font-size:13px}
+.camps{grid-template-columns:1fr;gap:8px}
+.camp{padding:7px 10px 1px}
+.mem-n{font-size:14px}.mem-d{font-size:13px}
+.tb th{font-size:12px;padding:6px 5px}.tb th .y{font-size:13px}
+.tb td{font-size:13px;padding:6px 5px}
+.tb td.p small{font-size:11px}
+.tb td.y{font-size:14px}
+.chip{font-size:12px;padding:1px 5px;min-width:3em}
+.chip.sw{padding:0 4px}
+table.mx td{padding:5px 3px}
+.mx-key{font-size:11.5px}
+.mx th .hl{display:none}.mx th .hn{display:block;font-size:14px}
+.mx-cols{display:flex;flex-wrap:wrap;gap:2px 12px;margin:0 2px 6px;font-size:12px;color:var(--text2)}
+.toc a{font-size:13px}
 }
 </style><style id="thThemes">/* =====================================================
    THESAURUS HISTORIAE ― themes.css(LUX固定版)
@@ -82,69 +223,23 @@ html[data-theme="lux"] .side-note,
 html[data-theme="lux"] .ev-note,
 html[data-theme="lux"] .arrow-text,
 html[data-theme="lux"] .detail { color:var(--text2); }
-</style><script id="thScript">document.documentElement.setAttribute('data-theme','lux');</script></head><body>
+</style><script id="thScript">document.documentElement.setAttribute('data-theme','lux');</script></head>
+<body>
 <div class="hdr"><h1>宗教改革の対立構造 ― ルター・カルヴァン・英国教会 vs ローマ教皇</h1><a href="charts.html">← Ad Chartae</a></div>
-<div class="content"><div class="content-inner">
-
-<div class="phase">
-<div class="phase-hdr"><div class="phase-era">1517–30s</div><div class="phase-title">ルターの反旗と帝国の分裂</div></div>
-<div class="phase-body">
- <div class="grp grp-cat"><div class="grp-label grp-label-cat">カトリック陣営</div>
- <div class="cn cn-cat"><div class="nm">ローマ教皇</div><div class="sub">レオ10世→パウルス3世</div></div>
- <div class="cn cn-cat"><div class="nm">カール5世</div><div class="sub">神聖ローマ皇帝(ハプスブルク)</div></div>
- <div class="cn cn-cat"><div class="nm">スペイン</div><div class="sub">ハプスブルク家</div></div>
- </div>
- <div class="vs">VS</div>
- <div class="grp grp-pro"><div class="grp-label grp-label-pro">ルター派(プロテスタント)</div>
- <div class="cn cn-pro"><div class="nm">ルター</div><div class="sub">★95カ条の論題(1517)</div></div>
- <div class="cn cn-pro"><div class="nm">ザクセン選帝侯</div><div class="sub">フリードリヒ賢公(庇護者)</div></div>
- <div class="cn cn-pro"><div class="nm">北ドイツ諸侯</div><div class="sub">教会財産の世俗化が動機</div></div>
- </div>
+<main>
+<p class="lead">16世紀の宗教改革は、ルターによる教皇・教会への批判から始まり、カルヴァンの改革、イギリス国教会の成立へと広がった。これらの新しい宗派は<b>プロテスタント</b>と総称される。カトリック側も<b>カトリック改革(対抗宗教改革)</b>で立て直しを図り、ヨーロッパは宗派によって分かれた。ここでは、どの勢力がどちらの側に立ったかを地域・時期ごとに整理する。</p>
+<div class="sec-hdr"><span class="sec-icon">Ⅰ</span><h2>対立の構図 <span class="latin">Partes</span></h2></div><p class="cap">地域・時期ごとに、カトリック側と改革側に立ったおもな勢力を示す。</p>
+<div class="tb-wrap"><table class="tb"><thead><tr><th>舞台</th><th>カトリック側</th><th>改革側</th></tr></thead><tbody><tr><td class="p">ドイツ<small>1517-55</small></td><td>ローマ教皇(レオ10世ら)<br>皇帝カール5世<br>カトリック諸侯</td><td>ルター<br>ザクセン選帝侯フリードリヒ<br>ルター派の諸侯・都市(シュマルカルデン同盟)</td></tr><tr><td class="p">スイス<small>1520年代-</small></td><td>カトリックの州(カントン)</td><td>ツヴィングリ(チューリヒ)<br>カルヴァン(ジュネーヴ)</td></tr><tr><td class="p">フランス</td><td>フランス王権・カトリック貴族</td><td>ユグノー(カルヴァン派)</td></tr><tr><td class="p">ネーデルラント</td><td>スペイン王フェリペ2世</td><td>ゴイセン(カルヴァン派)</td></tr><tr><td class="p">イギリス<small>1534-</small></td><td>ローマ教皇</td><td>ヘンリ8世(国教会)<br>のちピューリタン(カルヴァン派)も</td></tr><tr><td class="p">立て直し<small>1540年代-</small></td><td>トリエント公会議<br>イエズス会</td><td>―</td></tr></tbody></table></div>
+<div class="sec-hdr"><span class="sec-icon">Ⅱ</span><h2>要点 <span class="latin">Summarium</span></h2></div>
+<div class="kp"><p>❶ ルターの<b>九十五カ条の論題(1517)</b>が発端。信仰によってのみ救われ、信仰のよりどころは聖書だけであると説いた。<b>ヴォルムス帝国議会(1521)</b>で帝国から追放する処分を受けた</p><p>❷ <b>ドイツ農民戦争(1524-25)</b>でルターは諸侯による鎮圧を支持し、ルター派は領邦君主が教会を監督する<b>領邦教会制</b>のもとで広まった</p><p>❸ 皇帝カール5世はイタリア戦争やオスマン帝国への対応に追われた。ルター派諸侯は<b>シュマルカルデン同盟</b>を結んで皇帝と対立し、<b>アウクスブルクの和議(1555)</b>で諸侯はルター派を選べるようになった(カルヴァン派は対象外、個人の信仰の自由ではない)</p><p>❹ <b>カルヴァン</b>(ジュネーヴ)の<b>予定説</b>は商工業者に受け入れられ、ユグノー(フランス)・ゴイセン(ネーデルラント)・長老派(スコットランド)・ピューリタン(イングランド)として広がった</p><p>❺ イギリスでは<b>ヘンリ8世</b>の離婚問題から<b>首長法(1534)</b>で教皇から離れ、<b>エリザベス1世の統一法(1559)</b>で国教会が確立した</p><p>❻ カトリック側は<b>トリエント公会議(1545-63)</b>と<b>イエズス会</b>によって立て直しを図った(カトリック改革)</p></div>
+<div class="sec-hdr"><span class="sec-icon">Ⅲ</span><h2>時期別の解説 <span class="latin">Per Aetates</span></h2></div>
+<nav class="toc"><a href="#ph1"><span>1517-1525</span>ルターの改革</a><a href="#ph2"><span>1526-1555</span>皇帝とルター派諸侯の対立</a><a href="#ph3"><span>1520s-1560s</span>スイスの改革とカルヴァン派の広がり</a><a href="#ph4"><span>1534-1559</span>イギリスの宗教改革</a><a href="#ph5"><span>1540s-</span>カトリック改革</a></nav>
+<div class="rail">
+<div class="phase" id="ph1"><div class="phase-label">1517<br>〜<br>1525</div><div class="ph-head"><span class="ph-title">ルターの改革</span><span class="ph-sub">贖宥状批判から帝国内の対立へ</span></div><div class="ph-body"><div class="camps"><div class="camp a"><div class="camp-h">カトリック側</div><div class="mem"><div class="mem-n">ローマ教皇レオ10世<span class="mem-r">メディチ家出身</span></div><div class="mem-d">サン＝ピエトロ大聖堂の改築資金を集めるため、ドイツでの<b>贖宥状</b>の販売を認めた。1521年にルターを破門した。</div></div><div class="mem"><div class="mem-n">皇帝カール5世<span class="mem-r">ハプスブルク家・スペイン王カルロス1世</span></div><div class="mem-d">スペイン王を兼ねる神聖ローマ皇帝。<b>ヴォルムス帝国議会(1521)</b>にルターを呼び出し、説を撤回しなかったルターを帝国から追放する処分とした。</div></div></div><div class="camp b"><div class="camp-h">改革側</div><div class="mem"><div class="mem-n">ルター<span class="mem-r">ヴィッテンベルク大学の神学教授</span></div><div class="mem-d"><b>九十五カ条の論題(1517)</b>で贖宥状の販売を批判した。人は善行ではなく信仰によってのみ救われる(信仰義認説)、信仰のよりどころは聖書だけである(聖書主義)と説き、教皇の権威を否定した。</div></div><div class="mem"><div class="mem-n">ザクセン選帝侯フリードリヒ</div><div class="mem-d">ルターを保護し、ヴァルトブルク城にかくまった。ルターはここで新約聖書をドイツ語に訳した。</div></div><div class="mem"><div class="mem-n">ルター派の諸侯<span class="mem-r">北ドイツなど</span></div><div class="mem-d">ルター派を採用すると、教会領を没収し、領内の教会を自ら監督できた。そのため、ルター派を支持する諸侯が増えた。</div></div></div></div><div class="event bad-ev"><div class="ev-title">ドイツ農民戦争<span class="ev-year">1524-25</span></div><div class="ev-desc">ルターの教えに刺激された農民が、農奴制の廃止などを求めて南ドイツを中心に蜂起した。<b>ミュンツァー</b>らが指導した。ルターは初め農民の要求に一定の理解を示したが、蜂起が急進化すると諸侯による鎮圧を支持した。以後ルター派は、領邦君主が領内の教会を監督する<b>領邦教会制</b>のもとで広まった。</div></div><div class="side-note"><b>再洗礼派(アナバプテスト)</b>：幼児洗礼を否定し、自覚した信仰にもとづく成人の洗礼を主張した急進派。カトリック・ルター派の双方から迫害された。</div></div></div>
+<div class="phase" id="ph2"><div class="phase-label">1526<br>〜<br>1555</div><div class="ph-head"><span class="ph-title">皇帝とルター派諸侯の対立</span><span class="ph-sub">シュマルカルデン同盟からアウクスブルクの和議へ</span></div><div class="ph-body"><div class="camps"><div class="camp a"><div class="camp-h">皇帝・カトリック側</div><div class="mem"><div class="mem-n">皇帝カール5世</div><div class="mem-d">フランス王<b>フランソワ1世</b>とのイタリア戦争や、オスマン帝国の進出(<b>第1次ウィーン包囲</b>、1529)への対応に追われ、ルター派への対応は一貫しなかった。1526年の帝国議会ではルター派を事実上容認したが、1529年の帝国議会で再び禁止した。<b>シュマルカルデン戦争(1546-47)</b>でルター派諸侯を破ったが、その後の諸侯の反撃で妥協を迫られた。</div></div><div class="mem"><div class="mem-n">カトリック諸侯<span class="mem-r">南ドイツ・オーストリアなど</span></div><div class="mem-d">ハプスブルク家の領地や南ドイツの諸侯はカトリックにとどまった。</div></div></div><div class="camp b"><div class="camp-h">ルター派側</div><div class="mem"><div class="mem-n">ルター派の諸侯・都市</div><div class="mem-d">1529年の<b>シュパイアー帝国議会</b>でルター派が再び禁止されると、これに抗議した。ここから「プロテスタント(抗議する者)」の名が生まれた。</div></div><div class="mem"><div class="mem-n">シュマルカルデン同盟<span class="mem-r">1531</span></div><div class="mem-d">ルター派の諸侯・都市が皇帝に対抗して結んだ同盟。シュマルカルデン戦争で皇帝に敗れた。</div></div></div></div><div class="side-note"><b>皇帝に敵対した外部の勢力</b>：カトリックのフランス王フランソワ1世は、ハプスブルク家に対抗するためオスマン帝国のスレイマン1世と結んだ。皇帝が東西の敵に対処を迫られたことも、ルター派が勢力を保てた理由の一つである。</div><div class="event org"><div class="ev-title">アウクスブルクの和議<span class="ev-year">1555</span></div><div class="ev-desc">諸侯はカトリックとルター派のどちらかを選ぶことができ、領民はその宗派に従うものとされた(「領主の宗教がその地で行われる」)。個人の信仰の自由は認められず、<b>カルヴァン派は対象外</b>とされた。この限界が、のちの三十年戦争の遠因の一つとなった。</div></div></div></div>
+<div class="phase" id="ph3"><div class="phase-label">1520s<br>〜<br>1560s</div><div class="ph-head"><span class="ph-title">スイスの改革とカルヴァン派の広がり</span><span class="ph-sub">ツヴィングリとカルヴァン</span></div><div class="ph-body"><div class="event"><div class="ev-title">ツヴィングリ<span class="ev-year">チューリヒ・1520年代</span></div><div class="ev-desc">チューリヒで宗教改革を進めた。1529年の<b>マールブルク会談</b>で、聖餐の解釈をめぐってルターと一致できなかった(ルターはパンとぶどう酒にキリストが実際に臨在すると考え、ツヴィングリはそれを象徴とみなした)。プロテスタントの間にも教義の違いがあったことを示す。1531年、カトリックの州との戦いで戦死した。</div></div><div class="event org"><div class="ev-title">カルヴァン<span class="ev-year">ジュネーヴ・1541-64</span></div><div class="ev-desc">フランス出身。『キリスト教綱要』(1536)を著した。ジュネーヴで厳格な教会規律による<b>神権政治</b>を行った。救われる者はあらかじめ神によって決められているとする<b>予定説</b>を説き、教会は信徒から選ばれた長老が牧師とともに運営する<b>長老制</b>をとった。職業に励んで得た富を肯定的にとらえたため、商工業者に受け入れられた。</div></div><div class="side-note">20世紀初めの社会学者マックス＝ヴェーバーは『プロテスタンティズムの倫理と資本主義の精神』で、カルヴァン派の禁欲的な職業倫理が近代資本主義の発展を促したと論じた。</div><p class="sub-h">― カルヴァン派の広がり ―</p><div class="tb-wrap"><table class="tb"><thead><tr><th>地域</th><th>呼び名</th><th>その後</th></tr></thead><tbody><tr><td class="p">フランス</td><td>ユグノー</td><td>カトリックとのユグノー戦争(1562-98)。ナントの王令(1598)で信仰が認められた</td></tr><tr><td class="p">ネーデルラント</td><td>ゴイセン</td><td>スペイン王フェリペ2世の弾圧に抵抗し、オランダ独立戦争(1568-)へ</td></tr><tr><td class="p">スコットランド</td><td>長老派<br>(プレスビテリアン)</td><td>ノックスが指導し、長老派の教会が成立した</td></tr><tr><td class="p">イングランド</td><td>ピューリタン(清教徒)</td><td>国教会のさらなる改革を求め、のちのピューリタン革命の担い手となった</td></tr></tbody></table></div><div class="side-note">ルター派はドイツ北部と北欧(デンマーク・スウェーデンなど)に広まったのに対し、カルヴァン派は西ヨーロッパの各地に広まった。</div></div></div>
+<div class="phase" id="ph4"><div class="phase-label">1534<br>〜<br>1559</div><div class="ph-head"><span class="ph-title">イギリスの宗教改革</span><span class="ph-sub">首長法から統一法へ</span></div><div class="ph-body"><div class="camps"><div class="camp a"><div class="camp-h">ローマ教皇</div><div class="mem"><div class="mem-n">ローマ教皇<span class="mem-r">クレメンス7世</span></div><div class="mem-d">ヘンリ8世と王妃キャサリン＝オブ＝アラゴンとの離婚を認めなかった。</div></div></div><div class="camp b"><div class="camp-h">イギリス国王</div><div class="mem"><div class="mem-n">ヘンリ8世<span class="mem-r">テューダー朝</span></div><div class="mem-d">離婚問題をきっかけに教皇と対立し、<b>首長法(1534)</b>で国王をイギリス国教会の唯一の首長とした。教義の対立よりも、国王の離婚と権力の問題から教皇と分かれた点に特色がある。教義や儀式はほぼカトリックのままだった。</div></div></div></div><div class="event"><div class="ev-title">修道院の解散<span class="ev-year">1536-39</span></div><div class="ev-desc">ヘンリ8世は修道院を解散してその土地・財産を没収した。土地の多くは売却されてジェントリなどの手に渡り、王権の財政と支持基盤が強まった。</div></div><div class="event"><div class="ev-title">エドワード6世とメアリ1世<span class="ev-year">1547-58</span></div><div class="ev-desc">エドワード6世のもとで一般祈祷書(1549)が制定され、プロテスタント化が進んだ。次のメアリ1世はカトリックを復活させ、プロテスタントを弾圧した。</div></div><div class="event org"><div class="ev-title">エリザベス1世の統一法<span class="ev-year">1559</span></div><div class="ev-desc">礼拝や祈祷の形式を定め、国王を首長とするイギリス国教会の体制を確立した。教義はカルヴァン派に近い一方、主教制度や儀式にはカトリック的な要素を残した。</div></div></div></div>
+<div class="phase" id="ph5"><div class="phase-label">1540s<br>〜<br></div><div class="ph-head"><span class="ph-title">カトリック改革</span><span class="ph-sub">対抗宗教改革</span></div><div class="ph-body"><div class="event"><div class="ev-title">イエズス会<span class="ev-year">1534結成・1540認可</span></div><div class="ev-desc"><b>イグナティウス＝ロヨラ</b>やフランシスコ＝ザビエルらが結成した修道会。厳しい規律のもとで教育と海外布教に力を注ぎ、アジアやアメリカでも布教した。ザビエルは1549年に日本に来た。</div></div><div class="event org"><div class="ev-title">トリエント公会議<span class="ev-year">1545-63</span></div><div class="ev-desc">教皇の至上権と、従来の教義を再確認した。救いには信仰とともに善行も必要であること、信仰の根拠は聖書と教会の伝承であることを確認し、プロテスタントの主張を退けた。あわせて聖職者の規律を引き締め、贖宥状の濫用を禁じた。</div></div><div class="event"><div class="ev-title">禁書目録・宗教裁判</div><div class="ev-desc">異端とみなした書物の閲読を禁じ(禁書目録)、宗教裁判(異端審問)を強化した。</div></div><div class="side-note"><b>結果</b>：南ドイツ・オーストリア・ポーランドなどでカトリックが勢力を回復し、宗派の分布がほぼ固まった。</div></div></div>
 </div>
-<div class="detail"><b>★ヴォルムス帝国議会(1521)</b>＝カール5世がルターを帝国追放処分→ザクセン選帝侯が保護。<b>ドイツ農民戦争(1524-25)</b>＝ミュンツァーが指導→ルターは鎮圧を支持(「領邦教会制」＝諸侯の支持を得る戦略)。<b>★シュマルカルデン同盟(1531)</b>＝ルター派諸侯が皇帝に対抗して軍事同盟。スイスでは同時期に<b>ツヴィングリ</b>がチューリヒで独自に改革を開始→ルターと<b>マールブルク宗教会談</b>(1529)で会談するも★<b>聖餐(せいさん)の解釈で決裂</b>(ルター＝パンとぶどう酒に実際にキリストが臨在/ツヴィングリ＝象徴に過ぎない)→<b>プロテスタント自体が一枚岩ではなかった</b>ことを示す好例。さらに急進的な<b>再洗礼派(アナバプテスト)</b>は幼児洗礼を否定し政教分離を主張→ルター派・カトリック双方から弾圧された。</div>
-</div>
-
-<div class="phase">
-<div class="phase-hdr"><div class="phase-era">1530s–50s</div><div class="phase-title">カルヴァンの台頭とアウクスブルクの和議</div></div>
-<div class="phase-body">
- <div class="grp grp-cal"><div class="grp-label grp-label-cal">カルヴァン派</div>
- <div class="cn cn-cal"><div class="nm">カルヴァン</div><div class="sub">ジュネーヴで神権政治</div></div>
- <div class="cn cn-cal"><div class="nm">ユグノー(仏)</div><div class="sub">フランスのカルヴァン派</div></div>
- <div class="cn cn-cal"><div class="nm">ゴイセン(蘭)</div><div class="sub">オランダ独立運動と結合</div></div>
- <div class="cn cn-cal"><div class="nm">ピューリタン(英)</div><div class="sub">イギリスのカルヴァン派</div></div>
- <div class="cn cn-cal"><div class="nm">プレスビテリアン(スコ)</div><div class="sub">ノックスが指導</div></div>
- </div>
-</div>
-<div class="detail"><b>★カルヴァンの予定説</b>＝救済は神があらかじめ決定→勤勉に働くことが「選ばれた証」→<b>★ヴェーバー『プロテスタンティズムの倫理と資本主義の精神』</b>＝資本主義の精神的起源。カルヴァン派は商工業者層に浸透→国際的に拡大(ルター派はドイツ・北欧に留まる)。<b>★アウクスブルクの宗教和議(1555)</b>＝「領主の宗教がその地の宗教」→ただし<b>カルヴァン派は認められず</b>→三十年戦争(1618-48)の遠因。</div>
-</div>
-
-<div class="phase">
-<div class="phase-hdr"><div class="phase-era">1534</div><div class="phase-title">イギリスの宗教改革(首長法)</div></div>
-<div class="phase-body">
- <div class="cn cn-ang"><div class="nm">ヘンリ8世</div><div class="sub">★離婚問題が発端</div></div>
- <div class="ar">→</div>
- <div class="ev">★首長法(1534)＝英国教会成立</div>
- <div class="ar">→</div>
- <div class="cn cn-ang"><div class="nm">英国教会(アングリカン)</div><div class="sub">教義はカトリック的、制度は国王が首長</div></div>
- <div class="vs">VS</div>
- <div class="cn cn-cat"><div class="nm">ローマ教皇</div><div class="sub">離婚を認めず→破門</div></div>
-</div>
-<div class="detail"><b>動機</b>＝アラゴンのキャサリンとの離婚→教皇が許可せず→★<b>「教義の対立」ではなく「政治的理由」で分離</b>＝イギリス宗教改革の最大の特徴。<b>修道院解散</b>(1536-39)→教会財産を没収→国王の権力・財政を強化＋ジェントリ層に土地分配。教義面では<b>カトリック色が強い</b>中間的位置(「中道(ヴィア・メディア)」)→エリザベス1世の統一法(1559)で確立。</div>
-</div>
-
-<div class="phase">
-<div class="phase-hdr"><div class="phase-era">1540s–</div><div class="phase-title">対抗宗教改革(カトリック改革)</div></div>
-<div class="phase-body">
- <div class="grp grp-cat"><div class="grp-label grp-label-cat">カトリック陣営の立て直し</div>
- <div class="cn cn-cat"><div class="nm">★トリエント公会議</div><div class="sub">1545-63・教皇の至上権を再確認</div></div>
- <div class="cn cn-cat"><div class="nm">★イエズス会</div><div class="sub">イグナティウス＝ロヨラ(1534設立)</div></div>
- <div class="cn cn-cat"><div class="nm">禁書目録</div><div class="sub">異端書の禁止</div></div>
- <div class="cn cn-cat"><div class="nm">宗教裁判</div><div class="sub">異端審問の強化</div></div>
- </div>
-</div>
-<div class="detail"><b>★イエズス会</b>＝ロヨラ＋フランシスコ＝ザビエル。「教皇の精鋭部隊」→海外布教(日本・中国・南米)＋教育事業。<b>トリエント公会議</b>＝①教皇の権威を再確認 ②信仰＋善行が救済に必要(ルターの「信仰のみ」を否定) ③聖書＋伝承が権威の源泉(ルターの「聖書のみ」を否定) ④免罪符の悪用は禁止(ただし制度自体は維持)。</div>
-</div>
-
-</div></div>
-<div class="note"><p>宗教改革＝<strong>ルター(ドイツ・北欧) / カルヴァン(スイス・仏・蘭・英) / 英国教会(英・政治的動機) vs カトリック(教皇＋ハプスブルク家＋対抗改革)</strong>の多角的対立。ここでは「3派の違い(ルター＝聖書のみ・カルヴァン＝予定説・英国教会＝政治的分離)」「ツヴィングリとの聖餐論争(マールブルク1529)」「対抗改革(トリエント・イエズス会)」が重要。</p></div>
+</main>
 <script src="search_jump.js" defer></script></body></html>
