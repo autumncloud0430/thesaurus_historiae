@@ -1,75 +1,184 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>モンゴル帝国 家系図</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
-:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--gold-dim:rgba(var(--axr),.12);--text:#d4cfc6;--text2:#8a857d;--text3:#555048;--border:rgba(var(--axr),.08);
---kj:#5b8a72;--kc:#7a6b8a;--ko:#8a7b5b;--kt:#8a5b5b;--ky:#5b6f8a;--ki:#8a6b5b}
+<style>@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+:root{--bg:#f1ecdf;--gold:#8b6f4e;--gold2:#59452a;--text:#2b241b;--text2:#6d6353;--text3:#a89a80;--axr:139,111,78;--shu:#a2331e}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
-body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
-.hdr{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
-.hdr h1{font-family:'Noto Serif JP',serif;font-size:15px;font-weight:700;color:var(--gold2)}
-.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5;transition:opacity .2s}
-.hdr a:hover{opacity:1}
-.tree-wrap{padding:24px 16px 20px;overflow-x:auto}
-.tree{display:flex;flex-direction:column;align-items:center;min-width:980px}
-@media(max-width:650px){.tree{min-width:0;width:100%}.row{flex-wrap:wrap;justify-content:center}.branch{flex-wrap:wrap;justify-content:center}}
-/* Node */
-.nd{position:relative;text-align:center;cursor:default;transition:transform .2s}
-.nd:hover{transform:translateY(-2px)}
-.nb{border:1px solid rgba(var(--axr),.2);border-radius:8px;padding:8px 12px;background:rgba(var(--axr),.04);transition:all .25s;position:relative}
-.nd:hover .nb{border-color:rgba(var(--axr),.5);background:rgba(var(--axr),.08);box-shadow:0 4px 20px rgba(var(--axr),.1)}
-.nn{font-family:'Noto Serif JP',serif;font-size:12px;font-weight:700;color:var(--gold2);white-space:nowrap}
-.ni{font-size:8px;color:var(--text2);margin-top:1px;white-space:nowrap}
-.nk{font-family:'Cormorant Garamond',serif;font-size:8px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin-top:3px;padding:1px 7px;border-radius:100px;display:inline-block}
-/* Founder */
-.founder .nb{border-color:rgba(var(--axr),.4);background:rgba(var(--axr),.08);padding:10px 18px}
-.founder .nn{font-size:16px;background:linear-gradient(135deg,#c9a96e,#e8c888,#c9a96e);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-/* LUX: gradient name was illegible on the paper background */
-html[data-theme="lux"] .founder .nn{background:none;-webkit-background-clip:border-box;background-clip:border-box;-webkit-text-fill-color:currentColor;color:var(--gold2)}
-/* Rival */
-.rival .nb{border-style:dashed;opacity:.85}
-/* Khanate colors */
-.kj .nk{background:rgba(91,138,114,.2);color:#8ac4a0} .kj .nb{border-left:3px solid rgba(91,138,114,.4)}
-.kc .nk{background:rgba(122,107,138,.2);color:#b09fc8} .kc .nb{border-left:3px solid rgba(122,107,138,.4)}
-.ko .nk{background:rgba(138,123,91,.2);color:#c8b88a} .ko .nb{border-left:3px solid rgba(138,123,91,.4)}
-.kt .nb{border-left:3px solid rgba(138,91,91,.3)}
-.ky .nk{background:rgba(91,111,138,.2);color:#8aafc8} .ky .nb{border-left:3px solid rgba(91,111,138,.4)}
-.ki .nk{background:rgba(138,107,91,.2);color:#c8a88a} .ki .nb{border-left:3px solid rgba(138,107,91,.4)}
-/* Lines */
-.cv{width:1px;height:20px;background:rgba(var(--axr),.2);margin:0 auto}
-.cv.s{height:14px}
-/* Tooltip - click based, fixed position */
-.nd .tp{display:none;position:fixed;background:var(--bg);border:1px solid rgba(var(--axr),.25);border-radius:8px;padding:10px 14px;width:300px;z-index:9999;pointer-events:auto;box-shadow:0 8px 30px rgba(0,0,0,.5)}
-/* tooltip content is copied to #tooltip-box */
-.tp p{font-size:10px;color:var(--text2);line-height:1.7}
-/* Layout */
-.row{display:flex;align-items:flex-start;gap:12px}
-.branch{display:flex;flex-direction:column;align-items:center}
-.sub-row{display:flex;gap:8px}
-.sub-branch{display:flex;flex-direction:column;align-items:center}
-/* Legend */
-.legend{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;padding:16px 20px}
-.legend-item{display:flex;align-items:center;gap:5px;font-size:9px;color:var(--text3)}
-.legend-dot{width:8px;height:8px;border-radius:2px}
-.note{text-align:center;padding:6px 20px 32px;font-size:9px;color:var(--text3);line-height:1.8;max-width:750px;margin:0 auto}
-.note strong{color:var(--gold)}
-@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
-.tree>*{animation:fadeIn .6s ease both}
-.tree>*:nth-child(2){animation-delay:.1s}
-.tree>*:nth-child(3){animation-delay:.2s}
-
+.hdr{padding:16px 20px;border-bottom:1px solid rgba(var(--axr),.12);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.hdr h1{font-family:'Noto Serif JP',serif;font-size:20px;font-weight:700;color:var(--gold2)}
+.hdr a{font-size:14px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
+main{max-width:760px;margin:0 auto;padding:24px 20px 60px}
+.lead{font-size:15px;line-height:2}
+.lead b{color:var(--gold2)}
+.sec-hdr{display:flex;align-items:center;gap:10px;padding:10px 0;margin:34px 0 4px;border-bottom:1px solid rgba(var(--axr),.15)}
+.sec-icon{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:700;color:var(--gold);opacity:.75}
+.sec-hdr h2{font-family:'Noto Serif JP',serif;font-size:18px;font-weight:700;color:var(--gold2)}
+.latin{font-family:'Cormorant Garamond',serif;font-size:13px;font-weight:400;font-style:italic;color:var(--gold);margin-left:10px;letter-spacing:1px;opacity:.75}
+.cap{font-size:13px;color:var(--text2);margin:8px 0 14px;line-height:1.8}
+.x{color:var(--shu)}
+/* I lineage */
+.lin-row{display:flex;justify-content:center;gap:8px}
+.box{flex:1;max-width:220px;border:1px solid rgba(var(--axr),.3);border-radius:10px;background:rgba(var(--axr),.05);padding:8px 8px 7px;text-align:center;line-height:1.35}
+.box b{display:block;font-family:'Noto Serif JP',serif;font-size:17px;color:var(--gold2)}
+.box .by{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:15px;color:var(--gold)}
+.box small{display:block;font-size:12px;color:var(--text2);margin-top:2px}
+.box.big{max-width:420px}.box.big b{font-size:21px}
+.box.eu{border-color:rgba(var(--axr),.55);background:rgba(var(--axr),.09);box-shadow:0 0 0 3px rgba(var(--axr),.06)}
+.box .note2{border-top:1px solid rgba(var(--axr),.15);margin-top:6px;padding-top:5px}
+.merge,.down{position:relative;text-align:center;padding:10px 0 13px}
+.merge::before,.down::before{content:'';position:absolute;left:50%;top:0;bottom:0;border-left:1.5px solid rgba(var(--axr),.45)}
+.merge::after,.down::after{content:'';position:absolute;left:calc(50% - 5px);bottom:-1px;border:5px solid transparent;border-top:7px solid rgba(var(--axr),.6);border-bottom:0}
+.merge span,.down span{position:relative;background:var(--bg);font-size:12.5px;color:var(--gold);padding:0 8px}
+.merge span b,.down span b{font-family:'Cormorant Garamond',serif;font-size:14px}
+.three{position:relative;padding-bottom:10px}
+.three::after{content:'';position:absolute;left:16%;right:16%;bottom:0;border-bottom:1.5px solid rgba(var(--axr),.45)}
+.three .box{position:relative}
+.three .box::after{content:'';position:absolute;left:50%;bottom:-12px;height:10px;border-left:1.5px solid rgba(var(--axr),.45)}
+.side-h{margin:22px 0 6px;font-size:12px;color:var(--gold);font-family:'Cormorant Garamond',serif;font-style:italic;letter-spacing:1px}
+.side{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.sbox{border:1px solid rgba(var(--axr),.18);border-radius:8px;background:rgba(var(--axr),.03);padding:7px 10px;font-size:13px;line-height:1.5;color:var(--gold2)}
+.sbox b{font-family:'Noto Serif JP',serif}
+.sbox small{display:block;font-size:12px;color:var(--text2);margin-top:3px;line-height:1.65}
+.sbox.dash{border-style:dashed}
+/* II deepening x widening */
+.dw{border:1px solid rgba(var(--axr),.15);border-radius:10px;overflow:hidden;background:rgba(var(--axr),.02)}
+.dw-h,.dw-r{display:grid;grid-template-columns:48px 1fr 1fr;column-gap:10px;padding-left:10px;padding-right:10px}
+.dw-h{font-family:'Noto Serif JP',serif;font-size:13px;font-weight:700;color:var(--gold2);padding-top:8px;padding-bottom:8px;background:rgba(var(--axr),.07)}
+.dw-h span small{display:block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;color:var(--gold);font-size:11.5px;letter-spacing:1px}
+.dw-r{padding-top:6px;padding-bottom:6px;border-top:1px solid rgba(var(--axr),.08);font-size:13.5px;line-height:1.6;align-items:start}
+.dw-r:nth-child(odd){background:rgba(var(--axr),.025)}
+.dw-r .y{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:16px;color:var(--gold);line-height:1.4}
+.dw-r .d{border-right:1px solid rgba(var(--axr),.12);padding-right:10px}
+.cnt{display:flex;align-items:center;gap:6px;margin-top:4px}
+.cnt i{display:block;height:6px;border-radius:3px;background:rgba(var(--axr),.45);max-width:calc(100% - 28px)}
+.cnt b{font-size:13px;font-family:'Cormorant Garamond',serif;color:var(--gold2)}
+/* III UK */
+.uk{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;counter-reset:u}
+.uk li{position:relative;border:1px solid rgba(var(--axr),.15);border-radius:8px;background:rgba(var(--axr),.04);padding:6px 10px 7px 32px;font-size:13.5px;line-height:1.55;counter-increment:u}
+.uk li::before{content:counter(u,upper-roman);position:absolute;left:9px;top:7px;font-family:'Cormorant Garamond',serif;font-weight:700;font-size:13px;color:var(--gold);opacity:.7}
+.uk li .y{display:block;font-family:'Cormorant Garamond',serif;font-weight:700;color:var(--gold);font-size:15px}
+.uk li.ux{border-color:rgba(162,51,30,.35);background:rgba(162,51,30,.04)}.uk li.ux .y{color:var(--shu)}
+/* summary */
+.kp{background:rgba(var(--axr),.04);border:1px solid rgba(var(--axr),.12);border-radius:10px;padding:14px 18px}
+.kp p{font-size:13.5px;line-height:1.9;margin:2px 0}
+.kp b{color:var(--gold2)}
+/* IV per-phase (flow_ style) */
+.toc{display:flex;flex-wrap:wrap;gap:4px 14px;margin:4px 0 14px}
+.toc a{font-size:12.5px;color:var(--text2);text-decoration:none}
+.toc a span{font-family:'Cormorant Garamond',serif;font-weight:700;color:var(--gold);margin-right:5px}
+.toc a:hover{color:var(--gold2)}
+.phase{position:relative;padding:14px 4px 14px 22px;border-left:2px solid rgba(var(--axr),.15);margin-left:46px;scroll-margin-top:8px}
+.phase:last-child{border-left-color:transparent}
+.phase::before{content:'';position:absolute;left:-6px;top:20px;width:8px;height:8px;border-radius:50%;background:var(--bg);border:2px solid rgba(var(--axr),.45)}
+.phase-label{position:absolute;left:-50px;top:15px;width:40px;font-family:'Cormorant Garamond',serif;font-size:13px;font-weight:700;color:var(--gold);text-align:right;line-height:1.25}
+.ph-head{margin-bottom:8px}
+.ph-title{display:block;font-family:'Noto Serif JP',serif;font-size:17px;font-weight:700;color:var(--gold2)}
+.ph-sub{display:block;font-size:12.5px;color:var(--text2);margin-top:1px}
+.event{background:rgba(var(--axr),.03);border:1px solid rgba(var(--axr),.1);border-radius:8px;padding:8px 12px;margin-bottom:8px}
+.event.org{background:rgba(var(--axr),.07);border-color:rgba(var(--axr),.22)}
+.event.bad-ev{background:rgba(162,51,30,.035);border-color:rgba(162,51,30,.22)}
+.ev-title{font-family:'Noto Serif JP',serif;font-size:15px;font-weight:700;color:var(--gold2);display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 10px}
+.bad-ev .ev-title{color:var(--shu)}
+.orgname{font-size:16px}
+.ev-year{font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:700;color:var(--gold)}
+.org-sub{font-size:12px;color:var(--text2)}
+.bad{font-family:'Noto Sans JP',sans-serif;font-size:10.5px;font-weight:400;color:var(--shu);border:1px solid rgba(162,51,30,.4);border-radius:4px;padding:0 6px}
+.ev-desc{font-size:14px;color:var(--text);line-height:1.8;margin-top:3px}
+.ev-desc b{color:var(--gold2)}
+.side-note{font-size:13px;color:var(--text2);line-height:1.8;padding:6px 10px;border-left:2px solid rgba(var(--axr),.25);margin:4px 0 8px}
+.side-note b,.side-note strong{color:var(--gold2)}
+.out{color:var(--shu)}
 @media(max-width:600px){
-.hdr{padding:10px 12px}.hdr h1{font-size:12px}
-.legend .li{font-size:7px}
-.note p{font-size:8px}
+.hdr{padding:12px 14px}.hdr h1{font-size:16px}
+main{padding:16px 14px 60px}
+.lead{font-size:14px}
+.sec-hdr h2{font-size:16px}.latin{font-size:12px;margin-left:6px}
+.box b{font-size:15px}.box small{font-size:11px}.box{padding:6px 4px}
+.box.big b{font-size:18px}
+.merge span,.down span{font-size:11.5px}
+.side{grid-template-columns:1fr}
+.dw-h,.dw-r{grid-template-columns:36px 1fr 1fr;column-gap:7px;padding-left:7px;padding-right:7px}
+.dw-r{font-size:12.5px}.dw-r .y{font-size:14px}.dw-r .d{padding-right:7px}
+.uk{grid-template-columns:1fr 1fr}.uk li{font-size:12.5px}
+.kp{padding:12px 14px}.kp p{font-size:12.5px}
+.phase{margin-left:38px;padding-left:16px}.phase-label{left:-42px;width:34px;font-size:12px}
+.ph-title{font-size:15.5px}
+.ev-title{font-size:14px}.orgname{font-size:15px}.ev-desc{font-size:13px}
+.side-note{font-size:12.5px}
 }
-</style>
-<style id="thThemes">/* =====================================================
+
+/* ---- genealogy figures (2026-11-28) ---- */
+.lead{margin-top:2px}
+.gt{margin:6px 0 4px}
+.gkey{display:flex;flex-wrap:wrap;gap:2px 14px;font-size:12px;color:var(--text2);line-height:1.7;margin:2px 2px 10px}
+.gkey b{font-family:'Cormorant Garamond',serif;color:var(--gold);font-size:14px}
+.gn{border:1px solid rgba(var(--axr),.22);border-radius:9px;background:rgba(var(--axr),.035);padding:4px 10px 5px;line-height:1.5}
+.gn-h{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 7px}
+.gn-no{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:15px;color:var(--gold);min-width:1.2em}
+.gn-rel{font-size:11px;color:var(--gold2);border:1px solid rgba(var(--axr),.35);border-radius:999px;padding:0 6px;line-height:1.55;align-self:center;white-space:nowrap;background:var(--bg)}
+.gn-nm{font-family:'Noto Serif JP',serif;font-size:15px;font-weight:700;color:var(--text)}
+.gn-yr{font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:700;color:var(--gold);white-space:nowrap}
+.gn-n{font-size:13px;color:var(--text);line-height:1.6}
+.gn-n b{color:var(--gold2)}
+.gn.key{border-color:rgba(var(--axr),.5);background:rgba(var(--axr),.085)}
+.gn.key .gn-nm{color:var(--gold2)}
+.gn.min{padding:2px 10px 3px;background:transparent;border-color:rgba(var(--axr),.17)}
+.gn.min .gn-nm{font-size:14px}
+.gn.end{border-color:rgba(162,51,30,.4);background:rgba(162,51,30,.045)}
+.gn.end .gn-nm{color:#7a2b1c}
+.gn.ext{border-style:dashed;background:transparent}
+.gn.st{border-color:rgba(var(--axr),.3);background:rgba(var(--axr),.05)}
+.gn.st .gn-nm{font-size:14px;color:var(--gold2)}
+.gn.t1{border-left:4px solid rgba(60,110,70,.5)}
+.gn.t2{border-left:4px solid rgba(100,70,130,.45)}
+.gn.t3{border-left:4px solid rgba(150,110,40,.5)}
+.gn.t4{border-left:4px solid rgba(52,86,140,.5)}
+.gn.t5{border-left:4px solid rgba(162,51,30,.45)}
+.gl{height:11px;margin-left:20px;border-left:1.5px solid rgba(var(--axr),.45)}
+.gl.d{border-left-style:dashed}
+.gl.t{height:auto;padding:1px 0 1px 10px;font-size:12px;color:var(--text2);line-height:1.55}
+.gl.t b{color:var(--gold2);font-weight:600}
+.gbrk{border:1px dashed rgba(162,51,30,.45);background:rgba(162,51,30,.04);border-radius:8px;padding:3px 10px 4px;font-size:13px;line-height:1.6;color:var(--text)}
+.gbrk b{font-family:'Noto Serif JP',serif;color:var(--shu)}
+.gbrk .y{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:15px;color:var(--shu);margin:0 6px 0 4px}
+.gera{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 8px;margin:16px 0 6px;padding-bottom:3px;border-bottom:1px solid rgba(var(--axr),.14);font-family:'Noto Serif JP',serif;font-size:13.5px;font-weight:700;color:var(--gold2)}
+.gera:first-child{margin-top:2px}
+.gera .y{font-family:'Cormorant Garamond',serif;font-size:14.5px;color:var(--gold)}
+.gera i{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:13px;color:var(--gold);opacity:.8;letter-spacing:.5px}
+.gera a{margin-left:auto;font-family:'Noto Sans JP',sans-serif;font-weight:400;font-size:12px;color:var(--gold);text-decoration:none}
+.kids{margin-left:20px;padding-left:14px}
+.kid{position:relative;padding-top:6px}
+.kid::before{content:'';position:absolute;left:-14px;top:0;bottom:0;border-left:1.5px solid rgba(var(--axr),.45)}
+.kid:last-child::before{bottom:auto;height:20px}
+.kid::after{content:'';position:absolute;left:-14px;top:20px;width:13px;border-top:1.5px solid rgba(var(--axr),.45)}
+.kid.d::before{border-left-style:dashed}.kid.d::after{border-top-style:dashed}
+.sp{display:flex;align-items:center;gap:6px;margin:3px 0 0 12px}
+.sp>.gn{flex:1 1 auto;min-width:0}
+.sp .eq{font-family:'Noto Serif JP',serif;font-size:17px;font-weight:700;color:var(--gold);line-height:1}
+.bgrid{display:grid;grid-template-columns:var(--cols,repeat(2,minmax(0,1fr)));gap:10px}
+.bcol{border:1px solid rgba(var(--axr),.13);border-radius:11px;background:rgba(var(--axr),.02);padding:7px 8px 9px;min-width:0}
+.bcol.span{grid-column:1/-1}
+.bcol-h{font-family:'Noto Serif JP',serif;font-size:13.5px;font-weight:700;color:var(--gold2);margin:0 0 5px 2px;line-height:1.45}
+.bcol-h small{font-family:'Noto Sans JP',sans-serif;font-weight:400;font-size:12px;color:var(--text2);margin-left:6px}
+.bsub{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.gfn{font-size:12.5px;color:var(--text2);line-height:1.75;margin:8px 2px 0}
+@media(max-width:700px){
+.bgrid,.bsub{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+.kp p{font-size:13px}
+.gn{padding:4px 8px 5px}.gn.min{padding:2px 8px 3px}
+.gn-nm{font-size:14.5px}.gn.min .gn-nm{font-size:14px}
+.gn-yr{font-size:14px}.gn-n{font-size:13px}
+.gl.t{font-size:12px}
+.gkey{font-size:12px}
+.bcol{padding:6px 6px 8px}
+.kids{margin-left:14px;padding-left:12px}
+.kid::before,.kid::after{left:-12px}.kid::after{width:11px}
+.gl{margin-left:14px}
+.gfn{font-size:12.5px}
+}
+</style><style id="thThemes">/* =====================================================
    THESAURUS HISTORIAE ― themes.css(LUX固定版)
    生成りの紙 + 墨の本文 + 朱筆(★語) + 金茶の構造色。
    retheme_inject.py が各HTMLに埋め込む。編集後は再実行。
@@ -116,275 +225,12 @@ html[data-theme="lux"] .arrow-text,
 html[data-theme="lux"] .detail { color:var(--text2); }
 </style><script id="thScript">document.documentElement.setAttribute('data-theme','lux');</script></head>
 <body>
-
-<div class="hdr">
-  <h1>モンゴル帝国 家系図</h1>
-  <a href="charts.html">← Ad Chartae</a>
-</div>
-
-<div class="tree-wrap">
-<div class="tree">
-
-<!-- Gen 1: チンギス -->
-<div class="nd founder">
-  <div class="nb">
-    <div class="nn">チンギス＝ハン</div>
-    <div class="ni">在位 1206-1227 ｜ 大モンゴル帝国建国</div>
-  </div>
-  <div class="tp"><p>テムジンとして生まれ、モンゴル高原を統一。1206年クリルタイで即位。西夏・金・ホラズムを征服。駅伝制（ジャムチ）を整備。1227年西夏遠征中に没。</p></div>
-</div>
-
-<div class="cv"></div>
-
-<!-- Gen 2: Four Sons -->
-<div class="row">
-
-  <!-- ジョチ系 -->
-  <div class="branch">
-    <div class="cv s"></div>
-    <div class="nd kj">
-      <div class="nb">
-        <div class="nn">ジョチ</div>
-        <div class="ni">?-1227 ｜ 長男</div>
-        <div class="nk">キプチャク＝ハン国</div>
-      </div>
-      <div class="tp"><p>長男だが出生に疑惑あり（メルキト捕虜時代に懐妊）。父に先立ち死去。ロシア・東欧方面を分封される。</p></div>
-    </div>
-    <div class="cv s"></div>
-    <div class="nd kj">
-      <div class="nb">
-        <div class="nn">バトゥ</div>
-        <div class="ni">1207頃-1255 ｜ ジョチの子</div>
-        <div class="nk">キプチャク＝ハン国 建国</div>
-      </div>
-      <div class="tp"><p>ジョチの次男。ヨーロッパ遠征（1236-42）を指揮。ワールシュタットの戦い(1241)でポーランド・ドイツ連合軍を撃破。サライを首都にキプチャク＝ハン国を建国。「タタールのくびき」(~1480)の起点。モンケの即位を支持。</p></div>
-    </div>
-  </div>
-
-  <!-- チャガタイ系 -->
-  <div class="branch">
-    <div class="cv s"></div>
-    <div class="nd kc">
-      <div class="nb">
-        <div class="nn">チャガタイ</div>
-        <div class="ni">1183頃-1242 ｜ 次男</div>
-        <div class="nk">チャガタイ＝ハン国</div>
-      </div>
-      <div class="tp"><p>中央アジア（トルキスタン）を分封。ヤサ（モンゴル法）の守護者。後にチャガタイ＝ハン国に発展→14Cにティムールが台頭する母体。</p></div>
-    </div>
-    <div class="cv s"></div>
-    <div class="nd kc" style="opacity:.7">
-      <div class="nb">
-        <div class="nn" style="font-size:10px">→ ティムール帝国へ</div>
-        <div class="ni">14C後半にティムールが簒奪</div>
-      </div>
-      <div class="tp"><p>西チャガタイ＝ハン国からティムール（在位1370-1405）が台頭。チンギスの血統ではないがチンギスの女系子孫と婚姻し「駙馬（グレゲン）」を名乗る。サマルカンドを首都に大帝国を建設。</p></div>
-    </div>
-  </div>
-
-  <!-- オゴタイ系 -->
-  <div class="branch">
-    <div class="cv s"></div>
-    <div class="nd ko">
-      <div class="nb">
-        <div class="nn">オゴタイ</div>
-        <div class="ni">在位 1229-1241 ｜ 三男・第2代大ハン</div>
-        <div class="nk">オゴタイ＝ハン国</div>
-      </div>
-      <div class="tp"><p>チンギスが後継者に指名。カラコルムを建設。金を滅ぼす(1234)。バトゥの西征を命じる。飲酒が原因で急死→後継争いの契機に。</p></div>
-    </div>
-    <div class="cv s"></div>
-    <div class="nd ko">
-      <div class="nb">
-        <div class="nn">グユク</div>
-        <div class="ni">在位 1246-1248 ｜ オゴタイの子・第3代</div>
-      </div>
-      <div class="tp"><p>オゴタイの長男。バトゥと対立。教皇インノケンティウス4世の使節プラノ＝カルピニを接見。在位わずか2年で急死→トゥルイ家に大ハン位が移る契機。</p></div>
-    </div>
-    <div class="cv s"></div>
-    <div class="nd ko rival">
-      <div class="nb">
-        <div class="nn">ハイドゥ</div>
-        <div class="ni">1235頃-1301 ｜ オゴタイの孫</div>
-        <div class="nk" style="background:rgba(180,80,80,.15);color:#d4a0a0">反フビライの盟主</div>
-      </div>
-      <div class="tp"><p>オゴタイの孫。フビライの大ハン位を認めず、中央アジアで約30年にわたり反乱を継続（ハイドゥの乱, 1266-1301）。チャガタイ＝ハン国と連携しフビライに対抗。モンゴル帝国の統一性を最終的に破壊した人物。彼の死後、オゴタイ＝ハン国はチャガタイ＝ハン国に吸収される。</p></div>
-    </div>
-  </div>
-
-  <!-- トゥルイ系 -->
-  <div class="branch">
-    <div class="cv s"></div>
-    <div class="nd kt">
-      <div class="nb">
-        <div class="nn">トゥルイ</div>
-        <div class="ni">1191頃-1232 ｜ 四男（末子）</div>
-        <div class="nk" style="background:rgba(138,91,91,.1);color:#c8a08a">モンゴル本土を相続</div>
-      </div>
-      <div class="tp"><p>末子相続の慣習によりモンゴル本土と軍の大部分を継承。早世したが、モンケ・アリクブケ・フビライ・フラグが帝国の中心を担う→「トゥルイ家の時代」。</p></div>
-    </div>
-    <div class="cv s"></div>
-
-    <!-- トゥルイの4子 -->
-    <div class="sub-row">
-      <div class="sub-branch">
-        <div class="cv s"></div>
-        <div class="nd kt">
-          <div class="nb">
-            <div class="nn">モンケ</div>
-            <div class="ni">在位 1251-1259 ｜ 第4代</div>
-          </div>
-          <div class="tp"><p>トゥルイの長男。バトゥの支持で即位しオゴタイ家を排除。南宋遠征中に陣没。モンケの死が帝国分裂の決定的契機→フビライとアリクブケの後継争い。</p></div>
-        </div>
-      </div>
-
-      <div class="sub-branch">
-        <div class="cv s"></div>
-        <div class="nd kt rival">
-          <div class="nb">
-            <div class="nn">アリクブケ</div>
-            <div class="ni">?-1266 ｜ トゥルイの子</div>
-            <div class="nk" style="background:rgba(180,80,80,.15);color:#d4a0a0">フビライと対立</div>
-          </div>
-          <div class="tp"><p>トゥルイの末子。モンケ死後、カラコルムのクリルタイで大ハンに推戴されフビライと対立（1260-64）。モンゴル高原の伝統派（遊牧重視）を代表。敗北後フビライに降伏し幽閉→病死。この内戦が帝国の分裂を決定づけた。</p></div>
-        </div>
-      </div>
-
-      <div class="sub-branch">
-        <div class="cv s"></div>
-        <div class="nd ky">
-          <div class="nb">
-            <div class="nn">フビライ</div>
-            <div class="ni">在位 1260-1294 ｜ 第5代</div>
-            <div class="nk">元朝 建国(1271)</div>
-          </div>
-          <div class="tp"><p>大都（北京）に遷都し国号を「元」とする。南宋を滅ぼし中国統一(1279)。元寇(1274/1281)は失敗。マルコ＝ポーロが仕える。色目人重用・四等人制・交鈔。アリクブケ・ハイドゥとの内戦でモンゴル帝国の統一性は実質崩壊。</p></div>
-        </div>
-      </div>
-
-      <div class="sub-branch">
-        <div class="cv s"></div>
-        <div class="nd ki">
-          <div class="nb">
-            <div class="nn">フラグ</div>
-            <div class="ni">在位 1256-1265</div>
-            <div class="nk">イル＝ハン国 建国</div>
-          </div>
-          <div class="tp"><p>バグダードを攻略しアッバース朝を滅亡(1258)。アイン＝ジャールート(1260)でマムルーク朝に敗北→西進の限界。タブリーズを首都にイル＝ハン国を建国。ガザン＝ハン時にイスラーム改宗。宰相ラシード＝ウッディーンが『集史』を編纂。</p></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-</div><!-- row -->
-</div><!-- tree -->
-</div><!-- tree-wrap -->
-
-<div class="legend">
-  <div class="legend-item"><div class="legend-dot" style="background:rgba(91,138,114,.5)"></div>キプチャク＝ハン国（南ロシア）</div>
-  <div class="legend-item"><div class="legend-dot" style="background:rgba(122,107,138,.5)"></div>チャガタイ＝ハン国（中央アジア）</div>
-  <div class="legend-item"><div class="legend-dot" style="background:rgba(138,123,91,.5)"></div>オゴタイ＝ハン国（モンゴル西部）</div>
-  <div class="legend-item"><div class="legend-dot" style="background:rgba(91,111,138,.5)"></div>元朝（中国）</div>
-  <div class="legend-item"><div class="legend-dot" style="background:rgba(138,107,91,.5)"></div>イル＝ハン国（イラン）</div>
-  <div class="legend-item"><div class="legend-dot" style="background:rgba(180,80,80,.3);border:1px dashed rgba(180,80,80,.5)"></div>フビライへの対抗勢力</div>
-</div>
-
-<div class="note">
-  <strong>帝国分裂の構造：</strong>モンケの死(1259)後、<strong>フビライ</strong>（中国志向・大都）と<strong>アリクブケ</strong>（遊牧伝統・カラコルム）が大ハン位を争い、帝国は事実上分裂。<br>
-  フビライが勝利するも、オゴタイ家の<strong>ハイドゥ</strong>が中央アジアで約30年にわたり反乱→帝国の統一は完全に崩壊。<br>
-  4ハン国はそれぞれ独自の道を歩む。オゴタイ＝ハン国はハイドゥの死(1301)後にチャガタイ＝ハン国に吸収。<br>
-  <strong>重要ポイント：</strong>「なぜモンゴル帝国は分裂したか」→ ①後継争い(フビライvsアリクブケ) ②中国化vs遊牧伝統の路線対立 ③ハイドゥの乱による長期内戦
-</div>
-
-<div id="tooltip-overlay" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;z-index:8000" onclick="closeTip()"></div>
-<div id="tooltip-box" style="display:none;position:fixed;z-index:9000;background:var(--bg);border:1px solid rgba(var(--axr),.25);border-radius:8px;padding:12px 16px;max-width:300px;width:calc(100vw - 32px);box-shadow:0 8px 30px rgba(0,0,0,.6)">
-  <div id="tooltip-content" style="font-size:10px;color:var(--text2);line-height:1.7"></div>
-</div>
-<script>
-(function() {
-  var overlay = document.getElementById("tooltip-overlay");
-  var box = document.getElementById("tooltip-box");
-  var content = document.getElementById("tooltip-content");
-  var isOpen = false;
-
-  window.closeTip = function() {
-    box.style.display = "none";
-    overlay.style.display = "none";
-    isOpen = false;
-  };
-
-  function openTip(nd) {
-    var tp = nd.querySelector(".tp");
-    if (!tp) return;
-    closeTip();
-
-    content.innerHTML = tp.innerHTML;
-    overlay.style.display = "block";
-    box.style.display = "block";
-
-    // Position: center horizontally under the node
-    var rect = nd.getBoundingClientRect();
-    var bw = Math.min(300, window.innerWidth - 32);
-    box.style.width = bw + "px";
-
-    var left = rect.left + rect.width / 2 - bw / 2;
-    if (left < 16) left = 16;
-    if (left + bw > window.innerWidth - 16) left = window.innerWidth - 16 - bw;
-    box.style.left = left + "px";
-
-    // Try below first
-    var top = rect.bottom + 8;
-    box.style.top = top + "px";
-
-    // Check if it overflows bottom
-    var boxRect = box.getBoundingClientRect();
-    if (boxRect.bottom > window.innerHeight - 16) {
-      // Place above instead
-      top = rect.top - boxRect.height - 8;
-      if (top < 16) top = 16;
-      box.style.top = top + "px";
-    }
-
-    isOpen = true;
-  }
-
-  // Touch handling
-  var touchMoved = false;
-  var touchTgt = null;
-
-  document.addEventListener("touchstart", function(e) {
-    touchMoved = false;
-    touchTgt = e.target;
-  }, {passive: true});
-
-  document.addEventListener("touchmove", function() {
-    touchMoved = true;
-  }, {passive: true});
-
-  document.addEventListener("touchend", function(e) {
-    if (touchMoved) return;
-    var nd = touchTgt ? touchTgt.closest(".nd") : null;
-    if (nd) {
-      e.preventDefault();
-      openTip(nd);
-    } else if (!touchTgt || !touchTgt.closest("#tooltip-box")) {
-      closeTip();
-    }
-    touchTgt = null;
-  });
-
-  // Desktop click
-  document.addEventListener("click", function(e) {
-    if ("ontouchstart" in window) return;
-    var nd = e.target.closest(".nd");
-    if (nd) {
-      openTip(nd);
-    } else if (!e.target.closest("#tooltip-box") && !e.target.closest("#tooltip-overlay")) {
-      closeTip();
-    }
-  });
-})();
-</script>
-
-<script src="search_jump.js" defer></script></body>
-</html>
+<div class="hdr"><h1>モンゴル帝国 家系図 ― チンギス＝カンの子孫とハン国</h1><a href="charts.html">← Ad Chartae</a></div>
+<main>
+<p class="lead"><b>チンギス＝カン</b>の一族は、帝国の各地を所領(ウルス)として分け合い、大ハン(カアン)は<b>クリルタイ</b>で選ばれた。大ハン位はオゴデイ家からトゥルイ家に移り、クビライの即位をめぐる争いのあと、帝国は<b>元</b>と各地のハン国に分かれた。</p>
+<div class="sec-hdr"><span class="sec-icon">Ⅰ</span><h2>チンギス＝カンの子孫 <span class="latin">Genealogia</span></h2></div><p class="cap">息子ごとの家を枠で分け、その家が治めた国を各列の下に示した。</p>
+<div class="gt"><div class="gn key"><div class="gn-h"><span class="gn-no">①</span><span class="gn-nm">チンギス＝カン</span><span class="gn-yr">1206–27</span></div><div class="gn-n">クリルタイで即位、ホラズム＝シャー朝を倒す</div></div><div class="gl t">正妻ボルテの4人の息子が所領を分け合う</div><div class="bgrid" style="--cols:repeat(3,minmax(0,1fr))"><div class="bcol"><div class="bcol-h">ジョチ家<small>長男</small></div><div class="gn min"><div class="gn-h"><span class="gn-nm">ジョチ</span><span class="gn-yr">?–1227</span></div><div class="gn-n">父より先に死去</div></div><div class="kids"><div class="kid"><div class="gn key"><div class="gn-h"><span class="gn-rel">子</span><span class="gn-nm">バトゥ</span><span class="gn-yr">1207頃–55</span></div><div class="gn-n"><b>ヨーロッパ遠征</b>、ワールシュタットの戦い</div></div><div class="gl"></div><div class="gn st t1"><div class="gn-h"><span class="gn-nm">キプチャク＝ハン国</span><span class="gn-yr">–1502</span></div><div class="gn-n">ジョチ＝ウルス。都サライ、ロシアを支配</div></div></div></div></div><div class="bcol"><div class="bcol-h">チャガタイ家<small>次男</small></div><div class="gn min"><div class="gn-h"><span class="gn-nm">チャガタイ</span><span class="gn-yr">?–1242</span></div><div class="gn-n">中央アジアを所領とする</div></div><div class="kids"><div class="kid d"><div class="gn st t2"><div class="gn-h"><span class="gn-rel">子孫</span><span class="gn-nm">チャガタイ＝ハン国</span></div><div class="gn-n">14世紀半ばに東西に分裂</div></div><div class="gl d"></div><div class="gn ext"><div class="gn-h"><span class="gn-rel">娘婿</span><span class="gn-nm">ティムール</span><span class="gn-yr">1370–1405</span></div><div class="gn-n">西チャガタイから台頭、ティムール朝</div></div></div></div></div><div class="bcol"><div class="bcol-h">オゴデイ家<small>三男</small></div><div class="gn key"><div class="gn-h"><span class="gn-no">②</span><span class="gn-nm">オゴデイ</span><span class="gn-yr">1229–41</span></div><div class="gn-n"><b>金</b>を滅ぼす(1234)、カラコルム建設</div></div><div class="kids"><div class="kid"><div class="gn"><div class="gn-h"><span class="gn-no">③</span><span class="gn-rel">子</span><span class="gn-nm">グユク</span><span class="gn-yr">1246–48</span></div><div class="gn-n">ローマ教皇の使節プラノ＝カルピニが来訪</div></div></div><div class="kid d"><div class="gn end"><div class="gn-h"><span class="gn-rel">孫</span><span class="gn-nm">カイドゥ</span><span class="gn-yr">?–1301</span></div><div class="gn-n">クビライに反抗(<b>カイドゥの乱</b>)</div></div></div></div></div><div class="bcol span"><div class="bcol-h">トゥルイ家<small>末子</small></div><div class="gn min"><div class="gn-h"><span class="gn-nm">トゥルイ</span><span class="gn-yr">1191頃–1232</span></div><div class="gn-n">末子として父のモンゴル本土を継ぐ</div></div><div class="gl t">モンケ以後、大ハン位はトゥルイ家が継ぐ</div><div class="bsub"><div><div class="gn key"><div class="gn-h"><span class="gn-no">④</span><span class="gn-rel">子</span><span class="gn-nm">モンケ</span><span class="gn-yr">1251–59</span></div><div class="gn-n">クビライ・フレグを遠征させ、陣中で死去</div></div></div><div><div class="gn end"><div class="gn-h"><span class="gn-rel">子</span><span class="gn-nm">アリクブケ</span><span class="gn-yr">?–1266</span></div><div class="gn-n">クビライと大ハン位を争い敗れる</div></div></div><div><div class="gn key"><div class="gn-h"><span class="gn-no">⑤</span><span class="gn-rel">子</span><span class="gn-nm">クビライ</span><span class="gn-yr">1260–94</span></div><div class="gn-n">大都に遷都、国号を<b>元</b>とする(1271)</div></div><div class="gl"></div><div class="gn st t4"><div class="gn-h"><span class="gn-nm">元</span><span class="gn-yr">1271–1368</span></div><div class="gn-n">南宋を滅ぼす(1279)、明に追われ北へ</div></div></div><div><div class="gn"><div class="gn-h"><span class="gn-rel">子</span><span class="gn-nm">フレグ</span><span class="gn-yr">1256–65</span></div><div class="gn-n"><b>アッバース朝</b>を滅ぼす(1258)</div></div><div class="gl"></div><div class="gn st t3"><div class="gn-h"><span class="gn-nm">イル＝ハン国</span><span class="gn-yr">–14世紀半ば</span></div><div class="gn-n">フレグ＝ウルス、都タブリーズ</div></div></div></div></div></div><div class="gkey"><span><b>①–⑤</b> 大ハン(カアン)の順</span><span>色帯の枠 その家が治めた国</span><span>朱色の枠 クビライに対抗した者</span><span>破線の枠 チンギスの子孫でない者</span></div></div>
+<div class="sec-hdr"><span class="sec-icon">Ⅱ</span><h2>要点 <span class="latin">Summarium</span></h2></div>
+<div class="kp"><p>❶ 大ハン：①チンギス → ②<b>オゴデイ</b>(三男) → ③グユク(その子) → ④<b>モンケ</b> → ⑤<b>クビライ</b>(ともにトゥルイの子)</p><p>❷ ジョチの子<b>バトゥ</b>の西征でキプチャク＝ハン国、トゥルイの子<b>フレグ</b>の西征でイル＝ハン国が成立</p><p>❸ モンケの死後、クビライとアリクブケの争い(1260–64)と<b>カイドゥの乱</b>で帝国は元と諸ハン国に分かれた</p><p>❹ 分裂後も元の皇帝を大ハンとするゆるやかなまとまりが続き、東西の交流が盛んだった</p><p>❺ かつての「オゴタイ＝ハン国」は今は数えないことが多い。ティムールはチンギスの子孫ではない</p></div>
+</main>
+<script src="search_jump.js" defer></script></body></html>

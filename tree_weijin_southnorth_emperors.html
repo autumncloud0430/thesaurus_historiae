@@ -1,41 +1,196 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>魏晋南北朝の系譜 ― 三国から隋統一までの分裂時代(220-589)</title><style>@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
-:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048;--border:rgba(var(--axr),.08)}
+<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>魏晋南北朝の系譜 ― 三国から隋統一までの分裂時代(220-589)</title>
+<style>@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+:root{--bg:#f1ecdf;--gold:#8b6f4e;--gold2:#59452a;--text:#2b241b;--text2:#6d6353;--text3:#a89a80;--axr:139,111,78;--shu:#a2331e}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
-body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
-.hdr{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
-.hdr h1{font-family:'Noto Serif JP',serif;font-size:15px;font-weight:700;color:var(--gold2)}
-.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5;transition:opacity .2s}.hdr a:hover{opacity:1}
-.wrap{padding:20px 16px 10px;overflow-x:auto}
-.tree{display:flex;flex-direction:column;align-items:center;min-width:600px;gap:0}
-@media(max-width:650px){.tree{min-width:0;width:100%}.row{flex-wrap:wrap;justify-content:center}}
-.nd{position:relative;text-align:center;cursor:pointer;transition:transform .15s}.nd:hover{transform:translateY(-1px)}
-.nb{border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:7px 12px;background:rgba(255,255,255,.02);transition:all .2s;border-left:3px solid rgba(91,100,138,.4)}
-.nd:hover .nb{border-color:rgba(var(--axr),.3);background:rgba(var(--axr),.04)}
-.nn{font-family:'Noto Serif JP',serif;font-size:11px;font-weight:700;color:var(--gold2);white-space:nowrap}
-.ni{font-size:7.5px;color:var(--text2);margin-top:1px;white-space:nowrap}
-.ntag{font-size:7px;font-weight:600;letter-spacing:.06em;margin-top:2px;padding:1px 6px;border-radius:100px;display:inline-block;background:rgba(91,100,138,.2);color:#a0acd4}
-.peak .nb{border-color:rgba(var(--axr),.35);background:rgba(var(--axr),.06);padding:9px 14px}
-.peak .nn{font-size:14px;background:linear-gradient(135deg,#c9a96e,#e8c888,#c9a96e);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-/* LUX: gradient name was illegible on the paper background */
-html[data-theme="lux"] .peak .nn{background:none;-webkit-background-clip:border-box;background-clip:border-box;-webkit-text-fill-color:currentColor;color:var(--gold2)}
-.end .nb{border-color:rgba(140,60,60,.3);background:rgba(140,60,60,.04)}
-.era{opacity:.55}
-.era .nb{border-left:3px solid rgba(100,100,100,.3)}
-.era .nn{font-size:10px}
-.cv{width:1px;height:14px;background:rgba(var(--axr),.15);margin:0 auto}.cv.l{height:20px}
-.inherit{font-size:7px;color:var(--text3);text-align:center;margin:2px 0;font-style:italic}.inherit strong{color:var(--gold);font-style:normal}
-.why-box{border:1px dashed rgba(var(--axr),.15);border-radius:6px;padding:5px 10px;margin:4px 0;max-width:380px}
-.why-box p{font-size:7.5px;color:var(--gold);line-height:1.5;text-align:center}
-.tp{display:none}
-.row{display:flex;gap:20px;align-items:flex-start;justify-content:center;flex-wrap:wrap}
-.branch{display:flex;flex-direction:column;align-items:center;gap:0;min-width:180px}
-.branch-label{font-family:'Noto Serif JP',serif;font-size:11px;font-weight:700;color:var(--gold);margin-bottom:8px;padding:3px 10px;border:1px solid rgba(var(--axr),.25);border-radius:4px;background:rgba(var(--axr),.04)}
-.note{text-align:center;padding:6px 20px 32px;font-size:9px;color:var(--text3);line-height:1.8;max-width:800px;margin:0 auto}.note strong{color:var(--gold)}
-@media(max-width:600px){.hdr{padding:10px 12px}.hdr h1{font-size:12px}.note p{font-size:8px}.row{flex-direction:column;gap:6px}}
+.hdr{padding:16px 20px;border-bottom:1px solid rgba(var(--axr),.12);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.hdr h1{font-family:'Noto Serif JP',serif;font-size:20px;font-weight:700;color:var(--gold2)}
+.hdr a{font-size:14px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
+main{max-width:760px;margin:0 auto;padding:24px 20px 60px}
+.lead{font-size:15px;line-height:2}
+.lead b{color:var(--gold2)}
+.sec-hdr{display:flex;align-items:center;gap:10px;padding:10px 0;margin:34px 0 4px;border-bottom:1px solid rgba(var(--axr),.15)}
+.sec-icon{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:700;color:var(--gold);opacity:.75}
+.sec-hdr h2{font-family:'Noto Serif JP',serif;font-size:18px;font-weight:700;color:var(--gold2)}
+.latin{font-family:'Cormorant Garamond',serif;font-size:13px;font-weight:400;font-style:italic;color:var(--gold);margin-left:10px;letter-spacing:1px;opacity:.75}
+.cap{font-size:13px;color:var(--text2);margin:8px 0 14px;line-height:1.8}
+.x{color:var(--shu)}
+/* I lineage */
+.lin-row{display:flex;justify-content:center;gap:8px}
+.box{flex:1;max-width:220px;border:1px solid rgba(var(--axr),.3);border-radius:10px;background:rgba(var(--axr),.05);padding:8px 8px 7px;text-align:center;line-height:1.35}
+.box b{display:block;font-family:'Noto Serif JP',serif;font-size:17px;color:var(--gold2)}
+.box .by{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:15px;color:var(--gold)}
+.box small{display:block;font-size:12px;color:var(--text2);margin-top:2px}
+.box.big{max-width:420px}.box.big b{font-size:21px}
+.box.eu{border-color:rgba(var(--axr),.55);background:rgba(var(--axr),.09);box-shadow:0 0 0 3px rgba(var(--axr),.06)}
+.box .note2{border-top:1px solid rgba(var(--axr),.15);margin-top:6px;padding-top:5px}
+.merge,.down{position:relative;text-align:center;padding:10px 0 13px}
+.merge::before,.down::before{content:'';position:absolute;left:50%;top:0;bottom:0;border-left:1.5px solid rgba(var(--axr),.45)}
+.merge::after,.down::after{content:'';position:absolute;left:calc(50% - 5px);bottom:-1px;border:5px solid transparent;border-top:7px solid rgba(var(--axr),.6);border-bottom:0}
+.merge span,.down span{position:relative;background:var(--bg);font-size:12.5px;color:var(--gold);padding:0 8px}
+.merge span b,.down span b{font-family:'Cormorant Garamond',serif;font-size:14px}
+.three{position:relative;padding-bottom:10px}
+.three::after{content:'';position:absolute;left:16%;right:16%;bottom:0;border-bottom:1.5px solid rgba(var(--axr),.45)}
+.three .box{position:relative}
+.three .box::after{content:'';position:absolute;left:50%;bottom:-12px;height:10px;border-left:1.5px solid rgba(var(--axr),.45)}
+.side-h{margin:22px 0 6px;font-size:12px;color:var(--gold);font-family:'Cormorant Garamond',serif;font-style:italic;letter-spacing:1px}
+.side{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.sbox{border:1px solid rgba(var(--axr),.18);border-radius:8px;background:rgba(var(--axr),.03);padding:7px 10px;font-size:13px;line-height:1.5;color:var(--gold2)}
+.sbox b{font-family:'Noto Serif JP',serif}
+.sbox small{display:block;font-size:12px;color:var(--text2);margin-top:3px;line-height:1.65}
+.sbox.dash{border-style:dashed}
+/* II deepening x widening */
+.dw{border:1px solid rgba(var(--axr),.15);border-radius:10px;overflow:hidden;background:rgba(var(--axr),.02)}
+.dw-h,.dw-r{display:grid;grid-template-columns:48px 1fr 1fr;column-gap:10px;padding-left:10px;padding-right:10px}
+.dw-h{font-family:'Noto Serif JP',serif;font-size:13px;font-weight:700;color:var(--gold2);padding-top:8px;padding-bottom:8px;background:rgba(var(--axr),.07)}
+.dw-h span small{display:block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;color:var(--gold);font-size:11.5px;letter-spacing:1px}
+.dw-r{padding-top:6px;padding-bottom:6px;border-top:1px solid rgba(var(--axr),.08);font-size:13.5px;line-height:1.6;align-items:start}
+.dw-r:nth-child(odd){background:rgba(var(--axr),.025)}
+.dw-r .y{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:16px;color:var(--gold);line-height:1.4}
+.dw-r .d{border-right:1px solid rgba(var(--axr),.12);padding-right:10px}
+.cnt{display:flex;align-items:center;gap:6px;margin-top:4px}
+.cnt i{display:block;height:6px;border-radius:3px;background:rgba(var(--axr),.45);max-width:calc(100% - 28px)}
+.cnt b{font-size:13px;font-family:'Cormorant Garamond',serif;color:var(--gold2)}
+/* III UK */
+.uk{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;counter-reset:u}
+.uk li{position:relative;border:1px solid rgba(var(--axr),.15);border-radius:8px;background:rgba(var(--axr),.04);padding:6px 10px 7px 32px;font-size:13.5px;line-height:1.55;counter-increment:u}
+.uk li::before{content:counter(u,upper-roman);position:absolute;left:9px;top:7px;font-family:'Cormorant Garamond',serif;font-weight:700;font-size:13px;color:var(--gold);opacity:.7}
+.uk li .y{display:block;font-family:'Cormorant Garamond',serif;font-weight:700;color:var(--gold);font-size:15px}
+.uk li.ux{border-color:rgba(162,51,30,.35);background:rgba(162,51,30,.04)}.uk li.ux .y{color:var(--shu)}
+/* summary */
+.kp{background:rgba(var(--axr),.04);border:1px solid rgba(var(--axr),.12);border-radius:10px;padding:14px 18px}
+.kp p{font-size:13.5px;line-height:1.9;margin:2px 0}
+.kp b{color:var(--gold2)}
+/* IV per-phase (flow_ style) */
+.toc{display:flex;flex-wrap:wrap;gap:4px 14px;margin:4px 0 14px}
+.toc a{font-size:12.5px;color:var(--text2);text-decoration:none}
+.toc a span{font-family:'Cormorant Garamond',serif;font-weight:700;color:var(--gold);margin-right:5px}
+.toc a:hover{color:var(--gold2)}
+.phase{position:relative;padding:14px 4px 14px 22px;border-left:2px solid rgba(var(--axr),.15);margin-left:46px;scroll-margin-top:8px}
+.phase:last-child{border-left-color:transparent}
+.phase::before{content:'';position:absolute;left:-6px;top:20px;width:8px;height:8px;border-radius:50%;background:var(--bg);border:2px solid rgba(var(--axr),.45)}
+.phase-label{position:absolute;left:-50px;top:15px;width:40px;font-family:'Cormorant Garamond',serif;font-size:13px;font-weight:700;color:var(--gold);text-align:right;line-height:1.25}
+.ph-head{margin-bottom:8px}
+.ph-title{display:block;font-family:'Noto Serif JP',serif;font-size:17px;font-weight:700;color:var(--gold2)}
+.ph-sub{display:block;font-size:12.5px;color:var(--text2);margin-top:1px}
+.event{background:rgba(var(--axr),.03);border:1px solid rgba(var(--axr),.1);border-radius:8px;padding:8px 12px;margin-bottom:8px}
+.event.org{background:rgba(var(--axr),.07);border-color:rgba(var(--axr),.22)}
+.event.bad-ev{background:rgba(162,51,30,.035);border-color:rgba(162,51,30,.22)}
+.ev-title{font-family:'Noto Serif JP',serif;font-size:15px;font-weight:700;color:var(--gold2);display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 10px}
+.bad-ev .ev-title{color:var(--shu)}
+.orgname{font-size:16px}
+.ev-year{font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:700;color:var(--gold)}
+.org-sub{font-size:12px;color:var(--text2)}
+.bad{font-family:'Noto Sans JP',sans-serif;font-size:10.5px;font-weight:400;color:var(--shu);border:1px solid rgba(162,51,30,.4);border-radius:4px;padding:0 6px}
+.ev-desc{font-size:14px;color:var(--text);line-height:1.8;margin-top:3px}
+.ev-desc b{color:var(--gold2)}
+.side-note{font-size:13px;color:var(--text2);line-height:1.8;padding:6px 10px;border-left:2px solid rgba(var(--axr),.25);margin:4px 0 8px}
+.side-note b,.side-note strong{color:var(--gold2)}
+.out{color:var(--shu)}
+@media(max-width:600px){
+.hdr{padding:12px 14px}.hdr h1{font-size:16px}
+main{padding:16px 14px 60px}
+.lead{font-size:14px}
+.sec-hdr h2{font-size:16px}.latin{font-size:12px;margin-left:6px}
+.box b{font-size:15px}.box small{font-size:11px}.box{padding:6px 4px}
+.box.big b{font-size:18px}
+.merge span,.down span{font-size:11.5px}
+.side{grid-template-columns:1fr}
+.dw-h,.dw-r{grid-template-columns:36px 1fr 1fr;column-gap:7px;padding-left:7px;padding-right:7px}
+.dw-r{font-size:12.5px}.dw-r .y{font-size:14px}.dw-r .d{padding-right:7px}
+.uk{grid-template-columns:1fr 1fr}.uk li{font-size:12.5px}
+.kp{padding:12px 14px}.kp p{font-size:12.5px}
+.phase{margin-left:38px;padding-left:16px}.phase-label{left:-42px;width:34px;font-size:12px}
+.ph-title{font-size:15.5px}
+.ev-title{font-size:14px}.orgname{font-size:15px}.ev-desc{font-size:13px}
+.side-note{font-size:12.5px}
+}
+
+/* ---- emperor genealogy pages (2026-11-28) ---- */
+.lead{margin-top:2px}
+.legend{display:flex;flex-wrap:wrap;gap:2px 14px;margin:0 2px 12px;font-size:12.5px;color:var(--text2);line-height:1.8}
+.legend span{display:inline-flex;align-items:center;gap:5px}
+.lg-big{display:inline-block;width:22px;height:12px;border-radius:4px;border:1px solid rgba(var(--axr),.5);background:rgba(var(--axr),.1)}
+.lg-brk{display:inline-block;width:22px;height:12px;border-radius:4px;border:1px solid rgba(162,51,30,.3);background:rgba(162,51,30,.06)}
+.legend b{font-family:'Noto Serif JP',serif;font-size:12px;font-weight:700;color:var(--gold2);border:1px solid rgba(var(--axr),.35);border-radius:999px;padding:0 7px;background:var(--bg)}
+.legend b.x{color:var(--shu);border-color:rgba(162,51,30,.4);background:rgba(162,51,30,.05)}
+/* rail */
+.line{position:relative;margin-left:7px;padding:1px 0 1px 20px;border-left:2px solid rgba(var(--axr),.25)}
+.line>*+*{margin-top:4px}
+.dyn{position:relative;display:flex;flex-wrap:wrap;align-items:baseline;gap:0 10px;padding:3px 12px;border-radius:8px;background:rgba(var(--axr),.1);border:1px solid rgba(var(--axr),.28)}
+.dyn::before{content:'';position:absolute;left:-28px;top:50%;margin-top:-7px;width:10px;height:10px;border-radius:50%;background:rgba(var(--axr),.6);border:2px solid var(--bg);box-shadow:0 0 0 1.5px rgba(var(--axr),.6)}
+.dyn b{font-family:'Noto Serif JP',serif;font-size:16px;color:var(--gold2)}
+.dyn .y{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:15.5px;color:var(--gold)}
+.dyn small{font-size:12.5px;color:var(--text2)}
+.ru{position:relative;border:1px solid rgba(var(--axr),.22);border-radius:9px;background:rgba(var(--axr),.03);padding:3px 10px 4px;line-height:1.55}
+.ru::before{content:'';position:absolute;left:-27px;top:9px;width:8px;height:8px;border-radius:50%;background:var(--bg);border:2px solid rgba(var(--axr),.55)}
+.ru.big{border-color:rgba(var(--axr),.5);background:rgba(var(--axr),.085)}
+.ru.big::before{background:rgba(var(--axr),.4)}
+.ru.end{border-color:rgba(162,51,30,.3)}
+.ru.end::before{border-color:rgba(162,51,30,.6)}
+.ru-h{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 7px}
+.ru-r{font-family:'Noto Serif JP',serif;font-size:12px;font-weight:700;color:var(--gold2);border:1px solid rgba(var(--axr),.35);border-radius:999px;padding:0 6px;line-height:1.5;background:var(--bg);align-self:center}
+.ru-r.x{color:var(--shu);border-color:rgba(162,51,30,.4);background:rgba(162,51,30,.05)}
+.ru-n{font-family:'Noto Serif JP',serif;font-size:15px;font-weight:700;color:var(--gold2)}
+.ru.big .ru-n{font-size:16.5px}
+.ru-a{font-size:12px;color:var(--text2)}
+.ru-y{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:15px;color:var(--gold);white-space:nowrap}
+.ru-d{font-size:13.5px;line-height:1.6;color:var(--text)}
+.ru-d b{color:var(--gold2)}
+.ru.sm{border-style:dashed;background:transparent}
+.ru.sm .ru-n{font-size:14px}
+.ru.sm .ru-y{font-size:14px}
+.skip{font-size:12.5px;line-height:1.6;color:var(--text2);padding:0 2px}
+/* dynasty change band */
+.brk{margin:8px 0;padding:4px 12px 5px;border-radius:9px;background:rgba(162,51,30,.045);border:1px solid rgba(162,51,30,.24);line-height:1.6}
+.brk .y{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:15.5px;color:var(--shu);margin-right:8px}
+.brk .t{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:#7a2b1c;margin-right:8px}
+.brk .d{font-size:13px;color:var(--text)}
+/* parallel dynasties */
+.cols{display:grid;gap:12px;margin:4px 0}
+.cols.c2{grid-template-columns:1fr 1fr}
+.cols.c3{grid-template-columns:repeat(3,1fr)}
+.col{min-width:0}
+.col-h{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2);padding:0 4px 3px;margin-bottom:5px;border-bottom:1px solid rgba(var(--axr),.2)}
+.col-h small{font-family:'Noto Sans JP',sans-serif;font-weight:400;font-size:12px;color:var(--text2);margin-left:6px}
+.cols .line{margin-left:5px;padding-left:16px}
+.cols .ru::before{left:-23px}
+.cols .dyn::before{left:-24px}
+.aside{margin:8px 0;border:1px dashed rgba(var(--axr),.4);border-radius:9px;padding:3px 12px 4px;background:rgba(var(--axr),.025);font-size:13px;line-height:1.6}
+.aside b{font-family:'Noto Serif JP',serif;color:var(--gold2);margin-right:6px}
+.aside .y{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:15px;color:var(--gold);margin-right:6px}
+/* tables */
+.tb-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid rgba(var(--axr),.15);border-radius:10px;background:rgba(var(--axr),.02)}
+table.tb{width:100%;border-collapse:collapse}
+.tb th{font-family:'Noto Serif JP',serif;font-size:13px;font-weight:700;color:var(--gold2);background:rgba(var(--axr),.07);padding:6px 8px;line-height:1.35;text-align:left;vertical-align:bottom}
+.tb td{font-size:13.5px;line-height:1.6;color:var(--text);padding:5px 8px;border-top:1px solid rgba(var(--axr),.08);vertical-align:top}
+.tb tbody tr:nth-child(even) td{background:rgba(var(--axr),.02)}
+.tb td.p{font-family:'Noto Serif JP',serif;font-weight:700;color:var(--gold2);white-space:nowrap}
+.tb td.p small{display:block;font-family:'Cormorant Garamond',serif;font-weight:700;font-size:14px;color:var(--gold)}
+.tb-note{font-size:13px;color:var(--text2);line-height:1.8;margin:6px 2px 0}
+@media(max-width:640px){
+.cols.c2,.cols.c3{grid-template-columns:1fr;gap:6px}
+.col-h{margin-top:6px}
+}
+@media(max-width:600px){
+.kp p{font-size:13px}
+.legend{font-size:12px}
+.line,.cols .line{padding-left:16px;margin-left:5px}
+.ru::before,.cols .ru::before{left:-23px}
+.dyn::before,.cols .dyn::before{left:-24px}
+.ru{padding:3px 9px 4px}
+.ru-n{font-size:14.5px}.ru.big .ru-n{font-size:15.5px}
+.ru-y{font-size:14.5px}
+.ru-d{font-size:13px}
+.ru-r{font-size:11.5px}
+.skip{font-size:12px}
+.dyn b{font-size:15px}.dyn small{font-size:12px}
+.brk .t{font-size:13.5px}.brk .d{font-size:13px}
+.tb th{font-size:12px;padding:6px 5px}
+.tb td{font-size:13px;padding:5px 5px}
+.tb-note{font-size:12.5px}
+}
 </style><style id="thThemes">/* =====================================================
    THESAURUS HISTORIAE ― themes.css(LUX固定版)
    生成りの紙 + 墨の本文 + 朱筆(★語) + 金茶の構造色。
@@ -83,109 +238,13 @@ html[data-theme="lux"] .arrow-text,
 html[data-theme="lux"] .detail { color:var(--text2); }
 </style><script id="thScript">document.documentElement.setAttribute('data-theme','lux');</script></head>
 <body>
-<div class="hdr"><h1>魏晋南北朝の系譜 ― 三国から隋統一までの分裂時代(220-589)</h1><a href="charts.html">&larr; Ad Chartae</a></div>
-
-<div class="wrap">
-<div class="tree">
-
-<div class="nd era"><div class="nb"><div class="nn">後漢末の動乱（黄巾の乱 184・董卓の乱 189・赤壁の戦い 208）</div></div></div>
-<div class="cv l"></div>
-<div class="why-box"><p><strong>三国時代(220-280)</strong>=華北の魏・江東の呉・蜀漢の三国が並立</p></div>
-<div class="row">
-<div class="branch"><div class="branch-label">魏</div>
-<div class="nd"><div class="nb"><div class="nn">曹丕(文帝)</div><div class="ni">位 220-226｜魏の初代</div><div class="ntag">後漢を簒奪</div></div><div class="tp"><p>曹操の子。220年に後漢の献帝から禅譲を受けて魏を建国。九品中正制を創設=後の貴族制社会の基礎。</p></div></div>
-<div class="cv"></div>
-<div class="nd"><div class="nb"><div class="nn">明帝(曹叡)</div><div class="ni">位 226-239｜魏2代</div></div><div class="tp"><p>曹丕の子。諸葛亮の北伐(228-234)を司馬懿らの防衛で撃退。</p></div></div>
-<div class="cv"></div>
-<div class="inherit">↓（実権は司馬氏へ）</div>
-<div class="cv"></div>
-<div class="nd"><div class="nb"><div class="nn">司馬懿</div><div class="ni">179-251｜皇帝位に就かず実権掌握</div><div class="ntag">249クーデタで実権</div></div><div class="tp"><p>魏の将軍。諸葛亮の北伐を防ぐ。249年高平陵の変で曹爽を倒して実権を握る→子孫が晋を建国する基礎を作る。死後に宣帝と追号。</p></div></div></div>
-<div class="branch"><div class="branch-label">蜀漢</div>
-<div class="nd"><div class="nb"><div class="nn">劉備</div><div class="ni">位 221-223｜蜀漢初代</div><div style="display:flex;gap:3px;justify-content:center;flex-wrap:wrap;margin-top:2px"><span class="ntag">漢中王</span><span class="ntag">諸葛亮</span></div></div><div class="tp"><p>漢景帝の末裔を自称する草鞋売り。関羽・張飛・諸葛亮らと苦難の末、219年漢中王・221年に蜀(成都)で皇帝即位=<strong>蜀漢</strong>。夷陵の戦いで呉に敗北→白帝城で死去。</p></div></div>
-<div class="cv"></div>
-<div class="nd"><div class="nb"><div class="nn">劉禅</div><div class="ni">位 223-263｜蜀漢2代・末代</div><div style="display:flex;gap:3px;justify-content:center;flex-wrap:wrap;margin-top:2px"><span class="ntag">諸葛亮の北伐</span><span class="ntag">蜀漢滅亡</span></div></div><div class="tp"><p>劉備の子「阿斗」。諸葛亮の補佐で維持→234年諸葛亮が五丈原で病死→姜維の北伐も失敗→263年魏(司馬氏)の鄧艾に降伏=<strong>蜀漢滅亡</strong>。「楽不思蜀」の逸話。</p></div></div></div>
-<div class="branch"><div class="branch-label">呉</div>
-<div class="nd"><div class="nb"><div class="nn">孫権</div><div class="ni">位 229-252｜呉初代</div><div style="display:flex;gap:3px;justify-content:center;flex-wrap:wrap;margin-top:2px"><span class="ntag">赤壁の戦い</span><span class="ntag">海上貿易</span></div></div><div class="tp"><p>孫堅の子・孫策の弟。208年赤壁の戦いで劉備と連合して曹操撃破→江東を確保。229年に皇帝即位=<strong>呉</strong>(東呉)建国。南方開発・海上貿易(台湾・海南島を経営)。</p></div></div>
-<div class="cv"></div>
-<div class="inherit">↓（後継争いで弱体化）</div>
-<div class="cv"></div>
-<div class="nd"><div class="nb"><div class="nn">孫皓</div><div class="ni">位 264-280｜呉4代・末代</div><div class="ntag">呉滅亡</div></div><div class="tp"><p>暴君として有名。280年晋(司馬炎)に降伏=<strong>呉滅亡</strong>=三国時代の終焉・晋による中華統一。</p></div></div></div>
-</div>
-<div class="cv l"></div>
-<div class="why-box"><p><strong>西晋(265-316)</strong>=司馬炎が魏から禅譲→280年呉を滅ぼして中華統一</p></div>
-<div class="nd"><div class="nb"><div class="nn">司馬炎(武帝)</div><div class="ni">位 265-290｜晋の初代・中華統一</div><div style="display:flex;gap:3px;justify-content:center;flex-wrap:wrap;margin-top:2px"><span class="ntag">晋建国</span><span class="ntag">占田課田法</span><span class="ntag">中華統一</span></div></div><div class="tp"><p>司馬懿の孫。265年に魏から禅譲=<strong>晋</strong>建国(後世「西晋」と呼ぶ)。280年に呉を滅ぼし<strong>中華統一</strong>=三国時代終焉。<strong>占田課田法</strong>制定。ただし晩年の後継問題と諸侯王大量分封が後の八王の乱の原因に。</p></div></div>
-<div class="cv"></div>
-<div class="why-box"><p><strong>八王の乱(291-306)</strong>→華北荒廃<br><strong>五胡(匈奴・鮮卑・羯・羌・氐)</strong>が華北侵入<br>316年<strong>永嘉の乱</strong>で西晋滅亡</p></div>
-<div class="cv"></div>
-<div class="row">
-<div class="branch"><div class="branch-label">華北:五胡十六国</div>
-<div class="nd"><div class="nb"><div class="nn">劉淵(前趙)</div><div class="ni">位 304-310｜匈奴</div><div class="ntag">五胡始まり</div></div><div class="tp"><p>南匈奴の族長。304年漢(後に前趙)を建国=五胡の王朝建国の始まり。</p></div></div>
-<div class="cv"></div>
-<div class="inherit">↓16王朝が興亡</div>
-<div class="cv"></div>
-<div class="nd"><div class="nb"><div class="nn">苻堅(前秦)</div><div class="ni">位 357-385｜氐族</div><div style="display:flex;gap:3px;justify-content:center;flex-wrap:wrap;margin-top:2px"><span class="ntag">華北統一</span><span class="ntag">淝水の戦い敗北</span></div></div><div class="tp"><p>氐族の族長。376年<strong>華北統一</strong>を達成=一時は南北統一間近。383年<strong>淝水の戦い</strong>で東晋(謝玄)に大敗→前秦崩壊→華北再分裂。</p></div></div>
-<div class="cv"></div>
-<div class="nd"><div class="nb"><div class="nn">拓跋珪(道武帝)</div><div class="ni">位 386-409｜鮮卑</div><div class="ntag">北魏建国</div></div><div class="tp"><p>鮮卑族拓跋部の族長。386年<strong>北魏</strong>建国=後に439年太武帝が華北再統一して五胡十六国時代終焉。</p></div></div></div>
-<div class="branch"><div class="branch-label">江南:東晋</div>
-<div class="nd"><div class="nb"><div class="nn">司馬睿(元帝)</div><div class="ni">位 317-323｜東晋初代</div><div class="ntag">建康遷都</div></div><div class="tp"><p>琅邪王。西晋滅亡後、建康(現南京)で即位=<strong>東晋</strong>建国=以後南朝の始まり。北方貴族(王導・謝安等)と江南豪族が支える。</p></div></div>
-<div class="cv"></div>
-<div class="inherit">↓明帝・成帝・哀帝等</div>
-<div class="cv"></div>
-<div class="nd"><div class="nb"><div class="nn">孝武帝</div><div class="ni">位 372-396｜東晋</div><div class="ntag">淝水の戦い勝利</div></div><div class="tp"><p>383年<strong>淝水の戦い</strong>で宰相謝安・甥の謝玄が苻堅の大軍撃破=東晋存続。</p></div></div>
-<div class="cv"></div>
-<div class="nd"><div class="nb"><div class="nn">(劉裕が実権)</div><div class="ni">東晋末</div></div><div class="tp"><p>劉裕が軍事力で台頭→420年に東晋から禅譲を受け宋建国=南朝開始。</p></div></div></div>
-</div>
-<div class="cv l"></div>
-<div class="why-box"><p><strong>南北朝時代(439-589)</strong><br>北朝:北魏→東魏+西魏→北斉+北周→隋が統一<br>南朝:宋→斉→梁→陳</p></div>
-<div class="row">
-<div class="branch"><div class="branch-label">北朝</div>
-<div class="nd"><div class="nb"><div class="nn">太武帝</div><div class="ni">位 423-452｜北魏3代</div><div style="display:flex;gap:3px;justify-content:center;flex-wrap:wrap;margin-top:2px"><span class="ntag">華北再統一</span><span class="ntag">廃仏</span></div></div><div class="tp"><p>鮮卑族拓跋氏。439年に<strong>華北統一</strong>=五胡十六国時代終結→南北朝時代の始まり。道士寇謙之の助言で<strong>廃仏</strong>(三武一宗の法難の1つ)。</p></div></div>
-<div class="cv"></div>
-<div class="nd"><div class="nb"><div class="nn">文成帝</div><div class="ni">位 452-465｜北魏4代</div><div class="ntag">雲崗石窟</div></div><div class="tp"><p>太武帝の死後に廃仏を解除→<strong>雲崗石窟</strong>造営開始(曇曜五窟)。</p></div></div>
-<div class="cv"></div>
-<div class="nd peak"><div class="nb"><div class="nn">孝文帝</div><div class="ni">位 471-499｜北魏6代</div><div style="display:flex;gap:3px;justify-content:center;flex-wrap:wrap;margin-top:2px"><span class="ntag">均田制</span><span class="ntag">漢化政策</span><span class="ntag">洛陽遷都</span></div></div><div class="tp"><p>祖母馮太后の摂政下で改革開始。<strong>均田制</strong>(485)=後の隋唐均田制の原型。<strong>三長制</strong>・<strong>戸調制</strong>を整備。493年<strong>洛陽遷都</strong>・<strong>漢化政策</strong>=鮮卑語禁止・胡服禁止・漢族との通婚奨励・姓を漢姓に=鮮卑文化の消失と引き換えの中国化。<strong>龍門石窟</strong>造営開始。</p></div></div>
-<div class="cv"></div>
-<div class="inherit">↓北魏の分裂</div>
-<div class="cv"></div>
-<div class="nd"><div class="nb"><div class="nn">文帝《西魏》</div><div class="ni">西魏初代｜534-551</div></div><div class="tp"><p>北魏分裂で西魏成立(都は長安)→宇文泰が実権。</p></div></div>
-<div class="cv"></div>
-<div class="nd"><div class="nb"><div class="nn">武帝(宇文邕)</div><div class="ni">位 560-578｜北周3代</div><div style="display:flex;gap:3px;justify-content:center;flex-wrap:wrap;margin-top:2px"><span class="ntag">廃仏</span><span class="ntag">北斉滅ぼす</span></div></div><div class="tp"><p>北周(西魏の後継)。577年<strong>北斉</strong>を滅ぼして華北再統一。574年<strong>廃仏</strong>(三武一宗の2つ目)。死後にすぐ外戚楊堅が台頭→隋建国へ。</p></div></div>
-<div class="cv"></div>
-<div class="nd end"><div class="nb"><div class="nn">(581年 楊堅が隋を建国)</div><div class="ni">北朝終焉</div></div><div class="tp"><p>北周の外戚楊堅が禅譲を受けて隋を建国→589年に南朝陳を滅ぼして中華再統一(南北朝終焉)。</p></div></div></div>
-<div class="branch"><div class="branch-label">南朝</div>
-<div class="nd"><div class="nb"><div class="nn">劉裕(武帝)</div><div class="ni">位 420-422｜宋(劉宋)初代</div><div class="ntag">南朝開始</div></div><div class="tp"><p>東晋末の軍人。420年東晋から禅譲=<strong>宋</strong>(後世「劉宋」)建国=南朝の始まり。</p></div></div>
-<div class="cv"></div>
-<div class="inherit">↓斉(蕭道成)へ</div>
-<div class="cv"></div>
-<div class="nd"><div class="nb"><div class="nn">(蕭道成 斉建国 479)</div><div class="ni">宋→斉</div></div><div class="tp"><p>宋末の軍人蕭道成が479年に<strong>斉</strong>(南斉)建国。短命王朝。</p></div></div>
-<div class="cv"></div>
-<div class="nd"><div class="nb"><div class="nn">蕭衍(武帝)</div><div class="ni">位 502-549｜梁初代</div><div class="ntag">仏教保護</div></div><div class="tp"><p>斉の武将→502年禅譲で<strong>梁</strong>建国。長期治世(48年)=文化隆盛期=『文選』編纂(昭明太子)。仏教を深く信奉=「皇帝菩薩」と呼ばれる。しかし侯景の乱(548-552)で建康陥落・餓死(86歳)=南朝最大の文化遺産が失われる。</p></div></div>
-<div class="cv"></div>
-<div class="nd"><div class="nb"><div class="nn">陳覇先(武帝)</div><div class="ni">位 557-559｜陳初代</div><div class="ntag">南朝最後の王朝</div></div><div class="tp"><p>侯景の乱鎮圧で台頭→557年<strong>陳</strong>建国=南朝最後。江南の一地方政権に縮小。</p></div></div>
-<div class="cv"></div>
-<div class="nd end"><div class="nb"><div class="nn">(589年 隋に滅ぼされる)</div><div class="ni">南朝終焉</div></div><div class="tp"><p>589年隋の楊堅が陳を滅ぼして<strong>中華再統一</strong>=南北朝時代終焉(魏晋南北朝約370年の分裂期終わる)。</p></div></div></div>
-</div>
-
-</div>
-</div>
-
-<div class="note"><p><strong>魏晋南北朝370年</strong> — 三国並立(魏・蜀漢・呉)→280年西晋の司馬炎が中華統一→八王の乱・永嘉の乱→南北に分裂=華北は五胡十六国(匈奴の劉淵・氐の苻堅・鮮卑の拓跋珪等)・江南は東晋(淝水の戦いで苻堅撃破)→439年北魏太武帝の華北再統一→孝文帝の均田制・漢化政策・洛陽遷都→北魏分裂(東魏/西魏)→北斉/北周→北周武帝の華北統一+北周武帝の廃仏→581年楊堅の隋建国→589年陳滅亡で中華再統一まで。分裂期は<strong>並列4列</strong>(三国期)・<strong>並列2列</strong>(五胡/東晋・南北朝)で表現。peak=北魏孝文帝(漢化政策の画期)。</p></div>
-
-<div id="tooltip-overlay" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;z-index:8000" onclick="closeTip()"></div>
-<div id="tooltip-box" style="display:none;position:fixed;z-index:9000;background:var(--bg);border:1px solid rgba(var(--axr),.25);border-radius:8px;padding:12px 16px;max-width:320px;width:calc(100vw - 32px);box-shadow:0 8px 30px rgba(0,0,0,.6)">
-  <div id="tooltip-content" style="font-size:10px;color:var(--text2);line-height:1.7"></div>
-</div>
-<script>
-(function(){
-  var ov=document.getElementById("tooltip-overlay"),bx=document.getElementById("tooltip-box"),ct=document.getElementById("tooltip-content");
-  window.closeTip=function(){bx.style.display="none";ov.style.display="none"};
-  function openTip(nd){var tp=nd.querySelector(".tp");if(!tp)return;closeTip();ct.innerHTML=tp.innerHTML;ov.style.display="block";bx.style.display="block";var r=nd.getBoundingClientRect(),w=Math.min(320,window.innerWidth-32);bx.style.width=w+"px";var l=r.left+r.width/2-w/2;if(l<16)l=16;if(l+w>window.innerWidth-16)l=window.innerWidth-16-w;bx.style.left=l+"px";bx.style.top=(r.bottom+8)+"px";bx.style.bottom="auto";var br=bx.getBoundingClientRect();if(br.bottom>window.innerHeight-16){var t=r.top-br.height-8;if(t<16)t=16;bx.style.top=t+"px"}}
-  var tm=false,tt=null;
-  document.addEventListener("touchstart",function(e){tm=false;tt=e.target},{passive:true});
-  document.addEventListener("touchmove",function(){tm=true},{passive:true});
-  document.addEventListener("touchend",function(e){if(tm)return;var nd=tt?tt.closest(".nd"):null;if(nd){e.preventDefault();openTip(nd)}else if(!tt||!tt.closest("#tooltip-box"))closeTip();tt=null});
-  document.addEventListener("click",function(e){if("ontouchstart"in window)return;var nd=e.target.closest(".nd");if(nd)openTip(nd);else if(!e.target.closest("#tooltip-box"))closeTip()});
-})();
-</script>
-<script src="search_jump.js" defer></script></body>
-</html>
+<div class="hdr"><h1>魏晋南北朝の系譜 ― 三国から隋統一までの分裂時代(220-589)</h1><a href="charts.html">← Ad Chartae</a></div>
+<main>
+<p class="lead">後漢の滅亡(220)から隋の統一(589)まで、中国は晋による短い統一をはさんで分裂が続いた。華北では遊牧民(<b>五胡</b>)の国々が興亡したのち<b>北朝</b>に、江南では<b>東晋</b>と<b>南朝</b>の諸王朝が建康を都に交代した。</p>
+<div class="sec-hdr"><span class="sec-icon">Ⅰ</span><h2>系図 <span class="latin">Stemma</span></h2></div><p class="cap">上から順に帝位の継承を示す。並んだ列は同時に存在した王朝。</p>
+<div class="legend"><span><i class="lg-big"></i>特に重要な皇帝</span><span><b>子</b>前の皇帝との続柄</span><span><b class="x">簒奪</b>帝位の奪取・王朝の交代</span><span><i class="lg-brk"></i>王朝の交代・分裂</span><span>⋮ 省略した皇帝</span></div>
+<div class="brk"><span class="y">184–220</span><span class="t">後漢末の動乱</span><span class="d">黄巾の乱(184)・赤壁の戦い(208)をへて三国が並び立つ</span></div><div class="cols c3"><div class="col"><div class="col-h">魏<small>220–265 都：洛陽</small></div><div class="line"><div class="ru big"><div class="ru-h"><span class="ru-r">曹操の子</span><span class="ru-n">曹丕</span><span class="ru-a">文帝</span><span class="ru-y">220–226</span></div><div class="ru-d">後漢から禅譲を受ける。九品中正</div></div><div class="skip">⋮ 明帝(曹叡) ― 諸葛亮の北伐を防ぐ</div><div class="skip">⋮ 曹芳ら3帝 ― 実権は司馬氏へ</div></div></div><div class="col"><div class="col-h">蜀(蜀漢)<small>221–263 都：成都</small></div><div class="line"><div class="ru"><div class="ru-h"><span class="ru-n">劉備</span><span class="ru-y">221–223</span></div><div class="ru-d">漢の皇帝の子孫を称して即位</div></div><div class="ru end"><div class="ru-h"><span class="ru-r">子</span><span class="ru-n">劉禅</span><span class="ru-y">223–263</span></div><div class="ru-d">魏に降伏し、蜀が滅亡</div></div></div></div><div class="col"><div class="col-h">呉<small>222–280 都：建業</small></div><div class="line"><div class="ru"><div class="ru-h"><span class="ru-n">孫権</span><span class="ru-y">229–252</span></div><div class="ru-d">222年自立・229年即位。赤壁で曹操を破る</div></div><div class="skip">⋮ 孫亮・孫休</div><div class="ru end"><div class="ru-h"><span class="ru-r">孫</span><span class="ru-n">孫皓</span><span class="ru-y">264–280</span></div><div class="ru-d">晋に降伏し、呉が滅亡</div></div></div></div></div><div class="aside"><b>司馬懿</b><span class="y">179–251</span>魏の重臣。249年に実権を握り、孫の司馬炎が晋を建てる</div><div class="brk"><span class="y">265</span><span class="t">魏の滅亡</span><span class="d">司馬炎が魏から禅譲を受け、晋(西晋)を建てる</span></div><div class="line"><div class="dyn"><b>西晋</b><span class="y">265–316</span><small>都：洛陽</small></div><div class="ru big"><div class="ru-h"><span class="ru-r">司馬懿の孫</span><span class="ru-n">司馬炎</span><span class="ru-a">武帝</span><span class="ru-y">265–290</span></div><div class="ru-d">呉を滅ぼし統一(280)。占田・課田法</div></div><div class="skip">⋮ 恵帝 ― 八王の乱(291–306)</div><div class="skip">⋮ 懐帝・愍帝 ― 永嘉の乱(311–316)で洛陽・長安が陥落</div></div><div class="brk"><span class="y">316</span><span class="t">西晋の滅亡 → 南北の分立</span><span class="d">華北は五胡の諸国、江南は東晋</span></div><div class="cols c2"><div class="col"><div class="col-h">華北：五胡十六国<small>304–439</small></div><div class="line"><div class="ru"><div class="ru-h"><span class="ru-n">劉淵</span><span class="ru-a">匈奴</span><span class="ru-y">304–310</span></div><div class="ru-d">漢(のち前趙)を建国。子が西晋を倒す</div></div><div class="skip">⋮ 後趙(羯)などが興亡</div><div class="ru big"><div class="ru-h"><span class="ru-n">苻堅</span><span class="ru-a">前秦・氐</span><span class="ru-y">357–385</span></div><div class="ru-d">華北を統一したが淝水の戦いで敗北</div></div><div class="ru"><div class="ru-h"><span class="ru-n">拓跋珪</span><span class="ru-a">道武帝・鮮卑</span><span class="ru-y">386–409</span></div><div class="ru-d">北魏を建国</div></div></div></div><div class="col"><div class="col-h">江南：東晋<small>317–420 都：建康</small></div><div class="line"><div class="ru"><div class="ru-h"><span class="ru-r">西晋の一族</span><span class="ru-n">司馬睿</span><span class="ru-a">元帝</span><span class="ru-y">317–323</span></div><div class="ru-d">建康で即位し、晋を再建</div></div><div class="skip">⋮ 明帝〜哀帝ほか</div><div class="ru sm"><div class="ru-h"><span class="ru-n">孝武帝</span><span class="ru-y">372–396</span></div><div class="ru-d">淝水の戦い(383)で前秦を破る</div></div><div class="skip">⋮ 安帝・恭帝 ― 軍人の劉裕が実権を握る</div></div></div></div><div class="brk"><span class="y">420・439</span><span class="t">南北朝の成立</span><span class="d">劉裕が宋を建て(420)、北魏が華北を統一(439)</span></div><div class="cols c2"><div class="col"><div class="col-h">北朝<small>439–581</small></div><div class="line"><div class="dyn"><b>北魏</b><span class="y">386–534</span><small>都：平城→洛陽</small></div><div class="ru"><div class="ru-h"><span class="ru-r">道武帝の孫</span><span class="ru-n">太武帝</span><span class="ru-y">423–452</span></div><div class="ru-d">華北を統一(439)。廃仏を行う</div></div><div class="ru sm"><div class="ru-h"><span class="ru-r">孫</span><span class="ru-n">文成帝</span><span class="ru-y">452–465</span></div><div class="ru-d">仏教を復興し、雲崗石窟を開く</div></div><div class="skip">⋮ 献文帝</div><div class="ru big"><div class="ru-h"><span class="ru-r">文成帝の孫</span><span class="ru-n">孝文帝</span><span class="ru-y">471–499</span></div><div class="ru-d">均田制・洛陽遷都・漢化政策</div></div><div class="skip">⋮ 宣武帝・孝明帝 ― 六鎮の乱(524)</div><div class="dyn"><b>東魏・西魏に分裂</b><span class="y">534</span></div><div class="ru sm"><div class="ru-h"><span class="ru-n">宇文泰</span></div><div class="ru-d">西魏の実権者。府兵制を始める</div></div><div class="skip">⋮ 東魏 → 北斉(550–577)</div><div class="dyn"><b>北周</b><span class="y">557–581</span><small>都：長安</small></div><div class="ru"><div class="ru-h"><span class="ru-r">宇文泰の子</span><span class="ru-n">武帝</span><span class="ru-a">宇文邕</span><span class="ru-y">560–578</span></div><div class="ru-d">北斉を滅ぼし華北統一(577)。廃仏</div></div><div class="skip">⋮ 宣帝・静帝 ― 外戚の楊堅が実権を握る</div></div></div><div class="col"><div class="col-h">南朝<small>420–589 都：建康</small></div><div class="line"><div class="dyn"><b>宋</b><span class="y">420–479</span></div><div class="ru"><div class="ru-h"><span class="ru-r x">禅譲</span><span class="ru-n">劉裕</span><span class="ru-a">武帝</span><span class="ru-y">420–422</span></div><div class="ru-d">東晋の軍人。宋を建てる</div></div><div class="dyn"><b>斉</b><span class="y">479–502</span><small>建国者：蕭道成</small></div><div class="dyn"><b>梁</b><span class="y">502–557</span></div><div class="ru"><div class="ru-h"><span class="ru-r x">禅譲</span><span class="ru-n">蕭衍</span><span class="ru-a">武帝</span><span class="ru-y">502–549</span></div><div class="ru-d">仏教を保護。子の昭明太子が『文選』</div></div><div class="skip">⋮ 侯景の乱(548–552)で建康が荒廃</div><div class="dyn"><b>陳</b><span class="y">557–589</span></div><div class="ru sm"><div class="ru-h"><span class="ru-r x">禅譲</span><span class="ru-n">陳覇先</span><span class="ru-a">武帝</span><span class="ru-y">557–559</span></div><div class="ru-d">侯景の乱の後に陳を建てる</div></div><div class="skip">⋮ 後主 ― 隋に滅ぼされる</div></div></div></div><div class="brk"><span class="y">581・589</span><span class="t">隋の統一</span><span class="d">北周の外戚楊堅が隋を建て(581)、陳を滅ぼす(589)</span></div>
+<div class="sec-hdr"><span class="sec-icon">Ⅱ</span><h2>要点 <span class="latin">Summarium</span></h2></div>
+<div class="kp"><p>❶ <b>三国</b>：魏が九品中正を始める → 魏から禅譲を受けた<b>晋</b>が呉を滅ぼし統一(280)</p><p>❷ <b>八王の乱</b>で西晋が乱れ、五胡が自立 → <b>永嘉の乱</b>で西晋滅亡(316)。江南に東晋</p><p>❸ <b>淝水の戦い</b>(383)で前秦が東晋に敗れ、南北の分立が続く</p><p>❹ <b>北朝</b>：北魏の<b>孝文帝</b>が均田制・漢化政策 → 東西に分裂 → 北周が華北統一 → 隋</p><p>❺ <b>南朝</b>：宋・斉・梁・陳が建康に都を置いた(呉・東晋と合わせ<b>六朝</b>) → 隋が陳を滅ぼす(589)</p></div>
+</main>
+<script src="search_jump.js" defer></script></body></html>

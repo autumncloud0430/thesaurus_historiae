@@ -183,6 +183,27 @@ main{padding:16px 14px 60px}
 .side-note{font-size:13px}
 .toc a{font-size:12.5px}
 }
+
+.lead{font-size:14.5px;line-height:1.9}
+.cur{margin:6px 0 4px}
+.st{position:relative;padding:4px 0 10px 18px;border-left:2px solid rgba(var(--axr),.15);margin-left:50px}
+.st:last-child{border-left-color:transparent;padding-bottom:2px}
+.st::before{content:'';position:absolute;left:-6px;top:9px;width:8px;height:8px;border-radius:50%;background:var(--bg);border:2px solid rgba(var(--axr),.45)}
+.st-y{position:absolute;left:-54px;top:4px;width:44px;font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:700;color:var(--gold);text-align:right;line-height:1.2}
+.st-t{font-family:'Noto Serif JP',serif;font-size:15px;font-weight:700;color:var(--gold2);line-height:1.5}
+.st ul{list-style:none;margin:1px 0 0;padding:0}
+.st li{font-size:14px;line-height:1.65;color:var(--text);padding-left:.9em;text-indent:-.9em}
+.st li::before{content:'・';color:var(--gold)}
+.st li b{color:var(--gold2);font-weight:600}
+.st li a{color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(var(--axr),.3)}
+.mx-notes li{line-height:1.65}
+.kp p{line-height:1.75}
+@media(max-width:600px){
+.lead{font-size:14px;line-height:1.85}
+.st{margin-left:42px;padding-left:14px}.st-y{left:-46px;width:38px;font-size:13px}
+.st-t{font-size:14.5px}.st li{font-size:13.5px}
+.kp p{font-size:13.5px}
+}
 </style><style id="thThemes">/* =====================================================
    THESAURUS HISTORIAE ― themes.css(LUX固定版)
    生成りの紙 + 墨の本文 + 朱筆(★語) + 金茶の構造色。
@@ -232,7 +253,7 @@ html[data-theme="lux"] .detail { color:var(--text2); }
 <body>
 <div class="hdr"><h1>ヨーロッパ外交関係の変遷 ― ナポレオン3世から第一次世界大戦へ</h1><a href="charts.html">← Ad Chartae</a></div>
 <main>
-<p class="lead">19世紀後半のヨーロッパでは、<b>ドイツ帝国の成立(1871)</b>ののち、ビスマルクがフランスを孤立させる同盟網をつくった。ビスマルクの辞職(1890)後、ロシアとイギリスがフランスと結んで<b>三国協商</b>が成立し、ドイツ・オーストリア・イタリアの<b>三国同盟</b>と対立した。この二つの陣営が、1914年に始まる<b>第一次世界大戦</b>で戦った。</p>
+<p class="lead">ビスマルクはフランスを孤立させる同盟網をつくったが、その辞職後に<b>三国協商</b>が成立し、<b>三国同盟</b>と対立した。両陣営は1914年、<b>第一次世界大戦</b>で戦った。</p>
 <div class="sec-hdr"><span class="sec-icon">Ⅰ</span><h2>陣営の移り変わり <span class="latin">Ordo Partium</span></h2></div><p class="cap">ドイツ帝国の成立から第一次世界大戦の終わりまで、主な国がどちらの側にいたかを示す。</p>
 <div class="mx-wrap"><table class="mx"><colgroup><col style="width:19%">
 <col>
@@ -312,41 +333,10 @@ html[data-theme="lux"] .detail { color:var(--text2); }
 </tr>
 </tbody></table></div>
 <div class="legend"><span><i class="r"></i>ドイツの側(同盟網・三国同盟・同盟国)</span><span><i class="b"></i>ドイツと対立する側(協商・連合国)</span><span><i class="n"></i>孤立・中立・不参加</span></div>
-<ul class="mx-notes"><li>・<b>ロシア</b>はビスマルク時代にはドイツと結んでいたが、1890年に再保障条約が更新されず、フランスと<b>露仏同盟</b>を結んだ。大戦中の革命ののち、1918年に<b>ブレスト＝リトフスク条約</b>でドイツと講和して戦争から離れた。</li><li>・<b>イタリア</b>は三国同盟の一員だったが、オーストリアとの間に「<b>未回収のイタリア</b>」(南チロル・トリエステなど)の問題をかかえていた。大戦が始まると中立を宣言し、<b>ロンドン秘密条約(1915)</b>で領土の約束を得て連合国側で参戦した。</li><li>・<b>イギリス</b>は大陸の同盟に加わらない「<b>光栄ある孤立</b>」を続けていたが、ロシアの東アジア進出に対抗して日英同盟(1902)を結び、ドイツとの対立が深まると英仏協商(1904)・英露協商(1907)を結んだ。</li><li>・<b>日本</b>は日英同盟を理由にドイツに宣戦し(1914.8)、<b>アメリカ</b>はドイツの無制限潜水艦作戦をきっかけに参戦した(1917.4)。</li></ul>
-<div class="sec-hdr"><span class="sec-icon">Ⅱ</span><h2>要点 <span class="latin">Summarium</span></h2></div>
-<div class="kp"><p>❶ ビスマルクの外交の目的は<b>フランスの孤立</b>。三帝同盟(1873)、独墺同盟(1879)、三国同盟(1882)、再保障条約(1887)で、たがいに対立するオーストリアとロシアの両方と結んだ</p><p>❷ ヴィルヘルム2世のもとでビスマルクが辞職し(1890)、ドイツは<b>再保障条約</b>を更新しなかった。ロシアはフランスに接近し、<b>露仏同盟(1891-94)</b>が成立した</p><p>❸ 三国協商の成立順は<b>露仏同盟(1894)→英仏協商(1904)→英露協商(1907)</b>。イギリスは日英同盟(1902)で「光栄ある孤立」をやめ、ドイツの世界政策と海軍拡張に対抗して英仏・英露の協商を結んだ</p><p>❹ <b>サラエヴォ事件(1914.6)</b>からひと月あまりで、同盟関係を通じて戦争が広がった。オーストリアのセルビアへの宣戦、ロシアの総動員、ドイツの対露・対仏宣戦とベルギー侵入、イギリスの参戦と続いた</p><p>❺ 三国同盟のイタリアは<b>ロンドン秘密条約(1915)</b>で連合国側に移った。1917年に<b>アメリカ</b>が参戦し、革命後のロシアは1918年に戦争から離れた</p></div>
-<div class="sec-hdr"><span class="sec-icon">Ⅲ</span><h2>時期別の解説 <span class="latin">Per Aetates</span></h2></div>
-<nav class="toc"><a href="#ph1"><span>1853-56</span>クリミア戦争</a><a href="#ph2"><span>1862-71</span>ドイツ統一</a><a href="#ph3"><span>1871-90</span>ビスマルク体制</a><a href="#ph4"><span>1890-1913</span>三国協商の形成</a><a href="#ph5"><span>1914-18</span>第一次世界大戦</a></nav>
-<div class="phase" id="ph1"><div class="phase-label">1853<br>〜56</div>
-<div class="ph-head"><span class="ph-title">クリミア戦争(1853-56)</span><span class="ph-sub">ロシアの南下を英仏が阻む</span></div>
-<div class="lineup"><span class="b"><b>オスマン帝国を支援した国々</b>オスマン帝国・フランス・イギリス・サルデーニャ</span><em>対</em><span class="r"><b>ロシア</b>ロシア</span></div>
-<div class="camps"><div class="camp b"><div class="camp-h">オスマン帝国を支援した国々</div><div class="mem"><div class="mem-n">フランス<small>ナポレオン3世</small></div><div class="mem-d">イギリスとともにオスマン帝国を支援してロシアと戦い、勝利した。パリ講和会議(1856)を主催して国際的な地位を高めた。1859年にはサルデーニャを助けてオーストリアと戦い(イタリア統一戦争)、その代償としてサヴォイア・ニースを得た(1860)。</div></div><div class="mem"><div class="mem-n">イギリス</div><div class="mem-d">ロシアの地中海への進出を防ぐため、フランスとともに参戦した。ロシアの南下を食いとめることは、イギリスの外交の大きな目標だった。</div></div><div class="mem"><div class="mem-n">サルデーニャ<small>首相カヴール</small></div><div class="mem-d">イタリア統一に向けて英仏の支持を得るため、首相カヴールの判断で英仏側に参戦した。その後フランスとプロンビエール密約(1858)を結び、1859年にオーストリアと戦った(イタリア統一戦争)。これがイタリア王国の成立(1861)につながった。</div></div><div class="mem"><div class="mem-n">オスマン帝国<small>戦争の当事国</small></div><div class="mem-d">聖地の管理権の問題と、オスマン帝国内のギリシア正教徒の保護を理由とするロシアの圧力から、ロシアとの戦争になった。</div></div></div><div class="camp r"><div class="camp-h">ロシア</div><div class="mem"><div class="mem-n">ロシア<small>ニコライ1世→アレクサンドル2世</small></div><div class="mem-d">オスマン帝国と開戦したが、英仏の参戦を招き、<b>セヴァストポリ要塞</b>が陥落して敗れた。<b>パリ条約(1856)</b>で黒海の中立化が定められ、南下は阻まれた。敗戦を機に、アレクサンドル2世は<b>農奴解放令(1861)</b>などの改革を進めた。</div></div></div></div>
-<div class="side-note"><b>オーストリア</b>は中立を守ったが、ロシアに敵対的な態度をとったため、ロシアとの関係が悪化した。</div>
-</div>
-<div class="phase" id="ph2"><div class="phase-label">1862<br>〜71</div>
-<div class="ph-head"><span class="ph-title">ドイツ統一(1862-71)</span><span class="ph-sub">ビスマルクの鉄血政策と3つの戦争</span></div>
-<div class="lineup"><span class="r"><b>プロイセン</b>プロイセン</span><em>対</em><span class="n"><b>プロイセンに敗れた国</b>オーストリア・フランス</span></div>
-<div class="camps"><div class="camp r"><div class="camp-h">プロイセン</div><div class="mem"><div class="mem-n">プロイセン<small>首相ビスマルク</small></div><div class="mem-d">1862年に首相となったビスマルクは、議会の反対をおさえて軍備を拡張した(<b>鉄血政策</b>)。デンマーク戦争(1864)、<b>プロイセン＝オーストリア戦争(普墺戦争, 1866)</b>、<b>ドイツ＝フランス戦争(普仏戦争, 1870-71)</b>に勝ち、1871年1月、ヴェルサイユ宮殿で<b>ドイツ帝国</b>の成立を宣言した。</div></div></div><div class="camp n"><div class="camp-h">プロイセンに敗れた国</div><div class="mem"><div class="mem-n">オーストリア</div><div class="mem-d">普墺戦争でサドヴァ(ケーニヒグレーツ)の戦いに敗れ、ドイツ統一から除かれた。プロイセンを中心に北ドイツ連邦(1867)がつくられた。1867年にはハンガリーとの妥協(アウスグライヒ)で<b>オーストリア＝ハンガリー帝国</b>となった。</div></div><div class="mem"><div class="mem-n">フランス<small>ナポレオン3世→第三共和政</small></div><div class="mem-d"><b>スダン(セダン)の戦い(1870)</b>でナポレオン3世が捕虜となり、第二帝政は倒れて第三共和政となった。フランクフルト講和条約(1871)で<b>アルザス・ロレーヌ</b>をドイツに割譲し、賠償金を支払った。以後、フランスではドイツへの報復を求める声が強かった。</div></div></div></div>
-</div>
-<div class="phase" id="ph3"><div class="phase-label">1871<br>〜90</div>
-<div class="ph-head"><span class="ph-title">ビスマルク体制(1871-90)</span><span class="ph-sub">フランスを孤立させる同盟網</span></div>
-<div class="lineup"><span class="r"><b>ビスマルクの同盟網</b>ドイツ・オーストリア・ロシア・イタリア</span><em>対</em><span class="n"><b>同盟網の外</b>フランス・イギリス</span></div>
-<div class="camps"><div class="camp r"><div class="camp-h">ビスマルクの同盟網</div><div class="mem"><div class="mem-n">ドイツ帝国<small>宰相ビスマルク</small></div><div class="mem-d">フランスの報復を防ぐため、フランスを孤立させることを外交の基本とした。<b>三帝同盟(1873)</b>でオーストリア・ロシアと結び、ロシア＝トルコ戦争後の<b>ベルリン会議(1878)</b>では仲介役として列強の利害を調整した。さらに<b>独墺同盟(1879)</b>、<b>三国同盟(1882)</b>、ロシアとの<b>再保障条約(1887)</b>を結び、たがいに対立するオーストリアとロシアの両方と同盟を保った。</div></div><div class="mem"><div class="mem-n">オーストリア＝ハンガリー</div><div class="mem-d"><b>独墺同盟(1879)</b>でドイツの最も重要な同盟国となった。バルカン半島では、スラヴ系民族を支援するロシア(<b>パン＝スラヴ主義</b>)と対立していた。ベルリン会議でボスニア・ヘルツェゴヴィナの行政権を得た。</div></div><div class="mem"><div class="mem-n">ロシア</div><div class="mem-d">三帝同盟(1873)でドイツ・オーストリアと結んだ。ベルリン会議で南下を阻まれてドイツに不満をもったが、1881年に三帝同盟を結び直した(新三帝同盟)。これがバルカンをめぐるオーストリアとの対立で更新されなかったため、1887年にドイツと<b>再保障条約</b>を結んだ。</div></div><div class="mem"><div class="mem-n">イタリア</div><div class="mem-d">フランスが<b>チュニジア</b>を保護国としたこと(1881)に反発し、<b>三国同盟(1882)</b>に加わった。しかしオーストリアとの間には「<b>未回収のイタリア</b>」(南チロル・トリエステなど)の問題があった。</div></div></div><div class="camp n"><div class="camp-h">同盟網の外</div><div class="mem"><div class="mem-n">フランス<small>第三共和政</small></div><div class="mem-d">ビスマルクの同盟網によって、同盟を結べる相手がいなかった。</div></div><div class="mem"><div class="mem-n">イギリス</div><div class="mem-d">大陸の同盟に加わらない「<b>光栄ある孤立</b>」の方針をとった。ビスマルクは海軍の拡張を控え、イギリスとの対立を避けた。</div></div></div></div>
-<div class="side-note"><b>しくみ</b>：オーストリアとロシアはバルカンで対立していたが、ドイツが両国とそれぞれ同盟を結んでいたため、フランスはどちらとも結ぶことができなかった。</div>
-</div>
-<div class="phase" id="ph4"><div class="phase-label">1890<br>〜1913</div>
-<div class="ph-head"><span class="ph-title">三国協商の形成(1890-1907)</span><span class="ph-sub">ビスマルクの辞職とドイツの世界政策</span></div>
-<div class="event bad-ev"><div class="ev-title">再保障条約の不更新<span class="ev-year">1890</span></div><div class="ev-desc">1888年に即位したヴィルヘルム2世はビスマルクと対立し、1890年にビスマルクは辞職した。ドイツは再保障条約を更新せず、ロシアとの同盟は終わった。</div></div>
-<div class="lineup"><span class="b"><b>三国協商</b>フランス・ロシア・イギリス</span><em>対</em><span class="r"><b>三国同盟</b>ドイツ・オーストリア・イタリア</span></div>
-<div class="camps"><div class="camp b"><div class="camp-h">三国協商<small>1907年に成立</small></div><div class="mem"><div class="mem-n">フランス</div><div class="mem-d">ドイツと離れたロシアに接近し、<b>露仏同盟(1891-94)</b>を結んで孤立から抜け出した。フランスの資本はロシアのシベリア鉄道の建設などに投じられた。アフリカで衝突したイギリスとも<b>ファショダ事件(1898)</b>ののちに和解し、<b>英仏協商(1904)</b>でイギリスのエジプト、フランスのモロッコにおける優越を認め合った。</div></div><div class="mem"><div class="mem-n">ロシア</div><div class="mem-d">露仏同盟を結んだ。<b>日露戦争(1904-05)</b>に敗れて東アジアでの南下を阻まれると、バルカンへの進出に力を向け、イギリスと<b>英露協商(1907)</b>を結んでイラン・アフガニスタン・チベットでの勢力範囲を定めた。これで三国協商が成立した。</div></div><div class="mem"><div class="mem-n">イギリス</div><div class="mem-d">ロシアの東アジア進出に対抗して<b>日英同盟(1902)</b>を結び、「光栄ある孤立」をやめた。さらにドイツの<b>世界政策</b>と海軍の拡張(建艦競争)に危機感を強め、英仏協商(1904)、英露協商(1907)を結んだ。</div></div></div><div class="camp r"><div class="camp-h">三国同盟</div><div class="mem"><div class="mem-n">ドイツ<small>皇帝ヴィルヘルム2世</small></div><div class="mem-d">「<b>世界政策</b>」をかかげて海軍を拡張し、イギリスと建艦競争をくりひろげた。バグダード鉄道の建設を進める<b>3B政策</b>は、イギリスの3C政策と対立した。<b>モロッコ事件(1905・1911)</b>でフランスに圧力をかけたが、英仏の結びつきをかえって強めた。</div></div><div class="mem"><div class="mem-n">オーストリア＝ハンガリー</div><div class="mem-d">1908年、青年トルコ革命の混乱に乗じて<b>ボスニア・ヘルツェゴヴィナを併合</b>した。同じスラヴ系の住民の統合をめざすセルビアと、それを支援するロシアとの対立が深まり、バルカン半島は「<b>ヨーロッパの火薬庫</b>」とよばれた。</div></div><div class="mem"><div class="mem-n">イタリア</div><div class="mem-d">三国同盟の一員だったが、1902年にはフランスとも協定を結び、同盟の結びつきは弱まっていた。オーストリアとの「未回収のイタリア」の問題も残っていた。</div></div></div></div>
-<div class="event"><div class="ev-title">バルカン戦争<span class="ev-year">1912-13</span></div><div class="ev-desc"><b>バルカン同盟</b>(セルビア・ブルガリア・ギリシア・モンテネグロ)がオスマン帝国と戦った(第1次)。つづいて領土の分配をめぐってブルガリアが他の国々と戦って敗れた(第2次)。敗れたブルガリアはドイツ・オーストリアに接近した。</div></div>
-</div>
-<div class="phase" id="ph5"><div class="phase-label">1914<br>〜18</div>
-<div class="ph-head"><span class="ph-title">第一次世界大戦(1914-18)</span><span class="ph-sub">サラエヴォ事件から同盟の連鎖で世界大戦へ</span></div>
-<div class="event bad-ev"><div class="ev-title">開戦までの経過<span class="ev-year">1914.6-8</span></div><div class="ev-desc"><ul style="list-style:none;margin-left:0"><li><span class="d">6.28</span>サラエヴォで、オーストリアの帝位継承者夫妻がセルビア人の青年に暗殺される(サラエヴォ事件)</li><li><span class="d">7.5</span>ドイツがオーストリアに全面的な支持を約束する</li><li><span class="d">7.23</span>オーストリアがセルビアに最後通牒を送る</li><li><span class="d">7.28</span>オーストリアがセルビアに宣戦する</li><li><span class="d">7.30</span>ロシアが総動員を命じる</li><li><span class="d">8.1</span>ドイツがロシアに宣戦する</li><li><span class="d">8.3</span>ドイツがフランスに宣戦する</li><li><span class="d">8.4</span>ドイツ軍が中立国ベルギーに侵入し、イギリスがドイツに宣戦する</li></ul></div></div>
-<div class="lineup"><span class="r"><b>同盟国</b>ドイツ・オーストリア・オスマン帝国・ブルガリア</span><em>対</em><span class="b"><b>連合国(協商国)</b>セルビア・ロシア・フランス・イギリス・日本・イタリア(1915)・アメリカ(1917)</span></div>
-<div class="camps"><div class="camp r"><div class="camp-h">同盟国<small>ドイツの側</small></div><div class="mem"><div class="mem-n">ドイツ帝国</div><div class="mem-d">オーストリアのセルビアへの強硬な対応を支持した。フランスを短期間で破ってからロシアに向かう<b>シュリーフェン計画</b>にもとづき、中立国ベルギーを通ってフランスに侵攻したため、イギリスの参戦を招いた。</div></div><div class="mem"><div class="mem-n">オーストリア＝ハンガリー</div><div class="mem-d">帝位継承者<b>フランツ＝フェルディナント</b>がサラエヴォで暗殺されると(1914.6.28)、ドイツの支持を得てセルビアに最後通牒を送り(7.23)、宣戦した(7.28)。</div></div><div class="mem"><div class="mem-n">オスマン帝国</div><div class="mem-d">1914年11月、ドイツ側で参戦した。<b>ガリポリの戦い</b>(1915)では英仏軍の上陸を退けたが、最終的に敗れ、<b>セーヴル条約(1920)</b>で領土の多くを失った。ムスタファ＝ケマルはこの条約を認めず、トルコ革命を進めた。</div></div><div class="mem"><div class="mem-n">ブルガリア</div><div class="mem-d">第2次バルカン戦争で失った領土の回復をめざし、1915年にドイツ側で参戦した。</div></div></div><div class="camp b"><div class="camp-h">連合国(協商国)<small>ドイツと戦った側</small></div><div class="mem"><div class="mem-n">セルビア</div><div class="mem-d">オーストリアの帝位継承者を暗殺したのは、ボスニアのセルビア人の青年プリンチプだった。セルビアは最後通牒の大部分を受け入れたが、すべては認めなかったため宣戦された。ロシアは<b>パン＝スラヴ主義</b>の立場からセルビアを支援した。</div></div><div class="mem"><div class="mem-n">ロシア</div><div class="mem-d">セルビアを支援して総動員を命じ(7.30)、これに対してドイツが宣戦した(8.1)。東部戦線では<b>タンネンベルクの戦い</b>(1914.8)で大敗した。1917年の<b>ロシア革命</b>で帝政が倒れ、ソヴィエト政権は1918年3月に<b>ブレスト＝リトフスク条約</b>でドイツと講和して戦争から離れた。</div></div><div class="mem"><div class="mem-n">フランス</div><div class="mem-d">ドイツ軍の侵攻を受けたが、<b>マルヌの戦い</b>(1914.9)でパリの手前で食いとめた。以後、西部戦線は塹壕戦となって長期化した。</div></div><div class="mem"><div class="mem-n">イギリス</div><div class="mem-d">ドイツ軍のベルギー侵入(中立の侵犯)を理由に、8月4日にドイツに宣戦した。海上封鎖でドイツを苦しめ、ドイツはこれに無制限潜水艦作戦で対抗した。</div></div><div class="mem"><div class="mem-n">日本<small>1914.8参戦</small></div><div class="mem-d"><b>日英同盟</b>を理由に1914年8月にドイツに宣戦し、中国の青島や太平洋のドイツ領南洋諸島を占領した。1915年には中国に<b>二十一カ条の要求</b>を出した。</div></div><div class="mem"><div class="mem-n">イタリア<small>1915参戦</small></div><div class="mem-d">開戦時には中立を宣言した。1915年、「未回収のイタリア」などの領土を与えるという<b>ロンドン秘密条約</b>を連合国と結び、オーストリアに宣戦した。これで三国同盟は崩れた。</div></div><div class="mem"><div class="mem-n">アメリカ<small>1917.4参戦</small></div><div class="mem-d">初めは中立を守った。ドイツの<b>無制限潜水艦作戦</b>(1917.2)と、ドイツがメキシコに対米参戦を働きかけた<b>ツィンメルマン電報</b>の発覚をきっかけに、1917年4月に参戦した。ウィルソン大統領の<b>十四カ条</b>(1918)は戦後の講和の原則となった。</div></div></div></div>
-<div class="side-note"><b>結果</b>：1918年11月、ドイツは休戦協定に調印し、大戦は連合国の勝利で終わった。ドイツ・オーストリア・ロシア・オスマンの4つの帝国は、大戦中から戦後にかけて崩壊した。</div>
-</div>
+<ul class="mx-notes"><li>・<b>ロシア</b>は再保障条約の不更新(1890)でフランスに接近した。1918年にブレスト＝リトフスク条約で離脱。</li><li>・<b>イタリア</b>は墺と「未回収のイタリア」問題をかかえ、ロンドン秘密条約(1915)で連合国側に移った。</li><li>・<b>イギリス</b>はロシアに対抗する日英同盟(1902)で「光栄ある孤立」をやめた。</li></ul>
+<div class="sec-hdr"><span class="sec-icon">Ⅱ</span><h2>経過 <span class="latin">Cursus Rerum</span></h2></div>
+<div class="cur"><div class="st"><div class="st-y">1853<br>〜56</div><div class="st-t">クリミア戦争</div><ul><li>英・仏・サルデーニャがオスマン帝国を支援</li><li>ロシア敗北、パリ条約(1856)で南下挫折</li></ul></div><div class="st"><div class="st-y">1862<br>〜71</div><div class="st-t">ドイツ統一</div><ul><li>ビスマルクの<b>鉄血政策</b></li><li>普墺戦争(1866)・普仏戦争(1870-71)</li><li>1871 ドイツ帝国成立</li><li>仏はアルザス・ロレーヌを割譲</li></ul></div><div class="st"><div class="st-y">1871<br>〜90</div><div class="st-t">ビスマルク体制</div><ul><li>三帝同盟(1873)・独墺同盟(1879)</li><li><b>三国同盟</b>(1882)：独・墺・伊</li><li><b>再保障条約</b>(1887)：独・露</li><li>英は「光栄ある孤立」、仏は孤立</li></ul></div><div class="st"><div class="st-y">1890<br>〜1907</div><div class="st-t">三国協商の形成</div><ul><li>ビスマルク辞職、再保障条約を更新せず</li><li><b>露仏同盟</b>(1891-94)</li><li>日英同盟(1902)・<b>英仏協商</b>(1904)</li><li><b>英露協商</b>(1907)で三国協商成立</li><li>独の世界政策・3B政策、モロッコ事件(1905)</li></ul></div><div class="st"><div class="st-y">1908<br>〜14</div><div class="st-t">バルカン問題</div><ul><li>墺がボスニア・ヘルツェゴヴィナ併合</li><li>バルカン戦争(1912-13)</li><li><b>サラエヴォ事件</b>(1914.6)</li></ul></div><div class="st"><div class="st-y">1914<br>〜18</div><div class="st-t">第一次世界大戦</div><ul><li>独軍がベルギーに侵入→英が参戦</li><li>日本(1914)・伊(1915)が連合国側で参戦</li><li>オスマン帝国・ブルガリアは独側</li><li>米が参戦(1917)、露が離脱(1918)</li><li>1918.11 ドイツが休戦協定に調印</li></ul></div></div>
+<div class="sec-hdr"><span class="sec-icon">Ⅲ</span><h2>要点 <span class="latin">Summarium</span></h2></div>
+<div class="kp"><p>❶ ビスマルク外交の目的は<b>フランスの孤立</b>。たがいに対立する墺と露の両方と同盟した</p><p>❷ 1890年に<b>再保障条約</b>が更新されず、<b>露仏同盟(1891-94)</b>が成立した</p><p>❸ 三国協商：<b>露仏同盟(1894)→英仏協商(1904)→英露協商(1907)</b></p><p>❹ <b>サラエヴォ事件(1914.6)</b>からひと月あまりで、同盟関係を通じて大戦に広がった</p><p>❺ 三国同盟の<b>イタリア</b>は1915年に連合国側へ。1917年に<b>アメリカ</b>が参戦し、1918年に<b>ロシア</b>が離脱</p></div>
 </main>
 <script src="search_jump.js" defer></script></body></html>

@@ -166,7 +166,26 @@ table.mx{width:100%;border-collapse:separate;border-spacing:3px;table-layout:fix
 .chain .cn{font-family:'Noto Serif JP',serif;font-weight:700;font-size:14.5px;color:var(--gold2)}
 .chain li.red .cn{color:var(--shu)}
 .chain .cx{font-size:13.5px;line-height:1.8;color:var(--text)}
+/* compact one-line timeline (2nd revision: chartae = figure, not reading page) */
+.tl{list-style:none;margin:2px 0 6px;padding:0}
+.tl li{position:relative;padding:1px 0 5px 18px;border-left:1.5px solid rgba(var(--axr),.2);margin-left:5px;font-size:13.5px;line-height:1.6;color:var(--text)}
+.tl li:last-child{border-left-color:transparent;padding-bottom:1px}
+.tl li::before{content:'';position:absolute;left:-5.5px;top:7px;width:7px;height:7px;border-radius:50%;background:var(--bg);border:2px solid rgba(var(--axr),.5)}
+.tl li.w::before{background:rgba(var(--w),.35);border-color:rgba(var(--w),.75)}
+.tl li.e::before{background:rgba(var(--e),.3);border-color:rgba(var(--e),.7)}
+.tl li.n::before{background:rgba(var(--n),.35);border-color:rgba(var(--n),.75)}
+.tl li.p::before{background:rgba(var(--p),.3);border-color:rgba(var(--p),.7)}
+.tl .ty{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:15px;color:var(--gold);margin-right:7px}
+.tl b{font-family:'Noto Serif JP',serif;color:var(--gold2)}
+.tl li.war b{color:var(--shu)}
+.tl-h{display:flex;align-items:baseline;gap:8px;margin:10px 0 4px;font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2)}
+.tl-h .rn{font-family:'Cormorant Garamond',serif;font-size:15px;color:var(--gold);opacity:.8}
+.tl-h .yr{font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:700;color:var(--gold)}
+.fn{margin:6px 0 4px;padding:0;list-style:none}
+.fn li{font-size:13px;line-height:1.7;color:var(--text2);padding-left:1em;text-indent:-1em}
+.fn li b{color:var(--gold2)}
 @media(max-width:600px){
+.tl li{font-size:13px}
 .kp p{font-size:13px}.side-note{font-size:13px}
 .mx thead th{font-size:11px}.mx thead th b{font-size:12px}.mx thead th .yr{font-size:12.5px}
 .mx tbody th{font-size:12px}
@@ -225,8 +244,8 @@ html[data-theme="lux"] .detail { color:var(--text2); }
 <body>
 <div class="hdr"><h1>冷戦構造の変遷 ― 形成・危機・デタント・新冷戦・崩壊</h1><a href="charts.html">← Ad Chartae</a></div>
 <main>
-<p class="lead">第二次世界大戦後、アメリカを中心とする<b>西側(資本主義)陣営</b>と、ソ連を中心とする<b>東側(社会主義)陣営</b>が対立した。米ソが直接の全面戦争を行わなかったため「冷戦」と呼ばれる。対立は1991年のソ連解体まで続き、その間に中国の離反や非同盟諸国の台頭など、陣営の構成は何度も変化した。</p>
-<div class="sec-hdr"><span class="sec-icon">Ⅰ</span><h2>陣営の変化 <span class="latin">Conspectus Partium</span></h2></div><p class="cap">米ソ以外の主な国が、各時期にどちらの陣営に属したかを示す。文字はその時期の主なできごと。アメリカとソ連は全期間を通じて両陣営の中心であった。各時期の内容はⅢで説明する。</p>
+<p class="lead">アメリカ中心の<b>西側(資本主義)陣営</b>とソ連中心の<b>東側(社会主義)陣営</b>の対立。1991年のソ連解体まで続き、その間に陣営の構成は何度も変わった。</p>
+<div class="sec-hdr"><span class="sec-icon">Ⅰ</span><h2>陣営の変化 <span class="latin">Conspectus Partium</span></h2></div><p class="cap">米ソ以外の主な国が、各時期にどちらの陣営にいたか。文字はその時期の主なできごと(東欧の反ソ暴動＝1956ハンガリー、「連帯」＝1980ポーランド)。</p>
 <div class="mx-wrap"><table class="mx"><colgroup><col style="width:17%"><col><col><col><col><col></colgroup>
 <thead><tr><th></th><th><span class="rn">Ⅰ</span><b>形成</b><span class="yr">45–55</span></th><th><span class="rn">Ⅱ</span><b>雪どけ</b><span class="yr">55–62</span></th><th><span class="rn">Ⅲ</span><b>デタント</b><span class="yr">62–79</span></th><th><span class="rn">Ⅳ</span><b>新冷戦</b><span class="yr">79–85</span></th><th><span class="rn">Ⅴ</span><b>終結</b><span class="yr">85–91</span></th></tr></thead><tbody>
 <tr><th>西ドイツ</th><td class="c-w">1949建国</td><td class="c-w">NATO<br>加盟</td><td class="c-w">東方外交</td><td class="c-w">西側</td><td class="c-w">ドイツ<br>統一</td></tr>
@@ -239,118 +258,15 @@ html[data-theme="lux"] .detail { color:var(--text2); }
 <tr><th>キューバ</th><td class="c-w">親米政権</td><td class="c-we">革命→<br>ソ連へ</td><td class="c-e">東側</td><td class="c-e">東側</td><td class="c-e">東側</td></tr>
 <tr><th>エジプト</th><td class="c-n">1952革命</td><td class="c-n">非同盟</td><td class="c-ew">ソ連→米</td><td class="c-w">親米</td><td class="c-w">親米</td></tr>
 </tbody></table></div>
-<div class="legend"><span><i class="c-w"></i>西側</span><span><i class="c-e"></i>東側</span><span><i class="c-n"></i>非同盟</span><span><i class="c-i"></i>米ソのどちらにも属さない(中国)</span><span><i class="c-ed"></i>破線：陣営内で対立・距離をおく</span><span><i class="c-ew"></i>二色：時期の途中で立場が変化</span><span><i class="c-x"></i>灰の破線：体制転換・国家の消滅</span></div>
-<div class="sec-hdr"><span class="sec-icon">Ⅱ</span><h2>要点 <span class="latin">Summarium</span></h2></div>
-<div class="kp"><p>❶ 冷戦は<b>形成(1945〜55)→雪どけと危機(1955〜62)→デタント(1962〜79)→新冷戦(1979〜85)→終結(1985〜91)</b>と推移した</p><p>❷ 1955年までに、西側は<b>NATO(1949)</b>、東側は<b>ワルシャワ条約機構(1955)</b>を結成し、ヨーロッパは二つの軍事同盟に分かれた。経済面ではマーシャル＝プラン(1947)に対して東側はCOMECON(1949)をつくった</p><p>❸ どちらの陣営にも属さない国々は、<b>アジア＝アフリカ会議(1955)</b>と<b>第1回非同盟諸国首脳会議(1961)</b>で連携した</p><p>❹ 東側では1950年代末から<b>中ソ対立</b>が深まった。中国はソ連を警戒して米に接近し、<b>ニクソン訪中(1972)</b>を経て<b>米中国交正常化(1979)</b>に至った</p><p>❺ デタントはソ連の<b>アフガニスタン侵攻(1979)</b>で終わった。レーガン政権の軍備拡張は、経済が停滞していたソ連に重い負担となった</p><p>❻ ゴルバチョフの改革と東欧への不干渉のもとで<b>東欧革命(1989)</b>がおこり、<b>マルタ会談(1989)</b>で冷戦の終結が宣言された。ソ連は1991年に解体した</p></div>
-<div class="sec-hdr"><span class="sec-icon">Ⅲ</span><h2>時期別の解説 <span class="latin">Per Aetates</span></h2></div><p class="cap">各時期の西側・東側・第三世界の主な国と、その時期のできごと。</p>
-<nav class="toc"><a href="#ph1"><span>1945-1955</span>冷戦の形成</a><a href="#ph2"><span>1955-1962</span>「雪どけ」と危機</a><a href="#ph3"><span>1962-1979</span>デタント(緊張緩和)</a><a href="#ph4"><span>1979-1985</span>「新冷戦」</a><a href="#ph5"><span>1985-1991</span>冷戦の終結</a></nav>
-<div class="phase" id="ph1"><div class="phase-label">1945<br>〜<br>1955</div>
-<div class="ph-head"><span class="ph-title">冷戦の形成</span><span class="ph-sub">「鉄のカーテン」から二つの軍事同盟の成立まで</span></div>
-<div class="event"><div class="ev-title">「鉄のカーテン」演説<span class="ev-year">1946</span></div><div class="ev-desc">イギリス前首相チャーチルが、ヨーロッパはバルト海からアドリア海まで「鉄のカーテン」で東西に分断されていると演説し、ソ連の勢力拡大を批判した。</div></div>
-<div class="camps">
-<div class="camp k-w"><div class="camp-h">西側陣営 <span class="latin">Occidens</span></div>
-<div class="mem"><div class="mem-n">アメリカ<small>トルーマン</small></div><div class="mem-d"><b>トルーマン＝ドクトリン(1947)</b>でギリシア・トルコへの援助を表明し、共産主義勢力の拡大を防ぐ「封じ込め政策」を始めた。<b>マーシャル＝プラン(1947)</b>で西欧の復興を援助し、<b>NATO(北大西洋条約機構, 1949)</b>を結成した。</div></div>
-<div class="mem"><div class="mem-n">西欧諸国</div><div class="mem-d">マーシャル＝プランの援助を受け入れて復興した。受け入れのためにOEEC(1948)を設け、1950年代にはECSC(1952発足)から始まるヨーロッパ統合を進めた。NATOには、アメリカ・カナダとともに西欧・北欧など10カ国が原加盟国として加わった。</div></div>
-<div class="mem"><div class="mem-n">西ドイツ<small>1949建国</small></div><div class="mem-d">米英仏の占領地区から<b>ドイツ連邦共和国</b>が成立した。アデナウアー首相のもとで西側諸国との結びつきを強め、「経済の奇跡」と呼ばれる復興を遂げた。</div></div>
-<div class="mem"><div class="mem-n">日本<small>1951講和</small></div><div class="mem-d"><b>サンフランシスコ平和条約</b>(1951調印・1952発効)で主権を回復し、同時に<b>日米安全保障条約</b>を結んで西側陣営に加わった。朝鮮戦争の特需で経済が復興した。</div></div>
-<div class="mem"><div class="mem-n">アメリカの同盟網</div><div class="mem-d">米州機構(OAS, 1948)・太平洋安全保障条約(ANZUS, 1951)・日米安全保障条約(1951)・東南アジア条約機構(SEATO, 1954)・バグダード条約機構(METO, 1955。アメリカは正式には加盟せず)など、ソ連・中国を囲む集団防衛の条約を各地で結んだ。</div></div>
-</div>
-<div class="camp k-e"><div class="camp-h">東側陣営 <span class="latin">Oriens</span></div>
-<div class="mem"><div class="mem-n">ソ連<small>スターリン</small></div><div class="mem-d">東欧諸国を勢力下におき、<b>コミンフォルム(1947)</b>で各国共産党の連携を強め、<b>COMECON(経済相互援助会議, 1949)</b>で経済の結びつきをつくった。1949年に原子爆弾を保有し、アメリカの核独占を破った。</div></div>
-<div class="mem"><div class="mem-n">東欧諸国</div><div class="mem-d">ソ連軍の影響下で共産党が実権を握り、人民民主主義の名のもとで一党体制とソ連型の計画経済が導入された。ユーゴスラヴィアはティトーのもとで独自路線をとってソ連と対立し、1948年にコミンフォルムから除名された。</div></div>
-<div class="mem"><div class="mem-n">東ドイツ<small>1949建国</small></div><div class="mem-d">ソ連の占領地区から<b>ドイツ民主共和国</b>が成立した。西ドイツとの経済格差から住民の西への流出が続き、のちのベルリンの壁建設(1961)の背景となった。</div></div>
-<div class="mem"><div class="mem-n">中国<small>1949建国</small></div><div class="mem-d">中華人民共和国が成立し、<b>中ソ友好同盟相互援助条約(1950)</b>を結んで東側陣営に加わった。朝鮮戦争には人民義勇軍を送った。</div></div>
-<div class="mem"><div class="mem-n">ワルシャワ条約機構<small>1955</small></div><div class="mem-d">西ドイツのNATO加盟に対抗して、ソ連と東欧7カ国が結成した軍事同盟。東側の集団防衛の中心となった。</div></div>
-</div>
-</div>
-<div class="event bad-ev"><div class="ev-title">ベルリン封鎖<span class="ev-year">1948〜49</span><span class="bad">戦争・危機</span></div><div class="ev-desc">西側占領地区での通貨改革に反発したソ連が、西ベルリンへの陸上交通を遮断した。米英は物資を空輸して対抗した。封鎖が解かれた1949年に、ドイツは東西二つの国家に分かれた。</div></div>
-<div class="event bad-ev"><div class="ev-title">朝鮮戦争<span class="ev-year">1950〜53</span><span class="bad">戦争・危機</span></div><div class="ev-desc">北朝鮮が韓国に侵攻して始まった。国連安全保障理事会(ソ連は欠席)の決議で米軍中心の国連軍が韓国を、中国の人民義勇軍が北朝鮮を支援した。1953年に板門店で休戦協定が結ばれた。</div></div>
-</div>
-<div class="phase" id="ph2"><div class="phase-label">1955<br>〜<br>1962</div>
-<div class="ph-head"><span class="ph-title">「雪どけ」と危機</span><span class="ph-sub">スターリン批判・第三世界の台頭・キューバ危機</span></div>
-<div class="camps">
-<div class="camp k-w"><div class="camp-h">西側 <span class="latin">Occidens</span></div>
-<div class="mem"><div class="mem-n">アメリカ<small>アイゼンハワー→ケネディ</small></div><div class="mem-d"><b>ジュネーヴ4巨頭会談(1955)</b>で米英仏ソの首脳が会談し、緊張緩和(「雪どけ」)が進んだ。しかし<b>U2型偵察機撃墜事件(1960)</b>で米ソ関係は再び悪化し、ケネディ政権はキューバ危機(1962)に直面した。</div></div>
-<div class="mem"><div class="mem-n">NATO・西ドイツ<small>1955</small></div><div class="mem-d">西ドイツはパリ協定にもとづいて再軍備し、1955年にNATOに加盟した。これに対抗して同年ワルシャワ条約機構が結成され、ヨーロッパの東西の軍事的な分断が固まった。</div></div>
-<div class="mem"><div class="mem-n">日本<small>1956</small></div><div class="mem-d"><b>日ソ共同宣言(1956)</b>でソ連と国交を回復し、同年に国際連合に加盟した。</div></div>
-</div>
-<div class="camp k-e"><div class="camp-h">東側 <span class="latin">Oriens</span></div>
-<div class="mem"><div class="mem-n">ソ連<small>フルシチョフ</small></div><div class="mem-d">1956年のソ連共産党第20回大会で<b>スターリン批判</b>を行い、西側との<b>平和共存</b>を唱えた。1957年に人工衛星スプートニク1号の打ち上げに成功し、1959年に訪米した。1962年にはキューバにミサイル基地を建設してキューバ危機を招いた。</div></div>
-<div class="mem"><div class="mem-n">東欧諸国<small>1956</small></div><div class="mem-d">スターリン批判の影響で、ポーランドで<b>ポズナン暴動</b>がおこり、ハンガリーでは<b>反ソ暴動(ハンガリー事件)</b>がおこった。ハンガリーのナジ＝イムレ首相はワルシャワ条約機構からの脱退を表明したが、ソ連軍に鎮圧された。</div></div>
-<div class="mem"><div class="mem-n">東ドイツ<small>1961</small></div><div class="mem-d">西ベルリンを経由した住民の流出を止めるため、<b>ベルリンの壁</b>を築いた。</div></div>
-<div class="mem"><div class="mem-n">中国<small>毛沢東</small></div><div class="mem-d">スターリン批判と平和共存路線に反発し、<b>中ソ対立</b>が始まった。1960年にソ連は中国に派遣していた技術者を引き揚げ、援助を打ち切った。</div></div>
-<div class="mem"><div class="mem-n">キューバ<small>カストロ</small></div><div class="mem-d"><b>キューバ革命(1959)</b>で親米のバティスタ政権が倒れた。アメリカとの関係が悪化すると、1961年に社会主義を宣言してソ連に接近した。</div></div>
-</div>
-<div class="camp k-n"><div class="camp-h">第三世界 <span class="latin">Tertius Mundus</span></div>
-<div class="mem"><div class="mem-n">アジア・アフリカ諸国<small>1955</small></div><div class="mem-d">周恩来・ネルー会談(1954)の<b>平和五原則</b>をうけ、<b>アジア＝アフリカ会議(バンドン会議, 1955)</b>が開かれた。29カ国が参加し、反植民地主義と平和共存をうたう平和十原則を採択した。</div></div>
-<div class="mem"><div class="mem-n">非同盟諸国<small>1961</small></div><div class="mem-d">ユーゴスラヴィアのティトー、インドのネルー、エジプトのナセル、インドネシアのスカルノらの呼びかけで、<b>第1回非同盟諸国首脳会議(1961, ベオグラード)</b>が開かれ、どちらの陣営にも属さない立場を示した。</div></div>
-<div class="mem"><div class="mem-n">エジプト<small>ナセル</small></div><div class="mem-d">アスワン＝ハイダムの建設資金をめぐって米英が融資を撤回すると、<b>スエズ運河の国有化(1956)</b>を宣言した。英・仏・イスラエルが出兵したスエズ戦争(第2次中東戦争)は、米ソの反対と国連の撤兵要求で失敗に終わり、英仏の中東での影響力は後退した。以後エジプトはソ連の援助を受けた。</div></div>
-</div>
-</div>
-<div class="event bad-ev"><div class="ev-title">キューバ危機<span class="ev-year">1962</span><span class="bad">戦争・危機</span></div><div class="ev-desc">ソ連がキューバにミサイル基地を建設していることが判明し、ケネディ大統領は海上封鎖を行って撤去を求めた。核戦争の危機が高まったが、フルシチョフが撤去に応じ、アメリカはキューバに侵攻しないことを約束した。翌1963年、米ソ首脳間に直通通信回線(ホットライン)が設けられた。</div></div>
-<div class="side-note">スターリン批判後、米ソの対話が始まる一方で、東側では東欧の動揺と中ソ対立がおこり、陣営の外では非同盟の動きが広がった。キューバ危機をきっかけに、米ソは核戦争を避けるための話し合いを進めるようになった。</div>
-</div>
-<div class="phase" id="ph3"><div class="phase-label">1962<br>〜<br>1979</div>
-<div class="ph-head"><span class="ph-title">デタント(緊張緩和)</span><span class="ph-sub">核軍備管理の条約・米中接近・ヘルシンキ宣言</span></div>
-<div class="camps">
-<div class="camp k-w"><div class="camp-h">西側 <span class="latin">Occidens</span></div>
-<div class="mem"><div class="mem-n">アメリカ<small>ジョンソン→ニクソン→カーター</small></div><div class="mem-d">1965年から北ベトナムへの爆撃(北爆)を始めてベトナム戦争に本格的に介入したが、戦争は長期化し、1973年のベトナム(パリ)和平協定で撤兵した。ニクソン大統領は1971年に<b>ドルと金の交換停止</b>を発表し(ドル＝ショック、ニクソン＝ショックとも)、1972年に中国を訪問し、同年ソ連とSALT Iに調印した。</div></div>
-<div class="mem"><div class="mem-n">西ドイツ<small>ブラント</small></div><div class="mem-d"><b>東方外交</b>を進め、ソ連・ポーランドと武力不行使や国境の承認(ポーランドとの間ではオーデル＝ナイセ線)を定めた条約を結んだ(1970)。<b>東西ドイツ基本条約(1972)</b>で東ドイツと互いに承認し合い、1973年に東西ドイツは国際連合に同時加盟した。</div></div>
-<div class="mem"><div class="mem-n">フランス<small>ド＝ゴール</small></div><div class="mem-d">核兵器を保有し(1960)、中華人民共和国を承認し(1964)、<b>NATOの軍事機構から脱退(1966)</b>するなど、アメリカから距離をおく独自の外交を進めた。</div></div>
-<div class="mem"><div class="mem-n">日本<small>1972</small></div><div class="mem-d"><b>日中共同声明(1972)</b>で中華人民共和国と国交を正常化した。</div></div>
-</div>
-<div class="camp k-e"><div class="camp-h">東側 <span class="latin">Oriens</span></div>
-<div class="mem"><div class="mem-n">ソ連<small>ブレジネフ</small></div><div class="mem-d">アメリカとSALT I(1972)に調印し、ヘルシンキの全欧安全保障協力会議(1975)にも参加した。一方でチェコスロヴァキアの改革を軍事介入で抑え、社会主義圏全体の利益のためには一国の主権が制限されるとする<b>制限主権論(ブレジネフ＝ドクトリン)</b>を唱えた。</div></div>
-<div class="mem"><div class="mem-n">チェコスロヴァキア<small>1968</small></div><div class="mem-d">共産党第一書記ドプチェクが言論の自由化などの改革を進めた(<b>「プラハの春」</b>)。ソ連など5カ国のワルシャワ条約機構軍が侵攻して改革を抑えた。</div></div>
-<div class="mem"><div class="mem-n">中国<small>毛沢東</small></div><div class="mem-d">1964年に原爆実験に成功した。1969年に中ソ国境の<b>珍宝島(ダマンスキー島)</b>で両国軍が衝突し、中国はソ連を最大の脅威とみてアメリカに接近した。</div></div>
-<div class="mem"><div class="mem-n">ベトナム<small>1975〜76</small></div><div class="mem-d">北ベトナムと南ベトナム解放民族戦線は、米軍撤退後の1975年にサイゴンを占領した。1976年に南北を統一してベトナム社会主義共和国が成立した。</div></div>
-</div>
-<div class="camp k-n"><div class="camp-h">第三世界 <span class="latin">Tertius Mundus</span></div>
-<div class="mem"><div class="mem-n">エジプト<small>サダト</small></div><div class="mem-d">ナセルの死(1970)後に大統領となったサダトは、1972年にソ連の軍事顧問団を国外に退去させた。第4次中東戦争(1973)のあとアメリカとの関係を深め、アメリカの仲介でイスラエルと<b>エジプト＝イスラエル平和条約(1979)</b>を結んだ。</div></div>
-</div>
-</div>
-<div class="event"><div class="ev-title">米中接近<span class="ev-year">1971〜79</span></div><div class="ev-desc">1971年にキッシンジャー大統領補佐官が秘密裏に訪中し、同年、国際連合の中国代表権が中華人民共和国に移った。1972年に<b>ニクソン大統領が訪中</b>して関係改善に合意し、1979年に米中は国交を正常化した。米ソ二極の対立は、米・中・ソの三国の関係へと変わった。</div></div>
-<div class="sub-h">核軍備管理と緊張緩和</div>
-<div class="event org"><div class="ev-title">部分的核実験禁止条約(PTBT)<span class="ev-year">1963</span><span class="ok">条約・合意</span></div><div class="ev-desc">米英ソが調印し、大気圏内・宇宙空間・水中での核実験を禁止した。地下核実験は禁止の対象外で、フランスと中国は参加しなかった。キューバ危機の後に結ばれた最初の核軍備管理の条約である。</div></div>
-<div class="event org"><div class="ev-title">核拡散防止条約(NPT)<span class="ev-year">1968</span><span class="ok">条約・合意</span></div><div class="ev-desc">米・ソ・英・仏・中の5カ国以外が核兵器を持つことを禁じ、保有国には核軍縮の交渉を義務づけた(1970発効)。仏・中の加盟は1992年。インド・パキスタン・イスラエルは加盟せず、北朝鮮は2003年に脱退を宣言した。</div></div>
-<div class="event org"><div class="ev-title">第1次戦略兵器制限交渉(SALT I)<span class="ev-year">1972</span><span class="ok">条約・合意</span></div><div class="ev-desc">ニクソンとブレジネフが調印した。大陸間弾道ミサイル(ICBM)と潜水艦発射弾道ミサイル(SLBM)の数に上限を設け、弾道弾迎撃ミサイル(ABM)制限条約も結んだ。</div></div>
-<div class="event org"><div class="ev-title">ヘルシンキ宣言<span class="ev-year">1975</span><span class="ok">条約・合意</span></div><div class="ev-desc">全欧安全保障協力会議(CSCE)で、ヨーロッパ33カ国と米・カナダの計35カ国が採択した。戦後の国境の尊重、経済・科学技術の協力、人権の尊重などを定めた。東側は国境の現状を認めさせることができたが、人権の尊重を定めた部分は、のちに東欧の反体制運動のよりどころとなった。</div></div>
-<div class="sub-h">デタント期の戦争と経済危機</div>
-<div class="event bad-ev"><div class="ev-title">ベトナム戦争<span class="ev-year">1965〜75</span><span class="bad">戦争・危機</span></div><div class="ev-desc">アメリカは南ベトナム政府を支え、ソ連・中国は北ベトナムを援助した。戦費の増大と国内外の反戦運動で、アメリカの国際的な地位は低下した。</div></div>
-<div class="event bad-ev"><div class="ev-title">第1次石油危機<span class="ev-year">1973</span><span class="bad">戦争・危機</span></div><div class="ev-desc">第4次中東戦争の際、アラブ石油輸出国機構(OAPEC)がイスラエル支持国への石油輸出を制限し、石油輸出国機構(OPEC)が原油価格を引き上げた。先進国の経済は大きな打撃を受けた。これより先、ドル＝ショック(1971)の後の1973年に主要国は変動相場制に移り、ブレトン＝ウッズ体制は終わっていた。</div></div>
-<div class="side-note">デタントの時期にも、アメリカはベトナムで、ソ連はチェコスロヴァキアで武力を用いた。また中国の離反とフランスの独自外交により、米ソがそれぞれの陣営をまとめる力は弱まった。</div>
-</div>
-<div class="phase" id="ph4"><div class="phase-label">1979<br>〜<br>1985</div>
-<div class="ph-head"><span class="ph-title">「新冷戦」</span><span class="ph-sub">アフガニスタン侵攻でデタントが終わり、対立が再び激しくなる</span></div>
-<div class="camps">
-<div class="camp k-w"><div class="camp-h">西側 <span class="latin">Occidens</span></div>
-<div class="mem"><div class="mem-n">アメリカ<small>カーター→レーガン</small></div><div class="mem-d">カーター政権はソ連のアフガニスタン侵攻に抗議し、<b>モスクワ五輪(1980)をボイコット</b>した。日本・西ドイツなども同調した。レーガン政権(1981〜)はソ連に対して強硬な姿勢をとって軍備を拡張し、<b>戦略防衛構想(SDI, 1983)</b>を打ち出した。1983年からは西欧に中距離核ミサイルを配備した。</div></div>
-<div class="mem"><div class="mem-n">イギリス<small>サッチャー</small></div><div class="mem-d">1979年に首相となり、国営企業の民営化などの新自由主義的な改革を進めた。フォークランド戦争(1982)でアルゼンチンと戦った。外交ではレーガン政権と緊密に協力した。</div></div>
-</div>
-<div class="camp k-e"><div class="camp-h">東側 <span class="latin">Oriens</span></div>
-<div class="mem"><div class="mem-n">ソ連<small>ブレジネフ→アンドロポフ→チェルネンコ</small></div><div class="mem-d">1979年12月に<b>アフガニスタンへ侵攻</b>し、デタントは終わった。ブレジネフの死(1982)後、高齢の指導者が短期間で交代し、経済の停滞と軍事費の負担が続いた。この行きづまりが、1985年のゴルバチョフ登場の背景となった。</div></div>
-<div class="mem"><div class="mem-n">アフガニスタン<small>1979〜89</small></div><div class="mem-d">1978年に成立した親ソ政権を支えるため、ソ連軍が侵攻した。アメリカやパキスタンなどがイスラーム勢力のゲリラ(ムジャーヒディーン)を支援し、戦争は長期化した。ソ連軍は1989年に撤退を完了した。</div></div>
-<div class="mem"><div class="mem-n">ポーランド<small>ワレサ</small></div><div class="mem-d">1980年、ワレサを指導者とする自主管理労組<b>「連帯」</b>が結成された。社会主義国で初めての、政府から独立した労働組合だった。1981年にヤルゼルスキ政権が戒厳令をしいて「連帯」を非合法化したが、運動は続いた。</div></div>
-</div>
-</div>
-<div class="side-note">米ソの軍備拡張競争は、経済が停滞していたソ連にとって大きな負担となった。</div>
-</div>
-<div class="phase" id="ph5"><div class="phase-label">1985<br>〜<br>1991</div>
-<div class="ph-head"><span class="ph-title">冷戦の終結</span><span class="ph-sub">ゴルバチョフの改革→東欧革命→ソ連の解体</span></div>
-<div class="camps">
-<div class="camp k-w"><div class="camp-h">西側 <span class="latin">Occidens</span></div>
-<div class="mem"><div class="mem-n">アメリカ<small>レーガン→ブッシュ</small></div><div class="mem-d">ソ連と<b>中距離核戦力(INF)全廃条約(1987)</b>を結び、<b>マルタ会談(1989)</b>で冷戦の終結を宣言した。1991年の湾岸戦争では国連決議にもとづく多国籍軍を主導した。</div></div>
-</div>
-<div class="camp k-e"><div class="camp-h">東側 <span class="latin">Oriens</span></div>
-<div class="mem"><div class="mem-n">ソ連<small>ゴルバチョフ</small></div><div class="mem-d">1985年に共産党書記長となり、<b>ペレストロイカ(建て直し)</b>と<b>グラスノスチ(情報公開)</b>を進めた。チェルノブイリ原子力発電所事故(1986)は情報公開を進めるきっかけとなった。<b>「新思考外交」</b>をかかげてアメリカとの軍縮を進め、アフガニスタンから撤退した。1988年の新ベオグラード宣言で制限主権論を否定し、東欧諸国への内政干渉をやめた。1989年に訪中して中ソ関係を正常化した。</div></div>
-</div>
-</div>
-<div class="event org"><div class="ev-title">中距離核戦力(INF)全廃条約<span class="ev-year">1987</span><span class="ok">条約・合意</span></div><div class="ev-desc">レーガンとゴルバチョフが調印した。射程500〜5500kmの地上発射の中距離核ミサイルを全廃することを定め、特定の種類の核兵器を初めて全廃した条約となった(2019年に失効)。</div></div>
-<div class="sub-h">東欧革命 <span class="latin">1989</span></div>
-<ol class="chain"><li><span class="cd">1989.2〜8</span><span class="cn">ポーランド</span><div class="cx">政府と「連帯」の円卓会議を経て行われた選挙で「連帯」が圧勝し、8月に非共産党系のマゾヴィエツキ首相が選ばれた。</div></li><li><span class="cd">1989.5〜</span><span class="cn">ハンガリー</span><div class="cx">複数政党制への移行を進め、オーストリアとの国境の鉄条網を撤去した。この国境を通って多くの東ドイツ市民が西側へ脱出した。</div></li><li><span class="cd">1989.10〜11</span><span class="cn">東ドイツ</span><div class="cx">市民の大量出国とデモが続くなかで10月にホネッカーが退陣し、11月9日に<b>ベルリンの壁</b>が開放された。</div></li><li><span class="cd">1989.11〜12</span><span class="cn">チェコスロヴァキア</span><div class="cx">大規模なデモで共産党政権が退陣し、劇作家ハヴェルが大統領となった(<b>ビロード革命</b>)。1993年にチェコとスロヴァキアに分離した。</div></li><li class="red"><span class="cd">1989.12</span><span class="cn">ルーマニア</span><div class="cx">チャウシェスクの独裁政権が民衆の蜂起と軍の離反で倒れ、チャウシェスク夫妻は処刑された。東欧革命のなかで多くの死者が出た例である。</div></li></ol>
-<div class="sub-h">ソ連の解体</div>
-<ol class="chain"><li><span class="cd">1989.12</span><span class="cn">マルタ会談</span><div class="cx">ブッシュ大統領とゴルバチョフ書記長が地中海のマルタ島で会談し、冷戦の終結を宣言した。</div></li><li><span class="cd">1990.10</span><span class="cn">ドイツ統一</span><div class="cx">東西ドイツと米英仏ソの「2＋4条約」で国際的に承認され、東ドイツの諸州が西ドイツに編入される形で統一した。統一ドイツはNATOにとどまった。</div></li><li class="red"><span class="cd">1990〜91</span><span class="cn">バルト三国の独立</span><div class="cx">1940年にソ連に併合されたエストニア・ラトヴィア・リトアニアが、1990年3月のリトアニアを先頭に独立を宣言し、1991年9月にソ連も独立を承認した。</div></li><li class="red"><span class="cd">1991.6〜7</span><span class="cn">COMECON・ワルシャワ条約機構の解散</span><div class="cx">東側の経済協力機構と軍事同盟がともに解散した。</div></li><li class="red"><span class="cd">1991.8</span><span class="cn">保守派のクーデター</span><div class="cx">改革に反対する共産党保守派がゴルバチョフを軟禁したが、ロシア共和国大統領エリツィンと市民の抵抗で3日で失敗した。その後ソ連共産党は活動を停止し、各共和国の独立が進んだ。</div></li><li class="red"><span class="cd">1991.12</span><span class="cn">CISの結成とソ連の消滅</span><div class="cx">ロシア・ウクライナ・ベラルーシが独立国家共同体(CIS)の結成を宣言し、バルト三国とグルジア(ジョージア)を除く11カ国で発足した。12月25日にゴルバチョフが大統領を辞任し、ソ連は消滅した。</div></li></ol>
-<div class="side-note">ソ連解体の背景には、経済の停滞、軍事費の重い負担、改革による混乱、各共和国の民族運動があった。冷戦の終結により、アメリカが唯一の超大国となった。</div>
-</div>
+<div class="legend"><span><i class="c-w"></i>西側</span><span><i class="c-e"></i>東側</span><span><i class="c-n"></i>非同盟</span><span><i class="c-i"></i>どちらにも属さない(中国)</span><span><i class="c-ed"></i>破線：陣営内で対立・距離</span><span><i class="c-ew"></i>二色：途中で立場が変化</span><span><i class="c-x"></i>灰破線：体制転換・消滅</span></div>
+<ul class="fn"><li>※<b>ユーゴ</b>：ティトーの独自路線でコミンフォルム除名(1948)</li><li>※<b>中国</b>：珍宝島事件(1969)の後、米に接近</li><li>※<b>フランス</b>：ド＝ゴールがNATO軍事機構を脱退(1966)</li><li>※<b>キューバ</b>：革命(1959)の後、社会主義を宣言(1961)</li><li>※<b>エジプト</b>：サダトがソ連軍事顧問団を退去させた(1972)</li></ul>
+<div class="sec-hdr"><span class="sec-icon">Ⅱ</span><h2>時期ごとの主なできごと <span class="latin">Per Aetates</span></h2></div><p class="cap">点の色は関係する陣営(青＝西側、赤＝東側、緑＝非同盟、金＝東西の合意・接近)。朱字は戦争・危機。</p>
+<div class="tl-h"><span class="rn">Ⅰ</span>冷戦の形成<span class="yr">1945–55</span></div><ol class="tl"><li class="w"><span class="ty">1947</span><b>トルーマン＝ドクトリン</b>(封じ込め政策)</li><li class="w"><span class="ty">1947</span><b>マーシャル＝プラン</b>(西欧の復興援助)</li><li class="e"><span class="ty">1947</span>コミンフォルム、1949 COMECON</li><li class="war"><span class="ty">1948</span><b>ベルリン封鎖</b>→1949 東西ドイツ分立</li><li class="w"><span class="ty">1949</span><b>NATO</b>(北大西洋条約機構)結成</li><li class="war"><span class="ty">1950</span><b>朝鮮戦争</b>(〜53)。中国が北朝鮮を支援</li><li class="e"><span class="ty">1955</span><b>ワルシャワ条約機構</b>結成</li></ol>
+<div class="tl-h"><span class="rn">Ⅱ</span>「雪どけ」と危機<span class="yr">1955–62</span></div><ol class="tl"><li class="n"><span class="ty">1955</span><b>アジア＝アフリカ会議</b>(バンドン)</li><li class="e"><span class="ty">1956</span>フルシチョフが<b>スターリン批判</b>・平和共存</li><li class="n"><span class="ty">1961</span><b>第1回非同盟諸国首脳会議</b></li><li class="war"><span class="ty">1962</span><b>キューバ危機</b>→翌年ホットライン設置</li></ol>
+<div class="tl-h"><span class="rn">Ⅲ</span>デタント(緊張緩和)<span class="yr">1962–79</span></div><ol class="tl"><li class=""><span class="ty">1963</span><b>部分的核実験禁止条約</b>(米英ソ)</li><li class="w war"><span class="ty">1965</span><b>ベトナム戦争</b>本格化(〜75)</li><li class=""><span class="ty">1968</span><b>核拡散防止条約</b>(NPT)</li><li class=""><span class="ty">1972</span><b>ニクソン訪中</b>、SALT I調印</li><li class=""><span class="ty">1975</span><b>ヘルシンキ宣言</b>(全欧安保協力会議)</li></ol>
+<div class="tl-h"><span class="rn">Ⅳ</span>「新冷戦」<span class="yr">1979–85</span></div><ol class="tl"><li class="e war"><span class="ty">1979</span>ソ連の<b>アフガニスタン侵攻</b></li><li class="w"><span class="ty">1980</span>西側がモスクワ五輪をボイコット</li><li class="w"><span class="ty">1983</span>レーガン政権が<b>SDI</b>構想を発表</li></ol>
+<div class="tl-h"><span class="rn">Ⅴ</span>冷戦の終結<span class="yr">1985–91</span></div><ol class="tl"><li class="e"><span class="ty">1985</span>ゴルバチョフが書記長に→<b>ペレストロイカ</b></li><li class=""><span class="ty">1987</span><b>INF全廃条約</b></li><li class="e"><span class="ty">1989</span><b>東欧革命</b>、ベルリンの壁開放</li><li class=""><span class="ty">1989</span><b>マルタ会談</b>で冷戦の終結を宣言</li><li class="e"><span class="ty">1991</span>ワルシャワ条約機構解散、<b>ソ連消滅</b></li></ol>
+<div class="sec-hdr"><span class="sec-icon">Ⅲ</span><h2>要点 <span class="latin">Summarium</span></h2></div>
+<div class="kp"><p>❶ 5期：<b>形成→雪どけ→デタント→新冷戦→終結</b></p><p>❷ <b>NATO(1949)</b> 対 <b>ワルシャワ条約機構(1955)</b></p><p>❸ 東側の分裂：<b>中ソ対立</b>→<b>米中接近(1972)</b></p><p>❹ 第三世界：<b>バンドン会議(1955)</b>・<b>非同盟諸国首脳会議(1961)</b></p><p>❺ <b>マルタ会談(1989)</b>で冷戦終結、<b>1991</b>年ソ連解体</p></div>
 </main>
 <script src="search_jump.js" defer></script></body></html>

@@ -1,41 +1,183 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>ロシア皇帝の系譜 ― リューリクからニコライ2世まで(862-1917)</title><style>@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
-:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048;--border:rgba(var(--axr),.08)}
+<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ロシア皇帝の系譜 ― リューリクからニコライ2世まで(862-1917)</title>
+<style>@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+:root{--bg:#f1ecdf;--gold:#8b6f4e;--gold2:#59452a;--text:#2b241b;--text2:#6d6353;--text3:#a89a80;--axr:139,111,78;--shu:#a2331e}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
-body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
-.hdr{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
-.hdr h1{font-family:'Noto Serif JP',serif;font-size:15px;font-weight:700;color:var(--gold2)}
-.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5;transition:opacity .2s}.hdr a:hover{opacity:1}
-.wrap{padding:20px 16px 10px;overflow-x:auto}
-.tree{display:flex;flex-direction:column;align-items:center;min-width:600px;gap:0}
-@media(max-width:650px){.tree{min-width:0;width:100%}.row{flex-wrap:wrap;justify-content:center}}
-.nd{position:relative;text-align:center;cursor:pointer;transition:transform .15s}.nd:hover{transform:translateY(-1px)}
-.nb{border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:7px 12px;background:rgba(255,255,255,.02);transition:all .2s;border-left:3px solid rgba(91,100,138,.4)}
-.nd:hover .nb{border-color:rgba(var(--axr),.3);background:rgba(var(--axr),.04)}
-.nn{font-family:'Noto Serif JP',serif;font-size:11px;font-weight:700;color:var(--gold2);white-space:nowrap}
-.ni{font-size:7.5px;color:var(--text2);margin-top:1px;white-space:nowrap}
-.ntag{font-size:7px;font-weight:600;letter-spacing:.06em;margin-top:2px;padding:1px 6px;border-radius:100px;display:inline-block;background:rgba(91,100,138,.2);color:#a0acd4}
-.peak .nb{border-color:rgba(var(--axr),.35);background:rgba(var(--axr),.06);padding:9px 14px}
-.peak .nn{font-size:14px;background:linear-gradient(135deg,#c9a96e,#e8c888,#c9a96e);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-/* LUX: gradient name was illegible on the paper background */
-html[data-theme="lux"] .peak .nn{background:none;-webkit-background-clip:border-box;background-clip:border-box;-webkit-text-fill-color:currentColor;color:var(--gold2)}
-.end .nb{border-color:rgba(140,60,60,.3);background:rgba(140,60,60,.04)}
-.era{opacity:.55}
-.era .nb{border-left:3px solid rgba(100,100,100,.3)}
-.era .nn{font-size:10px}
-.cv{width:1px;height:14px;background:rgba(var(--axr),.15);margin:0 auto}.cv.l{height:20px}
-.inherit{font-size:7px;color:var(--text3);text-align:center;margin:2px 0;font-style:italic}.inherit strong{color:var(--gold);font-style:normal}
-.why-box{border:1px dashed rgba(var(--axr),.15);border-radius:6px;padding:5px 10px;margin:4px 0;max-width:380px}
-.why-box p{font-size:7.5px;color:var(--gold);line-height:1.5;text-align:center}
-.tp{display:none}
-.row{display:flex;gap:20px;align-items:flex-start;justify-content:center;flex-wrap:wrap}
-.branch{display:flex;flex-direction:column;align-items:center;gap:0;min-width:180px}
-.branch-label{font-family:'Noto Serif JP',serif;font-size:11px;font-weight:700;color:var(--gold);margin-bottom:8px;padding:3px 10px;border:1px solid rgba(var(--axr),.25);border-radius:4px;background:rgba(var(--axr),.04)}
-.note{text-align:center;padding:6px 20px 32px;font-size:9px;color:var(--text3);line-height:1.8;max-width:800px;margin:0 auto}.note strong{color:var(--gold)}
-@media(max-width:600px){.hdr{padding:10px 12px}.hdr h1{font-size:12px}.note p{font-size:8px}.row{flex-direction:column;gap:6px}}
+.hdr{padding:16px 20px;border-bottom:1px solid rgba(var(--axr),.12);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.hdr h1{font-family:'Noto Serif JP',serif;font-size:20px;font-weight:700;color:var(--gold2)}
+.hdr a{font-size:14px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
+main{max-width:760px;margin:0 auto;padding:24px 20px 60px}
+.lead{font-size:15px;line-height:2}
+.lead b{color:var(--gold2)}
+.sec-hdr{display:flex;align-items:center;gap:10px;padding:10px 0;margin:34px 0 4px;border-bottom:1px solid rgba(var(--axr),.15)}
+.sec-icon{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:700;color:var(--gold);opacity:.75}
+.sec-hdr h2{font-family:'Noto Serif JP',serif;font-size:18px;font-weight:700;color:var(--gold2)}
+.latin{font-family:'Cormorant Garamond',serif;font-size:13px;font-weight:400;font-style:italic;color:var(--gold);margin-left:10px;letter-spacing:1px;opacity:.75}
+.cap{font-size:13px;color:var(--text2);margin:8px 0 14px;line-height:1.8}
+.x{color:var(--shu)}
+/* I lineage */
+.lin-row{display:flex;justify-content:center;gap:8px}
+.box{flex:1;max-width:220px;border:1px solid rgba(var(--axr),.3);border-radius:10px;background:rgba(var(--axr),.05);padding:8px 8px 7px;text-align:center;line-height:1.35}
+.box b{display:block;font-family:'Noto Serif JP',serif;font-size:17px;color:var(--gold2)}
+.box .by{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:15px;color:var(--gold)}
+.box small{display:block;font-size:12px;color:var(--text2);margin-top:2px}
+.box.big{max-width:420px}.box.big b{font-size:21px}
+.box.eu{border-color:rgba(var(--axr),.55);background:rgba(var(--axr),.09);box-shadow:0 0 0 3px rgba(var(--axr),.06)}
+.box .note2{border-top:1px solid rgba(var(--axr),.15);margin-top:6px;padding-top:5px}
+.merge,.down{position:relative;text-align:center;padding:10px 0 13px}
+.merge::before,.down::before{content:'';position:absolute;left:50%;top:0;bottom:0;border-left:1.5px solid rgba(var(--axr),.45)}
+.merge::after,.down::after{content:'';position:absolute;left:calc(50% - 5px);bottom:-1px;border:5px solid transparent;border-top:7px solid rgba(var(--axr),.6);border-bottom:0}
+.merge span,.down span{position:relative;background:var(--bg);font-size:12.5px;color:var(--gold);padding:0 8px}
+.merge span b,.down span b{font-family:'Cormorant Garamond',serif;font-size:14px}
+.three{position:relative;padding-bottom:10px}
+.three::after{content:'';position:absolute;left:16%;right:16%;bottom:0;border-bottom:1.5px solid rgba(var(--axr),.45)}
+.three .box{position:relative}
+.three .box::after{content:'';position:absolute;left:50%;bottom:-12px;height:10px;border-left:1.5px solid rgba(var(--axr),.45)}
+.side-h{margin:22px 0 6px;font-size:12px;color:var(--gold);font-family:'Cormorant Garamond',serif;font-style:italic;letter-spacing:1px}
+.side{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.sbox{border:1px solid rgba(var(--axr),.18);border-radius:8px;background:rgba(var(--axr),.03);padding:7px 10px;font-size:13px;line-height:1.5;color:var(--gold2)}
+.sbox b{font-family:'Noto Serif JP',serif}
+.sbox small{display:block;font-size:12px;color:var(--text2);margin-top:3px;line-height:1.65}
+.sbox.dash{border-style:dashed}
+/* II deepening x widening */
+.dw{border:1px solid rgba(var(--axr),.15);border-radius:10px;overflow:hidden;background:rgba(var(--axr),.02)}
+.dw-h,.dw-r{display:grid;grid-template-columns:48px 1fr 1fr;column-gap:10px;padding-left:10px;padding-right:10px}
+.dw-h{font-family:'Noto Serif JP',serif;font-size:13px;font-weight:700;color:var(--gold2);padding-top:8px;padding-bottom:8px;background:rgba(var(--axr),.07)}
+.dw-h span small{display:block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;color:var(--gold);font-size:11.5px;letter-spacing:1px}
+.dw-r{padding-top:6px;padding-bottom:6px;border-top:1px solid rgba(var(--axr),.08);font-size:13.5px;line-height:1.6;align-items:start}
+.dw-r:nth-child(odd){background:rgba(var(--axr),.025)}
+.dw-r .y{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:16px;color:var(--gold);line-height:1.4}
+.dw-r .d{border-right:1px solid rgba(var(--axr),.12);padding-right:10px}
+.cnt{display:flex;align-items:center;gap:6px;margin-top:4px}
+.cnt i{display:block;height:6px;border-radius:3px;background:rgba(var(--axr),.45);max-width:calc(100% - 28px)}
+.cnt b{font-size:13px;font-family:'Cormorant Garamond',serif;color:var(--gold2)}
+/* III UK */
+.uk{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;counter-reset:u}
+.uk li{position:relative;border:1px solid rgba(var(--axr),.15);border-radius:8px;background:rgba(var(--axr),.04);padding:6px 10px 7px 32px;font-size:13.5px;line-height:1.55;counter-increment:u}
+.uk li::before{content:counter(u,upper-roman);position:absolute;left:9px;top:7px;font-family:'Cormorant Garamond',serif;font-weight:700;font-size:13px;color:var(--gold);opacity:.7}
+.uk li .y{display:block;font-family:'Cormorant Garamond',serif;font-weight:700;color:var(--gold);font-size:15px}
+.uk li.ux{border-color:rgba(162,51,30,.35);background:rgba(162,51,30,.04)}.uk li.ux .y{color:var(--shu)}
+/* summary */
+.kp{background:rgba(var(--axr),.04);border:1px solid rgba(var(--axr),.12);border-radius:10px;padding:14px 18px}
+.kp p{font-size:13.5px;line-height:1.9;margin:2px 0}
+.kp b{color:var(--gold2)}
+/* IV per-phase (flow_ style) */
+.toc{display:flex;flex-wrap:wrap;gap:4px 14px;margin:4px 0 14px}
+.toc a{font-size:12.5px;color:var(--text2);text-decoration:none}
+.toc a span{font-family:'Cormorant Garamond',serif;font-weight:700;color:var(--gold);margin-right:5px}
+.toc a:hover{color:var(--gold2)}
+.phase{position:relative;padding:14px 4px 14px 22px;border-left:2px solid rgba(var(--axr),.15);margin-left:46px;scroll-margin-top:8px}
+.phase:last-child{border-left-color:transparent}
+.phase::before{content:'';position:absolute;left:-6px;top:20px;width:8px;height:8px;border-radius:50%;background:var(--bg);border:2px solid rgba(var(--axr),.45)}
+.phase-label{position:absolute;left:-50px;top:15px;width:40px;font-family:'Cormorant Garamond',serif;font-size:13px;font-weight:700;color:var(--gold);text-align:right;line-height:1.25}
+.ph-head{margin-bottom:8px}
+.ph-title{display:block;font-family:'Noto Serif JP',serif;font-size:17px;font-weight:700;color:var(--gold2)}
+.ph-sub{display:block;font-size:12.5px;color:var(--text2);margin-top:1px}
+.event{background:rgba(var(--axr),.03);border:1px solid rgba(var(--axr),.1);border-radius:8px;padding:8px 12px;margin-bottom:8px}
+.event.org{background:rgba(var(--axr),.07);border-color:rgba(var(--axr),.22)}
+.event.bad-ev{background:rgba(162,51,30,.035);border-color:rgba(162,51,30,.22)}
+.ev-title{font-family:'Noto Serif JP',serif;font-size:15px;font-weight:700;color:var(--gold2);display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 10px}
+.bad-ev .ev-title{color:var(--shu)}
+.orgname{font-size:16px}
+.ev-year{font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:700;color:var(--gold)}
+.org-sub{font-size:12px;color:var(--text2)}
+.bad{font-family:'Noto Sans JP',sans-serif;font-size:10.5px;font-weight:400;color:var(--shu);border:1px solid rgba(162,51,30,.4);border-radius:4px;padding:0 6px}
+.ev-desc{font-size:14px;color:var(--text);line-height:1.8;margin-top:3px}
+.ev-desc b{color:var(--gold2)}
+.side-note{font-size:13px;color:var(--text2);line-height:1.8;padding:6px 10px;border-left:2px solid rgba(var(--axr),.25);margin:4px 0 8px}
+.side-note b,.side-note strong{color:var(--gold2)}
+.out{color:var(--shu)}
+@media(max-width:600px){
+.hdr{padding:12px 14px}.hdr h1{font-size:16px}
+main{padding:16px 14px 60px}
+.lead{font-size:14px}
+.sec-hdr h2{font-size:16px}.latin{font-size:12px;margin-left:6px}
+.box b{font-size:15px}.box small{font-size:11px}.box{padding:6px 4px}
+.box.big b{font-size:18px}
+.merge span,.down span{font-size:11.5px}
+.side{grid-template-columns:1fr}
+.dw-h,.dw-r{grid-template-columns:36px 1fr 1fr;column-gap:7px;padding-left:7px;padding-right:7px}
+.dw-r{font-size:12.5px}.dw-r .y{font-size:14px}.dw-r .d{padding-right:7px}
+.uk{grid-template-columns:1fr 1fr}.uk li{font-size:12.5px}
+.kp{padding:12px 14px}.kp p{font-size:12.5px}
+.phase{margin-left:38px;padding-left:16px}.phase-label{left:-42px;width:34px;font-size:12px}
+.ph-title{font-size:15.5px}
+.ev-title{font-size:14px}.orgname{font-size:15px}.ev-desc{font-size:13px}
+.side-note{font-size:12.5px}
+}
+
+/* ---- genealogy figures (2026-11-28) ---- */
+.lead{margin-top:2px}
+.gt{margin:6px 0 4px}
+.gkey{display:flex;flex-wrap:wrap;gap:2px 14px;font-size:12px;color:var(--text2);line-height:1.7;margin:2px 2px 10px}
+.gkey b{font-family:'Cormorant Garamond',serif;color:var(--gold);font-size:14px}
+.gn{border:1px solid rgba(var(--axr),.22);border-radius:9px;background:rgba(var(--axr),.035);padding:4px 10px 5px;line-height:1.5}
+.gn-h{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 7px}
+.gn-no{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:15px;color:var(--gold);min-width:1.2em}
+.gn-rel{font-size:11px;color:var(--gold2);border:1px solid rgba(var(--axr),.35);border-radius:999px;padding:0 6px;line-height:1.55;align-self:center;white-space:nowrap;background:var(--bg)}
+.gn-nm{font-family:'Noto Serif JP',serif;font-size:15px;font-weight:700;color:var(--text)}
+.gn-yr{font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:700;color:var(--gold);white-space:nowrap}
+.gn-n{font-size:13px;color:var(--text);line-height:1.6}
+.gn-n b{color:var(--gold2)}
+.gn.key{border-color:rgba(var(--axr),.5);background:rgba(var(--axr),.085)}
+.gn.key .gn-nm{color:var(--gold2)}
+.gn.min{padding:2px 10px 3px;background:transparent;border-color:rgba(var(--axr),.17)}
+.gn.min .gn-nm{font-size:14px}
+.gn.end{border-color:rgba(162,51,30,.4);background:rgba(162,51,30,.045)}
+.gn.end .gn-nm{color:#7a2b1c}
+.gn.ext{border-style:dashed;background:transparent}
+.gn.st{border-color:rgba(var(--axr),.3);background:rgba(var(--axr),.05)}
+.gn.st .gn-nm{font-size:14px;color:var(--gold2)}
+.gn.t1{border-left:4px solid rgba(60,110,70,.5)}
+.gn.t2{border-left:4px solid rgba(100,70,130,.45)}
+.gn.t3{border-left:4px solid rgba(150,110,40,.5)}
+.gn.t4{border-left:4px solid rgba(52,86,140,.5)}
+.gn.t5{border-left:4px solid rgba(162,51,30,.45)}
+.gl{height:11px;margin-left:20px;border-left:1.5px solid rgba(var(--axr),.45)}
+.gl.d{border-left-style:dashed}
+.gl.t{height:auto;padding:1px 0 1px 10px;font-size:12px;color:var(--text2);line-height:1.55}
+.gl.t b{color:var(--gold2);font-weight:600}
+.gbrk{border:1px dashed rgba(162,51,30,.45);background:rgba(162,51,30,.04);border-radius:8px;padding:3px 10px 4px;font-size:13px;line-height:1.6;color:var(--text)}
+.gbrk b{font-family:'Noto Serif JP',serif;color:var(--shu)}
+.gbrk .y{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:15px;color:var(--shu);margin:0 6px 0 4px}
+.gera{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 8px;margin:16px 0 6px;padding-bottom:3px;border-bottom:1px solid rgba(var(--axr),.14);font-family:'Noto Serif JP',serif;font-size:13.5px;font-weight:700;color:var(--gold2)}
+.gera:first-child{margin-top:2px}
+.gera .y{font-family:'Cormorant Garamond',serif;font-size:14.5px;color:var(--gold)}
+.gera i{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:13px;color:var(--gold);opacity:.8;letter-spacing:.5px}
+.gera a{margin-left:auto;font-family:'Noto Sans JP',sans-serif;font-weight:400;font-size:12px;color:var(--gold);text-decoration:none}
+.kids{margin-left:20px;padding-left:14px}
+.kid{position:relative;padding-top:6px}
+.kid::before{content:'';position:absolute;left:-14px;top:0;bottom:0;border-left:1.5px solid rgba(var(--axr),.45)}
+.kid:last-child::before{bottom:auto;height:20px}
+.kid::after{content:'';position:absolute;left:-14px;top:20px;width:13px;border-top:1.5px solid rgba(var(--axr),.45)}
+.kid.d::before{border-left-style:dashed}.kid.d::after{border-top-style:dashed}
+.sp{display:flex;align-items:center;gap:6px;margin:3px 0 0 12px}
+.sp>.gn{flex:1 1 auto;min-width:0}
+.sp .eq{font-family:'Noto Serif JP',serif;font-size:17px;font-weight:700;color:var(--gold);line-height:1}
+.bgrid{display:grid;grid-template-columns:var(--cols,repeat(2,minmax(0,1fr)));gap:10px}
+.bcol{border:1px solid rgba(var(--axr),.13);border-radius:11px;background:rgba(var(--axr),.02);padding:7px 8px 9px;min-width:0}
+.bcol.span{grid-column:1/-1}
+.bcol-h{font-family:'Noto Serif JP',serif;font-size:13.5px;font-weight:700;color:var(--gold2);margin:0 0 5px 2px;line-height:1.45}
+.bcol-h small{font-family:'Noto Sans JP',sans-serif;font-weight:400;font-size:12px;color:var(--text2);margin-left:6px}
+.bsub{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.gfn{font-size:12.5px;color:var(--text2);line-height:1.75;margin:8px 2px 0}
+@media(max-width:700px){
+.bgrid,.bsub{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+.kp p{font-size:13px}
+.gn{padding:4px 8px 5px}.gn.min{padding:2px 8px 3px}
+.gn-nm{font-size:14.5px}.gn.min .gn-nm{font-size:14px}
+.gn-yr{font-size:14px}.gn-n{font-size:13px}
+.gl.t{font-size:12px}
+.gkey{font-size:12px}
+.bcol{padding:6px 6px 8px}
+.kids{margin-left:14px;padding-left:12px}
+.kid::before,.kid::after{left:-12px}.kid::after{width:11px}
+.gl{margin-left:14px}
+.gfn{font-size:12.5px}
+}
 </style><style id="thThemes">/* =====================================================
    THESAURUS HISTORIAE ― themes.css(LUX固定版)
    生成りの紙 + 墨の本文 + 朱筆(★語) + 金茶の構造色。
@@ -83,81 +225,12 @@ html[data-theme="lux"] .arrow-text,
 html[data-theme="lux"] .detail { color:var(--text2); }
 </style><script id="thScript">document.documentElement.setAttribute('data-theme','lux');</script></head>
 <body>
-<div class="hdr"><h1>ロシア皇帝の系譜 ― リューリクからニコライ2世まで(862-1917)</h1><a href="charts.html">&larr; Ad Chartae</a></div>
-
-<div class="wrap">
-<div class="tree">
-
-<div class="nd era"><div class="nb"><div class="nn">ノルマン人(ヴァリャーグ)の移住→東スラヴ世界に国家形成</div></div></div>
-<div class="cv l"></div>
-<div class="nd"><div class="nb"><div class="nn">リューリク</div><div class="ni">位 862-879｜ノヴゴロド公</div><div class="ntag">リューリク朝開始</div></div><div class="tp"><p>ノルマン人(ヴァリャーグ)の族長。東スラヴ人の招請で862年ノヴゴロドに入城=<strong>リューリク朝</strong>開始=以後東スラヴ世界の王朝となる。</p></div></div>
-<div class="cv"></div>
-<div class="nd"><div class="nb"><div class="nn">オレーグ</div><div class="ni">位 879-912｜キエフ大公国建国</div><div class="ntag">キエフ遷都(882)</div></div><div class="tp"><p>リューリクの親族。882年キエフ占領→<strong>キエフ大公国(キエフ=ルーシ)</strong>建国。ビザンツ帝国との交易で繁栄。</p></div></div>
-<div class="cv"></div>
-<div class="nd peak"><div class="nb"><div class="nn">ウラジーミル1世(聖公)</div><div class="ni">位 980-1015｜キエフ大公</div><div class="ntag">ギリシア正教改宗(988)</div></div><div class="tp"><p>★<strong>988年ギリシア正教に改宗</strong>=ビザンツ皇帝バシレイオス2世の妹アンナと結婚→ロシアのキリスト教化・文字(キリル文字)普及=ロシア文化の決定的な基礎。</p></div></div>
-<div class="cv"></div>
-<div class="nd"><div class="nb"><div class="nn">ヤロスラフ(賢公)</div><div class="ni">位 1019-1054｜キエフ大公</div><div style="display:flex;gap:3px;justify-content:center;flex-wrap:wrap;margin-top:2px"><span class="ntag">ルースカヤ=プラウダ(法典)</span><span class="ntag">キエフ最盛期</span></div></div><div class="tp"><p>『<strong>ルースカヤ=プラウダ</strong>』=ロシア最古の成文法。聖ソフィア大聖堂建設。諸国と婚姻外交。キエフ大公国の最盛期。</p></div></div>
-<div class="cv"></div>
-<div class="inherit">↓ (11-13世紀、諸公分裂期)</div>
-<div class="cv"></div>
-<div class="why-box"><p><strong>モンゴルの襲来</strong>(1237-40)<br>バトゥのモンゴル軍がキエフ陥落(1240)<br>以後240年の<strong>「タタールのくびき」</strong></p></div>
-<div class="cv"></div>
-<div class="nd"><div class="nb"><div class="nn">アレクサンドル=ネフスキー</div><div class="ni">位 1252-1263｜ウラジーミル大公</div><div style="display:flex;gap:3px;justify-content:center;flex-wrap:wrap;margin-top:2px"><span class="ntag">ネヴァ川の戦い</span><span class="ntag">バルト十字軍撃退</span></div></div><div class="tp"><p>1240年<strong>ネヴァ川の戦い</strong>でスウェーデン軍撃破・1242年<strong>氷上の戦い</strong>でドイツ騎士団撃破=西方十字軍の侵入を阻止。モンゴルには臣従。ロシア民族英雄。</p></div></div>
-<div class="cv"></div>
-<div class="nd"><div class="nb"><div class="nn">イヴァン1世(カリター=金袋)</div><div class="ni">位 1325-1340｜モスクワ大公</div><div class="ntag">モスクワ台頭</div></div><div class="tp"><p>モンゴルのためにロシア諸公から貢納を徴収→巨富を蓄え「金袋(カリター)」のあだ名=モスクワ大公国の経済的飛躍。</p></div></div>
-<div class="cv"></div>
-<div class="nd peak"><div class="nb"><div class="nn">イヴァン3世(大帝)</div><div class="ni">位 1462-1505｜モスクワ大公</div><div style="display:flex;gap:3px;justify-content:center;flex-wrap:wrap;margin-top:2px"><span class="ntag">タタールのくびき脱却</span><span class="ntag">第3のローマ</span></div></div><div class="tp"><p>★<strong>1480年ウグラ川の対峙</strong>でモンゴル軍と戦わずに撤退させ<strong>タタールのくびきを脱却</strong>。ビザンツ最後の皇帝コンスタンティノス11世の姪ソフィアと結婚=ビザンツ双頭の鷲紋章を採用=「★<strong>第3のローマ</strong>」思想=ロシア独自のキリスト教帝国観。ノヴゴロド併合等で領土拡大。</p></div></div>
-<div class="cv"></div>
-<div class="nd peak"><div class="nb"><div class="nn">イヴァン4世(雷帝)</div><div class="ni">位 1533-1584｜最初の「ツァーリ」</div><div style="display:flex;gap:3px;justify-content:center;flex-wrap:wrap;margin-top:2px"><span class="ntag">ツァーリ称号(1547)</span><span class="ntag">オプリーチニナ</span></div></div><div class="tp"><p>★<strong>1547年ツァーリ(皇帝)</strong>を正式に称号=ロシア帝政の始まり。★<strong>1549年ゼムスキー=ソボル(全国会議)</strong>創設=諸身分代表。カザン=ハン国(1552)・アストラハン=ハン国(1556)併合=ヴォルガ・ウラル進出。★<strong>オプリーチニナ</strong>(親衛領)=ボヤーレ(貴族)弾圧=恐怖政治の原点=「雷帝(グローズヌィ)」の名の由来。★<strong>イェルマーク</strong>がシベリア遠征=ロシアのシベリア植民地化開始。リヴォニア戦争(1558-83)でバルト海進出失敗。</p></div></div>
-<div class="cv"></div>
-<div class="inherit">↓フョードル1世(1584-98)</div>
-<div class="cv"></div>
-<div class="nd end"><div class="nb"><div class="nn">動乱時代(スムータ)</div><div class="ni">1598-1613</div><div style="display:flex;gap:3px;justify-content:center;flex-wrap:wrap;margin-top:2px"><span class="ntag">リューリク朝断絶</span><span class="ntag">偽ドミトリー</span><span class="ntag">ポーランド介入</span></div></div><div class="tp"><p>フョードル1世死後にリューリク朝断絶→偽ドミトリーの乱・ポーランド軍モスクワ占領・飢饉・農民反乱(ボロトニコフの乱)=ロシア史上最悪の混乱期。1613年ゼムスキー=ソボルで<strong>ミハイル=ロマノフ</strong>をツァーリに選出=ロマノフ朝開始。</p></div></div>
-<div class="cv l"></div>
-<div class="nd"><div class="nb"><div class="nn">ミハイル=ロマノフ</div><div class="ni">位 1613-1645｜ロマノフ朝初代</div><div class="ntag">ロマノフ朝開始</div></div><div class="tp"><p>16歳で即位。父フィラレート(総主教)が摂政。動乱時代の混乱を収拾。</p></div></div>
-<div class="cv"></div>
-<div class="nd"><div class="nb"><div class="nn">アレクセイ</div><div class="ni">位 1645-1676｜ロマノフ朝2代</div><div style="display:flex;gap:3px;justify-content:center;flex-wrap:wrap;margin-top:2px"><span class="ntag">ウクライナ併合</span><span class="ntag">ラージンの乱</span></div></div><div class="tp"><p>1654年ウクライナ併合(ボフダン=フメリニツキーの蜂起)=以後の対ポーランド戦争で左岸ウクライナ獲得(1667年アンドルソヴォ条約)。<strong>ステンカ=ラージンの反乱</strong>(1670-71)。教会改革(ニーコン総主教、古儀式派との分裂)。</p></div></div>
-<div class="cv"></div>
-<div class="nd peak"><div class="nb"><div class="nn">ピョートル1世(大帝)</div><div class="ni">位 1682-1725｜ロマノフ朝4代</div><div style="display:flex;gap:3px;justify-content:center;flex-wrap:wrap;margin-top:2px"><span class="ntag">西欧化改革</span><span class="ntag">北方戦争</span><span class="ntag">サンクトペテルブルク</span></div></div><div class="tp"><p>ロシアの「近代化の父」。西欧に使節団派遣(自ら大工として造船技術を学ぶ)。<strong>北方戦争</strong>(1700-21)でスウェーデンの<strong>カール12世</strong>撃破→バルト海の制海権獲得(ニスタット条約1721)。<strong>サンクトペテルブルク</strong>建設・遷都(1712)=「ヨーロッパへの窓」。貴族にひげを剃らせ西洋服を強制。聖務会院設置で教会を国家管理下に。元老院・12省庁・県制度。1721年<strong>インペラートル(皇帝)</strong>を正式称号=ロシア帝国に。</p></div></div>
-<div class="cv"></div>
-<div class="why-box"><p><strong>宮廷革命の時代</strong>(1725-1762)<br>近衛連隊のクーデタで皇帝が次々交代</p></div>
-<div class="cv"></div>
-<div class="nd"><div class="nb"><div class="nn">エリザヴェータ</div><div class="ni">位 1741-1762｜ピョートル大帝の娘</div><div class="ntag">七年戦争参戦</div></div><div class="tp"><p>七年戦争(1756-63)でオーストリア・フランス側に参戦=ベルリンを一時占領=プロイセンのフリードリヒ2世を追い詰める→1762年急死→甥ピョートル3世が即位してすぐ撤退(「<strong>ブランデンブルクの奇跡</strong>」)。</p></div></div>
-<div class="cv"></div>
-<div class="nd peak"><div class="nb"><div class="nn">エカチェリーナ2世(大帝)</div><div class="ni">位 1762-1796｜ロマノフ朝7代</div><div style="display:flex;gap:3px;justify-content:center;flex-wrap:wrap;margin-top:2px"><span class="ntag">啓蒙専制</span><span class="ntag">ポーランド分割</span><span class="ntag">南下政策</span></div></div><div class="tp"><p>ドイツ出身の夫ピョートル3世を廃位して即位(ドイツ出身のツァーリ)。ヴォルテール・ディドロと文通する<strong>啓蒙専制君主</strong>=ただし<strong>プガチョフの反乱</strong>(1773-75)鎮圧後は<strong>農奴制を強化</strong>。<strong>露土戦争</strong>(1768-74キュチュク=カイナルジ条約)でクリミアを獲得=黒海への出口。<strong>ポーランド分割</strong>(1772・1793・1795)でプロイセン・オーストリアとともにポーランド消滅。日本に<strong>ラクスマン</strong>派遣(1792、大黒屋光太夫送還)。</p></div></div>
-<div class="cv"></div>
-<div class="nd"><div class="nb"><div class="nn">パーヴェル1世</div><div class="ni">位 1796-1801｜ロマノフ朝8代</div></div><div class="tp"><p>エカチェリーナ2世とピョートル3世の子。母に冷遇され、即位後は反エカチェリーナ政策→貴族特権制限→1801年宮廷クーデタで暗殺。</p></div></div>
-<div class="cv"></div>
-<div class="nd peak"><div class="nb"><div class="nn">アレクサンドル1世</div><div class="ni">位 1801-1825｜ロマノフ朝9代</div><div style="display:flex;gap:3px;justify-content:center;flex-wrap:wrap;margin-top:2px"><span class="ntag">ナポレオン戦争勝利</span><span class="ntag">神聖同盟</span><span class="ntag">ウィーン体制</span></div></div><div class="tp"><p>★<strong>1812年ナポレオンのロシア遠征</strong>を撃退=冬将軍で仏軍壊滅→対仏反撃→1814年パリ占領→<strong>ウィーン会議</strong>(1814-15)の主役の1人=<strong>神聖同盟</strong>(1815、宗教的連帯)+<strong>四国同盟</strong>の主導者=「ヨーロッパの救世主」と呼ばれる。晩年はメッテルニヒと同調する反動政策。</p></div></div>
-<div class="cv"></div>
-<div class="nd"><div class="nb"><div class="nn">ニコライ1世</div><div class="ni">位 1825-1855｜ロマノフ朝10代</div><div style="display:flex;gap:3px;justify-content:center;flex-wrap:wrap;margin-top:2px"><span class="ntag">デカブリストの乱鎮圧</span><span class="ntag">クリミア戦争敗北</span></div></div><div class="tp"><p>兄の死後即位直後に★<strong>デカブリストの乱</strong>(1825年12月14日、西欧的な立憲改革を求める青年士官)を鎮圧=反動体制の確立。<strong>ヨーロッパの憲兵</strong>と呼ばれる保守主義。1848年革命ではハンガリーの独立運動鎮圧でオーストリア支援。★<strong>クリミア戦争</strong>(1853-56)=黒海南下政策→英仏トルコに敗北=ロシア後進性の露呈・ニコライの死因と言われる。</p></div></div>
-<div class="cv"></div>
-<div class="nd"><div class="nb"><div class="nn">アレクサンドル2世</div><div class="ni">位 1855-1881｜ロマノフ朝11代</div><div style="display:flex;gap:3px;justify-content:center;flex-wrap:wrap;margin-top:2px"><span class="ntag">農奴解放令</span><span class="ntag">ポーランド反乱</span><span class="ntag">暗殺</span></div></div><div class="tp"><p>★<strong>1861年農奴解放令</strong>=ロシア近代化の画期=しかし農民に与えた土地は少なく地主への買戻金を負わせる=中途半端な改革。1863年<strong>ポーランド1月蜂起</strong>鎮圧。1877-78年<strong>露土戦争</strong>でサン=ステファノ条約(後ベルリン条約で制限)=バルカン南下の試み。1881年<strong>ナロードナヤ=ヴォーリャ(人民の意志)</strong>の爆弾テロで暗殺=改革派皇帝の最期。</p></div></div>
-<div class="cv"></div>
-<div class="nd"><div class="nb"><div class="nn">アレクサンドル3世</div><div class="ni">位 1881-1894｜ロマノフ朝12代</div><div style="display:flex;gap:3px;justify-content:center;flex-wrap:wrap;margin-top:2px"><span class="ntag">反動政治</span><span class="ntag">露仏同盟</span></div></div><div class="tp"><p>父の暗殺に衝撃を受け反動政治=ロシア化政策(ユダヤ人迫害・ポーランド化)・反ドイツ外交で<strong>露仏同盟</strong>(1891-94)=独仏分断の第一歩=後の三国協商の基礎。</p></div></div>
-<div class="cv"></div>
-<div class="nd end"><div class="nb"><div class="nn">ニコライ2世</div><div class="ni">位 1894-1917｜ロマノフ朝最後</div><div style="display:flex;gap:3px;justify-content:center;flex-wrap:wrap;margin-top:2px"><span class="ntag">日露戦争</span><span class="ntag">1905年革命</span><span class="ntag">第一次大戦</span><span class="ntag">処刑</span></div></div><div class="tp"><p>★<strong>日露戦争</strong>(1904-05)敗北=旅順陥落・日本海海戦=<strong>ポーツマス条約</strong>。★<strong>1905年血の日曜日事件</strong>→<strong>1905年革命</strong>→<strong>十月詔書</strong>で<strong>ドゥーマ</strong>(国家会議)開設・★<strong>ストルイピン首相</strong>の改革。1914年<strong>第一次世界大戦</strong>参戦→敗退続き→<strong>1917年2月革命</strong>で退位→<strong>臨時政府</strong>成立→10月革命→1918年7月17日エカチェリンブルクで家族全員処刑=★<strong>ロマノフ朝終焉</strong>・ロシア帝国終焉。</p></div></div>
-
-</div>
-</div>
-
-<div class="note"><p><strong>ロシア皇帝</strong> — 862年リューリクのノヴゴロド入城→882年オレーグのキエフ遷都→988年ウラジーミル1世のギリシア正教改宗→ヤロスラフ賢公のルースカヤ=プラウダ→1237-40年モンゴル襲来(タタールのくびき)→アレクサンドル=ネフスキー(ネヴァ川の戦い・氷上の戦い)→イヴァン1世(金袋)のモスクワ台頭→1480年イヴァン3世のくびき脱却と「第3のローマ」→1547年イヴァン4世のツァーリ称号・ゼムスキー=ソボル・オプリーチニナ・シベリア遠征→動乱時代(スムータ)→1613年ミハイル=ロマノフ→ピョートル大帝の北方戦争・サンクトペテルブルク・インペラートル称号→エリザヴェータの七年戦争→エカチェリーナ2世の啓蒙専制・ポーランド分割・南下政策→アレクサンドル1世のナポレオン撃退・ウィーン会議・神聖同盟→ニコライ1世のデカブリストの乱・クリミア戦争→アレクサンドル2世の農奴解放令・暗殺→アレクサンドル3世の反動政治・露仏同盟→ニコライ2世の日露戦争・1905年革命・十月詔書・ドゥーマ・1917年革命で処刑までを概観する。peak=ウラジーミル1世(正教改宗)・イヴァン3世(第3のローマ)・イヴァン4世(ツァーリ・オプリーチニナ)・ピョートル大帝(近代化の父)・エカチェリーナ2世(啓蒙専制)・アレクサンドル1世(ナポレオン撃退)。</p></div>
-
-<div id="tooltip-overlay" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;z-index:8000" onclick="closeTip()"></div>
-<div id="tooltip-box" style="display:none;position:fixed;z-index:9000;background:var(--bg);border:1px solid rgba(var(--axr),.25);border-radius:8px;padding:12px 16px;max-width:320px;width:calc(100vw - 32px);box-shadow:0 8px 30px rgba(0,0,0,.6)">
-  <div id="tooltip-content" style="font-size:10px;color:var(--text2);line-height:1.7"></div>
-</div>
-<script>
-(function(){
-  var ov=document.getElementById("tooltip-overlay"),bx=document.getElementById("tooltip-box"),ct=document.getElementById("tooltip-content");
-  window.closeTip=function(){bx.style.display="none";ov.style.display="none"};
-  function openTip(nd){var tp=nd.querySelector(".tp");if(!tp)return;closeTip();ct.innerHTML=tp.innerHTML;ov.style.display="block";bx.style.display="block";var r=nd.getBoundingClientRect(),w=Math.min(320,window.innerWidth-32);bx.style.width=w+"px";var l=r.left+r.width/2-w/2;if(l<16)l=16;if(l+w>window.innerWidth-16)l=window.innerWidth-16-w;bx.style.left=l+"px";bx.style.top=(r.bottom+8)+"px";bx.style.bottom="auto";var br=bx.getBoundingClientRect();if(br.bottom>window.innerHeight-16){var t=r.top-br.height-8;if(t<16)t=16;bx.style.top=t+"px"}}
-  var tm=false,tt=null;
-  document.addEventListener("touchstart",function(e){tm=false;tt=e.target},{passive:true});
-  document.addEventListener("touchmove",function(){tm=true},{passive:true});
-  document.addEventListener("touchend",function(e){if(tm)return;var nd=tt?tt.closest(".nd"):null;if(nd){e.preventDefault();openTip(nd)}else if(!tt||!tt.closest("#tooltip-box"))closeTip();tt=null});
-  document.addEventListener("click",function(e){if("ontouchstart"in window)return;var nd=e.target.closest(".nd");if(nd)openTip(nd);else if(!e.target.closest("#tooltip-box"))closeTip()});
-})();
-</script>
-<script src="search_jump.js" defer></script></body>
-</html>
+<div class="hdr"><h1>ロシア皇帝の系譜 ― リューリクからニコライ2世まで(862-1917)</h1><a href="charts.html">← Ad Chartae</a></div>
+<main>
+<p class="lead">ロシアの君主は、ノルマン人の首長を祖とする<b>リューリク朝</b>(862頃-1598)と、<b>動乱時代</b>のあとに選ばれた<b>ロマノフ朝</b>(1613-1917)に分かれる。称号は公・大公から<b>ツァーリ</b>、さらに皇帝(インペラートル)へと変わった。</p>
+<div class="sec-hdr"><span class="sec-icon">Ⅰ</span><h2>君主の系譜 <span class="latin">Genealogia</span></h2></div><p class="cap">丸枠は前に記した君主との続柄。濃い枠は特に重要な君主、朱色は王朝の断絶と終わり。省いた君主は線のわきに記した。</p>
+<div class="gt"><div class="gera">キエフ公国<span class="y">862頃–1240</span><i>Rus Kioviensis</i></div><div class="gn"><div class="gn-h"><span class="gn-nm">リューリク</span><span class="gn-yr">862–79</span></div><div class="gn-n">ノヴゴロドの首長となったと伝わる</div></div><div class="gl"></div><div class="gn"><div class="gn-h"><span class="gn-rel">一族</span><span class="gn-nm">オレーグ</span><span class="gn-yr">879–912</span></div><div class="gn-n">キエフを都とする(882)</div></div><div class="gl t d">間にイーゴリ(リューリクの子)・スヴャトスラフ</div><div class="gn key"><div class="gn-h"><span class="gn-rel">リューリクの曾孫</span><span class="gn-nm">ウラジーミル1世</span><span class="gn-yr">980–1015</span></div><div class="gn-n"><b>ギリシア正教</b>に改宗(988頃)</div></div><div class="gl"></div><div class="gn"><div class="gn-h"><span class="gn-rel">子</span><span class="gn-nm">ヤロスラフ1世</span><span class="gn-yr">1019–54</span></div><div class="gn-n">キエフ公国の最盛期、法典を編纂</div></div><div class="gl"></div><div class="gbrk"><b>モンゴル来襲</b><span class="y">1237–40</span>キエフ陥落 →「タタールのくびき」</div><div class="gera">モンゴル支配とモスクワの台頭<span class="y">1240–1480</span><i>Moscovia</i></div><div class="gn"><div class="gn-h"><span class="gn-rel">子孫</span><span class="gn-nm">アレクサンドル＝ネフスキー</span><span class="gn-yr">1252–63</span></div><div class="gn-n">スウェーデン軍・ドイツ騎士団を撃退</div></div><div class="gl"></div><div class="gn min"><div class="gn-h"><span class="gn-rel">子</span><span class="gn-nm">ダニール</span><span class="gn-yr">1263–1303</span></div><div class="gn-n">モスクワ公家の祖</div></div><div class="gl"></div><div class="gn"><div class="gn-h"><span class="gn-rel">子</span><span class="gn-nm">イヴァン1世</span><span class="gn-yr">1325–40</span></div><div class="gn-n">モンゴルへの貢納を取りまとめ台頭</div></div><div class="gl t d">間にドミトリー＝ドンスコイ(クリコヴォの戦い, 1380)ら</div><div class="gera">ツァーリの国<span class="y">1480–1598</span><i>Tsardom</i></div><div class="gn key"><div class="gn-h"><span class="gn-rel">子孫</span><span class="gn-nm">イヴァン3世</span><span class="gn-yr">1462–1505</span></div><div class="gn-n"><b>くびきを脱する</b>(1480)、ツァーリを称す</div></div><div class="gl t">間にヴァシーリー3世(子)</div><div class="gn key"><div class="gn-h"><span class="gn-rel">孫</span><span class="gn-nm">イヴァン4世</span><span class="gn-yr">1533–84</span></div><div class="gn-n">ツァーリとして戴冠(1547)、<b>オプリチニナ</b></div></div><div class="gl"></div><div class="gn min"><div class="gn-h"><span class="gn-rel">子</span><span class="gn-nm">フョードル1世</span><span class="gn-yr">1584–98</span></div><div class="gn-n">死去でリューリク朝が断絶</div></div><div class="gl"></div><div class="gbrk"><b>動乱時代</b><span class="y">1598–1613</span>ボリス＝ゴドゥノフ、偽ドミトリー、ポーランド軍の介入</div><div class="gl d"></div><div class="gera">ロマノフ朝<span class="y">1613–1917</span><i>Romanovi</i><a href="romanov_tree.html">家系図 →</a></div><div class="gn"><div class="gn-h"><span class="gn-rel">選出</span><span class="gn-nm">ミハイル＝ロマノフ</span><span class="gn-yr">1613–45</span></div><div class="gn-n"><b>全国会議</b>で選ばれる(1613)</div></div><div class="gl t">間にアレクセイ(子、ステンカ＝ラージンの乱)</div><div class="gn key"><div class="gn-h"><span class="gn-rel">孫</span><span class="gn-nm">ピョートル1世</span><span class="gn-yr">1682–1725</span></div><div class="gn-n"><b>北方戦争</b>、ペテルブルク遷都、皇帝を称す</div></div><div class="gl t d">宮廷革命の時代(1725–62)：女帝・幼帝が交代、エリザヴェータが七年戦争に参戦</div><div class="gn key"><div class="gn-h"><span class="gn-rel">孫の妃</span><span class="gn-nm">エカチェリーナ2世</span><span class="gn-yr">1762–96</span></div><div class="gn-n">啓蒙専制君主、<b>ポーランド分割</b></div></div><div class="gl t">間にパーヴェル1世(子)</div><div class="gn key"><div class="gn-h"><span class="gn-rel">孫</span><span class="gn-nm">アレクサンドル1世</span><span class="gn-yr">1801–25</span></div><div class="gn-n">ナポレオンを撃退(1812)、<b>神聖同盟</b></div></div><div class="gl"></div><div class="gn"><div class="gn-h"><span class="gn-rel">弟</span><span class="gn-nm">ニコライ1世</span><span class="gn-yr">1825–55</span></div><div class="gn-n">デカブリストの乱を鎮圧、クリミア戦争</div></div><div class="gl"></div><div class="gn key"><div class="gn-h"><span class="gn-rel">子</span><span class="gn-nm">アレクサンドル2世</span><span class="gn-yr">1855–81</span></div><div class="gn-n"><b>農奴解放令</b>(1861)、のち暗殺</div></div><div class="gl"></div><div class="gn min"><div class="gn-h"><span class="gn-rel">子</span><span class="gn-nm">アレクサンドル3世</span><span class="gn-yr">1881–94</span></div><div class="gn-n">露仏同盟、シベリア鉄道着工</div></div><div class="gl"></div><div class="gn end"><div class="gn-h"><span class="gn-rel">子</span><span class="gn-nm">ニコライ2世</span><span class="gn-yr">1894–1917</span></div><div class="gn-n">日露戦争、<b>二月革命</b>で退位</div></div><div class="gl"></div><div class="gbrk"><b>帝政の終わり</b><span class="y">1917</span>二月革命 → 十月革命でソヴィエト政権</div></div>
+<div class="sec-hdr"><span class="sec-icon">Ⅱ</span><h2>要点 <span class="latin">Summarium</span></h2></div>
+<div class="kp"><p>❶ キエフ公国：ウラジーミル1世がギリシア正教を受け入れた(988頃)。モンゴル来襲(1240)で衰退</p><p>❷ モスクワ大公国が台頭し、<b>イヴァン3世</b>がくびきを脱した(1480)。<b>イヴァン4世</b>がツァーリとして戴冠(1547)</p><p>❸ リューリク朝の断絶(1598) → 動乱時代 → 全国会議が<b>ミハイル＝ロマノフ</b>を選出(1613)</p><p>❹ <b>ピョートル1世</b>の西欧化と皇帝号(1721)、<b>エカチェリーナ2世</b>の南下と啓蒙専制</p><p>❺ 農奴解放(1861)後も専制が続き、<b>ニコライ2世</b>が二月革命(1917)で退位して帝政は終わった</p></div>
+</main>
+<script src="search_jump.js" defer></script></body></html>

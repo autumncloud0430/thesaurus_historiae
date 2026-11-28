@@ -1,68 +1,192 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ハプスブルク家の婚姻戦略</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
-:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048;--border:rgba(var(--axr),.08)}
+<style>@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');:root{--bg:#f1ecdf;--gold:#8b6f4e;--gold2:#59452a;--text:#2b241b;--text2:#6d6353;--text3:#a89a80;--axr:139,111,78;--shu:#a2331e}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
-body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
-.hdr{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
-.hdr h1{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2)}
-.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5;transition:opacity .2s}
-.hdr a:hover{opacity:1}
-.wrap{padding:20px 16px 10px;overflow-x:auto}
-.tree{display:flex;flex-direction:column;align-items:center;min-width:920px;gap:0}
-@media(max-width:650px){.tree{min-width:0;width:100%}.row{flex-wrap:wrap;justify-content:center}.branch{flex-wrap:wrap;justify-content:center}}
-.nd{position:relative;text-align:center;cursor:pointer;transition:transform .15s}
-.nd:hover{transform:translateY(-1px)}
-.nb{border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:7px 11px;background:rgba(255,255,255,.02);transition:all .2s}
-.nd:hover .nb{border-color:rgba(var(--axr),.3);background:rgba(var(--axr),.04)}
-.nn{font-family:'Noto Serif JP',serif;font-size:11px;font-weight:700;color:var(--gold2);white-space:nowrap}
-.ni{font-size:7.5px;color:var(--text2);margin-top:1px;white-space:nowrap}
-.ntag{font-size:7px;font-weight:600;letter-spacing:.06em;margin-top:2px;padding:1px 6px;border-radius:100px;display:inline-block}
-.h-hab .nb{border-left:3px solid rgba(138,123,91,.4)} .h-hab .ntag{background:rgba(138,123,91,.2);color:#c8b88a}
-.h-spa .nb{border-left:3px solid rgba(138,91,91,.4)} .h-spa .ntag{background:rgba(138,91,91,.2);color:#d4a8a8}
-.h-bur .nb{border-left:3px solid rgba(91,111,138,.4)} .h-bur .ntag{background:rgba(91,111,138,.2);color:#8aafc8}
-.h-ara .nb{border-left:3px solid rgba(111,138,91,.4)} .h-ara .ntag{background:rgba(111,138,91,.2);color:#a8c88a}
-.h-aus .nb{border-left:3px solid rgba(160,140,80,.3)} .h-aus .ntag{background:rgba(160,140,80,.15);color:#d4c898}
-.h-eng .nb{border-left:3px solid rgba(91,138,120,.4)} .h-eng .ntag{background:rgba(91,138,120,.2);color:#8ac8b0}
-.h-fra .nb{border-left:3px solid rgba(120,91,138,.4)} .h-fra .ntag{background:rgba(120,91,138,.2);color:#b8a0d4}
-.h-ott .nb{border-left:3px solid rgba(138,120,91,.4)} .h-ott .ntag{background:rgba(138,120,91,.2);color:#d4c0a0}
-.karl .nb{border-color:rgba(var(--axr),.35);background:rgba(var(--axr),.06);padding:10px 14px}
-.karl .nn{font-size:14px;background:linear-gradient(135deg,#c9a96e,#e8c888,#c9a96e);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-/* LUX: gradient name was illegible on the paper background */
-html[data-theme="lux"] .karl .nn{background:none;-webkit-background-clip:border-box;background-clip:border-box;-webkit-text-fill-color:currentColor;color:var(--gold2)}
-.m-heart{font-size:7px;color:var(--gold);opacity:.4;padding:0 3px;text-align:center}
-.m-line{width:24px;height:1px;background:rgba(var(--axr),.25)}
-.cv{width:1px;height:14px;background:rgba(var(--axr),.15);margin:0 auto}
-.cv.l{height:20px}
-.row{display:flex;align-items:flex-start;gap:14px}
-.branch{display:flex;flex-direction:column;align-items:center}
-.inherit{font-size:7px;color:var(--text3);text-align:center;margin:2px 0;font-style:italic}
-.inherit strong{color:var(--gold);font-style:normal}
-.split-label{font-family:'Cormorant Garamond',serif;font-size:9px;font-weight:700;letter-spacing:.15em;color:var(--gold);text-align:center;padding:6px 0 3px;opacity:.6}
-.tp{display:none}
-/* Relation diagram section */
-.sec-title{font-family:'Noto Serif JP',serif;font-size:12px;font-weight:700;color:var(--gold2);text-align:center;padding:16px 20px 8px;border-top:1px solid rgba(var(--axr),.06);margin-top:10px}
-.sec-sub{font-size:9px;color:var(--text3);text-align:center;margin-bottom:10px}
-.diagram-wrap{display:flex;justify-content:center;padding:0 16px 10px;overflow-x:auto}
-.legend{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;padding:10px 20px}
-.legend-item{display:flex;align-items:center;gap:5px;font-size:9px;color:var(--text3)}
-.legend-dot{width:12px;height:8px;border-radius:2px}
-.note{text-align:center;padding:6px 20px 32px;font-size:9px;color:var(--text3);line-height:1.8;max-width:800px;margin:0 auto}
-.note strong{color:var(--gold)}
-
+.hdr{padding:16px 20px;border-bottom:1px solid rgba(var(--axr),.12);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.hdr h1{font-family:'Noto Serif JP',serif;font-size:20px;font-weight:700;color:var(--gold2)}
+.hdr a{font-size:14px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
+main{max-width:760px;margin:0 auto;padding:24px 20px 60px}
+.lead{font-size:15px;line-height:2}
+.lead b{color:var(--gold2)}
+.sec-hdr{display:flex;align-items:center;gap:10px;padding:10px 0;margin:34px 0 4px;border-bottom:1px solid rgba(var(--axr),.15)}
+.sec-icon{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:700;color:var(--gold);opacity:.75}
+.sec-hdr h2{font-family:'Noto Serif JP',serif;font-size:18px;font-weight:700;color:var(--gold2)}
+.latin{font-family:'Cormorant Garamond',serif;font-size:13px;font-weight:400;font-style:italic;color:var(--gold);margin-left:10px;letter-spacing:1px;opacity:.75}
+.cap{font-size:13px;color:var(--text2);margin:8px 0 14px;line-height:1.8}
+.x{color:var(--shu)}
+/* I lineage */
+.lin-row{display:flex;justify-content:center;gap:8px}
+.box{flex:1;max-width:220px;border:1px solid rgba(var(--axr),.3);border-radius:10px;background:rgba(var(--axr),.05);padding:8px 8px 7px;text-align:center;line-height:1.35}
+.box b{display:block;font-family:'Noto Serif JP',serif;font-size:17px;color:var(--gold2)}
+.box .by{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:15px;color:var(--gold)}
+.box small{display:block;font-size:12px;color:var(--text2);margin-top:2px}
+.box.big{max-width:420px}.box.big b{font-size:21px}
+.box.eu{border-color:rgba(var(--axr),.55);background:rgba(var(--axr),.09);box-shadow:0 0 0 3px rgba(var(--axr),.06)}
+.box .note2{border-top:1px solid rgba(var(--axr),.15);margin-top:6px;padding-top:5px}
+.merge,.down{position:relative;text-align:center;padding:10px 0 13px}
+.merge::before,.down::before{content:'';position:absolute;left:50%;top:0;bottom:0;border-left:1.5px solid rgba(var(--axr),.45)}
+.merge::after,.down::after{content:'';position:absolute;left:calc(50% - 5px);bottom:-1px;border:5px solid transparent;border-top:7px solid rgba(var(--axr),.6);border-bottom:0}
+.merge span,.down span{position:relative;background:var(--bg);font-size:12.5px;color:var(--gold);padding:0 8px}
+.merge span b,.down span b{font-family:'Cormorant Garamond',serif;font-size:14px}
+.three{position:relative;padding-bottom:10px}
+.three::after{content:'';position:absolute;left:16%;right:16%;bottom:0;border-bottom:1.5px solid rgba(var(--axr),.45)}
+.three .box{position:relative}
+.three .box::after{content:'';position:absolute;left:50%;bottom:-12px;height:10px;border-left:1.5px solid rgba(var(--axr),.45)}
+.side-h{margin:22px 0 6px;font-size:12px;color:var(--gold);font-family:'Cormorant Garamond',serif;font-style:italic;letter-spacing:1px}
+.side{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.sbox{border:1px solid rgba(var(--axr),.18);border-radius:8px;background:rgba(var(--axr),.03);padding:7px 10px;font-size:13px;line-height:1.5;color:var(--gold2)}
+.sbox b{font-family:'Noto Serif JP',serif}
+.sbox small{display:block;font-size:12px;color:var(--text2);margin-top:3px;line-height:1.65}
+.sbox.dash{border-style:dashed}
+/* II deepening x widening */
+.dw{border:1px solid rgba(var(--axr),.15);border-radius:10px;overflow:hidden;background:rgba(var(--axr),.02)}
+.dw-h,.dw-r{display:grid;grid-template-columns:48px 1fr 1fr;column-gap:10px;padding-left:10px;padding-right:10px}
+.dw-h{font-family:'Noto Serif JP',serif;font-size:13px;font-weight:700;color:var(--gold2);padding-top:8px;padding-bottom:8px;background:rgba(var(--axr),.07)}
+.dw-h span small{display:block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;color:var(--gold);font-size:11.5px;letter-spacing:1px}
+.dw-r{padding-top:6px;padding-bottom:6px;border-top:1px solid rgba(var(--axr),.08);font-size:13.5px;line-height:1.6;align-items:start}
+.dw-r:nth-child(odd){background:rgba(var(--axr),.025)}
+.dw-r .y{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:16px;color:var(--gold);line-height:1.4}
+.dw-r .d{border-right:1px solid rgba(var(--axr),.12);padding-right:10px}
+.cnt{display:flex;align-items:center;gap:6px;margin-top:4px}
+.cnt i{display:block;height:6px;border-radius:3px;background:rgba(var(--axr),.45);max-width:calc(100% - 28px)}
+.cnt b{font-size:13px;font-family:'Cormorant Garamond',serif;color:var(--gold2)}
+/* III UK */
+.uk{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;counter-reset:u}
+.uk li{position:relative;border:1px solid rgba(var(--axr),.15);border-radius:8px;background:rgba(var(--axr),.04);padding:6px 10px 7px 32px;font-size:13.5px;line-height:1.55;counter-increment:u}
+.uk li::before{content:counter(u,upper-roman);position:absolute;left:9px;top:7px;font-family:'Cormorant Garamond',serif;font-weight:700;font-size:13px;color:var(--gold);opacity:.7}
+.uk li .y{display:block;font-family:'Cormorant Garamond',serif;font-weight:700;color:var(--gold);font-size:15px}
+.uk li.ux{border-color:rgba(162,51,30,.35);background:rgba(162,51,30,.04)}.uk li.ux .y{color:var(--shu)}
+/* summary */
+.kp{background:rgba(var(--axr),.04);border:1px solid rgba(var(--axr),.12);border-radius:10px;padding:14px 18px}
+.kp p{font-size:13.5px;line-height:1.9;margin:2px 0}
+.kp b{color:var(--gold2)}
+/* IV per-phase (flow_ style) */
+.toc{display:flex;flex-wrap:wrap;gap:4px 14px;margin:4px 0 14px}
+.toc a{font-size:12.5px;color:var(--text2);text-decoration:none}
+.toc a span{font-family:'Cormorant Garamond',serif;font-weight:700;color:var(--gold);margin-right:5px}
+.toc a:hover{color:var(--gold2)}
+.phase{position:relative;padding:14px 4px 14px 22px;border-left:2px solid rgba(var(--axr),.15);margin-left:46px;scroll-margin-top:8px}
+.phase:last-child{border-left-color:transparent}
+.phase::before{content:'';position:absolute;left:-6px;top:20px;width:8px;height:8px;border-radius:50%;background:var(--bg);border:2px solid rgba(var(--axr),.45)}
+.phase-label{position:absolute;left:-50px;top:15px;width:40px;font-family:'Cormorant Garamond',serif;font-size:13px;font-weight:700;color:var(--gold);text-align:right;line-height:1.25}
+.ph-head{margin-bottom:8px}
+.ph-title{display:block;font-family:'Noto Serif JP',serif;font-size:17px;font-weight:700;color:var(--gold2)}
+.ph-sub{display:block;font-size:12.5px;color:var(--text2);margin-top:1px}
+.event{background:rgba(var(--axr),.03);border:1px solid rgba(var(--axr),.1);border-radius:8px;padding:8px 12px;margin-bottom:8px}
+.event.org{background:rgba(var(--axr),.07);border-color:rgba(var(--axr),.22)}
+.event.bad-ev{background:rgba(162,51,30,.035);border-color:rgba(162,51,30,.22)}
+.ev-title{font-family:'Noto Serif JP',serif;font-size:15px;font-weight:700;color:var(--gold2);display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 10px}
+.bad-ev .ev-title{color:var(--shu)}
+.orgname{font-size:16px}
+.ev-year{font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:700;color:var(--gold)}
+.org-sub{font-size:12px;color:var(--text2)}
+.bad{font-family:'Noto Sans JP',sans-serif;font-size:10.5px;font-weight:400;color:var(--shu);border:1px solid rgba(162,51,30,.4);border-radius:4px;padding:0 6px}
+.ev-desc{font-size:14px;color:var(--text);line-height:1.8;margin-top:3px}
+.ev-desc b{color:var(--gold2)}
+.side-note{font-size:13px;color:var(--text2);line-height:1.8;padding:6px 10px;border-left:2px solid rgba(var(--axr),.25);margin:4px 0 8px}
+.side-note b,.side-note strong{color:var(--gold2)}
+.out{color:var(--shu)}
 @media(max-width:600px){
-.hdr{padding:10px 12px}.hdr h1{font-size:12px}
-.legend .li{font-size:7px}
-.note p{font-size:8px}
+.hdr{padding:12px 14px}.hdr h1{font-size:16px}
+main{padding:16px 14px 60px}
+.lead{font-size:14px}
+.sec-hdr h2{font-size:16px}.latin{font-size:12px;margin-left:6px}
+.box b{font-size:15px}.box small{font-size:11px}.box{padding:6px 4px}
+.box.big b{font-size:18px}
+.merge span,.down span{font-size:11.5px}
+.side{grid-template-columns:1fr}
+.dw-h,.dw-r{grid-template-columns:36px 1fr 1fr;column-gap:7px;padding-left:7px;padding-right:7px}
+.dw-r{font-size:12.5px}.dw-r .y{font-size:14px}.dw-r .d{padding-right:7px}
+.uk{grid-template-columns:1fr 1fr}.uk li{font-size:12.5px}
+.kp{padding:12px 14px}.kp p{font-size:12.5px}
+.phase{margin-left:38px;padding-left:16px}.phase-label{left:-42px;width:34px;font-size:12px}
+.ph-title{font-size:15.5px}
+.ev-title{font-size:14px}.orgname{font-size:15px}.ev-desc{font-size:13px}
+.side-note{font-size:12.5px}
 }
-</style>
-<style id="thThemes">/* =====================================================
+
+/* ---- dynasty trees (tree_lib.py): compact figure ---- */
+:root{--dc:139,111,78}
+.d-a{--dc:139,111,78}.d-b{--dc:46,94,158}.d-c{--dc:170,66,40}.d-e{--dc:62,122,84}.d-f{--dc:112,78,146}.d-g{--dc:36,112,124}.d-h{--dc:150,112,40}.d-x{--dc:120,112,100}
+.hdr h1{line-height:1.45}
+.lead{font-size:14.5px;line-height:1.9}
+.tree{margin:6px 0 4px}
+.nd{position:relative;margin:0 auto;max-width:520px;border:1px solid rgba(var(--dc),.30);border-radius:9px;background:rgba(var(--dc),.07);padding:5px 11px 6px}
+.nd.pk{border-color:rgba(var(--dc),.55);background:rgba(var(--dc),.12);box-shadow:0 0 0 3px rgba(var(--dc),.07)}
+.nd.mn{padding:3px 10px 4px;max-width:420px}
+.nd.gh{border-style:dashed;background:rgba(var(--axr),.03)}
+.nm{font-family:'Noto Serif JP',serif;font-size:15.5px;font-weight:700;color:var(--gold2);display:flex;flex-wrap:wrap;align-items:baseline;gap:0 7px;line-height:1.5}
+.nd.pk .nm{font-size:16.5px}
+.nd.mn .nm{font-size:14px}
+.nm small{font-family:'Noto Sans JP',sans-serif;font-size:12px;font-weight:400;color:var(--text2)}
+.yr{margin-left:auto;font-family:'Noto Sans JP',sans-serif;font-size:12px;font-weight:400;color:var(--text2);white-space:nowrap}
+.yr i{font-family:'Cormorant Garamond',serif;font-style:normal;font-weight:700;font-size:15px;color:var(--gold)}
+.dd{font-size:13.5px;line-height:1.6;color:var(--text)}
+.nd.mn .dd{font-size:13px}
+.dd b,.brk b,.mar-x b,.kp b{color:var(--gold2);font-weight:600}
+.tg{display:inline-block;font-family:'Noto Sans JP',sans-serif;font-size:11.5px;font-weight:600;color:var(--shu);border:1px solid rgba(162,51,30,.35);border-radius:4px;padding:0 5px;line-height:1.55;background:rgba(162,51,30,.04)}
+.tg.g{color:var(--gold2);border-color:rgba(var(--axr),.4);background:rgba(var(--axr),.05)}
+.tree .down{padding:3px 0 7px}
+.tree .down span{font-size:12px;color:var(--gold2);line-height:1.45;display:inline-block;max-width:88%}
+.down.dash::before{border-left-style:dashed}
+.dyn{text-align:center;margin:2px 0 0}
+.dyn span{display:inline-block;font-family:'Noto Serif JP',serif;font-size:14.5px;font-weight:700;color:var(--gold2);background:rgba(var(--dc),.13);border:1px solid rgba(var(--dc),.35);border-radius:100px;padding:2px 14px}
+.dyn span i{font-family:'Cormorant Garamond',serif;font-style:normal;font-weight:700;font-size:15px;color:var(--gold);margin-left:6px}
+.brk{max-width:560px;margin:0 auto;border:1px dashed rgba(162,51,30,.40);border-radius:9px;background:rgba(162,51,30,.045);padding:4px 12px 5px;text-align:center}
+.brk-t{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--shu);line-height:1.5}
+.brk-t i{font-family:'Cormorant Garamond',serif;font-style:normal;font-weight:700;font-size:15px;margin-left:4px}
+.brk p{font-size:13px;line-height:1.6;color:var(--text)}
+.split{position:relative;display:grid;gap:10px;align-items:start;padding-top:12px}
+.split::before{content:'';position:absolute;top:0;border-top:1.5px solid rgba(var(--axr),.45)}
+.split.n2{grid-template-columns:1fr 1fr}.split.n2::before{left:25%;right:25%}
+.split.n3{grid-template-columns:1fr 1fr 1fr}.split.n3::before{left:16.6%;right:16.6%}
+.br{position:relative}
+.br::before{content:'';position:absolute;left:50%;top:-12px;height:12px;border-left:1.5px solid rgba(var(--axr),.45)}
+.br-h{text-align:center;font-family:'Noto Serif JP',serif;font-size:13.5px;font-weight:700;color:var(--gold2);background:rgba(var(--dc),.12);border:1px solid rgba(var(--dc),.28);border-radius:8px;padding:2px 8px;margin-bottom:6px;line-height:1.5}
+.br-h small{font-family:'Noto Sans JP',sans-serif;font-size:12px;font-weight:400;color:var(--text2);margin-left:4px}
+.br .nd{max-width:none}
+.mar{display:grid;grid-template-columns:1fr auto 1fr;gap:6px;align-items:center;max-width:640px;margin:0 auto}
+.mar-s{min-width:0}
+.mar .yr,.sib .yr{white-space:normal;margin-left:0}
+.mar-x{text-align:center;font-size:12px;color:var(--gold2);line-height:1.4;min-width:48px}
+.mar-x em{display:block;font-style:normal;font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--gold);line-height:1}
+.sib{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:6px;max-width:640px;margin:0 auto}
+.sib .nd{max-width:none;margin:0}
+.sib-l{text-align:center;font-size:12px;color:var(--gold2);margin:0 0 4px}
+.tree .side-note{max-width:560px;margin:4px auto}
+.kp{padding:10px 16px}
+.kp p{padding-left:1.4em;text-indent:-1.4em;line-height:1.75}
+.rl{width:100%;border-collapse:separate;border-spacing:0 3px;font-size:13px}
+.rl th{text-align:left;font-family:'Noto Serif JP',serif;font-size:13px;font-weight:700;color:var(--gold2);background:rgba(var(--axr),.08);padding:4px 8px;white-space:nowrap}
+.rl td{padding:4px 8px;vertical-align:top;line-height:1.55;background:rgba(var(--axr),.035)}
+.rl td:first-child,.rl th:first-child{border-radius:6px 0 0 6px}.rl td:last-child,.rl th:last-child{border-radius:0 6px 6px 0}
+.rl td.k{font-family:'Noto Serif JP',serif;font-weight:700;color:var(--gold2);white-space:nowrap}
+.rl td.k small{display:block;font-family:'Noto Sans JP',sans-serif;font-size:12px;font-weight:400;color:var(--text2)}
+.rl b.x{color:var(--shu);font-weight:600;margin-right:4px}
+.rl td.r{color:var(--shu)}
+.rel-links{font-size:13px;color:var(--text2);margin-top:22px;line-height:1.9}
+.rel-links a{color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(var(--axr),.3)}
+@media(max-width:600px){
+.lead{font-size:13.5px}
+.nd{padding:4px 9px 5px}
+.nm{font-size:14.5px}.nd.pk .nm{font-size:15.5px}.nd.mn .nm{font-size:13.5px}
+.dd,.nd.mn .dd{font-size:13px}
+.dyn span{font-size:14px;padding:2px 12px}
+.brk-t{font-size:13.5px}.brk p{font-size:13px}
+.split,.split.n2,.split.n3{grid-template-columns:1fr;gap:10px;padding-top:2px}
+.split::before,.br::before{display:none}
+.br{border-left:2px solid rgba(var(--dc),.30);padding-left:8px}
+.br-h{text-align:left}
+.mar{grid-template-columns:1fr;gap:0}
+.mar-x{display:flex;align-items:center;justify-content:center;gap:6px;padding:1px 0}
+.mar-x em{display:inline;font-size:18px}
+.mar-x br{display:none}
+.sib{grid-template-columns:1fr 1fr;gap:5px}
+.kp{padding:9px 12px}.kp p{font-size:13px}
+.rl{font-size:13px}.rl td,.rl th{padding:4px 6px}
+}
+</style><style id="thThemes">/* =====================================================
    THESAURUS HISTORIAE ― themes.css(LUX固定版)
    生成りの紙 + 墨の本文 + 朱筆(★語) + 金茶の構造色。
    retheme_inject.py が各HTMLに埋め込む。編集後は再実行。
@@ -109,340 +233,38 @@ html[data-theme="lux"] .arrow-text,
 html[data-theme="lux"] .detail { color:var(--text2); }
 </style><script id="thScript">document.documentElement.setAttribute('data-theme','lux');</script></head>
 <body>
-
-<div class="hdr">
-  <h1>ハプスブルク家の婚姻戦略 ―「戦争は他家に任せよ。幸いなるオーストリアよ、汝は結婚せよ」</h1>
-  <a href="charts.html">← Ad Chartae</a>
-</div>
-
-<!-- ===== PART 1: FAMILY TREE ===== -->
-<div class="wrap">
+<div class="hdr"><h1>ハプスブルク家の系図 ― 婚姻による領土の拡大と、スペイン系・オーストリア系への分立</h1><a href="charts.html">← Ad Chartae</a></div>
+<main>
+<p class="lead">ハプスブルク家は婚姻によって領土を広げ、<b>カール5世</b>はオーストリア・ネーデルラント・スペインと新大陸・南イタリアを一人で受け継いだ。1556年の退位で、家は<b>スペイン系</b>と<b>オーストリア系</b>に分かれた。</p>
+<div class="sec-hdr"><span class="sec-icon">Ⅰ</span><h2>系図 <span class="latin">Stemma</span></h2></div>
 <div class="tree">
-
-<!-- Gen 0: 3 founding houses -->
-<div class="row">
-  <div class="branch">
-    <div class="nd h-bur"><div class="nb">
-      <div class="nn">シャルル突進公</div>
-      <div class="ni">ブルゴーニュ公 ｜ 1433-1477</div>
-      <div class="ntag">ブルゴーニュ</div>
-    </div><div class="tp"><p>ヴァロワ＝ブルゴーニュ家最後の君主。ネーデルラント（現ベルギー・オランダ）を支配。ナンシーの戦い(1477)で戦死→男子なく断絶→娘マリーが全領土を相続。</p></div></div>
-    <div class="cv"></div>
-    <div class="nd h-bur"><div class="nb">
-      <div class="nn">マリー</div>
-      <div class="ni">ブルゴーニュ女公 ｜ 1457-1482</div>
-    </div><div class="tp"><p>一人娘。ネーデルラント・フランシュ＝コンテを相続。マクシミリアンとの結婚で全領土がハプスブルク家に。25歳で落馬事故死。</p></div></div>
-  </div>
-
-  <div style="display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding-bottom:18px">
-    <div class="m-line"></div><div class="m-heart">婚姻<br>1477</div><div class="m-line"></div>
-  </div>
-
-  <div class="branch">
-    <div class="nd h-hab"><div class="nb">
-      <div class="nn">フリードリヒ3世</div>
-      <div class="ni">神聖ローマ皇帝 ｜ 1415-1493</div>
-      <div class="ntag">ハプスブルク</div>
-    </div><div class="tp"><p>A.E.I.O.U.（「全地球はオーストリアに従う」）を標語にした皇帝。息子マクシミリアンをマリーと結婚させブルゴーニュ領を獲得。</p></div></div>
-    <div class="cv"></div>
-    <div class="nd h-hab"><div class="nb">
-      <div class="nn">マクシミリアン1世</div>
-      <div class="ni">神聖ローマ皇帝 ｜ 1459-1519</div>
-      <div class="ntag">ハプスブルク</div>
-    </div><div class="tp"><p>「中世最後の騎士」。マリーとの結婚でネーデルラントを獲得。息子フィリップをスペインのフアナと結婚させる外交を主導→孫カール5世の「太陽の沈まぬ帝国」を準備。</p></div></div>
-  </div>
-
-  <div style="width:40px"></div>
-
-  <div class="branch">
-    <div class="nd h-ara"><div class="nb">
-      <div class="nn">フェルナンド2世</div>
-      <div class="ni">アラゴン王 ｜ 1452-1516</div>
-      <div class="ntag">アラゴン</div>
-    </div><div class="tp"><p>「カトリック両王」の一方。グラナダ征服(1492)でレコンキスタ完了。アラゴン（＋ナポリ・シチリア・サルデーニャ）をスペインに。娘キャサリンがヘンリー8世の最初の妻→離婚問題が英国国教会成立の引き金に。</p></div></div>
-  </div>
-
-  <div style="display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding-bottom:18px">
-    <div class="m-line"></div><div class="m-heart">婚姻<br>1469</div><div class="m-line"></div>
-  </div>
-
-  <div class="branch">
-    <div class="nd h-spa"><div class="nb">
-      <div class="nn">イサベル1世</div>
-      <div class="ni">カスティーリャ女王 ｜ 1451-1504</div>
-      <div class="ntag">カスティーリャ</div>
-    </div><div class="tp"><p>「カトリック両王」。コロンブスの航海を支援(1492)→新大陸はカスティーリャの所有に。異端審問所を設立。</p></div></div>
-  </div>
+<div class="split n2"><div class="br d-a"><div class="br-h">ハプスブルク家 × ブルゴーニュ家</div><div class="mar"><div class="mar-s"><div class="nd d-a mn"><div class="nm">マクシミリアン1世<span class="yr">皇帝 在位 <i>1493-1519</i></span></div><div class="dd">皇帝フリードリヒ3世の子</div></div></div><div class="mar-x"><em>×</em>結婚<br>1477</div><div class="mar-s"><div class="nd d-f mn"><div class="nm">マリー</div><div class="dd">ブルゴーニュ公シャルル(突進公)の娘。ネーデルラントを相続</div></div></div></div>
+<div class="down"><span>子</span></div>
+<div class="nd d-a mn"><div class="nm">フィリップ<small>美公</small></div><div class="dd">ネーデルラントを継ぐ</div></div></div><div class="br d-c"><div class="br-h">スペイン王家</div><div class="mar"><div class="mar-s"><div class="nd d-c mn"><div class="nm">フェルナンド2世<span class="yr">アラゴン王 在位 <i>1479-1516</i></span></div></div></div><div class="mar-x"><em>×</em>結婚<br>1469</div><div class="mar-s"><div class="nd d-c mn"><div class="nm">イサベル1世<span class="yr">カスティーリャ女王 在位 <i>1474-1504</i></span></div></div></div></div>
+<div class="down"><span>娘</span></div>
+<div class="nd d-c mn"><div class="nm">フアナ</div><div class="dd">スペインと新大陸を継ぐ。妹キャサリンは英王妃</div></div></div></div>
+<div class="down"><span>フィリップとフアナの結婚(1496) → 長男</span></div>
+<div class="nd d-a pk"><div class="nm">カール5世<span class="yr">スペイン王(カルロス1世)・皇帝(1519-) <i>1516-1556</i></span></div><div class="dd">4家の領土を相続。フランス・オスマン・ルター派と対立</div></div>
+<div class="down"><span>1556年の退位 ― 子フェリペと弟フェルディナントに分ける</span></div><div class="split n2"><div class="br d-c"><div class="br-h">スペイン＝ハプスブルク家</div><div class="nd d-c pk"><div class="nm">フェリペ2世<span class="yr">在位 <i>1556-1598</i></span></div><div class="dd">ポルトガル併合(1580)。アルマダの敗北(1588)</div></div>
+<div class="down dash"><span>フェリペ3世・4世を経て</span></div>
+<div class="nd d-c"><div class="nm">カルロス2世<span class="tg">断絶</span><span class="yr">在位 <i>1665-1700</i></span></div><div class="dd">子なく死去 → スペイン継承戦争</div></div>
+<div class="down"></div>
+<div class="nd d-c mn gh"><div class="nm">ブルボン朝へ<span class="yr"><i>1700</i></span></div><div class="dd">ルイ14世の孫フェリペ5世が即位</div></div></div><div class="br d-b"><div class="br-h">オーストリア＝ハプスブルク家</div><div class="nd d-b"><div class="nm">フェルディナント1世<span class="yr">皇帝 在位 <i>1556-1564</i></span></div><div class="dd">カールの弟。ベーメン・ハンガリー王(1526-)</div></div>
+<div class="down dash"><span>レオポルト1世・カール6世などを経て</span></div>
+<div class="nd d-b pk"><div class="nm">マリア＝テレジア<span class="yr">在位 <i>1740-1780</i></span></div><div class="dd">オーストリア継承戦争。夫はロートリンゲン家</div></div>
+<div class="down"><span>子孫(ハプスブルク＝ロートリンゲン家)</span></div>
+<div class="nd d-b mn gh"><div class="nm">ヨーゼフ2世 … フランツ＝ヨーゼフ1世<span class="yr"><i>-1918</i></span></div><div class="dd">神聖ローマ皇帝位は1806年まで。1918年に帝国解体</div></div></div></div>
 </div>
-
-<!-- Connectors -->
-<div style="display:flex;gap:180px;justify-content:center">
-  <div><div class="cv l"></div><div class="inherit"><strong>ブルゴーニュ＋ハプスブルク</strong></div></div>
-  <div><div class="cv l"></div><div class="inherit"><strong>アラゴン＋カスティーリャ</strong></div></div>
-</div>
-
-<!-- Gen 1: フィリップ × フアナ -->
-<div class="row" style="justify-content:center">
-  <div class="nd h-hab"><div class="nb">
-    <div class="nn">フィリップ美公</div>
-    <div class="ni">1478-1506 ｜ ハプスブルク＋ブルゴーニュ</div>
-  </div><div class="tp"><p>マクシミリアンとマリーの子。28歳で急死。ネーデルラントの相続者。</p></div></div>
-  <div style="display:flex;align-items:center"><div class="m-line"></div><div class="m-heart">婚姻<br>1496</div><div class="m-line"></div></div>
-  <div class="nd h-spa"><div class="nb">
-    <div class="nn">フアナ（狂女）</div>
-    <div class="ni">1479-1555 ｜ アラゴン＋カスティーリャ</div>
-  </div><div class="tp"><p>フェルナンドとイサベルの娘。スペイン＋新大陸の相続者。夫の死後に精神を病み幽閉。</p></div></div>
-</div>
-
-<div class="cv l"></div>
-<div class="inherit"><strong>4家門が1人に集中</strong></div>
-<div class="cv"></div>
-
-<!-- Gen 2: カール5世 -->
-<div class="nd karl"><div class="nb">
-  <div class="nn">カール5世（カルロス1世）</div>
-  <div class="ni">神聖ローマ皇帝＋スペイン王 ｜ 1500-1558</div>
-  <div style="display:flex;gap:3px;justify-content:center;flex-wrap:wrap;margin-top:3px">
-    <span class="ntag" style="background:rgba(138,123,91,.2);color:#c8b88a">オーストリア</span>
-    <span class="ntag" style="background:rgba(91,111,138,.2);color:#8aafc8">ネーデルラント</span>
-    <span class="ntag" style="background:rgba(138,91,91,.2);color:#d4a8a8">スペイン＋新大陸</span>
-    <span class="ntag" style="background:rgba(111,138,91,.2);color:#a8c88a">南イタリア</span>
-  </div>
-</div><div class="tp"><p>「太陽の沈まぬ帝国」。4家門の血統を一身に集める。ルターの宗教改革(1521ヴォルムス帝国議会)、フランソワ1世との4度の戦争（パヴィアの戦い1525）、スレイマン1世の第1次ウィーン包囲(1529)に同時に対処。1556年に退位し帝国をスペイン系（息子フェリペ2世）とオーストリア系（弟フェルディナント）に分割。</p></div></div>
-
-<div class="cv l"></div>
-<div class="split-label">1556年退位 ― 帝国を二分</div>
-<div class="cv"></div>
-
-<!-- Gen 3: スペイン系 vs オーストリア系 -->
-<div class="row" style="justify-content:center;gap:60px">
-  <div class="branch">
-    <div class="nd h-spa"><div class="nb">
-      <div class="nn">フェリペ2世</div>
-      <div class="ni">スペイン王 ｜ 1527-1598</div>
-      <div class="ntag">スペイン＝ハプスブルク</div>
-    </div><div class="tp"><p>スペイン＋ネーデルラント＋新大陸＋ポルトガル(1580)を支配。レパント(1571)でオスマンに勝利。しかしオランダ独立戦争・アルマダの敗北(1588)で衰退の兆し。</p></div></div>
-    <div class="cv"></div>
-    <div class="nd h-spa" style="opacity:.7"><div class="nb">
-      <div class="nn" style="font-size:10px">カルロス2世（1700断絶）</div>
-      <div class="ni">→ スペイン継承戦争(1701-13)</div>
-      <div class="ni">→ ブルボン朝スペインへ</div>
-    </div><div class="tp"><p>近親婚の繰り返しによる遺伝的問題。後継者なく死去→スペイン継承戦争→ユトレヒト条約でブルボン朝スペインが成立（仏西合同は禁止）。</p></div></div>
-  </div>
-
-  <div class="branch">
-    <div class="nd h-aus"><div class="nb">
-      <div class="nn">フェルディナント1世</div>
-      <div class="ni">神聖ローマ皇帝 ｜ 1503-1564</div>
-      <div class="ntag">オーストリア＝ハプスブルク</div>
-    </div><div class="tp"><p>カール5世の弟。オーストリア・ボヘミア・ハンガリーを相続。アウクスブルクの和議(1555)を主導。神聖ローマ皇帝位はこちらの系統が1806年まで継承。</p></div></div>
-    <div class="cv"></div>
-    <div class="nd h-aus" style="opacity:.7"><div class="nb">
-      <div class="nn" style="font-size:10px">→ マリア＝テレジア(1740-80)</div>
-      <div class="ni">→ ハプスブルク＝ロートリンゲン家</div>
-      <div class="ni">→ WW1で帝国解体(1918)</div>
-    </div><div class="tp"><p>マリア＝テレジア(オーストリア継承戦争)→ヨーゼフ2世(啓蒙専制)→フランツ2世(神聖ローマ帝国解体1806)→フランツ＝ヨーゼフ(アウスグライヒ1867)→WW1敗戦→帝国解体(1918)。マリア＝テレジアの娘マリー＝アントワネットがルイ16世に嫁いだのも婚姻外交の延長。</p></div></div>
-  </div>
-</div>
-
-</div><!-- tree -->
-</div><!-- wrap -->
-
-<!-- ===== PART 2: カール5世を取り巻く国際関係 ===== -->
-<div class="sec-title">カール5世の時代 ― 同時代の君主と対立構造</div>
-<div class="sec-sub">タップすると詳細を表示</div>
-
-<div class="diagram-wrap">
-<svg viewBox="0 0 780 420" xmlns="http://www.w3.org/2000/svg" style="width:780px;height:420px;min-width:780px">
-
-  <!-- 
-    Layout: Karl V center. Rivals arranged around with clear spacing.
-    LEFT: Francis I (top-left), Henry VIII (bottom-left)
-    RIGHT: Suleiman (top-right), Luther (bottom-right)
-    BOTTOM CENTER: Pope
-    Catherine label between Henry and Karl
-    Lines routed to avoid crossings.
-  -->
-
-  <!-- ===== RELATIONSHIP LINES (drawn first, behind nodes) ===== -->
-
-  <!-- Karl ←→ Francis I : rivalry (top-left diagonal) -->
-  <path d="M 290 195 L 200 120" stroke="#c25a5a" stroke-width="2" opacity=".4" fill="none"/>
-  <rect x="196" y="148" width="90" height="22" rx="3" fill="rgba(6,9,15,.85)"/>
-  <text x="241" y="157" text-anchor="middle" fill="#c25a5a" font-size="7.5" font-family="Noto Sans JP" opacity=".8">イタリア戦争(4回)</text>
-  <text x="241" y="167" text-anchor="middle" fill="#c25a5a" font-size="6.5" font-family="Noto Sans JP" opacity=".6">パヴィアで捕虜(1525)</text>
-
-  <!-- Karl ←→ Suleiman : military clash (top-right diagonal) -->
-  <path d="M 490 195 L 580 120" stroke="#c25a5a" stroke-width="2" opacity=".4" fill="none"/>
-  <rect x="496" y="148" width="95" height="22" rx="3" fill="rgba(6,9,15,.85)"/>
-  <text x="543" y="157" text-anchor="middle" fill="#c25a5a" font-size="7.5" font-family="Noto Sans JP" opacity=".8">ウィーン包囲(1529)</text>
-  <text x="543" y="167" text-anchor="middle" fill="#c25a5a" font-size="6.5" font-family="Noto Sans JP" opacity=".6">東方からの脅威</text>
-
-  <!-- Karl ←→ Henry VIII : Catherine problem (bottom-left diagonal) -->
-  <path d="M 290 225 L 200 300" stroke="#c29a4a" stroke-width="1.5" opacity=".4" stroke-dasharray="5,4" fill="none"/>
-  <rect x="193" y="252" width="105" height="22" rx="3" fill="rgba(6,9,15,.85)"/>
-  <text x="245" y="261" text-anchor="middle" fill="#c29a4a" font-size="7.5" font-family="Noto Sans JP" opacity=".8">叔母キャサリンの離婚問題</text>
-  <text x="245" y="271" text-anchor="middle" fill="#c29a4a" font-size="6.5" font-family="Noto Sans JP" opacity=".6">→ 英国国教会の成立に直結</text>
-
-  <!-- Karl ←→ Luther : internal split (bottom-right diagonal) -->
-  <path d="M 490 225 L 580 300" stroke="#c25a5a" stroke-width="1.5" opacity=".35" stroke-dasharray="4,3" fill="none"/>
-  <rect x="496" y="252" width="100" height="22" rx="3" fill="rgba(6,9,15,.85)"/>
-  <text x="546" y="261" text-anchor="middle" fill="#c25a5a" font-size="7.5" font-family="Noto Sans JP" opacity=".8">ヴォルムス帝国議会(1521)</text>
-  <text x="546" y="271" text-anchor="middle" fill="#c25a5a" font-size="6.5" font-family="Noto Sans JP" opacity=".6">帝国の宗教的分裂</text>
-
-  <!-- Francis ←→ Suleiman : secret alliance (top, horizontal) -->
-  <path d="M 195 88 L 585 88" stroke="#4a90c2" stroke-width="1.5" opacity=".3" stroke-dasharray="6,4" fill="none"/>
-  <rect x="310" y="66" width="160" height="18" rx="3" fill="rgba(6,9,15,.85)"/>
-  <text x="390" y="79" text-anchor="middle" fill="#4a90c2" font-size="8" font-family="Noto Sans JP" opacity=".8">仏土同盟（キリスト教世界に衝撃）</text>
-
-  <!-- Henry ←→ Pope : break (bottom, horizontal) -->
-  <path d="M 195 330 L 335 380" stroke="#c25a5a" stroke-width="1.5" opacity=".3" fill="none"/>
-  <rect x="218" y="351" width="80" height="14" rx="3" fill="rgba(6,9,15,.85)"/>
-  <text x="258" y="361" text-anchor="middle" fill="#c25a5a" font-size="7" font-family="Noto Sans JP" opacity=".7">首長法で決裂(1534)</text>
-
-  <!-- Karl ←→ Pope : complex (bottom center) -->
-  <path d="M 390 240 L 390 365" stroke="#c29a4a" stroke-width="1.5" opacity=".3" stroke-dasharray="4,3" fill="none"/>
-  <rect x="395" y="330" width="85" height="14" rx="3" fill="rgba(6,9,15,.85)"/>
-  <text x="437" y="340" text-anchor="middle" fill="#c29a4a" font-size="7" font-family="Noto Sans JP" opacity=".7">ローマ劫掠(1527)</text>
-
-  <!-- ===== NODES (drawn on top of lines) ===== -->
-
-  <!-- カール5世 (center) -->
-  <g class="nd-svg" data-tip="karl5">
-    <rect x="290" y="178" width="200" height="64" rx="10" fill="rgba(var(--axr),.08)" stroke="rgba(var(--axr),.35)" stroke-width="1.5"/>
-    <text x="390" y="200" text-anchor="middle" fill="#e8c888" font-size="15" font-family="Noto Serif JP" font-weight="700">カール5世</text>
-    <text x="390" y="216" text-anchor="middle" fill="#8a857d" font-size="8" font-family="Noto Sans JP">神聖ローマ皇帝＋スペイン王 ｜ 1519-1556</text>
-    <text x="390" y="232" text-anchor="middle" fill="#555048" font-size="7.5" font-family="Noto Sans JP">「太陽の沈まぬ帝国」― 三方面の敵に同時に対処</text>
-  </g>
-
-  <!-- フランソワ1世 (top-left) -->
-  <g class="nd-svg" data-tip="francis">
-    <rect x="50" y="92" width="150" height="52" rx="8" fill="rgba(120,91,138,.08)" stroke="rgba(120,91,138,.3)" stroke-width="1.5"/>
-    <text x="125" y="112" text-anchor="middle" fill="#b8a0d4" font-size="12" font-family="Noto Serif JP" font-weight="700">フランソワ1世</text>
-    <text x="125" y="126" text-anchor="middle" fill="#8a857d" font-size="7.5" font-family="Noto Sans JP">フランス王 ｜ 1515-1547</text>
-    <text x="125" y="138" text-anchor="middle" fill="#555048" font-size="7" font-family="Noto Sans JP">カール最大のライバル</text>
-  </g>
-
-  <!-- スレイマン1世 (top-right) -->
-  <g class="nd-svg" data-tip="suleiman">
-    <rect x="580" y="92" width="150" height="52" rx="8" fill="rgba(138,120,91,.08)" stroke="rgba(138,120,91,.3)" stroke-width="1.5"/>
-    <text x="655" y="112" text-anchor="middle" fill="#d4c0a0" font-size="12" font-family="Noto Serif JP" font-weight="700">スレイマン1世</text>
-    <text x="655" y="126" text-anchor="middle" fill="#8a857d" font-size="7.5" font-family="Noto Sans JP">オスマン帝国 ｜ 1520-1566</text>
-    <text x="655" y="138" text-anchor="middle" fill="#555048" font-size="7" font-family="Noto Sans JP">オスマン最盛期</text>
-  </g>
-
-  <!-- ヘンリー8世 (bottom-left) -->
-  <g class="nd-svg" data-tip="henry">
-    <rect x="50" y="290" width="150" height="52" rx="8" fill="rgba(91,138,120,.08)" stroke="rgba(91,138,120,.3)" stroke-width="1.5"/>
-    <text x="125" y="310" text-anchor="middle" fill="#8ac8b0" font-size="12" font-family="Noto Serif JP" font-weight="700">ヘンリー8世</text>
-    <text x="125" y="324" text-anchor="middle" fill="#8a857d" font-size="7.5" font-family="Noto Sans JP">イングランド王 ｜ 1509-1547</text>
-    <text x="125" y="336" text-anchor="middle" fill="#555048" font-size="7" font-family="Noto Sans JP">離婚問題→英国国教会(1534)</text>
-  </g>
-
-  <!-- ルター (bottom-right) -->
-  <g class="nd-svg" data-tip="luther">
-    <rect x="580" y="290" width="150" height="52" rx="8" fill="rgba(138,100,80,.06)" stroke="rgba(138,100,80,.2)" stroke-width="1.5"/>
-    <text x="655" y="310" text-anchor="middle" fill="#d4b0a0" font-size="12" font-family="Noto Serif JP" font-weight="700">ルター</text>
-    <text x="655" y="324" text-anchor="middle" fill="#8a857d" font-size="7.5" font-family="Noto Sans JP">95か条の論題(1517)</text>
-    <text x="655" y="336" text-anchor="middle" fill="#555048" font-size="7" font-family="Noto Sans JP">帝国内の宗教的分裂</text>
-  </g>
-
-  <!-- 教皇 (bottom center) -->
-  <g class="nd-svg" data-tip="pope">
-    <rect x="325" y="370" width="130" height="42" rx="8" fill="rgba(180,160,100,.06)" stroke="rgba(180,160,100,.2)" stroke-width="1"/>
-    <text x="390" y="388" text-anchor="middle" fill="#d4c8a0" font-size="11" font-family="Noto Serif JP" font-weight="700">ローマ教皇</text>
-    <text x="390" y="402" text-anchor="middle" fill="#8a857d" font-size="7" font-family="Noto Sans JP">クレメンス7世 ｜ 各勢力の板挟み</text>
-  </g>
-
-  <!-- Legend (bottom-left corner, compact) -->
-  <rect x="15" y="370" width="130" height="42" rx="4" fill="rgba(6,9,15,.6)"/>
-  <line x1="25" y1="381" x2="45" y2="381" stroke="#c25a5a" stroke-width="2" opacity=".5"/>
-  <text x="50" y="384" fill="#555048" font-size="7" font-family="Noto Sans JP">対立・交戦</text>
-  <line x1="25" y1="393" x2="45" y2="393" stroke="#4a90c2" stroke-width="2" opacity=".5"/>
-  <text x="50" y="396" fill="#555048" font-size="7" font-family="Noto Sans JP">同盟</text>
-  <line x1="25" y1="405" x2="45" y2="405" stroke="#c29a4a" stroke-width="1.5" opacity=".5" stroke-dasharray="4,3"/>
-  <text x="50" y="408" fill="#555048" font-size="7" font-family="Noto Sans JP">婚姻→対立に転化</text>
-
-</svg>
-</div>
-
-<!-- Hidden tooltip data for SVG nodes -->
-<div class="tp" id="tip-karl5"><p><strong>カール5世</strong>は同時に3つの巨大な脅威に直面した：①西のフランソワ1世（イタリア戦争）②東のスレイマン1世（ウィーン包囲）③内のルター（宗教改革による帝国分裂）。さらにヘンリー8世の叔母キャサリンとの離婚問題、教皇との複雑な関係も抱えた。この多方面での消耗が1556年退位の背景。</p></div>
-<div class="tp" id="tip-francis"><p><strong>フランソワ1世</strong>はカール5世の最大のライバル。1519年の神聖ローマ皇帝選挙でもカールと争い敗北。イタリア戦争で4度交戦→パヴィアの戦い(1525)で捕虜に。驚くべきことに、キリスト教世界の敵であるオスマンのスレイマン1世と同盟（仏土同盟）→ヨーロッパに衝撃を与えた。</p></div>
-<div class="tp" id="tip-henry"><p><strong>ヘンリー8世</strong>の最初の妻キャサリンはカール5世の叔母（フェルナンド2世とイサベルの娘）。男子の後継者を得るため離婚を望むが、カールの圧力を受けた教皇が離婚を許可せず→ヘンリーは教皇から離脱し<strong>首長法(1534)で英国国教会を設立</strong>。ハプスブルク家の婚姻政策がイギリスの宗教改革を引き起こした皮肉な結果。</p></div>
-<div class="tp" id="tip-suleiman"><p><strong>スレイマン1世（大帝）</strong>はオスマン帝国の最盛期を現出。1526年モハーチの戦いでハンガリー王国を滅ぼし、1529年<strong>第1次ウィーン包囲</strong>でハプスブルク本拠地を直接脅かした。プレヴェザの海戦(1538)で地中海の制海権も掌握。フランソワ1世と同盟しカールを東西から挟撃する戦略をとった。</p></div>
-<div class="tp" id="tip-luther"><p><strong>ルター</strong>の宗教改革(1517)はカール5世の帝国を内部から分裂させた。1521年のヴォルムス帝国議会でルターは帝国追放令を受けるが、ザクセン選帝侯の保護で生き延びる。ドイツ諸侯がルター派に改宗→シュマルカルデン戦争(1546-47)→アウクスブルクの和議(1555)で「領主の宗教が領民の宗教」。帝国の宗教的統一は永久に失われた。</p></div>
-<div class="tp" id="tip-pope"><p><strong>教皇</strong>とカールの関係は複雑。対プロテスタントでは協力関係だが、イタリアの覇権をめぐっては対立→1527年のローマ劫掠（カール軍がローマを略奪）は教皇庁に衝撃を与えた。一方でヘンリー8世の離婚問題ではカールの圧力で教皇が離婚不許可→英国国教会の成立を招いた。</p></div>
-<div class="tp" id="tip-catherine"><p><strong>キャサリン（カタリナ・デ・アラゴン）</strong>はフェルナンド2世とイサベル1世の末娘で、カール5世の叔母にあたる。ヘンリー8世の最初の妻。男子を産めなかったためヘンリーが離婚を要求→カールが教皇に圧力→教皇は離婚を認めず→ヘンリーが首長法で英国国教会を設立。ハプスブルクの婚姻政策がイギリスの宗教改革を間接的に引き起こした。</p></div>
-
-<div class="note">
-  <strong>重要ポイント：</strong><br>
-  ❶「カール5世はなぜ退位したか」→ 西のフランソワ・東のスレイマン・内のルターによる三方面の消耗<br>
-  ❷「なぜヘンリー8世は英国国教会を作ったか」→ キャサリン（カール5世の叔母）との離婚問題→教皇がカールに配慮して離婚不許可<br>
-  ❸「フランソワ1世のオスマン同盟」→ キリスト教世界の敵と同盟してまでカールに対抗した衝撃<br>
-  ❹「なぜスペイン継承戦争が起きたか」→ スペイン＝ハプスブルク家の近親婚による断絶(1700)
-</div>
-
-<!-- Tooltip system -->
-<div id="tooltip-overlay" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;z-index:8000" onclick="closeTip()"></div>
-<div id="tooltip-box" style="display:none;position:fixed;z-index:9000;background:var(--bg);border:1px solid rgba(var(--axr),.25);border-radius:8px;padding:12px 16px;max-width:320px;width:calc(100vw - 32px);box-shadow:0 8px 30px rgba(0,0,0,.6)">
-  <div id="tooltip-content" style="font-size:10px;color:var(--text2);line-height:1.7"></div>
-</div>
-<script>
-(function(){
-  var ov=document.getElementById("tooltip-overlay");
-  var bx=document.getElementById("tooltip-box");
-  var ct=document.getElementById("tooltip-content");
-
-  window.closeTip=function(){bx.style.display="none";ov.style.display="none"};
-
-  function openTip(el,rect){
-    closeTip();
-    // Get tip content: from .tp child (HTML nodes) or from data-tip (SVG nodes)
-    var tipEl=el.querySelector(".tp");
-    if(!tipEl){
-      var tipId=el.getAttribute("data-tip");
-      if(tipId) tipEl=document.getElementById("tip-"+tipId);
-    }
-    if(!tipEl) return;
-
-    ct.innerHTML=tipEl.innerHTML;
-    ov.style.display="block";bx.style.display="block";
-    var w=Math.min(320,window.innerWidth-32);bx.style.width=w+"px";
-    var l=rect.left+rect.width/2-w/2;
-    if(l<16)l=16;if(l+w>window.innerWidth-16)l=window.innerWidth-16-w;
-    bx.style.left=l+"px";
-    bx.style.top=(rect.bottom+8)+"px";bx.style.bottom="auto";
-    var br=bx.getBoundingClientRect();
-    if(br.bottom>window.innerHeight-16){var t=rect.top-br.height-8;if(t<16)t=16;bx.style.top=t+"px"}
-  }
-
-  function findNode(target){
-    var nd=target.closest(".nd");
-    if(nd) return {el:nd,rect:nd.getBoundingClientRect()};
-    var svg=target.closest(".nd-svg");
-    if(svg) return {el:svg,rect:svg.getBoundingClientRect()};
-    return null;
-  }
-
-  var tm=false,tt=null;
-  document.addEventListener("touchstart",function(e){tm=false;tt=e.target},{passive:true});
-  document.addEventListener("touchmove",function(){tm=true},{passive:true});
-  document.addEventListener("touchend",function(e){
-    if(tm)return;
-    var info=findNode(tt);
-    if(info){e.preventDefault();openTip(info.el,info.rect)}
-    else if(!tt||!tt.closest("#tooltip-box"))closeTip();
-    tt=null;
-  });
-  document.addEventListener("click",function(e){
-    if("ontouchstart"in window)return;
-    var info=findNode(e.target);
-    if(info)openTip(info.el,info.rect);
-    else if(!e.target.closest("#tooltip-box"))closeTip();
-  });
-})();
-</script>
-
-<script src="search_jump.js" defer></script></body>
-</html>
+<div class="sec-hdr"><span class="sec-icon">Ⅱ</span><h2>要点 <span class="latin">Summarium</span></h2></div>
+<div class="kp"><p>❶ マクシミリアン1世とマリーの結婚(1477)でネーデルラント、フィリップとフアナの結婚(1496)でスペインと新大陸</p><p>❷ カール5世はフランソワ1世・スレイマン1世・ルター派と同時に争い、1556年に退位した</p><p>❸ スペイン系はフェリペ2世が最盛期、1700年に断絶 → スペイン継承戦争 → ブルボン朝</p><p>❹ オーストリア系は神聖ローマ皇帝位を継ぎ、マリア＝テレジアの子孫が1918年まで続いた</p></div>
+<div class="sec-hdr"><span class="sec-icon">Ⅲ</span><h2>カール5世と同時代の君主 <span class="latin">Aetas Caroli Quinti</span></h2></div>
+<table class="rl"><tr><th>相手</th><th>カール5世との関係</th></tr>
+<tr><td class="k">フランソワ1世<small>フランス王</small></td><td><b class="x">対立</b> 皇帝選挙で争う(1519)。イタリア戦争、パヴィアの戦いで捕虜に(1525)</td></tr>
+<tr><td class="k">スレイマン1世<small>オスマン帝国</small></td><td><b class="x">対立</b> モハーチの戦い(1526)でハンガリーを破り、ウィーンを包囲(1529)</td></tr>
+<tr><td class="k">ルター派諸侯</td><td><b class="x">対立</b> ヴォルムス帝国議会(1521) → アウクスブルクの和議(1555)</td></tr>
+<tr><td class="k">クレメンス7世<small>教皇</small></td><td><b class="x">対立</b> カールの軍がローマを略奪(1527)</td></tr>
+<tr><td class="k">ヘンリ8世<small>イギリス王</small></td><td><b class="x">対立</b> 妃キャサリン(カールの叔母)との離婚を教皇が認めず → 首長法(1534)</td></tr>
+</table><p class="cap">フランソワ1世はスレイマン1世と結び、カール5世を東西からはさんだ。</p>
+<p class="rel-links">関連：<a href="bourbon_tree.html">ブルボン家の系図</a>　<a href="england_kings_tree.html">イギリス王家の系図</a>　<a href="hohenzollern_tree.html">ホーエンツォレルン家の系図</a></p>
+</main>
+<script src="search_jump.js" defer></script></body></html>

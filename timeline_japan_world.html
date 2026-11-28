@@ -1,30 +1,174 @@
 <!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>日本と世界の連関年表</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
-:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048;--border:rgba(var(--axr),.08)}
+<style>@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+:root{--bg:#f1ecdf;--gold:#8b6f4e;--gold2:#59452a;--text:#2b241b;--text2:#6d6353;--text3:#a89a80;--axr:139,111,78;--shu:#a2331e}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
-body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
-.hdr{padding:12px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
-.hdr h1{font-family:'Noto Serif JP',serif;font-size:13px;font-weight:700;color:var(--gold2)}
-.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
-.tbl-wrap{overflow-x:auto;padding:8px 16px 40px;-webkit-overflow-scrolling:touch}
-table{border-collapse:collapse;width:100%;min-width:900px}
-th{background:rgba(var(--axr),.06);color:var(--gold2);font-family:'Noto Serif JP',serif;font-size:9px;font-weight:700;padding:8px 10px;text-align:center;border-bottom:1px solid rgba(var(--axr),.12);position:sticky;top:0}
-th:first-child{text-align:right;min-width:80px}
-th:nth-child(2){min-width:50px}
-th:last-child{text-align:left;min-width:80px}
-td{padding:6px 10px;border-bottom:1px solid rgba(255,255,255,.03);font-size:8.5px;color:var(--text2);line-height:1.6;vertical-align:top}
-td:first-child{text-align:right;color:var(--text);min-width:300px}
-td:nth-child(2){text-align:center;font-family:'Cormorant Garamond',serif;font-size:11px;font-weight:700;color:var(--gold);white-space:nowrap;min-width:50px;background:rgba(var(--axr),.02)}
-td:last-child{text-align:left;color:var(--text2);min-width:300px}
-td strong{color:var(--text);font-weight:600}
-tr:hover td{background:rgba(var(--axr),.02)}
-.connect{background:rgba(var(--axr),.04)!important}
-.connect td{color:var(--text)!important}
-.note{text-align:center;padding:8px 20px 32px;max-width:800px;margin:0 auto}.note p{font-size:15px;color:var(--text3);line-height:1.7}
-@media(max-width:600px){.hdr{padding:10px 12px}.hdr h1{font-size:11px}th,td{padding:5px 7px;font-size:8px}td:nth-child(2){font-size:9px}.note p{font-size:7px}}
+.hdr{padding:16px 20px;border-bottom:1px solid rgba(var(--axr),.12);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.hdr h1{font-family:'Noto Serif JP',serif;font-size:20px;font-weight:700;color:var(--gold2)}
+.hdr a{font-size:14px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
+main{max-width:760px;margin:0 auto;padding:24px 20px 60px}
+.lead{font-size:15px;line-height:2}
+.lead b{color:var(--gold2)}
+.sec-hdr{display:flex;align-items:center;gap:10px;padding:10px 0;margin:34px 0 4px;border-bottom:1px solid rgba(var(--axr),.15)}
+.sec-icon{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:700;color:var(--gold);opacity:.75}
+.sec-hdr h2{font-family:'Noto Serif JP',serif;font-size:18px;font-weight:700;color:var(--gold2)}
+.latin{font-family:'Cormorant Garamond',serif;font-size:13px;font-weight:400;font-style:italic;color:var(--gold);margin-left:10px;letter-spacing:1px;opacity:.75}
+.cap{font-size:13px;color:var(--text2);margin:8px 0 14px;line-height:1.8}
+.x{color:var(--shu)}
+/* I lineage */
+.lin-row{display:flex;justify-content:center;gap:8px}
+.box{flex:1;max-width:220px;border:1px solid rgba(var(--axr),.3);border-radius:10px;background:rgba(var(--axr),.05);padding:8px 8px 7px;text-align:center;line-height:1.35}
+.box b{display:block;font-family:'Noto Serif JP',serif;font-size:17px;color:var(--gold2)}
+.box .by{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:15px;color:var(--gold)}
+.box small{display:block;font-size:12px;color:var(--text2);margin-top:2px}
+.box.big{max-width:420px}.box.big b{font-size:21px}
+.box.eu{border-color:rgba(var(--axr),.55);background:rgba(var(--axr),.09);box-shadow:0 0 0 3px rgba(var(--axr),.06)}
+.box .note2{border-top:1px solid rgba(var(--axr),.15);margin-top:6px;padding-top:5px}
+.merge,.down{position:relative;text-align:center;padding:10px 0 13px}
+.merge::before,.down::before{content:'';position:absolute;left:50%;top:0;bottom:0;border-left:1.5px solid rgba(var(--axr),.45)}
+.merge::after,.down::after{content:'';position:absolute;left:calc(50% - 5px);bottom:-1px;border:5px solid transparent;border-top:7px solid rgba(var(--axr),.6);border-bottom:0}
+.merge span,.down span{position:relative;background:var(--bg);font-size:12.5px;color:var(--gold);padding:0 8px}
+.merge span b,.down span b{font-family:'Cormorant Garamond',serif;font-size:14px}
+.three{position:relative;padding-bottom:10px}
+.three::after{content:'';position:absolute;left:16%;right:16%;bottom:0;border-bottom:1.5px solid rgba(var(--axr),.45)}
+.three .box{position:relative}
+.three .box::after{content:'';position:absolute;left:50%;bottom:-12px;height:10px;border-left:1.5px solid rgba(var(--axr),.45)}
+.side-h{margin:22px 0 6px;font-size:12px;color:var(--gold);font-family:'Cormorant Garamond',serif;font-style:italic;letter-spacing:1px}
+.side{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.sbox{border:1px solid rgba(var(--axr),.18);border-radius:8px;background:rgba(var(--axr),.03);padding:7px 10px;font-size:13px;line-height:1.5;color:var(--gold2)}
+.sbox b{font-family:'Noto Serif JP',serif}
+.sbox small{display:block;font-size:12px;color:var(--text2);margin-top:3px;line-height:1.65}
+.sbox.dash{border-style:dashed}
+/* II deepening x widening */
+.dw{border:1px solid rgba(var(--axr),.15);border-radius:10px;overflow:hidden;background:rgba(var(--axr),.02)}
+.dw-h,.dw-r{display:grid;grid-template-columns:48px 1fr 1fr;column-gap:10px;padding-left:10px;padding-right:10px}
+.dw-h{font-family:'Noto Serif JP',serif;font-size:13px;font-weight:700;color:var(--gold2);padding-top:8px;padding-bottom:8px;background:rgba(var(--axr),.07)}
+.dw-h span small{display:block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;color:var(--gold);font-size:11.5px;letter-spacing:1px}
+.dw-r{padding-top:6px;padding-bottom:6px;border-top:1px solid rgba(var(--axr),.08);font-size:13.5px;line-height:1.6;align-items:start}
+.dw-r:nth-child(odd){background:rgba(var(--axr),.025)}
+.dw-r .y{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:16px;color:var(--gold);line-height:1.4}
+.dw-r .d{border-right:1px solid rgba(var(--axr),.12);padding-right:10px}
+.cnt{display:flex;align-items:center;gap:6px;margin-top:4px}
+.cnt i{display:block;height:6px;border-radius:3px;background:rgba(var(--axr),.45);max-width:calc(100% - 28px)}
+.cnt b{font-size:13px;font-family:'Cormorant Garamond',serif;color:var(--gold2)}
+/* III UK */
+.uk{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;counter-reset:u}
+.uk li{position:relative;border:1px solid rgba(var(--axr),.15);border-radius:8px;background:rgba(var(--axr),.04);padding:6px 10px 7px 32px;font-size:13.5px;line-height:1.55;counter-increment:u}
+.uk li::before{content:counter(u,upper-roman);position:absolute;left:9px;top:7px;font-family:'Cormorant Garamond',serif;font-weight:700;font-size:13px;color:var(--gold);opacity:.7}
+.uk li .y{display:block;font-family:'Cormorant Garamond',serif;font-weight:700;color:var(--gold);font-size:15px}
+.uk li.ux{border-color:rgba(162,51,30,.35);background:rgba(162,51,30,.04)}.uk li.ux .y{color:var(--shu)}
+/* summary */
+.kp{background:rgba(var(--axr),.04);border:1px solid rgba(var(--axr),.12);border-radius:10px;padding:14px 18px}
+.kp p{font-size:13.5px;line-height:1.9;margin:2px 0}
+.kp b{color:var(--gold2)}
+/* IV per-phase (flow_ style) */
+.toc{display:flex;flex-wrap:wrap;gap:4px 14px;margin:4px 0 14px}
+.toc a{font-size:12.5px;color:var(--text2);text-decoration:none}
+.toc a span{font-family:'Cormorant Garamond',serif;font-weight:700;color:var(--gold);margin-right:5px}
+.toc a:hover{color:var(--gold2)}
+.phase{position:relative;padding:14px 4px 14px 22px;border-left:2px solid rgba(var(--axr),.15);margin-left:46px;scroll-margin-top:8px}
+.phase:last-child{border-left-color:transparent}
+.phase::before{content:'';position:absolute;left:-6px;top:20px;width:8px;height:8px;border-radius:50%;background:var(--bg);border:2px solid rgba(var(--axr),.45)}
+.phase-label{position:absolute;left:-50px;top:15px;width:40px;font-family:'Cormorant Garamond',serif;font-size:13px;font-weight:700;color:var(--gold);text-align:right;line-height:1.25}
+.ph-head{margin-bottom:8px}
+.ph-title{display:block;font-family:'Noto Serif JP',serif;font-size:17px;font-weight:700;color:var(--gold2)}
+.ph-sub{display:block;font-size:12.5px;color:var(--text2);margin-top:1px}
+.event{background:rgba(var(--axr),.03);border:1px solid rgba(var(--axr),.1);border-radius:8px;padding:8px 12px;margin-bottom:8px}
+.event.org{background:rgba(var(--axr),.07);border-color:rgba(var(--axr),.22)}
+.event.bad-ev{background:rgba(162,51,30,.035);border-color:rgba(162,51,30,.22)}
+.ev-title{font-family:'Noto Serif JP',serif;font-size:15px;font-weight:700;color:var(--gold2);display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 10px}
+.bad-ev .ev-title{color:var(--shu)}
+.orgname{font-size:16px}
+.ev-year{font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:700;color:var(--gold)}
+.org-sub{font-size:12px;color:var(--text2)}
+.bad{font-family:'Noto Sans JP',sans-serif;font-size:10.5px;font-weight:400;color:var(--shu);border:1px solid rgba(162,51,30,.4);border-radius:4px;padding:0 6px}
+.ev-desc{font-size:14px;color:var(--text);line-height:1.8;margin-top:3px}
+.ev-desc b{color:var(--gold2)}
+.side-note{font-size:13px;color:var(--text2);line-height:1.8;padding:6px 10px;border-left:2px solid rgba(var(--axr),.25);margin:4px 0 8px}
+.side-note b,.side-note strong{color:var(--gold2)}
+.out{color:var(--shu)}
+@media(max-width:600px){
+.hdr{padding:12px 14px}.hdr h1{font-size:16px}
+main{padding:16px 14px 60px}
+.lead{font-size:14px}
+.sec-hdr h2{font-size:16px}.latin{font-size:12px;margin-left:6px}
+.box b{font-size:15px}.box small{font-size:11px}.box{padding:6px 4px}
+.box.big b{font-size:18px}
+.merge span,.down span{font-size:11.5px}
+.side{grid-template-columns:1fr}
+.dw-h,.dw-r{grid-template-columns:36px 1fr 1fr;column-gap:7px;padding-left:7px;padding-right:7px}
+.dw-r{font-size:12.5px}.dw-r .y{font-size:14px}.dw-r .d{padding-right:7px}
+.uk{grid-template-columns:1fr 1fr}.uk li{font-size:12.5px}
+.kp{padding:12px 14px}.kp p{font-size:12.5px}
+.phase{margin-left:38px;padding-left:16px}.phase-label{left:-42px;width:34px;font-size:12px}
+.ph-title{font-size:15.5px}
+.ev-title{font-size:14px}.orgname{font-size:15px}.ev-desc{font-size:13px}
+.side-note{font-size:12.5px}
+}
+
+/* ---- timeline pages (2026-11-28) ---- */
+.lead{margin-top:2px}
+.tl{border:1px solid rgba(var(--axr),.15);border-radius:10px;overflow:hidden;background:rgba(var(--axr),.02)}
+.tl-h,.tl-r{display:grid;grid-template-columns:50px repeat(var(--n),minmax(0,1fr));column-gap:10px;padding:0 10px}
+.tl-h{font-family:'Noto Serif JP',serif;font-size:13px;font-weight:700;color:var(--gold2);padding-top:8px;padding-bottom:8px;background:rgba(var(--axr),.07);line-height:1.35}
+.tl-h small{display:block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;color:var(--gold);font-size:12px;letter-spacing:.5px}
+.tl-r{padding-top:6px;padding-bottom:6px;border-top:1px solid rgba(var(--axr),.08);font-size:13.5px;line-height:1.55;align-items:start}
+.tl-r .y{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:16px;color:var(--gold);line-height:1.35;white-space:nowrap}
+.tl-r .y small{display:block;font-size:12.5px;line-height:1.1}
+.tl-r .c{min-width:0;border-left:1px solid rgba(var(--axr),.1);padding-left:8px;align-self:stretch}
+.tl-r .c.sp{background:rgba(var(--axr),.05);border-radius:6px;border-left:0;padding:1px 8px}
+.tl-r .e{display:block}
+.tl-r .e+.e{margin-top:3px}
+.tl-r.lk{background:rgba(var(--axr),.075)}
+.tl-r.lk .y::after{content:'⇄';display:block;font-family:'Noto Sans JP',sans-serif;font-size:11px;font-weight:400;color:var(--gold)}
+.tl-era{border-top:1px solid rgba(var(--axr),.16);background:rgba(var(--axr),.06);padding:7px 10px 6px;font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2);line-height:1.45}
+.tl-era i{font-family:'Cormorant Garamond',serif;font-weight:700;font-style:normal;color:var(--gold);margin-left:6px;font-size:15px}
+.tl-era small{display:block;font-family:'Noto Sans JP',sans-serif;font-weight:400;font-size:12px;color:var(--text2);margin-top:1px}
+.x{color:var(--shu)}
+.key{display:flex;flex-wrap:wrap;gap:4px 12px;margin:0 2px 8px;font-size:12px;color:var(--text2);line-height:1.8}
+.foot{font-size:12.5px;color:var(--text2);line-height:1.75;margin:6px 2px 0}
+/* tags (soft tints, dark ink) */
+.t{display:inline-block;font-size:11.5px;line-height:1.45;padding:0 5px;margin-right:4px;border-radius:4px;border:1px solid rgba(var(--axr),.3);background:rgba(var(--axr),.07);color:var(--text);font-weight:400;white-space:nowrap;vertical-align:1px}
+.t.k-e{background:rgba(52,86,140,.1);border-color:rgba(52,86,140,.32)}
+.t.k-f{background:rgba(110,70,150,.1);border-color:rgba(110,70,150,.32)}
+.t.k-s{background:rgba(162,51,30,.09);border-color:rgba(162,51,30,.3)}
+.t.k-p{background:rgba(60,120,50,.1);border-color:rgba(60,120,50,.32)}
+.t.k-n{background:rgba(200,120,30,.11);border-color:rgba(200,120,30,.36)}
+.t.k-g{background:rgba(90,90,90,.1);border-color:rgba(90,90,90,.32)}
+.t.k-u{background:rgba(30,120,120,.1);border-color:rgba(30,120,120,.32)}
+.t.k-j{background:rgba(150,140,30,.12);border-color:rgba(150,140,30,.4)}
+.t.k-i{background:rgba(120,90,50,.1);border-color:rgba(120,90,50,.32)}
+.t.k-o{background:rgba(var(--axr),.05);border-style:dashed;border-color:rgba(var(--axr),.45)}
+.t.k-ind{background:rgba(var(--axr),.2);border-color:rgba(var(--axr),.55);font-weight:600;color:var(--gold2)}
+/* plain table */
+.tb-wrap{border:1px solid rgba(var(--axr),.15);border-radius:10px;overflow:hidden;background:rgba(var(--axr),.02)}
+table.tb{width:100%;border-collapse:collapse;table-layout:fixed}
+.tb th{font-family:'Noto Serif JP',serif;font-size:13px;font-weight:700;color:var(--gold2);background:rgba(var(--axr),.07);padding:7px 8px;line-height:1.35;text-align:left;vertical-align:bottom}
+.tb th small{display:block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;color:var(--gold);font-size:12px}
+.tb td{font-size:13.5px;line-height:1.55;color:var(--text);padding:7px 8px;border-top:1px solid rgba(var(--axr),.08);border-left:1px solid rgba(var(--axr),.08);vertical-align:top;overflow-wrap:anywhere}
+.tb td:first-child{border-left:0}
+.tb tbody tr:nth-child(even) td{background:rgba(var(--axr),.02)}
+.tb td.p{font-family:'Noto Serif JP',serif;font-weight:700;color:var(--gold2);font-size:13.5px}
+.tb td .e{display:block}
+.tb td .e+.e{margin-top:4px}
+.tb.gt tbody tr:nth-child(even) td{background:none}
+.tb.gt tr.g td{background:rgba(var(--axr),.06);font-family:'Noto Serif JP',serif;font-size:13.5px;font-weight:700;color:var(--gold2);padding:4px 8px;border-left:0;border-top:1px solid rgba(var(--axr),.16)}
+.tb.gt tr.g td small{font-family:'Noto Sans JP',sans-serif;font-weight:400;font-size:12px;color:var(--text2);margin-left:8px}
+.tb .dash{color:var(--text3)}
+.yy{font-family:'Cormorant Garamond',serif;font-weight:700;color:var(--gold);font-size:15px}
+@media(max-width:600px){
+.tl-h,.tl-r{grid-template-columns:36px repeat(var(--n),minmax(0,1fr));column-gap:6px;padding-left:6px;padding-right:6px}
+.tl-h{font-size:12px}.tl-h small{font-size:11px}
+.tl-r{font-size:13px;line-height:1.45;padding-top:5px;padding-bottom:5px}.tl-r .e+.e{margin-top:2px}.tl-r .y{font-size:14px}.tl-r .y small{font-size:11.5px}
+.tl-r .c{padding-left:5px}.tl-r .c.sp{padding:1px 5px}
+.tl-era{font-size:13.5px;padding:6px 8px 5px}.tl-era small{font-size:11.5px}
+.t{font-size:11px;padding:0 4px;margin-right:3px}
+.tb th{font-size:12px;padding:6px 5px}.tb th small{font-size:11px}
+.tb td{font-size:13px;padding:5px 5px;line-height:1.45}.tb td.p{font-size:12px;line-height:1.35}.tb td .e+.e{margin-top:3px}.tb.gt tr.g td{padding:3px 6px;font-size:13px}
+.key{font-size:11.5px}.foot{font-size:12px}
+.kp p{font-size:13px}
+}
 </style><style id="thThemes">/* =====================================================
    THESAURUS HISTORIAE ― themes.css(LUX固定版)
    生成りの紙 + 墨の本文 + 朱筆(★語) + 金茶の構造色。
@@ -70,87 +214,11 @@ html[data-theme="lux"] .side-note,
 html[data-theme="lux"] .ev-note,
 html[data-theme="lux"] .arrow-text,
 html[data-theme="lux"] .detail { color:var(--text2); }
-</style><script id="thScript">document.documentElement.setAttribute('data-theme','lux');</script></head><body>
-<div class="hdr"><h1>日本と世界の連関年表 ― 「同じ頃、世界では」</h1><a href="charts.html">← Ad Chartae</a></div>
-<div class="tbl-wrap"><table>
-<thead><tr><th>← 日本史</th><th>年</th><th>世界史 →</th></tr></thead>
-<tbody>
-
-<tr><td>★<strong>邪馬台国</strong>の卑弥呼が魏に朝貢→金印「親魏倭王」</td><td>239</td><td>三国時代(魏・呉・蜀)。ローマ帝国は「3世紀の危機」(軍人皇帝時代)</td></tr>
-
-<tr><td>倭の五王が南朝(宋)に朝貢→中国の冊封体制に参入</td><td>5C</td><td>西ローマ帝国滅亡(476)。ゲルマン民族の大移動。北魏の孝文帝の漢化政策</td></tr>
-
-<tr class="connect"><td>★<strong>遣隋使</strong>(607小野妹子)。冠位十二階(603)。十七条憲法(604)</td><td>607</td><td>★<strong>隋</strong>の煬帝→大運河建設→高句麗遠征失敗(612)→隋滅亡(618)</td></tr>
-
-<tr><td>★<strong>大化の改新</strong>(645)→中央集権化→律令国家へ</td><td>645</td><td>★イスラームの急速な拡大(正統カリフ時代)。唐の太宗(貞観の治)</td></tr>
-
-<tr class="connect"><td>★<strong>白村江の戦い</strong>(663)→百済救援に失敗→朝鮮半島から撤退→防衛体制強化</td><td>663</td><td>唐・新羅連合が百済を滅ぼす(660)→高句麗を滅ぼす(668)→新羅が朝鮮半島を統一(676)</td></tr>
-
-<tr><td>★<strong>大宝律令</strong>(701)→律令国家の完成。奈良時代(710平城京)</td><td>701</td><td>ウマイヤ朝の最大版図。唐は則天武后(690-705)→玄宗(開元の治)</td></tr>
-
-<tr class="connect"><td>★<strong>遣唐使</strong>の全盛期。鑑真来日(753)。★<strong>天平文化</strong>(正倉院宝物＝シルクロードの終着点)</td><td>752</td><td>★<strong>タラス河畔の戦い</strong>(751)＝唐vsアッバース朝→製紙法の西伝。アッバース革命(750)</td></tr>
-
-<tr><td>★<strong>平安遷都</strong>(794)。最澄(天台宗)・空海(真言宗)</td><td>794</td><td>カール大帝の戴冠(800)。アッバース朝のハールーン＝アッラシード。唐の衰退期</td></tr>
-
-<tr><td>★<strong>遣唐使の廃止</strong>(894菅原道真)→★<strong>国風文化</strong>の発展(源氏物語・枕草子)</td><td>894</td><td>唐滅亡(907)→五代十国。ヨーロッパはノルマン人の侵攻(ヴァイキング時代)</td></tr>
-
-<tr><td>★<strong>院政の開始</strong>(1086白河上皇)。平氏政権(1167平清盛太政大臣)</td><td>11-12C</td><td>★十字軍(第1回1096)。セルジューク朝。宋(王安石の新法1069)。クリュニー修道院改革</td></tr>
-
-<tr class="connect"><td>★<strong>日宋貿易</strong>(平清盛が大輪田泊を整備)→宋銭の大量輸入→貨幣経済の浸透</td><td>12C</td><td>南宋の経済繁栄。景徳鎮の陶磁器。朱子学の完成(朱熹1130-1200)</td></tr>
-
-<tr class="connect"><td>★<strong>元寇</strong>(1274文永の役・1281弘安の役)→モンゴル軍の撃退→ただし御恩不足→御家人の不満→鎌倉幕府の衰退</td><td>1274</td><td>★<strong>モンゴル帝国</strong>の最大版図。フビライの元(1271-)。マルコ＝ポーロ(1271出発)</td></tr>
-
-<tr><td>★<strong>建武の新政</strong>(1334後醍醐天皇)→失敗→南北朝時代(1336-92)→室町幕府(足利尊氏)</td><td>1336</td><td>百年戦争開始(1337)。ペスト(黒死病1347-)。元末の紅巾の乱→明の建国(1368)</td></tr>
-
-<tr class="connect"><td>★<strong>勘合貿易</strong>(1404足利義満)→日明貿易→日本国王に冊封される(★倭の五王以来、約900年ぶりに中国皇帝の冊封を受けた)</td><td>1404</td><td>★<strong>明の永楽帝</strong>→鄭和の南海遠征(1405-33)。ティムール帝国の全盛(ティムール1405死去)</td></tr>
-
-<tr><td>★<strong>応仁の乱</strong>(1467)→戦国時代の開始</td><td>1467</td><td>ビザンツ帝国滅亡(1453)。グーテンベルクの活版印刷(1450年代)。バラ戦争(英1455-85)</td></tr>
-
-<tr class="connect"><td>★<strong>鉄砲伝来</strong>(1543種子島)。★<strong>キリスト教伝来</strong>(1549ザビエル)→南蛮貿易</td><td>1543</td><td>★<strong>コペルニクス</strong>「天球の回転について」(1543)。トリエント公会議(1545)→対抗宗教改革→イエズス会の海外宣教</td></tr>
-
-<tr><td>★<strong>織田信長</strong>(桶狭間1560→本能寺の変1582)→★<strong>豊臣秀吉</strong>(全国統一1590)</td><td>1560s-</td><td>エリザベス1世(英1558-1603)→アルマダの海戦(1588)。オランダ独立戦争(1568-)。ユグノー戦争(仏1562-98)</td></tr>
-
-<tr class="connect"><td>★<strong>朝鮮出兵</strong>(壬辰倭乱1592・丁酉再乱1597)→東アジア全体に衝撃(明の衰退を加速・朝鮮の荒廃)</td><td>1592</td><td>明の万暦帝(援軍派遣で財政悪化→明滅亡の一因)。朝鮮の李舜臣(亀甲船)</td></tr>
-
-<tr><td>★<strong>関ヶ原の戦い</strong>(1600)→★<strong>江戸幕府</strong>成立(1603徳川家康)</td><td>1600</td><td>★<strong>英東インド会社</strong>(1600)・★<strong>蘭東インド会社(VOC)</strong>(1602)設立。関ヶ原と同年にイギリスがアジア進出の拠点を作った</td></tr>
-
-<tr class="connect"><td>★<strong>鎖国の完成</strong>(1639ポルトガル船来航禁止→出島のオランダのみ)→約200年の平和</td><td>1639</td><td>ピューリタン革命(英1642)→清の中国支配(1644)→ウェストファリア条約(1648)→主権国家体制。ルイ14世(仏1643-1715)</td></tr>
-
-<tr><td>★<strong>元禄文化</strong>(1688-1704)。松尾芭蕉「奥の細道」(1689)。井原西鶴。近松門左衛門</td><td>1689</td><td>★<strong>名誉革命→権利章典</strong>(英1689)。ピョートル1世(露1682-1725)の西欧化改革。★ネルチンスク条約(清露1689)</td></tr>
-
-<tr><td>田沼意次の政治(1772-86)→★<strong>寛政の改革</strong>(1787-93松平定信)</td><td>1776</td><td>★<strong>アメリカ独立宣言</strong>(1776)。アダム＝スミス「国富論」(1776)。啓蒙思想の時代</td></tr>
-
-<tr><td>★<strong>化政文化</strong>。葛飾北斎「富嶽三十六景」(1831頃)→★<strong>ジャポニスム</strong>として印象派に影響</td><td>1830s</td><td>七月革命(仏1830)。選挙法改正(英1832)。アヘン戦争(1840-42清vs英)→南京条約</td></tr>
-
-<tr class="connect"><td>★<strong>ペリー来航</strong>(1853)→日米和親条約(1854)→安政の五カ国条約(1858不平等条約)</td><td>1853</td><td>クリミア戦争(1853-56露vs英仏)→露の敗北→アレクサンドル2世の改革。太平天国(1851-64)</td></tr>
-
-<tr class="connect"><td>★<strong>明治維新</strong>(1868)→廃藩置県(1871)→学制・徴兵令・地租改正→★<strong>富国強兵</strong></td><td>1868</td><td>スエズ運河開通(1869)。ドイツ帝国成立(1871)。イタリア統一完成(1870)。パリ＝コミューン(1871)</td></tr>
-
-<tr><td>★<strong>自由民権運動</strong>→★<strong>大日本帝国憲法</strong>(1889)→帝国議会開設(1890)</td><td>1889</td><td>エッフェル塔(パリ万博1889)。ブラジル共和革命(1889)。ビスマルク辞任(1890)</td></tr>
-
-<tr class="connect"><td>★<strong>日清戦争</strong>(1894-95)→下関条約→台湾獲得→三国干渉→臥薪嘗胆</td><td>1894</td><td>★<strong>甲午農民戦争</strong>(朝鮮)。ドレフュス事件(仏1894)。露仏同盟(1894)。列強のアフリカ分割が加速</td></tr>
-
-<tr class="connect"><td>★<strong>日露戦争</strong>(1904-05)→ポーツマス条約→韓国保護国化→★<strong>非白人国家が白人大国に勝利</strong>→アジアの民族運動に衝撃</td><td>1905</td><td>★<strong>第一次ロシア革命</strong>(血の日曜日)。イラン立憲革命。青年トルコ革命(1908)。相対性理論(1905)</td></tr>
-
-<tr class="connect"><td>★<strong>韓国併合</strong>(1910)→★<strong>対華21カ条要求</strong>(1915)→大戦景気</td><td>1914</td><td>★<strong>第一次世界大戦</strong>勃発(1914)。サラエヴォ事件→同盟国vs連合国</td></tr>
-
-<tr><td>★<strong>米騒動</strong>(1918)→原敬(初の本格的政党内閣1918)→大正デモクラシー</td><td>1919</td><td>パリ講和会議。ヴェルサイユ条約。三一運動(朝鮮)。五四運動(中国)。ワイマール共和国(独)</td></tr>
-
-<tr class="connect"><td>★<strong>満州事変</strong>(1931柳条湖事件)→満州国建国(1932)→国際連盟脱退(1933)</td><td>1931</td><td>世界恐慌の深化。ナチスの台頭(1933ヒトラー政権)。中国では★<strong>長征</strong>(1934-36)</td></tr>
-
-<tr class="connect"><td>★<strong>日中戦争</strong>勃発(1937盧溝橋事件)→南京事件→泥沼化</td><td>1937</td><td>スペイン内戦(1936-39)。独のオーストリア併合(1938)。ミュンヘン会談(1938)→宥和政策の失敗</td></tr>
-
-<tr class="connect"><td>★<strong>太平洋戦争</strong>(1941.12.8真珠湾攻撃)→★<strong>敗戦</strong>(1945.8.15)</td><td>1941</td><td>★<strong>独ソ戦</strong>開始(1941.6)。大西洋憲章(1941.8)。スターリングラード(1942-43)→ノルマンディー(1944)→独降伏(1945.5)</td></tr>
-
-<tr class="connect"><td>★<strong>GHQ占領</strong>→日本国憲法(1946)→財閥解体・農地改革→★<strong>サンフランシスコ平和条約＋日米安保条約</strong>(1951)→主権回復(1952)</td><td>1945-52</td><td>国際連合(1945)。冷戦の開始→トルーマン＝ドクトリン(1947)→マーシャル＝プラン→ベルリン封鎖(1948)→NATO(1949)→朝鮮戦争(1950-53)</td></tr>
-
-<tr class="connect"><td>★<strong>朝鮮特需</strong>→★<strong>高度経済成長</strong>(1955-73)→東京オリンピック(1964)→日韓基本条約(1965)</td><td>1960s</td><td>アフリカの年(1960)。キューバ危機(1962)。ベトナム戦争激化。文化大革命(1966-76)。プラハの春(1968)</td></tr>
-
-<tr class="connect"><td>★<strong>日中国交正常化</strong>(1972田中角栄)→★<strong>石油危機</strong>(1973)→高度成長の終焉</td><td>1972</td><td>★ニクソン訪中(1972)→米中接近。第四次中東戦争(1973)。ベトナム戦争終結(1975)</td></tr>
-
-<tr><td>★<strong>バブル経済</strong>(1986-91)→崩壊→「失われた10年」</td><td>1989</td><td>★<strong>天安門事件</strong>(6月)。★<strong>ベルリンの壁崩壊</strong>(11月)→冷戦終結。ソ連崩壊(1991)</td></tr>
-
-</tbody></table></div>
-
-<div class="note"><p>★ゴールド背景の行＝日本と世界が直接つながっている事象(遣唐使・元寇・鉄砲伝来・ペリー来航・日清日露・WWなど)。日本史と世界史を「同じ時間軸」で並べて見ることで、「なぜこの時期にこの出来事が起きたか」の因果関係が見える。</p></div>
+</style><script id="thScript">document.documentElement.setAttribute('data-theme','lux');</script></head>
+<body>
+<div class="hdr"><h1>日本と世界の連関年表 ― 同じころ、世界では</h1><a href="charts.html">← Ad Chartae</a></div>
+<main>
+<p class="lead">日本の出来事と同じころの世界の出来事を並べた。<b>⇄</b>の行は日本と世界が直接結びついた出来事。</p>
+<div class="sec-hdr"><span class="sec-icon">Ⅰ</span><h2>年表 <span class="latin">Ordo Temporum</span></h2></div><div class="tl" style="--n:2"><div class="tl-h"><span></span><span>日本<small>Iaponia</small></span><span>世界<small>Orbis</small></span></div><div class="tl-era">古代<i>3〜10世紀</i></div><div class="tl-r lk"><span class="y">239</span><span class="c"><span class="e">卑弥呼が魏に使い(親魏倭王)</span></span><span class="c"><span class="e">中国は三国時代(魏・呉・蜀)</span></span></div><div class="tl-r lk"><span class="y">5C</span><span class="c"><span class="e">倭の五王が南朝の宋に朝貢</span></span><span class="c"><span class="e">中国は南北朝時代、西ローマ帝国滅亡(476)</span></span></div><div class="tl-r lk"><span class="y">607</span><span class="c"><span class="e">遣隋使(小野妹子)</span></span><span class="c"><span class="e">隋の煬帝、高句麗遠征に失敗(612〜14)</span></span></div><div class="tl-r"><span class="y">645</span><span class="c"><span class="e">大化の改新</span></span><span class="c"><span class="e">唐の太宗、イスラーム勢力の拡大</span></span></div><div class="tl-r lk"><span class="y">663</span><span class="c"><span class="e">白村江の戦いで唐・新羅に敗れる</span></span><span class="c"><span class="e">新羅が朝鮮半島を統一(676)</span></span></div><div class="tl-r"><span class="y">701</span><span class="c"><span class="e">大宝律令(710 平城京)</span></span><span class="c"><span class="e">唐の則天武后・玄宗</span></span></div><div class="tl-r"><span class="y">752</span><span class="c"><span class="e">東大寺大仏の開眼、正倉院の宝物</span></span><span class="c"><span class="e">アッバース朝成立(750)、タラス河畔の戦い(751)</span></span></div><div class="tl-r"><span class="y">794</span><span class="c"><span class="e">平安京に遷都</span></span><span class="c"><span class="e">カール大帝の戴冠(800)</span></span></div><div class="tl-r lk"><span class="y">894</span><span class="c"><span class="e">遣唐使の停止→国風文化</span></span><span class="c"><span class="e">黄巣の乱(875〜84)、唐の滅亡(907)</span></span></div><div class="tl-era">中世<i>11〜15世紀</i></div><div class="tl-r"><span class="y">1086</span><span class="c"><span class="e">院政の開始(白河上皇)</span></span><span class="c"><span class="e">第1回十字軍(1096)</span></span></div><div class="tl-r lk"><span class="y">12C</span><span class="c"><span class="e">平清盛の日宋貿易、宋銭の流入</span></span><span class="c"><span class="e">南宋、朱熹が朱子学を大成</span></span></div><div class="tl-r lk"><span class="y">1274<small>/81</small></span><span class="c"><span class="e">元寇(文永の役・弘安の役)</span></span><span class="c"><span class="e">クビライの元(1271)</span></span></div><div class="tl-r"><span class="y">1336</span><span class="c"><span class="e">南北朝の動乱(〜92)</span></span><span class="c"><span class="e">百年戦争・黒死病、明の建国(1368)</span></span></div><div class="tl-r lk"><span class="y">1404</span><span class="c"><span class="e">勘合貿易(足利義満が明に朝貢)</span></span><span class="c"><span class="e">明の永楽帝、鄭和の南海遠征</span></span></div><div class="tl-r"><span class="y">1467</span><span class="c"><span class="e">応仁の乱→戦国時代</span></span><span class="c"><span class="e">ビザンツ帝国の滅亡(1453)</span></span></div><div class="tl-era">近世<i>16〜19世紀前半</i></div><div class="tl-r lk"><span class="y">1543</span><span class="c"><span class="e">鉄砲伝来、ザビエル来日(1549)</span></span><span class="c"><span class="e">大航海時代、イエズス会の布教</span></span></div><div class="tl-r lk"><span class="y">1592</span><span class="c"><span class="e">文禄・慶長の役(〜98)</span></span><span class="c"><span class="e">明が朝鮮に援軍、財政が悪化</span></span></div><div class="tl-r"><span class="y">1600</span><span class="c"><span class="e">関ヶ原の戦い→江戸幕府(1603)</span></span><span class="c"><span class="e">英・蘭が東インド会社を設立</span></span></div><div class="tl-r lk"><span class="y">1639</span><span class="c"><span class="e">鎖国の完成(ポルトガル船の来航禁止)</span></span><span class="c"><span class="e">オランダの対日貿易独占、明の滅亡(1644)</span></span></div><div class="tl-r"><span class="y">1689</span><span class="c"><span class="e">元禄文化</span></span><span class="c"><span class="e">名誉革命・権利章典、ネルチンスク条約</span></span></div><div class="tl-r"><span class="y">1776</span><span class="c"><span class="e">田沼意次の政治</span></span><span class="c"><span class="e">アメリカ独立宣言</span></span></div><div class="tl-r"><span class="y">1830<small>–40</small></span><span class="c"><span class="e">化政文化(葛飾北斎)</span></span><span class="c"><span class="e">七月革命(1830)、アヘン戦争(1840〜)</span></span></div><div class="tl-era">近代<i>1853〜1945</i></div><div class="tl-r lk"><span class="y">1853</span><span class="c"><span class="e">ペリー来航→開国(1854)</span></span><span class="c"><span class="e">クリミア戦争、太平天国</span></span></div><div class="tl-r lk"><span class="y">1868</span><span class="c"><span class="e">明治維新、岩倉使節団の欧米視察(1871)</span></span><span class="c"><span class="e">ドイツ帝国成立(1871)</span></span></div><div class="tl-r"><span class="y">1889</span><span class="c"><span class="e">大日本帝国憲法</span></span><span class="c"><span class="e">ビスマルク辞職(1890)</span></span></div><div class="tl-r lk"><span class="y">1894</span><span class="c"><span class="e">日清戦争→下関条約・三国干渉</span></span><span class="c"><span class="e">甲午農民戦争、露仏同盟</span></span></div><div class="tl-r lk"><span class="y">1904</span><span class="c"><span class="e">日露戦争→ポーツマス条約(1905)</span></span><span class="c"><span class="e">第一次ロシア革命(1905)</span></span></div><div class="tl-r lk"><span class="y">1914</span><span class="c"><span class="e">第一次大戦に参戦、二十一カ条の要求</span></span><span class="c"><span class="e">第一次世界大戦(〜18)</span></span></div><div class="tl-r lk"><span class="y">1918<small>–19</small></span><span class="c"><span class="e">米騒動→原敬内閣、パリ講和会議(1919)</span></span><span class="c"><span class="e">ヴェルサイユ条約・五・四運動(1919)</span></span></div><div class="tl-r lk"><span class="y">1931</span><span class="c"><span class="e">満州事変→国際連盟脱退(1933)</span></span><span class="c"><span class="e">世界恐慌(1929〜)、ヒトラー政権(1933)</span></span></div><div class="tl-r lk"><span class="y">1937</span><span class="c"><span class="e">日中戦争</span></span><span class="c"><span class="e">日独伊三国防共協定、ミュンヘン会談(1938)</span></span></div><div class="tl-r lk"><span class="y">1941</span><span class="c"><span class="e">太平洋戦争→敗戦(1945)</span></span><span class="c"><span class="e">独ソ戦、ドイツ降伏(1945)</span></span></div><div class="tl-era">現代<i>1945〜</i></div><div class="tl-r lk"><span class="y">1951</span><span class="c"><span class="e">サンフランシスコ平和条約・日米安保</span></span><span class="c"><span class="e">冷戦、朝鮮戦争(1950〜53)</span></span></div><div class="tl-r lk"><span class="y">1960s</span><span class="c"><span class="e">高度経済成長、日韓基本条約(1965)</span></span><span class="c"><span class="e">キューバ危機、ベトナム戦争</span></span></div><div class="tl-r lk"><span class="y">1972</span><span class="c"><span class="e">沖縄返還、日中国交正常化</span></span><span class="c"><span class="e">ニクソン訪中、石油危機(1973)</span></span></div><div class="tl-r"><span class="y">1989</span><span class="c"><span class="e">バブル経済(〜91)</span></span><span class="c"><span class="e">天安門事件、ベルリンの壁開放</span></span></div></div><div class="sec-hdr"><span class="sec-icon">Ⅱ</span><h2>要点 <span class="latin">Summa</span></h2></div><div class="kp"><p>❶ 古代は中国に朝貢し、遣隋使・<b>遣唐使</b>で制度と文化を学んだ</p><p>❷ 東アジアの戦争に直接かかわった：<b>白村江・元寇・文禄・慶長の役</b></p><p>❸ 16世紀、<b>大航海時代</b>のヨーロッパ人が鉄砲とキリスト教を伝えた</p><p>❹ 欧米の進出の中で<b>開国</b>し、日清・日露戦争で列強に加わった</p><p>❺ 戦後は<b>冷戦</b>の中で西側に入り、高度経済成長をとげた</p></div>
+</main>
 <script src="search_jump.js" defer></script></body></html>

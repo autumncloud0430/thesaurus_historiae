@@ -183,6 +183,27 @@ main{padding:16px 14px 60px}
 .side-note{font-size:13px}
 .toc a{font-size:12.5px}
 }
+
+.lead{font-size:14.5px;line-height:1.9}
+.cur{margin:6px 0 4px}
+.st{position:relative;padding:4px 0 10px 18px;border-left:2px solid rgba(var(--axr),.15);margin-left:50px}
+.st:last-child{border-left-color:transparent;padding-bottom:2px}
+.st::before{content:'';position:absolute;left:-6px;top:9px;width:8px;height:8px;border-radius:50%;background:var(--bg);border:2px solid rgba(var(--axr),.45)}
+.st-y{position:absolute;left:-54px;top:4px;width:44px;font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:700;color:var(--gold);text-align:right;line-height:1.2}
+.st-t{font-family:'Noto Serif JP',serif;font-size:15px;font-weight:700;color:var(--gold2);line-height:1.5}
+.st ul{list-style:none;margin:1px 0 0;padding:0}
+.st li{font-size:14px;line-height:1.65;color:var(--text);padding-left:.9em;text-indent:-.9em}
+.st li::before{content:'・';color:var(--gold)}
+.st li b{color:var(--gold2);font-weight:600}
+.st li a{color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(var(--axr),.3)}
+.mx-notes li{line-height:1.65}
+.kp p{line-height:1.75}
+@media(max-width:600px){
+.lead{font-size:14px;line-height:1.85}
+.st{margin-left:42px;padding-left:14px}.st-y{left:-46px;width:38px;font-size:13px}
+.st-t{font-size:14.5px}.st li{font-size:13.5px}
+.kp p{font-size:13.5px}
+}
 </style><style id="thThemes">/* =====================================================
    THESAURUS HISTORIAE ― themes.css(LUX固定版)
    生成りの紙 + 墨の本文 + 朱筆(★語) + 金茶の構造色。
@@ -232,7 +253,7 @@ html[data-theme="lux"] .detail { color:var(--text2); }
 <body>
 <div class="hdr"><h1>対仏大同盟の変遷 ― 7回の同盟とナポレオン</h1><a href="charts.html">← Ad Chartae</a></div>
 <main>
-<p class="lead">フランス革命が自国に広がることをおそれたヨーロッパの君主国は、1793年から1815年までに<b>7回の対仏大同盟</b>を結んでフランスと戦った。<b>イギリス</b>は7回すべてに加わったが、オーストリア・プロイセン・ロシアは敗れて講和したり、フランスと同盟したりして、陣営をたびたび変えた。</p>
+<p class="lead">フランス革命の波及をおそれた君主国は、1793〜1815年に7回の<b>対仏大同盟</b>を結んだ。<b>イギリス</b>以外の国は、敗れて講和したりフランス側についたりして、陣営をたびたび変えた。</p>
 <div class="sec-hdr"><span class="sec-icon">Ⅰ</span><h2>各国の陣営 <span class="latin">Ordo Partium</span></h2></div><p class="cap">7回の対仏大同盟で、主な5カ国がどちらの側にいたかを示す。数字は講和・離脱・参加の年(西暦の下2桁)。教科書で回数をつけてよぶのは第3回(1805)までが多く、第4回以降の数え方は図説などによる。</p>
 <div class="mx-wrap"><table class="mx"><colgroup><col style="width:17%">
 <col>
@@ -298,70 +319,10 @@ html[data-theme="lux"] .detail { color:var(--text2); }
 </tr>
 </tbody></table></div>
 <div class="legend"><span><i class="b"></i>対仏大同盟に参加</span><span><i class="r"></i>フランス側(フランスと同盟)</span><span><i class="n"></i>中立・参戦せず</span></div>
-<ul class="mx-notes"><li>・<b>イギリス</b>は7回すべてに加わった。アミアンの和約(1802)で一度講和したが、1803年に戦争を再開した。</li><li>・<b>オーストリア</b>は4回敗れて講和した(1797・1801・1805・1809)。1812年のロシア遠征ではフランス側で兵を出し、1813年に同盟へ戻った。</li><li>・<b>プロイセン</b>は1795年に講和してから中立を守ったが、1806年に開戦して大敗した。1812年にはフランス側で兵を出し、1813年に同盟へ戻った。</li><li>・<b>ロシア</b>はティルジット条約(1807)でフランスと同盟したが、大陸封鎖令を守らなくなり、1812年のロシア遠征を招いた。</li><li>・<b>スペイン</b>は1795年の講和後フランスと同盟した。1808年にナポレオンが兄ジョゼフを国王にすると、反乱勢力がイギリスと結んで抵抗した。</li></ul>
-<div class="sec-hdr"><span class="sec-icon">Ⅱ</span><h2>要点 <span class="latin">Summarium</span></h2></div>
-<div class="kp"><p>❶ 対仏大同盟は7回結ばれた。第1回(1793)はルイ16世の処刑を受けてイギリス首相<b>ピット(小ピット)</b>が提唱した。<b>イギリス</b>は7回すべてに加わり、海軍力と資金で同盟を支えた</p><p>❷ <b>トラファルガーの海戦(1805)</b>でフランスはイギリスに敗れ、海上ではイギリスの優位が確定したが、<b>アウステルリッツの戦い(1805)</b>でオーストリア・ロシアに勝ち、大陸での優位を固めた</p><p>❸ 1806年に<b>ライン同盟</b>が結成され、<b>神聖ローマ帝国</b>は消滅した。同年、ナポレオンは<b>大陸封鎖令</b>でイギリスとの通商を大陸諸国に禁じた</p><p>❹ <b>ティルジット条約(1807)</b>でプロイセンは領土の約半分を失い、ロシアはフランスと同盟した。ヨーロッパ大陸の大半がナポレオンの支配下に入った</p><p>❺ プロイセンは敗戦を機に<b>シュタイン・ハルデンベルクの改革</b>を進め、<b>解放戦争(1813-14)</b>で同盟の中心となった</p><p>❻ <b>ロシア遠征(1812)</b>の失敗後、第6回同盟が<b>ライプツィヒの戦い(1813)</b>でナポレオンを破った。ナポレオンはエルバ島に流され、百日天下ののち<b>ワーテルローの戦い(1815)</b>に敗れてセントヘレナ島に流された</p></div>
-<div class="sec-hdr"><span class="sec-icon">Ⅲ</span><h2>時期別の解説 <span class="latin">Per Aetates</span></h2></div>
-<nav class="toc"><a href="#ph1"><span>1792</span>革命戦争の開始</a><a href="#ph2"><span>第1回</span>1793-97</a><a href="#ph3"><span>第2回</span>1799-1802</a><a href="#ph4"><span>第3回</span>1805</a><a href="#ph5"><span>第4回</span>1806-07</a><a href="#ph6"><span>第5回</span>1809</a><a href="#ph7"><span>第6回</span>1813-14</a><a href="#ph8"><span>第7回</span>1815</a></nav>
-<div class="phase" id="ph1"><div class="phase-label">1791<br>〜93</div>
-<div class="ph-head"><span class="ph-title">前史 ― 革命戦争の開始</span><span class="ph-sub">革命の波及をおそれる君主国とフランスの開戦</span></div>
-<div class="lineup"><span class="r"><b>革命フランス</b>フランス</span><em>対</em><span class="b"><b>オーストリア・プロイセン</b>オーストリア・プロイセン</span></div>
-<div class="camps"><div class="camp r"><div class="camp-h">革命フランス</div><div class="mem"><div class="mem-n">フランス<small>立法議会→国民公会</small></div><div class="mem-d">1792年4月、立法議会がオーストリアに宣戦し、<b>革命戦争</b>が始まった。当初は敗戦が続いたが、7月に「祖国は危機にあり」と宣言して全国から義勇兵を集め、持ちこたえた。</div></div></div><div class="camp b"><div class="camp-h">オーストリア・プロイセン</div><div class="mem"><div class="mem-n">オーストリア・プロイセン</div><div class="mem-d">両国の君主は<b>ピルニッツ宣言(1791)</b>を出し、フランス国王の地位を守るため各国に協力を呼びかけた。フランスはこれに反発し、両国との戦争となった。</div></div></div></div>
-<div class="event"><div class="ev-title">ヴァルミーの戦い<span class="ev-year">1792.9</span></div><div class="ev-desc">フランス軍が、パリに向かうプロイセン軍を中心とする軍を退けた。革命軍の最初の勝利である。翌日、新たに成立した国民公会が王政の廃止を宣言した(第一共和政)。</div></div>
-<div class="event"><div class="ev-title">ルイ16世の処刑<span class="ev-year">1793.1</span></div><div class="ev-desc">国民公会の裁判で国王が処刑された。各国の君主は革命が自国に広がることをいっそうおそれ、イギリス首相ピット(小ピット)の提唱で<b>第1回対仏大同盟</b>が結成された(1793)。</div></div>
-</div>
-<div class="phase" id="ph2"><div class="phase-label">1793<br>〜97</div>
-<div class="ph-head"><span class="ph-title">第1回対仏大同盟(1793-97)</span><span class="ph-sub">国民総動員令による大軍と、ナポレオンのイタリア遠征</span></div>
-<div class="lineup"><span class="r"><b>革命フランス</b>フランス</span><em>対</em><span class="b"><b>第1回対仏大同盟</b>イギリス・オーストリア・プロイセン・スペイン・サルデーニャ・オランダ</span></div>
-<div class="camps"><div class="camp r"><div class="camp-h">革命フランス<small>国民公会→総裁政府(1795)</small></div><div class="mem"><div class="mem-n">フランス<small>国民公会→総裁政府</small></div><div class="mem-d">国民公会は<b>国民総動員令(1793)</b>を出して18〜25歳の未婚男性を徴兵し、兵力を大きく増やして同盟軍を押し返した。国内ではジャコバン派の独裁が<b>テルミドールの反動(1794)</b>で倒れ、1795年に総裁政府が成立した。</div></div><div class="mem"><div class="mem-n">ナポレオン<small>イタリア方面軍司令官</small></div><div class="mem-d">総裁政府のもとで<b>イタリア遠征(1796-97)</b>を指揮し、サルデーニャとオーストリアを破って名声を高めた。</div></div></div><div class="camp b"><div class="camp-h">第1回対仏大同盟<small>イギリスのピット(小ピット)が提唱</small></div><div class="mem"><div class="mem-n">イギリス<small>首相ピット(小ピット)</small></div><div class="mem-d">同盟を提唱し、戦争を主導した。海軍でフランスの海上交通を封鎖し、資金を出して大陸の同盟国を支えた。以後、7回の対仏大同盟すべてに加わった。</div></div><div class="mem"><div class="mem-n">オーストリア</div><div class="mem-d">ナポレオンのイタリア遠征に敗れ、<b>カンポ＝フォルミオ条約(1797)</b>で講和した。ベルギー(南ネーデルラント)をフランスに譲り、かわりにヴェネツィアを得た。</div></div><div class="mem"><div class="mem-n">プロイセン</div><div class="mem-d"><b>バーゼルの和約(1795)</b>でフランスと講和して同盟を離れ、同じ年の第3回ポーランド分割に力を注いだ。1806年まで対仏戦争に加わらなかった。</div></div><div class="mem"><div class="mem-n">スペイン</div><div class="mem-d">1795年にフランスと講和し、翌1796年にはフランスと同盟した。以後はフランス側に立ち、トラファルガーの海戦(1805)でもフランスとともにイギリスと戦った。</div></div><div class="mem"><div class="mem-n">サルデーニャ</div><div class="mem-d">ナポレオンのイタリア遠征で最初に敗れ、1796年に講和して、サヴォイアとニースをフランスに譲った。</div></div><div class="mem"><div class="mem-n">オランダ</div><div class="mem-d">1795年にフランス軍に占領され、フランスの影響下に置かれた<b>バタヴィア共和国</b>となった。</div></div></div></div>
-<div class="side-note"><b>結果</b>：カンポ＝フォルミオ条約でオーストリアが講和し、第1回対仏大同盟は解体した。フランスと戦い続けたのはイギリスだけになった。</div>
-</div>
-<div class="phase" id="ph3"><div class="phase-label">1799<br>〜1802</div>
-<div class="ph-head"><span class="ph-title">第2回対仏大同盟(1799-1802)</span><span class="ph-sub">エジプト遠征中に結成され、統領政府のナポレオンが破る</span></div>
-<div class="event"><div class="ev-title">エジプト遠征<span class="ev-year">1798-99</span></div><div class="ev-desc">ナポレオンは、イギリスとインドの連絡を断つためにエジプトへ遠征した。<b>アブキール湾の海戦(1798)</b>でネルソンの率いるイギリス艦隊にフランス艦隊が敗れ、遠征軍は孤立した。この間にイギリスの呼びかけで第2回対仏大同盟が結成された。</div></div>
-<div class="lineup"><span class="r"><b>フランス</b>ナポレオン</span><em>対</em><span class="b"><b>第2回対仏大同盟</b>イギリス・オーストリア・ロシア・オスマン帝国</span></div>
-<div class="camps"><div class="camp r"><div class="camp-h">フランス<small>総裁政府→統領政府(1799)</small></div><div class="mem"><div class="mem-n">ナポレオン<small>第一統領</small></div><div class="mem-d">エジプトから帰国し、<b>ブリュメール18日のクーデタ(1799)</b>で総裁政府を倒して統領政府を立て、第一統領となった。<b>マレンゴの戦い(1800)</b>でオーストリアを破った。</div></div></div><div class="camp b"><div class="camp-h">第2回対仏大同盟</div><div class="mem"><div class="mem-n">イギリス</div><div class="mem-d">アブキール湾の海戦でフランス艦隊を破った。大陸の同盟国が講和したのち、<b>アミアンの和約(1802)</b>でフランスと講和した。</div></div><div class="mem"><div class="mem-n">オーストリア</div><div class="mem-d">マレンゴの戦いなどで敗れ、<b>リュネヴィル条約(1801)</b>で講和した。</div></div><div class="mem"><div class="mem-n">ロシア<small>パーヴェル1世</small></div><div class="mem-d">スヴォーロフの率いる軍を北イタリア・スイスに送り、一時はフランス軍を北イタリアから退けた。しかしオーストリア・イギリスと対立して1799年に同盟を離れた。パーヴェル1世はその後フランスに接近したが、1801年に暗殺された。</div></div><div class="mem"><div class="mem-n">オスマン帝国</div><div class="mem-d">自国の属領であるエジプトにフランス軍が侵入したため、同盟に加わった。</div></div></div></div>
-<div class="event"><div class="ev-title">アミアンの和約<span class="ev-year">1802</span></div><div class="ev-desc">イギリスとフランスの講和で、第2回対仏大同盟はこれで解体した。しかし1803年に両国は再び戦争に入った。</div></div>
-<div class="side-note"><b>国内では</b>：ナポレオンは<b>宗教協約(コンコルダート, 1801)</b>でローマ教皇と和解し、1802年に終身統領となった。1804年には<b>ナポレオン法典(フランス民法典)</b>を制定した。</div>
-</div>
-<div class="phase" id="ph4"><div class="phase-label">1805</div>
-<div class="ph-head"><span class="ph-title">第3回対仏大同盟(1805)</span><span class="ph-sub">トラファルガーの海戦とアウステルリッツの戦い</span></div>
-<div class="lineup"><span class="r"><b>フランス帝国</b>フランス・スペイン</span><em>対</em><span class="b"><b>第3回対仏大同盟</b>イギリス・オーストリア・ロシア</span></div>
-<div class="camps"><div class="camp r"><div class="camp-h">フランス帝国<small>1804年 ナポレオンが皇帝に即位</small></div><div class="mem"><div class="mem-n">ナポレオン<small>皇帝ナポレオン1世</small></div><div class="mem-d">1804年、国民投票で承認を得て皇帝に即位した(第一帝政)。イギリス本土への上陸を計画したが実行できず、軍を大陸に向けた。トラファルガーの敗北で、上陸の見込みはなくなった。</div></div><div class="mem"><div class="mem-n">スペイン<small>フランスの同盟国</small></div><div class="mem-d">フランスと連合艦隊を組み、トラファルガーの海戦でイギリス艦隊と戦った。</div></div></div><div class="camp b"><div class="camp-h">第3回対仏大同盟</div><div class="mem"><div class="mem-n">イギリス</div><div class="mem-d">首相ピット(小ピット)が同盟を組織した。海上ではトラファルガーの海戦に勝って制海権を確保した。</div></div><div class="mem"><div class="mem-n">オーストリア<small>神聖ローマ皇帝フランツ2世</small></div><div class="mem-d">ウルムの戦いで軍が降伏し、ウィーンを占領された。続くアウステルリッツの戦いにも敗れ、<b>プレスブルク条約(1805)</b>で講和した。</div></div><div class="mem"><div class="mem-n">ロシア<small>アレクサンドル1世</small></div><div class="mem-d">アウステルリッツの戦いにオーストリア軍とともに加わって敗れ、自国へ退いた。翌年の第4回同盟に再び加わった。</div></div></div></div>
-<div class="event"><div class="ev-title">トラファルガーの海戦<span class="ev-year">1805.10</span></div><div class="ev-desc">スペイン南西岸沖で、<b>ネルソン</b>の率いるイギリス艦隊がフランス・スペイン連合艦隊を破った。ネルソンは戦死したが、イギリスの制海権が確立した。</div></div>
-<div class="event"><div class="ev-title">アウステルリッツの戦い(三帝会戦)<span class="ev-year">1805.12</span></div><div class="ev-desc">ナポレオンが、神聖ローマ皇帝フランツ2世とロシア皇帝アレクサンドル1世の連合軍を破った。3人の皇帝が戦場にいたため三帝会戦とよばれる。</div></div>
-<div class="side-note"><b>結果</b>：プレスブルク条約でオーストリアが講和し、第3回同盟は解体した。1806年、ナポレオンは西南ドイツ諸邦を<b>ライン同盟</b>に組織してその保護者となり、<b>神聖ローマ帝国</b>は消滅した。</div>
-</div>
-<div class="phase" id="ph5"><div class="phase-label">1806<br>〜07</div>
-<div class="ph-head"><span class="ph-title">第4回対仏大同盟(1806-07)</span><span class="ph-sub">プロイセンの大敗とティルジット条約</span></div>
-<div class="lineup"><span class="r"><b>フランス帝国</b>フランス・ライン同盟</span><em>対</em><span class="b"><b>第4回対仏大同盟</b>プロイセン・ロシア・イギリス</span></div>
-<div class="camps"><div class="camp r"><div class="camp-h">フランス帝国<small>ライン同盟を従える</small></div><div class="mem"><div class="mem-n">ナポレオン</div><div class="mem-d">プロイセンとロシアを破った。占領したベルリンで<b>大陸封鎖令(1806)</b>を出し、ティルジット条約(1807)でヨーロッパ大陸の大半を支配下においた。</div></div><div class="mem"><div class="mem-n">ライン同盟</div><div class="mem-d">西南ドイツの諸邦がナポレオンを保護者として結成した同盟(1806)。フランス軍に兵力を提供した。</div></div></div><div class="camp b"><div class="camp-h">第4回対仏大同盟</div><div class="mem"><div class="mem-n">プロイセン</div><div class="mem-d"><b>イエナの戦い(1806)</b>(イエナ・アウエルシュタットの戦い)に敗れ、ベルリンを占領された。ティルジット条約で、エルベ川以西の領土と、ポーランド分割で得た領土の大部分を失い、領土はほぼ半分になった。この敗北を受けて<b>シュタイン・ハルデンベルクの改革</b>(農民解放・行政改革・軍制改革)が進められ、ベルリン大学も創設された(1810)。フィヒテは講演「ドイツ国民に告ぐ」で国民意識の形成を訴えた。</div></div><div class="mem"><div class="mem-n">ロシア<small>アレクサンドル1世</small></div><div class="mem-d"><b>フリートラントの戦い(1807)</b>に敗れ、ティルジット条約でフランスと講和・同盟して大陸封鎖への参加を約束した。しかし穀物をイギリスに輸出できなくなって経済が苦しくなり、1810年にイギリスとの通商を再開した。これがロシア遠征(1812)の原因となった。</div></div><div class="mem"><div class="mem-n">イギリス</div><div class="mem-d">大陸の同盟国が敗れたのちも、海軍で海上を押さえて戦争を続けた。大陸封鎖令には、大陸諸国の海上貿易を封鎖することで対抗した。</div></div></div></div>
-<div class="event"><div class="ev-title">大陸封鎖令(ベルリン勅令)<span class="ev-year">1806</span></div><div class="ev-desc">ヨーロッパ大陸諸国にイギリスとの通商を禁じた。イギリスに経済的な打撃を与え、大陸をフランス産業の市場とするねらいがあった。しかし大陸諸国はイギリスへの穀物輸出やイギリス製品の輸入ができなくなって苦しみ、封鎖は守られなくなっていった。</div></div>
-<div class="event"><div class="ev-title">ティルジット条約<span class="ev-year">1807</span></div><div class="ev-desc">フランスがプロイセン・ロシアと結んだ講和条約。プロイセンは領土の約半分を失い、旧プロイセン領ポーランドには<b>ワルシャワ大公国</b>が置かれた。ロシアはフランスと同盟した。</div></div>
-</div>
-<div class="phase" id="ph6"><div class="phase-label">1809</div>
-<div class="ph-head"><span class="ph-title">第5回対仏大同盟(1809)</span><span class="ph-sub">スペインの反乱とオーストリアの再挑戦</span></div>
-<div class="event"><div class="ev-title">スペイン反乱(半島戦争)<span class="ev-year">1808-14</span></div><div class="ev-desc">1808年、ナポレオンが兄ジョゼフをスペイン王にすると、スペイン各地で民衆が蜂起した。イギリスは<b>ウェリントン</b>の率いる軍を送ってスペイン・ポルトガルで戦い、フランス軍は長期にわたって多くの兵力を割かれた。ゴヤは「1808年5月3日」でフランス軍による市民の処刑を描いた。</div></div>
-<div class="lineup"><span class="r"><b>フランス帝国</b>フランス・ロシア</span><em>対</em><span class="b"><b>第5回対仏大同盟</b>オーストリア・イギリス・スペイン</span></div>
-<div class="camps"><div class="camp r"><div class="camp-h">フランス帝国</div><div class="mem"><div class="mem-n">ナポレオン</div><div class="mem-d"><b>ヴァグラムの戦い(1809)</b>でオーストリアを破り、<b>シェーンブルン条約(1809)</b>を結ばせた。同年末に皇后ジョゼフィーヌと離婚し、翌1810年にオーストリア皇女マリ＝ルイーズと結婚して、ハプスブルク家と結びついた。</div></div><div class="mem"><div class="mem-n">ロシア<small>フランスの同盟国</small></div><div class="mem-d">ティルジット条約にもとづき、フランスの同盟国としてオーストリアに宣戦したが、大きな戦闘はしなかった。</div></div></div><div class="camp b"><div class="camp-h">第5回対仏大同盟</div><div class="mem"><div class="mem-n">オーストリア</div><div class="mem-d">スペインの反乱に乗じて開戦し、アスペルンの戦いではナポレオン軍を退けたが、ヴァグラムの戦いで敗れた。シェーンブルン条約でさらに領土を失い、その後は外相メッテルニヒのもとでフランスとの協調に転じた。</div></div><div class="mem"><div class="mem-n">イギリス</div><div class="mem-d">スペイン・ポルトガルで半島戦争を戦った。オーストリアへの直接の援軍はわずかだった。</div></div><div class="mem"><div class="mem-n">スペイン<small>反乱勢力</small></div><div class="mem-d">ジョゼフの王位を認めない反乱勢力が、イギリスと結んでフランス軍と戦った。</div></div></div></div>
-<div class="side-note"><b>結果</b>：オーストリアが講和し、大陸でフランスに抵抗を続けたのはスペイン・ポルトガルとこれを支えるイギリスだけになった。</div>
-</div>
-<div class="phase" id="ph7"><div class="phase-label">1812<br>〜14</div>
-<div class="ph-head"><span class="ph-title">第6回対仏大同盟(1813-14)</span><span class="ph-sub">ロシア遠征の失敗から、ライプツィヒの戦い・ナポレオン退位へ</span></div>
-<div class="event bad-ev"><div class="ev-title">ロシア遠征<span class="ev-year">1812</span></div><div class="ev-desc">イギリスとの通商を再開したロシアに対し、ナポレオンはオーストリア・プロイセンなど従属国の兵を含む約60万の大軍で侵攻した。ロシア軍は退却しながら物資を焼き払う<b>焦土戦術</b>をとった。ナポレオンはモスクワに入ったが、市街は大火で焼け、冬の寒さと食料不足のなかで退却した。帰還できた兵はわずかだった。</div></div>
-<div class="lineup"><span class="r"><b>フランス帝国</b>フランス</span><em>対</em><span class="b"><b>第6回対仏大同盟</b>ロシア・プロイセン・オーストリア・イギリス・スウェーデン</span></div>
-<div class="camps"><div class="camp r"><div class="camp-h">フランス帝国<small>ロシア遠征で主力を失う</small></div><div class="mem"><div class="mem-n">ナポレオン</div><div class="mem-d">ロシア遠征の失敗後、プロイセン・オーストリアが離反し、ほぼ全ヨーロッパが同盟に加わった。<b>ライプツィヒの戦い(1813)</b>に敗れ、1814年に同盟軍がパリに入ると退位して、地中海のエルバ島に流された。</div></div></div><div class="camp b"><div class="camp-h">第6回対仏大同盟<small>ほぼ全ヨーロッパ</small></div><div class="mem"><div class="mem-n">ロシア<small>アレクサンドル1世</small></div><div class="mem-d">ナポレオン軍を国外に追い、ヨーロッパに進撃した。1814年、アレクサンドル1世は同盟軍とともにパリに入り、ウィーン会議でも大きな発言力をもった。</div></div><div class="mem"><div class="mem-n">プロイセン</div><div class="mem-d">ロシア遠征の失敗を機にフランスとの同盟を破棄し、1813年にロシアと結んで<b>解放戦争</b>を始めた。改革で整えた軍はライプツィヒの戦いで中心となり、ドイツで国民意識が高まった。</div></div><div class="mem"><div class="mem-n">オーストリア<small>外相メッテルニヒ</small></div><div class="mem-d">1813年8月に同盟に加わった。戦後、メッテルニヒはウィーン会議の議長を務めた。</div></div><div class="mem"><div class="mem-n">イギリス</div><div class="mem-d">ウェリントンがスペインからフランス軍を追い出し、南からフランスに入った。資金援助で同盟諸国を支えた。</div></div><div class="mem"><div class="mem-n">スウェーデン<small>皇太子ベルナドット</small></div><div class="mem-d">ナポレオン軍の元帥だったベルナドットが皇太子に迎えられ(のちの国王カール14世)、フランスに対抗する側に転じて同盟に加わった。</div></div></div></div>
-<div class="event"><div class="ev-title">ライプツィヒの戦い(諸国民の戦い)<span class="ev-year">1813.10</span></div><div class="ev-desc">プロイセン・ロシア・オーストリア・スウェーデンの連合軍がナポレオンを破った。多くの国の軍が戦ったため「諸国民の戦い」とよばれる。</div></div>
-<div class="event"><div class="ev-title">ナポレオンの退位<span class="ev-year">1814.4</span></div><div class="ev-desc">同盟軍がパリを占領し(1814.3)、ナポレオンは退位してエルバ島に流された。フランスでは<b>ブルボン朝</b>が復活してルイ18世が即位し、9月から<b>ウィーン会議</b>が開かれた。</div></div>
-</div>
-<div class="phase" id="ph8"><div class="phase-label">1815</div>
-<div class="ph-head"><span class="ph-title">第7回対仏大同盟(1815)</span><span class="ph-sub">百日天下とワーテルローの戦い</span></div>
-<div class="event"><div class="ev-title">エルバ島脱出と百日天下<span class="ev-year">1815.3-6</span></div><div class="ev-desc">ウィーン会議中の1815年2月末、ナポレオンはエルバ島を脱出し、3月にパリに戻って再び帝位についた。ルイ18世は国外に逃れた。列強はただちに第7回対仏大同盟を結んだ。6月の再退位までの約100日間の支配を<b>百日天下</b>とよぶ。</div></div>
-<div class="lineup"><span class="r"><b>フランス</b>フランス</span><em>対</em><span class="b"><b>第7回対仏大同盟</b>イギリス・プロイセン・墺・露など</span></div>
-<div class="camps"><div class="camp r"><div class="camp-h">フランス</div><div class="mem"><div class="mem-n">ナポレオン</div><div class="mem-d">軍を立て直し、同盟軍がそろう前に、ベルギーにいたイギリス軍とプロイセン軍を別々に破る作戦をとった。</div></div></div><div class="camp b"><div class="camp-h">第7回対仏大同盟<small>ウィーン会議に集まった列強</small></div><div class="mem"><div class="mem-n">イギリス<small>ウェリントン</small></div><div class="mem-d">ワーテルローの戦いでイギリス・オランダなどの連合軍を指揮し、プロイセン軍が到着するまでフランス軍の攻撃に耐えた。</div></div><div class="mem"><div class="mem-n">プロイセン<small>ブリュッヒャー</small></div><div class="mem-d">直前の戦いで敗れたが軍を立て直し、ワーテルローの戦場に到着してフランス軍の側面を攻撃した。これが勝敗を決めた。</div></div><div class="mem"><div class="mem-n">オーストリア・ロシアなど</div><div class="mem-d">同盟に加わって軍を動かしたが、ワーテルローの戦いには間に合わなかった。戦闘はイギリス・オランダなどの軍とプロイセン軍で決着した。</div></div></div></div>
-<div class="event"><div class="ev-title">ワーテルローの戦い<span class="ev-year">1815.6.18</span></div><div class="ev-desc">ブリュッセル南方のワーテルローで、ウェリントンとブリュッヒャーの軍がナポレオンを破った。ナポレオン最後の戦いとなった。</div></div>
-<div class="event"><div class="ev-title">セントヘレナ島への流刑<span class="ev-year">1815-21</span></div><div class="ev-desc">ナポレオンは再び退位し、南大西洋のイギリス領セントヘレナ島に流されて、1821年に死去した。</div></div>
-<div class="event"><div class="ev-title">ウィーン体制へ</div><div class="ev-desc">ウィーン会議(1814-15)は、フランス革命前の王朝と領土を正しいものとする<b>正統主義</b>と、大国の力のつりあいを保つ<b>勢力均衡</b>を原則とした。ロシア皇帝アレクサンドル1世の提唱した<b>神聖同盟</b>と、イギリス・オーストリア・プロイセン・ロシアの<b>四国同盟</b>がこの体制を支え、1848年の革命まで続いた。<a href="alliance_vienna.html">→ ウィーン体制</a></div></div>
-</div>
+<ul class="mx-notes"><li>・<b>オーストリア・プロイセン</b>は1812年のロシア遠征ではフランス側で出兵し、1813年に同盟に戻った。</li><li>・<b>ロシア</b>はティルジット条約(1807)でフランスと同盟したが、大陸封鎖令を守らず1812年の遠征を招いた。</li><li>・<b>スペイン</b>は1796年からフランスと同盟。1808年にジョゼフが国王になると反乱がおこった。</li></ul>
+<div class="sec-hdr"><span class="sec-icon">Ⅱ</span><h2>経過 <span class="latin">Cursus Rerum</span></h2></div>
+<div class="cur"><div class="st"><div class="st-y">1792</div><div class="st-t">革命戦争の開始</div><ul><li>墺・普がピルニッツ宣言(1791)</li><li>仏が墺に宣戦(1792.4)</li><li>ヴァルミーの戦い(1792)で仏が勝利</li><li>ルイ16世の処刑(1793)</li></ul></div><div class="st"><div class="st-y">第1回</div><div class="st-t">1793-97</div><ul><li>ピット(小ピット)が提唱、仏は国民総動員令</li><li>ナポレオンのイタリア遠征(1796-97)</li><li>カンポ＝フォルミオ条約(1797)で墺が講和</li></ul></div><div class="st"><div class="st-y">第2回</div><div class="st-t">1799-1802</div><ul><li>エジプト遠征中に結成される</li><li>ブリュメール18日のクーデタ(1799)</li><li>マレンゴの戦い→リュネヴィル条約(1801)</li><li>アミアンの和約(1802)で英とも講和</li></ul></div><div class="st"><div class="st-y">第3回</div><div class="st-t">1805</div><ul><li><b>トラファルガーの海戦</b>：ネルソンが勝利</li><li><b>アウステルリッツの戦い</b>→プレスブルク条約</li><li>1806 ライン同盟、神聖ローマ帝国消滅</li></ul></div><div class="st"><div class="st-y">第4回</div><div class="st-t">1806-07</div><ul><li>イエナの戦いでプロイセンが大敗</li><li><b>大陸封鎖令</b>(1806、ベルリン勅令)</li><li><b>ティルジット条約</b>(1807)、ワルシャワ大公国</li></ul></div><div class="st"><div class="st-y">第5回</div><div class="st-t">1809</div><ul><li>スペイン反乱(1808-14)を英が支援</li><li>ヴァグラムの戦い→シェーンブルン条約</li></ul></div><div class="st"><div class="st-y">第6回</div><div class="st-t">1813-14</div><ul><li><b>ロシア遠征</b>(1812)の失敗→普・墺が離反</li><li><b>ライプツィヒの戦い</b>(1813、諸国民の戦い)</li><li>パリ占領→退位(1814)、エルバ島へ</li></ul></div><div class="st"><div class="st-y">第7回</div><div class="st-t">1815</div><ul><li>エルバ島脱出、<b>百日天下</b></li><li><b>ワーテルローの戦い</b>で敗北</li><li>セントヘレナ島へ流刑 → <a href="alliance_vienna.html">ウィーン体制</a></li></ul></div></div>
+<div class="sec-hdr"><span class="sec-icon">Ⅲ</span><h2>要点 <span class="latin">Summarium</span></h2></div>
+<div class="kp"><p>❶ 第1回(1793)はピット(小ピット)の提唱。<b>イギリス</b>は7回すべてに加わった</p><p>❷ 1805年、<b>トラファルガーの海戦</b>で英が制海権を確立し、<b>アウステルリッツの戦い</b>で仏が墺・露を破った</p><p>❸ 1806年、<b>ライン同盟</b>の結成で<b>神聖ローマ帝国</b>が消滅。<b>大陸封鎖令</b>で英との通商を禁止</p><p>❹ <b>ティルジット条約(1807)</b>でプロイセンは領土の約半分を失い、<b>シュタイン・ハルデンベルクの改革</b>へ</p><p>❺ <b>ロシア遠征(1812)</b>の失敗→<b>ライプツィヒの戦い(1813)</b>→退位。百日天下ののち<b>ワーテルロー(1815)</b>で敗北</p></div>
 </main>
 <script src="search_jump.js" defer></script></body></html>

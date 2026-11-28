@@ -1,19 +1,194 @@
-<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>産業革命の波及タイムライン</title><style>@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
-:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048}*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
-.hdr{padding:16px 20px;border-bottom:1px solid rgba(var(--axr),.08);display:flex;align-items:center;gap:14px;flex-wrap:wrap}.hdr h1{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2)}.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
-.legend{display:flex;gap:10px;justify-content:center;padding:6px 16px;flex-wrap:wrap;border-bottom:1px solid rgba(255,255,255,.02)}.legend .li{display:flex;align-items:center;gap:4px;font-size:7px;color:var(--text3)}.legend .ld{width:12px;height:8px;border-radius:2px}
-.wrap{padding:8px 0 10px;overflow-x:auto}.note{text-align:center;padding:8px 20px 32px;max-width:900px;margin:0 auto}.note p{font-size:15px;color:var(--text3);line-height:1.8}.note strong{color:var(--gold)}
-.evt{padding:12px 20px;max-width:900px;margin:0 auto}.evt-title{font-family:'Noto Serif JP',serif;font-size:11px;color:var(--gold);margin-bottom:8px;border-bottom:1px solid rgba(var(--axr),.08);padding-bottom:4px}.evt-item{display:flex;gap:8px;padding:4px 0;font-size:9px;line-height:1.5;border-bottom:1px solid rgba(255,255,255,.015)}.evt-year{flex-shrink:0;width:70px;font-family:'Cormorant Garamond',serif;font-weight:700;color:var(--gold2);font-size:10px}.evt-desc{color:var(--text)}.evt-desc strong{color:var(--gold2);font-weight:600}
-.tt{display:none;position:fixed;z-index:9000;background:var(--bg);border:1px solid rgba(var(--axr),.25);border-radius:6px;padding:8px 12px;max-width:360px;pointer-events:none;box-shadow:0 8px 30px rgba(0,0,0,.5)}.tt-name{font-family:"Noto Serif JP",serif;font-size:13px;font-weight:700;color:var(--gold2);margin-bottom:3px}.tt-era{font-size:11px;color:var(--text2);margin-bottom:4px}.tt-desc{font-size:12px;color:var(--text);line-height:1.7}.hdr h1{font-size:12px}
-.legend .li{font-size:7px}
-.note p{font-size:8px}
+<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>産業革命の波及タイムライン</title>
+<style>@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');:root{--bg:#f1ecdf;--gold:#8b6f4e;--gold2:#59452a;--text:#2b241b;--text2:#6d6353;--text3:#a89a80;--axr:139,111,78;--shu:#a2331e}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+.hdr{padding:16px 20px;border-bottom:1px solid rgba(var(--axr),.12);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.hdr h1{font-family:'Noto Serif JP',serif;font-size:20px;font-weight:700;color:var(--gold2)}
+.hdr a{font-size:14px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
+main{max-width:760px;margin:0 auto;padding:24px 20px 60px}
+.lead{font-size:15px;line-height:2}
+.lead b{color:var(--gold2)}
+.sec-hdr{display:flex;align-items:center;gap:10px;padding:10px 0;margin:34px 0 4px;border-bottom:1px solid rgba(var(--axr),.15)}
+.sec-icon{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:700;color:var(--gold);opacity:.75}
+.sec-hdr h2{font-family:'Noto Serif JP',serif;font-size:18px;font-weight:700;color:var(--gold2)}
+.latin{font-family:'Cormorant Garamond',serif;font-size:13px;font-weight:400;font-style:italic;color:var(--gold);margin-left:10px;letter-spacing:1px;opacity:.75}
+.cap{font-size:13px;color:var(--text2);margin:8px 0 14px;line-height:1.8}
+.x{color:var(--shu)}
+/* I lineage */
+.lin-row{display:flex;justify-content:center;gap:8px}
+.box{flex:1;max-width:220px;border:1px solid rgba(var(--axr),.3);border-radius:10px;background:rgba(var(--axr),.05);padding:8px 8px 7px;text-align:center;line-height:1.35}
+.box b{display:block;font-family:'Noto Serif JP',serif;font-size:17px;color:var(--gold2)}
+.box .by{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:15px;color:var(--gold)}
+.box small{display:block;font-size:12px;color:var(--text2);margin-top:2px}
+.box.big{max-width:420px}.box.big b{font-size:21px}
+.box.eu{border-color:rgba(var(--axr),.55);background:rgba(var(--axr),.09);box-shadow:0 0 0 3px rgba(var(--axr),.06)}
+.box .note2{border-top:1px solid rgba(var(--axr),.15);margin-top:6px;padding-top:5px}
+.merge,.down{position:relative;text-align:center;padding:10px 0 13px}
+.merge::before,.down::before{content:'';position:absolute;left:50%;top:0;bottom:0;border-left:1.5px solid rgba(var(--axr),.45)}
+.merge::after,.down::after{content:'';position:absolute;left:calc(50% - 5px);bottom:-1px;border:5px solid transparent;border-top:7px solid rgba(var(--axr),.6);border-bottom:0}
+.merge span,.down span{position:relative;background:var(--bg);font-size:12.5px;color:var(--gold);padding:0 8px}
+.merge span b,.down span b{font-family:'Cormorant Garamond',serif;font-size:14px}
+.three{position:relative;padding-bottom:10px}
+.three::after{content:'';position:absolute;left:16%;right:16%;bottom:0;border-bottom:1.5px solid rgba(var(--axr),.45)}
+.three .box{position:relative}
+.three .box::after{content:'';position:absolute;left:50%;bottom:-12px;height:10px;border-left:1.5px solid rgba(var(--axr),.45)}
+.side-h{margin:22px 0 6px;font-size:12px;color:var(--gold);font-family:'Cormorant Garamond',serif;font-style:italic;letter-spacing:1px}
+.side{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.sbox{border:1px solid rgba(var(--axr),.18);border-radius:8px;background:rgba(var(--axr),.03);padding:7px 10px;font-size:13px;line-height:1.5;color:var(--gold2)}
+.sbox b{font-family:'Noto Serif JP',serif}
+.sbox small{display:block;font-size:12px;color:var(--text2);margin-top:3px;line-height:1.65}
+.sbox.dash{border-style:dashed}
+/* II deepening x widening */
+.dw{border:1px solid rgba(var(--axr),.15);border-radius:10px;overflow:hidden;background:rgba(var(--axr),.02)}
+.dw-h,.dw-r{display:grid;grid-template-columns:48px 1fr 1fr;column-gap:10px;padding-left:10px;padding-right:10px}
+.dw-h{font-family:'Noto Serif JP',serif;font-size:13px;font-weight:700;color:var(--gold2);padding-top:8px;padding-bottom:8px;background:rgba(var(--axr),.07)}
+.dw-h span small{display:block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;color:var(--gold);font-size:11.5px;letter-spacing:1px}
+.dw-r{padding-top:6px;padding-bottom:6px;border-top:1px solid rgba(var(--axr),.08);font-size:13.5px;line-height:1.6;align-items:start}
+.dw-r:nth-child(odd){background:rgba(var(--axr),.025)}
+.dw-r .y{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:16px;color:var(--gold);line-height:1.4}
+.dw-r .d{border-right:1px solid rgba(var(--axr),.12);padding-right:10px}
+.cnt{display:flex;align-items:center;gap:6px;margin-top:4px}
+.cnt i{display:block;height:6px;border-radius:3px;background:rgba(var(--axr),.45);max-width:calc(100% - 28px)}
+.cnt b{font-size:13px;font-family:'Cormorant Garamond',serif;color:var(--gold2)}
+/* III UK */
+.uk{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;counter-reset:u}
+.uk li{position:relative;border:1px solid rgba(var(--axr),.15);border-radius:8px;background:rgba(var(--axr),.04);padding:6px 10px 7px 32px;font-size:13.5px;line-height:1.55;counter-increment:u}
+.uk li::before{content:counter(u,upper-roman);position:absolute;left:9px;top:7px;font-family:'Cormorant Garamond',serif;font-weight:700;font-size:13px;color:var(--gold);opacity:.7}
+.uk li .y{display:block;font-family:'Cormorant Garamond',serif;font-weight:700;color:var(--gold);font-size:15px}
+.uk li.ux{border-color:rgba(162,51,30,.35);background:rgba(162,51,30,.04)}.uk li.ux .y{color:var(--shu)}
+/* summary */
+.kp{background:rgba(var(--axr),.04);border:1px solid rgba(var(--axr),.12);border-radius:10px;padding:14px 18px}
+.kp p{font-size:13.5px;line-height:1.9;margin:2px 0}
+.kp b{color:var(--gold2)}
+/* IV per-phase (flow_ style) */
+.toc{display:flex;flex-wrap:wrap;gap:4px 14px;margin:4px 0 14px}
+.toc a{font-size:12.5px;color:var(--text2);text-decoration:none}
+.toc a span{font-family:'Cormorant Garamond',serif;font-weight:700;color:var(--gold);margin-right:5px}
+.toc a:hover{color:var(--gold2)}
+.phase{position:relative;padding:14px 4px 14px 22px;border-left:2px solid rgba(var(--axr),.15);margin-left:46px;scroll-margin-top:8px}
+.phase:last-child{border-left-color:transparent}
+.phase::before{content:'';position:absolute;left:-6px;top:20px;width:8px;height:8px;border-radius:50%;background:var(--bg);border:2px solid rgba(var(--axr),.45)}
+.phase-label{position:absolute;left:-50px;top:15px;width:40px;font-family:'Cormorant Garamond',serif;font-size:13px;font-weight:700;color:var(--gold);text-align:right;line-height:1.25}
+.ph-head{margin-bottom:8px}
+.ph-title{display:block;font-family:'Noto Serif JP',serif;font-size:17px;font-weight:700;color:var(--gold2)}
+.ph-sub{display:block;font-size:12.5px;color:var(--text2);margin-top:1px}
+.event{background:rgba(var(--axr),.03);border:1px solid rgba(var(--axr),.1);border-radius:8px;padding:8px 12px;margin-bottom:8px}
+.event.org{background:rgba(var(--axr),.07);border-color:rgba(var(--axr),.22)}
+.event.bad-ev{background:rgba(162,51,30,.035);border-color:rgba(162,51,30,.22)}
+.ev-title{font-family:'Noto Serif JP',serif;font-size:15px;font-weight:700;color:var(--gold2);display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 10px}
+.bad-ev .ev-title{color:var(--shu)}
+.orgname{font-size:16px}
+.ev-year{font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:700;color:var(--gold)}
+.org-sub{font-size:12px;color:var(--text2)}
+.bad{font-family:'Noto Sans JP',sans-serif;font-size:10.5px;font-weight:400;color:var(--shu);border:1px solid rgba(162,51,30,.4);border-radius:4px;padding:0 6px}
+.ev-desc{font-size:14px;color:var(--text);line-height:1.8;margin-top:3px}
+.ev-desc b{color:var(--gold2)}
+.side-note{font-size:13px;color:var(--text2);line-height:1.8;padding:6px 10px;border-left:2px solid rgba(var(--axr),.25);margin:4px 0 8px}
+.side-note b,.side-note strong{color:var(--gold2)}
+.out{color:var(--shu)}
+@media(max-width:600px){
+.hdr{padding:12px 14px}.hdr h1{font-size:16px}
+main{padding:16px 14px 60px}
+.lead{font-size:14px}
+.sec-hdr h2{font-size:16px}.latin{font-size:12px;margin-left:6px}
+.box b{font-size:15px}.box small{font-size:11px}.box{padding:6px 4px}
+.box.big b{font-size:18px}
+.merge span,.down span{font-size:11.5px}
+.side{grid-template-columns:1fr}
+.dw-h,.dw-r{grid-template-columns:36px 1fr 1fr;column-gap:7px;padding-left:7px;padding-right:7px}
+.dw-r{font-size:12.5px}.dw-r .y{font-size:14px}.dw-r .d{padding-right:7px}
+.uk{grid-template-columns:1fr 1fr}.uk li{font-size:12.5px}
+.kp{padding:12px 14px}.kp p{font-size:12.5px}
+.phase{margin-left:38px;padding-left:16px}.phase-label{left:-42px;width:34px;font-size:12px}
+.ph-title{font-size:15.5px}
+.ev-title{font-size:14px}.orgname{font-size:15px}.ev-desc{font-size:13px}
+.side-note{font-size:12.5px}
 }
 
+/* ---- vertical lane timeline (timeline_lib.py) ---- */
+.hdr h1{line-height:1.45}
+.lane-wrap{margin:8px 0 6px}
+.lane{width:100%;border-collapse:separate;border-spacing:3px 2px;table-layout:fixed}
+.lane thead th{font-family:'Noto Serif JP',serif;font-size:13px;font-weight:700;color:var(--gold2);padding:6px 2px 5px;
+ background:rgba(var(--axr),.07);border-radius:7px;text-align:center;line-height:1.3;position:sticky;top:0;z-index:2}
+.lane thead th small{display:block;font-family:'Noto Sans JP',sans-serif;font-size:11px;font-weight:400;color:var(--text2)}
+.lane thead th.corner{background:transparent}
+.lane td{vertical-align:top;padding:0}
+.lane td.ax{border-top:1px solid rgba(var(--axr),.22);text-align:right;padding:1px 3px 0 0}
+.lane td.ax span{font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:700;color:var(--gold);line-height:1}
+.lane td.e{border-left:1px dotted rgba(var(--axr),.16)}
+.lane tr.tk td.e{border-top:1px dotted rgba(var(--axr),.22)}
+.lane td.blk{border-radius:7px;padding:4px 6px 5px;line-height:1.35;color:var(--text)}
+.blk b{font-family:'Noto Serif JP',serif;font-size:13px;font-weight:700;color:var(--gold2);margin-right:4px}
+.blk .y{font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:700;color:var(--gold);white-space:nowrap}
+.blk i{display:block;font-style:normal;font-size:12px;color:var(--text);margin-top:1px}
+.blk ul{list-style:none;margin:2px 0 0;padding:0}
+.blk li{font-size:12px;line-height:1.4;margin-top:2px;padding-left:2.6em;text-indent:-2.6em}
+.blk li.ny{padding-left:0;text-indent:0}
+.blk li em{font-style:normal;font-family:'Cormorant Garamond',serif;font-weight:700;font-size:13.5px;color:var(--gold);display:inline-block;width:2.5em;text-indent:0}
+.blk.c-mu b{color:var(--text2);font-weight:400}
+.blk.c-mu{border-style:dashed!important}
+.blk.open{border-bottom-style:dashed!important}
+.legend{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:12px;color:var(--text2);margin:6px 0 4px;line-height:1.6}
+.legend span{display:inline-flex;align-items:center;gap:5px}
+.legend i{display:inline-block;width:16px;height:11px;border-radius:3px}
+.fn{list-style:none;margin:6px 0 0;padding:0}
+.fn li{font-size:12.5px;line-height:1.7;color:var(--text2);padding-left:1em;text-indent:-1em}
+.fn li b{color:var(--gold2)}
+.tbl-h{font-family:'Noto Serif JP',serif;font-size:15px;font-weight:700;color:var(--gold2);margin:22px 0 2px}
+.tbl-h small{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;font-size:13px;color:var(--gold);margin-left:8px;letter-spacing:.5px}
+.kp p{padding-left:1.4em;text-indent:-1.4em}
 @media(max-width:600px){
-.hdr{padding:10px 12px}.hdr h1{font-size:12px}
-.legend .li{font-size:7px}
-.note p{font-size:8px}
+main{padding:14px 10px 50px}
+.lane{border-spacing:2px 2px}
+.lane thead th{font-size:12px;padding:5px 1px 4px}
+.lane td.ax{padding-right:2px}
+.lane td.ax span{font-size:12.5px}
+.lane td.blk{padding:3px 4px 4px;border-radius:6px}
+.blk b{font-size:12.5px;margin-right:3px}
+.blk .y{font-size:13px}
+.blk i,.blk li{font-size:11px}
+.blk li{padding-left:2.5em;text-indent:-2.5em}
+.blk li.ny{padding-left:0;text-indent:0}
+.blk li em{font-size:12px;width:2.4em}
+.fn li{font-size:12px}
+.kp p{font-size:13px}
 }
+
+.lane td.c-go{background:rgba(139,111,78,0.1);border:1px solid rgba(139,111,78,0.26)}
+.en.c-go{background:rgba(139,111,78,0.08000000000000002);border-left:3px solid rgba(139,111,78,0.51)}
+.legend i.c-go{background:rgba(139,111,78,0.14);border:1px solid rgba(139,111,78,0.26)}
+.lane td.c-bl{background:rgba(46,94,158,0.11);border:1px solid rgba(46,94,158,0.26)}
+.en.c-bl{background:rgba(46,94,158,0.08800000000000001);border-left:3px solid rgba(46,94,158,0.51)}
+.legend i.c-bl{background:rgba(46,94,158,0.15);border:1px solid rgba(46,94,158,0.26)}
+.lane td.c-rd{background:rgba(170,66,40,0.09);border:1px solid rgba(170,66,40,0.24)}
+.en.c-rd{background:rgba(170,66,40,0.072);border-left:3px solid rgba(170,66,40,0.49)}
+.legend i.c-rd{background:rgba(170,66,40,0.13);border:1px solid rgba(170,66,40,0.24)}
+.lane td.c-gr{background:rgba(60,122,82,0.11);border:1px solid rgba(60,122,82,0.26)}
+.en.c-gr{background:rgba(60,122,82,0.08800000000000001);border-left:3px solid rgba(60,122,82,0.51)}
+.legend i.c-gr{background:rgba(60,122,82,0.15);border:1px solid rgba(60,122,82,0.26)}
+.lane td.c-pu{background:rgba(118,72,140,0.1);border:1px solid rgba(118,72,140,0.25)}
+.en.c-pu{background:rgba(118,72,140,0.08000000000000002);border-left:3px solid rgba(118,72,140,0.5)}
+.legend i.c-pu{background:rgba(118,72,140,0.14);border:1px solid rgba(118,72,140,0.25)}
+.lane td.c-te{background:rgba(36,118,128,0.1);border:1px solid rgba(36,118,128,0.25)}
+.en.c-te{background:rgba(36,118,128,0.08000000000000002);border-left:3px solid rgba(36,118,128,0.5)}
+.legend i.c-te{background:rgba(36,118,128,0.14);border:1px solid rgba(36,118,128,0.25)}
+.lane td.c-oc{background:rgba(176,128,30,0.13);border:1px solid rgba(176,128,30,0.3)}
+.en.c-oc{background:rgba(176,128,30,0.10400000000000001);border-left:3px solid rgba(176,128,30,0.55)}
+.legend i.c-oc{background:rgba(176,128,30,0.17);border:1px solid rgba(176,128,30,0.3)}
+.lane td.c-mu{background:rgba(139,111,78,0.035);border:1px solid rgba(139,111,78,0.16)}
+.en.c-mu{background:rgba(139,111,78,0.028000000000000004);border-left:3px solid rgba(139,111,78,0.41000000000000003)}
+.legend i.c-mu{background:rgba(139,111,78,0.07500000000000001);border:1px solid rgba(139,111,78,0.16)}
+.lane td.c-i1{background:rgba(139,111,78,0.06);border:1px solid rgba(139,111,78,0.2)}
+.en.c-i1{background:rgba(139,111,78,0.048);border-left:3px solid rgba(139,111,78,0.45)}
+.legend i.c-i1{background:rgba(139,111,78,0.1);border:1px solid rgba(139,111,78,0.2)}
+.lane td.c-i2{background:rgba(139,111,78,0.13);border:1px solid rgba(139,111,78,0.28)}
+.en.c-i2{background:rgba(139,111,78,0.10400000000000001);border-left:3px solid rgba(139,111,78,0.53)}
+.legend i.c-i2{background:rgba(139,111,78,0.17);border:1px solid rgba(139,111,78,0.28)}
+.lane td.c-i3{background:rgba(139,111,78,0.22);border:1px solid rgba(139,111,78,0.36)}
+.en.c-i3{background:rgba(139,111,78,0.17600000000000002);border-left:3px solid rgba(139,111,78,0.61)}
+.legend i.c-i3{background:rgba(139,111,78,0.26);border:1px solid rgba(139,111,78,0.36)}
 </style><style id="thThemes">/* =====================================================
    THESAURUS HISTORIAE ― themes.css(LUX固定版)
    生成りの紙 + 墨の本文 + 朱筆(★語) + 金茶の構造色。
@@ -59,20 +234,125 @@ html[data-theme="lux"] .side-note,
 html[data-theme="lux"] .ev-note,
 html[data-theme="lux"] .arrow-text,
 html[data-theme="lux"] .detail { color:var(--text2); }
-</style><script id="thScript">document.documentElement.setAttribute('data-theme','lux');</script></head><body><div class="hdr"><h1>産業革命の波及タイムライン</h1><a href="charts.html">← Ad Chartae</a></div><div class="legend"><div class="li" style="font-size:6px;color:var(--text3)">各バーにマウスオーバーで詳細表示 ← 横スクロール →</div></div><div class="wrap"><svg viewBox="0 0 1600 340" xmlns="http://www.w3.org/2000/svg" style="width:1600px;height:340px;min-width:1600px"><defs><style>g[data-tip]:hover rect{filter:brightness(1.3)}</style></defs><line x1="90.0" y1="26" x2="90.0" y2="340" stroke="rgba(var(--axr),.06)"/><text x="90.0" y="22" text-anchor="middle" fill="rgba(var(--axr),.5)" font-size="8" font-family="Cormorant Garamond" font-weight="700">1750</text><line x1="177.6470588235294" y1="32" x2="177.6470588235294" y2="340" stroke="rgba(255,255,255,.015)"/><text x="177.6470588235294" y="30" text-anchor="middle" fill="rgba(var(--axr),.25)" font-size="6" font-family="Cormorant Garamond">1760</text><line x1="265.2941176470588" y1="32" x2="265.2941176470588" y2="340" stroke="rgba(255,255,255,.015)"/><text x="265.2941176470588" y="30" text-anchor="middle" fill="rgba(var(--axr),.25)" font-size="6" font-family="Cormorant Garamond">1770</text><line x1="352.94117647058823" y1="32" x2="352.94117647058823" y2="340" stroke="rgba(255,255,255,.015)"/><text x="352.94117647058823" y="30" text-anchor="middle" fill="rgba(var(--axr),.25)" font-size="6" font-family="Cormorant Garamond">1780</text><line x1="440.5882352941176" y1="32" x2="440.5882352941176" y2="340" stroke="rgba(255,255,255,.015)"/><text x="440.5882352941176" y="30" text-anchor="middle" fill="rgba(var(--axr),.25)" font-size="6" font-family="Cormorant Garamond">1790</text><line x1="528.2352941176471" y1="26" x2="528.2352941176471" y2="340" stroke="rgba(var(--axr),.06)"/><text x="528.2352941176471" y="22" text-anchor="middle" fill="rgba(var(--axr),.5)" font-size="8" font-family="Cormorant Garamond" font-weight="700">1800</text><line x1="615.8823529411765" y1="32" x2="615.8823529411765" y2="340" stroke="rgba(255,255,255,.015)"/><text x="615.8823529411765" y="30" text-anchor="middle" fill="rgba(var(--axr),.25)" font-size="6" font-family="Cormorant Garamond">1810</text><line x1="703.5294117647059" y1="32" x2="703.5294117647059" y2="340" stroke="rgba(255,255,255,.015)"/><text x="703.5294117647059" y="30" text-anchor="middle" fill="rgba(var(--axr),.25)" font-size="6" font-family="Cormorant Garamond">1820</text><line x1="791.1764705882352" y1="32" x2="791.1764705882352" y2="340" stroke="rgba(255,255,255,.015)"/><text x="791.1764705882352" y="30" text-anchor="middle" fill="rgba(var(--axr),.25)" font-size="6" font-family="Cormorant Garamond">1830</text><line x1="878.8235294117648" y1="32" x2="878.8235294117648" y2="340" stroke="rgba(255,255,255,.015)"/><text x="878.8235294117648" y="30" text-anchor="middle" fill="rgba(var(--axr),.25)" font-size="6" font-family="Cormorant Garamond">1840</text><line x1="966.4705882352941" y1="26" x2="966.4705882352941" y2="340" stroke="rgba(var(--axr),.06)"/><text x="966.4705882352941" y="22" text-anchor="middle" fill="rgba(var(--axr),.5)" font-size="8" font-family="Cormorant Garamond" font-weight="700">1850</text><line x1="1054.1176470588234" y1="32" x2="1054.1176470588234" y2="340" stroke="rgba(255,255,255,.015)"/><text x="1054.1176470588234" y="30" text-anchor="middle" fill="rgba(var(--axr),.25)" font-size="6" font-family="Cormorant Garamond">1860</text><line x1="1141.764705882353" y1="32" x2="1141.764705882353" y2="340" stroke="rgba(255,255,255,.015)"/><text x="1141.764705882353" y="30" text-anchor="middle" fill="rgba(var(--axr),.25)" font-size="6" font-family="Cormorant Garamond">1870</text><line x1="1229.4117647058822" y1="32" x2="1229.4117647058822" y2="340" stroke="rgba(255,255,255,.015)"/><text x="1229.4117647058822" y="30" text-anchor="middle" fill="rgba(var(--axr),.25)" font-size="6" font-family="Cormorant Garamond">1880</text><line x1="1317.0588235294117" y1="32" x2="1317.0588235294117" y2="340" stroke="rgba(255,255,255,.015)"/><text x="1317.0588235294117" y="30" text-anchor="middle" fill="rgba(var(--axr),.25)" font-size="6" font-family="Cormorant Garamond">1890</text><line x1="1404.7058823529412" y1="26" x2="1404.7058823529412" y2="340" stroke="rgba(var(--axr),.06)"/><text x="1404.7058823529412" y="22" text-anchor="middle" fill="rgba(var(--axr),.5)" font-size="8" font-family="Cormorant Garamond" font-weight="700">1900</text><line x1="1492.3529411764705" y1="32" x2="1492.3529411764705" y2="340" stroke="rgba(255,255,255,.015)"/><text x="1492.3529411764705" y="30" text-anchor="middle" fill="rgba(var(--axr),.25)" font-size="6" font-family="Cormorant Garamond">1910</text><line x1="1580.0" y1="32" x2="1580.0" y2="340" stroke="rgba(255,255,255,.015)"/><text x="1580.0" y="30" text-anchor="middle" fill="rgba(var(--axr),.25)" font-size="6" font-family="Cormorant Garamond">1920</text><rect x="90" y="50" width="1490" height="38" fill="rgba(255,255,255,.01)" rx="2"/><text x="4" y="72" fill="var(--gold2)" font-size="8" font-family="Noto Serif JP" font-weight="700">イギリス</text><g data-tip="{&quot;n&quot;: &quot;イギリス 第一次産業革命&quot;, &quot;e&quot;: &quot;1760-1840頃&quot;, &quot;d&quot;: &quot;綿工業が中核。飛び杼(1733)→ジェニー紡績機(1764)→水力紡績機(1769)→ミュール紡績機(1779)→力織機(1785)と発明の連鎖。ワットの蒸気機関改良(1769)が工場動力を変革。マンチェスターが「世界の工場」の中心に。囲い込み(エンクロージャー)で農村から都市へ人口流入。児童労働・長時間労働→チャーティスト運動・工場法(1833)。&quot;}"><rect x="177.6470588235294" y="54" width="701.1764705882354" height="30" rx="3" fill="rgba(var(--axr),.25)" stroke="rgba(var(--axr),.35)" stroke-width="0.5"/><text x="528.2352941176471" y="72.0" text-anchor="middle" fill="var(--text)" font-size="7" font-family="Noto Serif JP" font-weight="700">第一次産業革命</text><text x="528.2352941176471" y="81.0" text-anchor="middle" fill="var(--text3)" font-size="5.5" font-family="Noto Sans JP">紡績機→蒸気機関</text></g><g data-tip="{&quot;n&quot;: &quot;イギリス 第二次産業革命&quot;, &quot;e&quot;: &quot;1840-1900頃&quot;, &quot;d&quot;: &quot;鉄鋼・造船・機械が中核。1851年ロンドン万博(水晶宮)で「世界の工場」を誇示。自由貿易主義(穀物法廃止1846、航海法廃止1849)。しかし19C後半にはドイツ(重化学)・アメリカ(大量生産)に追い越される。ヴィクトリア朝＝大英帝国の全盛期だが「世界の銀行」へ転換。&quot;}"><rect x="878.8235294117648" y="54" width="525.8823529411765" height="30" rx="3" fill="rgba(var(--axr),.18)" stroke="rgba(var(--axr),.28)" stroke-width="0.5"/><text x="1141.764705882353" y="72.0" text-anchor="middle" fill="var(--text)" font-size="7" font-family="Noto Serif JP" font-weight="700">第二次産業革命</text><text x="1141.764705882353" y="81.0" text-anchor="middle" fill="var(--text3)" font-size="5.5" font-family="Noto Sans JP">鉄道・鉄鋼・造船</text></g><rect x="90" y="95" width="1490" height="38" fill="rgba(255,255,255,.01)" rx="2"/><text x="4" y="117" fill="var(--gold2)" font-size="8" font-family="Noto Serif JP" font-weight="700">フランス</text><g data-tip="{&quot;n&quot;: &quot;フランスの産業革命&quot;, &quot;e&quot;: &quot;1800-1860頃&quot;, &quot;d&quot;: &quot;イギリスに比べ緩やかな工業化。小規模経営・奢侈品(絹織物・ワイン・香水)が中心。農民の土地所有が進んだため(革命の成果)、都市への人口流入がイギリスより少ない。鉄道建設は第二帝政期(ナポレオン3世)のオスマンによるパリ改造と並行して本格化。クレディ・リヨネ等の大銀行(投資銀行)が産業資金を供給。&quot;}"><rect x="528.2352941176471" y="99" width="525.8823529411764" height="30" rx="3" fill="rgba(100,130,180,.2)" stroke="rgba(100,130,180,.3)" stroke-width="0.5"/><text x="791.1764705882352" y="117.0" text-anchor="middle" fill="var(--text)" font-size="7" font-family="Noto Serif JP" font-weight="700">産業化開始</text><text x="791.1764705882352" y="126.0" text-anchor="middle" fill="var(--text3)" font-size="5.5" font-family="Noto Sans JP">ナポレオン後〜第二帝政</text></g><g data-tip="{&quot;n&quot;: &quot;フランス 本格的工業化&quot;, &quot;e&quot;: &quot;1860-1914&quot;, &quot;d&quot;: &quot;鉄道網整備。しかしドイツやアメリカほどの重工業化は進まず、中小企業と高級品産業が経済の特色であり続けた。普仏戦争(1870-71)の敗北でアルザス・ロレーヌ(鉄鉱石・石炭)を喪失→重工業のハンディキャップ。海外植民地(インドシナ・北アフリカ)の獲得で市場を確保。&quot;}"><rect x="1054.1176470588234" y="99" width="473.294117647059" height="30" rx="3" fill="rgba(100,130,180,.15)" stroke="rgba(100,130,180,.25)" stroke-width="0.5"/><text x="1290.764705882353" y="117.0" text-anchor="middle" fill="var(--text)" font-size="7" font-family="Noto Serif JP" font-weight="700">本格的工業化</text><text x="1290.764705882353" y="126.0" text-anchor="middle" fill="var(--text3)" font-size="5.5" font-family="Noto Sans JP">鉄道網・金融</text></g><rect x="90" y="140" width="1490" height="38" fill="rgba(255,255,255,.01)" rx="2"/><text x="4" y="162" fill="var(--gold2)" font-size="8" font-family="Noto Serif JP" font-weight="700">ドイツ</text><g data-tip="{&quot;n&quot;: &quot;ドイツ関税同盟(ツォルフェライン)&quot;, &quot;e&quot;: &quot;1834-1870&quot;, &quot;d&quot;: &quot;1834年にプロイセン主導で結成された関税同盟が経済統一の基盤。フリードリヒ＝リストの保護貿易論(幼稚産業保護)。鉄道建設が進み「鉄道が国家統一に先行した」。クルップ製鉄所(エッセン)が成長。統一前から経済的にはすでに一体化が進んでいた。&quot;}"><rect x="826.2352941176471" y="144" width="315.52941176470586" height="30" rx="3" fill="rgba(150,120,80,.2)" stroke="rgba(150,120,80,.3)" stroke-width="0.5"/><text x="984.0" y="162.0" text-anchor="middle" fill="var(--text)" font-size="7" font-family="Noto Serif JP" font-weight="700">関税同盟→工業化</text><text x="984.0" y="171.0" text-anchor="middle" fill="var(--text3)" font-size="5.5" font-family="Noto Sans JP">ツォルフェライン</text></g><g data-tip="{&quot;n&quot;: &quot;ドイツ帝国の工業化&quot;, &quot;e&quot;: &quot;1871-1914&quot;, &quot;d&quot;: &quot;統一後に急速な重工業化。クルップ(鉄鋼)・ジーメンス(電機)・BASF/バイエル(化学・染料)・AEG(電機)。1900年頃にはGDPでイギリスを追い越す。大学と産業の結合(研究開発型)がドイツの強み。ビスマルクの社会保険制度(疾病1883・労災1884・年金1889)は世界初の社会保障。ヴィルヘルム2世の世界政策→3B政策→イギリスとの対立→WW1へ。&quot;}"><rect x="1141.764705882353" y="144" width="385.6470588235295" height="30" rx="3" fill="rgba(150,120,80,.25)" stroke="rgba(150,120,80,.35)" stroke-width="0.5"/><text x="1334.5882352941176" y="162.0" text-anchor="middle" fill="var(--text)" font-size="7" font-family="Noto Serif JP" font-weight="700">急速な重工業化</text><text x="1334.5882352941176" y="171.0" text-anchor="middle" fill="var(--text3)" font-size="5.5" font-family="Noto Sans JP">鉄鋼・化学・電機</text></g><rect x="90" y="185" width="1490" height="38" fill="rgba(255,255,255,.01)" rx="2"/><text x="4" y="207" fill="var(--gold2)" font-size="8" font-family="Noto Serif JP" font-weight="700">アメリカ</text><g data-tip="{&quot;n&quot;: &quot;アメリカ北部の工業化&quot;, &quot;e&quot;: &quot;1800-1860&quot;, &quot;d&quot;: &quot;ニューイングランドのローウェル紡績工場が先駆。ホイットニーの互換式部品方式＝大量生産の萌芽。北部は工業(保護関税を要求)、南部は綿花プランテーション(自由貿易を要求＋奴隷制)→南北の経済構造の違いが南北戦争(1861-65)の根本原因。エリー運河(1825)・大陸横断鉄道構想が西部開拓を推進。&quot;}"><rect x="528.2352941176471" y="189" width="525.8823529411764" height="30" rx="3" fill="rgba(80,150,120,.18)" stroke="rgba(80,150,120,.28)" stroke-width="0.5"/><text x="791.1764705882352" y="207.0" text-anchor="middle" fill="var(--text)" font-size="7" font-family="Noto Serif JP" font-weight="700">北部の工業化</text><text x="791.1764705882352" y="216.0" text-anchor="middle" fill="var(--text3)" font-size="5.5" font-family="Noto Sans JP">紡績・製鉄</text></g><g data-tip="{&quot;n&quot;: &quot;ギルデッドエイジ(金ぴか時代)&quot;, &quot;e&quot;: &quot;1865-1914&quot;, &quot;d&quot;: &quot;南北戦争後の急速な工業化。大陸横断鉄道(1869)が大陸を統一市場に。カーネギー(鉄鋼)・ロックフェラー(スタンダード石油)・モルガン(金融)・ヴァンダービルト(鉄道)の独占資本(トラスト)。移民の大量流入(南東欧から)が安価な労働力を供給。フォードのT型(1908)＝大量生産・大量消費社会の到来。シャーマン反トラスト法(1890)で独占規制の試み。&quot;}"><rect x="1097.9411764705883" y="189" width="429.47058823529414" height="30" rx="3" fill="rgba(80,150,120,.25)" stroke="rgba(80,150,120,.35)" stroke-width="0.5"/><text x="1312.6764705882354" y="207.0" text-anchor="middle" fill="var(--text)" font-size="7" font-family="Noto Serif JP" font-weight="700">ギルデッドエイジ</text><text x="1312.6764705882354" y="216.0" text-anchor="middle" fill="var(--text3)" font-size="5.5" font-family="Noto Sans JP">鉄道・石油・鉄鋼</text></g><rect x="90" y="230" width="1490" height="38" fill="rgba(255,255,255,.01)" rx="2"/><text x="4" y="252" fill="var(--gold2)" font-size="8" font-family="Noto Serif JP" font-weight="700">ロシア</text><g data-tip="{&quot;n&quot;: &quot;ロシアの工業化&quot;, &quot;e&quot;: &quot;1861-1905&quot;, &quot;d&quot;: &quot;1861年アレクサンドル2世の農奴解放令が出発点(だが農民の土地は不十分→ミール共同体に縛られる)。蔵相ヴィッテの工業化政策＝シベリア鉄道(1891着工-1904)・金本位制導入(1897)・外資(フランス資本)の導入。サンクトペテルブルクとモスクワ周辺に重工業が集中。しかし農村の貧困は解消されず→第一次ロシア革命(1905)の背景。&quot;}"><rect x="1054.1176470588234" y="234" width="394.41176470588243" height="30" rx="3" fill="rgba(150,80,80,.2)" stroke="rgba(150,80,80,.3)" stroke-width="0.5"/><text x="1251.3235294117646" y="252.0" text-anchor="middle" fill="var(--text)" font-size="7" font-family="Noto Serif JP" font-weight="700">農奴解放→工業化</text><text x="1251.3235294117646" y="261.0" text-anchor="middle" fill="var(--text3)" font-size="5.5" font-family="Noto Sans JP">シベリア鉄道</text></g><g data-tip="{&quot;n&quot;: &quot;革命前ロシア&quot;, &quot;e&quot;: &quot;1905-1917&quot;, &quot;d&quot;: &quot;血の日曜日事件(1905)→十月詔書→国会(ドゥーマ)開設。ストルイピン首相の農業改革(ミール解体→自営農創出)は道半ばで暗殺(1911)。工業生産は年8%成長したが、外資(仏独)依存が7割。労働者の劣悪な条件→ボリシェヴィキの浸透。WW1の総力戦で経済が崩壊→1917年二月革命・十月革命。&quot;}"><rect x="1448.5294117647059" y="234" width="105.17647058823536" height="30" rx="3" fill="rgba(150,80,80,.15)" stroke="rgba(150,80,80,.25)" stroke-width="0.5"/><text x="1501.1176470588234" y="252.0" text-anchor="middle" fill="var(--text)" font-size="7" font-family="Noto Serif JP" font-weight="700">革命前の工業化</text><text x="1501.1176470588234" y="261.0" text-anchor="middle" fill="var(--text3)" font-size="5.5" font-family="Noto Sans JP">外資依存</text></g><rect x="90" y="275" width="1490" height="38" fill="rgba(255,255,255,.01)" rx="2"/><text x="4" y="297" fill="var(--gold2)" font-size="8" font-family="Noto Serif JP" font-weight="700">日本</text><g data-tip="{&quot;n&quot;: &quot;日本の殖産興業&quot;, &quot;e&quot;: &quot;1868-1895&quot;, &quot;d&quot;: &quot;明治維新(1868)後、「殖産興業・富国強兵」を国策に。富岡製糸場(1872)・横須賀造船所等の官営模範工場→1880年代に松方財政で民間に払い下げ→三井・三菱・住友等の財閥が成長。大阪紡績(渋沢栄一、1882)の成功で綿紡績業が急成長。日清戦争(1894-95)の勝利→賠償金2億テール(当時の国家予算4年分)→金本位制(1897)で国際経済に参入。&quot;}"><rect x="1124.235294117647" y="279" width="236.64705882352928" height="30" rx="3" fill="rgba(180,100,130,.2)" stroke="rgba(180,100,130,.3)" stroke-width="0.5"/><text x="1242.5588235294117" y="297.0" text-anchor="middle" fill="var(--text)" font-size="7" font-family="Noto Serif JP" font-weight="700">殖産興業</text><text x="1242.5588235294117" y="306.0" text-anchor="middle" fill="var(--text3)" font-size="5.5" font-family="Noto Sans JP">官営模範工場</text></g><g data-tip="{&quot;n&quot;: &quot;日本の重工業化&quot;, &quot;e&quot;: &quot;1895-1914&quot;, &quot;d&quot;: &quot;日清・日露戦争を経て軽工業から重工業へ転換。八幡製鉄所(1901、官営)が日本初の本格的製鉄所。日露戦争(1904-05)の勝利で列強として認知。造船業が急成長。財閥(三井・三菱・住友・安田)が工業・金融を支配。1910年代にはアジア最大の工業国に成長。しかし農村は貧困のまま→後の社会問題に。&quot;}"><rect x="1360.8823529411764" y="279" width="166.52941176470608" height="30" rx="3" fill="rgba(180,100,130,.18)" stroke="rgba(180,100,130,.28)" stroke-width="0.5"/><text x="1444.1470588235293" y="297.0" text-anchor="middle" fill="var(--text)" font-size="7" font-family="Noto Serif JP" font-weight="700">軽工業→重工業</text><text x="1444.1470588235293" y="306.0" text-anchor="middle" fill="var(--text3)" font-size="5.5" font-family="Noto Sans JP">日清・日露後</text></g><line x1="256.52941176470586" y1="38" x2="256.52941176470586" y2="340" stroke="rgba(var(--axr),.4)" stroke-width="1" stroke-dasharray="2,2"/><text x="256.52941176470586" y="35" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="5.5" font-family="Noto Sans JP">1769 ワット蒸気機関</text><line x1="791.1764705882352" y1="38" x2="791.1764705882352" y2="340" stroke="rgba(var(--axr),.4)" stroke-width="1" stroke-dasharray="2,2"/><text x="791.1764705882352" y="35" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="5.5" font-family="Noto Sans JP">1830 リヴァプール鉄道</text><line x1="975.2352941176471" y1="38" x2="975.2352941176471" y2="340" stroke="rgba(var(--axr),.4)" stroke-width="1" stroke-dasharray="2,2"/><text x="975.2352941176471" y="35" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="5.5" font-family="Noto Sans JP">1851 ロンドン万博</text><line x1="1133.0" y1="38" x2="1133.0" y2="340" stroke="rgba(var(--axr),.4)" stroke-width="1" stroke-dasharray="2,2"/><text x="1133.0" y="35" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="5.5" font-family="Noto Sans JP">1869 スエズ運河</text><line x1="1150.5294117647059" y1="28" x2="1150.5294117647059" y2="340" stroke="rgba(var(--axr),.4)" stroke-width="1" stroke-dasharray="2,2"/><text x="1150.5294117647059" y="25" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="5.5" font-family="Noto Sans JP">1871 ドイツ統一</text></svg></div><div class="evt"><div class="evt-title">主要な発明・出来事</div>
-<div class="evt-item"><div class="evt-year">1733</div><div class="evt-desc"><strong>飛び杼</strong>(ジョン＝ケイ)→織布の効率2倍に。紡績との生産性格差が発明の連鎖を誘発</div></div>
-<div class="evt-item"><div class="evt-year">1764</div><div class="evt-desc"><strong>ジェニー紡績機</strong>(ハーグリーヴズ)→1台で8本の糸を紡ぐ多軸紡績</div></div>
-<div class="evt-item"><div class="evt-year">1769</div><div class="evt-desc"><strong>水力紡績機</strong>(アークライト)＝工場制の始まり ＋ <strong>ワット蒸気機関</strong>改良＝動力革命</div></div>
-<div class="evt-item"><div class="evt-year">1779</div><div class="evt-desc"><strong>ミュール紡績機</strong>(クロンプトン)→ジェニーとアークライトの長所を統合。高品質の細糸</div></div>
-<div class="evt-item"><div class="evt-year">1785</div><div class="evt-desc"><strong>力織機</strong>(カートライト)→織布の機械化完成。紡績→織布の全工程が機械化</div></div>
-<div class="evt-item"><div class="evt-year">1807</div><div class="evt-desc"><strong>蒸気船</strong>(フルトン)→河川・海上輸送の革命。後に大西洋横断航路に</div></div>
-<div class="evt-item"><div class="evt-year">1825</div><div class="evt-desc"><strong>ストックトン＝ダーリントン鉄道</strong>＝世界初の公共鉄道(貨物中心)</div></div>
-<div class="evt-item"><div class="evt-year">1830</div><div class="evt-desc"><strong>リヴァプール＝マンチェスター鉄道</strong>(スティーブンソン「ロケット号」)＝本格的旅客鉄道</div></div>
-<div class="evt-item"><div class="evt-year">1834</div><div class="evt-desc"><strong>ドイツ関税同盟</strong>(ツォルフェライン)＝経済統一が政治統一に先行</div></div>
-<div class="evt-item"><div class="evt-year">1851</div><div class="evt-desc"><strong>ロンドン万国博覧会</strong>(水晶宮)＝イギリスが「世界の工場」を誇示</div></div>
-<div class="evt-item"><div class="evt-year">1861</div><div class="evt-desc"><strong>農奴解放令</strong>(ロシア・アレクサンドル2世)＝ロシア近代化の出発点</div></div>
-<div class="evt-item"><div class="evt-year">1868</div><div class="evt-desc"><strong>明治維新</strong>→殖産興業・富国強兵政策の開始</div></div>
-<div class="evt-item"><div class="evt-year">1869</div><div class="evt-desc"><strong>スエズ運河</strong>開通(レセップス) ＋ <strong>大陸横断鉄道</strong>(米)開通＝世界の一体化</div></div>
-<div class="evt-item"><div class="evt-year">1871</div><div class="evt-desc"><strong>ドイツ帝国成立</strong>→鉄鋼・化学・電機の急速な重工業化</div></div>
-<div class="evt-item"><div class="evt-year">1891</div><div class="evt-desc"><strong>シベリア鉄道</strong>着工(ロシア・ヴィッテ)＝ユーラシア大陸を鉄道で横断</div></div>
-</div><div class="note"><p>産業革命はイギリスで始まり(18C後半)、約100年かけて各国に波及。<strong>「なぜイギリスで最初に起きたか」(植民地市場・石炭・資本蓄積・囲い込み・科学革命)と「各国への波及の順序・背景」</strong>は定番テーマ。</p></div><div class="tt" id="tooltip"><div class="tt-name"></div><div class="tt-era"></div><div class="tt-desc"></div></div><script>var tt=document.getElementById("tooltip");document.querySelectorAll("[data-tip]").forEach(function(el){el.style.cursor="pointer";el.addEventListener("mouseenter",function(e){var d=JSON.parse(el.getAttribute("data-tip"));tt.querySelector(".tt-name").textContent=d.n||"";tt.querySelector(".tt-era").textContent=d.e||"";tt.querySelector(".tt-desc").textContent=d.d||"";tt.style.display="block";var r=el.getBoundingClientRect();var tx=Math.min(r.left,window.innerWidth-370);var ty=r.bottom+6;if(ty+tt.offsetHeight>window.innerHeight)ty=r.top-tt.offsetHeight-6;tt.style.left=Math.max(4,tx)+"px";tt.style.top=ty+"px"});el.addEventListener("mouseleave",function(){tt.style.display="none"})});</script><script src="search_jump.js" defer></script></body></html>
+</style><script id="thScript">document.documentElement.setAttribute('data-theme','lux');</script></head>
+<body>
+<div class="hdr"><h1>産業革命の波及タイムライン</h1><a href="charts.html">← Ad Chartae</a></div>
+<main>
+<p class="lead">産業革命は18世紀後半のイギリスに始まり、19世紀に欧米、19世紀末にロシア・日本へ広がった。時代は上から下へ進み、<b>横に読むと各国の工業化の時期の差</b>がわかる。</p>
+<div class="sec-hdr"><span class="sec-icon">Ⅰ</span><h2>各国の工業化 <span class="latin">Tabula Industriae</span></h2></div><p class="cap">縦の長さは期間のおよその目安。色が濃いほど工業化が進んだ段階。</p><div class="legend"><span><i class="c-mu"></i>工業化以前</span><span><i class="c-i1"></i>始まり</span><span><i class="c-i2"></i>産業革命・本格化</span><span><i class="c-i3"></i>最も発展した時期</span><span><i class="c-rd"></i>戦争</span></div><div class="tbl-h">ヨーロッパ<small>Europa</small></div><div class="lane-wrap"><table class="lane"><colgroup><col style="width:30px"><col><col><col></colgroup><thead><tr><th class="corner"></th><th>イギリス</th><th>フランス</th><th>ドイツ</th></tr></thead><tbody>
+<tr style="height:7px">
+<td class="ax" rowspan="2"><span></span></td>
+<td class="e"></td>
+<td class="e" rowspan="2"></td>
+<td class="e" rowspan="2"></td>
+</tr>
+<tr style="height:15px">
+<td class="blk c-i2" rowspan="8"><b>産業革命</b><span class="y">1760年代-1830年代</span><i>綿工業の機械化と蒸気機関</i><ul><li><em>1733</em>飛び杼(ジョン＝ケイ)</li><li><em>1764</em>ジェニー紡績機</li><li><em>1769</em>水力紡績機・ワットの蒸気機関</li><li><em>1779</em>ミュール紡績機</li><li><em>1785</em>力織機</li><li><em>1825</em>最初の鉄道(ストックトン・ダーリントン間)</li></ul></td>
+</tr>
+<tr class="tk" style="height:44px">
+<td class="ax"><span>1740</span></td>
+<td class="e"></td>
+<td class="e"></td>
+</tr>
+<tr class="tk" style="height:44px">
+<td class="ax"><span>1760</span></td>
+<td class="e"></td>
+<td class="e"></td>
+</tr>
+<tr class="tk" style="height:20px">
+<td class="ax" rowspan="2"><span>1780</span></td>
+<td class="e"></td>
+<td class="e" rowspan="2"></td>
+</tr>
+<tr style="height:24px">
+<td class="blk c-mu" rowspan="4"><b>革命〜復古王政</b><i>自作農が多く、都市への人口移動は少ない</i></td>
+</tr>
+<tr class="tk" style="height:33px">
+<td class="ax" rowspan="2"><span>1800</span></td>
+<td class="e"></td>
+</tr>
+<tr style="height:11px">
+<td class="blk c-mu" rowspan="3"><b>ドイツ連邦</b><span class="y">1815-</span><i>多くの国に分かれ関税もばらばら</i></td>
+</tr>
+<tr class="tk" style="height:83px">
+<td class="ax" rowspan="3"><span>1820</span></td>
+</tr>
+<tr style="height:9px">
+<td class="blk c-i3" rowspan="4"><b>「世界の工場」</b><span class="y">1830-70年代</span><i>鉄道・製鉄・機械工業</i><ul><li><em>1830</em>リヴァプール・マンチェスター鉄道</li><li><em>1846</em>穀物法廃止(自由貿易)</li><li><em>1851</em>ロンドン万国博覧会</li></ul></td>
+<td class="blk c-i2" rowspan="4"><b>産業革命</b><span class="y">1830年代-</span><i>七月王政期に始まる</i><ul><li class="ny">絹織物など軽工業が中心</li><li><em>1852</em>第二帝政で鉄道網を整備</li></ul></td>
+</tr>
+<tr style="height:13px">
+<td class="blk c-i2" rowspan="4"><b>産業革命</b><span class="y">1830年代-</span><ul><li><em>1834</em>ドイツ関税同盟</li><li><em>1835</em>最初の鉄道</li><li class="ny">リストの保護関税論</li><li class="ny">ルール地方の石炭・鉄鋼</li></ul></td>
+</tr>
+<tr class="tk" style="height:44px">
+<td class="ax"><span>1840</span></td>
+</tr>
+<tr class="tk" style="height:129px">
+<td class="ax" rowspan="3"><span>1860</span></td>
+</tr>
+<tr style="height:4px">
+<td class="blk c-i2" rowspan="4"><b>独・米の追い上げ</b><span class="y">1870年代-</span><i>海外投資がふえ「世界の銀行」に</i></td>
+<td class="blk c-i2" rowspan="4"><b>緩やかな工業化</b><ul><li><em>1871</em>アルザス・ロレーヌを失う</li><li class="ny">資本をロシアなどへ投資</li></ul></td>
+</tr>
+<tr style="height:20px">
+<td class="blk c-i3" rowspan="3"><b>重化学工業の発展</b><span class="y">1871-</span><ul><li class="ny">鉄鋼・化学・電機</li><li class="ny">クルップ・ジーメンス</li><li><em>1883</em>社会保険制度を開始</li></ul></td>
+</tr>
+<tr class="tk" style="height:44px">
+<td class="ax"><span>1880</span></td>
+</tr>
+<tr class="tk" style="height:69px">
+<td class="ax"><span>1900</span></td>
+</tr>
+</tbody></table></div><ul class="fn"><li>・大陸ではベルギーが最も早く(1830年代)工業化した。</li><li>・19世紀後半の、鉄鋼・化学・電機・石油を中心とする工業の発展を第二次産業革命という。</li></ul><div class="tbl-h">アメリカ・ロシア・日本<small>Extra Europam</small></div><div class="lane-wrap"><table class="lane"><colgroup><col style="width:30px"><col><col><col></colgroup><thead><tr><th class="corner"></th><th>アメリカ</th><th>ロシア</th><th>日本</th></tr></thead><tbody>
+<tr class="tk" style="height:22px">
+<td class="ax" rowspan="2"><span>1780</span></td>
+<td class="e"></td>
+<td class="e" rowspan="2"></td>
+<td class="blk c-mu" rowspan="5"><b>江戸時代</b></td>
+</tr>
+<tr style="height:22px">
+<td class="blk c-i1" rowspan="6"><b>北部の工業化</b><span class="y">19世紀前半</span><ul><li><em>1793</em>綿繰り機(ホイットニー)</li><li><em>1807</em>蒸気船(フルトン)</li><li><em>1812</em>米英戦争で輸入途絶</li><li class="ny">南部は綿花プランテーション</li></ul></td>
+</tr>
+<tr class="tk" style="height:44px">
+<td class="ax"><span>1800</span></td>
+<td class="blk c-mu" rowspan="5"><b>農奴制のもとで停滞</b></td>
+</tr>
+<tr class="tk" style="height:44px">
+<td class="ax"><span>1820</span></td>
+</tr>
+<tr class="tk" style="height:31px">
+<td class="ax" rowspan="2"><span>1840</span></td>
+</tr>
+<tr style="height:13px">
+<td class="blk c-mu" rowspan="4"><b>開国</b><span class="y">1854</span><ul><li><em>1859</em>貿易開始(生糸輸出)</li></ul></td>
+</tr>
+<tr class="tk" style="height:23px">
+<td class="ax" rowspan="4"><span>1860</span></td>
+</tr>
+<tr style="height:30px">
+<td class="blk c-rd"><b>南北戦争</b><span class="y">1861-65</span></td>
+<td class="blk c-i1" rowspan="5"><b>農奴解放後</b><ul><li><em>1861</em>農奴解放令</li></ul></td>
+</tr>
+<tr style="height:7px">
+<td class="blk c-i3" rowspan="6"><b>急速な工業化</b><ul><li><em>1869</em>大陸横断鉄道</li><li class="ny">鉄鋼・石油の巨大企業</li><li class="ny">19世紀末に世界最大の工業国</li><li><em>1908</em>T型フォード</li></ul></td>
+</tr>
+<tr style="height:26px">
+<td class="blk c-i1" rowspan="2"><b>殖産興業</b><span class="y">1868-</span><ul><li><em>1872</em>富岡製糸場</li><li><em>1880</em>官営工場の払い下げ</li></ul></td>
+</tr>
+<tr class="tk" style="height:56px">
+<td class="ax" rowspan="3"><span>1880</span></td>
+</tr>
+<tr style="height:9px">
+<td class="blk c-i2" rowspan="3"><b>産業革命</b><span class="y">1880年代後半-</span><ul><li class="ny">紡績・製糸(軽工業)</li><li><em>1897</em>金本位制</li><li><em>1901</em>八幡製鉄所(重工業)</li></ul></td>
+</tr>
+<tr style="height:22px">
+<td class="blk c-i2" rowspan="2"><b>国家主導の工業化</b><span class="y">1890年代-</span><ul><li><em>1891</em>シベリア鉄道着工</li><li class="ny">蔵相ウィッテ・フランス資本</li><li><em>1905</em>第一次ロシア革命</li></ul></td>
+</tr>
+<tr class="tk" style="height:129px">
+<td class="ax"><span>1900</span></td>
+</tr>
+</tbody></table></div>
+<div class="sec-hdr"><span class="sec-icon">Ⅱ</span><h2>要点 <span class="latin">Summarium</span></h2></div>
+<div class="kp"><p>❶ 英が最初：資本の蓄積・石炭と鉄・植民地市場・囲い込みで生まれた労働力</p><p>❷ 順序：英(18世紀後半)→ベルギー・仏(1830年代)→独(1830〜40年代)→米(南北戦争後に本格化)→露・日(19世紀末)</p><p>❸ 後発の独・露・日では、国家が鉄道や重工業の育成を進めた</p><p>❹ 19世紀後半、重化学工業で独・米が英を追い上げた(第二次産業革命)</p><p>❺ 米は南北戦争(1861-65)後に急成長し、19世紀末には英を抜いて世界最大の工業国となった</p></div>
+</main>
+<script src="search_jump.js" defer></script></body></html>

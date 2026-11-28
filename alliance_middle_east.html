@@ -166,7 +166,26 @@ table.mx{width:100%;border-collapse:separate;border-spacing:3px;table-layout:fix
 .chain .cn{font-family:'Noto Serif JP',serif;font-weight:700;font-size:14.5px;color:var(--gold2)}
 .chain li.red .cn{color:var(--shu)}
 .chain .cx{font-size:13.5px;line-height:1.8;color:var(--text)}
+/* compact one-line timeline (2nd revision: chartae = figure, not reading page) */
+.tl{list-style:none;margin:2px 0 6px;padding:0}
+.tl li{position:relative;padding:1px 0 5px 18px;border-left:1.5px solid rgba(var(--axr),.2);margin-left:5px;font-size:13.5px;line-height:1.6;color:var(--text)}
+.tl li:last-child{border-left-color:transparent;padding-bottom:1px}
+.tl li::before{content:'';position:absolute;left:-5.5px;top:7px;width:7px;height:7px;border-radius:50%;background:var(--bg);border:2px solid rgba(var(--axr),.5)}
+.tl li.w::before{background:rgba(var(--w),.35);border-color:rgba(var(--w),.75)}
+.tl li.e::before{background:rgba(var(--e),.3);border-color:rgba(var(--e),.7)}
+.tl li.n::before{background:rgba(var(--n),.35);border-color:rgba(var(--n),.75)}
+.tl li.p::before{background:rgba(var(--p),.3);border-color:rgba(var(--p),.7)}
+.tl .ty{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:15px;color:var(--gold);margin-right:7px}
+.tl b{font-family:'Noto Serif JP',serif;color:var(--gold2)}
+.tl li.war b{color:var(--shu)}
+.tl-h{display:flex;align-items:baseline;gap:8px;margin:10px 0 4px;font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2)}
+.tl-h .rn{font-family:'Cormorant Garamond',serif;font-size:15px;color:var(--gold);opacity:.8}
+.tl-h .yr{font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:700;color:var(--gold)}
+.fn{margin:6px 0 4px;padding:0;list-style:none}
+.fn li{font-size:13px;line-height:1.7;color:var(--text2);padding-left:1em;text-indent:-1em}
+.fn li b{color:var(--gold2)}
 @media(max-width:600px){
+.tl li{font-size:13px}
 .kp p{font-size:13px}.side-note{font-size:13px}
 .mx thead th{font-size:11px}.mx thead th b{font-size:12px}.mx thead th .yr{font-size:12.5px}
 .mx tbody th{font-size:12px}
@@ -176,6 +195,16 @@ table.mx{width:100%;border-collapse:separate;border-spacing:3px;table-layout:fix
 .chain .cx{font-size:13px}
 .legend{font-size:11.5px}
 }
+
+.pr{display:grid;gap:6px}
+.pr-r{display:grid;grid-template-columns:78px 1fr;gap:8px;align-items:stretch}
+.pr-w{display:flex;align-items:center;justify-content:center;border-radius:8px;font-family:'Noto Serif JP',serif;font-size:13px;font-weight:700;color:var(--gold2);text-align:center}
+.pr-w.k-e{color:#7a2a1e}.pr-w.k-w{color:#2d4569}
+.pr-b{font-size:13.5px;line-height:1.6;padding:3px 0}
+.pr-b b{font-family:'Noto Serif JP',serif;color:var(--gold2);margin-right:6px}
+.pr-res{font-size:13.5px;color:var(--text);padding:2px 0 0 86px}
+.pr-res b{color:var(--shu)}
+@media(max-width:600px){.pr-r{grid-template-columns:68px 1fr}.pr-w{font-size:12px}.pr-b,.pr-res{font-size:13px}.pr-res{padding-left:0}}
 </style><style id="thThemes">/* =====================================================
    THESAURUS HISTORIAE ― themes.css(LUX固定版)
    生成りの紙 + 墨の本文 + 朱筆(★語) + 金茶の構造色。
@@ -225,8 +254,15 @@ html[data-theme="lux"] .detail { color:var(--text2); }
 <body>
 <div class="hdr"><h1>中東現代の関係図 ― パレスチナ問題を軸に</h1><a href="charts.html">← Ad Chartae</a></div>
 <main>
-<p class="lead">第一次世界大戦中のイギリスの外交から、パレスチナをめぐるアラブ人とユダヤ人の対立が生まれた。1948年のイスラエル建国後は、<b>4度の中東戦争</b>、<b>エジプトとイスラエルの和平</b>、<b>イラン革命</b>、湾岸戦争、対テロ戦争と、中東の対立の構図は変化を続けた。冷戦期には、アメリカがイスラエルを、ソ連がエジプト・シリアなどのアラブ諸国を支援した。</p>
-<div class="sec-hdr"><span class="sec-icon">Ⅰ</span><h2>立場の変化 <span class="latin">Conspectus Partium</span></h2></div><p class="cap">主な国・勢力の立場を時期ごとに示す。色は立場の分類、文字はその時期の主なできごと。エジプト・イラン・イラクのように、時期によって立場を大きく変えた国がある。各時期の内容はⅢで説明する。</p>
+<p class="lead">パレスチナをめぐるアラブ人とユダヤ人の対立を軸に、冷戦・イラン革命・対テロ戦争が重なり、中東の対立の構図は変化を続けた。</p>
+<div class="sec-hdr"><span class="sec-icon">Ⅰ</span><h2>イギリスの三つの約束 <span class="latin">Origo</span></h2></div><p class="cap">第一次世界大戦中、イギリスは相手ごとに異なる約束をした。</p>
+<div class="pr">
+<div class="pr-r"><div class="pr-w k-e">アラブ人へ</div><div class="pr-b"><b>フサイン＝マクマホン協定</b><span class="ev-year">1915〜16</span><br>オスマン帝国への反乱を条件に独立を約束</div></div>
+<div class="pr-r"><div class="pr-w k-i">仏・露と</div><div class="pr-b"><b>サイクス＝ピコ協定</b><span class="ev-year">1916</span><br>オスマン領の分割を密約(パレスチナは国際管理)</div></div>
+<div class="pr-r"><div class="pr-w k-w">ユダヤ人へ</div><div class="pr-b"><b>バルフォア宣言</b><span class="ev-year">1917</span><br>パレスチナに「民族的郷土」建設を支持</div></div>
+<div class="pr-res">→ 三つの約束は矛盾し、<b>パレスチナ問題</b>の起源となった</div></div>
+<ul class="fn"><li>※<b>1920</b> 英の委任統治 → <b>1947</b> 国連分割案 → <b>1948</b> イスラエル建国</li></ul>
+<div class="sec-hdr"><span class="sec-icon">Ⅱ</span><h2>立場の変化 <span class="latin">Conspectus Partium</span></h2></div><p class="cap">主な国・勢力の立場の変化。文字はその時期の主なできごと。</p>
 <div class="mx-wrap"><table class="mx"><colgroup><col style="width:22%"><col><col><col></colgroup>
 <thead><tr><th></th><th><span class="rn">Ⅰ</span><b>中東戦争</b><span class="yr">1948–73</span></th><th><span class="rn">Ⅱ</span><b>和平と革命</b><span class="yr">1978–2000</span></th><th><span class="rn">Ⅲ</span><b>21世紀</b><span class="yr">2001–</span></th></tr></thead><tbody>
 <tr><th>イスラエル</th><td class="c-w">建国・<br>4度の戦争</td><td class="c-w">エジプト・<br>PLOと和平</td><td class="c-w">ガザ・西岸で<br>対立続く</td></tr>
@@ -235,111 +271,16 @@ html[data-theme="lux"] .detail { color:var(--text2); }
 <tr><th>シリア</th><td class="c-e">交戦<br>ソ連が援助</td><td class="c-e">イスラエル<br>と対立</td><td class="c-x">内戦<br>(2011〜)</td></tr>
 <tr><th>イラク</th><td class="c-we">親英王政→<br>1958革命</td><td class="c-we">米が支援→<br>湾岸戦争</td><td class="c-x">イラク戦争<br>政権崩壊</td></tr>
 <tr><th>イラン</th><td class="c-w">親米王政</td><td class="c-p">イラン革命<br>反米</td><td class="c-p">反米<br>シリア支援</td></tr>
-<tr><th>PLO・<br>パレスチナ</th><td class="c-e">1964結成<br>武装闘争</td><td class="c-w">オスロ合意<br>相互承認</td><td class="c-x">自治政府と<br>ハマスに分裂</td></tr>
+<tr><th>PLO・<br>パレスチナ</th><td class="c-e">1964結成<br>武装闘争</td><td class="c-ew">インティファーダ<br>→オスロ合意</td><td class="c-x">自治政府と<br>ハマスに分裂</td></tr>
 <tr><th>サウジ<br>アラビア</th><td class="c-w">親米王政</td><td class="c-w">親米<br>イランと対立</td><td class="c-w">親米<br>イランと対立</td></tr>
 </tbody></table></div>
-<div class="legend"><span><i class="c-w"></i>米と協調、またはイスラエルと和平</span><span><i class="c-e"></i>イスラエルと交戦・対立(ソ連の援助を受けた国が多い)</span><span><i class="c-p"></i>イスラーム共和国(反米)</span><span><i class="c-we"></i>二色：時期の途中で立場が変化</span><span><i class="c-x"></i>灰の破線：内戦・政権崩壊・分裂</span></div>
-<div class="sec-hdr"><span class="sec-icon">Ⅱ</span><h2>要点 <span class="latin">Summarium</span></h2></div>
-<div class="kp"><p>❶ 第一次世界大戦中、イギリスは<b>フサイン＝マクマホン協定(1915〜16)</b>でアラブ人に独立を、<b>サイクス＝ピコ協定(1916)</b>で英・仏・露によるオスマン帝国領の分割を、<b>バルフォア宣言(1917)</b>でユダヤ人に民族的郷土を約束した。この矛盾がパレスチナ問題の起源となった</p><p>❷ 中東戦争は4度おこった。第1次(1948〜49)で多数のパレスチナ難民が生まれ、<b>第3次(1967)</b>でイスラエルがシナイ半島・ガザ地区・ヨルダン川西岸・ゴラン高原を占領した。<b>第4次(1973)</b>ではOAPECの石油戦略で第1次石油危機がおこった</p><p>❸ エジプトはナセルのもとでソ連の援助を受けてイスラエルと戦ったが、サダトのもとでアメリカに接近し、<b>エジプト＝イスラエル平和条約(1979)</b>でアラブ諸国で初めてイスラエルを承認した</p><p>❹ <b>イラン革命(1979)</b>で親米のパフレヴィー朝が倒れ、反米のイスラーム共和国が成立した。アメリカはイラン＝イラク戦争(1980〜88)でイラクを支援したが、<b>湾岸戦争(1991)</b>ではイラクと戦った</p><p>❺ <b>オスロ合意(1993)</b>でイスラエルとPLOが互いを承認し、パレスチナ暫定自治が始まった。しかしエルサレムの帰属や難民の問題は解決していない</p><p>❻ 2001年の同時多発テロ後、アメリカはアフガニスタン(2001)・イラク(2003)を攻撃した。「アラブの春」(2011)の後シリアは内戦となり、「イスラーム国」が台頭した</p></div>
-<div class="sec-hdr"><span class="sec-icon">Ⅲ</span><h2>時期別の解説 <span class="latin">Per Aetates</span></h2></div><p class="cap">対立した国・勢力を左右に並べ、その時期のできごとを年代順に示す。</p>
-<nav class="toc"><a href="#ph1"><span>1915–1947</span>前史 ― イギリスの外交</a><a href="#ph2"><span>1948–1973</span>4度の中東戦争</a><a href="#ph3"><span>1978–2000</span>和平の進展とイラン革命</a><a href="#ph4"><span>2001–</span>対テロ戦争とその後</a></nav>
-<div class="phase" id="ph1"><div class="phase-label">1915<br>〜<br>1947</div>
-<div class="ph-head"><span class="ph-title">前史 ― イギリスの外交</span><span class="ph-sub">第一次世界大戦中の三つの約束と委任統治</span></div>
-<div class="camps">
-<div class="camp k-e"><div class="camp-h">アラブ人への約束</div>
-<div class="mem"><div class="mem-n">フサイン＝マクマホン協定<small>1915〜16</small></div><div class="mem-d">エジプト駐在のイギリス高等弁務官マクマホンが、メッカの太守フサインとの書簡で、オスマン帝国への反乱を条件に、戦後のアラブ人国家の独立を支持すると約束した。これを受けて1916年にアラブの反乱がおこった。約束の範囲があいまいで、パレスチナが含まれるかどうかがのちに争われた。</div></div>
-</div>
-<div class="camp k-i"><div class="camp-h">フランス・ロシアとの密約</div>
-<div class="mem"><div class="mem-n">サイクス＝ピコ協定<small>1916</small></div><div class="mem-d">イギリス・フランス・ロシアが、戦後のオスマン帝国領の分割を秘密に取り決めた。シリア・レバノン方面をフランス、イラク南部をイギリスの勢力範囲とし、パレスチナは国際管理とした。ロシア革命後の1917年、ソヴィエト政権がこの協定を公表した。</div></div>
-</div>
-<div class="camp k-w"><div class="camp-h">ユダヤ人への約束</div>
-<div class="mem"><div class="mem-n">バルフォア宣言<small>1917</small></div><div class="mem-d">イギリス外相バルフォアが、パレスチナにユダヤ人の「民族的郷土」を建設することへの支持を表明した。シオニズム運動の協力を得るねらいがあった。宣言はパレスチナの非ユダヤ人住民の権利を害さないとしていたが、アラブ人への約束とは両立しなかった。</div></div>
-</div>
-</div>
-<div class="side-note">三つの約束は互いに矛盾しており、パレスチナ問題の起源となった。これをイギリスの「三枚舌外交」と呼ぶことがある。</div>
-<div class="event"><div class="ev-title">委任統治<span class="ev-year">1920〜</span></div><div class="ev-desc">戦後、パレスチナ・トランスヨルダン・イラクはイギリスの、シリア・レバノンはフランスの委任統治領となった。パレスチナにはユダヤ人の移住が増え、アラブ人との衝突がくり返された。</div></div>
-<div class="event"><div class="ev-title">国際連合のパレスチナ分割案<span class="ev-year">1947</span></div><div class="ev-desc">イギリスが委任統治の終了を決めた後、国際連合総会はパレスチナをユダヤ人国家とアラブ人国家に分け、エルサレムを国際管理とする分割案を採択した。ユダヤ人側は受け入れ、アラブ側は拒否した。</div></div>
-</div>
-<div class="phase" id="ph2"><div class="phase-label">1948<br>〜<br>1973</div>
-<div class="ph-head"><span class="ph-title">4度の中東戦争</span><span class="ph-sub">イスラエルとアラブ諸国の対立</span></div>
-<div class="camps">
-<div class="camp k-w"><div class="camp-h">イスラエル側</div>
-<div class="mem"><div class="mem-n">イスラエル<small>1948建国</small></div><div class="mem-d">1948年5月、イギリスの委任統治の終了とともに建国を宣言した。アメリカは建国直後に承認し、のちに最大の支援国となった。第1次・第3次中東戦争で支配地域を広げた。</div></div>
-<div class="mem"><div class="mem-n">アメリカ</div><div class="mem-d">イスラエルを支援した。ただしスエズ戦争(1956)では、イギリス・フランス・イスラエルの出兵に反対した。</div></div>
-<div class="mem"><div class="mem-n">イギリス・フランス<small>1956</small></div><div class="mem-d">エジプトによるスエズ運河の国有化に反発し、1956年にイスラエルとともに出兵した。</div></div>
-</div>
-<div class="camp k-e"><div class="camp-h">アラブ側</div>
-<div class="mem"><div class="mem-n">エジプト<small>ナセル→サダト</small></div><div class="mem-d">1952年のエジプト革命で王政が倒れ、ナセルが指導者となった。アラブ民族主義をかかげてスエズ運河を国有化し(1956)、ソ連の援助を受けたが、第3次中東戦争(1967)で大敗した。ナセルの死(1970)後に大統領となったサダトは、1972年にソ連の軍事顧問団を退去させ、第4次中東戦争(1973)をおこした。</div></div>
-<div class="mem"><div class="mem-n">シリア</div><div class="mem-d">1958年から61年までエジプトとアラブ連合共和国をつくった。第3次中東戦争(1967)でゴラン高原をイスラエルに占領された。1970年からバアス党のアサド政権が続き、ソ連の支援を受けた。</div></div>
-<div class="mem"><div class="mem-n">ヨルダン</div><div class="mem-d">第1次中東戦争でヨルダン川西岸とエルサレム旧市街を支配下においたが、第3次中東戦争(1967)でイスラエルに奪われた。</div></div>
-<div class="mem"><div class="mem-n">イラク</div><div class="mem-d">第1次中東戦争に参加した。王政のもとで1955年にバグダード条約機構に加わって西側と結んだが、1958年のイラク革命で王政が倒れ、翌年脱退した。</div></div>
-<div class="mem"><div class="mem-n">PLO(パレスチナ解放機構)<small>1964結成</small></div><div class="mem-d">1969年からアラファトが議長となり、イスラエルに対する武装闘争を進めた。1970年にヨルダンから追放され、拠点をレバノンに移した。</div></div>
-</div>
-</div>
-<div class="sub-h">4度の戦争</div>
-<div class="event bad-ev"><div class="ev-title">第1次中東戦争(パレスチナ戦争)<span class="ev-year">1948〜49</span><span class="bad">戦争・危機</span></div><div class="ev-desc">イスラエルの建国宣言の直後、エジプト・ヨルダン・シリア・イラク・レバノンが攻撃した。イスラエルが勝ち、国連の分割案より広い地域を確保した。70万人以上のパレスチナ人が故郷を追われて難民となった。</div></div>
-<div class="event bad-ev"><div class="ev-title">第2次中東戦争(スエズ戦争)<span class="ev-year">1956</span><span class="bad">戦争・危機</span></div><div class="ev-desc">ナセルのスエズ運河国有化に対し、イギリス・フランス・イスラエルが出兵した。米ソの反対と国連の撤兵要求で3国は撤兵し、ナセルの威信が高まった。英仏の中東での影響力は後退した。</div></div>
-<div class="event bad-ev"><div class="ev-title">第3次中東戦争<span class="ev-year">1967</span><span class="bad">戦争・危機</span></div><div class="ev-desc">イスラエルが先制攻撃し、6日間でシナイ半島・ガザ地区・ヨルダン川西岸(東エルサレムを含む)・ゴラン高原を占領した。国連安全保障理事会は占領地からの撤退を求める決議242を採択した。</div></div>
-<div class="event bad-ev"><div class="ev-title">第4次中東戦争<span class="ev-year">1973</span><span class="bad">戦争・危機</span></div><div class="ev-desc">エジプトとシリアがイスラエルを攻撃した。アラブ石油輸出国機構(OAPEC)はイスラエルを支持する国への石油輸出を制限し、石油輸出国機構(OPEC)は原油価格を大幅に引き上げた。これにより<b>第1次石油危機</b>がおこり、先進国の高度経済成長は終わった。</div></div>
-<div class="side-note">冷戦のもとで、アメリカはイスラエルを、ソ連はエジプト・シリアなどのアラブ諸国を支援した。第3次中東戦争の後、パレスチナ問題はイスラエルの占領地をめぐる問題という性格を強めた。</div>
-</div>
-<div class="phase" id="ph3"><div class="phase-label">1978<br>〜<br>2000</div>
-<div class="ph-head"><span class="ph-title">和平の進展とイラン革命</span><span class="ph-sub">エジプトの和平・イラン革命・湾岸戦争・オスロ合意</span></div>
-<div class="sub-h">エジプトとイスラエルの和平</div>
-<div class="event org"><div class="ev-title">キャンプ＝デービッド合意<span class="ev-year">1978</span><span class="ok">条約・合意</span></div><div class="ev-desc">アメリカのカーター大統領の仲介で、エジプトのサダト大統領とイスラエルのベギン首相が和平の枠組みに合意した。</div></div>
-<div class="event org"><div class="ev-title">エジプト＝イスラエル平和条約<span class="ev-year">1979</span><span class="ok">条約・合意</span></div><div class="ev-desc">イスラエルがシナイ半島を返還し(1982年に完了)、エジプトはアラブ諸国で初めてイスラエルを承認した。エジプトはアラブ連盟の加盟資格を停止され、サダトは1981年にイスラーム急進派に暗殺された。</div></div>
-<div class="sub-h">イラン革命とイラン＝イラク戦争</div>
-<div class="camps">
-<div class="camp k-p"><div class="camp-h">イラン</div>
-<div class="mem"><div class="mem-n">イラン<small>ホメイニ</small></div><div class="mem-d">1979年の<b>イラン革命</b>で、親米のパフレヴィー朝(国王パフレヴィー2世)が倒れ、シーア派の宗教指導者ホメイニのもとでイスラーム共和国が成立した。革命の混乱で原油の供給が減り、第2次石油危機がおこった。アメリカ大使館占拠事件(1979〜81)を機にアメリカと断交した。</div></div>
-</div>
-<div class="camp k-i"><div class="camp-h">イラク側</div>
-<div class="mem"><div class="mem-n">イラク<small>サダム＝フセイン</small></div><div class="mem-d">1979年に大統領となったサダム＝フセインは、1980年にイランに侵攻した。</div></div>
-<div class="mem"><div class="mem-n">イラクを支援した国</div><div class="mem-d">アメリカや、サウジアラビアなどの湾岸諸国は、イラン革命の影響が広がることを警戒してイラクを支援した。</div></div>
-</div>
-</div>
-<div class="event bad-ev"><div class="ev-title">イラン＝イラク戦争<span class="ev-year">1980〜88</span><span class="bad">戦争・危機</span></div><div class="ev-desc">8年に及ぶ消耗戦となり、1988年に国連安全保障理事会の決議を受けて停戦した。</div></div>
-<div class="sub-h">湾岸戦争</div>
-<div class="camps">
-<div class="camp k-e"><div class="camp-h">イラク</div>
-<div class="mem"><div class="mem-n">イラク<small>サダム＝フセイン</small></div><div class="mem-d">1990年8月にクウェートに侵攻し、併合を宣言した。</div></div>
-</div>
-<div class="camp k-w"><div class="camp-h">多国籍軍</div>
-<div class="mem"><div class="mem-n">アメリカ・イギリス・フランス・サウジアラビア・エジプト・シリアなど</div><div class="mem-d">国連安全保障理事会の武力行使容認決議を受け、アメリカを中心とする多国籍軍が1991年1月にイラクを攻撃し、クウェートを解放した。</div></div>
-</div>
-</div>
-<div class="side-note">イラン＝イラク戦争でアメリカの支援を受けたイラクが、湾岸戦争ではアメリカと戦った。また、エジプト・シリアなどのアラブ諸国も多国籍軍に加わった。</div>
-<div class="sub-h">パレスチナ和平の動き</div>
-<div class="event bad-ev"><div class="ev-title">インティファーダ<span class="ev-year">1987〜</span><span class="bad">戦争・危機</span></div><div class="ev-desc">イスラエルの占領地であるガザ地区とヨルダン川西岸で、パレスチナ住民の大規模な抵抗運動がおこった。この中でイスラーム主義の組織ハマスが結成された。</div></div>
-<div class="event org"><div class="ev-title">オスロ合意(パレスチナ暫定自治協定)<span class="ev-year">1993</span><span class="ok">条約・合意</span></div><div class="ev-desc">ノルウェーの仲介による秘密交渉を経て、イスラエルのラビン首相とPLOのアラファト議長が調印した。イスラエルとPLOが互いを承認し、ガザ地区とヨルダン川西岸の一部でパレスチナ人の暫定自治を始めることを定めた。エルサレムの帰属・難民・境界などの問題は先送りされた。</div></div>
-<div class="event"><div class="ev-title">パレスチナ暫定自治政府<span class="ev-year">1994〜</span></div><div class="ev-desc">オスロ合意にもとづいて発足し、アラファトが代表となった。</div></div>
-<div class="event org"><div class="ev-title">ヨルダン＝イスラエル平和条約<span class="ev-year">1994</span><span class="ok">条約・合意</span></div><div class="ev-desc">ヨルダンは、エジプトに次いでイスラエルと平和条約を結んだ2番目のアラブの国となった。</div></div>
-<div class="event bad-ev"><div class="ev-title">ラビン首相の暗殺<span class="ev-year">1995</span><span class="bad">戦争・危機</span></div><div class="ev-desc">和平に反対するユダヤ人の青年に暗殺され、和平交渉は停滞した。</div></div>
-</div>
-<div class="phase" id="ph4"><div class="phase-label">2001<br>〜<br></div>
-<div class="ph-head"><span class="ph-title">対テロ戦争とその後</span><span class="ph-sub">同時多発テロ・イラク戦争・アラブの春・シリア内戦</span></div>
-<div class="sub-h">対テロ戦争</div>
-<div class="event bad-ev"><div class="ev-title">同時多発テロ<span class="ev-year">2001</span><span class="bad">戦争・危機</span></div><div class="ev-desc">イスラーム急進派の組織アル＝カーイダ(指導者ビン＝ラーディン)が、アメリカで旅客機を使ったテロをおこした。ブッシュ(子)大統領は「対テロ戦争」をかかげた。</div></div>
-<div class="event bad-ev"><div class="ev-title">アフガニスタン攻撃<span class="ev-year">2001</span><span class="bad">戦争・危機</span></div><div class="ev-desc">アル＝カーイダをかくまったとして、アメリカ・イギリスなどがアフガニスタンのターリバーン政権を攻撃し、崩壊させた。米軍は2021年に撤退し、ターリバーンが政権に復帰した。</div></div>
-<div class="event bad-ev"><div class="ev-title">イラク戦争<span class="ev-year">2003</span><span class="bad">戦争・危機</span></div><div class="ev-desc">大量破壊兵器の保有を理由に、アメリカ・イギリスがイラクを攻撃し、サダム＝フセイン政権を倒した。大量破壊兵器は見つからず、戦後のイラクでは宗派間の対立やテロが続いた。</div></div>
-<div class="sub-h">「アラブの春」とシリア内戦</div>
-<div class="event"><div class="ev-title">「アラブの春」<span class="ev-year">2010〜11</span></div><div class="ev-desc">チュニジアの民主化運動をきっかけに、エジプトのムバラク政権、リビアのカダフィ政権などが倒れた。民主化が定着した国は少なく、各地で混乱や内戦が続いた。</div></div>
-<div class="camps">
-<div class="camp k-e"><div class="camp-h">アサド政権側</div>
-<div class="mem"><div class="mem-n">アサド政権</div><div class="mem-d">2011年の反政府運動を武力で弾圧し、内戦となった。ロシア・イランの支援を受けて戦ったが、2024年12月に反政府勢力の攻勢で崩壊した。</div></div>
-<div class="mem"><div class="mem-n">ロシア・イラン</div><div class="mem-d">ロシアは2015年から軍事介入した。イランはシーア派の勢力とともにアサド政権を支えた。</div></div>
-</div>
-<div class="camp k-w"><div class="camp-h">反政府側</div>
-<div class="mem"><div class="mem-n">反政府勢力</div><div class="mem-d">さまざまな勢力に分かれて政権と戦った。トルコや湾岸諸国などが一部の勢力を支援した。</div></div>
-<div class="mem"><div class="mem-n">クルド人勢力</div><div class="mem-d">シリア北東部を支配し、アメリカの支援を受けて「イスラーム国」との戦いを担った。アサド政権とは別の立場をとった。</div></div>
-</div>
-</div>
-<div class="event bad-ev"><div class="ev-title">「イスラーム国」(IS)<span class="ev-year">2014</span><span class="bad">戦争・危機</span></div><div class="ev-desc">イラクとシリアの混乱のなかで勢力を広げ、2014年に国家の樹立を宣言した。アメリカなどの有志連合や周辺の勢力の攻撃を受け、2019年までに支配地域を失った。</div></div>
-<div class="side-note">シリア内戦では数百万人が国外に逃れ、2015年にはヨーロッパへの難民の流入が大きな問題となった。</div>
-<div class="sub-h">パレスチナ問題</div>
-<div class="event"><div class="ev-title">パレスチナの分裂<span class="ev-year">2007</span></div><div class="ev-desc">2006年のパレスチナ評議会選挙でハマスが勝ち、2007年にガザ地区を支配した。ヨルダン川西岸は自治政府(ファタハ)が統治し、パレスチナは二つに分かれた。</div></div>
-<div class="event bad-ev"><div class="ev-title">ガザでの戦争<span class="ev-year">2023〜</span><span class="bad">戦争・危機</span></div><div class="ev-desc">2023年10月、ガザ地区を支配するハマスがイスラエルを攻撃し、多数の死者が出て人質も連れ去られた。これに対しイスラエルはガザ地区で大規模な軍事作戦を行い、多数の住民が犠牲になった。</div></div>
-<div class="side-note">21世紀の中東では、パレスチナ問題が解決しないまま、アメリカの軍事介入、「アラブの春」の後の内戦、イランとサウジアラビアの対立などが重なった。イランとサウジアラビアの対立は、シーア派とスンナ派の宗派の対立と結びついている。</div>
-</div>
+<div class="legend"><span><i class="c-w"></i>米と協調、またはイスラエルと和平</span><span><i class="c-e"></i>イスラエルと交戦・対立</span><span><i class="c-p"></i>イスラーム共和国(反米)</span><span><i class="c-we"></i>二色：途中で立場が変化</span><span><i class="c-x"></i>灰破線：内戦・崩壊・分裂</span></div>
+<ul class="fn"><li>※冷戦期、<b>米はイスラエル</b>を、<b>ソ連はエジプト・シリア</b>を支援</li><li>※<b>イラク</b>：対イラン戦争では米が支援、1990年クウェート侵攻で敵対</li><li>※<b>シリア</b>：アサド政権は2024年に崩壊</li></ul>
+<div class="sec-hdr"><span class="sec-icon">Ⅲ</span><h2>戦争と和平 <span class="latin">Bella et Paces</span></h2></div><p class="cap">青い点は和平・合意、紫はイラン革命、朱字は戦争・危機。</p>
+<div class="tl-h"><span class="rn">Ⅰ</span>4度の中東戦争<span class="yr">1948–73</span></div><ol class="tl"><li class="war"><span class="ty">1948</span><b>第1次中東戦争</b>：パレスチナ難民が発生</li><li class="war"><span class="ty">1956</span><b>第2次(スエズ戦争)</b>：運河国有化に英仏・イスラエルが出兵</li><li class="war"><span class="ty">1967</span><b>第3次</b>：シナイ・ガザ・西岸・ゴラン高原を占領</li><li class="war"><span class="ty">1973</span><b>第4次</b>：OAPECの石油戦略→石油危機</li></ol>
+<div class="tl-h"><span class="rn">Ⅱ</span>和平と革命<span class="yr">1978–2000</span></div><ol class="tl"><li class="w"><span class="ty">1978</span><b>キャンプ＝デービッド合意</b>→翌年平和条約</li><li class="p"><span class="ty">1979</span><b>イラン革命</b>：イスラーム共和国成立</li><li class="war"><span class="ty">1980</span><b>イラン＝イラク戦争</b>(〜88)</li><li class="war"><span class="ty">1991</span><b>湾岸戦争</b>：多国籍軍がクウェート解放</li><li class="w"><span class="ty">1993</span><b>オスロ合意</b>：イスラエルとPLOが相互承認</li></ol>
+<div class="tl-h"><span class="rn">Ⅲ</span>対テロ戦争とその後<span class="yr">2001–</span></div><ol class="tl"><li class="war"><span class="ty">2001</span><b>同時多発テロ</b>→アフガニスタン攻撃</li><li class="war"><span class="ty">2003</span><b>イラク戦争</b>：サダム＝フセイン政権崩壊</li><li class="war"><span class="ty">2011</span><b>「アラブの春」</b>→シリア内戦</li><li class="war"><span class="ty">2014</span><b>「イスラーム国」</b>が国家樹立を宣言</li><li class="war"><span class="ty">2023</span>ハマスの攻撃→<b>ガザでの戦争</b></li></ol>
+<div class="sec-hdr"><span class="sec-icon">Ⅳ</span><h2>要点 <span class="latin">Summarium</span></h2></div>
+<div class="kp"><p>❶ 英の三つの約束の矛盾→<b>パレスチナ問題</b>の起源</p><p>❷ 中東戦争：<b>第3次(1967)</b>で占領地拡大、<b>第4次(1973)</b>→石油危機</p><p>❸ エジプト：ソ連寄り→<b>平和条約(1979)</b>でイスラエルを承認</p><p>❹ <b>イラン革命(1979)</b>：親米王政→反米のイスラーム共和国</p><p>❺ <b>オスロ合意(1993)</b>後も、エルサレム・難民の問題は未解決</p></div>
 </main>
 <script src="search_jump.js" defer></script></body></html>

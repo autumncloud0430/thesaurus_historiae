@@ -1,22 +1,162 @@
 <!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>古代オリエント史タイムライン</title>
 <style>@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
-:root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048}
-*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
-.hdr{padding:16px 20px;border-bottom:1px solid rgba(var(--axr),.08);display:flex;align-items:center;gap:14px;flex-wrap:wrap}.hdr h1{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2)}.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
-.legend{display:flex;gap:10px;justify-content:center;padding:6px 16px;flex-wrap:wrap;border-bottom:1px solid rgba(255,255,255,.02)}.legend .li{display:flex;align-items:center;gap:4px;font-size:7.5px;color:var(--text3)}.legend .ld{width:14px;height:10px;border-radius:3px}
-.wrap{padding:8px 0 10px;overflow-x:auto}
-.nd-svg{cursor:pointer}.nd-svg:hover rect{filter:brightness(1.3)}
-#tip{display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:100;background:var(--bg);border:1px solid rgba(var(--axr),.25);border-radius:8px;padding:14px 18px;max-width:420px;max-height:80vh;overflow-y:auto;box-shadow:0 8px 32px rgba(0,0,0,.6);font-size:10px;color:var(--text2);line-height:1.7}
-#tip b{color:var(--gold2);font-weight:700}
-#tip-close{position:absolute;top:6px;right:10px;color:var(--text3);cursor:pointer;font-size:14px}
-#tip-close:hover{color:var(--gold)}
-#overlay{display:none;position:fixed;inset:0;z-index:99;background:rgba(0,0,0,.4)}
-.note{text-align:center;padding:8px 20px 32px;max-width:820px;margin:0 auto}.note p{font-size:15px;color:var(--text3);line-height:1.8}.note strong{color:var(--gold)}
+:root{--bg:#f1ecdf;--gold:#8b6f4e;--gold2:#59452a;--text:#2b241b;--text2:#6d6353;--text3:#a89a80;--axr:139,111,78;--shu:#a2331e}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+.hdr{padding:16px 20px;border-bottom:1px solid rgba(var(--axr),.12);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.hdr h1{font-family:'Noto Serif JP',serif;font-size:20px;font-weight:700;color:var(--gold2)}
+.hdr a{font-size:14px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
+main{max-width:760px;margin:0 auto;padding:24px 20px 60px}
+.lead{font-size:15px;line-height:2}
+.lead b{color:var(--gold2)}
+.sec-hdr{display:flex;align-items:center;gap:10px;padding:10px 0;margin:34px 0 4px;border-bottom:1px solid rgba(var(--axr),.15)}
+.sec-icon{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:700;color:var(--gold);opacity:.75}
+.sec-hdr h2{font-family:'Noto Serif JP',serif;font-size:18px;font-weight:700;color:var(--gold2)}
+.latin{font-family:'Cormorant Garamond',serif;font-size:13px;font-weight:400;font-style:italic;color:var(--gold);margin-left:10px;letter-spacing:1px;opacity:.75}
+.cap{font-size:13px;color:var(--text2);margin:8px 0 14px;line-height:1.8}
+.x{color:var(--shu)}
+/* I lineage */
+.lin-row{display:flex;justify-content:center;gap:8px}
+.box{flex:1;max-width:220px;border:1px solid rgba(var(--axr),.3);border-radius:10px;background:rgba(var(--axr),.05);padding:8px 8px 7px;text-align:center;line-height:1.35}
+.box b{display:block;font-family:'Noto Serif JP',serif;font-size:17px;color:var(--gold2)}
+.box .by{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:15px;color:var(--gold)}
+.box small{display:block;font-size:12px;color:var(--text2);margin-top:2px}
+.box.big{max-width:420px}.box.big b{font-size:21px}
+.box.eu{border-color:rgba(var(--axr),.55);background:rgba(var(--axr),.09);box-shadow:0 0 0 3px rgba(var(--axr),.06)}
+.box .note2{border-top:1px solid rgba(var(--axr),.15);margin-top:6px;padding-top:5px}
+.merge,.down{position:relative;text-align:center;padding:10px 0 13px}
+.merge::before,.down::before{content:'';position:absolute;left:50%;top:0;bottom:0;border-left:1.5px solid rgba(var(--axr),.45)}
+.merge::after,.down::after{content:'';position:absolute;left:calc(50% - 5px);bottom:-1px;border:5px solid transparent;border-top:7px solid rgba(var(--axr),.6);border-bottom:0}
+.merge span,.down span{position:relative;background:var(--bg);font-size:12.5px;color:var(--gold);padding:0 8px}
+.merge span b,.down span b{font-family:'Cormorant Garamond',serif;font-size:14px}
+.three{position:relative;padding-bottom:10px}
+.three::after{content:'';position:absolute;left:16%;right:16%;bottom:0;border-bottom:1.5px solid rgba(var(--axr),.45)}
+.three .box{position:relative}
+.three .box::after{content:'';position:absolute;left:50%;bottom:-12px;height:10px;border-left:1.5px solid rgba(var(--axr),.45)}
+.side-h{margin:22px 0 6px;font-size:12px;color:var(--gold);font-family:'Cormorant Garamond',serif;font-style:italic;letter-spacing:1px}
+.side{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.sbox{border:1px solid rgba(var(--axr),.18);border-radius:8px;background:rgba(var(--axr),.03);padding:7px 10px;font-size:13px;line-height:1.5;color:var(--gold2)}
+.sbox b{font-family:'Noto Serif JP',serif}
+.sbox small{display:block;font-size:12px;color:var(--text2);margin-top:3px;line-height:1.65}
+.sbox.dash{border-style:dashed}
+/* II deepening x widening */
+.dw{border:1px solid rgba(var(--axr),.15);border-radius:10px;overflow:hidden;background:rgba(var(--axr),.02)}
+.dw-h,.dw-r{display:grid;grid-template-columns:48px 1fr 1fr;column-gap:10px;padding-left:10px;padding-right:10px}
+.dw-h{font-family:'Noto Serif JP',serif;font-size:13px;font-weight:700;color:var(--gold2);padding-top:8px;padding-bottom:8px;background:rgba(var(--axr),.07)}
+.dw-h span small{display:block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;color:var(--gold);font-size:11.5px;letter-spacing:1px}
+.dw-r{padding-top:6px;padding-bottom:6px;border-top:1px solid rgba(var(--axr),.08);font-size:13.5px;line-height:1.6;align-items:start}
+.dw-r:nth-child(odd){background:rgba(var(--axr),.025)}
+.dw-r .y{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:16px;color:var(--gold);line-height:1.4}
+.dw-r .d{border-right:1px solid rgba(var(--axr),.12);padding-right:10px}
+.cnt{display:flex;align-items:center;gap:6px;margin-top:4px}
+.cnt i{display:block;height:6px;border-radius:3px;background:rgba(var(--axr),.45);max-width:calc(100% - 28px)}
+.cnt b{font-size:13px;font-family:'Cormorant Garamond',serif;color:var(--gold2)}
+/* III UK */
+.uk{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;counter-reset:u}
+.uk li{position:relative;border:1px solid rgba(var(--axr),.15);border-radius:8px;background:rgba(var(--axr),.04);padding:6px 10px 7px 32px;font-size:13.5px;line-height:1.55;counter-increment:u}
+.uk li::before{content:counter(u,upper-roman);position:absolute;left:9px;top:7px;font-family:'Cormorant Garamond',serif;font-weight:700;font-size:13px;color:var(--gold);opacity:.7}
+.uk li .y{display:block;font-family:'Cormorant Garamond',serif;font-weight:700;color:var(--gold);font-size:15px}
+.uk li.ux{border-color:rgba(162,51,30,.35);background:rgba(162,51,30,.04)}.uk li.ux .y{color:var(--shu)}
+/* summary */
+.kp{background:rgba(var(--axr),.04);border:1px solid rgba(var(--axr),.12);border-radius:10px;padding:14px 18px}
+.kp p{font-size:13.5px;line-height:1.9;margin:2px 0}
+.kp b{color:var(--gold2)}
+/* IV per-phase (flow_ style) */
+.toc{display:flex;flex-wrap:wrap;gap:4px 14px;margin:4px 0 14px}
+.toc a{font-size:12.5px;color:var(--text2);text-decoration:none}
+.toc a span{font-family:'Cormorant Garamond',serif;font-weight:700;color:var(--gold);margin-right:5px}
+.toc a:hover{color:var(--gold2)}
+.phase{position:relative;padding:14px 4px 14px 22px;border-left:2px solid rgba(var(--axr),.15);margin-left:46px;scroll-margin-top:8px}
+.phase:last-child{border-left-color:transparent}
+.phase::before{content:'';position:absolute;left:-6px;top:20px;width:8px;height:8px;border-radius:50%;background:var(--bg);border:2px solid rgba(var(--axr),.45)}
+.phase-label{position:absolute;left:-50px;top:15px;width:40px;font-family:'Cormorant Garamond',serif;font-size:13px;font-weight:700;color:var(--gold);text-align:right;line-height:1.25}
+.ph-head{margin-bottom:8px}
+.ph-title{display:block;font-family:'Noto Serif JP',serif;font-size:17px;font-weight:700;color:var(--gold2)}
+.ph-sub{display:block;font-size:12.5px;color:var(--text2);margin-top:1px}
+.event{background:rgba(var(--axr),.03);border:1px solid rgba(var(--axr),.1);border-radius:8px;padding:8px 12px;margin-bottom:8px}
+.event.org{background:rgba(var(--axr),.07);border-color:rgba(var(--axr),.22)}
+.event.bad-ev{background:rgba(162,51,30,.035);border-color:rgba(162,51,30,.22)}
+.ev-title{font-family:'Noto Serif JP',serif;font-size:15px;font-weight:700;color:var(--gold2);display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 10px}
+.bad-ev .ev-title{color:var(--shu)}
+.orgname{font-size:16px}
+.ev-year{font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:700;color:var(--gold)}
+.org-sub{font-size:12px;color:var(--text2)}
+.bad{font-family:'Noto Sans JP',sans-serif;font-size:10.5px;font-weight:400;color:var(--shu);border:1px solid rgba(162,51,30,.4);border-radius:4px;padding:0 6px}
+.ev-desc{font-size:14px;color:var(--text);line-height:1.8;margin-top:3px}
+.ev-desc b{color:var(--gold2)}
+.side-note{font-size:13px;color:var(--text2);line-height:1.8;padding:6px 10px;border-left:2px solid rgba(var(--axr),.25);margin:4px 0 8px}
+.side-note b,.side-note strong{color:var(--gold2)}
+.out{color:var(--shu)}
 @media(max-width:600px){
-.hdr{padding:10px 12px}.hdr h1{font-size:12px}
-.legend .li{font-size:7px}
-.note p{font-size:8px}
+.hdr{padding:12px 14px}.hdr h1{font-size:16px}
+main{padding:16px 14px 60px}
+.lead{font-size:14px}
+.sec-hdr h2{font-size:16px}.latin{font-size:12px;margin-left:6px}
+.box b{font-size:15px}.box small{font-size:11px}.box{padding:6px 4px}
+.box.big b{font-size:18px}
+.merge span,.down span{font-size:11.5px}
+.side{grid-template-columns:1fr}
+.dw-h,.dw-r{grid-template-columns:36px 1fr 1fr;column-gap:7px;padding-left:7px;padding-right:7px}
+.dw-r{font-size:12.5px}.dw-r .y{font-size:14px}.dw-r .d{padding-right:7px}
+.uk{grid-template-columns:1fr 1fr}.uk li{font-size:12.5px}
+.kp{padding:12px 14px}.kp p{font-size:12.5px}
+.phase{margin-left:38px;padding-left:16px}.phase-label{left:-42px;width:34px;font-size:12px}
+.ph-title{font-size:15.5px}
+.ev-title{font-size:14px}.orgname{font-size:15px}.ev-desc{font-size:13px}
+.side-note{font-size:12.5px}
+}
+
+/* ---- timeline pages (2026-11-28) ---- */
+.lead{margin-top:2px}
+.tl-t{font-family:'Noto Serif JP',serif;font-size:15px;font-weight:700;color:var(--gold2);margin:18px 2px 6px}
+.tl-t small{font-family:'Noto Sans JP',sans-serif;font-weight:400;font-size:12.5px;color:var(--text2);margin-left:8px}
+.tl-wrap{border:1px solid rgba(var(--axr),.15);border-radius:10px;background:rgba(var(--axr),.02);padding:0 6px 10px}
+.tl{display:grid;column-gap:4px;grid-auto-rows:minmax(18px,auto);grid-template-columns:var(--rail,52px) var(--cols)}
+.tl-h{position:sticky;top:0;z-index:3;grid-row:1;text-align:center;font-family:'Noto Serif JP',serif;font-size:13.5px;font-weight:700;color:var(--gold2);
+ line-height:1.3;padding:9px 2px 7px;margin-bottom:6px;border-bottom:1px solid rgba(var(--axr),.15);background:linear-gradient(rgba(var(--axr),.05),rgba(var(--axr),.05)),var(--bg)}
+.tl-h small{display:block;font-family:'Noto Sans JP',sans-serif;font-weight:400;font-size:11px;color:var(--text2)}
+.tl-h0{grid-column:1}
+.tl-y{grid-column:1;position:relative;font-family:'Cormorant Garamond',serif;font-weight:700;font-size:13.5px;color:var(--gold);text-align:right;padding-right:15px;line-height:1;margin-top:-2px;white-space:nowrap;z-index:1}
+.tl-y::after{content:'';position:absolute;right:1px;top:1px;width:7px;height:7px;border-radius:50%;background:var(--bg);border:2px solid rgba(var(--axr),.45)}
+.tl-line{grid-column:1;justify-self:end;width:1.5px;margin-right:6px;background:rgba(var(--axr),.18)}
+.tl-g{grid-column:2/-1;border-top:1px dashed rgba(var(--axr),.13)}
+.b{position:relative;z-index:2;display:block;margin:2px 0;border-radius:7px;padding:4px 6px 5px;text-decoration:none;color:var(--text);line-height:1.35;overflow-wrap:anywhere;
+ border:1px solid rgba(var(--t),.34);background:linear-gradient(rgba(var(--t),.075),rgba(var(--t),.075)),var(--bg)}
+.b b{font-family:'Noto Serif JP',serif;font-size:13.5px;font-weight:700;color:var(--text);margin-right:5px}
+.b .yy{display:inline-block;font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:700;color:var(--gold);line-height:1.25}
+.b small{display:block;font-size:11.5px;color:var(--text2);line-height:1.45;margin-top:1px}
+.b.emp{background:linear-gradient(rgba(var(--t),.13),rgba(var(--t),.13)),var(--bg);border-color:rgba(var(--t),.55);box-shadow:inset 0 0 0 2px rgba(var(--t),.08)}
+.b.emp b{font-size:14.5px}
+.b.weak{border-style:dashed;background:linear-gradient(rgba(var(--t),.035),rgba(var(--t),.035)),var(--bg)}
+.b.weak b{font-weight:400;font-family:'Noto Sans JP',sans-serif;font-size:12.5px}
+.b.ev{border-style:dashed;border-color:rgba(162,51,30,.4);background:linear-gradient(rgba(162,51,30,.05),rgba(162,51,30,.05)),var(--bg)}
+.b.ev b{color:#7a2b1c}
+.tl-fn{font-size:12.5px;color:var(--text2);line-height:1.75;margin:6px 2px 0}
+.tl-fn b{color:var(--gold2)}
+.tl-key{display:flex;flex-wrap:wrap;gap:4px 14px;margin:8px 2px 0;font-size:12px;color:var(--text2);line-height:1.7}
+.tl-key span::before{content:'';display:inline-block;width:18px;height:10px;border-radius:3px;margin-right:5px;vertical-align:-1px;border:1px solid rgba(var(--axr),.4);background:rgba(var(--axr),.07)}
+.tl-key .k-emp::before{background:rgba(var(--axr),.15);border-color:rgba(var(--axr),.6)}
+.tl-key .k-weak::before{border-style:dashed;background:transparent}
+.tl-key .k-ev::before{border-style:dashed;border-color:rgba(162,51,30,.45);background:rgba(162,51,30,.05)}
+/* tighter paragraph spacing than the theme's p{line-height:2.05} (needs the extra specificity) */
+body main p.lead{line-height:1.85}
+body main p.cap,body main p.tl-fn{line-height:1.7}
+body main p.tl-t{line-height:1.5}
+body main .kp p{line-height:1.75;margin:3px 0}
+@media(max-width:600px){
+.tl-wrap{padding:0 3px 8px 0}
+.tl{column-gap:3px;grid-template-columns:var(--mrail,44px) var(--cols)}
+.tl-h{font-size:12px;padding:7px 1px 6px}.tl-h small{font-size:11px}
+.tl-y{font-size:12px;padding-right:13px;letter-spacing:-.2px}
+.tl-y::after{width:6px;height:6px}
+.b{padding:1px 4px 2px;margin:1px 0;border-radius:6px;line-height:1.28}
+.b b{font-size:12px}.b.emp b{font-size:13px}.b.weak b{font-size:11.5px}
+.b .yy{font-size:12px}
+.b small{font-size:11px}
+.b.h{padding:2px 3px 3px}.b.h b{font-size:11.5px;margin-right:0}.b.h .yy{font-size:11.5px}.b.h small{font-size:11px;line-height:1.35}
+.tl-key{font-size:11.5px}
+.kp p{font-size:13px}
 }
 </style><style id="thThemes">/* =====================================================
    THESAURUS HISTORIAE ― themes.css(LUX固定版)
@@ -63,170 +203,14 @@ html[data-theme="lux"] .side-note,
 html[data-theme="lux"] .ev-note,
 html[data-theme="lux"] .arrow-text,
 html[data-theme="lux"] .detail { color:var(--text2); }
-</style><script id="thScript">document.documentElement.setAttribute('data-theme','lux');</script></head><body>
-<div class="hdr"><h1>古代オリエント史タイムライン ― BC3000〜BC330 地域別レーン表示</h1><a href="charts.html">← Ad Chartae</a></div>
-<div class="legend">
-  <div class="li"><div class="ld" style="background:rgba(100,130,180,.22);border:1px solid rgba(100,130,180,.32)"></div>エジプト</div>
-  <div class="li"><div class="ld" style="background:rgba(80,150,120,.2);border:1px solid rgba(80,150,120,.28)"></div>シリア・パレスチナ</div>
-  <div class="li"><div class="ld" style="background:rgba(140,160,80,.2);border:1px solid rgba(140,160,80,.28)"></div>小アジア</div>
-  <div class="li"><div class="ld" style="background:rgba(180,140,60,.22);border:1px solid rgba(180,140,60,.32)"></div>メソポタミア</div>
-  <div class="li"><div class="ld" style="background:rgba(160,100,140,.2);border:1px solid rgba(160,100,140,.28)"></div>イラン高原</div>
-  <div class="li"><div class="ld" style="background:rgba(180,80,80,.12);border:1px solid rgba(180,80,80,.22)"></div>統一帝国</div>
-  <div class="li" style="font-size:6px;color:var(--text3)">← 横スクロール → バーをクリックで詳細</div>
-</div>
-<div class="wrap"><svg viewBox="0 0 1900 402" xmlns="http://www.w3.org/2000/svg" style="width:1900px;height:402px;min-width:1900px">
-<rect x="90" y="32" width="1810" height="72" fill="rgba(255,255,255,.02)"/>
-<text x="4" y="52" fill="var(--gold2)" font-size="7.5" font-family="Noto Serif JP" font-weight="700">エジプト</text>
-<line x1="0" y1="104" x2="1900" y2="104" stroke="rgba(var(--axr),.06)"/>
-<rect x="90" y="104" width="1810" height="72" fill="rgba(255,255,255,.01)"/>
-<text x="4" y="124" fill="var(--gold2)" font-size="7.5" font-family="Noto Serif JP" font-weight="700">シリア・パレスチナ</text>
-<line x1="0" y1="176" x2="1900" y2="176" stroke="rgba(var(--axr),.06)"/>
-<rect x="90" y="176" width="1810" height="72" fill="rgba(255,255,255,.02)"/>
-<text x="4" y="196" fill="var(--gold2)" font-size="7.5" font-family="Noto Serif JP" font-weight="700">小アジア</text>
-<line x1="0" y1="248" x2="1900" y2="248" stroke="rgba(var(--axr),.06)"/>
-<rect x="90" y="248" width="1810" height="72" fill="rgba(255,255,255,.01)"/>
-<text x="4" y="268" fill="var(--gold2)" font-size="7.5" font-family="Noto Serif JP" font-weight="700">メソポタミア</text>
-<line x1="0" y1="320" x2="1900" y2="320" stroke="rgba(var(--axr),.06)"/>
-<rect x="90" y="320" width="1810" height="72" fill="rgba(255,255,255,.02)"/>
-<text x="4" y="340" fill="var(--gold2)" font-size="7.5" font-family="Noto Serif JP" font-weight="700">イラン高原</text>
-<line x1="90" y1="32" x2="90" y2="402" stroke="rgba(255,255,255,.015)"/>
-<line x1="155" y1="28" x2="155" y2="402" stroke="rgba(var(--axr),.06)"/>
-<text x="155" y="26" text-anchor="middle" fill="rgba(var(--axr),.5)" font-size="7" font-family="Cormorant Garamond" font-weight="700">前3000</text>
-<line x1="219" y1="32" x2="219" y2="402" stroke="rgba(255,255,255,.015)"/>
-<line x1="284" y1="32" x2="284" y2="402" stroke="rgba(255,255,255,.015)"/>
-<line x1="349" y1="32" x2="349" y2="402" stroke="rgba(255,255,255,.015)"/>
-<line x1="413" y1="32" x2="413" y2="402" stroke="rgba(255,255,255,.015)"/>
-<line x1="478" y1="28" x2="478" y2="402" stroke="rgba(var(--axr),.06)"/>
-<text x="478" y="26" text-anchor="middle" fill="rgba(var(--axr),.5)" font-size="7" font-family="Cormorant Garamond" font-weight="700">前2500</text>
-<line x1="542" y1="32" x2="542" y2="402" stroke="rgba(255,255,255,.015)"/>
-<line x1="607" y1="32" x2="607" y2="402" stroke="rgba(255,255,255,.015)"/>
-<line x1="672" y1="32" x2="672" y2="402" stroke="rgba(255,255,255,.015)"/>
-<line x1="736" y1="32" x2="736" y2="402" stroke="rgba(255,255,255,.015)"/>
-<line x1="801" y1="28" x2="801" y2="402" stroke="rgba(var(--axr),.06)"/>
-<text x="801" y="26" text-anchor="middle" fill="rgba(var(--axr),.5)" font-size="7" font-family="Cormorant Garamond" font-weight="700">前2000</text>
-<line x1="866" y1="32" x2="866" y2="402" stroke="rgba(255,255,255,.015)"/>
-<line x1="930" y1="32" x2="930" y2="402" stroke="rgba(255,255,255,.015)"/>
-<line x1="995" y1="32" x2="995" y2="402" stroke="rgba(255,255,255,.015)"/>
-<line x1="1060" y1="32" x2="1060" y2="402" stroke="rgba(255,255,255,.015)"/>
-<line x1="1124" y1="28" x2="1124" y2="402" stroke="rgba(var(--axr),.06)"/>
-<text x="1124" y="26" text-anchor="middle" fill="rgba(var(--axr),.5)" font-size="7" font-family="Cormorant Garamond" font-weight="700">前1500</text>
-<line x1="1189" y1="32" x2="1189" y2="402" stroke="rgba(255,255,255,.015)"/>
-<line x1="1254" y1="32" x2="1254" y2="402" stroke="rgba(255,255,255,.015)"/>
-<line x1="1318" y1="32" x2="1318" y2="402" stroke="rgba(255,255,255,.015)"/>
-<line x1="1383" y1="32" x2="1383" y2="402" stroke="rgba(255,255,255,.015)"/>
-<line x1="1448" y1="28" x2="1448" y2="402" stroke="rgba(var(--axr),.06)"/>
-<text x="1448" y="26" text-anchor="middle" fill="rgba(var(--axr),.5)" font-size="7" font-family="Cormorant Garamond" font-weight="700">前1000</text>
-<line x1="1512" y1="32" x2="1512" y2="402" stroke="rgba(255,255,255,.015)"/>
-<line x1="1577" y1="32" x2="1577" y2="402" stroke="rgba(255,255,255,.015)"/>
-<line x1="1641" y1="32" x2="1641" y2="402" stroke="rgba(255,255,255,.015)"/>
-<line x1="1706" y1="32" x2="1706" y2="402" stroke="rgba(255,255,255,.015)"/>
-<line x1="1771" y1="28" x2="1771" y2="402" stroke="rgba(var(--axr),.06)"/>
-<text x="1771" y="26" text-anchor="middle" fill="rgba(var(--axr),.5)" font-size="7" font-family="Cormorant Garamond" font-weight="700">前500</text>
-<line x1="1835" y1="32" x2="1835" y2="402" stroke="rgba(255,255,255,.015)"/>
-<line x1="1900" y1="32" x2="1900" y2="402" stroke="rgba(255,255,255,.015)"/>
-<g class="nd-svg" onclick="showTip(1)">
-<rect x="1505.0" y="34" width="193.3" height="284" rx="3" fill="rgba(180,80,80,.12)" stroke="rgba(180,80,80,.22)" stroke-width="1"/>
-<text x="1508.0" y="179" fill="#d48888" font-size="8" font-family="Noto Serif JP" font-weight="700">★アッシリア帝国</text>
-</g>
-<g class="nd-svg" onclick="showTip(2)">
-<rect x="1738.4" y="34" width="142.2" height="356" rx="3" fill="rgba(180,80,80,.12)" stroke="rgba(180,80,80,.22)" stroke-width="1"/>
-<text x="1741.4" y="215" fill="#d48888" font-size="8" font-family="Noto Serif JP" font-weight="700">★★アケメネス朝ペルシア</text>
-</g>
-<g class="nd-svg" onclick="showTip(3)">
-<rect x="1318.2" y="34" width="32.3" height="212" rx="3" fill="rgba(120,120,160,.12)" stroke="rgba(120,120,160,.2)" stroke-width="1"/>
-<text x="1321.2" y="143" fill="#b0b0d4" font-size="6" font-family="Noto Serif JP" font-weight="700">「海の民」の大移動</text>
-</g>
-<g class="nd-svg" onclick="showTip(4)">
-<rect x="154.6" y="35" width="203.0" height="20" rx="3" fill="rgba(100,130,180,.22)" stroke="rgba(100,130,180,.32)" stroke-width="1"/>
-<text x="157.6" y="49" fill="#88b0d4" font-size="8" font-family="Noto Serif JP" font-weight="700">初期王朝</text>
-</g>
-<g class="nd-svg" onclick="showTip(5)">
-<rect x="357.6" y="35" width="326.4" height="20" rx="3" fill="rgba(100,130,180,.22)" stroke="rgba(100,130,180,.32)" stroke-width="1"/>
-<text x="360.6" y="49" fill="#88b0d4" font-size="8" font-family="Noto Serif JP" font-weight="700">古王国</text>
-</g>
-<g class="nd-svg" onclick="showTip(6)">
-<rect x="765.5" y="35" width="261.8" height="20" rx="3" fill="rgba(100,130,180,.22)" stroke="rgba(100,130,180,.32)" stroke-width="1"/>
-<text x="768.5" y="49" fill="#88b0d4" font-size="8" font-family="Noto Serif JP" font-weight="700">中王国</text>
-</g>
-<g class="nd-svg" onclick="showTip(7)">
-<rect x="1092.0" y="35" width="310.9" height="20" rx="3" fill="rgba(100,130,180,.22)" stroke="rgba(100,130,180,.32)" stroke-width="1"/>
-<text x="1095.0" y="49" fill="#88b0d4" font-size="8" font-family="Noto Serif JP" font-weight="700">新王国</text>
-</g>
-<g class="nd-svg" onclick="showTip(8)">
-<rect x="1664.7" y="35" width="89.9" height="20" rx="3" fill="rgba(100,130,180,.22)" stroke="rgba(100,130,180,.32)" stroke-width="1"/>
-<text x="1667.7" y="49" fill="#88b0d4" font-size="8" font-family="Noto Serif JP" font-weight="700">サイス朝</text>
-</g>
-<g class="nd-svg" onclick="showTip(9)">
-<rect x="1124.3" y="107" width="148.7" height="20" rx="3" fill="rgba(80,150,120,.2)" stroke="rgba(80,150,120,.28)" stroke-width="1"/>
-<text x="1127.3" y="121" fill="#88d4b0" font-size="8" font-family="Noto Serif JP" font-weight="700">ミタンニ勢力圏</text>
-</g>
-<g class="nd-svg" onclick="showTip(10)">
-<rect x="1434.6" y="107" width="63.3" height="20" rx="3" fill="rgba(80,150,120,.2)" stroke="rgba(80,150,120,.28)" stroke-width="1"/>
-<text x="1437.6" y="121" fill="#88d4b0" font-size="7" font-family="Noto Serif JP" font-weight="700">ヘブライ統一王国</text>
-</g>
-<g class="nd-svg" onclick="showTip(11)">
-<rect x="1497.9" y="107" width="129.3" height="20" rx="3" fill="rgba(80,150,120,.2)" stroke="rgba(80,150,120,.28)" stroke-width="1"/>
-<text x="1500.9" y="121" fill="#88d4b0" font-size="8" font-family="Noto Serif JP" font-weight="700">イスラエル(北)</text>
-</g>
-<g class="nd-svg" onclick="showTip(12)">
-<rect x="1382.9" y="129" width="342.6" height="20" rx="3" fill="rgba(80,150,120,.2)" stroke="rgba(80,150,120,.28)" stroke-width="1"/>
-<text x="1385.9" y="143" fill="#88d4b0" font-size="8" font-family="Noto Serif JP" font-weight="700">フェニキア都市国家</text>
-</g>
-<g class="nd-svg" onclick="showTip(13)">
-<rect x="1497.9" y="151" width="217.2" height="20" rx="3" fill="rgba(80,150,120,.2)" stroke="rgba(80,150,120,.28)" stroke-width="1"/>
-<text x="1500.9" y="165" fill="#88d4b0" font-size="8" font-family="Noto Serif JP" font-weight="700">ユダ(南)</text>
-</g>
-<g class="nd-svg" onclick="showTip(14)">
-<rect x="801.1" y="179" width="530.1" height="20" rx="3" fill="rgba(140,160,80,.2)" stroke="rgba(140,160,80,.28)" stroke-width="1"/>
-<text x="804.1" y="193" fill="#b8d088" font-size="8" font-family="Noto Serif JP" font-weight="700">ヒッタイト</text>
-</g>
-<g class="nd-svg" onclick="showTip(15)">
-<rect x="1059.6" y="201" width="213.3" height="20" rx="3" fill="rgba(140,160,80,.2)" stroke="rgba(140,160,80,.28)" stroke-width="1"/>
-<text x="1062.6" y="215" fill="#b8d088" font-size="8" font-family="Noto Serif JP" font-weight="700">ミタンニ(北部)</text>
-</g>
-<g class="nd-svg" onclick="showTip(16)">
-<rect x="1647.9" y="179" width="93.1" height="20" rx="3" fill="rgba(140,160,80,.2)" stroke="rgba(140,160,80,.28)" stroke-width="1"/>
-<text x="1650.9" y="193" fill="#b8d088" font-size="8" font-family="Noto Serif JP" font-weight="700">リディア</text>
-</g>
-<g class="nd-svg" onclick="showTip(17)">
-<rect x="154.6" y="251" width="420.2" height="20" rx="3" fill="rgba(180,140,60,.22)" stroke="rgba(180,140,60,.32)" stroke-width="1"/>
-<text x="157.6" y="265" fill="#d4c088" font-size="8" font-family="Noto Serif JP" font-weight="700">シュメール都市国家</text>
-</g>
-<g class="nd-svg" onclick="showTip(18)">
-<rect x="574.8" y="251" width="129.3" height="20" rx="3" fill="rgba(180,140,60,.22)" stroke="rgba(180,140,60,.32)" stroke-width="1"/>
-<text x="577.8" y="265" fill="#d4c088" font-size="8" font-family="Noto Serif JP" font-weight="700">アッカド王国</text>
-</g>
-<g class="nd-svg" onclick="showTip(19)">
-<rect x="728.7" y="251" width="69.8" height="20" rx="3" fill="rgba(180,140,60,.22)" stroke="rgba(180,140,60,.32)" stroke-width="1"/>
-<text x="731.7" y="265" fill="#d4c088" font-size="7" font-family="Noto Serif JP" font-weight="700">ウル第3王朝</text>
-</g>
-<g class="nd-svg" onclick="showTip(20)">
-<rect x="869.6" y="251" width="193.3" height="20" rx="3" fill="rgba(180,140,60,.22)" stroke="rgba(180,140,60,.32)" stroke-width="1"/>
-<text x="872.6" y="265" fill="#d4c088" font-size="8" font-family="Noto Serif JP" font-weight="700">古バビロニア</text>
-</g>
-<g class="nd-svg" onclick="showTip(21)">
-<rect x="1062.9" y="251" width="284.4" height="20" rx="3" fill="rgba(180,140,60,.22)" stroke="rgba(180,140,60,.32)" stroke-width="1"/>
-<text x="1065.9" y="265" fill="#d4c088" font-size="8" font-family="Noto Serif JP" font-weight="700">カッシート</text>
-</g>
-<g class="nd-svg" onclick="showTip(22)">
-<rect x="1689.9" y="251" width="55.6" height="20" rx="3" fill="rgba(180,140,60,.22)" stroke="rgba(180,140,60,.32)" stroke-width="1"/>
-<text x="1692.9" y="265" fill="#d4c088" font-size="7" font-family="Noto Serif JP" font-weight="700">新バビロニア</text>
-</g>
-<g class="nd-svg" onclick="showTip(23)">
-<rect x="348.6" y="323" width="711.1" height="20" rx="3" fill="rgba(160,100,140,.2)" stroke="rgba(160,100,140,.28)" stroke-width="1"/>
-<text x="351.6" y="337" fill="#d0a0c0" font-size="8" font-family="Noto Serif JP" font-weight="700">エラム</text>
-</g>
-<g class="nd-svg" onclick="showTip(24)">
-<rect x="1641.4" y="323" width="97.0" height="20" rx="3" fill="rgba(160,100,140,.2)" stroke="rgba(160,100,140,.28)" stroke-width="1"/>
-<text x="1644.4" y="337" fill="#d0a0c0" font-size="8" font-family="Noto Serif JP" font-weight="700">メディア</text>
-</g>
-</svg></div>
-<div id="overlay" onclick="closeTip()"></div>
-<div id="tip"><span id="tip-close" onclick="closeTip()">×</span><div id="tip-body"></div></div>
-<script>
-var TIPS={"1": "<b>★オリエント初の統一(BC7C)</b><br>首都：<b>アッシュル</b>(初期)→<b>ニネヴェ</b>(最盛期)→<b>ニムルド</b><br>民族：セム語系アッシリア人<br>軍事：★<b>鉄製武器＋戦車＋騎兵＋攻城兵器(破城槌)</b>→当時最強の軍事力<br>最盛期：<b>アッシュルバニパル王</b>(BC668-627頃)＝メソポタミア＋エジプト＋シリア＋エラムを支配<br>文化：ニネヴェに<b>大図書館</b>(楔形文字粘土板2万枚以上→ギルガメシュ叙事詩もここで発見)<br>統治：<b>過酷な支配</b>＝強制移住(征服民を帝国各地に分散)・重税・見せしめの残虐刑→各地で反乱<br>滅亡：<b>新バビロニア＋メディアの連合軍</b>→★BC612年ニネヴェ陥落→BC609年完全滅亡<br>★重要ポイント：「鉄器＋軍事力で初統一」「過酷な支配→崩壊」「ニネヴェの図書館」", "2": "<b>★★全オリエント統一</b><br>首都：<b>ペルセポリス</b>(儀式)・<b>スサ</b>(行政)・<b>エクバタナ</b>(夏)・<b>バビロン</b><br>建国：<b>キュロス2世</b>(BC550)＝メディアを倒す→リディア征服(BC546)→新バビロニア征服(BC539＝★バビロン捕囚の解放)<br>エジプト征服：<b>カンビュセス2世</b>(BC525)→4王国すべてを併合＝全オリエント統一<br>最盛期：<b>ダレイオス1世</b>(BC522-486)＝帝国を約20州に分け★<b>サトラップ(知事)</b>を任命。★<b>「王の目・王の耳」</b>(監察官)。★<b>「王の道」</b>(スサ→サルデス約2400km)＋駅伝制。<b>ダレイオス金貨(ダリク)</b><br>宗教：<b>ゾロアスター教</b>(善悪二元論・最後の審判→ユダヤ教・キリスト教に影響)を保護<br>特徴：★<b>寛容な支配</b>(被征服民の宗教・文化を尊重)→アッシリアの過酷さとの対比<br>ペルシア戦争：ダレイオス1世→マラトン(BC490)敗北。クセルクセス1世→サラミス(BC480)敗北<br>滅亡：BC330年<b>アレクサンドロス大王</b>に征服→ヘレニズム時代へ<br>★重要ポイント：「キュロス2世＝3王国征服＋バビロン捕囚解放」「カンビュセス2世＝エジプト」「ダレイオス1世＝サトラップ・王の目王の耳・王の道」「寛容な支配」", "3": "<b>BC12C頃の東地中海の大変動</b><br>「海の民」＝エーゲ海方面からの民族集団(正確な出自は不明。ペリシテ人等を含む)<br>影響：★<b>ヒッタイト王国が滅亡</b>・ミケーネ文明が崩壊・エジプト新王国が衰退(ラメセス3世が撃退するも疲弊)<br>結果：①★<b>鉄器が広く普及</b>(ヒッタイトの鉄の独占が崩壊) ②東地中海が「暗黒時代」に→この空白期に<b>フェニキア人</b>(★アルファベットの起源)・<b>アラム人</b>(★アラム文字→各地の文字の祖)・<b>ヘブライ人</b>(★ユダヤ教＝一神教)が台頭<br>★重要ポイント：「海の民→ヒッタイト滅亡→鉄器の普及」「フェニキア＝アルファベット」「アラム人＝アラム文字」「ヘブライ人＝一神教」", "4": "<b>エジプト初期王朝(BC3000頃-BC2686)</b><br>首都：<b>メンフィス</b>(上下エジプトの境界)<br>★<b>ナルメル(メネス)</b>が上下エジプトを統一(ナルメルのパレット)→ファラオ(「大きな家」)の称号<br>文字：★<b>ヒエログリフ(神聖文字)</b>の発展(→ヒエラティック→デモティック)<br>暦：★<b>太陽暦</b>(ナイル川の氾濫周期に基づく365日暦)＝メソポタミアの太陰暦と対比", "5": "<b>古王国(BC2686-BC2181)</b><br>首都：<b>メンフィス</b><br>★<b>ピラミッドの時代</b>：ジェセル王(階段ピラミッド・建築家イムホテプ)→<b>ギザの三大ピラミッド</b>(★クフ王・カフラー王・メンカウラー王)＋★<b>スフィンクス</b><br>ファラオ＝「太陽神ラーの子」＝★<b>神権政治</b>(ファラオは神の化身)<br>社会：ピラミッド建設は奴隷労働ではなく農閑期の公共事業(ナイル氾濫期)との説<br>崩壊：地方勢力(ノモス)の自立→第1中間期(BC2181-2055)へ", "6": "<b>中王国(BC2055-BC1650)</b><br>首都：<b>テーベ</b>(上エジプト)<br>メンチュヘテプ2世がエジプトを再統一<br>★<b>ヌビア(南方)</b>への進出→金・象牙の獲得<br>文学の黄金期(「シヌヘの物語」等)<br>崩壊：★<b>ヒクソス</b>(「異国の支配者」。西アジアから)の侵入→★<b>馬と戦車</b>を持ち込む→第2中間期(BC1650-1550)", "7": "<b>新王国(BC1550-BC1069)＝★エジプト最盛期</b><br>首都：<b>テーベ</b>（カルナック神殿・ルクソール神殿・★王家の谷）<br>★<b>トトメス3世</b>＝「エジプトのナポレオン」。シリア・パレスチナまで進出→エジプト史上最大の版図<br><b>ハトシェプスト</b>＝女性ファラオ。プント(ソマリア方面)への交易遠征<br>★<b>アメンホテプ4世(アクエンアテン)</b>＝★<b>アマルナ改革</b>＝アテン(太陽円盤)のみを崇拝する一神教的改革→アマルナに遷都→旧来の神官団と対立→死後に旧体制に復帰<br><b>ツタンカーメン</b>＝黄金のマスク(1922年ハワード＝カーターが発掘)<br>★<b>ラメセス2世</b>＝★<b>カデシュの戦い</b>(BC1286頃)でヒッタイトと交戦→★<b>世界最古の国際(平和)条約</b>を締結。アブ＝シンベル神殿を建設<br>衰退：「海の民」の侵入(ラメセス3世が撃退するも疲弊)→第3中間期→リビア人・ヌビア人の支配→アッシリアに征服", "8": "<b>第26王朝(サイス朝)(BC664-BC525)</b><br>首都：★<b>サイス</b>(ナイルデルタ西部)<br>アッシリア支配から独立→エジプト最後の独立王朝<br>ギリシア人傭兵を雇用。ギリシア商人にナウクラティスを開放(ギリシアとの交流)<br>滅亡：★<b>アケメネス朝のカンビュセス2世</b>に征服(BC525)→以後エジプトはペルシア帝国の属州<br>★重要ポイント：「★4王国の一つ」「カンビュセス2世に滅亡(BC525)」", "9": "<b>ミタンニ王国の南方勢力圏(BC1500-BC1270頃)</b><br>ミタンニの影響がシリア・北メソポタミアに及ぶ<br>★<b>アマルナ外交</b>＝エジプト新王国(アメンホテプ3世・4世)との外交書簡(アマルナ文書＝楔形文字のアッカド語＝当時の国際語)<br>ミタンニ王女がエジプトに嫁ぐ等の政略結婚<br>ヒッタイト＋アッシリアの挟撃で衰退・滅亡", "10": "<b>ヘブライ(イスラエル)統一王国(BC1020頃-BC922)</b><br>首都：★<b>エルサレム</b><br>★<b>サウル</b>＝初代王<br>★<b>ダヴィデ</b>＝エルサレムを首都に。ペリシテ人を撃退(「ダヴィデとゴリアテ」)<br>★<b>ソロモン</b>＝最盛期。★<b>ソロモン神殿</b>(エルサレム神殿)を建設。「ソロモンの知恵」。フェニキアのティルスと同盟して交易で繁栄。だし重税と強制労働→死後に南北分裂<br>★重要ポイント：「ダヴィデ→ソロモン→分裂の順序」", "11": "<b>イスラエル王国(北王国)(BC922-BC722)</b><br>首都：★<b>サマリア</b><br>10部族が北に分離。ヤロブアム1世が建国<br>バアル信仰等の異教の影響→預言者エリヤが批判<br>滅亡：★<b>アッシリア(サルゴン2世)に滅ぼされる(BC722)</b>→住民は強制移住(★アッシリアの支配方式)→「失われた10部族」伝説", "12": "<b>フェニキア都市国家(BC1100頃-BC570頃)</b><br>主要都市：★<b>ティルス</b>・<b>シドン</b>・<b>ビブロス</b>(現レバノン沿岸)<br>★<b>地中海交易の覇者</b>＝シリアの杉材・紫の染料(テュロスの紫)・ガラス製品を交易<br>★<b>アルファベット</b>＝22文字の表音文字(子音のみ)→★ギリシア文字(母音を追加)→ラテン文字→現代の英語等のアルファベットの起源<br>植民活動：★<b>カルタゴ</b>(BC814、現チュニジア)を建設→西地中海の覇者に(→ポエニ戦争でローマと対決)<br>★重要ポイント：「フェニキア文字＝アルファベットの起源」「カルタゴの建設」「地中海交易」", "13": "<b>ユダ王国(南王国)(BC922-BC586)</b><br>首都：★<b>エルサレム</b>(ソロモン神殿がある)<br>2部族(ユダ族＋ベニヤミン族)。ダヴィデの血統を維持<br>預言者の活動：イザヤ・エレミヤ等がヤハウェ信仰の純粋化を説く<br>滅亡：★<b>新バビロニアのネブカドネザル2世</b>がエルサレムを破壊(BC586)→★<b>バビロン捕囚</b>＝ユダヤ人がバビロンに強制移住→★<b>ユダヤ教の成熟</b>(神殿なき信仰→律法と会堂中心に→一神教の確立)<br>★重要ポイント：「BC586バビロン捕囚」「捕囚中にユダヤ教が成熟」「キュロス2世が解放(BC539)」", "14": "<b>ヒッタイト王国(BC2000頃-BC1180頃)</b><br>首都：★<b>ハットゥシャ(ボアズキョイ)</b>(現トルコ中部)<br>民族：インド＝ヨーロッパ語族(小アジア最初のインド＝ヨーロッパ系国家)<br>★<b>最初の鉄器使用民族</b>→鉄製武器で軍事的優位(だし本格普及はヒッタイト滅亡後)<br>バビロン攻撃：BC1595頃にバビロン第1王朝を滅ぼす<br>★<b>カデシュの戦い</b>(BC1286頃)＝エジプト新王国のラメセス2世と交戦→引き分け→★<b>世界最古の国際(平和)条約</b>を締結(ハットゥシリ3世とラメセス2世)<br>文書：楔形文字＋ヒッタイト象形文字。広大な外交文書(ボアズキョイ文書)<br>滅亡：★<b>「海の民」の侵入</b>(BC1180頃)で滅亡→鉄器技術が各地に拡散<br>★重要ポイント：「鉄器＝ヒッタイト」「カデシュの戦い→世界最古の条約」「海の民で滅亡」", "15": "<b>ミタンニ王国(BC16C-BC13C頃)</b><br>首都：<b>ワシュカンニ</b>(正確な位置は不明。北メソポタミア〜東アナトリア)<br>民族：フリ人(ただし支配層にインド＝アーリア系の要素→馬の調教術にサンスクリットの用語)<br>★<b>戦車(チャリオット)</b>を駆使→「マリヤンヌ」(戦車貴族)<br>エジプトと<b>アマルナ外交</b>(友好関係・政略結婚)<br>滅亡：<b>ヒッタイト</b>(シュッピルリウマ1世)と<b>アッシリア</b>に挟撃されて滅亡", "16": "<b>リディア王国(BC7C-BC546)</b><br>首都：★<b>サルデス</b>(小アジア西部。「王の道」の西の終点)<br>★<b>世界最古の鋳造貨幣(エレクトロン貨)</b>を発行＝金と銀の自然合金→★<b>商業の発展</b>を促進(物々交換→貨幣経済への転換)<br><b>クロイソス王</b>＝その富が伝説に(「クロイソスのように富む」＝大金持ちの代名詞)<br>デルフォイの神託に「大帝国を滅ぼすだろう」→滅んだのは自分の帝国だった<br>滅亡：★<b>アケメネス朝のキュロス2世</b>に征服(BC546)<br>★重要ポイント：「★4王国の一つ」「世界最古の鋳造貨幣」「キュロス2世に滅亡(BC546)」", "17": "<b>シュメール都市国家(BC3000頃-BC2350頃)</b><br>主要都市：<b>ウル</b>・<b>ウルク</b>・<b>ラガシュ</b>・<b>エリドゥ</b>・<b>キシュ</b>(メソポタミア南部＝現イラク南部)<br>★<b>世界最古の都市文明</b><br>文字：★<b>楔形文字</b>(粘土板に葦のペンで刻む)<br>数学：★<b>六十進法</b>(60秒＝1分、360度等に残る)<br>建築：<b>ジッグラト</b>(聖塔＝階段状ピラミッド)＝旧約聖書「バベルの塔」のモデルか<br>暦：★<b>太陰暦</b>(月の満ち欠けに基づく)＝エジプトの太陽暦と対比<br>文学：★<b>「ギルガメシュ叙事詩」</b>(世界最古の文学作品。洪水伝説→ノアの箱舟のモデルか)<br>経済：<b>灌漑農業</b>(チグリス・ユーフラテス川)が文明の基盤<br>社会：都市国家間の覇権争い(ラガシュ vs ウンマ等)→統一には至らず", "18": "<b>アッカド王国(BC2350頃-BC2150頃)</b><br>首都：<b>アッカド</b>(正確な位置は未確認)<br>★<b>サルゴン1世</b>(サルゴン大王)＝セム語系のアッカド人→★<b>メソポタミア最初の統一王朝</b>を建設<br>「上の海(地中海)から下の海(ペルシア湾)まで」支配を主張<br>ナラム＝シン(孫)＝「四方世界の王」を称する<br>シュメール文化を継承(楔形文字をアッカド語に適用)<br>崩壊：<b>グティ人</b>(ザグロス山脈からの山岳民族)の侵入で滅亡。約200年で崩壊", "19": "<b>ウル第3王朝(BC2112頃-BC2004頃)</b><br>首都：★<b>ウル</b>(メソポタミア南部の大都市)<br><b>ウル＝ナンム</b>が建設→★<b>ウル＝ナンム法典</b>＝現存する<b>世界最古の法典</b>(ハンムラビ法典より約300年古い。罰金刑が中心→同害復讐法ではない)<br>シュメール文明の最後の繁栄(「シュメール＝ルネサンス」)<br>高度な官僚制・度量衡の統一<br>ウルのジッグラト(現存する最大級)<br>崩壊：<b>エラム人</b>(東方)と<b>アムル人</b>(西方の遊牧民)の侵入で滅亡→メソポタミアは小国分立へ", "20": "<b>古バビロニア王国(バビロン第1王朝)(BC1894頃-BC1595頃)</b><br>首都：★<b>バビロン</b>(ユーフラテス川中流)<br>民族：<b>アムル人</b>(セム語系の遊牧民出身)<br>★<b>ハンムラビ王</b>(BC1792-BC1750頃)＝メソポタミアを統一→★<b>ハンムラビ法典</b>を制定<br>法典の特徴：①★<b>「目には目を、歯には歯を」(同害復讐法＝タリオの法)</b> ②<b>身分による刑罰の差異</b>(自由人・半自由人(ムシュケーヌム)・奴隷で刑罰が異なる) ③全282条。黒色閃緑岩の石碑に楔形文字で刻まれた(★ルーヴル美術館所蔵)<br>滅亡：★<b>ヒッタイト</b>の攻撃(BC1595頃)で滅亡→カッシート人が支配<br>★重要ポイント：「ハンムラビ法典＝同害復讐法＋身分制」「ウル＝ナンム法典との比較(罰金刑 vs 同害復讐)」", "21": "<b>カッシート(バビロン第3王朝)(BC1595頃-BC1155頃)</b><br>首都：<b>バビロン</b>(後にドゥル＝クリガルズに遷都)<br>ヒッタイトがバビロンを攻撃した後にカッシート人が支配<br>約400年の長期政権＝バビロニア史上最長の王朝(だし文化的貢献は少なめ)<br>国際外交：エジプト・ヒッタイト・アッシリアとアマルナ外交(国際書簡)<br>★<b>クドゥル(境界石)</b>＝土地寄進の記録→経済史の史料<br>滅亡：<b>エラム人</b>の攻撃で滅亡→ハンムラビ法典の石碑がエラムのスサに持ち去られた(→そこで近代に発掘)", "22": "<b>新バビロニア(カルデア)(BC625-BC539)</b><br>首都：★<b>バビロン</b>(ユーフラテス川にまたがる大都市)<br>建国：ナボポラッサルがアッシリアから独立→メディアと連合してニネヴェを攻略(BC612)<br>最盛期：★<b>ネブカドネザル2世</b>(BC604-BC562)→★<b>バビロン捕囚</b>(BC586＝ユダ王国を滅ぼしエルサレム神殿を破壊→ユダヤ人をバビロンに強制移住)→ユダヤ教の成熟(律法中心の信仰へ)<br><b>バビロンの空中庭園</b>＝世界七不思議の一つ(実在は不確実)<br>イシュタル門(青い彩釉煉瓦＝★ベルリンのペルガモン博物館所蔵)<br>滅亡：★<b>アケメネス朝のキュロス2世</b>に征服(BC539)→★バビロン捕囚の解放＝ユダヤ人がエルサレムに帰還<br>★重要ポイント：「★4王国の一つ」「ネブカドネザル2世＝バビロン捕囚(BC586)」「キュロス2世に滅亡(BC539)→捕囚の解放」", "23": "<b>エラム(BC2700頃-BC640頃)</b><br>首都：★<b>スサ</b>(ザグロス山脈西麓。後にアケメネス朝の行政首都にもなる)<br>メソポタミアの東隣→メソポタミア文明と交流しつつ独自性を維持<br>独自の<b>エラム文字</b>(原エラム文字→線文字エラム。未解読の部分も多い)<br>ウル第3王朝を滅ぼす(BC2004頃)。カッシートを滅ぼす(BC1155頃)→ハンムラビ法典の石碑をスサに持ち帰る<br>最盛期(BC13-12C頃)：チョガ＝ザンビール(ジッグラト)の建設<br>★アッシリアのアッシュルバニパルに壊滅的打撃(BC640頃)→衰退→アケメネス朝に吸収", "24": "<b>メディア王国(BC7C後半-BC550)</b><br>首都：★<b>エクバタナ(ハマダーン)</b>(イラン高原西部)<br>★<b>イラン系民族で最初の統一王国</b><br>キュアクサレス王がアッシリア滅亡に貢献(BC612、新バビロニアと連合してニネヴェ攻略)<br>ザグロス山脈以東のイラン高原を支配<br>リディアと衝突→日食(BC585.5.28、「タレスが予言した日食」)で停戦<br>滅亡：★<b>アケメネス朝のキュロス2世</b>(元はメディアの臣下→反乱して独立)に倒される(BC550)→アケメネス朝ペルシアの建国<br>★重要ポイント：「★4王国の一つ」「エクバタナ」「キュロス2世に滅亡(BC550)＝アケメネス朝建国」"};
-function showTip(id){var t=TIPS[id];if(!t)return;document.getElementById('tip-body').innerHTML=t;document.getElementById('tip').style.display='block';document.getElementById('overlay').style.display='block';}
-function closeTip(){document.getElementById('tip').style.display='none';document.getElementById('overlay').style.display='none';}
-</script>
-<div class="note"><p>古代オリエント＝<strong>5地域が並立・交流し、アッシリア→アケメネス朝で統一</strong>。バーをクリックすると首都・特徴・滅亡原因等の詳細が表示されます。</p></div>
+</style><script id="thScript">document.documentElement.setAttribute('data-theme','lux');</script></head>
+<body>
+<div class="hdr"><h1>古代オリエント史タイムライン ― 前3000〜前330</h1><a href="charts.html">← Ad Chartae</a></div>
+<main>
+<p class="lead"><b>アッシリア</b>が初めて全オリエントを統一し(前7世紀前半)、その滅亡後に分立した四王国を<b>アケメネス朝</b>が再び統一した(前525)。</p>
+<div class="sec-hdr"><span class="sec-icon">Ⅰ</span><h2>年表 <span class="latin">Chronologia</span></h2></div><p class="cap">時間は上から下へ流れる。横に並ぶ枠は同じ時期に並び立った国(枠の高さは年数に比例しない)。</p>
+<p class="tl-t">A　エジプト・シリア・メソポタミア</p><div class="tl-wrap"><div class="tl" style="--cols:minmax(0,0.9fr) minmax(0,0.9fr) minmax(0,1.15fr) minmax(0,1.15fr) minmax(0,1fr) minmax(0,1fr);--rail:56px;--mrail:50px"><div class="tl-h tl-h0"></div><div class="tl-h" style="grid-column:2/4">エジプト<small>ナイル川流域</small></div><div class="tl-h" style="grid-column:4/6">シリア・パレスチナ<small>地中海東岸</small></div><div class="tl-h" style="grid-column:6/8">メソポタミア<small>左:南部 右:北部</small></div><div class="tl-line" style="grid-row:2/26"></div><div class="tl-g" style="grid-row:2"></div><div class="tl-y" style="grid-row:2">前3000</div><div class="tl-g" style="grid-row:3"></div><div class="tl-y" style="grid-row:3">前2700</div><div class="tl-g" style="grid-row:4"></div><div class="tl-y" style="grid-row:4">前2350</div><div class="tl-g" style="grid-row:5"></div><div class="tl-y" style="grid-row:5">前2200</div><div class="tl-g" style="grid-row:6"></div><div class="tl-y" style="grid-row:6">前2100</div><div class="tl-g" style="grid-row:7"></div><div class="tl-y" style="grid-row:7">前2000</div><div class="tl-g" style="grid-row:8"></div><div class="tl-y" style="grid-row:8">前1900</div><div class="tl-g" style="grid-row:9"></div><div class="tl-y" style="grid-row:9">前1700</div><div class="tl-g" style="grid-row:10"></div><div class="tl-y" style="grid-row:10">前1595</div><div class="tl-g" style="grid-row:11"></div><div class="tl-y" style="grid-row:11">前1550</div><div class="tl-g" style="grid-row:12"></div><div class="tl-y" style="grid-row:12">前1270</div><div class="tl-g" style="grid-row:13"></div><div class="tl-y" style="grid-row:13">前1200</div><div class="tl-g" style="grid-row:14"></div><div class="tl-y" style="grid-row:14">前1150</div><div class="tl-g" style="grid-row:15"></div><div class="tl-y" style="grid-row:15">前1070</div><div class="tl-g" style="grid-row:16"></div><div class="tl-y" style="grid-row:16">前1000</div><div class="tl-g" style="grid-row:17"></div><div class="tl-y" style="grid-row:17">前922</div><div class="tl-g" style="grid-row:18"></div><div class="tl-y" style="grid-row:18">前722</div><div class="tl-g" style="grid-row:19"></div><div class="tl-y" style="grid-row:19">前664</div><div class="tl-g" style="grid-row:20"></div><div class="tl-y" style="grid-row:20">前625</div><div class="tl-g" style="grid-row:21"></div><div class="tl-y" style="grid-row:21">前612</div><div class="tl-g" style="grid-row:22"></div><div class="tl-y" style="grid-row:22">前586</div><div class="tl-g" style="grid-row:23"></div><div class="tl-y" style="grid-row:23">前539</div><div class="tl-g" style="grid-row:24"></div><div class="tl-y" style="grid-row:24">前525</div><div class="tl-g" style="grid-row:25"></div><div class="tl-y" style="grid-row:25">前330</div><div class="b" style="--t:52,86,140;grid-column:2/4;grid-row:2/3"><b>初期王朝</b><span class="yy">前3000頃–</span><small>メネスが統一</small></div><div class="b" style="--t:52,86,140;grid-column:2/4;grid-row:3/5"><b>古王国</b><span class="yy">前27–前22世紀</span><small>ピラミッド</small></div><div class="b weak" style="--t:52,86,140;grid-column:2/4;grid-row:5/7"><b>分裂期</b></div><div class="b" style="--t:52,86,140;grid-column:2/4;grid-row:7/9"><b>中王国</b><span class="yy">前21–前18世紀</span><small>都テーベ</small></div><div class="b weak" style="--t:52,86,140;grid-column:2/4;grid-row:9/11"><b>ヒクソス</b><span class="yy">前17–前16世紀</span><small>馬と戦車を伝える</small></div><div class="b" style="--t:52,86,140;grid-column:2/4;grid-row:11/15"><b>新王国</b><span class="yy">前16–前11世紀</span><small>アマルナ改革 ラメス2世</small></div><div class="b weak" style="--t:52,86,140;grid-column:2/4;grid-row:15/19"><b>分裂・異民族支配</b><small>前671 アッシリアが征服</small></div><div class="b" style="--t:52,86,140;grid-column:2/4;grid-row:19/24"><b>サイス朝</b><small>四王国の一つ</small></div><div class="b" style="--t:58,118,88;grid-column:4/6;grid-row:11/12"><b>ミタンニ王国</b><span class="yy">前16–前13世紀</span></div><div class="b ev" style="--t:58,118,88;grid-column:4/6;grid-row:13/14"><b>「海の民」</b><span class="yy">前1200頃</span><small>ヒッタイト滅亡 鉄器が普及</small></div><div class="b h" style="--t:58,118,88;grid-column:4/5;grid-row:14/23"><b>フェニキア人 アラム人</b><span class="yy">前12世紀–</span><small>交易で活躍 のちアッシリアに服属</small></div><div class="b h" style="--t:58,118,88;grid-column:5/6;grid-row:16/17"><b>ヘブライ王国</b><span class="yy">前1000頃</span><small>ダヴィデ王・ソロモン王</small></div><div class="b h" style="--t:58,118,88;grid-column:5/6;grid-row:17/18"><b>イスラエル王国 ユダ王国</b><span class="yy">前922頃 南北に分裂</span><small>前722 イスラエル王国滅亡</small></div><div class="b h" style="--t:58,118,88;grid-column:5/6;grid-row:18/22"><b>ユダ王国</b><span class="yy">–前586</span><small>新バビロニアに滅ぼされる</small></div><div class="b ev h" style="--t:58,118,88;grid-column:5/6;grid-row:22/23"><b>バビロン捕囚</b><span class="yy">前586–前538</span><small>解放後にユダヤ教が確立</small></div><div class="b" style="--t:139,111,78;grid-column:6/8;grid-row:3/4"><b>シュメール人の都市国家</b><span class="yy">前27–前24世紀</span><small>楔形文字</small></div><div class="b" style="--t:139,111,78;grid-column:6/8;grid-row:4/6"><b>アッカド王国</b><span class="yy">前24–前22世紀</span><small>サルゴンがメソポタミアを統一</small></div><div class="b" style="--t:139,111,78;grid-column:6/8;grid-row:6/7"><b>ウル第三王朝</b><span class="yy">前2100頃–前2000頃</span><small>ウル＝ナンム法典</small></div><div class="b h" style="--t:139,111,78;grid-column:6/7;grid-row:8/10"><b>古バビロニア</b><span class="yy">前19世紀–前1595頃</span><small>ハンムラビ法典</small></div><div class="b h" style="--t:139,111,78;grid-column:6/7;grid-row:10/14"><b>カッシート</b><span class="yy">前16–前12世紀</span></div><div class="b weak h" style="--t:139,111,78;grid-column:6/7;grid-row:14/20"><b>小王朝の交替</b></div><div class="b h" style="--t:139,111,78;grid-column:6/7;grid-row:20/23"><b>新バビロニア</b><small>四王国の一つ</small></div><div class="b h" style="--t:139,111,78;grid-column:7/8;grid-row:7/21"><b>アッシリア</b><span class="yy">前2000頃–前612</span><small>前671 全オリエント統一</small></div><div class="b emp" style="--t:139,111,78;grid-column:4/8;grid-row:23/24"><b>アケメネス朝</b><span class="yy">前539 新バビロニアを征服</span></div><div class="b emp" style="--t:139,111,78;grid-column:2/8;grid-row:24/25"><b>アケメネス朝(ペルシア)</b><span class="yy">前525 全オリエント統一 – 前330</span><small>ダレイオス1世：州と知事(サトラップ)、王の道</small></div></div></div><p class="tl-t">B　小アジア・イラン高原<small>表Aと同じ時代</small></p><div class="tl-wrap"><div class="tl" style="--cols:minmax(0,1fr) minmax(0,1fr) minmax(0,1fr) minmax(0,1fr);--rail:56px;--mrail:50px"><div class="tl-h tl-h0"></div><div class="tl-h" style="grid-column:2/4">小アジア<small>アナトリア高原</small></div><div class="tl-h" style="grid-column:4/6">イラン高原</div><div class="tl-line" style="grid-row:2/11"></div><div class="tl-g" style="grid-row:2"></div><div class="tl-y" style="grid-row:2">前2700</div><div class="tl-g" style="grid-row:3"></div><div class="tl-y" style="grid-row:3">前1650</div><div class="tl-g" style="grid-row:4"></div><div class="tl-y" style="grid-row:4">前1200</div><div class="tl-g" style="grid-row:5"></div><div class="tl-y" style="grid-row:5">前700</div><div class="tl-g" style="grid-row:6"></div><div class="tl-y" style="grid-row:6">前680</div><div class="tl-g" style="grid-row:7"></div><div class="tl-y" style="grid-row:7">前639</div><div class="tl-g" style="grid-row:8"></div><div class="tl-y" style="grid-row:8">前550</div><div class="tl-g" style="grid-row:9"></div><div class="tl-y" style="grid-row:9">前546</div><div class="tl-g" style="grid-row:10"></div><div class="tl-y" style="grid-row:10">前330</div><div class="b" style="--t:118,112,46;grid-column:2/4;grid-row:3/4"><b>ヒッタイト</b><span class="yy">前17世紀半ば–前1190頃</span><small>鉄器と戦車 前1595頃 古バビロニアを滅ぼす</small></div><div class="b" style="--t:118,112,46;grid-column:2/4;grid-row:6/9"><b>リディア</b><span class="yy">前7世紀–前546</span><small>最古の金属貨幣 四王国の一つ</small></div><div class="b" style="--t:122,72,112;grid-column:4/6;grid-row:2/5"><b>エラム</b><span class="yy">前3千年紀–前639</span><small>都スサ</small></div><div class="b h" style="--t:122,72,112;grid-column:4/5;grid-row:5/7"><b>エラム</b><span class="yy">–前639</span></div><div class="b h" style="--t:122,72,112;grid-column:5/6;grid-row:5/8"><b>メディア</b><span class="yy">–前550</span><small>四王国の一つ</small></div><div class="b emp" style="--t:139,111,78;grid-column:4/6;grid-row:8/9"><b>アケメネス朝</b><span class="yy">前550 キュロス2世が建国</span></div><div class="b emp" style="--t:139,111,78;grid-column:2/6;grid-row:9/10"><b>アケメネス朝</b><span class="yy">前546 リディアを征服 – 前330</span><small>アレクサンドロス大王が滅ぼす</small></div></div></div><div class="tl-key"><span class="k-n">王朝・国家</span><span class="k-emp">全オリエントの統一帝国</span><span class="k-weak">分裂期・他勢力の支配</span><span class="k-ev">大きなできごと</span></div><p class="tl-fn"><b>四王国</b>＝アッシリア滅亡後(前612〜)に分立したサイス朝(エジプト)・リディア・新バビロニア・メディア。</p>
+<div class="sec-hdr"><span class="sec-icon">Ⅱ</span><h2>要点 <span class="latin">Summarium</span></h2></div>
+<div class="kp"><p>❶ エジプトは外敵が入りにくく王朝が長く続き、開けたメソポタミアでは民族と王朝の交替が続いた。</p><p>❷ 前2千年紀にはエジプト新王国・ヒッタイト・ミタンニ・カッシートが並び立った。</p><p>❸ 前1200年頃の「海の民」の後、鉄器が広まり、フェニキア人・アラム人・ヘブライ人が活動した。</p><p>❹ アッシリアの統一(前7世紀前半) → 四王国の分立(前612〜) → アケメネス朝の再統一(前525)。</p></div>
+</main>
 <script src="search_jump.js" defer></script></body></html>

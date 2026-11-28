@@ -183,6 +183,27 @@ main{padding:16px 14px 60px}
 .side-note{font-size:13px}
 .toc a{font-size:12.5px}
 }
+
+.lead{font-size:14.5px;line-height:1.9}
+.cur{margin:6px 0 4px}
+.st{position:relative;padding:4px 0 10px 18px;border-left:2px solid rgba(var(--axr),.15);margin-left:50px}
+.st:last-child{border-left-color:transparent;padding-bottom:2px}
+.st::before{content:'';position:absolute;left:-6px;top:9px;width:8px;height:8px;border-radius:50%;background:var(--bg);border:2px solid rgba(var(--axr),.45)}
+.st-y{position:absolute;left:-54px;top:4px;width:44px;font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:700;color:var(--gold);text-align:right;line-height:1.2}
+.st-t{font-family:'Noto Serif JP',serif;font-size:15px;font-weight:700;color:var(--gold2);line-height:1.5}
+.st ul{list-style:none;margin:1px 0 0;padding:0}
+.st li{font-size:14px;line-height:1.65;color:var(--text);padding-left:.9em;text-indent:-.9em}
+.st li::before{content:'・';color:var(--gold)}
+.st li b{color:var(--gold2);font-weight:600}
+.st li a{color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(var(--axr),.3)}
+.mx-notes li{line-height:1.65}
+.kp p{line-height:1.75}
+@media(max-width:600px){
+.lead{font-size:14px;line-height:1.85}
+.st{margin-left:42px;padding-left:14px}.st-y{left:-46px;width:38px;font-size:13px}
+.st-t{font-size:14.5px}.st li{font-size:13.5px}
+.kp p{font-size:13.5px}
+}
 </style><style id="thThemes">/* =====================================================
    THESAURUS HISTORIAE ― themes.css(LUX固定版)
    生成りの紙 + 墨の本文 + 朱筆(★語) + 金茶の構造色。
@@ -232,7 +253,7 @@ html[data-theme="lux"] .detail { color:var(--text2); }
 <body>
 <div class="hdr"><h1>第二次世界大戦の同盟関係 ― 枢軸国と連合国</h1><a href="charts.html">← Ad Chartae</a></div>
 <main>
-<p class="lead">第二次世界大戦は、ドイツ・イタリア・日本の<b>枢軸国</b>と、イギリス・フランス、のちにソ連・アメリカ・中国などが加わった<b>連合国</b>との戦争である。開戦時、ソ連はドイツと不可侵条約を結び、アメリカは中立だった。<b>1941年</b>の独ソ戦と太平洋戦争の開始で陣営が固まり、枢軸国はイタリア(1943)・ドイツ(1945.5)・日本(1945.8)の順に降伏した。</p>
+<p class="lead"><b>枢軸国</b>(独・伊・日)と<b>連合国</b>の戦争。開戦時、ソ連はドイツと不可侵条約を結び、アメリカは中立だった。<b>1941年</b>に陣営が固まった。</p>
 <div class="sec-hdr"><span class="sec-icon">Ⅰ</span><h2>陣営の移り変わり <span class="latin">Ordo Partium</span></h2></div><p class="cap">大戦の各段階で、主な国がどちらの側にいたかを示す。小さな字はその段階の主なできごと。</p>
 <div class="mx-wrap"><table class="mx"><colgroup><col style="width:17%">
 <col>
@@ -305,38 +326,10 @@ html[data-theme="lux"] .detail { color:var(--text2); }
 </tr>
 </tbody></table></div>
 <div class="legend"><span><i class="r"></i>枢軸国の側</span><span><i class="b"></i>連合国の側(枢軸国と戦う側)</span><span><i class="n"></i>中立・参戦せず・降伏後の占領</span></div>
-<ul class="mx-notes"><li>・<b>ソ連</b>は<b>独ソ不可侵条約(1939.8)</b>によってドイツと戦わず、ポーランド東部やバルト3国を併合した。1941年6月にドイツが侵攻するとイギリス・アメリカと結んだ。日本とは<b>日ソ中立条約(1941.4)</b>を結んでいたが、1945年8月、条約の有効期間中に日本に宣戦した。</li><li>・<b>イタリア</b>は1940年6月にドイツ側で参戦したが、1943年9月に降伏し、10月にはドイツに宣戦した。北部はドイツに占領された。</li><li>・<b>フランス</b>は1940年6月に降伏し、南部にはドイツに協力する<b>ヴィシー政府</b>ができた。ロンドンではド＝ゴールが<b>自由フランス</b>を組織して抗戦を続け、1944年8月にパリが解放された。</li><li>・<b>アメリカ</b>は中立を守りながら<b>武器貸与法(1941.3)</b>でイギリスなどに武器を送り、日本の真珠湾攻撃をきっかけに参戦した。</li></ul>
-<div class="sec-hdr"><span class="sec-icon">Ⅱ</span><h2>要点 <span class="latin">Summarium</span></h2></div>
-<div class="kp"><p>❶ 枢軸の形成：<b>ベルリン＝ローマ枢軸(1936)</b>、<b>日独伊三国防共協定(1937)</b>、<b>日独伊三国同盟(1940)</b></p><p>❷ イギリス・フランスはドイツの要求に譲歩する<b>宥和政策</b>をとり、<b>ミュンヘン会談(1938)</b>でズデーテン地方の割譲を認めた。英仏に不信をもったソ連はドイツと<b>独ソ不可侵条約(1939.8)</b>を結び、直後にドイツはポーランドに侵攻した</p><p>❸ <b>1941年</b>に陣営が固まった。独ソ戦の開始(6月)でソ連が連合国側に入り、日本の真珠湾攻撃(12月)でアメリカが参戦した。1942年1月には26カ国が<b>連合国共同宣言</b>を出した</p><p>❹ 戦局の転換点は<b>ミッドウェー海戦(1942.6)</b>と<b>スターリングラードの戦い(1942-43)</b>。枢軸国はイタリア(1943.9)・ドイツ(1945.5)・日本(1945.8)の順に降伏した</p><p>❺ 連合国の首脳会談で戦後処理が話し合われた：<b>カイロ会談(1943.11)</b>、<b>テヘラン会談(1943.11-12)</b>、<b>ヤルタ会談(1945.2)</b>、<b>ポツダム会談(1945.7-8)</b>。ポーランドなど東欧をめぐる米英とソ連の対立は、戦後の冷戦につながった</p><p>❻ フランスは、ドイツに協力する<b>ヴィシー政府</b>(ペタン)と、ロンドンで抗戦を続けた<b>自由フランス</b>(ド＝ゴール)に分かれた</p></div>
-<div class="sec-hdr"><span class="sec-icon">Ⅲ</span><h2>時期別の解説 <span class="latin">Per Aetates</span></h2></div>
-<nav class="toc"><a href="#ph1"><span>1936-39</span>開戦前</a><a href="#ph2"><span>1939-41</span>ドイツの攻勢</a><a href="#ph3"><span>1941-43</span>大戦の拡大</a><a href="#ph4"><span>1943-45</span>連合国の勝利</a></nav>
-<div class="phase" id="ph1"><div class="phase-label">1935<br>〜39</div>
-<div class="ph-head"><span class="ph-title">開戦前 ― 枢軸の形成と宥和政策</span><span class="ph-sub">ドイツ・イタリア・日本の接近と、英仏の譲歩</span></div>
-<div class="lineup"><span class="r"><b>枢軸の形成</b>ドイツ・イタリア・日本</span><em>対</em><span class="b"><b>宥和政策をとった国</b>イギリス・フランス</span></div>
-<div class="camps"><div class="camp r"><div class="camp-h">枢軸の形成</div><div class="mem"><div class="mem-n">ドイツ<small>ヒトラー</small></div><div class="mem-d">ヴェルサイユ体制の打破をかかげ、再軍備を宣言し(1935)、ラインラントに進駐した(1936)。1938年にオーストリアを併合し、チェコスロヴァキアに<b>ズデーテン地方</b>の割譲を要求した。</div></div><div class="mem"><div class="mem-n">イタリア<small>ムッソリーニ</small></div><div class="mem-d"><b>エチオピア侵攻(1935-36)</b>で国際連盟の経済制裁を受けてドイツに接近し、<b>ベルリン＝ローマ枢軸(1936)</b>が成立した。ムッソリーニが両国の関係をヨーロッパの「枢軸」とよんだことから、枢軸国の名がおこった。両国はスペイン内戦(1936-39)でフランコの側を支援した。</div></div><div class="mem"><div class="mem-n">日本</div><div class="mem-d">ドイツと<b>日独防共協定(1936)</b>を結び、翌1937年にイタリアが加わって<b>三国防共協定</b>となった。コミンテルン(共産主義の国際組織)に対抗することを名目とした。1937年からは日中戦争を続けていた。</div></div></div><div class="camp b"><div class="camp-h">宥和政策をとった国</div><div class="mem"><div class="mem-n">イギリス・フランス</div><div class="mem-d">ドイツの要求にある程度応じて戦争を避ける<b>宥和政策</b>をとった。イギリス首相はネヴィル＝チェンバレン、フランス首相はダラディエ。</div></div></div></div>
-<div class="event"><div class="ev-title">ミュンヘン会談<span class="ev-year">1938.9</span></div><div class="ev-desc">ネヴィル＝チェンバレン・ダラディエ・ヒトラー・ムッソリーニが会談し、ズデーテン地方のドイツへの割譲を認めた。しかしドイツは1939年3月にチェコスロヴァキアを解体し、宥和政策は行きづまった。</div></div>
-<div class="event bad-ev"><div class="ev-title">独ソ不可侵条約<span class="ev-year">1939.8</span></div><div class="ev-desc">対立していたドイツとソ連が不可侵条約を結び、世界を驚かせた。<b>秘密議定書</b>で、ポーランドの分割と、バルト地方などをソ連の勢力圏とすることを定めた。ドイツは東西二正面での戦争を避けられるようになり、9月1日にポーランドに侵攻した。イギリス・フランスはドイツに宣戦し、第二次世界大戦が始まった。</div></div>
-</div>
-<div class="phase" id="ph2"><div class="phase-label">1939<br>〜41</div>
-<div class="ph-head"><span class="ph-title">大戦前半 ― ドイツの攻勢(1939-41)</span><span class="ph-sub">ソ連はドイツと不可侵、アメリカは中立</span></div>
-<div class="lineup"><span class="r"><b>枢軸国</b>ドイツ・イタリア・日本</span><em>対</em><span class="b"><b>連合国</b>イギリス・フランス(1940年6月降伏)</span></div>
-<div class="camps"><div class="camp r"><div class="camp-h">枢軸国</div><div class="mem"><div class="mem-n">ドイツ<small>ヒトラー</small></div><div class="mem-d">機動力を生かした<b>電撃戦</b>でポーランドを破り(1939)、1940年にはデンマーク・ノルウェー、オランダ・ベルギーを占領して、6月にフランスを降伏させた。しかしイギリスとの航空戦(<b>バトル＝オブ＝ブリテン</b>)で制空権を奪えず、イギリス本土への上陸はできなかった。</div></div><div class="mem"><div class="mem-n">イタリア<small>ムッソリーニ</small></div><div class="mem-d">フランスの敗北が決定的になった1940年6月にドイツ側で参戦した。しかし北アフリカやギリシアで苦戦し、ドイツの援軍を受けた。</div></div><div class="mem"><div class="mem-n">日本</div><div class="mem-d">1940年9月、北部仏印進駐とほぼ同時に<b>日独伊三国同盟</b>を結んだ。1941年4月には<b>日ソ中立条約</b>を結んで北方の安全をはかり、7月に南部仏印に進駐した。これに対しアメリカは対日石油輸出を禁止した(1941.8)。</div></div></div><div class="camp b"><div class="camp-h">連合国<small>この時点ではイギリス・フランスなど</small></div><div class="mem"><div class="mem-n">イギリス<small>チャーチル</small></div><div class="mem-d">1940年5月、宥和政策をとったネヴィル＝チェンバレンにかわってチャーチルが首相となった。フランスの降伏後はほぼ単独でドイツと戦い、ドイツ空軍の攻撃に耐えた。</div></div><div class="mem"><div class="mem-n">フランス</div><div class="mem-d">1940年6月、ドイツ軍の侵攻から約6週間で降伏した。北部はドイツに占領され、南部には<b>ペタン</b>を首班としてドイツに協力する<b>ヴィシー政府</b>が成立した。ロンドンに亡命した<b>ド＝ゴール</b>は<b>自由フランス</b>を組織し、抗戦を呼びかけた。</div></div></div></div>
-<div class="event"><div class="ev-title">ソ連 ― ドイツとの不可侵<span class="ev-year">1939-41</span></div><div class="ev-desc">独ソ不可侵条約にもとづいてポーランド東部に侵攻した(1939.9)。フィンランドに侵攻して(ソ連＝フィンランド戦争, 1939-40)国際連盟から除名され、1940年にはバルト3国を併合した。1941年6月まではドイツと戦わなかった。</div></div>
-<div class="event"><div class="ev-title">アメリカ ― 中立と援助<span class="ev-year">1939-41</span></div><div class="ev-desc">中立を守ったが、<b>武器貸与法(1941.3)</b>でイギリスなどに武器を送った。1941年8月、フランクリン＝ローズヴェルト大統領とチャーチルは<b>大西洋憲章</b>を発表し、戦後の平和の原則を示した。</div></div>
-</div>
-<div class="phase" id="ph3"><div class="phase-label">1941<br>〜43</div>
-<div class="ph-head"><span class="ph-title">大戦の拡大 ― 独ソ戦と太平洋戦争(1941-43)</span><span class="ph-sub">1941年、連合国の陣営が固まる</span></div>
-<div class="event bad-ev"><div class="ev-title">独ソ戦<span class="ev-year">1941.6</span></div><div class="ev-desc">ドイツは不可侵条約を破ってソ連に侵攻した。ドイツ軍はモスクワに迫ったが、1941年冬に阻まれた。<b>スターリングラードの戦い</b>(1942-43)でドイツ軍が降伏し、東部戦線の形勢は逆転した。</div></div>
-<div class="event bad-ev"><div class="ev-title">太平洋戦争の開始<span class="ev-year">1941.12</span></div><div class="ev-desc">1941年12月8日(日本時間)、日本はイギリス領マレー半島に上陸し、ハワイの<b>真珠湾</b>を攻撃して、アメリカ・イギリスに宣戦した。ドイツ・イタリアもアメリカに宣戦し、戦争は世界規模に広がった。</div></div>
-<div class="lineup"><span class="r"><b>枢軸国</b>ドイツ・イタリア・日本</span><em>対</em><span class="b"><b>連合国</b>アメリカ・イギリス・ソ連・中国</span></div>
-<div class="camps"><div class="camp r"><div class="camp-h">枢軸国</div><div class="mem"><div class="mem-n">ドイツ</div><div class="mem-d">東のソ連と、西・南のイギリス・アメリカを同時に相手にする<b>二正面戦争</b>となった。スターリングラードでの敗北が大きな転換点となった。</div></div><div class="mem"><div class="mem-n">イタリア</div><div class="mem-d">北アフリカでイギリス軍に押された。1943年7月に連合軍がシチリア島に上陸すると、ムッソリーニは失脚した。</div></div><div class="mem"><div class="mem-n">日本</div><div class="mem-d">開戦後、東南アジアと太平洋の広い地域を占領した。<b>ミッドウェー海戦(1942.6)</b>で主力空母を失ってから、アメリカの反攻を受けるようになった。</div></div></div><div class="camp b"><div class="camp-h">連合国<small>アメリカ・イギリス・ソ連・中国など</small></div><div class="mem"><div class="mem-n">アメリカ<small>フランクリン＝ローズヴェルト</small></div><div class="mem-d">参戦後はヨーロッパと太平洋の両方で戦い、連合国に大量の兵器と物資を送った。原子爆弾の開発(<b>マンハッタン計画</b>)も進めた。</div></div><div class="mem"><div class="mem-n">イギリス<small>チャーチル</small></div><div class="mem-d"><b>エル＝アラメインの戦い(1942)</b>で北アフリカのドイツ・イタリア軍を破った。アメリカとともに北アフリカ・イタリア、のちにはフランスへの上陸作戦を進めた。</div></div><div class="mem"><div class="mem-n">ソ連<small>スターリン</small></div><div class="mem-d">スターリングラードの戦い(1942.8-43.2)でドイツ軍を包囲して降伏させ、以後ドイツ軍を西へ押し返してベルリンまで進んだ。戦争による死者は2000万人をこえたとされる。</div></div><div class="mem"><div class="mem-n">中国<small>国民政府(蒋介石)</small></div><div class="mem-d">1937年からの日中戦争を続け、太平洋戦争の開始後に日本・ドイツ・イタリアに正式に宣戦した。重慶に移った国民政府は、米英の<b>援蒋ルート</b>を通じて物資の支援を受けた。</div></div></div></div>
-<div class="side-note"><b>連合国共同宣言(1942.1)</b>：アメリカ・イギリス・ソ連・中国など26カ国が、大西洋憲章の原則を確認し、枢軸国と単独で講和しないことを約束した。戦後の<b>国際連合</b>の名はここから来ている。</div>
-</div>
-<div class="phase" id="ph4"><div class="phase-label">1943<br>〜45</div>
-<div class="ph-head"><span class="ph-title">連合国の勝利と戦後構想(1943-45)</span><span class="ph-sub">枢軸国の降伏と、連合国の首脳会談</span></div>
-<div class="lineup"><span class="r"><b>枢軸国の降伏</b>イタリア(1943.9)・ドイツ(1945.5)・日本(1945.8)</span><em>対</em><span class="b"><b>連合国の首脳会談</b>カイロ・テヘラン・ヤルタ・ポツダム</span></div>
-<div class="camps"><div class="camp r"><div class="camp-h">枢軸国の降伏</div><div class="mem"><div class="mem-n">イタリア<small>1943.9 降伏</small></div><div class="mem-d">ムッソリーニの失脚後、バドリオ政府が連合国に無条件降伏した。ドイツ軍は北部・中部を占領し、救出したムッソリーニに政府を立てさせた。バドリオ政府は1943年10月にドイツに宣戦し、連合国側で戦った(共同交戦国)。</div></div><div class="mem"><div class="mem-n">ドイツ<small>1945.5 降伏</small></div><div class="mem-d">1944年6月、アイゼンハワーの指揮する連合軍が<b>ノルマンディー上陸作戦</b>を行い、ドイツは東西から攻められるようになった。8月にはパリが解放された。1945年4月、ソ連軍がベルリンに迫るなかでヒトラーが自殺し、5月に無条件降伏した。</div></div><div class="mem"><div class="mem-n">日本<small>1945.8 降伏</small></div><div class="mem-d">アメリカは広島(8.6)と長崎(8.9)に原子爆弾を投下し、ソ連は日ソ中立条約の有効期間中に日本に宣戦した(8.8)。日本は8月14日に<b>ポツダム宣言</b>を受け入れ、15日に国民に発表した。9月2日に降伏文書に調印した。</div></div></div><div class="camp b"><div class="camp-h">連合国の首脳会談</div><div class="mem"><div class="mem-n">カイロ会談<small>1943.11 米・英・中</small></div><div class="mem-d">フランクリン＝ローズヴェルト・チャーチル・蒋介石が、日本が無条件降伏するまで戦うこと、日本が奪った領土の返還、朝鮮の独立などを決めた(<b>カイロ宣言</b>)。</div></div><div class="mem"><div class="mem-n">テヘラン会談<small>1943.11-12 米・英・ソ</small></div><div class="mem-d">フランクリン＝ローズヴェルト・チャーチル・スターリンの初めての三首脳会談。北フランスへの上陸作戦(第二戦線)を1944年に行うことで合意した。</div></div><div class="mem"><div class="mem-n">ヤルタ会談<small>1945.2 米・英・ソ</small></div><div class="mem-d">ドイツの戦後処理(米・英・仏・ソによる分割占領など)や国際連合の設立について話し合った。秘密協定で、ソ連がドイツ降伏後に対日参戦すること、その見返りに南樺太・千島列島をソ連に与えることを決めた。ポーランドなど東欧の扱いをめぐって、米英とソ連の対立が表に出はじめた。</div></div><div class="mem"><div class="mem-n">ポツダム会談<small>1945.7-8 米・英・ソ</small></div><div class="mem-d">トルーマン(フランクリン＝ローズヴェルトの死後に大統領)・チャーチル(途中からアトリー)・スターリンが、ドイツの非軍事化・非ナチ化などの戦後処理を話し合った。日本に無条件降伏を求める<b>ポツダム宣言</b>は、アメリカ・イギリス・中国の名で出され、ソ連は対日参戦後に加わった。</div></div></div></div>
-<div class="side-note"><b>戦後へ</b>：1945年10月に<b>国際連合</b>が発足し、アメリカ・イギリス・フランス・ソ連・中国が安全保障理事会の常任理事国となった。戦争中の協力関係は、東欧やドイツの扱いをめぐる米ソの対立に変わり、冷戦が始まった。<a href="alliance_cold_war.html">→ 冷戦構造の変遷</a></div>
-</div>
+<ul class="mx-notes"><li>・<b>ソ連</b>は独ソ不可侵条約(1939)で開戦時は中立。独ソ戦(1941)で連合国側に入り、1945年8月に対日参戦した。</li><li>・<b>イタリア</b>は1940年6月に参戦、1943年9月に降伏し、10月にドイツに宣戦した。</li><li>・<b>フランス</b>は1940年に降伏し、ヴィシー政府(ペタン)と自由フランス(ド＝ゴール)に分かれた。</li></ul>
+<div class="sec-hdr"><span class="sec-icon">Ⅱ</span><h2>経過 <span class="latin">Cursus Rerum</span></h2></div>
+<div class="cur"><div class="st"><div class="st-y">1936<br>〜39</div><div class="st-t">開戦前</div><ul><li>ベルリン＝ローマ枢軸(1936)</li><li>日独伊三国防共協定(1937)</li><li><b>ミュンヘン会談</b>(1938)：英仏の宥和政策</li><li><b>独ソ不可侵条約</b>(1939.8)</li><li>独がポーランドに侵攻→英仏が宣戦</li></ul></div><div class="st"><div class="st-y">1939<br>〜41</div><div class="st-t">ドイツの攻勢</div><ul><li>1940.6 伊が参戦、フランス降伏</li><li><b>日独伊三国同盟</b>(1940.9)</li><li>米は武器貸与法(1941.3)で英を支援</li><li>日ソ中立条約(1941.4)</li></ul></div><div class="st"><div class="st-y">1941<br>〜43</div><div class="st-t">大戦の拡大</div><ul><li><b>独ソ戦</b>(1941.6)：ソ連が連合国側へ</li><li><b>太平洋戦争</b>(1941.12)：米が参戦</li><li>連合国共同宣言(1942.1)</li><li>ミッドウェー・スターリングラードで転換</li></ul></div><div class="st"><div class="st-y">1943<br>〜45</div><div class="st-t">連合国の勝利</div><ul><li>イタリア降伏(1943.9)</li><li>カイロ会談・テヘラン会談(1943)</li><li>ノルマンディー上陸(1944.6)</li><li>ヤルタ会談(1945.2)、独降伏(1945.5)</li><li>ポツダム宣言受諾、日本降伏(1945.8)</li></ul></div></div>
+<div class="sec-hdr"><span class="sec-icon">Ⅲ</span><h2>要点 <span class="latin">Summarium</span></h2></div>
+<div class="kp"><p>❶ 枢軸の形成：ベルリン＝ローマ枢軸(1936)→三国防共協定(1937)→<b>日独伊三国同盟(1940)</b></p><p>❷ 英仏の<b>宥和政策</b>(ミュンヘン会談)に不信をもったソ連は<b>独ソ不可侵条約(1939)</b>を結んだ</p><p>❸ <b>1941年</b>、独ソ戦でソ連が、真珠湾攻撃でアメリカが連合国側に入った</p><p>❹ 転換点は<b>ミッドウェー海戦(1942)</b>と<b>スターリングラードの戦い(1942-43)</b>。降伏は伊→独→日の順</p><p>❺ ヤルタ・ポツダムなどの首脳会談で戦後処理。東欧をめぐる米英とソ連の対立は冷戦へ</p></div>
 </main>
 <script src="search_jump.js" defer></script></body></html>

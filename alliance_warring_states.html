@@ -166,7 +166,26 @@ table.mx{width:100%;border-collapse:separate;border-spacing:3px;table-layout:fix
 .chain .cn{font-family:'Noto Serif JP',serif;font-weight:700;font-size:14.5px;color:var(--gold2)}
 .chain li.red .cn{color:var(--shu)}
 .chain .cx{font-size:13.5px;line-height:1.8;color:var(--text)}
+/* compact one-line timeline (2nd revision: chartae = figure, not reading page) */
+.tl{list-style:none;margin:2px 0 6px;padding:0}
+.tl li{position:relative;padding:1px 0 5px 18px;border-left:1.5px solid rgba(var(--axr),.2);margin-left:5px;font-size:13.5px;line-height:1.6;color:var(--text)}
+.tl li:last-child{border-left-color:transparent;padding-bottom:1px}
+.tl li::before{content:'';position:absolute;left:-5.5px;top:7px;width:7px;height:7px;border-radius:50%;background:var(--bg);border:2px solid rgba(var(--axr),.5)}
+.tl li.w::before{background:rgba(var(--w),.35);border-color:rgba(var(--w),.75)}
+.tl li.e::before{background:rgba(var(--e),.3);border-color:rgba(var(--e),.7)}
+.tl li.n::before{background:rgba(var(--n),.35);border-color:rgba(var(--n),.75)}
+.tl li.p::before{background:rgba(var(--p),.3);border-color:rgba(var(--p),.7)}
+.tl .ty{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:15px;color:var(--gold);margin-right:7px}
+.tl b{font-family:'Noto Serif JP',serif;color:var(--gold2)}
+.tl li.war b{color:var(--shu)}
+.tl-h{display:flex;align-items:baseline;gap:8px;margin:10px 0 4px;font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2)}
+.tl-h .rn{font-family:'Cormorant Garamond',serif;font-size:15px;color:var(--gold);opacity:.8}
+.tl-h .yr{font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:700;color:var(--gold)}
+.fn{margin:6px 0 4px;padding:0;list-style:none}
+.fn li{font-size:13px;line-height:1.7;color:var(--text2);padding-left:1em;text-indent:-1em}
+.fn li b{color:var(--gold2)}
 @media(max-width:600px){
+.tl li{font-size:13px}
 .kp p{font-size:13px}.side-note{font-size:13px}
 .mx thead th{font-size:11px}.mx thead th b{font-size:12px}.mx thead th .yr{font-size:12.5px}
 .mx tbody th{font-size:12px}
@@ -206,6 +225,9 @@ table.mx{width:100%;border-collapse:separate;border-spacing:3px;table-layout:fix
 .dg-s{grid-column:3;position:relative;z-index:1;text-align:center;border-radius:6px;padding:2px 0;font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:#2d4569;background:var(--bg);border:1px solid rgba(var(--w),.3);margin:0 3px}
 .dg-s.h{color:var(--gold2);border-color:rgba(var(--axr),.3);margin:0}
 .dg-ln{grid-column:2;align-self:center;border-top:1.5px solid rgba(var(--e),.5)}
+.dg-x{list-style:none;margin:8px 2px 0;padding:6px 0 0;border-top:1px solid rgba(var(--axr),.15)}
+.dg-x li{font-size:13px;line-height:1.55;color:var(--text);padding:1px 0}
+.dg-x li b{color:var(--gold2)}
 @media(max-width:600px){
 .sv-h,.sv-r{grid-template-columns:40px 1fr 52px;column-gap:7px;padding-left:8px;padding-right:8px}
 .sv-n b{font-size:17px}.sv-n small{font-size:11px}
@@ -262,75 +284,22 @@ html[data-theme="lux"] .detail { color:var(--text2); }
 <body>
 <div class="hdr"><h1>春秋戦国の合従連衡 ― 秦の統一への道</h1><a href="charts.html">← Ad Chartae</a></div>
 <main>
-<p class="lead">周の東遷(前770)から秦の統一(前221)までを<b>春秋・戦国時代</b>という。春秋時代には有力な諸侯が覇者として他の諸侯を率い、戦国時代には七つの強国(<b>戦国の七雄</b>)が争った。強大になった秦に対し、他の6国がどのように同盟するかをめぐって、<b>合従</b>と<b>連衡</b>という二つの外交策が説かれた。</p>
-<div class="sec-hdr"><span class="sec-icon">Ⅰ</span><h2>戦国の七雄 <span class="latin">Septem Regna</span></h2></div><p class="cap">秦と、秦に滅ぼされた順に並べた6国。韓・魏・趙の3国は、春秋時代の大国晋が分かれてできた。</p>
-<div class="sv"><div class="sv-h"><span>国</span><span>主な事項</span><span>秦による滅亡</span></div>
-<div class="sv-r q"><div class="sv-n"><b>秦</b><small>西</small></div><div class="sv-d">孝公が法家の<b>商鞅</b>を用いて変法を行い(前4世紀半ば)、富国強兵に成功して最強国となった。都は咸陽。</div><div class="sv-e">統一<br><span class="y">前221</span></div></div>
-<div class="sv-r"><div class="sv-n"><b>韓</b><small>中央</small></div><div class="sv-d">晋から分かれた国。七雄のなかで最も弱く、秦と境を接していた。法家の韓非はこの国の公子。</div><div class="sv-e">①<span class="y">前230</span></div></div>
-<div class="sv-r"><div class="sv-n"><b>趙</b><small>北</small></div><div class="sv-d">晋から分かれた国。武霊王が遊牧民の騎馬戦術と服装を取り入れた(<b>胡服騎射</b>)。長平の戦い(前260)で秦に大敗した。</div><div class="sv-e">②<span class="y">前228</span></div></div>
-<div class="sv-r"><div class="sv-n"><b>魏</b><small>中央</small></div><div class="sv-d">晋から分かれた国。戦国初期に文侯のもとで最初に強国となった。</div><div class="sv-e">③<span class="y">前225</span></div></div>
-<div class="sv-r"><div class="sv-n"><b>楚</b><small>南</small></div><div class="sv-d">長江中流域を中心とする最大の領域をもつ国。詩人の<b>屈原</b>は秦への警戒を説いたが受け入れられなかった。</div><div class="sv-e">④<span class="y">前223</span></div></div>
-<div class="sv-r"><div class="sv-n"><b>燕</b><small>北東</small></div><div class="sv-d">都は薊(現在の北京付近)。太子丹が送った刺客の荊軻による秦王政の暗殺は失敗した(前227)。</div><div class="sv-e">⑤<span class="y">前222</span></div></div>
-<div class="sv-r"><div class="sv-n"><b>斉</b><small>東</small></div><div class="sv-d">都の臨淄に多くの学者が集まり(<b>稷下の学士</b>)、学問の中心となった。前386年に家臣の田氏が君主の地位を奪った。</div><div class="sv-e">⑥<span class="y">前221</span></div></div>
+<p class="lead">周の東遷(前770)から秦の統一(前221)までの<b>春秋・戦国時代</b>。戦国時代には七つの強国(<b>戦国の七雄</b>)が争い、強大になった秦への対し方として<b>合従</b>と<b>連衡</b>が説かれた。</p>
+<div class="sec-hdr"><span class="sec-icon">Ⅰ</span><h2>戦国の七雄 <span class="latin">Septem Regna</span></h2></div><p class="cap">秦と、秦に滅ぼされた順(①〜⑥)に並べた6国。韓・魏・趙は晋が分かれてできた国。</p>
+<div class="sv"><div class="sv-h"><span>国</span><span>主な事項</span><span>滅亡</span></div>
+<div class="sv-r q"><div class="sv-n"><b>秦</b><small>西</small></div><div class="sv-d"><b>商鞅</b>の変法で最強国に。都は咸陽</div><div class="sv-e">統一<br><span class="y">前221</span></div></div>
+<div class="sv-r"><div class="sv-n"><b>韓</b><small>中央</small></div><div class="sv-d">晋から分立。七雄で最も弱い。韓非の出身国</div><div class="sv-e">①<span class="y">前230</span></div></div>
+<div class="sv-r"><div class="sv-n"><b>趙</b><small>北</small></div><div class="sv-d">晋から分立。武霊王の<b>胡服騎射</b></div><div class="sv-e">②<span class="y">前228</span></div></div>
+<div class="sv-r"><div class="sv-n"><b>魏</b><small>中央</small></div><div class="sv-d">晋から分立。戦国初期の強国(文侯)</div><div class="sv-e">③<span class="y">前225</span></div></div>
+<div class="sv-r"><div class="sv-n"><b>楚</b><small>南</small></div><div class="sv-d">長江中流域の大国。詩人<b>屈原</b></div><div class="sv-e">④<span class="y">前223</span></div></div>
+<div class="sv-r"><div class="sv-n"><b>燕</b><small>北東</small></div><div class="sv-d">都は薊(北京付近)。荊軻の秦王暗殺未遂</div><div class="sv-e">⑤<span class="y">前222</span></div></div>
+<div class="sv-r"><div class="sv-n"><b>斉</b><small>東</small></div><div class="sv-d">都は臨淄。<b>稷下の学士</b>。田氏が君主に</div><div class="sv-e">⑥<span class="y">前221</span></div></div>
 </div>
-<div class="sec-hdr"><span class="sec-icon">Ⅱ</span><h2>合従と連衡 <span class="latin">Foedera</span></h2></div><p class="cap">「従」は縦(南北)、「衡」は横(東西)を意味する。秦が西にあり、他の6国が東に南北に並んでいたことからこう呼ばれた。蘇秦・張儀のように諸国を回って外交策を説いた人々を<b>縦横家</b>という。</p>
-<div class="dgs"><div class="dg-p"><div class="dg-t">合従<small>南北(縦)の同盟</small></div><div class="dg"><div class="dg-dir" style="grid-column:1">西</div><div class="dg-dir" style="grid-column:3">東(上が北)</div><div class="dg-q">秦</div><div class="dg-vs">対抗</div><div class="dg-bar"></div><div class="dg-s" style="grid-row:2">燕</div><div class="dg-s" style="grid-row:3">趙</div><div class="dg-s" style="grid-row:4">斉</div><div class="dg-s" style="grid-row:5">魏</div><div class="dg-s" style="grid-row:6">韓</div><div class="dg-s" style="grid-row:7">楚</div></div></div><div class="dg-p"><div class="dg-t">連衡<small>東西(横)の個別の同盟</small></div><div class="dg"><div class="dg-dir" style="grid-column:1">西</div><div class="dg-dir" style="grid-column:3">東(上が北)</div><div class="dg-q">秦</div><div class="dg-ln" style="grid-row:2"></div><div class="dg-ln" style="grid-row:3"></div><div class="dg-ln" style="grid-row:4"></div><div class="dg-ln" style="grid-row:5"></div><div class="dg-ln" style="grid-row:6"></div><div class="dg-ln" style="grid-row:7"></div><div class="dg-s h" style="grid-row:2">燕</div><div class="dg-s h" style="grid-row:3">趙</div><div class="dg-s h" style="grid-row:4">斉</div><div class="dg-s h" style="grid-row:5">魏</div><div class="dg-s h" style="grid-row:6">韓</div><div class="dg-s h" style="grid-row:7">楚</div></div></div></div>
-<div class="camps">
-<div class="camp k-w"><div class="camp-h">合従 <span class="latin">Foedus Austri et Septentrionis</span></div>
-<div class="mem"><div class="mem-n">提唱者<small>蘇秦</small></div><div class="mem-d">縦横家の蘇秦が説いたとされる。『史記』は、蘇秦が6国の宰相を兼ねて同盟をまとめたと伝える。</div></div>
-<div class="mem"><div class="mem-n">内容</div><div class="mem-d">秦以外の6国が南北(縦)に連合し、共同で秦に対抗する。</div></div>
-<div class="mem"><div class="mem-n">弱点</div><div class="mem-d">6国の利害が一致せず、同盟は長続きしなかった。</div></div>
-</div>
-<div class="camp k-e"><div class="camp-h">連衡 <span class="latin">Foedus Orientis et Occidentis</span></div>
-<div class="mem"><div class="mem-n">提唱者<small>張儀</small></div><div class="mem-d">縦横家の張儀が説き、張儀自身も秦の宰相となった。</div></div>
-<div class="mem"><div class="mem-n">内容</div><div class="mem-d">6国がそれぞれ秦と東西(横)に同盟を結ぶようにして、合従を切り崩す。</div></div>
-<div class="mem"><div class="mem-n">結果</div><div class="mem-d">秦は6国を分断し、のちに范雎の遠交近攻策と合わせて、各国を一つずつ攻めることができた。</div></div>
-</div>
-</div>
-<div class="sec-hdr"><span class="sec-icon">Ⅲ</span><h2>要点 <span class="latin">Summarium</span></h2></div>
-<div class="kp"><p>❶ 春秋時代(前770〜前403)には、斉の桓公・晋の文公などの<b>覇者</b>が「尊王攘夷」をかかげて諸侯を率いた</p><p>❷ 晋が韓・魏・趙の3国に分かれた前403年から戦国時代となり、<b>秦・楚・斉・燕・韓・魏・趙</b>の七雄が争った</p><p>❸ 秦は孝公のときに<b>商鞅の変法</b>で国力を高め、最強の国となった</p><p>❹ <b>合従</b>は蘇秦が説いた、6国が南北(縦)に結んで秦に対抗する策。<b>連衡</b>は張儀が説いた、6国がそれぞれ秦と東西(横)に結ぶ策</p><p>❺ 秦王政は<b>韓(前230)→趙(前228)→魏(前225)→楚(前223)→燕(前222)→斉(前221)</b>の順に6国を滅ぼし、前221年に中国を統一して<b>始皇帝</b>と称した</p></div>
-<div class="sec-hdr"><span class="sec-icon">Ⅳ</span><h2>時期別の解説 <span class="latin">Per Aetates</span></h2></div>
-<nav class="toc"><a href="#ph1"><span>前770–前403</span>春秋時代</a><a href="#ph2"><span>前403–</span>戦国時代の始まり</a><a href="#ph3"><span>前313–前260</span>合従と連衡の時代</a><a href="#ph4"><span>前230–前221</span>秦の統一</a></nav>
-<div class="phase" id="ph1"><div class="phase-label">前770<br>〜<br>前403</div>
-<div class="ph-head"><span class="ph-title">春秋時代</span><span class="ph-sub">覇者が諸侯を率いた時代</span></div>
-<div class="event"><div class="ev-title">周の東遷<span class="ev-year">前770</span></div><div class="ev-desc">周が都を鎬京から洛邑に移した。これ以後の周を東周という。周王の権威は衰え、有力な諸侯が勢力を争った。</div></div>
-<div class="sub-h">春秋の五覇(数え方には諸説がある)</div>
-<div class="camps">
-<div class="camp k-i"><div class="camp-h">北方の覇者</div>
-<div class="mem"><div class="mem-n">斉の桓公<small>前7世紀</small></div><div class="mem-d">宰相<b>管仲</b>の改革で国力を高め、最初の覇者となった。</div></div>
-<div class="mem"><div class="mem-n">晋の文公<small>前7世紀</small></div><div class="mem-d">城濮の戦い(前632)で楚を破り、覇者となった。</div></div>
-</div>
-<div class="camp k-i"><div class="camp-h">南方の覇者</div>
-<div class="mem"><div class="mem-n">楚の荘王<small>前7〜前6世紀</small></div><div class="mem-d">周の使者に、王位の象徴である鼎の重さを尋ねて周に取って代わる野心を示したと伝えられる(「鼎の軽重を問う」の故事)。</div></div>
-<div class="mem"><div class="mem-n">呉王闔閭・夫差<small>前6〜前5世紀</small></div><div class="mem-d">伍子胥らを用いて強大になり、越と争った。</div></div>
-<div class="mem"><div class="mem-n">越王勾践<small>前5世紀</small></div><div class="mem-d">呉王夫差に敗れた後に国力を立て直し、呉を滅ぼした(前473)。呉と越の争いは「臥薪嘗胆」の故事で知られる。</div></div>
-</div>
-</div>
-<div class="side-note">覇者は、周王を尊び周辺の異民族を退けること(<b>尊王攘夷</b>)をかかげ、諸侯を集めた会盟を主催した。五覇には、秦の穆公や宋の襄公を数える説もある。</div>
-</div>
-<div class="phase" id="ph2"><div class="phase-label">前403<br>〜<br></div>
-<div class="ph-head"><span class="ph-title">戦国時代の始まり</span><span class="ph-sub">晋の分裂と、各国の富国強兵</span></div>
-<div class="event"><div class="ev-title">晋の分裂<span class="ev-year">前403</span></div><div class="ev-desc">晋の有力な家臣であった韓・魏・趙の3氏が晋を分け、周王から諸侯と認められた。この年を戦国時代の始まりとすることが多い。</div></div>
-<div class="event"><div class="ev-title">商鞅の変法<span class="ev-year">前4世紀半ば</span></div><div class="ev-desc">秦の孝公に用いられた法家の商鞅が改革を行った。住民を5戸・10戸の組に編成して連帯責任を負わせる<b>什伍の制</b>、戦場での手柄に応じて爵位を与える制度、県を置いて君主が直接治める<b>県制</b>などで君主の権力を強め、秦を最強の国にした。</div></div>
-<div class="side-note">戦国時代には家柄よりも実力が重んじられ、各国は富国強兵のために人材を集めた。諸子百家と呼ばれる思想家が各国の君主に政策を説いた。</div>
-</div>
-<div class="phase" id="ph3"><div class="phase-label">前313<br>〜<br>前260</div>
-<div class="ph-head"><span class="ph-title">合従と連衡の時代</span><span class="ph-sub">秦と6国の外交と戦争(合従・連衡の内容はⅡ)</span></div>
-<div class="event"><div class="ev-title">張儀による楚の分断<span class="ev-year">前313頃</span></div><div class="ev-desc">張儀は楚の懐王に、斉との同盟を断てば秦の土地600里を与えると約束した。楚が斉と断交すると、張儀は6里だったと言って約束を守らなかった。懐王はのちに秦に招かれて抑留され、秦で死んだ。</div></div>
-<div class="event"><div class="ev-title">遠交近攻<span class="ev-year">前3世紀前半</span></div><div class="ev-desc">秦の昭襄王に仕えた范雎が説いた策。遠くの国(斉・燕)とは友好を結び、近くの国(韓・魏・趙)を攻めて領土を広げる。</div></div>
-<div class="event bad-ev"><div class="ev-title">長平の戦い<span class="ev-year">前260</span><span class="bad">戦争・危機</span></div><div class="ev-desc">秦が趙の大軍を破り、多数の捕虜を殺したと伝えられる。これ以後、単独で秦に対抗できる国はなくなった。</div></div>
-</div>
-<div class="phase" id="ph4"><div class="phase-label">前230<br>〜<br>前221</div>
-<div class="ph-head"><span class="ph-title">秦の統一</span><span class="ph-sub">秦王政(のちの始皇帝)が6国を滅ぼす</span></div>
-<div class="camps">
-<div class="camp k-e"><div class="camp-h">秦</div>
-<div class="mem"><div class="mem-n">秦王政<small>のちの始皇帝</small></div><div class="mem-d">法家の<b>李斯</b>らを用い、秦に近い国から順に6国を滅ぼした。</div></div>
-</div>
-</div>
-<div class="sub-h">6国の滅亡</div>
-<ol class="chain"><li class="red"><span class="cd">前230</span><span class="cn">韓</span><div class="cx">秦に最も近く、最も弱い国で、最初に滅ぼされた。</div></li><li class="red"><span class="cd">前228</span><span class="cn">趙</span><div class="cx">長平の戦いの後に弱体化しており、都の邯鄲が落とされた。</div></li><li class="red"><span class="cd">前225</span><span class="cn">魏</span><div class="cx">都の大梁が水攻めで落とされた。</div></li><li class="red"><span class="cd">前223</span><span class="cn">楚</span><div class="cx">最大の領域をもつ国だったが、秦の将軍王翦の大軍に敗れた。</div></li><li class="red"><span class="cd">前222</span><span class="cn">燕</span><div class="cx">荊軻による秦王暗殺の失敗(前227)の後に攻められ、遼東に逃れた燕王も捕らえられた。</div></li><li class="red"><span class="cd">前221</span><span class="cn">斉</span><div class="cx">最も遠い東方の国で、最後に戦わずに降伏した。</div></li></ol>
-<div class="event"><div class="ev-title">始皇帝の即位<span class="ev-year">前221</span></div><div class="ev-desc">中国を統一した秦王政は、「王」に代えて「皇帝」の称号を定め、始皇帝と称した。中国で初めての統一王朝が成立した。郡県制を全国に広げ、文字・度量衡・貨幣を統一した。</div></div>
-<div class="side-note">秦は近い国から順に滅ぼし、遠い燕・斉が最後に残った。合従が長続きしなかったため、秦は6国を一つずつ攻めることができた。</div>
-</div>
+<div class="sec-hdr"><span class="sec-icon">Ⅱ</span><h2>合従と連衡 <span class="latin">Foedera</span></h2></div><p class="cap">「従」は縦(南北)、「衡」は横(東西)の意味。蘇秦・張儀のような外交策の論客を<b>縦横家</b>という。</p>
+<div class="dgs"><div class="dg-p"><div class="dg-t">合従<small>南北(縦)の同盟</small></div><div class="dg"><div class="dg-dir" style="grid-column:1">西</div><div class="dg-dir" style="grid-column:3">東(上が北)</div><div class="dg-q">秦</div><div class="dg-vs">対抗</div><div class="dg-bar"></div><div class="dg-s" style="grid-row:2">燕</div><div class="dg-s" style="grid-row:3">趙</div><div class="dg-s" style="grid-row:4">斉</div><div class="dg-s" style="grid-row:5">魏</div><div class="dg-s" style="grid-row:6">韓</div><div class="dg-s" style="grid-row:7">楚</div></div><ul class="dg-x"><li><b>蘇秦</b>が説く</li><li>6国が南北に結び秦に対抗</li><li>利害が合わず長続きせず</li></ul></div><div class="dg-p"><div class="dg-t">連衡<small>東西(横)の個別の同盟</small></div><div class="dg"><div class="dg-dir" style="grid-column:1">西</div><div class="dg-dir" style="grid-column:3">東(上が北)</div><div class="dg-q">秦</div><div class="dg-ln" style="grid-row:2"></div><div class="dg-ln" style="grid-row:3"></div><div class="dg-ln" style="grid-row:4"></div><div class="dg-ln" style="grid-row:5"></div><div class="dg-ln" style="grid-row:6"></div><div class="dg-ln" style="grid-row:7"></div><div class="dg-s h" style="grid-row:2">燕</div><div class="dg-s h" style="grid-row:3">趙</div><div class="dg-s h" style="grid-row:4">斉</div><div class="dg-s h" style="grid-row:5">魏</div><div class="dg-s h" style="grid-row:6">韓</div><div class="dg-s h" style="grid-row:7">楚</div></div><ul class="dg-x"><li><b>張儀</b>が説く</li><li>6国が個別に秦と結ぶ</li><li>合従を崩し、秦の各個撃破へ</li></ul></div></div>
+<div class="sec-hdr"><span class="sec-icon">Ⅲ</span><h2>春秋から統一まで <span class="latin">Per Aetates</span></h2></div>
+<ol class="tl"><li class=""><span class="ty">前770</span><b>周の東遷</b>→春秋時代</li><li class=""><span class="ty">前7世紀</span>斉の桓公(宰相<b>管仲</b>)が最初の覇者に</li><li class=""><span class="ty">前403</span>韓・魏・趙が諸侯に→<b>戦国時代</b></li><li class="e"><span class="ty">前4世紀半ば</span>秦の孝公が<b>商鞅の変法</b></li><li class=""><span class="ty">前4世紀後半</span><b>合従</b>(蘇秦)と<b>連衡</b>(張儀)</li><li class="e"><span class="ty">前3世紀前半</span>范雎が<b>遠交近攻</b>を説く(秦)</li><li class="e war"><span class="ty">前260</span><b>長平の戦い</b>：秦が趙に大勝</li><li class="e war"><span class="ty">前230〜</span>秦王政が6国を滅ぼす(Ⅰ表の①〜⑥)</li><li class="e"><span class="ty">前221</span>秦王政が<b>始皇帝</b>を称する</li></ol><ul class="fn"><li>※<b>春秋の五覇</b>：斉の桓公・晋の文公・楚の荘王・呉王夫差・越王勾践など(数え方は諸説)</li></ul>
+<div class="sec-hdr"><span class="sec-icon">Ⅳ</span><h2>要点 <span class="latin">Summarium</span></h2></div>
+<div class="kp"><p>❶ 春秋(前770〜前403)：覇者が<b>尊王攘夷</b>で諸侯を率いる</p><p>❷ 戦国(前403〜前221)：<b>秦・楚・斉・燕・韓・魏・趙</b>の七雄</p><p>❸ <b>合従＝蘇秦＝縦(南北)</b>、<b>連衡＝張儀＝横(東西)</b></p><p>❹ 秦は商鞅の変法で強大化し、6国を次々に滅ぼした</p><p>❺ 滅亡順：<b>韓→趙→魏→楚→燕→斉</b>(前221 統一)</p></div>
 </main>
 <script src="search_jump.js" defer></script></body></html>
