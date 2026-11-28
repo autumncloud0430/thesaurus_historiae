@@ -3,18 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>文化史 CULTURA ― 世界史資料集</title>
-<style>@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&display=swap');
+<title>THESAURUS HISTORIAE ― Ad Cultura</title>
+<style>@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
 :root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
 body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
 .top-bar{padding:28px 32px 18px;border-bottom:1px solid rgba(var(--axr),.06)}
-.top-bar h1{font-family:'Shippori Mincho',serif;font-size:32px;font-weight:700;color:var(--gold2);letter-spacing:.04em}
+.top-bar h1{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:700;color:var(--gold2);letter-spacing:3px}
 .top-bar .meta{display:flex;align-items:center;gap:16px;margin-top:4px}
 .top-bar .meta a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.4}.top-bar .meta a:hover{opacity:1}
-.top-bar .meta .cnt{font-size:11px;color:var(--text3);font-family:'Shippori Mincho',serif;font-size:14px;letter-spacing:1px}
-.top-bar::after{content:'HISTORIA ARTIUM · LIBER CULTURARUM · CULTURA HUMANA';display:block;font-family:'Shippori Mincho',serif;font-size:11px;color:var(--text3);letter-spacing:.04em;margin-top:6px;opacity:.4}
+.top-bar .meta .cnt{font-size:11px;color:var(--text3);font-family:'Cormorant Garamond',serif;font-size:14px;letter-spacing:1px}
+.top-bar::after{content:'HISTORIA ARTIUM · LIBER CULTURARUM · CULTURA HUMANA';display:block;font-family:'Cormorant Garamond',serif;font-size:11px;color:var(--text3);letter-spacing:3px;margin-top:6px;opacity:.4}
 .search-area{padding:14px 32px;border-bottom:1px solid rgba(var(--axr),.04);display:flex;align-items:center;gap:12px;flex-wrap:wrap}
 .search-area input{background:rgba(var(--axr),.03);border:1px solid rgba(var(--axr),.08);border-radius:8px;padding:10px 20px;color:var(--text);font-size:13px;font-family:inherit;width:420px;outline:none;transition:all .2s}
 .search-area input:focus{border-color:rgba(var(--axr),.25);background:rgba(var(--axr),.05)}
@@ -24,28 +24,28 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
 .nav-pills{display:flex;gap:5px;padding:10px 32px;flex-wrap:wrap;border-bottom:1px solid rgba(var(--axr),.04)}
 .nav-pills a{font-size:8px;padding:4px 10px;border:1px solid;border-radius:20px;text-decoration:none;transition:all .15s;opacity:.7}
 .nav-pills a:hover{opacity:1;background:rgba(var(--axr),.04)}
-.nav-pills::before{content:'· NAVIGATIO ·';font-family:'Shippori Mincho',serif;font-size:8px;color:var(--text3);letter-spacing:.04em;opacity:.3;margin-right:8px}
+.nav-pills::before{content:'· NAVIGATIO ·';font-family:'Cormorant Garamond',serif;font-size:8px;color:var(--text3);letter-spacing:3px;opacity:.3;margin-right:8px}
 .content{max-width:1100px;margin:0 auto;padding:20px 32px 80px}
 .sec{margin-bottom:32px}
 .sec-hdr{display:flex;align-items:center;gap:10px;padding:10px 0;margin-bottom:10px;border-bottom:1px solid rgba(var(--axr),.06);position:relative;padding-top:12px}
 .sec-hdr::before{content:'';display:block;width:100%;height:1px;background:linear-gradient(90deg,rgba(var(--axr),.15),rgba(var(--axr),.03));position:absolute;top:0}
-.sec-icon{font-family:'Shippori Mincho',serif;font-size:14px;font-weight:700;opacity:.6}
+.sec-icon{font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:700;opacity:.6}
 .sec-hdr h2{font-family:'Noto Serif JP',serif;font-size:15px;font-weight:700;color:var(--gold2)}
-.sec-cnt{font-size:9px;color:var(--text3);margin-left:auto;font-family:'Shippori Mincho',serif;font-size:12px}
-.latin{font-family:'Shippori Mincho',serif;font-size:10px;font-weight:400;font-style:normal;color:var(--gold);margin-left:10px;letter-spacing:1px;opacity:.6}
+.sec-cnt{font-size:9px;color:var(--text3);margin-left:auto;font-family:'Cormorant Garamond',serif;font-size:12px}
+.latin{font-family:'Cormorant Garamond',serif;font-size:10px;font-weight:400;font-style:italic;color:var(--gold);margin-left:10px;letter-spacing:1px;opacity:.6}
 .sec-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:8px}
 .card{display:flex;flex-direction:column;gap:5px;padding:10px 14px;border:1px solid rgba(var(--axr),.04);border-radius:8px;background:rgba(255,255,255,.006);text-decoration:none;transition:all .2s;position:relative}
-.card:hover{background:rgba(var(--axr),.04);border-color:rgba(var(--axr),.12);box-shadow:0 4px 12px rgba(0,0,0,.2)}
+.card:hover{background:rgba(var(--axr),.04);border-color:rgba(var(--axr),.12);transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.2)}
 .card.hidden{display:none}
 .card.match-body{border-color:rgba(var(--axr),.25);background:rgba(var(--axr),.04)}
 .card.match-body::after{content:'★';position:absolute;top:6px;right:8px;font-size:8px;color:var(--gold);opacity:.7}
 .card-main{font-size:10.5px;color:var(--text);font-weight:600;line-height:1.5}
 .card-sub{font-size:8px;color:var(--text3);line-height:1.4}
 .divider{text-align:center;padding:4px 0;border-bottom:1px solid rgba(var(--axr),.04)}
-.divider span{font-family:Shippori Mincho,serif;font-size:9px;color:rgba(var(--axr),.15);letter-spacing:.04em}</style>
+.divider span{font-family:Cormorant Garamond,serif;font-size:9px;color:rgba(var(--axr),.15);letter-spacing:6px}</style>
 <style id="thThemes">/* =====================================================
-   THESAURUS HISTORIAE ― themes.css(LUX v2: 印刷資料集)
-   生成りの紙 + 墨の本文 + 朱筆(★語)。飾りは罫線だけ。
+   THESAURUS HISTORIAE ― themes.css(LUX固定版)
+   生成りの紙 + 墨の本文 + 朱筆(★語) + 金茶の構造色。
    retheme_inject.py が各HTMLに埋め込む。編集後は再実行。
    ===================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&display=swap');
@@ -53,24 +53,22 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
 :root { --axr: 201, 169, 110; --shu: #c9a96e; }
 
 html[data-theme="lux"] {
-  --bg:#f6f2e8; --paper:#fffdf7;
-  --gold:#6e5434; --gold2:#2a2016; --gold3:#8a7352;
-  --text:#211b14; --text2:#3f372d; --text3:#776b59;
-  --line:rgba(33,27,20,.17); --line2:rgba(33,27,20,.32); --border:rgba(33,27,20,.17);
-  --gold-dim:rgba(110,84,52,.14);
-  --axr:110,84,52;
-  --shu:#a2331e; --ai:#2c4a6e;
+  --bg:#f1ecdf;
+  --gold:#8b6f4e; --gold2:#59452a; --gold3:#9c855f;
+  --text:#2b241b; --text2:#6d6353; --text3:#a89a80;
+  --line:rgba(43,36,27,.16); --border:rgba(43,36,27,.16);
+  --gold-dim:rgba(139,111,78,.16);
+  --axr:139,111,78;
+  --shu:#a2331e;
 }
 
 html[data-theme="lux"] body {
   background:var(--bg);
-  color:var(--text);
   font-family:'Shippori Mincho','Noto Serif JP',serif;
 }
-html[data-theme="lux"] body::before { display:none !important; }   /* ノイズ撤去 */
+html[data-theme="lux"] body::before { opacity:.55; }
 html[data-theme="lux"] p { line-height:2.05; }
 html[data-theme="lux"] * { text-shadow:none !important; }
-html[data-theme="lux"] *:hover { box-shadow:none !important; }
 
 /* 強調の二段化: 通常太字=墨 / ★語=朱 */
 html[data-theme="lux"] strong { color:var(--text) !important; font-weight:600; }
@@ -79,93 +77,28 @@ html[data-theme="lux"] span.k + strong,
 html[data-theme="lux"] .node-title .k { color:var(--shu) !important; }
 html[data-theme="lux"] span.k + strong { font-weight:700; }
 html[data-theme="lux"] ::selection { background:rgba(162,51,30,.18); }
-
-/* ページ見出し帯: 柱のように太罫で区切る */
-html[data-theme="lux"] .hdr,
-html[data-theme="lux"] .top-bar { background:var(--bg); border-bottom:2px solid var(--text) !important; }
-html[data-theme="lux"] .hdr h1,
-html[data-theme="lux"] .top-bar h1 { color:var(--text); letter-spacing:.02em; }
-html[data-theme="lux"] .hdr a,
-html[data-theme="lux"] .meta a,
-html[data-theme="lux"] .bottom-nav a { opacity:1 !important; color:var(--ai) !important; text-decoration:none; }
-html[data-theme="lux"] .hdr a:hover,
-html[data-theme="lux"] .meta a:hover,
-html[data-theme="lux"] .bottom-nav a:hover { text-decoration:underline; }
-html[data-theme="lux"] .latin,
-html[data-theme="lux"] .divider { display:none !important; }
-html[data-theme="lux"] .top-bar::after { content:none !important; }
-
-/* 年・番号: 等幅数字、薄めない */
-html[data-theme="lux"] .node-year,
-html[data-theme="lux"] .phase-label,
-html[data-theme="lux"] .sec-icon,
-html[data-theme="lux"] .sec-cnt,
-html[data-theme="lux"] .cnt,
-html[data-theme="lux"] td.no { font-variant-numeric:tabular-nums; letter-spacing:0 !important; opacity:1 !important; color:var(--text3) !important; }
-
-/* 流れ図(通史・国家史・文化史): 半透明の角丸カード → 紙面に罫線 */
-html[data-theme="lux"] .node { background:var(--paper) !important; border:1px solid var(--line) !important; border-radius:2px !important; }
-html[data-theme="lux"] .node.key { border-color:var(--line2) !important; }
-html[data-theme="lux"] .node-title,
-html[data-theme="lux"] .node-desc { color:var(--text) !important; }
-html[data-theme="lux"] .phase { border-left-color:var(--line) !important; }
-html[data-theme="lux"] .phase::before { background:var(--bg) !important; }
-
-/* 表 */
-html[data-theme="lux"] th { background:#ebe4d4 !important; color:var(--text) !important; border-bottom:1px solid var(--line2) !important; letter-spacing:0 !important; }
-html[data-theme="lux"] td { color:var(--text); border-color:var(--line) !important; }
-html[data-theme="lux"] .note p { color:var(--text2) !important; }
-
-/* 目次系(図表・国家史・文化史の一覧) */
-html[data-theme="lux"] .card { background:var(--paper) !important; border:1px solid var(--line) !important; border-radius:2px !important; transform:none !important; }
-html[data-theme="lux"] .card:hover { border-color:var(--gold) !important; }
-html[data-theme="lux"] .card-main { font-size:13.5px !important; color:var(--text) !important; }
-html[data-theme="lux"] .card-sub { font-size:11px !important; color:var(--text3) !important; }
-html[data-theme="lux"] .card-badge { font-size:10.5px !important; background:none !important; color:var(--text3) !important; padding:0 !important; font-weight:400 !important; }
-html[data-theme="lux"] .nav-pills a { font-size:12px !important; opacity:1 !important; color:var(--text2) !important; border-color:var(--line) !important; border-radius:2px !important; }
-html[data-theme="lux"] .sec-hdr { border-bottom:1px solid var(--text) !important; }
-html[data-theme="lux"] .sec-hdr::before { display:none; }
-html[data-theme="lux"] .sec-icon { color:var(--shu) !important; }
-html[data-theme="lux"] .sec-hdr h2 { font-size:17px !important; color:var(--text) !important; }
-
-/* 入力欄 */
-html[data-theme="lux"] .search-area input,
-html[data-theme="lux"] .si { background:var(--paper) !important; border:1px solid var(--line2) !important; border-radius:2px !important; font-size:14px !important; color:var(--text) !important; }
-
-/* 家系図などの箱 */
-html[data-theme="lux"] .nb { background:var(--paper) !important; border-radius:2px !important; }
-html[data-theme="lux"] .nn { color:var(--text) !important; }
-html[data-theme="lux"] .ntag { letter-spacing:0 !important; border-radius:2px !important; }
-
-/* 目次ページの見出し: 和名 + 小さなラテン名 */
-html[data-theme="lux"] .top-bar h1 small { font-size:13px; font-weight:400; color:var(--text3); margin-left:12px; letter-spacing:.06em; }
-html[data-theme="lux"] .top-bar h1 { font-size:28px !important; }
-
-html[data-theme="lux"] .sec-lat,
-html[data-theme="lux"] .asm-type { display:none !important; }
-
 </style><script id="thScript">document.documentElement.setAttribute('data-theme','lux');</script></head>
 <body>
-<div class="top-bar"><h1>文化史<small>CULTURA</small></h1><div class="meta"><span class="cnt">28枚</span><a href="index.html">← 目次</a></div></div>
+<div class="top-bar"><h1>CULTURA</h1><div class="meta"><span class="cnt">28 culturae</span><a href="index.html">← Ad Indicem</a></div></div>
 <div class="divider"><span>✦ HISTORIA ARTIUM ✦</span></div>
 <div class="search-area">
-<input type="text" id="search" placeholder="人物・作品・地域・時代で検索">
+<input type="text" id="search" placeholder="Quaere — 人物・作品・地域・時代で検索">
 <span class="result" id="result"></span>
 <span class="hint">★ = 本文ヒット</span>
 </div>
 <div class="nav-pills">
-<a href="#sec-ancient" style="border-color:#d4c08844;color:#776531">Ⅰ. 古代 ― オリエント・地中海</a>
-<a href="#sec-ancient_asia" style="border-color:#d4888844;color:#773131">Ⅱ. 古代 ― インド・中国</a>
-<a href="#sec-medieval_west" style="border-color:#88d4b044;color:#317756">Ⅲ. 中世 ― ビザンツ・イスラーム・イラン</a>
-<a href="#sec-medieval_asia" style="border-color:#88b0d444;color:#315677">Ⅳ. 中世 ― 東・東南アジア</a>
-<a href="#sec-early_modern_asia" style="border-color:#d4a08844;color:#774731">Ⅴ. 近世 ― アジアの文化</a>
-<a href="#sec-early_modern_europe" style="border-color:#b088d444;color:#563177">Ⅵ. 近世 ― ヨーロッパの変革</a>
-<a href="#sec-modern" style="border-color:#d4c08844;color:#776531">Ⅶ. 近代 ― 科学革命と19世紀</a>
-<a href="#sec-contemporary" style="border-color:#88d4b044;color:#317756">Ⅷ. 現代 ― 20-21世紀</a>
+<a href="#sec-ancient" style="border-color:#d4c08844;color:#d4c088">Ⅰ. 古代 ― オリエント・地中海</a>
+<a href="#sec-ancient_asia" style="border-color:#d4888844;color:#d48888">Ⅱ. 古代 ― インド・中国</a>
+<a href="#sec-medieval_west" style="border-color:#88d4b044;color:#88d4b0">Ⅲ. 中世 ― ビザンツ・イスラーム・イラン</a>
+<a href="#sec-medieval_asia" style="border-color:#88b0d444;color:#88b0d4">Ⅳ. 中世 ― 東・東南アジア</a>
+<a href="#sec-early_modern_asia" style="border-color:#d4a08844;color:#d4a088">Ⅴ. 近世 ― アジアの文化</a>
+<a href="#sec-early_modern_europe" style="border-color:#b088d444;color:#b088d4">Ⅵ. 近世 ― ヨーロッパの変革</a>
+<a href="#sec-modern" style="border-color:#d4c08844;color:#d4c088">Ⅶ. 近代 ― 科学革命と19世紀</a>
+<a href="#sec-contemporary" style="border-color:#88d4b044;color:#88d4b0">Ⅷ. 現代 ― 20-21世紀</a>
 </div>
 <div class="content">
 <section class="sec" id="sec-ancient">
-<div class="sec-hdr"><span class="sec-icon" style="color:#776531">Ⅰ</span><h2>古代 ― オリエント・地中海 <span class="latin">Antiquitas Mediterranea</span></h2><span class="sec-cnt">5件</span></div>
+<div class="sec-hdr"><span class="sec-icon" style="color:#d4c088">Ⅰ</span><h2>古代 ― オリエント・地中海 <span class="latin">Antiquitas Mediterranea</span></h2><span class="sec-cnt">5 items</span></div>
 <div class="sec-grid">
 <a href="cultura_ancient_orient.html" class="card" data-title="古代オリエント文化 メソポタミア・エジプト・ヘブライの源流" data-kw="[&quot;★アラム語・アラム文字 ― 古代世界の交易共通語&quot;, &quot;★エジプト多神教 ― ラー・アメン・オシリス&quot;, &quot;★エジプト文字とシャンポリオンの解読&quot;, &quot;★ギルガメシュ叙事詩と洪水伝説&quot;, &quot;★シュメールの多神教世界&quot;, &quot;★ハンムラビ法典の精神 ― 「目には目を」&quot;, &quot;★バビロン捕囚と離散 ― 預言者の登場&quot;, &quot;★フェニキア文字とアルファベットの誕生&quot;, &quot;★ヘブライ人の宗教 ― ヤハウェ信仰の確立&quot;, &quot;★初期王朝美術 ― ウルのスタンダード&quot;, &quot;★旧約聖書 ― 創世記からダニエル書まで&quot;, &quot;★暦と占星術&quot;, &quot;★来世観と葬送 ― マスタバ・ピラミッド・死者の書&quot;, &quot;★楔形文字と粘土板 ― 解読史&quot;, &quot;アッシュル&quot;, &quot;アテン&quot;, &quot;アブ=シンベル神殿&quot;, &quot;アブラハム&quot;, &quot;アメン&quot;, &quot;アメン=ラー&quot;, &quot;アラム文字&quot;, &quot;アラム語&quot;, &quot;イザヤ&quot;, &quot;ウル=ナンム法典&quot;, &quot;ウルのスタンダード&quot;, &quot;ウーリー&quot;, &quot;エシュヌンナ法典&quot;, &quot;エジプトの実用科学 ― 太陽暦・測地術&quot;, &quot;エジプトはナイルのたまもの&quot;, &quot;エジプト宗教・葬制&quot;, &quot;エジプト神殿建築 ― オベリスク・カルナック・ルクソール・アブ=シンベル&quot;, &quot;エレミヤ&quot;, &quot;エンリル&quot;, &quot;オシリス&quot;, &quot;オベリスク&quot;, &quot;カルナック神殿&quot;, &quot;ギリシア文字(アルファベット)&quot;, &quot;ギルガメシュ&quot;, &quot;ギルガメシュ叙事詩&quot;, &quot;グローテフェント&quot;, &quot;シナイ山&quot;, &quot;シャンポリオン&quot;, &quot;シュメール法&quot;, &quot;ジッグラト&quot;, &quot;スフィンクス&quot;, &quot;ディアスポラ(民族離散)&quot;, &quot;ノア&quot;, &quot;ハンムラビ法典&quot;, &quot;ピラミッド&quot;, &quot;フェニキア文字&quot;, &quot;ヘブライ宗教・一神教&quot;, &quot;ヘブライ文字&quot;, &quot;ホルス&quot;, &quot;マスタバ&quot;, &quot;マルドゥク&quot;, &quot;ミイラ&quot;, &quot;メソポタミア宗教&quot;, &quot;モーセ&quot;, &quot;ヤハウェ&quot;, &quot;ユダヤ教&quot;, &quot;ラー&quot;, &quot;リピト=イシュタル法典&quot;, &quot;ルクソール神殿&quot;, &quot;ロゼッタ&quot;, &quot;ロゼッタ=ストーン&quot;, &quot;一神教&quot;, &quot;一週七日制&quot;, &quot;創世記&quot;, &quot;十戒&quot;, &quot;占星術&quot;, &quot;嘆きの壁&quot;, &quot;多神教&quot;, &quot;太陰太陽暦&quot;, &quot;太陰暦&quot;, &quot;太陽暦&quot;, &quot;復讐法(同害復讐法)&quot;, &quot;救世主(メシア)&quot;, &quot;文字の伝播&quot;, &quot;旧約聖書&quot;, &quot;楔形文字&quot;, &quot;楔形文字・暦・法&quot;, &quot;死者の書&quot;, &quot;民用文字(デモティック)&quot;, &quot;測地術&quot;, &quot;目には目を、歯には歯を&quot;, &quot;神官文字(ヒエラティック)&quot;, &quot;神聖文字(ヒエログリフ)&quot;, &quot;身分制社会&quot;, &quot;選民思想&quot;, &quot;預言者&quot;]"><div class="card-main">古代オリエント文化</div><div class="card-sub">メソポタミア・エジプト・ヘブライの源流</div></a>
 <a href="cultura_ancient_greece.html" class="card" data-title="古代ギリシア文化 神話・哲学・劇・美術" data-kw="[&quot;★イオニア自然哲学 ― 「アルケー」を求める知&quot;, &quot;★エーゲ世界の地理 ― 神話と歴史の舞台&quot;, &quot;★エーゲ文明解読史 ― エヴァンズ・シュリーマン・ヴェントリス&quot;, &quot;★クレタ神話 ― ミノス王とミノタウロス&quot;, &quot;★ソフィストとソクラテス ― 知の転換&quot;, &quot;★プラトンとアリストテレス ― 古代哲学の双璧&quot;, &quot;★ヘシオドスとサッフォー ― 教訓詩と叙情詩&quot;, &quot;★ホメロス ― 西洋文学最古の叙事詩&quot;, &quot;★ミケーネ伝承 ― アガメムノンとトロイア戦争&quot;, &quot;★三大悲劇詩人と喜劇 ― アテネ演劇の黄金期&quot;, &quot;★医学と歴史記述 ― ヒポクラテス・ヘロドトス・トゥキディデス&quot;, &quot;★古典期彫刻 ― フェイディアスとミュロン&quot;, &quot;★神殿建築の三様式と代表作&quot;, &quot;アイスキュロス&quot;, &quot;アガメムノン&quot;, &quot;アキレウス&quot;, &quot;アテナ&quot;, &quot;アテナ女神像&quot;, &quot;アナクサゴラス&quot;, &quot;アナクシマンドロス&quot;, &quot;アナクシメネス&quot;, &quot;アナクレオン&quot;, &quot;アナバシス&quot;, &quot;アフロディテ&quot;, &quot;アポロン&quot;, &quot;アリストテレス&quot;, &quot;アリストファネス&quot;, &quot;アルテミス&quot;, &quot;イオニア式&quot;, &quot;イオニア自然哲学&quot;, &quot;イクティノス&quot;, &quot;イソクラテス&quot;, &quot;イデア&quot;, &quot;イリアス&quot;, &quot;エウリピデス&quot;, &quot;エレクトラ&quot;, &quot;エンペドクレス&quot;, &quot;エヴァンズ&quot;, &quot;エーゲ海&quot;, &quot;オデュッセイア&quot;, &quot;オデュッセウス&quot;, &quot;オリンピア&quot;, &quot;オリンピアの祭典&quot;, &quot;オリンポス12神&quot;, &quot;オリンポス山&quot;, &quot;カリクラテス&quot;, &quot;ギリシア人&quot;, &quot;ギリシア神話&quot;, &quot;クセノファネス&quot;, &quot;クセノフォン&quot;, &quot;クレタ島&quot;, &quot;コス島&quot;, &quot;コリントス同盟&quot;, &quot;コリント式&quot;, &quot;サッフォー&quot;, &quot;シノペ&quot;, &quot;シュリーマン&quot;, &quot;シラクサ&quot;, &quot;ゼウス&quot;, &quot;ゼウス=オリンピオス神殿&quot;, &quot;ソクラテス&quot;, &quot;ソフィスト&quot;, &quot;ソフォクレス&quot;, &quot;タレス&quot;, &quot;テオス&quot;, &quot;ディオゲネス&quot;, &quot;ディオニュソス&quot;, &quot;デメテル&quot;, &quot;デモクリトス&quot;, &quot;デモステネス&quot;, &quot;デルフォイ&quot;, &quot;デルフォイの神託&quot;, &quot;トゥキディデス&quot;, &quot;ドーリア式(ドリス式)&quot;, &quot;ニケ神殿&quot;, &quot;パルテノン神殿&quot;, &quot;パルメニデス&quot;, &quot;ヒポクラテス&quot;, &quot;ピタゴラス&quot;, &quot;ピタゴラスの定理&quot;, &quot;ピタゴラス学派&quot;, &quot;ピンダロス&quot;, &quot;フェイディアス(ペイディアス)&quot;, &quot;プラクシテレス&quot;, &quot;プラトン&quot;, &quot;プロタゴラス&quot;, &quot;プロメテウス&quot;, &quot;ヘクトール&quot;, &quot;ヘシオドス&quot;, &quot;ヘスティア&quot;, &quot;ヘファイストス&quot;, &quot;ヘラ&quot;, &quot;ヘラクレイトス&quot;, &quot;ヘラクレス&quot;, &quot;ヘルメス神像&quot;, &quot;ヘロドトス&quot;, &quot;ペロポネソス半島&quot;, &quot;ホメロス&quot;, &quot;ポセイドン&quot;, &quot;ミノス&quot;, &quot;ミノタウロス&quot;, &quot;ミュロン&quot;, &quot;ヴェントリス&quot;, &quot;万物の尺度は人間(人間は万物の尺度)&quot;, &quot;労働と日々(仕事と日々)&quot;, &quot;原子論&quot;, &quot;叙事詩と神話&quot;, &quot;古典期哲学・劇・歴史&quot;, &quot;古典期美術と建築&quot;, &quot;四元素説&quot;, &quot;形而上学&quot;, &quot;歴史&quot;, &quot;無知の知&quot;, &quot;知徳合一&quot;, &quot;神統記(テオゴニア)&quot;, &quot;神話と解読史&quot;, &quot;線文字A&quot;, &quot;線文字B&quot;, &quot;自然哲学&quot;, &quot;自然学&quot;]"><div class="card-main">古代ギリシア文化</div><div class="card-sub">神話・哲学・劇・美術</div></a>
@@ -175,14 +108,14 @@ html[data-theme="lux"] .asm-type { display:none !important; }
 </div>
 </section>
 <section class="sec" id="sec-ancient_asia">
-<div class="sec-hdr"><span class="sec-icon" style="color:#773131">Ⅱ</span><h2>古代 ― インド・中国 <span class="latin">Antiquitas Asiatica</span></h2><span class="sec-cnt">2件</span></div>
+<div class="sec-hdr"><span class="sec-icon" style="color:#d48888">Ⅱ</span><h2>古代 ― インド・中国 <span class="latin">Antiquitas Asiatica</span></h2><span class="sec-cnt">2 items</span></div>
 <div class="sec-grid">
 <a href="cultura_india_ancient.html" class="card" data-title="古代インド文化 ヴェーダ・仏教・ヒンドゥー・サンスクリット" data-kw="[&quot;★ヒンドゥー教成立とグプタ朝文化&quot;, &quot;★ヴェーダ時代とバラモン教&quot;, &quot;★古代インドの終末 ― ヴァルダナ朝とエフタル&quot;, &quot;★大乗仏教とガンダーラ美術&quot;, &quot;アショーカ王&quot;, &quot;アタルヴァ=ヴェーダ&quot;, &quot;アルジュナ&quot;, &quot;インドラ&quot;, &quot;エフタル&quot;, &quot;エリュトゥラー海案内記&quot;, &quot;カナウジ&quot;, &quot;カーリダーサ&quot;, &quot;ガンダーラ美術&quot;, &quot;クマーラグプタ1世&quot;, &quot;グプタ様式&quot;, &quot;サーマ=ヴェーダ&quot;, &quot;シャクンタラー&quot;, &quot;シャンカラ&quot;, &quot;シーター&quot;, &quot;セイロン島布教&quot;, &quot;ゼロの概念&quot;, &quot;タミル語&quot;, &quot;ダルマ&quot;, &quot;ハルシャ王&quot;, &quot;バラタ族&quot;, &quot;バラモン&quot;, &quot;バラモン教&quot;, &quot;パーリ語&quot;, &quot;ヒンドゥー教&quot;, &quot;ヒンドゥー教 グプタ朝文化&quot;, &quot;ブラフマー&quot;, &quot;マトゥラー&quot;, &quot;マヌ&quot;, &quot;マヌ法典&quot;, &quot;マハーバーラタ&quot;, &quot;ヤジュル=ヴェーダ&quot;, &quot;ヤムナー川&quot;, &quot;ラーマ&quot;, &quot;ラーマーヤナ&quot;, &quot;リグ=ヴェーダ&quot;, &quot;ヴァルダナ朝&quot;, &quot;ヴァルダナ朝 エフタル&quot;, &quot;ヴァルダマーナ&quot;, &quot;ヴァルナ&quot;, &quot;ヴァールミーキ&quot;, &quot;ヴィシュヌ&quot;, &quot;ヴェーダ&quot;, &quot;ヴェーダ時代 バラモン教&quot;, &quot;上座部仏教&quot;, &quot;中観派&quot;, &quot;仏典結集&quot;, &quot;仏教&quot;, &quot;八正道&quot;, &quot;前期チャールキヤ朝&quot;, &quot;大乗仏教&quot;, &quot;大乗仏教 ガンダーラ美術&quot;, &quot;小乗仏教&quot;, &quot;玄奘三蔵&quot;, &quot;磨崖碑+石柱碑&quot;, &quot;菩薩信仰&quot;, &quot;輪廻転生&quot;, &quot;部派仏教&quot;]"><div class="card-main">古代インド文化</div><div class="card-sub">ヴェーダ・仏教・ヒンドゥー・サンスクリット</div></a>
 <a href="cultura_china_ancient.html" class="card" data-title="古代中国文化 諸子百家・五経・史記・漢代科学" data-kw="[&quot;★司馬遷『史記』と紀伝体の創始&quot;, &quot;★殷墟の発掘 ― 甲骨文字と青銅器の祭祀文化&quot;, &quot;★法家・墨家・兵家・縦横家・名家・陰陽家・農家&quot;, &quot;★漢代儒学 ― 五経の国教化と訓詁学&quot;, &quot;★紙の発明・「漢委奴国王」金印・仏教伝来&quot;, &quot;★諸子百家の登場 ― 儒家と道家&quot;, &quot;★金文・春秋・戦国策・楚辞 ― 周代から戦国期の古典&quot;, &quot;世家&quot;, &quot;二里頭文化&quot;, &quot;五経&quot;, &quot;五経博士&quot;, &quot;仏教伝来&quot;, &quot;傷寒論&quot;, &quot;儒学&quot;, &quot;儒家&quot;, &quot;公孫竜&quot;, &quot;兵家&quot;, &quot;列伝&quot;, &quot;劉向&quot;, &quot;劉知幾&quot;, &quot;古典編纂&quot;, &quot;史記&quot;, &quot;司馬遷&quot;, &quot;名家&quot;, &quot;呉子&quot;, &quot;墨子&quot;, &quot;墨家&quot;, &quot;天人相関説&quot;, &quot;孔子&quot;, &quot;孟子&quot;, &quot;孫子&quot;, &quot;孫臏&quot;, &quot;宋玉&quot;, &quot;屈原&quot;, &quot;張仲景&quot;, &quot;張儀&quot;, &quot;後漢書&quot;, &quot;後漢書東夷伝&quot;, &quot;性善説&quot;, &quot;性悪説&quot;, &quot;戦国策&quot;, &quot;断代史&quot;, &quot;春秋&quot;, &quot;李斯&quot;, &quot;李陵&quot;, &quot;楚辞&quot;, &quot;武帝&quot;, &quot;殷の文字&quot;, &quot;殷墟&quot;, &quot;法家&quot;, &quot;漢代儒学・後漢文化&quot;, &quot;漢委奴国王印&quot;, &quot;漢書&quot;, &quot;災異説&quot;, &quot;無為自然&quot;, &quot;王国維&quot;, &quot;班固&quot;, &quot;班昭&quot;, &quot;甲骨文字&quot;, &quot;紀伝体&quot;, &quot;紀伝体史学&quot;, &quot;縦横家&quot;, &quot;羅振玉&quot;, &quot;老子&quot;, &quot;荀子&quot;, &quot;荘子&quot;, &quot;華夷思想&quot;, &quot;董仲舒&quot;, &quot;蔡倫&quot;, &quot;蘇秦&quot;, &quot;訓詁学&quot;, &quot;許行&quot;, &quot;説文解字&quot;, &quot;論語&quot;, &quot;諸子百家&quot;, &quot;諸子百家(1)&quot;, &quot;諸子百家(2)&quot;, &quot;農家&quot;, &quot;道家&quot;, &quot;郭沫若&quot;, &quot;鄒衍&quot;, &quot;鄭玄&quot;, &quot;金印&quot;, &quot;陰陽五行説&quot;, &quot;陰陽家&quot;, &quot;韓非&quot;, &quot;馬融&quot;, &quot;鬼谷子&quot;, &quot;黄帝&quot;, &quot;黄老の政治思想&quot;]"><div class="card-main">古代中国文化</div><div class="card-sub">諸子百家・五経・史記・漢代科学</div></a>
 </div>
 </section>
 <section class="sec" id="sec-medieval_west">
-<div class="sec-hdr"><span class="sec-icon" style="color:#317756">Ⅲ</span><h2>中世 ― ビザンツ・イスラーム・イラン <span class="latin">Medii Aevi Orientis</span></h2><span class="sec-cnt">4件</span></div>
+<div class="sec-hdr"><span class="sec-icon" style="color:#88d4b0">Ⅲ</span><h2>中世 ― ビザンツ・イスラーム・イラン <span class="latin">Medii Aevi Orientis</span></h2><span class="sec-cnt">4 items</span></div>
 <div class="sec-grid">
 <a href="cultura_byzantine.html" class="card" data-title="ビザンツ文化 正教・聖像・東方正教世界" data-kw="[&quot;★サン=ヴィターレ聖堂とモザイク壁画 ― ビザンツ美術の頂点&quot;, &quot;★ハギア=ソフィア聖堂とビザンツ建築様式&quot;, &quot;★ビザンツ文化 ― ギリシア正教世界の成立&quot;, &quot;★ロシア正教と「第三のローマ」 ― スラブ世界へのビザンツ文化伝播&quot;, &quot;★絹織物産業 ― ビザンツ経済を支えた工芸&quot;, &quot;★聖像崇拝論争とイコン ― ビザンツ宗教文化の二度の危機&quot;, &quot;イコン&quot;, &quot;ウラディミル1世&quot;, &quot;キュリロス&quot;, &quot;キリル文字&quot;, &quot;ギリシア正教徒の保護&quot;, &quot;ギリシア正教徒の保護 ― 東方問題に至るビザンツ文化の遺産&quot;, &quot;サン=ヴィターレ聖堂&quot;, &quot;スラブ世界への伝播&quot;, &quot;ツァーリ&quot;, &quot;テオドラ&quot;, &quot;ニカの乱&quot;, &quot;ハギア=ソフィア聖堂&quot;, &quot;ハギア=ソフィア聖堂・サン=ヴィターレ聖堂・モザイク壁画・イコン・聖像崇拝論争・正教(ローマ=カトリックとの分離)&quot;, &quot;バシリカ様式&quot;, &quot;ビザンツ文化&quot;, &quot;ビザンツ文化の総体&quot;, &quot;ビザンツ様式&quot;, &quot;メトディオス&quot;, &quot;モザイク壁画&quot;, &quot;ユスティニアヌス大帝&quot;, &quot;ラヴェンナ&quot;, &quot;ラヴェンナのモザイク&quot;, &quot;ロシア正教&quot;, &quot;ローマ=カトリック教会&quot;, &quot;地中海帝国&quot;, &quot;後世への遺産&quot;, &quot;正教&quot;, &quot;第三のローマ&quot;, &quot;絹織物産業&quot;, &quot;聖像崇拝論争&quot;, &quot;聖像崇拝論争とイコン&quot;]"><div class="card-main">ビザンツ文化</div><div class="card-sub">正教・聖像・東方正教世界</div></a>
 <a href="cultura_islamic.html" class="card" data-title="イスラーム文化 コーラン・哲学・科学・建築" data-kw="[&quot;12世紀ルネサンス&quot;, &quot;★アラビア語文化圏と固有学問の成立&quot;, &quot;★イスラーム建築・文芸 ― モスクから千夜一夜まで&quot;, &quot;★イスラーム文化のヨーロッパへの伝播 ― 12世紀ルネサンス&quot;, &quot;★イスラーム神秘主義・哲学・歴史学&quot;, &quot;アラビア語&quot;, &quot;アラビア語と 固有学問&quot;, &quot;アルハンブラ宮殿&quot;, &quot;アヴィケンナ&quot;, &quot;イジュマー&quot;, &quot;イスラム文化&quot;, &quot;イブン=アラビー&quot;, &quot;イブン=シーナー&quot;, &quot;イブン=トゥールーン&quot;, &quot;イブン=ハルドゥーン&quot;, &quot;イブン=バットゥータ&quot;, &quot;イブン=ルシュド&quot;, &quot;ガブリエル&quot;, &quot;キヤース&quot;, &quot;グラナダ&quot;, &quot;コーラン&quot;, &quot;ザカート&quot;, &quot;シャー=ナーメ&quot;, &quot;シーラーズ&quot;, &quot;スーフィズム&quot;, &quot;スーフィー&quot;, &quot;タバリー&quot;, &quot;タラス河畔の戦い&quot;, &quot;ディルハム銀貨&quot;, &quot;ディーナール金貨&quot;, &quot;ナスル朝&quot;, &quot;ニザーミーヤ学院&quot;, &quot;ハッジ&quot;, &quot;ハーフィズ&quot;, &quot;ビールーニー&quot;, &quot;ブハーリー&quot;, &quot;ベルベル人&quot;, &quot;マグリブ&quot;, &quot;マドラサ&quot;, &quot;マラケシュ&quot;, &quot;ムーア人&quot;, &quot;モスク&quot;, &quot;ヨーロッパへ 伝播&quot;, &quot;ラシードゥッディーン&quot;, &quot;レコンキスタ&quot;, &quot;世界史序説&quot;, &quot;六信五行&quot;, &quot;写本絵画&quot;, &quot;医学典範&quot;, &quot;千夜一夜物語&quot;, &quot;四行詩集&quot;, &quot;大旅行記&quot;, &quot;市場&quot;, &quot;年代記&quot;, &quot;建築と文芸&quot;, &quot;知恵の館&quot;, &quot;神秘主義・哲学 歴史学&quot;, &quot;神秘主義教団&quot;, &quot;翻訳学校&quot;, &quot;聖者&quot;, &quot;薔薇園&quot;, &quot;製紙法の西伝&quot;, &quot;集史&quot;]"><div class="card-main">イスラーム文化</div><div class="card-sub">コーラン・哲学・科学・建築</div></a>
@@ -191,7 +124,7 @@ html[data-theme="lux"] .asm-type { display:none !important; }
 </div>
 </section>
 <section class="sec" id="sec-medieval_asia">
-<div class="sec-hdr"><span class="sec-icon" style="color:#315677">Ⅳ</span><h2>中世 ― 東・東南アジア <span class="latin">Medii Aevi Asiae Orientalis</span></h2><span class="sec-cnt">5件</span></div>
+<div class="sec-hdr"><span class="sec-icon" style="color:#88b0d4">Ⅳ</span><h2>中世 ― 東・東南アジア <span class="latin">Medii Aevi Asiae Orientalis</span></h2><span class="sec-cnt">5 items</span></div>
 <div class="sec-grid">
 <a href="cultura_india_medieval.html" class="card" data-title="中世インド文化 バクティ・スーフィー・インド=イスラーム文化" data-kw="[&quot;★アジャンター石窟 ― 仏教絵画の傑作&quot;, &quot;★エローラ石窟 ― 三宗教共存の聖地&quot;, &quot;★グプタ朝の宮廷とサンスクリット古典文学&quot;, &quot;★ナーランダー僧院 ― 大乗仏教の最高学府&quot;, &quot;★バクティ運動 ― 中世ヒンドゥー教の民衆宗教運動&quot;, &quot;アジャンター&quot;, &quot;アジャンター石窟寺院&quot;, &quot;エローラ&quot;, &quot;エローラ石窟寺院&quot;, &quot;カイラーサナータ寺院&quot;, &quot;カーリダーサ&quot;, &quot;サンスクリット&quot;, &quot;サンスクリット古典&quot;, &quot;サンスクリット文学&quot;, &quot;シャクンタラー&quot;, &quot;ゼロの概念&quot;, &quot;タミル語&quot;, &quot;ナーランダー&quot;, &quot;ナーランダー僧院&quot;, &quot;バクティ運動&quot;, &quot;ヨーガ&quot;, &quot;三宗教共存&quot;, &quot;仏教の最高学府&quot;, &quot;仏教絵画の傑作&quot;, &quot;玄奘&quot;, &quot;義浄&quot;, &quot;香辛料&quot;]"><div class="card-main">中世インド文化</div><div class="card-sub">バクティ・スーフィー・インド=イスラーム文化</div></a>
 <a href="cultura_china_medieval.html" class="card" data-title="中世中国文化 六朝・隋唐の仏教・詩・書道" data-kw="[&quot;★六朝文化 ― 江南の貴族文化、文選・山水詩・書聖王羲之・画聖顧愷之&quot;, &quot;★南北朝の仏教受容と道教の成立、敦煌・雲崗・竜門の石窟寺院&quot;, &quot;★南北朝期の地理・農学・数学 ― 酈道元『水経注』、賈思勰『斉民要術』、祖沖之の円周率&quot;, &quot;★唐代仏教の諸宗派と外来宗教 ― 国際宗教都市長安&quot;, &quot;★玄奘の西行と訳経事業 ― 法相宗の創始、義浄の海路求法、五経正義の編纂&quot;, &quot;★盛唐-中唐の文化 ― 李白・杜甫・白居易、古文復興、チベット文字、仏国寺&quot;, &quot;★魏晋玄学・清談・竹林の七賢 ― 後漢末の儒教崩壊から隠逸詩人陶淵明まで&quot;, &quot;カンツー&quot;, &quot;シュリーヴィジャヤ&quot;, &quot;ソグド商人&quot;, &quot;チベット仏教&quot;, &quot;チベット文字&quot;, &quot;ナーランダー僧院&quot;, &quot;ペリオ&quot;, &quot;ポロ&quot;, &quot;ムスリム商人&quot;, &quot;五経正義&quot;, &quot;仏図澄&quot;, &quot;仏国寺&quot;, &quot;仏国記&quot;, &quot;仏教&quot;, &quot;仏教と道教&quot;, &quot;伊水&quot;, &quot;傷寒論&quot;, &quot;六朝の実用学&quot;, &quot;六朝文化&quot;, &quot;六朝文学美術&quot;, &quot;冊封体制&quot;, &quot;南海寄帰内法伝&quot;, &quot;吐蕃&quot;, &quot;唐代の書画と都城制 ― 楷書の四大家と長安・洛陽の都市計画&quot;, &quot;唐蕃会盟碑&quot;, &quot;唐詩と周辺文化&quot;, &quot;善導&quot;, &quot;四六駢儷体&quot;, &quot;大唐西域記&quot;, &quot;大秦景教流行中国碑&quot;, &quot;天台宗&quot;, &quot;天台山&quot;, &quot;女史箴図&quot;, &quot;寇謙之&quot;, &quot;山水画&quot;, &quot;山水詩&quot;, &quot;山濤&quot;, &quot;嵆康&quot;, &quot;嵩山&quot;, &quot;張仲景&quot;, &quot;張華&quot;, &quot;後秦&quot;, &quot;恵果&quot;, &quot;慧遠&quot;, &quot;抱朴子&quot;, &quot;揚州&quot;, &quot;敦煌&quot;, &quot;文選&quot;, &quot;斉民要術&quot;, &quot;昭明太子&quot;, &quot;景教&quot;, &quot;智顗&quot;, &quot;最澄&quot;, &quot;朝貢&quot;, &quot;李白&quot;, &quot;杜甫&quot;, &quot;柳宗元&quot;, &quot;模写&quot;, &quot;欧陽詢&quot;, &quot;武陽&quot;, &quot;水経注&quot;, &quot;法相宗&quot;, &quot;法顕&quot;, &quot;浄土宗&quot;, &quot;清談&quot;, &quot;玄奘&quot;, &quot;玄奘と義浄&quot;, &quot;玄学・清談&quot;, &quot;王羲之&quot;, &quot;白居易&quot;, &quot;真言宗&quot;, &quot;祆教&quot;, &quot;祖沖之&quot;, &quot;神仙思想&quot;, &quot;禅宗&quot;, &quot;空海&quot;, &quot;竜門&quot;, &quot;竹林の七賢&quot;, &quot;義浄&quot;, &quot;老荘思想&quot;, &quot;莫高窟&quot;, &quot;蘭亭序&quot;, &quot;虞世南&quot;, &quot;褚遂良&quot;, &quot;西域の文化&quot;, &quot;謝霊運&quot;, &quot;賈思勰&quot;, &quot;道教&quot;, &quot;達磨&quot;, &quot;都城制&quot;, &quot;酈道元&quot;, &quot;閻立本&quot;, &quot;阮籍&quot;, &quot;陳寿&quot;, &quot;陶潜&quot;, &quot;雲崗&quot;, &quot;韓愈&quot;, &quot;顔真卿&quot;, &quot;顧愷之&quot;, &quot;鳩摩羅什&quot;]"><div class="card-main">中世中国文化</div><div class="card-sub">六朝・隋唐の仏教・詩・書道</div></a>
@@ -201,13 +134,13 @@ html[data-theme="lux"] .asm-type { display:none !important; }
 </div>
 </section>
 <section class="sec" id="sec-early_modern_asia">
-<div class="sec-hdr"><span class="sec-icon" style="color:#774731">Ⅴ</span><h2>近世 ― アジアの文化 <span class="latin">Aetas Recens Asiatica</span></h2><span class="sec-cnt">1件</span></div>
+<div class="sec-hdr"><span class="sec-icon" style="color:#d4a088">Ⅴ</span><h2>近世 ― アジアの文化 <span class="latin">Aetas Recens Asiatica</span></h2><span class="sec-cnt">1 items</span></div>
 <div class="sec-grid">
 <a href="cultura_china_ming_qing.html" class="card" data-title="明清文化 陽明学・考証学・小説" data-kw="[&quot;★イエズス会の中国布教 ─ マテオ=リッチからカスティリオーネ&quot;, &quot;★明代の編纂事業と通俗文学&quot;, &quot;★明末の実学と西学東漸&quot;, &quot;★清朝の文化事業と通俗文学の発達&quot;, &quot;アダム=シャール&quot;, &quot;カスティリオーネ&quot;, &quot;クレメンス11世&quot;, &quot;シノワズリ&quot;, &quot;フェルビースト&quot;, &quot;ブーヴェ&quot;, &quot;マテオ=リッチ&quot;, &quot;マテオ=リッチ 西洋宣教師の東漸&quot;, &quot;レジス&quot;, &quot;三国志演義&quot;, &quot;会館&quot;, &quot;儒林外史&quot;, &quot;公所&quot;, &quot;典礼問題&quot;, &quot;円明園&quot;, &quot;古今図書集成&quot;, &quot;呉承恩&quot;, &quot;呉敬梓&quot;, &quot;四大奇書&quot;, &quot;四庫全書&quot;, &quot;坤輿万国全図&quot;, &quot;天工開物&quot;, &quot;孫悟空&quot;, &quot;宋応星&quot;, &quot;実学&quot;, &quot;山西商人&quot;, &quot;崇禎暦書&quot;, &quot;康熙字典&quot;, &quot;徐光啓&quot;, &quot;徽州&quot;, &quot;徽州商人&quot;, &quot;心即理&quot;, &quot;抗租&quot;, &quot;明夷待訪録&quot;, &quot;明末の実学 徐光啓と宋応星&quot;, &quot;明清交替期の編纂事業 四大奇書&quot;, &quot;曹雪芹&quot;, &quot;本草綱目&quot;, &quot;李時珍&quot;, &quot;李贄&quot;, &quot;東林書院&quot;, &quot;東林派&quot;, &quot;梁山泊&quot;, &quot;水滸伝&quot;, &quot;永楽大典&quot;, &quot;清朝の編纂事業 四庫全書と紅楼夢&quot;, &quot;特権商人&quot;, &quot;王守仁&quot;, &quot;考証学&quot;, &quot;致良知&quot;, &quot;蒲松齢&quot;, &quot;西遊記&quot;, &quot;講談&quot;, &quot;貴州省&quot;, &quot;賈宝玉&quot;, &quot;農政全書&quot;, &quot;郷紳&quot;, &quot;黄宗羲&quot;]"><div class="card-main">明清文化</div><div class="card-sub">陽明学・考証学・小説</div></a>
 </div>
 </section>
 <section class="sec" id="sec-early_modern_europe">
-<div class="sec-hdr"><span class="sec-icon" style="color:#563177">Ⅵ</span><h2>近世 ― ヨーロッパの変革 <span class="latin">Aetas Recens Europaea</span></h2><span class="sec-cnt">5件</span></div>
+<div class="sec-hdr"><span class="sec-icon" style="color:#b088d4">Ⅵ</span><h2>近世 ― ヨーロッパの変革 <span class="latin">Aetas Recens Europaea</span></h2><span class="sec-cnt">5 items</span></div>
 <div class="sec-grid">
 <a href="cultura_medieval_europe.html" class="card" data-title="中世ヨーロッパ文化 スコラ哲学・ゴシック・騎士道" data-kw="[&quot;12世紀ルネサンス&quot;, &quot;★カトリック教会の階層制と教皇権の確立&quot;, &quot;★中世大学の成立とスコラ哲学・普遍論争&quot;, &quot;★中世西欧の封建社会 ─ 領主・諸侯・騎士と荘園制&quot;, &quot;★中世西欧の建築と文学 ─ 大聖堂とロマンス&quot;, &quot;★中世都市の自治とギルド・ハンザ同盟&quot;, &quot;★修道会運動と中世修道院文化&quot;, &quot;★十字軍運動と中世西欧の巡礼文化&quot;, &quot;★教皇権の凋落・アヴィニョン捕囚・宗教改革の先駆者&quot;, &quot;★農業革命と封建社会の動揺・農民一揆&quot;, &quot;アウクスブルク&quot;, &quot;アダムが耕しイヴが紡いだ時、だれが貴族であったか&quot;, &quot;アッシジ&quot;, &quot;アナーニ&quot;, &quot;アベラール&quot;, &quot;アレクシオス1世&quot;, &quot;アンセルムス&quot;, &quot;アヴィニョン&quot;, &quot;アヴィニョン捕囚&quot;, &quot;アーサー&quot;, &quot;アーサー王物語&quot;, &quot;イドリーシー&quot;, &quot;インノケンティウス3世&quot;, &quot;ウィクリフ&quot;, &quot;ウィリアム=オブ=オッカム&quot;, &quot;オクスフォード大学&quot;, &quot;カノッサ&quot;, &quot;ガレノス&quot;, &quot;ギルド&quot;, &quot;クリュニー&quot;, &quot;クリュニー修道院&quot;, &quot;クリームヒルト&quot;, &quot;クレメンス5世&quot;, &quot;クレルモン宗教会議&quot;, &quot;グレゴリウス11世&quot;, &quot;ケルン大聖堂&quot;, &quot;ケンブリッジ大学&quot;, &quot;コムーネ&quot;, &quot;コンスタンツ公会議&quot;, &quot;ゴシック様式&quot;, &quot;サレルノ大学&quot;, &quot;サンティアゴ=デ=コンポステーラ&quot;, &quot;シトー&quot;, &quot;シトー修道会&quot;, &quot;シャルトル大聖堂&quot;, &quot;シャンパーニュ&quot;, &quot;シュパイアー&quot;, &quot;ジェラルド&quot;, &quot;ジャクリーの乱&quot;, &quot;ジョン=ボール&quot;, &quot;スコラ学&quot;, &quot;ステンドグラス&quot;, &quot;ツンフト闘争&quot;, &quot;テンプル騎士団&quot;, &quot;トマス=アクィナス&quot;, &quot;ドゥンス=スコトゥス&quot;, &quot;ドミニコ&quot;, &quot;ドミニコ修道会&quot;, &quot;ニーベルンゲンの歌&quot;, &quot;ノートルダム大聖堂&quot;, &quot;ハンザ同盟&quot;, &quot;バーゼル公会議&quot;, &quot;パリ大学&quot;, &quot;パレルモ&quot;, &quot;フス&quot;, &quot;フッガー家&quot;, &quot;フランチェスコ&quot;, &quot;フランチェスコ修道会&quot;, &quot;ブリュージュ&quot;, &quot;ベリー公の豪華時禱書&quot;, &quot;ベリー公ジャン&quot;, &quot;ベルナルドゥス&quot;, &quot;ボニファティウス8世&quot;, &quot;ボローニャ大学&quot;, &quot;メディチ家&quot;, &quot;モンテ=カシノ&quot;, &quot;ユダヤ人迫害&quot;, &quot;ヨハネ騎士団&quot;, &quot;ランス&quot;, &quot;ランブール兄弟&quot;, &quot;レオ9世&quot;, &quot;ロベール=ド=ソルボン&quot;, &quot;ロマネスク様式&quot;, &quot;ロンバルディア同盟&quot;, &quot;ローラン&quot;, &quot;ローランの歌&quot;, &quot;ワット=タイラーの乱&quot;, &quot;三学部&quot;, &quot;中世建築と文学 大聖堂と騎士道物語&quot;, &quot;中世都市&quot;, &quot;中世都市と商業ルネサンス ハンザとギルド&quot;, &quot;人頭税&quot;, &quot;保有地&quot;, &quot;修道会運動 スコラ哲学&quot;, &quot;修道院&quot;, &quot;修道院長&quot;, &quot;傭兵&quot;, &quot;北ヨーロッパ商業圏&quot;, &quot;十分の一税&quot;, &quot;十字軍と巡礼 聖地と聖人崇拝&quot;, &quot;司教&quot;, &quot;司教座都市&quot;, &quot;司祭&quot;, &quot;同職ギルド&quot;, &quot;吟遊詩人&quot;, &quot;唯名論&quot;, &quot;商人ギルド&quot;, &quot;地中海商業圏&quot;, &quot;大司教&quot;, &quot;大学&quot;, &quot;大学とスコラ哲学 普遍論争&quot;, &quot;大開墾時代&quot;, &quot;学寮&quot;, &quot;宗教騎士団&quot;, &quot;定期市&quot;, &quot;実在論&quot;, &quot;封土&quot;, &quot;封建反動&quot;, &quot;封建社会&quot;, &quot;封建社会の構造 領主と荘園&quot;, &quot;巡礼&quot;, &quot;市参事会&quot;, &quot;帝国教会政策&quot;, &quot;帝国都市&quot;, &quot;廷臣&quot;, &quot;徒弟&quot;, &quot;托鉢修道会&quot;, &quot;政治権力の中央集権化&quot;, &quot;教会大分裂&quot;, &quot;教会権威の確立 カノッサと叙任権闘争&quot;, &quot;教会法&quot;, &quot;教区教会&quot;, &quot;教皇権の凋落 宗教改革先駆者&quot;, &quot;普遍論争&quot;, &quot;東方貿易&quot;, &quot;水車&quot;, &quot;火器&quot;, &quot;然りと否&quot;, &quot;特許状&quot;, &quot;独立自営農民&quot;, &quot;生産物地代&quot;, &quot;異端審問&quot;, &quot;破門&quot;, &quot;祈り、働け&quot;, &quot;神学大全&quot;, &quot;第四回ラテラノ公会議&quot;, &quot;聖ヤコブ&quot;, &quot;聖職叙任権&quot;, &quot;聖職売買&quot;, &quot;聖職者の妻帯&quot;, &quot;職人&quot;, &quot;自営農民&quot;, &quot;自治権&quot;, &quot;自治都市&quot;, &quot;自由七科&quot;, &quot;荘園&quot;, &quot;親方&quot;, &quot;諸侯&quot;, &quot;貨幣地代&quot;, &quot;貨幣経済の普及&quot;, &quot;賦役&quot;, &quot;農奴解放&quot;, &quot;農業革命 封建社会の解体&quot;, &quot;農民一揆&quot;, &quot;遠隔地貿易&quot;, &quot;都市の空気は自由にする&quot;, &quot;都市同盟&quot;, &quot;都市法&quot;, &quot;重量有輪犂&quot;, &quot;鉄製農具&quot;, &quot;開放耕地制&quot;, &quot;階層制組織&quot;, &quot;領主&quot;, &quot;飛梁&quot;, &quot;騎士&quot;, &quot;騎士道物語&quot;, &quot;魔女裁判&quot;]"><div class="card-main">中世ヨーロッパ文化</div><div class="card-sub">スコラ哲学・ゴシック・騎士道</div></a>
 <a href="cultura_renaissance.html" class="card" data-title="ルネサンス文化 ヒューマニズム・絵画・印刷" data-kw="[&quot;★ルネサンスの起源とイタリア諸都市の繁栄&quot;, &quot;★ルネサンス文学 ─ 三大詩人と俗語文学&quot;, &quot;★ルネサンス美術 ─ ジョットから三大巨匠まで&quot;, &quot;アルノ川&quot;, &quot;イタリア三大詩人&quot;, &quot;エセー&quot;, &quot;エラスムス&quot;, &quot;エラスムス像&quot;, &quot;ガルガンチュア&quot;, &quot;ガルガンチュアとパンタグリュエルの物語&quot;, &quot;グーテンベルク&quot;, &quot;コジモ&quot;, &quot;コペルニクス&quot;, &quot;サン=ピエトロ大聖堂&quot;, &quot;サンタ=マリア大聖堂&quot;, &quot;サンチョ=パンサ&quot;, &quot;サヴォナローラ&quot;, &quot;シェークスピア&quot;, &quot;シクストゥス4世&quot;, &quot;システィナ礼拝堂&quot;, &quot;ジョット&quot;, &quot;ジョルジョーネ&quot;, &quot;ジョルダーノ=ブルーノ&quot;, &quot;セルバンテス&quot;, &quot;ダンテ&quot;, &quot;ダヴィデ像&quot;, &quot;チェーザレ=ボルジア&quot;, &quot;ティツィアーノ&quot;, &quot;デューラー&quot;, &quot;トマス=モア&quot;, &quot;ドナテルロ&quot;, &quot;ニコラウス5世&quot;, &quot;パトロン&quot;, &quot;ヒューマニスト&quot;, &quot;ピエタ&quot;, &quot;ピコ=デラ=ミランドラ&quot;, &quot;ファン=アイク兄弟&quot;, &quot;フィレンツェ&quot;, &quot;フランドル派&quot;, &quot;ブリューゲル&quot;, &quot;ブルクハルト&quot;, &quot;ペトラルカ&quot;, &quot;ホルバイン&quot;, &quot;ボッカチオ&quot;, &quot;マキャヴェリ&quot;, &quot;ミケランジェロ&quot;, &quot;メディチ家&quot;, &quot;モンテーニュ&quot;, &quot;ヤン=ファン=アイク&quot;, &quot;ユートピア&quot;, &quot;ラウラ&quot;, &quot;ラファエロ&quot;, &quot;ラブレー&quot;, &quot;ルネサンス&quot;, &quot;ルネサンスの起源 イタリアの萌芽&quot;, &quot;ルネサンス文学 ダンテからセルバンテス&quot;, &quot;ルネサンス様式&quot;, &quot;ルネサンス美術 イタリア三大巨匠&quot;, &quot;レオ10世&quot;, &quot;レオナルド=ダ=ヴィンチ&quot;, &quot;ローマ史論&quot;, &quot;ヴィンチ村&quot;, &quot;中世からの連続性&quot;, &quot;叙情詩集&quot;, &quot;君主論&quot;, &quot;天動説&quot;, &quot;宮廷人&quot;, &quot;愚神礼賛&quot;, &quot;最後の審判&quot;, &quot;油絵&quot;, &quot;軍事革命&quot;, &quot;農民の踊り&quot;, &quot;黙示録&quot;]"><div class="card-main">ルネサンス文化</div><div class="card-sub">ヒューマニズム・絵画・印刷</div></a>
@@ -217,7 +150,7 @@ html[data-theme="lux"] .asm-type { display:none !important; }
 </div>
 </section>
 <section class="sec" id="sec-modern">
-<div class="sec-hdr"><span class="sec-icon" style="color:#776531">Ⅶ</span><h2>近代 ― 科学革命と19世紀 <span class="latin">Aetas Moderna</span></h2><span class="sec-cnt">3件</span></div>
+<div class="sec-hdr"><span class="sec-icon" style="color:#d4c088">Ⅶ</span><h2>近代 ― 科学革命と19世紀 <span class="latin">Aetas Moderna</span></h2><span class="sec-cnt">3 items</span></div>
 <div class="sec-grid">
 <a href="cultura_19c_early.html" class="card" data-title="19世紀前半文化 ロマン主義とヘーゲル哲学" data-kw="[&quot;1870年代の世界的不況&quot;, &quot;19世紀の思想・哲学 功利主義からニーチェまで&quot;, &quot;19世紀の科学技術 進化論と電磁気学の革命&quot;, &quot;X線&quot;, &quot;★19世紀の哲学・社会思想&quot;, &quot;★19世紀文学 ─ ロマン主義から自然主義まで&quot;, &quot;★19世紀科学技術の大革命&quot;, &quot;★19世紀絵画 ─ 古典主義から印象派・ポスト印象派へ&quot;, &quot;★19世紀音楽と世紀末芸術&quot;, &quot;アムンゼン&quot;, &quot;アール=ヌーヴォー&quot;, &quot;エディソン&quot;, &quot;エネルギー保存の法則&quot;, &quot;エンゲルス&quot;, &quot;カスパー=フリードリヒ&quot;, &quot;カルテル&quot;, &quot;カーネギー&quot;, &quot;キオス島&quot;, &quot;クールベ&quot;, &quot;グリム兄弟&quot;, &quot;ゲーテ&quot;, &quot;コレラ&quot;, &quot;コロー&quot;, &quot;コンツェルン&quot;, &quot;コント&quot;, &quot;ゴヤ&quot;, &quot;ゴーガン&quot;, &quot;サヴィニー&quot;, &quot;シュペングラー&quot;, &quot;シューベルト&quot;, &quot;ショパン&quot;, &quot;シラー&quot;, &quot;ジョン=ステュアート=ミル&quot;, &quot;スコット&quot;, &quot;スタンダール&quot;, &quot;スペンサー&quot;, &quot;スメタナ&quot;, &quot;セーヌ川&quot;, &quot;セーヌ県&quot;, &quot;タスマン&quot;, &quot;ターナー&quot;, &quot;ダイムラー&quot;, &quot;ダヴィド&quot;, &quot;ダーウィン&quot;, &quot;ディケンズ&quot;, &quot;デパート&quot;, &quot;トゥルゲーネフ&quot;, &quot;トラスト&quot;, &quot;ドストエフスキー&quot;, &quot;ドラクロワ&quot;, &quot;ドーヴァー海峡&quot;, &quot;ノルデ&quot;, &quot;ハイネ&quot;, &quot;ハリウッド&quot;, &quot;バイロン&quot;, &quot;バルザック&quot;, &quot;バルビゾン&quot;, &quot;パストゥール&quot;, &quot;パリ改造&quot;, &quot;ファウスト&quot;, &quot;ファラデー&quot;, &quot;フロベール&quot;, &quot;プーシキン&quot;, &quot;ヘルムホルツ&quot;, &quot;ヘーゲル&quot;, &quot;ベル&quot;, &quot;ベンサム&quot;, &quot;ボン=マルシェ&quot;, &quot;マイヤー&quot;, &quot;マリ=キュリー&quot;, &quot;マルクス&quot;, &quot;マルクス主義&quot;, &quot;マルサス&quot;, &quot;モース&quot;, &quot;ヨーロッパ近代文明&quot;, &quot;ランケ&quot;, &quot;リカード&quot;, &quot;リスト&quot;, &quot;レ=ミゼラブル&quot;, &quot;ロプノール湖&quot;, &quot;ロマン主義&quot;, &quot;ロマン主義から自然主義 19世紀文学の展開&quot;, &quot;ロマン主義絵画&quot;, &quot;ロマン派音楽&quot;, &quot;ワーズワース&quot;, &quot;ヴァイマル公国&quot;, &quot;ヴァーグナー&quot;, &quot;ヴィクトル=ユゴー&quot;, &quot;ヴィルヘルム=テル&quot;, &quot;ヴェルディ&quot;, &quot;ヴェルナー=フォン=ジーメンス&quot;, &quot;人口論&quot;, &quot;公衆衛生法&quot;, &quot;写実主義&quot;, &quot;功利主義&quot;, &quot;南極条約&quot;, &quot;博物誌&quot;, &quot;印象派音楽&quot;, &quot;古典主義&quot;, &quot;古典主義絵画&quot;, &quot;史的唯物論&quot;, &quot;国民文化&quot;, &quot;実証主義&quot;, &quot;市民文化&quot;, &quot;弁証法哲学&quot;, &quot;映画&quot;, &quot;最大多数の最大幸福&quot;, &quot;楼蘭&quot;, &quot;歌の本&quot;, &quot;歴史学派経済学&quot;, &quot;歴史法学&quot;, &quot;海底電信ケーブル&quot;, &quot;無線電信&quot;, &quot;独占資本&quot;, &quot;独裁者&quot;, &quot;疾風怒濤&quot;, &quot;社会学&quot;, &quot;社会進化論&quot;, &quot;移民&quot;, &quot;第2次産業革命&quot;, &quot;経験論哲学&quot;, &quot;絵画の革命 古典主義からポスト印象派へ&quot;, &quot;耽美主義&quot;, &quot;自然主義絵画&quot;, &quot;自由論&quot;, &quot;資本輸出&quot;, &quot;赤と黒&quot;, &quot;近代歴史学&quot;, &quot;遺伝の法則&quot;, &quot;重化学工業&quot;, &quot;金融資本&quot;, &quot;電信機&quot;, &quot;電機工業&quot;, &quot;電灯&quot;, &quot;電磁気学&quot;, &quot;電車&quot;, &quot;音楽と建築 ロマン派音楽とアール=ヌーヴォー&quot;]"><div class="card-main">19世紀前半文化</div><div class="card-sub">ロマン主義とヘーゲル哲学</div></a>
 <a href="cultura_19c_late.html" class="card" data-title="19世紀後半文化 マルクス主義〜印象派・科学革命" data-kw="[&quot;1870年代の世界的不況&quot;, &quot;19世紀の思想・哲学 功利主義からニーチェまで&quot;, &quot;19世紀の科学技術 進化論と電磁気学の革命&quot;, &quot;X線&quot;, &quot;★19世紀の哲学・社会思想&quot;, &quot;★19世紀の技術革新と探検&quot;, &quot;★19世紀文学 ─ ロマン主義から自然主義まで&quot;, &quot;★19世紀科学技術の大革命&quot;, &quot;★19世紀絵画 ─ 古典主義から印象派・ポスト印象派へ&quot;, &quot;★19世紀音楽と世紀末芸術&quot;, &quot;★マルクス主義の成立&quot;, &quot;★第2次産業革命と独占資本主義&quot;, &quot;★近代都市の誕生 ─ パリ改造と大衆消費社会&quot;, &quot;アムンゼン&quot;, &quot;アール=ヌーヴォー&quot;, &quot;イプセン&quot;, &quot;ウィーンの都市計画&quot;, &quot;ウィーン分離派&quot;, &quot;エディソン&quot;, &quot;エンゲルス&quot;, &quot;オスマン&quot;, &quot;カスパー=フリードリヒ&quot;, &quot;カルテル&quot;, &quot;カーネギー&quot;, &quot;ガウディ&quot;, &quot;キオス島&quot;, &quot;キュリー夫妻&quot;, &quot;クリムト&quot;, &quot;クールベ&quot;, &quot;グリム兄弟&quot;, &quot;コッホ&quot;, &quot;コレラ&quot;, &quot;コロー&quot;, &quot;コンツェルン&quot;, &quot;コント&quot;, &quot;ゴッホ&quot;, &quot;ゴーガン&quot;, &quot;シュペングラー&quot;, &quot;ジョン=ステュアート=ミル&quot;, &quot;スコット&quot;, &quot;スタイン&quot;, &quot;スペンサー&quot;, &quot;スメタナ&quot;, &quot;セザンヌ&quot;, &quot;セーヌ川&quot;, &quot;セーヌ県&quot;, &quot;ゾラ&quot;, &quot;タスマン&quot;, &quot;タンガニーカ湖&quot;, &quot;ダイムラー&quot;, &quot;ダヴィド&quot;, &quot;ダーウィン&quot;, &quot;チャイコフスキー&quot;, &quot;ディケンズ&quot;, &quot;ディーゼル&quot;, &quot;デパート&quot;, &quot;トゥルゲーネフ&quot;, &quot;トラスト&quot;, &quot;トルストイ&quot;, &quot;ドストエフスキー&quot;, &quot;ドビュッシー&quot;, &quot;ドラクロワ&quot;, &quot;ドヴォルザーク&quot;, &quot;ドーヴァー海峡&quot;, &quot;ニーチェ&quot;, &quot;ノラ&quot;, &quot;ノルデ&quot;, &quot;ノーベル&quot;, &quot;ハリウッド&quot;, &quot;バルビゾン&quot;, &quot;パストゥール&quot;, &quot;パリ改造&quot;, &quot;ファウスト&quot;, &quot;フロベール&quot;, &quot;ヘディン&quot;, &quot;ヘルムホルツ&quot;, &quot;ベル&quot;, &quot;ベンサム&quot;, &quot;ホイットマン&quot;, &quot;ボン=マルシェ&quot;, &quot;ボードレール&quot;, &quot;ポスト印象派&quot;, &quot;マネ&quot;, &quot;マリ=キュリー&quot;, &quot;マルクス&quot;, &quot;マルクスの思想 社会主義の理論化&quot;, &quot;マルクス主義&quot;, &quot;マルコーニ&quot;, &quot;ミレー&quot;, &quot;メンデル&quot;, &quot;モネ&quot;, &quot;モース&quot;, &quot;モーパッサン&quot;, &quot;ヨーロッパ近代文明&quot;, &quot;ライト兄弟&quot;, &quot;ラジウムの発見&quot;, &quot;ランケ&quot;, &quot;リュミエール兄弟&quot;, &quot;ルノワール&quot;, &quot;レ=ミゼラブル&quot;, &quot;レントゲン&quot;, &quot;ロダン&quot;, &quot;ロプノール湖&quot;, &quot;ロマン主義から自然主義 19世紀文学の展開&quot;, &quot;ロマン派音楽&quot;, &quot;ヴァーグナー&quot;, &quot;ヴィクトル=ユゴー&quot;, &quot;ヴィルヘルム=テル&quot;, &quot;ヴェルディ&quot;, &quot;ヴェルナー=フォン=ジーメンス&quot;, &quot;上下水道の整備&quot;, &quot;人形の家&quot;, &quot;公衆衛生&quot;, &quot;公衆衛生法&quot;, &quot;写実主義&quot;, &quot;写実主義絵画&quot;, &quot;功利主義&quot;, &quot;北里柴三郎&quot;, &quot;南極条約&quot;, &quot;博物誌&quot;, &quot;印象派&quot;, &quot;印象派音楽&quot;, &quot;国民文化&quot;, &quot;奴隷道徳&quot;, &quot;居酒屋&quot;, &quot;市民文化&quot;, &quot;戦争と平和&quot;, &quot;技術革新と探検 電気・通信・極地&quot;, &quot;映画&quot;, &quot;極地探検&quot;, &quot;楼蘭&quot;, &quot;歴史学派経済学&quot;, &quot;海底電信ケーブル&quot;, &quot;無線電信&quot;, &quot;独占資本&quot;, &quot;独裁者&quot;, &quot;疾風怒濤&quot;, &quot;社会学&quot;, &quot;社会進化論&quot;, &quot;移民&quot;, &quot;種の起源&quot;, &quot;第2次産業革命&quot;, &quot;第2次産業革命 独占資本主義の出現&quot;, &quot;細菌学&quot;, &quot;経験論哲学&quot;, &quot;絵画の革命 古典主義からポスト印象派へ&quot;, &quot;罪と罰&quot;, &quot;耽美主義&quot;, &quot;自然主義&quot;, &quot;自然主義絵画&quot;, &quot;自由論&quot;, &quot;象徴主義&quot;, &quot;資本論&quot;, &quot;資本輸出&quot;, &quot;近代歴史学&quot;, &quot;近代都市の発展 パリ改造と大衆消費社会&quot;, &quot;進化論&quot;, &quot;遺伝の法則&quot;, &quot;都市交通網の整備&quot;, &quot;重化学工業&quot;, &quot;金融資本&quot;, &quot;電信機&quot;, &quot;電機工業&quot;, &quot;電灯&quot;, &quot;電磁気学&quot;, &quot;電車&quot;, &quot;音楽と建築 ロマン派音楽とアール=ヌーヴォー&quot;]"><div class="card-main">19世紀後半文化</div><div class="card-sub">マルクス主義〜印象派・科学革命</div></a>
@@ -225,7 +158,7 @@ html[data-theme="lux"] .asm-type { display:none !important; }
 </div>
 </section>
 <section class="sec" id="sec-contemporary">
-<div class="sec-hdr"><span class="sec-icon" style="color:#317756">Ⅷ</span><h2>現代 ― 20-21世紀 <span class="latin">Aetas Recentissima</span></h2><span class="sec-cnt">3件</span></div>
+<div class="sec-hdr"><span class="sec-icon" style="color:#88d4b0">Ⅷ</span><h2>現代 ― 20-21世紀 <span class="latin">Aetas Recentissima</span></h2><span class="sec-cnt">3 items</span></div>
 <div class="sec-grid">
 <a href="cultura_20c_science.html" class="card" data-title="20世紀思想と科学 相対性理論から構造主義まで" data-kw="[&quot;20世紀の思想 精神分析・実存主義・構造主義&quot;, &quot;★20世紀の物理学革命&quot;, &quot;★20世紀思想 ─ 精神分析から構造主義へ&quot;, &quot;アインシュタイン&quot;, &quot;アンドレ=ジッド&quot;, &quot;インフレーション&quot;, &quot;クリック&quot;, &quot;ゲルニカ&quot;, &quot;サルトル&quot;, &quot;シュルレアリスム&quot;, &quot;ジョルジュ=ブラック&quot;, &quot;デューイ&quot;, &quot;バートランド=ラッセル&quot;, &quot;フォード&quot;, &quot;フレミング&quot;, &quot;フロイト&quot;, &quot;プラグマティズム&quot;, &quot;ヘミングウェー&quot;, &quot;ボーア&quot;, &quot;ポスト=モダニズム&quot;, &quot;ポスト構造主義&quot;, &quot;ラッセル=アインシュタイン宣言&quot;, &quot;ワスプ&quot;, &quot;ワトソン&quot;, &quot;分子生物学&quot;, &quot;女性参政権&quot;, &quot;存在と時間&quot;, &quot;存在と無&quot;, &quot;実存哲学&quot;, &quot;封建社会&quot;, &quot;核兵器&quot;, &quot;構造主義&quot;, &quot;無意識&quot;, &quot;物理学革命 相対性理論と量子力学&quot;, &quot;現代大衆文化&quot;, &quot;異邦人&quot;, &quot;相対性理論&quot;, &quot;禁酒法&quot;, &quot;精神分析学&quot;, &quot;組み立てライン方式&quot;, &quot;野獣派&quot;, &quot;量子力学&quot;, &quot;飛行機開発&quot;]"><div class="card-main">20世紀思想と科学</div><div class="card-sub">相対性理論から構造主義まで</div></a>
 <a href="cultura_20c_arts.html" class="card" data-title="20世紀芸術と大衆文化 ジャズ=エイジからシュルレアリスムまで" data-kw="[&quot;12音技法&quot;, &quot;20世紀の芸術運動 キュビスムからシュルレアリスム&quot;, &quot;★1920年代アメリカ大衆文化&quot;, &quot;★20世紀芸術の革新&quot;, &quot;アメリカ大衆文化 1920年代のフォーディズム&quot;, &quot;アメリカ的生活様式&quot;, &quot;アンドレ=ジッド&quot;, &quot;インフレーション&quot;, &quot;カフカ&quot;, &quot;ゲルニカ&quot;, &quot;シェーンベルク&quot;, &quot;シュルレアリスム&quot;, &quot;ジャズ&quot;, &quot;ジョルジュ=ブラック&quot;, &quot;ダダイズム&quot;, &quot;ダリ&quot;, &quot;バートランド=ラッセル&quot;, &quot;ピカソ&quot;, &quot;フォード&quot;, &quot;プラグマティズム&quot;, &quot;ヘミングウェー&quot;, &quot;ポスト=モダニズム&quot;, &quot;マティス&quot;, &quot;マルロー&quot;, &quot;ラッセル=アインシュタイン宣言&quot;, &quot;ワスプ&quot;, &quot;大衆文化&quot;, &quot;大量生産・大量消費社会&quot;, &quot;女性参政権&quot;, &quot;実存哲学&quot;, &quot;封建社会&quot;, &quot;狭き門&quot;, &quot;現代大衆文化&quot;, &quot;異邦人&quot;, &quot;禁酒法&quot;, &quot;立体派&quot;, &quot;組み立てライン方式&quot;, &quot;野獣派&quot;, &quot;飛行機開発&quot;]"><div class="card-main">20世紀芸術と大衆文化</div><div class="card-sub">ジャズ=エイジからシュルレアリスムまで</div></a>

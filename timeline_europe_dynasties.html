@@ -2,7 +2,7 @@
 <html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>欧州王朝タイムライン</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
 :root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
@@ -24,8 +24,8 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
 .note p{font-size:8px}
 }
 </style><style id="thThemes">/* =====================================================
-   THESAURUS HISTORIAE ― themes.css(LUX v2: 印刷資料集)
-   生成りの紙 + 墨の本文 + 朱筆(★語)。飾りは罫線だけ。
+   THESAURUS HISTORIAE ― themes.css(LUX固定版)
+   生成りの紙 + 墨の本文 + 朱筆(★語) + 金茶の構造色。
    retheme_inject.py が各HTMLに埋め込む。編集後は再実行。
    ===================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&display=swap');
@@ -33,24 +33,22 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
 :root { --axr: 201, 169, 110; --shu: #c9a96e; }
 
 html[data-theme="lux"] {
-  --bg:#f6f2e8; --paper:#fffdf7;
-  --gold:#6e5434; --gold2:#2a2016; --gold3:#8a7352;
-  --text:#211b14; --text2:#3f372d; --text3:#776b59;
-  --line:rgba(33,27,20,.17); --line2:rgba(33,27,20,.32); --border:rgba(33,27,20,.17);
-  --gold-dim:rgba(110,84,52,.14);
-  --axr:110,84,52;
-  --shu:#a2331e; --ai:#2c4a6e;
+  --bg:#f1ecdf;
+  --gold:#8b6f4e; --gold2:#59452a; --gold3:#9c855f;
+  --text:#2b241b; --text2:#6d6353; --text3:#a89a80;
+  --line:rgba(43,36,27,.16); --border:rgba(43,36,27,.16);
+  --gold-dim:rgba(139,111,78,.16);
+  --axr:139,111,78;
+  --shu:#a2331e;
 }
 
 html[data-theme="lux"] body {
   background:var(--bg);
-  color:var(--text);
   font-family:'Shippori Mincho','Noto Serif JP',serif;
 }
-html[data-theme="lux"] body::before { display:none !important; }   /* ノイズ撤去 */
+html[data-theme="lux"] body::before { opacity:.55; }
 html[data-theme="lux"] p { line-height:2.05; }
 html[data-theme="lux"] * { text-shadow:none !important; }
-html[data-theme="lux"] *:hover { box-shadow:none !important; }
 
 /* 強調の二段化: 通常太字=墨 / ★語=朱 */
 html[data-theme="lux"] strong { color:var(--text) !important; font-weight:600; }
@@ -59,73 +57,8 @@ html[data-theme="lux"] span.k + strong,
 html[data-theme="lux"] .node-title .k { color:var(--shu) !important; }
 html[data-theme="lux"] span.k + strong { font-weight:700; }
 html[data-theme="lux"] ::selection { background:rgba(162,51,30,.18); }
-
-/* ページ見出し帯: 柱のように太罫で区切る */
-html[data-theme="lux"] .hdr,
-html[data-theme="lux"] .top-bar { background:var(--bg); border-bottom:2px solid var(--text) !important; }
-html[data-theme="lux"] .hdr h1,
-html[data-theme="lux"] .top-bar h1 { color:var(--text); letter-spacing:.02em; }
-html[data-theme="lux"] .hdr a,
-html[data-theme="lux"] .meta a,
-html[data-theme="lux"] .bottom-nav a { opacity:1 !important; color:var(--ai) !important; text-decoration:none; }
-html[data-theme="lux"] .hdr a:hover,
-html[data-theme="lux"] .meta a:hover,
-html[data-theme="lux"] .bottom-nav a:hover { text-decoration:underline; }
-html[data-theme="lux"] .latin,
-html[data-theme="lux"] .divider { display:none !important; }
-html[data-theme="lux"] .top-bar::after { content:none !important; }
-
-/* 年・番号: 等幅数字、薄めない */
-html[data-theme="lux"] .node-year,
-html[data-theme="lux"] .phase-label,
-html[data-theme="lux"] .sec-icon,
-html[data-theme="lux"] .sec-cnt,
-html[data-theme="lux"] .cnt,
-html[data-theme="lux"] td.no { font-variant-numeric:tabular-nums; letter-spacing:0 !important; opacity:1 !important; color:var(--text3) !important; }
-
-/* 流れ図(通史・国家史・文化史): 半透明の角丸カード → 紙面に罫線 */
-html[data-theme="lux"] .node { background:var(--paper) !important; border:1px solid var(--line) !important; border-radius:2px !important; }
-html[data-theme="lux"] .node.key { border-color:var(--line2) !important; }
-html[data-theme="lux"] .node-title,
-html[data-theme="lux"] .node-desc { color:var(--text) !important; }
-html[data-theme="lux"] .phase { border-left-color:var(--line) !important; }
-html[data-theme="lux"] .phase::before { background:var(--bg) !important; }
-
-/* 表 */
-html[data-theme="lux"] th { background:#ebe4d4 !important; color:var(--text) !important; border-bottom:1px solid var(--line2) !important; letter-spacing:0 !important; }
-html[data-theme="lux"] td { color:var(--text); border-color:var(--line) !important; }
-html[data-theme="lux"] .note p { color:var(--text2) !important; }
-
-/* 目次系(図表・国家史・文化史の一覧) */
-html[data-theme="lux"] .card { background:var(--paper) !important; border:1px solid var(--line) !important; border-radius:2px !important; transform:none !important; }
-html[data-theme="lux"] .card:hover { border-color:var(--gold) !important; }
-html[data-theme="lux"] .card-main { font-size:13.5px !important; color:var(--text) !important; }
-html[data-theme="lux"] .card-sub { font-size:11px !important; color:var(--text3) !important; }
-html[data-theme="lux"] .card-badge { font-size:10.5px !important; background:none !important; color:var(--text3) !important; padding:0 !important; font-weight:400 !important; }
-html[data-theme="lux"] .nav-pills a { font-size:12px !important; opacity:1 !important; color:var(--text2) !important; border-color:var(--line) !important; border-radius:2px !important; }
-html[data-theme="lux"] .sec-hdr { border-bottom:1px solid var(--text) !important; }
-html[data-theme="lux"] .sec-hdr::before { display:none; }
-html[data-theme="lux"] .sec-icon { color:var(--shu) !important; }
-html[data-theme="lux"] .sec-hdr h2 { font-size:17px !important; color:var(--text) !important; }
-
-/* 入力欄 */
-html[data-theme="lux"] .search-area input,
-html[data-theme="lux"] .si { background:var(--paper) !important; border:1px solid var(--line2) !important; border-radius:2px !important; font-size:14px !important; color:var(--text) !important; }
-
-/* 家系図などの箱 */
-html[data-theme="lux"] .nb { background:var(--paper) !important; border-radius:2px !important; }
-html[data-theme="lux"] .nn { color:var(--text) !important; }
-html[data-theme="lux"] .ntag { letter-spacing:0 !important; border-radius:2px !important; }
-
-/* 目次ページの見出し: 和名 + 小さなラテン名 */
-html[data-theme="lux"] .top-bar h1 small { font-size:13px; font-weight:400; color:var(--text3); margin-left:12px; letter-spacing:.06em; }
-html[data-theme="lux"] .top-bar h1 { font-size:28px !important; }
-
-html[data-theme="lux"] .sec-lat,
-html[data-theme="lux"] .asm-type { display:none !important; }
-
 </style><script id="thScript">document.documentElement.setAttribute('data-theme','lux');</script></head><body>
-<div class="hdr"><h1>欧州王朝タイムライン ― 6カ国の王朝変遷</h1><a href="charts.html">← 図表一覧</a></div>
+<div class="hdr"><h1>欧州王朝タイムライン ― 6カ国の王朝変遷</h1><a href="charts.html">← Ad Chartae</a></div>
 <div class="legend">
 <div class="li"><div class="ld" style="background:rgba(190,170,80,.15);border:1px solid rgba(190,170,80,.3)"></div>カロリング</div>
 <div class="li"><div class="ld" style="background:rgba(80,120,180,.15);border:1px solid rgba(80,120,180,.3)"></div>カペー系</div>
@@ -157,88 +90,88 @@ html[data-theme="lux"] .asm-type { display:none !important; }
 <text x="4" y="356" fill="var(--gold2)" font-size="8" font-family="Noto Serif JP" font-weight="700">ロシア</text>
 <line x1="0" y1="382" x2="1212" y2="382" stroke="rgba(var(--axr),.04)"/>
 <line x1="112" y1="28" x2="112" y2="394" stroke="rgba(var(--axr),.06)"/>
-<text x="112" y="24" text-anchor="middle" fill="rgba(var(--axr),.5)" font-size="8" font-family="Shippori Mincho" font-weight="700">800</text>
+<text x="112" y="24" text-anchor="middle" fill="rgba(var(--axr),.5)" font-size="8" font-family="Cormorant Garamond" font-weight="700">800</text>
 <line x1="178" y1="34" x2="178" y2="394" stroke="rgba(255,255,255,.015)"/>
-<text x="178" y="24" text-anchor="middle" fill="rgba(var(--axr),.25)" font-size="6" font-family="Shippori Mincho">900</text>
+<text x="178" y="24" text-anchor="middle" fill="rgba(var(--axr),.25)" font-size="6" font-family="Cormorant Garamond">900</text>
 <line x1="242" y1="28" x2="242" y2="394" stroke="rgba(var(--axr),.06)"/>
-<text x="242" y="24" text-anchor="middle" fill="rgba(var(--axr),.5)" font-size="8" font-family="Shippori Mincho" font-weight="700">1000</text>
+<text x="242" y="24" text-anchor="middle" fill="rgba(var(--axr),.5)" font-size="8" font-family="Cormorant Garamond" font-weight="700">1000</text>
 <line x1="308" y1="34" x2="308" y2="394" stroke="rgba(255,255,255,.015)"/>
-<text x="308" y="24" text-anchor="middle" fill="rgba(var(--axr),.25)" font-size="6" font-family="Shippori Mincho">1100</text>
+<text x="308" y="24" text-anchor="middle" fill="rgba(var(--axr),.25)" font-size="6" font-family="Cormorant Garamond">1100</text>
 <line x1="372" y1="28" x2="372" y2="394" stroke="rgba(var(--axr),.06)"/>
-<text x="372" y="24" text-anchor="middle" fill="rgba(var(--axr),.5)" font-size="8" font-family="Shippori Mincho" font-weight="700">1200</text>
+<text x="372" y="24" text-anchor="middle" fill="rgba(var(--axr),.5)" font-size="8" font-family="Cormorant Garamond" font-weight="700">1200</text>
 <line x1="438" y1="34" x2="438" y2="394" stroke="rgba(255,255,255,.015)"/>
-<text x="438" y="24" text-anchor="middle" fill="rgba(var(--axr),.25)" font-size="6" font-family="Shippori Mincho">1300</text>
+<text x="438" y="24" text-anchor="middle" fill="rgba(var(--axr),.25)" font-size="6" font-family="Cormorant Garamond">1300</text>
 <line x1="502" y1="28" x2="502" y2="394" stroke="rgba(var(--axr),.06)"/>
-<text x="502" y="24" text-anchor="middle" fill="rgba(var(--axr),.5)" font-size="8" font-family="Shippori Mincho" font-weight="700">1400</text>
+<text x="502" y="24" text-anchor="middle" fill="rgba(var(--axr),.5)" font-size="8" font-family="Cormorant Garamond" font-weight="700">1400</text>
 <line x1="568" y1="34" x2="568" y2="394" stroke="rgba(255,255,255,.015)"/>
-<text x="568" y="24" text-anchor="middle" fill="rgba(var(--axr),.25)" font-size="6" font-family="Shippori Mincho">1500</text>
+<text x="568" y="24" text-anchor="middle" fill="rgba(var(--axr),.25)" font-size="6" font-family="Cormorant Garamond">1500</text>
 <line x1="632" y1="28" x2="632" y2="394" stroke="rgba(var(--axr),.06)"/>
-<text x="632" y="24" text-anchor="middle" fill="rgba(var(--axr),.5)" font-size="8" font-family="Shippori Mincho" font-weight="700">1600</text>
+<text x="632" y="24" text-anchor="middle" fill="rgba(var(--axr),.5)" font-size="8" font-family="Cormorant Garamond" font-weight="700">1600</text>
 <line x1="752" y1="34" x2="752" y2="394" stroke="rgba(255,255,255,.015)"/>
-<text x="752" y="24" text-anchor="middle" fill="rgba(var(--axr),.25)" font-size="6" font-family="Shippori Mincho">1700</text>
+<text x="752" y="24" text-anchor="middle" fill="rgba(var(--axr),.25)" font-size="6" font-family="Cormorant Garamond">1700</text>
 <line x1="812" y1="34" x2="812" y2="394" stroke="rgba(255,255,255,.01)"/>
-<text x="812" y="24" text-anchor="middle" fill="rgba(var(--axr),.15)" font-size="5" font-family="Shippori Mincho">1750</text>
+<text x="812" y="24" text-anchor="middle" fill="rgba(var(--axr),.15)" font-size="5" font-family="Cormorant Garamond">1750</text>
 <line x1="872" y1="28" x2="872" y2="394" stroke="rgba(var(--axr),.06)"/>
-<text x="872" y="24" text-anchor="middle" fill="rgba(var(--axr),.5)" font-size="8" font-family="Shippori Mincho" font-weight="700">1800</text>
+<text x="872" y="24" text-anchor="middle" fill="rgba(var(--axr),.5)" font-size="8" font-family="Cormorant Garamond" font-weight="700">1800</text>
 <line x1="998" y1="34" x2="998" y2="394" stroke="rgba(255,255,255,.01)"/>
-<text x="998" y="24" text-anchor="middle" fill="rgba(var(--axr),.15)" font-size="5" font-family="Shippori Mincho">1850</text>
+<text x="998" y="24" text-anchor="middle" fill="rgba(var(--axr),.15)" font-size="5" font-family="Cormorant Garamond">1850</text>
 <line x1="1122" y1="34" x2="1122" y2="394" stroke="rgba(255,255,255,.015)"/>
-<text x="1122" y="24" text-anchor="middle" fill="rgba(var(--axr),.25)" font-size="6" font-family="Shippori Mincho">1900</text>
-<g class="nd-svg" data-tip="e-fr_caro"><rect x="81" y="44" width="60" height="22" rx="4" fill="rgba(190,170,80,.14)" stroke="rgba(190,170,80,.28)" stroke-width="1.2"/><text x="83" y="58" fill="#776231" font-size="7" font-family="Noto Serif JP" font-weight="700">カロリング</text></g>
-<g class="nd-svg" data-tip="e-fr_wcaro"><rect x="140" y="44" width="94" height="22" rx="4" fill="rgba(190,170,80,.14)" stroke="rgba(190,170,80,.28)" stroke-width="1.2"/><text x="143" y="58" fill="#776231" font-size="8" font-family="Noto Serif JP" font-weight="700">西フランク</text><text x="231" y="62" text-anchor="end" fill="rgba(255,255,255,.2)" font-size="5.5" font-family="Shippori Mincho">843-987</text></g>
-<g class="nd-svg" data-tip="e-fr_capet"><rect x="234" y="44" width="222" height="22" rx="4" fill="rgba(80,120,180,.12)" stroke="rgba(80,120,180,.25)" stroke-width="1.2"/><text x="237" y="58" fill="#314f77" font-size="9" font-family="Noto Serif JP" font-weight="700">カペー</text><text x="453" y="62" text-anchor="end" fill="rgba(255,255,255,.2)" font-size="5.5" font-family="Shippori Mincho">987-1328</text></g>
-<g class="nd-svg" data-tip="e-fr_valois"><rect x="456" y="44" width="111" height="22" rx="4" fill="rgba(80,110,170,.12)" stroke="rgba(80,110,170,.25)" stroke-width="1.2"/><text x="459" y="58" fill="#344974" font-size="9" font-family="Noto Serif JP" font-weight="700">ヴァロワ</text><text x="563" y="62" text-anchor="end" fill="rgba(255,255,255,.2)" font-size="5.5" font-family="Shippori Mincho">1328-1498</text></g>
-<g class="nd-svg" data-tip="e-fr_valois2"><rect x="566" y="44" width="59" height="22" rx="4" fill="rgba(80,110,170,.12)" stroke="rgba(80,110,170,.25)" stroke-width="1.2"/><text x="568" y="58" fill="#344974" font-size="7" font-family="Noto Serif JP" font-weight="700">ヴァロワ傍系</text></g>
-<g class="nd-svg" data-tip="e-fr_bourbon"><rect x="625" y="44" width="238" height="22" rx="4" fill="rgba(160,100,160,.12)" stroke="rgba(160,100,160,.25)" stroke-width="1.2"/><text x="628" y="58" fill="#6d3b6d" font-size="9" font-family="Noto Serif JP" font-weight="700">ブルボン</text><text x="860" y="62" text-anchor="end" fill="rgba(255,255,255,.2)" font-size="5.5" font-family="Shippori Mincho">1589-1792</text></g>
-<g class="nd-svg" data-tip="e-fr_rep1"><rect x="863" y="44" width="20" height="22" rx="3" fill="rgba(180,80,80,.10)" stroke="rgba(180,80,80,.22)" stroke-width="1"/><text x="873" y="53" text-anchor="middle" fill="#743434" font-size="7" font-family="Noto Serif JP" font-weight="700">一</text>
-<text x="873" y="61" text-anchor="middle" fill="#743434" font-size="7" font-family="Noto Serif JP" font-weight="700">共</text></g>
-<g class="nd-svg" data-tip="e-fr_nap1"><rect x="882" y="44" width="25" height="22" rx="3" fill="rgba(170,130,80,.12)" stroke="rgba(170,130,80,.25)" stroke-width="1"/><text x="895" y="53" text-anchor="middle" fill="#775632" font-size="7" font-family="Noto Serif JP" font-weight="700">一</text>
-<text x="895" y="61" text-anchor="middle" fill="#775632" font-size="7" font-family="Noto Serif JP" font-weight="700">帝</text></g>
-<g class="nd-svg" data-tip="e-fr_restau"><rect x="908" y="44" width="40" height="22" rx="4" fill="rgba(160,100,160,.12)" stroke="rgba(160,100,160,.25)" stroke-width="1.2"/><text x="910" y="58" fill="#6d3b6d" font-size="7" font-family="Noto Serif JP" font-weight="700">復古</text></g>
-<g class="nd-svg" data-tip="e-fr_july"><rect x="948" y="44" width="45" height="22" rx="4" fill="rgba(80,120,180,.12)" stroke="rgba(80,120,180,.25)" stroke-width="1.2"/><text x="950" y="58" fill="#314f77" font-size="7" font-family="Noto Serif JP" font-weight="700">七月王政</text></g>
-<g class="nd-svg" data-tip="e-fr_rep2"><rect x="992" y="44" width="10" height="22" rx="3" fill="rgba(180,80,80,.10)" stroke="rgba(180,80,80,.22)" stroke-width="1"/><text x="998" y="53" text-anchor="middle" fill="#743434" font-size="7" font-family="Noto Serif JP" font-weight="700">二</text>
-<text x="998" y="61" text-anchor="middle" fill="#743434" font-size="7" font-family="Noto Serif JP" font-weight="700">共</text></g>
-<g class="nd-svg" data-tip="e-fr_nap3"><rect x="1002" y="44" width="45" height="22" rx="4" fill="rgba(170,130,80,.12)" stroke="rgba(170,130,80,.25)" stroke-width="1.2"/><text x="1004" y="58" fill="#775632" font-size="7" font-family="Noto Serif JP" font-weight="700">第二帝政</text></g>
-<g class="nd-svg" data-tip="e-fr_rep3"><rect x="1048" y="44" width="125" height="22" rx="4" fill="rgba(120,120,120,.08)" stroke="rgba(120,120,120,.18)" stroke-width="1.2"/><text x="1050" y="58" fill="#3f372d" font-size="9" font-family="Noto Serif JP" font-weight="700">第三共和政</text><text x="1170" y="62" text-anchor="end" fill="rgba(255,255,255,.2)" font-size="5.5" font-family="Shippori Mincho">1870-1920</text></g>
-<g class="nd-svg" data-tip="e-en_anglo"><rect x="131" y="101" width="154" height="22" rx="4" fill="rgba(150,140,90,.10)" stroke="rgba(150,140,90,.22)" stroke-width="1.2"/><text x="134" y="115" fill="#675e41" font-size="9" font-family="Noto Serif JP" font-weight="700">アングロ＝サクソン</text><text x="282" y="119" text-anchor="end" fill="rgba(255,255,255,.2)" font-size="5.5" font-family="Shippori Mincho">829-1066</text></g>
-<g class="nd-svg" data-tip="e-en_norman"><rect x="285" y="101" width="57" height="22" rx="4" fill="rgba(170,140,80,.12)" stroke="rgba(170,140,80,.25)" stroke-width="1.2"/><text x="287" y="115" fill="#745b34" font-size="7" font-family="Noto Serif JP" font-weight="700">ノルマン</text></g>
-<g class="nd-svg" data-tip="e-en_planta"><rect x="343" y="101" width="159" height="22" rx="4" fill="rgba(150,130,80,.12)" stroke="rgba(150,130,80,.25)" stroke-width="1.2"/><text x="346" y="115" fill="#6b593e" font-size="9" font-family="Noto Serif JP" font-weight="700">プランタジネット</text><text x="499" y="119" text-anchor="end" fill="rgba(255,255,255,.2)" font-size="5.5" font-family="Shippori Mincho">1154-1399</text></g>
-<g class="nd-svg" data-tip="e-en_lanc"><rect x="502" y="101" width="40" height="22" rx="4" fill="rgba(140,90,90,.10)" stroke="rgba(140,90,90,.22)" stroke-width="1.2"/><text x="504" y="115" fill="#624747" font-size="7" font-family="Noto Serif JP" font-weight="700">ランカスター</text></g>
-<g class="nd-svg" data-tip="e-en_york"><rect x="542" y="101" width="16" height="22" rx="3" fill="rgba(90,120,140,.10)" stroke="rgba(90,120,140,.22)" stroke-width="1"/><text x="550" y="106" text-anchor="middle" fill="#475962" font-size="7" font-family="Noto Serif JP" font-weight="700">ヨ</text>
-<text x="550" y="114" text-anchor="middle" fill="#475962" font-size="7" font-family="Noto Serif JP" font-weight="700">ー</text>
-<text x="550" y="122" text-anchor="middle" fill="#475962" font-size="7" font-family="Noto Serif JP" font-weight="700">ク</text></g>
-<g class="nd-svg" data-tip="e-en_tudor"><rect x="558" y="101" width="78" height="22" rx="4" fill="rgba(170,90,90,.12)" stroke="rgba(170,90,90,.25)" stroke-width="1.2"/><text x="561" y="115" fill="#713838" font-size="8" font-family="Noto Serif JP" font-weight="700">テューダー</text></g>
-<g class="nd-svg" data-tip="e-en_stuart1"><rect x="636" y="101" width="55" height="22" rx="4" fill="rgba(120,100,170,.12)" stroke="rgba(120,100,170,.25)" stroke-width="1.2"/><text x="638" y="115" fill="#483c6d" font-size="7" font-family="Noto Serif JP" font-weight="700">ステュアート</text></g>
-<g class="nd-svg" data-tip="e-en_cw"><rect x="691" y="101" width="13" height="22" rx="3" fill="rgba(180,80,80,.10)" stroke="rgba(180,80,80,.22)" stroke-width="1"/><text x="698" y="110" text-anchor="middle" fill="#743434" font-size="7" font-family="Noto Serif JP" font-weight="700">共</text>
-<text x="698" y="118" text-anchor="middle" fill="#743434" font-size="7" font-family="Noto Serif JP" font-weight="700">和</text></g>
-<g class="nd-svg" data-tip="e-en_stuart2"><rect x="704" y="101" width="65" height="22" rx="4" fill="rgba(120,100,170,.12)" stroke="rgba(120,100,170,.25)" stroke-width="1.2"/><text x="706" y="115" fill="#483c6d" font-size="7" font-family="Noto Serif JP" font-weight="700">ステュアート復古</text></g>
-<g class="nd-svg" data-tip="e-en_hanover"><rect x="769" y="101" width="356" height="22" rx="4" fill="rgba(80,160,120,.12)" stroke="rgba(80,160,120,.25)" stroke-width="1.2"/><text x="772" y="115" fill="#387157" font-size="9" font-family="Noto Serif JP" font-weight="700">ハノーヴァー</text><text x="1122" y="119" text-anchor="end" fill="rgba(255,255,255,.2)" font-size="5.5" font-family="Shippori Mincho">1714-1901</text></g>
-<g class="nd-svg" data-tip="e-en_windsor"><rect x="1125" y="101" width="48" height="22" rx="4" fill="rgba(80,160,120,.12)" stroke="rgba(80,160,120,.25)" stroke-width="1.2"/><text x="1127" y="115" fill="#387157" font-size="7" font-family="Noto Serif JP" font-weight="700">ウィンザー</text></g>
-<g class="nd-svg" data-tip="e-hre_caro"><rect x="112" y="158" width="72" height="22" rx="4" fill="rgba(190,170,80,.14)" stroke="rgba(190,170,80,.28)" stroke-width="1.2"/><text x="116" y="172" fill="#776231" font-size="7.5" font-family="Noto Serif JP" font-weight="700">カロリング</text></g>
-<g class="nd-svg" data-tip="e-hre_saxon"><rect x="190" y="158" width="68" height="22" rx="4" fill="rgba(150,140,90,.10)" stroke="rgba(150,140,90,.22)" stroke-width="1.2"/><text x="193" y="172" fill="#675e41" font-size="7.5" font-family="Noto Serif JP" font-weight="700">ザクセン</text></g>
-<g class="nd-svg" data-tip="e-hre_salian"><rect x="258" y="158" width="66" height="22" rx="4" fill="rgba(140,140,90,.10)" stroke="rgba(140,140,90,.22)" stroke-width="1.2"/><text x="261" y="172" fill="#626247" font-size="7.5" font-family="Noto Serif JP" font-weight="700">ザーリアー</text></g>
-<g class="nd-svg" data-tip="e-hre_staufen"><rect x="332" y="158" width="75" height="22" rx="4" fill="rgba(170,140,70,.12)" stroke="rgba(170,140,70,.25)" stroke-width="1.2"/><text x="335" y="172" fill="#776032" font-size="8" font-family="Noto Serif JP" font-weight="700">シュタウフェン</text></g>
-<g class="nd-svg" data-tip="e-hre_inter"><rect x="408" y="158" width="12" height="22" rx="3" fill="rgba(120,120,120,.08)" stroke="rgba(120,120,120,.18)" stroke-width="1"/><text x="414" y="167" text-anchor="middle" fill="#3f372d" font-size="7" font-family="Noto Serif JP" font-weight="700">空</text>
-<text x="414" y="175" text-anchor="middle" fill="#3f372d" font-size="7" font-family="Noto Serif JP" font-weight="700">位</text></g>
-<g class="nd-svg" data-tip="e-hre_luxem"><rect x="468" y="158" width="58" height="22" rx="4" fill="rgba(100,110,160,.10)" stroke="rgba(100,110,160,.22)" stroke-width="1.2"/><text x="470" y="172" fill="#3f496a" font-size="7" font-family="Noto Serif JP" font-weight="700">ルクセンブルク</text></g>
-<g class="nd-svg" data-tip="e-hre_habsburg"><rect x="527" y="158" width="360" height="22" rx="4" fill="rgba(180,150,80,.14)" stroke="rgba(180,150,80,.28)" stroke-width="1.2"/><text x="530" y="172" fill="#775d31" font-size="9" font-family="Noto Serif JP" font-weight="700">ハプスブルク(皇帝)</text><text x="884" y="176" text-anchor="end" fill="rgba(255,255,255,.2)" font-size="5.5" font-family="Shippori Mincho">1438-1806</text></g>
-<g class="nd-svg" data-tip="e-hre_bund"><rect x="888" y="158" width="162" height="22" rx="4" fill="rgba(120,120,120,.08)" stroke="rgba(120,120,120,.18)" stroke-width="1.2"/><text x="890" y="172" fill="#3f372d" font-size="9" font-family="Noto Serif JP" font-weight="700">ドイツ連邦</text><text x="1047" y="176" text-anchor="end" fill="rgba(255,255,255,.2)" font-size="5.5" font-family="Shippori Mincho">1806-1871</text></g>
-<g class="nd-svg" data-tip="e-hre_hohen"><rect x="1050" y="158" width="118" height="22" rx="4" fill="rgba(100,140,170,.12)" stroke="rgba(100,140,170,.25)" stroke-width="1.2"/><text x="1053" y="172" fill="#3f5769" font-size="9" font-family="Noto Serif JP" font-weight="700">ドイツ帝国</text><text x="1164" y="176" text-anchor="end" fill="rgba(255,255,255,.2)" font-size="5.5" font-family="Shippori Mincho">1871-1918</text></g>
-<g class="nd-svg" data-tip="e-es_umayyad"><rect x="84" y="215" width="179" height="22" rx="4" fill="rgba(140,160,80,.10)" stroke="rgba(140,160,80,.22)" stroke-width="1.2"/><text x="87" y="229" fill="#636d3b" font-size="9" font-family="Noto Serif JP" font-weight="700">後ウマイヤ</text><text x="260" y="233" text-anchor="end" fill="rgba(255,255,255,.2)" font-size="5.5" font-family="Shippori Mincho">756-1031</text></g>
-<g class="nd-svg" data-tip="e-es_castilla"><rect x="265" y="215" width="289" height="22" rx="4" fill="rgba(140,160,80,.10)" stroke="rgba(140,160,80,.22)" stroke-width="1.2"/><text x="268" y="229" fill="#636d3b" font-size="9" font-family="Noto Serif JP" font-weight="700">カスティリャ</text><text x="551" y="233" text-anchor="end" fill="rgba(255,255,255,.2)" font-size="5.5" font-family="Shippori Mincho">1035-1479</text></g>
-<g class="nd-svg" data-tip="e-es_aragon"><rect x="265" y="239" width="289" height="22" rx="4" fill="rgba(130,150,100,.10)" stroke="rgba(130,150,100,.22)" stroke-width="1.2"/><text x="268" y="253" fill="#3f372d" font-size="9" font-family="Noto Serif JP" font-weight="700">アラゴン</text><text x="551" y="257" text-anchor="end" fill="rgba(255,255,255,.2)" font-size="5.5" font-family="Shippori Mincho">1035-1479</text></g>
-<g class="nd-svg" data-tip="e-es_habsburg"><rect x="554" y="215" width="199" height="22" rx="4" fill="rgba(180,150,80,.14)" stroke="rgba(180,150,80,.28)" stroke-width="1.2"/><text x="557" y="229" fill="#775d31" font-size="9" font-family="Noto Serif JP" font-weight="700">ハプスブルク(西)</text><text x="750" y="233" text-anchor="end" fill="rgba(255,255,255,.2)" font-size="5.5" font-family="Shippori Mincho">1479-1700</text></g>
-<g class="nd-svg" data-tip="e-es_bourbon"><rect x="752" y="215" width="140" height="22" rx="4" fill="rgba(160,100,160,.12)" stroke="rgba(160,100,160,.25)" stroke-width="1.2"/><text x="756" y="229" fill="#6d3b6d" font-size="9" font-family="Noto Serif JP" font-weight="700">ブルボン(西)</text><text x="890" y="233" text-anchor="end" fill="rgba(255,255,255,.2)" font-size="5.5" font-family="Shippori Mincho">1700-1808</text></g>
-<g class="nd-svg" data-tip="e-es_nap"><rect x="892" y="215" width="12" height="22" rx="3" fill="rgba(170,130,80,.12)" stroke="rgba(170,130,80,.25)" stroke-width="1"/><text x="899" y="224" text-anchor="middle" fill="#775632" font-size="7" font-family="Noto Serif JP" font-weight="700">ナ</text>
-<text x="899" y="232" text-anchor="middle" fill="#775632" font-size="7" font-family="Noto Serif JP" font-weight="700">ポ</text></g>
-<g class="nd-svg" data-tip="e-es_bourbon2"><rect x="905" y="215" width="268" height="22" rx="4" fill="rgba(160,100,160,.12)" stroke="rgba(160,100,160,.25)" stroke-width="1.2"/><text x="908" y="229" fill="#6d3b6d" font-size="9" font-family="Noto Serif JP" font-weight="700">ブルボン(復帰)</text><text x="1170" y="233" text-anchor="end" fill="rgba(255,255,255,.2)" font-size="5.5" font-family="Shippori Mincho">1813-1920</text></g>
-<g class="nd-svg" data-tip="e-at_habsburg"><rect x="423" y="272" width="425" height="22" rx="4" fill="rgba(180,150,80,.14)" stroke="rgba(180,150,80,.28)" stroke-width="1.2"/><text x="426" y="286" fill="#775d31" font-size="9" font-family="Noto Serif JP" font-weight="700">ハプスブルク</text><text x="846" y="290" text-anchor="end" fill="rgba(255,255,255,.2)" font-size="5.5" font-family="Shippori Mincho">1278-1780</text></g>
-<g class="nd-svg" data-tip="e-at_reform"><rect x="848" y="272" width="192" height="22" rx="4" fill="rgba(180,150,80,.14)" stroke="rgba(180,150,80,.28)" stroke-width="1.2"/><text x="852" y="286" fill="#775d31" font-size="9" font-family="Noto Serif JP" font-weight="700">ハプスブルク(改革)</text><text x="1037" y="290" text-anchor="end" fill="rgba(255,255,255,.2)" font-size="5.5" font-family="Shippori Mincho">1780-1867</text></g>
-<g class="nd-svg" data-tip="e-at_dual"><rect x="1040" y="272" width="128" height="22" rx="4" fill="rgba(180,150,80,.14)" stroke="rgba(180,150,80,.28)" stroke-width="1.2"/><text x="1043" y="286" fill="#775d31" font-size="9" font-family="Noto Serif JP" font-weight="700">墺＝ハンガリー</text><text x="1164" y="290" text-anchor="end" fill="rgba(255,255,255,.2)" font-size="5.5" font-family="Shippori Mincho">1867-1918</text></g>
-<g class="nd-svg" data-tip="e-ru_rurik"><rect x="153" y="329" width="478" height="22" rx="4" fill="rgba(150,120,100,.10)" stroke="rgba(150,120,100,.22)" stroke-width="1.2"/><text x="156" y="343" fill="#634f45" font-size="9" font-family="Noto Serif JP" font-weight="700">リューリク</text><text x="628" y="347" text-anchor="end" fill="rgba(255,255,255,.2)" font-size="5.5" font-family="Shippori Mincho">862-1598</text></g>
-<g class="nd-svg" data-tip="e-ru_trouble"><rect x="631" y="329" width="17" height="22" rx="3" fill="rgba(180,80,80,.10)" stroke="rgba(180,80,80,.22)" stroke-width="1"/><text x="640" y="338" text-anchor="middle" fill="#743434" font-size="7" font-family="Noto Serif JP" font-weight="700">動</text>
-<text x="640" y="346" text-anchor="middle" fill="#743434" font-size="7" font-family="Noto Serif JP" font-weight="700">乱</text></g>
-<g class="nd-svg" data-tip="e-ru_romanov"><rect x="648" y="329" width="517" height="22" rx="4" fill="rgba(80,150,170,.12)" stroke="rgba(80,150,170,.25)" stroke-width="1.2"/><text x="651" y="343" fill="#386171" font-size="9" font-family="Noto Serif JP" font-weight="700">ロマノフ</text><text x="1162" y="347" text-anchor="end" fill="rgba(255,255,255,.2)" font-size="5.5" font-family="Shippori Mincho">1613-1917</text></g>
+<text x="1122" y="24" text-anchor="middle" fill="rgba(var(--axr),.25)" font-size="6" font-family="Cormorant Garamond">1900</text>
+<g class="nd-svg" data-tip="e-fr_caro"><rect x="81" y="44" width="60" height="22" rx="4" fill="rgba(190,170,80,.14)" stroke="rgba(190,170,80,.28)" stroke-width="1.2"/><text x="83" y="58" fill="#e0c890" font-size="7" font-family="Noto Serif JP" font-weight="700">カロリング</text></g>
+<g class="nd-svg" data-tip="e-fr_wcaro"><rect x="140" y="44" width="94" height="22" rx="4" fill="rgba(190,170,80,.14)" stroke="rgba(190,170,80,.28)" stroke-width="1.2"/><text x="143" y="58" fill="#e0c890" font-size="8" font-family="Noto Serif JP" font-weight="700">西フランク</text><text x="231" y="62" text-anchor="end" fill="rgba(255,255,255,.2)" font-size="5.5" font-family="Cormorant Garamond">843-987</text></g>
+<g class="nd-svg" data-tip="e-fr_capet"><rect x="234" y="44" width="222" height="22" rx="4" fill="rgba(80,120,180,.12)" stroke="rgba(80,120,180,.25)" stroke-width="1.2"/><text x="237" y="58" fill="#a8c0e0" font-size="9" font-family="Noto Serif JP" font-weight="700">カペー</text><text x="453" y="62" text-anchor="end" fill="rgba(255,255,255,.2)" font-size="5.5" font-family="Cormorant Garamond">987-1328</text></g>
+<g class="nd-svg" data-tip="e-fr_valois"><rect x="456" y="44" width="111" height="22" rx="4" fill="rgba(80,110,170,.12)" stroke="rgba(80,110,170,.25)" stroke-width="1.2"/><text x="459" y="58" fill="#a8b8d8" font-size="9" font-family="Noto Serif JP" font-weight="700">ヴァロワ</text><text x="563" y="62" text-anchor="end" fill="rgba(255,255,255,.2)" font-size="5.5" font-family="Cormorant Garamond">1328-1498</text></g>
+<g class="nd-svg" data-tip="e-fr_valois2"><rect x="566" y="44" width="59" height="22" rx="4" fill="rgba(80,110,170,.12)" stroke="rgba(80,110,170,.25)" stroke-width="1.2"/><text x="568" y="58" fill="#a8b8d8" font-size="7" font-family="Noto Serif JP" font-weight="700">ヴァロワ傍系</text></g>
+<g class="nd-svg" data-tip="e-fr_bourbon"><rect x="625" y="44" width="238" height="22" rx="4" fill="rgba(160,100,160,.12)" stroke="rgba(160,100,160,.25)" stroke-width="1.2"/><text x="628" y="58" fill="#d4b0d4" font-size="9" font-family="Noto Serif JP" font-weight="700">ブルボン</text><text x="860" y="62" text-anchor="end" fill="rgba(255,255,255,.2)" font-size="5.5" font-family="Cormorant Garamond">1589-1792</text></g>
+<g class="nd-svg" data-tip="e-fr_rep1"><rect x="863" y="44" width="20" height="22" rx="3" fill="rgba(180,80,80,.10)" stroke="rgba(180,80,80,.22)" stroke-width="1"/><text x="873" y="53" text-anchor="middle" fill="#d4a0a0" font-size="7" font-family="Noto Serif JP" font-weight="700">一</text>
+<text x="873" y="61" text-anchor="middle" fill="#d4a0a0" font-size="7" font-family="Noto Serif JP" font-weight="700">共</text></g>
+<g class="nd-svg" data-tip="e-fr_nap1"><rect x="882" y="44" width="25" height="22" rx="3" fill="rgba(170,130,80,.12)" stroke="rgba(170,130,80,.25)" stroke-width="1"/><text x="895" y="53" text-anchor="middle" fill="#d4b898" font-size="7" font-family="Noto Serif JP" font-weight="700">一</text>
+<text x="895" y="61" text-anchor="middle" fill="#d4b898" font-size="7" font-family="Noto Serif JP" font-weight="700">帝</text></g>
+<g class="nd-svg" data-tip="e-fr_restau"><rect x="908" y="44" width="40" height="22" rx="4" fill="rgba(160,100,160,.12)" stroke="rgba(160,100,160,.25)" stroke-width="1.2"/><text x="910" y="58" fill="#d4b0d4" font-size="7" font-family="Noto Serif JP" font-weight="700">復古</text></g>
+<g class="nd-svg" data-tip="e-fr_july"><rect x="948" y="44" width="45" height="22" rx="4" fill="rgba(80,120,180,.12)" stroke="rgba(80,120,180,.25)" stroke-width="1.2"/><text x="950" y="58" fill="#a8c0e0" font-size="7" font-family="Noto Serif JP" font-weight="700">七月王政</text></g>
+<g class="nd-svg" data-tip="e-fr_rep2"><rect x="992" y="44" width="10" height="22" rx="3" fill="rgba(180,80,80,.10)" stroke="rgba(180,80,80,.22)" stroke-width="1"/><text x="998" y="53" text-anchor="middle" fill="#d4a0a0" font-size="7" font-family="Noto Serif JP" font-weight="700">二</text>
+<text x="998" y="61" text-anchor="middle" fill="#d4a0a0" font-size="7" font-family="Noto Serif JP" font-weight="700">共</text></g>
+<g class="nd-svg" data-tip="e-fr_nap3"><rect x="1002" y="44" width="45" height="22" rx="4" fill="rgba(170,130,80,.12)" stroke="rgba(170,130,80,.25)" stroke-width="1.2"/><text x="1004" y="58" fill="#d4b898" font-size="7" font-family="Noto Serif JP" font-weight="700">第二帝政</text></g>
+<g class="nd-svg" data-tip="e-fr_rep3"><rect x="1048" y="44" width="125" height="22" rx="4" fill="rgba(120,120,120,.08)" stroke="rgba(120,120,120,.18)" stroke-width="1.2"/><text x="1050" y="58" fill="#b0b0b0" font-size="9" font-family="Noto Serif JP" font-weight="700">第三共和政</text><text x="1170" y="62" text-anchor="end" fill="rgba(255,255,255,.2)" font-size="5.5" font-family="Cormorant Garamond">1870-1920</text></g>
+<g class="nd-svg" data-tip="e-en_anglo"><rect x="131" y="101" width="154" height="22" rx="4" fill="rgba(150,140,90,.10)" stroke="rgba(150,140,90,.22)" stroke-width="1.2"/><text x="134" y="115" fill="#c8c0a8" font-size="9" font-family="Noto Serif JP" font-weight="700">アングロ＝サクソン</text><text x="282" y="119" text-anchor="end" fill="rgba(255,255,255,.2)" font-size="5.5" font-family="Cormorant Garamond">829-1066</text></g>
+<g class="nd-svg" data-tip="e-en_norman"><rect x="285" y="101" width="57" height="22" rx="4" fill="rgba(170,140,80,.12)" stroke="rgba(170,140,80,.25)" stroke-width="1.2"/><text x="287" y="115" fill="#d4c0a0" font-size="7" font-family="Noto Serif JP" font-weight="700">ノルマン</text></g>
+<g class="nd-svg" data-tip="e-en_planta"><rect x="343" y="101" width="159" height="22" rx="4" fill="rgba(150,130,80,.12)" stroke="rgba(150,130,80,.25)" stroke-width="1.2"/><text x="346" y="115" fill="#c8b8a0" font-size="9" font-family="Noto Serif JP" font-weight="700">プランタジネット</text><text x="499" y="119" text-anchor="end" fill="rgba(255,255,255,.2)" font-size="5.5" font-family="Cormorant Garamond">1154-1399</text></g>
+<g class="nd-svg" data-tip="e-en_lanc"><rect x="502" y="101" width="40" height="22" rx="4" fill="rgba(140,90,90,.10)" stroke="rgba(140,90,90,.22)" stroke-width="1.2"/><text x="504" y="115" fill="#c0a8a8" font-size="7" font-family="Noto Serif JP" font-weight="700">ランカスター</text></g>
+<g class="nd-svg" data-tip="e-en_york"><rect x="542" y="101" width="16" height="22" rx="3" fill="rgba(90,120,140,.10)" stroke="rgba(90,120,140,.22)" stroke-width="1"/><text x="550" y="106" text-anchor="middle" fill="#a8b8c0" font-size="7" font-family="Noto Serif JP" font-weight="700">ヨ</text>
+<text x="550" y="114" text-anchor="middle" fill="#a8b8c0" font-size="7" font-family="Noto Serif JP" font-weight="700">ー</text>
+<text x="550" y="122" text-anchor="middle" fill="#a8b8c0" font-size="7" font-family="Noto Serif JP" font-weight="700">ク</text></g>
+<g class="nd-svg" data-tip="e-en_tudor"><rect x="558" y="101" width="78" height="22" rx="4" fill="rgba(170,90,90,.12)" stroke="rgba(170,90,90,.25)" stroke-width="1.2"/><text x="561" y="115" fill="#d4a8a8" font-size="8" font-family="Noto Serif JP" font-weight="700">テューダー</text></g>
+<g class="nd-svg" data-tip="e-en_stuart1"><rect x="636" y="101" width="55" height="22" rx="4" fill="rgba(120,100,170,.12)" stroke="rgba(120,100,170,.25)" stroke-width="1.2"/><text x="638" y="115" fill="#c0b8d8" font-size="7" font-family="Noto Serif JP" font-weight="700">ステュアート</text></g>
+<g class="nd-svg" data-tip="e-en_cw"><rect x="691" y="101" width="13" height="22" rx="3" fill="rgba(180,80,80,.10)" stroke="rgba(180,80,80,.22)" stroke-width="1"/><text x="698" y="110" text-anchor="middle" fill="#d4a0a0" font-size="7" font-family="Noto Serif JP" font-weight="700">共</text>
+<text x="698" y="118" text-anchor="middle" fill="#d4a0a0" font-size="7" font-family="Noto Serif JP" font-weight="700">和</text></g>
+<g class="nd-svg" data-tip="e-en_stuart2"><rect x="704" y="101" width="65" height="22" rx="4" fill="rgba(120,100,170,.12)" stroke="rgba(120,100,170,.25)" stroke-width="1.2"/><text x="706" y="115" fill="#c0b8d8" font-size="7" font-family="Noto Serif JP" font-weight="700">ステュアート復古</text></g>
+<g class="nd-svg" data-tip="e-en_hanover"><rect x="769" y="101" width="356" height="22" rx="4" fill="rgba(80,160,120,.12)" stroke="rgba(80,160,120,.25)" stroke-width="1.2"/><text x="772" y="115" fill="#a8d4c0" font-size="9" font-family="Noto Serif JP" font-weight="700">ハノーヴァー</text><text x="1122" y="119" text-anchor="end" fill="rgba(255,255,255,.2)" font-size="5.5" font-family="Cormorant Garamond">1714-1901</text></g>
+<g class="nd-svg" data-tip="e-en_windsor"><rect x="1125" y="101" width="48" height="22" rx="4" fill="rgba(80,160,120,.12)" stroke="rgba(80,160,120,.25)" stroke-width="1.2"/><text x="1127" y="115" fill="#a8d4c0" font-size="7" font-family="Noto Serif JP" font-weight="700">ウィンザー</text></g>
+<g class="nd-svg" data-tip="e-hre_caro"><rect x="112" y="158" width="72" height="22" rx="4" fill="rgba(190,170,80,.14)" stroke="rgba(190,170,80,.28)" stroke-width="1.2"/><text x="116" y="172" fill="#e0c890" font-size="7.5" font-family="Noto Serif JP" font-weight="700">カロリング</text></g>
+<g class="nd-svg" data-tip="e-hre_saxon"><rect x="190" y="158" width="68" height="22" rx="4" fill="rgba(150,140,90,.10)" stroke="rgba(150,140,90,.22)" stroke-width="1.2"/><text x="193" y="172" fill="#c8c0a8" font-size="7.5" font-family="Noto Serif JP" font-weight="700">ザクセン</text></g>
+<g class="nd-svg" data-tip="e-hre_salian"><rect x="258" y="158" width="66" height="22" rx="4" fill="rgba(140,140,90,.10)" stroke="rgba(140,140,90,.22)" stroke-width="1.2"/><text x="261" y="172" fill="#c0c0a8" font-size="7.5" font-family="Noto Serif JP" font-weight="700">ザーリアー</text></g>
+<g class="nd-svg" data-tip="e-hre_staufen"><rect x="332" y="158" width="75" height="22" rx="4" fill="rgba(170,140,70,.12)" stroke="rgba(170,140,70,.25)" stroke-width="1.2"/><text x="335" y="172" fill="#d4c098" font-size="8" font-family="Noto Serif JP" font-weight="700">シュタウフェン</text></g>
+<g class="nd-svg" data-tip="e-hre_inter"><rect x="408" y="158" width="12" height="22" rx="3" fill="rgba(120,120,120,.08)" stroke="rgba(120,120,120,.18)" stroke-width="1"/><text x="414" y="167" text-anchor="middle" fill="#b0b0b0" font-size="7" font-family="Noto Serif JP" font-weight="700">空</text>
+<text x="414" y="175" text-anchor="middle" fill="#b0b0b0" font-size="7" font-family="Noto Serif JP" font-weight="700">位</text></g>
+<g class="nd-svg" data-tip="e-hre_luxem"><rect x="468" y="158" width="58" height="22" rx="4" fill="rgba(100,110,160,.10)" stroke="rgba(100,110,160,.22)" stroke-width="1.2"/><text x="470" y="172" fill="#b0b8d0" font-size="7" font-family="Noto Serif JP" font-weight="700">ルクセンブルク</text></g>
+<g class="nd-svg" data-tip="e-hre_habsburg"><rect x="527" y="158" width="360" height="22" rx="4" fill="rgba(180,150,80,.14)" stroke="rgba(180,150,80,.28)" stroke-width="1.2"/><text x="530" y="172" fill="#e0c8a0" font-size="9" font-family="Noto Serif JP" font-weight="700">ハプスブルク(皇帝)</text><text x="884" y="176" text-anchor="end" fill="rgba(255,255,255,.2)" font-size="5.5" font-family="Cormorant Garamond">1438-1806</text></g>
+<g class="nd-svg" data-tip="e-hre_bund"><rect x="888" y="158" width="162" height="22" rx="4" fill="rgba(120,120,120,.08)" stroke="rgba(120,120,120,.18)" stroke-width="1.2"/><text x="890" y="172" fill="#b0b0b0" font-size="9" font-family="Noto Serif JP" font-weight="700">ドイツ連邦</text><text x="1047" y="176" text-anchor="end" fill="rgba(255,255,255,.2)" font-size="5.5" font-family="Cormorant Garamond">1806-1871</text></g>
+<g class="nd-svg" data-tip="e-hre_hohen"><rect x="1050" y="158" width="118" height="22" rx="4" fill="rgba(100,140,170,.12)" stroke="rgba(100,140,170,.25)" stroke-width="1.2"/><text x="1053" y="172" fill="#b8c8d4" font-size="9" font-family="Noto Serif JP" font-weight="700">ドイツ帝国</text><text x="1164" y="176" text-anchor="end" fill="rgba(255,255,255,.2)" font-size="5.5" font-family="Cormorant Garamond">1871-1918</text></g>
+<g class="nd-svg" data-tip="e-es_umayyad"><rect x="84" y="215" width="179" height="22" rx="4" fill="rgba(140,160,80,.10)" stroke="rgba(140,160,80,.22)" stroke-width="1.2"/><text x="87" y="229" fill="#c8d0a8" font-size="9" font-family="Noto Serif JP" font-weight="700">後ウマイヤ</text><text x="260" y="233" text-anchor="end" fill="rgba(255,255,255,.2)" font-size="5.5" font-family="Cormorant Garamond">756-1031</text></g>
+<g class="nd-svg" data-tip="e-es_castilla"><rect x="265" y="215" width="289" height="22" rx="4" fill="rgba(140,160,80,.10)" stroke="rgba(140,160,80,.22)" stroke-width="1.2"/><text x="268" y="229" fill="#c8d0a8" font-size="9" font-family="Noto Serif JP" font-weight="700">カスティリャ</text><text x="551" y="233" text-anchor="end" fill="rgba(255,255,255,.2)" font-size="5.5" font-family="Cormorant Garamond">1035-1479</text></g>
+<g class="nd-svg" data-tip="e-es_aragon"><rect x="265" y="239" width="289" height="22" rx="4" fill="rgba(130,150,100,.10)" stroke="rgba(130,150,100,.22)" stroke-width="1.2"/><text x="268" y="253" fill="#c0c8b8" font-size="9" font-family="Noto Serif JP" font-weight="700">アラゴン</text><text x="551" y="257" text-anchor="end" fill="rgba(255,255,255,.2)" font-size="5.5" font-family="Cormorant Garamond">1035-1479</text></g>
+<g class="nd-svg" data-tip="e-es_habsburg"><rect x="554" y="215" width="199" height="22" rx="4" fill="rgba(180,150,80,.14)" stroke="rgba(180,150,80,.28)" stroke-width="1.2"/><text x="557" y="229" fill="#e0c8a0" font-size="9" font-family="Noto Serif JP" font-weight="700">ハプスブルク(西)</text><text x="750" y="233" text-anchor="end" fill="rgba(255,255,255,.2)" font-size="5.5" font-family="Cormorant Garamond">1479-1700</text></g>
+<g class="nd-svg" data-tip="e-es_bourbon"><rect x="752" y="215" width="140" height="22" rx="4" fill="rgba(160,100,160,.12)" stroke="rgba(160,100,160,.25)" stroke-width="1.2"/><text x="756" y="229" fill="#d4b0d4" font-size="9" font-family="Noto Serif JP" font-weight="700">ブルボン(西)</text><text x="890" y="233" text-anchor="end" fill="rgba(255,255,255,.2)" font-size="5.5" font-family="Cormorant Garamond">1700-1808</text></g>
+<g class="nd-svg" data-tip="e-es_nap"><rect x="892" y="215" width="12" height="22" rx="3" fill="rgba(170,130,80,.12)" stroke="rgba(170,130,80,.25)" stroke-width="1"/><text x="899" y="224" text-anchor="middle" fill="#d4b898" font-size="7" font-family="Noto Serif JP" font-weight="700">ナ</text>
+<text x="899" y="232" text-anchor="middle" fill="#d4b898" font-size="7" font-family="Noto Serif JP" font-weight="700">ポ</text></g>
+<g class="nd-svg" data-tip="e-es_bourbon2"><rect x="905" y="215" width="268" height="22" rx="4" fill="rgba(160,100,160,.12)" stroke="rgba(160,100,160,.25)" stroke-width="1.2"/><text x="908" y="229" fill="#d4b0d4" font-size="9" font-family="Noto Serif JP" font-weight="700">ブルボン(復帰)</text><text x="1170" y="233" text-anchor="end" fill="rgba(255,255,255,.2)" font-size="5.5" font-family="Cormorant Garamond">1813-1920</text></g>
+<g class="nd-svg" data-tip="e-at_habsburg"><rect x="423" y="272" width="425" height="22" rx="4" fill="rgba(180,150,80,.14)" stroke="rgba(180,150,80,.28)" stroke-width="1.2"/><text x="426" y="286" fill="#e0c8a0" font-size="9" font-family="Noto Serif JP" font-weight="700">ハプスブルク</text><text x="846" y="290" text-anchor="end" fill="rgba(255,255,255,.2)" font-size="5.5" font-family="Cormorant Garamond">1278-1780</text></g>
+<g class="nd-svg" data-tip="e-at_reform"><rect x="848" y="272" width="192" height="22" rx="4" fill="rgba(180,150,80,.14)" stroke="rgba(180,150,80,.28)" stroke-width="1.2"/><text x="852" y="286" fill="#e0c8a0" font-size="9" font-family="Noto Serif JP" font-weight="700">ハプスブルク(改革)</text><text x="1037" y="290" text-anchor="end" fill="rgba(255,255,255,.2)" font-size="5.5" font-family="Cormorant Garamond">1780-1867</text></g>
+<g class="nd-svg" data-tip="e-at_dual"><rect x="1040" y="272" width="128" height="22" rx="4" fill="rgba(180,150,80,.14)" stroke="rgba(180,150,80,.28)" stroke-width="1.2"/><text x="1043" y="286" fill="#e0c8a0" font-size="9" font-family="Noto Serif JP" font-weight="700">墺＝ハンガリー</text><text x="1164" y="290" text-anchor="end" fill="rgba(255,255,255,.2)" font-size="5.5" font-family="Cormorant Garamond">1867-1918</text></g>
+<g class="nd-svg" data-tip="e-ru_rurik"><rect x="153" y="329" width="478" height="22" rx="4" fill="rgba(150,120,100,.10)" stroke="rgba(150,120,100,.22)" stroke-width="1.2"/><text x="156" y="343" fill="#c8b8b0" font-size="9" font-family="Noto Serif JP" font-weight="700">リューリク</text><text x="628" y="347" text-anchor="end" fill="rgba(255,255,255,.2)" font-size="5.5" font-family="Cormorant Garamond">862-1598</text></g>
+<g class="nd-svg" data-tip="e-ru_trouble"><rect x="631" y="329" width="17" height="22" rx="3" fill="rgba(180,80,80,.10)" stroke="rgba(180,80,80,.22)" stroke-width="1"/><text x="640" y="338" text-anchor="middle" fill="#d4a0a0" font-size="7" font-family="Noto Serif JP" font-weight="700">動</text>
+<text x="640" y="346" text-anchor="middle" fill="#d4a0a0" font-size="7" font-family="Noto Serif JP" font-weight="700">乱</text></g>
+<g class="nd-svg" data-tip="e-ru_romanov"><rect x="648" y="329" width="517" height="22" rx="4" fill="rgba(80,150,170,.12)" stroke="rgba(80,150,170,.25)" stroke-width="1.2"/><text x="651" y="343" fill="#a8c8d4" font-size="9" font-family="Noto Serif JP" font-weight="700">ロマノフ</text><text x="1162" y="347" text-anchor="end" fill="rgba(255,255,255,.2)" font-size="5.5" font-family="Cormorant Garamond">1613-1917</text></g>
 </svg></div>
 
 <div class="tp" id="tip-e-fr_caro"><p><strong>カロリング朝</strong>(751-843) ― ピピン3世が創始。<strong>カール大帝</strong>(768-814)が西ヨーロッパを統一→800年にローマ教皇から西ローマ皇帝の冠。<strong>ヴェルダン条約(843)</strong>で三分割→仏独伊の原型。</p></div>

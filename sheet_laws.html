@@ -2,7 +2,7 @@
 <html lang="ja"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>法律と制度</title>
-<style>@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@400;600;700&display=swap');
+<style>@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@400;600;700&family=Cormorant+Garamond:wght@400;700&display=swap');
 :root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--gold-dim:rgba(var(--axr),.12);--text:#d4cfc6;--text2:#8a857d;--text3:#555048;--border:rgba(var(--axr),.08)}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
@@ -18,15 +18,15 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
 .search-bar{padding:10px 20px;display:flex;gap:10px;align-items:center}
 .si{padding:6px 14px;border-radius:100px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);color:var(--text);font-size:11px;font-family:inherit;width:240px;outline:none;transition:border-color .2s}
 .si:focus{border-color:rgba(var(--axr),.3)}.si::placeholder{color:var(--text3)}
-.cnt{font-size:9px;color:var(--text3);font-family:'Shippori Mincho',serif;letter-spacing:.1em}
+.cnt{font-size:9px;color:var(--text3);font-family:'Cormorant Garamond',serif;letter-spacing:.1em}
 .tbl-wrap{padding:4px 20px 40px;overflow-x:auto}
 table{width:100%;border-collapse:collapse;font-size:11px}
 th{background:rgba(var(--axr),.08);color:var(--gold);font-family:'Noto Serif JP',serif;font-weight:700;font-size:10px;letter-spacing:.08em;text-align:left;padding:8px 12px;border-bottom:1px solid rgba(var(--axr),.15);white-space:nowrap}
-td{padding:8px 12px;border-bottom:1px solid rgba(255,255,255,.025);color:#3f372d;vertical-align:top;line-height:1.7}
-td.no-cell{color:var(--text3);font-family:'Shippori Mincho',serif;font-size:12px;text-align:center;font-weight:600;width:36px}
+td{padding:8px 12px;border-bottom:1px solid rgba(255,255,255,.025);color:#bbb;vertical-align:top;line-height:1.7}
+td.no-cell{color:var(--text3);font-family:'Cormorant Garamond',serif;font-size:12px;text-align:center;font-weight:600;width:36px}
 td.name-cell{color:var(--text);font-weight:600;width:180px}
-td.year-cell{color:var(--gold);opacity:.7;font-family:'Shippori Mincho',serif;font-size:12px;white-space:nowrap;width:90px}
-td.desc-cell{color:#3f372d;font-size:11px}
+td.year-cell{color:var(--gold);opacity:.7;font-family:'Cormorant Garamond',serif;font-size:12px;white-space:nowrap;width:90px}
+td.desc-cell{color:#a8a39a;font-size:11px}
 tr:hover td{background:rgba(var(--axr),.03)}
 tr.section-header td{background:rgba(var(--axr),.06);color:var(--gold2);font-family:'Noto Serif JP',serif;font-weight:700;font-size:12px;padding:12px;letter-spacing:.06em;border-bottom:1px solid rgba(var(--axr),.1)}
 .hidden{display:none}
@@ -69,8 +69,8 @@ tr.section-header td{padding:6px;font-size:9.5px}
 }
 </style>
 <style id="thThemes">/* =====================================================
-   THESAURUS HISTORIAE ― themes.css(LUX v2: 印刷資料集)
-   生成りの紙 + 墨の本文 + 朱筆(★語)。飾りは罫線だけ。
+   THESAURUS HISTORIAE ― themes.css(LUX固定版)
+   生成りの紙 + 墨の本文 + 朱筆(★語) + 金茶の構造色。
    retheme_inject.py が各HTMLに埋め込む。編集後は再実行。
    ===================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&display=swap');
@@ -78,24 +78,22 @@ tr.section-header td{padding:6px;font-size:9.5px}
 :root { --axr: 201, 169, 110; --shu: #c9a96e; }
 
 html[data-theme="lux"] {
-  --bg:#f6f2e8; --paper:#fffdf7;
-  --gold:#6e5434; --gold2:#2a2016; --gold3:#8a7352;
-  --text:#211b14; --text2:#3f372d; --text3:#776b59;
-  --line:rgba(33,27,20,.17); --line2:rgba(33,27,20,.32); --border:rgba(33,27,20,.17);
-  --gold-dim:rgba(110,84,52,.14);
-  --axr:110,84,52;
-  --shu:#a2331e; --ai:#2c4a6e;
+  --bg:#f1ecdf;
+  --gold:#8b6f4e; --gold2:#59452a; --gold3:#9c855f;
+  --text:#2b241b; --text2:#6d6353; --text3:#a89a80;
+  --line:rgba(43,36,27,.16); --border:rgba(43,36,27,.16);
+  --gold-dim:rgba(139,111,78,.16);
+  --axr:139,111,78;
+  --shu:#a2331e;
 }
 
 html[data-theme="lux"] body {
   background:var(--bg);
-  color:var(--text);
   font-family:'Shippori Mincho','Noto Serif JP',serif;
 }
-html[data-theme="lux"] body::before { display:none !important; }   /* ノイズ撤去 */
+html[data-theme="lux"] body::before { opacity:.55; }
 html[data-theme="lux"] p { line-height:2.05; }
 html[data-theme="lux"] * { text-shadow:none !important; }
-html[data-theme="lux"] *:hover { box-shadow:none !important; }
 
 /* 強調の二段化: 通常太字=墨 / ★語=朱 */
 html[data-theme="lux"] strong { color:var(--text) !important; font-weight:600; }
@@ -104,73 +102,8 @@ html[data-theme="lux"] span.k + strong,
 html[data-theme="lux"] .node-title .k { color:var(--shu) !important; }
 html[data-theme="lux"] span.k + strong { font-weight:700; }
 html[data-theme="lux"] ::selection { background:rgba(162,51,30,.18); }
-
-/* ページ見出し帯: 柱のように太罫で区切る */
-html[data-theme="lux"] .hdr,
-html[data-theme="lux"] .top-bar { background:var(--bg); border-bottom:2px solid var(--text) !important; }
-html[data-theme="lux"] .hdr h1,
-html[data-theme="lux"] .top-bar h1 { color:var(--text); letter-spacing:.02em; }
-html[data-theme="lux"] .hdr a,
-html[data-theme="lux"] .meta a,
-html[data-theme="lux"] .bottom-nav a { opacity:1 !important; color:var(--ai) !important; text-decoration:none; }
-html[data-theme="lux"] .hdr a:hover,
-html[data-theme="lux"] .meta a:hover,
-html[data-theme="lux"] .bottom-nav a:hover { text-decoration:underline; }
-html[data-theme="lux"] .latin,
-html[data-theme="lux"] .divider { display:none !important; }
-html[data-theme="lux"] .top-bar::after { content:none !important; }
-
-/* 年・番号: 等幅数字、薄めない */
-html[data-theme="lux"] .node-year,
-html[data-theme="lux"] .phase-label,
-html[data-theme="lux"] .sec-icon,
-html[data-theme="lux"] .sec-cnt,
-html[data-theme="lux"] .cnt,
-html[data-theme="lux"] td.no { font-variant-numeric:tabular-nums; letter-spacing:0 !important; opacity:1 !important; color:var(--text3) !important; }
-
-/* 流れ図(通史・国家史・文化史): 半透明の角丸カード → 紙面に罫線 */
-html[data-theme="lux"] .node { background:var(--paper) !important; border:1px solid var(--line) !important; border-radius:2px !important; }
-html[data-theme="lux"] .node.key { border-color:var(--line2) !important; }
-html[data-theme="lux"] .node-title,
-html[data-theme="lux"] .node-desc { color:var(--text) !important; }
-html[data-theme="lux"] .phase { border-left-color:var(--line) !important; }
-html[data-theme="lux"] .phase::before { background:var(--bg) !important; }
-
-/* 表 */
-html[data-theme="lux"] th { background:#ebe4d4 !important; color:var(--text) !important; border-bottom:1px solid var(--line2) !important; letter-spacing:0 !important; }
-html[data-theme="lux"] td { color:var(--text); border-color:var(--line) !important; }
-html[data-theme="lux"] .note p { color:var(--text2) !important; }
-
-/* 目次系(図表・国家史・文化史の一覧) */
-html[data-theme="lux"] .card { background:var(--paper) !important; border:1px solid var(--line) !important; border-radius:2px !important; transform:none !important; }
-html[data-theme="lux"] .card:hover { border-color:var(--gold) !important; }
-html[data-theme="lux"] .card-main { font-size:13.5px !important; color:var(--text) !important; }
-html[data-theme="lux"] .card-sub { font-size:11px !important; color:var(--text3) !important; }
-html[data-theme="lux"] .card-badge { font-size:10.5px !important; background:none !important; color:var(--text3) !important; padding:0 !important; font-weight:400 !important; }
-html[data-theme="lux"] .nav-pills a { font-size:12px !important; opacity:1 !important; color:var(--text2) !important; border-color:var(--line) !important; border-radius:2px !important; }
-html[data-theme="lux"] .sec-hdr { border-bottom:1px solid var(--text) !important; }
-html[data-theme="lux"] .sec-hdr::before { display:none; }
-html[data-theme="lux"] .sec-icon { color:var(--shu) !important; }
-html[data-theme="lux"] .sec-hdr h2 { font-size:17px !important; color:var(--text) !important; }
-
-/* 入力欄 */
-html[data-theme="lux"] .search-area input,
-html[data-theme="lux"] .si { background:var(--paper) !important; border:1px solid var(--line2) !important; border-radius:2px !important; font-size:14px !important; color:var(--text) !important; }
-
-/* 家系図などの箱 */
-html[data-theme="lux"] .nb { background:var(--paper) !important; border-radius:2px !important; }
-html[data-theme="lux"] .nn { color:var(--text) !important; }
-html[data-theme="lux"] .ntag { letter-spacing:0 !important; border-radius:2px !important; }
-
-/* 目次ページの見出し: 和名 + 小さなラテン名 */
-html[data-theme="lux"] .top-bar h1 small { font-size:13px; font-weight:400; color:var(--text3); margin-left:12px; letter-spacing:.06em; }
-html[data-theme="lux"] .top-bar h1 { font-size:28px !important; }
-
-html[data-theme="lux"] .sec-lat,
-html[data-theme="lux"] .asm-type { display:none !important; }
-
 </style><script id="thScript">document.documentElement.setAttribute('data-theme','lux');</script></head><body>
-<div class="hdr"><h1>法律と制度</h1><a href="index.html">← 目次</a></div>
+<div class="hdr"><h1>法律と制度</h1><a href="index.html">← Ad Indicem</a></div>
 <div class="tabs"><button class="tab on" onclick="switchTab(0)" id="tab0">古代〜中世の法</button>
 <button class="tab" onclick="switchTab(1)" id="tab1">近世〜18世紀の法</button>
 <button class="tab" onclick="switchTab(2)" id="tab2">革命期〜19世紀の法</button>
@@ -860,8 +793,8 @@ function filterRows(){var q=document.getElementById("search").value.toLowerCase(
 filterRows();
 </script>
 <style>
-.chart-link{display:inline-block;font-size:6px;padding:1px 4px;margin:1px;border-radius:2px;background:rgba(var(--axr),.08);border:1px solid rgba(var(--axr),.12);color:#775f31;text-decoration:none;white-space:nowrap;vertical-align:middle;transition:all .15s}
-.chart-link:hover{background:rgba(var(--axr),.2);border-color:rgba(var(--axr),.3);color:#776031}
+.chart-link{display:inline-block;font-size:6px;padding:1px 4px;margin:1px;border-radius:2px;background:rgba(var(--axr),.08);border:1px solid rgba(var(--axr),.12);color:#c9a96e;text-decoration:none;white-space:nowrap;vertical-align:middle;transition:all .15s}
+.chart-link:hover{background:rgba(var(--axr),.2);border-color:rgba(var(--axr),.3);color:#e8c888}
 .chart-links-wrap{display:inline;margin-left:3px}
 </style>
 <script>

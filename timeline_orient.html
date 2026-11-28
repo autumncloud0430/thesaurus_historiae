@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>古代オリエント史タイムライン</title>
-<style>@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&display=swap');
+<style>@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
 :root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048}
 *{margin:0;padding:0;box-sizing:border-box}body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
 .hdr{padding:16px 20px;border-bottom:1px solid rgba(var(--axr),.08);display:flex;align-items:center;gap:14px;flex-wrap:wrap}.hdr h1{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--gold2)}.hdr a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.5}.hdr a:hover{opacity:1}
@@ -19,8 +19,8 @@
 .note p{font-size:8px}
 }
 </style><style id="thThemes">/* =====================================================
-   THESAURUS HISTORIAE ― themes.css(LUX v2: 印刷資料集)
-   生成りの紙 + 墨の本文 + 朱筆(★語)。飾りは罫線だけ。
+   THESAURUS HISTORIAE ― themes.css(LUX固定版)
+   生成りの紙 + 墨の本文 + 朱筆(★語) + 金茶の構造色。
    retheme_inject.py が各HTMLに埋め込む。編集後は再実行。
    ===================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&display=swap');
@@ -28,24 +28,22 @@
 :root { --axr: 201, 169, 110; --shu: #c9a96e; }
 
 html[data-theme="lux"] {
-  --bg:#f6f2e8; --paper:#fffdf7;
-  --gold:#6e5434; --gold2:#2a2016; --gold3:#8a7352;
-  --text:#211b14; --text2:#3f372d; --text3:#776b59;
-  --line:rgba(33,27,20,.17); --line2:rgba(33,27,20,.32); --border:rgba(33,27,20,.17);
-  --gold-dim:rgba(110,84,52,.14);
-  --axr:110,84,52;
-  --shu:#a2331e; --ai:#2c4a6e;
+  --bg:#f1ecdf;
+  --gold:#8b6f4e; --gold2:#59452a; --gold3:#9c855f;
+  --text:#2b241b; --text2:#6d6353; --text3:#a89a80;
+  --line:rgba(43,36,27,.16); --border:rgba(43,36,27,.16);
+  --gold-dim:rgba(139,111,78,.16);
+  --axr:139,111,78;
+  --shu:#a2331e;
 }
 
 html[data-theme="lux"] body {
   background:var(--bg);
-  color:var(--text);
   font-family:'Shippori Mincho','Noto Serif JP',serif;
 }
-html[data-theme="lux"] body::before { display:none !important; }   /* ノイズ撤去 */
+html[data-theme="lux"] body::before { opacity:.55; }
 html[data-theme="lux"] p { line-height:2.05; }
 html[data-theme="lux"] * { text-shadow:none !important; }
-html[data-theme="lux"] *:hover { box-shadow:none !important; }
 
 /* 強調の二段化: 通常太字=墨 / ★語=朱 */
 html[data-theme="lux"] strong { color:var(--text) !important; font-weight:600; }
@@ -54,73 +52,8 @@ html[data-theme="lux"] span.k + strong,
 html[data-theme="lux"] .node-title .k { color:var(--shu) !important; }
 html[data-theme="lux"] span.k + strong { font-weight:700; }
 html[data-theme="lux"] ::selection { background:rgba(162,51,30,.18); }
-
-/* ページ見出し帯: 柱のように太罫で区切る */
-html[data-theme="lux"] .hdr,
-html[data-theme="lux"] .top-bar { background:var(--bg); border-bottom:2px solid var(--text) !important; }
-html[data-theme="lux"] .hdr h1,
-html[data-theme="lux"] .top-bar h1 { color:var(--text); letter-spacing:.02em; }
-html[data-theme="lux"] .hdr a,
-html[data-theme="lux"] .meta a,
-html[data-theme="lux"] .bottom-nav a { opacity:1 !important; color:var(--ai) !important; text-decoration:none; }
-html[data-theme="lux"] .hdr a:hover,
-html[data-theme="lux"] .meta a:hover,
-html[data-theme="lux"] .bottom-nav a:hover { text-decoration:underline; }
-html[data-theme="lux"] .latin,
-html[data-theme="lux"] .divider { display:none !important; }
-html[data-theme="lux"] .top-bar::after { content:none !important; }
-
-/* 年・番号: 等幅数字、薄めない */
-html[data-theme="lux"] .node-year,
-html[data-theme="lux"] .phase-label,
-html[data-theme="lux"] .sec-icon,
-html[data-theme="lux"] .sec-cnt,
-html[data-theme="lux"] .cnt,
-html[data-theme="lux"] td.no { font-variant-numeric:tabular-nums; letter-spacing:0 !important; opacity:1 !important; color:var(--text3) !important; }
-
-/* 流れ図(通史・国家史・文化史): 半透明の角丸カード → 紙面に罫線 */
-html[data-theme="lux"] .node { background:var(--paper) !important; border:1px solid var(--line) !important; border-radius:2px !important; }
-html[data-theme="lux"] .node.key { border-color:var(--line2) !important; }
-html[data-theme="lux"] .node-title,
-html[data-theme="lux"] .node-desc { color:var(--text) !important; }
-html[data-theme="lux"] .phase { border-left-color:var(--line) !important; }
-html[data-theme="lux"] .phase::before { background:var(--bg) !important; }
-
-/* 表 */
-html[data-theme="lux"] th { background:#ebe4d4 !important; color:var(--text) !important; border-bottom:1px solid var(--line2) !important; letter-spacing:0 !important; }
-html[data-theme="lux"] td { color:var(--text); border-color:var(--line) !important; }
-html[data-theme="lux"] .note p { color:var(--text2) !important; }
-
-/* 目次系(図表・国家史・文化史の一覧) */
-html[data-theme="lux"] .card { background:var(--paper) !important; border:1px solid var(--line) !important; border-radius:2px !important; transform:none !important; }
-html[data-theme="lux"] .card:hover { border-color:var(--gold) !important; }
-html[data-theme="lux"] .card-main { font-size:13.5px !important; color:var(--text) !important; }
-html[data-theme="lux"] .card-sub { font-size:11px !important; color:var(--text3) !important; }
-html[data-theme="lux"] .card-badge { font-size:10.5px !important; background:none !important; color:var(--text3) !important; padding:0 !important; font-weight:400 !important; }
-html[data-theme="lux"] .nav-pills a { font-size:12px !important; opacity:1 !important; color:var(--text2) !important; border-color:var(--line) !important; border-radius:2px !important; }
-html[data-theme="lux"] .sec-hdr { border-bottom:1px solid var(--text) !important; }
-html[data-theme="lux"] .sec-hdr::before { display:none; }
-html[data-theme="lux"] .sec-icon { color:var(--shu) !important; }
-html[data-theme="lux"] .sec-hdr h2 { font-size:17px !important; color:var(--text) !important; }
-
-/* 入力欄 */
-html[data-theme="lux"] .search-area input,
-html[data-theme="lux"] .si { background:var(--paper) !important; border:1px solid var(--line2) !important; border-radius:2px !important; font-size:14px !important; color:var(--text) !important; }
-
-/* 家系図などの箱 */
-html[data-theme="lux"] .nb { background:var(--paper) !important; border-radius:2px !important; }
-html[data-theme="lux"] .nn { color:var(--text) !important; }
-html[data-theme="lux"] .ntag { letter-spacing:0 !important; border-radius:2px !important; }
-
-/* 目次ページの見出し: 和名 + 小さなラテン名 */
-html[data-theme="lux"] .top-bar h1 small { font-size:13px; font-weight:400; color:var(--text3); margin-left:12px; letter-spacing:.06em; }
-html[data-theme="lux"] .top-bar h1 { font-size:28px !important; }
-
-html[data-theme="lux"] .sec-lat,
-html[data-theme="lux"] .asm-type { display:none !important; }
-
 </style><script id="thScript">document.documentElement.setAttribute('data-theme','lux');</script></head><body>
-<div class="hdr"><h1>古代オリエント史タイムライン ― BC3000〜BC330 地域別レーン表示</h1><a href="charts.html">← 図表一覧</a></div>
+<div class="hdr"><h1>古代オリエント史タイムライン ― BC3000〜BC330 地域別レーン表示</h1><a href="charts.html">← Ad Chartae</a></div>
 <div class="legend">
   <div class="li"><div class="ld" style="background:rgba(100,130,180,.22);border:1px solid rgba(100,130,180,.32)"></div>エジプト</div>
   <div class="li"><div class="ld" style="background:rgba(80,150,120,.2);border:1px solid rgba(80,150,120,.28)"></div>シリア・パレスチナ</div>
@@ -147,134 +80,134 @@ html[data-theme="lux"] .asm-type { display:none !important; }
 <text x="4" y="340" fill="var(--gold2)" font-size="7.5" font-family="Noto Serif JP" font-weight="700">イラン高原</text>
 <line x1="90" y1="32" x2="90" y2="402" stroke="rgba(255,255,255,.015)"/>
 <line x1="155" y1="28" x2="155" y2="402" stroke="rgba(var(--axr),.06)"/>
-<text x="155" y="26" text-anchor="middle" fill="rgba(var(--axr),.5)" font-size="7" font-family="Shippori Mincho" font-weight="700">前3000</text>
+<text x="155" y="26" text-anchor="middle" fill="rgba(var(--axr),.5)" font-size="7" font-family="Cormorant Garamond" font-weight="700">前3000</text>
 <line x1="219" y1="32" x2="219" y2="402" stroke="rgba(255,255,255,.015)"/>
 <line x1="284" y1="32" x2="284" y2="402" stroke="rgba(255,255,255,.015)"/>
 <line x1="349" y1="32" x2="349" y2="402" stroke="rgba(255,255,255,.015)"/>
 <line x1="413" y1="32" x2="413" y2="402" stroke="rgba(255,255,255,.015)"/>
 <line x1="478" y1="28" x2="478" y2="402" stroke="rgba(var(--axr),.06)"/>
-<text x="478" y="26" text-anchor="middle" fill="rgba(var(--axr),.5)" font-size="7" font-family="Shippori Mincho" font-weight="700">前2500</text>
+<text x="478" y="26" text-anchor="middle" fill="rgba(var(--axr),.5)" font-size="7" font-family="Cormorant Garamond" font-weight="700">前2500</text>
 <line x1="542" y1="32" x2="542" y2="402" stroke="rgba(255,255,255,.015)"/>
 <line x1="607" y1="32" x2="607" y2="402" stroke="rgba(255,255,255,.015)"/>
 <line x1="672" y1="32" x2="672" y2="402" stroke="rgba(255,255,255,.015)"/>
 <line x1="736" y1="32" x2="736" y2="402" stroke="rgba(255,255,255,.015)"/>
 <line x1="801" y1="28" x2="801" y2="402" stroke="rgba(var(--axr),.06)"/>
-<text x="801" y="26" text-anchor="middle" fill="rgba(var(--axr),.5)" font-size="7" font-family="Shippori Mincho" font-weight="700">前2000</text>
+<text x="801" y="26" text-anchor="middle" fill="rgba(var(--axr),.5)" font-size="7" font-family="Cormorant Garamond" font-weight="700">前2000</text>
 <line x1="866" y1="32" x2="866" y2="402" stroke="rgba(255,255,255,.015)"/>
 <line x1="930" y1="32" x2="930" y2="402" stroke="rgba(255,255,255,.015)"/>
 <line x1="995" y1="32" x2="995" y2="402" stroke="rgba(255,255,255,.015)"/>
 <line x1="1060" y1="32" x2="1060" y2="402" stroke="rgba(255,255,255,.015)"/>
 <line x1="1124" y1="28" x2="1124" y2="402" stroke="rgba(var(--axr),.06)"/>
-<text x="1124" y="26" text-anchor="middle" fill="rgba(var(--axr),.5)" font-size="7" font-family="Shippori Mincho" font-weight="700">前1500</text>
+<text x="1124" y="26" text-anchor="middle" fill="rgba(var(--axr),.5)" font-size="7" font-family="Cormorant Garamond" font-weight="700">前1500</text>
 <line x1="1189" y1="32" x2="1189" y2="402" stroke="rgba(255,255,255,.015)"/>
 <line x1="1254" y1="32" x2="1254" y2="402" stroke="rgba(255,255,255,.015)"/>
 <line x1="1318" y1="32" x2="1318" y2="402" stroke="rgba(255,255,255,.015)"/>
 <line x1="1383" y1="32" x2="1383" y2="402" stroke="rgba(255,255,255,.015)"/>
 <line x1="1448" y1="28" x2="1448" y2="402" stroke="rgba(var(--axr),.06)"/>
-<text x="1448" y="26" text-anchor="middle" fill="rgba(var(--axr),.5)" font-size="7" font-family="Shippori Mincho" font-weight="700">前1000</text>
+<text x="1448" y="26" text-anchor="middle" fill="rgba(var(--axr),.5)" font-size="7" font-family="Cormorant Garamond" font-weight="700">前1000</text>
 <line x1="1512" y1="32" x2="1512" y2="402" stroke="rgba(255,255,255,.015)"/>
 <line x1="1577" y1="32" x2="1577" y2="402" stroke="rgba(255,255,255,.015)"/>
 <line x1="1641" y1="32" x2="1641" y2="402" stroke="rgba(255,255,255,.015)"/>
 <line x1="1706" y1="32" x2="1706" y2="402" stroke="rgba(255,255,255,.015)"/>
 <line x1="1771" y1="28" x2="1771" y2="402" stroke="rgba(var(--axr),.06)"/>
-<text x="1771" y="26" text-anchor="middle" fill="rgba(var(--axr),.5)" font-size="7" font-family="Shippori Mincho" font-weight="700">前500</text>
+<text x="1771" y="26" text-anchor="middle" fill="rgba(var(--axr),.5)" font-size="7" font-family="Cormorant Garamond" font-weight="700">前500</text>
 <line x1="1835" y1="32" x2="1835" y2="402" stroke="rgba(255,255,255,.015)"/>
 <line x1="1900" y1="32" x2="1900" y2="402" stroke="rgba(255,255,255,.015)"/>
 <g class="nd-svg" onclick="showTip(1)">
 <rect x="1505.0" y="34" width="193.3" height="284" rx="3" fill="rgba(180,80,80,.12)" stroke="rgba(180,80,80,.22)" stroke-width="1"/>
-<text x="1508.0" y="179" fill="#773131" font-size="8" font-family="Noto Serif JP" font-weight="700">★アッシリア帝国</text>
+<text x="1508.0" y="179" fill="#d48888" font-size="8" font-family="Noto Serif JP" font-weight="700">★アッシリア帝国</text>
 </g>
 <g class="nd-svg" onclick="showTip(2)">
 <rect x="1738.4" y="34" width="142.2" height="356" rx="3" fill="rgba(180,80,80,.12)" stroke="rgba(180,80,80,.22)" stroke-width="1"/>
-<text x="1741.4" y="215" fill="#773131" font-size="8" font-family="Noto Serif JP" font-weight="700">★★アケメネス朝ペルシア</text>
+<text x="1741.4" y="215" fill="#d48888" font-size="8" font-family="Noto Serif JP" font-weight="700">★★アケメネス朝ペルシア</text>
 </g>
 <g class="nd-svg" onclick="showTip(3)">
 <rect x="1318.2" y="34" width="32.3" height="212" rx="3" fill="rgba(120,120,160,.12)" stroke="rgba(120,120,160,.2)" stroke-width="1"/>
-<text x="1321.2" y="143" fill="#3b3b6d" font-size="6" font-family="Noto Serif JP" font-weight="700">「海の民」の大移動</text>
+<text x="1321.2" y="143" fill="#b0b0d4" font-size="6" font-family="Noto Serif JP" font-weight="700">「海の民」の大移動</text>
 </g>
 <g class="nd-svg" onclick="showTip(4)">
 <rect x="154.6" y="35" width="203.0" height="20" rx="3" fill="rgba(100,130,180,.22)" stroke="rgba(100,130,180,.32)" stroke-width="1"/>
-<text x="157.6" y="49" fill="#315677" font-size="8" font-family="Noto Serif JP" font-weight="700">初期王朝</text>
+<text x="157.6" y="49" fill="#88b0d4" font-size="8" font-family="Noto Serif JP" font-weight="700">初期王朝</text>
 </g>
 <g class="nd-svg" onclick="showTip(5)">
 <rect x="357.6" y="35" width="326.4" height="20" rx="3" fill="rgba(100,130,180,.22)" stroke="rgba(100,130,180,.32)" stroke-width="1"/>
-<text x="360.6" y="49" fill="#315677" font-size="8" font-family="Noto Serif JP" font-weight="700">古王国</text>
+<text x="360.6" y="49" fill="#88b0d4" font-size="8" font-family="Noto Serif JP" font-weight="700">古王国</text>
 </g>
 <g class="nd-svg" onclick="showTip(6)">
 <rect x="765.5" y="35" width="261.8" height="20" rx="3" fill="rgba(100,130,180,.22)" stroke="rgba(100,130,180,.32)" stroke-width="1"/>
-<text x="768.5" y="49" fill="#315677" font-size="8" font-family="Noto Serif JP" font-weight="700">中王国</text>
+<text x="768.5" y="49" fill="#88b0d4" font-size="8" font-family="Noto Serif JP" font-weight="700">中王国</text>
 </g>
 <g class="nd-svg" onclick="showTip(7)">
 <rect x="1092.0" y="35" width="310.9" height="20" rx="3" fill="rgba(100,130,180,.22)" stroke="rgba(100,130,180,.32)" stroke-width="1"/>
-<text x="1095.0" y="49" fill="#315677" font-size="8" font-family="Noto Serif JP" font-weight="700">新王国</text>
+<text x="1095.0" y="49" fill="#88b0d4" font-size="8" font-family="Noto Serif JP" font-weight="700">新王国</text>
 </g>
 <g class="nd-svg" onclick="showTip(8)">
 <rect x="1664.7" y="35" width="89.9" height="20" rx="3" fill="rgba(100,130,180,.22)" stroke="rgba(100,130,180,.32)" stroke-width="1"/>
-<text x="1667.7" y="49" fill="#315677" font-size="8" font-family="Noto Serif JP" font-weight="700">サイス朝</text>
+<text x="1667.7" y="49" fill="#88b0d4" font-size="8" font-family="Noto Serif JP" font-weight="700">サイス朝</text>
 </g>
 <g class="nd-svg" onclick="showTip(9)">
 <rect x="1124.3" y="107" width="148.7" height="20" rx="3" fill="rgba(80,150,120,.2)" stroke="rgba(80,150,120,.28)" stroke-width="1"/>
-<text x="1127.3" y="121" fill="#317756" font-size="8" font-family="Noto Serif JP" font-weight="700">ミタンニ勢力圏</text>
+<text x="1127.3" y="121" fill="#88d4b0" font-size="8" font-family="Noto Serif JP" font-weight="700">ミタンニ勢力圏</text>
 </g>
 <g class="nd-svg" onclick="showTip(10)">
 <rect x="1434.6" y="107" width="63.3" height="20" rx="3" fill="rgba(80,150,120,.2)" stroke="rgba(80,150,120,.28)" stroke-width="1"/>
-<text x="1437.6" y="121" fill="#317756" font-size="7" font-family="Noto Serif JP" font-weight="700">ヘブライ統一王国</text>
+<text x="1437.6" y="121" fill="#88d4b0" font-size="7" font-family="Noto Serif JP" font-weight="700">ヘブライ統一王国</text>
 </g>
 <g class="nd-svg" onclick="showTip(11)">
 <rect x="1497.9" y="107" width="129.3" height="20" rx="3" fill="rgba(80,150,120,.2)" stroke="rgba(80,150,120,.28)" stroke-width="1"/>
-<text x="1500.9" y="121" fill="#317756" font-size="8" font-family="Noto Serif JP" font-weight="700">イスラエル(北)</text>
+<text x="1500.9" y="121" fill="#88d4b0" font-size="8" font-family="Noto Serif JP" font-weight="700">イスラエル(北)</text>
 </g>
 <g class="nd-svg" onclick="showTip(12)">
 <rect x="1382.9" y="129" width="342.6" height="20" rx="3" fill="rgba(80,150,120,.2)" stroke="rgba(80,150,120,.28)" stroke-width="1"/>
-<text x="1385.9" y="143" fill="#317756" font-size="8" font-family="Noto Serif JP" font-weight="700">フェニキア都市国家</text>
+<text x="1385.9" y="143" fill="#88d4b0" font-size="8" font-family="Noto Serif JP" font-weight="700">フェニキア都市国家</text>
 </g>
 <g class="nd-svg" onclick="showTip(13)">
 <rect x="1497.9" y="151" width="217.2" height="20" rx="3" fill="rgba(80,150,120,.2)" stroke="rgba(80,150,120,.28)" stroke-width="1"/>
-<text x="1500.9" y="165" fill="#317756" font-size="8" font-family="Noto Serif JP" font-weight="700">ユダ(南)</text>
+<text x="1500.9" y="165" fill="#88d4b0" font-size="8" font-family="Noto Serif JP" font-weight="700">ユダ(南)</text>
 </g>
 <g class="nd-svg" onclick="showTip(14)">
 <rect x="801.1" y="179" width="530.1" height="20" rx="3" fill="rgba(140,160,80,.2)" stroke="rgba(140,160,80,.28)" stroke-width="1"/>
-<text x="804.1" y="193" fill="#607731" font-size="8" font-family="Noto Serif JP" font-weight="700">ヒッタイト</text>
+<text x="804.1" y="193" fill="#b8d088" font-size="8" font-family="Noto Serif JP" font-weight="700">ヒッタイト</text>
 </g>
 <g class="nd-svg" onclick="showTip(15)">
 <rect x="1059.6" y="201" width="213.3" height="20" rx="3" fill="rgba(140,160,80,.2)" stroke="rgba(140,160,80,.28)" stroke-width="1"/>
-<text x="1062.6" y="215" fill="#607731" font-size="8" font-family="Noto Serif JP" font-weight="700">ミタンニ(北部)</text>
+<text x="1062.6" y="215" fill="#b8d088" font-size="8" font-family="Noto Serif JP" font-weight="700">ミタンニ(北部)</text>
 </g>
 <g class="nd-svg" onclick="showTip(16)">
 <rect x="1647.9" y="179" width="93.1" height="20" rx="3" fill="rgba(140,160,80,.2)" stroke="rgba(140,160,80,.28)" stroke-width="1"/>
-<text x="1650.9" y="193" fill="#607731" font-size="8" font-family="Noto Serif JP" font-weight="700">リディア</text>
+<text x="1650.9" y="193" fill="#b8d088" font-size="8" font-family="Noto Serif JP" font-weight="700">リディア</text>
 </g>
 <g class="nd-svg" onclick="showTip(17)">
 <rect x="154.6" y="251" width="420.2" height="20" rx="3" fill="rgba(180,140,60,.22)" stroke="rgba(180,140,60,.32)" stroke-width="1"/>
-<text x="157.6" y="265" fill="#776531" font-size="8" font-family="Noto Serif JP" font-weight="700">シュメール都市国家</text>
+<text x="157.6" y="265" fill="#d4c088" font-size="8" font-family="Noto Serif JP" font-weight="700">シュメール都市国家</text>
 </g>
 <g class="nd-svg" onclick="showTip(18)">
 <rect x="574.8" y="251" width="129.3" height="20" rx="3" fill="rgba(180,140,60,.22)" stroke="rgba(180,140,60,.32)" stroke-width="1"/>
-<text x="577.8" y="265" fill="#776531" font-size="8" font-family="Noto Serif JP" font-weight="700">アッカド王国</text>
+<text x="577.8" y="265" fill="#d4c088" font-size="8" font-family="Noto Serif JP" font-weight="700">アッカド王国</text>
 </g>
 <g class="nd-svg" onclick="showTip(19)">
 <rect x="728.7" y="251" width="69.8" height="20" rx="3" fill="rgba(180,140,60,.22)" stroke="rgba(180,140,60,.32)" stroke-width="1"/>
-<text x="731.7" y="265" fill="#776531" font-size="7" font-family="Noto Serif JP" font-weight="700">ウル第3王朝</text>
+<text x="731.7" y="265" fill="#d4c088" font-size="7" font-family="Noto Serif JP" font-weight="700">ウル第3王朝</text>
 </g>
 <g class="nd-svg" onclick="showTip(20)">
 <rect x="869.6" y="251" width="193.3" height="20" rx="3" fill="rgba(180,140,60,.22)" stroke="rgba(180,140,60,.32)" stroke-width="1"/>
-<text x="872.6" y="265" fill="#776531" font-size="8" font-family="Noto Serif JP" font-weight="700">古バビロニア</text>
+<text x="872.6" y="265" fill="#d4c088" font-size="8" font-family="Noto Serif JP" font-weight="700">古バビロニア</text>
 </g>
 <g class="nd-svg" onclick="showTip(21)">
 <rect x="1062.9" y="251" width="284.4" height="20" rx="3" fill="rgba(180,140,60,.22)" stroke="rgba(180,140,60,.32)" stroke-width="1"/>
-<text x="1065.9" y="265" fill="#776531" font-size="8" font-family="Noto Serif JP" font-weight="700">カッシート</text>
+<text x="1065.9" y="265" fill="#d4c088" font-size="8" font-family="Noto Serif JP" font-weight="700">カッシート</text>
 </g>
 <g class="nd-svg" onclick="showTip(22)">
 <rect x="1689.9" y="251" width="55.6" height="20" rx="3" fill="rgba(180,140,60,.22)" stroke="rgba(180,140,60,.32)" stroke-width="1"/>
-<text x="1692.9" y="265" fill="#776531" font-size="7" font-family="Noto Serif JP" font-weight="700">新バビロニア</text>
+<text x="1692.9" y="265" fill="#d4c088" font-size="7" font-family="Noto Serif JP" font-weight="700">新バビロニア</text>
 </g>
 <g class="nd-svg" onclick="showTip(23)">
 <rect x="348.6" y="323" width="711.1" height="20" rx="3" fill="rgba(160,100,140,.2)" stroke="rgba(160,100,140,.28)" stroke-width="1"/>
-<text x="351.6" y="337" fill="#71385e" font-size="8" font-family="Noto Serif JP" font-weight="700">エラム</text>
+<text x="351.6" y="337" fill="#d0a0c0" font-size="8" font-family="Noto Serif JP" font-weight="700">エラム</text>
 </g>
 <g class="nd-svg" onclick="showTip(24)">
 <rect x="1641.4" y="323" width="97.0" height="20" rx="3" fill="rgba(160,100,140,.2)" stroke="rgba(160,100,140,.28)" stroke-width="1"/>
-<text x="1644.4" y="337" fill="#71385e" font-size="8" font-family="Noto Serif JP" font-weight="700">メディア</text>
+<text x="1644.4" y="337" fill="#d0a0c0" font-size="8" font-family="Noto Serif JP" font-weight="700">メディア</text>
 </g>
 </svg></div>
 <div id="overlay" onclick="closeTip()"></div>

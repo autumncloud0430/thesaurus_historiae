@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ハプスブルク家の婚姻戦略</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
 :root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048;--border:rgba(var(--axr),.08)}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
@@ -18,20 +18,20 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
 .tree{display:flex;flex-direction:column;align-items:center;min-width:920px;gap:0}
 @media(max-width:650px){.tree{min-width:0;width:100%}.row{flex-wrap:wrap;justify-content:center}.branch{flex-wrap:wrap;justify-content:center}}
 .nd{position:relative;text-align:center;cursor:pointer;transition:transform .15s}
-.nd:hover{}
+.nd:hover{transform:translateY(-1px)}
 .nb{border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:7px 11px;background:rgba(255,255,255,.02);transition:all .2s}
 .nd:hover .nb{border-color:rgba(var(--axr),.3);background:rgba(var(--axr),.04)}
 .nn{font-family:'Noto Serif JP',serif;font-size:11px;font-weight:700;color:var(--gold2);white-space:nowrap}
 .ni{font-size:7.5px;color:var(--text2);margin-top:1px;white-space:nowrap}
 .ntag{font-size:7px;font-weight:600;letter-spacing:.06em;margin-top:2px;padding:1px 6px;border-radius:100px;display:inline-block}
-.h-hab .nb{border-left:3px solid rgba(138,123,91,.4)} .h-hab .ntag{background:rgba(138,123,91,.2);color:#726336}
-.h-spa .nb{border-left:3px solid rgba(138,91,91,.4)} .h-spa .ntag{background:rgba(138,91,91,.2);color:#713838}
-.h-bur .nb{border-left:3px solid rgba(91,111,138,.4)} .h-bur .ntag{background:rgba(91,111,138,.2);color:#365a72}
-.h-ara .nb{border-left:3px solid rgba(111,138,91,.4)} .h-ara .ntag{background:rgba(111,138,91,.2);color:#537236}
-.h-aus .nb{border-left:3px solid rgba(160,140,80,.3)} .h-aus .ntag{background:rgba(160,140,80,.15);color:#776932}
-.h-eng .nb{border-left:3px solid rgba(91,138,120,.4)} .h-eng .ntag{background:rgba(91,138,120,.2);color:#36725b}
-.h-fra .nb{border-left:3px solid rgba(120,91,138,.4)} .h-fra .ntag{background:rgba(120,91,138,.2);color:#523474}
-.h-ott .nb{border-left:3px solid rgba(138,120,91,.4)} .h-ott .ntag{background:rgba(138,120,91,.2);color:#745b34}
+.h-hab .nb{border-left:3px solid rgba(138,123,91,.4)} .h-hab .ntag{background:rgba(138,123,91,.2);color:#c8b88a}
+.h-spa .nb{border-left:3px solid rgba(138,91,91,.4)} .h-spa .ntag{background:rgba(138,91,91,.2);color:#d4a8a8}
+.h-bur .nb{border-left:3px solid rgba(91,111,138,.4)} .h-bur .ntag{background:rgba(91,111,138,.2);color:#8aafc8}
+.h-ara .nb{border-left:3px solid rgba(111,138,91,.4)} .h-ara .ntag{background:rgba(111,138,91,.2);color:#a8c88a}
+.h-aus .nb{border-left:3px solid rgba(160,140,80,.3)} .h-aus .ntag{background:rgba(160,140,80,.15);color:#d4c898}
+.h-eng .nb{border-left:3px solid rgba(91,138,120,.4)} .h-eng .ntag{background:rgba(91,138,120,.2);color:#8ac8b0}
+.h-fra .nb{border-left:3px solid rgba(120,91,138,.4)} .h-fra .ntag{background:rgba(120,91,138,.2);color:#b8a0d4}
+.h-ott .nb{border-left:3px solid rgba(138,120,91,.4)} .h-ott .ntag{background:rgba(138,120,91,.2);color:#d4c0a0}
 .karl .nb{border-color:rgba(var(--axr),.35);background:rgba(var(--axr),.06);padding:10px 14px}
 .karl .nn{font-size:14px;background:linear-gradient(135deg,#c9a96e,#e8c888,#c9a96e);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 /* LUX: gradient name was illegible on the paper background */
@@ -42,9 +42,9 @@ html[data-theme="lux"] .karl .nn{background:none;-webkit-background-clip:border-
 .cv.l{height:20px}
 .row{display:flex;align-items:flex-start;gap:14px}
 .branch{display:flex;flex-direction:column;align-items:center}
-.inherit{font-size:7px;color:var(--text3);text-align:center;margin:2px 0;font-style:normal}
+.inherit{font-size:7px;color:var(--text3);text-align:center;margin:2px 0;font-style:italic}
 .inherit strong{color:var(--gold);font-style:normal}
-.split-label{font-family:'Shippori Mincho',serif;font-size:9px;font-weight:700;letter-spacing:.15em;color:var(--gold);text-align:center;padding:6px 0 3px;opacity:.6}
+.split-label{font-family:'Cormorant Garamond',serif;font-size:9px;font-weight:700;letter-spacing:.15em;color:var(--gold);text-align:center;padding:6px 0 3px;opacity:.6}
 .tp{display:none}
 /* Relation diagram section */
 .sec-title{font-family:'Noto Serif JP',serif;font-size:12px;font-weight:700;color:var(--gold2);text-align:center;padding:16px 20px 8px;border-top:1px solid rgba(var(--axr),.06);margin-top:10px}
@@ -63,8 +63,8 @@ html[data-theme="lux"] .karl .nn{background:none;-webkit-background-clip:border-
 }
 </style>
 <style id="thThemes">/* =====================================================
-   THESAURUS HISTORIAE ― themes.css(LUX v2: 印刷資料集)
-   生成りの紙 + 墨の本文 + 朱筆(★語)。飾りは罫線だけ。
+   THESAURUS HISTORIAE ― themes.css(LUX固定版)
+   生成りの紙 + 墨の本文 + 朱筆(★語) + 金茶の構造色。
    retheme_inject.py が各HTMLに埋め込む。編集後は再実行。
    ===================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&display=swap');
@@ -72,24 +72,22 @@ html[data-theme="lux"] .karl .nn{background:none;-webkit-background-clip:border-
 :root { --axr: 201, 169, 110; --shu: #c9a96e; }
 
 html[data-theme="lux"] {
-  --bg:#f6f2e8; --paper:#fffdf7;
-  --gold:#6e5434; --gold2:#2a2016; --gold3:#8a7352;
-  --text:#211b14; --text2:#3f372d; --text3:#776b59;
-  --line:rgba(33,27,20,.17); --line2:rgba(33,27,20,.32); --border:rgba(33,27,20,.17);
-  --gold-dim:rgba(110,84,52,.14);
-  --axr:110,84,52;
-  --shu:#a2331e; --ai:#2c4a6e;
+  --bg:#f1ecdf;
+  --gold:#8b6f4e; --gold2:#59452a; --gold3:#9c855f;
+  --text:#2b241b; --text2:#6d6353; --text3:#a89a80;
+  --line:rgba(43,36,27,.16); --border:rgba(43,36,27,.16);
+  --gold-dim:rgba(139,111,78,.16);
+  --axr:139,111,78;
+  --shu:#a2331e;
 }
 
 html[data-theme="lux"] body {
   background:var(--bg);
-  color:var(--text);
   font-family:'Shippori Mincho','Noto Serif JP',serif;
 }
-html[data-theme="lux"] body::before { display:none !important; }   /* ノイズ撤去 */
+html[data-theme="lux"] body::before { opacity:.55; }
 html[data-theme="lux"] p { line-height:2.05; }
 html[data-theme="lux"] * { text-shadow:none !important; }
-html[data-theme="lux"] *:hover { box-shadow:none !important; }
 
 /* 強調の二段化: 通常太字=墨 / ★語=朱 */
 html[data-theme="lux"] strong { color:var(--text) !important; font-weight:600; }
@@ -98,77 +96,12 @@ html[data-theme="lux"] span.k + strong,
 html[data-theme="lux"] .node-title .k { color:var(--shu) !important; }
 html[data-theme="lux"] span.k + strong { font-weight:700; }
 html[data-theme="lux"] ::selection { background:rgba(162,51,30,.18); }
-
-/* ページ見出し帯: 柱のように太罫で区切る */
-html[data-theme="lux"] .hdr,
-html[data-theme="lux"] .top-bar { background:var(--bg); border-bottom:2px solid var(--text) !important; }
-html[data-theme="lux"] .hdr h1,
-html[data-theme="lux"] .top-bar h1 { color:var(--text); letter-spacing:.02em; }
-html[data-theme="lux"] .hdr a,
-html[data-theme="lux"] .meta a,
-html[data-theme="lux"] .bottom-nav a { opacity:1 !important; color:var(--ai) !important; text-decoration:none; }
-html[data-theme="lux"] .hdr a:hover,
-html[data-theme="lux"] .meta a:hover,
-html[data-theme="lux"] .bottom-nav a:hover { text-decoration:underline; }
-html[data-theme="lux"] .latin,
-html[data-theme="lux"] .divider { display:none !important; }
-html[data-theme="lux"] .top-bar::after { content:none !important; }
-
-/* 年・番号: 等幅数字、薄めない */
-html[data-theme="lux"] .node-year,
-html[data-theme="lux"] .phase-label,
-html[data-theme="lux"] .sec-icon,
-html[data-theme="lux"] .sec-cnt,
-html[data-theme="lux"] .cnt,
-html[data-theme="lux"] td.no { font-variant-numeric:tabular-nums; letter-spacing:0 !important; opacity:1 !important; color:var(--text3) !important; }
-
-/* 流れ図(通史・国家史・文化史): 半透明の角丸カード → 紙面に罫線 */
-html[data-theme="lux"] .node { background:var(--paper) !important; border:1px solid var(--line) !important; border-radius:2px !important; }
-html[data-theme="lux"] .node.key { border-color:var(--line2) !important; }
-html[data-theme="lux"] .node-title,
-html[data-theme="lux"] .node-desc { color:var(--text) !important; }
-html[data-theme="lux"] .phase { border-left-color:var(--line) !important; }
-html[data-theme="lux"] .phase::before { background:var(--bg) !important; }
-
-/* 表 */
-html[data-theme="lux"] th { background:#ebe4d4 !important; color:var(--text) !important; border-bottom:1px solid var(--line2) !important; letter-spacing:0 !important; }
-html[data-theme="lux"] td { color:var(--text); border-color:var(--line) !important; }
-html[data-theme="lux"] .note p { color:var(--text2) !important; }
-
-/* 目次系(図表・国家史・文化史の一覧) */
-html[data-theme="lux"] .card { background:var(--paper) !important; border:1px solid var(--line) !important; border-radius:2px !important; transform:none !important; }
-html[data-theme="lux"] .card:hover { border-color:var(--gold) !important; }
-html[data-theme="lux"] .card-main { font-size:13.5px !important; color:var(--text) !important; }
-html[data-theme="lux"] .card-sub { font-size:11px !important; color:var(--text3) !important; }
-html[data-theme="lux"] .card-badge { font-size:10.5px !important; background:none !important; color:var(--text3) !important; padding:0 !important; font-weight:400 !important; }
-html[data-theme="lux"] .nav-pills a { font-size:12px !important; opacity:1 !important; color:var(--text2) !important; border-color:var(--line) !important; border-radius:2px !important; }
-html[data-theme="lux"] .sec-hdr { border-bottom:1px solid var(--text) !important; }
-html[data-theme="lux"] .sec-hdr::before { display:none; }
-html[data-theme="lux"] .sec-icon { color:var(--shu) !important; }
-html[data-theme="lux"] .sec-hdr h2 { font-size:17px !important; color:var(--text) !important; }
-
-/* 入力欄 */
-html[data-theme="lux"] .search-area input,
-html[data-theme="lux"] .si { background:var(--paper) !important; border:1px solid var(--line2) !important; border-radius:2px !important; font-size:14px !important; color:var(--text) !important; }
-
-/* 家系図などの箱 */
-html[data-theme="lux"] .nb { background:var(--paper) !important; border-radius:2px !important; }
-html[data-theme="lux"] .nn { color:var(--text) !important; }
-html[data-theme="lux"] .ntag { letter-spacing:0 !important; border-radius:2px !important; }
-
-/* 目次ページの見出し: 和名 + 小さなラテン名 */
-html[data-theme="lux"] .top-bar h1 small { font-size:13px; font-weight:400; color:var(--text3); margin-left:12px; letter-spacing:.06em; }
-html[data-theme="lux"] .top-bar h1 { font-size:28px !important; }
-
-html[data-theme="lux"] .sec-lat,
-html[data-theme="lux"] .asm-type { display:none !important; }
-
 </style><script id="thScript">document.documentElement.setAttribute('data-theme','lux');</script></head>
 <body>
 
 <div class="hdr">
   <h1>ハプスブルク家の婚姻戦略 ―「戦争は他家に任せよ。幸いなるオーストリアよ、汝は結婚せよ」</h1>
-  <a href="charts.html">← 図表一覧</a>
+  <a href="charts.html">← Ad Chartae</a>
 </div>
 
 <!-- ===== PART 1: FAMILY TREE ===== -->
@@ -259,10 +192,10 @@ html[data-theme="lux"] .asm-type { display:none !important; }
   <div class="nn">カール5世（カルロス1世）</div>
   <div class="ni">神聖ローマ皇帝＋スペイン王 ｜ 1500-1558</div>
   <div style="display:flex;gap:3px;justify-content:center;flex-wrap:wrap;margin-top:3px">
-    <span class="ntag" style="background:rgba(138,123,91,.2);color:#726336">オーストリア</span>
-    <span class="ntag" style="background:rgba(91,111,138,.2);color:#365a72">ネーデルラント</span>
-    <span class="ntag" style="background:rgba(138,91,91,.2);color:#713838">スペイン＋新大陸</span>
-    <span class="ntag" style="background:rgba(111,138,91,.2);color:#537236">南イタリア</span>
+    <span class="ntag" style="background:rgba(138,123,91,.2);color:#c8b88a">オーストリア</span>
+    <span class="ntag" style="background:rgba(91,111,138,.2);color:#8aafc8">ネーデルラント</span>
+    <span class="ntag" style="background:rgba(138,91,91,.2);color:#d4a8a8">スペイン＋新大陸</span>
+    <span class="ntag" style="background:rgba(111,138,91,.2);color:#a8c88a">南イタリア</span>
   </div>
 </div><div class="tp"><p>「太陽の沈まぬ帝国」。4家門の血統を一身に集める。ルターの宗教改革(1521ヴォルムス帝国議会)、フランソワ1世との4度の戦争（パヴィアの戦い1525）、スレイマン1世の第1次ウィーン包囲(1529)に同時に対処。1556年に退位し帝国をスペイン系（息子フェリペ2世）とオーストリア系（弟フェルディナント）に分割。</p></div></div>
 
@@ -325,14 +258,14 @@ html[data-theme="lux"] .asm-type { display:none !important; }
   <!-- Karl ←→ Francis I : rivalry (top-left diagonal) -->
   <path d="M 290 195 L 200 120" stroke="#c25a5a" stroke-width="2" opacity=".4" fill="none"/>
   <rect x="196" y="148" width="90" height="22" rx="3" fill="rgba(6,9,15,.85)"/>
-  <text x="241" y="157" text-anchor="middle" fill="#773131" font-size="7.5" font-family="Noto Sans JP" opacity=".8">イタリア戦争(4回)</text>
-  <text x="241" y="167" text-anchor="middle" fill="#773131" font-size="6.5" font-family="Noto Sans JP" opacity=".6">パヴィアで捕虜(1525)</text>
+  <text x="241" y="157" text-anchor="middle" fill="#c25a5a" font-size="7.5" font-family="Noto Sans JP" opacity=".8">イタリア戦争(4回)</text>
+  <text x="241" y="167" text-anchor="middle" fill="#c25a5a" font-size="6.5" font-family="Noto Sans JP" opacity=".6">パヴィアで捕虜(1525)</text>
 
   <!-- Karl ←→ Suleiman : military clash (top-right diagonal) -->
   <path d="M 490 195 L 580 120" stroke="#c25a5a" stroke-width="2" opacity=".4" fill="none"/>
   <rect x="496" y="148" width="95" height="22" rx="3" fill="rgba(6,9,15,.85)"/>
-  <text x="543" y="157" text-anchor="middle" fill="#773131" font-size="7.5" font-family="Noto Sans JP" opacity=".8">ウィーン包囲(1529)</text>
-  <text x="543" y="167" text-anchor="middle" fill="#773131" font-size="6.5" font-family="Noto Sans JP" opacity=".6">東方からの脅威</text>
+  <text x="543" y="157" text-anchor="middle" fill="#c25a5a" font-size="7.5" font-family="Noto Sans JP" opacity=".8">ウィーン包囲(1529)</text>
+  <text x="543" y="167" text-anchor="middle" fill="#c25a5a" font-size="6.5" font-family="Noto Sans JP" opacity=".6">東方からの脅威</text>
 
   <!-- Karl ←→ Henry VIII : Catherine problem (bottom-left diagonal) -->
   <path d="M 290 225 L 200 300" stroke="#c29a4a" stroke-width="1.5" opacity=".4" stroke-dasharray="5,4" fill="none"/>
@@ -343,8 +276,8 @@ html[data-theme="lux"] .asm-type { display:none !important; }
   <!-- Karl ←→ Luther : internal split (bottom-right diagonal) -->
   <path d="M 490 225 L 580 300" stroke="#c25a5a" stroke-width="1.5" opacity=".35" stroke-dasharray="4,3" fill="none"/>
   <rect x="496" y="252" width="100" height="22" rx="3" fill="rgba(6,9,15,.85)"/>
-  <text x="546" y="261" text-anchor="middle" fill="#773131" font-size="7.5" font-family="Noto Sans JP" opacity=".8">ヴォルムス帝国議会(1521)</text>
-  <text x="546" y="271" text-anchor="middle" fill="#773131" font-size="6.5" font-family="Noto Sans JP" opacity=".6">帝国の宗教的分裂</text>
+  <text x="546" y="261" text-anchor="middle" fill="#c25a5a" font-size="7.5" font-family="Noto Sans JP" opacity=".8">ヴォルムス帝国議会(1521)</text>
+  <text x="546" y="271" text-anchor="middle" fill="#c25a5a" font-size="6.5" font-family="Noto Sans JP" opacity=".6">帝国の宗教的分裂</text>
 
   <!-- Francis ←→ Suleiman : secret alliance (top, horizontal) -->
   <path d="M 195 88 L 585 88" stroke="#4a90c2" stroke-width="1.5" opacity=".3" stroke-dasharray="6,4" fill="none"/>
@@ -354,7 +287,7 @@ html[data-theme="lux"] .asm-type { display:none !important; }
   <!-- Henry ←→ Pope : break (bottom, horizontal) -->
   <path d="M 195 330 L 335 380" stroke="#c25a5a" stroke-width="1.5" opacity=".3" fill="none"/>
   <rect x="218" y="351" width="80" height="14" rx="3" fill="rgba(6,9,15,.85)"/>
-  <text x="258" y="361" text-anchor="middle" fill="#773131" font-size="7" font-family="Noto Sans JP" opacity=".7">首長法で決裂(1534)</text>
+  <text x="258" y="361" text-anchor="middle" fill="#c25a5a" font-size="7" font-family="Noto Sans JP" opacity=".7">首長法で決裂(1534)</text>
 
   <!-- Karl ←→ Pope : complex (bottom center) -->
   <path d="M 390 240 L 390 365" stroke="#c29a4a" stroke-width="1.5" opacity=".3" stroke-dasharray="4,3" fill="none"/>
@@ -366,7 +299,7 @@ html[data-theme="lux"] .asm-type { display:none !important; }
   <!-- カール5世 (center) -->
   <g class="nd-svg" data-tip="karl5">
     <rect x="290" y="178" width="200" height="64" rx="10" fill="rgba(var(--axr),.08)" stroke="rgba(var(--axr),.35)" stroke-width="1.5"/>
-    <text x="390" y="200" text-anchor="middle" fill="#776031" font-size="15" font-family="Noto Serif JP" font-weight="700">カール5世</text>
+    <text x="390" y="200" text-anchor="middle" fill="#e8c888" font-size="15" font-family="Noto Serif JP" font-weight="700">カール5世</text>
     <text x="390" y="216" text-anchor="middle" fill="#8a857d" font-size="8" font-family="Noto Sans JP">神聖ローマ皇帝＋スペイン王 ｜ 1519-1556</text>
     <text x="390" y="232" text-anchor="middle" fill="#555048" font-size="7.5" font-family="Noto Sans JP">「太陽の沈まぬ帝国」― 三方面の敵に同時に対処</text>
   </g>
@@ -374,7 +307,7 @@ html[data-theme="lux"] .asm-type { display:none !important; }
   <!-- フランソワ1世 (top-left) -->
   <g class="nd-svg" data-tip="francis">
     <rect x="50" y="92" width="150" height="52" rx="8" fill="rgba(120,91,138,.08)" stroke="rgba(120,91,138,.3)" stroke-width="1.5"/>
-    <text x="125" y="112" text-anchor="middle" fill="#523474" font-size="12" font-family="Noto Serif JP" font-weight="700">フランソワ1世</text>
+    <text x="125" y="112" text-anchor="middle" fill="#b8a0d4" font-size="12" font-family="Noto Serif JP" font-weight="700">フランソワ1世</text>
     <text x="125" y="126" text-anchor="middle" fill="#8a857d" font-size="7.5" font-family="Noto Sans JP">フランス王 ｜ 1515-1547</text>
     <text x="125" y="138" text-anchor="middle" fill="#555048" font-size="7" font-family="Noto Sans JP">カール最大のライバル</text>
   </g>
@@ -382,7 +315,7 @@ html[data-theme="lux"] .asm-type { display:none !important; }
   <!-- スレイマン1世 (top-right) -->
   <g class="nd-svg" data-tip="suleiman">
     <rect x="580" y="92" width="150" height="52" rx="8" fill="rgba(138,120,91,.08)" stroke="rgba(138,120,91,.3)" stroke-width="1.5"/>
-    <text x="655" y="112" text-anchor="middle" fill="#745b34" font-size="12" font-family="Noto Serif JP" font-weight="700">スレイマン1世</text>
+    <text x="655" y="112" text-anchor="middle" fill="#d4c0a0" font-size="12" font-family="Noto Serif JP" font-weight="700">スレイマン1世</text>
     <text x="655" y="126" text-anchor="middle" fill="#8a857d" font-size="7.5" font-family="Noto Sans JP">オスマン帝国 ｜ 1520-1566</text>
     <text x="655" y="138" text-anchor="middle" fill="#555048" font-size="7" font-family="Noto Sans JP">オスマン最盛期</text>
   </g>
@@ -390,7 +323,7 @@ html[data-theme="lux"] .asm-type { display:none !important; }
   <!-- ヘンリー8世 (bottom-left) -->
   <g class="nd-svg" data-tip="henry">
     <rect x="50" y="290" width="150" height="52" rx="8" fill="rgba(91,138,120,.08)" stroke="rgba(91,138,120,.3)" stroke-width="1.5"/>
-    <text x="125" y="310" text-anchor="middle" fill="#36725b" font-size="12" font-family="Noto Serif JP" font-weight="700">ヘンリー8世</text>
+    <text x="125" y="310" text-anchor="middle" fill="#8ac8b0" font-size="12" font-family="Noto Serif JP" font-weight="700">ヘンリー8世</text>
     <text x="125" y="324" text-anchor="middle" fill="#8a857d" font-size="7.5" font-family="Noto Sans JP">イングランド王 ｜ 1509-1547</text>
     <text x="125" y="336" text-anchor="middle" fill="#555048" font-size="7" font-family="Noto Sans JP">離婚問題→英国国教会(1534)</text>
   </g>
@@ -398,7 +331,7 @@ html[data-theme="lux"] .asm-type { display:none !important; }
   <!-- ルター (bottom-right) -->
   <g class="nd-svg" data-tip="luther">
     <rect x="580" y="290" width="150" height="52" rx="8" fill="rgba(138,100,80,.06)" stroke="rgba(138,100,80,.2)" stroke-width="1.5"/>
-    <text x="655" y="310" text-anchor="middle" fill="#744834" font-size="12" font-family="Noto Serif JP" font-weight="700">ルター</text>
+    <text x="655" y="310" text-anchor="middle" fill="#d4b0a0" font-size="12" font-family="Noto Serif JP" font-weight="700">ルター</text>
     <text x="655" y="324" text-anchor="middle" fill="#8a857d" font-size="7.5" font-family="Noto Sans JP">95か条の論題(1517)</text>
     <text x="655" y="336" text-anchor="middle" fill="#555048" font-size="7" font-family="Noto Sans JP">帝国内の宗教的分裂</text>
   </g>
@@ -406,7 +339,7 @@ html[data-theme="lux"] .asm-type { display:none !important; }
   <!-- 教皇 (bottom center) -->
   <g class="nd-svg" data-tip="pope">
     <rect x="325" y="370" width="130" height="42" rx="8" fill="rgba(180,160,100,.06)" stroke="rgba(180,160,100,.2)" stroke-width="1"/>
-    <text x="390" y="388" text-anchor="middle" fill="#746534" font-size="11" font-family="Noto Serif JP" font-weight="700">ローマ教皇</text>
+    <text x="390" y="388" text-anchor="middle" fill="#d4c8a0" font-size="11" font-family="Noto Serif JP" font-weight="700">ローマ教皇</text>
     <text x="390" y="402" text-anchor="middle" fill="#8a857d" font-size="7" font-family="Noto Sans JP">クレメンス7世 ｜ 各勢力の板挟み</text>
   </g>
 

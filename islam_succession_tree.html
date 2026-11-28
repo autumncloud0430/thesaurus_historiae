@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ムハンマドの後継問題 ― ハーシム家 vs ウマイヤ家</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
 :root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--text:#d4cfc6;--text2:#8a857d;--text3:#555048;--border:rgba(var(--axr),.08)}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
@@ -29,8 +29,8 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
 }
 </style>
 <style id="thThemes">/* =====================================================
-   THESAURUS HISTORIAE ― themes.css(LUX v2: 印刷資料集)
-   生成りの紙 + 墨の本文 + 朱筆(★語)。飾りは罫線だけ。
+   THESAURUS HISTORIAE ― themes.css(LUX固定版)
+   生成りの紙 + 墨の本文 + 朱筆(★語) + 金茶の構造色。
    retheme_inject.py が各HTMLに埋め込む。編集後は再実行。
    ===================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&display=swap');
@@ -38,24 +38,22 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
 :root { --axr: 201, 169, 110; --shu: #c9a96e; }
 
 html[data-theme="lux"] {
-  --bg:#f6f2e8; --paper:#fffdf7;
-  --gold:#6e5434; --gold2:#2a2016; --gold3:#8a7352;
-  --text:#211b14; --text2:#3f372d; --text3:#776b59;
-  --line:rgba(33,27,20,.17); --line2:rgba(33,27,20,.32); --border:rgba(33,27,20,.17);
-  --gold-dim:rgba(110,84,52,.14);
-  --axr:110,84,52;
-  --shu:#a2331e; --ai:#2c4a6e;
+  --bg:#f1ecdf;
+  --gold:#8b6f4e; --gold2:#59452a; --gold3:#9c855f;
+  --text:#2b241b; --text2:#6d6353; --text3:#a89a80;
+  --line:rgba(43,36,27,.16); --border:rgba(43,36,27,.16);
+  --gold-dim:rgba(139,111,78,.16);
+  --axr:139,111,78;
+  --shu:#a2331e;
 }
 
 html[data-theme="lux"] body {
   background:var(--bg);
-  color:var(--text);
   font-family:'Shippori Mincho','Noto Serif JP',serif;
 }
-html[data-theme="lux"] body::before { display:none !important; }   /* ノイズ撤去 */
+html[data-theme="lux"] body::before { opacity:.55; }
 html[data-theme="lux"] p { line-height:2.05; }
 html[data-theme="lux"] * { text-shadow:none !important; }
-html[data-theme="lux"] *:hover { box-shadow:none !important; }
 
 /* 強調の二段化: 通常太字=墨 / ★語=朱 */
 html[data-theme="lux"] strong { color:var(--text) !important; font-weight:600; }
@@ -64,76 +62,11 @@ html[data-theme="lux"] span.k + strong,
 html[data-theme="lux"] .node-title .k { color:var(--shu) !important; }
 html[data-theme="lux"] span.k + strong { font-weight:700; }
 html[data-theme="lux"] ::selection { background:rgba(162,51,30,.18); }
-
-/* ページ見出し帯: 柱のように太罫で区切る */
-html[data-theme="lux"] .hdr,
-html[data-theme="lux"] .top-bar { background:var(--bg); border-bottom:2px solid var(--text) !important; }
-html[data-theme="lux"] .hdr h1,
-html[data-theme="lux"] .top-bar h1 { color:var(--text); letter-spacing:.02em; }
-html[data-theme="lux"] .hdr a,
-html[data-theme="lux"] .meta a,
-html[data-theme="lux"] .bottom-nav a { opacity:1 !important; color:var(--ai) !important; text-decoration:none; }
-html[data-theme="lux"] .hdr a:hover,
-html[data-theme="lux"] .meta a:hover,
-html[data-theme="lux"] .bottom-nav a:hover { text-decoration:underline; }
-html[data-theme="lux"] .latin,
-html[data-theme="lux"] .divider { display:none !important; }
-html[data-theme="lux"] .top-bar::after { content:none !important; }
-
-/* 年・番号: 等幅数字、薄めない */
-html[data-theme="lux"] .node-year,
-html[data-theme="lux"] .phase-label,
-html[data-theme="lux"] .sec-icon,
-html[data-theme="lux"] .sec-cnt,
-html[data-theme="lux"] .cnt,
-html[data-theme="lux"] td.no { font-variant-numeric:tabular-nums; letter-spacing:0 !important; opacity:1 !important; color:var(--text3) !important; }
-
-/* 流れ図(通史・国家史・文化史): 半透明の角丸カード → 紙面に罫線 */
-html[data-theme="lux"] .node { background:var(--paper) !important; border:1px solid var(--line) !important; border-radius:2px !important; }
-html[data-theme="lux"] .node.key { border-color:var(--line2) !important; }
-html[data-theme="lux"] .node-title,
-html[data-theme="lux"] .node-desc { color:var(--text) !important; }
-html[data-theme="lux"] .phase { border-left-color:var(--line) !important; }
-html[data-theme="lux"] .phase::before { background:var(--bg) !important; }
-
-/* 表 */
-html[data-theme="lux"] th { background:#ebe4d4 !important; color:var(--text) !important; border-bottom:1px solid var(--line2) !important; letter-spacing:0 !important; }
-html[data-theme="lux"] td { color:var(--text); border-color:var(--line) !important; }
-html[data-theme="lux"] .note p { color:var(--text2) !important; }
-
-/* 目次系(図表・国家史・文化史の一覧) */
-html[data-theme="lux"] .card { background:var(--paper) !important; border:1px solid var(--line) !important; border-radius:2px !important; transform:none !important; }
-html[data-theme="lux"] .card:hover { border-color:var(--gold) !important; }
-html[data-theme="lux"] .card-main { font-size:13.5px !important; color:var(--text) !important; }
-html[data-theme="lux"] .card-sub { font-size:11px !important; color:var(--text3) !important; }
-html[data-theme="lux"] .card-badge { font-size:10.5px !important; background:none !important; color:var(--text3) !important; padding:0 !important; font-weight:400 !important; }
-html[data-theme="lux"] .nav-pills a { font-size:12px !important; opacity:1 !important; color:var(--text2) !important; border-color:var(--line) !important; border-radius:2px !important; }
-html[data-theme="lux"] .sec-hdr { border-bottom:1px solid var(--text) !important; }
-html[data-theme="lux"] .sec-hdr::before { display:none; }
-html[data-theme="lux"] .sec-icon { color:var(--shu) !important; }
-html[data-theme="lux"] .sec-hdr h2 { font-size:17px !important; color:var(--text) !important; }
-
-/* 入力欄 */
-html[data-theme="lux"] .search-area input,
-html[data-theme="lux"] .si { background:var(--paper) !important; border:1px solid var(--line2) !important; border-radius:2px !important; font-size:14px !important; color:var(--text) !important; }
-
-/* 家系図などの箱 */
-html[data-theme="lux"] .nb { background:var(--paper) !important; border-radius:2px !important; }
-html[data-theme="lux"] .nn { color:var(--text) !important; }
-html[data-theme="lux"] .ntag { letter-spacing:0 !important; border-radius:2px !important; }
-
-/* 目次ページの見出し: 和名 + 小さなラテン名 */
-html[data-theme="lux"] .top-bar h1 small { font-size:13px; font-weight:400; color:var(--text3); margin-left:12px; letter-spacing:.06em; }
-html[data-theme="lux"] .top-bar h1 { font-size:28px !important; }
-
-html[data-theme="lux"] .sec-lat,
-html[data-theme="lux"] .asm-type { display:none !important; }
-
 </style><script id="thScript">document.documentElement.setAttribute('data-theme','lux');</script></head>
 <body>
 <div class="hdr">
   <h1>ムハンマドの後継問題 ― クライシュ族：ハーシム家 vs ウマイヤ家</h1>
-  <a href="charts.html">← 図表一覧</a>
+  <a href="charts.html">← Ad Chartae</a>
 </div>
 
 <div class="svg-wrap">
@@ -141,10 +74,10 @@ html[data-theme="lux"] .asm-type { display:none !important; }
 
 <!-- ===== CLAN BACKGROUND ===== -->
 <rect x="20" y="55" width="500" height="815" rx="12" fill="none" stroke="rgba(80,130,80,.1)" stroke-width="1"/>
-<text x="40" y="75" fill="rgba(80,130,80,.5)" font-size="10" font-family="Shippori Mincho" font-weight="700" letter-spacing=".2em">HASHIM ― ハーシム家</text>
+<text x="40" y="75" fill="rgba(80,130,80,.5)" font-size="10" font-family="Cormorant Garamond" font-weight="700" letter-spacing=".2em">HASHIM ― ハーシム家</text>
 
 <rect x="540" y="55" width="360" height="510" rx="12" fill="none" stroke="rgba(160,110,70,.1)" stroke-width="1"/>
-<text x="560" y="75" fill="rgba(160,110,70,.5)" font-size="10" font-family="Shippori Mincho" font-weight="700" letter-spacing=".2em">UMAYYA ― ウマイヤ家</text>
+<text x="560" y="75" fill="rgba(160,110,70,.5)" font-size="10" font-family="Cormorant Garamond" font-weight="700" letter-spacing=".2em">UMAYYA ― ウマイヤ家</text>
 
 <!-- ===== LINES (behind nodes) ===== -->
 
@@ -226,34 +159,34 @@ html[data-theme="lux"] .asm-type { display:none !important; }
 <!-- QURAYSH -->
 <g class="nd-svg" data-tip="quraysh">
   <rect x="390" y="5" width="140" height="28" rx="8" fill="rgba(var(--axr),.06)" stroke="rgba(var(--axr),.2)" stroke-width="1"/>
-  <text x="460" y="24" text-anchor="middle" fill="#776031" font-size="12" font-family="Noto Serif JP" font-weight="700">クライシュ族</text>
+  <text x="460" y="24" text-anchor="middle" fill="#e8c888" font-size="12" font-family="Noto Serif JP" font-weight="700">クライシュ族</text>
 </g>
 
 <!-- ABD AL-MUTTALIB -->
 <g class="nd-svg" data-tip="muttalib">
   <rect x="175" y="88" width="170" height="40" rx="7" fill="rgba(80,130,80,.06)" stroke="rgba(80,130,80,.2)" stroke-width="1"/>
-  <text x="260" y="107" text-anchor="middle" fill="#36724b" font-size="11" font-family="Noto Serif JP" font-weight="700">アブド＝アルムッタリブ</text>
+  <text x="260" y="107" text-anchor="middle" fill="#8ac8a0" font-size="11" font-family="Noto Serif JP" font-weight="700">アブド＝アルムッタリブ</text>
   <text x="260" y="121" text-anchor="middle" fill="#8a857d" font-size="7" font-family="Noto Sans JP">ハーシム家の長 ｜ ムハンマドの祖父</text>
 </g>
 
 <!-- ABDULLAH -->
 <g class="nd-svg" data-tip="abdullah">
   <rect x="45" y="178" width="130" height="30" rx="6" fill="rgba(80,130,80,.04)" stroke="rgba(80,130,80,.12)" stroke-width="1"/>
-  <text x="110" y="196" text-anchor="middle" fill="#36724b" font-size="9" font-family="Noto Serif JP" font-weight="600">アブドゥッラー</text>
+  <text x="110" y="196" text-anchor="middle" fill="#8ac8a0" font-size="9" font-family="Noto Serif JP" font-weight="600">アブドゥッラー</text>
   <text x="110" y="207" text-anchor="middle" fill="#555048" font-size="6" font-family="Noto Sans JP">ムハンマドの父（早世）</text>
 </g>
 
 <!-- ABU TALIB -->
 <g class="nd-svg" data-tip="abutalib">
   <rect x="200" y="178" width="160" height="30" rx="6" fill="rgba(80,130,80,.04)" stroke="rgba(80,130,80,.12)" stroke-width="1"/>
-  <text x="280" y="196" text-anchor="middle" fill="#36724b" font-size="9" font-family="Noto Serif JP" font-weight="600">アブー＝ターリブ</text>
+  <text x="280" y="196" text-anchor="middle" fill="#8ac8a0" font-size="9" font-family="Noto Serif JP" font-weight="600">アブー＝ターリブ</text>
   <text x="280" y="207" text-anchor="middle" fill="#555048" font-size="6" font-family="Noto Sans JP">ムハンマドの叔父・アリーの父</text>
 </g>
 
 <!-- ABBAS -->
 <g class="nd-svg" data-tip="abbas">
   <rect x="375" y="178" width="110" height="30" rx="6" fill="rgba(80,100,140,.04)" stroke="rgba(80,100,140,.12)" stroke-width="1"/>
-  <text x="430" y="196" text-anchor="middle" fill="#365a72" font-size="9" font-family="Noto Serif JP" font-weight="600">アッバース</text>
+  <text x="430" y="196" text-anchor="middle" fill="#8aafc8" font-size="9" font-family="Noto Serif JP" font-weight="600">アッバース</text>
   <text x="430" y="207" text-anchor="middle" fill="#555048" font-size="6" font-family="Noto Sans JP">ムハンマドの叔父</text>
 </g>
 
@@ -261,8 +194,8 @@ html[data-theme="lux"] .asm-type { display:none !important; }
 <g class="nd-svg" data-tip="abubakr">
   <rect x="25" y="275" width="120" height="48" rx="7" fill="rgba(130,120,100,.05)" stroke="rgba(130,120,100,.2)" stroke-width="1"/>
   <circle cx="42" cy="288" r="8" fill="rgba(var(--axr),.15)" stroke="rgba(var(--axr),.3)" stroke-width="1"/>
-  <text x="42" y="291" text-anchor="middle" fill="#776031" font-size="8" font-family="Shippori Mincho" font-weight="700">①</text>
-  <text x="97" y="293" text-anchor="middle" fill="#6b5d3e" font-size="9" font-family="Noto Serif JP" font-weight="700">アブー＝バクル</text>
+  <text x="42" y="291" text-anchor="middle" fill="#e8c888" font-size="8" font-family="Cormorant Garamond" font-weight="700">①</text>
+  <text x="97" y="293" text-anchor="middle" fill="#c8bca0" font-size="9" font-family="Noto Serif JP" font-weight="700">アブー＝バクル</text>
   <text x="85" y="306" text-anchor="middle" fill="#8a857d" font-size="6.5" font-family="Noto Sans JP">初代カリフ 632-634</text>
   <text x="85" y="318" text-anchor="middle" fill="#555048" font-size="6" font-family="Noto Sans JP">親友・義父。リッダ鎮圧</text>
 </g>
@@ -271,8 +204,8 @@ html[data-theme="lux"] .asm-type { display:none !important; }
 <g class="nd-svg" data-tip="umar">
   <rect x="25" y="345" width="120" height="48" rx="7" fill="rgba(130,120,100,.05)" stroke="rgba(130,120,100,.2)" stroke-width="1"/>
   <circle cx="42" cy="358" r="8" fill="rgba(var(--axr),.15)" stroke="rgba(var(--axr),.3)" stroke-width="1"/>
-  <text x="42" y="361" text-anchor="middle" fill="#776031" font-size="8" font-family="Shippori Mincho" font-weight="700">②</text>
-  <text x="97" y="363" text-anchor="middle" fill="#6b5d3e" font-size="9" font-family="Noto Serif JP" font-weight="700">ウマル</text>
+  <text x="42" y="361" text-anchor="middle" fill="#e8c888" font-size="8" font-family="Cormorant Garamond" font-weight="700">②</text>
+  <text x="97" y="363" text-anchor="middle" fill="#c8bca0" font-size="9" font-family="Noto Serif JP" font-weight="700">ウマル</text>
   <text x="85" y="376" text-anchor="middle" fill="#8a857d" font-size="6.5" font-family="Noto Sans JP">第2代カリフ 634-644</text>
   <text x="85" y="388" text-anchor="middle" fill="#555048" font-size="6" font-family="Noto Sans JP">義父。大征服。ササン朝滅亡</text>
 </g>
@@ -280,7 +213,7 @@ html[data-theme="lux"] .asm-type { display:none !important; }
 <!-- MUHAMMAD (center, large) -->
 <g class="nd-svg" data-tip="muhammad">
   <rect x="170" y="265" width="160" height="60" rx="10" fill="rgba(var(--axr),.08)" stroke="rgba(var(--axr),.35)" stroke-width="1.5"/>
-  <text x="250" y="290" text-anchor="middle" fill="#776031" font-size="16" font-family="Noto Serif JP" font-weight="700">ムハンマド</text>
+  <text x="250" y="290" text-anchor="middle" fill="#e8c888" font-size="16" font-family="Noto Serif JP" font-weight="700">ムハンマド</text>
   <text x="250" y="306" text-anchor="middle" fill="#8a857d" font-size="8" font-family="Noto Sans JP">預言者 ｜ 570頃-632</text>
   <text x="250" y="319" text-anchor="middle" fill="#555048" font-size="7" font-family="Noto Sans JP">後継者未指名のまま死去</text>
 </g>
@@ -288,7 +221,7 @@ html[data-theme="lux"] .asm-type { display:none !important; }
 <!-- FATIMA -->
 <g class="nd-svg" data-tip="fatima">
   <rect x="170" y="405" width="105" height="44" rx="7" fill="rgba(80,130,80,.05)" stroke="rgba(80,130,80,.2)" stroke-width="1"/>
-  <text x="222" y="423" text-anchor="middle" fill="#36724b" font-size="10" font-family="Noto Serif JP" font-weight="700">ファーティマ</text>
+  <text x="222" y="423" text-anchor="middle" fill="#8ac8a0" font-size="10" font-family="Noto Serif JP" font-weight="700">ファーティマ</text>
   <text x="222" y="438" text-anchor="middle" fill="#8a857d" font-size="7" font-family="Noto Sans JP">ムハンマドの娘</text>
 </g>
 
@@ -296,8 +229,8 @@ html[data-theme="lux"] .asm-type { display:none !important; }
 <g class="nd-svg" data-tip="ali">
   <rect x="340" y="400" width="150" height="56" rx="7" fill="rgba(138,80,80,.06)" stroke="rgba(138,80,80,.25)" stroke-width="1.5"/>
   <circle cx="358" cy="414" r="8" fill="rgba(138,80,80,.2)" stroke="rgba(138,80,80,.4)" stroke-width="1"/>
-  <text x="358" y="417" text-anchor="middle" fill="#743434" font-size="8" font-family="Shippori Mincho" font-weight="700">④</text>
-  <text x="430" y="420" text-anchor="middle" fill="#743434" font-size="11" font-family="Noto Serif JP" font-weight="700">アリー</text>
+  <text x="358" y="417" text-anchor="middle" fill="#d4a0a0" font-size="8" font-family="Cormorant Garamond" font-weight="700">④</text>
+  <text x="430" y="420" text-anchor="middle" fill="#d4a0a0" font-size="11" font-family="Noto Serif JP" font-weight="700">アリー</text>
   <text x="415" y="435" text-anchor="middle" fill="#8a857d" font-size="7" font-family="Noto Sans JP">第4代カリフ 656-661</text>
   <text x="415" y="449" text-anchor="middle" fill="#555048" font-size="6.5" font-family="Noto Sans JP">従弟＋娘婿。シーア派の正統</text>
 </g>
@@ -305,36 +238,36 @@ html[data-theme="lux"] .asm-type { display:none !important; }
 <!-- HASAN -->
 <g class="nd-svg" data-tip="hasan">
   <rect x="160" y="520" width="120" height="40" rx="6" fill="rgba(138,80,80,.04)" stroke="rgba(138,80,80,.15)" stroke-width="1"/>
-  <text x="220" y="538" text-anchor="middle" fill="#743434" font-size="10" font-family="Noto Serif JP" font-weight="700">ハサン</text>
+  <text x="220" y="538" text-anchor="middle" fill="#d4a0a0" font-size="10" font-family="Noto Serif JP" font-weight="700">ハサン</text>
   <text x="220" y="552" text-anchor="middle" fill="#8a857d" font-size="7" font-family="Noto Sans JP">長男 ｜ ムアーウィヤに譲位</text>
 </g>
 
 <!-- HUSAYN -->
 <g class="nd-svg" data-tip="husayn">
   <rect x="310" y="520" width="150" height="50" rx="6" fill="rgba(138,80,80,.06)" stroke="rgba(138,80,80,.25)" stroke-width="1.5"/>
-  <text x="385" y="538" text-anchor="middle" fill="#743434" font-size="10" font-family="Noto Serif JP" font-weight="700">フサイン</text>
+  <text x="385" y="538" text-anchor="middle" fill="#d4a0a0" font-size="10" font-family="Noto Serif JP" font-weight="700">フサイン</text>
   <text x="385" y="550" text-anchor="middle" fill="#8a857d" font-size="7" font-family="Noto Sans JP">次男 ｜ 626-680</text>
-  <text x="385" y="564" text-anchor="middle" fill="#773131" font-size="7" font-family="Noto Sans JP" font-weight="600">カルバラーの悲劇(680)</text>
+  <text x="385" y="564" text-anchor="middle" fill="#c25a5a" font-size="7" font-family="Noto Sans JP" font-weight="600">カルバラーの悲劇(680)</text>
 </g>
 
 <!-- TWELVE IMAMS -->
 <g class="nd-svg" data-tip="twelver">
   <rect x="130" y="640" width="175" height="42" rx="6" fill="rgba(138,80,80,.03)" stroke="rgba(138,80,80,.1)" stroke-width="1"/>
-  <text x="217" y="657" text-anchor="middle" fill="#743434" font-size="9" font-family="Noto Serif JP" font-weight="600">十二イマーム派（主流）</text>
+  <text x="217" y="657" text-anchor="middle" fill="#d4a0a0" font-size="9" font-family="Noto Serif JP" font-weight="600">十二イマーム派（主流）</text>
   <text x="217" y="672" text-anchor="middle" fill="#555048" font-size="6.5" font-family="Noto Sans JP">→ サファヴィー朝(1501) → 現イラン</text>
 </g>
 
 <!-- ISMAILI -->
 <g class="nd-svg" data-tip="ismaili">
   <rect x="320" y="640" width="155" height="42" rx="6" fill="rgba(138,80,80,.03)" stroke="rgba(138,80,80,.1)" stroke-width="1"/>
-  <text x="397" y="657" text-anchor="middle" fill="#743434" font-size="9" font-family="Noto Serif JP" font-weight="600">イスマーイール派</text>
+  <text x="397" y="657" text-anchor="middle" fill="#d4a0a0" font-size="9" font-family="Noto Serif JP" font-weight="600">イスマーイール派</text>
   <text x="397" y="672" text-anchor="middle" fill="#555048" font-size="6.5" font-family="Noto Sans JP">→ ファーティマ朝(909-1171)</text>
 </g>
 
 <!-- ABBASID -->
 <g class="nd-svg" data-tip="abbasid">
   <rect x="350" y="800" width="170" height="50" rx="8" fill="rgba(80,100,140,.06)" stroke="rgba(80,100,140,.25)" stroke-width="1.5"/>
-  <text x="435" y="820" text-anchor="middle" fill="#365a72" font-size="11" font-family="Noto Serif JP" font-weight="700">アッバース朝</text>
+  <text x="435" y="820" text-anchor="middle" fill="#8aafc8" font-size="11" font-family="Noto Serif JP" font-weight="700">アッバース朝</text>
   <text x="435" y="835" text-anchor="middle" fill="#8a857d" font-size="7.5" font-family="Noto Sans JP">750-1258 ｜ バグダード</text>
   <text x="435" y="847" text-anchor="middle" fill="#555048" font-size="6.5" font-family="Noto Sans JP">アッバースの子孫（アリーの系統ではない）</text>
 </g>
@@ -344,7 +277,7 @@ html[data-theme="lux"] .asm-type { display:none !important; }
 <!-- ABU SUFYAN -->
 <g class="nd-svg" data-tip="abusufyan">
   <rect x="640" y="88" width="160" height="40" rx="7" fill="rgba(160,110,70,.06)" stroke="rgba(160,110,70,.2)" stroke-width="1"/>
-  <text x="720" y="107" text-anchor="middle" fill="#775d31" font-size="11" font-family="Noto Serif JP" font-weight="700">アブー＝スフヤーン</text>
+  <text x="720" y="107" text-anchor="middle" fill="#d4b888" font-size="11" font-family="Noto Serif JP" font-weight="700">アブー＝スフヤーン</text>
   <text x="720" y="121" text-anchor="middle" fill="#8a857d" font-size="7" font-family="Noto Sans JP">ウマイヤ家の長 ｜ 当初ムハンマドに敵対</text>
 </g>
 
@@ -352,8 +285,8 @@ html[data-theme="lux"] .asm-type { display:none !important; }
 <g class="nd-svg" data-tip="uthman">
   <rect x="555" y="188" width="125" height="55" rx="7" fill="rgba(160,110,70,.06)" stroke="rgba(160,110,70,.2)" stroke-width="1.5"/>
   <circle cx="573" cy="202" r="8" fill="rgba(160,110,70,.15)" stroke="rgba(160,110,70,.3)" stroke-width="1"/>
-  <text x="573" y="205" text-anchor="middle" fill="#775d31" font-size="8" font-family="Shippori Mincho" font-weight="700">③</text>
-  <text x="635" y="207" text-anchor="middle" fill="#775d31" font-size="10" font-family="Noto Serif JP" font-weight="700">ウスマーン</text>
+  <text x="573" y="205" text-anchor="middle" fill="#d4b888" font-size="8" font-family="Cormorant Garamond" font-weight="700">③</text>
+  <text x="635" y="207" text-anchor="middle" fill="#d4b888" font-size="10" font-family="Noto Serif JP" font-weight="700">ウスマーン</text>
   <text x="617" y="221" text-anchor="middle" fill="#8a857d" font-size="7" font-family="Noto Sans JP">第3代カリフ 644-656</text>
   <text x="617" y="234" text-anchor="middle" fill="#555048" font-size="6" font-family="Noto Sans JP">ウマイヤ家。コーラン編纂。殺害される</text>
 </g>
@@ -361,7 +294,7 @@ html[data-theme="lux"] .asm-type { display:none !important; }
 <!-- MUAWIYA -->
 <g class="nd-svg" data-tip="muawiya">
   <rect x="700" y="188" width="160" height="55" rx="7" fill="rgba(160,110,70,.06)" stroke="rgba(160,110,70,.25)" stroke-width="1.5"/>
-  <text x="780" y="207" text-anchor="middle" fill="#775d31" font-size="11" font-family="Noto Serif JP" font-weight="700">ムアーウィヤ</text>
+  <text x="780" y="207" text-anchor="middle" fill="#d4b888" font-size="11" font-family="Noto Serif JP" font-weight="700">ムアーウィヤ</text>
   <text x="780" y="223" text-anchor="middle" fill="#8a857d" font-size="7.5" font-family="Noto Sans JP">ウマイヤ朝初代カリフ</text>
   <text x="780" y="236" text-anchor="middle" fill="#555048" font-size="6.5" font-family="Noto Sans JP">在位 661-680 ｜ アブー＝スフヤーンの子</text>
 </g>
@@ -369,15 +302,15 @@ html[data-theme="lux"] .asm-type { display:none !important; }
 <!-- YAZID -->
 <g class="nd-svg" data-tip="yazid">
   <rect x="700" y="305" width="160" height="55" rx="7" fill="rgba(160,110,70,.05)" stroke="rgba(160,110,70,.2)" stroke-width="1"/>
-  <text x="780" y="324" text-anchor="middle" fill="#775d31" font-size="10" font-family="Noto Serif JP" font-weight="700">ヤズィード1世</text>
+  <text x="780" y="324" text-anchor="middle" fill="#d4b888" font-size="10" font-family="Noto Serif JP" font-weight="700">ヤズィード1世</text>
   <text x="780" y="338" text-anchor="middle" fill="#8a857d" font-size="7" font-family="Noto Sans JP">ウマイヤ朝第2代 680-683</text>
-  <text x="780" y="352" text-anchor="middle" fill="#773131" font-size="6.5" font-family="Noto Sans JP">フサインをカルバラーで殺害</text>
+  <text x="780" y="352" text-anchor="middle" fill="#c25a5a" font-size="6.5" font-family="Noto Sans JP">フサインをカルバラーで殺害</text>
 </g>
 
 <!-- UMAYYAD DYNASTY -->
 <g class="nd-svg" data-tip="umayyad">
   <rect x="660" y="420" width="200" height="50" rx="8" fill="rgba(160,110,70,.05)" stroke="rgba(160,110,70,.2)" stroke-width="1.5"/>
-  <text x="760" y="440" text-anchor="middle" fill="#775d31" font-size="11" font-family="Noto Serif JP" font-weight="700">ウマイヤ朝</text>
+  <text x="760" y="440" text-anchor="middle" fill="#d4b888" font-size="11" font-family="Noto Serif JP" font-weight="700">ウマイヤ朝</text>
   <text x="760" y="454" text-anchor="middle" fill="#8a857d" font-size="7.5" font-family="Noto Sans JP">661-750 ｜ ダマスクス ｜ アラブ至上主義</text>
   <text x="760" y="466" text-anchor="middle" fill="#555048" font-size="6.5" font-family="Noto Sans JP">マワーリー差別 → アッバース革命(750)で崩壊</text>
 </g>
@@ -395,7 +328,7 @@ html[data-theme="lux"] .asm-type { display:none !important; }
 
 <!-- CALIPH ORDER BOX (bottom right) -->
 <rect x="580" y="580" width="310" height="80" rx="8" fill="rgba(6,9,15,.5)" stroke="rgba(var(--axr),.1)" stroke-width="1"/>
-<text x="735" y="600" text-anchor="middle" fill="#775f31" font-size="9" font-family="Noto Serif JP" font-weight="700">正統カリフの順番（超</text>
+<text x="735" y="600" text-anchor="middle" fill="#c9a96e" font-size="9" font-family="Noto Serif JP" font-weight="700">正統カリフの順番（超</text>
 <text x="735" y="618" text-anchor="middle" fill="#8a857d" font-size="8" font-family="Noto Sans JP">① アブー＝バクル → ② ウマル → ③ ウスマーン → ④ アリー</text>
 <text x="735" y="636" text-anchor="middle" fill="#555048" font-size="7" font-family="Noto Sans JP">①②はムハンマドの義父。③だけウマイヤ家。④は従弟＋娘婿</text>
 <text x="735" y="652" text-anchor="middle" fill="rgba(138,80,80,.6)" font-size="7" font-family="Noto Sans JP">シーア派：①②③は簒奪者、④アリーこそ初代であるべき</text>
@@ -411,7 +344,7 @@ html[data-theme="lux"] .asm-type { display:none !important; }
 <line x1="700" y1="715" x2="725" y2="715" stroke="rgba(80,100,140,.2)" stroke-width="1" stroke-dasharray="4,4"/>
 <text x="732" y="718" fill="#555048" font-size="7" font-family="Noto Sans JP">系統の継承</text>
 <circle cx="605" cy="735" r="7" fill="rgba(var(--axr),.15)" stroke="rgba(var(--axr),.3)" stroke-width="1"/>
-<text x="605" y="738" text-anchor="middle" fill="#776031" font-size="7" font-family="Shippori Mincho" font-weight="700">N</text>
+<text x="605" y="738" text-anchor="middle" fill="#e8c888" font-size="7" font-family="Cormorant Garamond" font-weight="700">N</text>
 <text x="620" y="738" fill="#555048" font-size="7" font-family="Noto Sans JP">正統カリフの順番</text>
 
 <!-- OTTOMAN (bottom) -->

@@ -3,38 +3,38 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>亡国一覧 ― 世界史資料集</title>
+<title>THESAURUS HISTORIAE — Regna Extincta</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
 :root{--bg:#06090f;--gold:#c9a96e;--gold2:#e8c888;--gold3:#a08550;--text:#d4cfc6;--text2:#8a857d;--text3:#555048}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
 body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");opacity:.4}
 .top-bar{padding:28px 32px 14px;border-bottom:1px solid rgba(var(--axr),.06)}
-.top-bar h1{font-family:'Shippori Mincho',serif;font-size:32px;font-weight:700;color:var(--gold2);letter-spacing:.04em}
+.top-bar h1{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:700;color:var(--gold2);letter-spacing:3px}
 .top-bar .meta{display:flex;align-items:center;gap:16px;margin-top:4px}
 .top-bar .meta a{font-size:11px;color:var(--gold);text-decoration:none;opacity:.4}.top-bar .meta a:hover{opacity:1}
-.top-bar .meta .cnt{font-size:14px;color:var(--text3);font-family:'Shippori Mincho',serif;letter-spacing:1px}
-.top-bar::after{content:'REGNA · DYNASTIAE · IMPERIA · EXTINCTA';display:block;font-family:'Shippori Mincho',serif;font-size:11px;color:var(--text3);letter-spacing:.04em;margin-top:6px;opacity:.4}
+.top-bar .meta .cnt{font-size:14px;color:var(--text3);font-family:'Cormorant Garamond',serif;letter-spacing:1px}
+.top-bar::after{content:'REGNA · DYNASTIAE · IMPERIA · EXTINCTA';display:block;font-family:'Cormorant Garamond',serif;font-size:11px;color:var(--text3);letter-spacing:3px;margin-top:6px;opacity:.4}
 .search-area{padding:14px 32px;border-bottom:1px solid rgba(var(--axr),.04);display:flex;align-items:center;gap:12px;position:sticky;top:0;background:var(--bg);z-index:50;backdrop-filter:blur(8px);flex-wrap:wrap}
 .search-area input{background:rgba(var(--axr),.03);border:1px solid rgba(var(--axr),.08);border-radius:8px;padding:10px 20px;color:var(--text);font-size:13px;font-family:inherit;width:420px;max-width:50vw;outline:none;transition:all .2s}
 .search-area input:focus{border-color:rgba(var(--axr),.25);background:rgba(var(--axr),.05)}
 .search-area input::placeholder{color:var(--text3)}
-.search-area .result{font-size:11px;color:var(--gold);opacity:.6;font-family:'Shippori Mincho',serif;letter-spacing:1px}
+.search-area .result{font-size:11px;color:var(--gold);opacity:.6;font-family:'Cormorant Garamond',serif;letter-spacing:1px}
 .search-area button{background:transparent;border:1px solid rgba(var(--axr),.08);color:var(--text3);padding:8px 14px;border-radius:6px;font-size:10px;cursor:pointer;font-family:inherit;letter-spacing:1px;transition:all .2s}
 .search-area button:hover{color:var(--gold2);border-color:rgba(var(--axr),.25)}
 .nav-pills{display:flex;gap:5px;padding:12px 32px;flex-wrap:wrap;border-bottom:1px solid rgba(var(--axr),.04);background:var(--bg)}
-.nav-pills::before{content:'· NAVIGATIO ·';font-family:'Shippori Mincho',serif;font-size:9px;color:var(--text3);letter-spacing:.04em;opacity:.35;margin-right:8px;align-self:center}
+.nav-pills::before{content:'· NAVIGATIO ·';font-family:'Cormorant Garamond',serif;font-size:9px;color:var(--text3);letter-spacing:3px;opacity:.35;margin-right:8px;align-self:center}
 .nav-pills a{font-size:9px;padding:4px 10px;border:1px solid;border-radius:20px;text-decoration:none;transition:all .15s;opacity:.75}
 .nav-pills a:hover{opacity:1;background:rgba(var(--axr),.05)}
 .content{max-width:1280px;margin:0 auto;padding:20px 24px 80px}
 .sec{margin-bottom:28px;scroll-margin-top:60px}
 .sec-hdr{display:flex;align-items:baseline;gap:12px;padding:12px 0 8px;margin-bottom:4px;border-bottom:1px solid rgba(var(--axr),.12);flex-wrap:wrap}
-.sec-icon{font-family:'Shippori Mincho',serif;font-size:18px;font-weight:700;opacity:.7}
+.sec-icon{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:700;opacity:.7}
 .sec-hdr h2{font-family:'Noto Serif JP',serif;font-size:15px;font-weight:700;color:var(--gold2);letter-spacing:1px}
-.sec-lat{font-family:'Shippori Mincho',serif;font-size:11px;font-style:normal;color:var(--gold);opacity:.5;letter-spacing:1px}
-.sec-cnt{font-size:10px;color:var(--text3);margin-left:auto;font-family:'Shippori Mincho',serif;letter-spacing:1px}
-.sec-top{font-size:10px;color:var(--text3);text-decoration:none;margin-left:10px;padding:3px 8px;border:1px solid rgba(var(--axr),.08);border-radius:4px;transition:all .15s;font-family:'Shippori Mincho',serif;letter-spacing:1px}
+.sec-lat{font-family:'Cormorant Garamond',serif;font-size:11px;font-style:italic;color:var(--gold);opacity:.5;letter-spacing:1px}
+.sec-cnt{font-size:10px;color:var(--text3);margin-left:auto;font-family:'Cormorant Garamond',serif;letter-spacing:1px}
+.sec-top{font-size:10px;color:var(--text3);text-decoration:none;margin-left:10px;padding:3px 8px;border:1px solid rgba(var(--axr),.08);border-radius:4px;transition:all .15s;font-family:'Cormorant Garamond',serif;letter-spacing:1px}
 .sec-top:hover{color:var(--gold2);border-color:rgba(var(--axr),.3)}
 table.nt{width:100%;border-collapse:collapse;font-size:11px}
 table.nt th{text-align:left;padding:6px 8px;font-family:'Noto Sans JP',sans-serif;font-size:9.5px;font-weight:600;color:var(--gold);letter-spacing:1px;border-bottom:1px solid rgba(var(--axr),.15);background:rgba(var(--axr),.02);cursor:pointer;user-select:none}
@@ -49,7 +49,7 @@ table.nt tbody tr.hidden{display:none}
 .col-n{font-family:'Noto Serif JP',serif;font-weight:700;color:var(--text);width:150px;font-size:11.5px}
 .col-n .alt{font-style:normal;color:var(--text3);font-size:9px;font-weight:400;display:block;margin-top:1px}
 .col-c{color:var(--text2);width:180px;font-size:10px}
-.col-f,.col-e{color:var(--gold3);width:70px;font-family:'Shippori Mincho',serif;font-size:11.5px;text-align:right;white-space:nowrap}
+.col-f,.col-e{color:var(--gold3);width:70px;font-family:'Cormorant Garamond',serif;font-size:11.5px;text-align:right;white-space:nowrap}
 .col-r{color:var(--text2);width:220px;font-size:10px;line-height:1.5}
 .col-d{color:var(--text);font-size:10.5px;line-height:1.65;min-width:260px}
 .sec.folded table{display:none}
@@ -100,7 +100,7 @@ table.nt tbody tr.hidden{display:none}
   display:inline-block;
   font-size:11px;
   color:var(--gold3);
-  font-family:'Shippori Mincho',serif;
+  font-family:'Cormorant Garamond',serif;
   margin-right:14px;
   text-align:left;
 }
@@ -109,8 +109,8 @@ table.nt tbody tr.hidden{display:none}
 }
 </style>
 <style id="thThemes">/* =====================================================
-   THESAURUS HISTORIAE ― themes.css(LUX v2: 印刷資料集)
-   生成りの紙 + 墨の本文 + 朱筆(★語)。飾りは罫線だけ。
+   THESAURUS HISTORIAE ― themes.css(LUX固定版)
+   生成りの紙 + 墨の本文 + 朱筆(★語) + 金茶の構造色。
    retheme_inject.py が各HTMLに埋め込む。編集後は再実行。
    ===================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&display=swap');
@@ -118,24 +118,22 @@ table.nt tbody tr.hidden{display:none}
 :root { --axr: 201, 169, 110; --shu: #c9a96e; }
 
 html[data-theme="lux"] {
-  --bg:#f6f2e8; --paper:#fffdf7;
-  --gold:#6e5434; --gold2:#2a2016; --gold3:#8a7352;
-  --text:#211b14; --text2:#3f372d; --text3:#776b59;
-  --line:rgba(33,27,20,.17); --line2:rgba(33,27,20,.32); --border:rgba(33,27,20,.17);
-  --gold-dim:rgba(110,84,52,.14);
-  --axr:110,84,52;
-  --shu:#a2331e; --ai:#2c4a6e;
+  --bg:#f1ecdf;
+  --gold:#8b6f4e; --gold2:#59452a; --gold3:#9c855f;
+  --text:#2b241b; --text2:#6d6353; --text3:#a89a80;
+  --line:rgba(43,36,27,.16); --border:rgba(43,36,27,.16);
+  --gold-dim:rgba(139,111,78,.16);
+  --axr:139,111,78;
+  --shu:#a2331e;
 }
 
 html[data-theme="lux"] body {
   background:var(--bg);
-  color:var(--text);
   font-family:'Shippori Mincho','Noto Serif JP',serif;
 }
-html[data-theme="lux"] body::before { display:none !important; }   /* ノイズ撤去 */
+html[data-theme="lux"] body::before { opacity:.55; }
 html[data-theme="lux"] p { line-height:2.05; }
 html[data-theme="lux"] * { text-shadow:none !important; }
-html[data-theme="lux"] *:hover { box-shadow:none !important; }
 
 /* 強調の二段化: 通常太字=墨 / ★語=朱 */
 html[data-theme="lux"] strong { color:var(--text) !important; font-weight:600; }
@@ -144,85 +142,20 @@ html[data-theme="lux"] span.k + strong,
 html[data-theme="lux"] .node-title .k { color:var(--shu) !important; }
 html[data-theme="lux"] span.k + strong { font-weight:700; }
 html[data-theme="lux"] ::selection { background:rgba(162,51,30,.18); }
-
-/* ページ見出し帯: 柱のように太罫で区切る */
-html[data-theme="lux"] .hdr,
-html[data-theme="lux"] .top-bar { background:var(--bg); border-bottom:2px solid var(--text) !important; }
-html[data-theme="lux"] .hdr h1,
-html[data-theme="lux"] .top-bar h1 { color:var(--text); letter-spacing:.02em; }
-html[data-theme="lux"] .hdr a,
-html[data-theme="lux"] .meta a,
-html[data-theme="lux"] .bottom-nav a { opacity:1 !important; color:var(--ai) !important; text-decoration:none; }
-html[data-theme="lux"] .hdr a:hover,
-html[data-theme="lux"] .meta a:hover,
-html[data-theme="lux"] .bottom-nav a:hover { text-decoration:underline; }
-html[data-theme="lux"] .latin,
-html[data-theme="lux"] .divider { display:none !important; }
-html[data-theme="lux"] .top-bar::after { content:none !important; }
-
-/* 年・番号: 等幅数字、薄めない */
-html[data-theme="lux"] .node-year,
-html[data-theme="lux"] .phase-label,
-html[data-theme="lux"] .sec-icon,
-html[data-theme="lux"] .sec-cnt,
-html[data-theme="lux"] .cnt,
-html[data-theme="lux"] td.no { font-variant-numeric:tabular-nums; letter-spacing:0 !important; opacity:1 !important; color:var(--text3) !important; }
-
-/* 流れ図(通史・国家史・文化史): 半透明の角丸カード → 紙面に罫線 */
-html[data-theme="lux"] .node { background:var(--paper) !important; border:1px solid var(--line) !important; border-radius:2px !important; }
-html[data-theme="lux"] .node.key { border-color:var(--line2) !important; }
-html[data-theme="lux"] .node-title,
-html[data-theme="lux"] .node-desc { color:var(--text) !important; }
-html[data-theme="lux"] .phase { border-left-color:var(--line) !important; }
-html[data-theme="lux"] .phase::before { background:var(--bg) !important; }
-
-/* 表 */
-html[data-theme="lux"] th { background:#ebe4d4 !important; color:var(--text) !important; border-bottom:1px solid var(--line2) !important; letter-spacing:0 !important; }
-html[data-theme="lux"] td { color:var(--text); border-color:var(--line) !important; }
-html[data-theme="lux"] .note p { color:var(--text2) !important; }
-
-/* 目次系(図表・国家史・文化史の一覧) */
-html[data-theme="lux"] .card { background:var(--paper) !important; border:1px solid var(--line) !important; border-radius:2px !important; transform:none !important; }
-html[data-theme="lux"] .card:hover { border-color:var(--gold) !important; }
-html[data-theme="lux"] .card-main { font-size:13.5px !important; color:var(--text) !important; }
-html[data-theme="lux"] .card-sub { font-size:11px !important; color:var(--text3) !important; }
-html[data-theme="lux"] .card-badge { font-size:10.5px !important; background:none !important; color:var(--text3) !important; padding:0 !important; font-weight:400 !important; }
-html[data-theme="lux"] .nav-pills a { font-size:12px !important; opacity:1 !important; color:var(--text2) !important; border-color:var(--line) !important; border-radius:2px !important; }
-html[data-theme="lux"] .sec-hdr { border-bottom:1px solid var(--text) !important; }
-html[data-theme="lux"] .sec-hdr::before { display:none; }
-html[data-theme="lux"] .sec-icon { color:var(--shu) !important; }
-html[data-theme="lux"] .sec-hdr h2 { font-size:17px !important; color:var(--text) !important; }
-
-/* 入力欄 */
-html[data-theme="lux"] .search-area input,
-html[data-theme="lux"] .si { background:var(--paper) !important; border:1px solid var(--line2) !important; border-radius:2px !important; font-size:14px !important; color:var(--text) !important; }
-
-/* 家系図などの箱 */
-html[data-theme="lux"] .nb { background:var(--paper) !important; border-radius:2px !important; }
-html[data-theme="lux"] .nn { color:var(--text) !important; }
-html[data-theme="lux"] .ntag { letter-spacing:0 !important; border-radius:2px !important; }
-
-/* 目次ページの見出し: 和名 + 小さなラテン名 */
-html[data-theme="lux"] .top-bar h1 small { font-size:13px; font-weight:400; color:var(--text3); margin-left:12px; letter-spacing:.06em; }
-html[data-theme="lux"] .top-bar h1 { font-size:28px !important; }
-
-html[data-theme="lux"] .sec-lat,
-html[data-theme="lux"] .asm-type { display:none !important; }
-
 </style><script id="thScript">document.documentElement.setAttribute('data-theme','lux');</script></head>
 <body>
 <a id="top"></a>
-<div class="top-bar"><h1>亡国一覧<small>REGNA EXTINCTA</small></h1><div class="meta"><span class="cnt" id="topcnt"></span><a href="index.html">← 目次</a></div></div>
-<div class="search-area"><input type="text" id="search" placeholder="国名・首都・原因等で横断検索"><span class="result" id="result"></span><button onclick="document.querySelectorAll('.sec').forEach(s=>s.classList.toggle('folded'))">すべて開閉</button><button onclick="resetSort()">元の順に戻す</button></div>
-<div class="nav-pills" id="toc"><a href="#s1" style="border-color:#d4c08844;color:#776531">I. 古代オリエント(29)</a><a href="#s2" style="border-color:#d4888844;color:#773131">II. 古代中国 夏〜秦漢(23)</a><a href="#s3" style="border-color:#d4888844;color:#773131">III. 三国〜元(54)</a><a href="#s4" style="border-color:#c0a0d444;color:#5b3474">IV. 古代・中世南アジア(20)</a><a href="#s5" style="border-color:#88d4b044;color:#317756">V. 古代・中世東南アジア(20)</a><a href="#s6" style="border-color:#88b0d444;color:#315677">VI. 古代ギリシア・ローマ(30)</a><a href="#s7" style="border-color:#b8d08844;color:#607731">VII. イスラーム・中世アフリカ(41)</a><a href="#s8" style="border-color:#a0a0d444;color:#343474">VIII. 中世欧州(69)</a><a href="#s9" style="border-color:#d4a08844;color:#774731">IX. モンゴル・中央アジア(22)</a><a href="#s10" style="border-color:#88d4d444;color:#317777">X. 朝鮮・琉球(10)</a><a href="#s11" style="border-color:#d4888c44;color:#773135">XI. 明清近世アジア(31)</a><a href="#s12" style="border-color:#b0b08844;color:#656543">XII. 近世欧州+先コロンブス期ア(22)</a><a href="#s13" style="border-color:#c8a8d444;color:#613871">XIII. 19世紀(ナポレオン〜)(55)</a><a href="#s14" style="border-color:#d4888844;color:#773131">XIV. 帝国主義期(23)</a><a href="#s15" style="border-color:#a0c8d444;color:#346574">XV. 20世紀前半(17)</a><a href="#s16" style="border-color:#88b0d444;color:#315677">XVI. 20世紀後半(20)</a></div>
+<div class="top-bar"><h1>REGNA EXTINCTA</h1><div class="meta"><span class="cnt" id="topcnt">regna</span><a href="index.html">← Ad Indicem</a></div></div>
+<div class="search-area"><input type="text" id="search" placeholder="Quaere — 国名・首都・原因等で横断検索"><span class="result" id="result"></span><button onclick="document.querySelectorAll('.sec').forEach(s=>s.classList.toggle('folded'))">Fold / Unfold</button><button onclick="resetSort()">Reset Order</button></div>
+<div class="nav-pills" id="toc"><a href="#s1" style="border-color:#d4c08844;color:#d4c088">I. 古代オリエント(29)</a><a href="#s2" style="border-color:#d4888844;color:#d48888">II. 古代中国 夏〜秦漢(23)</a><a href="#s3" style="border-color:#d4888844;color:#d48888">III. 三国〜元(54)</a><a href="#s4" style="border-color:#c0a0d444;color:#c0a0d4">IV. 古代・中世南アジア(20)</a><a href="#s5" style="border-color:#88d4b044;color:#88d4b0">V. 古代・中世東南アジア(20)</a><a href="#s6" style="border-color:#88b0d444;color:#88b0d4">VI. 古代ギリシア・ローマ(30)</a><a href="#s7" style="border-color:#b8d08844;color:#b8d088">VII. イスラーム・中世アフリカ(41)</a><a href="#s8" style="border-color:#a0a0d444;color:#a0a0d4">VIII. 中世欧州(69)</a><a href="#s9" style="border-color:#d4a08844;color:#d4a088">IX. モンゴル・中央アジア(22)</a><a href="#s10" style="border-color:#88d4d444;color:#88d4d4">X. 朝鮮・琉球(10)</a><a href="#s11" style="border-color:#d4888c44;color:#d4888c">XI. 明清近世アジア(31)</a><a href="#s12" style="border-color:#b0b08844;color:#b0b088">XII. 近世欧州+先コロンブス期ア(22)</a><a href="#s13" style="border-color:#c8a8d444;color:#c8a8d4">XIII. 19世紀(ナポレオン〜)(55)</a><a href="#s14" style="border-color:#d4888844;color:#d48888">XIV. 帝国主義期(23)</a><a href="#s15" style="border-color:#a0c8d444;color:#a0c8d4">XV. 20世紀前半(17)</a><a href="#s16" style="border-color:#88b0d444;color:#88b0d4">XVI. 20世紀後半(20)</a></div>
 <div class="content">
 <section class="sec" id="s1">
 <div class="sec-hdr">
-<span class="sec-icon" style="color:#776531">I</span>
+<span class="sec-icon" style="color:#d4c088">I</span>
 <h2>古代オリエント</h2>
 <span class="sec-lat">Oriens Antiquus</span>
-<span class="sec-cnt">29国</span>
-<a href="#top" class="sec-top">▲ 先頭へ</a>
+<span class="sec-cnt">29 regna</span>
+<a href="#top" class="sec-top">▲ top</a>
 </div>
 <table class="nt">
 <thead><tr>
@@ -268,11 +201,11 @@ html[data-theme="lux"] .asm-type { display:none !important; }
 </section>
 <section class="sec" id="s2">
 <div class="sec-hdr">
-<span class="sec-icon" style="color:#773131">II</span>
+<span class="sec-icon" style="color:#d48888">II</span>
 <h2>古代中国 夏〜秦漢</h2>
 <span class="sec-lat">Sinae Antiquae</span>
-<span class="sec-cnt">23国</span>
-<a href="#top" class="sec-top">▲ 先頭へ</a>
+<span class="sec-cnt">23 regna</span>
+<a href="#top" class="sec-top">▲ top</a>
 </div>
 <table class="nt">
 <thead><tr>
@@ -312,11 +245,11 @@ html[data-theme="lux"] .asm-type { display:none !important; }
 </section>
 <section class="sec" id="s3">
 <div class="sec-hdr">
-<span class="sec-icon" style="color:#773131">III</span>
+<span class="sec-icon" style="color:#d48888">III</span>
 <h2>三国〜元</h2>
 <span class="sec-lat">Sinae Mediaevales</span>
-<span class="sec-cnt">54国</span>
-<a href="#top" class="sec-top">▲ 先頭へ</a>
+<span class="sec-cnt">54 regna</span>
+<a href="#top" class="sec-top">▲ top</a>
 </div>
 <table class="nt">
 <thead><tr>
@@ -387,11 +320,11 @@ html[data-theme="lux"] .asm-type { display:none !important; }
 </section>
 <section class="sec" id="s4">
 <div class="sec-hdr">
-<span class="sec-icon" style="color:#5b3474">IV</span>
+<span class="sec-icon" style="color:#c0a0d4">IV</span>
 <h2>古代・中世南アジア</h2>
 <span class="sec-lat">India Mediaevalis</span>
-<span class="sec-cnt">20国</span>
-<a href="#top" class="sec-top">▲ 先頭へ</a>
+<span class="sec-cnt">20 regna</span>
+<a href="#top" class="sec-top">▲ top</a>
 </div>
 <table class="nt">
 <thead><tr>
@@ -428,11 +361,11 @@ html[data-theme="lux"] .asm-type { display:none !important; }
 </section>
 <section class="sec" id="s5">
 <div class="sec-hdr">
-<span class="sec-icon" style="color:#317756">V</span>
+<span class="sec-icon" style="color:#88d4b0">V</span>
 <h2>古代・中世東南アジア</h2>
 <span class="sec-lat">India Extra Gangem</span>
-<span class="sec-cnt">20国</span>
-<a href="#top" class="sec-top">▲ 先頭へ</a>
+<span class="sec-cnt">20 regna</span>
+<a href="#top" class="sec-top">▲ top</a>
 </div>
 <table class="nt">
 <thead><tr>
@@ -469,11 +402,11 @@ html[data-theme="lux"] .asm-type { display:none !important; }
 </section>
 <section class="sec" id="s6">
 <div class="sec-hdr">
-<span class="sec-icon" style="color:#315677">VI</span>
+<span class="sec-icon" style="color:#88b0d4">VI</span>
 <h2>古代ギリシア・ローマ</h2>
 <span class="sec-lat">Graecia et Roma</span>
-<span class="sec-cnt">30国</span>
-<a href="#top" class="sec-top">▲ 先頭へ</a>
+<span class="sec-cnt">30 regna</span>
+<a href="#top" class="sec-top">▲ top</a>
 </div>
 <table class="nt">
 <thead><tr>
@@ -520,11 +453,11 @@ html[data-theme="lux"] .asm-type { display:none !important; }
 </section>
 <section class="sec" id="s7">
 <div class="sec-hdr">
-<span class="sec-icon" style="color:#607731">VII</span>
+<span class="sec-icon" style="color:#b8d088">VII</span>
 <h2>イスラーム・中世アフリカ</h2>
 <span class="sec-lat">Islamica et Africa Mediaev.</span>
-<span class="sec-cnt">41国</span>
-<a href="#top" class="sec-top">▲ 先頭へ</a>
+<span class="sec-cnt">41 regna</span>
+<a href="#top" class="sec-top">▲ top</a>
 </div>
 <table class="nt">
 <thead><tr>
@@ -582,11 +515,11 @@ html[data-theme="lux"] .asm-type { display:none !important; }
 </section>
 <section class="sec" id="s8">
 <div class="sec-hdr">
-<span class="sec-icon" style="color:#343474">VIII</span>
+<span class="sec-icon" style="color:#a0a0d4">VIII</span>
 <h2>中世欧州</h2>
 <span class="sec-lat">Europa Mediaevalis</span>
-<span class="sec-cnt">69国</span>
-<a href="#top" class="sec-top">▲ 先頭へ</a>
+<span class="sec-cnt">69 regna</span>
+<a href="#top" class="sec-top">▲ top</a>
 </div>
 <table class="nt">
 <thead><tr>
@@ -672,11 +605,11 @@ html[data-theme="lux"] .asm-type { display:none !important; }
 </section>
 <section class="sec" id="s9">
 <div class="sec-hdr">
-<span class="sec-icon" style="color:#774731">IX</span>
+<span class="sec-icon" style="color:#d4a088">IX</span>
 <h2>モンゴル・中央アジア</h2>
 <span class="sec-lat">Mongolia et Asia Centralis</span>
-<span class="sec-cnt">22国</span>
-<a href="#top" class="sec-top">▲ 先頭へ</a>
+<span class="sec-cnt">22 regna</span>
+<a href="#top" class="sec-top">▲ top</a>
 </div>
 <table class="nt">
 <thead><tr>
@@ -715,11 +648,11 @@ html[data-theme="lux"] .asm-type { display:none !important; }
 </section>
 <section class="sec" id="s10">
 <div class="sec-hdr">
-<span class="sec-icon" style="color:#317777">X</span>
+<span class="sec-icon" style="color:#88d4d4">X</span>
 <h2>朝鮮・琉球</h2>
 <span class="sec-lat">Corea et Ryukyuus</span>
-<span class="sec-cnt">10国</span>
-<a href="#top" class="sec-top">▲ 先頭へ</a>
+<span class="sec-cnt">10 regna</span>
+<a href="#top" class="sec-top">▲ top</a>
 </div>
 <table class="nt">
 <thead><tr>
@@ -746,11 +679,11 @@ html[data-theme="lux"] .asm-type { display:none !important; }
 </section>
 <section class="sec" id="s11">
 <div class="sec-hdr">
-<span class="sec-icon" style="color:#773135">XI</span>
+<span class="sec-icon" style="color:#d4888c">XI</span>
 <h2>明清近世アジア</h2>
 <span class="sec-lat">Asia Orientalis Recens</span>
-<span class="sec-cnt">31国</span>
-<a href="#top" class="sec-top">▲ 先頭へ</a>
+<span class="sec-cnt">31 regna</span>
+<a href="#top" class="sec-top">▲ top</a>
 </div>
 <table class="nt">
 <thead><tr>
@@ -798,11 +731,11 @@ html[data-theme="lux"] .asm-type { display:none !important; }
 </section>
 <section class="sec" id="s12">
 <div class="sec-hdr">
-<span class="sec-icon" style="color:#656543">XII</span>
+<span class="sec-icon" style="color:#b0b088">XII</span>
 <h2>近世欧州+先コロンブス期ア</h2>
 <span class="sec-lat">Europa Recens et Americae</span>
-<span class="sec-cnt">22国</span>
-<a href="#top" class="sec-top">▲ 先頭へ</a>
+<span class="sec-cnt">22 regna</span>
+<a href="#top" class="sec-top">▲ top</a>
 </div>
 <table class="nt">
 <thead><tr>
@@ -841,11 +774,11 @@ html[data-theme="lux"] .asm-type { display:none !important; }
 </section>
 <section class="sec" id="s13">
 <div class="sec-hdr">
-<span class="sec-icon" style="color:#613871">XIII</span>
+<span class="sec-icon" style="color:#c8a8d4">XIII</span>
 <h2>19世紀(ナポレオン〜)</h2>
 <span class="sec-lat">Saeculum XIX Primum</span>
-<span class="sec-cnt">55国</span>
-<a href="#top" class="sec-top">▲ 先頭へ</a>
+<span class="sec-cnt">55 regna</span>
+<a href="#top" class="sec-top">▲ top</a>
 </div>
 <table class="nt">
 <thead><tr>
@@ -917,11 +850,11 @@ html[data-theme="lux"] .asm-type { display:none !important; }
 </section>
 <section class="sec" id="s14">
 <div class="sec-hdr">
-<span class="sec-icon" style="color:#773131">XIV</span>
+<span class="sec-icon" style="color:#d48888">XIV</span>
 <h2>帝国主義期</h2>
 <span class="sec-lat">Aetas Imperialismi</span>
-<span class="sec-cnt">23国</span>
-<a href="#top" class="sec-top">▲ 先頭へ</a>
+<span class="sec-cnt">23 regna</span>
+<a href="#top" class="sec-top">▲ top</a>
 </div>
 <table class="nt">
 <thead><tr>
@@ -961,11 +894,11 @@ html[data-theme="lux"] .asm-type { display:none !important; }
 </section>
 <section class="sec" id="s15">
 <div class="sec-hdr">
-<span class="sec-icon" style="color:#346574">XV</span>
+<span class="sec-icon" style="color:#a0c8d4">XV</span>
 <h2>20世紀前半</h2>
 <span class="sec-lat">Saeculum XX Primum</span>
-<span class="sec-cnt">17国</span>
-<a href="#top" class="sec-top">▲ 先頭へ</a>
+<span class="sec-cnt">17 regna</span>
+<a href="#top" class="sec-top">▲ top</a>
 </div>
 <table class="nt">
 <thead><tr>
@@ -999,11 +932,11 @@ html[data-theme="lux"] .asm-type { display:none !important; }
 </section>
 <section class="sec" id="s16">
 <div class="sec-hdr">
-<span class="sec-icon" style="color:#315677">XVI</span>
+<span class="sec-icon" style="color:#88b0d4">XVI</span>
 <h2>20世紀後半</h2>
 <span class="sec-lat">Saeculum XX Alterum</span>
-<span class="sec-cnt">20国</span>
-<a href="#top" class="sec-top">▲ 先頭へ</a>
+<span class="sec-cnt">20 regna</span>
+<a href="#top" class="sec-top">▲ top</a>
 </div>
 <table class="nt">
 <thead><tr>
@@ -1087,7 +1020,7 @@ document.querySelectorAll('table.nt th').forEach(th=>{
     rows.forEach(r=>tbody.appendChild(r));
   });
 });
-document.getElementById('topcnt').textContent=allRows.length+'国';
+document.getElementById('topcnt').textContent=allRows.length+' regna';
 </script>
 <script src="search_jump.js" defer></script></body>
 </html>
