@@ -102,7 +102,7 @@ html[data-theme="lux"] .detail { color:var(--text2); }
 var FAM=[['ANNALES','通史'],['TABULA','一覧表'],['CIVITATES','国家史'],['CULTURA','文化史'],['CHARTAE','図表'],['MATRIX','同時代表'],['NEXUS','因果網'],['MAPPAE','地図'],['IMAGINES','写真']];
 var FAMJ={};FAM.forEach(function(f){FAMJ[f[0]]=f[1]});
 var FBONUS={ANNALES:40,TABULA:18,CIVITATES:10,CULTURA:10,CHARTAE:6,MATRIX:4,NEXUS:4};
-var D=[],TN=[],SD=[],SH=[],ST=[],SN=[],HN={},loaded=0,total=0,fam='',lastQ=null,showPages=40,openAll={};
+var D=[],TN=[],SD=[],SH=[],ST=[],SN=[],HN={},AG=[],loaded=0,total=0,fam='',lastQ=null,showPages=40,openAll={};
 var $q=document.getElementById('q'),$res=document.getElementById('res'),$st=document.getElementById('st'),$chips=document.getElementById('chips'),$clr=document.getElementById('clr');
 var IGN=/[\s　=＝・･·★☆]/g;
 function nz(s){return s.normalize('NFKC').toLowerCase().replace(/[ぁ-ゖ]/g,function(c){return String.fromCharCode(c.charCodeAt(0)+96)}).replace(IGN,'')}
@@ -112,6 +112,7 @@ function esc(s){return s.replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&
 /* ---- load ---- */
 fetch('search_idx/manifest.json').then(function(r){return r.json()}).then(function(m){
   D=m.d;TN=D.map(function(d){return nz(d[1])});total=m.shards.length;status();
+  if(m.alias)fetch('search_idx/'+m.alias).then(function(r){return r.json()}).then(function(g){AG=g.map(function(x){return x.map(nz)});lastQ=null;schedule(0)}).catch(function(){});
   m.shards.forEach(function(name){
     fetch('search_idx/'+name).then(function(r){return r.json()}).then(function(x){
       var hb=x.h;
@@ -127,16 +128,21 @@ function hn(h){if(!(h in HN))HN[h]=nz(h);return HN[h]}
 
 /* ---- search ---- */
 var R=null;
+/* synonyms: a query that is (most of) one variant of a group also matches the group's other variants (e.g. プファルツ継承 -> ファルツ戦争) */
+function expand(q){var o=[q];if(q.length<3)return o;var n=0;for(var i=0;i<AG.length&&n<4;i++){var g=AG[i];for(var j=0;j<g.length;j++){if(g[j].indexOf(q)>=0&&q.length*2>=g[j].length){g.forEach(function(x){if(o.indexOf(x)<0)o.push(x)});n++;break}}}return o}
+function hasAny(t,a){for(var i=0;i<a.length;i++)if(t.indexOf(a[i])>=0)return true;return false}
+function firstAt(t,a){var b=-1;for(var i=0;i<a.length;i++){var j=t.indexOf(a[i]);if(j>=0&&(b<0||j<b))b=j}return b}
 function run(){
   var raw=$q.value.trim();$clr.style.display=raw?'block':'none';
   var key=raw+'|'+loaded;if(key===lastQ&&R)return render();lastQ=key;
   var terms=raw.split(/[\s　]+/).map(nz).filter(Boolean);
   try{var u=new URL(location.href);if(raw)u.searchParams.set('q',raw);else u.searchParams.delete('q');if(fam)u.searchParams.set('f',fam);else u.searchParams.delete('f');history.replaceState(null,'',u)}catch(e){}
   if(!terms.length){R=null;$res.innerHTML='';drawChips({});status();return}
+  var alts=terms.map(expand);
   var full=(1<<terms.length)-1,P={},joined=terms.join('');
   for(var i=0;i<SN.length;i++){
     var t=SN[i],mk=0;
-    for(var k=0;k<terms.length;k++)if(t.indexOf(terms[k])>=0)mk|=1<<k;
+    for(var k=0;k<terms.length;k++)if(hasAny(t,alts[k]))mk|=1<<k;
     if(!mk)continue;
     var d=SD[i],p=P[d];if(!p)p=P[d]={d:d,mask:0,segs:[]};
     p.mask|=mk;p.segs.push([i,mk]);
@@ -144,13 +150,13 @@ function run(){
   var out=[];
   for(var d in P){
     var p=P[d],tm=0;
-    for(var k=0;k<terms.length;k++)if(TN[d].indexOf(terms[k])>=0)tm|=1<<k;
+    for(var k=0;k<terms.length;k++)if(hasAny(TN[d],alts[k]))tm|=1<<k;
     if(((p.mask|tm)&full)!==full)continue;
     if(p.segs.some(function(s){return s[1]===full}))p.segs=p.segs.filter(function(s){return s[1]===full});
     var sc=(tm===full&&!/^\d+$/.test(joined)?60:0)+(TN[d]===joined?300:0)+(FBONUS[D[d][2]]||0),nf=0;
     p.segs.forEach(function(s){
       var h=hn(SH[s[0]]),w=0,hh=h.slice(h.lastIndexOf('›')+1);
-      if(s[1]===full){w=4;nf++;if(terms.length===1&&(h===terms[0]||hh===terms[0]||hh.indexOf(terms[0])===0&&hh.length<=terms[0].length+6))w+=20;else if(terms.every(function(x){return h.indexOf(x)>=0}))w+=10;var j=SN[s[0]].indexOf(terms[0]);if(j>=0&&j<14)w+=12}
+      if(s[1]===full){w=4;nf++;if(terms.length===1&&(h===terms[0]||hh===terms[0]||hh.indexOf(terms[0])===0&&hh.length<=terms[0].length+6))w+=20;else if(terms.every(function(x){return h.indexOf(x)>=0}))w+=10;var j=firstAt(SN[s[0]],alts[0]);if(j>=0&&j<14)w+=12}
       else w=1;
       s.push(w);
     });
@@ -159,7 +165,7 @@ function run(){
     p.sc=sc+top+Math.min(nf,20)*1.5;p.nf=nf;out.push(p);
   }
   out.sort(function(a,b){return b.sc-a.sc||a.d-b.d});
-  R={terms:terms,pages:out};showPages=40;openAll={};render();
+  R={terms:terms,alts:alts,pages:out};showPages=40;openAll={};render();
 }
 function drawChips(cnt){
   var all=0;for(var k in cnt)all+=cnt[k];
@@ -167,14 +173,14 @@ function drawChips(cnt){
   FAM.forEach(function(f){var n=cnt[f[0]]||0;h+='<button class="chip'+(fam===f[0]?' on':'')+'" data-f="'+f[0]+'"'+(R&&!n&&fam!==f[0]?' disabled':'')+'>'+f[1]+(R?'<b>'+n+'</b>':'')+'</button>'});
   $chips.innerHTML=h;
 }
-function snippet(i,terms,mk){
+function snippet(i,alts,mk){
   var t=ST[i],nm=nmap(t),pos=-1,len=0;
-  for(var k=0;k<terms.length;k++){if(!(mk&(1<<k)))continue;var j=nm.s.indexOf(terms[k]);if(j>=0&&(pos<0||j<pos)){pos=j;len=terms[k].length}}
+  for(var k=0;k<alts.length;k++){if(!(mk&(1<<k)))continue;alts[k].forEach(function(x){var j=nm.s.indexOf(x);if(j>=0&&(pos<0||j<pos)){pos=j;len=x.length}})}
   var o0=pos>=0?nm.m[pos]:0,o1=pos>=0?nm.m[pos+len-1]+1:0;
   var a=Math.max(0,o0-36),b=Math.min(t.length,o0+96);
   if(a>0){var cut=t.lastIndexOf('。',o0-1);if(cut>=a-30&&cut<o0)a=cut+1}
   var sl=t.slice(a,b),sm=nmap(sl),marks=[];
-  terms.forEach(function(x){var j=0;while((j=sm.s.indexOf(x,j))>=0){marks.push([sm.m[j],sm.m[j+x.length-1]+1]);j+=x.length}});
+  [].concat.apply([],alts).forEach(function(x){var j=0;while((j=sm.s.indexOf(x,j))>=0){marks.push([sm.m[j],sm.m[j+x.length-1]+1]);j+=x.length}});
   marks.sort(function(p,q){return p[0]-q[0]});
   var h='',c=0;marks.forEach(function(r){if(r[0]<c)return;h+=esc(sl.slice(c,r[0]))+'<mark>'+esc(sl.slice(r[0],r[1]))+'</mark>';c=r[1]});
   h+=esc(sl.slice(c));
@@ -198,7 +204,7 @@ function render(){
     var d=D[p.d],lim=openAll[p.d]?30:3,first=null;
     var hits='';
     p.segs.slice(0,lim).forEach(function(s){
-      var sn=snippet(s[0],R.terms,s[1]);if(!first)first=link(p.d,s[0],sn);
+      var sn=snippet(s[0],R.alts,s[1]);if(!first)first=link(p.d,s[0],sn);
       var hd=SH[s[0]];
       hits+='<a class="hit" href="'+esc(link(p.d,s[0],sn))+'">'+(hd&&hd!==d[1]?'<span class="h">'+esc(hd)+'</span>':'')+sn.html+'</a>';
     });
