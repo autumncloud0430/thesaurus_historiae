@@ -24,15 +24,41 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
 .tooltip-box strong{color:var(--gold2)}.tooltip-box b{color:var(--gold)}
 .note{text-align:center;padding:8px 20px 32px;max-width:800px;margin:0 auto}.note p{font-size:9px;color:var(--text3);line-height:1.8}.note strong{color:var(--gold)}
 @media(max-width:600px){body{font-size:12px}.container{padding:8px}h1{font-size:14px}}
-/* LUX(明色)背景でのノード文字・矢印ラベルのコントラスト確保 */
-html[data-theme="lux"] .nd text[fill="#d4c088"],html[data-theme="lux"] .nd text[fill="#e8c888"]{fill:#6f5212}
-html[data-theme="lux"] .nd text[fill="#d48888"],html[data-theme="lux"] .nd text[fill="#d47070"]{fill:#8e2a2a}
-html[data-theme="lux"] .nd text[fill="#88d4b0"],html[data-theme="lux"] .nd text[fill="#a0c0a0"]{fill:#1f6347}
-html[data-theme="lux"] .nd text[fill="#88b0d4"],html[data-theme="lux"] .nd text[fill="#a0a0d4"]{fill:#27507c}
-html[data-theme="lux"] .nd text[fill="#c0a0d4"]{fill:#5b3a7a}
-html[data-theme="lux"] .nd text[fill="#c0c0a0"]{fill:#55533a}
-html[data-theme="lux"] .nd text[fill="#d4a088"],html[data-theme="lux"] .nd text[fill="#d4a080"]{fill:#86452a}
-html[data-theme="lux"] .ed text{fill:var(--text2)}
+
+
+
+/* nexus-print */
+.tabs{gap:0 18px;padding:10px 20px 0;border-bottom:1px solid var(--line)}
+.tabs button{font-family:inherit;font-size:11px;padding:6px 0 7px;border:none;border-bottom:2px solid transparent;border-radius:0;background:none;color:var(--text2);margin-bottom:-1px}
+.tabs button:hover{background:none;color:var(--text)}
+.tabs button.active{background:none;color:var(--text);border-bottom-color:var(--shu);font-weight:600}
+.hint{font-size:10px;color:var(--text2);padding:10px 16px 2px}
+.nd:hover rect{filter:none;stroke:var(--text)}
+.nd rect{fill:#fbf8f1;stroke:#9c855f;stroke-width:1}
+.nd rect[fill$=",.2)"]{stroke:var(--text);stroke-width:1.4}
+.nd text{fill:var(--text)}
+.nd text .st{fill:var(--shu)}
+.ed line,.ed path{stroke:#9c855f;stroke-width:1.1}
+marker polygon{fill:#8b6f4e}
+.ed text{fill:var(--text2);font-family:'Shippori Mincho','Noto Serif JP',serif}
+.dim .nd{opacity:.28}.dim .ed{opacity:.16}
+.dim .nd.hi,.dim .ed.hi{opacity:1}
+.dim .ed.hi line,.dim .ed.hi path{stroke:#6d5638}
+.nd.sel rect{stroke:var(--shu)!important;stroke-width:1.6!important}
+.tooltip-box{background:#fbf8f1;border:1px solid #9c855f;border-radius:2px;box-shadow:0 2px 8px rgba(43,36,27,.12);padding:12px 16px;font-size:12px;line-height:1.85;color:var(--text);max-width:340px;pointer-events:auto}
+.tooltip-box strong{display:block;font-size:13px;color:var(--text);border-bottom:1px solid var(--line);padding-bottom:4px;margin-bottom:6px}
+.tooltip-box strong+br{display:none}
+.tooltip-box b{color:#59452a}
+.tooltip-box .tt-x{position:absolute;top:4px;right:6px;border:none;background:none;font-size:18px;line-height:1;color:var(--text2);cursor:pointer;padding:4px 6px;display:none}
+@media(max-width:700px){
+.tabs{gap:0 14px;padding:8px 14px 0}
+.tabs button{font-size:10px}
+.tooltip-box{left:0!important;right:0;top:auto!important;bottom:0;max-width:none;max-height:46vh;overflow-y:auto;border:none;border-top:1px solid #9c855f;border-radius:0;box-shadow:0 -2px 10px rgba(43,36,27,.1);padding:14px 40px 18px 16px;font-size:12.5px}
+.tooltip-box .tt-x{display:block}
+body.tt-open{padding-bottom:46vh}
+body.tt-open .sj-btn{display:none}
+}
+/* /nexus-print */
 </style><style id="thThemes">/* =====================================================
    THESAURUS HISTORIAE ― themes.css(LUX固定版)
    生成りの紙 + 墨の本文 + 朱筆(★語) + 金茶の構造色。
@@ -67,6 +93,17 @@ html[data-theme="lux"] span.k + strong,
 html[data-theme="lux"] .node-title .k { color:var(--shu) !important; }
 html[data-theme="lux"] span.k + strong { font-weight:700; }
 html[data-theme="lux"] ::selection { background:rgba(162,51,30,.18); }
+
+/* じっくり読む本文: ダーク時代の淡色(#bbb/#a8a39a/#b0aba2/--text3)を墨へ。ラベル類は淡いまま */
+html[data-theme="lux"] td.desc-cell,
+html[data-theme="lux"] td.ds,
+html[data-theme="lux"] td.event-cell { color:var(--text); }
+html[data-theme="lux"] .note p,
+html[data-theme="lux"] div.note,
+html[data-theme="lux"] .side-note,
+html[data-theme="lux"] .ev-note,
+html[data-theme="lux"] .arrow-text,
+html[data-theme="lux"] .detail { color:var(--text2); }
 </style><script id="thScript">document.documentElement.setAttribute('data-theme','lux');</script></head><body>
 <div class="hdr"><h1>因果関係ネットワーク ― 「なぜそうなったか」を辿る</h1><a href="index.html">← Ad Indicem</a></div>
 <div class="tabs"><button class=" active" data-key="rome">ローマ帝国の変容と衰亡</button>
@@ -84,7 +121,7 @@ html[data-theme="lux"] ::selection { background:rgba(162,51,30,.18); }
 <button class="" data-key="china">中国近現代の因果連鎖</button>
 <button class="" data-key="eastasia">東アジア国際秩序の変容</button>
 </div>
-<div class="hint">ノードをクリック → 関連する因果関係がハイライト＋詳細表示 / 余白クリックで解除</div>
+<div class="hint">ノードをクリック(タップ)すると、つながる因果関係と解説を表示 / 余白で解除</div>
 <div class="wrap">
 <div class="theme-svg" id="theme-20c" style="display:none">
 <svg viewBox="0 0 880 780" xmlns="http://www.w3.org/2000/svg" style="width:880px;height:780px;min-width:880px">
@@ -171,63 +208,63 @@ html[data-theme="lux"] ::selection { background:rgba(162,51,30,.18); }
 <text x="564" y="627" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">米ソの第三世界争奪</text>
 </g>
 <g class="nd" data-id="imperialism" data-desc="<strong>帝国主義(1880s-)</strong><br>列強がアフリカ・アジアを分割。ベルリン会議(1884-85)。<br>★<b>「持てる国」(英仏)vs「持たざる国」(独伊日)</b>の対立→ファショダ事件・モロッコ事件。">
-<rect x="30" y="20" width="160" height="36" rx="6" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
+<rect x="30" y="20" width="160" height="36" rx="2" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
 <text x="110.0" y="42.0" text-anchor="middle" fill="#d4c088" font-size="8" font-family="Noto Serif JP" font-weight="700">帝国主義の競争(1880s-)</text>
 </g>
 <g class="nd" data-id="arms" data-desc="<strong>軍拡競争</strong><br>独の<b>大海軍建設</b>→英独建艦競争。各国の常備軍拡大。<br>★軍部の発言力増大→シュリーフェン計画等が政治家の選択肢を制約。">
-<rect x="250" y="20" width="150" height="36" rx="6" fill="rgba(180,100,80,.15)" stroke="rgba(180,100,80,.3)" stroke-width="1.5"/>
+<rect x="250" y="20" width="150" height="36" rx="2" fill="rgba(180,100,80,.15)" stroke="rgba(180,100,80,.3)" stroke-width="1.5"/>
 <text x="325.0" y="42.0" text-anchor="middle" fill="#d4a088" font-size="8" font-family="Noto Serif JP" font-weight="700">軍拡競争(1890s-)</text>
 </g>
 <g class="nd" data-id="nationalism" data-desc="<strong>ナショナリズム(19C後半-)</strong><br>仏＝対独復讐。独＝「陽のあたる場所」。<br>★<b>汎スラヴ vs 汎ゲルマン</b>→バルカン＝「火薬庫」。">
-<rect x="460" y="20" width="170" height="36" rx="6" fill="rgba(130,100,160,.15)" stroke="rgba(130,100,160,.3)" stroke-width="1.5"/>
+<rect x="460" y="20" width="170" height="36" rx="2" fill="rgba(130,100,160,.15)" stroke="rgba(130,100,160,.3)" stroke-width="1.5"/>
 <text x="545.0" y="42.0" text-anchor="middle" fill="#c0a0d4" font-size="9" font-family="Noto Serif JP" font-weight="700">ナショナリズムの高揚</text>
 </g>
 <g class="nd" data-id="alliance" data-desc="<strong>同盟体制</strong><br>三国同盟(独墺伊) vs 三国協商(英仏露)→<b>二極化</b>。<br>★一国の紛争が自動的に全欧州の戦争に拡大する構造。">
-<rect x="690" y="20" width="150" height="36" rx="6" fill="rgba(100,130,180,.15)" stroke="rgba(100,130,180,.3)" stroke-width="1.5"/>
+<rect x="690" y="20" width="150" height="36" rx="2" fill="rgba(100,130,180,.15)" stroke="rgba(100,130,180,.3)" stroke-width="1.5"/>
 <text x="765.0" y="42.0" text-anchor="middle" fill="#88b0d4" font-size="8" font-family="Noto Serif JP" font-weight="700">同盟体制の硬直化</text>
 </g>
 <g class="nd" data-id="ww1" data-desc="<strong>★WW1(1914-18)</strong><br>サラエヴォ事件→同盟の連鎖で全面戦争。塹壕戦・毒ガス・総力戦。<br>戦死者約1000万。4帝国崩壊(独墺露オスマン)。">
-<rect x="330" y="120" width="180" height="46" rx="6" fill="rgba(180,60,60,.2)" stroke="rgba(180,60,60,.4)" stroke-width="1.5"/>
-<text x="420.0" y="147.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700">★第一次世界大戦(1914-18)</text>
+<rect x="330" y="120" width="180" height="46" rx="2" fill="rgba(180,60,60,.2)" stroke="rgba(180,60,60,.4)" stroke-width="1.5"/>
+<text x="420.0" y="147.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700"><tspan class="st">★</tspan>第一次世界大戦(1914-18)</text>
 </g>
 <g class="nd" data-id="versailles" data-desc="<strong>ヴェルサイユ条約</strong><br>独に<b>過酷な賠償1320億金マルク</b>＋領土喪失＋軍備制限＋戦争責任(231条)。<br>★民族自決→東欧に新興国→ただし少数民族問題を内包。">
-<rect x="60" y="240" width="170" height="36" rx="6" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
+<rect x="60" y="240" width="170" height="36" rx="2" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
 <text x="145.0" y="262.0" text-anchor="middle" fill="#d4c088" font-size="9" font-family="Noto Serif JP" font-weight="700">ヴェルサイユ体制(1919)</text>
 </g>
 <g class="nd" data-id="league" data-desc="<strong>国際連盟</strong><br>ウィルソンの14カ条→集団安全保障。ただし★<b>米不参加</b>＋全会一致＋軍事制裁なし→実効力欠如。<br>満州事変・エチオピアを止められず。">
-<rect x="340" y="240" width="150" height="36" rx="6" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
+<rect x="340" y="240" width="150" height="36" rx="2" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
 <text x="415.0" y="262.0" text-anchor="middle" fill="#88d4b0" font-size="8" font-family="Noto Serif JP" font-weight="700">国際連盟(1920)</text>
 </g>
 <g class="nd" data-id="russian_rev" data-desc="<strong>ロシア革命(1917)→ソ連(1922)</strong><br>WW1の疲弊→二月→十月革命(レーニン)。<b>世界初の社会主義国家</b>。<br>★資本主義vs社会主義の対立軸→冷戦の起源。">
-<rect x="600" y="240" width="170" height="36" rx="6" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/>
+<rect x="600" y="240" width="170" height="36" rx="2" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/>
 <text x="685.0" y="262.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700">ロシア革命→ソ連</text>
 </g>
 <g class="nd" data-id="depression" data-desc="<strong>世界恐慌(1929)</strong><br>ウォール街暴落→世界波及→失業率25%(米)。<br>★<b>ブロック経済</b>→持たざる国が市場を求めて侵略へ。">
-<rect x="60" y="370" width="160" height="36" rx="6" fill="rgba(130,130,100,.15)" stroke="rgba(130,130,100,.3)" stroke-width="1.5"/>
+<rect x="60" y="370" width="160" height="36" rx="2" fill="rgba(130,130,100,.15)" stroke="rgba(130,130,100,.3)" stroke-width="1.5"/>
 <text x="140.0" y="392.0" text-anchor="middle" fill="#c0c0a0" font-size="8" font-family="Noto Serif JP" font-weight="700">世界恐慌(1929)</text>
 </g>
 <g class="nd" data-id="fascism" data-desc="<strong>ファシズム</strong><br>ヴェルサイユの不満＋恐慌→<b>ナチス(独1933)</b>・ファシスト(伊1922)・軍国主義(日)。<br>反共＋領土拡張＋人種主義。">
-<rect x="340" y="370" width="170" height="36" rx="6" fill="rgba(130,80,60,.2)" stroke="rgba(130,80,60,.35)" stroke-width="1.5"/>
+<rect x="340" y="370" width="170" height="36" rx="2" fill="rgba(130,80,60,.2)" stroke="rgba(130,80,60,.35)" stroke-width="1.5"/>
 <text x="425.0" y="392.0" text-anchor="middle" fill="#d4a080" font-size="9" font-family="Noto Serif JP" font-weight="700">ファシズムの台頭</text>
 </g>
 <g class="nd" data-id="appease" data-desc="<strong>宥和政策</strong><br>★<b>ミュンヘン会談(1938)</b>＝チェンバレンがズデーテンを容認。<br>WW1の記憶→「戦争回避」→ただし侵略を増長させた。">
-<rect x="620" y="370" width="150" height="36" rx="6" fill="rgba(100,130,100,.15)" stroke="rgba(100,130,100,.3)" stroke-width="1.5"/>
+<rect x="620" y="370" width="150" height="36" rx="2" fill="rgba(100,130,100,.15)" stroke="rgba(100,130,100,.3)" stroke-width="1.5"/>
 <text x="695.0" y="392.0" text-anchor="middle" fill="#a0c0a0" font-size="8" font-family="Noto Serif JP" font-weight="700">宥和政策(1930s)</text>
 </g>
 <g class="nd" data-id="ww2" data-desc="<strong>★WW2(1939-45)</strong><br>電撃戦→仏陥落→独ソ戦→スターリングラード→D-Day→ベルリン陥落。原爆。<br>★<b>死者5000-8000万</b>。ホロコースト。核兵器の誕生。">
-<rect x="330" y="480" width="180" height="46" rx="6" fill="rgba(180,40,40,.2)" stroke="rgba(180,40,40,.4)" stroke-width="1.5"/>
-<text x="420.0" y="507.0" text-anchor="middle" fill="#d47070" font-size="9" font-family="Noto Serif JP" font-weight="700">★第二次世界大戦(1939-45)</text>
+<rect x="330" y="480" width="180" height="46" rx="2" fill="rgba(180,40,40,.2)" stroke="rgba(180,40,40,.4)" stroke-width="1.5"/>
+<text x="420.0" y="507.0" text-anchor="middle" fill="#d47070" font-size="9" font-family="Noto Serif JP" font-weight="700"><tspan class="st">★</tspan>第二次世界大戦(1939-45)</text>
 </g>
 <g class="nd" data-id="un" data-desc="<strong>国連(1945)</strong><br>連盟の反省→<b>米ソ参加＋安保理に軍事制裁権限</b>。<br>ただし拒否権→冷戦で機能不全。">
-<rect x="60" y="620" width="140" height="36" rx="6" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
+<rect x="60" y="620" width="140" height="36" rx="2" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
 <text x="130.0" y="642.0" text-anchor="middle" fill="#88d4b0" font-size="8" font-family="Noto Serif JP" font-weight="700">国際連合(1945)</text>
 </g>
 <g class="nd" data-id="coldwar" data-desc="<strong>★冷戦(1945-91)</strong><br>米ソ二極体制。NATO vs ワルシャワ。核の恐怖(MAD)。<br>ベルリンの壁→キューバ危機→ベトナム→アフガン→1991崩壊。">
-<rect x="320" y="610" width="190" height="46" rx="6" fill="rgba(100,100,180,.2)" stroke="rgba(100,100,180,.35)" stroke-width="1.5"/>
-<text x="415.0" y="637.0" text-anchor="middle" fill="#a0a0d4" font-size="9" font-family="Noto Serif JP" font-weight="700">★冷戦(1945-1991)</text>
+<rect x="320" y="610" width="190" height="46" rx="2" fill="rgba(100,100,180,.2)" stroke="rgba(100,100,180,.35)" stroke-width="1.5"/>
+<text x="415.0" y="637.0" text-anchor="middle" fill="#a0a0d4" font-size="9" font-family="Noto Serif JP" font-weight="700"><tspan class="st">★</tspan>冷戦(1945-1991)</text>
 </g>
 <g class="nd" data-id="decolonize" data-desc="<strong>脱植民地化</strong><br>宗主国の弱体化→アジア・アフリカ独立の波。<br>★非同盟運動(ネルー・ナセル・チトー)。アフリカの年(1960)。">
-<rect x="620" y="620" width="160" height="36" rx="6" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
+<rect x="620" y="620" width="160" height="36" rx="2" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
 <text x="700.0" y="642.0" text-anchor="middle" fill="#88d4b0" font-size="8" font-family="Noto Serif JP" font-weight="700">脱植民地化(1945-70s)</text>
 </g>
 
@@ -294,52 +331,52 @@ html[data-theme="lux"] ::selection { background:rgba(162,51,30,.18); }
 <text x="396" y="576" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">過剰生産→市場と原料</text>
 </g>
 <g class="nd" data-id="ottoman" data-desc="<strong>オスマン帝国(15-16C)</strong><br>東地中海を支配→アジアとの交易をイタリア・イスラーム商人が独占→<b>中間マージン</b>→直接航路の動機。">
-<rect x="30" y="20" width="170" height="36" rx="6" fill="rgba(180,100,80,.15)" stroke="rgba(180,100,80,.3)" stroke-width="1.5"/>
+<rect x="30" y="20" width="170" height="36" rx="2" fill="rgba(180,100,80,.15)" stroke="rgba(180,100,80,.3)" stroke-width="1.5"/>
 <text x="115.0" y="42.0" text-anchor="middle" fill="#d4a088" font-size="9" font-family="Noto Serif JP" font-weight="700">オスマンの地中海支配</text>
 </g>
 <g class="nd" data-id="reconquista" data-desc="<strong>レコンキスタ</strong><br>グラナダ陥落→余剰の軍事力＋宗教的情熱を海外に。">
-<rect x="30" y="110" width="160" height="36" rx="6" fill="rgba(130,130,100,.15)" stroke="rgba(130,130,100,.3)" stroke-width="1.5"/>
+<rect x="30" y="110" width="160" height="36" rx="2" fill="rgba(130,130,100,.15)" stroke="rgba(130,130,100,.3)" stroke-width="1.5"/>
 <text x="110.0" y="132.0" text-anchor="middle" fill="#c0c0a0" font-size="8" font-family="Noto Serif JP" font-weight="700">レコンキスタ完了(1492)</text>
 </g>
 <g class="nd" data-id="tech" data-desc="<strong>航海技術</strong><br>羅針盤・アストロラーベ・キャラベル船・活版印刷→知識の普及。">
-<rect x="600" y="20" width="170" height="36" rx="6" fill="rgba(100,130,180,.15)" stroke="rgba(100,130,180,.3)" stroke-width="1.5"/>
+<rect x="600" y="20" width="170" height="36" rx="2" fill="rgba(100,130,180,.15)" stroke="rgba(100,130,180,.3)" stroke-width="1.5"/>
 <text x="685.0" y="42.0" text-anchor="middle" fill="#88b0d4" font-size="9" font-family="Noto Serif JP" font-weight="700">航海技術の革新</text>
 </g>
 <g class="nd" data-id="exploration" data-desc="<strong>大航海時代</strong><br>ガマ(インド航路1498)・コロンブス(1492)・マゼラン(世界周航)。<br>★世界の一体化の始まり。">
-<rect x="300" y="80" width="170" height="42" rx="6" fill="rgba(80,150,120,.18)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
-<text x="385.0" y="105.0" text-anchor="middle" fill="#88d4b0" font-size="9" font-family="Noto Serif JP" font-weight="700">★大航海時代(15C末-16C)</text>
+<rect x="300" y="80" width="170" height="42" rx="2" fill="rgba(80,150,120,.18)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
+<text x="385.0" y="105.0" text-anchor="middle" fill="#88d4b0" font-size="9" font-family="Noto Serif JP" font-weight="700"><tspan class="st">★</tspan>大航海時代(15C末-16C)</text>
 </g>
 <g class="nd" data-id="silver" data-desc="<strong>銀の世界循環</strong><br>ポトシ銀山→スペイン→欧州→オスマン・インド・<b>中国</b>。マニラ＝ガレオン貿易。<br>★明の一条鞭法(銀納)が銀を吸い込む。">
-<rect x="80" y="200" width="170" height="36" rx="6" fill="rgba(180,140,60,.2)" stroke="rgba(180,140,60,.35)" stroke-width="1.5"/>
-<text x="165.0" y="222.0" text-anchor="middle" fill="#d4c088" font-size="9" font-family="Noto Serif JP" font-weight="700">★銀の世界循環(16-17C)</text>
+<rect x="80" y="200" width="170" height="36" rx="2" fill="rgba(180,140,60,.2)" stroke="rgba(180,140,60,.35)" stroke-width="1.5"/>
+<text x="165.0" y="222.0" text-anchor="middle" fill="#d4c088" font-size="9" font-family="Noto Serif JP" font-weight="700"><tspan class="st">★</tspan>銀の世界循環(16-17C)</text>
 </g>
 <g class="nd" data-id="triangle" data-desc="<strong>三角貿易</strong><br>欧州(工業製品)→アフリカ(奴隷)→新大陸(砂糖・タバコ)→欧州。<br>★約1200万人が強制移送→ヨーロッパの資本蓄積。">
-<rect x="560" y="200" width="180" height="36" rx="6" fill="rgba(130,80,60,.2)" stroke="rgba(130,80,60,.35)" stroke-width="1.5"/>
-<text x="650.0" y="222.0" text-anchor="middle" fill="#d4a080" font-size="9" font-family="Noto Serif JP" font-weight="700">★大西洋三角貿易(16-19C)</text>
+<rect x="560" y="200" width="180" height="36" rx="2" fill="rgba(130,80,60,.2)" stroke="rgba(130,80,60,.35)" stroke-width="1.5"/>
+<text x="650.0" y="222.0" text-anchor="middle" fill="#d4a080" font-size="9" font-family="Noto Serif JP" font-weight="700"><tspan class="st">★</tspan>大西洋三角貿易(16-19C)</text>
 </g>
 <g class="nd" data-id="price_rev" data-desc="<strong>価格革命</strong><br>銀の大量流入→物価2-3倍に上昇。<br>★封建貴族が没落→<b>商工業者(ブルジョワ)が台頭</b>。">
-<rect x="80" y="310" width="160" height="36" rx="6" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/>
-<text x="160.0" y="332.0" text-anchor="middle" fill="#d48888" font-size="8" font-family="Noto Serif JP" font-weight="700">★価格革命(16C)</text>
+<rect x="80" y="310" width="160" height="36" rx="2" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/>
+<text x="160.0" y="332.0" text-anchor="middle" fill="#d48888" font-size="8" font-family="Noto Serif JP" font-weight="700"><tspan class="st">★</tspan>価格革命(16C)</text>
 </g>
 <g class="nd" data-id="mercan" data-desc="<strong>重商主義</strong><br>国富＝金銀の蓄積→輸出奨励・輸入制限。コルベール・航海法。<br>★東インド会社＝国家が特許を与えた独占貿易会社。">
-<rect x="560" y="310" width="170" height="36" rx="6" fill="rgba(130,100,160,.15)" stroke="rgba(130,100,160,.3)" stroke-width="1.5"/>
+<rect x="560" y="310" width="170" height="36" rx="2" fill="rgba(130,100,160,.15)" stroke="rgba(130,100,160,.3)" stroke-width="1.5"/>
 <text x="645.0" y="332.0" text-anchor="middle" fill="#c0a0d4" font-size="9" font-family="Noto Serif JP" font-weight="700">重商主義(17-18C)</text>
 </g>
 <g class="nd" data-id="capital" data-desc="<strong>資本蓄積</strong><br>三角貿易＋重商主義の利益＋囲い込みによる農民の土地剥奪→<b>産業革命の資金源</b>。">
-<rect x="300" y="400" width="160" height="36" rx="6" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
+<rect x="300" y="400" width="160" height="36" rx="2" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
 <text x="380.0" y="422.0" text-anchor="middle" fill="#d4c088" font-size="8" font-family="Noto Serif JP" font-weight="700">資本の蓄積</text>
 </g>
 <g class="nd" data-id="smith" data-desc="<strong>自由貿易思想</strong><br>スミス『国富論』(1776)→重商主義批判→<b>「見えざる手」</b>。<br>リカード＝比較優位説→国際分業の理論的正当化。">
-<rect x="600" y="400" width="160" height="36" rx="6" fill="rgba(100,130,180,.15)" stroke="rgba(100,130,180,.3)" stroke-width="1.5"/>
+<rect x="600" y="400" width="160" height="36" rx="2" fill="rgba(100,130,180,.15)" stroke="rgba(100,130,180,.3)" stroke-width="1.5"/>
 <text x="680.0" y="422.0" text-anchor="middle" fill="#88b0d4" font-size="8" font-family="Noto Serif JP" font-weight="700">自由貿易思想(スミス)</text>
 </g>
 <g class="nd" data-id="ind_rev" data-desc="<strong>産業革命</strong><br>蒸気機関→工場制→大量生産→イギリスが「世界の工場」。<br>★過剰生産→原料と市場が必要→帝国主義へ。">
-<rect x="300" y="500" width="180" height="44" rx="6" fill="rgba(80,150,120,.2)" stroke="rgba(80,150,120,.4)" stroke-width="1.5"/>
-<text x="390.0" y="526.0" text-anchor="middle" fill="#88d4b0" font-size="9" font-family="Noto Serif JP" font-weight="700">★★産業革命(18C後半-)</text>
+<rect x="300" y="500" width="180" height="44" rx="2" fill="rgba(80,150,120,.2)" stroke="rgba(80,150,120,.4)" stroke-width="1.5"/>
+<text x="390.0" y="526.0" text-anchor="middle" fill="#88d4b0" font-size="9" font-family="Noto Serif JP" font-weight="700"><tspan class="st">★★</tspan>産業革命(18C後半-)</text>
 </g>
 <g class="nd" data-id="imperialism2" data-desc="<strong>帝国主義→WW1</strong><br>過剰資本の輸出先＋原料＋市場→アフリカ・アジア分割。<br>列強の対立→WW1(1914)。">
-<rect x="300" y="610" width="180" height="40" rx="6" fill="rgba(180,80,80,.2)" stroke="rgba(180,80,80,.35)" stroke-width="1.5"/>
-<text x="390.0" y="634.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700">★帝国主義(1880s-)→WW1</text>
+<rect x="300" y="610" width="180" height="40" rx="2" fill="rgba(180,80,80,.2)" stroke="rgba(180,80,80,.35)" stroke-width="1.5"/>
+<text x="390.0" y="634.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700"><tspan class="st">★</tspan>帝国主義(1880s-)→WW1</text>
 </g>
 
 </svg>
@@ -401,43 +438,43 @@ html[data-theme="lux"] ::selection { background:rgba(162,51,30,.18); }
 <text x="453" y="568" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">革命を法典に結晶</text>
 </g>
 <g class="nd" data-id="print" data-desc="<strong>グーテンベルクの活版印刷</strong><br>聖書の大量印刷→民衆が自分で読める→<b>教会の解釈独占が崩壊</b>。<br>知識の民主化→宗教改革・科学革命・啓蒙思想のすべての前提。">
-<rect x="300" y="20" width="170" height="36" rx="6" fill="rgba(130,130,100,.15)" stroke="rgba(130,130,100,.3)" stroke-width="1.5"/>
+<rect x="300" y="20" width="170" height="36" rx="2" fill="rgba(130,130,100,.15)" stroke="rgba(130,130,100,.3)" stroke-width="1.5"/>
 <text x="385.0" y="42.0" text-anchor="middle" fill="#c0c0a0" font-size="9" font-family="Noto Serif JP" font-weight="700">活版印刷(1450s)</text>
 </g>
 <g class="nd" data-id="reform" data-desc="<strong>宗教改革</strong><br>ルター＝聖書のみ・信仰のみ。カルヴァン＝予定説。<br>★教会の権威否定→<b>個人の良心を重視</b>→近代的個人主義の萌芽。">
-<rect x="80" y="110" width="170" height="36" rx="6" fill="rgba(100,130,180,.15)" stroke="rgba(100,130,180,.3)" stroke-width="1.5"/>
-<text x="165.0" y="132.0" text-anchor="middle" fill="#88b0d4" font-size="9" font-family="Noto Serif JP" font-weight="700">★宗教改革(1517-)</text>
+<rect x="80" y="110" width="170" height="36" rx="2" fill="rgba(100,130,180,.15)" stroke="rgba(100,130,180,.3)" stroke-width="1.5"/>
+<text x="165.0" y="132.0" text-anchor="middle" fill="#88b0d4" font-size="9" font-family="Noto Serif JP" font-weight="700"><tspan class="st">★</tspan>宗教改革(1517-)</text>
 </g>
 <g class="nd" data-id="sci_rev" data-desc="<strong>科学革命</strong><br>コペルニクス→ガリレイ→★ニュートン(プリンキピア1687)。<br>★<b>理性と実験で自然を解明できる</b>→啓蒙思想の基盤。">
-<rect x="550" y="110" width="170" height="36" rx="6" fill="rgba(130,100,160,.15)" stroke="rgba(130,100,160,.3)" stroke-width="1.5"/>
+<rect x="550" y="110" width="170" height="36" rx="2" fill="rgba(130,100,160,.15)" stroke="rgba(130,100,160,.3)" stroke-width="1.5"/>
 <text x="635.0" y="132.0" text-anchor="middle" fill="#c0a0d4" font-size="9" font-family="Noto Serif JP" font-weight="700">科学革命(16-17C)</text>
 </g>
 <g class="nd" data-id="30years" data-desc="<strong>三十年戦争</strong><br>宗教対立→国際政治の戦争に変質(リシュリューの「国家理性」)。<br>ドイツの荒廃(人口1/3減)。">
-<rect x="80" y="220" width="180" height="36" rx="6" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/>
+<rect x="80" y="220" width="180" height="36" rx="2" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/>
 <text x="170.0" y="242.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700">三十年戦争(1618-48)</text>
 </g>
 <g class="nd" data-id="westphalia" data-desc="<strong>ウェストファリア条約</strong><br>★<b>主権国家体制の確立</b>＝内政不干渉・対等な主権。カルヴァン派公認。<br>「宗教の時代」→「国家理性の時代」。近代国際法の出発点。">
-<rect x="80" y="330" width="180" height="36" rx="6" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
-<text x="170.0" y="352.0" text-anchor="middle" fill="#88d4b0" font-size="9" font-family="Noto Serif JP" font-weight="700">★ウェストファリア体制(1648)</text>
+<rect x="80" y="330" width="180" height="36" rx="2" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
+<text x="170.0" y="352.0" text-anchor="middle" fill="#88d4b0" font-size="9" font-family="Noto Serif JP" font-weight="700"><tspan class="st">★</tspan>ウェストファリア体制(1648)</text>
 </g>
 <g class="nd" data-id="locke" data-desc="<strong>ジョン＝ロック(1632-1704)</strong><br>自然権(生命・自由・財産)→政府は人民の信託→<b>抵抗権</b>。<br>名誉革命(1688)の正当化→米仏革命の理論的基盤。">
-<rect x="550" y="250" width="170" height="36" rx="6" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
+<rect x="550" y="250" width="170" height="36" rx="2" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
 <text x="635.0" y="272.0" text-anchor="middle" fill="#88d4b0" font-size="9" font-family="Noto Serif JP" font-weight="700">ロック＝社会契約説</text>
 </g>
 <g class="nd" data-id="enlighten" data-desc="<strong>啓蒙思想</strong><br>モンテスキュー＝三権分立。ルソー＝人民主権。ヴォルテール＝寛容。百科全書。<br>★<b>「理性で社会を改善できる」</b>→旧体制への挑戦。">
-<rect x="300" y="400" width="180" height="42" rx="6" fill="rgba(180,140,60,.2)" stroke="rgba(180,140,60,.35)" stroke-width="1.5"/>
-<text x="390.0" y="425.0" text-anchor="middle" fill="#d4c088" font-size="9" font-family="Noto Serif JP" font-weight="700">★啓蒙思想(18C)</text>
+<rect x="300" y="400" width="180" height="42" rx="2" fill="rgba(180,140,60,.2)" stroke="rgba(180,140,60,.35)" stroke-width="1.5"/>
+<text x="390.0" y="425.0" text-anchor="middle" fill="#d4c088" font-size="9" font-family="Noto Serif JP" font-weight="700"><tspan class="st">★</tspan>啓蒙思想(18C)</text>
 </g>
 <g class="nd" data-id="am_rev" data-desc="<strong>アメリカ独立</strong><br>独立宣言＝ロックの自然権思想を実践。共和制・三権分立・連邦制。<br>★<b>啓蒙思想の最初の大規模実験</b>→仏革命に影響。">
-<rect x="80" y="510" width="170" height="36" rx="6" fill="rgba(100,130,180,.15)" stroke="rgba(100,130,180,.3)" stroke-width="1.5"/>
+<rect x="80" y="510" width="170" height="36" rx="2" fill="rgba(100,130,180,.15)" stroke="rgba(100,130,180,.3)" stroke-width="1.5"/>
 <text x="165.0" y="532.0" text-anchor="middle" fill="#88b0d4" font-size="9" font-family="Noto Serif JP" font-weight="700">アメリカ独立(1776)</text>
 </g>
 <g class="nd" data-id="fr_rev" data-desc="<strong>フランス革命</strong><br>人権宣言＝自由・平等。身分制破壊＋国民主権。<br>恐怖政治→ナポレオン→法典で「法の前の平等」を制度化。">
-<rect x="430" y="510" width="180" height="42" rx="6" fill="rgba(180,60,60,.2)" stroke="rgba(180,60,60,.4)" stroke-width="1.5"/>
-<text x="520.0" y="535.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700">★フランス革命(1789)</text>
+<rect x="430" y="510" width="180" height="42" rx="2" fill="rgba(180,60,60,.2)" stroke="rgba(180,60,60,.4)" stroke-width="1.5"/>
+<text x="520.0" y="535.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700"><tspan class="st">★</tspan>フランス革命(1789)</text>
 </g>
 <g class="nd" data-id="napoleon" data-desc="<strong>ナポレオンの遺産</strong><br>法典＋「革命の輸出」→征服地にナショナリズムを覚醒→<b>ナポレオンを倒す力にもなった</b>。<br>ウィーン体制(復古) vs 自由主義の闘い→1848年革命。">
-<rect x="300" y="600" width="170" height="36" rx="6" fill="rgba(130,100,160,.15)" stroke="rgba(130,100,160,.3)" stroke-width="1.5"/>
+<rect x="300" y="600" width="170" height="36" rx="2" fill="rgba(130,100,160,.15)" stroke="rgba(130,100,160,.3)" stroke-width="1.5"/>
 <text x="385.0" y="622.0" text-anchor="middle" fill="#c0a0d4" font-size="9" font-family="Noto Serif JP" font-weight="700">ナポレオンの遺産</text>
 </g>
 
@@ -512,52 +549,52 @@ html[data-theme="lux"] ::selection { background:rgba(162,51,30,.18); }
 <text x="563" y="560" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">衛星国の離脱→ソ連孤立</text>
 </g>
 <g class="nd" data-id="yalta" data-desc="<strong>ヤルタ会談(1945.2)</strong><br>ルーズヴェルト・チャーチル・スターリン→ドイツ分割占領・ポーランド国境・国連設立・ソ連の対日参戦を合意。<br>★<b>戦後の米ソ勢力圏が事実上ここで決まる</b>→冷戦の原型。">
-<rect x="300" y="20" width="180" height="36" rx="6" fill="rgba(130,130,100,.15)" stroke="rgba(130,130,100,.3)" stroke-width="1.5"/>
+<rect x="300" y="20" width="180" height="36" rx="2" fill="rgba(130,130,100,.15)" stroke="rgba(130,130,100,.3)" stroke-width="1.5"/>
 <text x="390.0" y="42.0" text-anchor="middle" fill="#c0c0a0" font-size="9" font-family="Noto Serif JP" font-weight="700">ヤルタ体制(1945)</text>
 </g>
 <g class="nd" data-id="truman" data-desc="<strong>トルーマン＝ドクトリン(1947)</strong><br>★<b>「封じ込め」(ケナン)</b>＝ソ連の拡大を阻止。ギリシア・トルコに軍事援助。<br>マーシャル＝プラン→西欧復興。NATO(1949)。">
-<rect x="60" y="120" width="180" height="36" rx="6" fill="rgba(100,130,180,.15)" stroke="rgba(100,130,180,.3)" stroke-width="1.5"/>
+<rect x="60" y="120" width="180" height="36" rx="2" fill="rgba(100,130,180,.15)" stroke="rgba(100,130,180,.3)" stroke-width="1.5"/>
 <text x="150.0" y="142.0" text-anchor="middle" fill="#88b0d4" font-size="9" font-family="Noto Serif JP" font-weight="700">封じ込め政策(1947-)</text>
 </g>
 <g class="nd" data-id="soviet_bloc" data-desc="<strong>ソ連圏の形成</strong><br>コミンフォルム(1947)・コメコン(1949)・ワルシャワ条約(1955)。<br>★東欧の衛星国化→ハンガリー動乱(1956)・プラハの春(1968)で軍事介入。">
-<rect x="580" y="120" width="180" height="36" rx="6" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/>
+<rect x="580" y="120" width="180" height="36" rx="2" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/>
 <text x="670.0" y="142.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700">ソ連の東欧支配</text>
 </g>
 <g class="nd" data-id="proxy" data-desc="<strong>代理戦争</strong><br>米ソが直接戦わず第三世界で対立。★朝鮮戦争(1950-53)・ベトナム戦争(1955-75)・アフガン(1979-89)。<br>各地の内戦に米ソが介入→冷戦の「熱い」局面。">
-<rect x="60" y="250" width="170" height="36" rx="6" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/>
+<rect x="60" y="250" width="170" height="36" rx="2" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/>
 <text x="145.0" y="272.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700">代理戦争</text>
 </g>
 <g class="nd" data-id="nuclear" data-desc="<strong>核軍拡競争</strong><br>ソ連の核実験(1949)→水爆(米1952/ソ1953)→ICBM→<b>MAD(相互確証破壊)</b>。<br>★キューバ危機(1962)＝核戦争の瀬戸際→部分的核実験禁止条約(1963)→デタントへ。">
-<rect x="340" y="250" width="170" height="36" rx="6" fill="rgba(130,100,160,.15)" stroke="rgba(130,100,160,.3)" stroke-width="1.5"/>
+<rect x="340" y="250" width="170" height="36" rx="2" fill="rgba(130,100,160,.15)" stroke="rgba(130,100,160,.3)" stroke-width="1.5"/>
 <text x="425.0" y="272.0" text-anchor="middle" fill="#c0a0d4" font-size="9" font-family="Noto Serif JP" font-weight="700">核の恐怖</text>
 </g>
 <g class="nd" data-id="decolonize2" data-desc="<strong>脱植民地化(1945-70s)</strong><br>インド(1947)・インドネシア(1949)・アフリカの年(1960)。<br>★宗主国の弱体化＋民族自決の理念＋冷戦下で米ソが独立を支持。">
-<rect x="620" y="250" width="170" height="36" rx="6" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
+<rect x="620" y="250" width="170" height="36" rx="2" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
 <text x="705.0" y="272.0" text-anchor="middle" fill="#88d4b0" font-size="9" font-family="Noto Serif JP" font-weight="700">脱植民地化の波</text>
 </g>
 <g class="nd" data-id="nonaligned" data-desc="<strong>非同盟運動</strong><br>バンドン会議(1955)→ベオグラード会議(1961正式発足)。<br>★ネルー・ナセル・チトー・スカルノ→米ソどちらにも属さない「第三世界」の連帯。">
-<rect x="340" y="380" width="180" height="36" rx="6" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
-<text x="430.0" y="402.0" text-anchor="middle" fill="#d4c088" font-size="9" font-family="Noto Serif JP" font-weight="700">★非同盟運動(1961-)</text>
+<rect x="340" y="380" width="180" height="36" rx="2" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
+<text x="430.0" y="402.0" text-anchor="middle" fill="#d4c088" font-size="9" font-family="Noto Serif JP" font-weight="700"><tspan class="st">★</tspan>非同盟運動(1961-)</text>
 </g>
 <g class="nd" data-id="detente" data-desc="<strong>デタント(緊張緩和)</strong><br>SALT I(1972)・ヘルシンキ宣言(1975)。ニクソン訪中(1972)→米中接近。<br>ただし★アフガン侵攻(1979)→「新冷戦」→デタント終了。">
-<rect x="60" y="380" width="160" height="36" rx="6" fill="rgba(100,130,180,.15)" stroke="rgba(100,130,180,.3)" stroke-width="1.5"/>
+<rect x="60" y="380" width="160" height="36" rx="2" fill="rgba(100,130,180,.15)" stroke="rgba(100,130,180,.3)" stroke-width="1.5"/>
 <text x="140.0" y="402.0" text-anchor="middle" fill="#88b0d4" font-size="8" font-family="Noto Serif JP" font-weight="700">デタント(1970s)</text>
 </g>
 <g class="nd" data-id="neo_cold" data-desc="<strong>新冷戦</strong><br>アフガン侵攻(1979)→モスクワ五輪ボイコット→レーガンのSDI(スターウォーズ構想)。<br>★軍拡競争→ソ連の経済的疲弊が加速。">
-<rect x="60" y="490" width="170" height="36" rx="6" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/>
+<rect x="60" y="490" width="170" height="36" rx="2" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/>
 <text x="145.0" y="512.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700">「新冷戦」(1980s前半)</text>
 </g>
 <g class="nd" data-id="gorba" data-desc="<strong>ゴルバチョフ(1985-)</strong><br>★ペレストロイカ(経済改革)＋グラスノスチ(情報公開)＋新思考外交(軍縮)。<br>ただし★改革が制御不能に→各共和国が独立を宣言。">
-<rect x="340" y="490" width="180" height="36" rx="6" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
+<rect x="340" y="490" width="180" height="36" rx="2" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
 <text x="430.0" y="512.0" text-anchor="middle" fill="#88d4b0" font-size="9" font-family="Noto Serif JP" font-weight="700">ゴルバチョフの改革(1985-)</text>
 </g>
 <g class="nd" data-id="east_rev" data-desc="<strong>東欧革命(1989)</strong><br>ポーランド「連帯」→ハンガリー国境開放→★<b>ベルリンの壁崩壊(11.9)</b>→チェコ(ビロード革命)→ルーマニア(チャウシェスク処刑)。<br>★ドイツ統一(1990.10.3)。">
-<rect x="620" y="490" width="160" height="36" rx="6" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
+<rect x="620" y="490" width="160" height="36" rx="2" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
 <text x="700.0" y="512.0" text-anchor="middle" fill="#d4c088" font-size="8" font-family="Noto Serif JP" font-weight="700">東欧革命(1989)</text>
 </g>
 <g class="nd" data-id="end_cold" data-desc="<strong>★冷戦終結(1991)</strong><br>マルタ会談(1989.12米ソ)→冷戦終結宣言。ワルシャワ条約解散(1991.7)。<br>★<b>ソ連崩壊(1991.12.25)</b>→CIS→米の「唯一の超大国」→ただし新たな不安定(民族紛争・テロ)へ。">
-<rect x="320" y="610" width="210" height="44" rx="6" fill="rgba(var(--axr),.15)" stroke="rgba(var(--axr),.35)" stroke-width="1.5"/>
-<text x="425.0" y="636.0" text-anchor="middle" fill="#e8c888" font-size="9" font-family="Noto Serif JP" font-weight="700">★冷戦終結・ソ連崩壊(1991)</text>
+<rect x="320" y="610" width="210" height="44" rx="2" fill="rgba(var(--axr),.15)" stroke="rgba(var(--axr),.35)" stroke-width="1.5"/>
+<text x="425.0" y="636.0" text-anchor="middle" fill="#e8c888" font-size="9" font-family="Noto Serif JP" font-weight="700"><tspan class="st">★</tspan>冷戦終結・ソ連崩壊(1991)</text>
 </g>
 
 </svg>
@@ -639,52 +676,52 @@ html[data-theme="lux"] ::selection { background:rgba(162,51,30,.18); }
 <text x="558" y="509" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">シーア vs スンナの対立構造</text>
 </g>
 <g class="nd" data-id="ottoman_d" data-desc="<strong>オスマン帝国の衰退</strong><br>「瀕死の病人」→タンジマート・ミドハト憲法→挫折。青年トルコ革命(1908)。<br>★WW1で独側参戦→敗北→帝国崩壊(セーヴル条約1920)。">
-<rect x="300" y="20" width="200" height="36" rx="6" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
+<rect x="300" y="20" width="200" height="36" rx="2" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
 <text x="400.0" y="42.0" text-anchor="middle" fill="#d4c088" font-size="9" font-family="Noto Serif JP" font-weight="700">オスマン帝国の衰退(19C-)</text>
 </g>
 <g class="nd" data-id="triple" data-desc="<strong>三枚舌外交(WW1中)</strong><br>①フサイン＝マクマホン協定(アラブ独立を約束)<br>②サイクス＝ピコ協定(英仏でオスマン領を分割)<br>③★<b>バルフォア宣言(ユダヤ人にパレスチナを約束)</b><br>→矛盾する3つの約束＝★現在の中東問題の起源。">
-<rect x="60" y="120" width="180" height="36" rx="6" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/>
-<text x="150.0" y="142.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700">★英の三枚舌外交</text>
+<rect x="60" y="120" width="180" height="36" rx="2" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/>
+<text x="150.0" y="142.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700"><tspan class="st">★</tspan>英の三枚舌外交</text>
 </g>
 <g class="nd" data-id="mandate" data-desc="<strong>英仏の委任統治</strong><br>英＝イラク・パレスチナ・トランスヨルダン。仏＝シリア・レバノン。<br>★<b>人工的な国境線</b>(民族・部族の分布を無視)→現在まで続く紛争の構造的原因。">
-<rect x="560" y="120" width="190" height="36" rx="6" fill="rgba(130,130,100,.15)" stroke="rgba(130,130,100,.3)" stroke-width="1.5"/>
+<rect x="560" y="120" width="190" height="36" rx="2" fill="rgba(130,130,100,.15)" stroke="rgba(130,130,100,.3)" stroke-width="1.5"/>
 <text x="655.0" y="142.0" text-anchor="middle" fill="#c0c0a0" font-size="9" font-family="Noto Serif JP" font-weight="700">委任統治(1920s-)</text>
 </g>
 <g class="nd" data-id="israel" data-desc="<strong>イスラエル建国(1948.5.14)</strong><br>★ホロコースト→ユダヤ人の「祖国」への渇望＋国際的同情→国連分割決議(1947)。<br>建国即日に★<b>第1次中東戦争</b>→75万パレスチナ難民(ナクバ＝大災厄)。">
-<rect x="60" y="250" width="180" height="42" rx="6" fill="rgba(100,130,180,.15)" stroke="rgba(100,130,180,.3)" stroke-width="1.5"/>
-<text x="150.0" y="275.0" text-anchor="middle" fill="#88b0d4" font-size="9" font-family="Noto Serif JP" font-weight="700">★イスラエル建国(1948)</text>
+<rect x="60" y="250" width="180" height="42" rx="2" fill="rgba(100,130,180,.15)" stroke="rgba(100,130,180,.3)" stroke-width="1.5"/>
+<text x="150.0" y="275.0" text-anchor="middle" fill="#88b0d4" font-size="9" font-family="Noto Serif JP" font-weight="700"><tspan class="st">★</tspan>イスラエル建国(1948)</text>
 </g>
 <g class="nd" data-id="arab_nat" data-desc="<strong>汎アラブ主義</strong><br>★ナセル(エジプト1952革命)→スエズ運河国有化(1956)→アラブの英雄に。<br>アラブ連合共和国(1958エジプト＋シリア→失敗)。バース党(シリア・イラク)。">
-<rect x="350" y="250" width="180" height="36" rx="6" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
+<rect x="350" y="250" width="180" height="36" rx="2" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
 <text x="440.0" y="272.0" text-anchor="middle" fill="#d4c088" font-size="9" font-family="Noto Serif JP" font-weight="700">アラブ民族主義</text>
 </g>
 <g class="nd" data-id="oil" data-desc="<strong>石油</strong><br>中東＝世界の石油埋蔵量の約半分。OPEC(1960)・OAPEC。<br>★<b>石油＝中東を世界政治の中心に押し上げた</b>→列強が中東に介入し続ける理由。">
-<rect x="630" y="250" width="160" height="36" rx="6" fill="rgba(130,100,160,.15)" stroke="rgba(130,100,160,.3)" stroke-width="1.5"/>
-<text x="710.0" y="272.0" text-anchor="middle" fill="#c0a0d4" font-size="8" font-family="Noto Serif JP" font-weight="700">★石油の戦略的重要性</text>
+<rect x="630" y="250" width="160" height="36" rx="2" fill="rgba(130,100,160,.15)" stroke="rgba(130,100,160,.3)" stroke-width="1.5"/>
+<text x="710.0" y="272.0" text-anchor="middle" fill="#c0a0d4" font-size="8" font-family="Noto Serif JP" font-weight="700"><tspan class="st">★</tspan>石油の戦略的重要性</text>
 </g>
 <g class="nd" data-id="wars" data-desc="<strong>4次にわたる中東戦争</strong><br>第1次(1948)→第2次(1956スエズ)→★第3次(1967六日戦争→占領地拡大)→★第4次(1973→石油戦略)。<br>イスラエルが軍事的に優位→ただし和平は遠い。">
-<rect x="60" y="380" width="180" height="36" rx="6" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/>
+<rect x="60" y="380" width="180" height="36" rx="2" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/>
 <text x="150.0" y="402.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700">中東戦争(4回)</text>
 </g>
 <g class="nd" data-id="oil_shock" data-desc="<strong>石油危機</strong><br>第4次中東戦争→★OAPEC石油戦略(禁輸＋価格4倍)→世界経済に大打撃。<br>★<b>石油を「武器」として使用</b>→先進国のエネルギー安全保障が最重要課題に。">
-<rect x="370" y="380" width="160" height="36" rx="6" fill="rgba(130,100,160,.15)" stroke="rgba(130,100,160,.3)" stroke-width="1.5"/>
-<text x="450.0" y="402.0" text-anchor="middle" fill="#c0a0d4" font-size="8" font-family="Noto Serif JP" font-weight="700">★石油危機(1973,1979)</text>
+<rect x="370" y="380" width="160" height="36" rx="2" fill="rgba(130,100,160,.15)" stroke="rgba(130,100,160,.3)" stroke-width="1.5"/>
+<text x="450.0" y="402.0" text-anchor="middle" fill="#c0a0d4" font-size="8" font-family="Noto Serif JP" font-weight="700"><tspan class="st">★</tspan>石油危機(1973,1979)</text>
 </g>
 <g class="nd" data-id="iran_rev" data-desc="<strong>イラン革命(1979)</strong><br>パフレヴィー朝(米の傀儡)→★ホメイニーのイスラーム革命→<b>イスラーム共和国</b>。<br>米大使館人質事件→イラン＝イラク戦争(1980-88)。★シーア派の中心として地域覇権を目指す。">
-<rect x="630" y="380" width="170" height="36" rx="6" fill="rgba(180,100,80,.15)" stroke="rgba(180,100,80,.3)" stroke-width="1.5"/>
-<text x="715.0" y="402.0" text-anchor="middle" fill="#d4a088" font-size="9" font-family="Noto Serif JP" font-weight="700">★イラン革命(1979)</text>
+<rect x="630" y="380" width="170" height="36" rx="2" fill="rgba(180,100,80,.15)" stroke="rgba(180,100,80,.3)" stroke-width="1.5"/>
+<text x="715.0" y="402.0" text-anchor="middle" fill="#d4a088" font-size="9" font-family="Noto Serif JP" font-weight="700"><tspan class="st">★</tspan>イラン革命(1979)</text>
 </g>
 <g class="nd" data-id="plo" data-desc="<strong>パレスチナ問題</strong><br>PLO(1964アラファト)→テロ→インティファーダ(1987)→★オスロ合意(1993→暫定自治)→ただし挫折。<br>★ハマス(1987)→ガザ支配→イスラエルとの対立が継続。">
-<rect x="60" y="500" width="160" height="36" rx="6" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
+<rect x="60" y="500" width="160" height="36" rx="2" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
 <text x="140.0" y="522.0" text-anchor="middle" fill="#88d4b0" font-size="8" font-family="Noto Serif JP" font-weight="700">PLO・パレスチナ問題</text>
 </g>
 <g class="nd" data-id="gulf" data-desc="<strong>湾岸戦争→イラク戦争</strong><br>イラクのクウェート侵攻(1990)→多国籍軍→撤退。<br>★イラク戦争(2003)→フセイン政権崩壊→宗派対立→★IS台頭(2014)→壊滅→ただし不安定は継続。">
-<rect x="340" y="500" width="180" height="36" rx="6" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/>
+<rect x="340" y="500" width="180" height="36" rx="2" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/>
 <text x="430.0" y="522.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700">湾岸戦争(1991)→イラク</text>
 </g>
 <g class="nd" data-id="arab_spring" data-desc="<strong>「アラブの春」(2011)</strong><br>チュニジア→エジプト(ムバラク退陣)→リビア(カダフィ殺害)→★<b>シリア内戦(2011-)</b>→難民危機(数百万人がEUへ)。<br>民主化の期待→ただし多くの国で混乱・内戦・権威主義への回帰。★サウジ(スンナ)vsイラン(シーア)の代理戦争(イエメン・シリア)が継続。">
-<rect x="300" y="620" width="200" height="40" rx="6" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
-<text x="400.0" y="644.0" text-anchor="middle" fill="#d4c088" font-size="9" font-family="Noto Serif JP" font-weight="700">★「アラブの春」(2011-)→現在</text>
+<rect x="300" y="620" width="200" height="40" rx="2" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
+<text x="400.0" y="644.0" text-anchor="middle" fill="#d4c088" font-size="9" font-family="Noto Serif JP" font-weight="700"><tspan class="st">★</tspan>「アラブの春」(2011-)→現在</text>
 </g>
 
 </svg>
@@ -710,29 +747,29 @@ html[data-theme="lux"] ::selection { background:rgba(162,51,30,.18); }
 <g class="ed" data-from="guogong" data-to="civil"><path d="M220,780 Q440,810 660,780" fill="none" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_ch)"/><text x="440" y="810" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">上海クーデタ→国共分裂→内戦</text></g>
 <g class="ed" data-from="civil" data-to="prc"><line x1="660" y1="780" x2="660" y2="845" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_ch)"/><text x="670" y="815" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">日中戦争→第二次国共合作→共産党勝利</text></g>
 
-<g class="nd" data-id="opium" data-desc="<strong>アヘン戦争(1840-42)</strong><br>イギリスが清に開国を強制。★南京条約(1842)＝★<b>不平等条約体制の始まり</b>→香港割譲・5港開港・公行制度の廃止。アロー戦争(1856-60)→北京条約→天津条約。<br>★「西洋の衝撃」→中華世界秩序(朝貢体制)の崩壊が始まる。"><rect x="110" y="20" width="210" height="36" rx="6" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/><text x="215" y="42" text-anchor="middle" fill="#d4c088" font-size="8" font-family="Noto Serif JP" font-weight="700">アヘン戦争(1840-42)</text></g>
+<g class="nd" data-id="opium" data-desc="<strong>アヘン戦争(1840-42)</strong><br>イギリスが清に開国を強制。★南京条約(1842)＝★<b>不平等条約体制の始まり</b>→香港割譲・5港開港・公行制度の廃止。アロー戦争(1856-60)→北京条約→天津条約。<br>★「西洋の衝撃」→中華世界秩序(朝貢体制)の崩壊が始まる。"><rect x="110" y="20" width="210" height="36" rx="2" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/><text x="215" y="42" text-anchor="middle" fill="#d4c088" font-size="8" font-family="Noto Serif JP" font-weight="700">アヘン戦争(1840-42)</text></g>
 
-<g class="nd" data-id="taiping" data-desc="<strong>太平天国(1851-64)</strong><br>洪秀全がキリスト教的な「拝上帝会」を組織→南京を占領(「天京」)→★<b>清朝史上最大の内乱</b>→人口約2000万人が犠牲。<br>天朝田畝制度(土地均分)・纏足禁止(女性解放)。<br>★曾国藩の湘軍・李鴻章の淮軍(漢人の地方軍)が鎮圧→★<b>漢人官僚の台頭</b>→洋務運動へ。"><rect x="110" y="140" width="210" height="36" rx="6" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/><text x="215" y="162" text-anchor="middle" fill="#d4c088" font-size="8" font-family="Noto Serif JP" font-weight="700">太平天国(1851-64)</text></g>
+<g class="nd" data-id="taiping" data-desc="<strong>太平天国(1851-64)</strong><br>洪秀全がキリスト教的な「拝上帝会」を組織→南京を占領(「天京」)→★<b>清朝史上最大の内乱</b>→人口約2000万人が犠牲。<br>天朝田畝制度(土地均分)・纏足禁止(女性解放)。<br>★曾国藩の湘軍・李鴻章の淮軍(漢人の地方軍)が鎮圧→★<b>漢人官僚の台頭</b>→洋務運動へ。"><rect x="110" y="140" width="210" height="36" rx="2" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/><text x="215" y="162" text-anchor="middle" fill="#d4c088" font-size="8" font-family="Noto Serif JP" font-weight="700">太平天国(1851-64)</text></g>
 
-<g class="nd" data-id="yangwu" data-desc="<strong>洋務運動(1861-95)</strong><br>★<b>「中体西用」</b>＝中国の体制(体)は維持し西洋の技術(用)だけを導入。曾国藩・李鴻章・左宗棠・張之洞。<br>軍事工場(江南製造総局)・海軍(北洋艦隊)・通信・鉄道。<br>★<b>制度改革を伴わない技術導入の限界</b>＝日清戦争の敗北で証明される。"><rect x="490" y="140" width="210" height="36" rx="6" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/><text x="595" y="162" text-anchor="middle" fill="#d4c088" font-size="8" font-family="Noto Serif JP" font-weight="700">洋務運動(1861-95)</text></g>
+<g class="nd" data-id="yangwu" data-desc="<strong>洋務運動(1861-95)</strong><br>★<b>「中体西用」</b>＝中国の体制(体)は維持し西洋の技術(用)だけを導入。曾国藩・李鴻章・左宗棠・張之洞。<br>軍事工場(江南製造総局)・海軍(北洋艦隊)・通信・鉄道。<br>★<b>制度改革を伴わない技術導入の限界</b>＝日清戦争の敗北で証明される。"><rect x="490" y="140" width="210" height="36" rx="2" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/><text x="595" y="162" text-anchor="middle" fill="#d4c088" font-size="8" font-family="Noto Serif JP" font-weight="700">洋務運動(1861-95)</text></g>
 
-<g class="nd" data-id="sino_jp" data-desc="<strong>日清戦争(1894-95)</strong><br>朝鮮の甲午農民戦争(東学党の乱)→日清両国が出兵→★<b>下関条約</b>(1895)＝遼東半島・台湾割譲・賠償金2億両・朝鮮の独立承認。★三国干渉→遼東半島返還。<br>★<b>「中体西用」の失敗を証明</b>→制度改革(変法)の議論が活発化。<br>★列強の中国分割(租借地・勢力範囲)の契機。"><rect x="340" y="260" width="210" height="40" rx="6" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/><text x="445" y="284" text-anchor="middle" fill="#d4c088" font-size="8" font-family="Noto Serif JP" font-weight="700">日清戦争(1894-95)</text></g>
+<g class="nd" data-id="sino_jp" data-desc="<strong>日清戦争(1894-95)</strong><br>朝鮮の甲午農民戦争(東学党の乱)→日清両国が出兵→★<b>下関条約</b>(1895)＝遼東半島・台湾割譲・賠償金2億両・朝鮮の独立承認。★三国干渉→遼東半島返還。<br>★<b>「中体西用」の失敗を証明</b>→制度改革(変法)の議論が活発化。<br>★列強の中国分割(租借地・勢力範囲)の契機。"><rect x="340" y="260" width="210" height="40" rx="2" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/><text x="445" y="284" text-anchor="middle" fill="#d4c088" font-size="8" font-family="Noto Serif JP" font-weight="700">日清戦争(1894-95)</text></g>
 
-<g class="nd" data-id="wuxu" data-desc="<strong>戊戌変法(1898)</strong><br>★康有為・梁啓超が光緒帝に改革を建議→★<b>百日維新(103日間)</b>→科挙の改革・近代的学校設立・軍制改革等を急進的に実施。<br>★<b>西太后のクーデタ(戊戌政変)</b>で挫折→譚嗣同ら6人処刑(戊戌六君子)→光緒帝は幽閉。<br>★改革派の挫折→革命派(孫文)が台頭する契機。"><rect x="110" y="380" width="210" height="36" rx="6" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/><text x="215" y="402" text-anchor="middle" fill="#d4c088" font-size="8" font-family="Noto Serif JP" font-weight="700">戊戌変法(1898)</text></g>
+<g class="nd" data-id="wuxu" data-desc="<strong>戊戌変法(1898)</strong><br>★康有為・梁啓超が光緒帝に改革を建議→★<b>百日維新(103日間)</b>→科挙の改革・近代的学校設立・軍制改革等を急進的に実施。<br>★<b>西太后のクーデタ(戊戌政変)</b>で挫折→譚嗣同ら6人処刑(戊戌六君子)→光緒帝は幽閉。<br>★改革派の挫折→革命派(孫文)が台頭する契機。"><rect x="110" y="380" width="210" height="36" rx="2" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/><text x="215" y="402" text-anchor="middle" fill="#d4c088" font-size="8" font-family="Noto Serif JP" font-weight="700">戊戌変法(1898)</text></g>
 
-<g class="nd" data-id="boxer" data-desc="<strong>義和団事件(1900)</strong><br>「扶清滅洋」を掲げる義和団(民衆の排外運動)→北京の列国公使館を包囲→★<b>8カ国連合軍</b>(英米仏独露日伊墺)が北京を占領。<br>★<b>北京議定書</b>(1901)＝巨額の賠償金＋列国の北京駐兵権→清の半植民地化が決定的に。<br>→清末新政(科挙廃止1905等)→ただし「too late」。"><rect x="560" y="380" width="210" height="36" rx="6" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/><text x="665" y="402" text-anchor="middle" fill="#d4c088" font-size="8" font-family="Noto Serif JP" font-weight="700">義和団事件(1900)</text></g>
+<g class="nd" data-id="boxer" data-desc="<strong>義和団事件(1900)</strong><br>「扶清滅洋」を掲げる義和団(民衆の排外運動)→北京の列国公使館を包囲→★<b>8カ国連合軍</b>(英米仏独露日伊墺)が北京を占領。<br>★<b>北京議定書</b>(1901)＝巨額の賠償金＋列国の北京駐兵権→清の半植民地化が決定的に。<br>→清末新政(科挙廃止1905等)→ただし「too late」。"><rect x="560" y="380" width="210" height="36" rx="2" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/><text x="665" y="402" text-anchor="middle" fill="#d4c088" font-size="8" font-family="Noto Serif JP" font-weight="700">義和団事件(1900)</text></g>
 
-<g class="nd" data-id="xinhai" data-desc="<strong>辛亥革命(1911)</strong><br>四川暴動(鉄道国有化反対)→武昌蜂起(1911.10.10)→各省が独立宣言→★<b>中華民国</b>成立(1912.1.1)→孫文が臨時大総統→★<b>宣統帝(溥儀)退位</b>(1912.2)。<br>★<b>アジア最初の共和国</b>。三民主義(民族・民権・民生)。<br>ただし袁世凱に大総統の座を譲渡→袁世凱の独裁→帝政運動→死(1916)→軍閥割拠。"><rect x="110" y="500" width="210" height="36" rx="6" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/><text x="215" y="522" text-anchor="middle" fill="#d4c088" font-size="8" font-family="Noto Serif JP" font-weight="700">辛亥革命(1911)</text></g>
+<g class="nd" data-id="xinhai" data-desc="<strong>辛亥革命(1911)</strong><br>四川暴動(鉄道国有化反対)→武昌蜂起(1911.10.10)→各省が独立宣言→★<b>中華民国</b>成立(1912.1.1)→孫文が臨時大総統→★<b>宣統帝(溥儀)退位</b>(1912.2)。<br>★<b>アジア最初の共和国</b>。三民主義(民族・民権・民生)。<br>ただし袁世凱に大総統の座を譲渡→袁世凱の独裁→帝政運動→死(1916)→軍閥割拠。"><rect x="110" y="500" width="210" height="36" rx="2" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/><text x="215" y="522" text-anchor="middle" fill="#d4c088" font-size="8" font-family="Noto Serif JP" font-weight="700">辛亥革命(1911)</text></g>
 
-<g class="nd" data-id="warlord" data-desc="<strong>軍閥割拠(1916-28)</strong><br>袁世凱死後に中央政府の権威が崩壊→各地の軍閥(直隷派・安徽派・奉天派)が割拠→統一国家が機能しない時代。<br>★<b>日本の対華21カ条要求</b>(1915)→中国のナショナリズムを刺激。"><rect x="110" y="620" width="210" height="36" rx="6" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/><text x="215" y="642" text-anchor="middle" fill="#d4c088" font-size="8" font-family="Noto Serif JP" font-weight="700">軍閥割拠(1916-28)</text></g>
+<g class="nd" data-id="warlord" data-desc="<strong>軍閥割拠(1916-28)</strong><br>袁世凱死後に中央政府の権威が崩壊→各地の軍閥(直隷派・安徽派・奉天派)が割拠→統一国家が機能しない時代。<br>★<b>日本の対華21カ条要求</b>(1915)→中国のナショナリズムを刺激。"><rect x="110" y="620" width="210" height="36" rx="2" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/><text x="215" y="642" text-anchor="middle" fill="#d4c088" font-size="8" font-family="Noto Serif JP" font-weight="700">軍閥割拠(1916-28)</text></g>
 
-<g class="nd" data-id="may4" data-desc="<strong>五四運動(1919)</strong><br>パリ講和会議でドイツが持っていた山東省の権益が日本に移譲→★<b>北京の学生が抗議デモ(1919.5.4)</b>→全国的な反日・反帝国主義運動に拡大。<br>★<b>新文化運動</b>(白話文学＝魯迅「狂人日記」・陳独秀「新青年」)の延長。<br>★<b>マルクス主義の受容</b>→李大釗・陳独秀→★<b>中国共産党結成(1921)</b>。"><rect x="390" y="620" width="210" height="36" rx="6" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/><text x="495" y="642" text-anchor="middle" fill="#d4c088" font-size="8" font-family="Noto Serif JP" font-weight="700">五四運動(1919)</text></g>
+<g class="nd" data-id="may4" data-desc="<strong>五四運動(1919)</strong><br>パリ講和会議でドイツが持っていた山東省の権益が日本に移譲→★<b>北京の学生が抗議デモ(1919.5.4)</b>→全国的な反日・反帝国主義運動に拡大。<br>★<b>新文化運動</b>(白話文学＝魯迅「狂人日記」・陳独秀「新青年」)の延長。<br>★<b>マルクス主義の受容</b>→李大釗・陳独秀→★<b>中国共産党結成(1921)</b>。"><rect x="390" y="620" width="210" height="36" rx="2" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/><text x="495" y="642" text-anchor="middle" fill="#d4c088" font-size="8" font-family="Noto Serif JP" font-weight="700">五四運動(1919)</text></g>
 
-<g class="nd" data-id="guogong" data-desc="<strong>第一次国共合作(1924-27)</strong><br>孫文が「連ソ・容共・扶助工農」を採択→国民党と共産党が協力→★<b>北伐</b>(1926蒋介石)→軍閥打倒。<br>★<b>上海クーデタ(1927.4.12)</b>＝蒋介石が共産党を弾圧→国共分裂→★<b>南京国民政府</b>樹立。<br>共産党→農村に拠点→江西ソヴィエト→★<b>長征(1934-36)</b>→毛沢東が指導権確立。"><rect x="110" y="740" width="210" height="36" rx="6" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/><text x="215" y="762" text-anchor="middle" fill="#d4c088" font-size="8" font-family="Noto Serif JP" font-weight="700">国共合作と分裂(1924-27)</text></g>
+<g class="nd" data-id="guogong" data-desc="<strong>第一次国共合作(1924-27)</strong><br>孫文が「連ソ・容共・扶助工農」を採択→国民党と共産党が協力→★<b>北伐</b>(1926蒋介石)→軍閥打倒。<br>★<b>上海クーデタ(1927.4.12)</b>＝蒋介石が共産党を弾圧→国共分裂→★<b>南京国民政府</b>樹立。<br>共産党→農村に拠点→江西ソヴィエト→★<b>長征(1934-36)</b>→毛沢東が指導権確立。"><rect x="110" y="740" width="210" height="36" rx="2" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/><text x="215" y="762" text-anchor="middle" fill="#d4c088" font-size="8" font-family="Noto Serif JP" font-weight="700">国共合作と分裂(1924-27)</text></g>
 
-<g class="nd" data-id="civil" data-desc="<strong>日中戦争→国共内戦(1937-49)</strong><br>★<b>西安事件</b>(1936)→第二次国共合作→★<b>日中戦争</b>(1937盧溝橋事件→南京事件→重慶遷都)。<br>戦後→国共内戦再開→★<b>共産党の勝利</b>(農民の支持＋土地改革＋ゲリラ戦術)。<br>国民党は台湾に撤退(1949)。"><rect x="560" y="740" width="210" height="36" rx="6" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/><text x="665" y="762" text-anchor="middle" fill="#d4c088" font-size="8" font-family="Noto Serif JP" font-weight="700">日中戦争→国共内戦</text></g>
+<g class="nd" data-id="civil" data-desc="<strong>日中戦争→国共内戦(1937-49)</strong><br>★<b>西安事件</b>(1936)→第二次国共合作→★<b>日中戦争</b>(1937盧溝橋事件→南京事件→重慶遷都)。<br>戦後→国共内戦再開→★<b>共産党の勝利</b>(農民の支持＋土地改革＋ゲリラ戦術)。<br>国民党は台湾に撤退(1949)。"><rect x="560" y="740" width="210" height="36" rx="2" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/><text x="665" y="762" text-anchor="middle" fill="#d4c088" font-size="8" font-family="Noto Serif JP" font-weight="700">日中戦争→国共内戦</text></g>
 
-<g class="nd" data-id="prc" data-desc="<strong>中華人民共和国(1949-)</strong><br>★毛沢東が天安門で建国宣言(1949.10.1)。朝鮮戦争参戦→大躍進政策(1958失敗)→★<b>文化大革命</b>(1966-76)→毛沢東死去→★<b>改革開放</b>(1978鄧小平)→★<b>天安門事件</b>(1989)→市場経済化→世界第2位の経済大国。"><rect x="560" y="850" width="210" height="36" rx="6" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/><text x="665" y="872" text-anchor="middle" fill="#d4c088" font-size="8" font-family="Noto Serif JP" font-weight="700">中華人民共和国(1949-)</text></g>
+<g class="nd" data-id="prc" data-desc="<strong>中華人民共和国(1949-)</strong><br>★毛沢東が天安門で建国宣言(1949.10.1)。朝鮮戦争参戦→大躍進政策(1958失敗)→★<b>文化大革命</b>(1966-76)→毛沢東死去→★<b>改革開放</b>(1978鄧小平)→★<b>天安門事件</b>(1989)→市場経済化→世界第2位の経済大国。"><rect x="560" y="850" width="210" height="36" rx="2" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/><text x="665" y="872" text-anchor="middle" fill="#d4c088" font-size="8" font-family="Noto Serif JP" font-weight="700">中華人民共和国(1949-)</text></g>
 
 </svg></div>
 <div class="theme-svg" id="theme-eastasia" style="display:none">
@@ -750,23 +787,23 @@ html[data-theme="lux"] ::selection { background:rgba(162,51,30,.18); }
 <g class="ed" data-from="imperialism" data-to="ww2ea"><line x1="400" y1="566" x2="400" y2="650" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_ea)"/><text x="410" y="610" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">大東亜共栄圏→太平洋戦争</text></g>
 <g class="ed" data-from="ww2ea" data-to="coldwar_ea"><line x1="400" y1="700" x2="400" y2="775" stroke="rgba(var(--axr),.35)" stroke-width="2" marker-end="url(#ah_ea)"/><text x="410" y="740" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">日本敗戦→米ソによる分断</text></g>
 
-<g class="nd" data-id="sakuho" data-desc="<strong>冊封体制(前漢〜19C)</strong><br>★<b>中国皇帝が周辺国の王を「冊封」</b>＝称号と印璽を授けて君臣関係を結ぶ→東アジアの国際秩序の基本原理。<br>朝鮮・ベトナム・琉球が典型的な冊封国。日本は★<b>足利義満以降は冊封から離脱</b>→独自の立場。<br>★<b>華夷秩序</b>＝中華(文明)を中心に同心円状に「夷狄」が広がるという世界観。"><rect x="80" y="20" width="210" height="36" rx="6" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/><text x="185" y="42" text-anchor="middle" fill="#d4c088" font-size="8" font-family="Noto Serif JP" font-weight="700">冊封体制(前漢〜19C)</text></g>
+<g class="nd" data-id="sakuho" data-desc="<strong>冊封体制(前漢〜19C)</strong><br>★<b>中国皇帝が周辺国の王を「冊封」</b>＝称号と印璽を授けて君臣関係を結ぶ→東アジアの国際秩序の基本原理。<br>朝鮮・ベトナム・琉球が典型的な冊封国。日本は★<b>足利義満以降は冊封から離脱</b>→独自の立場。<br>★<b>華夷秩序</b>＝中華(文明)を中心に同心円状に「夷狄」が広がるという世界観。"><rect x="80" y="20" width="210" height="36" rx="2" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/><text x="185" y="42" text-anchor="middle" fill="#d4c088" font-size="8" font-family="Noto Serif JP" font-weight="700">冊封体制(前漢〜19C)</text></g>
 
-<g class="nd" data-id="chokou" data-desc="<strong>朝貢貿易</strong><br>冊封国が中国に使節を送り貢物を献上→★<b>中国皇帝が「回賜」として数倍の品を与える</b>→実質的には中国が損をする→ただし「中華の威信」の表現。<br>明の★<b>海禁政策</b>→朝貢貿易が唯一の合法的貿易→密貿易(倭寇)の原因に。<br>★<b>清代</b>＝広州一港貿易(公行制度)→イギリスとの摩擦→アヘン戦争の遠因。"><rect x="580" y="20" width="210" height="36" rx="6" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/><text x="685" y="42" text-anchor="middle" fill="#d4c088" font-size="8" font-family="Noto Serif JP" font-weight="700">朝貢貿易</text></g>
+<g class="nd" data-id="chokou" data-desc="<strong>朝貢貿易</strong><br>冊封国が中国に使節を送り貢物を献上→★<b>中国皇帝が「回賜」として数倍の品を与える</b>→実質的には中国が損をする→ただし「中華の威信」の表現。<br>明の★<b>海禁政策</b>→朝貢貿易が唯一の合法的貿易→密貿易(倭寇)の原因に。<br>★<b>清代</b>＝広州一港貿易(公行制度)→イギリスとの摩擦→アヘン戦争の遠因。"><rect x="580" y="20" width="210" height="36" rx="2" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/><text x="685" y="42" text-anchor="middle" fill="#d4c088" font-size="8" font-family="Noto Serif JP" font-weight="700">朝貢貿易</text></g>
 
-<g class="nd" data-id="western" data-desc="<strong>西洋の衝撃(18C末〜19C)</strong><br>★アヘン戦争(1840-42)→南京条約→★<b>不平等条約体制の始まり</b>。ペリー来航(1853)→日本の開国。<br>★<b>冊封体制(華夷秩序)とウェストファリア体制(主権国家体系)の衝突</b>→前者が後者に敗北。<br>各国の対応：日本(明治維新)＝成功、清(洋務運動)＝失敗、朝鮮(鎖国→開国)＝遅れ。"><rect x="80" y="150" width="210" height="36" rx="6" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/><text x="185" y="172" text-anchor="middle" fill="#d4c088" font-size="8" font-family="Noto Serif JP" font-weight="700">西洋の衝撃(18C末〜19C)</text></g>
+<g class="nd" data-id="western" data-desc="<strong>西洋の衝撃(18C末〜19C)</strong><br>★アヘン戦争(1840-42)→南京条約→★<b>不平等条約体制の始まり</b>。ペリー来航(1853)→日本の開国。<br>★<b>冊封体制(華夷秩序)とウェストファリア体制(主権国家体系)の衝突</b>→前者が後者に敗北。<br>各国の対応：日本(明治維新)＝成功、清(洋務運動)＝失敗、朝鮮(鎖国→開国)＝遅れ。"><rect x="80" y="150" width="210" height="36" rx="2" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/><text x="185" y="172" text-anchor="middle" fill="#d4c088" font-size="8" font-family="Noto Serif JP" font-weight="700">西洋の衝撃(18C末〜19C)</text></g>
 
-<g class="nd" data-id="treaty" data-desc="<strong>条約体制への移行(19C半ば)</strong><br>★<b>不平等条約の網</b>＝領事裁判権・協定関税・最恵国待遇→東アジア各国を「条約体制」に組み込む。<br>★<b>万国公法(国際法)の受容</b>→日本が最も積極的(条約改正を目標に近代化)。<br>★<b>冊封体制と条約体制の並存期</b>＝清は朝鮮・ベトナムとの宗属関係を主張し続ける→日清・仏清戦争の一因。"><rect x="80" y="275" width="210" height="36" rx="6" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/><text x="185" y="297" text-anchor="middle" fill="#d4c088" font-size="8" font-family="Noto Serif JP" font-weight="700">条約体制への移行(19C半ば)</text></g>
+<g class="nd" data-id="treaty" data-desc="<strong>条約体制への移行(19C半ば)</strong><br>★<b>不平等条約の網</b>＝領事裁判権・協定関税・最恵国待遇→東アジア各国を「条約体制」に組み込む。<br>★<b>万国公法(国際法)の受容</b>→日本が最も積極的(条約改正を目標に近代化)。<br>★<b>冊封体制と条約体制の並存期</b>＝清は朝鮮・ベトナムとの宗属関係を主張し続ける→日清・仏清戦争の一因。"><rect x="80" y="275" width="210" height="36" rx="2" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/><text x="185" y="297" text-anchor="middle" fill="#d4c088" font-size="8" font-family="Noto Serif JP" font-weight="700">条約体制への移行(19C半ば)</text></g>
 
-<g class="nd" data-id="sino_jp2" data-desc="<strong>日清戦争(1894-95)</strong><br>★<b>東アジア国際秩序の転換点</b>。日本が清(冊封体制の中心)に勝利→★<b>冊封体制の最終的な崩壊</b>→朝鮮の独立(＝清との宗属関係の消滅)。<br>★<b>下関条約</b>→台湾割譲・遼東半島(→三国干渉で返還)・賠償金。<br>★列強の中国分割が本格化→租借地(独＝膠州湾・露＝旅順大連・英＝威海衛・仏＝広州湾)。"><rect x="240" y="388" width="210" height="36" rx="6" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/><text x="345" y="410" text-anchor="middle" fill="#d4c088" font-size="8" font-family="Noto Serif JP" font-weight="700">日清戦争(1894-95)</text></g>
+<g class="nd" data-id="sino_jp2" data-desc="<strong>日清戦争(1894-95)</strong><br>★<b>東アジア国際秩序の転換点</b>。日本が清(冊封体制の中心)に勝利→★<b>冊封体制の最終的な崩壊</b>→朝鮮の独立(＝清との宗属関係の消滅)。<br>★<b>下関条約</b>→台湾割譲・遼東半島(→三国干渉で返還)・賠償金。<br>★列強の中国分割が本格化→租借地(独＝膠州湾・露＝旅順大連・英＝威海衛・仏＝広州湾)。"><rect x="240" y="388" width="210" height="36" rx="2" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/><text x="345" y="410" text-anchor="middle" fill="#d4c088" font-size="8" font-family="Noto Serif JP" font-weight="700">日清戦争(1894-95)</text></g>
 
-<g class="nd" data-id="russo_jp" data-desc="<strong>日露戦争(1904-05)</strong><br>満州・朝鮮をめぐる日露対立→★<b>ポーツマス条約</b>＝南樺太・南満州鉄道・韓国の優越権。<br>★<b>非白人国家が白人大国に勝利</b>→アジアの民族運動に衝撃(イラン立憲革命・青年トルコ革命・インドの国民会議派)。<br>★日本の韓国併合(1910)→東アジアにおける日本の帝国主義が確立。"><rect x="560" y="488" width="210" height="36" rx="6" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/><text x="665" y="510" text-anchor="middle" fill="#d4c088" font-size="8" font-family="Noto Serif JP" font-weight="700">日露戦争(1904-05)</text></g>
+<g class="nd" data-id="russo_jp" data-desc="<strong>日露戦争(1904-05)</strong><br>満州・朝鮮をめぐる日露対立→★<b>ポーツマス条約</b>＝南樺太・南満州鉄道・韓国の優越権。<br>★<b>非白人国家が白人大国に勝利</b>→アジアの民族運動に衝撃(イラン立憲革命・青年トルコ革命・インドの国民会議派)。<br>★日本の韓国併合(1910)→東アジアにおける日本の帝国主義が確立。"><rect x="560" y="488" width="210" height="36" rx="2" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/><text x="665" y="510" text-anchor="middle" fill="#d4c088" font-size="8" font-family="Noto Serif JP" font-weight="700">日露戦争(1904-05)</text></g>
 
-<g class="nd" data-id="imperialism" data-desc="<strong>日本の帝国主義(1910-45)</strong><br>★韓国併合(1910)→★<b>21カ条要求</b>(1915)→山東問題→満州事変(1931)→★<b>満州国</b>(1932傀儡国家)→日中戦争(1937)→<b>大東亜共栄圏</b>。<br>★<b>東アジアにおける「新秩序」の試み</b>＝欧米帝国主義に代わる日本中心の秩序→ただし実態は日本の支配と搾取。"><rect x="295" y="530" width="210" height="36" rx="6" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/><text x="400" y="552" text-anchor="middle" fill="#d4c088" font-size="8" font-family="Noto Serif JP" font-weight="700">日本の帝国主義(1910-45)</text></g>
+<g class="nd" data-id="imperialism" data-desc="<strong>日本の帝国主義(1910-45)</strong><br>★韓国併合(1910)→★<b>21カ条要求</b>(1915)→山東問題→満州事変(1931)→★<b>満州国</b>(1932傀儡国家)→日中戦争(1937)→<b>大東亜共栄圏</b>。<br>★<b>東アジアにおける「新秩序」の試み</b>＝欧米帝国主義に代わる日本中心の秩序→ただし実態は日本の支配と搾取。"><rect x="295" y="530" width="210" height="36" rx="2" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/><text x="400" y="552" text-anchor="middle" fill="#d4c088" font-size="8" font-family="Noto Serif JP" font-weight="700">日本の帝国主義(1910-45)</text></g>
 
-<g class="nd" data-id="ww2ea" data-desc="<strong>WW2と東アジア(1941-45)</strong><br>★<b>太平洋戦争</b>(1941.12真珠湾)→日本の敗戦(1945.8)→★<b>帝国主義的秩序の完全な崩壊</b>。<br>★<b>カイロ宣言</b>(1943)→ヤルタ会談→ポツダム宣言→日本の無条件降伏。<br>★<b>東アジアの再編</b>＝中華民国が常任理事国に(→中華人民共和国に交替1971)。朝鮮の南北分断(38度線)。日本の占領(GHQ)。"><rect x="295" y="655" width="210" height="40" rx="6" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/><text x="400" y="679" text-anchor="middle" fill="#d4c088" font-size="8" font-family="Noto Serif JP" font-weight="700">WW2と東アジア(1941-45)</text></g>
+<g class="nd" data-id="ww2ea" data-desc="<strong>WW2と東アジア(1941-45)</strong><br>★<b>太平洋戦争</b>(1941.12真珠湾)→日本の敗戦(1945.8)→★<b>帝国主義的秩序の完全な崩壊</b>。<br>★<b>カイロ宣言</b>(1943)→ヤルタ会談→ポツダム宣言→日本の無条件降伏。<br>★<b>東アジアの再編</b>＝中華民国が常任理事国に(→中華人民共和国に交替1971)。朝鮮の南北分断(38度線)。日本の占領(GHQ)。"><rect x="295" y="655" width="210" height="40" rx="2" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/><text x="400" y="679" text-anchor="middle" fill="#d4c088" font-size="8" font-family="Noto Serif JP" font-weight="700">WW2と東アジア(1941-45)</text></g>
 
-<g class="nd" data-id="coldwar_ea" data-desc="<strong>冷戦と東アジア(1945-)</strong><br>★<b>米ソ冷戦</b>→東アジアの分断＝★<b>朝鮮半島の南北分断</b>(1948)→朝鮮戦争(1950-53)→★<b>中国大陸と台湾の分断</b>。<br>日米安保体制(1951)＋日韓基本条約(1965)＋日中国交正常化(1972)。<br>★<b>冷戦の終結(1989)</b>→ただし東アジアでは★<b>冷戦構造が残存</b>(北朝鮮・台湾問題・米中対立)→★<b>21世紀の「新冷戦」</b>へ？<br>★冊封体制→条約体制→帝国主義→冷戦→米中二極という<b>東アジア国際秩序の重層的変容</b>。"><rect x="295" y="780" width="210" height="36" rx="6" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/><text x="400" y="802" text-anchor="middle" fill="#d4c088" font-size="8" font-family="Noto Serif JP" font-weight="700">冷戦と東アジア(1945-)</text></g>
+<g class="nd" data-id="coldwar_ea" data-desc="<strong>冷戦と東アジア(1945-)</strong><br>★<b>米ソ冷戦</b>→東アジアの分断＝★<b>朝鮮半島の南北分断</b>(1948)→朝鮮戦争(1950-53)→★<b>中国大陸と台湾の分断</b>。<br>日米安保体制(1951)＋日韓基本条約(1965)＋日中国交正常化(1972)。<br>★<b>冷戦の終結(1989)</b>→ただし東アジアでは★<b>冷戦構造が残存</b>(北朝鮮・台湾問題・米中対立)→★<b>21世紀の「新冷戦」</b>へ？<br>★冊封体制→条約体制→帝国主義→冷戦→米中二極という<b>東アジア国際秩序の重層的変容</b>。"><rect x="295" y="780" width="210" height="36" rx="2" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/><text x="400" y="802" text-anchor="middle" fill="#d4c088" font-size="8" font-family="Noto Serif JP" font-weight="700">冷戦と東アジア(1945-)</text></g>
 
 </svg></div>
 <!--NEXUS-PREMODERN-START-->
@@ -843,59 +880,59 @@ html[data-theme="lux"] ::selection { background:rgba(162,51,30,.18); }
 <text x="361" y="690" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">ゲルマン諸国家の分立</text>
 </g>
 <g class="nd" data-id="pax" data-desc="<strong>「ローマの平和」と拡大の停止(2C)</strong><br>五賢帝時代、トラヤヌス帝のとき最大版図。以後は征服が止まり、<b>戦利品と奴隷の流入が先細り</b>になる。<br>★長大な国境(ライン・ドナウ・東方)の防衛費だけが残る構造。">
-<rect x="64" y="20" width="172" height="36" rx="6" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
+<rect x="64" y="20" width="172" height="36" rx="2" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
 <text x="150.0" y="42.0" text-anchor="middle" fill="#d4c088" font-size="9" font-family="Noto Serif JP" font-weight="700">「ローマの平和」と拡大の停止(2C)</text>
 </g>
 <g class="nd" data-id="lati" data-desc="<strong>ラティフンディアの行き詰まり</strong><br>征服戦争の捕虜＝奴隷に依存した大農場経営。<br>★征服の停止で<b>奴隷の供給が減り価格が上昇</b>→奴隷制経営が不採算に。">
-<rect x="380" y="20" width="140" height="36" rx="6" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
+<rect x="380" y="20" width="140" height="36" rx="2" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
 <text x="450.0" y="42.0" text-anchor="middle" fill="#88d4b0" font-size="9" font-family="Noto Serif JP" font-weight="700">奴隷制大農場の行き詰まり</text>
 </g>
 <g class="nd" data-id="crisis3" data-desc="<strong>★3世紀の危機(軍人皇帝時代 235-284)</strong><br>各地の軍団が皇帝を擁立しては廃位。約50年間に20人以上の皇帝が乱立。<br>内乱・外敵・疫病に<b>貨幣の悪鋳によるインフレ</b>が重なり、帝国は解体の瀬戸際に。">
-<rect x="305" y="135" width="189" height="46" rx="6" fill="rgba(180,80,80,.2)" stroke="rgba(180,80,80,.4)" stroke-width="1.5"/>
-<text x="400.0" y="162.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700">★3世紀の危機(軍人皇帝時代 235-284)</text>
+<rect x="305" y="135" width="189" height="46" rx="2" fill="rgba(180,80,80,.2)" stroke="rgba(180,80,80,.4)" stroke-width="1.5"/>
+<text x="400.0" y="162.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700"><tspan class="st">★</tspan>3世紀の危機(軍人皇帝時代 235-284)</text>
 </g>
 <g class="nd" data-id="press" data-desc="<strong>外圧の増大(3C-)</strong><br>北＝ゲルマン人がライン・ドナウ国境に侵入。東＝パルティアに代わった<b>ササン朝(224-)</b>が攻勢。<br>★260年、皇帝ウァレリアヌスがシャープール1世に敗れ捕虜となる(エデッサの戦い)。">
-<rect x="703" y="140" width="143" height="36" rx="6" fill="rgba(100,130,180,.15)" stroke="rgba(100,130,180,.3)" stroke-width="1.5"/>
+<rect x="703" y="140" width="143" height="36" rx="2" fill="rgba(100,130,180,.15)" stroke="rgba(100,130,180,.3)" stroke-width="1.5"/>
 <text x="775.0" y="162.0" text-anchor="middle" fill="#88b0d4" font-size="9" font-family="Noto Serif JP" font-weight="700">ゲルマン人・ササン朝の圧力</text>
 </g>
 <g class="nd" data-id="domi" data-desc="<strong>専制君主政(ドミナトゥス 284-)</strong><br><b>ディオクレティアヌス帝</b>＝四帝分治制(テトラルキア)・皇帝崇拝の強制・軍と官僚の大増員。<br>★元首政(プリンキパトゥス)の共和政的な外見を捨て、東方的な専制へ。">
-<rect x="50" y="260" width="160" height="36" rx="6" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
+<rect x="50" y="260" width="160" height="36" rx="2" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
 <text x="130.0" y="282.0" text-anchor="middle" fill="#d4c088" font-size="9" font-family="Noto Serif JP" font-weight="700">専制君主政(ドミナトゥス 284-)</text>
 </g>
 <g class="nd" data-id="city" data-desc="<strong>重税と都市の衰退</strong><br>膨張した軍と官僚を支えるための重税。徴税責任を負わされた都市の有力者(都市参事会員)が没落・逃亡。<br>★<b>職業・身分の世襲化と固定化</b>。地中海の都市的な古代世界が変質する。">
-<rect x="320" y="260" width="140" height="36" rx="6" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
+<rect x="320" y="260" width="140" height="36" rx="2" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
 <text x="390.0" y="282.0" text-anchor="middle" fill="#88d4b0" font-size="9" font-family="Noto Serif JP" font-weight="700">重税と都市の衰退</text>
 </g>
 <g class="nd" data-id="colo" data-desc="<strong>コロナトゥス(小作制)への移行</strong><br>奴隷に代えて<b>コロヌス(土地に縛られた小作人)</b>を使う大所領経営へ。没落した中小農民もコロヌス化。<br>★コンスタンティヌス帝がコロヌスの移動を禁止(332)→中世の農奴制の先駆。">
-<rect x="540" y="260" width="140" height="36" rx="6" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
+<rect x="540" y="260" width="140" height="36" rx="2" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
 <text x="610.0" y="282.0" text-anchor="middle" fill="#88d4b0" font-size="9" font-family="Noto Serif JP" font-weight="700">コロナトゥス(小作制)</text>
 </g>
 <g class="nd" data-id="christ" data-desc="<strong>キリスト教の公認→国教化</strong><br>ディオクレティアヌス帝の大迫害(303)→コンスタンティヌス帝の<b>ミラノ勅令(313)</b>で公認→ニケーア公会議(325)でアタナシウス派が正統→<b>テオドシウス帝が国教化(392)</b>。<br>★迫害の対象から帝国統合の柱へ。">
-<rect x="60" y="380" width="140" height="36" rx="6" fill="rgba(130,100,160,.15)" stroke="rgba(130,100,160,.3)" stroke-width="1.5"/>
+<rect x="60" y="380" width="140" height="36" rx="2" fill="rgba(130,100,160,.15)" stroke="rgba(130,100,160,.3)" stroke-width="1.5"/>
 <text x="130.0" y="402.0" text-anchor="middle" fill="#c0a0d4" font-size="9" font-family="Noto Serif JP" font-weight="700">キリスト教の公認→国教化</text>
 </g>
 <g class="nd" data-id="const" data-desc="<strong>コンスタンティノープル遷都(330)</strong><br>コンスタンティヌス帝がビザンティウムに新都を建設。<b>ソリドゥス金貨</b>を発行して貨幣を安定させた。<br>★帝国の重心が、経済力のある東方へ移る。">
-<rect x="336" y="380" width="168" height="36" rx="6" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
+<rect x="336" y="380" width="168" height="36" rx="2" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
 <text x="420.0" y="402.0" text-anchor="middle" fill="#d4c088" font-size="9" font-family="Noto Serif JP" font-weight="700">コンスタンティノープル遷都(330)</text>
 </g>
 <g class="nd" data-id="migr" data-desc="<strong>ゲルマン人の大移動(375-)</strong><br><b>フン人の西進</b>に押された西ゴート人がドナウ川を越える→アドリアノープルの戦い(378)で皇帝ウァレンス戦死。<br>★410年、西ゴート王アラリックがローマを略奪。諸部族が帝国領内に次々と建国。">
-<rect x="705" y="380" width="140" height="36" rx="6" fill="rgba(100,130,180,.15)" stroke="rgba(100,130,180,.3)" stroke-width="1.5"/>
+<rect x="705" y="380" width="140" height="36" rx="2" fill="rgba(100,130,180,.15)" stroke="rgba(100,130,180,.3)" stroke-width="1.5"/>
 <text x="775.0" y="402.0" text-anchor="middle" fill="#88b0d4" font-size="9" font-family="Noto Serif JP" font-weight="700">ゲルマン人の大移動(375-)</text>
 </g>
 <g class="nd" data-id="split" data-desc="<strong>★帝国の東西分裂(395)</strong><br>テオドシウス帝が死に際して帝国を2子に分与(東＝アルカディウス、西＝ホノリウス)。<br>以後、再統一されることはなかった。">
-<rect x="350" y="500" width="140" height="36" rx="6" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/>
-<text x="420.0" y="522.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700">★帝国の東西分裂(395)</text>
+<rect x="350" y="500" width="140" height="36" rx="2" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/>
+<text x="420.0" y="522.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700"><tspan class="st">★</tspan>帝国の東西分裂(395)</text>
 </g>
 <g class="nd" data-id="fall" data-desc="<strong>★西ローマ帝国の滅亡(476)</strong><br>ゲルマン人傭兵隊長<b>オドアケル</b>が西ローマ皇帝ロムルス＝アウグストゥルスを廃位。<br>★西方は都市と貨幣経済が弱く、ゲルマン諸部族の建国で税収の基盤を失っていた。">
-<rect x="349" y="615" width="141" height="46" rx="6" fill="rgba(180,80,80,.2)" stroke="rgba(180,80,80,.4)" stroke-width="1.5"/>
-<text x="420.0" y="642.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700">★西ローマ帝国の滅亡(476)</text>
+<rect x="349" y="615" width="141" height="46" rx="2" fill="rgba(180,80,80,.2)" stroke="rgba(180,80,80,.4)" stroke-width="1.5"/>
+<text x="420.0" y="642.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700"><tspan class="st">★</tspan>西ローマ帝国の滅亡(476)</text>
 </g>
 <g class="nd" data-id="byz" data-desc="<strong>東ローマ(ビザンツ)帝国の存続(-1453)</strong><br>東方は都市と貨幣経済が健在で、首都は堅固な城壁に守られた。<br>★6世紀、<b>ユスティニアヌス帝</b>が地中海の再統一を試み、『ローマ法大全』を編纂させた。">
-<rect x="663" y="620" width="153" height="36" rx="6" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
+<rect x="663" y="620" width="153" height="36" rx="2" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
 <text x="740.0" y="642.0" text-anchor="middle" fill="#d4c088" font-size="9" font-family="Noto Serif JP" font-weight="700">東ローマ(ビザンツ)帝国の存続</text>
 </g>
 <g class="nd" data-id="medi" data-desc="<strong>西ヨーロッパ中世世界の形成</strong><br>ゲルマン国家(フランク王国)・<b>ローマ＝カトリック教会</b>・ローマの遺産(ラテン語・法)の3要素が融合。コロナトゥスは農奴制・荘園制の源流に。<br>★クローヴィスの改宗(496)→カール大帝の戴冠(800)へ。">
-<rect x="228" y="740" width="143" height="36" rx="6" fill="rgba(130,100,160,.15)" stroke="rgba(130,100,160,.3)" stroke-width="1.5"/>
+<rect x="228" y="740" width="143" height="36" rx="2" fill="rgba(130,100,160,.15)" stroke="rgba(130,100,160,.3)" stroke-width="1.5"/>
 <text x="300.0" y="762.0" text-anchor="middle" fill="#c0a0d4" font-size="9" font-family="Noto Serif JP" font-weight="700">西ヨーロッパ中世世界の形成</text>
 </g>
 
@@ -982,67 +1019,67 @@ html[data-theme="lux"] ::selection { background:rgba(162,51,30,.18); }
 <text x="646" y="819" text-anchor="start" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">マンジケルトの戦い(1071)</text>
 </g>
 <g class="nd" data-id="war" data-desc="<strong>ビザンツ帝国とササン朝の抗争(6C後半-7C初)</strong><br>両大国の長期戦で、メソポタミア経由の東西交易路が途絶えがちに。<br>★交易路が<b>アラビア半島西岸(ヒジャーズ地方)へ迂回</b>。両国は疲弊し、のちのアラブ軍の征服を容易にした。">
-<rect x="74" y="20" width="152" height="36" rx="6" fill="rgba(100,130,180,.15)" stroke="rgba(100,130,180,.3)" stroke-width="1.5"/>
+<rect x="74" y="20" width="152" height="36" rx="2" fill="rgba(100,130,180,.15)" stroke="rgba(100,130,180,.3)" stroke-width="1.5"/>
 <text x="150.0" y="42.0" text-anchor="middle" fill="#88b0d4" font-size="9" font-family="Noto Serif JP" font-weight="700">ビザンツ帝国とササン朝の抗争</text>
 </g>
 <g class="nd" data-id="mecca" data-desc="<strong>メッカの商業的繁栄</strong><br>クライシュ族が隊商交易を掌握。カーバ神殿は多神教の聖地として巡礼者を集めた。<br>★富の独占と<b>貧富の差の拡大</b>、部族的な相互扶助の弛緩。">
-<rect x="390" y="20" width="140" height="36" rx="6" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
+<rect x="390" y="20" width="140" height="36" rx="2" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
 <text x="460.0" y="42.0" text-anchor="middle" fill="#88d4b0" font-size="9" font-family="Noto Serif JP" font-weight="700">メッカの繁栄と貧富の差</text>
 </g>
 <g class="nd" data-id="tribe" data-desc="<strong>部族社会の対立</strong><br>アラブ人は血縁にもとづく部族ごとに分かれ、抗争が絶えなかった。<br>★部族を超えて人々を結びつける原理が存在しなかった。">
-<rect x="680" y="20" width="140" height="36" rx="6" fill="rgba(130,130,100,.15)" stroke="rgba(130,130,100,.3)" stroke-width="1.5"/>
+<rect x="680" y="20" width="140" height="36" rx="2" fill="rgba(130,130,100,.15)" stroke="rgba(130,130,100,.3)" stroke-width="1.5"/>
 <text x="750.0" y="42.0" text-anchor="middle" fill="#c0c0a0" font-size="9" font-family="Noto Serif JP" font-weight="700">部族間の対立・多神教</text>
 </g>
 <g class="nd" data-id="muha" data-desc="<strong>★ムハンマドとウンマの成立</strong><br>610年頃、唯一神アッラーの啓示を受け、神の前の平等と富の独占への批判を説く→メッカの大商人が迫害→<b>622年メディナへ移住(ヒジュラ)</b>。<br>★信仰にもとづく共同体<b>ウンマ</b>を建設。630年メッカ征服、アラビア半島をほぼ統一。">
-<rect x="355" y="135" width="209" height="46" rx="6" fill="rgba(130,100,160,.2)" stroke="rgba(130,100,160,.4)" stroke-width="1.5"/>
-<text x="460.0" y="162.0" text-anchor="middle" fill="#c0a0d4" font-size="9" font-family="Noto Serif JP" font-weight="700">★ムハンマドとウンマの成立(622 ヒジュラ)</text>
+<rect x="355" y="135" width="209" height="46" rx="2" fill="rgba(130,100,160,.2)" stroke="rgba(130,100,160,.4)" stroke-width="1.5"/>
+<text x="460.0" y="162.0" text-anchor="middle" fill="#c0a0d4" font-size="9" font-family="Noto Serif JP" font-weight="700"><tspan class="st">★</tspan>ムハンマドとウンマの成立(622 ヒジュラ)</text>
 </g>
 <g class="nd" data-id="conq" data-desc="<strong>正統カリフ時代の大征服(632-661)</strong><br>アブー＝バクル→ウマル→ウスマーン→アリー。<b>ニハーヴァンドの戦い(642)</b>でササン朝を破り、ビザンツ帝国からシリア・エジプトを奪う。<br>★征服地に軍営都市(ミスル)を建設。">
-<rect x="115" y="260" width="170" height="36" rx="6" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/>
+<rect x="115" y="260" width="170" height="36" rx="2" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/>
 <text x="200.0" y="282.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700">正統カリフ時代の大征服(632-661)</text>
 </g>
 <g class="nd" data-id="shia" data-desc="<strong>カリフ位をめぐる対立</strong><br>第4代カリフの<b>アリー</b>がシリア総督ムアーウィヤと対立し、661年に暗殺される。<br>★アリーとその子孫のみを指導者(イマーム)と認める<b>シーア派</b>が成立。多数派はスンナ派。">
-<rect x="649" y="260" width="161" height="36" rx="6" fill="rgba(130,100,160,.15)" stroke="rgba(130,100,160,.3)" stroke-width="1.5"/>
+<rect x="649" y="260" width="161" height="36" rx="2" fill="rgba(130,100,160,.15)" stroke="rgba(130,100,160,.3)" stroke-width="1.5"/>
 <text x="730.0" y="282.0" text-anchor="middle" fill="#c0a0d4" font-size="9" font-family="Noto Serif JP" font-weight="700">カリフ位をめぐる対立→シーア派</text>
 </g>
 <g class="nd" data-id="umay" data-desc="<strong>ウマイヤ朝(661-750)</strong><br>ムアーウィヤがダマスクスに開き、カリフ位を世襲化。西はイベリア半島(西ゴート王国を滅ぼす 711)、東は中央アジア・インダス川流域へ。<br>★<b>アラブ人が特権を持つ「アラブ帝国」</b>。トゥール・ポワティエ間の戦い(732)で西進が止まる。">
-<rect x="115" y="380" width="170" height="36" rx="6" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
+<rect x="115" y="380" width="170" height="36" rx="2" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
 <text x="200.0" y="402.0" text-anchor="middle" fill="#d4c088" font-size="9" font-family="Noto Serif JP" font-weight="700">ウマイヤ朝(661-750)＝アラブ帝国</text>
 </g>
 <g class="nd" data-id="mawa" data-desc="<strong>マワーリーの不満</strong><br>征服地の住民は改宗しても<b>ジズヤ(人頭税)とハラージュ(地租)</b>を課され続け、アラブ人は免除。<br>★「神の前の平等」という教えとの矛盾が、イラン人改宗者を中心に反ウマイヤ感情を生む。">
-<rect x="434" y="380" width="171" height="36" rx="6" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
+<rect x="434" y="380" width="171" height="36" rx="2" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
 <text x="520.0" y="402.0" text-anchor="middle" fill="#88d4b0" font-size="9" font-family="Noto Serif JP" font-weight="700">非アラブ改宗者(マワーリー)の不満</text>
 </g>
 <g class="nd" data-id="abba" data-desc="<strong>★アッバース朝の成立(750)</strong><br>ホラーサーン地方で蜂起、シーア派やマワーリーの支持を得てウマイヤ朝を打倒。<br>★アラブ人の特権を廃止：<b>ムスリムならジズヤ免除、アラブ人も土地を持てばハラージュを負担</b>＝「イスラーム帝国」。イラン人を官僚に登用。">
-<rect x="342" y="495" width="195" height="46" rx="6" fill="rgba(180,80,80,.2)" stroke="rgba(180,80,80,.4)" stroke-width="1.5"/>
-<text x="440.0" y="522.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700">★アッバース革命(750)＝イスラーム帝国</text>
+<rect x="342" y="495" width="195" height="46" rx="2" fill="rgba(180,80,80,.2)" stroke="rgba(180,80,80,.4)" stroke-width="1.5"/>
+<text x="440.0" y="522.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700"><tspan class="st">★</tspan>アッバース革命(750)＝イスラーム帝国</text>
 </g>
 <g class="nd" data-id="bagh" data-desc="<strong>バグダードの繁栄</strong><br>第2代カリフのマンスールが建設。ハールーン＝アッラシードの時代に全盛。タラス河畔の戦い(751)を機に製紙法が伝わる。<br>★<b>「知恵の館」</b>でギリシア語文献をアラビア語に翻訳→のちラテン語に重訳され西欧の12世紀ルネサンスへ。">
-<rect x="55" y="620" width="170" height="36" rx="6" fill="rgba(130,100,160,.15)" stroke="rgba(130,100,160,.3)" stroke-width="1.5"/>
+<rect x="55" y="620" width="170" height="36" rx="2" fill="rgba(130,100,160,.15)" stroke="rgba(130,100,160,.3)" stroke-width="1.5"/>
 <text x="140.0" y="642.0" text-anchor="middle" fill="#c0a0d4" font-size="9" font-family="Noto Serif JP" font-weight="700">バグダードの繁栄・イスラーム文化</text>
 </g>
 <g class="nd" data-id="three" data-desc="<strong>地方政権の自立と3カリフの鼎立(10C)</strong><br>ウマイヤ家の一族がイベリア半島に<b>後ウマイヤ朝(756-)</b>。シーア派(イスマーイール派)の<b>ファーティマ朝(909-)</b>は北アフリカ(チュニジア)での建国当初からカリフを称してアッバース朝の権威を否定→後ウマイヤ朝のアブド＝アッラフマーン3世も対抗してカリフを称した(929)。ファーティマ朝は969年にエジプトを征服し、新都カイロを建設。<br>★イスラーム世界の政治的統一は失われる。">
-<rect x="361" y="620" width="157" height="36" rx="6" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
+<rect x="361" y="620" width="157" height="36" rx="2" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
 <text x="440.0" y="642.0" text-anchor="middle" fill="#d4c088" font-size="9" font-family="Noto Serif JP" font-weight="700">地方政権の自立→3カリフの鼎立</text>
 </g>
 <g class="nd" data-id="mamluk" data-desc="<strong>マムルークの台頭(9C-)</strong><br>カリフが騎馬戦士として優秀な<b>トルコ人の奴隷を親衛隊に採用</b>。<br>★やがて軍人がカリフの廃立を左右するようになり、カリフの実権が失われていく。">
-<rect x="673" y="620" width="153" height="36" rx="6" fill="rgba(100,130,180,.15)" stroke="rgba(100,130,180,.3)" stroke-width="1.5"/>
+<rect x="673" y="620" width="153" height="36" rx="2" fill="rgba(100,130,180,.15)" stroke="rgba(100,130,180,.3)" stroke-width="1.5"/>
 <text x="750.0" y="642.0" text-anchor="middle" fill="#88b0d4" font-size="9" font-family="Noto Serif JP" font-weight="700">マムルーク(トルコ人軍人奴隷)</text>
 </g>
 <g class="nd" data-id="buya" data-desc="<strong>ブワイフ朝(932-1062)</strong><br>イラン系のシーア派軍事政権。946年バグダードに入城し、カリフから<b>大アミール</b>に任じられて実権を掌握。<br>★軍人に俸給の代わりに徴税権を与える<b>イクター制</b>を開始→セルジューク朝以降に継承。">
-<rect x="166" y="740" width="168" height="36" rx="6" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
+<rect x="166" y="740" width="168" height="36" rx="2" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
 <text x="250.0" y="762.0" text-anchor="middle" fill="#88d4b0" font-size="9" font-family="Noto Serif JP" font-weight="700">ブワイフ朝のバグダード入城(946)</text>
 </g>
 <g class="nd" data-id="selj" data-desc="<strong>セルジューク朝(1038-1194)</strong><br>トルコ系でスンナ派。<b>トゥグリル＝ベク</b>が1055年バグダードに入城しブワイフ朝を追放、カリフから<b>スルタン</b>の称号を得る。<br>★カリフ＝宗教的権威、スルタン＝世俗の支配者という分業。ニザーミーヤ学院でスンナ派の学問を振興。">
-<rect x="551" y="740" width="178" height="36" rx="6" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
+<rect x="551" y="740" width="178" height="36" rx="2" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
 <text x="640.0" y="762.0" text-anchor="middle" fill="#d4c088" font-size="9" font-family="Noto Serif JP" font-weight="700">セルジューク朝(1038-)とスルタン制</text>
 </g>
 <g class="nd" data-id="end" data-desc="<strong>アッバース朝の滅亡(1258)</strong><br>カリフは名目的な存在のまま存続したが、モンゴルの<b>フラグ</b>がバグダードを攻略して滅ぼした。<br>★以後、イスラーム世界の中心はマムルーク朝のカイロへ。">
-<rect x="180" y="860" width="140" height="36" rx="6" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/>
+<rect x="180" y="860" width="140" height="36" rx="2" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/>
 <text x="250.0" y="882.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700">アッバース朝の滅亡(1258)</text>
 </g>
 <g class="nd" data-id="crus" data-desc="<strong>十字軍の契機</strong><br>セルジューク朝が<b>マンジケルトの戦い(1071)</b>でビザンツ帝国を破り、アナトリアへ進出。<br>★ビザンツ皇帝の救援要請→教皇ウルバヌス2世のクレルモン宗教会議(1095)→第1回十字軍。アナトリアのトルコ化も始まる。">
-<rect x="564" y="860" width="151" height="36" rx="6" fill="rgba(100,130,180,.15)" stroke="rgba(100,130,180,.3)" stroke-width="1.5"/>
+<rect x="564" y="860" width="151" height="36" rx="2" fill="rgba(100,130,180,.15)" stroke="rgba(100,130,180,.3)" stroke-width="1.5"/>
 <text x="640.0" y="882.0" text-anchor="middle" fill="#88b0d4" font-size="9" font-family="Noto Serif JP" font-weight="700">ビザンツ圧迫→十字軍(1096-)</text>
 </g>
 
@@ -1133,71 +1170,71 @@ html[data-theme="lux"] ::selection { background:rgba(162,51,30,.18); }
 <text x="156" y="819" text-anchor="start" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">歳幣と軍事費で財政難</text>
 </g>
 <g class="nd" data-id="juntian" data-desc="<strong>律令体制の動揺(8C)</strong><br>人口増加と土地不足、貴族・寺院の荘園拡大で<b>均田制</b>が行き詰まり、重い負担を嫌った農民が逃亡。<br>★農民から徴兵する<b>府兵制</b>が維持できなくなり、傭兵を用いる<b>募兵制</b>へ。">
-<rect x="79" y="20" width="161" height="36" rx="6" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
+<rect x="79" y="20" width="161" height="36" rx="2" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
 <text x="160.0" y="42.0" text-anchor="middle" fill="#88d4b0" font-size="9" font-family="Noto Serif JP" font-weight="700">均田制・租調庸制・府兵制の動揺</text>
 </g>
 <g class="nd" data-id="jiedu" data-desc="<strong>節度使</strong><br>募兵を率いて辺境を守る軍団の司令官。玄宗の時代に10の節度使が置かれた。<br>★軍事だけでなく、任地の<b>民政・財政まで握る</b>ようになり、半独立の勢力に成長。">
-<rect x="400" y="20" width="140" height="36" rx="6" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
+<rect x="400" y="20" width="140" height="36" rx="2" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
 <text x="470.0" y="42.0" text-anchor="middle" fill="#d4c088" font-size="9" font-family="Noto Serif JP" font-weight="700">節度使の設置(辺境防衛)</text>
 </g>
 <g class="nd" data-id="xuan" data-desc="<strong>玄宗の治世後半</strong><br>前半は「開元の治」と称えられたが、晩年は楊貴妃を寵愛し、その一族の楊国忠が実権を握る。<br>★ソグド系の節度使<b>安禄山</b>と楊国忠の対立が深まる。">
-<rect x="680" y="20" width="140" height="36" rx="6" fill="rgba(130,130,100,.15)" stroke="rgba(130,130,100,.3)" stroke-width="1.5"/>
+<rect x="680" y="20" width="140" height="36" rx="2" fill="rgba(130,130,100,.15)" stroke="rgba(130,130,100,.3)" stroke-width="1.5"/>
 <text x="750.0" y="42.0" text-anchor="middle" fill="#c0c0a0" font-size="9" font-family="Noto Serif JP" font-weight="700">玄宗治世後半の政治の弛緩</text>
 </g>
 <g class="nd" data-id="anshi" data-desc="<strong>★安史の乱(755-763)</strong><br>平盧・范陽・河東の<b>3節度使を兼ねた安禄山</b>と部下の史思明が挙兵。洛陽・長安が陥落し、玄宗は四川へ逃れた。<br>★<b>ウイグルの援軍</b>を得てようやく鎮圧。唐の支配は根本から変質する。">
-<rect x="370" y="135" width="140" height="46" rx="6" fill="rgba(180,80,80,.2)" stroke="rgba(180,80,80,.4)" stroke-width="1.5"/>
-<text x="440.0" y="162.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700">★安史の乱(755-763)</text>
+<rect x="370" y="135" width="140" height="46" rx="2" fill="rgba(180,80,80,.2)" stroke="rgba(180,80,80,.4)" stroke-width="1.5"/>
+<text x="440.0" y="162.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700"><tspan class="st">★</tspan>安史の乱(755-763)</text>
 </g>
 <g class="nd" data-id="fanzhen" data-desc="<strong>藩鎮の割拠</strong><br>乱の鎮圧のため内地にも節度使を配置。彼らは軍事・行政・財政を握って<b>藩鎮</b>として自立し、とくに河北では租税を中央に送らなかった。<br>★唐の財政は、大運河で結ばれた江南の税収と塩の専売に依存するようになった。">
-<rect x="80" y="260" width="140" height="36" rx="6" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
+<rect x="80" y="260" width="140" height="36" rx="2" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
 <text x="150.0" y="282.0" text-anchor="middle" fill="#d4c088" font-size="9" font-family="Noto Serif JP" font-weight="700">藩鎮の割拠</text>
 </g>
 <g class="nd" data-id="liangshui" data-desc="<strong>両税法(780)</strong><br>宰相<b>楊炎</b>の建議。租調庸に代え、現住地で<b>実際に持つ土地・資産に応じて夏・秋2回</b>課税。銭納が原則。<br>★国家が<b>土地私有(大土地所有)を公認</b>したことを意味する。あわせて塩の専売が財政の柱に。">
-<rect x="370" y="260" width="140" height="36" rx="6" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
+<rect x="370" y="260" width="140" height="36" rx="2" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
 <text x="440.0" y="282.0" text-anchor="middle" fill="#88d4b0" font-size="9" font-family="Noto Serif JP" font-weight="700">両税法(780)・塩の専売</text>
 </g>
 <g class="nd" data-id="uighur" data-desc="<strong>周辺勢力の圧迫</strong><br>ウイグルは援軍の見返りに不利な<b>絹馬貿易</b>を唐に強いた。吐蕃は763年に一時長安を占領し、河西回廊を押さえる。<br>★唐は西域への影響力を失う。">
-<rect x="670" y="260" width="140" height="36" rx="6" fill="rgba(100,130,180,.15)" stroke="rgba(100,130,180,.3)" stroke-width="1.5"/>
+<rect x="670" y="260" width="140" height="36" rx="2" fill="rgba(100,130,180,.15)" stroke="rgba(100,130,180,.3)" stroke-width="1.5"/>
 <text x="740.0" y="282.0" text-anchor="middle" fill="#88b0d4" font-size="9" font-family="Noto Serif JP" font-weight="700">ウイグル・吐蕃の圧迫</text>
 </g>
 <g class="nd" data-id="huang" data-desc="<strong>黄巣の乱→唐の滅亡</strong><br>塩の密売商人の<b>黄巣</b>らが蜂起し、全国を転戦して長安を占領。<br>★乱の中で台頭した節度使の<b>朱全忠</b>が907年に唐を滅ぼし、後梁を建国。">
-<rect x="201" y="380" width="177" height="36" rx="6" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/>
+<rect x="201" y="380" width="177" height="36" rx="2" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/>
 <text x="290.0" y="402.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700">黄巣の乱(875-884)→唐の滅亡(907)</text>
 </g>
 <g class="nd" data-id="noble" data-desc="<strong>門閥貴族の没落</strong><br>魏晋南北朝以来、家柄を誇り高級官職を占めてきた貴族が、戦乱の中で荘園を失い、多くが殺害された。<br>★家柄にもとづく支配層が消滅。">
-<rect x="570" y="380" width="140" height="36" rx="6" fill="rgba(130,130,100,.15)" stroke="rgba(130,130,100,.3)" stroke-width="1.5"/>
+<rect x="570" y="380" width="140" height="36" rx="2" fill="rgba(130,130,100,.15)" stroke="rgba(130,130,100,.3)" stroke-width="1.5"/>
 <text x="640.0" y="402.0" text-anchor="middle" fill="#c0c0a0" font-size="9" font-family="Noto Serif JP" font-weight="700">門閥貴族の没落</text>
 </g>
 <g class="nd" data-id="wudai" data-desc="<strong>五代十国(907-979)</strong><br>華北に後梁・後唐・後晋・後漢・後周の5王朝、各地に10余りの国。いずれも節度使出身の武人が建てた。<br>★後晋が建国の援助の代償に<b>燕雲十六州を契丹(遼)に割譲</b>(936)。">
-<rect x="214" y="500" width="152" height="36" rx="6" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/>
+<rect x="214" y="500" width="152" height="36" rx="2" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/>
 <text x="290.0" y="522.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700">五代十国(907-979)＝武断政治</text>
 </g>
 <g class="nd" data-id="land" data-desc="<strong>新興地主層の台頭</strong><br>貴族に代わり、土地を買い集めた新興の地主＝<b>形勢戸</b>が成長。小作人の<b>佃戸</b>に耕作させて収穫の半分ほどを小作料として取る。<br>★家柄ではなく経済力にもとづく新しい支配層。">
-<rect x="570" y="500" width="140" height="36" rx="6" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
+<rect x="570" y="500" width="140" height="36" rx="2" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
 <text x="640.0" y="522.0" text-anchor="middle" fill="#88d4b0" font-size="9" font-family="Noto Serif JP" font-weight="700">新興地主(形勢戸)と佃戸制</text>
 </g>
 <g class="nd" data-id="song" data-desc="<strong>★宋(北宋 960-1127)の文治主義</strong><br><b>趙匡胤(太祖)</b>が節度使の権限を奪い、精鋭を皇帝直属の<b>禁軍</b>に集中。軍事・行政・財政の全権を皇帝に集めた。<br>★科挙の最終試験として皇帝自らが行う<b>殿試</b>を創設。">
-<rect x="208" y="615" width="164" height="46" rx="6" fill="rgba(180,140,60,.2)" stroke="rgba(180,140,60,.4)" stroke-width="1.5"/>
-<text x="290.0" y="642.0" text-anchor="middle" fill="#d4c088" font-size="9" font-family="Noto Serif JP" font-weight="700">★宋の文治主義・君主独裁(960-)</text>
+<rect x="208" y="615" width="164" height="46" rx="2" fill="rgba(180,140,60,.2)" stroke="rgba(180,140,60,.4)" stroke-width="1.5"/>
+<text x="290.0" y="642.0" text-anchor="middle" fill="#d4c088" font-size="9" font-family="Noto Serif JP" font-weight="700"><tspan class="st">★</tspan>宋の文治主義・君主独裁(960-)</text>
 </g>
 <g class="nd" data-id="shi" data-desc="<strong>士大夫の成立</strong><br>科挙に合格して官僚となった、儒学の教養を備えた知識人層。多くは形勢戸の出身で、官僚を出した家は<b>官戸</b>として特権を得た。<br>★貴族に代わる新しい支配層。ただし地位は世襲できず、代々科挙に合格する必要があった。">
-<rect x="580" y="620" width="140" height="36" rx="6" fill="rgba(130,100,160,.15)" stroke="rgba(130,100,160,.3)" stroke-width="1.5"/>
+<rect x="580" y="620" width="140" height="36" rx="2" fill="rgba(130,100,160,.15)" stroke="rgba(130,100,160,.3)" stroke-width="1.5"/>
 <text x="650.0" y="642.0" text-anchor="middle" fill="#c0a0d4" font-size="9" font-family="Noto Serif JP" font-weight="700">科挙官僚＝士大夫の成立</text>
 </g>
 <g class="nd" data-id="mili" data-desc="<strong>対外的な劣勢</strong><br>文官優位で軍の指揮系統が弱体化。遼と<b>澶淵の盟(1004)</b>、西夏と<b>慶暦の和約(1044)</b>を結び、毎年銀や絹を贈って平和を買った。<br>★1127年には金に華北を奪われる(靖康の変)。">
-<rect x="65" y="740" width="170" height="36" rx="6" fill="rgba(100,130,180,.15)" stroke="rgba(100,130,180,.3)" stroke-width="1.5"/>
+<rect x="65" y="740" width="170" height="36" rx="2" fill="rgba(100,130,180,.15)" stroke="rgba(100,130,180,.3)" stroke-width="1.5"/>
 <text x="150.0" y="762.0" text-anchor="middle" fill="#88b0d4" font-size="9" font-family="Noto Serif JP" font-weight="700">軍事力の弱体化→遼・西夏への歳幣</text>
 </g>
 <g class="nd" data-id="comm" data-desc="<strong>経済の飛躍的発展</strong><br>占城稲の導入と囲田の造成→<b>「蘇湖(江浙)熟すれば天下足る」</b>。都市では夜間や場所の営業規制がなくなり、城外に<b>草市・鎮</b>が成立。行(商人)・作(手工業者)。<br>★銅銭の大量鋳造に加え、世界最初の紙幣<b>交子</b>。">
-<rect x="390" y="740" width="140" height="36" rx="6" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
+<rect x="390" y="740" width="140" height="36" rx="2" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
 <text x="460.0" y="762.0" text-anchor="middle" fill="#88d4b0" font-size="9" font-family="Noto Serif JP" font-weight="700">江南開発と商業の発展</text>
 </g>
 <g class="nd" data-id="cult" data-desc="<strong>宋代の文化</strong><br>担い手は士大夫と都市の庶民。宇宙の原理と人間の本性を探究する<b>宋学</b>→南宋の<b>朱熹</b>が大成(朱子学)、大義名分論と華夷の別を強調。<br>★詞・雑劇、文人画と院体画、木版印刷の普及・羅針盤・火薬。">
-<rect x="680" y="740" width="140" height="36" rx="6" fill="rgba(130,100,160,.15)" stroke="rgba(130,100,160,.3)" stroke-width="1.5"/>
+<rect x="680" y="740" width="140" height="36" rx="2" fill="rgba(130,100,160,.15)" stroke="rgba(130,100,160,.3)" stroke-width="1.5"/>
 <text x="750.0" y="762.0" text-anchor="middle" fill="#c0a0d4" font-size="9" font-family="Noto Serif JP" font-weight="700">宋学(朱子学)と庶民文化</text>
 </g>
 <g class="nd" data-id="wang" data-desc="<strong>王安石の新法</strong><br>膨大な軍事費と歳幣、官僚の増加で財政難に。神宗が<b>王安石</b>を登用：青苗法・均輸法・市易法・募役法・保甲法・保馬法。<br>★大地主や大商人の利益を抑えたため、<b>司馬光</b>ら旧法党が反発→党争で国力を消耗。">
-<rect x="74" y="860" width="151" height="36" rx="6" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
+<rect x="74" y="860" width="151" height="36" rx="2" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
 <text x="150.0" y="882.0" text-anchor="middle" fill="#d4c088" font-size="9" font-family="Noto Serif JP" font-weight="700">財政難→王安石の新法(1069-)</text>
 </g>
 
@@ -1276,68 +1313,68 @@ html[data-theme="lux"] ::selection { background:rgba(162,51,30,.18); }
 <text x="703" y="685" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">物価高騰・飢饉・黄河の氾濫</text>
 </g>
 <g class="nd" data-id="steppe" data-desc="<strong>草原世界の分裂(9C半ば-12C)</strong><br>840年にウイグルがキルギスに滅ぼされて以後、モンゴル高原には統一勢力がなく、諸部族が抗争。<br>★華北の金は、諸部族を互いに争わせて統制していた。">
-<rect x="78" y="20" width="143" height="36" rx="6" fill="rgba(130,130,100,.15)" stroke="rgba(130,130,100,.3)" stroke-width="1.5"/>
+<rect x="78" y="20" width="143" height="36" rx="2" fill="rgba(130,130,100,.15)" stroke="rgba(130,130,100,.3)" stroke-width="1.5"/>
 <text x="150.0" y="42.0" text-anchor="middle" fill="#c0c0a0" font-size="9" font-family="Noto Serif JP" font-weight="700">ウイグル滅亡後の草原の分裂</text>
 </g>
 <g class="nd" data-id="army" data-desc="<strong>軍事・社会組織</strong><br>遊牧民の騎馬戦術と高い機動力。チンギス＝ハンは部族制を解体し、遊牧民を<b>千戸制</b>(1000戸単位の軍事・行政組織)に再編した。<br>★血縁による部族連合から、ハンに直属する軍事国家へ。">
-<rect x="380" y="20" width="140" height="36" rx="6" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
+<rect x="380" y="20" width="140" height="36" rx="2" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
 <text x="450.0" y="42.0" text-anchor="middle" fill="#d4c088" font-size="9" font-family="Noto Serif JP" font-weight="700">騎馬軍団の機動力と千戸制</text>
 </g>
 <g class="nd" data-id="merch" data-desc="<strong>商人と定住民の協力</strong><br>中央アジアのムスリム商人やウイグル人が、情報・資金・文書行政の技術を提供。<br>★モンゴルは交易路の安全を保障し、商人は帝国の財務を担う共生関係。元では<b>色目人</b>として重用された。">
-<rect x="669" y="20" width="161" height="36" rx="6" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
+<rect x="669" y="20" width="161" height="36" rx="2" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
 <text x="750.0" y="42.0" text-anchor="middle" fill="#88d4b0" font-size="9" font-family="Noto Serif JP" font-weight="700">ムスリム商人・ウイグル人の協力</text>
 </g>
 <g class="nd" data-id="chin" data-desc="<strong>★チンギス＝ハン(位1206-27)</strong><br>1206年、クリルタイでハン位につき大モンゴル国を建てる。ナイマン、<b>ホラズム＝シャー朝</b>、西夏を次々に滅ぼした。<br>★東西交易路の掌握をめざす征服。">
-<rect x="354" y="135" width="191" height="46" rx="6" fill="rgba(180,80,80,.2)" stroke="rgba(180,80,80,.4)" stroke-width="1.5"/>
-<text x="450.0" y="162.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700">★チンギス＝ハンの統一(1206)と大征服</text>
+<rect x="354" y="135" width="191" height="46" rx="2" fill="rgba(180,80,80,.2)" stroke="rgba(180,80,80,.4)" stroke-width="1.5"/>
+<text x="450.0" y="162.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700"><tspan class="st">★</tspan>チンギス＝ハンの統一(1206)と大征服</text>
 </g>
 <g class="nd" data-id="west" data-desc="<strong>西方遠征</strong><br><b>バトゥ</b>がロシア・東欧へ遠征、<b>ワールシュタットの戦い(1241)</b>でドイツ・ポーランド連合軍を破る。<b>フラグ</b>は1258年にバグダードを攻略してアッバース朝を滅ぼした。<br>★キプチャク＝ハン国、イル＝ハン国の成立。">
-<rect x="80" y="260" width="140" height="36" rx="6" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/>
+<rect x="80" y="260" width="140" height="36" rx="2" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/>
 <text x="150.0" y="282.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700">西方遠征(バトゥ・フラグ)</text>
 </g>
 <g class="nd" data-id="yuan" data-desc="<strong>中国の征服と元</strong><br>オゴタイが金を滅ぼす(1234)。<b>フビライ</b>が大都(現在の北京)に遷都し、1271年に国号を元とする→1276年に臨安を占領して南宋を滅ぼす。<br>★モンゴル人第一主義。色目人を財務に重用し、科挙は一時停止された。">
-<rect x="380" y="260" width="140" height="36" rx="6" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
+<rect x="380" y="260" width="140" height="36" rx="2" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
 <text x="450.0" y="282.0" text-anchor="middle" fill="#d4c088" font-size="9" font-family="Noto Serif JP" font-weight="700">金・南宋の征服→元(1271)</text>
 </g>
 <g class="nd" data-id="succ" data-desc="<strong>帝国の分立</strong><br>フビライの即位に反対して<b>ハイドゥの乱</b>(1266頃-1301)。チャガタイ＝ハン国、キプチャク＝ハン国、イル＝ハン国が事実上自立した。<br>★ただし14世紀初めに和解し、大ハン(元の皇帝)を宗主とするゆるやかな連合は保たれた。">
-<rect x="674" y="260" width="152" height="36" rx="6" fill="rgba(130,130,100,.15)" stroke="rgba(130,130,100,.3)" stroke-width="1.5"/>
+<rect x="674" y="260" width="152" height="36" rx="2" fill="rgba(130,130,100,.15)" stroke="rgba(130,130,100,.3)" stroke-width="1.5"/>
 <text x="750.0" y="282.0" text-anchor="middle" fill="#c0c0a0" font-size="9" font-family="Noto Serif JP" font-weight="700">帝位継承争い→諸ハン国の分立</text>
 </g>
 <g class="nd" data-id="local" data-desc="<strong>諸ハン国の土着化</strong><br>少数の支配者モンゴル人が、現地のトルコ系・イラン系住民に同化。イル＝ハン国は<b>ガザン＝ハン</b>の時(1295)にイスラーム教を国教とした。<br>★宰相ラシード＝アッディーンがペルシア語で世界史『集史』を編纂。">
-<rect x="60" y="380" width="140" height="36" rx="6" fill="rgba(130,100,160,.15)" stroke="rgba(130,100,160,.3)" stroke-width="1.5"/>
+<rect x="60" y="380" width="140" height="36" rx="2" fill="rgba(130,100,160,.15)" stroke="rgba(130,100,160,.3)" stroke-width="1.5"/>
 <text x="130.0" y="402.0" text-anchor="middle" fill="#c0a0d4" font-size="9" font-family="Noto Serif JP" font-weight="700">西方3ハン国のイスラーム化</text>
 </g>
 <g class="nd" data-id="pax" data-desc="<strong>★ユーラシアの一体化(「モンゴルの平和」)</strong><br>ユーラシアの大半が一つの政治的枠組みに入り、関税の簡素化と交通路の整備で<b>ヒト・モノ・情報の移動がかつてなく活発に</b>。<br>★「草原の道」「オアシスの道」「海の道」が、大都を終点として一つに結ばれた。">
-<rect x="381" y="375" width="197" height="46" rx="6" fill="rgba(80,150,120,.2)" stroke="rgba(80,150,120,.4)" stroke-width="1.5"/>
-<text x="480.0" y="402.0" text-anchor="middle" fill="#88d4b0" font-size="9" font-family="Noto Serif JP" font-weight="700">★ユーラシアの一体化(13C後半-14C前半)</text>
+<rect x="381" y="375" width="197" height="46" rx="2" fill="rgba(80,150,120,.2)" stroke="rgba(80,150,120,.4)" stroke-width="1.5"/>
+<text x="480.0" y="402.0" text-anchor="middle" fill="#88d4b0" font-size="9" font-family="Noto Serif JP" font-weight="700"><tspan class="st">★</tspan>ユーラシアの一体化(13C後半-14C前半)</text>
 </g>
 <g class="nd" data-id="succr" data-desc="<strong>後継勢力の台頭(14C後半-)</strong><br>分裂した西チャガタイ＝ハン国から<b>ティムール</b>が台頭(1370)。ロシアは約240年の「タタールのくびき」の下で<b>モスクワ大公国</b>が徴税を請け負って力をつけ、1480年にイヴァン3世が自立。<br>★モンゴルの遺産の上に次の時代の帝国が育つ。">
-<rect x="45" y="500" width="170" height="36" rx="6" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
+<rect x="45" y="500" width="170" height="36" rx="2" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
 <text x="130.0" y="522.0" text-anchor="middle" fill="#d4c088" font-size="9" font-family="Noto Serif JP" font-weight="700">ティムール・モスクワなど後継勢力</text>
 </g>
 <g class="nd" data-id="jam" data-desc="<strong>交通・交易網の整備</strong><br>オゴタイの時代に整備が始まり、帝国の拡大とともにユーラシア規模に広がった。幹線道路に沿って一定の距離ごとに駅を置き、牌符(通行証)を持つ使節や商人に馬や食料を提供する<b>駅伝制(ジャムチ)</b>。大運河を補修し、海運も発達。<br>★杭州・泉州・広州などの港市が繁栄し、ムスリム商人が活躍した。">
-<rect x="273" y="500" width="153" height="36" rx="6" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
+<rect x="273" y="500" width="153" height="36" rx="2" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
 <text x="350.0" y="522.0" text-anchor="middle" fill="#88d4b0" font-size="9" font-family="Noto Serif JP" font-weight="700">駅伝制(ジャムチ)と陸海交易網</text>
 </g>
 <g class="nd" data-id="cult" data-desc="<strong>東西の人と文化の往来</strong><br>プラノ＝カルピニ、ルブルック、<b>マルコ＝ポーロ</b>(『世界の記述』)、大都の大司教<b>モンテ＝コルヴィノ</b>、<b>イブン＝バットゥータ</b>(『大旅行記』)。<br>★イスラーム天文学→郭守敬の<b>授時暦</b>。中国絵画→イランの細密画(ミニアチュール)。コバルト顔料→染付。">
-<rect x="505" y="500" width="140" height="36" rx="6" fill="rgba(130,100,160,.15)" stroke="rgba(130,100,160,.3)" stroke-width="1.5"/>
+<rect x="505" y="500" width="140" height="36" rx="2" fill="rgba(130,100,160,.15)" stroke="rgba(130,100,160,.3)" stroke-width="1.5"/>
 <text x="575.0" y="522.0" text-anchor="middle" fill="#c0a0d4" font-size="9" font-family="Noto Serif JP" font-weight="700">東西文化の交流</text>
 </g>
 <g class="nd" data-id="silver" data-desc="<strong>銀と紙幣</strong><br>銀がユーラシア共通の決済手段に。元は銀との交換を前提に紙幣<b>交鈔</b>を発行して主要な通貨とした。<br>★徴税の請負や塩の専売で集めた銀が、ムスリム商人への投資を通じて西方へ流れた。">
-<rect x="715" y="500" width="140" height="36" rx="6" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
+<rect x="715" y="500" width="140" height="36" rx="2" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
 <text x="785.0" y="522.0" text-anchor="middle" fill="#88d4b0" font-size="9" font-family="Noto Serif JP" font-weight="700">銀を基準とする経済と交鈔</text>
 </g>
 <g class="nd" data-id="plague" data-desc="<strong>疫病の伝播</strong><br>活発化した交通路に沿ってペストが広がり、1347年以降、西アジア・北アフリカ・ヨーロッパで大流行した。<br>★ヨーロッパでは人口の約3分の1が失われたとされる(→「14世紀の危機」)。">
-<rect x="265" y="620" width="169" height="36" rx="6" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/>
+<rect x="265" y="620" width="169" height="36" rx="2" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/>
 <text x="350.0" y="642.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700">ペスト(黒死病)の大流行(14C半ば)</text>
 </g>
 <g class="nd" data-id="infl" data-desc="<strong>元の財政の破綻</strong><br>チベット仏教への莫大な寄進や宮廷の浪費、帝位をめぐる内紛が続く→<b>交鈔の濫発で物価が高騰</b>。専売の強化も民衆を圧迫した。">
-<rect x="715" y="620" width="140" height="36" rx="6" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
+<rect x="715" y="620" width="140" height="36" rx="2" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
 <text x="785.0" y="642.0" text-anchor="middle" fill="#88d4b0" font-size="9" font-family="Noto Serif JP" font-weight="700">交鈔の濫発・財政の破綻</text>
 </g>
 <g class="nd" data-id="hong" data-desc="<strong>★紅巾の乱→明の成立</strong><br>黄河の治水工事への徴発をきっかけに、白蓮教徒などが蜂起した<b>紅巾の乱</b>。その中から貧農出身の<b>朱元璋</b>が台頭し、1368年に南京で明を建てた。<br>★元はモンゴル高原へ退いた(北元)。">
-<rect x="524" y="735" width="191" height="46" rx="6" fill="rgba(180,80,80,.2)" stroke="rgba(180,80,80,.4)" stroke-width="1.5"/>
-<text x="620.0" y="762.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700">★紅巾の乱(1351-66)→明の成立(1368)</text>
+<rect x="524" y="735" width="191" height="46" rx="2" fill="rgba(180,80,80,.2)" stroke="rgba(180,80,80,.4)" stroke-width="1.5"/>
+<text x="620.0" y="762.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700"><tspan class="st">★</tspan>紅巾の乱(1351-66)→明の成立(1368)</text>
 </g>
 
 </svg>
@@ -1411,56 +1448,56 @@ html[data-theme="lux"] ::selection { background:rgba(162,51,30,.18); }
 <text x="732" y="492" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">諸侯の疲弊・国民意識の芽生え</text>
 </g>
 <g class="nd" data-id="clim" data-desc="<strong>気候の寒冷化(14C初-)</strong><br>11-13世紀の温暖期と大開墾時代が終わり、気候が寒冷化して凶作と飢饉が頻発(1315-17年の大飢饉など)。<br>★耕地の拡大は限界に達し、増えすぎた人口を養えなくなっていた。">
-<rect x="60" y="20" width="140" height="36" rx="6" fill="rgba(130,130,100,.15)" stroke="rgba(130,130,100,.3)" stroke-width="1.5"/>
+<rect x="60" y="20" width="140" height="36" rx="2" fill="rgba(130,130,100,.15)" stroke="rgba(130,130,100,.3)" stroke-width="1.5"/>
 <text x="130.0" y="42.0" text-anchor="middle" fill="#c0c0a0" font-size="9" font-family="Noto Serif JP" font-weight="700">気候の寒冷化・凶作・飢饉</text>
 </g>
 <g class="nd" data-id="plag" data-desc="<strong>★黒死病の大流行(1347-)</strong><br>モンゴル帝国のもとで活発化した交易路を通って、黒海沿岸からイタリア商人の船で地中海へ。数年で全ヨーロッパに拡大した。<br>★社会不安の中でユダヤ人の迫害も起こった。">
-<rect x="335" y="15" width="170" height="46" rx="6" fill="rgba(180,80,80,.2)" stroke="rgba(180,80,80,.4)" stroke-width="1.5"/>
-<text x="420.0" y="42.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700">★黒死病(ペスト)の大流行(1347-)</text>
+<rect x="335" y="15" width="170" height="46" rx="2" fill="rgba(180,80,80,.2)" stroke="rgba(180,80,80,.4)" stroke-width="1.5"/>
+<text x="420.0" y="42.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700"><tspan class="st">★</tspan>黒死病(ペスト)の大流行(1347-)</text>
 </g>
 <g class="nd" data-id="money" data-desc="<strong>貨幣経済の浸透(12-13C-)</strong><br>十字軍以降の遠隔地商業と都市の発展により、農村にも貨幣経済が広がった。<br>★領主も貨幣収入を必要とするようになり、農民は余剰の生産物を市場で売って貨幣を蓄えはじめた。">
-<rect x="650" y="20" width="140" height="36" rx="6" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
+<rect x="650" y="20" width="140" height="36" rx="2" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
 <text x="720.0" y="42.0" text-anchor="middle" fill="#88d4b0" font-size="9" font-family="Noto Serif JP" font-weight="700">貨幣経済の浸透</text>
 </g>
 <g class="nd" data-id="pop" data-desc="<strong>人口の激減</strong><br>飢饉と黒死病で、ヨーロッパの人口の約3分の1が失われたとされる。<br>★耕作者を失って放棄される村(廃村)も各地に現れた。">
-<rect x="200" y="140" width="140" height="36" rx="6" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/>
+<rect x="200" y="140" width="140" height="36" rx="2" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/>
 <text x="270.0" y="162.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700">人口の激減(約3分の1)</text>
 </g>
 <g class="nd" data-id="rent" data-desc="<strong>地代の変化</strong><br>領主は直営地での<b>賦役(労働地代)をやめて直営地を農民に貸し出し</b>、生産物や貨幣で地代を取る(純粋荘園)。<br>★農民は領主への人格的な従属から離れ、経済的に力をつける。とくにイギリスで進んだ。">
-<rect x="620" y="140" width="140" height="36" rx="6" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
+<rect x="620" y="140" width="140" height="36" rx="2" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
 <text x="690.0" y="162.0" text-anchor="middle" fill="#88d4b0" font-size="9" font-family="Noto Serif JP" font-weight="700">地代の金納化・賦役の廃止</text>
 </g>
 <g class="nd" data-id="labor" data-desc="<strong>農民の地位の向上</strong><br>働き手が希少になって賃金が上昇。領主は農民を引き留めるために待遇を改善せざるをえず、農民は有利な条件を求めて移動した。">
-<rect x="58" y="260" width="143" height="36" rx="6" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
+<rect x="58" y="260" width="143" height="36" rx="2" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
 <text x="130.0" y="282.0" text-anchor="middle" fill="#88d4b0" font-size="9" font-family="Noto Serif JP" font-weight="700">労働力不足→農民の地位向上</text>
 </g>
 <g class="nd" data-id="lord" data-desc="<strong>領主の経済的な困窮</strong><br>農民の減少で地代収入が減る一方、賃金と物価は上昇。貨幣で固定された地代は、貨幣価値の下落で実質的に目減りした。">
-<rect x="370" y="260" width="140" height="36" rx="6" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
+<rect x="370" y="260" width="140" height="36" rx="2" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
 <text x="440.0" y="282.0" text-anchor="middle" fill="#d4c088" font-size="9" font-family="Noto Serif JP" font-weight="700">領主層の困窮</text>
 </g>
 <g class="nd" data-id="war" data-desc="<strong>百年戦争と戦術の変化</strong><br>クレシーの戦い(1346)でイギリスの<b>長弓兵</b>がフランスの重装騎士軍を破る。やがて<b>火砲</b>も普及し、傭兵や常備軍が軍の主力となった。<br>★長期の戦争は、重税と国土の荒廃ももたらした。">
-<rect x="664" y="260" width="171" height="36" rx="6" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/>
+<rect x="664" y="260" width="171" height="36" rx="2" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/>
 <text x="750.0" y="282.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700">百年戦争(1339-1453)と戦術の変化</text>
 </g>
 <g class="nd" data-id="react" data-desc="<strong>封建反動</strong><br>困窮した領主が、<b>賦役の復活や地代の引き上げ、賃金の統制</b>によって農民への支配を再び強めようとした動き。<br>★イギリスの労働者規制法(1351)＝賃金を黒死病以前の水準に固定しようとした。">
-<rect x="260" y="380" width="140" height="36" rx="6" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
+<rect x="260" y="380" width="140" height="36" rx="2" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
 <text x="330.0" y="402.0" text-anchor="middle" fill="#d4c088" font-size="9" font-family="Noto Serif JP" font-weight="700">封建反動</text>
 </g>
 <g class="nd" data-id="revolt" data-desc="<strong>★大規模な農民一揆</strong><br>フランス＝<b>ジャックリーの乱(1358)</b>。イギリス＝<b>ワット＝タイラーの乱(1381)</b>：人頭税への反発、聖職者ジョン＝ボール「アダムが耕しイヴが紡いだとき、だれが貴族であったか」。<br>★いずれも鎮圧されたが、領主は農奴制を維持できなくなった。">
-<rect x="112" y="495" width="216" height="46" rx="6" fill="rgba(180,80,80,.2)" stroke="rgba(180,80,80,.4)" stroke-width="1.5"/>
-<text x="220.0" y="522.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700">★農民一揆(ジャックリー・ワット＝タイラー)</text>
+<rect x="112" y="495" width="216" height="46" rx="2" fill="rgba(180,80,80,.2)" stroke="rgba(180,80,80,.4)" stroke-width="1.5"/>
+<text x="220.0" y="522.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700"><tspan class="st">★</tspan>農民一揆(ジャックリー・ワット＝タイラー)</text>
 </g>
 <g class="nd" data-id="knight" data-desc="<strong>諸侯・騎士の没落</strong><br>所領経営の悪化と、戦場での役割の低下により、中小領主である騎士が没落した。<br>★国王の宮廷に仕える<b>廷臣</b>となるか、地方の地主(イギリスのジェントリ)として生き残る道を選ぶ。">
-<rect x="550" y="500" width="140" height="36" rx="6" fill="rgba(130,130,100,.15)" stroke="rgba(130,130,100,.3)" stroke-width="1.5"/>
+<rect x="550" y="500" width="140" height="36" rx="2" fill="rgba(130,130,100,.15)" stroke="rgba(130,130,100,.3)" stroke-width="1.5"/>
 <text x="620.0" y="522.0" text-anchor="middle" fill="#c0c0a0" font-size="9" font-family="Noto Serif JP" font-weight="700">諸侯・騎士の没落</text>
 </g>
 <g class="nd" data-id="yeoman" data-desc="<strong>農奴解放</strong><br>農民は貨幣で解放金を支払って農奴身分から解放された。イギリスでは<b>独立自営農民(ヨーマン)</b>が成長。<br>★荘園制と農奴制＝封建社会の経済的な基盤が解体する。(エルベ川以東では逆に農奴制が強化されていく)">
-<rect x="134" y="620" width="171" height="36" rx="6" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
+<rect x="134" y="620" width="171" height="36" rx="2" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
 <text x="220.0" y="642.0" text-anchor="middle" fill="#88d4b0" font-size="9" font-family="Noto Serif JP" font-weight="700">農奴解放→独立自営農民(ヨーマン)</text>
 </g>
 <g class="nd" data-id="king" data-desc="<strong>★王権の伸張</strong><br>国王は大商人と結んで財源を確保し、官僚制と常備軍を整えた。フランス＝シャルル7世が財政を再建して常備軍を創設。イギリス＝バラ戦争(1455-85)で諸侯が共倒れ→<b>テューダー朝</b>。<br>★封建的な主従関係にもとづく分権的な国家から、国王を中心とする中央集権国家へ。">
-<rect x="564" y="615" width="152" height="46" rx="6" fill="rgba(180,140,60,.2)" stroke="rgba(180,140,60,.4)" stroke-width="1.5"/>
-<text x="640.0" y="642.0" text-anchor="middle" fill="#d4c088" font-size="9" font-family="Noto Serif JP" font-weight="700">★王権の伸張→中央集権国家へ</text>
+<rect x="564" y="615" width="152" height="46" rx="2" fill="rgba(180,140,60,.2)" stroke="rgba(180,140,60,.4)" stroke-width="1.5"/>
+<text x="640.0" y="642.0" text-anchor="middle" fill="#d4c088" font-size="9" font-family="Noto Serif JP" font-weight="700"><tspan class="st">★</tspan>王権の伸張→中央集権国家へ</text>
 </g>
 
 </svg>
@@ -1534,63 +1571,63 @@ html[data-theme="lux"] ::selection { background:rgba(162,51,30,.18); }
 <text x="541" y="566" text-anchor="middle" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">植民地と市場の奪い合い</text>
 </g>
 <g class="nd" data-id="reli" data-desc="<strong>宗派対立</strong><br>アウクスブルクの和議(1555)は「領主の宗教がその領民の宗教」とし、個人の信仰の自由とカルヴァン派は認めなかった。<br>★宗派の対立が、各国の政治的な対立と結びついていく。">
-<rect x="70" y="20" width="140" height="36" rx="6" fill="rgba(130,100,160,.15)" stroke="rgba(130,100,160,.3)" stroke-width="1.5"/>
+<rect x="70" y="20" width="140" height="36" rx="2" fill="rgba(130,100,160,.15)" stroke="rgba(130,100,160,.3)" stroke-width="1.5"/>
 <text x="140.0" y="42.0" text-anchor="middle" fill="#c0a0d4" font-size="9" font-family="Noto Serif JP" font-weight="700">宗教改革後の宗派対立</text>
 </g>
 <g class="nd" data-id="clim" data-desc="<strong>気候の寒冷化</strong><br>17世紀は「小氷期」のなかでもとくに寒冷な時期で、凶作・飢饉・疫病が頻発した。<br>★16世紀に増加を続けたヨーロッパの人口は停滞に転じた。">
-<rect x="368" y="20" width="144" height="36" rx="6" fill="rgba(130,130,100,.15)" stroke="rgba(130,130,100,.3)" stroke-width="1.5"/>
+<rect x="368" y="20" width="144" height="36" rx="2" fill="rgba(130,130,100,.15)" stroke="rgba(130,130,100,.3)" stroke-width="1.5"/>
 <text x="440.0" y="42.0" text-anchor="middle" fill="#c0c0a0" font-size="9" font-family="Noto Serif JP" font-weight="700">小氷期(寒冷化)・凶作・疫病</text>
 </g>
 <g class="nd" data-id="silver" data-desc="<strong>銀の流入の減少</strong><br>16世紀の好況を支えたアメリカ大陸の銀の流入が、17世紀に入って減少。価格革命による物価の上昇が止まり、経済は停滞に向かった。<br>★銀に依存した交易は世界規模でつながっていたため、影響は東アジアにも及んだ。">
-<rect x="670" y="20" width="140" height="36" rx="6" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
+<rect x="670" y="20" width="140" height="36" rx="2" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
 <text x="740.0" y="42.0" text-anchor="middle" fill="#88d4b0" font-size="9" font-family="Noto Serif JP" font-weight="700">アメリカ銀の流入減少</text>
 </g>
 <g class="nd" data-id="crisis" data-desc="<strong>★「17世紀の危機」</strong><br>16世紀の経済成長が止まり、人口の停滞、物価の下落、凶作、疫病、戦乱、反乱が同時に各地を襲った。<br>★限られた富をめぐって、国家の間でも、国内の身分や集団の間でも争いが激化。各国が異なる形で危機に対応し、その後の進路が分かれた。">
-<rect x="336" y="135" width="207" height="46" rx="6" fill="rgba(180,80,80,.2)" stroke="rgba(180,80,80,.4)" stroke-width="1.5"/>
-<text x="440.0" y="162.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700">★「17世紀の危機」＝経済の停滞と社会不安</text>
+<rect x="336" y="135" width="207" height="46" rx="2" fill="rgba(180,80,80,.2)" stroke="rgba(180,80,80,.4)" stroke-width="1.5"/>
+<text x="440.0" y="162.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700"><tspan class="st">★</tspan>「17世紀の危機」＝経済の停滞と社会不安</text>
 </g>
 <g class="nd" data-id="thirty" data-desc="<strong>三十年戦争(1618-48)</strong><br>ベーメン(ボヘミア)の新教徒の反乱から始まり、デンマーク・スウェーデン・フランスが介入。宗教戦争から、ハプスブルク家とフランスの覇権争いへ変質した。<br>★傭兵軍の略奪でドイツの人口は大きく減少。">
-<rect x="60" y="260" width="140" height="36" rx="6" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/>
+<rect x="60" y="260" width="140" height="36" rx="2" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/>
 <text x="130.0" y="282.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700">三十年戦争(1618-48)</text>
 </g>
 <g class="nd" data-id="engl" data-desc="<strong>イギリス革命</strong><br>ステュアート朝の専制と国教の強制、議会の同意のない課税に、ジェントリやピューリタンが多い議会が反発→<b>ピューリタン革命</b>(チャールズ1世を処刑 1649)→クロムウェルの共和政→王政復古→<b>名誉革命</b>。">
-<rect x="280" y="260" width="169" height="36" rx="6" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/>
+<rect x="280" y="260" width="169" height="36" rx="2" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/>
 <text x="365.0" y="282.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700">イギリス革命(1640-60・1688-89)</text>
 </g>
 <g class="nd" data-id="fronde" data-desc="<strong>フロンドの乱(1648-53)</strong><br>三十年戦争の戦費のための増税と王権の強化に、高等法院や貴族が反乱。幼いルイ14世は一時パリを追われた。<br>★宰相マザランが鎮圧。フランスで最後の大規模な貴族の反乱となった。">
-<rect x="520" y="260" width="140" height="36" rx="6" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/>
+<rect x="520" y="260" width="140" height="36" rx="2" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/>
 <text x="590.0" y="282.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700">フロンドの乱(1648-53)</text>
 </g>
 <g class="nd" data-id="ming" data-desc="<strong>明清交替(1644)</strong><br>寒冷化による飢饉、北方の防衛のための増税に、銀の流入の減少が重なる。<b>李自成</b>の反乱軍が北京を占領して明が滅び、明の武将の呉三桂に導かれた清が入関した。<br>★東アジアも同じ時期に動乱を経験した。">
-<rect x="715" y="260" width="140" height="36" rx="6" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/>
+<rect x="715" y="260" width="140" height="36" rx="2" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/>
 <text x="785.0" y="282.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700">明清交替(1644)</text>
 </g>
 <g class="nd" data-id="westf" data-desc="<strong>ウェストファリア条約(1648)</strong><br>ドイツの領邦にほぼ完全な主権を認める→神聖ローマ帝国は有名無実に。スイスとオランダの独立を正式に承認。フランスがアルザスを獲得。<br>★対等な<b>主権国家</b>が並び立つ国際秩序が確立した。">
-<rect x="60" y="380" width="140" height="36" rx="6" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
+<rect x="60" y="380" width="140" height="36" rx="2" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
 <text x="130.0" y="402.0" text-anchor="middle" fill="#d4c088" font-size="9" font-family="Noto Serif JP" font-weight="700">主権国家体制の確立(1648)</text>
 </g>
 <g class="nd" data-id="parl" data-desc="<strong>イギリスの立憲王政</strong><br><b>権利の章典(1689)</b>＝議会の同意のない課税や法の停止を否定し、議会主権にもとづく立憲王政が確立。のちハノーヴァー朝(1714-)のもとでウォルポールの責任内閣制が成立し、「王は君臨すれども統治せず」の原則が定着した。<br>★議会が保証する国債と<b>イングランド銀行(1694)</b>により、戦費を低利で大量に調達できる体制が整った(財政革命)。">
-<rect x="295" y="380" width="140" height="36" rx="6" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
+<rect x="295" y="380" width="140" height="36" rx="2" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
 <text x="365.0" y="402.0" text-anchor="middle" fill="#d4c088" font-size="9" font-family="Noto Serif JP" font-weight="700">議会主権・立憲王政(1689)</text>
 </g>
 <g class="nd" data-id="absol" data-desc="<strong>★ルイ14世の親政(1661-1715)</strong><br>反乱を抑え込んだ王権が貴族を宮廷に取り込む(ヴェルサイユ宮殿)。「朕は国家なり」、王権神授説、官僚制と常備軍。<br>★ナントの王令の廃止(1685)→ユグノーの商工業者が国外に流出した。">
-<rect x="517" y="375" width="145" height="46" rx="6" fill="rgba(180,140,60,.2)" stroke="rgba(180,140,60,.4)" stroke-width="1.5"/>
-<text x="590.0" y="402.0" text-anchor="middle" fill="#d4c088" font-size="9" font-family="Noto Serif JP" font-weight="700">★絶対王政の完成(ルイ14世)</text>
+<rect x="517" y="375" width="145" height="46" rx="2" fill="rgba(180,140,60,.2)" stroke="rgba(180,140,60,.4)" stroke-width="1.5"/>
+<text x="590.0" y="402.0" text-anchor="middle" fill="#d4c088" font-size="9" font-family="Noto Serif JP" font-weight="700"><tspan class="st">★</tspan>絶対王政の完成(ルイ14世)</text>
 </g>
 <g class="nd" data-id="qing" data-desc="<strong>清の支配の安定</strong><br>康熙帝が三藩の乱を鎮圧し、台湾の鄭氏を降伏させる(1683)→海禁を解除し、交易が回復。<br>★18世紀には人口が急増し、「盛世」と呼ばれる繁栄へ。">
-<rect x="715" y="380" width="140" height="36" rx="6" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
+<rect x="715" y="380" width="140" height="36" rx="2" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
 <text x="785.0" y="402.0" text-anchor="middle" fill="#d4c088" font-size="9" font-family="Noto Serif JP" font-weight="700">清の中国支配と海禁の解除</text>
 </g>
 <g class="nd" data-id="dutch" data-desc="<strong>商業覇権の移動</strong><br>危機の時代に例外的に繁栄したのが<b>オランダ</b>：中継貿易・東インド会社・アムステルダムの金融。これに対抗してイギリスが<b>航海法(1651)</b>→3回の英蘭戦争(1652-74)。<br>★商業覇権はオランダからイギリスへ。">
-<rect x="224" y="500" width="152" height="36" rx="6" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
+<rect x="224" y="500" width="152" height="36" rx="2" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
 <text x="300.0" y="522.0" text-anchor="middle" fill="#88d4b0" font-size="9" font-family="Noto Serif JP" font-weight="700">オランダの繁栄→英の商業覇権</text>
 </g>
 <g class="nd" data-id="merc" data-desc="<strong>重商主義</strong><br>世界の富の総量は一定と考え、国家が貿易と産業を統制して富を奪い合う。フランス＝財務総監<b>コルベール</b>が王立マニュファクチュアの設立と東インド会社の再建を進めた。<br>★北アメリカ・インド・カリブ海で植民地を争奪。">
-<rect x="550" y="500" width="140" height="36" rx="6" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
+<rect x="550" y="500" width="140" height="36" rx="2" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
 <text x="620.0" y="522.0" text-anchor="middle" fill="#88d4b0" font-size="9" font-family="Noto Serif JP" font-weight="700">重商主義と植民地の争奪</text>
 </g>
 <g class="nd" data-id="second" data-desc="<strong>第2次英仏百年戦争(1689-1815)</strong><br>ヨーロッパでの戦争のたびに、植民地でも英仏が戦った：ウィリアム王戦争、アン女王戦争、ジョージ王戦争、フレンチ＝インディアン戦争。<br>★戦費の調達力にまさるイギリスが、<b>パリ条約(1763)</b>で北アメリカとインドでの優位を確立した。">
-<rect x="381" y="620" width="158" height="36" rx="6" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/>
+<rect x="381" y="620" width="158" height="36" rx="2" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/>
 <text x="460.0" y="642.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700">第2次英仏百年戦争(1689-1815)</text>
 </g>
 
@@ -1657,55 +1694,55 @@ html[data-theme="lux"] ::selection { background:rgba(162,51,30,.18); }
 <text x="386" y="822" text-anchor="start" fill="rgba(var(--axr),.6)" font-size="7" font-family="Noto Sans JP">社会構造は変わらず</text>
 </g>
 <g class="nd" data-id="enl" data-desc="<strong>啓蒙思想</strong><br>ロック＝抵抗権(革命権)、モンテスキュー＝三権分立、ルソー＝人民主権。<br>★アメリカ独立宣言と、フランス人権宣言の理論的な支柱となった。">
-<rect x="40" y="20" width="140" height="36" rx="6" fill="rgba(130,100,160,.15)" stroke="rgba(130,100,160,.3)" stroke-width="1.5"/>
+<rect x="40" y="20" width="140" height="36" rx="2" fill="rgba(130,100,160,.15)" stroke="rgba(130,100,160,.3)" stroke-width="1.5"/>
 <text x="110.0" y="42.0" text-anchor="middle" fill="#c0a0d4" font-size="9" font-family="Noto Serif JP" font-weight="700">啓蒙思想</text>
 </g>
 <g class="nd" data-id="seven" data-desc="<strong>★七年戦争(1756-63)</strong><br>ヨーロッパ・北アメリカ(フレンチ＝インディアン戦争)・インド(プラッシーの戦い)で英仏が戦った世界規模の戦争。<br>★<b>パリ条約(1763)</b>でイギリスが勝利したが、勝者も敗者も巨額の負債を抱えた。">
-<rect x="370" y="15" width="140" height="46" rx="6" fill="rgba(180,80,80,.2)" stroke="rgba(180,80,80,.4)" stroke-width="1.5"/>
-<text x="440.0" y="42.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700">★七年戦争(1756-63)</text>
+<rect x="370" y="15" width="140" height="46" rx="2" fill="rgba(180,80,80,.2)" stroke="rgba(180,80,80,.4)" stroke-width="1.5"/>
+<text x="440.0" y="42.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700"><tspan class="st">★</tspan>七年戦争(1756-63)</text>
 </g>
 <g class="nd" data-id="atl" data-desc="<strong>大西洋経済の発展</strong><br>砂糖やタバコ、奴隷貿易を軸に大西洋の両岸が結びつき、植民地の社会が経済的に成熟。13植民地は植民地議会による自治の伝統を持ち、ラテンアメリカでは植民地生まれの白人<b>クリオーリョ</b>が地主として成長した。<br>★本国の重商主義的な統制が、しだいに足かせとなる。">
-<rect x="674" y="20" width="152" height="36" rx="6" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
+<rect x="674" y="20" width="152" height="36" rx="2" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
 <text x="750.0" y="42.0" text-anchor="middle" fill="#88d4b0" font-size="9" font-family="Noto Serif JP" font-weight="700">大西洋経済と植民地社会の成長</text>
 </g>
 <g class="nd" data-id="ukfin" data-desc="<strong>イギリスの課税強化</strong><br>戦費の負債と植民地の防衛費を植民地にも負担させようとした：<b>印紙法(1765)</b>→「代表なくして課税なし」→<b>茶法(1773)</b>→ボストン茶会事件。<br>★フランスの脅威が消えたことで、植民地側は本国の軍事力を必要としなくなっていた。">
-<rect x="229" y="140" width="161" height="36" rx="6" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
+<rect x="229" y="140" width="161" height="36" rx="2" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
 <text x="310.0" y="162.0" text-anchor="middle" fill="#d4c088" font-size="9" font-family="Noto Serif JP" font-weight="700">英の財政難→植民地への課税強化</text>
 </g>
 <g class="nd" data-id="frfin" data-desc="<strong>フランスの財政難</strong><br>七年戦争の敗北で北アメリカとインドの植民地の大半を失い、負債が累積。<br>★イギリスへの報復の機会をうかがう。">
-<rect x="570" y="140" width="140" height="36" rx="6" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
+<rect x="570" y="140" width="140" height="36" rx="2" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
 <text x="640.0" y="162.0" text-anchor="middle" fill="#d4c088" font-size="9" font-family="Noto Serif JP" font-weight="700">仏の財政難(敗戦と負債)</text>
 </g>
 <g class="nd" data-id="usa" data-desc="<strong>★アメリカ独立革命</strong><br>レキシントン・コンコードで開戦(1775)→トマス＝ペイン『コモン＝センス』→<b>独立宣言(1776 ジェファソンら起草)</b>→フランス(1778)・スペインが参戦、ロシアなどの武装中立同盟→ヨークタウンの戦い→<b>パリ条約(1783)</b>。<br>★1787年に合衆国憲法＝人民主権・連邦主義・三権分立。">
-<rect x="234" y="255" width="152" height="46" rx="6" fill="rgba(180,80,80,.2)" stroke="rgba(180,80,80,.4)" stroke-width="1.5"/>
-<text x="310.0" y="282.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700">★アメリカ独立革命(1775-83)</text>
+<rect x="234" y="255" width="152" height="46" rx="2" fill="rgba(180,80,80,.2)" stroke="rgba(180,80,80,.4)" stroke-width="1.5"/>
+<text x="310.0" y="282.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700"><tspan class="st">★</tspan>アメリカ独立革命(1775-83)</text>
 </g>
 <g class="nd" data-id="fr" data-desc="<strong>★フランス革命</strong><br>特権身分への課税をはかって<b>三部会を招集(1789)</b>→国民議会→バスティーユ牢獄の襲撃→<b>人権宣言</b>→王政の廃止(1792)→ジャコバン派の独裁→総裁政府。<br>★アメリカ独立戦争に義勇兵として参加したラ＝ファイエットが人権宣言を起草。">
-<rect x="490" y="375" width="140" height="46" rx="6" fill="rgba(180,80,80,.2)" stroke="rgba(180,80,80,.4)" stroke-width="1.5"/>
-<text x="560.0" y="402.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700">★フランス革命(1789-99)</text>
+<rect x="490" y="375" width="140" height="46" rx="2" fill="rgba(180,80,80,.2)" stroke="rgba(180,80,80,.4)" stroke-width="1.5"/>
+<text x="560.0" y="402.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700"><tspan class="st">★</tspan>フランス革命(1789-99)</text>
 </g>
 <g class="nd" data-id="haiti" data-desc="<strong>ハイチ革命</strong><br>フランス領サン＝ドマングは世界最大級の砂糖の生産地。1791年に黒人奴隷が蜂起し、<b>トゥサン＝ルヴェルチュール</b>が指導。国民公会は1794年に奴隷制の廃止を決議。ナポレオンの派遣軍を破り<b>1804年に独立</b>。<br>★史上初の黒人共和国、ラテンアメリカで最初の独立国。">
-<rect x="130" y="500" width="140" height="36" rx="6" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/>
+<rect x="130" y="500" width="140" height="36" rx="2" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/>
 <text x="200.0" y="522.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700">ハイチ革命(1791-1804)</text>
 </g>
 <g class="nd" data-id="napo" data-desc="<strong>ナポレオンの支配</strong><br>革命の成果(法の前の平等、所有権の不可侵＝ナポレオン法典)をヨーロッパ各地に広める一方で、征服された地域の民族意識を呼び覚ました。<br>★大陸封鎖令(1806)に従わないポルトガルへ出兵し、スペインにも介入。">
-<rect x="568" y="500" width="144" height="36" rx="6" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/>
+<rect x="568" y="500" width="144" height="36" rx="2" fill="rgba(180,80,80,.15)" stroke="rgba(180,80,80,.3)" stroke-width="1.5"/>
 <text x="640.0" y="522.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700">ナポレオン戦争(1799-1815)</text>
 </g>
 <g class="nd" data-id="iber" data-desc="<strong>本国の権力の空白</strong><br>ポルトガルの王室はブラジルへ避難(1807)。スペインではナポレオンが兄のジョゼフを王位につける(1808)→スペインの民衆が反乱(半島戦争)。<br>★植民地は従うべき正統な国王を失い、各地でクリオーリョが自治の組織をつくった。">
-<rect x="541" y="620" width="197" height="36" rx="6" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
+<rect x="541" y="620" width="197" height="36" rx="2" fill="rgba(180,140,60,.15)" stroke="rgba(180,140,60,.3)" stroke-width="1.5"/>
 <text x="640.0" y="642.0" text-anchor="middle" fill="#d4c088" font-size="9" font-family="Noto Serif JP" font-weight="700">イベリア侵攻(1807-08)→本国の権力空白</text>
 </g>
 <g class="nd" data-id="latam" data-desc="<strong>★ラテンアメリカ諸国の独立</strong><br>北部＝<b>シモン＝ボリバル</b>(ベネズエラ・コロンビア・ボリビア)、南部＝<b>サン＝マルティン</b>(アルゼンチン・チリ・ペルー)、メキシコ＝司祭イダルゴの蜂起(1810)→1821年に独立。ブラジル＝ポルトガルの王子が皇帝に即位して帝国として独立(1822)。">
-<rect x="277" y="735" width="206" height="46" rx="6" fill="rgba(180,80,80,.2)" stroke="rgba(180,80,80,.4)" stroke-width="1.5"/>
-<text x="380.0" y="762.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700">★ラテンアメリカ諸国の独立(1810-20年代)</text>
+<rect x="277" y="735" width="206" height="46" rx="2" fill="rgba(180,80,80,.2)" stroke="rgba(180,80,80,.4)" stroke-width="1.5"/>
+<text x="380.0" y="762.0" text-anchor="middle" fill="#d48888" font-size="9" font-family="Noto Serif JP" font-weight="700"><tspan class="st">★</tspan>ラテンアメリカ諸国の独立(1810-20年代)</text>
 </g>
 <g class="nd" data-id="monroe" data-desc="<strong>独立を助けた国際環境</strong><br>ウィーン体制の列強は干渉をはかったが、イギリスの外相<b>カニング</b>は新しい市場を期待して独立を支持。アメリカ合衆国は<b>モンロー宣言(1823)</b>で、ヨーロッパとアメリカ大陸の相互不干渉を唱えた。">
-<rect x="672" y="740" width="155" height="36" rx="6" fill="rgba(100,130,180,.15)" stroke="rgba(100,130,180,.3)" stroke-width="1.5"/>
+<rect x="672" y="740" width="155" height="36" rx="2" fill="rgba(100,130,180,.15)" stroke="rgba(100,130,180,.3)" stroke-width="1.5"/>
 <text x="750.0" y="762.0" text-anchor="middle" fill="#88b0d4" font-size="9" font-family="Noto Serif JP" font-weight="700">英の支持・モンロー宣言(1823)</text>
 </g>
 <g class="nd" data-id="after" data-desc="<strong>独立後のラテンアメリカ</strong><br>独立を主導したのは地主のクリオーリョで、大土地所有制や、先住民・黒人への社会的な差別は温存された(奴隷制の廃止はハイチを除くと遅れた)。軍事的な実力者<b>カウディーリョ</b>による政権の争奪が続く。<br>★原料や食料を輸出して工業製品を輸入する、イギリスへの経済的な従属。">
-<rect x="272" y="860" width="215" height="36" rx="6" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
+<rect x="272" y="860" width="215" height="36" rx="2" fill="rgba(80,150,120,.15)" stroke="rgba(80,150,120,.3)" stroke-width="1.5"/>
 <text x="380.0" y="882.0" text-anchor="middle" fill="#88d4b0" font-size="9" font-family="Noto Serif JP" font-weight="700">独立後：クリオーリョ支配と英への経済的従属</text>
 </g>
 
@@ -1714,7 +1751,7 @@ html[data-theme="lux"] ::selection { background:rgba(162,51,30,.18); }
 <!--NEXUS-PREMODERN-END-->
 </div>
 <div class="tooltip-box" id="tooltip"></div>
-<script>
+<script id="nexus-js">
 function showTheme(key) {
   document.querySelectorAll('.theme-svg').forEach(function(el){el.style.display='none';});
   document.getElementById('theme-'+key).style.display='';
@@ -1727,16 +1764,27 @@ document.querySelectorAll('.tabs button').forEach(function(b){
   b.addEventListener('click', function(){ showTheme(this.getAttribute('data-key')); });
 });
 var tooltip = document.getElementById('tooltip');
+function placeTip(nd) {
+  if (window.innerWidth <= 700) { tooltip.style.left = ''; tooltip.style.top = ''; return; }  // bottom sheet (CSS)
+  var r = nd.getBoundingClientRect(), w = tooltip.offsetWidth, h = tooltip.offsetHeight, W = window.innerWidth, H = window.innerHeight;
+  var x = r.right + 10;
+  if (x + w > W - 8) x = r.left - w - 10;
+  if (x < 8) x = Math.max(8, Math.min(W - w - 8, r.left + r.width / 2 - w / 2));
+  var y = (x === r.right + 10 || x === r.left - w - 10) ? r.top : r.bottom + 10;
+  if (y + h > H - 8) y = (x === r.right + 10 || x === r.left - w - 10) ? H - h - 8 : r.top - h - 10;
+  if (y < 8) y = 8;
+  tooltip.style.left = x + 'px'; tooltip.style.top = y + 'px';
+}
 document.addEventListener('click', function(e) {
+  if (e.target.closest('.tt-x')) { clearHighlight(); return; }
   var nd = e.target.closest('.nd');
   if (nd) {
     var id = nd.getAttribute('data-id');
-    var desc = nd.getAttribute('data-desc');
     var container = nd.closest('.theme-svg');
     container.querySelector('svg').classList.add('dim');
-    container.querySelectorAll('.nd').forEach(function(n){n.classList.remove('hi');});
+    container.querySelectorAll('.nd').forEach(function(n){n.classList.remove('hi','sel');});
     container.querySelectorAll('.ed').forEach(function(ed){ed.classList.remove('hi');});
-    nd.classList.add('hi');
+    nd.classList.add('hi','sel');
     container.querySelectorAll('.ed').forEach(function(ed){
       if(ed.getAttribute('data-from')===id || ed.getAttribute('data-to')===id){
         ed.classList.add('hi');
@@ -1745,25 +1793,22 @@ document.addEventListener('click', function(e) {
         if(otherNd) otherNd.classList.add('hi');
       }
     });
-    tooltip.innerHTML = desc;
+    tooltip.innerHTML = '<button class="tt-x" aria-label="閉じる">×</button>' + nd.getAttribute('data-desc');
     tooltip.style.display = 'block';
-    var rect = nd.getBoundingClientRect();
-    var tx = rect.right + 10;
-    var ty = rect.top;
-    if (tx + 350 > window.innerWidth) tx = rect.left - 350;
-    if (ty + 300 > window.innerHeight) ty = window.innerHeight - 320;
-    if (ty < 10) ty = 10;
-    tooltip.style.left = tx + 'px';
-    tooltip.style.top = ty + 'px';
+    tooltip.scrollTop = 0;
+    document.body.classList.add('tt-open');
+    placeTip(nd);
   } else if (!e.target.closest('.tooltip-box') && !e.target.closest('.tabs')) {
     clearHighlight();
   }
 });
 function clearHighlight() {
   document.querySelectorAll('svg').forEach(function(s){s.classList.remove('dim');});
-  document.querySelectorAll('.nd').forEach(function(n){n.classList.remove('hi');});
+  document.querySelectorAll('.nd').forEach(function(n){n.classList.remove('hi','sel');});
   document.querySelectorAll('.ed').forEach(function(ed){ed.classList.remove('hi');});
   tooltip.style.display = 'none';
-}</script>
+  document.body.classList.remove('tt-open');
+}
+</script>
 <div class="note"><p>因果関係ネットワーク＝<strong>複数の原因が合流し、1つの結果が複数方向に分岐する「網目状の因果」を可視化</strong>。ノードをクリックすると関連する因果だけがハイライトされます。</p></div>
 <script src="search_jump.js" defer></script></body></html>

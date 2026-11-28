@@ -4,7 +4,7 @@
 .search-bar{padding:10px 20px;display:flex;gap:10px;align-items:center}.si{padding:6px 14px;border-radius:100px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);color:var(--text);font-size:11px;font-family:inherit;width:240px;outline:none;transition:border-color .2s}.si:focus{border-color:rgba(var(--axr),.3)}.si::placeholder{color:var(--text3)}.cnt{font-size:9px;color:var(--text3);font-family:'Cormorant Garamond',serif;letter-spacing:.1em}
 .tbl-wrap{padding:4px 20px 40px;overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:11px}
 th{background:rgba(var(--axr),.08);color:var(--gold);font-family:'Noto Serif JP',serif;font-weight:700;font-size:10px;letter-spacing:.08em;text-align:left;padding:8px 12px;border-bottom:1px solid rgba(var(--axr),.15);white-space:nowrap}
-td{padding:8px 12px;border-bottom:1px solid rgba(255,255,255,.025);color:#bbb;vertical-align:top;line-height:1.7}
+td{padding:8px 12px;border-bottom:1px solid rgba(255,255,255,.025);color:var(--text);vertical-align:top;line-height:1.7}
 td:first-child{color:var(--gold);opacity:.7;font-family:'Cormorant Garamond',serif;font-size:11px;white-space:nowrap;min-width:60px}
 td:nth-child(2){color:var(--text2);min-width:60px}
 td:nth-child(3){color:var(--text);font-weight:600;min-width:120px}
@@ -19,6 +19,18 @@ td:first-child{font-size:8.5px}
 .note p{font-size:8px}
 .side-note{font-size:7.5px}
 }
+
+
+
+/* tabula-fs: sheet_laws scale */
+@media(max-width:768px){table{font-size:10px}th{font-size:9px}.tab{font-size:9px}
+td:nth-child(n){font-size:9.5px}td:nth-child(1),td:nth-child(2){font-size:10px}
+tr.section-header td{font-size:10.5px}}
+@media(max-width:480px){table{font-size:9px}th{font-size:8px}.tab{font-size:8.5px}
+td:nth-child(n){font-size:9px;line-height:1.55}td:nth-child(1),td:nth-child(2){font-size:9.5px}
+td:nth-child(1){white-space:normal;min-width:80px}
+tr.section-header td{font-size:9.5px}}
+/* /tabula-fs */
 </style><style id="thThemes">/* =====================================================
    THESAURUS HISTORIAE ― themes.css(LUX固定版)
    生成りの紙 + 墨の本文 + 朱筆(★語) + 金茶の構造色。
@@ -53,6 +65,17 @@ html[data-theme="lux"] span.k + strong,
 html[data-theme="lux"] .node-title .k { color:var(--shu) !important; }
 html[data-theme="lux"] span.k + strong { font-weight:700; }
 html[data-theme="lux"] ::selection { background:rgba(162,51,30,.18); }
+
+/* じっくり読む本文: ダーク時代の淡色(#bbb/#a8a39a/#b0aba2/--text3)を墨へ。ラベル類は淡いまま */
+html[data-theme="lux"] td.desc-cell,
+html[data-theme="lux"] td.ds,
+html[data-theme="lux"] td.event-cell { color:var(--text); }
+html[data-theme="lux"] .note p,
+html[data-theme="lux"] div.note,
+html[data-theme="lux"] .side-note,
+html[data-theme="lux"] .ev-note,
+html[data-theme="lux"] .arrow-text,
+html[data-theme="lux"] .detail { color:var(--text2); }
 </style><script id="thScript">document.documentElement.setAttribute('data-theme','lux');</script></head><body>
 <div class="hdr"><h1>論述・経済社会史・比較史</h1><a href="index.html">← Ad Indicem</a></div>
 <div class="tabs"><button class="tab on" onclick="switchTab(0)" id="tab0">論述テーマ一覧</button>

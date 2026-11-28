@@ -49,6 +49,28 @@ td.year-cell{font-size:9.5px;min-width:50px}
 td.desc-cell{font-size:9px;line-height:1.55;min-width:120px}
 tr.section-header td{padding:6px;font-size:9.5px}
 }
+
+
+
+
+/* tabula-fs: sheet_laws scale */
+@media(max-width:1024px){td.desc-cell,td.ds,td.event-cell{font-size:10.5px}}
+@media(max-width:768px){table{font-size:10px}th{font-size:9px}.tab{font-size:9px}
+td.no-cell,td.no{font-size:10px;width:28px}
+td.name-cell,td.nm{font-size:10px;width:auto;min-width:110px}
+td.year-cell,td.yr{font-size:10px;width:auto;min-width:60px}
+td.desc-cell,td.ds,td.event-cell,td.feature-cell{font-size:9.5px;width:auto;min-width:150px}
+td.feature-cell{min-width:80px}
+tr.section-header td,tr.sh td{font-size:10.5px}}
+@media(max-width:480px){table{font-size:9px}th{font-size:8px}.tab{font-size:8.5px}
+td.no-cell,td.no{font-size:9px;width:24px}
+td.name-cell,td.nm{font-size:9.5px;min-width:90px}
+td.year-cell,td.yr{font-size:9.5px;min-width:50px}
+td.desc-cell,td.ds,td.event-cell,td.feature-cell{font-size:9px;line-height:1.55;min-width:120px}
+td.feature-cell{min-width:70px}
+td.year-cell{white-space:normal;min-width:60px}
+tr.section-header td,tr.sh td{font-size:9.5px}}
+/* /tabula-fs */
 </style><style id="thThemes">/* =====================================================
    THESAURUS HISTORIAE ― themes.css(LUX固定版)
    生成りの紙 + 墨の本文 + 朱筆(★語) + 金茶の構造色。
@@ -83,6 +105,17 @@ html[data-theme="lux"] span.k + strong,
 html[data-theme="lux"] .node-title .k { color:var(--shu) !important; }
 html[data-theme="lux"] span.k + strong { font-weight:700; }
 html[data-theme="lux"] ::selection { background:rgba(162,51,30,.18); }
+
+/* じっくり読む本文: ダーク時代の淡色(#bbb/#a8a39a/#b0aba2/--text3)を墨へ。ラベル類は淡いまま */
+html[data-theme="lux"] td.desc-cell,
+html[data-theme="lux"] td.ds,
+html[data-theme="lux"] td.event-cell { color:var(--text); }
+html[data-theme="lux"] .note p,
+html[data-theme="lux"] div.note,
+html[data-theme="lux"] .side-note,
+html[data-theme="lux"] .ev-note,
+html[data-theme="lux"] .arrow-text,
+html[data-theme="lux"] .detail { color:var(--text2); }
 </style><script id="thScript">document.documentElement.setAttribute('data-theme','lux');</script></head><body>
 <div class="hdr"><h1>条約・協定一覧</h1><a href="index.html">← Ad Indicem</a></div>
 <div class="tabs"><button class="tab on" onclick="switchTab(0)" id="tab0">古代〜中世</button>
